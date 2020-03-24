@@ -8,5 +8,13 @@ It'll have to do.
 
 Bleach is another option.
 
+A nephelometer or https://en.wikipedia.org/wiki/McFarland_standards is used to determine titer of a broth. Looks like an LED and photodetector at 90 deg would be sufficient.
 
+Rubber cap strip for all tubes?
+
+Bubble aeration - we'll try it!
+
+Water bath for robot pipettes
+
+Dilution will also work.
 

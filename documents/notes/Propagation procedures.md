@@ -10,14 +10,29 @@ https://www.carolina.com/teacher-resources/Interactive/living-organism-care-guid
 
 http://www.gaudi.ch/HTGAA/final_project.html
 
-Okay so E. Coli stays at RT, phage goes in the fridge. No, wait, the package says specifically 
+Okay so E. Coli stays at RT, phage goes in the fridge. The phage package says specifically 
 "refrigerate after arrival".
 
 Cultures must be shaken and must have sufficient oxygen for growth.
 
 Culture was put in the fridge at 2.9 C.
 
-Sterilized alu foil can be used to cap beakers n' stuff. Neat.
+Sterilized alu foil can be used to cap beakers n' stuff. Neat. Definitely should have purchased some parafilm though, because of its gas permeability.
 
 12-50ml Falkon tubes are used to culture in shakers. Oh well.
+
+# Starting the culture
+
+Autoclave:
+
+- 10 pipettes
+- Aluminum foil
+- 5 centrifuge tubes, empty
+
+Transfer 1 mL sterile broth to empty centrifuge tubes.
+
+- 5 centrifuge tubes.
+
+
+Flame inoculating loop.
 

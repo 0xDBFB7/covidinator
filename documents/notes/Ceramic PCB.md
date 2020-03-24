@@ -45,7 +45,8 @@ PEG1000 is very hygroscopic and rapidly dries ceramics. Different percentages ar
 
 A box with a glass window could be used to laser-pattern copper oxide. Something to try.
 
-#### Atmosphere
+Could also screen-print traces - with PVOH?
+
 
 
 
