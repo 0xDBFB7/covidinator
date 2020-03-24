@@ -177,9 +177,9 @@ HackRF max input power is only 316 microwatts. That's tiny. Attenuator that I've
 
 We want to precisely measure the power. How on earth can we can level losses at 10 GHz? We don't have a reference 10 GHz generator.
 
-Thick film resistors are good for RF.
+Thick film resistors are good for RF. Graphite, specifically.
 
-I suppose we don't actually need a precise power measurement. We can set the level to just above where a 15 minute exposure is sufficient (thereby setting the 10 dBm reference), and then try shorter and shorter exposures.
+I suppose we don't actually need a precise power measurement. We can set the level to just above where a 15 minute exposure is sufficient to kill everything (thereby setting the 10 dBm reference from Yang et al), and then try shorter and shorter exposures.
 
 PDB has a great list of software. https://www.cellmicrocosmos.org/index.php/cm2-project into ProDy looks good.
 
@@ -192,7 +192,7 @@ Used QUCS's attenuator synthesizer to make an attenuator. Great success! 30 DB:
 The strength and Q of viruses changes significantly with pH. Neat!
 
 
-Tried qspectrumanalyzer. Upgraded hackrf firmware, kind of buggy.
+Tried qspectrumanalyzer. Upgraded hackrf firmware. hackrf-spectrum-analyzer works pretty well.
 
 Hey, having a direct WiFi AP on the main server to a notebook laptop would be great.
 
@@ -200,7 +200,135 @@ Trying to get this adf4351 board running to test the downconverter. Had it lock 
 
 Made a simple Nichrome pancake element with ~6" of wire. Got to about 600C on a firebrick. 
 
+First, university.
 
+For QC testing, just filter, rectify ("demodulate") and measure average power through resistor?
+
+Was orignally planning on using ProDy with the lipid generator, GROMACS looks equally good though, has an easy electric field module
+
+http://www.gromacs.org/Documentation/How-tos/Normal_Mode_Analysis
+
+What with the multitude of fields we're working in here, workspace is getting a bit cluttered. Going to try Awesome. 
+
+We could use two beams of 4 GHz 90 deg out of phase, or four beams at 2 GHz; or perhaps two 24 GHz ISM band beams beating at 8.4 GHz? 
+
+
+
+Tapered anode: electrode deflects to shorten path and alter phase?
+
+
+
+Feedback: we don't want to use LEDs, since we don't have a PnP step yet. 
+
+
+
+A fermi estimation: given global WiFi shipments of 3 Bil/yr globally, and assuming that every such device uses a single suitable RF transistor (a gross overestimation, since most use multifunctional ICs), producing 100 million units in 2 weeks would consume the entire global production capacity, assuming that other lines aren't re-tooled and disregarding the effect of the virus on production lines.
+
+This would be a logistical nightmare.
+
+There are nearly 1 million staffed hospital beds in the US alone.
+
+100 parallel production lines doing 1 every 10 minutes in 500 factories to make 100 mil. in 2 weeks. Not bad! A large last-mile team to distribute the elements in time would be required, though people would probably line up themselves.
+
+Consider a bus full of people all with these devices. SAR limits could be exceeded? Some sort of feedback during non-transmitting times - if received power exceeds some amount, don't transmit.
+
+Laser thermal crosslinking with benzoate?
+
+Changes induced by UV radiation in the presence of sodium benzoate in films formulated with polyvinyl alcohol and carboxymethyl 
+
+Glycerol is a plasticizer for PVA
+
+Changes induced by UV radiation in the presence of sodium benzoate in films formulated with polyvinyl alcohol and carboxymethyl 
+
+Conformal coat
+tin or nickel plate with thiourea
+Epoxy pot? That'd take too long. Dip in a non-corrosive latex paint?
+
+**Just simple masked screen-printing would be useful**
+
+How do you laser-trim caps?
+
+OpenEMS - use to sim triode
+
+"Formier getter - aluminum magnesium alloy"
+
+" Pieces of
+thin nickel foil are used between each ceramic and
+titanium part to form a reactive alloy."* 
+
+MLI'd tungsten heater 
+
+The triode is really very simple indeed - just look at where the grid is!
+
+A tiny drop of glass can be put over a port on the thing and then fired in a vacuum.
+
+
+Jackpot! paper added. Grid v=60v. 
+
+Tubes could be fired under low-vac and then gettered down?
+
+Now this is an application for IBSimu.
+
+Tungsten wire from lightbulb factories - except, thoriated? Also, incandescent lightbulbs aren't produced en masse anymore.
+
+Oh! the anode voltage can be varied, perhaps - changes electron velocity in drift? Or a second phase-shift grid.
+
+Okay. Picture a 2d planar triode. Amazing, right? The lid can be a seperate plate of alumina, with a little channel filled with active-metal (or silica, even better!) that's coated afterward. Just a little nichrome heater that follows the silica seal bead in a low-vac chamber.
+
+The filaments are sized to tolerate 3 months of continuous operation. 
+
+Side chamber with magnesium getter, electrodes come out and are flashed
+
+A typical smartphone has maybe 10 watt-hours. We want, say, a 6-hour life, with the phone on standby. At the spec'd 5% eff, the tube will take 0.8 W to put out 0.04 w. Perfect! will need a USB passthrough of some sort.
+
+voltage on USB C is similar to those of old; just resistors on pins.
+
+looks like USB C ports on phones can push about 1.5 amps out. That's not bad!
+
+Oh, and we probably won't need continuous service.
+
+This is kind of an america-centric idea, where we all have modern phones with USB C PD. I don't know how we could replicate this in places where handheld batteries aren't common - phillipines has only a 30% smartphone pop. Solar? 1
+
+If we use laser masking and pasting, each trace can have a seperate mask, applied in sequence after drying so we don't have issues with impossible isolated areas.
+
+How do we get the copper to the side of the triode? do we even need to? it could be produced roughly planar.
+
+Let's see. We want...0.1 watts, at 48 volts (step-up?). That's 0.002 A of electron current. Via the C-L law, we'll need 
+
+SAR exemption limits are around 50 mW
+
+Angle low-temp soldered 
+
+Ceramic USB ports - all different types integrated - C, A, B, etc - top of plug planar with PCB.
+
+The 8 GHz bands have a few painful allocations, like *"Aeronautical radionavigation"* (ouch!) and *"Maritime radionavigation"* (ouch!)
+
+Cumulatively, DigiKey has about 30 million N-channel mosfets in stock, so we're okay using a single mosfet for a charge pump.
+
+A 10-minute, 100-lane factory will produce 200,000 units in 2 weeks. If each board consumes 2 mm of tungsten wire, that's just 400 m of wire. Each roll is about 100 to 500 m - that shouldn't be a big deal. Midwest Tungsten has rolls of 1500 m. Still would be easier to use nichrome, though.
+
+MEEP is also good, but apparently less suited to RF designs.
+OpenEMS has python bindings.
+
+Oh, the PVOH photosensitize thing won't work with a carbothermal method - the carbon black will probably absorb all the UV! A multilayer technique might work
+
+Should try laser patterning CuO+graphite though. Nice black surface. Not sure if it'll scale, though - 100 laser diodes per factory?
+
+"Flaming" the rim of a test tube heats it, creating a local updraft. 
+
+Use permeable sponge or something for acetone toner transfer.
+
+
+
+Looks like this describes the optical hetrodyning technique: https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250040104
+
+Seems like opinion is divided on DNA having resonance modes. These guys
+https://onlinelibrary.wiley.com/doi/abs/10.1002/bip.360330114 say there's no resonance modes, the other says there's a significant mode.
+
+
+"1400 and below" describes using Cu2O, copper (i) oxide, not CuO. Similar melting and boiling points.
+
+Remember to record the Alumina particle size.
 
 
 

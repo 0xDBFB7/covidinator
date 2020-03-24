@@ -1,31 +1,43 @@
 #include <iostream>
 #include <math.h>
+#include <vector>
 
 #define MAX_N_POINTS 10
 #define POINT_MASS (1/1000)
 #define CUTOFF 1
 
-float N = 0;
+#define ELECTRIC_CONSTANT (1)
 
-int MAX_N_PO = 0;
+
 //need damping
+//try springs later
 
-double point_buffer[MAX_N_POINTS*6] = {0}; //x,y,z,v_x,v_y,v_z,type
-double neutral_distance[MAX_N_POINTS*6] = {0}; //x
 
-int dist(){
-       
+
+int dist(double x, double y, double z){
+
 }
 
-int force(double dist){
-      
+int calculate_neighbors(){
+
 }
 
-void make_sphere(){
-    
+int force(double particle_charge_1, double particle_charge_1, double dist){
+    //regularize
+    lennard_jones_force =
+    coulomb_force = (particle_charge_1*particle_charge_2)/((dist-)*dist);
 }
+
+void make_sphere(std::vector<double> points, double total_charge, double radius, int N){
+    surface_area = 4.0 * M_PI * (radius*radius);
+
+}
+
 
 
 int main(){
-    
+    std::vector<double> points; //x,y,z, v_x, v_y, v_z, mass, charge, LJ rest distance
+    // std::vector<std::vector<double>> neighbor_distances; //2d! oh noes
+
+
 }
