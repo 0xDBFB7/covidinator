@@ -9,7 +9,6 @@ Polyprop. is inert to the same.
 
 A 1 oz shot glass is about 100 g of alumina. 
 
-
 "Films from three different bloom strength were prepared and dried at three different temperatures (20 °C, 40 °C and 60 °C) to investigate whether the differences in ordering and aggregation during film formation, under controlled drying conditions, reflect changes in their mechanical properties. Results showed that Young's modulus (E) was not significantly (p ≤ 0.05) influenced by the drying regime because it remained around 3.0 GPa. "
 https://www.tandfonline.com/doi/full/10.1080/19476337.2010.523902
 
@@ -47,7 +46,6 @@ A box with a glass window could be used to laser-pattern copper oxide. Something
 
 Could also screen-print traces - with PVOH?
 
+Poly(vinyl acetate) resin is soluble in acetone, 95% ethanol, isopropanol, cyclohexanone, diacetone alcohol, MEK, methanol, ethyl acetate
 
-
-
-
+If spin coated, a negative mask layer of PVOH can be added after a positive mask with the copper oxide and the 

@@ -1,13 +1,13 @@
 Surrogate
 
 ---
+
 title: Surrogate
 created: '2020-03-18T16:06:05.344Z'
 modified: '2020-03-18T16:06:48.957Z'
 ---
 
 # Surrogate
-
 
 > COVID-19 is most often spread from person to person among close contacts.
 
@@ -27,12 +27,11 @@ Feline coronavirus is an accepted surrogate.
 
 Blockquote>Bacteriophages were chosen as microbial targets in this study due to the ease with which they could be handled, propagated, and titered, in addition to worker safety concerns.</blockquote>
 
-
 {{Cite journal| doi = 10.1021/es803289w| issn = 0013-936X, 1520-5851| volume = 43| issue = 15| pages = 5940–5946| last1 = Kettleson| first1 = Eric M.| last2 = Ramaswami| first2 = Bala| last3 = Hogan| first3 = Christopher J.| last4 = Lee| first4 = Myong-Hwa| last5 = Statyukha| first5 = Gennadiy A.| last6 = Biswas| first6 = Pratim| last7 = Angenent| first7 = Largus T.| title = Airborne Virus Capture and Inactivation by an Electrostatic Particle Collector| journal = Environmental Science & Technology| accessdate = 2020-03-14| date = 2009-08| url = https://pubs.acs.org/doi/10.1021/es803289w}}
 
 Escherichia coli bacteriophage T3 (ATCC® 11303-B3™), https://www.atcc.org/en/Products/All/11303-B3.aspx BSL 1 
 
-Storage Conditions	Frozen: -80°C or colder
+Storage Conditions    Frozen: -80°C or colder
 Freeze-Dried: 2°C to 8°C
 Live Culture: See Propagation Section
 
@@ -60,7 +59,6 @@ Isolating phage can be a fairly simple process and for the most part researchers
 
 oops - since the envelope is kind of the important part.
 
-
 So you can take environmental phages and hosts, kill the hosts? add a whole bunch of the desired host, wait, kill the hosts again, centrifuge, to isolate the desired phage. P. syringae pv. Phaseolicola HB10Y is an enveloped host, Phi6 phage. Wants a sucrose broth
 
 Phages are easier to deactivate than the actual viruses https://sci-hub.tw/https://www.liebertpub.com/doi/abs/10.1089/ees.2014.0496
@@ -69,18 +67,13 @@ BVD virus is often used for enveloped tests but is a BSL2.
 
 BAA-871.pdf
 
-
 Testing for phage damage seems pretty easy: see Table 1. Methods for detecting newly isolated bacteriophages.
 
 {{Cite journal| doi = 10.3390/ph12010035| issn = 1424-8247| volume = 12| issue = 1| last = Hyman| first = Paul| title = Phages for Phage Therapy: Isolation, Characterization, and Host Range Breadth| journal = Pharmaceuticals| accessdate = 2020-03-15| date = 2019-03-11| url = https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6469166/| pmid = 30862020| pmc = PMC6469166}}
 
-
 Oh! Take leaf with P. syringe. Culture. Separate phages. Do again, kill phages with vit. C.
 
-
 https://ampd.yorku.ca/profile/joel-ong/ this dude did an art project with guttman labs u of t with P. Syringae. Emailed. 
-
-
 
 You can follow Laboratory Guide for Identification of Plant Pathogenic Bacteria, Third Edition Edited by N.W. Schaad, J.B. Jones, and W. Chun.APS PRESS 2001. Besides selective media, you can use King's  B agar.  Pseudomonas syringae cause leaf spots on plants mostly after cold nights (0-5oC). The lesions can be colonized by other bacteria at higher temperature, especially by Pantoea agglomerans.
 
@@ -134,7 +127,7 @@ I wanna be a phagehunter!
 "We will now filter the solution to remove bacteria. Obtain a sterile 0.45 m filter, a syringe,
 and a sterile tube. Do not open the filter package yet." - neat, you can use a filter instead of a centrifuge.
 
-The most important test we have to run is how long exposure must continue for. If it's almost instantaneous, we can just 
+The most important test we have to run is how long exposure must continue for.
 
 "The medium used in phage plaque assays has a relatively low percentage of agar and therefore is called soft agar; it permits diffusion of phage to nearby uninfected cells but does not permit new phages to move to remote parts of the plate. "
 
@@ -150,7 +143,6 @@ Some BSL1 virii are still pathogenic to animals, and may still require export li
 
  binding to the coxsackie and adenovirus receptor (CAR) was blocked using a zwitterionic envelope, 
 what the f?
-
 
 "From the literature 24 , force with 400 pN applied
 on the AFM tip can fracture the lipid envelope [ of influenza ] ."

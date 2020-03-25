@@ -1,13 +1,13 @@
 Microwave
 
 ---
+
 title: Microwave
 created: '2020-03-18T16:01:18.644Z'
 modified: '2020-03-21T22:37:33.054Z'
 ---
 
 # Microwave
-
 
 RF! Just enough power at the right freq. to bake aerosols without harming people
 
@@ -52,14 +52,11 @@ On clavicle?
 
 mounted to goggles?
 
-
 Infineon SiGe can do 10 dB at 10 GHz.
 
 https://www.youtube.com/watch?v=drwGvATLNaw - QUCS and copper foil
 
-
 what about a second harmonic?
-
 
 They say 25 mW/cm^2, 3 watts for their system. If we have a 2x2 cm antenna, we'll only need about 0.1 W to hit that.
 
@@ -86,7 +83,6 @@ PLL-like servo technique
 
 Phaged array
 
-
 So, if we servo the phase using a PLL, 
 
 http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.135.2121&rep=rep1&type=pdf describes a simple phase-shifter.
@@ -97,7 +93,6 @@ There's a sim of flu lipid envelope: https://www.sciencedaily.com/releases/2015/
 http://www.charmm-gui.org/?doc=input/membrane.bilayer
 
 Charmm has a vibration module. 
-
 
 "In this work, microwaves were applied to excite the dipolar resonance of the whole virus structure. By exciting the dipolar mode of the nanosphere, core and shell with opposite charge distributions would move in opposite directions and will resonate like a damped mass-spring system"
 
@@ -118,11 +113,10 @@ other coordinate system is the system of normal modes. Thus, what
 from the regular Cartesian set to a normal set, which is more natural to
 the molecule. "
 "Among the various properties that can be studied are:
+
 1) Vibrational Spectrum - the collection of all normal frequencies. This
-spectrum is comparable to experimental vibrational spectra taken
-with IR spectroscopy" - fantastic.
-
-
+   spectrum is comparable to experimental vibrational spectra taken
+   with IR spectroscopy" - fantastic.
 
 Ah and now my lack of bio knowlee hits. Exporting a model via CHARMMing web interface, and I get: * You need to decide on the protonation states of all residues. Either they were assigned default values, or PROPKA could not be run on this molecule.
 
@@ -134,10 +128,6 @@ T4 head is 111 х 78 nm (similar to )
 T2 is 
 
 ther's no ligand view for 
-
-
-
-
 
 timeout to disable after the pandemic has ended. 
 
@@ -168,7 +158,6 @@ Will need 4ghz high pass image-rejection before mixer
 Completely coincidentally, the NE3210S01 fet that "Small Size X band" used is almost exactly the same as the CE3520K3 fet I bought. Also:
 "A schematic diagram of the AIA is shown in Fig. 1. The antenna is comprised of two wide transmission line sections connected by a narrow linewidth section. The narrow linewidth section serves to form a transmission feedback loop, and the two wider sections radiate the radio frequency (RF) signal."
 
-
 Copper Oxide + charcoal definitely works, just need to try CuO+.
 
 We'll need HackRF <-> mixer, synth <-> mixer <-> filter, filter <-> antenna.
@@ -188,9 +177,7 @@ Used QUCS's attenuator synthesizer to make an attenuator. Great success! 30 DB:
 "3.16544 Ohm"
 "46.9347 Ohm"
 
-
 The strength and Q of viruses changes significantly with pH. Neat!
-
 
 Tried qspectrumanalyzer. Upgraded hackrf firmware. hackrf-spectrum-analyzer works pretty well.
 
@@ -212,15 +199,9 @@ What with the multitude of fields we're working in here, workspace is getting a 
 
 We could use two beams of 4 GHz 90 deg out of phase, or four beams at 2 GHz; or perhaps two 24 GHz ISM band beams beating at 8.4 GHz? 
 
-
-
 Tapered anode: electrode deflects to shorten path and alter phase?
 
-
-
 Feedback: we don't want to use LEDs, since we don't have a PnP step yet. 
-
-
 
 A fermi estimation: given global WiFi shipments of 3 Bil/yr globally, and assuming that every such device uses a single suitable RF transistor (a gross overestimation, since most use multifunctional ICs), producing 100 million units in 2 weeks would consume the entire global production capacity, assuming that other lines aren't re-tooled and disregarding the effect of the virus on production lines.
 
@@ -261,7 +242,6 @@ MLI'd tungsten heater
 The triode is really very simple indeed - just look at where the grid is!
 
 A tiny drop of glass can be put over a port on the thing and then fired in a vacuum.
-
 
 Jackpot! paper added. Grid v=60v. 
 
@@ -318,17 +298,29 @@ Should try laser patterning CuO+graphite though. Nice black surface. Not sure if
 
 Use permeable sponge or something for acetone toner transfer.
 
-
-
 Looks like this describes the optical hetrodyning technique: https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250040104
 
 Seems like opinion is divided on DNA having resonance modes. These guys
 https://onlinelibrary.wiley.com/doi/abs/10.1002/bip.360330114 say there's no resonance modes, the other says there's a significant mode.
 
-
 "1400 and below" describes using Cu2O, copper (i) oxide, not CuO. Similar melting and boiling points.
 
 Remember to record the Alumina particle size.
 
+Rotate polarization chirp (not circular, just rotating linear) to centrifugally destroy once dipole set up - rotating dipole  
 
+(3.22144550674e-16 grams ((100 nanometers*pi/(1/(50 MHz)))^2) / (50 nanometers)) to nanonewtons - 1.5 nN! That'll work a treat!  
 
+How do we make this specific to viruses, and not DNA or anything? 
+
+Ah, this is called "centrifugal dissociation" - can we see this signal in the output, perhaps?  
+
+Spinning the dipole would only involve modulating the amplitude of each of the four quadrants. 
+
+Or even just a single kick, fast enough that nothing bigger can be affected. What's the angular momentum, and what's the torque exerted by the dipole?  
+
+a dipole can readily be induced in DNA.  
+
+The electric field magnitude for circularly polarized will probably be ~1.41x - yep, it is.  
+
+"ICH Guidelines S1A, S1B and S1C on carcinogenicity testing"

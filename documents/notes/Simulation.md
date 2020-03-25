@@ -7,7 +7,6 @@ The s3d version of cm2 doesn't seem to work on this machine. using the latest ot
 We'll probably want to compare with the AFM force results to make sure we're doing 
 https://www.researchgate.net/post/Anybody_knows_how_to_model_AFM_tip_in_MD_simulation_packages
 
-
 The T4 phage capsid is made up of gp23 ( and gp24 (PDB:1YUE) proteins. 
 
 http://www.gromacs.org/Documentation/How-tos/Steps_to_Perform_a_Simulation
@@ -19,7 +18,6 @@ http://www.gromacs.org/Documentation/How-tos/Steps_to_Perform_a_Simulation
 http://www.ks.uiuc.edu/Research/STMV/
 
 Aha! That could be the mechanism behind long durations. 
-
 
 *"Kalzium and Avogadro programs"*
 
@@ -33,11 +31,9 @@ The payload DNA inside the capsid can greatly modify the stiffness of the capsid
 
 What sort of motion would speed up fatigue? How can we test if fatigue is even the regime that we're interested in? Timing before fracture?
 
-
 But these guys just sim'd the capsid whole. Huh.
 
 https://pure.aston.ac.uk/ws/portalfiles/portal/24464574/Details_of_charge_distribution_in_stable_viral_capsid.pdf
-
 
 DNA has a negative charge, the quantity of which is pretty hard to tease out but probably around 0.1e- per BP.
 
@@ -46,7 +42,6 @@ The T4 is basically exactly the same size as COVID.
 Tried VMD, didn't start, gave up. LAMMPS, AMBER, 
 
 The inside of the phage capsid is under huge pressure - like 60 atm. Neat!
-
 
 "The Lennard-Jones potential is totally inadequate for open shell systems,
 in which strong localized bonds are formed."
@@ -67,7 +62,4 @@ http://www.moltemplate.org/
 
 LAMMPS has a larger userbase, but stuff like variable e-fields seem to be more difficult. Let's see how gromacs fares.
 
-
 http://manual.gromacs.org/documentation/2019/reference-manual/functions/bonded-interactions.html
-
-
