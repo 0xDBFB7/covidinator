@@ -48,4 +48,16 @@ Could also screen-print traces - with PVOH?
 
 Poly(vinyl acetate) resin is soluble in acetone, 95% ethanol, isopropanol, cyclohexanone, diacetone alcohol, MEK, methanol, ethyl acetate
 
-If spin coated, a negative mask layer of PVOH can be added after a positive mask with the copper oxide and the 
+If spin coated, a negative mask layer of PVOH can be added after a positive mask with the copper oxide
+
+(67) - (1.5*8)*2 = 43 mm bore. Will that be enough?
+
+There isn't actually a dielectric requirement for ceramic substrate; we could probably get away with FR-4.
+
+
+
+
+
+
+
+

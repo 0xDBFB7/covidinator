@@ -1,3 +1,11 @@
+List of things that computational biologists have totally down:
+
+- Standardized file formats (perhaps because the proteins themselves are the same for every project? You don't have accelerator )
+  
+  - I'm not blameless here either, because all the little things I've written don't use OpenPMD or anything standardized
+
+- 
+
 Biology
 
 https://www.cdc.gov/infectioncontrol/guidelines/disinfection/disinfection-methods/chemical.html

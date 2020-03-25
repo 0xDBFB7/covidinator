@@ -90,8 +90,6 @@ Autoclave for 20 minutes:
 
 - 1 shot glass of broth, capped with loose-fitting aluminum foil.
 
-
-
 #### 4
 
 Allow to cool naturally rather than venting; apparently that's useful.
@@ -106,22 +104,4 @@ Open bottle of host by flame. Drag loop across agar. Insert into shot glass.
 
 Incubate at 37 C with . After (12 h?) a 
 
-
-
-
-
-
-
-
-
 #### Experiment 1: Exposure Duration
-
-
-
-
-
-
-
-
-
-
