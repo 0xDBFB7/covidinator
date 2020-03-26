@@ -1,10 +1,12 @@
 List of things that computational biologists have totally down:
 
-- Standardized file formats (perhaps because the proteins themselves are the same for every project? You don't have accelerator )
+- Standardized file formats 
+  
+     Perhaps this is because the proteins themselves are the same for every project? You don't have standardized accelerator pipes.
   
   - I'm not blameless here either, because all the little things I've written don't use OpenPMD or anything standardized
 
-- 
+- Builds that actually work
 
 Biology
 
@@ -59,3 +61,71 @@ Autoclave diagnostic tapes! cool.
 How about a vortex mixer? Small vortexers for 1.5 mL tubes do exist. 
 
 Oh this'll select for resistance to microwaves. Is that even possible? Perhaps mutants of different dimensions will be favored, in which case it should be possible for users to re-tune without re-issuing.
+
+"Due to the slower motions of CG, one can often use a timestep of 500 fs rather than the 1 fs time-step"
+
+"Now we approximate that a spherical virus is like a homogeneous sphere but with opposite and equal charges in the core and shell regions."
+
+Ooh, maybe the head isn't in the PDB yet, but XRF and Cryo EM data do exist! [https://www.ncbi.nlm.nih.gov/pubmed/16884923](https://www.ncbi.nlm.nih.gov/pubmed/16884923) [https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6323](https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6323)
+
+[https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-1414](https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-1414)
+
+[https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082](https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082)
+
+Coarse-grained can be mapped directly to CryoEM data [https://www.tandfonline.com/doi/abs/10.1080/08927022.2018.1431835](https://www.tandfonline.com/doi/abs/10.1080/08927022.2018.1431835)
+
+Hey, ProDy can do that! Cool. [http://prody.csb.pitt.edu/tutorials/cryoem_tutorial/background.html](http://prody.csb.pitt.edu/tutorials/cryoem_tutorial/background.html)
+
+[http://prody.csb.pitt.edu/tutorials/cryoem_tutorial/em_analysis.html](http://prody.csb.pitt.edu/tutorials/cryoem_tutorial/em_analysis.html)
+
+[http://www.emdataresource.org/](http://www.emdataresource.org/)
+
+There are whole structural models [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5119483/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5119483/)
+
+Ah, these people used beads inside to represent the DNA: [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/)
+
+"Therefore, in the present work, we model each six-base pair segment of double-stranded DNA as an ion-penetrable sphere which interacts via an electrostatically-repulsive colloidal potential from classic DLVO theory,[31](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/#c31) given by"
+
+"where *q* = 12*e*− is the electrostatic charge from backbone phosphate groups LB = 7.135 Å is the Bjerrum length, κ = 0.31 Å−1 is the inverse Debye screening length, a = 19.9 Å is the radius of the DNA segments, and R is the separation between such segments. Such a potential incorporates the full negative charge from the backbone phosphate groups with simple Gouy-Chapman double layer ionic-screening appropriate to the experimental conditions of 100 mM Na+ and 5 mM Mg2+."
+
+"The entire P22 genome of 41.7 kbp was modeled using 6950 “beads.” This simulation was performed using a modified version of the extended system program (ESP)[32](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/#c32) molecular dynamics package (MD) developed by the Pettitt laboratory. The capsid interaction with the surface of the “beads” was modeled through the repulsive part of a WCA decomposition of a Lennard-Jones interaction.[33](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/#c33) The simulation was performed for 100 ns in the microcanonical ensemble at 300 K (with variation less than ±1 K) with a 100 fs time steps. Coordinates were sampled every 2 ps."
+
+
+
+
+
+
+
+The all-atom influenza model:
+
+[https://pubs.acs.org/doi/10.1021/acscentsci.9b01071?goto=supporting-info](https://pubs.acs.org/doi/10.1021/acscentsci.9b01071?goto=supporting-info)
+
+"As the first explicitly solvated atomic-scale simulation of a viral lipid envelope (∼115 nm diameter, ∼160 million particles, ∼121 ns),"
+
+Wow. Good going. Fantastic.
+
+[https://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b01071/suppl_file/oc9b01071_si_001.pdf](https://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b01071/suppl_file/oc9b01071_si_001.pdf) the "how it was done"
+
+
+
+They used [https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper](https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper). Jackpot.
+
+Coronaviruses E proteins[https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0](https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0)
+
+"Aside from high-resolution bilayer models like that of the influenza example above, in which each atom is explicitly represented, LipidWrapper can be used to produce coarse-grained models as well [[61]](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003720#pcbi.1003720-Srivastava1)." Fantastic!
+
+
+
+
+
+Used ProDy to convert raw CryoEM EMD-6323 to PDB:
+
+`atomgroup, emd = parseEMD('input_data/emd_6323/emd_6323.map', cutoff=1.2, n_nodes=5000, num_iter=30, map=False, make_nodes=True)`
+
+
+
+
+
+
+
+

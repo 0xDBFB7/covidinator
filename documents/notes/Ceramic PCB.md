@@ -56,7 +56,7 @@ There isn't actually a dielectric requirement for ceramic substrate; we could pr
 
 
 
-
+The end caps should have the spacers - oven
 
 
 
