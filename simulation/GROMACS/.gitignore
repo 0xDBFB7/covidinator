@@ -6,3 +6,6 @@ mdout.mdp
 md.log
 topol.tpr
 ener.edr
+*.xtc
+confout.gro
+*.cpt

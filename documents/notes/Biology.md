@@ -124,8 +124,6 @@ Also, really need to get around to propagating those phages. Even without the sh
 
 
 
-
-
-
+Chimera only supports GROMACS formats in the daily builds.
 
 
