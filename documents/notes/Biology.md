@@ -90,12 +90,6 @@ Ah, these people used beads inside to represent the DNA: [https://www.ncbi.nlm.n
 
 "The entire P22 genome of 41.7 kbp was modeled using 6950 “beads.” This simulation was performed using a modified version of the extended system program (ESP)[32](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/#c32) molecular dynamics package (MD) developed by the Pettitt laboratory. The capsid interaction with the surface of the “beads” was modeled through the repulsive part of a WCA decomposition of a Lennard-Jones interaction.[33](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/#c33) The simulation was performed for 100 ns in the microcanonical ensemble at 300 K (with variation less than ±1 K) with a 100 fs time steps. Coordinates were sampled every 2 ps."
 
-
-
-
-
-
-
 The all-atom influenza model:
 
 [https://pubs.acs.org/doi/10.1021/acscentsci.9b01071?goto=supporting-info](https://pubs.acs.org/doi/10.1021/acscentsci.9b01071?goto=supporting-info)
@@ -106,26 +100,20 @@ Wow. Good going. Fantastic.
 
 [https://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b01071/suppl_file/oc9b01071_si_001.pdf](https://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b01071/suppl_file/oc9b01071_si_001.pdf) the "how it was done"
 
-
-
 They used [https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper](https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper). Jackpot.
 
 Coronaviruses E proteins[https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0](https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0)
 
 "Aside from high-resolution bilayer models like that of the influenza example above, in which each atom is explicitly represented, LipidWrapper can be used to produce coarse-grained models as well [[61]](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003720#pcbi.1003720-Srivastava1)." Fantastic!
 
-
-
-
-
-Used ProDy to convert raw CryoEM EMD-6323 to PDB:
+Used ProDy to convert raw CryoEM EMD-6323 (typical empty prolate phage) to PDB:
 
 `atomgroup, emd = parseEMD('input_data/emd_6323/emd_6323.map', cutoff=1.2, n_nodes=5000, num_iter=30, map=False, make_nodes=True)`
 
+Took 25 minutes.
 
+> Due to its softness and fluidity the influenza virus envelope could be elastically deformed wall-to-wall and healed from any puncturing in a subsecond timescale. Similar properties have only been reported for the CCMV capsid so far ([27](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3030173/#bib27)). In addition, we have shown here that the influenza lipid bilayer on its own constitutes a protective shell that resists rupture equally as well as a more rigid protein capsid.
 
+Need to find lipid bilayer and nucleocapsid PDBs for covid and influenza.
 
-
-
-
-
+Also, really need to get around to propagating those phages. Even without the shaker - just get a backup colony.

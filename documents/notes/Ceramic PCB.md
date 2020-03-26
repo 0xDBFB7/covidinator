@@ -54,9 +54,13 @@ If spin coated, a negative mask layer of PVOH can be added after a positive mask
 
 There isn't actually a dielectric requirement for ceramic substrate; we could probably get away with FR-4.
 
-
-
 The end caps should have the spacers - oven
+
+Made a quick two-flux thermal sim for MLI. Doesn't work - I think I've made a grave mistake trying to solve the reflection.
+
+Oh yeah, we can't possibly print the mold for this binder - it'll melt.
+
+
 
 
 

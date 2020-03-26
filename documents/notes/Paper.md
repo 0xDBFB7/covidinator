@@ -48,15 +48,7 @@ Both coarse-grained bead-spring molecular dynamics (via integration of particle 
 
 The algebraic normal-mode methods included in many software packages [charmm] are not generally sufficient for this task, as they often assume the limit of low-amplitudes.
 
-
-
-
-
-
-
-
-
-
+The phage model was produced from raw CryoEM data using ProDy. The coronavirid model was produced with LipidWrapper.
 
 [] Each field seems to invent its own terminology for multiscale modelling. "coarse-graining" is referred to as DSMC.
 
