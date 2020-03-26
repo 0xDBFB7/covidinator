@@ -117,3 +117,15 @@ Took 25 minutes.
 Need to find lipid bilayer and nucleocapsid PDBs for covid and influenza.
 
 Also, really need to get around to propagating those phages. Even without the shaker - just get a backup colony.
+
+
+
+[https://mailman-1.sys.kth.se/pipermail/gromacs.org_gmx-users/2004-November/012877.html](https://mailman-1.sys.kth.se/pipermail/gromacs.org_gmx-users/2004-November/012877.html)
+
+
+
+
+
+
+
+

@@ -59,9 +59,3 @@ The end caps should have the spacers - oven
 Made a quick two-flux thermal sim for MLI. Doesn't work - I think I've made a grave mistake trying to solve the reflection.
 
 Oh yeah, we can't possibly print the mold for this binder - it'll melt.
-
-
-
-
-
-
