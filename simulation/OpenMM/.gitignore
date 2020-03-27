@@ -5,9 +5,8 @@ lipidwrapper.py
 mdout.mdp
 md.log
 topol.tpr
-*.edr
+ener.edr
 *.xtc
-*.xvg
 confout.gro
 *.cpt
 *.pdb

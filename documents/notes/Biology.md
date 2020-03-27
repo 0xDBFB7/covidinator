@@ -126,4 +126,24 @@ Also, really need to get around to propagating those phages. Even without the sh
 
 Chimera only supports GROMACS formats in the daily builds.
 
+VMD topotools would probably deal with the bonds...s
+
+[http://glotzerlab.engin.umich.edu/hoomd-blue/index.html](http://glotzerlab.engin.umich.edu/hoomd-blue/index.html)
+
+Hoomd blue looks really great, not totally done yet though...
+
+OpenMM looks really fantastic - oh, but time-varying external forces aren't implemented yet, and that looks like a read doozy.
+
+
+
+The electric field is specified in src/gromacs/applied_forces/electricfield.cpp:111 - easy to change! Very nice.
+
+[http://prody.csb.pitt.edu/manual/reference/dynamics/mechstiff.html](http://prody.csb.pitt.edu/manual/reference/dynamics/mechstiff.html) - mechanical stiffness calc.
+
+
+
+
+
+
+
 

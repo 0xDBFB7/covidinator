@@ -20,8 +20,8 @@ Capsid         3
      2       B       1    CGB      B       1  -1
 
 [ bonds ]
-;  ai    aj funct           c0           c1
-    1     2     1 1.000000e-01 3.744680e+05
+;  ai    aj funct           b_0(nm)           (k_b)
+    1     2     1 5 3.744680e+05
 
 [ system ]
 Capsid ajiggle

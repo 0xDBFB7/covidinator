@@ -1,10 +1,10 @@
 integrator               = md
-dt                       = 0.002
-nsteps                   = 500000
+dt                       = 0.002 ; picoseconds
+nsteps                   = 500
 
-nstlog                   = 5000
-nstenergy                = 5000
-nstxout-compressed       = 5000
+nstlog                   = 500
+nstenergy                = 500
+nstxout-compressed       = 5
 
 continuation             = yes
 constraints              = all-bonds
