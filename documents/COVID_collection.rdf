@@ -6013,54 +6013,6 @@ DOI: 10.1007/978-94-007-5313-6_41</dc:description>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
-    <bib:Document rdf:about="https://pubs.acs.org/doi/pdf/10.1021/bi00475a020">
-        <z:itemType>webpage</z:itemType>
-        <dcterms:isPartOf>
-           <z:Website></z:Website>
-        </dcterms:isPartOf>
-        <bib:authors>
-            <rdf:Seq>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Steven</foaf:surname>
-                        <foaf:givenName>Alasdair C.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Greenstone</foaf:surname>
-                        <foaf:givenName>Heather</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Bauer</foaf:surname>
-                        <foaf:givenName>Adelia C.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Williams</foaf:surname>
-                        <foaf:givenName>Robert W.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-            </rdf:Seq>
-        </bib:authors>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://pubs.acs.org/doi/pdf/10.1021/bi00475a020</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dc:date>May 1, 2002</dc:date>
-        <dc:description>Archive Location: world
-Library Catalog: pubs.acs.org
-Publisher: American Chemical Society
-DOI: 10.1021/bi00475a020</dc:description>
-        <dcterms:dateSubmitted>2020-03-19 05:47:18</dcterms:dateSubmitted>
-        <z:type>research-article</z:type>
-        <z:language>EN</z:language>
-        <dc:title>The maturation-dependent conformational change of the major capsid protein of bacteriophage T4 involves a substantial change in secondary structure</dc:title>
-    </bib:Document>
     <bib:Article rdf:about="https://pubs.acs.org/doi/abs/10.1021/bi00475a020">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:0006-2960,%201520-4995"/>
@@ -7344,6 +7296,7 @@ DOI: 10.1007/978-94-007-6552-8_18</dc:description>
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2187"/>
         <link:link rdf:resource="#item_2112"/>
         <link:link rdf:resource="#item_2114"/>
         <link:link rdf:resource="#item_2113"/>
@@ -7365,6 +7318,9 @@ PMID: 15133147</dc:description>
         <dc:title>Bacteriophage capsids: Tough nanoshells with complex elastic properties</dc:title>
         <z:shortTitle>Bacteriophage capsids</z:shortTitle>
     </bib:Article>
+    <bib:Memo rdf:about="#item_2187">
+       <rdf:value>&lt;p&gt;These guys use finite-element&lt;/p&gt;</rdf:value>
+    </bib:Memo>
     <z:Attachment rdf:about="#item_2112">
         <z:itemType>attachment</z:itemType>
         <dc:identifier>
@@ -7845,12 +7801,12 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:isReferencedBy rdf:resource="#item_2133"/>
         <link:link rdf:resource="#item_2132"/>
         <link:link rdf:resource="#item_2131"/>
-        <dc:subject>⛔ No DOI found</dc:subject>
         <dc:subject>
             <z:AutomaticTag>
                <rdf:value>Physics - Biological Physics</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
+        <dc:subject>⛔ No DOI found</dc:subject>
         <dc:identifier>
             <dcterms:URI>
                <rdf:value>http://arxiv.org/abs/1704.06819</rdf:value>
@@ -8291,5 +8247,1099 @@ Publisher: Nature Publishing Group</dc:description>
         <dc:title>ScienceDirect Snapshot</dc:title>
         <z:linkMode>1</z:linkMode>
         <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6679002/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1424-8220"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gillett</foaf:surname>
+                        <foaf:givenName>David</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marchiori</foaf:surname>
+                        <foaf:givenName>Alan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2177"/>
+        <link:link rdf:resource="#item_2176"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6679002/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2019-7-10</dc:date>
+        <dc:description>PMID: 31295890
+PMCID: PMC6679002</dc:description>
+        <dcterms:dateSubmitted>2020-03-24 22:23:31</dcterms:dateSubmitted>
+        <z:libraryCatalog>PubMed Central</z:libraryCatalog>
+        <dcterms:abstract>Turbidity describes the cloudiness, or clarity, of a liquid. It is a principal indicator of water quality, sensitive to any suspended solids present. Prior work has identified the lack of low-cost turbidity monitoring as a significant hurdle to overcome to improve water quality in many domains, especially in the developing world. Low-cost hand-held benchtop meters have been proposed. This work adapts and verifies the technology for continuous monitoring. Lab tests show the low-cost continuous monitor can achieve 1 nephelometric turbidity unit (NTU) accuracy in the range 0–100 NTU and costs approximately 64 USD in components to construct. This level of accuracy yields useful and actionable data about water quality and may be sufficient in certain applications where cost is a primary constraint. A 38-day continuous monitoring trial, including a step change in turbidity, showed promising results with a median error of 0.45 and 1.40 NTU for two different monitors. However, some noise was present in the readings resulting in a standard deviation of 1.90 and 6.55 NTU, respectively. The cause was primarily attributed to ambient light and bubbles in the piping. By controlling these noise sources, we believe the low-cost continuous turbidity monitor could be a useful tool in multiple domains.</dcterms:abstract>
+        <dc:title>A Low-Cost Continuous Turbidity Monitor</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1424-8220">
+        <prism:volume>19</prism:volume>
+        <prism:number>14</prism:number>
+        <dc:title>Sensors (Basel, Switzerland)</dc:title>
+        <dc:identifier>ISSN 1424-8220</dc:identifier>
+        <dcterms:alternative>Sensors (Basel)</dcterms:alternative>
+        <dc:identifier>DOI 10.3390/s19143039</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2177">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6679002/pdf/sensors-19-03039.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-24 22:23:36</dcterms:dateSubmitted>
+        <dc:title>Gillett_Marchiori_2019_A Low-Cost Continuous Turbidity Monitor.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2176">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6679002/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-24 22:23:32</dcterms:dateSubmitted>
+        <dc:title>PubMed Central Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2178">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0003-6919"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Palumbo</foaf:surname>
+                        <foaf:givenName>S. A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Berry</foaf:surname>
+                        <foaf:givenName>J. M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Witter</foaf:surname>
+                        <foaf:givenName>L. D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2179"/>
+        <bib:pages>114-116</bib:pages>
+        <dc:date>Jan 1967</dc:date>
+        <dc:description>PMID: 5340162
+PMCID: PMC546853</dc:description>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <z:language>eng</z:language>
+        <dcterms:abstract>A system for the aeration of cultures growing in a polythermostat temperature-gradient block was developed. This system provided both aeration and agitation of the cultures, while allowing the growth to be followed spectrophotometrically. The necessity for aeration of cultures growing in a polythermostat was experimentally shown.</dcterms:abstract>
+        <dc:title>Culture aeration in a polythermostat</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0003-6919">
+        <prism:volume>15</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Applied Microbiology</dc:title>
+        <dc:identifier>ISSN 0003-6919</dc:identifier>
+        <dcterms:alternative>Appl Microbiol</dcterms:alternative>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2179">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/5340162</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-24 22:33:05</dcterms:dateSubmitted>
+        <dc:title>PubMed entry</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://arxiv.org/abs/1810.00109">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+               <dc:title>arXiv:1810.00109 [physics]</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xie</foaf:surname>
+                        <foaf:givenName>Weiqiang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Huang</foaf:surname>
+                        <foaf:givenName>Jinxi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Komljenovic</foaf:surname>
+                        <foaf:givenName>Tin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Coldren</foaf:surname>
+                        <foaf:givenName>Larry</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bowers</foaf:surname>
+                        <foaf:givenName>John</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2182"/>
+        <link:link rdf:resource="#item_2181"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/1810.00109</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2018-09-28</dc:date>
+        <dc:description>arXiv: 1810.00109</dc:description>
+        <dcterms:dateSubmitted>2020-03-25 03:54:34</dcterms:dateSubmitted>
+        <z:libraryCatalog>arXiv.org</z:libraryCatalog>
+        <dcterms:abstract>In this paper, we demonstrate a radiation-strength-chirped metasurface centimeter-long grating antenna, whose beam quality is approaching the diffraction limit in its footprint with 90 percent efficiency.Instead of chirping the duty cycle to tune radiation strength, which calls for non-scalable fabrication resolution, we design a 2D fish-bone surface grating with apodized width of the bone.The meta surface is made by silicon nitride on top of silicon waveguide to weakly perturb the mode. Moreover, a Monte Carlo Markov Chain(MCMC) algorithm is implemented to design the radiation strength profile, making the optimized trade off between efficiency, beam quality and fabrication challenge. A metal mirror is designed to deposit on the top of the cladding for unidirectional upside-down radiation and uniform lateral gain. For the 1cm grating, our design is for a 0.01 degree beam with 37000 1D directional gain and 90% efficiency, with 200nm feature size. Finally, we fabricated the antenna and measured the beam quality with Fourier imaging system, which gives result of 0.02 degree -10dB beam divergence. To the best of our knowledge, this is the state-of-the-art on-chip antenna with CMOS- foundry-compatible technology.</dcterms:abstract>
+        <dc:title>Diffraction limited centimeter scale radiator: metasurface grating antenna for phased array LiDAR</dc:title>
+        <z:shortTitle>Diffraction limited centimeter scale radiator</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2182">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/abs/1810.00109</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 03:54:38</dcterms:dateSubmitted>
+        <dc:title>arXiv.org Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2181">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/pdf/1810.00109.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 03:54:36</dcterms:dateSubmitted>
+        <dc:title>Xie et al_2018_Diffraction limited centimeter scale radiator.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1177/875647939601200502">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:8756-4793"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hedrick</foaf:surname>
+                        <foaf:givenName>W. R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hykes</foaf:surname>
+                        <foaf:givenName>D. L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2184"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1177/875647939601200502</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>211-215</bib:pages>
+        <dc:date>September 1, 1996</dc:date>
+        <dc:description>Publisher: SAGE Publications Inc STM</dc:description>
+        <dcterms:dateSubmitted>2020-03-25 03:57:07</dcterms:dateSubmitted>
+        <z:libraryCatalog>SAGE Journals</z:libraryCatalog>
+        <dcterms:abstract>The linear phased array is a type of multielement transducer in which each crystal is controlled independently during transmission and reception. The techniques of beam steering, transmit focusing, and dynamic focusing are discussed with illustrative examples. Advantages and disadvantages of linear phased arrays are presented.</dcterms:abstract>
+        <dc:title>Beam Steering and Focusing With Linear Phiased Arrays</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:8756-4793">
+        <prism:volume>12</prism:volume>
+        <prism:number>5</prism:number>
+        <dc:title>Journal of Diagnostic Medical Sonography</dc:title>
+        <dc:identifier>ISSN 8756-4793</dc:identifier>
+        <dcterms:alternative>Journal of Diagnostic Medical Sonography</dcterms:alternative>
+        <dc:identifier>DOI 10.1177/875647939601200502</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2184">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.sagepub.com/doi/pdf/10.1177/875647939601200502</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 03:57:09</dcterms:dateSubmitted>
+        <dc:title>Hedrick_Hykes_1996_Beam Steering and Focusing With Linear Phiased Arrays.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2186">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Medina-Sanchez</foaf:surname>
+                        <foaf:givenName>Rafael H</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2185"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>220</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>BEAM STEERING CONTROL SYSTEM FOR LOW-COST PHASED ARRAY WEATHER RADARS: DESIGN AND CALIBRATION TECHNIQUES</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2185">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://scholarworks.umass.edu/cgi/viewcontent.cgi?article=1044&amp;context=dissertations_2</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 04:02:00</dcterms:dateSubmitted>
+        <dc:title>Medina-Sanchez - BEAM STEERING CONTROL SYSTEM FOR LOW-COST PHASED A.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://galileo.phys.virginia.edu/classes/152.mf1i.spring02/Oscillations4.htm">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2189"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://galileo.phys.virginia.edu/classes/152.mf1i.spring02/Oscillations4.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 17:06:05</dcterms:dateSubmitted>
+        <dc:title>Damped Driven Oscillator</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2189">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://galileo.phys.virginia.edu/classes/152.mf1i.spring02/Oscillations4.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 17:06:05</dcterms:dateSubmitted>
+        <dc:title>Damped Driven Oscillator</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:978-1-4200-5956-4">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>CRC Press</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Voth</foaf:surname>
+                        <foaf:givenName>Gregory A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2191"/>
+        <dc:identifier>ISBN 978-1-4200-5956-4</dc:identifier>
+        <dc:date>2008-09-22</dc:date>
+        <dc:description>Google-Books-ID: skNKAXfeXUMC</dc:description>
+        <z:libraryCatalog>Google Books</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Exploring recent developments in the field, Coarse-Graining of Condensed Phase and Biomolecular Systems examines systematic ways of constructing coarse-grained representations for complex systems. It explains how this approach can be used in the simulation and modeling of condensed phase and biomolecular systems. Each chapter focuses on specific examples of evolving coarse-graining methodologies and presents results for a variety of complex systems. The contributors carefully detail their own coarse-graining approach, exploring its motivation, strengths, weaknesses, and important application examples. They discuss two of the most successful coarse-graining schemes for soft matter: inverse and multiscale coarse-graining. The book also describes current coarse-grained model development for peptides and proteins at the amino acid level and larger length scales. Assembling the work of some of the most influential, world-renowned researchers in the field, this book provides a unified, in-depth overview of all the coarse-grained schemes developed for condensed phase and biomolecular systems. It shows the promise of coarse-graining as a revolutionary advancement in the scientific community.</dcterms:abstract>
+        <dc:title>Coarse-Graining of Condensed Phase and Biomolecular Systems</dc:title>
+        <z:numPages>492</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_2191">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://books.google.ca/books?id=skNKAXfeXUMC</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 22:47:28</dcterms:dateSubmitted>
+        <dc:title>Google Books Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.pnas.org/cgi/doi/10.1073/pnas.0400444101">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>101</prism:volume>
+                <prism:number>16</prism:number>
+                <dc:title>Proceedings of the National Academy of Sciences</dc:title>
+                <dc:identifier>ISSN 0027-8424, 1091-6490</dc:identifier>
+                <dcterms:alternative>Proceedings of the National Academy of Sciences</dcterms:alternative>
+                <dc:identifier>DOI 10.1073/pnas.0400444101</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fokine</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chipman</foaf:surname>
+                        <foaf:givenName>P. R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leiman</foaf:surname>
+                        <foaf:givenName>P. G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mesyanzhinov</foaf:surname>
+                        <foaf:givenName>V. V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rao</foaf:surname>
+                        <foaf:givenName>V. B.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rossmann</foaf:surname>
+                        <foaf:givenName>M. G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2192"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.pnas.org/cgi/doi/10.1073/pnas.0400444101</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>6003-6008</bib:pages>
+        <dc:date>2004-04-20</dc:date>
+        <dcterms:dateSubmitted>2020-03-25 23:31:24</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Molecular architecture of the prolate head of bacteriophage T4</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2192">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.pnas.org/content/pnas/101/16/6003.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 23:31:22</dcterms:dateSubmitted>
+        <dc:title>Fokine et al. - 2004 - Molecular architecture of the prolate head of bact.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2195"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 23:31:59</dcterms:dateSubmitted>
+        <dc:title>EMDB EMD-6082 structure summary ‹ Protein Data Bank in Europe (PDBe) ‹ EMBL-EBI</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2195">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 23:32:06</dcterms:dateSubmitted>
+        <dc:title>EMDB EMD-6082 structure summary ‹ Protein Data Bank in Europe (PDBe) ‹ EMBL-EBI</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0021-9606"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Myers</foaf:surname>
+                        <foaf:givenName>Christopher G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pettitt</foaf:surname>
+                        <foaf:givenName>B. Montgomery</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2198"/>
+        <link:link rdf:resource="#item_2197"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2013-2-21</dc:date>
+        <dc:description>PMID: 23444988
+PMCID: PMC3592880</dc:description>
+        <dcterms:dateSubmitted>2020-03-25 23:51:08</dcterms:dateSubmitted>
+        <z:libraryCatalog>PubMed Central</z:libraryCatalog>
+        <dcterms:abstract>Cryo electron microscopy (cryo-EM) data of the interior of phages show ordering of the interior DNA that has been interpreted as a nearly perfectly ordered polymer. We show surface-induced correlations, excluded volume, and electrostatic forces are sufficient to predict most of the major features of the current structural data for DNA packaged within viral capsids without additional ordering due to elastic bending forces for the polymer. Current models assume highly-ordered, even spooled, hexagonally packed conformations based on interpretation of cryo-EM density maps. We show herein that the surface induced packing of short (6mer), unconnected DNA polymer segments is the only necessary ingredient in creating ringed densities consistent with experimental density maps. This implies the ensemble of possible conformations of polymeric DNA within the capsid that are consistent with cryo-EM data may be much larger than implied by traditional interpretations where such rings can only result from highly-ordered spool-like conformations. This opens the possibility of a more disordered, entropically-driven view of phage packaging thermodynamics. We also show the electrostatics of the DNA contributes a large portion of the internal hydrostatic and osmotic pressures of a phage virion, suggesting that nonlinear elastic anomalies might reduce the overall elastic bending enthalpy of more disordered conformations to have allowable free energies.</dcterms:abstract>
+        <dc:title>Communication: Origin of the contributions to DNA structure in phages</dc:title>
+        <z:shortTitle>Communication</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0021-9606">
+        <prism:volume>138</prism:volume>
+        <prism:number>7</prism:number>
+        <dc:title>The Journal of Chemical Physics</dc:title>
+        <dc:identifier>ISSN 0021-9606</dc:identifier>
+        <dcterms:alternative>J Chem Phys</dcterms:alternative>
+        <dc:identifier>DOI 10.1063/1.4791708</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2198">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/pdf/JCPSA6-000138-071103_1.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 23:51:10</dcterms:dateSubmitted>
+        <dc:title>Myers_Pettitt_2013_Communication.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2197">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-25 23:51:09</dcterms:dateSubmitted>
+        <dc:title>PubMed Central Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://doi.wiley.com/10.1111/febs.12078">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1742464X"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Milne</foaf:surname>
+                        <foaf:givenName>Jacqueline L. S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Borgnia</foaf:surname>
+                        <foaf:givenName>Mario J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bartesaghi</foaf:surname>
+                        <foaf:givenName>Alberto</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tran</foaf:surname>
+                        <foaf:givenName>Erin E. H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Earl</foaf:surname>
+                        <foaf:givenName>Lesley A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schauder</foaf:surname>
+                        <foaf:givenName>David M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lengyel</foaf:surname>
+                        <foaf:givenName>Jeffrey</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pierson</foaf:surname>
+                        <foaf:givenName>Jason</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Patwardhan</foaf:surname>
+                        <foaf:givenName>Ardan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Subramaniam</foaf:surname>
+                        <foaf:givenName>Sriram</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2199"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://doi.wiley.com/10.1111/febs.12078</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>28-45</bib:pages>
+        <dc:date>01/2013</dc:date>
+        <dcterms:dateSubmitted>2020-03-26 01:16:08</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Cryo-electron microscopy - a primer for the non-microscopist</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1742464X">
+        <prism:volume>280</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>FEBS Journal</dc:title>
+        <dc:identifier>ISSN 1742464X</dc:identifier>
+        <dcterms:alternative>FEBS J</dcterms:alternative>
+        <dc:identifier>DOI 10.1111/febs.12078</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2199">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.lsu.edu/sif/files/8f9b39_caccc7d0622f4102819ca0361fb8aee6.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 01:16:06</dcterms:dateSubmitted>
+        <dc:title>Milne et al. - 2013 - Cryo-electron microscopy - a primer for the non-mi.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2201">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.arieselec.com/PDFs/rf-conductive-elastomer-for-board-to-dut-users-guide.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 03:35:53</dcterms:dateSubmitted>
+        <dc:title>rf-conductive-elastomer-for-board-to-dut-users-guide.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3030173/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0006-3495"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Li</foaf:surname>
+                        <foaf:givenName>Sai</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eghiaian</foaf:surname>
+                        <foaf:givenName>Frederic</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sieben</foaf:surname>
+                        <foaf:givenName>Christian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Herrmann</foaf:surname>
+                        <foaf:givenName>Andreas</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schaap</foaf:surname>
+                        <foaf:givenName>Iwan A.T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2204"/>
+        <link:link rdf:resource="#item_2203"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3030173/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>637-645</bib:pages>
+        <dc:date>2011-2-02</dc:date>
+        <dc:description>PMID: 21281578
+PMCID: PMC3030173</dc:description>
+        <dcterms:dateSubmitted>2020-03-26 04:13:15</dcterms:dateSubmitted>
+        <z:libraryCatalog>PubMed Central</z:libraryCatalog>
+        <dcterms:abstract>Lysosomes, enveloped viruses, as well as synaptic and secretory vesicles are all examples of natural nanocontainers (diameter ≈ 100 nm) which specifically rely on their lipid bilayer to protect and exchange their contents with the cell. We have applied methods primarily based on atomic force microscopy and finite element modeling that allow precise investigation of the mechanical properties of the influenza virus lipid envelope. The mechanical properties of small, spherical vesicles made from PR8 influenza lipids were probed by an atomic force microscopy tip applying forces up to 0.2 nN, which led to an elastic deformation up to 20%, on average. The liposome deformation was modeled using finite element methods to extract the lipid bilayer elastic properties. We found that influenza liposomes were softer than what would be expected for a gel phase bilayer and highly deformable: Consistent with previous suggestion that influenza lipids do not undergo a major phase transition, we observe that the stiffness of influenza liposomes increases gradually and weakly (within one order of magnitude) with temperature. Surprisingly, influenza liposomes were, in most cases, able to withstand wall-to-wall deformation, and forces &gt;1 nN were generally required to puncture the influenza envelope, which is similar to viral protein shells. Hence, the choice of a highly flexible lipid envelope may provide as efficient a protection for a viral genome as a stiff protein shell.</dcterms:abstract>
+        <dc:title>Bending and Puncturing the Influenza Lipid Envelope</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0006-3495">
+        <prism:volume>100</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Biophysical Journal</dc:title>
+        <dc:identifier>ISSN 0006-3495</dc:identifier>
+        <dcterms:alternative>Biophys J</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/j.bpj.2010.12.3701</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2204">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3030173/pdf/main.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 04:13:16</dcterms:dateSubmitted>
+        <dc:title>Li et al_2011_Bending and Puncturing the Influenza Lipid Envelope.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+        <dc:description>&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml&quot; id=&quot;title&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;&lt;ul xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;list-style-type: none; padding-left:0px&quot; id=&quot;toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/1&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;Materials and Methods&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;Lipids&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;Liposome preparations&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;Surface chemistry&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;AFM and cantilevers&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;Imaging and force mapping&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/2&quot;&gt;Liposome stiffness analysis&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/3&quot;&gt;Finite element modeling&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/3&quot;&gt;Influenza membrane puncturing&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/3&quot;&gt;Results&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/7&quot;&gt;Discussion&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/8&quot;&gt;Supporting Material&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_8WZH648J/8&quot;&gt;References&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</dc:description>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2203">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3030173/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 04:13:15</dcterms:dateSubmitted>
+        <dc:title>PubMed Central Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4990194/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>11</prism:volume>
+                <prism:number>8</prism:number>
+                <dc:title>PLoS ONE</dc:title>
+                <dc:identifier>ISSN 1932-6203</dc:identifier>
+                <dcterms:alternative>PLoS One</dcterms:alternative>
+                <dc:identifier>DOI 10.1371/journal.pone.0160371</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Qin</foaf:surname>
+                        <foaf:givenName>Yang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:givenName>Chengzhen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jiang</foaf:surname>
+                        <foaf:givenName>Suisui</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cao</foaf:surname>
+                        <foaf:givenName>Jinmiao</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiong</foaf:surname>
+                        <foaf:givenName>Liu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Qingjie</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2206"/>
+        <link:link rdf:resource="#item_2207"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4990194/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2016-8-18</dc:date>
+        <dc:description>PMID: 27537844
+PMCID: PMC4990194</dc:description>
+        <dcterms:dateSubmitted>2020-03-26 05:04:39</dcterms:dateSubmitted>
+        <z:libraryCatalog>PubMed Central</z:libraryCatalog>
+        <dcterms:abstract>Glutinous rice flour (GRF) and glutinous rice starch (GRS) were modified by dry-heat treatment and their rheological, thermal properties and freeze-thaw stability were evaluated. Compared with the native GRF and GRS, the water-holding ability of modified GRF and GRS were enhanced. Both the onset and peak temperatures of the modified samples increased while the endothermic enthalpy change decreased significantly (p &lt; 0.05). Meanwhile, dry heating remarkably increased the apparent viscosities of both GRF and GRS. Importantly, compared with GRS samples, the storage modulus (G') and loss modulus (G&quot;) values of modified GRF increased more greatly and the tanδ values decreased more remarkably, indicating that the dry-heat treatment showed more impact on the GRF and a higher viscoelasticity compared with GRS. Our results suggest the dry-heat treatment of GRF is a more effective method than that of GRS, which omits the complex and tedious process for purifying GRS, and thereby has more practical applications in the food industry.</dcterms:abstract>
+        <dc:title>Functional Properties of Glutinous Rice Flour by Dry-Heat Treatment</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2206">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4990194/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 05:04:39</dcterms:dateSubmitted>
+        <dc:title>PubMed Central Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2207">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4990194/pdf/pone.0160371.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 05:04:41</dcterms:dateSubmitted>
+        <dc:title>Qin et al_2016_Functional Properties of Glutinous Rice Flour by Dry-Heat Treatment.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1007/s10854-020-03096-1">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1573-482X"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wan</foaf:surname>
+                        <foaf:givenName>Wei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tang</foaf:surname>
+                        <foaf:givenName>Wenhua</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tao</foaf:surname>
+                        <foaf:givenName>Meizhen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cao</foaf:surname>
+                        <foaf:givenName>Hailin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luo</foaf:surname>
+                        <foaf:givenName>Junrong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yuan</foaf:surname>
+                        <foaf:givenName>Wen-xiang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Qiu</foaf:surname>
+                        <foaf:givenName>Tai</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1007/s10854-020-03096-1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>5360-5367</bib:pages>
+        <dc:date>2020-04-01</dc:date>
+        <dcterms:dateSubmitted>2020-03-26 14:47:52</dcterms:dateSubmitted>
+        <z:libraryCatalog>Springer Link</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>CaCu3Ti4O12 (CCTO) ceramics with desirable dielectric properties were prepared by a green gelcasting forming method combined with pressureless sintering. A non-toxic natural macromolecule, glutinous rice flour (GRF) was used as the gelling agent for the gelcasting process. The significant parameter, namely, the dosage of gelling agent was carefully studied so as to optimize the gelcasting process. The results showed that the dosage of GRF had evident effect on both gelcasting process and the final dielectric properties of CCTO ceramics. CCTO ceramics from the green body solidified with 3.5 wt% GRF showed relatively optimal dielectric properties, namely a dielectric constant up to 1.60 × 104 and a loss of only 0.063 (at 1 kHz test frequency). CCTO ceramics fabricated by this green gelcasting method have superior dielectric properties compared with that of the ceramics obtained by the dry pressing method.</dcterms:abstract>
+        <dc:title>Green gelcasting of CaCu3Ti4O12 ceramics</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1573-482X">
+        <prism:volume>31</prism:volume>
+        <prism:number>7</prism:number>
+        <dc:title>Journal of Materials Science: Materials in Electronics</dc:title>
+        <dc:identifier>ISSN 1573-482X</dc:identifier>
+        <dcterms:alternative>J Mater Sci: Mater Electron</dcterms:alternative>
+        <dc:identifier>DOI 10.1007/s10854-020-03096-1</dc:identifier>
+    </bib:Journal>
+    <bib:Document rdf:about="https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>GitLab</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2210"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: git.durrantlab.pitt.edu</dc:description>
+        <dcterms:dateSubmitted>2020-03-26 16:17:02</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>LipidWrapper is a program for creating large-scale, curved membrane models of arbitrary size and geometry.</dcterms:abstract>
+        <dc:title>jdurrant / lipidwrapper</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2210">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://git.durrantlab.pitt.edu/jdurrant/lipidwrapper</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-26 16:17:04</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://builder.openmm.org/#">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2212"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://builder.openmm.org/#</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-27 00:28:43</dcterms:dateSubmitted>
+        <dc:title>OpenMM Script Builder</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2212">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://builder.openmm.org/#</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-27 00:28:44</dcterms:dateSubmitted>
+        <dc:title>OpenMM Script Builder</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://stacks.iop.org/0950-7671/36/i=3/a=301?key=crossref.aa2e767eff582bac5848b429cab0ea8f">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0950-7671"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Holland</foaf:surname>
+                        <foaf:givenName>L</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2215"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://stacks.iop.org/0950-7671/36/i=3/a=301?key=crossref.aa2e767eff582bac5848b429cab0ea8f</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>105-116</bib:pages>
+        <dc:date>03/1959</dc:date>
+        <dcterms:dateSubmitted>2020-03-28 00:08:10</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Theory and design of getter-ion pumps</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0950-7671">
+        <prism:volume>36</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Journal of Scientific Instruments</dc:title>
+        <dc:identifier>ISSN 0950-7671</dc:identifier>
+        <dcterms:alternative>J. Sci. Instrum.</dcterms:alternative>
+        <dc:identifier>DOI 10.1088/0950-7671/36/3/301</dc:identifier>
+    </bib:Journal>
+    <bib:Memo rdf:about="#item_2215">
+        <rdf:value>&lt;p&gt;Greater success was obtained by feeding a wire downwards into an electronbeam, so that a molten globule formed at the tip of the wire. However, it was difficult to obtain a temperature above the melting point (1660&quot; C) because increase in the electron stream intensity merely caused the metal to melt farther up the wire. Thus with a 1 mm diameter wire a droplet of 5 mm maximum diameter could be supported giving a maximum evaporation rate of 15 mgjmin at the melting point.&lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <bib:Article rdf:about="https://www.mdpi.com/2073-4360/3/4/1972">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>3</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>Polymers</dc:title>
+                <dc:identifier>DOI 10.3390/polym3041972</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kadajji</foaf:surname>
+                        <foaf:givenName>Veeran Gowda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Betageri</foaf:surname>
+                        <foaf:givenName>Guru V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2217"/>
+        <link:link rdf:resource="#item_2218"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.mdpi.com/2073-4360/3/4/1972</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>http://creativecommons.org/licenses/by/3.0/</dc:rights>
+        <bib:pages>1972-2009</bib:pages>
+        <dc:date>2011/12</dc:date>
+        <dc:description>Number: 4
+Publisher: Molecular Diversity Preservation International</dc:description>
+        <dcterms:dateSubmitted>2020-03-28 17:41:16</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.mdpi.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Advances in polymer science have led to the development of novel drug delivery systems. Some polymers are obtained from natural resources and then chemically modified for various applications, while others are chemically synthesized and used. A large number of natural and synthetic polymers are available. In the present paper, only water soluble polymers are described. They have been explained in two categories (1) synthetic and (2) natural. Drug polymer conjugates, block copolymers, hydrogels and other water soluble drug polymer complexes have also been explained. The general properties and applications of different water soluble polymers in the formulation of different dosage forms, novel delivery systems and biomedical applications will be discussed.</dcterms:abstract>
+        <dc:title>Water Soluble Polymers for Pharmaceutical Applications</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2217">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.mdpi.com/2073-4360/3/4/1972/pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-28 17:41:17</dcterms:dateSubmitted>
+        <dc:title>Kadajji_Betageri_2011_Water Soluble Polymers for Pharmaceutical Applications.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2218">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.mdpi.com/2073-4360/3/4/1972/htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-28 17:41:19</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:BookSection rdf:about="urn:isbn:978-953-307-517-4">
+        <z:itemType>bookSection</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Book>
+                <dc:identifier>ISBN 978-953-307-517-4</dc:identifier>
+                <dc:title>New Trends and Developments in Automotive System Engineering</dc:title>
+            </bib:Book>
+        </dcterms:isPartOf>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>InTech</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chiaberge</foaf:surname>
+                        <foaf:givenName>Marcello</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hausnerova</foaf:surname>
+                        <foaf:givenName>Berenika</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2219"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.intechopen.com/books/new-trends-and-developments-in-automotive-system-engineering/powder-injection-moulding-an-alternative-processing-method-for-automotive-items</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2011-01-08</dc:date>
+        <dc:description>DOI: 10.5772/13358</dc:description>
+        <dcterms:dateSubmitted>2020-03-28 20:22:44</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Powder Injection Moulding - An Alternative Processing Method for Automotive Items</dc:title>
+    </bib:BookSection>
+    <z:Attachment rdf:about="#item_2219">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://cdn.intechopen.com/pdfs/13350/intech-powder_injection_moulding_an_alternative_processing_method_for_automotive_items.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-28 20:22:43</dcterms:dateSubmitted>
+        <dc:title>Hausnerova - 2011 - Powder Injection Moulding - An Alternative Process.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
     </z:Attachment>
 </rdf:RDF>

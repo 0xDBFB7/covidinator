@@ -59,3 +59,71 @@ The end caps should have the spacers - oven
 Made a quick two-flux thermal sim for MLI. Doesn't work - I think I've made a grave mistake trying to solve the reflection.
 
 Oh yeah, we can't possibly print the mold for this binder - it'll melt.
+
+11 cm takes 1.5 kw.
+
+DPR6EA-9
+
+
+
+Concerns regarding AS foam in vacuum seem to have been unfounded - pulled down to 5000 micron with no significant changes.
+
+Aqueous gelcasting is rubbish. Let's try something else.
+
+
+
+PMMA is soluble in EA. The MSDS for EA says it's spicy; wikipedia says the opposite. Who to trust?
+
+"Poly(ethylene terephthalate), PET or PETE - PET is not very soluble in ethanol or isopropanol, but prolonged exposure may cause crazing or stiffening due to the dissolution of plasticizers." - fascinating. AE is a plasticizer for PLA, making it softer; PET 
+
+"However, methanol or *ethanol* are nonsolvents for poly(vinyl *alcohol*) but solvents for poly(vinyl acetate)"
+
+[https://link.springer.com/chapter/10.1007/978-3-642-78704-1_3](https://link.springer.com/chapter/10.1007/978-3-642-78704-1_3)
+
+Acetone is slightly safer than EA.
+
+PP is resistant to acetone.
+
+Acetone dissolves PE.
+
+Ethyl acetate dissolves PS.
+
+"A solvent is suitable for a polymer if both have similar values of the **solubility** parameter." ah! neat!
+
+PS and PMMA have similar tensile strengths. In testing, PS is indeed way more soluble in EA than Acetone.
+
+Binder percents are often specified in volumes! 10vol.% PMMA, for instance.
+
+>  Nevertheless, any metal (except for pure aluminium, due to an
+> oxide film on the surface inhibiting sintering) or ceramic powder can be utilized in both PIM
+
+[https://cdn.intechopen.com/pdfs/13350/intech-powder_injection_moulding_an_alternative_processing_method_for_automotive_items.pdf](https://cdn.intechopen.com/pdfs/13350/intech-powder_injection_moulding_an_alternative_processing_method_for_automotive_items.pdf)
+
+[https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-4603.2008.00140.x](https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-4603.2008.00140.x)
+
+"At a high solid concentration such as 18%, the complex viscosity shows
+a decreasing trend when the time of heating exceeds 60 min. This is possibly
+caused by damage of the gel network that has already been formed because of
+thermal treatment. On the other hand, a dispersion with low solid content (such
+as 10%) shows an increasing trend in complex viscosity up to about 40 min
+after which it portrays a marked decreasing trend."
+
+40 min sounds like the ideal time.
+
+
+
+Yes, I think this is the key. The drying and the gelation must be isolated. Put it in a beaker, cover with aluminum foil to keep it moist, run it up to 75c. Preheat the mold too. After pouring into mold, immediately cool quickly.
+
+Besides PEG drying or freeze-drying...there doesn't seem to be a method to rapidly dry gel-cast parts!
+
+
+
+Tried ~10% paraffin wax. Worked perfectly. Small amount of pressure required for good molding. Casting wax in wax? no problem. Gosh darnit. Oh well, I learned a lot. 
+
+Indeed, looking at the Dow document, Paraffin is twice as strong as PVA.
+
+
+
+
+
+
