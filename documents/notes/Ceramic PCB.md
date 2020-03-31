@@ -64,13 +64,9 @@ Oh yeah, we can't possibly print the mold for this binder - it'll melt.
 
 DPR6EA-9
 
-
-
 Concerns regarding AS foam in vacuum seem to have been unfounded - pulled down to 5000 micron with no significant changes.
 
 Aqueous gelcasting is rubbish. Let's try something else.
-
-
 
 PMMA is soluble in EA. The MSDS for EA says it's spicy; wikipedia says the opposite. Who to trust?
 
@@ -110,20 +106,24 @@ after which it portrays a marked decreasing trend."
 
 40 min sounds like the ideal time.
 
-
-
 Yes, I think this is the key. The drying and the gelation must be isolated. Put it in a beaker, cover with aluminum foil to keep it moist, run it up to 75c. Preheat the mold too. After pouring into mold, immediately cool quickly.
 
 Besides PEG drying or freeze-drying...there doesn't seem to be a method to rapidly dry gel-cast parts!
-
-
 
 Tried ~10% paraffin wax. Worked perfectly. Small amount of pressure required for good molding. Casting wax in wax? no problem. Gosh darnit. Oh well, I learned a lot. 
 
 Indeed, looking at the Dow document, Paraffin is twice as strong as PVA.
 
+"With this method, the bending strength of sintered samples (σ = 331.6 MPa) is higher than that obtained by thermal treatment (σ = 312.3MPa).
+
+Oh wow, mixing method (ball mill, mixer, etc) has a huge impact! See Miyamoto.
 
 
 
+Nozzle is 1 mL - need at least 4 grams + part volume. 
+
+
+
+Lots of progress in other document. Giving my lungs a break from the silica; let's work on something else.
 
 

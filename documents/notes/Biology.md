@@ -118,11 +118,7 @@ Need to find lipid bilayer and nucleocapsid PDBs for covid and influenza.
 
 Also, really need to get around to propagating those phages. Even without the shaker - just get a backup colony.
 
-
-
 [https://mailman-1.sys.kth.se/pipermail/gromacs.org_gmx-users/2004-November/012877.html](https://mailman-1.sys.kth.se/pipermail/gromacs.org_gmx-users/2004-November/012877.html)
-
-
 
 Chimera only supports GROMACS formats in the daily builds.
 
@@ -132,15 +128,15 @@ VMD topotools would probably deal with the bonds...s
 
 Hoomd blue looks really great, not totally done yet though...
 
-OpenMM looks really fantastic - oh, but time-varying external forces aren't implemented yet, and that looks like a read doozy.
-
-
+OpenMM looks really fantastic - oh, but time-varying external forces aren't implemented yet, and that looks like a real doozy.
 
 The electric field is specified in src/gromacs/applied_forces/electricfield.cpp:111 - easy to change! Very nice.
 
 [http://prody.csb.pitt.edu/manual/reference/dynamics/mechstiff.html](http://prody.csb.pitt.edu/manual/reference/dynamics/mechstiff.html) - mechanical stiffness calc.
 
+Autoclaved pierce-top rubber stopper? Buna-n survives autoclaving. 
 
+Oh, buna-n can be simply isopropyl'd.
 
 
 

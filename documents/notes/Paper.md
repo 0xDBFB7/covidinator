@@ -50,6 +50,18 @@ The algebraic normal-mode methods included in many software packages [charmm] ar
 
 The phage model was produced from raw CryoEM data using ProDy. The coronavirid model was produced with LipidWrapper.
 
+A number of OpenMM
+
 [] Each field seems to invent its own terminology for multiscale modelling. "coarse-graining" is referred to as DSMC.
 
 []: the use of special symbols in names seems to be problematic for searches. Hereafter we will refer to \phi 6 as Phi6.
+
+It remains to be seen how much not-invented-here fallacy was baked into this project. 
+
+Based on prior work by the author, of PMMA, polystyrene binders in ethyl acetate, Oak Ridge gelcasting with PVOH (in-situ crosslinkers not readily available at the time), PVAc (low green strength, passable), alginate (poor rheology, Ca+ calcium iodide source not readily available), gelatine, GRF, or LPIM with paraffin wax binder, only LPIM was sufficiently fast and reliable for rapid production. 
+
+This is contrary to the existing tapecast industry, where acrylic, PVB, PVP or similar binders are used; commercial tapecast binders were not evaluated and may provide far superior results. 
+
+
+
+
