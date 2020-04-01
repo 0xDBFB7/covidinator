@@ -146,8 +146,6 @@ Ceramics represent only a local minimum for prototyping. It's hard to imagine a 
 
 Machinable wax bonded very strongly to the dried PVAc concoction. Unlikely that it'll be a useful mold.
 
+Laser stencil will have sufficient resolution.
 
-
-
-
-
+I'm panicking, because every day wasted now is an order of magnitude more units, but the panic is impeding useful work. 
