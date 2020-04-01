@@ -63,3 +63,31 @@ http://www.moltemplate.org/
 LAMMPS has a larger userbase, but stuff like variable e-fields seem to be more difficult. Let's see how gromacs fares.
 
 http://manual.gromacs.org/documentation/2019/reference-manual/functions/bonded-interactions.html
+
+[https://sci-hub.tw/https://ieeexplore.ieee.org/document/4121581](https://sci-hub.tw/https://ieeexplore.ieee.org/document/4121581)
+
+- OpenMM: No provisions for time-varying electric field
+
+- HOOMD-blue: No provisions for importing PDB, but that's easy to work around. Time-varying external forces looks pretty tricky, however.
+
+- ProtoMD?
+
+- 
+
+- Warp with EM3D() will probably work for triode sim
+
+Okay, so what do we actually need from the software?
+
+- Charge on particles - coulomb interaction.
+
+- Add charged particles to the inside core
+
+- Measuring the force requires an AFM model sim (still doable, sphere?), but since we have stiffness and Young's Modulus values
+  
+  we can just move an atom on the periphery slightly 
+
+- Export in XYZ etc.
+
+
+
+

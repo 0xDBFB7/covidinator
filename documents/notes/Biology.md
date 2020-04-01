@@ -134,12 +134,28 @@ The electric field is specified in src/gromacs/applied_forces/electricfield.cpp:
 
 [http://prody.csb.pitt.edu/manual/reference/dynamics/mechstiff.html](http://prody.csb.pitt.edu/manual/reference/dynamics/mechstiff.html) - mechanical stiffness calc.
 
+------
+
 Autoclaved pierce-top rubber stopper? Buna-n survives autoclaving. 
 
 Oh, buna-n can be simply isopropyl'd.
 
+-----
 
+Oh, Yang didn't calculate the ideal frequency - they just used the microwave absorption cavity thing:
 
+> In order to calculate the threshold magnitude of the electric field to fracture
+> H3N2 virus following equation (12), some important parameters such as q, Q and ω0 of the studied H3N2 virus
+> has to be obtained by measuring the microwave absorption spectrum of viruses.
 
+That's why they got such good agreement.
+
+1 1. ×6 10 e
+
+Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 V/m RMS. They say "106 V/m (8GHz), average electric field magnitude" - already basically good enough.
+
+Fig. 5b in Yang says there's only 40% inactivation at 100 W/m^2
+
+CNC'd a piece of PVC pipe as an eppendorf holder (rather, Dad made the .ngc). 400 mm/min. 17 mm between centers. 10krpm, 2 mm step with 1/8" endmill. We now have 22 incubated wells to work with. Some nichrome in thin tubing will probably work for the heater.
 
 

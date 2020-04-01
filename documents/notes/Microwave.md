@@ -333,10 +333,12 @@ There is precedent for dual-polarization weather radars at about 9.5 GHz.
 "The maximum amplitude is approximately the Q times the displacement caused by a static force that is equal in
 magnitude to the amplitude of the periodic force." Neat! The energy and max power transfer might not correspond to the frequency of maximum amplitude.
 
-Exposure time
 
-both [] and [] choose a 15-minute exposure. To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure.
 
-As a driven, damped, phased-array oscillator
 
-It
+
+
+
+[https://en.wikipedia.org/wiki/Dipole#Dipole_radiation](https://en.wikipedia.org/wiki/Dipole#Dipole_radiation)
+
+

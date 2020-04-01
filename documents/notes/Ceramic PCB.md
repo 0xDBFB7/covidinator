@@ -118,12 +118,36 @@ Indeed, looking at the Dow document, Paraffin is twice as strong as PVA.
 
 Oh wow, mixing method (ball mill, mixer, etc) has a huge impact! See Miyamoto.
 
-
-
 Nozzle is 1 mL - need at least 4 grams + part volume. 
 
-
-
 Lots of progress in other document. Giving my lungs a break from the silica; let's work on something else.
+
+I had just assumed that the mechanism behind laser copper-oxide patterning was carbothermal in nature; turns out it's a far more complex reaction using [https://en.wikipedia.org/wiki/Glycolic_acid](https://en.wikipedia.org/wiki/Glycolic_acid) [https://www.mdpi.com/2072-666X/10/6/401](https://www.mdpi.com/2072-666X/10/6/401) - apparently Gly. is very common for electroless copper. Synthesis route is relatively easy, but also quite toxic.
+
+----
+
+A sample of copper powder was placed on 0.5mm pressed 60/40/5 substrate and heated with a torch to dull red for a few minutes. The copper oxidized throughout almost immediately, but was otherwise quite well bonded.
+
+------
+
+Carbothermal has an intermediate carbon monoxide gas step. This might be the source of our failures.
+
+However, in a vacuum CuO dissociates to Cu at ~1000 K. Very nice! (oh - for future readers, the reason why I'm going about this circuitious route is that I only have a little bit of pure copper powder - not enough for many tests.)
+
+![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-03-31 14-09-16.png)
+
+Aha! The copper phase doesn't appear unless the oxygen pressure is < 10^-5 - 7.6 microns. Definitely need argon backfill.
+
+Various tests with 60/40/5 ceramic. This stuff definitely works; 4 minutes in the SiC crucible got it to medium strength. I only have one SiC element left; it's important that it not get broken!
+
+Ceramics represent only a local minimum for prototyping. It's hard to imagine a process requiring a 1000 C furnace being the simplest option! However, I can't find anything better in short notice (can't do electroless on PTFE or anything - don't have the chemicals, haven't had success with copper PVD in the past, etc)
+
+----
+
+Machinable wax bonded very strongly to the dried PVAc concoction. Unlikely that it'll be a useful mold.
+
+
+
+
 
 

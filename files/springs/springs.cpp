@@ -9,9 +9,11 @@
 #define ELECTRIC_CONSTANT (1)
 
 
-//need damping
+//need damping?
 //try springs later
 
+//based on https://people.sc.fsu.edu/~jburkardt/cpp_src/md_openmp/md_openmp.cpp
+//pdb reader from https://graphics.stanford.edu/~drussel/pdb/
 
 
 int dist(double x, double y, double z){
@@ -28,16 +30,24 @@ int force(double particle_charge_1, double particle_charge_1, double dist){
     coulomb_force = (particle_charge_1*particle_charge_2)/((dist-)*dist);
 }
 
-void make_sphere(std::vector<double> points, double total_charge, double radius, int N){
-    surface_area = 4.0 * M_PI * (radius*radius);
+// void make_sphere(std::vector<double> points, double total_charge, double radius, int N){
+//     surface_area = 4.0 * M_PI * (radius*radius);
+//
+// }
 
-}
+
+//bond angles can also be represented by a Hooks-ian spring.
+//https://en.wikibooks.org/wiki/Molecular_Simulation/Intramolecular_Forces#Bond_Angle_Bending
 
 
 
 int main(){
-    std::vector<double> points; //x,y,z, v_x, v_y, v_z, mass, charge, LJ rest distance
+    std::vector<double> positions; //x,y,z
+    std::vector<double> velocities; //x,y,z
+    std::vector<double> properties; //charge, mass,
+
     // std::vector<std::vector<double>> neighbor_distances; //2d! oh noes
+
 
 
 }
