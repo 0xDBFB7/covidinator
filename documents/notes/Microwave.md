@@ -333,12 +333,12 @@ There is precedent for dual-polarization weather radars at about 9.5 GHz.
 "The maximum amplitude is approximately the Q times the displacement caused by a static force that is equal in
 magnitude to the amplitude of the periodic force." Neat! The energy and max power transfer might not correspond to the frequency of maximum amplitude.
 
+[https://en.wikipedia.org/wiki/Dipole#Dipole_radiation](https://en.wikipedia.org/wiki/Dipole#Dipole_radiation) - monitor for that
 
 
 
+[http://openems.de/index.php/Tutorial:_Patch_Antenna_Phased_Array.html](http://openems.de/index.php/Tutorial:_Patch_Antenna_Phased_Array.html)
 
-
-
-[https://en.wikipedia.org/wiki/Dipole#Dipole_radiation](https://en.wikipedia.org/wiki/Dipole#Dipole_radiation)
+[https://github.com/jcyrax/pcbmodelgen](https://github.com/jcyrax/pcbmodelgen)
 
 

@@ -30,8 +30,6 @@ The charge distribution and pressure within the virus also differs.
 
 permanent charge separation
 
-
-
 ## Field Limits
 
 Exemption limits increase from 70 mW at 35 mm from the body to:
@@ -43,10 +41,6 @@ In these cases, the information contained in the RF exposure technical brief may
 At between 6 to 15 GHz, in an uncontrolled (public) environment, the Canadian government sets field thresholds at 61.4 V/m RMS. They also specifiy a limit adopted by most countries; 1 milliwatt / cm^2 over a 6 minute averaging time, along with the following constraint:
 
 > The total incident energy density during any one-tenth second period within the averaging time shall not exceed one-fifth of the total energy density permitted during the entire averaging time for a continuous field.
-
-
-
-
 
 #### Exposure time
 
@@ -62,11 +56,7 @@ Other research[] has found the T4  approximately a thousand times easier to inac
 
 > [] obtain an excellent prediction using an elastic continuum method with a spherical virus, with opposite charges in core and shell. 
 
-
-
 Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 V/m RMS. Yang et al's models for H3N2 specify a threshold at 86.9 V/m.
-
-
 
 We wished to gain more insight into the processes which cause the fracture, in an attempt to reduce the field requirements further.
 
@@ -81,3 +71,5 @@ The phage model was produced from raw CryoEM data using ProDy. The coronavirid m
 []: the use of special symbols in names seems to be problematic for searches. Hereafter we will refer to \phi 6 as Phi6.
 
 It remains to be seen how much not-invented-here fallacy was baked into this project. 
+
+It must be noted that, because of 

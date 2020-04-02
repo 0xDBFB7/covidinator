@@ -148,4 +148,52 @@ Machinable wax bonded very strongly to the dried PVAc concoction. Unlikely that 
 
 Laser stencil will have sufficient resolution.
 
-I'm panicking, because every day wasted now is an order of magnitude more units, but the panic is impeding useful work. 
+#### Laser sintering tests
+
+Laser sintering the CuO+C paste directly at 50 mm/min: formed a faint line of copper.
+
+50 mm/min, pure CuO powder: beads, clearly visible, slightly oxidized.
+
+----
+
+300 mm/min, thin aqueous dried layer: 
+
+----
+
+In argon:
+
+Well focused, both 100 and 50% at 100mm/min look identical - small beads.
+
+----
+
+Thick layer mechanically added with spatula, well-focused, 100 mm/min in argon, (using petrie dish with acrylic lid, hole drilled, Ar tube)
+
+30 40 25
+
+Now thick layer with pure copper (not oxide), 40 100mm 0.2 focused is just a bit too much.
+
+"One can readily see that in Eq. (1) Copper Oxide will
+be formed quite easily as evidenced by the very large
+negative heat of formation (AHo). Gold metal
+remains unchanged and will not form stable oxides at
+these temperatures."
+
+---
+
+Miserable failures with SiC crucible in vacuum. A slightly higher vacuum and a better crucible would do it, but my lungs really hurt. Moreover, I'm increasingly convinced that the argon backfill just won't work.
+
+----------
+
+#### Low temp screen-printed solderable traces test 1
+
+Equal parts by wt. graphite, copper, PVA. Small amount of water. Dried at 135. traces are 10k r. Not solderable. Annealing at 220C, R dropped to about 2k / cm. Good polymer resistor, at least.
+
+
+
+
+
+
+
+
+
+
