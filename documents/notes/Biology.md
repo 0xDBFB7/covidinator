@@ -152,10 +152,40 @@ That's why they got such good agreement.
 
 1 1. ×6 10 e
 
-Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 V/m RMS. They say "106 V/m (8GHz), average electric field magnitude" - already basically good enough.
+Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 V/m RMS. They say "average electric field magnitude" -
 
 Fig. 5b in Yang says there's only 40% inactivation at 100 W/m^2
 
 CNC'd a piece of PVC pipe as an eppendorf holder (rather, Dad made the .ngc). 400 mm/min. 17 mm between centers. 10krpm, 2 mm step with 1/8" endmill. We now have 22 incubated wells to work with. Some nichrome in thin tubing will probably work for the heater.
+
+Apparently hair and eyes are also important to protect.
+
+Agitation/stirrer! If insulating and transparent, can be mounted to the very same nozzle; nozzle spins. Just aspriating/ejecting might be enough?
+
+A heated Microwell might have been a better idea.
+
+Eh, nevermind - we can probably reliably work with 0.1 mL (the first graduation in these cent. tubes) - that's only two tubes worth of LB, etc. That's fine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

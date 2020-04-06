@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-
+ 
 #define MAX_N_POINTS 10
 #define POINT_MASS (1/1000)
 #define CUTOFF 1

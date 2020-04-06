@@ -335,10 +335,12 @@ magnitude to the amplitude of the periodic force." Neat! The energy and max powe
 
 [https://en.wikipedia.org/wiki/Dipole#Dipole_radiation](https://en.wikipedia.org/wiki/Dipole#Dipole_radiation) - monitor for that
 
-
-
 [http://openems.de/index.php/Tutorial:_Patch_Antenna_Phased_Array.html](http://openems.de/index.php/Tutorial:_Patch_Antenna_Phased_Array.html)
 
 [https://github.com/jcyrax/pcbmodelgen](https://github.com/jcyrax/pcbmodelgen)
+
+[http://www.waves.utoronto.ca/prof/svhum/ece422/notes/15-arrays2.pdf](http://www.waves.utoronto.ca/prof/svhum/ece422/notes/15-arrays2.pdf)
+
+[http://www.sigcon.com/Pubs/edn/SlidingEdge.htm](http://www.sigcon.com/Pubs/edn/SlidingEdge.htm)
 
 

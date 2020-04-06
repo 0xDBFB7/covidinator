@@ -188,6 +188,135 @@ Miserable failures with SiC crucible in vacuum. A slightly higher vacuum and a b
 
 Equal parts by wt. graphite, copper, PVA. Small amount of water. Dried at 135. traces are 10k r. Not solderable. Annealing at 220C, R dropped to about 2k / cm. Good polymer resistor, at least.
 
+----
+
+It seems like silver inks can be fired in air without much ado. I haven't any right now.
+
+I have some MG chemicals "nickel shield", but the resistivity is some 0.8 ohms/sq, a bit too much.
+
+I have one 1/16" endmill left. It's long enough to do a single graphite block in one go.
+
+-----
+
+Last attempt at non-vacuum reduction. c+cuo, Ar purge, test tube, bunsen burner. No dice.
+
+-----
+
+Some Ar was leaking around the tubing I was using. Previous Ar tests might not have been getting sufficient flow.
+
+-----
+
+Ran a test with the wine tumbler. Worked great. Making some alumina cylinders now, using PVC mandrels.
+
+A few things for next time: A height gauge ring around the mandrel would be useful. Wire or tape would work.
+
+The wax paper stuck to the mandrel - we'll see if that clears up later. Otherwise, adding some oil or mold release beforehand would probably be useful.
+
+After ~3  hours of drying at room temp, the big 48mm one cracked on the mandrel. It cracked at the Kapton joint, but I think that's just coincidence; that area was also the thinnest. May also have gotten the mix ratio wrong; it's important to add the glue to the weigh-able tray before transferring to the larger bowl.
+
+----
+
+Tried in-situ sintering the vac. furnace. Worked okay! A part that hadn't dried overnight started spalling a bit.
+
+Should have used the furnace to burnout first, however. All the volatiles melted and covered the chamber, and the residual carbon discolored the part. Doesn't seem to have affected the strength.
+
+-----
+
+Thought perhaps I could microwave-sinter copper traces. Copper powder was added to a mason jar, Kapton lid, filled with argon. After 10 seconds, a violent plasma explosion occurred, which then extinguished itself. It seemed visually as though the entrance of air extinguished the arc - an effect of the higher ionization energy of argon, perhaps?
+
+> For this experiment a thin layer of graphite
+> coating outside the alumina sample holder was used as a suceptor. 
+
+Tried with copper + graphite. Big arc - different character of arc this time.
+
+SiC, Zinc Oxide, charcoal 
+
+[https://sci-hub.tw/https://www.researchgate.net/publication/244529718_Arcing_and_other_microwave_characteristics_of_metal_powders_in_liquid_systems](https://sci-hub.tw/https://www.researchgate.net/publication/244529718_Arcing_and_other_microwave_characteristics_of_metal_powders_in_liquid_systems)
+
+Tried with a touch of water and PVAc. Less arcing, no sintering. Glass broke.
+
+Made SiC susceptor + CuO + C mix. In a test tube. No arcing this time. No heating, either.
+
+----
+
+[https://sci-hub.tw/https://pubs.acs.org/doi/abs/10.1021/jp205281a](https://sci-hub.tw/https://pubs.acs.org/doi/abs/10.1021/jp205281a)
+
+> irradiated, the CuO NPs photochemically can react with the
+> ethylene glycol (C2H6O2) as follows
+
+Acetaldehyde produced is fienishly toxic.
+
+----
+
+Going to take a break from the cofired process and try prototyping via router.
+
+Z-levelling: Linuxcnc has a Probekins thinger.    
+
+Then there's also a Z height file filter [https://github.com/hase-berlin/pcbGcodeZprobing](https://github.com/hase-berlin/pcbGcodeZprobing)
+
+Oh hey! triode need not be planar - could be a via-based thing. That means we can have a whole bunch of little holes, perfect for cold field-emitters!
+
+Wavelength at 10 GHz is like 10mm.
+
+GaN looks like a reasonably easy alternative - still way more complex than a vac. system
+
+[https://www.pasternack.com/t-calculator-wavelength.aspx](https://www.pasternack.com/t-calculator-wavelength.aspx)
+
+
+
+> That is, the field emitters themselves must have dimensions less that 0.1 micrometers in order to generate the high electrostatic fields necessary for electron tunneling
+
+[https://www.cambridge.org/core/journals/mrs-online-proceedings-library-archive/article/silicon-field-emitter-array-planar-vacuum-fet-fabricated-with-microfabrication-techniques/6D8EA9A163B6DF82C82DDDE96F147C5A](https://www.cambridge.org/core/journals/mrs-online-proceedings-library-archive/article/silicon-field-emitter-array-planar-vacuum-fet-fabricated-with-microfabrication-techniques/6D8EA9A163B6DF82C82DDDE96F147C5A)
+
+
+
+> 
+> 
+> --------------  copper anode from PCB to retain hermeticity
+> 
+> |            | - alumina ring, small layer of Ti + solder on top and bottom
+> 
+> |            | - vac. pulldown port, sputter baffle?
+> 
+> ---- ---- --- grid
+> 
+> ===  === W cathode
+> 
+> ------------- Ti getter sputter layer? perhaps coated on the W cathode?
+> 
+> slant for phase shift? alumina insulator can be cut at an angle.
+
+Wait, but that means we have the worst of both worlds? 
+
+I guess it minimizes the furnace size.
+
+
+
+"Low vacuum MEMS ion-sorption micropump" all the way from atmosphere! Amazing!
+
+"Further tests of the micropump have been performed with use
+of the miniature Bayard-Alpert gauge (Fig. 12a), which has been
+fabricated for this purpose especially," amazing
+
+sputter pump
+
+Externally heated getter with torch?
+
+
+
+The real question here is, am I overestimating the difficulty of producing millions of units?
+[https://www.linkedin.com/pulse/china-expected-become-worlds-largest-pcb-country-aken-cheung](https://www.linkedin.com/pulse/china-expected-become-worlds-largest-pcb-country-aken-cheung)
+
+Chinese PCB production capacity seems to be on the order of 500 million square meters per year (extrapolating from +21 m/year being 5% growth). If each board is 8 cm^2, that's..10^10/month! holy crap! So we're probably okay to use stock PCBs?
+
+The global MMIC market is $9b/year. Taking a random sample from digikey, we find the average price at 10,000-of is \$26.4. Previously I found the price to be \$7; so we're probably on the right order. That gives about 1 B devices/year, or 83 million per month, of which about 1/20th seems to be > X-band. That's 4 million/month, and that's not nearly 100 million/month. Even an order of magnitude more won't do it. Also, how many *extra* parts are there? It's not like they're going to stop shipping to other companies for a month.
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,9 @@
 # Paper
 
+Safe nonthermal microwave viral inactivation with a \$1 X-band phased array
+
+
+
 "We provide a trivial extension of et al's landmark paper to "
 
 "Note: this is a dynamic project. The latest version of this paper is available at github.com/covidinator."
@@ -30,6 +34,14 @@ The charge distribution and pressure within the virus also differs.
 
 permanent charge separation
 
+Infobox with each citation:
+
+> Yang et al:
+> 
+> - Describe dipole mode numerically
+> 
+> - Establish field limits
+
 ## Field Limits
 
 Exemption limits increase from 70 mW at 35 mm from the body to:
@@ -38,7 +50,7 @@ Exemption limits increase from 70 mW at 35 mm from the body to:
 
 In these cases, the information contained in the RF exposure technical brief may be limited to information that demonstrates how the e.i.r.p. was derived.
 
-At between 6 to 15 GHz, in an uncontrolled (public) environment, the Canadian government sets field thresholds at 61.4 V/m RMS. They also specifiy a limit adopted by most countries; 1 milliwatt / cm^2 over a 6 minute averaging time, along with the following constraint:
+At between 6 to 15 GHz, in an uncontrolled (public) environment, the Canadian government sets field thresholds at 61.4 V/m RMS. They also specifiy a limit adopted by most countries; 1 milliwatt / cm^2 (10 W/m^2) over a 6 minute averaging time, along with the following constraint:
 
 > The total incident energy density during any one-tenth second period within the averaging time shall not exceed one-fifth of the total energy density permitted during the entire averaging time for a continuous field.
 
@@ -46,13 +58,13 @@ At between 6 to 15 GHz, in an uncontrolled (public) environment, the Canadian go
 
 both [] and [] arbitrarily chose a 15-minute exposure against H3N2. To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure. 
 
-As a damped, driven oscillator, the ring-up time depends on the Q factor. [] states the Q of H3N2 to between 2 and 10, so at 8 GHz the steady-state should be reached in well under 1 us.
+As a damped, driven oscillator, the ring-up time depends on the Q factor. Yang et al. state the Q of H3N2 to between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us.
 
-Reality is rarely so tidy. [] have found a significant mechanical fatigue effect in phage capsids; a small strain applied repetitively eventually causes fracture. At low field strengths, this mechanism could extend the exposure required to break the capsid.
+Reality is rarely so tidy. [] have found a significant mechanical fatigue effect in phage capsids; a small strain applied repetitively eventually causes fracture. At low field strengths, this mechanism could extend the exposure required to break the capsid or membrane.
 
 Variance in the sizes and stiffness of viruses (due to mutations) could shift the resonance off-peak, requiring a longer duration exposure or a frequency chirp to accommodate.
 
-Other research[] has found the T4  approximately a thousand times easier to inactivate chemically; however, its capsid is mechanically approx. 2x stronger than that of H3N2.
+Other research[] has found T4 approximately a thousand times "easier" to inactivate chemically; however, its capsid is mechanically approx. 2x stronger than that of H3N2.
 
 > [] obtain an excellent prediction using an elastic continuum method with a spherical virus, with opposite charges in core and shell. 
 
@@ -64,7 +76,7 @@ Both coarse-grained bead-spring molecular dynamics (via integration of particle 
 
 The algebraic normal-mode methods included in many software packages [charmm] are not generally sufficient for this task, as they often assume the limit of low-amplitudes.
 
-The phage model was produced from raw CryoEM data using ProDy. The coronavirid model was produced with LipidWrapper.
+The phage model was produced from raw CryoEM data using ProDy. ~~The coronavirid model was produced with LipidWrapper.~~ 
 
 [] Each field seems to invent its own terminology for multiscale modelling. "coarse-graining" is referred to as DSMC.
 

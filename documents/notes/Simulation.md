@@ -87,7 +87,3 @@ Okay, so what do we actually need from the software?
   we can just move an atom on the periphery slightly 
 
 - Export in XYZ etc.
-
-
-
-
