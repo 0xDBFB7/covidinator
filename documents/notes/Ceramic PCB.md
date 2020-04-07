@@ -262,16 +262,10 @@ GaN looks like a reasonably easy alternative - still way more complex than a vac
 
 [https://www.pasternack.com/t-calculator-wavelength.aspx](https://www.pasternack.com/t-calculator-wavelength.aspx)
 
-
-
 > That is, the field emitters themselves must have dimensions less that 0.1 micrometers in order to generate the high electrostatic fields necessary for electron tunneling
 
 [https://www.cambridge.org/core/journals/mrs-online-proceedings-library-archive/article/silicon-field-emitter-array-planar-vacuum-fet-fabricated-with-microfabrication-techniques/6D8EA9A163B6DF82C82DDDE96F147C5A](https://www.cambridge.org/core/journals/mrs-online-proceedings-library-archive/article/silicon-field-emitter-array-planar-vacuum-fet-fabricated-with-microfabrication-techniques/6D8EA9A163B6DF82C82DDDE96F147C5A)
 
-
-
-> 
-> 
 > --------------  copper anode from PCB to retain hermeticity
 > 
 > |            | - alumina ring, small layer of Ti + solder on top and bottom
@@ -290,8 +284,6 @@ Wait, but that means we have the worst of both worlds?
 
 I guess it minimizes the furnace size.
 
-
-
 "Low vacuum MEMS ion-sorption micropump" all the way from atmosphere! Amazing!
 
 "Further tests of the micropump have been performed with use
@@ -302,8 +294,6 @@ sputter pump
 
 Externally heated getter with torch?
 
-
-
 The real question here is, am I overestimating the difficulty of producing millions of units?
 [https://www.linkedin.com/pulse/china-expected-become-worlds-largest-pcb-country-aken-cheung](https://www.linkedin.com/pulse/china-expected-become-worlds-largest-pcb-country-aken-cheung)
 
@@ -311,18 +301,32 @@ Chinese PCB production capacity seems to be on the order of 500 million square m
 
 The global MMIC market is $9b/year. Taking a random sample from digikey, we find the average price at 10,000-of is \$26.4. Previously I found the price to be \$7; so we're probably on the right order. That gives about 1 B devices/year, or 83 million per month, of which about 1/20th seems to be > X-band. That's 4 million/month, and that's not nearly 100 million/month. Even an order of magnitude more won't do it. Also, how many *extra* parts are there? It's not like they're going to stop shipping to other companies for a month.
 
+----
 
+There's a guy called Y.Srinivasa Rao who seems to have published some many, many papers on the subject of polymer resistors. Good on ya!
 
+---
 
+At 10ghz, on 0.7 mm PCB, microstrip should be 1.36 mm. Changes very little with frequency between 8 and 10 GHz.
 
+At 1.6mm thickness, 3.35792 mm. Conductor losses are about half.
 
+Thickness of copper (even to 0.3 mm) seems to have little effect on the dimensions.
 
+[http://kicad-kicon.com/wp-content/uploads/2019/05/Darrell-Harmon-kicon19.pdf](http://kicad-kicon.com/wp-content/uploads/2019/05/Darrell-Harmon-kicon19.pdf)
 
+This guy makes a 15 GHz filter on thin OSHpark flex. some issues with max impedance because of thickness, ground cutout needed.
 
+Man, RF resistors are super expensive - and the Vishay FC series only goes in factors of 5 and 10, so we'd need to parallel a bunch. That's no good.
 
+> RF resistors should be approximately as wide as the microstrip trace itself
 
+Pencil lead is a bit too conductive for the purpose -  2 ohms / cm or so. Difficult to tune, even with a file, and the resistance is pressure-sensitive.
 
+we could use gigabeq's copper plating technique for the contacts
 
+0.08g fine graphite + 0.055g PVAc was mixed, squished onto a glass slide. Only a small amount of the graphite was wetted by the PVAc and used.
 
+Resistance was in the Mohms.
 
-
+It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With sufficient contact pressure, 200 ohms could be obtained! Wonderful.

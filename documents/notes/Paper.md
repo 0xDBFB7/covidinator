@@ -2,7 +2,9 @@
 
 Safe nonthermal microwave viral inactivation with a \$1 X-band phased array
 
+Incorporate criticism and corrections into the Rebuke section
 
+Datasheet links
 
 "We provide a trivial extension of et al's landmark paper to "
 

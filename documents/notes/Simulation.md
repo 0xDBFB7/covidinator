@@ -87,3 +87,15 @@ Okay, so what do we actually need from the software?
   we can just move an atom on the periphery slightly 
 
 - Export in XYZ etc.
+
+---
+
+Maintaining a base of scientific software, with conflicting dependencies and things, is becoming something of a pain. I'm not sure that docker is a great solution for this - mounting directories is a little clunky, etc. 
+
+What about using a bare debian debootstrap chroot for each piece of software, with a bind-mount for data?
+
+Indeed, this works great. Installed openEMS on a *jessie* chroot, where it was originally developed.
+
+-----
+
+
