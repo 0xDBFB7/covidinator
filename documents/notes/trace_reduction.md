@@ -24,3 +24,7 @@ Probably don't want to use ethanol.
 Put a bit of copper oxide in one of those pyrex funnels, pumped in some butane, and lit the end -  a wonderful fireball is produced. Used a second butane torch to heat the powder. CuO turned red hot, not quite self-sustaining - probably didn't have sufficient gas flow, but the oxide was definitely reduced to copper. Not sintered, either, but that's also a temperature effect.
 
 ----
+
+The whole thing could be gas-fired with propane or natural gas. Just racks of 
+
+

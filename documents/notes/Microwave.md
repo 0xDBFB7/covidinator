@@ -373,11 +373,8 @@ Y'know, I'm really liking these environment-ed installations. OpenEMS took some 
 
 Same with openFOAM's Docker distributions. Really neat.
 
-
-
 [https://github.com/gprMax/gprMax/issues/129](https://github.com/gprMax/gprMax/issues/129) - transmission line kernels aren't implemented yet, so no GPU for us.
 
-> 
 > Traceback (most recent call last):
 >   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/runpy.py", line 193, in _run_module_as_main
 >     return _run_code(code, main_globals, None,
@@ -397,4 +394,14 @@ Ah, fixed in master. I love it when that happens!
 
 - Warren, C., Giannopoulos, A., & Giannakis I. (2016). gprMax: Open source software to simulate electromagnetic wave propagation for Ground Penetrating Radar, Computer Physics Communications ([http://dx.doi.org/10.1016/j.cpc.2016.08.020](http://dx.doi.org/10.1016/j.cpc.2016.08.020))
 
+xnec2c is a Method of Moments antenna designer that might be useful for setting up the patch antenna
 
+Unlike openEMS, gprMax doesn't have mesh-refinement features. 0.05/(0.0007/5) = 357, a V100 can probably knock out a 450^3 in reasonable time. Might have to record voltages then excite a coarser sim with those excitations to get the antenna pattern
+
+> First, the models with a coarse mesh clearly suffer from the effects of a
+> too low spatial discretization (the substrate thickness is modeled with the height of only one cell).
+> This produces a noticeable shift in the resonance toward low frequencies.
+
+file:///home/arthurdent/Downloads/electronics-08-01506%20(1).pdf
+
+If they got such good agreement with just 1 cell, a substrate 2 or 3 cells thick should probably do.

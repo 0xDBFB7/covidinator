@@ -2,3 +2,7 @@
 *.vtk
 *.vti
 *.out
+*.vtp
+*pvsm
+*-bak
+*autosave*

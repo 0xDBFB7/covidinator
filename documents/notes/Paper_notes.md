@@ -28,7 +28,7 @@ Many means exist to generate RF power, including
 
 The author has no prior experience in microbiology, and access to a pathogenic BSL-2 virus would probably result in another pandemic. There are also difficulties in culturing, propagating and assaying such viruses. The Phi6, there is precedent for using. No Phi6 could be procured due to shipping restrictions and phage bank closures.
 
-*Highlight implementation details (like reasons why Phi6 wasn't used) differently? Sidebars?*
+*Highlight implementation details (like reasons why Phi6 wasn't used) differently? Sidebars?*~~~~
 
 T4 is not an ideal surrogate for SARS-CoV-2. T4 has a 120 nm prolate icosahedral membrane capsid directly surrounding the DNA core. SARS-CoV-2 has a 120 nm spherical lipid envelope surronding a 10 nm nucleocapsid, which surrounds the core. H3N2, as used by [],is 100 nm.
 
@@ -43,3 +43,19 @@ Infobox with each citation:
 > - Describe dipole mode numerically
 > 
 > - Establish field limits
+
+Conflicts of interest: all of them. The author could stand to gain monetarily (but will not; if local production is started, the devices will be sold with a 0% profit margin; financials will be public at /accounting.md), and would profit greatly if society were to fail to collapse. This has almost certainly biased the author's analyses of safety and effectiveness. Again, please consider with due skepticism. Truly unconcerned parties, such as a member of an uncontacted tribe.
+
+[1]:  First, this isn't my idea in the slightest; if anything, Yang et al should profit - but their research was publicly funded in the first place. Second, this is a vulnerable time, and everyone needs their last dollars. 
+
+First, the models with a coarse mesh clearly suffer from the effects of a
+too low spatial discretization (the substrate thickness is modeled with the height of only one cell).
+This produces a noticeable shift in the resonance toward low frequencies.
+
+Author Contributions is a neat section to have. Not important for this one, obvs
+
+Funding: This research received no external funding.
+
+Because Q varies with pH, it may be more difficult to inactivate viruses entrained in vomit, or aerosols from vomit. 
+
+

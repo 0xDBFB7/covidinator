@@ -96,4 +96,10 @@ What about using a bare debian debootstrap chroot for each piece of software, wi
 
 Indeed, this works great. Installed openEMS on a *jessie* chroot, where it was originally developed.
 
+For our software, might it be a good idea to package and redistribute everything as a static, internal library, where the library version is controlled by the distributor? How'd that work even work?
+
+I mean, all these developer hours working on dependency issues are pretty much wasted.
+
+
+
 -----

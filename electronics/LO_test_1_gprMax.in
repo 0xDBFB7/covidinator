@@ -1,13 +1,77 @@
 #num_threads: 14
 
-#domain: 0.05 0.05 0.05
-//meters
-
-#dx_dy_dz: 0.0016 0.0016 0.0016
-
-//PML boundaries are 10 cells on each side of the domain
-
 #time_window: 1e-9
 //seconds
 
+#material: 1     6e7     1 0 copper
+#material: 4.5   0.0001  1 0 substrate
+#material: 1     6e7     1 0 copper_top
+#material: 1     6e7     1 0 copper_bottom
+//rel permittivity, conductivity (S/m), rel. permeability, magnetic loss (Ohms/m)
 
+---------------------------------------------------
+#python:
+from gprMax.input_cmd_funcs import *
+import os 
+
+domain_x = 0.05
+domain_y = 0.05
+domain_z = 0.05
+
+N = 50 +20
+#PML boundaries are 10 cells on each side of the domain
+
+domain(domain_x, domain_y, domain_z)
+
+cell_x = domain_x/N
+cell_y = domain_y/N
+cell_z = domain_z/N
+
+dx_dy_dz(cell_x,cell_y,cell_z)
+
+#copper_thickness = 0.0007
+substrate_thickness = 0.0007
+
+#ground plane
+cells_from_border = 12
+plate(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z, 
+                            domain_x-(cells_from_border*cell_x), domain_y-(cells_from_border*cell_y), cells_from_border*cell_z, 'copper')
+
+
+box(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z, 
+                            domain_x-(cells_from_border*cell_x), domain_y-(cells_from_border*cell_y), cells_from_border*cell_z+substrate_thickness, 'substrate')
+
+
+input_filename = "/home/arthurdent/Projects/covidinator/electronics/local_oscillator_test/local_oscillator_test-F.Cu.svg"
+dpi = 0.0254 / cell_x 
+os.system("inkscape -z --export-dpi {} {} -e from_kicad.png".format(int(dpi),input_filename))
+#os.system("mogrify -threshold 10 from_kicad.png")
+os.system("python -m tools.convert_png2h5 from_kicad.png {} {} {}".format(cell_x,cell_y,cell_z))
+
+
+
+print("#geometry_objects_read: {} {} {} {} {}".format(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z+substrate_thickness+substrate_thickness, 
+                                                                                    "from_kicad.h5", "from_kicad_materials.txt"))
+
+
+
+geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry') #creates .vti file, no edges
+geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry',type="f") # creates .vtp file, no sources
+
+#end_python:
+---------------------------------------------------
+
+
+
+/#python:
+/for i in range(1, 31):
+/    print('#snapshot: x1 y1 z1 x2 y2 z2 dx dy dz {} snapshot{}'.format((i/10)*1e-9, i))
+/#end_python:
+
+
+//run with:
+
+//
+//python -m gprMax LO_test_1_gprMax.in
+//requires inkscape
+//thresholding the .vtp at <2 in paraview makes for a cleaner view

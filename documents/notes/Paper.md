@@ -46,6 +46,4 @@ The phage model was produced from raw CryoEM data using ProDy. ~~The coronavirid
 
 It remains to be seen how much not-invented-here fallacy was baked into this project.
 
-It must be noted that, because of
-
 
