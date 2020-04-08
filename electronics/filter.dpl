@@ -1,0 +1,25 @@
+<Qucs Schematic >
+<Properties>
+  <View=0,40,800,1091,1,131,120>
+  <Grid=10,10,0>
+  <DataSet=filter.dat>
+  <DataDisplay=filter.sch>
+  <OpenDisplay=1>
+  <Script=filter.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+</Diagrams>
+<Paintings>
+</Paintings>

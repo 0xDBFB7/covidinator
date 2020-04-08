@@ -165,27 +165,3 @@ Agitation/stirrer! If insulating and transparent, can be mounted to the very sam
 A heated Microwell might have been a better idea.
 
 Eh, nevermind - we can probably reliably work with 0.1 mL (the first graduation in these cent. tubes) - that's only two tubes worth of LB, etc. That's fine.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

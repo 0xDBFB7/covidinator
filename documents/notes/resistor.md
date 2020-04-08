@@ -16,8 +16,8 @@ Resistance was in the Mohms.
 
 It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With sufficient contact pressure, 200 ohms could be obtained! Wonderful.
 
-The 3-ohm resistor might be a bit tricky.
+The 3-ohm resistor required for a T-type attenuator might be a bit tricky with this process. A pi-type needs a 250 ohm R.
 
-It's time to make an attenuator!
+----
 
----
+

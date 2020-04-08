@@ -341,6 +341,60 @@ magnitude to the amplitude of the periodic force." Neat! The energy and max powe
 
 [http://www.waves.utoronto.ca/prof/svhum/ece422/notes/15-arrays2.pdf](http://www.waves.utoronto.ca/prof/svhum/ece422/notes/15-arrays2.pdf)
 
-[http://www.sigcon.com/Pubs/edn/SlidingEdge.htm](http://www.sigcon.com/Pubs/edn/SlidingEdge.htm)
+[http://www.sigcon.com/Pubs/edn/SlidingEdge.htm](http://www.sigcon.com/Pubs/edn/SlidingEdge.htm) - gaps in board-to-board interfaces probably won't be that bad.
+
+Oh neat, you can make a variable PI attenuator with PIN diodes. That'll be helpful.
+
+Spent some time trying to install OpenEMS. Tried chroots (works, but no visualization, and getting the octave interface to work across a chroot boundary looks tricky) - VM (CAELinux - old 0.35 release of ems worked). 
+
+Going to try meep.
+
+Meep has support for moving charged particles. 
+
+Meep's bundled mayavi2 visualizer is really neat.
+
+Reasons for switching to gprMax: MEEP seems to be a little more focused (ha) on optical rather than RF sims; so there's less emphasis on, say, S-params, etc. gprMax also has sweet GPU accel. 
+
+Having multiple APIs in different languages (MEEP: Scheme, Python, C++) (openEMS: MATLAB, internal Python, Python wrapper written by dlHarmon) seems complicate things. Snippets that others post are likely to be in the wrong language, and multiple sets of documentation have to be kept consistent - for intsance.
+
+gprMax seems to have really worked this out very well; one SPARTA-like "command" input file, with integrated Python bindings.
+
+---
+
+Can't we just use a filter as an attenuator? Wait, no, that's dumb.
+
+----
+
+Y'know, I'm really liking these environment-ed installations. OpenEMS took some 8 hours to install because of dependencies, but all gprMax and MEEP needed was a "conda env create -f conda_env.yml", plus
+
+> python setup.py build
+> 
+> python setup.py install
+
+Same with openFOAM's Docker distributions. Really neat.
+
+
+
+[https://github.com/gprMax/gprMax/issues/129](https://github.com/gprMax/gprMax/issues/129) - transmission line kernels aren't implemented yet, so no GPU for us.
+
+> 
+> Traceback (most recent call last):
+>   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/runpy.py", line 193, in _run_module_as_main
+>     return _run_code(code, main_globals, None,
+>   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/runpy.py", line 86, in _run_code
+>     exec(code, run_globals)
+>   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/site-packages/gprMax-3.1.5-py3.8-linux-x86_64.egg/gprMax/__main__.py", line 6, in <module>
+>     gprMax.gprMax.main()
+>   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/site-packages/gprMax-3.1.5-py3.8-linux-x86_64.egg/gprMax/gprMax.py", line 67, in main
+>     run_main(args)
+>   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/site-packages/gprMax-3.1.5-py3.8-linux-x86_64.egg/gprMax/gprMax.py", line 123, in run_main
+>     hostinfo = get_host_info()
+>   File "/home/arthurdent/Programs/miniconda/envs/gprMax/lib/python3.8/site-packages/gprMax-3.1.5-py3.8-linux-x86_64.egg/gprMax/utilities.py", line 317, in get_host_info
+>     osversion = 'Linux (' + osrelease + ', ' + platform.linux_distribution()[0] + ')'
+> AttributeError: module 'platform' has no attribute 'linux_distribution'
+
+Ah, fixed in master. I love it when that happens!
+
+- Warren, C., Giannopoulos, A., & Giannakis I. (2016). gprMax: Open source software to simulate electromagnetic wave propagation for Ground Penetrating Radar, Computer Physics Communications ([http://dx.doi.org/10.1016/j.cpc.2016.08.020](http://dx.doi.org/10.1016/j.cpc.2016.08.020))
 
 

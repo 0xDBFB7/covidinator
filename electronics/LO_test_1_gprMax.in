@@ -1,0 +1,13 @@
+#num_threads: 14
+
+#domain: 0.05 0.05 0.05
+//meters
+
+#dx_dy_dz: 0.0016 0.0016 0.0016
+
+//PML boundaries are 10 cells on each side of the domain
+
+#time_window: 1e-9
+//seconds
+
+
