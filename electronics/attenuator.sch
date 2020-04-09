@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-60,564,1003,1517,0.289665,0,0>
+  <View=-60,-756,1003,1517,0.909094,0,875>
   <Grid=10,10,1>
   <DataSet=attenuator.dat>
   <DataDisplay=attenuator.dpl>
