@@ -3,10 +3,10 @@
   (general
     (thickness 1.6)
     (drawings 0)
-    (tracks 8)
+    (tracks 5)
     (zones 0)
-    (modules 2)
-    (nets 4)
+    (modules 0)
+    (nets 1)
   )
 
   (page A4)
@@ -91,9 +91,6 @@
   )
 
   (net 0 "")
-  (net 1 /OSC1)
-  (net 2 GND)
-  (net 3 /GATE)
 
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -102,254 +99,12 @@
     (via_drill 0.4)
     (uvia_dia 0.3)
     (uvia_drill 0.1)
-    (add_net /GATE)
-    (add_net /OSC1)
-    (add_net GND)
-  )
-
-  (module 0402 (layer F.Cu) (tedit 200000) (tstamp 5E8F6E58)
-    (at 18.35 20 90)
-    (descr "GENERIC 1005 (0402) PACKAGE")
-    (tags "GENERIC 1005 (0402) PACKAGE")
-    (path /5E8F3679)
-    (attr smd)
-    (fp_text reference C1 (at 0 -1.27 90) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.127)))
-    )
-    (fp_text value 1pF (at 0 1.27 90) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.127)))
-    )
-    (fp_line (start -0.55372 0.3048) (end -0.254 0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start -0.254 0.3048) (end -0.254 -0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start -0.55372 -0.3048) (end -0.254 -0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start -0.55372 0.3048) (end -0.55372 -0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start 0.25654 0.3048) (end 0.5588 0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start 0.5588 0.3048) (end 0.5588 -0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start 0.25654 -0.3048) (end 0.5588 -0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start 0.25654 0.3048) (end 0.25654 -0.3048) (layer Dwgs.User) (width 0.06604))
-    (fp_line (start -0.19812 0.29972) (end 0.19812 0.29972) (layer F.SilkS) (width 0.06604))
-    (fp_line (start 0.19812 0.29972) (end 0.19812 -0.29972) (layer F.SilkS) (width 0.06604))
-    (fp_line (start -0.19812 -0.29972) (end 0.19812 -0.29972) (layer F.SilkS) (width 0.06604))
-    (fp_line (start -0.19812 0.29972) (end -0.19812 -0.29972) (layer F.SilkS) (width 0.06604))
-    (fp_line (start -0.26924 -0.2286) (end 0.26924 -0.2286) (layer Dwgs.User) (width 0.1524))
-    (fp_line (start 0.26924 0.2286) (end -0.26924 0.2286) (layer Dwgs.User) (width 0.1524))
-    (fp_line (start -1.19888 -0.6477) (end 1.19888 -0.6477) (layer F.CrtYd) (width 0.0508))
-    (fp_line (start 1.19888 -0.6477) (end 1.19888 0.6477) (layer F.CrtYd) (width 0.0508))
-    (fp_line (start 1.19888 0.6477) (end -1.19888 0.6477) (layer F.CrtYd) (width 0.0508))
-    (fp_line (start -1.19888 0.6477) (end -1.19888 -0.6477) (layer F.CrtYd) (width 0.0508))
-    (pad 1 smd rect (at -0.57912 0 90) (size 0.84836 0.89916) (layers F.Cu F.Paste F.Mask)
-      (net 3 /GATE) (solder_mask_margin 0.1016))
-    (pad 2 smd rect (at 0.57912 0 90) (size 0.84836 0.89916) (layers F.Cu F.Paste F.Mask)
-      (net 3 /GATE) (solder_mask_margin 0.1016))
-  )
-
-  (module 0xDBFB7:4-Micro-X (layer F.Cu) (tedit 5E8E9CC3) (tstamp 5E8F6C5B)
-    (at 22.45 20 270)
-    (path /5E8F0DA8)
-    (fp_text reference U1 (at 0 5.072 270) (layer F.SilkS)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text value CE3520K3 (at 0 4.072 270) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (fp_text user Gate (at 1.4 -0.5 270) (layer Dwgs.User)
-      (effects (font (size 0.2 0.2) (thickness 0.05)))
-    )
-    (fp_text user Drain (at -1.3 -0.5 270) (layer Dwgs.User)
-      (effects (font (size 0.2 0.2) (thickness 0.05)))
-    )
-    (fp_text user Source (at -0.5 -1.3) (layer Dwgs.User)
-      (effects (font (size 0.2 0.2) (thickness 0.05)))
-    )
-    (fp_text user Source (at -0.5 1.4) (layer Dwgs.User)
-      (effects (font (size 0.2 0.2) (thickness 0.05)))
-    )
-    (fp_circle (center 0 0) (end 0.583095 0) (layer F.SilkS) (width 0.15))
-    (fp_circle (center 0.4 0) (end 0.5 0) (layer F.SilkS) (width 0.15))
-    (pad 2 smd rect (at -1.35 0) (size 0.65 1) (layers F.Cu F.Paste F.Mask)
-      (net 3 /GATE))
-    (pad 1 smd rect (at 0 -1.35 270) (size 0.65 1) (layers F.Cu F.Paste F.Mask)
-      (net 2 GND))
-    (pad 4 smd rect (at 1.35 0 180) (size 0.65 1) (layers F.Cu F.Paste F.Mask)
-      (net 3 /GATE))
-    (pad 3 smd rect (at 0 1.35 90) (size 0.65 1) (layers F.Cu F.Paste F.Mask)
-      (net 2 GND))
   )
 
   (segment (start 15 12.75) (end 15 12.5) (width 0.05) (layer F.Cu) (net 0))
   (segment (start 15 12.5) (end 15.25 12.5) (width 0.05) (layer F.Cu) (net 0))
   (segment (start 28.75 27.25) (end 28.75 27.5) (width 0.05) (layer F.Cu) (net 0))
   (segment (start 28.75 27.5) (end 28.5 27.5) (width 0.05) (layer F.Cu) (net 0))
-  (segment (start 26.95 20) (end 24.2 20) (width 0.1) (layer F.Cu) (net 2))
-  (segment (start 22.45 22.5) (end 22.45 25.25) (width 0.1) (layer F.Cu) (net 3) (tstamp 5E8F704A))
-  (segment (start 22.45 14.75) (end 22.45 17.5) (width 0.1) (layer F.Cu) (net 1) (tstamp 5E8F704A))
-  (segment (start 18.35 19.42088) (end 18.35 20.57912) (width 0.5) (layer F.Cu) (net 3))
+  (segment (start 22.5 15.25) (end 22.5 23.5) (width 0.7) (layer F.Cu) (net 0))
 
-  (zone (net 3) (net_name /GATE) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0.508))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
-    (polygon
-      (pts
-        (xy 24.95 22.5) (xy 24.95 21) (xy 19.95 21) (xy 19.95 22.5)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 24.823 22.373) (xy 20.077 22.373) (xy 20.077 21.127) (xy 24.823 21.127)
-      )
-    )
-  )
-  (zone (net 3) (net_name /GATE) (layer F.Cu) (tstamp 5E8F6D5D) (hatch edge 0.508)
-    (connect_pads yes (clearance 0.508))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
-    (polygon
-      (pts
-        (xy 24.95 19) (xy 24.95 17.5) (xy 19.95 17.5) (xy 19.95 19)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 24.823 18.873) (xy 20.077 18.873) (xy 20.077 17.627) (xy 24.823 17.627)
-      )
-    )
-  )
-  (zone (net 2) (net_name GND) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 19.95 19.75) (xy 24.95 19.75) (xy 24.95 20.25) (xy 19.95 20.25)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 24.823 20.123) (xy 20.077 20.123) (xy 20.077 19.877) (xy 24.823 19.877)
-      )
-    )
-  )
-  (zone (net 1) (net_name /OSC1) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 20.45 18) (xy 20.45 16.5) (xy 19.95 16.5) (xy 19.95 18)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 20.323 17.873) (xy 20.077 17.873) (xy 20.077 16.627) (xy 20.323 16.627)
-      )
-    )
-  )
-  (zone (net 1) (net_name /OSC1) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 20.45 16.5) (xy 20.45 17.25) (xy 17.95 17.25) (xy 17.95 16.5)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 20.323 17.123) (xy 18.077 17.123) (xy 18.077 16.627) (xy 20.323 16.627)
-      )
-    )
-  )
-  (zone (net 3) (net_name /GATE) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 17.95 16.5) (xy 17.95 19.5) (xy 18.7 19.5) (xy 18.7 16.5)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 18.573 19.373) (xy 18.077 19.373) (xy 18.077 16.627) (xy 18.573 16.627)
-      )
-    )
-  )
-  (zone (net 3) (net_name /GATE) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 20.45 22) (xy 20.45 23.5) (xy 19.95 23.5) (xy 19.95 22)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 20.323 23.373) (xy 20.077 23.373) (xy 20.077 22.127) (xy 20.323 22.127)
-      )
-    )
-  )
-  (zone (net 3) (net_name /GATE) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 20.45 23.5) (xy 17.95 23.5) (xy 17.95 20.5) (xy 18.7 20.5) (xy 18.7 22.75)
-        (xy 20.45 22.75)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 18.573 22.75) (xy 18.582667 22.798601) (xy 18.610197 22.839803) (xy 18.651399 22.867333) (xy 18.7 22.877)
-        (xy 20.323 22.877) (xy 20.323 23.373) (xy 18.077 23.373) (xy 18.077 20.627) (xy 18.573 20.627)
-      )
-    )
-  )
-  (zone (net 1) (net_name /OSC1) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 22 15) (xy 23 15) (xy 23 14) (xy 22 14)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 22.873 14.873) (xy 22.127 14.873) (xy 22.127 14.127) (xy 22.873 14.127)
-      )
-    )
-  )
-  (zone (net 2) (net_name GND) (layer F.Cu) (tstamp 0) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 26.75 19.5) (xy 26.75 20.5) (xy 27.75 20.5) (xy 27.75 19.5)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 27.623 20.373) (xy 26.877 20.373) (xy 26.877 19.627) (xy 27.623 19.627)
-      )
-    )
-  )
-  (zone (net 3) (net_name /GATE) (layer F.Cu) (tstamp 5E8F8DCA) (hatch edge 0.508)
-    (connect_pads yes (clearance 0))
-    (min_thickness 0.254)
-    (fill yes (arc_segments 16) (thermal_gap 0) (thermal_bridge_width 0))
-    (polygon
-      (pts
-        (xy 23 25) (xy 22 25) (xy 22 26) (xy 23 26)
-      )
-    )
-    (filled_polygon
-      (pts
-        (xy 22.873 25.873) (xy 22.127 25.873) (xy 22.127 25.127) (xy 22.873 25.127)
-      )
-    )
-  )
 )

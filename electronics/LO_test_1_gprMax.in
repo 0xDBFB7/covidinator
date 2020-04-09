@@ -75,12 +75,12 @@ tx_pos_y = import_pos_y + 0.0065
 tx_pos_z = import_pos_z
 print("#voltage_source: z {} {} {} 1 waveform_1".format(tx_pos_x,tx_pos_y,tx_pos_z))
 #polarization, x,y,z, resistance, waveform          
-print("#rx: {} {} {} tx_1 Ez".format(tx_pos_x,tx_pos_y,tx_pos_z))
+print("#rx: {} {} {}".format(tx_pos_x,tx_pos_y,tx_pos_z))
 
 rx_pos_x = import_pos_x + 0.0075
 rx_pos_y = import_pos_y + 0.00875
 rx_pos_z = import_pos_z
-print("#rx: {} {} {} rx_1 Ez".format(rx_pos_x,rx_pos_y,rx_pos_z))
+print("#rx: {} {} {}".format(rx_pos_x,rx_pos_y,rx_pos_z))
 
 
 geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry') #creates .vti file, no edges
@@ -99,7 +99,7 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 
 /#excitation_file: excitation.txt linear extrapolate
 /#waveform: contsine 10 20e9 waveform_1
-#waveform: gaussian 10 30e9 waveform_1
+#waveform: gaussian 1e6 10e9 waveform_1
 /#waveform: contsine 100 8e9 waveform_1
 /#gaussian 1 
 
@@ -112,3 +112,4 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 //filters->alphabetical->threshold-ing the .vtp at <2 in paraview makes for a cleaner view
 //
 //then python -m tools.plot_Ascan LO_test_1_gprMax.out --outputs Ez
+

@@ -434,6 +434,8 @@ Using sudo breaks conda. Good to know! You can just pip without sudo.
 
 
 
+Simulating the stock active antenna from NASA. Capacitor has been shorted for testing.
+
 Trying to measure impulse response. Using an 0.01e-9 second pulse, exciting in Ez, monitoring gate in Ez, all I get is this: 
 
 ![](/home/arthurdent/Projects/covidinator/media/run_strange.png)
@@ -446,6 +448,22 @@ Huh, that still happens if the impulse is lengthened - but not if the pulse is s
 
 Getting awfully close to memory limits on this workstation.
 
-Switching to a 30 GHz gaussian pulse, we get: 
+Switching to a 30 GHz gaussian pulse, which produces a nice and flat frequency-domain curve up to about 50 GHz, we get: 
 
 ![run_more_decent.png](/home/arthurdent/Projects/covidinator/media/run_more_decent.png)
+
+10ghz impulse. There certainly is a peak at 7 GHz, but it's pretty hard to discern. The phase difference is equally hard to discern.
+
+![test_3.png](/home/arthurdent/Projects/covidinator/media/test_3.png)
+
+The CE3520K3 has a gain of perhaps 10 at X-band. The input to output feedback ratio for this circuit is 
+
+Oh man, it's probably roundoff error, the signal is only e-18 V! Let's raise that. Also, I'm measuring the electric field from inside the trace. Is that correct? 
+
+X and Y pol. mag. was on the order of e-12 for this run.
+
+Using wcalc, a 50r microstrip on er=10.3 should be 0.6939mm, has a delay of 9.1e-11s / cm - so it's definitely not a time issue, we're fine at 2e-9
+
+Let's try a basic microstrip calculation.
+
+
