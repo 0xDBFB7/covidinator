@@ -23,7 +23,7 @@ domain_x = 0.02
 domain_y = 0.02
 domain_z = 0.01
 
-N = 50 +20
+N = 100 +20
 #PML boundaries are 10 cells on each side of the domain
 
 domain(domain_x, domain_y, domain_z)
@@ -34,7 +34,7 @@ cell_z = domain_z/N
 
 dx_dy_dz(cell_x,cell_y,cell_z)
 
-#copper_thickness = 0.0007
+copper_thickness = 0.000035
 substrate_thickness = 0.0007
 
 #ground plane
@@ -62,27 +62,36 @@ import_pos_z = cells_from_border*cell_z+substrate_thickness;
 for x in range(0, img.shape[0]-1):
     for y in range(0, img.shape[1]-1):
         if(np.sum(img[x,y])): 
-            position_x = import_pos_x+(x*cell_x)
-            position_y = import_pos_y+(y*cell_y)
+            position_x = import_pos_x+(y*cell_x)
+            position_y = import_pos_y+(x*cell_y) #mirror!
             #plate(position_x, position_y, import_pos_z, \
             #            position_x+cell_x, position_y+cell_y, import_pos_z, 'copper')
             box(position_x, position_y, import_pos_z, \
-                                    position_x+cell_x, position_y+cell_y, import_pos_z+cell_z, 'copper')
+                                    position_x+cell_x, position_y+cell_y, import_pos_z+copper_thickness, 'copper')
             
 
-print("#voltage_source: z 0.0075 0.0065 {} 1 waveform_1".format(import_pos_z))
+tx_pos_x = import_pos_x + 0.0075
+tx_pos_y = import_pos_y + 0.0065
+tx_pos_z = import_pos_z
+print("#voltage_source: z {} {} {} 1 waveform_1".format(tx_pos_x,tx_pos_y,tx_pos_z))
 #polarization, x,y,z, resistance, waveform          
 
-print("#rx: 0.0075 0.0065 {} rx_0 Ez".format(import_pos_z))
 
-print("#rx: 0.0075 0.00875 {} rx_1 Ez".format(import_pos_z))
+#print("#rx: 0.0075 0.0065 {} rx_0 Ez".format(import_pos_z))
+
+rx_pos_x = import_pos_x + 0.0075
+rx_pos_y = import_pos_y + 0.00875
+rx_pos_z = import_pos_z
+print("#rx: {} {} {} rx_1 Ez".format(rx_pos_x,rx_pos_y,rx_pos_z))
 
 
 geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry') #creates .vti file, no edges
 geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry',type="f") # creates .vtp file, no sources
 
-for i in range(1, 10):
-    print('#snapshot: {} {} {} {} {} {} {} {} {} {} snapshot{}'.format(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,time/31.0,i))
+snapshot_N = 200
+
+for i in range(1, snapshot_N):
+    print('#snapshot: {} {} {} {} {} {} {} {} {} {} snapshot{}'.format(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,(time/snapshot_N)*i,i))
 
 os.system("rm -r LO_test_1_gprMax_snaps/*")
 
@@ -91,14 +100,14 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 
 
 #excitation_file: excitation.txt linear extrapolate
-/#waveform: contsine 1 8e9 waveform_1
+/#waveform: contsine 100 8e9 waveform_1
 /#gaussian 1 
 
 
 //run with:
 
-//
-//python -m gprMax LO_test_1_gprMax.in
+//export PATH=/usr/local/cuda-10.2/bin:$PATH
+//python -m gprMax LO_test_1_gprMax.in -gpu (gpu doesn't work with transmission lines yet)
 //requires inkscape
 //filters->alphabetical->threshold-ing the .vtp at <2 in paraview makes for a cleaner view
 //

@@ -428,4 +428,12 @@ Spacebar sets kicad origin.
 
 What polarization should we be measuring? Ez seems to correspond to the qTEM mode...
 
+> sudo  CUDA_ROOT=/usr/local/cuda-10.2/ PATH=/usr/local/cuda-10.2/bin:$PATH CUDA_INC_DIR=/usr/local/cuda-10.2/include pip3 -vvv install pycuda
+
+Using sudo breaks conda. Good to know! You can just pip without sudo.
+
+
+
+
+
 
