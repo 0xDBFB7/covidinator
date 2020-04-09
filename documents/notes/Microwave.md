@@ -434,6 +434,18 @@ Using sudo breaks conda. Good to know! You can just pip without sudo.
 
 
 
+Trying to measure impulse response. Using an 0.01e-9 second pulse, exciting in Ez, monitoring gate in Ez, all I get is this: 
+
+![](/home/arthurdent/Projects/covidinator/media/run_strange.png)
 
 
 
+The frequency there is a few femtoseconds. not sure what's going on there.
+
+Huh, that still happens if the impulse is lengthened - but not if the pulse is set to zero.
+
+Getting awfully close to memory limits on this workstation.
+
+Switching to a 30 GHz gaussian pulse, we get: 
+
+![run_more_decent.png](/home/arthurdent/Projects/covidinator/media/run_more_decent.png)

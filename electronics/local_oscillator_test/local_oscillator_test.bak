@@ -64,4 +64,8 @@ F 3 "" H 3200 3500 50  0001 C CNN
 	1    3200 3500
 	1    0    0    -1  
 $EndComp
+Text Label 3100 3000 0    50   ~ 0
+OSC1
+Text Label 2600 3300 0    50   ~ 0
+GATE
 $EndSCHEMATC

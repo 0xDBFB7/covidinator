@@ -35,7 +35,7 @@ cell_z = domain_z/N
 dx_dy_dz(cell_x,cell_y,cell_z)
 
 copper_thickness = 0.000035
-substrate_thickness = 0.0007
+substrate_thickness = 0.00079
 
 #ground plane
 cells_from_border = 12
@@ -75,9 +75,7 @@ tx_pos_y = import_pos_y + 0.0065
 tx_pos_z = import_pos_z
 print("#voltage_source: z {} {} {} 1 waveform_1".format(tx_pos_x,tx_pos_y,tx_pos_z))
 #polarization, x,y,z, resistance, waveform          
-
-
-#print("#rx: 0.0075 0.0065 {} rx_0 Ez".format(import_pos_z))
+print("#rx: {} {} {} tx_1 Ez".format(tx_pos_x,tx_pos_y,tx_pos_z))
 
 rx_pos_x = import_pos_x + 0.0075
 rx_pos_y = import_pos_y + 0.00875
@@ -99,7 +97,9 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 ---------------------------------------------------
 
 
-#excitation_file: excitation.txt linear extrapolate
+/#excitation_file: excitation.txt linear extrapolate
+/#waveform: contsine 10 20e9 waveform_1
+#waveform: gaussian 10 30e9 waveform_1
 /#waveform: contsine 100 8e9 waveform_1
 /#gaussian 1 
 
