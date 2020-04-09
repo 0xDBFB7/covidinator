@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=0,-310,800,1610,0.909095,97,0>
+  <View=-74,-173,1334,920,0.909091,0,0>
   <Grid=10,10,1>
   <DataSet=local_oscillator_test_qucs.dat>
   <DataDisplay=local_oscillator_test_qucs.dpl>
@@ -16,23 +16,35 @@
 <Symbol>
 </Symbol>
 <Components>
-  <_MOSFET T1 1 460 -200 8 -26 0 0 "nfet" 0 "1.0 V" 1 "2e-5" 1 "0.0" 0 "0.6 V" 0 "0.0" 1 "0.0 Ohm" 0 "0.0 Ohm" 0 "0.0 Ohm" 0 "1e-14 A" 0 "1.0" 0 "1 um" 0 "1 um" 0 "0.0" 0 "0.1 um" 0 "0.0" 0 "0.0" 0 "0.0" 0 "0.0 F" 0 "0.0 F" 0 "0.8 V" 0 "0.5" 0 "0.5" 0 "0.0" 0 "0.33" 0 "0.0 ps" 0 "0.0" 0 "0.0" 0 "1" 0 "600.0" 0 "0.0" 0 "1" 0 "1" 0 "0.0" 0 "0.0" 0 "0.0" 0 "0.0" 0 "0.0 m" 0 "0.0 m" 0 "0.0" 0 "1.0" 0 "1.0" 0 "26.85" 0 "26.85" 0>
-  <.SP SPTC1 1 242 221 0 73 0 0 "log" 1 "0.55 GHz" 1 "55 GHz" 1 "51" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <SUBST SubstTC1 1 642 111 -30 24 0 0 "4.35" 1 "0.79 mm" 1 "2.54 um" 1 "0" 1 "2.43902e-08" 1 "0" 1>
-  <Eqn EqnTC1 1 432 231 -23 12 0 0 "A=twoport(S,'S','A')" 1 "ZL=real(sqrt(A[1,2]/A[2,1]))" 1 "yes" 0>
-  <Pac P1 1 282 101 -74 -26 1 1 "1" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
-  <Pac P2 1 462 101 18 -26 0 1 "2" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
-  <GND *1 5 282 131 0 0 0 0>
-  <GND *2 5 462 131 0 0 0 0>
-  <MLIN MSTC1 1 372 51 -60 -98 0 0 "SubstTC1" 1 "1.52372 mm" 1 "0 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <Pac P1 1 430 360 18 -26 0 1 "1" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *1 5 430 390 0 0 0 0>
+  <MGAP MS1 1 490 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "1.543 mm" 1 "91.13 um" 1 "Hammerstad" 0 "Kirschning" 0>
+  <MLIN MS2 1 580 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "14.36 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MGAP MS3 1 670 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "1.543 mm" 1 "1.333 mm" 1 "Hammerstad" 0 "Kirschning" 0>
+  <MLIN MS4 1 760 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "14.54 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MGAP MS5 1 850 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "1.543 mm" 1 "1.731 mm" 1 "Hammerstad" 0 "Kirschning" 0>
+  <MLIN MS6 1 940 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "14.49 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MGAP MS7 1 1030 220 -26 15 0 0 "Subst1" 0 "1.543 mm" 1 "1.543 mm" 1 "492.7 um" 1 "Hammerstad" 0 "Kirschning" 0>
+  <Pac P2 1 1110 360 18 -26 0 1 "2" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *2 5 1110 390 0 0 0 0>
+  <.SP SP1 1 440 460 0 69 0 0 "lin" 1 "5 GHz" 1 "6 GHz" 1 "300" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <SUBST Subst1 1 670 500 -30 24 0 0 "4.2" 1 "790 um" 1 "34.29 um" 1 "0" 1 "1e-10" 1 "0" 1>
+  <Eqn Eqn1 1 820 560 -28 15 0 0 "S21_dB=dB(S[2,1])" 1 "S11_dB=dB(S[1,1])" 1 "yes" 0>
 </Components>
 <Wires>
-  <282 51 342 51 "" 0 0 0 "">
-  <282 51 282 71 "" 0 0 0 "">
-  <402 51 462 51 "" 0 0 0 "">
-  <462 51 462 71 "" 0 0 0 "">
+  <430 220 430 330 "" 0 0 0 "">
+  <430 220 460 220 "" 0 0 0 "">
+  <1110 220 1110 330 "" 0 0 0 "">
+  <1060 220 1110 220 "" 0 0 0 "">
+  <520 220 550 220 "" 0 0 0 "">
+  <610 220 640 220 "" 0 0 0 "">
+  <700 220 730 220 "" 0 0 0 "">
+  <790 220 820 220 "" 0 0 0 "">
+  <880 220 910 220 "" 0 0 0 "">
+  <970 220 1000 220 "" 0 0 0 "">
 </Wires>
 <Diagrams>
 </Diagrams>
 <Paintings>
+  <Text 790 460 12 #000000 0 "end-coupled, half-wavelength bandpass filter \n Bessel 5.5 GHz...5.51 GHz \n impedance matching 50 Ohm">
 </Paintings>

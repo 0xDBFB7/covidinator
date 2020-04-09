@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=0,40,800,1091,1,131,120>
+  <View=-489,-129,1038,988,0.909098,0,0>
   <Grid=10,10,0>
   <DataSet=filter.dat>
   <DataDisplay=filter.sch>
@@ -20,6 +20,12 @@
 <Wires>
 </Wires>
 <Diagrams>
+  <Rect 430 910 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S11_dB" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -392 659 1423 550 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S21_dB" #0000ff 0 3 0 0 0>
+  </Rect>
 </Diagrams>
 <Paintings>
 </Paintings>

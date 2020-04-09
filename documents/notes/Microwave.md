@@ -405,3 +405,27 @@ Unlike openEMS, gprMax doesn't have mesh-refinement features. 0.05/(0.0007/5) = 
 file:///home/arthurdent/Downloads/electronics-08-01506%20(1).pdf
 
 If they got such good agreement with just 1 cell, a substrate 2 or 3 cells thick should probably do.
+
+I think there's a bug in QUCS; exciting a transmission line with a voltage pulse source doesn't work.
+
+Mmm, perhaps not. More testing required.
+
+
+
+I want to hack gprMax to introduce arbitrary functions (perhaps SPICE?) to nodes based on other nodes; this would seem to allow simulation of resistors, transistors, capacitors, etc.
+
+We want to make a [https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/receivers.py](https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/receivers.py)
+
+line 424 in [https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/model_build_run.py](https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/model_build_run.py) seems to be where the magic happens
+
+Man, this is such an amazing codebase. It's so readable!
+
+
+
+We need the loop gain of the oscillator to be >1. The signal coming out of the feedback loop multiplied by the gain of the transistor should be > the input, and the phase shift should be like 
+
+Spacebar sets kicad origin.
+
+What polarization should we be measuring? Ez seems to correspond to the qTEM mode...
+
+
