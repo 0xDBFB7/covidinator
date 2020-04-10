@@ -522,4 +522,8 @@ Definitely changes the spectrum.
 
 So we'll need to modify things a bit.
 
+Removed some of the dead-space to get better resolution on some of those inductors, that changed things pretty significantly. Distance to the boundary certainly does matter.
+
+
+
 

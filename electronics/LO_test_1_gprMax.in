@@ -2,8 +2,8 @@
 
 
 #material: 1     6e7     1 0 copper
-#material: 4.2   0.0001  1 0 substrate
-//#material: 10.3   0.0001  1 0 substrate
+//#material: 4.2   0.0001  1 0 substrate
+#material: 10.3   0.0001  1 0 substrate
 
 //rel permittivity, conductivity (S/m), rel. permeability, magnetic loss (Ohms/m)
 
@@ -19,8 +19,8 @@ time = 2e-9
 print("#time_window: {}".format(time))
 
 
-domain_x = 0.014
-domain_y = 0.014
+domain_x = 0.0155
+domain_y = 0.0155
 domain_z = 0.005
 
 N = 100 +20
