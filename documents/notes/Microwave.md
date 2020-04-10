@@ -524,6 +524,71 @@ So we'll need to modify things a bit.
 
 Removed some of the dead-space to get better resolution on some of those inductors, that changed things pretty significantly. Distance to the boundary certainly does matter.
 
+It'll be a little tricky to model phase shift from varactors etc in this model. The best option would probably be to implement a SPICE module within gprMax's run loop.
+
+Oh, the source-GND connection wasn't modeled in those runs. That shouldn't change much, since it's at the end of the inductor.
+
+
+
+file:///home/arthurdent/Zotero/storage/YBFB6ILR/Bonefacic_Bartolic_2005_Design%20Considerations%20of%20an%20Active%20Integrated%20Antenna%20with%20Negative%20Resistance.pdf
+
+> When a two-port device (e.g. bipolar transistor or FET) is
+> used there are two possibilities. The first is to load the twoport device in such a way to get negative resistance in the
+> frequency band of interest at one of the ports. In that case
+> the oscillator design is similar to the one with an one-port.
+> The second possibility is to use the active two-port as an
+> amplifier with positive feedback [11]. This approach usually requires relatively long lines to assure the required
+> phase shift in the feedback loop resulting in larger substrate
+> area for the fabrication of the active antenna.
+
+
+
+> The two active integrated antennas are mutually coupled
+> predominantly by radiation which results in mutual injection locking. The coupling strength and phase are determined by the array inter-element distance d. The analysis and
+> stability considerations in [7] show that the coupling phase
+> around 0° gives the best results for weakly coupled spatial
+> power combining arrays.
+
+Huh, that's a neat technique - bypass the whole phased-array thing, injection-lock them all together
+
+---
+
+For fun, quickly cut a copper-tape feedback loop with a CE MMIC. 1.6 mm (fr1?), 4pF blocking cap. Oscillation was unstable until a small piece of copper tape was placed on the feedback loop. Unbelievably, it lit right up. at 4.975 GHz. Near-field effects from fingers and stuff definitely have a significant effect - it's actually a very effective radar right now - might need a unidirectional coupler or something, and some shielding on the feedback loop.
+
+With 2.4v bias, "stalled" current is about 0.019, drops to 0.013 when running smoothly.
+
+![my_photo-2.jpg](/home/arthurdent/Projects/covidinator/media/my_photo-2.jpg)
+
+Most of the noise seems to be spurs from the HackRF itself. Putting the device into a metal project box made it far less sensitive to touch, but the current seemed to decrease to 0.006? Odd.
+
+Mmm, no, persisted after it was removed.
+
+IF on the mixer is only up to 4 GHz. We'll need to "leap-frog" LOs.
+
+It's a VCO, too! About 25 MHz/V from 2-3V. Power doesn't change a whole lot.
+
+Cutting a 1mm sliver off the "antenna wing thing" increased F by 100 MHz.
+
+Recommended drain current is a mere 10 mA for this device; 20 was breifly drawn. The mosfet seems to have failed short after a great deal of prodding.
+
+Building another circuit. 
+
+~~To try to decrease the sensitivity, using proper 3.2 mm microstrip all the way around. ~~~
+
+At 6 GHz and this substrate, we need 13.67 mm long feedback loop to get a 180 deg. phase shift.
+
+Oh, this material is actually only 1.4 mm thick. 
+
+2.778 mm microstrip, 13.73 mm long FB.
+
+![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-10 12-48-19.png)
+
+That's basically perfect!
+
+![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-10 12-42-44.png)
+
+
+
 
 
 
