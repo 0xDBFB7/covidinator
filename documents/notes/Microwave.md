@@ -466,4 +466,60 @@ Using wcalc, a 50r microstrip on er=10.3 should be 0.6939mm, has a delay of 9.1e
 
 Let's try a basic microstrip calculation.
 
+Oh, and I forgot to switch the ground plane to box. Done.
+
+Previous coords:
+
+0.0075,0.0065
+
+0.0075,0.00875
+
+Impedance changed to 50 ohms.
+
+Not much difference with simple microstrip: still only e-9 v/m on the output, max in Ez.
+
+Hmm. It looks like something is reflecting off the ABCs. Strange! Going to add more distance around the model.
+
+
+
+Oh, the scale was on log in paraview - that's probably why the reflections looked so severe.
+
+With tx and rx above conductors, y plane excite and z plane recieve, continuous, ratio is 1/500. Removing the microstrip copper and leaving the rest unchanged,
+
+the excitation E has gone up to 40000, ratio is 1/20000! fantastic. we are, in fact, simulating something.
+
+Indeed, the resonance peaks in the FFT that were previously present have disappeared.
+
+Next let's try simming the filter we synthesized and see if we can satisfy the barkhausen criteria.
+
+Oh right, the ground plane. Let's connect that. 
+
+That did it. I'm a doofus. Ratio is now 1/10.
+
+![test_4.png](/home/arthurdent/Projects/covidinator/media/test_4.png)
+
+Peak at 7 GHz compared to their 8.4 GHz. FB ratio is 1/80 now. 
+
+Inputting f=7GHz and setting a source turn-off at 1.5e-9 s, 
+
+that didn't work.
+
+The impulse peaks at frame 12. The wavefront bleeds through the source terminal a bit, then the FB line peaks at frame 27, so the phase shift is on the order of 0.15 ns. That's close to 2pi rad, which is longer than we would expect. 
+
+We should export and determine the phase shift that way.
+
+
+
+Here's the spectrum with er=4.2:
+
+
+
+![test_5.png](/home/arthurdent/Projects/covidinator/media/test_5.png)
+
+
+
+Definitely changes the spectrum.
+
+So we'll need to modify things a bit.
+
 

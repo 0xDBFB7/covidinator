@@ -1,10 +1,9 @@
 #num_threads: 14
 
-//seconds
 
 #material: 1     6e7     1 0 copper
-//#material: 4.5   0.0001  1 0 substrate
-#material: 10.3   0.0001  1 0 substrate
+#material: 4.2   0.0001  1 0 substrate
+//#material: 10.3   0.0001  1 0 substrate
 
 //rel permittivity, conductivity (S/m), rel. permeability, magnetic loss (Ohms/m)
 
@@ -14,14 +13,15 @@ from gprMax.input_cmd_funcs import *
 import matplotlib.image as mpimage
 import numpy as np
 import os 
+import math
 
 time = 2e-9
 print("#time_window: {}".format(time))
 
 
-domain_x = 0.02
-domain_y = 0.02
-domain_z = 0.01
+domain_x = 0.014
+domain_y = 0.014
+domain_z = 0.005
 
 N = 100 +20
 #PML boundaries are 10 cells on each side of the domain
@@ -30,7 +30,7 @@ domain(domain_x, domain_y, domain_z)
 
 cell_x = domain_x/N
 cell_y = domain_y/N
-cell_z = domain_z/N
+cell_z = domain_z/(N/2)
 
 dx_dy_dz(cell_x,cell_y,cell_z)
 
@@ -39,9 +39,8 @@ substrate_thickness = 0.00079
 
 #ground plane
 cells_from_border = 12
-plate(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z, 
+box(cells_from_border*cell_x, cells_from_border*cell_y, (cells_from_border*cell_z)-math.ceil(copper_thickness/cell_z)*cell_z, 
                             domain_x-(cells_from_border*cell_x), domain_y-(cells_from_border*cell_y), cells_from_border*cell_z, 'copper')
-
 
 box(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z, 
                             domain_x-(cells_from_border*cell_x), domain_y-(cells_from_border*cell_y), cells_from_border*cell_z+substrate_thickness, 'substrate')
@@ -70,18 +69,19 @@ for x in range(0, img.shape[0]-1):
                                     position_x+cell_x, position_y+cell_y, import_pos_z+copper_thickness, 'copper')
             
 
-tx_pos_x = import_pos_x + 0.0075
-tx_pos_y = import_pos_y + 0.0065
-tx_pos_z = import_pos_z
-print("#voltage_source: z {} {} {} 1 waveform_1".format(tx_pos_x,tx_pos_y,tx_pos_z))
+tx_pos_x = import_pos_x + 0.005
+tx_pos_y = import_pos_y + 0.00475
+tx_pos_z = import_pos_z - cell_z
+print("#voltage_source: z {} {} {} 50 waveform_1".format(tx_pos_x,tx_pos_y,tx_pos_z))
 #polarization, x,y,z, resistance, waveform          
 print("#rx: {} {} {}".format(tx_pos_x,tx_pos_y,tx_pos_z))
+box(tx_pos_x,tx_pos_y,import_pos_z-substrate_thickness,tx_pos_x+cell_x,tx_pos_y+cell_y,import_pos_z-(cell_z*2),'copper')
 
 rx_pos_x = import_pos_x + 0.0075
-rx_pos_y = import_pos_y + 0.00875
-rx_pos_z = import_pos_z
+rx_pos_y = import_pos_y + 0.00725
+rx_pos_z = import_pos_z - cell_z
 print("#rx: {} {} {}".format(rx_pos_x,rx_pos_y,rx_pos_z))
-
+box(rx_pos_x,rx_pos_y,import_pos_z-substrate_thickness,rx_pos_x+cell_x,rx_pos_y+cell_y,import_pos_z-(cell_z*2),'copper') #connect bottom of source to ground plane
 
 geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry') #creates .vti file, no edges
 geometry_view(0,0,0,domain_x,domain_y,domain_z,cell_x,cell_y,cell_z,'geometry',type="f") # creates .vtp file, no sources
@@ -98,8 +98,8 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 
 
 /#excitation_file: excitation.txt linear extrapolate
-/#waveform: contsine 10 20e9 waveform_1
-#waveform: gaussian 1e6 10e9 waveform_1
+/#waveform: contsine 1 7e9 waveform_1
+#waveform: gaussian 1 10e9 waveform_1
 /#waveform: contsine 100 8e9 waveform_1
 /#gaussian 1 
 
