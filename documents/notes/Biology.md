@@ -191,3 +191,5 @@ In retrospect, using individual eppendorfs was a pretty dumb idea. A microwell w
 [https://www.usascientific.com/breathe-easy-membranes/p/9126-1000](https://www.usascientific.com/breathe-easy-membranes/p/9126-1000)
 
 
+
+A pipette was heated via a 
