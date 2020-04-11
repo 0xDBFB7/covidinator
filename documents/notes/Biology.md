@@ -193,3 +193,19 @@ In retrospect, using individual eppendorfs was a pretty dumb idea. A microwell w
 
 
 A pipette was heated via a 
+
+
+
+Asciio lost everything on "oxygen synthesis". :( That was really cool! aww
+
+Anyhow, manganese dioxide catalyzes decomposition of hydrogen peroxide, even the battery-derived stuff I have worked fine, 
+
+the whole concoction would then be sterile, including all the air supply. Everything could be hermetic.
+
+
+
+
+
+
+
+
