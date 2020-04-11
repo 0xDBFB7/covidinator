@@ -165,3 +165,24 @@ Agitation/stirrer! If insulating and transparent, can be mounted to the very sam
 A heated Microwell might have been a better idea.
 
 Eh, nevermind - we can probably reliably work with 0.1 mL (the first graduation in these cent. tubes) - that's only two tubes worth of LB, etc. That's fine.
+
+Derlin is ostensibly autoclavable, but emits formadehyde vapor -[https://journals.sagepub.com/doi/pdf/10.1177/109135059700200309](https://journals.sagepub.com/doi/pdf/10.1177/109135059700200309)
+
+> It should be noted that acetal releases formaldehyde in the autoclave. The Nalgene" catalog
+> recommends autoclaving acetal test tube racks at 121°C maximum for 20 minutes at 15 psig.
+> Proper ventilation is required for autoclaving of acetal. Autoclaving acetal racks for longer
+> periods or at higher temperatures results in the release of dangerous levels offormaldehyde.
+
+
+
+
+[https://aem.asm.org/content/aem/21/4/633.full.pdf](https://aem.asm.org/content/aem/21/4/633.full.pdf)
+
+"Chloroform (1
+ml) was added to the culture to artificially disrupt
+any cells that had failed to undergo phage-induced
+lysis."
+
+a "ferris wheel" type agitator looks pretty simple; putting some debris in an eppendorf, 
+
+

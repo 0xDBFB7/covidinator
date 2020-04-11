@@ -591,4 +591,12 @@ That's basically perfect!
 
 
 
+An ascii "flowchart" might be a good replacement for a lab notebook. Above, for instance; I referenced an incorrect value and updated it. 
+
+A whole project could be a single, huge flowchart with multiple starts for different parts, latex equations, snips from references, etc. Asciio is pretty good, a few problems. Especially neat that ascii symbols 
+
+Dia doesn't really do it.
+
+
+
 
