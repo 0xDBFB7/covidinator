@@ -173,9 +173,6 @@ Derlin is ostensibly autoclavable, but emits formadehyde vapor -[https://journal
 > Proper ventilation is required for autoclaving of acetal. Autoclaving acetal racks for longer
 > periods or at higher temperatures results in the release of dangerous levels offormaldehyde.
 
-
-
-
 [https://aem.asm.org/content/aem/21/4/633.full.pdf](https://aem.asm.org/content/aem/21/4/633.full.pdf)
 
 "Chloroform (1
@@ -183,6 +180,14 @@ ml) was added to the culture to artificially disrupt
 any cells that had failed to undergo phage-induced
 lysis."
 
-a "ferris wheel" type agitator looks pretty simple; putting some debris in an eppendorf, 
+a "ferris wheel" type agitator looks pretty simple; putting some debris in an eppendorf, not
+
+Autoclave has an auto-simmer feature; should watch for that.
+
+Dad made an eppendorf rack out of a sheet of PP. 13 wells. First attempts cracked a bit, warming the polyprop. in an oven worked really well.
+
+In retrospect, using individual eppendorfs was a pretty dumb idea. A microwell would have been better.
+
+[https://www.usascientific.com/breathe-easy-membranes/p/9126-1000](https://www.usascientific.com/breathe-easy-membranes/p/9126-1000)
 
 

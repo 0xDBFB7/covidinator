@@ -19,5 +19,3 @@ It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With su
 The 3-ohm resistor required for a T-type attenuator might be a bit tricky with this process. A pi-type needs a 250 ohm R.
 
 ----
-
-
