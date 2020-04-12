@@ -410,8 +410,6 @@ I think there's a bug in QUCS; exciting a transmission line with a voltage pulse
 
 Mmm, perhaps not. More testing required.
 
-
-
 I want to hack gprMax to introduce arbitrary functions (perhaps SPICE?) to nodes based on other nodes; this would seem to allow simulation of resistors, transistors, capacitors, etc.
 
 We want to make a [https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/receivers.py](https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/receivers.py)
@@ -419,8 +417,6 @@ We want to make a [https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d4
 line 424 in [https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/model_build_run.py](https://github.com/gprMax/gprMax/blob/fb0b4d6ce947395d09189d417f3615475cf12186/gprMax/model_build_run.py) seems to be where the magic happens
 
 Man, this is such an amazing codebase. It's so readable!
-
-
 
 We need the loop gain of the oscillator to be >1. The signal coming out of the feedback loop multiplied by the gain of the transistor should be > the input, and the phase shift should be like 
 
@@ -432,15 +428,11 @@ What polarization should we be measuring? Ez seems to correspond to the qTEM mod
 
 Using sudo breaks conda. Good to know! You can just pip without sudo.
 
-
-
 Simulating the stock active antenna from NASA. Capacitor has been shorted for testing.
 
 Trying to measure impulse response. Using an 0.01e-9 second pulse, exciting in Ez, monitoring gate in Ez, all I get is this: 
 
 ![](/home/arthurdent/Projects/covidinator/media/run_strange.png)
-
-
 
 The frequency there is a few femtoseconds. not sure what's going on there.
 
@@ -480,8 +472,6 @@ Not much difference with simple microstrip: still only e-9 v/m on the output, ma
 
 Hmm. It looks like something is reflecting off the ABCs. Strange! Going to add more distance around the model.
 
-
-
 Oh, the scale was on log in paraview - that's probably why the reflections looked so severe.
 
 With tx and rx above conductors, y plane excite and z plane recieve, continuous, ratio is 1/500. Removing the microstrip copper and leaving the rest unchanged,
@@ -508,15 +498,9 @@ The impulse peaks at frame 12. The wavefront bleeds through the source terminal 
 
 We should export and determine the phase shift that way.
 
-
-
 Here's the spectrum with er=4.2:
 
-
-
 ![test_5.png](/home/arthurdent/Projects/covidinator/media/test_5.png)
-
-
 
 Definitely changes the spectrum.
 
@@ -527,8 +511,6 @@ Removed some of the dead-space to get better resolution on some of those inducto
 It'll be a little tricky to model phase shift from varactors etc in this model. The best option would probably be to implement a SPICE module within gprMax's run loop.
 
 Oh, the source-GND connection wasn't modeled in those runs. That shouldn't change much, since it's at the end of the inductor.
-
-
 
 file:///home/arthurdent/Zotero/storage/YBFB6ILR/Bonefacic_Bartolic_2005_Design%20Considerations%20of%20an%20Active%20Integrated%20Antenna%20with%20Negative%20Resistance.pdf
 
@@ -541,8 +523,6 @@ file:///home/arthurdent/Zotero/storage/YBFB6ILR/Bonefacic_Bartolic_2005_Design%2
 > phase shift in the feedback loop resulting in larger substrate
 > area for the fabrication of the active antenna.
 
-
-
 > The two active integrated antennas are mutually coupled
 > predominantly by radiation which results in mutual injection locking. The coupling strength and phase are determined by the array inter-element distance d. The analysis and
 > stability considerations in [7] show that the coupling phase
@@ -553,7 +533,7 @@ Huh, that's a neat technique - bypass the whole phased-array thing, injection-lo
 
 ---
 
-For fun, quickly cut a copper-tape feedback loop with a CE MMIC. 1.6 mm (fr1?), 4pF blocking cap. Oscillation was unstable until a small piece of copper tape was placed on the feedback loop. Unbelievably, it lit right up. at 4.975 GHz. Near-field effects from fingers and stuff definitely have a significant effect - it's actually a very effective radar right now - might need a unidirectional coupler or something, and some shielding on the feedback loop.
+For fun, quickly cut a copper-tape feedback loop with a CE MMIC. 1.6 mm (fr1?), 4pF 0603 blocking cap. Oscillation was unstable until a small piece of copper tape was placed on the feedback loop. Unbelievably, it lit right up. at 4.975 GHz. Near-field effects from fingers and stuff definitely have a significant effect - it's actually a very effective radar right now - might need a unidirectional coupler or something, and some shielding on the feedback loop.
 
 With 2.4v bias, "stalled" current is about 0.019, drops to 0.013 when running smoothly.
 
@@ -587,9 +567,7 @@ That's basically perfect!
 
 ![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-10 12-42-44.png)
 
-
-
-
+-----
 
 An ascii "flowchart" might be a good replacement for a lab notebook. Above, for instance; I referenced an incorrect value and updated it. 
 
@@ -597,6 +575,22 @@ A whole project could be a single, huge flowchart with multiple starts for diffe
 
 Dia doesn't really do it.
 
+-----
 
+Going to try a 4:1 Wilkinson power divider for the feedback loop. [https://www.microwaves101.com/calculators/871-unequal-split-power-divider-calculator](https://www.microwaves101.com/calculators/871-unequal-split-power-divider-calculator)
+
+Need electrical length of 90 deg, 
+
+![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-11 21-24-18.png)
+
+R_w apparently avoids reflections - pretty important.
+
+Per Vishay, we can actually get away with stock 0603 50 ohm resistors up to 10 GHz - the impedance is off by at most 0.2x!
+
+A simple T or Y-coupler might work; we might not be that concerned with reflections?
+
+----
+
+Oh, do we even need a splitter? The gate doesn't take any power, can't we just continue the microstrip?
 
 

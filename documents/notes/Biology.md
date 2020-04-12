@@ -190,11 +190,7 @@ In retrospect, using individual eppendorfs was a pretty dumb idea. A microwell w
 
 [https://www.usascientific.com/breathe-easy-membranes/p/9126-1000](https://www.usascientific.com/breathe-easy-membranes/p/9126-1000)
 
-
-
 A pipette was heated via a 
-
-
 
 Asciio lost everything on "oxygen synthesis". :( That was really cool! aww
 
@@ -202,7 +198,13 @@ Anyhow, manganese dioxide catalyzes decomposition of hydrogen peroxide, even the
 
 the whole concoction would then be sterile, including all the air supply. Everything could be hermetic.
 
+-----
 
+Palm sander works really well as a vortex mixer for Eppendorfs. 11000 RPM - I suppose that makes sense - smaller tubes have a higher Fres. It's pretty simple; just an aluminum piece eccentric in a bearing, with a flywheel fan with an offset weight. Four plastic standoffs "live hinges" are used for the flexing part.
+
+                
+
+Rather than sterilizing pipettes after each use, we could just use a standard PnP nozzle-style collar-and-forks toolchanger.
 
 
 
