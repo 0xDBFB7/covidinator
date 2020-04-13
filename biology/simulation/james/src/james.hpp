@@ -10,19 +10,21 @@ struct particles{
     std::vector<double> charges;
     std::vector<double> masses;
 
+
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
+    void add_particle(std::vector<double> position, double charge, double mass);
 
 };
 
 struct stretchy_bonds{
     std::vector<int> p1;
     std::vector<int> p2;
-    std::vector<int> neutral_lengths;
+    std::vector<double> neutral_lengths;
 };
 
 struct bendy_bonds{
     std::vector<int> p1;
     std::vector<int> p2;
     std::vector<int> p3;
-    std::vector<int> neutral_angle;
+    std::vector<double> neutral_angle;
 };

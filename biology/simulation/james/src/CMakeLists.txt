@@ -1,5 +1,7 @@
 include_directories(./)
 
 
-add_executable(james james.cpp)
-target_link_libraries(james ${MATHGL2_LIBRARY} gtest gtest_main OpenMP::OpenMP_CXX )
+add_library(james_lib james.cpp)
+target_link_libraries(james_lib ${MATHGL2_LIBRARY} gtest gtest_main OpenMP::OpenMP_CXX )
+
+add_executable(james main.cpp)

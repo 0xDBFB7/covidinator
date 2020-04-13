@@ -1,8 +1,10 @@
 
+
 #include <mgl2/mgl.h>
 
 #include "gtest/gtest.h"
 
+#include "james_test.hpp"
 
 
 //rm -r * && cmake ../

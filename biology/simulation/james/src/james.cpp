@@ -15,7 +15,14 @@
 
 void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass){
     positions.insert(positions.end(), position.begin(), position.end());
-    velocity.insert(velocity.end(), velocity.begin(), velocity.end());
+    velocities.insert(velocity.end(), velocity.begin(), velocity.end());
+    charges.push_back(charge); //slow, whatever
+    masses.push_back(mass);
+}
+
+void particles::add_particle(std::vector<double> position, double charge, double mass){
+    positions.insert(positions.end(), position.begin(), position.end());
+    velocities.resize(velocities.size()+3,0);
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
 }
@@ -46,10 +53,3 @@ void particles::add_particle(std::vector<double> position, std::vector<double> v
 // //bond angles can also be represented by a Hooks-ian spring.
 // //https://en.wikibooks.org/wiki/Molecular_Simulation/Intramolecular_Forces#Bond_Angle_Bending
 //
-
-
-int main(){
-
-    // std::vector<std::vector<double>> neighbor_distances; //2d! oh noes
-
-}
