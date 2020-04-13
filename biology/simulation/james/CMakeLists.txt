@@ -1,17 +1,18 @@
+cmake_minimum_required(VERSION 3.16)
+
+
 set(CXX_ASAN_FLAGS "-fno-omit-frame-pointer -fsanitize=address -fsanitize=undefined -fsanitize=leak ")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -g --coverage")
 
 set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} ${CXX_ASAN_FLAGS} -g")
 
-PROJECT(springs LANGUAGES CXX C)
+PROJECT(james LANGUAGES CXX C)
 
 find_package(OpenMP REQUIRED)
 find_package(MathGL2 REQUIRED)
 
-### Note that FLTK's OpenGL support has been disabled. Probably can be re-enabled.
 include_directories(${CMAKE_SOURCE_DIR} ${MATHGL2_INCLUDE_DIR} ../src/)
-
 
 set(CMAKE_BUILD_TYPE Debug)
 add_subdirectory (src)
