@@ -206,8 +206,10 @@ Palm sander works really well as a vortex mixer for Eppendorfs. 11000 RPM - I su
 
 Rather than sterilizing pipettes after each use, we could just use a standard PnP nozzle-style collar-and-forks toolchanger.
 
+-----------------
 
+There are two different properties we have to determine: the bond bending and stretching coefficient. Given a certain indentation and force, we should be able to determine how much of the force is due to the constant-volume bending ("Shear?"), and how much is due to the changing-volume stretching (bulk modulus?) - just run a sim with the same size AFM tip as in the paper, measure the average bending and stretching of the participating region, and set the constants accordingly!
 
-
+We should solvate. The solvent inside the envelope might give rise to new modes.
 
 
