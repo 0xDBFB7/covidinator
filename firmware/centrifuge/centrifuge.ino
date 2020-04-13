@@ -4,7 +4,7 @@ Servo myservo;
  
 int pos = 0;
  
-void setup()
+void setup() //this doesn't work! Replace with the one from the laptop.
 {
   myservo.attach(3);  // attaches the servo on pin 9 to the servo object
   myservo.write(50);
@@ -39,5 +39,6 @@ void setup()
  
 void loop()
 {
+  
 }
 
