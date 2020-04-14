@@ -240,9 +240,19 @@ It was confirmed that all tubes were visually distinct from the controls at star
 
 All tubes were released to air breifly. There was a slight vacuum in each one. This was probably not an ideal procedure, as contaminants may have been drawn into the tube. Oh well.
 
-After inoculation, the phage tubes were shaken vigorously for a few seconds
+After inoculation with a loop, the phage tubes were shaken vigorously for a few seconds.
+
+
 
 E0 was removed and refrigerated for safekeeping; the rest were kept at room temperature overnight without stirring.
+
+At 10:00 the next day, the phage tubes looked distinctly *cloudier* - this might have been my imaginination. The bacteria were presumed to have entered the stationary phase; shaking and heating were resumed.
+
+At 12:00, there was no perceptible difference between the P and E tubes.
+
+
+
+
 
 
 

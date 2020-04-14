@@ -1,7 +1,10 @@
+#ifndef JAMES_H
+#define JAMES_H
+
 #include <iostream>
 #include <math.h>
 #include <vector>
-
+#include <numeric>
 
 struct particles{
     //SoA is 5x faster than AoS
@@ -9,7 +12,6 @@ struct particles{
     std::vector<double> velocities; //x,y,z
     std::vector<double> charges;
     std::vector<double> masses;
-
 
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
     void add_particle(std::vector<double> position, double charge, double mass);
@@ -22,6 +24,7 @@ struct stretchy_bonds{
     std::vector<int> p1;
     std::vector<int> p2;
     std::vector<double> neutral_lengths;
+    std::vector<double> coefficients;
 };
 
 struct bendy_bonds{
@@ -29,4 +32,7 @@ struct bendy_bonds{
     std::vector<int> p2;
     std::vector<int> p3;
     std::vector<double> neutral_angle;
+    std::vector<double> coefficients;
 };
+
+#endif

@@ -20,12 +20,23 @@ void particles::add_particle(std::vector<double> position, std::vector<double> v
     masses.push_back(mass);
 }
 
+
 void particles::add_particle(std::vector<double> position, double charge, double mass){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.resize(velocities.size()+3,0);
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
 }
+
+
+double particles::angle(int particle_1, int particle_2, int particle_3){
+    positions.particle * particle_2.position;
+}
+
+
+//vel. verlet integrator (https://en.wikipedia.org/wiki/Verlet_integration)
+
+
 
 //
 // std::vector<int> neighbors(positions, float cutoff_distance){
