@@ -14,6 +14,8 @@ struct particles{
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
     void add_particle(std::vector<double> position, double charge, double mass);
 
+    
+
 };
 
 struct stretchy_bonds{

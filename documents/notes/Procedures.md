@@ -104,4 +104,38 @@ Open bottle of host by flame. Drag loop across agar. Insert into shot glass.
 
 Incubate at 37 C with . After (12 h?) a 
 
+#### Culture: take 1
+
+Complete failure. Opened the pipettes from the wrong end, they fell to the table. The delrin washers I was planning on using to keep the Eppendorfs slightly open were too fiddly, and I put all sorts of fingerprints at the opening of the tubes. Opened the sterile broth away from the Bunsen - I should have poured it into a seperate beaker first, so as to not contaminate the existing solution, but I didn't. 
+
+Proper racking is important too.
+
+Leaving the tubes open while autoclaving is the recommended procedure, but there's so much condensation with this pressure cooker, that probably won't be possible. They're half-full of condensate when removed! The condensate drying step is really pretty important.
+
+
+
+Instead, I just filled with 1ml of broth and put them in the cooker closed. 
+
+
+
+Wet-lab bio stuff is *hard*.
+
+#### culture: take 2
+
+All the tubes except the controls had opened during autoclaving. Closed them immediately. They didn't gather all that much condensation.
+
+
+
+Sharpie Labels stayed on, that's convenient.
+
+Went really well - just a simple inoculation this time. Inoculated P0 to E2 in order. Put in the incubator, lids closed. 
+
+Finished at 4:47. 4 hours later we need to put in the phage.
+
+Stirring at 450; i > 200, 30, every 120 seconds, at 35 C.
+
+
+
 #### Experiment 1: Exposure Duration
+
+

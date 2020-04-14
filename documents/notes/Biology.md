@@ -212,4 +212,38 @@ There are two different properties we have to determine: the bond bending and st
 
 We should solvate. The solvent inside the envelope might give rise to new modes.
 
+----
+
+Built a simple nephelometer with a red LED and a photodiode. Biased at 3v, for future ref. 
+
+| @10:23, T=5.5 hr, 35 C, mild stirring, lids closed, 1 mL volume. | E0     | E1  | E2  | P0     | P1     | P2     | C0     | C1     |     |
+| ---------------------------------------------------------------- | ------ | --- | --- | ------ | ------ | ------ | ------ | ------ | --- |
+|                                                                  | 2.9852 |     |     | 2.9848 | 2.9852 | 2.9852 | 2.9853 | 2.9853 |     |
+
+Not enough resolution - the tubes were clearly different spectra, and yet all were 2.9852. 
+
+Messed with resistor values, but couldn't get a reasonable result.
+
+Using a solar cell works - larger area, I suppose.
+
+| @10:23, T=5.5 hr, 35 C, mild stirring, lids closed, 1 mL volume. | E0      | E1      | E2      | P0      | P1      | P2      | C0  | C1      |     |
+| ---------------------------------------------------------------- | ------- | ------- | ------- | ------- | ------- | ------- | --- | ------- | --- |
+|                                                                  | 0.19030 | 0.18745 | 0.18862 | 0.18830 | 0.18660 | 0.18336 |     | 0.18793 |     |
+
+Accuracy is pm 50 counts due to positioning of cuvette.
+
+- ----
+
+Miserable failure. Phage was propagated anyhow, process finished at 12:15 AM 04-14.
+
+It was confirmed that all tubes were visually distinct from the controls at start.
+
+All tubes were released to air breifly. There was a slight vacuum in each one. This was probably not an ideal procedure, as contaminants may have been drawn into the tube. Oh well.
+
+After inoculation, the phage tubes were shaken vigorously for a few seconds
+
+E0 was removed and refrigerated for safekeeping; the rest were kept at room temperature overnight without stirring.
+
+
+
 

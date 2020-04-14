@@ -593,4 +593,6 @@ A simple T or Y-coupler might work; we might not be that concerned with reflecti
 
 Oh, do we even need a splitter? The gate doesn't take any power, can't we just continue the microstrip?
 
+Built up another of those LO test boards - this one doesn't seem to oscillate properly.
+
 

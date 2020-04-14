@@ -158,4 +158,8 @@ Wire Wire Line
 	3200 2850 3600 2850
 Connection ~ 3200 2850
 Connection ~ 3600 2850
+Wire Wire Line
+	3200 3500 3200 3900
+Text Notes 1050 2450 0    50   ~ 0
+Transmission line with 50 R impedance and 180 deg phase shift
 $EndSCHEMATC
