@@ -56,7 +56,16 @@ TEST(data_structure, stretchy_bonds_1){
     //particle 0 should feel a restoring force in the -Z direction
     //particle 1 should feel a restoring force in the +Z direction
 
-    stretchy_obj.compute_bond_force(particles_obj, 0);
+    std::vector<double> force_vector_1(3);
+    std::vector<double> force_vector_2(3);
+    stretchy_obj.compute_bond_force(particles_obj, force_vector_1, force_vector_2, 0);
+
+
+    ASSERT_NEAR(force_vector_1[Z],-0.25,1e-3);
+    ASSERT_NEAR(force_vector_2[Z],0.25,1e-3);
+
+    particles_obj.apply_force(0, force_vector_1);
+    particles_obj.apply_force(1, force_vector_2);
 
     ASSERT_NEAR(particles_obj.forces[particles_obj.idx(0,Z)],-0.25,1e-3);
     ASSERT_NEAR(particles_obj.forces[particles_obj.idx(1,Z)],0.25,1e-3);

@@ -24,6 +24,7 @@ struct particles{
     void add_particle(std::vector<double> position, double charge, double mass);
     std::vector<double> distance_vector(int particle_1, int particle_2);
     double angle(int particle_1, int particle_2, int particle_3);
+    void apply_force(int particle_id, std::vector<double> &force_vector);
 
     int idx(int id, int dim);
 };
@@ -36,7 +37,7 @@ struct stretchy_bonds{
 
     void add_bond(particles &particle_obj, int particle_1, int particle_2, double coefficient);
 
-    void compute_bond_force(particles &particle_obj, int bond_id);
+    void compute_bond_force(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
 };
 
 struct bendy_bonds{
@@ -69,5 +70,7 @@ std::vector<double> cross_product(std::vector<double> vector_1, std::vector<doub
 std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double> vector_2);
 
 std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
+
+
 
 #endif

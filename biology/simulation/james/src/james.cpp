@@ -59,6 +59,11 @@ std::vector<double> particles::distance_vector(int particle_1, int particle_2){
     return output;
 }
 
+void particles::apply_force(int particle_id, std::vector<double> &force_vector){
+    forces[idx(particle_id,X)] += force_vector[X];
+    forces[idx(particle_id,Y)] += force_vector[Y];
+    forces[idx(particle_id,Z)] += force_vector[Z];
+}
 
 int particles::idx(int id, int dim){
     return (id*3)+dim;
@@ -89,7 +94,7 @@ void stretchy_bonds::add_bond(particles &particle_obj, int particle_1, int parti
     coefficients.push_back(coefficient);
 }
 
-void stretchy_bonds::compute_bond_force(particles &particle_obj, int bond_id){
+void stretchy_bonds::compute_bond_force(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
     int p1_id = p1[bond_id];
     int p2_id = p2[bond_id];
 
@@ -110,18 +115,14 @@ void stretchy_bonds::compute_bond_force(particles &particle_obj, int bond_id){
 
     double force = -1.0*coefficients[particle_obj.idx(p1_id,0)]*displacement;
 
-    double force_x = force*(distance_x/distance); //vector projection
-    double force_y = force*(distance_y/distance);
-    double force_z = force*(distance_z/distance);
+    force_vector_1[X] = force*(distance_x/distance); //vector projection
+    force_vector_1[Y] = force*(distance_y/distance);
+    force_vector_1[Z] = force*(distance_z/distance);
 
-    particle_obj.forces[particle_obj.idx(p1_id,X)] += force_x;
-    particle_obj.forces[particle_obj.idx(p1_id,Y)] += force_y;
-    particle_obj.forces[particle_obj.idx(p1_id,Z)] += force_z;
-
-    particle_obj.forces[particle_obj.idx(p2_id,X)] -= force_x; // equal and opposite reaction
-    particle_obj.forces[particle_obj.idx(p2_id,Y)] -= force_y;
-    particle_obj.forces[particle_obj.idx(p2_id,Z)] -= force_z;
+    force_vector_2 = opposite_vector(force_vector_1); // equal and opposite reaction
 }
+
+
 
 
 void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient){
