@@ -100,6 +100,6 @@ For our software, might it be a good idea to package and redistribute everything
 
 I mean, all these developer hours working on dependency issues are pretty much wasted.
 
-
-
 -----
+
+[http://octa.jp/components/cognac/](http://octa.jp/components/cognac/) looks pretty neat.

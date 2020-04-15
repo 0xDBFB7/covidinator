@@ -57,5 +57,3 @@ Author Contributions is a neat section to have. Not important for this one, obvs
 Funding: This research received no external funding.
 
 Because Q varies with pH, it may be more difficult to inactivate viruses entrained in vomit, or aerosols from vomit. 
-
-

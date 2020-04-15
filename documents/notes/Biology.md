@@ -242,18 +242,24 @@ All tubes were released to air breifly. There was a slight vacuum in each one. T
 
 After inoculation with a loop, the phage tubes were shaken vigorously for a few seconds.
 
-
-
 E0 was removed and refrigerated for safekeeping; the rest were kept at room temperature overnight without stirring.
 
 At 10:00 the next day, the phage tubes looked distinctly *cloudier* - this might have been my imaginination. The bacteria were presumed to have entered the stationary phase; shaking and heating were resumed.
 
 At 12:00, there was no perceptible difference between the P and E tubes.
 
+---
 
+Dissolved oxygen meters seem to commonly use an electrode ("polarimetric") oxygen-sensitive dye, or a UV band. For pulse oximetry, that dye seems to be the hemoglobin itself -  a dual-wavelength spectrometer is used to measure absorption.
 
+It turns out that the "all-in-one" paradigm isn't so easy to implement in real life!
 
+----
 
+Just make a carusel of eppendorfs. Everything stays sealed. No pipette - maybe an inoculating loop coil at most? wire could self-heat!
 
+------------------
 
+Man, I wish I'd bought some 15mL and larger culture tubes with lids back when we could. A lack of glassware is really hampering me here.
 
+McMaster still sells centrifuge tubes. 

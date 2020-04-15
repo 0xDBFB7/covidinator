@@ -1,3 +1,5 @@
+*asciientist*
+
 - Available over HTTP - maybe that should be seperate?
 
 - Text files always remain human-readable
@@ -19,3 +21,9 @@
 - Readable on small devices?
 
 - BibTeX - no, zotero! integration
+
+- .bash_history integration
+
+- 
+
+
