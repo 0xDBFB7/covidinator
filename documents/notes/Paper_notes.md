@@ -44,6 +44,8 @@ T4 is not an ideal surrogate for SARS-CoV-2. T4 has a 120 nm prolate icosahedral
 | Pseudomonas Phi6                      | 85 nm                                                             |                     |            |                              |                                |             |     |
 | Coliphage T4r+ (as used in this work) | 120 nm prolate icosahedral capsid directly surrounding dsDNA core |                     |            |                              |                                |             |     |
 
+In both cases, RNA was found, so the capsid was broken.
+
 
 
 Discussion: Email the author at [] or open a github issue.

@@ -54,7 +54,7 @@ struct bendy_bonds{
                                                                                     std::vector<double> &leg_2_force,
                                                                                     std::vector<double> &pivot_force, int bond_id);
 
-    void compute_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id);
+    void compute_leg_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id);
 
 };
 
@@ -68,5 +68,6 @@ std::vector<double> cross_product(std::vector<double> vector_1, std::vector<doub
 
 std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double> vector_2);
 
+std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
 
 #endif

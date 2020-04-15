@@ -153,7 +153,7 @@ void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle
 
 
 
-void bendy_bonds::compute_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id){
+void bendy_bonds::compute_leg_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id){
     //determine the amount to scale the leg force direction vectors by
     int p1_id = p1[bond_id];
     int p2_id = p2[bond_id];
@@ -222,6 +222,15 @@ std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double>
     output[Z] = vector_1[Z] + vector_2[Z];
     return output;
 }
+
+std::vector<double> scale_vector(std::vector<double> vector_1, double scalar){
+    std::vector<double> output(3);
+    output[X] = vector_1[X] * scalar;
+    output[Y] = vector_1[Y] * scalar;
+    output[Z] = vector_1[Z] * scalar;
+    return output;
+}
+
 
 std::vector<double> opposite_vector(std::vector<double> vector_1){
     //a x b
