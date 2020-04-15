@@ -330,3 +330,7 @@ we could use gigabeq's copper plating technique for the contacts
 Resistance was in the Mohms.
 
 It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With sufficient contact pressure, 200 ohms could be obtained! Wonderful.
+
+-----
+
+Rather than using a conformal coating, the PCB could be vacuum-sealed, a 'la 

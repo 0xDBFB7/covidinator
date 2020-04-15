@@ -19,13 +19,15 @@ struct particles{
     std::vector<double> velocities;
     std::vector<double> charges;
     std::vector<double> masses;
+    std::vector<int> tags;
 
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
+    void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag);
     void add_particle(std::vector<double> position, double charge, double mass);
     std::vector<double> distance_vector(int particle_1, int particle_2);
     double angle(int particle_1, int particle_2, int particle_3);
     void apply_force(int particle_id, std::vector<double> &force_vector);
-
+    void initialize_timestep();
     int idx(int id, int dim);
 };
 
@@ -71,6 +73,7 @@ std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double>
 
 std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
 
-
+void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2);
+void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &force_vector_1);
 
 #endif

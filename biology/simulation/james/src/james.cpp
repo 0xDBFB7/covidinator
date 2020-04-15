@@ -1,13 +1,6 @@
 
 #include <james.hpp>
 
-#define MAX_N_POINTS 10
-#define POINT_MASS (1/1000)
-#define CUTOFF_DISTANCE 1
-
-#define ELECTRIC_CONSTANT (1)
-
-
 //need damping?
 
 //based on https://people.sc.fsu.edu/~jburkardt/cpp_src/md_openmp/md_openmp.cpp
@@ -19,16 +12,28 @@ void particles::add_particle(std::vector<double> position, std::vector<double> v
     velocities.insert(velocity.end(), velocity.begin(), velocity.end());
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
+    tags.push_back(0);
     accelerations.resize(accelerations.size()+3,0.0);
     forces.resize(forces.size()+3,0.0);
 }
 
+
+void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag){
+    positions.insert(positions.end(), position.begin(), position.end());
+    velocities.insert(velocity.end(), velocity.begin(), velocity.end());
+    charges.push_back(charge); //slow, whatever
+    masses.push_back(mass);
+    tags.push_back(tag);
+    accelerations.resize(accelerations.size()+3,0.0);
+    forces.resize(forces.size()+3,0.0);
+}
 
 void particles::add_particle(std::vector<double> position, double charge, double mass){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.resize(velocities.size()+3,0);
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
+    tags.push_back(0);
     accelerations.resize(accelerations.size()+3,0.0);
     forces.resize(forces.size()+3,0.0);
 }
@@ -59,6 +64,11 @@ std::vector<double> particles::distance_vector(int particle_1, int particle_2){
     return output;
 }
 
+void particles::initialize_timestep(){
+    std::fill(std::begin(forces),std::end(forces),0.0);
+    std::fill(std::begin(accelerations),std::end(accelerations),0.0);
+}
+
 void particles::apply_force(int particle_id, std::vector<double> &force_vector){
     forces[idx(particle_id,X)] += force_vector[X];
     forces[idx(particle_id,Y)] += force_vector[Y];
@@ -72,7 +82,6 @@ int particles::idx(int id, int dim){
 double norm(double x, double y, double z){
     return sqrt((x*x) + (y*y) + (z*z));
 }
-
 
 double norm(std::vector<double> vector_1){
     return sqrt((vector_1[0]*vector_1[0])+(vector_1[1]*vector_1[1])+(vector_1[2]*vector_1[2]));
@@ -244,14 +253,54 @@ std::vector<double> opposite_vector(std::vector<double> vector_1){
 }
 
 
-// void coulomb_force(particles &particle_obj){
+void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2){
+    double electric_constant = 8.854e-12;
+
+    double p1_x = particle_obj.positions[particle_obj.idx(particle_1,0)];
+    double p1_y = particle_obj.positions[particle_obj.idx(particle_1,1)];
+    double p1_z = particle_obj.positions[particle_obj.idx(particle_1,2)];
+
+    double p2_x = particle_obj.positions[particle_obj.idx(particle_2,0)];
+    double p2_y = particle_obj.positions[particle_obj.idx(particle_2,1)];
+    double p2_z = particle_obj.positions[particle_obj.idx(particle_2,2)];
+
+    double distance_x = p1_x - p2_x;
+    double distance_y = p1_y - p2_y;
+    double distance_z = p1_z - p2_z;
+
+    double distance = norm(distance_x,distance_y,distance_z);
+
+    double charge_1 = particle_obj.charges[particle_1];
+    double charge_2 = particle_obj.charges[particle_2];
+
+    double force = electric_constant*(charge_1*charge_2)/(distance*distance);
+
+    force_vector_1[X] = force*(distance_x/distance); //vector projection
+    force_vector_1[Y] = force*(distance_y/distance);
+    force_vector_1[Z] = force*(distance_z/distance);
+
+    force_vector_2 = opposite_vector(force_vector_1); // equal and opposite reaction
+
+}
+
+void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &force_vector_1){
+    
+}
 //
+//
+// void particles::integrate_particle_trajectory(){
+//     //currently using velocity verlet
+//     //if not tagged motionless
+//     void update(double dt){
+//         Vec3d new_pos = pos + vel*dt + acc*(dt*dt*0.5);
+//         Vec3d new_acc = apply_forces(); // only needed if acceleration is not constant
+//         Vec3d new_vel = vel + (acc+new_acc)*(dt*0.5);
+//         pos = new_pos;
+//         vel = new_vel;
+//         acc = new_acc;
+//     }
 // }
-
-
-
-
-
+//
 
 
 

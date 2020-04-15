@@ -211,7 +211,25 @@ TEST(data_structure, bendy_bonds_force_magnitude_1){
     ASSERT_NEAR(pivot_force_vector[Z],-0.785,1e-3);
 }
 
+TEST(coulomb_force, coulomb_force_1){
+    particles particles_obj;
+    bendy_bonds bendy_obj;
 
+    std::vector<double> position_1 = {0,0,1};
+    particles_obj.add_particle(position_1,2,2);
+
+    std::vector<double> position_2 = {0,0,0};
+    particles_obj.add_particle(position_2,2,2);
+
+    std::vector<double> force_vector_1(3);
+    std::vector<double> force_vector_2(3);
+    compute_coulomb_force(particles_obj, 0,1, force_vector_1, force_vector_2);
+
+    ASSERT_NEAR(force_vector_1[X],0,1e-3);
+    ASSERT_NEAR(force_vector_1[Y],0,1e-3);
+    ASSERT_NEAR(force_vector_1[Z],3.54e-11,1e-12);
+
+}
 
 //
 // TEST(data_structure, cross_product){

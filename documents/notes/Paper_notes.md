@@ -34,8 +34,6 @@ The author has no prior experience in microbiology, and access to a pathogenic B
 
 T4 is not an ideal surrogate for SARS-CoV-2. T4 has a 120 nm prolate icosahedral membrane capsid directly surrounding the DNA core. SARS-CoV-2 has a 120 nm spherical lipid envelope surronding a 10 nm nucleocapsid, which surrounds the core. H3N2, as used by [],is 100 nm.
 
-
-
 |                                       | Geometric description                                             | Charge distribution | base pairs | Outer membrane rupture force | Outer membrane Young's Modulus | Force curve |     |
 | ------------------------------------- | ----------------------------------------------------------------- | ------------------- | ---------- | ---------------------------- | ------------------------------ | ----------- | --- |
 | SARS-NCoV-2                           | 120 nm spherical lipid envelope surrounding 10 nm nucleocapsid    |                     |            |                              |                                | Fig []      |     |
@@ -45,8 +43,6 @@ T4 is not an ideal surrogate for SARS-CoV-2. T4 has a 120 nm prolate icosahedral
 | Coliphage T4r+ (as used in this work) | 120 nm prolate icosahedral capsid directly surrounding dsDNA core |                     |            |                              |                                |             |     |
 
 In both cases, RNA was found, so the capsid was broken.
-
-
 
 Discussion: Email the author at [] or open a github issue.
 
@@ -64,11 +60,9 @@ Infobox with each citation:
 
 Conflicts of interest: all of them. The author could stand to gain mightily monetarily (but will not; if local production is started, the devices will be sold with global profits capped at $50,000, financials will be public at /accounting.md, and any underhanded profit-seeking misers may find themselves handily undercut), and would profit greatly if society were to fail to collapse. This has almost certainly biased the author's analyses of safety and effectiveness. Again, please consider these claims with due skepticism. Truly unconcerned parties, such as a member of an uncontacted tribe. 
 
-
-
 34+140+90+
 
-[1]:  First, this isn't my idea in the slightest; if anything, Yang et al should profit - but their research was publicly funded in the first place. Second, this is a vulnerable time, and everyone needs their last dollars. 
+[1]:  First, this isn't my idea in the slightest; if anything, Yang et al should profit - but their research was publicly funded in the first place. Second, this is a vulnerable time, and everyone needs their last dollars. I'm in a middle-class family, I clearly have enough money for science already.
 
 First, the models with a coarse mesh clearly suffer from the effects of a
 too low spatial discretization (the substrate thickness is modeled with the height of only one cell).
@@ -82,10 +76,8 @@ Because Q varies with pH, it may be more difficult to inactivate viruses entrain
 
 metal jewelry will impair
 
-
-
 The author has already [overstepped their fields], and will not attempt to produce epideemological modelling. However, an  Based on the R0 of COVID-19, herd immunity is likely to begin at approx. 25% market penetration. 
 
-It is likely that sufficient PCB and microwave transistor capacity exists to produce a *covidinator* for every hospital bed in the US - on the order of 1 million units.
+It is likely that sufficient PCB and microwave transistor capacity exists to produce a *covidinator* for every hospital bed in North America in a few weeks - on the order of 1 million units.
 
-
+standard PCB production lines are not well optimized for a simple product such as this.
