@@ -166,6 +166,13 @@ TEST(data_structure, bendy_bonds_force_magnitude_1){
     particles_obj.add_particle(position_3,1.1,1.2);
 
     bendy_obj.add_bond(particles_obj,0,1,2,0.5); //this factor has units of N-m/radian, recall.
+
+    //          |            ^
+    //     //   |    ^       Z+
+    //     //   0 - -0       X+  >
+    //     //   |
+    //     //   |
+    //     // < 0
     // a line of particles in Z. Now we bend the top one down to +X
     particles_obj.positions[particles_obj.idx(0,X)] = 1;
     particles_obj.positions[particles_obj.idx(0,Z)] = 0;
@@ -184,13 +191,15 @@ TEST(data_structure, bendy_bonds_force_magnitude_1){
     std::vector<double> leg_force_vector_2;
     bendy_obj.compute_leg_force_direction_vectors(particles_obj, leg_force_vector_1, leg_force_vector_2, 0);
 
-    scale_vector(leg_force_vector_1, force_magnitude_1);
-    scale_vector(leg_force_vector_2, force_magnitude_2);
+    leg_force_vector_1 = scale_vector(leg_force_vector_1, force_magnitude_1);
+    leg_force_vector_2 = scale_vector(leg_force_vector_2, force_magnitude_2);
 
     std::vector<double> pivot_force_vector;
-    bendy_obj.compute_pivot_force_vector();
+    bendy_obj.compute_pivot_force_vector(particles_obj, leg_force_vector_1, leg_force_vector_2, pivot_force_vector, 0);
 
-    
+    ASSERT_NEAR(pivot_force_vector[X],0.785,1e-3);
+    ASSERT_NEAR(pivot_force_vector[Y],0,1e-3);
+    ASSERT_NEAR(pivot_force_vector[Z],-0.785,1e-3);
 }
 
 
