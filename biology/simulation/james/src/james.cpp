@@ -68,10 +68,19 @@ double norm(double x, double y, double z){
     return sqrt((x*x) + (y*y) + (z*z));
 }
 
+
 double norm(std::vector<double> vector_1){
     return sqrt((vector_1[0]*vector_1[0])+(vector_1[1]*vector_1[1])+(vector_1[2]*vector_1[2]));
 }
 
+std::vector<double> normalize(std::vector<double> input){
+    double mag = norm(input);
+    std::vector<double> output(3);
+    for(int dim = 0; dim < 3; dim++){
+        output[dim] = input[dim] / mag;
+    }
+    return output;
+}
 
 void stretchy_bonds::add_bond(particles &particle_obj, int particle_1, int particle_2, double coefficient){
     neutral_lengths.push_back(norm(particle_obj.distance_vector(particle_1,particle_2)));
@@ -123,37 +132,52 @@ void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle
     coefficients.push_back(coefficient);
 }
 
+//
+// void bendy_bonds::compute_bond_force(particles &particle_obj, int bond_id){
+//     //
+//     //the bendy bond can be imagined as two rods and three points:
+//     //        ^
+//     //   0----0
+//     //   |
+//     //   |
+//     // < 0
+//     // bending the bond applies a torque about the pivot.
+//     // We need to get the two force vectors, which always points 90 deg from each leg radially.
+//     //  - the magnitude is pretty easy to get
+//     // first we'll cross product the two legs to get the torque pivot vector.
+//     // then we'll cross one leg with this torque vector and normalize to get the force vector.
+//     // then you put one leg out, one leg in, and you shake it all about
+//     //then the force on the third particle is just the sum of the two,
+//     //but flipped.
+//
+//
+//     double angle = particle_obj.angle(particle_1,particle_2,particle_3); // DRY. take distance_vector out of .angle()
+//     //coefficient has units newton-meters of torque per radian
+//     double displacement = angle-neutral_angles[bond_id];
+//     double leg_torque = -1.0*displacement * coefficients[bond_id];
+//
+//     double leg_1_force = leg_torque / norm(leg_vector_1); //force = torque/radius
+//     double leg_2_force = leg_torque / norm(leg_vector_2);
+//
+// }
 
-void bendy_bonds::compute_bond_force(particles &particle_obj, int bond_id){
-    //
-    //the bendy bond can be imagined as two rods and three points:
-    //        ^
-    //   0----0
-    //   |
-    //   |
-    // < 0
-    // bending the bond applies a torque about the pivot.
-    // We need to get the two force vectors, which always points 90 deg from each leg radially.
-    //  - the magnitude is pretty easy to get
-    // first we'll cross product the two legs to get the torque pivot vector.
-    // then we'll cross one leg with this torque vector and normalize to get the force vector.
-    // then you put one leg out, one leg in, and you shake it all about
-    //then the force on the third particle is just the sum of the two,
-    //but flipped.
+void bendy_bonds::compute_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
     int p1_id = p1[bond_id];
     int p2_id = p2[bond_id];
     int p3_id = p3[bond_id];
 
-    std::vector<double> vector_1 = particle_obj.distance_vector(p1, p2);
-    std::vector<double> vector_2 = particle_obj.distance_vector(p1, p3);
+    std::vector<double> leg_vector_1 = particle_obj.distance_vector(p1, p2);
+    std::vector<double> leg_vector_2 = particle_obj.distance_vector(p1, p3);
 
-    std::vector<double> torque_vector = cross_product(vector_1, vector_2);
+    std::vector<double> torque_vector = cross_product(leg_vector_1, leg_vector_2);
 
-    double angle = particle_obj.angle(particle_1,particle_2,particle_3); // DRY. take distance_vector out of .angle()
-    //coefficient has units newton-meters of torque per radian
-    
+    force_vector_1 = cross_product(torque_vector, leg_vector_1);
+    force_vector_2 = cross_product(torque_vector, leg_vector_2); // this should be in a seperate function.
 
+    force_vector_1 = normalize(force_vector_1);
+    force_vector_2 = normalize(force_vector_2);
 }
+
 
 std::vector<double> cross_product(std::vector<double> vector_1, std::vector<double> vector_2){
     //a x b

@@ -48,4 +48,12 @@ The phage model was produced from raw CryoEM data using ProDy. ~~The coronavirid
 
 It remains to be seen how much not-invented-here fallacy was baked into this project.
 
+### [How long do T4 phages in the provided packaging last when refrigerated? Thanks!](https://www.carolina.com/viruses/coliphage-t4-t4r-living-5-ml/124330.pr#)
 
+1answer
+
+1. CBS Ben
+   
+   · 11 months ago  
+   
+   They can be refrigerated up to a year without any change in labeled titer.
