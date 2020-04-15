@@ -333,4 +333,4 @@ It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With su
 
 -----
 
-Rather than using a conformal coating, the PCB could be vacuum-sealed, a 'la 
+Rather than using a conformal coating, the PCB could be vacuum-sealed in PE film. Connectors might be a bit tricky?

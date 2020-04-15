@@ -229,6 +229,9 @@ TEST(coulomb_force, coulomb_force_1){
     ASSERT_NEAR(force_vector_1[Y],0,1e-3);
     ASSERT_NEAR(force_vector_1[Z],3.54e-11,1e-12);
 
+    ASSERT_NEAR(force_vector_2[X],0,1e-3);
+    ASSERT_NEAR(force_vector_2[Y],0,1e-3);
+    ASSERT_NEAR(force_vector_2[Z],-3.54e-11,1e-12);
 }
 
 //

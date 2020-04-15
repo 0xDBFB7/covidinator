@@ -5,6 +5,7 @@
 #include <math.h>
 #include <vector>
 #include <numeric>
+#include <limits>
 
 #define X 0
 #define Y 1
@@ -29,6 +30,7 @@ struct particles{
     void apply_force(int particle_id, std::vector<double> &force_vector);
     void initialize_timestep();
     int idx(int id, int dim);
+    int size();
 };
 
 struct stretchy_bonds{
