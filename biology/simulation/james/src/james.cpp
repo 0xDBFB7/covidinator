@@ -132,8 +132,7 @@ void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle
     coefficients.push_back(coefficient);
 }
 
-//
-// void bendy_bonds::compute_bond_force(particles &particle_obj, int bond_id){
+
 //     //
 //     //the bendy bond can be imagined as two rods and three points:
 //     //        ^
@@ -145,47 +144,92 @@ void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle
 //     // We need to get the two force vectors, which always points 90 deg from each leg radially.
 //     //  - the magnitude is pretty easy to get
 //     // first we'll cross product the two legs to get the torque pivot vector.
-//     // then we'll cross one leg with this torque vector and normalize to get the force vector.
-//     // then you put one leg out, one leg in, and you shake it all about
-//     //then the force on the third particle is just the sum of the two,
-//     //but flipped.
-//
-//
-//     double angle = particle_obj.angle(particle_1,particle_2,particle_3); // DRY. take distance_vector out of .angle()
-//     //coefficient has units newton-meters of torque per radian
-//     double displacement = angle-neutral_angles[bond_id];
-//     double leg_torque = -1.0*displacement * coefficients[bond_id];
-//
-//     double leg_1_force = leg_torque / norm(leg_vector_1); //force = torque/radius
-//     double leg_2_force = leg_torque / norm(leg_vector_2);
-//
-// }
+//     // then we'll cross one leg with this new torque vector and normalize to get the force vector.
+//        the torque vector for the other leg is opposite.
+//     // then the force on the third particle is just the elementwise sum of the two vectors,
+//     // but of opposite signs.
 
-void bendy_bonds::compute_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
+//     // then you put one leg out, one leg in, and you shake it all about
+
+
+
+void bendy_bonds::compute_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id){
+    //determine the amount to scale the leg force direction vectors by
     int p1_id = p1[bond_id];
     int p2_id = p2[bond_id];
     int p3_id = p3[bond_id];
 
-    std::vector<double> leg_vector_1 = particle_obj.distance_vector(p1, p2);
-    std::vector<double> leg_vector_2 = particle_obj.distance_vector(p1, p3);
+    std::vector<double> leg_vector_1 = particle_obj.distance_vector(p2_id, p1_id);
+    std::vector<double> leg_vector_2 = particle_obj.distance_vector(p2_id, p3_id);
+
+    double angle = particle_obj.angle(p1_id,p2_id,p3_id); // DRY. take distance_vector out of .angle()
+    //coefficient has units newton-meters of torque per radian
+    double displacement = angle-neutral_angles[bond_id];
+    double leg_torque = 1.0*displacement * coefficients[bond_id];
+
+    leg_1_force = leg_torque / norm(leg_vector_1); //force = torque/radius
+    leg_2_force = leg_torque / norm(leg_vector_2);
+
+    //the force magnitude can never be negative - that's handled by the direction vectors
+    leg_1_force = fabs(leg_1_force);
+    leg_2_force = fabs(leg_2_force);
+}
+
+void bendy_bonds::compute_leg_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
+    int p1_id = p1[bond_id];
+    int p2_id = p2[bond_id];
+    int p3_id = p3[bond_id];
+
+    std::vector<double> leg_vector_1 = particle_obj.distance_vector(p2_id, p1_id);
+    std::vector<double> leg_vector_2 = particle_obj.distance_vector(p2_id, p3_id);
 
     std::vector<double> torque_vector = cross_product(leg_vector_1, leg_vector_2);
 
     force_vector_1 = cross_product(torque_vector, leg_vector_1);
-    force_vector_2 = cross_product(torque_vector, leg_vector_2); // this should be in a seperate function.
+    force_vector_2 = cross_product(opposite_vector(torque_vector), leg_vector_2);
 
-    force_vector_1 = normalize(force_vector_1);
-    force_vector_2 = normalize(force_vector_2);
+    force_vector_1 = normalize(force_vector_1); // now we abandon all magnitude information from these vectors.
+    force_vector_2 = normalize(force_vector_2); // why? it's inelegant!
 }
+
+void bendy_bonds::compute_pivot_force_vector(particles &particle_obj, std::vector<double> &leg_1_force,
+                                                                                std::vector<double> &leg_2_force,
+                                                                                std::vector<double> &pivot_force, int bond_id){
+    //unlike the leg force direction vectors, this isn't normalized.
+    // inputs should be the actual scaled force vectors, output is the same.
+    std::vector<double> force_sum = sum_vector(leg_1_force,leg_2_force);
+
+    pivot_force = opposite_vector(force_sum);
+
+}
+
 
 
 std::vector<double> cross_product(std::vector<double> vector_1, std::vector<double> vector_2){
     //a x b
 
-    std::vector<double> output;
+    std::vector<double> output(3);
     output[0] = vector_1[1] * vector_2[2] - vector_1[2] * vector_2[1];
     output[1] = vector_1[2] * vector_2[0] - vector_1[0] * vector_2[2];
     output[2] = vector_1[0] * vector_2[1] - vector_1[1] * vector_2[0];
+    return output;
+}
+
+std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double> vector_2){
+    std::vector<double> output(3);
+    output[X] = vector_1[X] + vector_2[X];
+    output[Y] = vector_1[Y] + vector_2[Y];
+    output[Z] = vector_1[Z] + vector_2[Z];
+    return output;
+}
+
+std::vector<double> opposite_vector(std::vector<double> vector_1){
+    //a x b
+
+    std::vector<double> output(3);
+    output[X] = -1.0*vector_1[X];
+    output[Y] = -1.0*vector_1[Y];
+    output[Z] = -1.0*vector_1[Z];
     return output;
 }
 

@@ -289,5 +289,3 @@ Brief, intense RF EMF exposures can raise local tissue temperature excessively, 
 Fantastic!
 
 -----
-
-

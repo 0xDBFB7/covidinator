@@ -1,3 +1,7 @@
+
+
+
+
 ## Field Limits
 
 Exemption limits increase from 70 mW at 35 mm from the body to:

@@ -49,16 +49,24 @@ struct bendy_bonds{
     void add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient);
 
     void compute_bond_force(particles &particle_obj, int bond_id);
-    void compute_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
+    void compute_leg_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
+    void compute_pivot_force_vector(particles &particle_obj, std::vector<double> &leg_1_force,
+                                                                                    std::vector<double> &leg_2_force,
+                                                                                    std::vector<double> &pivot_force, int bond_id);
+
+    void compute_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id);
+
 };
 
 double norm(std::vector<double> vector_1);
 double norm(double x, double y, double z);
+std::vector<double> opposite_vector(std::vector<double> vector_1);
 
 std::vector<double> normalize(std::vector<double> input);
 
 std::vector<double> cross_product(std::vector<double> vector_1, std::vector<double> vector_2);
 
+std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double> vector_2);
 
 
 #endif

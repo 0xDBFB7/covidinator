@@ -63,6 +63,117 @@ TEST(data_structure, stretchy_bonds_1){
 
 }
 
+
+TEST(data_structure, bendy_bonds_force_directions_1){
+    particles particles_obj;
+    bendy_bonds bendy_obj;
+
+    std::vector<double> position_1 = {0,0,1};
+    particles_obj.add_particle(position_1,1.1,1.2);
+
+    std::vector<double> position_2 = {0,0,0};
+    particles_obj.add_particle(position_2,1.1,1.2);
+
+    std::vector<double> position_3 = {0,0,-1};
+    particles_obj.add_particle(position_3,1.1,1.2);
+
+    bendy_obj.add_bond(particles_obj,0,1,2,0.5); //this factor has units of N-m/radian, recall.
+
+    //          |            ^
+    //     //   |    ^       Z+
+    //     //   0 - -0       X+  >
+    //     //   |
+    //     //   |
+    //     // < 0
+    // a line of particles in Z. Now we bend the top one down to +X
+
+    particles_obj.positions[particles_obj.idx(0,X)] = 1;
+    particles_obj.positions[particles_obj.idx(0,Z)] = 0;
+
+    //particle 0 should feel a restoring force in the +Z direction
+    //particle 2 should feel a restoring force in the -X direction
+
+    std::vector<double> force_direction_vector_1;
+    std::vector<double> force_direction_vector_2;
+    bendy_obj.compute_leg_force_direction_vectors(particles_obj, force_direction_vector_1, force_direction_vector_2, 0);
+
+    //force on the first particle
+    ASSERT_NEAR(force_direction_vector_1[X],0,1e-3);
+    ASSERT_NEAR(force_direction_vector_1[Y],0,1e-3);
+    ASSERT_NEAR(force_direction_vector_1[Z],1,1e-3);
+
+    ASSERT_NEAR(force_direction_vector_2[X],-1,1e-3);
+    ASSERT_NEAR(force_direction_vector_2[Y],0,1e-3);
+    ASSERT_NEAR(force_direction_vector_2[Z],0,1e-3);
+
+
+}
+
+TEST(data_structure, bendy_bonds_force_directions_2){
+    particles particles_obj;
+    bendy_bonds bendy_obj;
+
+    std::vector<double> position_1 = {0,0,1};
+    particles_obj.add_particle(position_1,1.1,1.2);
+
+    std::vector<double> position_2 = {0,0,0};
+    particles_obj.add_particle(position_2,1.1,1.2);
+
+    std::vector<double> position_3 = {0,0,-1};
+    particles_obj.add_particle(position_3,1.1,1.2);
+
+    bendy_obj.add_bond(particles_obj,0,1,2,0.5); //this factor has units of N-m/radian, recall.
+
+    //          |            ^
+    //     //   |    ^       Z+
+    //     //   0 - -0       X-  >
+    //     //   |
+    //     //   |
+    //     // < 0
+    // a line of particles in Z. Now we bend the top one down to -X
+
+    particles_obj.positions[particles_obj.idx(0,X)] = -1;
+    particles_obj.positions[particles_obj.idx(0,Z)] = 0;
+
+    //particle 0 should feel a restoring force in the Z direction
+    //particle 2 should feel a restoring force in the +X direction
+
+    std::vector<double> force_direction_vector_1;
+    std::vector<double> force_direction_vector_2;
+    bendy_obj.compute_leg_force_direction_vectors(particles_obj, force_direction_vector_1, force_direction_vector_2, 0);
+
+    //force on the first particle
+    ASSERT_NEAR(force_direction_vector_1[X],0,1e-3);
+    ASSERT_NEAR(force_direction_vector_1[Y],0,1e-3);
+    ASSERT_NEAR(force_direction_vector_1[Z],1,1e-3);
+
+    ASSERT_NEAR(force_direction_vector_2[X],1,1e-3);
+    ASSERT_NEAR(force_direction_vector_2[Y],0,1e-3);
+    ASSERT_NEAR(force_direction_vector_2[Z],0,1e-3);
+}
+
+TEST(data_structure, bendy_bonds_force_magnitude_1){
+    particles particles_obj;
+    bendy_bonds bendy_obj;
+
+    std::vector<double> position_1 = {0,0,1};
+    particles_obj.add_particle(position_1,1.1,1.2);
+
+    std::vector<double> position_2 = {0,0,0};
+    particles_obj.add_particle(position_2,1.1,1.2);
+
+    std::vector<double> position_3 = {0,0,-1};
+    particles_obj.add_particle(position_3,1.1,1.2);
+
+    bendy_obj.add_bond(particles_obj,0,1,2,0.5); //this factor has units of N-m/radian, recall.
+
+    particles_obj.positions[particles_obj.idx(0,X)] = -1;
+    particles_obj.positions[particles_obj.idx(0,Z)] = 0;
+
+    
+}
+
+
 //
 // TEST(data_structure, cross_product){
 //     std::vector<double> position_1 = {1,0,0};
