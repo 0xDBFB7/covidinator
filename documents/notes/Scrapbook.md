@@ -22,7 +22,7 @@
 
 - BibTeX - no, zotero! integration
 
-- .bash_history integration
+- .bash_history, script-like? integration, but retroactive too -> choose command lines and output you want to assemble into install instructions
 
 - Link objects together (date tag on a box, perhaps) so they move together spatially 
 
@@ -30,4 +30,10 @@
 
 - Zotero notes are integrated properly
 
-- 
+- Settings (media folder) and binary appended to the end of file to work better with version control
+
+
+
+based on asciio
+
+

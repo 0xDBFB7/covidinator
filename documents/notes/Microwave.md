@@ -594,3 +594,11 @@ A simple T or Y-coupler might work; we might not be that concerned with reflecti
 Oh, do we even need a splitter? The gate doesn't take any power, can't we just continue the microstrip?
 
 Built up another of those LO test boards - this one doesn't seem to oscillate properly.
+
+
+
+I assumed that this device wouldn't be useful inside the body, since the skin effect at 10 GHz is like 0.2 cm. However, we **could** second-harmonic two penetrating 5 GHz signals (or fourth-harmonic 4!), making a 10 GHz field localized inside the body.
+
+ 
+
+
