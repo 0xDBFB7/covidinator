@@ -62,3 +62,11 @@ TEST(data_structure, stretchy_bonds_1){
     ASSERT_NEAR(particles_obj.forces[particles_obj.idx(1,Z)],0.25,1e-3);
 
 }
+
+//
+// TEST(data_structure, cross_product){
+//     std::vector<double> position_1 = {1,0,0};
+//     std::vector<double> position_2 = {0,1,0};
+//
+//     ASSERT_NEAR(cross_product,1,1e-3);
+// }

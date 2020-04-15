@@ -24,6 +24,10 @@
 
 - .bash_history integration
 
+- Link objects together (date tag on a box, perhaps) so they move together spatially 
+
+- Code, too! Runnable python inline! Oh boy!
+
+- Zotero notes are integrated properly
+
 - 
-
-

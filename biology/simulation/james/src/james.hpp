@@ -43,7 +43,7 @@ struct bendy_bonds{
     std::vector<int> p1;
     std::vector<int> p2;
     std::vector<int> p3;
-    std::vector<double> neutral_angle;
+    std::vector<double> neutral_angles;
     std::vector<double> coefficients;
 
     void add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient);

@@ -138,20 +138,31 @@ void bendy_bonds::compute_bond_force(particles &particle_obj, int bond_id){
     // first we'll cross product the two legs to get the torque pivot vector.
     // then we'll cross one leg with this torque vector and normalize to get the force vector.
     // then you put one leg out, one leg in, and you shake it all about
+    //then the force on the third particle is just the sum of the two,
+    //but flipped.
     int p1_id = p1[bond_id];
     int p2_id = p2[bond_id];
     int p3_id = p3[bond_id];
 
-    vector_1 = particle_obj.distance_vector(p1, p2);
-    vector_2 = particle_obj.distance_vector(p1, p3);
+    std::vector<double> vector_1 = particle_obj.distance_vector(p1, p2);
+    std::vector<double> vector_2 = particle_obj.distance_vector(p1, p3);
 
-    particle_obj.angle(particle_1,particle_2,particle_3); // DRY. take distance_vector out of .angle()
+    std::vector<double> torque_vector = cross_product(vector_1, vector_2);
+
+    double angle = particle_obj.angle(particle_1,particle_2,particle_3); // DRY. take distance_vector out of .angle()
+    //coefficient has units newton-meters of torque per radian
+    
 
 }
 
 std::vector<double> cross_product(std::vector<double> vector_1, std::vector<double> vector_2){
+    //a x b
+
     std::vector<double> output;
-    
+    output[0] = vector_1[1] * vector_2[2] - vector_1[2] * vector_2[1];
+    output[1] = vector_1[2] * vector_2[0] - vector_1[0] * vector_2[2];
+    output[2] = vector_1[0] * vector_2[1] - vector_1[1] * vector_2[0];
+    return output;
 }
 
 

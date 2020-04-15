@@ -263,3 +263,21 @@ Just make a carusel of eppendorfs. Everything stays sealed. No pipette - maybe a
 Man, I wish I'd bought some 15mL and larger culture tubes with lids back when we could. A lack of glassware is really hampering me here.
 
 McMaster still sells centrifuge tubes. 
+
+[https://www.icnirp.org/en/cart/index.html](https://www.icnirp.org/en/cart/index.html) this looks like a good review.
+
+The references section for IC guidelines is pretty good.
+
+ICNIRP [3] reference levels are the same as IC's.
+
+([https://www.who.int/peh-emf/meetings/archive/en/keynote3ng.pdf](https://www.who.int/peh-emf/meetings/archive/en/keynote3ng.pdf))
+
+[https://www.icnirp.org/en/differences.html](https://www.icnirp.org/en/differences.html)
+
+whereas ICNIRP (1998) averaged over a 20-cm2 region, ICNIRP (2020) requires averaging over a 4-cm2 region (and in some situations a 1-cm2 region). This 4-cm2 averaging area matches the face of the averaging volume (10 g) of SAR, and provides a consistent transition at 6 GHz (see Section 3.3). This change also ensures that an allowable exposure over 20-cm2 cannot be focused into a small region and increase temperature excessively.
+
+Brief, intense RF EMF exposures can raise local tissue temperature excessively, even if the average power over 6 minutes does not exceed the 6-minute average restrictions. This is particularly relevant for frequencies above 30 GHz, but it can also occur down to 400 MHz. Accordingly, ICNIRP (2020) provides additional restrictions to ensure that exposures over brief intervals do not result in excessive temperature rises.
+
+[https://www.icnirp.org/cms/upload/publications/ICNIRPrfgdl2020.pdf](https://www.icnirp.org/cms/upload/publications/ICNIRPrfgdl2020.pdf) - that's the best one.
+
+-----

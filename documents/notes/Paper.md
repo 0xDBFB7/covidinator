@@ -10,7 +10,9 @@ At between 6 to 15 GHz, in an uncontrolled (public) environment, the Canadian go
 
 > The total incident energy density during any one-tenth second period within the averaging time shall not exceed one-fifth of the total energy density permitted during the entire averaging time for a continuous field.
 
-Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 V/m RMS. Yang et al's models for H3N2 specify a threshold at 86.9 V/m.
+Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 V/m RMS. Yang et al's models for H3N2 specify a threshold at 86.9 V/m, but observe 40% inactivation at 87 V/m, and only 70% at 171 V/m (320 W/m^2) . All of those power densities are above even the controlled-environment power-density guidelines, at 20 W/m^2.
+
+[https://www.icnirp.org/cms/upload/publications/ICNIRPrfgdl2020.pdf](https://www.icnirp.org/cms/upload/publications/ICNIRPrfgdl2020.pdf)
 
 #### Exposure time
 
@@ -45,3 +47,5 @@ The phage model was produced from raw CryoEM data using ProDy. ~~The coronavirid
 ----
 
 It remains to be seen how much not-invented-here fallacy was baked into this project.
+
+

@@ -112,19 +112,13 @@ Proper racking is important too.
 
 Leaving the tubes open while autoclaving is the recommended procedure, but there's so much condensation with this pressure cooker, that probably won't be possible. They're half-full of condensate when removed! The condensate drying step is really pretty important.
 
-
-
 Instead, I just filled with 1ml of broth and put them in the cooker closed. 
-
-
 
 Wet-lab bio stuff is *hard*.
 
 #### culture: take 2
 
 All the tubes except the controls had opened during autoclaving. Closed them immediately. They didn't gather all that much condensation.
-
-
 
 Sharpie Labels stayed on, that's convenient.
 
@@ -134,8 +128,4 @@ Finished at 4:47. 4 hours later we need to put in the phage.
 
 Stirring at 450; i > 200, 30, every 120 seconds, at 35 C.
 
-
-
 #### Experiment 1: Exposure Duration
-
-
