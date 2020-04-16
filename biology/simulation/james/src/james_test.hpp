@@ -254,10 +254,17 @@ TEST(coulomb_force, electric_force){ //TODO: re-confirm field constants
 }
 
 
-//
-// TEST(data_structure, cross_product){
-//     std::vector<double> position_1 = {1,0,0};
-//     std::vector<double> position_2 = {0,1,0};
-//
-//     ASSERT_NEAR(cross_product,1,1e-3);
-// }
+TEST(pdb_import, import_1){ //TODO: re-confirm field constants
+    std::fstream fs;
+    fs.open("/home/arthurdent/Projects/covidinator/biology/simulation/GROMACS/T4/input_data/emd_6323.pdb", std::fstream::in);
+
+    PDB record;
+    while (fs >> record) {
+        switch (record.type()) {
+            case PDB::HETATM:
+                std::cout << record.atom.xyz[X] << ' ' << record.atom.xyz[Y]
+                 << ' ' << record.atom.xyz[Z] << std::endl;
+            break;
+        }
+    }
+}

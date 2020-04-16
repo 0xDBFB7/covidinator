@@ -4,7 +4,7 @@ set (CMAKE_CXX_STANDARD 17)
 
 set(CXX_ASAN_FLAGS "-fno-omit-frame-pointer -fsanitize=address -fsanitize=undefined -fsanitize=leak ")
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -g --coverage")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -g --coverage -Wno-error=switch -Wno-switch")
 
 set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} ${CXX_ASAN_FLAGS} -g")
 
@@ -13,13 +13,17 @@ PROJECT(james LANGUAGES CXX C)
 find_package(OpenMP REQUIRED)
 find_package(MathGL2 REQUIRED)
 
-include_directories(${CMAKE_SOURCE_DIR} ${MATHGL2_INCLUDE_DIR} ../src/)
+include_directories(${CMAKE_SOURCE_DIR} ${MATHGL2_INCLUDE_DIR} ../src/ )
+
+include_directories(./libpdb++)
+add_subdirectory (./libpdb++)
 
 set(CMAKE_BUILD_TYPE Debug)
 add_subdirectory (src)
 
 enable_testing ()
 add_subdirectory (test)
+
 
 
 

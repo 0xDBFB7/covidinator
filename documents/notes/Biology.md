@@ -289,3 +289,13 @@ Brief, intense RF EMF exposures can raise local tissue temperature excessively, 
 Fantastic!
 
 -----
+
+Drussel's PDB reader didn't compile for me first-try, and I cba to fix it.
+
+obabel shelxpro.pdb -O shelxpro.xyz  - openbabel can apparently convert to XYZ, will work in a pinch.
+
+
+
+[http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h](http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h)
+
+

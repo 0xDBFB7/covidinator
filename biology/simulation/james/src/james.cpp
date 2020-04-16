@@ -259,7 +259,7 @@ std::vector<double> opposite_vector(std::vector<double> vector_1){
 
 
 void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2){
-    const double electric_constant = 230.7077; //piconewtons per nm^2 / unitless integer electron charge
+    const double coulomb_constant = 230.7077; //piconewtons per nm^2 / unitless integer electron charge
     double singularity_epsilon = std::numeric_limits<double>::epsilon();
 
     double p1_x = particle_obj.positions[particle_obj.idx(particle_1,0)];
@@ -279,7 +279,7 @@ void compute_coulomb_force(particles &particle_obj, int particle_1, int particle
     double charge_1 = particle_obj.charges[particle_1];
     double charge_2 = particle_obj.charges[particle_2];
 
-    double force = electric_constant*(charge_1*charge_2)/((distance*distance)+singularity_epsilon);
+    double force = coulomb_constant*(charge_1*charge_2)/((distance*distance)+singularity_epsilon);
 
     force_vector_1[X] = force*(distance_x/distance); //vector projection
     force_vector_1[Y] = force*(distance_y/distance);
@@ -295,6 +295,7 @@ void compute_electric_force(particles &particle_obj, int particle_1, std::vector
     double charge_1 = particle_obj.charges[particle_1];
     force_vector_1 = scale_vector(electric_field_vector,charge_1*field_constant);
 }
+
 
 void handle_interparticle_forces(particles &particles_obj, std::vector<double> &electric_field_vector, double cutoff_distance){
 
@@ -313,21 +314,17 @@ void handle_interparticle_forces(particles &particles_obj, std::vector<double> &
 }
 
 
-
-
 //
-//
-// void particles::integrate_particle_trajectory(){
+// void particles::integrate_particle_trajectory(double timestep){
 //     //currently using velocity verlet
 //     //if not tagged motionless
-//     void update(double dt){
-//         Vec3d new_pos = pos + vel*dt + acc*(dt*dt*0.5);
-//         Vec3d new_acc = apply_forces(); // only needed if acceleration is not constant
-//         Vec3d new_vel = vel + (acc+new_acc)*(dt*0.5);
-//         pos = new_pos;
-//         vel = new_vel;
-//         acc = new_acc;
-//     }
+//     //stolen direct from https://en.wikipedia.org/wiki/Verlet_integration
+//     Vec3d new_pos = pos + velocities*timestep + acc*(timestep*timestep*0.5);
+//     Vec3d new_acc = apply_forces(); // only needed if acceleration is not constant
+//     Vec3d new_vel = vel + (acc+new_acc)*(dt*0.5);
+//     pos = new_pos;
+//     vel = new_vel;
+//     acc = new_acc;
 // }
 //
 

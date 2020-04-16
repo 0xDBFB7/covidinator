@@ -6,6 +6,13 @@
 #include <vector>
 #include <numeric>
 #include <limits>
+#include <fstream> 
+
+#include <pdb++.h>
+//pdb++ taken from
+//http://www.csb.yale.edu/userguides/graphics/midas/man/pdb++.html
+//http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h
+
 
 #define X 0
 #define Y 1
