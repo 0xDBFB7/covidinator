@@ -3,4 +3,4 @@ build
 *.svg
 *.png
 *.out
-libpdb++/*
+*.xyz

@@ -8,22 +8,9 @@
 
 
 
-
-void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass){
+void particles::add_particle(std::vector<double> position, double charge, double mass, int tag, bool is_frozen){
     positions.insert(positions.end(), position.begin(), position.end());
-    velocities.insert(velocity.end(), velocity.begin(), velocity.end());
-    charges.push_back(charge); //slow, whatever
-    masses.push_back(mass);
-    tags.push_back(0);
-    frozen.push_back(0);
-    accelerations.resize(accelerations.size()+3,0.0);
-    forces.resize(forces.size()+3,0.0);
-}
-
-
-void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag, bool is_frozen){
-    positions.insert(positions.end(), position.begin(), position.end());
-    velocities.insert(velocity.end(), velocity.begin(), velocity.end());
+    velocities.resize(velocities.size()+3,0);
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
     tags.push_back(tag);
@@ -339,10 +326,37 @@ void particles::integrate_particle_trajectory(double timestep){
         for(int dim = 0; dim < 3; dim++){
             new_accelerations[dim] = forces[idx(particle,dim)] / masses[particle];
             velocities[idx(particle,dim)] += (accelerations[idx(particle,dim)]+new_accelerations[dim])*(timestep*0.5);
+            velocities[idx(particle,dim)] *= !frozen[particle];
             accelerations[idx(particle,dim)] = new_accelerations[dim];
         }
     }
     positions.swap(new_positions);
+}
+
+
+void particles::dump_to_xyz_file(std::string filename){
+    std::fstream fs;
+    fs.open(filename, std::fstream::out);
+
+    for(int particle = 0; particle < size(); particle++){
+        fs << tags[particle] << positions[idx(particle,X)] << " " << positions[idx(particle,Y)] << " " << positions[idx(particle,Z)] << "\n";
+    }
+}
+
+void particles::import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen){
+    std::fstream fs;
+    fs.open(filename, std::fstream::in);
+
+    PDB record;
+    std::vector<double> position(3);
+    while (fs >> record) {
+        if(record.type() == PDB::ATOM || record.type() == PDB::HETATM) {
+            position[X] = record.atom.xyz[X];
+            position[Y] = record.atom.xyz[Y];
+            position[Z] = record.atom.xyz[Z];
+            add_particle(position, charge, mass, tag, is_frozen);
+        }
+    }
 }
 
 //Steps:

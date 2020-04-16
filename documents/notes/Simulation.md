@@ -98,8 +98,14 @@ Indeed, this works great. Installed openEMS on a *jessie* chroot, where it was o
 
 For our software, might it be a good idea to package and redistribute everything as a static, internal library, where the library version is controlled by the distributor? How'd that work even work?
 
-I mean, all these developer hours working on dependency issues are pretty much wasted.
+I mean, all these developer hours working on dependency versioning issues are pretty much wasted. Almost all the libraries have permissive redistribute licensing anyhow. I guess this becomes a bit too complex in the case of something like openEMS, since there's just hundreds of dependencies.
+
+If anything, distributing a "known good" reference package would be helpful.
 
 -----
 
 [http://octa.jp/components/cognac/](http://octa.jp/components/cognac/) looks pretty neat.
+
+Molecular dynamics is 
+
+

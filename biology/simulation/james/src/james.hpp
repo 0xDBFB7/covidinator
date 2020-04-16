@@ -23,6 +23,7 @@ struct particles{
 
     //using LAMMPS 'nano' reduced units style (https://lammps.sandia.gov/doc/units.html)
                                     //time:
+                                    
     std::vector<double> positions; //nanometers
     std::vector<double> forces; //piconewtons
 
@@ -35,10 +36,10 @@ struct particles{
     std::vector<double> new_positions; //used only by the verlet system
     std::vector<double> accelerations; //nanometers/nanosecond/nanosecond - these units and the mass and force work out
                                         //accelerations shouldn't be modified externally.
-                                        
-    void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
-    void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag, bool is_frozen);
+
+    void add_particle(std::vector<double> position, double charge, double mass, int tag, bool is_frozen);
     void add_particle(std::vector<double> position, double charge, double mass);
+
     std::vector<double> distance_vector(int particle_1, int particle_2);
     double angle(int particle_1, int particle_2, int particle_3);
     void apply_force(int particle_id, std::vector<double> &force_vector);
@@ -48,6 +49,9 @@ struct particles{
 
     int idx(int id, int dim);
     int size();
+
+    void import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen);
+    void dump_to_xyz_file(std::string filename);
 };
 
 struct stretchy_bonds{
