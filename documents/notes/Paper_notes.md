@@ -34,13 +34,23 @@ The author has no prior experience in microbiology, and access to a pathogenic B
 
 T4 is not an ideal surrogate for SARS-CoV-2. T4 has a 120 nm prolate icosahedral membrane capsid directly surrounding the DNA core. SARS-CoV-2 has a 120 nm spherical lipid envelope surronding a 10 nm nucleocapsid, which surrounds the core. H3N2, as used by [],is 100 nm.
 
-|                                       | Geometric description                                             | Charge distribution | base pairs | Outer membrane rupture force | Outer membrane Young's Modulus | Force curve |     |
-| ------------------------------------- | ----------------------------------------------------------------- | ------------------- | ---------- | ---------------------------- | ------------------------------ | ----------- | --- |
-| SARS-NCoV-2                           | 120 nm spherical lipid envelope surrounding 10 nm nucleocapsid    |                     |            |                              |                                | Fig []      |     |
-| H3N1 (as used by Yang et al)          | 100 nm spherical lipid envelope surrounding                       |                     |            |                              |                                |             |     |
-| H1N1 (as used by Yang et al)          |                                                                   |                     |            |                              |                                |             |     |
-| Pseudomonas Phi6                      | 85 nm                                                             |                     |            |                              |                                |             |     |
-| Coliphage T4r+ (as used in this work) | 120 nm prolate icosahedral capsid directly surrounding dsDNA core |                     |            |                              |                                |             |     |
+|                                       | Geometric description                                             | Charge distribution | base pairs | Outer membrane rupture force | Outer membrane Young's Modulus | Force curve | SARS-NCoV-2 |
+| ------------------------------------- | ----------------------------------------------------------------- | ------------------- | ---------- | ---------------------------- | ------------------------------ | ----------- | ----------- |
+|                                       | 120 nm spherical lipid envelope surrounding 10 nm nucleocapsid    |                     |            |                              |                                | Fig []      |             |
+| H3N1 (as used by Yang et al)          | 100 nm spherical lipid envelope surrounding                       |                     |            |                              |                                |             |             |
+| H1N1 (as used by Yang et al)          |                                                                   |                     |            |                              |                                |             |             |
+| Pseudomonas Phi6                      | 85 nm                                                             |                     |            |                              |                                |             |             |
+| Coliphage T4r+ (as used in this work) | 120 nm prolate icosahedral capsid directly surrounding dsDNA core |                     |            |                              |                                |             |             |
+
+|                                       | Model creation scheme                                                                                                                       |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| SARS-NCoV-2                           | 120 nm spherical lipid envelope surrounding 10 nm nucleocapsid                                                                              |
+| H3N1 (as used by Yang et al)          | 100 nm spherical lipid envelope surrounding                                                                                                 |
+| H1N1 (as used by Yang et al)          |                                                                                                                                             |
+| Pseudomonas Phi6                      | 85 nm                                                                                                                                       |
+| Coliphage T4r+ (as used in this work) | 5000 points interpolated from head capsid CryoEM EMD-6323 using ProDy, filled with N particles with charge -- interacting via Lennard-Jones |
+
+
 
 In both cases, RNA was found, so the capsid was broken.
 

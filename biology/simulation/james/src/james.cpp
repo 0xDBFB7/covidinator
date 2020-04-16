@@ -15,17 +15,19 @@ void particles::add_particle(std::vector<double> position, std::vector<double> v
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
     tags.push_back(0);
+    frozen.push_back(0);
     accelerations.resize(accelerations.size()+3,0.0);
     forces.resize(forces.size()+3,0.0);
 }
 
 
-void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag){
+void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag, bool is_frozen){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.insert(velocity.end(), velocity.begin(), velocity.end());
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
     tags.push_back(tag);
+    frozen.push_back(is_frozen);
     accelerations.resize(accelerations.size()+3,0.0);
     forces.resize(forces.size()+3,0.0);
 }
@@ -36,6 +38,7 @@ void particles::add_particle(std::vector<double> position, double charge, double
     charges.push_back(charge); //slow, whatever
     masses.push_back(mass);
     tags.push_back(0);
+    frozen.push_back(0);
     accelerations.resize(accelerations.size()+3,0.0);
     forces.resize(forces.size()+3,0.0);
 }
@@ -67,11 +70,6 @@ std::vector<double> particles::distance_vector(int particle_1, int particle_2){
         output[dim] = positions[idx(particle_1,dim)] - positions[idx(particle_2,dim)];
     }
     return output;
-}
-
-void particles::initialize_timestep(){
-    std::fill(std::begin(forces),std::end(forces),0.0);
-    std::fill(std::begin(accelerations),std::end(accelerations),0.0);
 }
 
 void particles::apply_force(int particle_id, std::vector<double> &force_vector){
@@ -148,7 +146,9 @@ void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle
 }
 
 
-//     //
+// //bond angles can also be represented by a Hooks-ian spring.
+// //https://en.wikibooks.org/wiki/Molecular_Simulation/Intramolecular_Forces#Bond_Angle_Bending
+//
 //     //the bendy bond can be imagined as two rods and three points:
 //     //        ^
 //     //   0----0
@@ -313,22 +313,37 @@ void handle_interparticle_forces(particles &particles_obj, std::vector<double> &
     }
 }
 
+void particles::begin_timestep(double timestep){
+    new_positions.resize(positions.size());
+    for(int particle = 0; particle < size(); particle++){
+        for(int dim = 0; dim < 3; dim++){
+            new_positions[idx(particle,dim)] = positions[idx(particle,dim)]
+                                                    + velocities[idx(particle,dim)]*timestep
+                                                    + accelerations[idx(particle,dim)]*(timestep*timestep*0.5);
+        }
+    }
 
-//
-// void particles::integrate_particle_trajectory(double timestep){
-//     //currently using velocity verlet
-//     //if not tagged motionless
-//     //stolen direct from https://en.wikipedia.org/wiki/Verlet_integration
-//     Vec3d new_pos = pos + velocities*timestep + acc*(timestep*timestep*0.5);
-//     Vec3d new_acc = apply_forces(); // only needed if acceleration is not constant
-//     Vec3d new_vel = vel + (acc+new_acc)*(dt*0.5);
-//     pos = new_pos;
-//     vel = new_vel;
-//     acc = new_acc;
-// }
-//
+    std::fill(std::begin(forces),std::end(forces),0.0);
+}
 
 
+void particles::integrate_particle_trajectory(double timestep){
+    //currently using velocity verlet
+    //if not tagged motionless
+    //stolen direct from https://en.wikipedia.org/wiki/Verlet_integration
+
+    //compute forces
+
+    std::vector <double> new_accelerations(3);
+    for(int particle = 0; particle < size(); particle++){
+        for(int dim = 0; dim < 3; dim++){
+            new_accelerations[dim] = forces[idx(particle,dim)] / masses[particle];
+            velocities[idx(particle,dim)] += (accelerations[idx(particle,dim)]+new_accelerations[dim])*(timestep*0.5);
+            accelerations[idx(particle,dim)] = new_accelerations[dim];
+        }
+    }
+    positions.swap(new_positions);
+}
 
 //Steps:
 //import particles.
@@ -361,7 +376,4 @@ void handle_interparticle_forces(particles &particles_obj, std::vector<double> &
 // //
 // // }
 //
-//
-// //bond angles can also be represented by a Hooks-ian spring.
-// //https://en.wikibooks.org/wiki/Molecular_Simulation/Intramolecular_Forces#Bond_Angle_Bending
 //

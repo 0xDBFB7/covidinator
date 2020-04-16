@@ -261,10 +261,33 @@ TEST(pdb_import, import_1){ //TODO: re-confirm field constants
     PDB record;
     while (fs >> record) {
         switch (record.type()) {
-            case PDB::HETATM:
-                std::cout << record.atom.xyz[X] << ' ' << record.atom.xyz[Y]
-                 << ' ' << record.atom.xyz[Z] << std::endl;
+            case PDB::HETATM: //variable depending on source of PDB file
+                // std::cout << record.atom.xyz[X] << ' ' << record.atom.xyz[Y]
+                //  << ' ' << record.atom.xyz[Z] << std::endl;
             break;
         }
     }
+}
+
+
+TEST(move_particles, move_particles_1){ //TODO: re-confirm field constants
+    particles particles_obj;
+
+    std::vector<double> position_1 = {0,0,0};
+    particles_obj.add_particle(position_1,1,2);
+
+    //acceleration = 5
+
+    for(int t = 0; t < 100; t++){
+        particles_obj.begin_timestep(1);
+        particles_obj.forces[particles_obj.idx(0,Z)] = 10;
+
+        particles_obj.integrate_particle_trajectory(1);
+    }
+
+    ASSERT_NEAR(particles_obj.positions[particles_obj.idx(0,Z)],0.5*5*(100*100),1000);
+    //predicted 25000, got 24750. Decent.
+    //delta x = 0.5 at^2
+
+
 }

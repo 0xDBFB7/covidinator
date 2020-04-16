@@ -6,7 +6,7 @@
 #include <vector>
 #include <numeric>
 #include <limits>
-#include <fstream> 
+#include <fstream>
 
 #include <pdb++.h>
 //pdb++ taken from
@@ -25,20 +25,26 @@ struct particles{
                                     //time:
     std::vector<double> positions; //nanometers
     std::vector<double> forces; //piconewtons
-    std::vector<double> accelerations; //nanometers/nanosecond/nanosecond - these units and the mass and force work out
+
     std::vector<double> velocities; //nanometers/nanosecond
     std::vector<double> charges; // multiple of e-
     std::vector<double> masses; // attograms
     std::vector<int> tags;
+    std::vector<bool> frozen; // velocities and acclerations are always zeroed.
 
+    std::vector<double> new_positions; //used only by the verlet system
+    std::vector<double> accelerations; //nanometers/nanosecond/nanosecond - these units and the mass and force work out
+                                        //accelerations shouldn't be modified externally.
+                                        
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
-    void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag);
+    void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass, int tag, bool is_frozen);
     void add_particle(std::vector<double> position, double charge, double mass);
     std::vector<double> distance_vector(int particle_1, int particle_2);
     double angle(int particle_1, int particle_2, int particle_3);
     void apply_force(int particle_id, std::vector<double> &force_vector);
 
-    void initialize_timestep();
+    void begin_timestep(double timestep);
+    void integrate_particle_trajectory(double timestep);
 
     int idx(int id, int dim);
     int size();
