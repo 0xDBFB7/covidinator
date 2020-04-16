@@ -106,6 +106,14 @@ If anything, distributing a "known good" reference package would be helpful.
 
 [http://octa.jp/components/cognac/](http://octa.jp/components/cognac/) looks pretty neat.
 
-Molecular dynamics is 
+**Molecular dynamics**, noun
+
+The art of making avogadro's constant equal to planck's constant equal about 1 by the straightforward process of scaling distance by energy, time by the fine structure constant, and telling space to get knotted.
+
+"normal units" is a misnomer.
+
+[https://en.wikipedia.org/wiki/Hartree_atomic_units](https://en.wikipedia.org/wiki/Hartree_atomic_units)
+
+
 
 

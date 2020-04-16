@@ -23,7 +23,7 @@ struct particles{
 
     //using LAMMPS 'nano' reduced units style (https://lammps.sandia.gov/doc/units.html)
                                     //time:
-                                    
+
     std::vector<double> positions; //nanometers
     std::vector<double> forces; //piconewtons
 
@@ -51,7 +51,7 @@ struct particles{
     int size();
 
     void import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen);
-    void dump_to_xyz_file(std::string filename);
+    void dump_to_xyz_file(std::string filename, int iteration);
 };
 
 struct stretchy_bonds{
@@ -59,6 +59,10 @@ struct stretchy_bonds{
     std::vector<int> p2;
     std::vector<double> neutral_lengths;
     std::vector<double> coefficients;
+
+    std::vector<double> breaking_force;
+    std::vector<bool> broken;
+
 
     void add_bond(particles &particle_obj, int particle_1, int particle_2, double coefficient);
 
@@ -71,6 +75,9 @@ struct bendy_bonds{
     std::vector<int> p3;
     std::vector<double> neutral_angles;
     std::vector<double> coefficients;
+
+    std::vector<double> breaking_force;
+    std::vector<bool> broken;
 
     void add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient);
 

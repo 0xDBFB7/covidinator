@@ -334,13 +334,24 @@ void particles::integrate_particle_trajectory(double timestep){
 }
 
 
-void particles::dump_to_xyz_file(std::string filename){
+void particles::dump_to_xyz_file(std::string filename, int iteration){
+    std::vector<char> tag_atom_lookup[] = {'C','O'};
+
     std::fstream fs;
+    filename += std::to_string(iteration);
+    filename += ".xyz";
     fs.open(filename, std::fstream::out);
 
+    fs << size() << "\n";
+    // fs << time << "\n";
+    fs << "\n"; // description on second line
     for(int particle = 0; particle < size(); particle++){
-        fs << tags[particle] << positions[idx(particle,X)] << " " << positions[idx(particle,Y)] << " " << positions[idx(particle,Z)] << "\n";
+        fs << tag_atom_lookup[tags[particle] % tag_atom_lookup.size()] <<
+                                                " " << positions[idx(particle,X)] <<
+                                                " " << positions[idx(particle,Y)] <<
+                                                " " << positions[idx(particle,Z)] << "\n";
     }
+    fs.close();
 }
 
 void particles::import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen){

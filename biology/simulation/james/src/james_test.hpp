@@ -294,18 +294,16 @@ TEST(pdb_import, import_1){
     }
 }
 
-TEST(write_file, dump_to_xyz_file_1){ 
+TEST(write_file, dump_to_xyz_file_1){
     particles particles_obj;
 
     std::vector<double> position_1 = {0,0,0};
     particles_obj.add_particle(position_1,1,2);
 
-    //acceleration = 5
-
     for(int t = 0; t < 100; t++){
         particles_obj.begin_timestep(1);
-        bendy_obj
+        particles_obj.forces[particles_obj.idx(0,Z)] = 10;
         particles_obj.integrate_particle_trajectory(1);
+        particles_obj.dump_to_xyz_file("output",t);
     }
-
 }
