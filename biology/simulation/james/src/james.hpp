@@ -15,15 +15,13 @@ struct particles{
     //SoA is 5x faster than AoS
 
     //using LAMMPS 'nano' reduced units style (https://lammps.sandia.gov/doc/units.html)
-    //scratch that, using Hartree units https://en.wikipedia.org/wiki/Hartree_atomic_units
-
-                                    //hbar / hartree energy (2.418 884e-17 s)
-    std::vector<double> positions; //Bohr (5.219 772e-11 m)
-    std::vector<double> forces; // hartree / Bohr (8.238e-8 N)
-    std::vector<double> velocities; //bohr / ( hbar / hartree ) (2.187691e6 m/s)
-    std::vector<double> accelerations; //bohr / ( hbar / hartree ) / ( hbar / hartree )
+                                    //time:
+    std::vector<double> positions; //nanometers
+    std::vector<double> forces; //piconewtons
+    std::vector<double> accelerations; //nanometers/nanosecond/nanosecond - these units and the mass and force work out
+    std::vector<double> velocities; //nanometers/nanosecond
     std::vector<double> charges; // multiple of e-
-    std::vector<double> masses; //
+    std::vector<double> masses; // attograms
     std::vector<int> tags;
 
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
@@ -82,6 +80,5 @@ std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double>
 std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
 
 void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2);
-void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &force_vector_1);
-
+void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1);
 #endif

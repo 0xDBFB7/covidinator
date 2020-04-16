@@ -6,6 +6,9 @@
 //based on https://people.sc.fsu.edu/~jburkardt/cpp_src/md_openmp/md_openmp.cpp
 //pdb reader from https://graphics.stanford.edu/~drussel/pdb/
 
+
+
+
 void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.insert(velocity.end(), velocity.begin(), velocity.end());
@@ -256,7 +259,7 @@ std::vector<double> opposite_vector(std::vector<double> vector_1){
 
 
 void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2){
-    double electric_constant = 8.987e9;
+    const double electric_constant = 230.7077; //piconewtons per nm^2 / unitless integer electron charge
     double singularity_epsilon = std::numeric_limits<double>::epsilon();
 
     double p1_x = particle_obj.positions[particle_obj.idx(particle_1,0)];
@@ -287,16 +290,14 @@ void compute_coulomb_force(particles &particle_obj, int particle_1, int particle
 }
 
 void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1){
-    //field vector is in volts/nanometer.
-
-    double electric_constant = 8.987e9;
+    const double field_constant = 1.602e-7; //piconewtons per (volt per meter) per e-
 
     double charge_1 = particle_obj.charges[particle_1];
-    force_vector_1 = scale_vector(electric_field_vector,charge_1*1.602e-19*electric_constant);
+    force_vector_1 = scale_vector(electric_field_vector,charge_1*field_constant);
 }
 
-void handle_interparticle_forces(particles &particles_obj, std::vector<double> &electric_field_vector){
-    double cutoff_distance = 1e-3;
+void handle_interparticle_forces(particles &particles_obj, std::vector<double> &electric_field_vector, double cutoff_distance){
+
     std::vector<double> force_vector_1;
     std::vector<double> force_vector_2;
     for(int i = 0; i < particles_obj.size(); i++){

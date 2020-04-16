@@ -211,7 +211,7 @@ TEST(data_structure, bendy_bonds_force_magnitude_1){
     ASSERT_NEAR(pivot_force_vector[Z],-0.785,1e-3);
 }
 
-TEST(coulomb_force, coulomb_force_1){
+TEST(coulomb_force, coulomb_force_1){ //TODO: re-confirm field constants
     particles particles_obj;
     bendy_bonds bendy_obj;
 
@@ -225,14 +225,34 @@ TEST(coulomb_force, coulomb_force_1){
     std::vector<double> force_vector_2(3);
     compute_coulomb_force(particles_obj, 0,1, force_vector_1, force_vector_2);
 
+    //coulomb constant * ((2 electron charges)^2)  / (1 nanometer^2) = 922 piconewtons
     ASSERT_NEAR(force_vector_1[X],0,1e-3);
     ASSERT_NEAR(force_vector_1[Y],0,1e-3);
-    ASSERT_NEAR(force_vector_1[Z],3.54e-11,1e-12);
+    ASSERT_NEAR(force_vector_1[Z],922.83,1e-2);
 
     ASSERT_NEAR(force_vector_2[X],0,1e-3);
     ASSERT_NEAR(force_vector_2[Y],0,1e-3);
-    ASSERT_NEAR(force_vector_2[Z],-3.54e-11,1e-12);
+    ASSERT_NEAR(force_vector_2[Z],-922.83,1e-2);
 }
+
+
+TEST(coulomb_force, electric_force){ //TODO: re-confirm field constants
+    particles particles_obj;
+    bendy_bonds bendy_obj;
+
+    std::vector<double> position_1 = {0,0,1};
+    particles_obj.add_particle(position_1,2,2);
+
+    std::vector<double> electric_field_vector = {0,0,1e6};
+    std::vector<double> force_vector_1(3);
+    compute_electric_force(particles_obj, 0, electric_field_vector, force_vector_1);
+
+    ASSERT_NEAR(force_vector_1[X],0,1e-3);
+    ASSERT_NEAR(force_vector_1[Y],0,1e-3);
+    ASSERT_NEAR(force_vector_1[Z],0.1602*2,1e-3);
+
+}
+
 
 //
 // TEST(data_structure, cross_product){
