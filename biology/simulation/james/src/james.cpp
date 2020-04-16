@@ -6,8 +6,6 @@
 //based on https://people.sc.fsu.edu/~jburkardt/cpp_src/md_openmp/md_openmp.cpp
 //pdb reader from https://graphics.stanford.edu/~drussel/pdb/
 
-//for simplicity, we'll try SI units first
-//regular or natural units will improve error
 void particles::add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.insert(velocity.end(), velocity.begin(), velocity.end());
@@ -42,6 +40,7 @@ void particles::add_particle(std::vector<double> position, double charge, double
 int particles::size(){
     return masses.size();
 }
+
 double particles::angle(int particle_1, int particle_2, int particle_3){
     //returns angle in radians, dot products
     std::vector<double> vector_1 = distance_vector(particle_1, particle_2);
@@ -176,7 +175,7 @@ void bendy_bonds::compute_leg_force_magnitude(particles &particle_obj, double &l
     std::vector<double> leg_vector_2 = particle_obj.distance_vector(p2_id, p3_id);
 
     double angle = particle_obj.angle(p1_id,p2_id,p3_id); // DRY. take distance_vector out of .angle()
-    //coefficient has units newton-meters of torque per radian
+    //coefficient has units piconewton-nanometers of torque per radian
     double displacement = angle-neutral_angles[bond_id];
     double leg_torque = 1.0*displacement * coefficients[bond_id];
 
@@ -257,7 +256,7 @@ std::vector<double> opposite_vector(std::vector<double> vector_1){
 
 
 void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2){
-    double electric_constant = 8.854e-12;
+    double electric_constant = 8.987e9;
     double singularity_epsilon = std::numeric_limits<double>::epsilon();
 
     double p1_x = particle_obj.positions[particle_obj.idx(particle_1,0)];
@@ -277,7 +276,7 @@ void compute_coulomb_force(particles &particle_obj, int particle_1, int particle
     double charge_1 = particle_obj.charges[particle_1];
     double charge_2 = particle_obj.charges[particle_2];
 
-    double force = electric_constant*(charge_1*charge_2)/((distance*distance));
+    double force = electric_constant*(charge_1*charge_2)/((distance*distance)+singularity_epsilon);
 
     force_vector_1[X] = force*(distance_x/distance); //vector projection
     force_vector_1[Y] = force*(distance_y/distance);
@@ -288,25 +287,28 @@ void compute_coulomb_force(particles &particle_obj, int particle_1, int particle
 }
 
 void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1){
-    //field vector is in volts/meter.
+    //field vector is in volts/nanometer.
+
+    double electric_constant = 8.987e9;
 
     double charge_1 = particle_obj.charges[particle_1];
-    force_vector_1 = scale_vector(electric_field_vector,charge_1);
+    force_vector_1 = scale_vector(electric_field_vector,charge_1*1.602e-19*electric_constant);
 }
 
 void handle_interparticle_forces(particles &particles_obj, std::vector<double> &electric_field_vector){
+    double cutoff_distance = 1e-3;
     std::vector<double> force_vector_1;
     std::vector<double> force_vector_2;
     for(int i = 0; i < particles_obj.size(); i++){
         for(int j = 0; j < particles_obj.size(); j++){ // I remember seeing a better looping strategy somewhere.
-            if(i == j) continue;
+            if(i == j) continue;                        //ah, yes, "Basics of molecular dynamics"
+            if(norm(particles_obj.distance_vector(i,j)) > cutoff_distance) continue;
 
             compute_coulomb_force(particles_obj, i, j, force_vector_1, force_vector_2);
             particles_obj.apply_force(i, force_vector_1);
             particles_obj.apply_force(j, force_vector_2);
         }
     }
-
 }
 
 

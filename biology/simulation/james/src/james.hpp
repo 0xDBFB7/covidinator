@@ -14,12 +14,16 @@
 struct particles{
     //SoA is 5x faster than AoS
 
-    std::vector<double> positions; //x,y,z - using this linear format so CUDA support can be added without undue struggle
-    std::vector<double> forces;
-    std::vector<double> accelerations;
-    std::vector<double> velocities;
-    std::vector<double> charges;
-    std::vector<double> masses;
+    //using LAMMPS 'nano' reduced units style (https://lammps.sandia.gov/doc/units.html)
+    //scratch that, using Hartree units https://en.wikipedia.org/wiki/Hartree_atomic_units
+
+                                    //hbar / hartree energy (2.418 884e-17 s)
+    std::vector<double> positions; //Bohr (5.219 772e-11 m)
+    std::vector<double> forces; // hartree / Bohr (8.238e-8 N)
+    std::vector<double> velocities; //bohr / ( hbar / hartree ) (2.187691e6 m/s)
+    std::vector<double> accelerations; //bohr / ( hbar / hartree ) / ( hbar / hartree )
+    std::vector<double> charges; // multiple of e-
+    std::vector<double> masses; //
     std::vector<int> tags;
 
     void add_particle(std::vector<double> position, std::vector<double> velocity, double charge, double mass);
@@ -28,7 +32,9 @@ struct particles{
     std::vector<double> distance_vector(int particle_1, int particle_2);
     double angle(int particle_1, int particle_2, int particle_3);
     void apply_force(int particle_id, std::vector<double> &force_vector);
+
     void initialize_timestep();
+
     int idx(int id, int dim);
     int size();
 };
