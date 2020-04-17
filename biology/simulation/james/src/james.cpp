@@ -8,7 +8,7 @@
 
 
 
-void particles::add_particle(std::vector<double> position, double charge, double mass, int tag, bool is_frozen){
+void Particles::add_particle(std::vector<double> position, double charge, double mass, int tag, bool is_frozen){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.resize(velocities.size()+3,0);
     charges.push_back(charge); //slow, whatever
@@ -19,7 +19,7 @@ void particles::add_particle(std::vector<double> position, double charge, double
     forces.resize(forces.size()+3,0.0);
 }
 
-void particles::add_particle(std::vector<double> position, double charge, double mass){
+void Particles::add_particle(std::vector<double> position, double charge, double mass){
     positions.insert(positions.end(), position.begin(), position.end());
     velocities.resize(velocities.size()+3,0);
     charges.push_back(charge); //slow, whatever
@@ -30,11 +30,11 @@ void particles::add_particle(std::vector<double> position, double charge, double
     forces.resize(forces.size()+3,0.0);
 }
 
-int particles::size(){
+int Particles::size(){
     return masses.size();
 }
 
-double particles::angle(int particle_1, int particle_2, int particle_3){
+double Particles::angle(int particle_1, int particle_2, int particle_3){
     //returns angle in radians, dot products
     std::vector<double> vector_1 = distance_vector(particle_1, particle_2);
     std::vector<double> vector_2 = distance_vector(particle_2, particle_3);
@@ -44,14 +44,14 @@ double particles::angle(int particle_1, int particle_2, int particle_3){
     double mag = norm(vector_1) * norm(vector_2);
 
     if(mag == 0.0){
-        std::cout << "particles::angle singularity\n";
+        std::cout << "Particles::angle singularity\n";
         return 0;
     }
 
     return acos(dot/mag);
 }
 
-std::vector<double> particles::distance_vector(int particle_1, int particle_2){
+std::vector<double> Particles::distance_vector(int particle_1, int particle_2){
     std::vector<double> output(3);
     for(int dim = 0; dim < 3; dim++){
         output[dim] = positions[idx(particle_1,dim)] - positions[idx(particle_2,dim)];
@@ -59,13 +59,13 @@ std::vector<double> particles::distance_vector(int particle_1, int particle_2){
     return output;
 }
 
-void particles::apply_force(int particle_id, std::vector<double> &force_vector){
+void Particles::apply_force(int particle_id, std::vector<double> &force_vector){
     forces[idx(particle_id,X)] += force_vector[X];
     forces[idx(particle_id,Y)] += force_vector[Y];
     forces[idx(particle_id,Z)] += force_vector[Z];
 }
 
-int particles::idx(int id, int dim){
+int Particles::idx(int id, int dim){
     return (id*3)+dim;
 }
 
@@ -86,24 +86,24 @@ std::vector<double> normalize(std::vector<double> input){
     return output;
 }
 
-void stretchy_bonds::add_bond(particles &particle_obj, int particle_1, int particle_2, double coefficient){
-    neutral_lengths.push_back(norm(particle_obj.distance_vector(particle_1,particle_2)));
+void stretchy_bonds::add_bond(Particles &particles, int particle_1, int particle_2, double coefficient){
+    neutral_lengths.push_back(norm(particles.distance_vector(particle_1,particle_2)));
     p1.push_back(particle_1);
     p2.push_back(particle_2);
     coefficients.push_back(coefficient);
 }
 
-void stretchy_bonds::compute_bond_force(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
+void stretchy_bonds::compute_bond_force(Particles &particles, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
     int p1_id = p1[bond_id];
     int p2_id = p2[bond_id];
 
-    double p1_x = particle_obj.positions[particle_obj.idx(p1_id,0)];
-    double p1_y = particle_obj.positions[particle_obj.idx(p1_id,1)];
-    double p1_z = particle_obj.positions[particle_obj.idx(p1_id,2)];
+    double p1_x = particles.positions[particles.idx(p1_id,0)];
+    double p1_y = particles.positions[particles.idx(p1_id,1)];
+    double p1_z = particles.positions[particles.idx(p1_id,2)];
 
-    double p2_x = particle_obj.positions[particle_obj.idx(p2_id,0)];
-    double p2_y = particle_obj.positions[particle_obj.idx(p2_id,1)];
-    double p2_z = particle_obj.positions[particle_obj.idx(p2_id,2)];
+    double p2_x = particles.positions[particles.idx(p2_id,0)];
+    double p2_y = particles.positions[particles.idx(p2_id,1)];
+    double p2_z = particles.positions[particles.idx(p2_id,2)];
 
     double distance_x = p1_x - p2_x;
     double distance_y = p1_y - p2_y;
@@ -112,7 +112,7 @@ void stretchy_bonds::compute_bond_force(particles &particle_obj, std::vector<dou
     double distance = norm(distance_x,distance_y,distance_z);
     double displacement = distance-neutral_lengths[bond_id];
 
-    double force = -1.0*coefficients[particle_obj.idx(p1_id,0)]*displacement;
+    double force = -1.0*coefficients[particles.idx(p1_id,0)]*displacement;
 
     force_vector_1[X] = force*(distance_x/distance); //vector projection
     force_vector_1[Y] = force*(distance_y/distance);
@@ -122,53 +122,79 @@ void stretchy_bonds::compute_bond_force(particles &particle_obj, std::vector<dou
 }
 
 
-void stretchy_bonds::bond_neighbors(particles &particle_obj, double radius, int tag, double coefficient){
-    for(int p1 = 0; p1 < particle_obj.size(); p1++){
-        if(particle_obj.tags[p1] != tag) continue;
+void stretchy_bonds::bond_neighbors(Particles &particles, double radius, int tag, double coefficient){
+    for(int p1_id = 0; p1_id < particles.size(); p1_id++){
+        if(particles.tags[p1_id] != tag) continue;
 
-            for(int p2 = 0; p2 < particle_obj.size(); p2++){
+        for(int p2_id = 0; p2_id < particles.size(); p2_id++){
 
-            if(p2 == pivot) continue;
-            if(particle_obj.tags[p2] != tag) continue;
-            if(norm(particle_obj.distance_vector(p2,p1)) > radius) continue;
+            if(p2_id == p1_id) continue;
+            if(particles.tags[p2_id] != tag) continue;
+            if(norm(particles.distance_vector(p2_id,p1_id)) > radius) continue;
 
-            add_bond(particle_obj, p1,  coefficient); //might be wrong
+            add_bond(particles, p1_id, p2_id, coefficient); //might be wrong
         }
     }
 }
 
+void stretchy_bonds::compute_all_bonds(Particles &particles){
+    for(int bond_id = 0; bond_id < (int)p1.size(); bond_id++){
 
+    }
+}
 
-void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient){
-    neutral_angles.push_back(particle_obj.angle(particle_1,particle_2,particle_3));
+void bendy_bonds::add_bond(Particles &particles, int particle_1, int pivot_particle, int particle_3, double coefficient){
+    neutral_angles.push_back(particles.angle(particle_1,pivot_particle,particle_3));
     p1.push_back(particle_1);
-    p2.push_back(particle_2);
+    pivots.push_back(pivot_particle);
     p3.push_back(particle_3);
     coefficients.push_back(coefficient);
 }
 
 
+void bendy_bonds::bond_neighbors(Particles &particles, double radius, int tag, double coefficient){
+    for(int pivot = 0; pivot < particles.size(); pivot++){
+        if(particles.tags[pivot] != tag) continue;
 
-void bendy_bonds::bond_neighbors(particles &particle_obj, double radius, int tag, double coefficient){
-    for(int pivot = 0; pivot < particle_obj.size(); pivot++){
-        if(particle_obj.tags[pivot] != tag) continue;
+        for(int p1_id = 0; p1_id < particles.size(); p1_id++){
+            if(p1_id == pivot) continue;
+            if(particles.tags[p1_id] != tag) continue;
+            if(norm(particles.distance_vector(p1_id,pivot)) > radius) continue;
 
-        for(int p1 = 0; p1 < particle_obj.size(); p1++){
-            if(p1 == pivot) continue;
-            if(particle_obj.tags[p1] != tag) continue;
-            if(norm(particle_obj.distance_vector(p1,pivot)) > radius) continue;
+            for(int p2_id = 0; p2_id < particles.size(); p2_id++){
+                if(p2_id == pivot || p1_id == p2_id) continue;
+                if(particles.tags[p2_id] != tag) continue;
+                if(norm(particles.distance_vector(p2_id,pivot)) > radius) continue;
 
-            for(int p2 = 0; p2 < particle_obj.size(); p2++){
-                if(p2 == pivot || p1 == p2) continue;
-                if(particle_obj.tags[p2] != tag) continue;
-                if(norm(particle_obj.distance_vector(p2,pivot)) > radius) continue;
-
-                add_bond(particle_obj, p1, pivot, p2, coefficient); //might be wrong
+                add_bond(particles, p1_id, pivot, p2_id, coefficient); //might be wrong
             }
         }
     }
 }
 
+
+void bendy_bonds::compute_all_bonds(Particles &particles){
+    for(int bond_id = 0; bond_id < (int)p1.size(); bond_id++){
+        double force_magnitude_1;
+        double force_magnitude_2;
+        compute_leg_force_magnitude(particles, force_magnitude_1, force_magnitude_2, bond_id);
+
+        std::vector<double> leg_force_vector_1;
+        std::vector<double> leg_force_vector_2;
+        compute_leg_force_direction_vectors(particles, leg_force_vector_1, leg_force_vector_2, bond_id);
+
+        leg_force_vector_1 = scale_vector(leg_force_vector_1, force_magnitude_1);
+        leg_force_vector_2 = scale_vector(leg_force_vector_2, force_magnitude_2);
+
+        std::vector<double> pivot_force_vector;
+        compute_pivot_force_vector(particles, leg_force_vector_1, leg_force_vector_2, pivot_force_vector, bond_id);
+
+        particles.apply_force(p1[bond_id], leg_force_vector_1);
+        particles.apply_force(p3[bond_id], leg_force_vector_2);
+        particles.apply_force(pivots[bond_id], pivot_force_vector);
+
+    }
+}
 
 // //bond angles can also be represented by a Hooks-ian spring.
 // //https://en.wikibooks.org/wiki/Molecular_Simulation/Intramolecular_Forces#Bond_Angle_Bending
@@ -192,16 +218,16 @@ void bendy_bonds::bond_neighbors(particles &particle_obj, double radius, int tag
 
 
 
-void bendy_bonds::compute_leg_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id){
+void bendy_bonds::compute_leg_force_magnitude(Particles &particles, double &leg_1_force, double &leg_2_force, int bond_id){
     //determine the amount to scale the leg force direction vectors by
     int p1_id = p1[bond_id];
-    int p2_id = p2[bond_id];
+    int pivot_id = pivots[bond_id];
     int p3_id = p3[bond_id];
 
-    std::vector<double> leg_vector_1 = particle_obj.distance_vector(p2_id, p1_id);
-    std::vector<double> leg_vector_2 = particle_obj.distance_vector(p2_id, p3_id);
+    std::vector<double> leg_vector_1 = particles.distance_vector(pivot_id, p1_id);
+    std::vector<double> leg_vector_2 = particles.distance_vector(pivot_id, p3_id);
 
-    double angle = particle_obj.angle(p1_id,p2_id,p3_id); // DRY. take distance_vector out of .angle()
+    double angle = particles.angle(p1_id,pivot_id,p3_id); // DRY. take distance_vector out of .angle()
     //coefficient has units piconewton-nanometers of torque per radian
     double displacement = angle-neutral_angles[bond_id];
     double leg_torque = 1.0*displacement * coefficients[bond_id];
@@ -214,13 +240,13 @@ void bendy_bonds::compute_leg_force_magnitude(particles &particle_obj, double &l
     leg_2_force = fabs(leg_2_force);
 }
 
-void bendy_bonds::compute_leg_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
+void bendy_bonds::compute_leg_force_direction_vectors(Particles &particles, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id){
     int p1_id = p1[bond_id];
-    int p2_id = p2[bond_id];
+    int pivot_id = pivots[bond_id];
     int p3_id = p3[bond_id];
 
-    std::vector<double> leg_vector_1 = particle_obj.distance_vector(p2_id, p1_id);
-    std::vector<double> leg_vector_2 = particle_obj.distance_vector(p2_id, p3_id);
+    std::vector<double> leg_vector_1 = particles.distance_vector(pivot_id, p1_id);
+    std::vector<double> leg_vector_2 = particles.distance_vector(pivot_id, p3_id);
 
     std::vector<double> torque_vector = cross_product(leg_vector_1, leg_vector_2);
 
@@ -231,7 +257,7 @@ void bendy_bonds::compute_leg_force_direction_vectors(particles &particle_obj, s
     force_vector_2 = normalize(force_vector_2); // why? it's inelegant!
 }
 
-void bendy_bonds::compute_pivot_force_vector(particles &particle_obj, std::vector<double> &leg_1_force,
+void bendy_bonds::compute_pivot_force_vector(Particles &particles, std::vector<double> &leg_1_force,
                                                                                 std::vector<double> &leg_2_force,
                                                                                 std::vector<double> &pivot_force, int bond_id){
     //unlike the leg force direction vectors, this isn't normalized.
@@ -282,17 +308,17 @@ std::vector<double> opposite_vector(std::vector<double> vector_1){
 }
 
 
-void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2){
+void compute_coulomb_force(Particles &particles, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2){
     const double coulomb_constant = 230.7077; //piconewtons per nm^2 / unitless integer electron charge
     double singularity_epsilon = std::numeric_limits<double>::epsilon();
 
-    double p1_x = particle_obj.positions[particle_obj.idx(particle_1,0)];
-    double p1_y = particle_obj.positions[particle_obj.idx(particle_1,1)];
-    double p1_z = particle_obj.positions[particle_obj.idx(particle_1,2)];
+    double p1_x = particles.positions[particles.idx(particle_1,0)];
+    double p1_y = particles.positions[particles.idx(particle_1,1)];
+    double p1_z = particles.positions[particles.idx(particle_1,2)];
 
-    double p2_x = particle_obj.positions[particle_obj.idx(particle_2,0)];
-    double p2_y = particle_obj.positions[particle_obj.idx(particle_2,1)];
-    double p2_z = particle_obj.positions[particle_obj.idx(particle_2,2)];
+    double p2_x = particles.positions[particles.idx(particle_2,0)];
+    double p2_y = particles.positions[particles.idx(particle_2,1)];
+    double p2_z = particles.positions[particles.idx(particle_2,2)];
 
     double distance_x = p1_x - p2_x;
     double distance_y = p1_y - p2_y;
@@ -300,8 +326,8 @@ void compute_coulomb_force(particles &particle_obj, int particle_1, int particle
 
     double distance = norm(distance_x,distance_y,distance_z);
 
-    double charge_1 = particle_obj.charges[particle_1];
-    double charge_2 = particle_obj.charges[particle_2];
+    double charge_1 = particles.charges[particle_1];
+    double charge_2 = particles.charges[particle_2];
 
     double force = coulomb_constant*(charge_1*charge_2)/((distance*distance)+singularity_epsilon);
 
@@ -313,31 +339,43 @@ void compute_coulomb_force(particles &particle_obj, int particle_1, int particle
 
 }
 
-void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1){
+void compute_electric_force(Particles &particles, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1){
     const double field_constant = 1.602e-7; //piconewtons per (volt per meter) per e-
 
-    double charge_1 = particle_obj.charges[particle_1];
+    double charge_1 = particles.charges[particle_1];
     force_vector_1 = scale_vector(electric_field_vector,charge_1*field_constant);
 }
 
+void compute_all_electric_forces(Particles &particles, std::vector<double> &electric_field_vector){
+    std::vector<double> force_vector_1(3);
 
-void handle_interparticle_forces(particles &particles_obj, std::vector<double> &electric_field_vector, double cutoff_distance){
+    for(int i = 0; i < particles.size(); i++){
+        compute_electric_force(particles, i, electric_field_vector, force_vector_1);
+        particles.apply_force(i, force_vector_1);
+    }
+}
+
+
+void handle_interparticle_forces(Particles &particles, std::vector<double> &electric_field_vector, double cutoff_distance){
 
     std::vector<double> force_vector_1;
     std::vector<double> force_vector_2;
-    for(int i = 0; i < particles_obj.size(); i++){
-        for(int j = 0; j < particles_obj.size(); j++){ // I remember seeing a better looping strategy somewhere.
-            if(i == j) continue;                        //ah, yes, "Basics of molecular dynamics"
-            if(norm(particles_obj.distance_vector(i,j)) > cutoff_distance) continue;
+    for(int i = 0; i < particles.size(); i++){
 
-            compute_coulomb_force(particles_obj, i, j, force_vector_1, force_vector_2);
-            particles_obj.apply_force(i, force_vector_1);
-            particles_obj.apply_force(j, force_vector_2);
+        for(int j = 0; j < particles.size(); j++){ // I remember seeing a better looping strategy somewhere.
+            if(i == j) continue;                        //ah, yes, "Basics of molecular dynamics"
+            if(norm(particles.distance_vector(i,j)) > cutoff_distance) continue;
+
+            compute_coulomb_force(particles, i, j, force_vector_1, force_vector_2);
+            particles.apply_force(i, force_vector_1);
+            particles.apply_force(j, force_vector_2);
+
+
         }
     }
 }
 
-void particles::begin_timestep(double timestep){
+void Particles::begin_timestep(double timestep){
     new_positions.resize(positions.size());
     for(int particle = 0; particle < size(); particle++){
         for(int dim = 0; dim < 3; dim++){
@@ -351,7 +389,7 @@ void particles::begin_timestep(double timestep){
 }
 
 
-void particles::integrate_particle_trajectory(double timestep){
+void Particles::integrate_particle_trajectory(double timestep){
     //currently using velocity verlet
     //if not tagged motionless
     //stolen direct from https://en.wikipedia.org/wiki/Verlet_integration
@@ -371,7 +409,7 @@ void particles::integrate_particle_trajectory(double timestep){
 }
 
 
-void particles::dump_to_xyz_file(std::string filename, int iteration){
+void Particles::dump_to_xyz_file(std::string filename, int iteration){
     //visualize with Chimera: under MD / Ensemble analysis, MD Movie, set XYZ.
     std::vector<char> tag_atom_lookup = {'C','O'};
 
@@ -392,7 +430,7 @@ void particles::dump_to_xyz_file(std::string filename, int iteration){
     fs.close();
 }
 
-void particles::import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen){
+void Particles::import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen){
     std::fstream fs;
     fs.open(filename, std::fstream::in);
 
@@ -409,13 +447,13 @@ void particles::import_PDB(std::string filename, double charge, double mass, int
 }
 
 //Steps:
-//import particles.
+//import Particles.
 
 
 //vel. verlet integrator (https://en.wikipedia.org/wiki/Verlet_integration)
 
 
-//for (auto i: particles_obj.positions) std::cout << i << ',';
+//for (auto i: particles.positions) std::cout << i << ',';
 
 //
 // std::vector<int> neighbors(positions, float cutoff_distance){

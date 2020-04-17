@@ -18,7 +18,7 @@
 #define Y 1
 #define Z 2
 
-struct particles{
+struct Particles{
     //SoA is 5x faster than AoS
 
     //using LAMMPS 'nano' reduced units style (https://lammps.sandia.gov/doc/units.html)
@@ -64,14 +64,15 @@ struct stretchy_bonds{
     std::vector<bool> broken;
 
 
-    void add_bond(particles &particle_obj, int particle_1, int particle_2, double coefficient);
-
-    void compute_bond_force(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
+    void add_bond(Particles &particles, int particle_1, int particle_2, double coefficient);
+    void bond_neighbors(Particles &particles, double radius, int tag, double coefficient);
+    void compute_all_bonds(Particles &particles);
+    void compute_bond_force(Particles &particles, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
 };
 
 struct bendy_bonds{
     std::vector<int> p1;
-    std::vector<int> p2;
+    std::vector<int> pivots;
     std::vector<int> p3;
     std::vector<double> neutral_angles;
     std::vector<double> coefficients;
@@ -79,15 +80,17 @@ struct bendy_bonds{
     std::vector<double> breaking_force;
     std::vector<bool> broken;
 
-    void add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient);
+    void add_bond(Particles &particles, int particle_1, int particle_2, int particle_3, double coefficient);
 
-    void compute_bond_force(particles &particle_obj, int bond_id);
-    void compute_leg_force_direction_vectors(particles &particle_obj, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
-    void compute_pivot_force_vector(particles &particle_obj, std::vector<double> &leg_1_force,
+    void compute_bond_force(Particles &particles, int bond_id);
+    void compute_leg_force_direction_vectors(Particles &particles, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
+    void compute_pivot_force_vector(Particles &particles, std::vector<double> &leg_1_force,
                                                                                     std::vector<double> &leg_2_force,
                                                                                     std::vector<double> &pivot_force, int bond_id);
-    void bond_neighbors(particles &particle_obj, double radius, int tag, double coefficient);
-    void compute_leg_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id);
+    void bond_neighbors(Particles &particles, double radius, int tag, double coefficient);
+    void compute_all_bonds(Particles &particles);
+
+    void compute_leg_force_magnitude(Particles &particles, double &leg_1_force, double &leg_2_force, int bond_id);
 
 };
 
@@ -103,6 +106,6 @@ std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double>
 
 std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
 
-void compute_coulomb_force(particles &particle_obj, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2);
-void compute_electric_force(particles &particle_obj, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1);
+void compute_coulomb_force(Particles &particles, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2);
+void compute_electric_force(Particles &particles, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1);
 #endif
