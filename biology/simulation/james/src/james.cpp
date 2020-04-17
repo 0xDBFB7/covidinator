@@ -122,6 +122,21 @@ void stretchy_bonds::compute_bond_force(particles &particle_obj, std::vector<dou
 }
 
 
+void stretchy_bonds::bond_neighbors(particles &particle_obj, double radius, int tag, double coefficient){
+    for(int p1 = 0; p1 < particle_obj.size(); p1++){
+        if(particle_obj.tags[p1] != tag) continue;
+
+            for(int p2 = 0; p2 < particle_obj.size(); p2++){
+
+            if(p2 == pivot) continue;
+            if(particle_obj.tags[p2] != tag) continue;
+            if(norm(particle_obj.distance_vector(p2,p1)) > radius) continue;
+
+            add_bond(particle_obj, p1,  coefficient); //might be wrong
+        }
+    }
+}
+
 
 
 void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle_2, int particle_3, double coefficient){
@@ -130,6 +145,28 @@ void bendy_bonds::add_bond(particles &particle_obj, int particle_1, int particle
     p2.push_back(particle_2);
     p3.push_back(particle_3);
     coefficients.push_back(coefficient);
+}
+
+
+
+void bendy_bonds::bond_neighbors(particles &particle_obj, double radius, int tag, double coefficient){
+    for(int pivot = 0; pivot < particle_obj.size(); pivot++){
+        if(particle_obj.tags[pivot] != tag) continue;
+
+        for(int p1 = 0; p1 < particle_obj.size(); p1++){
+            if(p1 == pivot) continue;
+            if(particle_obj.tags[p1] != tag) continue;
+            if(norm(particle_obj.distance_vector(p1,pivot)) > radius) continue;
+
+            for(int p2 = 0; p2 < particle_obj.size(); p2++){
+                if(p2 == pivot || p1 == p2) continue;
+                if(particle_obj.tags[p2] != tag) continue;
+                if(norm(particle_obj.distance_vector(p2,pivot)) > radius) continue;
+
+                add_bond(particle_obj, p1, pivot, p2, coefficient); //might be wrong
+            }
+        }
+    }
 }
 
 
@@ -335,7 +372,8 @@ void particles::integrate_particle_trajectory(double timestep){
 
 
 void particles::dump_to_xyz_file(std::string filename, int iteration){
-    std::vector<char> tag_atom_lookup[] = {'C','O'};
+    //visualize with Chimera: under MD / Ensemble analysis, MD Movie, set XYZ.
+    std::vector<char> tag_atom_lookup = {'C','O'};
 
     std::fstream fs;
     filename += std::to_string(iteration);

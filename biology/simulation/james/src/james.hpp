@@ -86,7 +86,7 @@ struct bendy_bonds{
     void compute_pivot_force_vector(particles &particle_obj, std::vector<double> &leg_1_force,
                                                                                     std::vector<double> &leg_2_force,
                                                                                     std::vector<double> &pivot_force, int bond_id);
-
+    void bond_neighbors(particles &particle_obj, double radius, int tag, double coefficient);
     void compute_leg_force_magnitude(particles &particle_obj, double &leg_1_force, double &leg_2_force, int bond_id);
 
 };
