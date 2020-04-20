@@ -444,6 +444,7 @@ void Particles::import_PDB(std::string filename, double charge, double mass, int
             add_particle(position, charge, mass, tag, is_frozen);
         }
     }
+    std::cout << "Imported " << size() << " particles." << "\n";
 }
 
 //Steps:

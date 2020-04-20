@@ -108,4 +108,6 @@ std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
 
 void compute_coulomb_force(Particles &particles, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2);
 void compute_electric_force(Particles &particles, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1);
+void handle_interparticle_forces(Particles &particles, std::vector<double> &electric_field_vector, double cutoff_distance);
+void compute_all_electric_forces(Particles &particles, std::vector<double> &electric_field_vector);
 #endif

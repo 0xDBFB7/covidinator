@@ -297,3 +297,13 @@ obabel shelxpro.pdb -O shelxpro.xyz  - openbabel can apparently convert to XYZ, 
 [http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h](http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h)
 
 
+
+----
+
+[https://www.rcsb.org/news?year=2020&article=5e74d55d2d410731e9944f52&feature=true](https://www.rcsb.org/news?year=2020&article=5e74d55d2d410731e9944f52&feature=true)
+
+Covid resources
+
+
+
+
