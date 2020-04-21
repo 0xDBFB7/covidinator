@@ -28,4 +28,46 @@ The 3-ohm resistor required for a T-type attenuator might be a bit tricky with t
 
 Per **Frequency Response of Thin Film Chip Resistors, Vishay** we can actually get away with stock 0603 50 ohm resistors up to 10 GHz - the impedance is off by at most 20%.
 
+-----
+
+## T4 Simulation
+
+One of the key aspects we have to test is the required duration of exposure. To do this, we need to find the resonant frequency of T4. This could be done with a microwave absorption measurement, as with Yang (2015) and Sun (2017), but having a proper simulation will allow us to simultaneously test optical centrifuge and chirp methods.
+
+
+
+----
+
+## 3D Beamforming
+
+Safar (2016) focus power to a small region. In their words:
+
+> In this paper, a new beamforming technique is introduced that is capable of transmitting power to a specified
+> point in space, rather than a direction.
+
+Depending on the inactivation time, this point would be swept throughout a volume of space. The required RF power would be much lower than a directional beam.
+
+However, on later review, the technique not only requires each antenna to have a different frequency, which is quite reasonable, but
+
+> Each antenna transmits a sum of 50 signals, each having different frequency of operation.
+> 
+> The frequency range is 1–1.75 GHz
+
+Reducing to 20 signals produces a very similar figure, as does reducing to 3 MHz increment.
+
+![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-21 11-47-02.png)
+
+It is not immediately obvious how this could be implemented. Independent control of phase for each of the frequencies would be needed, per antenna. Moreover,
+
+> Note that in (9) the optimum coefficient is a function of time.
+> This is necessary to cancel the time dependent exponential
+> present in the array factor in (6) to make the desired beam
+> pattern time independent as in (7). This can be achieved by
+> using phase shifters that can continuously change the phase
+> of the outgoing signals according to (9).
+
+This technique is probably not within reach for this project.
+
+----
+
 

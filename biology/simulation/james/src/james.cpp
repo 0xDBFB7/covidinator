@@ -136,19 +136,26 @@ void stretchy_bonds::compute_bond_force(Particles &particles, std::vector<double
     force_vector_2 = opposite_vector(force_vector_1); // equal and opposite reaction
 }
 
+ std::vector<double> find_neighbors(int p1_id, int num_neighbors){
+    std::vector<double> neighbors(num_neighbors);
+    std::vector<double> neighbor_distances(num_neighbors);
+    std::fill(neighbor_distances, );
 
-void stretchy_bonds::bond_neighbors(Particles &particles, double radius, int tag, double coefficient){
     for(int p1_id = 0; p1_id < particles.size(); p1_id++){
         if(particles.tags[p1_id] != tag) continue;
 
-        for(int p2_id = 0; p2_id < particles.size(); p2_id++){
+        if(p2_id == p1_id) continue;
+        if(particles.tags[p2_id] != tag) continue;
+        norm(particles.distance_vector(p2_id,p1_id))
+    }
+}
 
-            if(p2_id == p1_id) continue;
-            if(particles.tags[p2_id] != tag) continue;
-            if(norm(particles.distance_vector(p2_id,p1_id)) > radius) continue;
+void stretchy_bonds::bond_neighbors(Particles &particles, int num_neighbors, int tag, double coefficient){
+    for(int p1_id = 0; p1_id < particles.size(); p1_id++){
+        find_neighbors();
+        for(int p1_id = 0; p1_id < particles.size(); p1_id++){
 
-            add_bond(particles, p1_id, p2_id, coefficient); //might be wrong
-        }
+        add_bond(particles, p1_id, p2_id, coefficient); //might be wrong
     }
 }
 

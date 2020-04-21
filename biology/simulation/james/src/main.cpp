@@ -23,7 +23,7 @@ int main(){
 
 
     // coefficient: piconewtons / nanometer
-    // forces are perhaps on the order of 1 piconewton;
+    // forces are perhaps on the order of 1 nanonewton;
     // deflections are perhaps 10 nanometers.
     // the coefficient should be on the order of 0.1.
     stretchy_obj.bond_neighbors(particles, cutoff_distance, 0, 0.1);
