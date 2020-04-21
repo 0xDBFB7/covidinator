@@ -37,3 +37,23 @@ based on asciio
 [https://github.com/rcaloras/bash-preexec](https://github.com/rcaloras/bash-preexec)
 
 [https://unix.stackexchange.com/questions/485798/show-time-elapsed-since-i-started-last-command-in-prompt](https://unix.stackexchange.com/questions/485798/show-time-elapsed-since-i-started-last-command-in-prompt)
+
+docear is basically what I want.
+
+Here's why I'm spending all this time: this is a medical device, I don't want to screw up the science, rigor is now essential, and I'm wasting a lot of time looking for things I've already found.
+
+There's really four regimes we have to provide for here:
+
+- Quick, context-free note-taking in-situ - unreadable after a short period, not human readable extenrally
+
+- Linearly logging what was believed and considered at what time - crucially, without going back and updating as new information is added.
+  
+  Currently I'm only operating in this regime - new info is appended to the bottom of the document without any updates. Auditable lab notebooks would seem to fulfil the same function, but everyone's better at them.
+  
+  In some ways git fulfils this function with an ELN.
+
+- Rigorously documenting what was established and tested for future reference
+
+- Production-quality final paper
+
+[https://monodraw.helftone.com/](https://monodraw.helftone.com/) nice, only MacOX though

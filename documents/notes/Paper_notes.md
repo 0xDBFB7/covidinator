@@ -88,6 +88,4 @@ The author has already [overstepped their fields], and will not attempt to produ
 
 It is likely that sufficient PCB and microwave transistor capacity exists to produce a *covidinator* for every hospital bed in North America in a few weeks - on the order of 1 million units.
 
-standard PCB production lines are not well optimized for a simple product such as this.
-
-
+lay summary

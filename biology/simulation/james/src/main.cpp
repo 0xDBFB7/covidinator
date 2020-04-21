@@ -22,16 +22,16 @@ int main(){
     particles.import_PDB(input_file, 1, 1, 0, 0, 50);
 
 
-    //coefficient: piconewtons / nanometer
-    //forces are perhaps on the order of 1 piconewton;
-    //deflections are perhaps 10 nanometers.
+    // coefficient: piconewtons / nanometer
+    // forces are perhaps on the order of 1 piconewton;
+    // deflections are perhaps 10 nanometers.
     // the coefficient should be on the order of 0.1.
     stretchy_obj.bond_neighbors(particles, cutoff_distance, 0, 0.1);
 
 
-    //coefficient: piconewtons / radian
-    //forces are perhaps on the order of 1 piconewton;
-    //deflections are perhaps 0.5 rad
+    // coefficient: piconewtons / radian
+    // forces are perhaps on the order of 1 piconewton;
+    // deflections are perhaps 0.5 rad
     // the coefficient should be on the order of 0.1.
     // bendy_obj.bond_neighbors(particles, cutoff_distance, 0, 0.0000001);
 

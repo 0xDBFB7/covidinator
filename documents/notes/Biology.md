@@ -329,7 +329,3 @@ More FEM treatment.
 > 2 GHz: wet = ~25 mm dry 100 mm
 
 ----
-
-man I don't know whta the fuck I'm doing
-
-

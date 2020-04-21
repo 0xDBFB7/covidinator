@@ -484,28 +484,8 @@ void Particles::import_PDB(std::string filename, double charge, double mass, int
 //import Particles.
 
 
-//vel. verlet integrator (https://en.wikipedia.org/wiki/Verlet_integration)
-
-
 //for (auto i: particles.positions) std::cout << i << ',';
 
-//
-// std::vector<int> neighbors(positions, float cutoff_distance){
-//     //returns a list of particle IDs within radius cutoff of particle
-//
-// }
-//
-// int dist(double x, double y, double z){
-//
-// }
-//
-// int force(double particle_charge_1, double particle_charge_1, double dist){
-//     //regularize
-//     lennard_jones_force =
-//     coulomb_force = (particle_charge_1*particle_charge_2)/((dist-)*dist);
-//     //electric field
-// }
-//
 // // void make_sphere(std::vector<double> points, double total_charge, double radius, int N){
 // //     surface_area = 4.0 * M_PI * (radius*radius);
 // //
