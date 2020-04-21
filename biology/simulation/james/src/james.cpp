@@ -59,6 +59,21 @@ std::vector<double> Particles::distance_vector(int particle_1, int particle_2){
     return output;
 }
 
+//
+// double Particles::determine_mean_neighbor_distance(){
+//     //determine how far away the 3 nearest neighbors are, on average
+//
+//     const int N = 100; // sample a reasonable ensemble
+//
+//     double output;
+//     for(int p1_id = 0; p1_id < particles.size(); p1_id+=(particles.size()/N)){
+//
+//     }
+//     return output;
+// }
+
+
+
 void Particles::apply_force(int particle_id, std::vector<double> &force_vector){
     forces[idx(particle_id,X)] += force_vector[X];
     forces[idx(particle_id,Y)] += force_vector[Y];
@@ -112,7 +127,7 @@ void stretchy_bonds::compute_bond_force(Particles &particles, std::vector<double
     double distance = norm(distance_x,distance_y,distance_z);
     double displacement = distance-neutral_lengths[bond_id];
 
-    double force = -1.0*coefficients[particles.idx(p1_id,0)]*displacement;
+    double force = -1.0*coefficients[bond_id]*displacement;
 
     force_vector_1[X] = force*(distance_x/distance); //vector projection
     force_vector_1[Y] = force*(distance_y/distance);
@@ -138,8 +153,16 @@ void stretchy_bonds::bond_neighbors(Particles &particles, double radius, int tag
 }
 
 void stretchy_bonds::compute_all_bonds(Particles &particles){
+
+    #pragma omp parallel for
     for(int bond_id = 0; bond_id < (int)p1.size(); bond_id++){
 
+        std::vector<double> force_vector_1(3);
+        std::vector<double> force_vector_2(3);
+        compute_bond_force(particles, force_vector_1, force_vector_2, bond_id);
+
+        particles.apply_force(p1[bond_id], force_vector_1);
+        particles.apply_force(p2[bond_id], force_vector_2);
     }
 }
 
@@ -174,6 +197,8 @@ void bendy_bonds::bond_neighbors(Particles &particles, double radius, int tag, d
 
 
 void bendy_bonds::compute_all_bonds(Particles &particles){
+
+    #pragma omp parallel for
     for(int bond_id = 0; bond_id < (int)p1.size(); bond_id++){
         double force_magnitude_1;
         double force_magnitude_2;
@@ -347,9 +372,10 @@ void compute_electric_force(Particles &particles, int particle_1, std::vector<do
 }
 
 void compute_all_electric_forces(Particles &particles, std::vector<double> &electric_field_vector){
-    std::vector<double> force_vector_1(3);
 
+    #pragma omp parallel for
     for(int i = 0; i < particles.size(); i++){
+        std::vector<double> force_vector_1(3);
         compute_electric_force(particles, i, electric_field_vector, force_vector_1);
         particles.apply_force(i, force_vector_1);
     }
@@ -358,8 +384,9 @@ void compute_all_electric_forces(Particles &particles, std::vector<double> &elec
 
 void handle_interparticle_forces(Particles &particles, std::vector<double> &electric_field_vector, double cutoff_distance){
 
-    std::vector<double> force_vector_1;
-    std::vector<double> force_vector_2;
+    std::vector<double> force_vector_1(3);
+    std::vector<double> force_vector_2(3);
+    #pragma omp parallel for collapse(2)
     for(int i = 0; i < particles.size(); i++){
 
         for(int j = 0; j < particles.size(); j++){ // I remember seeing a better looping strategy somewhere.
@@ -377,6 +404,8 @@ void handle_interparticle_forces(Particles &particles, std::vector<double> &elec
 
 void Particles::begin_timestep(double timestep){
     new_positions.resize(positions.size());
+
+    #pragma omp parallel for
     for(int particle = 0; particle < size(); particle++){
         for(int dim = 0; dim < 3; dim++){
             new_positions[idx(particle,dim)] = positions[idx(particle,dim)]
@@ -397,6 +426,8 @@ void Particles::integrate_particle_trajectory(double timestep){
     //compute forces
 
     std::vector <double> new_accelerations(3);
+
+    #pragma omp parallel for
     for(int particle = 0; particle < size(); particle++){
         for(int dim = 0; dim < 3; dim++){
             new_accelerations[dim] = forces[idx(particle,dim)] / masses[particle];
@@ -430,19 +461,21 @@ void Particles::dump_to_xyz_file(std::string filename, int iteration){
     fs.close();
 }
 
-void Particles::import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen){
+void Particles::import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen, int divisor){
     std::fstream fs;
     fs.open(filename, std::fstream::in);
 
     PDB record;
     std::vector<double> position(3);
+    int particle = 0;
     while (fs >> record) {
-        if(record.type() == PDB::ATOM || record.type() == PDB::HETATM) {
+        if((record.type() == PDB::ATOM || record.type() == PDB::HETATM) && particle % divisor == 0) {
             position[X] = record.atom.xyz[X];
             position[Y] = record.atom.xyz[Y];
             position[Z] = record.atom.xyz[Z];
             add_particle(position, charge, mass, tag, is_frozen);
         }
+        particle++;
     }
     std::cout << "Imported " << size() << " particles." << "\n";
 }

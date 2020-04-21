@@ -119,5 +119,3 @@ The art of making avogadro's constant equal to planck's constant equal about 1 b
 copied 'script' from util-linux to /usr/bin/.
 
 Zotero RDF reader: [https://gist.github.com/rlskoeser/d18c19a8351d97ca933b64fd26048b98](https://gist.github.com/rlskoeser/d18c19a8351d97ca933b64fd26048b98)
-
-

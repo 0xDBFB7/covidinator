@@ -37,5 +37,3 @@ based on asciio
 [https://github.com/rcaloras/bash-preexec](https://github.com/rcaloras/bash-preexec)
 
 [https://unix.stackexchange.com/questions/485798/show-time-elapsed-since-i-started-last-command-in-prompt](https://unix.stackexchange.com/questions/485798/show-time-elapsed-since-i-started-last-command-in-prompt)
-
-

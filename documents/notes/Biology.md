@@ -296,14 +296,40 @@ obabel shelxpro.pdb -O shelxpro.xyz  - openbabel can apparently convert to XYZ, 
 
 [http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h](http://cci.lbl.gov/svn/ksdssp/trunk/libpdb++/pdb++.h)
 
-
-
 ----
 
 [https://www.rcsb.org/news?year=2020&article=5e74d55d2d410731e9944f52&feature=true](https://www.rcsb.org/news?year=2020&article=5e74d55d2d410731e9944f52&feature=true)
 
 Covid resources
 
+-----
 
+Somehow I totally missed the very similar 2017 paper by Sun et al.
+
+"In a previous microwave absorption study on Perina nuda viruses (PnV)4
+, it was found that
+the hydration levels on the capsid surface of viruses can affect the bandwidth of microwave resonant absorption
+induced by the confined acoustic vibrations."
+
+More FEM treatment.
+
+----
+
+[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2149302/pdf/brjcancersuppl00063-0018.pdf](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2149302/pdf/brjcancersuppl00063-0018.pdf)
+
+> the penetration depth D (i.e. the distance over which the magnitude of the E field is reduced by a factor of e-1) is given by...
+> 
+> The frequency dependence of D in tissues of high and low water content is shown in Fig. 1.
+> 
+> The absorbed power density is
+> reduced to approximately 13.5% within this distance.
+> 
+> 10 GHz: wet = ~5mm dry = 30 mm
+> 
+> 2 GHz: wet = ~25 mm dry 100 mm
+
+----
+
+man I don't know whta the fuck I'm doing
 
 

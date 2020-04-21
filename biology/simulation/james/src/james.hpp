@@ -22,7 +22,7 @@ struct Particles{
     //SoA is 5x faster than AoS
 
     //using LAMMPS 'nano' reduced units style (https://lammps.sandia.gov/doc/units.html)
-                                    //time:
+                                    //time is nanoseconds.
 
     std::vector<double> positions; //nanometers
     std::vector<double> forces; //piconewtons
@@ -50,7 +50,7 @@ struct Particles{
     int idx(int id, int dim);
     int size();
 
-    void import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen);
+    void import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen, int divisor);
     void dump_to_xyz_file(std::string filename, int iteration);
 };
 

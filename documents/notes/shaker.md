@@ -9,5 +9,3 @@ Screwed up every single feature on this part. It doesn't even work.
 Printed another part, works.
 
 I acccidentally made the eppendorf hole too big, so the tube rattles in an orbitla motion. This produces a nice and stable vortex!
-
-

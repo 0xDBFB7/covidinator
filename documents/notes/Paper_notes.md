@@ -50,8 +50,6 @@ T4 is not an ideal surrogate for SARS-CoV-2. T4 has a 120 nm prolate icosahedral
 | Pseudomonas Phi6                      | 85 nm                                                                                                                                       |
 | Coliphage T4r+ (as used in this work) | 5000 points interpolated from head capsid CryoEM EMD-6323 using ProDy, filled with N particles with charge -- interacting via Lennard-Jones |
 
-
-
 In both cases, RNA was found, so the capsid was broken.
 
 Discussion: Email the author at [] or open a github issue.
@@ -91,3 +89,5 @@ The author has already [overstepped their fields], and will not attempt to produ
 It is likely that sufficient PCB and microwave transistor capacity exists to produce a *covidinator* for every hospital bed in North America in a few weeks - on the order of 1 million units.
 
 standard PCB production lines are not well optimized for a simple product such as this.
+
+
