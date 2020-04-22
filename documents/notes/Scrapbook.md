@@ -59,5 +59,3 @@ There's really four regimes we have to provide for here:
 [https://monodraw.helftone.com/](https://monodraw.helftone.com/) nice, only MacOX though
 
 Zotero provides pdf names in the RDF file. cites should link to the local pdf?
-
-

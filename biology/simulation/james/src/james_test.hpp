@@ -279,6 +279,26 @@ TEST(move_Particles, move_Particles_1){
 
 }
 
+
+
+TEST(find_neighbors, find_neighbors_1){
+    Particles particles;
+
+    std::vector<double> position_1 = {0,0,0};
+    particles.add_particle(position_1,1,2);
+    std::vector<double> position_2 = {0,0,3};
+    particles.add_particle(position_2,1,2);
+    std::vector<double> position_3 = {0,0,1};
+    particles.add_particle(position_3,1,2);
+    std::vector<double> position_4 = {0,0,2};
+    particles.add_particle(position_4,1,2);
+
+
+
+
+}
+
+
 TEST(pdb_import, import_1){
     std::fstream fs;
     fs.open("/home/arthurdent/Projects/covidinator/biology/simulation/GROMACS/T4/input_data/emd_6323.pdb", std::fstream::in);

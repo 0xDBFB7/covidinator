@@ -28,11 +28,45 @@ The 3-ohm resistor required for a T-type attenuator might be a bit tricky with t
 
 Per **Frequency Response of Thin Film Chip Resistors, Vishay** we can actually get away with stock 0603 50 ohm resistors up to 10 GHz - the impedance is off by at most 20%.
 
------
+--------
 
-## T4 Simulation
+# Simulation
 
 One of the key aspects we have to test is the required duration of exposure. To do this, we need to find the resonant frequency of T4. This could be done with a microwave absorption measurement, as with Yang (2015) and Sun (2017), but having a proper simulation will allow us to simultaneously test optical centrifuge and chirp methods.
+
+Both coarse-grained bead-spring molecular dynamics (via integration of particle motion), elastic networks (elNémo), and finite-element methods (via solution of governing elastic PDEs - (Ivanovska, 2004, use CADRE, and Bathe (2007))  have been used to great effect for simulation of mechanical properties of viruses. 
+
+More recently, all-atom methods have also become computationally viable. 
+
+An MD scheme was chosen for no particularly good reason.
+
+The algebraic normal-mode methods included in many software packages [charmm] do not seem to be sufficient for this task, as they often assume the limit of low-amplitudes.
+
+LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been usable with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, because of the specific time-domain electric field impulses desired, the multiple-run frequency sweep required to optimize the impulse,  a custom ultra-simplistic MD code, JAMES, was written.
+
+-------
+
+Because of the importance of solvent to the damping of biological resonances.
+
+This could be represented by a friction or damping term in the particle motion fit to some experimental value, a realistic viscous-fluid damping model as discribed by Bathe (2007) (implicit/continuum solvation),
+
+>  Langevin dynamics may also be incorporated into the model by coupling the protein-domain to the Stokes equations to model solvent damping.
+
+ Uwe (2009) 
+
+> The atomic structure of the peptide was coarse-grained by first placing a van-der-Waals sphere around the Cα atoms of each of the residues...
+> 
+> Then, the Cα spheres were connected by springs...
+> 
+> As this first set of springs was not enough to reproduce all distance distributions correctly, additional springs between the CMs of the residues were added and their values optimized manually until a sufficient agreement between the MD results and a standard BD simulation was achieved.
+
+or an explicit solvation 
+
+
+
+------
+
+The following properties are known:
 
 
 
@@ -69,5 +103,50 @@ It is not immediately obvious how this could be implemented. Independent control
 This technique is probably not within reach for this project.
 
 ----
+
+# Oscillator
+
+Per Khanna (2006), both the source and drain of the active device participate in impedance matching:
+
+![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-21 18-37-56.png)
+
+------
+
+# Internal sterilization
+
+The original assumption was that this device wouldn't be useful inside the body, since the skin effect in tissue at 10 GHz is on the order of 0.2 cm. However, it may be possible to harmonic two, four, or eight penetrating 10/N GHz signals, making a 10 GHz field localized inside the body.
+
+[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2149302/pdf/brjcancersuppl00063-0018.pdf](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2149302/pdf/brjcancersuppl00063-0018.pdf)
+
+> the penetration depth D (i.e. the distance over which the magnitude of the E field is reduced by a factor of e-1) is given by...
+> 
+> The frequency dependence of D in tissues of high and low water content is shown in Fig. 1.
+> 
+> The absorbed power density is
+> reduced to approximately 13.5% within this distance.
+> 
+> 10 GHz: wet = ~5mm dry = 30 mm
+> 
+> 2 GHz: wet = ~25 mm dry 100 mm
+
+------
+
+# Safety
+
+| 100-6000   | 15.60 ƒ^0.25 |     | 0.6455ƒ 0.5 |     |
+| ---------- | ------------ | --- | ----------- | --- |
+| 6000-15000 | 137          |     | 50          |     |
+
+Adair, 2002:
+
+> The conclusion that there can be no microwave resonances in DNA in water is in accord with the results of measurements in three different laboratories ([Gabriel et al., 1987](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib7); [Foster et al., 1987](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib5)) using techniques designed to detect resonances with amplitudes less than 1/20th of that reported by [Edwards et al. (1984)](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib4).
+> 
+> Evidence of such microwave absorption resonances has been reported ([Edwards et al., 1984](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib4); [Grundler and Keilman, 1983](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib8)), but these results have not been replicated ([Gabriel et al., 1987](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib7); [Foster et al., 1987](https://www.sciencedirect.com/science/article/pii/S0006349502754738#bib5)).
+
+> We extend analyses that suggest that the damping of the vibratory motion by biological fluids severely restrict such possibilities[].
+
+Foster, (1987) find that the DNA resonance found by Edwards (1987) was well below the experimental error, given the latter's setup. The Foster paper is of remarkable quality.
+
+Sagripanti (1986) find DNA damage at 8.5 mw/g at 2.55 ghz. 
 
 
