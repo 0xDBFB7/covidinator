@@ -60,9 +60,7 @@ This could be represented by a friction or damping term in the particle motion f
 > 
 > As this first set of springs was not enough to reproduce all distance distributions correctly, additional springs between the CMs of the residues were added and their values optimized manually until a sufficient agreement between the MD results and a standard BD simulation was achieved.
 
-or an explicit solvation 
-
-
+or an explicit solvation scheme.
 
 ------
 
@@ -148,5 +146,13 @@ Adair, 2002:
 Foster, (1987) find that the DNA resonance found by Edwards (1987) was well below the experimental error, given the latter's setup. The Foster paper is of remarkable quality.
 
 Sagripanti (1986) find DNA damage at 8.5 mw/g at 2.55 ghz. 
+
+# Structural
+
+UIUC, Molecular Dynamics of Viruses:
+
+> What is the origin of the observed irreversibility of capsid deformation? 
+> 
+> Analysis of how interactions between protein units of the capsid change throughout simulations shows that bending and shifting of these units, along with establishment of contacts between capsid and substrate, are the main contributing factors. One finds, however, that the arrangement of protein units is essentially unaffected by the indentation, i.e., the local structure of the capsid remains the same, even though the capsid is strongly deformed globally. The position and orientation of units with respect to each other are not significantly affected, but their local bending and slight rearrangement is enough to introduce new favorable interactions that lock the capsid in the deformed state, once certain depth of indentation is passed. Thus, the irreversibility is due to capsid-substrate interactions, capsid protein bending, and slight shifting of these proteins with respect to each other, rather than from global rearrangement.
 
 

@@ -293,8 +293,12 @@ TEST(find_neighbors, find_neighbors_1){
     std::vector<double> position_4 = {0,0,2};
     particles.add_particle(position_4,1,2);
 
+    std::vector<int> neighbors = find_neighbors(particles, 0, 0, 3);
 
-
+    ASSERT_EQ(neighbors.size(),3);
+    ASSERT_EQ(neighbors[0], 2);
+    ASSERT_EQ(neighbors[1], 3);
+    ASSERT_EQ(neighbors[2], 1);
 
 }
 

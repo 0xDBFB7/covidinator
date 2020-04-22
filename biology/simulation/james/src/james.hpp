@@ -7,6 +7,8 @@
 #include <numeric>
 #include <limits>
 #include <fstream>
+#include <assert.h>
+#include <mgl2/mgl.h>
 
 #include <pdb++.h>
 //pdb++ taken from
@@ -52,6 +54,8 @@ struct Particles{
 
     void import_PDB(std::string filename, double charge, double mass, int tag, int is_frozen, int divisor);
     void dump_to_xyz_file(std::string filename, int iteration);
+    void apply_damping(double tag, double constant);
+
 };
 
 struct stretchy_bonds{
@@ -65,7 +69,7 @@ struct stretchy_bonds{
 
 
     void add_bond(Particles &particles, int particle_1, int particle_2, double coefficient);
-    void bond_neighbors(Particles &particles, double radius, int tag, double coefficient);
+    void bond_neighbors(Particles &particles, int num_neighbors, int tag, double coefficient);
     void compute_all_bonds(Particles &particles);
     void compute_bond_force(Particles &particles, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2, int bond_id);
 };
@@ -87,7 +91,7 @@ struct bendy_bonds{
     void compute_pivot_force_vector(Particles &particles, std::vector<double> &leg_1_force,
                                                                                     std::vector<double> &leg_2_force,
                                                                                     std::vector<double> &pivot_force, int bond_id);
-    void bond_neighbors(Particles &particles, double radius, int tag, double coefficient);
+    void bond_neighbors(Particles &particles, int num_neighbors, int tag, double coefficient);
     void compute_all_bonds(Particles &particles);
 
     void compute_leg_force_magnitude(Particles &particles, double &leg_1_force, double &leg_2_force, int bond_id);
@@ -105,6 +109,10 @@ std::vector<double> cross_product(std::vector<double> vector_1, std::vector<doub
 std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double> vector_2);
 
 std::vector<double> scale_vector(std::vector<double> vector_1, double scalar);
+
+std::vector<int> find_neighbors(Particles &particles, int p1_id, int tag, int num_neighbors);
+
+int count_particles_in_PDB(std::string filename,int divisor);
 
 void compute_coulomb_force(Particles &particles, int particle_1, int particle_2, std::vector<double> &force_vector_1, std::vector<double> &force_vector_2);
 void compute_electric_force(Particles &particles, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1);
