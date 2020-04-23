@@ -119,3 +119,13 @@ The art of making avogadro's constant equal to planck's constant equal about 1 b
 copied 'script' from util-linux to /usr/bin/.
 
 Zotero RDF reader: [https://gist.github.com/rlskoeser/d18c19a8351d97ca933b64fd26048b98](https://gist.github.com/rlskoeser/d18c19a8351d97ca933b64fd26048b98)
+
+----
+
+Had significant trouble with the velocity Verlet integrator. First there was a bug in the inter-particle force function when OpenMP was enabled - forces were shared which shouldn't have been. Then the timestep was a few orders of magnitude too large.
+
+Writing my own sim was probably the wrong decision, I've spent perhaps a week on this now.
+
+
+
+

@@ -9,6 +9,8 @@
 #include <fstream>
 #include <assert.h>
 #include <mgl2/mgl.h>
+#include <algorithm>
+#include <chrono>
 
 #include <pdb++.h>
 //pdb++ taken from

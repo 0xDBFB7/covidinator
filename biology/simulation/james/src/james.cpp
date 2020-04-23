@@ -35,7 +35,6 @@ int Particles::size(){
 }
 
 
-
 double Particles::angle(int particle_1, int particle_2, int particle_3){
     //returns angle in radians, dot products
     std::vector<double> vector_1 = distance_vector(particle_1, particle_2);
@@ -54,7 +53,7 @@ double Particles::angle(int particle_1, int particle_2, int particle_3){
 }
 
 std::vector<double> Particles::distance_vector(int particle_1, int particle_2){
-    std::vector<double> output(3);
+    std::vector<double> output = {0,0,0};
     for(int dim = 0; dim < 3; dim++){
         output[dim] = positions[idx(particle_1,dim)] - positions[idx(particle_2,dim)];
     }
@@ -78,13 +77,13 @@ double norm(double x, double y, double z){
     return sqrt((x*x) + (y*y) + (z*z));
 }
 
-double norm(std::vector<double> vector_1){
+double norm(std::vector<double> &vector_1){
     return sqrt((vector_1[0]*vector_1[0])+(vector_1[1]*vector_1[1])+(vector_1[2]*vector_1[2]));
 }
 
 std::vector<double> normalize(std::vector<double> input){
     double mag = norm(input);
-    std::vector<double> output(3);
+    std::vector<double> output = {0,0,0};
     for(int dim = 0; dim < 3; dim++){
         output[dim] = input[dim] / mag;
     }
@@ -170,15 +169,19 @@ void stretchy_bonds::bond_neighbors(Particles &particles, int num_neighbors, int
 
 void stretchy_bonds::compute_all_bonds(Particles &particles){
 
-    #pragma omp parallel for
-    for(int bond_id = 0; bond_id < (int)p1.size(); bond_id++){
+    #pragma omp parallel
+    {
+        std::vector<double> force_vector_1 = {0,0,0};
+        std::vector<double> force_vector_2 = {0,0,0};
+        #pragma omp for
+        for(int bond_id = 0; bond_id < (int)p1.size(); bond_id++){
 
-        std::vector<double> force_vector_1(3);
-        std::vector<double> force_vector_2(3);
-        compute_bond_force(particles, force_vector_1, force_vector_2, bond_id);
 
-        particles.apply_force(p1[bond_id], force_vector_1);
-        particles.apply_force(p2[bond_id], force_vector_2);
+            compute_bond_force(particles, force_vector_1, force_vector_2, bond_id);
+
+            particles.apply_force(p1[bond_id], force_vector_1);
+            particles.apply_force(p2[bond_id], force_vector_2);
+        }
     }
 }
 
@@ -316,7 +319,7 @@ void bendy_bonds::compute_pivot_force_vector(Particles &particles, std::vector<d
 std::vector<double> cross_product(std::vector<double> vector_1, std::vector<double> vector_2){
     //a x b
 
-    std::vector<double> output(3);
+    std::vector<double> output = {0,0,0};
     output[0] = vector_1[1] * vector_2[2] - vector_1[2] * vector_2[1];
     output[1] = vector_1[2] * vector_2[0] - vector_1[0] * vector_2[2];
     output[2] = vector_1[0] * vector_2[1] - vector_1[1] * vector_2[0];
@@ -324,7 +327,7 @@ std::vector<double> cross_product(std::vector<double> vector_1, std::vector<doub
 }
 
 std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double> vector_2){
-    std::vector<double> output(3);
+    std::vector<double> output = {0,0,0};
     output[X] = vector_1[X] + vector_2[X];
     output[Y] = vector_1[Y] + vector_2[Y];
     output[Z] = vector_1[Z] + vector_2[Z];
@@ -332,7 +335,7 @@ std::vector<double> sum_vector(std::vector<double> vector_1, std::vector<double>
 }
 
 std::vector<double> scale_vector(std::vector<double> vector_1, double scalar){
-    std::vector<double> output(3);
+    std::vector<double> output = {0,0,0};
     output[X] = vector_1[X] * scalar;
     output[Y] = vector_1[Y] * scalar;
     output[Z] = vector_1[Z] * scalar;
@@ -343,7 +346,7 @@ std::vector<double> scale_vector(std::vector<double> vector_1, double scalar){
 std::vector<double> opposite_vector(std::vector<double> vector_1){
     //a x b
 
-    std::vector<double> output(3);
+    std::vector<double> output  = {0,0,0};
     output[X] = -1.0*vector_1[X];
     output[Y] = -1.0*vector_1[Y];
     output[Z] = -1.0*vector_1[Z];
@@ -382,6 +385,7 @@ void compute_coulomb_force(Particles &particles, int particle_1, int particle_2,
 
 }
 
+
 void compute_electric_force(Particles &particles, int particle_1, std::vector<double> &electric_field_vector, std::vector<double> &force_vector_1){
     const double field_constant = 1.602e-7; //piconewtons per (volt per meter) per e-
 
@@ -393,7 +397,7 @@ void compute_all_electric_forces(Particles &particles, std::vector<double> &elec
 
     #pragma omp parallel
     {
-        std::vector<double> force_vector_1(3);
+        std::vector<double> force_vector_1 = {0,0,0};
         #pragma omp for
         for(int i = 0; i < particles.size(); i++){
             compute_electric_force(particles, i, electric_field_vector, force_vector_1);
@@ -408,8 +412,8 @@ void handle_interparticle_forces(Particles &particles, std::vector<double> &elec
 
     #pragma omp parallel
     {
-        std::vector<double> force_vector_1(3);
-        std::vector<double> force_vector_2(3);
+        std::vector<double> force_vector_1 = {0,0,0};
+        std::vector<double> force_vector_2 = {0,0,0};
 
         #pragma omp for collapse(2)
         for(int i = 0; i < particles.size(); i++){
@@ -453,7 +457,7 @@ void Particles::integrate_particle_trajectory(double timestep){
 
     #pragma omp parallel
     {
-        std::vector <double> new_accelerations(3);
+        std::vector <double> new_accelerations = {0,0,0};
 
         #pragma omp for
         for(int particle = 0; particle < size(); particle++){
@@ -505,7 +509,7 @@ int count_particles_in_PDB(std::string filename, int divisor){
 
     PDB record;
 
-    std::vector<double> position(3);
+    std::vector<double> position = {0,0,0};
     int particle = 0;
     int num_particles = 0;
 
@@ -530,13 +534,13 @@ void Particles::import_PDB(std::string filename, double charge, double mass, int
 
     PDB record;
 
-    std::vector<double> position(3);
+    std::vector<double> position = {0,0,0};
     int particle = 0;
     while (fs >> record) {
         if((record.type() == PDB::ATOM || record.type() == PDB::HETATM) && particle % divisor == 0) {
-            position[X] = record.atom.xyz[X];
-            position[Y] = record.atom.xyz[Y];
-            position[Z] = record.atom.xyz[Z];
+            position[X] = record.atom.xyz[X] / 10.0; //PDB units are assumed to be angstroms
+            position[Y] = record.atom.xyz[Y] / 10.0;
+            position[Z] = record.atom.xyz[Z] / 10.0;
             add_particle(position, charge/num_particles, mass/num_particles, tag, is_frozen);
         }
         particle++;

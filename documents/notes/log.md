@@ -66,9 +66,9 @@ or an explicit solvation scheme.
 
 The following properties are known:
 
-
-
 ----
+
+Typical timesteps for coarse-grained simulation are on the order of 10 nanoseconds.
 
 ## 3D Beamforming
 
@@ -154,5 +154,3 @@ UIUC, Molecular Dynamics of Viruses:
 > What is the origin of the observed irreversibility of capsid deformation? 
 > 
 > Analysis of how interactions between protein units of the capsid change throughout simulations shows that bending and shifting of these units, along with establishment of contacts between capsid and substrate, are the main contributing factors. One finds, however, that the arrangement of protein units is essentially unaffected by the indentation, i.e., the local structure of the capsid remains the same, even though the capsid is strongly deformed globally. The position and orientation of units with respect to each other are not significantly affected, but their local bending and slight rearrangement is enough to introduce new favorable interactions that lock the capsid in the deformed state, once certain depth of indentation is passed. Thus, the irreversibility is due to capsid-substrate interactions, capsid protein bending, and slight shifting of these proteins with respect to each other, rather than from global rearrangement.
-
-

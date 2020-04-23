@@ -597,8 +597,4 @@ Built up another of those LO test boards - this one doesn't seem to oscillate pr
 
 I assumed that this device wouldn't be useful inside the body, since the skin effect at 10 GHz is like 0.2 cm. However, we **could** second-harmonic two penetrating 5 GHz signals (or fourth-harmonic 4!), making a 10 GHz field localized inside the body.
 
-
-
 [https://www.microwaves101.com/encyclopedias/sliding-load](https://www.microwaves101.com/encyclopedias/sliding-load) for cclaibration
-
-
