@@ -32,17 +32,17 @@ Per **Frequency Response of Thin Film Chip Resistors, Vishay** we can actually g
 
 # Simulation
 
-One of the key aspects we have to test is the required duration of exposure. To do this, we need to find the resonant frequency of T4. This could be done with a microwave absorption measurement, as with Yang (2015) and Sun (2017), but having a proper simulation will allow us to simultaneously test optical centrifuge and chirp methods.
+- Yang: simulation for illustration, analytic expression with solid homogenous sphere for microwave absorption cross-section and shell stress. Experimental microwave absorption data used to obtain Q, and therefore derive the inactivation threshold. Very effective fit to 40% inactivation level, but much higher power required for 100% inactivation. 
 
-Both coarse-grained bead-spring molecular dynamics (via integration of particle motion), elastic networks (elNémo), and finite-element methods (via solution of governing elastic PDEs - (Ivanovska, 2004, use CADRE, and Bathe (2007))  have been used to great effect for simulation of mechanical properties of viruses. 
+Myriad methods - often mathematically overlapping - such as coarse-grained bead-spring molecular dynamics (via integration of particle motion), algebraic elastic networks (elNémo), and finite-element methods (via solution of governing elastic PDEs - (Ivanovska, 2004, use CADRE, and Bathe (2007)) have been used to great effect for simulation of mechanical properties of viruses. 
 
-More recently, all-atom methods have also become computationally viable. 
+Most recently, the ultimate-fidelity all-atom MD methods have also become computationally viable. 
 
-An MD scheme was chosen for no particularly good reason.
+An MD scheme was chosen for no particularly good reason. In fact, we hardly need the added fidelity of a simulation; an extension of the analytical method used by Yang would probably be more telling of the character of the problem, and would have lended itself better to numerical optimation. As has been more poignantly pointed out before, observation of simulation is as much understanding as observation of reality - it just happens to be less messy. The author is at the moment an incompetent mathematician.
 
 The algebraic normal-mode methods included in many software packages [charmm] do not seem to be sufficient for this task, as they often assume the limit of low-amplitudes.
 
-LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been usable with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, because of the specific time-domain electric field impulses desired, the multiple-run frequency sweep required to optimize the impulse,  a custom ultra-simplistic MD code, JAMES, was written.
+LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been usable with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, the specific time-domain electric field impulses desired, the many-run parameter sweep required to optimize the impulse, and the chain of software required to synthesize an artificially coarse new geometry, a custom ultra-simplistic, ultra-crude MD code was written.
 
 -------
 
@@ -68,7 +68,33 @@ The following properties are known:
 
 ----
 
-Typical timesteps for coarse-grained simulation are on the order of 10 nanoseconds.
+Typical timesteps for coarse-grained simulations with leapfrog-like integrators are on the order of 10 femtoseconds.
+
+RK4, while apparently more accurate at larger timesteps, suffers from gradual energy loss, whereas velocity Verlet is more immune to the same.
+
+---
+
+List of properties to test:
+
+- Synchrocyclotron-inspired frequency chirp
+  
+  As the amplitude of oscillation increases, the frequency of maximum amplitude might change.
+
+- Population-variance frequency chirp
+  
+  The properties of the virus will vary within a population. Perhaps this could describe Yang's results, where 40% were destroyed at the expected field amplitude, but the rest took far more.
+
+- Sudden phase-shift
+  
+  The phase-shift will have to take place within the relaxation time of the viral oscillator.
+
+- Superposition of frequencies, frequency-comb, shifting superimposed frequencies independently
+  
+  - It seems like it would be possible to analytically optimize the amplitude of the input wave as a function of time against the stress in the . 
+
+- Polarization-kick 'optical centrifuge'
+  
+  - Possible biological effects?
 
 ## 3D Beamforming
 
@@ -143,9 +169,11 @@ Adair, 2002:
 
 > We extend analyses that suggest that the damping of the vibratory motion by biological fluids severely restrict such possibilities[].
 
+It is interesting that this analysis would seem to disagree with the viral resonance seen by Yang.
+
 Foster, (1987) find that the DNA resonance found by Edwards (1987) was well below the experimental error, given the latter's setup. The Foster paper is of remarkable quality.
 
-Sagripanti (1986) find DNA damage at 8.5 mw/g at 2.55 ghz. 
+Sagripanti (1986) find DNA damage at 8.5 mw/g at 2.55 ghz. What is that in mw/cm^2?
 
 # Structural
 

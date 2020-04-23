@@ -1,15 +1,22 @@
 #include <james.hpp>
 
+//export OMP_NUM_THREADS=1
+//make -j15 && ./src/james
+//gprof ./src/james gmon.out
+//sudo perf stat ./src/james
+//valgrind --tool=massif ./src/james
+//valgrind ms_print
+
 int main(){
 
 
-    double timestep = 0.00001;
-    int steps = 5000;
+    primary_type timestep = 0.00001;
+    int steps = 400000;
     int record_interval = 1000;
 
-    double cutoff_distance = 1;
+    primary_type cutoff_distance = 1;
 
-    std::vector<double> electric_field_vector = {0, 0, 100};
+    std::vector<primary_type> electric_field_vector = {0, 0, 100};
 
     Particles particles;
     bendy_bonds bendy_obj;
@@ -22,9 +29,9 @@ int main(){
     particles.import_PDB(input_file, 20, 0.0813664, 0, 0, 50);
     //
     // for(int i = 0; i < 100; i++){
-    // std::vector<double> position_1 = {0,0,0};
+    // std::vector<primary_type> position_1 = {0,0,0};
     // particles.add_particle(position_1,1,1);
-    // std::vector<double> position_2 = {0,0,1};
+    // std::vector<primary_type> position_2 = {0,0,1};
     // particles.add_particle(position_2,1,1);
     // }
 
@@ -49,7 +56,7 @@ int main(){
     std::vector<double> x_position(steps);
     std::vector<double> x_force(steps);
 
-    double frequency = 10e9;
+    primary_type frequency = 10e9;
     for(int step = 0; step < steps; step++){
         auto start = std::chrono::high_resolution_clock::now();
 
@@ -70,7 +77,7 @@ int main(){
         particles.integrate_particle_trajectory(timestep);
 
         if(!(step % record_interval)){
-            particles.dump_to_xyz_file("output",step);
+            // particles.dump_to_xyz_file("output",step);
         }
 
 

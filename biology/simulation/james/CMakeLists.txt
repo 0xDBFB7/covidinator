@@ -2,10 +2,22 @@ cmake_minimum_required(VERSION 3.16)
 
 set (CMAKE_CXX_STANDARD 17)
 
-#set(CXX_ASAN_FLAGS "-fno-omit-frame-pointer -fsanitize=address -fsanitize=undefined -fsanitize=leak ")
+#set(CXX_ASAN_FLAGS "-fno-omit-frame-pointer -fsanitize=address -fsanitize=undefined -fsanitize=leak -no-pie -pg -g -coverage")
 set(CXX_ASAN_FLAGS " ")
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -O2 -no-pie -pg -Wno-error=switch -Wno-switch")
+#set(CXX_ADDITIONAL_FLAGS)
+
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -O3  -Wno-error=switch -Wno-switch")
+
+
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/arthurdent/Programs/gcc-offload/gcc-offload/install/lib64/
+#export CPATH=$CPATH:/usr/local/cuda/include
+#export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
+#~/Programs/gcc-offload/gcc-offload/install/bin/g++ -Wall -Werror -fsanitize=undefined,null -fopenmp -foffload=-lm -fno-fast-math -fno-associative-math openmp_offload.cpp -o ompfl && ./ompfl
+#-foffload=-lm -fno-fast-math -fno-associative-math required for math function offload
+
+set(CMAKE_CXX_COMPILER "~/Programs/gcc-offload/gcc-offload/install/bin/g++")
+
 
 set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} ${CXX_ASAN_FLAGS} -g")
 

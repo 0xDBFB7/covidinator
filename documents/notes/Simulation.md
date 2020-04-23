@@ -126,6 +126,14 @@ Had significant trouble with the velocity Verlet integrator. First there was a b
 
 Writing my own sim was probably the wrong decision, I've spent perhaps a week on this now.
 
+Running the sim with sudo greatly increases the variance in the performance. How strange!
+
+-----
+
+Switching to GCC 7.3 - with updated OpenMP 4.5 - finally established linear scaling with omp_thread_count. Peaks at 15, as expected.
+
+There's also a lot of variance; and the program distinctly slows down at about 50,000 iterations. Almost seems like thermal throttling?
+
 
 
 

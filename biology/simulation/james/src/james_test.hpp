@@ -4,7 +4,7 @@ TEST(data_structure, data_structure_test_1){
 
     Particles particles;
 
-    std::vector<double> position_1 = {0,0,0};
+    std::vector<primary_type> position_1 = {0,0,0};
     particles.add_particle(position_1,1.1,1.2);
 }
 
@@ -12,10 +12,10 @@ TEST(data_structure, data_structure_test_1){
 TEST(data_structure, subtract_position){
     Particles particles;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,1.1,1.2);
 
-    std::vector<double> position_2 = {0,0,1};
+    std::vector<primary_type> position_2 = {0,0,1};
     particles.add_particle(position_1,1.1,1.2);
 
     ASSERT_NEAR(particles.distance_vector(0,1)[0],0,1e-3);
@@ -28,13 +28,13 @@ TEST(data_structure, subtract_position){
 TEST(data_structure, angle_1){
     Particles particles;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,1.1,1.2);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,1.1,1.2);
 
-    std::vector<double> position_3 = {0,1,0};
+    std::vector<primary_type> position_3 = {0,1,0};
     particles.add_particle(position_3,1.1,1.2);
 
     ASSERT_NEAR(particles.angle(0,1,2),1.570,1e-3);
@@ -44,10 +44,10 @@ TEST(data_structure, stretchy_bonds_1){
     Particles particles;
     stretchy_bonds stretchy_obj;
 
-    std::vector<double> position_1 = {0,0,0};
+    std::vector<primary_type> position_1 = {0,0,0};
     particles.add_particle(position_1,1.1,1.2);
 
-    std::vector<double> position_2 = {0,0,1};
+    std::vector<primary_type> position_2 = {0,0,1};
     particles.add_particle(position_2,1.1,1.2);
 
     stretchy_obj.add_bond(particles,0,1,0.5);
@@ -56,8 +56,8 @@ TEST(data_structure, stretchy_bonds_1){
     //particle 0 should feel a restoring force in the -Z direction
     //particle 1 should feel a restoring force in the +Z direction
 
-    std::vector<double> force_vector_1(3);
-    std::vector<double> force_vector_2(3);
+    std::vector<primary_type> force_vector_1(3);
+    std::vector<primary_type> force_vector_2(3);
     stretchy_obj.compute_bond_force(particles, force_vector_1, force_vector_2, 0);
 
 
@@ -77,13 +77,13 @@ TEST(data_structure, bendy_bonds_force_directions_1){
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,1.1,1.2);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,1.1,1.2);
 
-    std::vector<double> position_3 = {0,0,-1};
+    std::vector<primary_type> position_3 = {0,0,-1};
     particles.add_particle(position_3,1.1,1.2);
 
     bendy_obj.add_bond(particles,0,1,2,0.5); //this factor has units of N-m/radian, recall.
@@ -102,8 +102,8 @@ TEST(data_structure, bendy_bonds_force_directions_1){
     //particle 0 should feel a restoring force in the +Z direction
     //particle 2 should feel a restoring force in the -X direction
 
-    std::vector<double> force_direction_vector_1;
-    std::vector<double> force_direction_vector_2;
+    std::vector<primary_type> force_direction_vector_1;
+    std::vector<primary_type> force_direction_vector_2;
     bendy_obj.compute_leg_force_direction_vectors(particles, force_direction_vector_1, force_direction_vector_2, 0);
 
     //force on the first particle
@@ -122,13 +122,13 @@ TEST(data_structure, bendy_bonds_force_directions_2){
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,1.1,1.2);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,1.1,1.2);
 
-    std::vector<double> position_3 = {0,0,-1};
+    std::vector<primary_type> position_3 = {0,0,-1};
     particles.add_particle(position_3,1.1,1.2);
 
     bendy_obj.add_bond(particles,0,1,2,0.5); //this factor has units of N-m/radian, recall.
@@ -147,8 +147,8 @@ TEST(data_structure, bendy_bonds_force_directions_2){
     //particle 0 should feel a restoring force in the Z direction
     //particle 2 should feel a restoring force in the +X direction
 
-    std::vector<double> force_direction_vector_1;
-    std::vector<double> force_direction_vector_2;
+    std::vector<primary_type> force_direction_vector_1;
+    std::vector<primary_type> force_direction_vector_2;
     bendy_obj.compute_leg_force_direction_vectors(particles, force_direction_vector_1, force_direction_vector_2, 0);
 
     //force on the first particle
@@ -165,13 +165,13 @@ TEST(data_structure, bendy_bonds_force_magnitude_1){
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,1.1,1.2);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,1.1,1.2);
 
-    std::vector<double> position_3 = {0,0,-1};
+    std::vector<primary_type> position_3 = {0,0,-1};
     particles.add_particle(position_3,1.1,1.2);
 
     bendy_obj.add_bond(particles,0,1,2,0.5); //this factor has units of N-m/radian, recall.
@@ -189,21 +189,21 @@ TEST(data_structure, bendy_bonds_force_magnitude_1){
     // 0.785 N-m, / leg length of 1,
     // force = 0.785
 
-    double force_magnitude_1;
-    double force_magnitude_2;
+    primary_type force_magnitude_1;
+    primary_type force_magnitude_2;
     bendy_obj.compute_leg_force_magnitude(particles, force_magnitude_1, force_magnitude_2, 0);
 
     ASSERT_NEAR(force_magnitude_1,0.78,1e-2);
     ASSERT_NEAR(force_magnitude_2,0.78,1e-2);
 
-    std::vector<double> leg_force_vector_1;
-    std::vector<double> leg_force_vector_2;
+    std::vector<primary_type> leg_force_vector_1;
+    std::vector<primary_type> leg_force_vector_2;
     bendy_obj.compute_leg_force_direction_vectors(particles, leg_force_vector_1, leg_force_vector_2, 0);
 
     leg_force_vector_1 = scale_vector(leg_force_vector_1, force_magnitude_1);
     leg_force_vector_2 = scale_vector(leg_force_vector_2, force_magnitude_2);
 
-    std::vector<double> pivot_force_vector;
+    std::vector<primary_type> pivot_force_vector;
     bendy_obj.compute_pivot_force_vector(particles, leg_force_vector_1, leg_force_vector_2, pivot_force_vector, 0);
 
     ASSERT_NEAR(pivot_force_vector[X],0.785,1e-3);
@@ -215,14 +215,14 @@ TEST(coulomb_force, coulomb_force_1){ //TODO: re-confirm field constants
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,2,2);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,2,2);
 
-    std::vector<double> force_vector_1(3);
-    std::vector<double> force_vector_2(3);
+    std::vector<primary_type> force_vector_1(3);
+    std::vector<primary_type> force_vector_2(3);
     compute_coulomb_force(particles, 0,1, force_vector_1, force_vector_2);
 
     //coulomb constant * ((2 electron charges)^2)  / (1 nanometer^2) = 922 piconewtons
@@ -240,14 +240,14 @@ TEST(coulomb_force, coulomb_force_2){ //TODO: re-confirm field constants
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,1,1);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,1,1);
 
-    std::vector<double> force_vector_1(3);
-    std::vector<double> force_vector_2(3);
+    std::vector<primary_type> force_vector_1(3);
+    std::vector<primary_type> force_vector_2(3);
     compute_coulomb_force(particles, 0,1, force_vector_1, force_vector_2);
 
     //coulomb constant * ((2 electron charges)^2)  / (1 nanometer^2) = 922 piconewtons
@@ -265,14 +265,14 @@ TEST(coulomb_force, coulomb_force_3){ //TODO: re-confirm field constants
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,2};
+    std::vector<primary_type> position_1 = {0,0,2};
     particles.add_particle(position_1,1,1.5);
 
-    std::vector<double> position_2 = {0,0,0};
+    std::vector<primary_type> position_2 = {0,0,0};
     particles.add_particle(position_2,1,1);
 
-    std::vector<double> force_vector_1(3);
-    std::vector<double> force_vector_2(3);
+    std::vector<primary_type> force_vector_1(3);
+    std::vector<primary_type> force_vector_2(3);
     compute_coulomb_force(particles, 0,1, force_vector_1, force_vector_2);
 
     //coulomb constant * ((2 electron charges)^2)  / (1 nanometer^2) = 922 piconewtons
@@ -291,11 +291,11 @@ TEST(coulomb_force, electric_force){ //TODO: re-confirm field constants
     Particles particles;
     bendy_bonds bendy_obj;
 
-    std::vector<double> position_1 = {0,0,1};
+    std::vector<primary_type> position_1 = {0,0,1};
     particles.add_particle(position_1,2,2);
 
-    std::vector<double> electric_field_vector = {0,0,1e6};
-    std::vector<double> force_vector_1(3);
+    std::vector<primary_type> electric_field_vector = {0,0,1e6};
+    std::vector<primary_type> force_vector_1(3);
     compute_electric_force(particles, 0, electric_field_vector, force_vector_1);
 
     ASSERT_NEAR(force_vector_1[X],0,1e-3);
@@ -311,7 +311,7 @@ TEST(coulomb_force, electric_force){ //TODO: re-confirm field constants
 TEST(move_Particles, move_Particles_1){
     Particles particles;
 
-    std::vector<double> position_1 = {0,0,0};
+    std::vector<primary_type> position_1 = {0,0,0};
     particles.add_particle(position_1,1,2);
 
     //acceleration = 5
@@ -335,13 +335,13 @@ TEST(move_Particles, move_Particles_1){
 TEST(find_neighbors, find_neighbors_1){
     Particles particles;
 
-    std::vector<double> position_1 = {0,0,0};
+    std::vector<primary_type> position_1 = {0,0,0};
     particles.add_particle(position_1,1,2);
-    std::vector<double> position_2 = {0,0,3};
+    std::vector<primary_type> position_2 = {0,0,3};
     particles.add_particle(position_2,1,2);
-    std::vector<double> position_3 = {0,0,1};
+    std::vector<primary_type> position_3 = {0,0,1};
     particles.add_particle(position_3,1,2);
-    std::vector<double> position_4 = {0,0,2};
+    std::vector<primary_type> position_4 = {0,0,2};
     particles.add_particle(position_4,1,2);
 
     std::vector<int> neighbors = find_neighbors(particles, 0, 0, 3);
@@ -372,7 +372,7 @@ TEST(pdb_import, import_1){
 TEST(write_file, dump_to_xyz_file_1){
     Particles particles;
 
-    std::vector<double> position_1 = {0,0,0};
+    std::vector<primary_type> position_1 = {0,0,0};
     particles.add_particle(position_1,1,2);
 
     for(int t = 0; t < 100; t++){
