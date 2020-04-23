@@ -8,10 +8,11 @@
 //valgrind ms_print
 
 int main(){
+    feenableexcept(FE_INVALID | FE_OVERFLOW);
 
 
     primary_type timestep = 0.00001;
-    int steps = 400000;
+    int steps = 500000;
     int record_interval = 1000;
 
     primary_type cutoff_distance = 1;
@@ -26,7 +27,7 @@ int main(){
 
     // std::string input_file = "/home/arthurdent/Projects/covidinator/biology/simulation/james/1coo.pdb";
 
-    particles.import_PDB(input_file, 20, 0.0813664, 0, 0, 50);
+    particles.import_PDB(input_file, 20, 0.0813664, 0, 0, 10);
     //
     // for(int i = 0; i < 100; i++){
     // std::vector<primary_type> position_1 = {0,0,0};
@@ -39,7 +40,7 @@ int main(){
     // forces are perhaps on the order of 10 piconewtons;
     // deflections are perhaps 10 nanometers.
     // the coefficient should be on the order 1.
-    stretchy_obj.bond_neighbors(particles, 3, 0, 1);
+    stretchy_obj.bond_neighbors(particles, 4, 0, 100);
 
 
     // coefficient: piconewton-meters / radian
@@ -47,55 +48,56 @@ int main(){
     // deflections are perhaps 0.5 rad
     //distances, perhaps 0.2 nm
     // the coefficient should be on the order 1.
-    bendy_obj.bond_neighbors(particles, 3, 0, 1);
+    bendy_obj.bond_neighbors(particles, 4, 0, 100);
 
-    particles.positions[particles.idx(0,Z)] *= 2;
+    particles.positions[particles.idx(0,Z)] *= 1.1;
 
     // particles.velocities[particles.idx(0,Z)] += 5;
+    // 
+    // std::vector<double> x_position(steps);
+    // std::vector<double> x_force(steps);
+    //
+    // primary_type frequency = 10e9;
+    // for(int step = 0; step < steps; step++){
+    //     auto start = std::chrono::high_resolution_clock::now();
+    //
+    //     electric_field_vector[Z] = 100000.0*sin(step*timestep*((frequency)/1e9)*2.0*M_PI);
+    //
+    //     particles.begin_timestep(timestep);
+    //     //
+    //     stretchy_obj.compute_all_bonds(particles);
+    //     bendy_obj.compute_all_bonds(particles);
+    //     //
+    //
+    //     handle_interparticle_forces(particles, electric_field_vector, cutoff_distance);
+    //     compute_all_electric_forces(particles, electric_field_vector);
+    //
+    //     particles.apply_damping(0, 0.01);
+    //
+    //     particles.integrate_particle_trajectory(timestep);
+    //
+    //     auto end = std::chrono::high_resolution_clock::now();
+    //     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end-start ).count();
+    //
+    //     if(!(step % record_interval)){
+    //         particles.dump_to_xyz_file("output",step);
+    //         std::cout << "Step " << step << " finished in " << duration << " us, " << "\n";
+    //     }
+    //
+    //
+    //
+    //
+    //     x_position[step] = particles.positions[particles.idx(0,Z)];
+    //
+    //
+    //     x_force[step] = particles.forces[particles.idx(0,Z)];
+    //
+    //     // std::cout << particles.forces[particles.idx(0,Z)] << "\n";
+    //     // std::cout << particles.forces[particles.idx(1,Z)] << "\n";
+    //
+    // }
 
-    std::vector<double> x_position(steps);
-    std::vector<double> x_force(steps);
-
-    primary_type frequency = 10e9;
-    for(int step = 0; step < steps; step++){
-        auto start = std::chrono::high_resolution_clock::now();
-
-        electric_field_vector[Z] = 100000.0*sin(step*timestep*((frequency)/1e9)*2.0*M_PI);
-
-        particles.begin_timestep(timestep);
-        //
-        stretchy_obj.compute_all_bonds(particles);
-        bendy_obj.compute_all_bonds(particles);
-        //
-
-        handle_interparticle_forces(particles, electric_field_vector, cutoff_distance);
-        compute_all_electric_forces(particles, electric_field_vector);
-
-        // particles.apply_damping(0, 0.1);
-
-
-        particles.integrate_particle_trajectory(timestep);
-
-        if(!(step % record_interval)){
-            // particles.dump_to_xyz_file("output",step);
-        }
-
-
-        auto end = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end-start ).count();
-        std::cout << "Step " << step << " finished in " << duration << " us, " << "\n";
-
-
-        x_position[step] = particles.positions[particles.idx(0,Z)];
-        // std::cout << particles.positions[particles.idx(0,Z)] << "\n";
-        // std::cout << particles.positions[particles.idx(1,Z)] << "\n";
-
-        x_force[step] = particles.forces[particles.idx(0,Z)];
-
-        // std::cout << particles.forces[particles.idx(0,Z)] << "\n";
-        // std::cout << particles.forces[particles.idx(1,Z)] << "\n";
-
-    }
+    fedisableexcept(FE_ALL_EXCEPT);
 
     mglGraph gr;
     mglData x_pos_mgl;

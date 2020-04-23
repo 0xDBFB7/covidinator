@@ -49,7 +49,12 @@ primary_type Particles::angle(int particle_1, int particle_2, int particle_3){
         return 0;
     }
 
-    return acos(dot/mag);
+    if(dot/mag < -1 || dot/mag > 1){
+        std::cout << "Particles::angle out of range\n";
+        return 0;
+    }
+
+    return acos(std::max(-1.0f, std::min(dot/mag, 1.0f)));
 }
 
 std::vector<primary_type> Particles::distance_vector(int particle_1, int particle_2){

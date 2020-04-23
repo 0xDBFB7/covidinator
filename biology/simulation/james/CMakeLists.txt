@@ -7,7 +7,7 @@ set(CXX_ASAN_FLAGS " ")
 
 #set(CXX_ADDITIONAL_FLAGS)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -O3  -Wno-error=switch -Wno-switch")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} -O2 -Wno-error=switch -Wno-switch")
 
 
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/arthurdent/Programs/gcc-offload/gcc-offload/install/lib64/

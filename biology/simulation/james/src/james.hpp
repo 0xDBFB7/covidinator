@@ -11,6 +11,8 @@
 #include <mgl2/mgl.h>
 #include <algorithm>
 #include <chrono>
+#include <fenv.h>
+
 
 #include <pdb++.h>
 //pdb++ taken from

@@ -132,8 +132,18 @@ Running the sim with sudo greatly increases the variance in the performance. How
 
 Switching to GCC 7.3 - with updated OpenMP 4.5 - finally established linear scaling with omp_thread_count. Peaks at 15, as expected.
 
-There's also a lot of variance; and the program distinctly slows down at about 50,000 iterations. Almost seems like thermal throttling?
+There's also a lot of variance; and the program distinctly slows down at about 41,000 iterations. Almost seems like thermal throttling? No, definitely not. Valgrind says there's a mem-leak. It's not writes to disk.
 
+Essentially no difference between -O2 vs -O3 
 
+aah stuck in the darned weeds now.
+
+Aha! After 42000 iterations, it runs into a nan. Why? Where did that come from?
+
+man, why didn't I just use an existing library like mdcore for the real MD part
+
+that was so stupid
+
+RUMD: great! Python  but no provisions for external forces, or direct access.
 
 
