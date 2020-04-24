@@ -80,30 +80,46 @@ int main()
 }
 
 
-//
-// void dump_to_xyz_file(std::string filename, int iteration){
-//     //visualize with Chimera: under MD / Ensemble analysis, MD Movie, set XYZ.
-//     std::vector<char> tag_atom_lookup = {'C','O'};
-//
+
+void dump_to_xyz_file(std::string filename, int iteration){
+    //visualize with Chimera: under MD / Ensemble analysis, MD Movie, set XYZ.
+    std::vector<char> tag_atom_lookup = {'C','O'};
+
+    std::fstream fs;
+    filename += std::to_string(iteration);
+    filename += ".xyz";
+    fs.open(filename, std::fstream::out);
+
+    fs << size() << "\n";
+    // fs << time << "\n";
+    fs << "\n"; // description on second line
+    for(int particle = 0; particle < size(); particle++){
+        fs << tag_atom_lookup[tags[particle] % tag_atom_lookup.size()] <<
+                                                " " << positions[idx(particle,X)] <<
+                                                " " << positions[idx(particle,Y)] <<
+                                                " " << positions[idx(particle,Z)] << "\n";
+    }
+    fs.close();
+}
+
+
+// // Handy homebrew PDB writer for quick-and-dirty trajectory output.
+// void writePdbFrame(int frameNum, const OpenMM::State& state)
+// {
 //     std::fstream fs;
 //     filename += std::to_string(iteration);
 //     filename += ".xyz";
+//     // Reference atomic positions in the OpenMM State.
+//     const std::vector<OpenMM::Vec3>& posInNm = state.getPositions();
+//
+//     // Use PDB MODEL cards to number trajectory frames
+//     printf("MODEL     %d\n", frameNum); // start of frame
+//     for (int a = 0; a < (int)posInNm.size(); ++a)
+//     {
+//         printf("ATOM  %5d  AR   AR     1    ", a+1); // atom number
+//         printf("%8.3f%8.3f%8.3f  1.00  0.00\n",      // coordinates
+//             // "*10" converts nanometers to Angstroms
+//             posInNm[a][0]*10, posInNm[a][1]*10, posInNm[a][2]*10);
+//     }
+//     printf("ENDMDL\n"); // end of frame
 // }
-
-// Handy homebrew PDB writer for quick-and-dirty trajectory output.
-void writePdbFrame(int frameNum, const OpenMM::State& state)
-{
-    // Reference atomic positions in the OpenMM State.
-    const std::vector<OpenMM::Vec3>& posInNm = state.getPositions();
-
-    // Use PDB MODEL cards to number trajectory frames
-    printf("MODEL     %d\n", frameNum); // start of frame
-    for (int a = 0; a < (int)posInNm.size(); ++a)
-    {
-        printf("ATOM  %5d  AR   AR     1    ", a+1); // atom number
-        printf("%8.3f%8.3f%8.3f  1.00  0.00\n",      // coordinates
-            // "*10" converts nanometers to Angstroms
-            posInNm[a][0]*10, posInNm[a][1]*10, posInNm[a][2]*10);
-    }
-    printf("ENDMDL\n"); // end of frame
-}

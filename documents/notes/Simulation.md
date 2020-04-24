@@ -153,3 +153,11 @@ There's an OpenMM installed in conda, but I'm using the ~/Programs version.
 [http://docs.openmm.org/latest/userguide/theory.html#writing-custom-expressions](http://docs.openmm.org/latest/userguide/theory.html#writing-custom-expressions)
 
 openmm's variable verlet integrator is very nice -  should use that somewhere else
+
+ooh, openmm totally does have support for time-varying forces - was that just added? Nope, it wasn't. darn! what an idiot.
+
+sorry, thousands of grampas that died because of that arrogant decision. I want a hug.
+
+>  The values of per-particle parameters are specified as part of the system definition, while values of global parameters may be modified during a simulation by calling [`Context::setParameter()`](http://docs.openmm.org/7.1.0/api-c++/generated/OpenMM.Context.html#_CPPv2N6OpenMM7Context12setParameterERKNSt6stringEd "OpenMM::Context::setParameter").
+
+

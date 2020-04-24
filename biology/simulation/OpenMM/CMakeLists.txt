@@ -32,6 +32,9 @@ find_package(MathGL2 REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR} ${MATHGL2_INCLUDE_DIR} ../src/ )
 
+include_directories(./libpdb++)
+add_subdirectory (./libpdb++)
+
 set(CMAKE_BUILD_TYPE Debug)
 add_subdirectory (src)
 
