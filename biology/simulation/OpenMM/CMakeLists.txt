@@ -24,7 +24,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenm
 
 set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} ${CXX_ASAN_FLAGS} -g")
 
-PROJECT(james LANGUAGES CXX C)
+PROJECT(sim LANGUAGES CXX C)
 
 set(OpenMM_ROOT_DIR /home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/)
 
@@ -41,8 +41,8 @@ add_subdirectory (./libpdb++)
 set(CMAKE_BUILD_TYPE Debug)
 add_subdirectory (src)
 
-#enable_testing ()
-#add_subdirectory (test)
+enable_testing ()
+add_subdirectory (test)
 
 
 

@@ -34,19 +34,33 @@ int main(){ try {
 
     //the force is specified by a potential energy function
 
-    OpenMM::CustomExternalForce* electric_force = new OpenMM::CustomExternalForce("Ex*charge");
-    electric_force->addGlobalParameter("Ex", 100.0);
+    OpenMM::CustomExternalForce* electric_force = new OpenMM::CustomExternalForce(
+                                                "-Ex*electric_constant*charge*x+-Ey*electric_constant*charge*y+-Ez*electric_constant*charge*z");
+
+    electric_force->addGlobalParameter("electric_constant", 9.649e-8);
+    electric_force->addGlobalParameter("Ex", 0.0);
+    electric_force->addGlobalParameter("Ey", 0.0);
+    electric_force->addGlobalParameter("Ez", 0.0);
     electric_force->addPerParticleParameter("charge");
+    //Force unit in OpenMM is kJ/(mol-nm); 1 unit is 1.6605397 piconewtons.
+
+    //1 V/m * (1 electron charge)  in piconewtons = 1.602e-7
+    //1 V/m * (1 electron charge) in kJ/(mol-nm) = 9.649e-8
+
+    //observed force with 1e, Ex=1: 9.63919e-08 kJ/(mol-nm) = 1.60063 piconewtons.
+
+    system.addForce(electric_force);
 
     // Create three atoms.
     std::vector<OpenMM::Vec3> initial_position(1);
-    for (int a = 0; a < 1; ++a)
+    for (int i = 0; i < 1; i++)
     {
-        initial_position[a] = OpenMM::Vec3(0.5*a,0,0); // location, nm
+        initial_position[i] = OpenMM::Vec3(0.5*i,0,0); // location, nm
 
         system.addParticle(39.95); // mass of Ar, grams per mole
 
-        electric_force.addParticle();
+        std::vector<double> electric_charge = {1};
+        electric_force->addParticle(i, electric_charge);
 
         // charge, L-J sigma (nm), well depth (kJ)
         // lennard_jones_force->addParticle(0.0, 0.3350, 0.996); // vdWRad(Ar)=.188 nm
@@ -58,6 +72,7 @@ int main(){ try {
     properties["DeviceIndex"] = "0";
     OpenMM::Context context(system, integrator, platform, properties);
 
+
     context.setPositions(initial_position);
 
     std::vector<double> x_position;
@@ -66,7 +81,7 @@ int main(){ try {
     // Simulate.
     for (int iteration=0; ;iteration++) {
         // Output current state information.
-        OpenMM::State state    = context.getState(OpenMM::State::Positions | OpenMM::State::Forces);
+        OpenMM::State state = context.getState(OpenMM::State::Positions | OpenMM::State::Forces);
 
         dump_to_xyz_file("output", iteration, state);
 
@@ -74,8 +89,14 @@ int main(){ try {
         x_position.push_back(positions[0][X]);
         const std::vector<OpenMM::Vec3>& forces = state.getForces();
         x_force.push_back(forces[0][X]);
+        x_force.push_back(forces[0][Y]);
+        x_force.push_back(forces[0][Z]);
 
+        context.setParameter("Ex",1.0);
+        context.setParameter("Ey",1.0);
+        context.setParameter("Ez",1.0);
 
+        std::cout << forces[0][X] << "\n";
         const double current_time = state.getTime();
         if (current_time >= end_time) break;
 
