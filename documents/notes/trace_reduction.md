@@ -26,5 +26,3 @@ Put a bit of copper oxide in one of those pyrex funnels, pumped in some butane, 
 ----
 
 The whole thing could be gas-fired with propane or natural gas. Just racks of 
-
-

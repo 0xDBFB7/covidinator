@@ -146,4 +146,10 @@ that was so stupid
 
 RUMD: great! Python  but no provisions for external forces, or direct access.
 
+james is working now, pretty slow at 500 particles (1.5 ms / cycle), still some instability but damping really helps. Anhedrals would also help.
 
+There's an OpenMM installed in conda, but I'm using the ~/Programs version.
+
+[http://docs.openmm.org/latest/userguide/theory.html#writing-custom-expressions](http://docs.openmm.org/latest/userguide/theory.html#writing-custom-expressions)
+
+openmm's variable verlet integrator is very nice -  should use that somewhere else

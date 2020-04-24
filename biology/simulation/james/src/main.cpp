@@ -10,14 +10,13 @@
 int main(){
     feenableexcept(FE_INVALID | FE_OVERFLOW);
 
-
     primary_type timestep = 0.00001;
     int steps = 500000;
     int record_interval = 1000;
 
     primary_type cutoff_distance = 1;
 
-    std::vector<primary_type> electric_field_vector = {0, 0, 100};
+    std::vector<primary_type> electric_field_vector = {0, 0, 0};
 
     Particles particles;
     bendy_bonds bendy_obj;
@@ -27,7 +26,7 @@ int main(){
 
     // std::string input_file = "/home/arthurdent/Projects/covidinator/biology/simulation/james/1coo.pdb";
 
-    particles.import_PDB(input_file, 20, 0.0813664, 0, 0, 10);
+    particles.import_PDB(input_file, 20, 0.0813664, 0, 0, 1);
     //
     // for(int i = 0; i < 100; i++){
     // std::vector<primary_type> position_1 = {0,0,0};
@@ -40,7 +39,7 @@ int main(){
     // forces are perhaps on the order of 10 piconewtons;
     // deflections are perhaps 10 nanometers.
     // the coefficient should be on the order 1.
-    stretchy_obj.bond_neighbors(particles, 4, 0, 100);
+    stretchy_obj.bond_neighbors(particles, 5, 0, 100);
 
 
     // coefficient: piconewton-meters / radian
@@ -48,7 +47,7 @@ int main(){
     // deflections are perhaps 0.5 rad
     //distances, perhaps 0.2 nm
     // the coefficient should be on the order 1.
-    bendy_obj.bond_neighbors(particles, 4, 0, 100);
+    bendy_obj.bond_neighbors(particles, 5, 0, 1);
 
     particles.positions[particles.idx(0,Z)] *= 1.1;
 
@@ -58,6 +57,7 @@ int main(){
     std::vector<double> x_force(steps);
 
     primary_type frequency = 10e9;
+
     for(int step = 0; step < steps; step++){
         auto start = std::chrono::high_resolution_clock::now();
 

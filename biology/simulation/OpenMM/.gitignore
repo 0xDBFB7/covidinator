@@ -10,3 +10,10 @@ ener.edr
 confout.gro
 *.cpt
 *.pdb
+
+build
+*.png
+*.svg
+*.png
+*.out
+*.xyz
