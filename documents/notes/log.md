@@ -175,6 +175,18 @@ Foster, (1987) find that the DNA resonance found by Edwards (1987) was well belo
 
 Sagripanti (1986) find DNA damage at 8.5 mw/g at 2.55 ghz. What is that in mw/cm^2?
 
+Via the ICNIRP, 2020:
+
+> This is typically described as a function of a relevant dosimetric quantity. For example, below about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass (W kg−1). Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area(W m−2), which we refer to as “absorbed power density”.
+> 
+> Similarly, as there is no evidence that continuous (e.g., sinusoidal) and discontinuous (e.g., pulsed) EMFs result in different biological effects (Kowalczuk et al. 2010; Juutilainen et al. 2011), no theoretical distinction has been made between these types of exposure (all exposures have been considered empirically in terms of whether they adversely affect health)
+
+Juutilainen references a wealth of empirical data. Vijayalaxmi (2006) is particularly helpful:
+
+Chemeris discusses 8.8 GHz  pulses, and finds no effect:
+
+> We found no data on genotoxic effects of HPPP EMF at peak SAR exceeding hundreds of megawatts per kilogram and at average SAR, which does not induce dramatic overheating of the exposed objects. At such powerful EMF, peak electric field intensity in the exposed biological objects is close to maximally achievable, i.e. near breakdown electric field intensity. It would be reasonable to expect specific genotoxic effects of RF EMF under such extreme conditions.
+
 # Structural
 
 UIUC, Molecular Dynamics of Viruses:

@@ -156,8 +156,6 @@ openmm's variable verlet integrator is very nice -  should use that somewhere el
 
 ooh, openmm totally does have support for time-varying forces - was that just added? Nope, it wasn't. darn! what an idiot.
 
-
-
 >  The values of per-particle parameters are specified as part of the system definition, while values of global parameters may be modified during a simulation by calling [`Context::setParameter()`](http://docs.openmm.org/7.1.0/api-c++/generated/OpenMM.Context.html#_CPPv2N6OpenMM7Context12setParameterERKNSt6stringEd "OpenMM::Context::setParameter").
 
-
+[https://github.com/openmm/openmmexampleplugin](https://github.com/openmm/openmmexampleplugin) if we need it 
