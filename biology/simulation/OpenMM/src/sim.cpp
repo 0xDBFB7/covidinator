@@ -11,8 +11,8 @@
 // other visualization tool to produce an animation of the resulting trajectory.
 // -----------------------------------------------------------------------------
 
-#include "OpenMM.h"
-#include <cstdio>
+#include "sim.hpp"
+
 
 // Forward declaration of routine for printing one frame of the
 // trajectory, defined later in this source file.
@@ -20,6 +20,13 @@ void writePdbFrame(int frameNum, const OpenMM::State&);
 
 void simulateArgon()
 {
+
+}
+
+int main(){ try {
+
+
+
     // Load any shared libraries containing GPU implementations.
     OpenMM::Platform::loadPluginsFromDirectory(
         OpenMM::Platform::getDefaultPluginsDirectory());
@@ -45,18 +52,17 @@ void simulateArgon()
 
     // Let OpenMM Context choose best platform.
     OpenMM::Context context(system, integrator);
-    printf( "REMARK  Using OpenMM platform %s\n",
-        context.getPlatform().getName().c_str() );
+    printf( "Using OpenMM platform %s\n", context.getPlatform().getName().c_str() );
 
     // Set starting positions of the atoms. Leave time and velocity zero.
     context.setPositions(initPosInNm);
 
     // Simulate.
-    for (int frameNum=1; ;++frameNum) {
+    for (int iteration=0; ;iteration++) {
         // Output current state information.
         OpenMM::State state    = context.getState(OpenMM::State::Positions);
         const double  timeInPs = state.getTime();
-        writePdbFrame(frameNum, state); // output coordinates
+        dump_to_xyz_file("output", iteration, state);
 
         if (timeInPs >= 10.)
             break;
@@ -64,13 +70,11 @@ void simulateArgon()
         // Advance state many steps at a time, for efficient use of OpenMM.
         integrator.step(10); // (use a lot more than this normally)
     }
-}
 
-int main()
-{
-    try {
-        simulateArgon();
-        return 0; // success!
+
+    return 0; // success!
+
+
     }
     // Catch and report usage and runtime errors detected by OpenMM and fail.
     catch(const std::exception& e) {
@@ -81,23 +85,28 @@ int main()
 
 
 
-void dump_to_xyz_file(std::string filename, int iteration){
+void dump_to_xyz_file(std::string filename, int iteration, const OpenMM::State& state){
     //visualize with Chimera: under MD / Ensemble analysis, MD Movie, set XYZ.
-    std::vector<char> tag_atom_lookup = {'C','O'};
+
+    // std::vector<char> tag_atom_lookup = {'C','O'};
 
     std::fstream fs;
     filename += std::to_string(iteration);
     filename += ".xyz";
     fs.open(filename, std::fstream::out);
 
-    fs << size() << "\n";
+    const std::vector<OpenMM::Vec3>& positions = state.getPositions();
+
+    fs << (int)positions.size() << "\n";
     // fs << time << "\n";
     fs << "\n"; // description on second line
-    for(int particle = 0; particle < size(); particle++){
-        fs << tag_atom_lookup[tags[particle] % tag_atom_lookup.size()] <<
-                                                " " << positions[idx(particle,X)] <<
-                                                " " << positions[idx(particle,Y)] <<
-                                                " " << positions[idx(particle,Z)] << "\n";
+
+
+    for (int a = 0; a < (int)positions.size(); a++){
+        fs << "O" <<
+            " " << positions[a][X] <<
+            " " << positions[a][Y] <<
+            " " << positions[a][Z] << "\n";
     }
     fs.close();
 }

@@ -7,7 +7,9 @@ set(CXX_ASAN_FLAGS " ")
 
 set(CXX_OPENMM_FLAGS "-Wno-error=reorder -Wno-error=unused-function -Wno-reorder -Wno-unused-function")
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} ${CXX_OPENMM_FLAGS} -O2 -Wno-error=switch -Wno-switch ")
+set(CXX_LIBPDB_FLAGS "-Wno-error=switch -Wno-switch -Wno-error=implicit-fallthrough -Wno-implicit-fallthrough")
+
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} ${CXX_LIBPDB_FLAGS} ${CXX_OPENMM_FLAGS} -O2 ")
 
 
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/arthurdent/Programs/gcc-offload/gcc-offload/install/lib64/
@@ -15,6 +17,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenm
 #export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
 #~/Programs/gcc-offload/gcc-offload/install/bin/g++ -Wall -Werror -fsanitize=undefined,null -fopenmp -foffload=-lm -fno-fast-math -fno-associative-math openmp_offload.cpp -o ompfl && ./ompfl
 #-foffload=-lm -fno-fast-math -fno-associative-math required for math function offload
+
 
 #set(CMAKE_CXX_COMPILER "/home/arthurdent/Programs/gcc-offload/gcc-offload/install/bin/g++")
 
