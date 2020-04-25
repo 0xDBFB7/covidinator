@@ -44,6 +44,8 @@ The algebraic normal-mode methods included in many software packages [charmm] do
 
 LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been usable with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, the specific time-domain electric field impulses desired, the many-run parameter sweep required to optimize the impulse, and the chain of software required to synthesize an artificially coarse new geometry, a custom ultra-simplistic, ultra-crude MD code was written.
 
+This could easily have been done with something like blender, much faster and better.
+
 -------
 
 Because of the importance of solvent to the damping of biological resonances.

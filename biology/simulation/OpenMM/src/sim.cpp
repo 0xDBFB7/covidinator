@@ -12,124 +12,70 @@
 // -----------------------------------------------------------------------------
 
 #include "sim.hpp"
+#include <helpers.hpp>
 
-struct simulation{
-
-}
-
-
-int main(){ try {
-
-    double timestep = 0.004; //picoseconds
-    double end_time = 10; //also picoseconds
-
-    // Load any shared libraries containing GPU implementations.
+Sim::Sim(double timestep){
     OpenMM::Platform::loadPluginsFromDirectory("/home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/lib/plugins");
-    // Create a system with nonbonded forces.
-    OpenMM::System system;
-    OpenMM::VerletIntegrator integrator(timestep);
 
-    // std::vector<> tags?
+    integrator = new OpenMM::VerletIntegrator(timestep);
 
-    OpenMM::CustomExternalForce* electric_force = init_electric_force();
+    electric_force = init_electric_force();
     system.addForce(electric_force);
 
-    OpenMM::NonbondedForce* LJ_coulomb_force = new OpenMM::NonbondedForce();
+    LJ_coulomb_force = new OpenMM::NonbondedForce();
     system.addForce(LJ_coulomb_force);
     // setCutoffDistance
 
-    OpenMM::HarmonicBondForce* stretchy_force = new OpenMM::HarmonicBondForce();
+    stretchy_force = new OpenMM::HarmonicBondForce();
     system.addForce(stretchy_force);
 
-    OpenMM::HarmonicAngleForce* bendy_force = new OpenMM::HarmonicAngleForce();
+    bendy_force = new OpenMM::HarmonicAngleForce();
     system.addForce(bendy_force);
+}
 
-
-    std::vector<OpenMM::Vec3> initial_position(1);
-    for (int i = 0; i < 1; i++)
-    {
-        initial_position[i] = OpenMM::Vec3(0.5*i,0,0); // location, nm
-
-        system.addParticle(39.95); // mass of Ar, grams per mole
-
-        double charge = 1;
-
-        std::vector<double> electric_charge = {charge};
-        electric_force->addParticle(i, electric_charge);
-
-        //charge, L-J sigma (nm), well depth (kJ)
-        LJ_coulomb_force->addParticle(charge, 0.3350, 0.996);
-
-    }
-
-
-
-
+void Sim::initialize_context(){
     OpenMM::Platform& platform = OpenMM::Platform::getPlatformByName("CUDA");
     std::map<std::string, std::string> properties;
     properties["DeviceIndex"] = "0";
-    OpenMM::Context context(system, integrator, platform, properties);
+    context = new OpenMM::Context(system, *integrator, platform, properties);
+
+    context->setPositions(initial_positions);
+}
 
 
-    context.setPositions(initial_position);
+void Sim::add_particle(OpenMM::Vec3 position, double mass, double charge, int tag, double LJ_sigma, double LJ_well_depth){
+    //position is in nanometers,
+    //charge is in fractions of e-
+    //mass is in amu.
 
-    std::vector<double> x_position;
-    std::vector<double> x_force;
+    initial_positions.push_back(position); // location, nm
 
-    // Simulate.
-    for (int iteration=0; ;iteration++) {
-        // Output current state information.
-        OpenMM::State state = context.getState(OpenMM::State::Positions | OpenMM::State::Forces);
+    system.addParticle(mass); // mass of Ar, grams per mole
+    //zero mass freezes particle. That's useful. setPositions with a modified copy of state would be useful for the FEM tip.
 
-        dump_to_xyz_file("output", iteration, state);
+    std::vector<double> electric_charge = {charge};
+    electric_force->addParticle(num_particles, electric_charge);
 
-        const std::vector<OpenMM::Vec3>& positions = state.getPositions();
-        x_position.push_back(positions[0][X]);
-        const std::vector<OpenMM::Vec3>& forces = state.getForces();
-        x_force.push_back(forces[0][X]);
+    //charge, L-J sigma (nm)  0.3350, well depth (kJ) 0.996
+    LJ_coulomb_force->addParticle(charge, LJ_sigma, LJ_well_depth);
 
-        context.setParameter("Ex",1.0);
-        context.setParameter("Ey",1.0);
-        context.setParameter("Ez",1.0);
+    tags.push_back(tag);
 
-        const double current_time = state.getTime();
-        if (current_time >= end_time) break;
+    num_particles++;
+}
 
-        // Advance state many steps at a time, for efficient use of OpenMM.
-        integrator.step(10); // (use a lot more than this normally)
+void Sim::add_particles(std::vector<OpenMM::Vec3> positions, double total_mass, double total_charge, int tag, double LJ_sigma, double LJ_well_depth){
+    //position is in nanometers,
+    //charge is in fractions of e-
+    //mass is in amu.
+    int N = positions.size();
+    for(int i = 0; i< (int) N; i++){
+        add_particle(positions[i], total_mass/N, total_charge/N, tag, LJ_sigma, LJ_well_depth);
     }
+}
 
-
-    mglGraph gr;
-    mglData x_pos_mgl;
-    mglData x_force_mgl;
-
-    x_pos_mgl.Link(x_position.data(),x_position.size());
-    x_force_mgl.Link(x_force.data(),x_force.size());
-
-    gr.SubPlot(1,2,0);
-    gr.Box();
-    gr.SetRange('y',*min_element(x_position.begin(), x_position.end()),*max_element(x_position.begin(), x_position.end()));
-    gr.Plot(x_pos_mgl,"Y");
-    gr.Axis();
-
-    gr.SubPlot(1,2,1);
-    gr.Box();
-    gr.SetRange('y',*min_element(x_force.begin(), x_force.end()),*max_element(x_force.begin(), x_force.end()));
-    gr.Plot(x_force_mgl,"R");
-    gr.Axis();
-
-    gr.WriteFrame("output.png");
-
-
-
-    std::cout << "\033[1;33m\n Simulation complete! \033[0m\n\n";
-
-    return 0; // success!
-    }
-    // Catch and report usage and runtime errors detected by OpenMM and fail.
-    catch(const std::exception& e) {
-        printf("EXCEPTION: %s\n", e.what());
-        return 1; // failure!
-    }
+void Sim::set_electric_field(double Ex, double Ey, double Ez){
+    context->setParameter("Ex",Ex);
+    context->setParameter("Ey",Ey);
+    context->setParameter("Ez",Ez);
 }

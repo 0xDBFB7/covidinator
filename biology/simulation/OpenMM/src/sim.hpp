@@ -15,7 +15,6 @@
 #include <chrono>
 #include <fenv.h>
 
-#include <helpers.hpp>
 
 #include <pdb++.h>
 //pdb++ taken from
@@ -28,6 +27,31 @@
 #define Z 2
 
 void dump_to_xyz_file(std::string filename, int iteration, const OpenMM::State& state);
+
+
+
+struct Sim{
+    OpenMM::System system;
+    OpenMM::Context* context;
+    OpenMM::VerletIntegrator* integrator;
+    OpenMM::CustomExternalForce* electric_force;
+    OpenMM::NonbondedForce* LJ_coulomb_force;
+
+    OpenMM::HarmonicBondForce* stretchy_force;
+    OpenMM::HarmonicAngleForce* bendy_force;
+
+    std::vector<OpenMM::Vec3> initial_positions;
+    std::vector<int> tags;
+    int num_particles = 0;
+
+    Sim(double timestep);
+
+    void initialize_context();
+    void add_particle(OpenMM::Vec3 position, double mass, double charge, int tag, double LJ_sigma, double LJ_well_depth);
+    void set_electric_field(double Ex, double Ey, double Ez);
+    void add_particles(std::vector<OpenMM::Vec3> positions, double total_mass, double total_charge, int tag, double LJ_sigma, double LJ_well_depth);
+
+};
 
 
 #endif

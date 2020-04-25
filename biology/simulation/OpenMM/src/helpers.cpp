@@ -73,41 +73,87 @@ OpenMM::CustomExternalForce* init_electric_force(){
     return electric_force;
 }
 
-double norm(double x, double y, double z){
-    return sqrt((x*x) + (y*y) + (z*z));
+double norm(OpenMM::Vec3 input){
+    return sqrt((input[X]*input[X]) + (input[Y]*input[Y]) + (input[Z]*input[Z]));
 }
 
-void stretchy_bond_neighbors(OpenMM::HarmonicBondForce* stretchy_force, std::vector<OpenMM::Vec3> &positions, int start, int end, int num_neighbors, double coefficient){
+void stretchy_bond_neighbors(Sim &sim, int tag, int num_neighbors, double coefficient){
+    std::vector<OpenMM::Vec3> positions = sim.initial_positions;
 
-        for (int p1 = start; p1 < end; p1++){
+    for (int p1 = 0; p1 < (int)positions.size(); p1++){
+        if(sim.tags[p1] != tag) continue;
 
-            std::vector<int> neighbor_ids = find_neighbors(positions, p1, start, end, num_neighbors);
+        std::vector<int> neighbor_ids = find_neighbors(sim, p1, tag, num_neighbors);
 
-            for (int p2 = 0; p2 < (int)neighbor_ids.size(); p2++){
-                double distance = norm(positions[p1][X]-positions[p2][X],
-                                        positions[p1][Y]-positions[p2][Y],
-                                        positions[p1][Z]-positions[p2][Z]);
+        for (int p2 = 0; p2 < (int)neighbor_ids.size(); p2++){
+            double distance = norm(positions[p1]-positions[neighbor_ids[p2]]);
 
-                stretchy_force->addBond(distance, p1,p2,coefficient);
+            sim.stretchy_force->addBond(distance,p1,neighbor_ids[p2],coefficient);
+        }
+    }
+}
+
+
+double angle(OpenMM::Vec3 particle_1, OpenMM::Vec3 particle_2, OpenMM::Vec3 particle_3){
+    //returns angle in radians, dot products
+    OpenMM::Vec3 vector_1 = particle_1 - particle_2;
+    OpenMM::Vec3 vector_2 = particle_2 - particle_3;
+
+    double dot = vector_1.dot(vector_2);
+
+    double mag = norm(vector_1) * norm(vector_2);
+
+    if(mag == 0.0){
+        std::cout << "Particles::angle singularity\n";
+        return 0;
+    }
+
+    if(dot/mag < -1 || dot/mag > 1){
+        std::cout << "Particles::angle out of range\n";
+        return 0;
+    }
+
+    return acos(std::max(-1.0, std::min(dot/mag, 1.0)));
+}
+
+
+
+void bendy_bond_neighbors(Sim &sim, int tag, int num_neighbors, double coefficient){
+    std::vector<OpenMM::Vec3> positions = sim.initial_positions;
+
+    for(int pivot = 0; pivot < (int)positions.size(); pivot++){
+        if(sim.tags[pivot] != tag) continue;
+
+        std::vector<int> neighbor_ids = find_neighbors(sim, pivot, tag, num_neighbors);
+
+        for(int p1_id = 0; p1_id < (int)neighbor_ids.size(); p1_id++){
+            for(int p2_id = 0; p2_id < (int)neighbor_ids.size(); p2_id++){
+                if(p1_id == p2_id) continue;
+
+                double bond_angle = angle(positions[neighbor_ids[p1_id]], positions[pivot], positions[neighbor_ids[p2_id]]);
+
+                sim.bendy_force->addAngle(neighbor_ids[p1_id], pivot, neighbor_ids[p2_id], bond_angle, coefficient); //might be wrong
             }
         }
+    }
 }
 
-std::vector<int> find_neighbors(std::vector<OpenMM::Vec3> &positions, int p1_id, int start, int end, int num_neighbors){
+
+std::vector<int> find_neighbors(Sim &sim, int p1_id, int tag, int num_neighbors){
     //for the given position in positions, find the nearest neighbor_ids
 
     std::vector<int> neighbor_ids(num_neighbors);
     std::vector<double> neighbor_distances(num_neighbors);
     std::fill(neighbor_distances.begin(), neighbor_distances.end(), std::numeric_limits<double>::max());
 
+    std::vector<OpenMM::Vec3> positions = sim.initial_positions;
+
     int found_particles = 0;
     for(int p2_id = 0; p2_id < (int)positions.size(); p2_id++){
         if(p2_id == p1_id) continue;
-        // if(particles.tags[p2_id] != tag) continue;
+        if(sim.tags[p2_id] != tag) continue;
 
-        double distance = norm(positions[p1_id][X]-positions[p2_id][X],
-                                positions[p1_id][Y]-positions[p2_id][Y],
-                                positions[p1_id][Z]-positions[p2_id][Z]);
+        double distance = norm(positions[p1_id]-positions[p2_id]);
 
         for(int neighbor_id = 0; neighbor_id < num_neighbors; neighbor_id++){
             if(distance < neighbor_distances[neighbor_id]){
