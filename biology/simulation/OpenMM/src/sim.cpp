@@ -17,7 +17,7 @@
 Sim::Sim(double timestep){
     OpenMM::Platform::loadPluginsFromDirectory("/home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/lib/plugins");
 
-    integrator = new OpenMM::LangevinIntegrator(250,1,timestep);
+    integrator = new OpenMM::LangevinIntegrator(0,2,timestep);
 
     electric_force = init_electric_force();
     system.addForce(electric_force);

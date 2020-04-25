@@ -157,6 +157,12 @@ The original assumption was that this device wouldn't be useful inside the body,
 
 ------
 
+Ding, 2004:
+
+> Table 1, Detection of SARS‐CoV in tissues from four SARS autopsies[a](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7167761/#fn1)
+
+SARS detected mainly in the lung, stomach, intestine, kidney, adrenal gland, skin, and small amounts in other organs.
+
 # Safety
 
 | 100-6000   | 15.60 ƒ^0.25 |     | 0.6455ƒ 0.5 |     |
@@ -191,8 +197,84 @@ Chemeris discusses 8.8 GHz  pulses, and finds no effect:
 
 # Structural
 
+#### T4
+
+```
+Architecture
+
+Capsid:
+Diameter
+Mass 82 MDa [Fokine (2004)]
+Proteins gp23, gp24 [PDB:1YUE]
+
+DNA:
+
+Model as charged beads restrained with an L-J force.
+
+AFM data
+Tip shape:
+
+```
+
+
+
+
+
+
+
+
+
+
+
+#### Coronaviridae
+
+```
+Nucleocapsid:
+
+
+
+
+Host-derived lipid bilayer envelope surrounding helical nucleocapsid containing RNA genome.
+
+Envelope diameter (SARS-nCOV-2): 80 to 160 nm [Liu, 2020]
+
+AFM data:
+Not available.
+
+```
+
+#### Other
+
+#### Charge distribution
+
+Tarasova provide some information on the empty capsid.
+
+Božič 2012:
+
+> In our analysis, we use experimental data deposited in the VIPERdb database. This allows us to construct three-dimensional structures of viral capsids, from which we obtain the various mass and charge distributions within the capsid. We consider not only the distribution of atoms inside a capsid, but the distribution of amino acids (their positions taken as centers-of-mass of their constituent atoms) and complete protein chains as well.
+> 
+> Some capsid data do not contain the positions of all atoms but only the positions of alpha carbons—in such cases we equate their positions with the positions of the amino acids to which they belong. Due to the methods of detection, there are also no hydrogen atoms included in the experimental data.
+
+> To obtain the charge distributions of the capsids, we extract the positions of charged amino acids from the experimental data 
+> 
+> At physiological *p*H of 7.4, we consider the following amino acids as charged [[23](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3473132/#CR23)]: aspartic acid (ASP) and glutamic acid (GLU) carrying a charge of − 1.0 *e*0, lysine (LYS) and arginine (ARG) carrying a charge of + 1.0 *e*0, and histidine (HIS) carrying a fractional charge of + 0.1 *e*0 (where *e*0 is the elementary charge).
+
+Teplow's Computational Approaches for Understanding Dynamical Systems discusses this a bit.
+
+Myers, 2013 fill an empty capsid with charged beads representing DNA:
+
+> The entire P22 genome of 41.7 kbp was modeled using 6950 “beads.” This simulation was performed using a modified version of the extended system program (ESP)[32](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592880/#c32) molecular dynamics package (MD) developed by the Pettitt laboratory. The capsid interaction with the surface of the “beads” was modeled through the repulsive part of a WCA decomposition of a Lennard-Jones interaction.
+> 
+> Similar simulations were also performed on a comparable model representation of the lambda phage system...
+
 UIUC, Molecular Dynamics of Viruses:
 
-> What is the origin of the observed irreversibility of capsid deformation? 
+> What is the origin of the observed irreversibility of capsid deformation?
 > 
 > Analysis of how interactions between protein units of the capsid change throughout simulations shows that bending and shifting of these units, along with establishment of contacts between capsid and substrate, are the main contributing factors. One finds, however, that the arrangement of protein units is essentially unaffected by the indentation, i.e., the local structure of the capsid remains the same, even though the capsid is strongly deformed globally. The position and orientation of units with respect to each other are not significantly affected, but their local bending and slight rearrangement is enough to introduce new favorable interactions that lock the capsid in the deformed state, once certain depth of indentation is passed. Thus, the irreversibility is due to capsid-substrate interactions, capsid protein bending, and slight shifting of these proteins with respect to each other, rather than from global rearrangement.
+
+# Transmission
+
+Ding, 2004:
+
+> In addition to viral spread through a respiratory route, SARS‐CoV in the intestinal tract, kidney and sweat glands may be excreted via faeces, urine and sweat, thereby leading to virus transmission.

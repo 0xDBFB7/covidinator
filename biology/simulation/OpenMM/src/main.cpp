@@ -1,28 +1,63 @@
 #include <sim.hpp>
 #include <helpers.hpp>
 
+void create_T4_head(Sim &sim){
 
-int main(){ try {
+     172-kbp
 
-    double timestep = 0.005; //picoseconds
-    double end_time = 1000; //also picoseconds
-    int dump_interval = 5; //iterations
+    //T4 data from Fokine(2004)
 
-    double electric_field_frequency = 10e9;
 
-    Sim sim(timestep);
+    double capsid_mass = 82e6;
 
+    double LJ_sigma = 0.33;
+    double LJ_e = 1;
+
+    //empty T4 head model from CryoEM EMD-6323
     std::string input_file = "/home/arthurdent/Projects/covidinator/biology/simulation/GROMACS/T4/input_data/emd_6323.pdb";
 
     std::vector<OpenMM::Vec3> particles = import_PDB(input_file);
     particles = decimate(5,particles);
     std::cout << particles.size() << "\n\n";
-    sim.add_particles(particles, 85000, 1, 0, 0.33, 1);
+    sim.add_particles(particles, 85000, 1, 0, LJ_sigma, LJ_e);
     stretchy_bond_neighbors(sim, 0, 5, 1e-2);
-    bendy_bond_neighbors(sim, 0, 5, 1e-2);
+    bendy_bond_neighbors(sim, 0, 5, 1);
+}
+
+void create_H3N1_head(Sim &sim){
+    //H3N1 was used by Yang.
+
+
+
+}
+
+
+int main(){ try {
+
+    double timestep = 0.005; //picoseconds
+    double end_time = 2000; //also picoseconds
+    int dump_interval = 50; //iterations
+
+    double electric_field_frequency = 10e9;
+    //about 1 cycle every 10,000 iters.
+
+    Sim sim(timestep);
+
+    create_T4_head();
+    // OpenMM::Vec3 position_1(0,0,0);
+    // sim.add_particle(position_1, 100, 1, 0, 0.33, 1);
+    // OpenMM::Vec3 position_2(1,0,0);
+    // sim.add_particle(position_2, 100, 0, 0, 0.33, 1);
+    // OpenMM::Vec3 position_3(2,0,0);
+    // sim.add_particle(position_3, 100, 0.001, 0, 0.33, 1);
+    // stretchy_bond_neighbors(sim, 0, 1, 5);
+    // bendy_bond_neighbors(sim, 0, 2, 1);
+
 
 
     sim.initialize_context();
+
+
 
     std::vector<double> x_position;
     std::vector<double> x_force;

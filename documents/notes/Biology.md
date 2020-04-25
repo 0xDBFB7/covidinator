@@ -329,3 +329,7 @@ More FEM treatment.
 > 2 GHz: wet = ~25 mm dry 100 mm
 
 ----
+
+The Coronaviruses is comprised of E proteins [https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0](https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0) - previously thought, but this schematic shows otherwise:
+
+![](/home/arthurdent/Downloads/1280px-Coronavirus_virion_structure.svg.png)

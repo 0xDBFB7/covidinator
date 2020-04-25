@@ -28,8 +28,6 @@ GCC 6 + gprof produces empty output - `-no-pie` flag is required
 
 ##### Solution
 
-
-
 ## Issue:
 
 Program inexplicably slowed down after 42000 iterations - the timing jumped from 150 us to 450 us.
@@ -45,5 +43,3 @@ At that point a gdb backtrace was enlightening.
 The cause was an acos call that went beyond -1, to -1.00000012.
 
 wait, what? 
-
-

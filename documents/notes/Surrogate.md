@@ -81,7 +81,7 @@ Phi 6 has a tetrahedral shape, probably similar to COVID. A few other phages hav
 
 Oh apparently Phi6 being a good surrogate is common knowledge.
 
-Influenza A has a totally different spectrum - absorption peak at 12 or so ghz https://www.researchgate.net/profile/Yi_Jan_Chen/publication/237374252_Microwave_resonant_absorption_of_viruses_through_dipolar_coupling_with_confined_acoustic_vibrations/links/0f3175397b4bc5e940000000.pdf
+Influenza A has a totally different spectrum - absorption peak at 12 or so ghz [https://www.researchgate.net/profile/Yi_Jan_Chen/publication/237374252_Microwave_resonant_absorption_of_viruses_through_dipolar_coupling_with_confined_acoustic_vibrations/links/0f3175397b4bc5e940000000.pdf]()
 
 One key difference between the lytic cycle and the lysogenic cycle is that the lysogenic cycle does not lyse the host cell straight away.[2] Phages that replicate only via the lytic cycle are known as virulent phages while phages that replicate using both lytic and lysogenic cycles are known as temperate phages.[1]
 
@@ -148,3 +148,5 @@ what the f?
 on the AFM tip can fracture the lipid envelope [ of influenza ] ."
 
 Phage lambda: 
+
+
