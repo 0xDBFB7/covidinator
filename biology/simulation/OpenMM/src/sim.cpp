@@ -17,7 +17,7 @@
 Sim::Sim(double timestep){
     OpenMM::Platform::loadPluginsFromDirectory("/home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/lib/plugins");
 
-    integrator = new OpenMM::VerletIntegrator(timestep);
+    integrator = new OpenMM::LangevinIntegrator(250,1,timestep);
 
     electric_force = init_electric_force();
     system.addForce(electric_force);
@@ -73,6 +73,7 @@ void Sim::add_particles(std::vector<OpenMM::Vec3> positions, double total_mass, 
         add_particle(positions[i], total_mass/N, total_charge/N, tag, LJ_sigma, LJ_well_depth);
     }
 }
+
 
 void Sim::set_electric_field(double Ex, double Ey, double Ez){
     context->setParameter("Ex",Ex);

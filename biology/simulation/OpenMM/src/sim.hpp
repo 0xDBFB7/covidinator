@@ -33,7 +33,7 @@ void dump_to_xyz_file(std::string filename, int iteration, const OpenMM::State& 
 struct Sim{
     OpenMM::System system;
     OpenMM::Context* context;
-    OpenMM::VerletIntegrator* integrator;
+    OpenMM::LangevinIntegrator* integrator;
     OpenMM::CustomExternalForce* electric_force;
     OpenMM::NonbondedForce* LJ_coulomb_force;
 
@@ -52,6 +52,7 @@ struct Sim{
     void add_particles(std::vector<OpenMM::Vec3> positions, double total_mass, double total_charge, int tag, double LJ_sigma, double LJ_well_depth);
 
 };
+
 
 
 #endif

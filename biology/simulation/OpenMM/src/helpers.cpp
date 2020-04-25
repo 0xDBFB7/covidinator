@@ -1,6 +1,16 @@
 
 #include "helpers.hpp"
 
+
+std::vector<OpenMM::Vec3> decimate(int M , std::vector<OpenMM::Vec3> arr)
+{
+    std::vector<OpenMM::Vec3> decimated;
+    for (size_t i = 0; i < arr.size(); i = i + M) {
+        decimated.push_back(arr[i]);
+    }
+    return decimated;
+}
+
 std::vector<OpenMM::Vec3> import_PDB(std::string filename){
     std::vector<OpenMM::Vec3> positions;
 

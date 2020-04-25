@@ -7,7 +7,7 @@ set(CXX_ASAN_FLAGS " ")
 
 set(CXX_OPENMM_FLAGS "-Wno-error=reorder -Wno-error=unused-function -Wno-reorder -Wno-unused-function")
 
-set(CXX_LIBPDB_FLAGS "-Wno-error=switch -Wno-switch -Wno-error=implicit-fallthrough -Wno-implicit-fallthrough")
+set(CXX_LIBPDB_FLAGS "-Wno-error=switch -Wno-switch")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -fopenmp -Wno-unused-parameter ${CXX_ASAN_FLAGS} ${CXX_LIBPDB_FLAGS} ${CXX_OPENMM_FLAGS} -O2 ")
 
