@@ -197,49 +197,88 @@ Chemeris discusses 8.8 GHz  pulses, and finds no effect:
 
 # Structural
 
-#### T4
-
 ```
-Architecture
 
-Capsid:
-Diameter
+T4
+---------------------------------------
+
+
+   Capsid:
+   
+Length 120 +/- 3 nm | Width 85 +/- 2 nm [Baschong 1988]
+Thickness: 5.7 +/- 0.5 nm [Baschong 1988]
 Mass 82 MDa [Fokine (2004)]
 Proteins gp23, gp24 [PDB:1YUE]
 
-DNA:
+   DNA:
+
+Mass: 112 MDa [Fokine (2004)]
+Size: 172 kbp dsDNA [Fokine (2004)]
+Charge: 344 k e-
+2e-/bp from phosphate group assumed for DNA
 
 Model as charged beads restrained with an L-J force.
 
-AFM data
-Tip shape:
+   Nanoindentation:
 
-```
-
-
-
+Empty? Lambda (50 nm), Empty? Phi29 (54 nm) [] [Roos 2009]
+Full T7 (57 +/- 2.2 nm) [Vörös 2016]
+Tip shape: 
 
 
+Influenza:
+---------------------------------------
 
+   Envelope:
+   
+Host-derived lipid bilayer
+Diameter (H3N1):
 
-
-
-
-
-#### Coronaviridae
-
-```
-Nucleocapsid:
+   Helical nucleocapsid:
 
 
 
+   Genome
 
-Host-derived lipid bilayer envelope surrounding helical nucleocapsid containing RNA genome.
 
-Envelope diameter (SARS-nCOV-2): 80 to 160 nm [Liu, 2020]
 
-AFM data:
+   Nanoindentation:
+
+
+Empty liposome: 
+[Li, 2011]
+Tip: BL-RC150VB, V-shape, radius 30 nm
+
+
+
+Coronaviridae
+---------------------------------------
+
+   Envelope:
+   
+Host-derived lipid bilayer
+
+Diameter (SARS-nCOV-2): 80 to 160 nm [Liu, 2020]
+
+
+   Helical nucleocapsid:
+
+
+
+
+   Genome:
+
+
+   
+
+   Nanoindentation:
+   
 Not available.
+
+Marchetti
+
+
+
 
 ```
 
