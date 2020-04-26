@@ -7,6 +7,14 @@ The S-parameters for the CE3520K3 mosfet are listed on the manufacturer's webpag
 qucs-RFlayout didn't recognize the QUCS file until the version ("0.0.19") was added to the
 opening XML tag. #5.
 
+----------------------------------------------------------------------------
+
+Because of the small engraving bit diameter, we would like to etch a minimum amount of copper.
+
+Microwaves101 says clearance of 3 line widths,
+but Digi says clearance of 2 x substrate thickness.
+
+To be safe, we'll go for 5x0.8, or 4 mm clearance.
 
 
 

@@ -1,0 +1,6 @@
+Using tip from McMaster-Carr, International Tools 62-1095
+
+30 deg, 0.381 mm tip radius. 
+
+HMC220B pitch is 0.65 mm center-to-center.
+
