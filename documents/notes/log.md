@@ -208,14 +208,18 @@ T4
 Length 120 +/- 3 nm | Width 85 +/- 2 nm [Baschong 1988]
 Thickness: 5.7 +/- 0.5 nm [Baschong 1988]
 Mass 82 MDa [Fokine (2004)]
-Proteins gp23, gp24 [PDB:1YUE]
+Charge: ?
 
-   DNA:
+Proteins and models: 
+gp23, gp24 [PDB:1YUE]
+CryoEM EM-6XXX 
+Fitted CryoEM 5VF3 (isometric mutant)
+
+   dsDNA:
 
 Mass: 112 MDa [Fokine (2004)]
 Size: 172 kbp dsDNA [Fokine (2004)]
-Charge: 344 k e-
-2e-/bp from phosphate group assumed for DNA
+Charge: 344 k e- [2e-/bp from phosphate group assumed for DNA]
 
 Model as charged beads restrained with an L-J force.
 
@@ -232,14 +236,30 @@ Influenza:
    Envelope:
    
 Host-derived lipid bilayer
-Diameter (H3N1):
+Total mass (X49/H3N2): 161 +/- 17 MDa [Ruigrok 1984] 
+Diameter (X-31/H3N2): 120 (84 to 170) nm [Harris 2006]
+Thickness (X-31/H3N2): 4 nm [Harris 2006]
+
+Distribution: a wide variety of shapes and sizes. 
+Aspect ratios from 1 (70.9%) to >7 (13%). [Harris 2006] 
+
+
+   Spike proteins:
+
+
+Mass: 
+Charge: 
+Number: 375  
+ 
+Proteins and models: 
+
 
    Helical nucleocapsid:
 
+[Durrant (supplemental)][Compans 1972]
 
-
-   Genome
-
+   RNA Genome (ds?)
+  
 
 
    Nanoindentation:
@@ -259,10 +279,12 @@ Coronaviridae
 Host-derived lipid bilayer
 
 Diameter (SARS-nCOV-2): 80 to 160 nm [Liu, 2020]
-
+[Masters 2006]
 
    Helical nucleocapsid:
 
+
+   Spike proteins:
 
 
 
@@ -277,6 +299,11 @@ Not available.
 
 Marchetti
 
+
+Phi6
+---------------------------------------
+
+Models: Capsids on VIPERdb, (envelope?)
 
 
 

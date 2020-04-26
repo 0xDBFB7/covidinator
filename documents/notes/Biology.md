@@ -333,3 +333,9 @@ More FEM treatment.
 The Coronaviruses is comprised of E proteins [https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0](https://virologyj.biomedcentral.com/articles/10.1186/s12985-019-1182-0) - previously thought, but this schematic shows otherwise:
 
 ![](/home/arthurdent/Downloads/1280px-Coronavirus_virion_structure.svg.png)
+
+>  Therefore, as soon as a grid at room temperature is dropped into the liquid nitrogen, some of it will warm and boil off, slowing the freezing process and allowing cubic ice to form. Ethane has a much higher heat capacity than liquid nitrogen and is also liquid at temperatures just slightly above those of liquid nitrogen. Therefore, liquid ethane is cold enough (it's melting point is -188 °C) to freeze water quickly and correctly, while not boiling off in the process. 
+
+Cool!
+
+ViperDB has a "Net Surface Charge:" field. Awesome!
