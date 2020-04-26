@@ -1,0 +1,12 @@
+# Qucs   /home/arthurdent/covidinator/electronics/qucs/global.sch
+
+SUBST:MG587 er="4.2" h="0.79 mm" t="34.29 um" tand="0" rho="2.43902e-08" D="0"
+SPfile:X1 _net4 _net5 gnd File="{/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3_v01_2-26G_3V_20mA.txt}" Data="rectangular" Interpolator="linear" duringDC="open"
+Eqn:EqnTC1 A="twoport(S,'S','A')" ZL="real(sqrt(A[1,2]/A[2,1]))" Export="yes"
+Pac:P2 _net6 gnd Num="2" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
+Pac:P1 _net7 gnd Num="1" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
+MLIN:MSTC3 _net5 _net6 Subst="MG587" W="1.54626 mm" L="10 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+.SP:SPTC1 Type="log" Start="1 GHz" Stop="20 GHz" Points="51" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
+SPfile:X2 _net8 _net9 _net10 File="{/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3_v01_2-26G_3V_20mA.txt}" Data="rectangular" Interpolator="linear" duringDC="open"
+.AC:AC1 Type="lin" Start="1 GHz" Stop="10 GHz" Points="19" Noise="no"
+MLIN:MSTC2 _net7 _net4 Subst="MG587" W="1.54626 mm" L="10 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"

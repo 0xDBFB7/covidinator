@@ -1,0 +1,9 @@
+# Qucs   /home/arthurdent/covidinator/electronics/qucs/image_reject_filter.sch
+
+MLIN:MS1 _net0 _net1 Subst="Sub1" W="1.324 mm" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+MLIN:MS2 _net1 gnd Subst="Sub1" W="560.7 um" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+MLIN:MS3 _net1 _net2 Subst="Sub1" W="1.324 mm" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+MLIN:MS4 _net2 gnd Subst="Sub1" W="3.321 mm" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+MLIN:MS5 _net2 _net3 Subst="Sub1" W="1.324 mm" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+MLIN:MS6 _net3 gnd Subst="Sub1" W="9.176 mm" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"
+MLIN:MS7 _net3 _net4 Subst="Sub1" W="1.324 mm" L="3.926 mm" Model="Hammerstad" DispModel="Kirschning" Temp="26.85"

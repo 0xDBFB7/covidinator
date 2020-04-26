@@ -2,7 +2,10 @@
 In order to satisfy the Barkhausen condition for oscillation, a 180 degree phase shift is required 
 in the feedback loop. The inverting mosfet itself contributes the remaining 180 degrees.
 
-The S-parameters for the CE3520K3 mosfet are listed on the manufacturer's webpage.
+The S-parameters for the CE3520K3 mosfet are listed on the manufacturer's webpage. 
+
+qucs-RFlayout didn't recognize the QUCS file until the version ("0.0.19") was added to the
+opening XML tag. #5.
 
 
 
