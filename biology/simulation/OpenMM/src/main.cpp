@@ -3,7 +3,7 @@
 
 void create_T4_head(Sim &sim){
 
-     172-kbp
+     // 172-kbp
 
     //T4 data from Fokine(2004)
 

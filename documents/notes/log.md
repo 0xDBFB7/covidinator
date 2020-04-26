@@ -208,40 +208,48 @@ T4
 Length 120 +/- 3 nm | Width 85 +/- 2 nm [Baschong 1988]
 Thickness: 5.7 +/- 0.5 nm [Baschong 1988]
 Mass 82 MDa [Fokine (2004)]
-Charge: ?
+
+Charge: +360 e+ [Tarasova 2018]
+(but we expect a surface charge density around −0.2 e/nm^2, which conflicts with this.
+some other protein must be coating the dsDNA) [Nap 2014]
 
 Proteins and models: 
 gp23, gp24 [PDB:1YUE]
-CryoEM EM-6XXX 
+w CryoEM EM-6XXX 
 Fitted CryoEM 5VF3 (isometric mutant)
 
-   dsDNA:
+   dsDNA: --done--
 
 Mass: 112 MDa [Fokine (2004)]
 Size: 172 kbp dsDNA [Fokine (2004)]
-Charge: 344 k e- [2e-/bp from phosphate group assumed for DNA]
+Charge: 344k e- [2e-/bp from phosphate group assumed for DNA]
 
-Model as charged beads restrained with an L-J force.
+Model as tightly packed charged beads restrained with an L-J force.
 
    Nanoindentation:
 
 Empty? Lambda (50 nm), Empty? Phi29 (54 nm) [] [Roos 2009]
 Full T7 (57 +/- 2.2 nm) [Vörös 2016]
-Tip shape: 
+Tip shape:  
 
 
 Influenza:
 ---------------------------------------
 
+Total mass (X49/H3N2): 161 +/- 17 MDa [Ruigrok 1984] 
+
    Envelope:
    
 Host-derived lipid bilayer
-Total mass (X49/H3N2): 161 +/- 17 MDa [Ruigrok 1984] 
-Diameter (X-31/H3N2): 120 (84 to 170) nm [Harris 2006]
-Thickness (X-31/H3N2): 4 nm [Harris 2006]
 
+Diameter (X-31/H3N2): 120 (84 to 170) nm x 100 nm [Harris 2006]
+Thickness (X-31/H3N2): 4 nm [Harris 2006]
+Mass: 
 Distribution: a wide variety of shapes and sizes. 
-Aspect ratios from 1 (70.9%) to >7 (13%). [Harris 2006] 
+Aspect ratios from 1.2 (70.9%) to >7 (13%). [Harris 2006] 
+
+Charge: 
+Expected (1.16e7 e- based on equal shell core assumption) [Yang 2015]
 
 
    Spike proteins:
@@ -256,9 +264,10 @@ Proteins and models:
 
    Helical nucleocapsid:
 
-[Durrant (supplemental)][Compans 1972]
+[Durrant (supplemental)][Compans 1972][SCHULZE ][Nermut 1970]
 
-   RNA Genome (ds?)
+
+   ssRNA Genome (ds?)
   
 
 

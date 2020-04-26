@@ -3,7 +3,12 @@
 Here we list all the ways the author has been wrong.
 
 
+1. The reason why we don't see the microwave resonance in the body is that there aren't any strucures the size of viruses.
+    If someone had asked, I would have given this answer. 
+    However, this couldn't be more wrong; it actually has to do with the damping observed in human solvents.
+     Microtubules, etc are all on the order 50 nm.
 
+    
 
 
 

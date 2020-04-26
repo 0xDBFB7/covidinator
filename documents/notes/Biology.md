@@ -339,3 +339,47 @@ The Coronaviruses is comprised of E proteins [https://virologyj.biomedcentral.co
 Cool!
 
 ViperDB has a "Net Surface Charge:" field. Awesome!
+
+After exposure to 40% destruction level, re-test microwave absorption - would tell us if the variation in sizes is shifting off-resonance.
+
+https://arxiv.org/pdf/physics/0403057.pdf
+The origin of the force resisting the ejection of DNA from the capsid lies in the
+osmotic pressure caused by molecules in solution that cannot penetrate the capsid. Neat!
+
+Okay. So. Basically zero progress. We don't know what the charge distribution inside the phage looks like. We could sum up all the protein charges - gp23, x charge, times x segments in capsid - but right now doing Yang's microwave absorption fitting technique might be better.
+
+It seems quite reasonable that the increase in power required is due to variance in the properties, but that remains to be seen.
+
+Pulsed RF is still on the table. If the blood cell data is transferable, can we use the 6-minute averaging to go over the 50 W/m^2 restriction? Also, the beamforming around the body will 
+
+Phi6 has an intermediate capsid between the envelope and the bare DNA, whereas influenza and COVID has a tightly-wound helix of DNA wrapped immediately in a capsid.
+
+-----------------
+
+Why do we need to simulate? We want to test the effects of 
+
+But T4 seems to be far more precise in its reproduction than influenza, so it's not going to replicate the distribution inactivation effect. 
+
+--------------------
+
+What can we simulate right now? We can do a super-coarse influenza using q-=q+ from the Yang paper.
+
+ICRNIP:
+# and (c) within the reactive near-field zone reference levels cannot be used to determine compliance, and so basic restrictions must be assessed. 
+
+oh!
+
+Four emitters in a -circle- no an arc, 2 GHz, connected by SMA cables, phase shifters on each one, alter phase shifters until max 8ghz signal recieved? Tune two, get second harmonic, etc until all phases are tuned
+
+Power in the second harmonic:
+
+{P_c} = {P_a} + {P_b} + a*b \cos(phase2 - phase1 )
+
+That's still 0.707 at 45 deg. 0.707^4 = 0.25. If the optical-centrifuge mode works, that might just be enough, given the ~4 W/cm^2 limit at 2 ghz?
+
+Huge power required. 
+
+
+It might be possible to extract the charge density map directly from the original CryoEM, rather than fitting the particles. Hirai 2007. Very interesting.
+
+Oh hold up, even a core with a single charge will 

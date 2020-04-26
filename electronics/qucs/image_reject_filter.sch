@@ -1,11 +1,11 @@
 <Qucs Schematic >
 <Properties>
-  <View=-420,175,1104,972,1.21004,126,33>
+  <View=-420,83,1104,1061,1.10003,56,120>
   <Grid=10,10,1>
-  <DataSet=filter.dat>
-  <DataDisplay=filter.dpl>
+  <DataSet=image_reject_filter.dat>
+  <DataDisplay=image_reject_filter.dpl>
   <OpenDisplay=1>
-  <Script=filter.m>
+  <Script=image_reject_filter.m>
   <RunScript=0>
   <showFrame=0>
   <FrameText0=Title>
