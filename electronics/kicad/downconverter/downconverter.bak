@@ -14,21 +14,21 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 0xDBFB7:HMC220B U?
+L 0xDBFB7:HMC220B U1
 U 1 1 5EA61CDA
 P 3450 2800
-F 0 "U?" H 3450 2875 50  0000 C CNN
+F 0 "U1" H 3450 2875 50  0000 C CNN
 F 1 "HMC220B" H 3450 2784 50  0000 C CNN
-F 2 "" H 3450 2250 50  0001 C CNN
+F 2 "Package_SO:MSOP-8-1EP_3x3mm_P0.65mm_EP1.68x1.88mm" H 3450 2250 50  0001 C CNN
 F 3 "" H 3450 2250 50  0001 C CNN
 	1    3450 2800
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0101
 U 1 1 5EA61DEC
 P 3750 3350
-F 0 "#PWR?" H 3750 3350 30  0001 C CNN
+F 0 "#PWR0101" H 3750 3350 30  0001 C CNN
 F 1 "GND" H 3750 3280 30  0001 C CNN
 F 2 "" H 3750 3350 50  0001 C CNN
 F 3 "" H 3750 3350 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "" H 3750 3350 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0102
 U 1 1 5EA61E03
 P 3150 3050
-F 0 "#PWR?" H 3150 3050 30  0001 C CNN
+F 0 "#PWR0102" H 3150 3050 30  0001 C CNN
 F 1 "GND" H 3150 2980 30  0001 C CNN
 F 2 "" H 3150 3050 50  0001 C CNN
 F 3 "" H 3150 3050 50  0001 C CNN
@@ -47,10 +47,10 @@ F 3 "" H 3150 3050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0103
 U 1 1 5EA61E1F
 P 3150 3150
-F 0 "#PWR?" H 3150 3150 30  0001 C CNN
+F 0 "#PWR0103" H 3150 3150 30  0001 C CNN
 F 1 "GND" H 3150 3080 30  0001 C CNN
 F 2 "" H 3150 3150 50  0001 C CNN
 F 3 "" H 3150 3150 50  0001 C CNN
@@ -58,10 +58,10 @@ F 3 "" H 3150 3150 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0104
 U 1 1 5EA61E2C
 P 3750 3150
-F 0 "#PWR?" H 3750 3150 30  0001 C CNN
+F 0 "#PWR0104" H 3750 3150 30  0001 C CNN
 F 1 "GND" H 3750 3080 30  0001 C CNN
 F 2 "" H 3750 3150 50  0001 C CNN
 F 3 "" H 3750 3150 50  0001 C CNN
@@ -69,14 +69,196 @@ F 3 "" H 3750 3150 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0105
 U 1 1 5EA61E3D
 P 3750 3050
-F 0 "#PWR?" H 3750 3050 30  0001 C CNN
+F 0 "#PWR0105" H 3750 3050 30  0001 C CNN
 F 1 "GND" H 3750 2980 30  0001 C CNN
 F 2 "" H 3750 3050 50  0001 C CNN
 F 3 "" H 3750 3050 50  0001 C CNN
 	1    3750 3050
 	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3150 2950 2850 2950
+Wire Wire Line
+	4000 3250 3750 3250
+$Comp
+L SparkFun-Connectors:CONN_01 J1
+U 1 1 5EA728FD
+P 2750 2950
+F 0 "J1" H 2706 3260 45  0000 C CNN
+F 1 "CONN_01" H 2706 3176 45  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 2750 3150 20  0001 C CNN
+F 3 "" H 2750 2950 50  0001 C CNN
+F 4 "XXX-00000" H 2706 3081 60  0000 C CNN "Field4"
+	1    2750 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_01 J3
+U 1 1 5EA72B6A
+P 4100 3250
+F 0 "J3" H 4057 2940 45  0000 C CNN
+F 1 "CONN_01" H 4057 3024 45  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 4100 3450 20  0001 C CNN
+F 3 "" H 4100 3250 50  0001 C CNN
+F 4 "XXX-00000" H 4057 3119 60  0000 C CNN "Field4"
+	1    4100 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_01 J2
+U 1 1 5EA729ED
+P 3850 2950
+F 0 "J2" H 3807 2640 45  0000 C CNN
+F 1 "CONN_01" H 3807 2724 45  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 3850 3150 20  0001 C CNN
+F 3 "" H 3850 2950 50  0001 C CNN
+F 4 "XXX-00000" H 3807 2819 60  0000 C CNN "Field4"
+	1    3850 2950
+	-1   0    0    1   
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J4
+U 1 1 5EA7320A
+P 2750 2350
+F 0 "J4" H 2826 2597 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 2826 2491 60  0000 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 2950 2550 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 2950 2650 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 2950 2750 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 2950 2850 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2950 2950 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 2950 3050 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 2950 3150 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 2950 3250 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 2950 3350 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 2950 3450 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2950 3550 60  0001 L CNN "Status"
+	1    2750 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J7
+U 1 1 5EA73375
+P 2750 2350
+F 0 "J7" H 2826 2597 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 2826 2491 60  0000 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 2950 2550 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 2950 2650 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 2950 2750 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 2950 2850 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2950 2950 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 2950 3050 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 2950 3150 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 2950 3250 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 2950 3350 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 2950 3450 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2950 3550 60  0001 L CNN "Status"
+	1    2750 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J8
+U 1 1 5EA733F7
+P 4250 2450
+F 0 "J8" H 4326 2697 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 4326 2591 60  0000 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 4450 2650 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 4450 2750 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 4450 2850 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 4450 2950 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 4450 3050 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 4450 3150 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 4450 3250 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 4450 3350 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 4450 3450 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 4450 3550 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4450 3650 60  0001 L CNN "Status"
+	1    4250 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J9
+U 1 1 5EA73407
+P 4250 2450
+F 0 "J9" H 4326 2697 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 4326 2591 60  0000 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 4450 2650 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 4450 2750 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 4450 2850 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 4450 2950 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 4450 3050 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 4450 3150 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 4450 3250 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 4450 3350 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 4450 3450 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 4450 3550 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4450 3650 60  0001 L CNN "Status"
+	1    4250 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J5
+U 1 1 5EA734BA
+P 3300 1750
+F 0 "J5" H 3376 1997 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 3376 1891 60  0000 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 3500 1950 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 3500 2050 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 3500 2150 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 3500 2250 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 3500 2350 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 3500 2450 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 3500 2550 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 3500 2650 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 3500 2750 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 3500 2850 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3500 2950 60  0001 L CNN "Status"
+	1    3300 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J6
+U 1 1 5EA734CA
+P 3300 1750
+F 0 "J6" H 3376 1997 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 3376 1891 60  0000 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 3500 1950 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 3500 2050 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 3500 2150 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 3500 2250 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 3500 2350 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 3500 2450 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 3500 2550 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 3500 2650 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 3500 2750 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 3500 2850 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3500 2950 60  0001 L CNN "Status"
+	1    3300 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EA7383E
+P 3150 3200
+F 0 "#PWR?" H 3150 3200 30  0001 C CNN
+F 1 "GND" H 3150 3130 30  0001 C CNN
+F 2 "" H 3150 3200 50  0001 C CNN
+F 3 "" H 3150 3200 50  0001 C CNN
+	1    3150 3200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EA73896
+P 3150 3250
+F 0 "#PWR?" H 3150 3250 30  0001 C CNN
+F 1 "GND" H 3150 3180 30  0001 C CNN
+F 2 "" H 3150 3250 50  0001 C CNN
+F 3 "" H 3150 3250 50  0001 C CNN
+	1    3150 3250
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC

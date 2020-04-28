@@ -4,3 +4,4 @@ Using tip from McMaster-Carr, International Tools 62-1095
 
 HMC220B pitch is 0.65 mm center-to-center.
 
+mm / min.
