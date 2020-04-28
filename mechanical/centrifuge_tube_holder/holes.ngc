@@ -1,0 +1,29 @@
+%
+M03 S10000;
+G4 P5;
+F5000;
+G54;
+G00 X10 Y10 Z5 ;
+#1 = 0 (assign parameter #1 the value of 0)
+F25 (set a feed rate)
+o101 while [#1 LT 22]
+  G0 X0
+  G0 Y[#1*-17-10] ;
+G1 F400 Z -6;
+  G1 F400 X [[-11/2]+[3.175/2]];
+G17;
+G2  F400 I[[11/2]-[3.175/2]];
+G1 F400 Z -8;
+  G1 F400 X [[-11/2]+[3.175/2]];
+G17;
+G2  F400 I[[11/2]-[3.175/2]];
+G1 F400 Z -10;
+  G1 F400 X [[-11/2]+[3.175/2]];
+G17;
+G2  F400 I[[11/2]-[3.175/2]];
+G1 Z 0;
+
+  #1 = [#1+1] (increment the test counter)
+o101 endwhile
+M2 (end program)
+%
