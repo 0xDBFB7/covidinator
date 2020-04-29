@@ -18,8 +18,8 @@ To be safe, we'll go for 5x0.8, or 4 mm clearance.
 
 -------------------------------------------------------------------------------------
 
-A matching network isn't strictly necessary if the gain is satisfactory [mwrf]. The S-parameters
-provided by the manufacturer are given relative to a 50-ohm impedance. 
+A matching network isn't strictly necessary if the gain and VSWR are already satisfactory [mwrf]. 
+The S-parameters provided by the manufacturer are given relative to a 50-ohm impedance. 
 
 The S-parameter table shows us that at 8 GHz, the transistor does not produce the 180 degree phase
 shift that was expected. The S21 mag,angle (@2v, 50 Ohm, 10 ma) varies from 4.7, 149 deg at 2 GHz to 
@@ -32,7 +32,13 @@ is used. Needed to be patched: https://github.com/Qucs/qucs/issues/861
 
 An AC sim was used in QUCS, with the F interval set to the desired interval.
 
+Unfortunately, the gain isn't particularly satisfactory - the input of the device seems to be 
+poorly matched to the output. Or perhaps this is just an artifact of the frequency-dependent 
+impedance of the microstrips?
 
+Au contrare. 
+
+Variables can't be used to match
 
 
 
