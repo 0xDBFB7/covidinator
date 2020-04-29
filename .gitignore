@@ -1,3 +1,4 @@
 documents/mdwiki.html
 *.gcode
 media/
+*.pyc
