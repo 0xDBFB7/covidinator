@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-1050,-159,2144,2089,0.620967,431,2>
+  <View=-1050,-99,2144,2089,0.620967,431,2>
   <Grid=10,10,1>
   <DataSet=image_reject_filter.dat>
   <DataDisplay=image_reject_filter.dpl>

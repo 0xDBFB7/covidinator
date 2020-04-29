@@ -38,11 +38,10 @@ impedance of the microstrips?
 
 Au contrare. 
 
-Variables can't be used to match
+Qucs doesn't allow variables as filenames.
 
 
-
-
+Simply teeing the output and feedback on the stage 1 oscillator does work, but if the 
 
 
 
