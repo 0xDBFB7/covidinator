@@ -1,6 +1,6 @@
 #
-# File:      /home/arthurdent/covidinator/electronics/160FR1.wc
-# Modified:  Mon Apr 13 18:14:09 2020
+# File:      /home/arthurdent/covidinator/electronics/wcalc/160FR1.wc
+# Modified:  Wed Apr 29 14:09:16 2020
 # Wcalc Version 1.1
 
 [wcalc]
@@ -14,16 +14,16 @@ model_name = microstrip
 file_version = 0.1
 
 # Length (meters)
-L = 0.013732161133033
+L = 0.01373
 
 # Width (meters)
-W = 0.00277829157402965
+W = 0.002778
 
 # Characteristic Impedance (ohms)
-Z0 = 50.0000000041207
+Z0 = 50.0031261077478
 
 # Electrical Length (degrees)
-Elen = 180
+Elen = 179.970692149774
 
 # Frequency of operation
 freq = 6000000000
