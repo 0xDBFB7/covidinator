@@ -27,11 +27,10 @@ shift that was expected. The S21 mag,angle (@2v, 50 Ohm, 10 ma) varies from 4.7,
 
 That's a clue as to why the most recent LO test didn't work.
 
+Designing the feedback loop would be helped by some optimization, so the Qucs ASCO 4.10 optimizer 
+is used. Needed to be patched: https://github.com/Qucs/qucs/issues/861
 
-
-
-
-
+An AC sim was used in QUCS, with the F interval set to the desired interval.
 
 
 
