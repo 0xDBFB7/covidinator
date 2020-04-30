@@ -36,4 +36,10 @@ F 4 "" H 4758 4716 60  0000 L CNN "Field4"
 	1    4650 4750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5650 4450 4650 4450
+Wire Wire Line
+	4650 4450 4650 4550
+Wire Wire Line
+	4650 4850 5650 4850
 $EndSCHEMATC

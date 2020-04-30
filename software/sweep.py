@@ -39,6 +39,8 @@ def run_sweep(start_freq, end_freq, bin_width, gain_db, samples_per_freq_multipl
             new_input = np.array([float(i) for i in line.decode().split(',')[2:]])
             for i in range(0, (len(new_input))-4):
                 freq = (new_input[0] + ((new_input[1] - new_input[0]) / (len(new_input)-4))*i) + LO_freq
+                if(n > N_points):
+                    break
                 data[n] = new_input[i+4]
                 freqs[n] = freq #lines are often out of order.
                 n+=1
@@ -65,11 +67,12 @@ def peak_detect(data, freqs, peak_interval=20):
     peaks_freqs = [freqs[i] for i in range(0, len(data), peak_interval)]
     return peaks_freqs, peaks_data
 
-def take_sample(freqs, averages=1):
+
+def take_sample(freqs, averages, *args, **kwargs):
     averaged_data = np.zeros(0)
 
     for i in range(0,averages):
-        x, data = run_sweep(1, 6000, 10000, 30.0, 0)
+        x, data = run_sweep(*args, **kwargs)
         if(not len(averaged_data)):
             averaged_data = data
         if(not len(freqs)):
@@ -79,22 +82,20 @@ def take_sample(freqs, averages=1):
 
     averaged_data /= averages
 
-    return averaged_data
+    return freqs, averaged_data
 
 
 
 averages = 5
 
-freqs = np.zeros(0)
+freqs = np.zeros(0) #this gets set on the first run, and persists throughout to anchor frequencies
 
-background = take_sample(freqs, averages=1)
+freqs, background = take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
-averaged_data = take_sample(freqs, averages=1)
+freqs, averaged_data = take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
 averaged_data -= background
-# averaged_data -= 500
 
-print(data)
-# plt.plot(x,data)
+
 plt.plot(freqs,averaged_data)
 plt.show()
