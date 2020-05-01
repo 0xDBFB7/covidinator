@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-1430,-1130,5106,3130,0.751316,1533,758>
+  <View=-1430,-1130,5106,3110,1.00001,1644,984>
   <Grid=10,10,1>
   <DataSet=feedback_loop.dat>
   <DataDisplay=feedback_loop.dpl>
@@ -136,11 +136,13 @@
   <SPfile X4 1 1570 340 -12 -40 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
   <MCORN MS26 1 800 220 15 -7 0 0 "Subst1" 1 "Zwidth" 1>
   <L L14 1 1380 340 -26 10 1 2 "0.2 nH" 1 "" 0>
-  <MLIN MS46 1 850 340 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "6 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <C C17 1 1450 340 -26 -57 0 2 "4.7 pF" 1 "" 0 "neutral" 0>
-  <C C18 1 1020 340 -26 -57 0 2 "1 pF" 1 "" 0 "neutral" 0>
-  <C C19 1 1210 340 -26 -57 0 2 "1 pF" 1 "" 0 "neutral" 0>
-  <R R6 1 1120 380 15 -26 0 1 "1000 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <R R6 1 3360 -740 15 -26 0 1 "1000 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <R R7 1 1120 460 -26 15 0 0 "1000 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <MLIN MS46 1 880 340 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "3 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <L L15 1 1090 190 -26 10 1 2 "0.2 nH" 1 "" 0>
+  <C C18 1 1160 190 -26 -57 0 2 "4.7 pF" 1 "" 0 "neutral" 0>
+  <MLIN MS53 1 1060 280 -115 -26 0 3 "Subst1" 1 "Zwidth" 1 "7 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
 </Components>
 <Wires>
   <-10 1390 100 1390 "" 0 0 0 "">
@@ -220,15 +222,17 @@
   <2520 -860 2550 -860 "" 0 0 0 "">
   <2610 -860 2630 -860 "" 0 0 0 "">
   <1600 340 1670 340 "Vfb_amp" 1660 290 30 "">
-  <1120 340 1120 350 "" 0 0 0 "">
-  <800 250 800 340 "" 0 0 0 "">
-  <800 340 820 340 "" 0 0 0 "">
   <1410 340 1420 340 "" 0 0 0 "">
   <1480 340 1540 340 "Vfb" 1500 250 4 "">
-  <1050 340 1120 340 "" 0 0 0 "">
-  <880 340 990 340 "" 0 0 0 "">
-  <1240 340 1350 340 "" 0 0 0 "">
-  <1120 340 1180 340 "" 0 0 0 "">
+  <1180 340 1350 340 "" 0 0 0 "">
+  <1180 340 1180 460 "" 0 0 0 "">
+  <1150 460 1180 460 "" 0 0 0 "">
+  <1060 460 1090 460 "" 0 0 0 "">
+  <1060 340 1060 460 "" 0 0 0 "">
+  <910 340 1060 340 "" 0 0 0 "">
+  <800 250 800 340 "" 0 0 0 "">
+  <800 340 850 340 "" 0 0 0 "">
+  <1120 190 1130 190 "" 0 0 0 "">
 </Wires>
 <Diagrams>
   <Rect 650 1430 281 175 3 #c0c0c0 1 00 1 2.5e+09 5e+09 2e+10 0 0 2 15 1 -1 1 1 315 0 225 "" "" "" "">
@@ -292,6 +296,7 @@
   <Text 2450 -990 12 #000000 0 "Basically perfect\n">
   <Text 1450 450 12 #000000 0 "Rather than do a transient sim of the oscillation,\nthis second amp represents the first amp on the second\nFB loop around\n">
   <Text 1070 560 12 #000000 0 "Fhigh = 0.5 pF\nFlow = 4 pF">
-  <Text 2890 -800 12 #000000 0 "Also works, sharper resonance\nPrefer 1.5x4 though\n">
+  <Text 2820 -840 12 #000000 0 "Also works, sharper resonance\nPrefer 1.5x4 though\n">
   <Text 2270 -600 12 #000000 0 "Contrary to previous belief, the chosen varactor C varies from \n2 to 40 pF.">
+  <Text 3240 -840 12 #000000 0 "PIN diode also doesn't have the dynamic range in that phase-shifter capacity">
 </Paintings>
