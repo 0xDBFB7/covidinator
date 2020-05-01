@@ -600,3 +600,6 @@ I assumed that this device wouldn't be useful inside the body, since the skin ef
 [https://www.microwaves101.com/encyclopedias/sliding-load](https://www.microwaves101.com/encyclopedias/sliding-load) for cclaibration
 
 
+[Sigcon 2003]
+
+> In all cases the effective inductance of the component is strongly influenced by its height above the nearest plane. A good discussion of this principle, and also the influence of the planes themselves, aears in the article "Parasitic Inductance of Bypass Capacitors".

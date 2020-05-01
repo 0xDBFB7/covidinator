@@ -44,11 +44,30 @@ Qucs doesn't allow variables as filenames.
 Simply teeing the output and feedback on the stage 1 oscillator does work, but if the 
 
 
+-------------------------------------------------------------------------------------
+
+The SMV1249 varactor in SC-79 (SOD-523) has an inductance of 0.7 nF.
+
+----------------
+
+IF out on the HMC220B should be AC coupled.
+
+    
+                  
+      |--------------------| 6GHz                      || HackRF spectrum 
+1 MHz |--------------------------------------| 12 GHz  ||
+                 5 GHz |---------------------| 12 GHz  || Spectrum of interest
+
+      |------------| 4 GHz                             || HMC220B IF range
+                 5 GHz |---------------------| 12 GHz  || HMC220B RF range
+
+
+
+---------------
 
 
 
 
 
 
-
-a
+-
