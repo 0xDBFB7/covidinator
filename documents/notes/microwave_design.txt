@@ -66,6 +66,9 @@ IF out on the HMC220B should be AC coupled.
 ---------------
 
 
+Designed qucs loop into kicad. Upgraded kicad to 5.1.5 through dpkg for rounded edges.
+Spacebar origin reset is very helpful.
+
 
 
 

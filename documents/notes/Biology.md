@@ -383,3 +383,40 @@ Huge power required.
 It might be possible to extract the charge density map directly from the original CryoEM, rather than fitting the particles. Hirai 2007. Very interesting.
 
 Oh hold up, even a core with a single charge will 
+
+
+
+
+
+https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150050404
+
+https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150030204
+
+We determine the surface charge density of our T4 surrogate by converting values of mu in agarose electrophoresis. This technique, while somewhat ridiculous, could also be used to inexpensively determine the distribution of radii of particles.
+
+Serwer, P. and Pichler, M. E., J. Virol. 1978, 28, 917-928.
+
+What is 2d gel electrophor...?
+
+Also, different proteins (M, liposome) charges might be found
+
+Influenza virus proteins: Identity, synthesis, and modification
+analyzed by two-dimensional gel electrophoresis
+
+https://www.sciencedirect.com/science/article/abs/pii/002228367090077X
+
+T4 phage were osmotically shocked using a procedure
+similar to Minagawa (1961). 6 ml. of a suspension of 1 x 1Or3 phage/ml., previously stored
+overnight in 5 M-N&~, was diluted 0.05 into cold distilled water to release DNA from the
+phage. Anderson, 1950
+
+2d gel elec. uses a gradient of pH in one axis (seperating by charge)
+and no gradient in the other (separating by Mw)
+
+http://www.gelanalyzer.com/?i=1 and PyElph
+
+It is possible to derive net charge directly from CryoEM maps of proteins. However, software 
+
+Oh wow, radioactive electrophoresis!
+
+Vary salt concentration

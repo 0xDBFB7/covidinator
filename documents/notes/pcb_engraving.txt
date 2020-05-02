@@ -13,6 +13,8 @@ Used sharpest "old" engraving bit in tray for trial.
 300 mm / min feed, 24Krpm spindle, depth -0.1 mm, Zhigh=3, overlap 0.05? mm. Tool dia in "paint area" 
 set to 0.22 mm, tool dia in "cnc job" set to 0.38.
 
+Use Kicad's aux axis to position the board in FlatCAM.
+
 Beautiful result.
 
 Had to run through a invert_probing.sh to fix a few syntax issues.
