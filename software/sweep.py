@@ -92,7 +92,7 @@ freqs = np.zeros(0) #this gets set on the first run, and persists throughout to 
 
 freqs, background = take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
-input()
+input("Do something! >")
 
 freqs, averaged_data = take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
@@ -103,3 +103,6 @@ freqs, averaged_data = peak_detect(averaged_data, freqs)
 
 plt.plot(freqs,averaged_data)
 plt.show()
+file = input("filename? > ")
+if file:
+    plt.savefig("../media/" + file + ".png")

@@ -95,15 +95,21 @@ There are a bunch of spurious tones, but the main one is much stronger than befo
 
 It's also more stable. F is still basically the same, 5.8 GHz.
 
+Oh, putting an inductor in the alternate fb loop makes a massive difference.
+
+Even though the OP power is only about -40 DB, the downconverter seems to be operational.
+
 It's hard to tell what the pin diode is doing. Once the resistance is brought down a bit,
 the oscillation voltage increases to 1.8v from 0.9, and all tones disappear from downconverter.
- At 0.3 A on the pin diode, 
+ At 0.3 A on the pin diode, the signal returns.
 
 
 Huh. Is that an effect of the increased inductance to ground?
 
+Exchanged the pin diode for a varactor. The entire spectrum lit up with -10 db signals. 
+
+The current (and, presumably, frequency) actually tracks the HackRF LO sweep!, varying by 5% or so!
 
 
-Oh, putting an inductor in the alternate fb loop makes a massive difference.
 
 -

@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-1430,-1130,5106,3110,1.10008,2194,999>
+  <View=-1430,-1130,5106,3110,0.683024,1195,541>
   <Grid=10,10,1>
   <DataSet=feedback_loop.dat>
   <DataDisplay=feedback_loop.dpl>
@@ -146,18 +146,28 @@
   <GND * 5 1640 430 0 0 0 0>
   <SPfile X4 1 1640 400 -12 -40 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
   <L L14 1 1390 400 -26 10 1 2 "0.2 nH" 1 "" 0>
-  <MLIN MS55 1 1290 400 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "0.1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS55 1 1290 400 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "2mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <MLIN MS56 1 1540 400 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "0.1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS54 1 1210 320 15 -26 1 3 "Subst1" 1 "2.5 mm" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <C C17 1 1460 400 -26 -57 0 2 "10 pF" 1 "" 0 "neutral" 0>
   <C C19 1 490 400 -26 -57 0 2 "10 pF" 1 "" 0 "neutral" 0>
-  <C C18 1 1180 230 -26 -57 0 2 "10 pF" 1 "" 0 "neutral" 0>
-  <R R8 1 1180 400 -26 15 0 0 "1" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <MLIN MS53 1 940 320 -115 -26 0 3 "Subst1" 1 "2.5 mm" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MTEE MS66 1 940 400 -26 34 0 2 "Subst1" 1 "Zwidth" 1 "Zwidth" 1 "Zwidth" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0 "showNumbers" 0>
-  <L L20 1 1100 400 -26 10 0 0 "0.7 nH" 1 "" 0>
-  <L L15 1 990 230 -26 10 1 2 "8.2 nH" 1 "" 0>
-  <L L21 1 1090 230 -26 10 1 2 "0.2 nH" 1 "" 0>
+  <L L22 1 3870 -120 -26 10 1 2 "0.2 nH" 1 "" 0>
+  <MLIN MS67 1 3770 -120 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "0.1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS68 1 4020 -120 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "0.1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS69 1 3690 -200 15 -26 1 3 "Subst1" 1 "2.5 mm" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <C C23 1 3940 -120 -26 -57 0 2 "10 pF" 1 "" 0 "neutral" 0>
+  <R R11 1 3660 -120 -26 15 0 0 "1" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <MLIN MS70 1 3420 -200 -115 -26 0 3 "Subst1" 1 "2.5 mm" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MTEE MS71 1 3420 -120 -26 34 0 2 "Subst1" 1 "Zwidth" 1 "Zwidth" 1 "Zwidth" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0 "showNumbers" 0>
+  <L L23 1 3580 -120 -26 10 0 0 "0.7 nH" 1 "" 0>
+  <L L24 1 3470 -290 -26 10 1 2 "8.2 nH" 1 "" 0>
+  <L L25 1 3570 -290 -26 10 1 2 "0.2 nH" 1 "" 0>
+  <C C24 1 3660 -290 -26 -57 0 2 "4.7 pF" 1 "" 0 "neutral" 0>
+  <L L27 1 860 400 -26 10 0 0 "0.7 nH" 1 "" 0>
+  <L L28 1 1030 400 -26 10 0 0 "0.7 nH" 1 "" 0>
+  <L L26 0 990 490 10 -26 1 3 "8.2 nH" 1 "" 0>
+  <GND *26 5 990 520 0 0 0 0>
+  <C C26 1 1110 400 -26 17 0 0 "40 pF" 1 "" 0 "neutral" 0>
+  <C C25 1 940 400 -26 17 0 0 "40pF" 1 "" 0 "neutral" 0>
 </Components>
 <Wires>
   <-10 1390 100 1390 "" 0 0 0 "">
@@ -250,17 +260,27 @@
   <1320 400 1360 400 "" 0 0 0 "">
   <1570 400 1610 400 "Vfb" 1580 330 21 "">
   <1490 400 1510 400 "" 0 0 0 "">
-  <1210 400 1260 400 "" 0 0 0 "">
-  <1210 350 1210 400 "" 0 0 0 "">
-  <1210 230 1210 290 "" 0 0 0 "">
-  <520 400 910 400 "" 0 0 0 "">
-  <940 350 940 370 "" 0 0 0 "">
-  <1130 400 1150 400 "" 0 0 0 "">
-  <970 400 1070 400 "" 0 0 0 "">
-  <940 230 940 290 "" 0 0 0 "">
-  <940 230 960 230 "" 0 0 0 "">
-  <1020 230 1060 230 "" 0 0 0 "">
-  <1120 230 1150 230 "" 0 0 0 "">
+  <3900 -120 3910 -120 "" 0 0 0 "">
+  <3800 -120 3840 -120 "" 0 0 0 "">
+  <3970 -120 3990 -120 "" 0 0 0 "">
+  <3690 -120 3740 -120 "" 0 0 0 "">
+  <3690 -170 3690 -120 "" 0 0 0 "">
+  <3690 -290 3690 -230 "" 0 0 0 "">
+  <3420 -170 3420 -150 "" 0 0 0 "">
+  <3610 -120 3630 -120 "" 0 0 0 "">
+  <3450 -120 3550 -120 "" 0 0 0 "">
+  <3420 -290 3420 -230 "" 0 0 0 "">
+  <3420 -290 3440 -290 "" 0 0 0 "">
+  <3500 -290 3540 -290 "" 0 0 0 "">
+  <3600 -290 3630 -290 "" 0 0 0 "">
+  <520 400 830 400 "" 0 0 0 "">
+  <890 400 910 400 "" 0 0 0 "">
+  <1060 400 1080 400 "" 0 0 0 "">
+  <970 400 990 400 "" 0 0 0 "">
+  <990 400 1000 400 "" 0 0 0 "">
+  <990 400 990 460 "" 0 0 0 "">
+  <1140 400 1260 400 "" 0 0 0 "">
+  <990 460 1000 460 "" 0 0 0 "">
 </Wires>
 <Diagrams>
   <Rect 650 1430 281 175 3 #c0c0c0 1 00 1 2.5e+09 5e+09 2e+10 0 0 2 15 1 -1 1 1 315 0 225 "" "" "" "">
@@ -321,7 +341,6 @@
   <Text 530 -620 12 #000000 0 "Sharper res, higher FB, and 8.5 GHz max fb\nSlightly mismatched at 7 GHz - only 75 deg phase shift\nToo much power through FB, zero at Vout">
   <Text 630 -440 12 #000000 0 "Just right.">
   <Text 2450 -990 12 #000000 0 "Basically perfect\n">
-  <Text 1450 450 12 #000000 0 "Rather than do a transient sim of the oscillation,\nthis second amp represents the first amp on the second\nFB loop around\n">
   <Text 2820 -840 12 #000000 0 "Also works, sharper resonance\nPrefer 1.5x4 though\n">
   <Text 2270 -600 12 #000000 0 "Contrary to previous belief, the chosen varactor C varies from \n2 to 40 pF.">
   <Text 3240 -840 12 #000000 0 "PIN diode also doesn't have the dynamic range in that phase-shifter capacity">
@@ -330,4 +349,6 @@
   <Text -70 200 12 #000000 0 "This length doesn't \naffect the FB loop at all!">
   <Text 1810 -600 12 #000000 0 "Fhigh = 0.5 pF\nFlow = 4 pF">
   <Text 4010 -450 12 #000000 0 "Works pretty well, but PIN inductance not modelled">
+  <Text 3450 -370 12 #000000 0 "Good dynamic range. V. good.">
+  <Text 1400 690 12 #000000 0 "Rather than do a transient sim of the oscillation,\nthis second amp represents the first amp on the second\nFB loop around\n">
 </Paintings>
