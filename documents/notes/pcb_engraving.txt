@@ -19,3 +19,13 @@ Beautiful result.
 
 Had to run through a invert_probing.sh to fix a few syntax issues.
 
+
+
+---------------
+
+A run with the MG chemicals substrate was a bit messier. Either the step-over was too small, 
+or perhaps the cutter diameter was set too large? Some regions were grooved, rather than removed.
+
+Tried the new toaster oven; seemed like the temperature ramp was too slow, the board seemed to get 
+a bit overheated. oven probably needed preheating.
+

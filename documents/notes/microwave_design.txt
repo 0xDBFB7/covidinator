@@ -70,7 +70,40 @@ Designed qucs loop into kicad. Upgraded kicad to 5.1.5 through dpkg for rounded 
 Spacebar origin reset is very helpful.
 
 
+Assembled local_oscillator.kicad. Apparent 9 ohm short across power and gnd, but ended up being
+just the normal mosfet resistance. 
+
+Refused to start up until the wires were jiggled, the voltage was increased to 2.3 V, and the current
+to 0.025 A. Resonates at 5.75 GHz. Slightly affected by proximity.
+
+There is considerable instability, however. Applying some voltage to the varactor instantly kills the
+signal, no matter the osc. bias.
+
+This is a "parallel feedback loop oscillator". 
+
+That was with a 50 R termination on the output. Removing that dropped Fres to 5.6 GHz.
+
+Tried putting a 30 K resistor on the gate to keep the gate bias from floating away. Refused to start
+up.
+
+Tried removing the DC block from varactor to gate, to use the existing bias trace to hold down the gate.
+Putting a big solder blob on there seemed to prevent it from starting up - 
+except later, I saw that when starting with 0.02 A, it steady-state transmits at 0.6V, rather than
+the previous 2.3 V. 
+
+There are a bunch of spurious tones, but the main one is much stronger than before - maybe 10x.
+
+It's also more stable. F is still basically the same, 5.8 GHz.
+
+It's hard to tell what the pin diode is doing. Once the resistance is brought down a bit,
+the oscillation voltage increases to 1.8v from 0.9, and all tones disappear from downconverter.
+ At 0.3 A on the pin diode, 
 
 
+Huh. Is that an effect of the increased inductance to ground?
+
+
+
+Oh, putting an inductor in the alternate fb loop makes a massive difference.
 
 -

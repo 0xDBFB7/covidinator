@@ -62,7 +62,7 @@ def run_sweep(start_freq, end_freq, bin_width, gain_db, samples_per_freq_multipl
 
     return freqs, data
 
-def peak_detect(data, freqs, peak_interval=20):
+def peak_detect(data, freqs, peak_interval=50):
     peaks_data = np.array([max(data[i:i+peak_interval]) for i in range(0, len(data), peak_interval)])
     peaks_freqs = [freqs[i] for i in range(0, len(data), peak_interval)]
     return peaks_freqs, peaks_data
@@ -92,9 +92,13 @@ freqs = np.zeros(0) #this gets set on the first run, and persists throughout to 
 
 freqs, background = take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
+input()
+
 freqs, averaged_data = take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
 averaged_data -= background
+
+freqs, averaged_data = peak_detect(averaged_data, freqs)
 
 
 plt.plot(freqs,averaged_data)
