@@ -1,0 +1,396 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 0xDBFB7:CE3520K3 U1
+U 1 1 5EAA1A86
+P 5650 4650
+F 0 "U1" H 5791 4696 50  0000 L CNN
+F 1 "CE3520K3" H 5791 4605 50  0000 L CNN
+F 2 "0xDBFB7:4-Micro-X" H 5650 4650 50  0001 C CNN
+F 3 "" H 5650 4650 50  0001 C CNN
+	1    5650 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 4850 5750 4850
+Connection ~ 5650 4850
+$Comp
+L power:GND #PWR0101
+U 1 1 5EAB3B29
+P 5750 4850
+F 0 "#PWR0101" H 5750 4850 30  0001 C CNN
+F 1 "GND" H 5750 4780 30  0001 C CNN
+F 2 "" H 5750 4850 50  0001 C CNN
+F 3 "" H 5750 4850 50  0001 C CNN
+	1    5750 4850
+	1    0    0    -1  
+$EndComp
+Connection ~ 5750 4850
+$Comp
+L power:GND #PWR0102
+U 1 1 5EAB3B63
+P 5650 4850
+F 0 "#PWR0102" H 5650 4850 30  0001 C CNN
+F 1 "GND" H 5650 4780 30  0001 C CNN
+F 2 "" H 5650 4850 50  0001 C CNN
+F 3 "" H 5650 4850 50  0001 C CNN
+	1    5650 4850
+	1    0    0    -1  
+$EndComp
+Text Notes 5350 5100 0    50   ~ 0
+Strap tightly down to GND
+Wire Wire Line
+	4750 4650 5400 4650
+Wire Wire Line
+	5350 3700 5350 3200
+Wire Wire Line
+	5350 3700 5650 3700
+$Comp
+L conn:CONN_1 P2
+U 1 1 5EAD28FF
+P 4300 4350
+F 0 "P2" H 4233 4253 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 4250 4390 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 4300 4350 50  0001 C CNN
+F 3 "" H 4300 4350 50  0001 C CNN
+	1    4300 4350
+	-1   0    0    1   
+$EndComp
+$Comp
+L conn:CONN_1 P3
+U 1 1 5EAD30DB
+P 5200 3200
+F 0 "P3" H 5133 3103 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 5150 3240 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 5200 3200 50  0001 C CNN
+F 3 "" H 5200 3200 50  0001 C CNN
+	1    5200 3200
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-Capacitors:4.7UF0603 C4
+U 1 1 5EADDFB9
+P 6100 3900
+F 0 "C4" H 6208 4045 45  0000 L CNN
+F 1 "0.1 uF" H 6208 3961 45  0000 L CNN
+F 2 "0603" H 6100 4150 20  0001 C CNN
+F 3 "" H 6100 3900 50  0001 C CNN
+F 4 "CAP-08280" V 6208 3866 60  0001 L CNN "Field4"
+	1    6100 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3700 6100 3700
+Connection ~ 5650 3700
+$Comp
+L power:GND #PWR0103
+U 1 1 5EAE14E0
+P 6100 4000
+F 0 "#PWR0103" H 6100 4000 30  0001 C CNN
+F 1 "GND" H 6100 3930 30  0001 C CNN
+F 2 "" H 6100 4000 50  0001 C CNN
+F 3 "" H 6100 4000 50  0001 C CNN
+	1    6100 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:4.7UF0603 C5
+U 1 1 5EAE2635
+P 6550 3900
+F 0 "C5" H 6658 4045 45  0000 L CNN
+F 1 "0.1 uF" H 6658 3961 45  0000 L CNN
+F 2 "0603" H 6550 4150 20  0001 C CNN
+F 3 "" H 6550 3900 50  0001 C CNN
+F 4 "CAP-08280" V 6658 3866 60  0001 L CNN "Field4"
+	1    6550 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 3700 6100 3700
+Connection ~ 6100 3700
+$Comp
+L power:GND #PWR0104
+U 1 1 5EAE3489
+P 6550 4000
+F 0 "#PWR0104" H 6550 4000 30  0001 C CNN
+F 1 "GND" H 6550 3930 30  0001 C CNN
+F 2 "" H 6550 4000 50  0001 C CNN
+F 3 "" H 6550 4000 50  0001 C CNN
+	1    6550 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3700 5650 4300
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C6
+U 1 1 5EAE6A89
+P 6100 4300
+F 0 "C6" H 5993 4308 45  0000 R CNN
+F 1 "4.7 pF" H 5993 4392 45  0000 R CNN
+F 2 "0402" H 6100 4550 20  0001 C CNN
+F 3 "" H 6100 4300 50  0001 C CNN
+F 4 "" H 5993 4434 60  0000 R CNN "Field4"
+	1    6100 4300
+	0    1    -1   0   
+$EndComp
+$Comp
+L SparkFun-Connectors:TEST-POINT3X4 TP1
+U 1 1 5EAC6ADE
+P 6300 4300
+F 0 "TP1" H 6364 4484 45  0000 C CNN
+F 1 "SMA" H 6364 4400 45  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 6300 4500 20  0001 C CNN
+F 3 "" H 6300 4300 50  0001 C CNN
+F 4 "" H 6364 4411 60  0000 C CNN "Field4"
+	1    6300 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4300 5650 4300
+Connection ~ 5650 4300
+Wire Wire Line
+	5650 4300 5650 4450
+Text Label 5650 4000 0    50   ~ 0
+VCC
+Text Label 5150 4650 0    50   ~ 0
+GATE
+$Comp
+L 0xDBFB7:CE3520K3 U?
+U 1 1 5EB03E53
+P 6900 4750
+F 0 "U?" H 7041 4796 50  0000 L CNN
+F 1 "CE3520K3" H 7041 4705 50  0000 L CNN
+F 2 "0xDBFB7:4-Micro-X" H 6900 4750 50  0001 C CNN
+F 3 "" H 6900 4750 50  0001 C CNN
+	1    6900 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 4300 4750 4350
+Wire Wire Line
+	4450 4350 4750 4350
+$Comp
+L Device:D D1
+U 1 1 5EAF43A0
+P 7500 2850
+F 0 "D1" V 7454 2929 50  0000 L CNN
+F 1 "D" V 7545 2929 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 7500 2850 50  0001 C CNN
+F 3 "~" H 7500 2850 50  0001 C CNN
+	1    7500 2850
+	-1   0    0    1   
+$EndComp
+Connection ~ 4750 4350
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C3
+U 1 1 5EAC501D
+P 4750 4450
+F 0 "C3" H 4643 4458 45  0000 R CNN
+F 1 "10 pF" H 4643 4542 45  0000 R CNN
+F 2 "0402" H 4750 4700 20  0001 C CNN
+F 3 "" H 4750 4450 50  0001 C CNN
+F 4 "" H 4643 4584 60  0000 R CNN "Field4"
+	1    4750 4450
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:D D?
+U 1 1 5EB0D03B
+P 7500 3150
+F 0 "D?" V 7454 3229 50  0000 L CNN
+F 1 "D" V 7545 3229 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 7500 3150 50  0001 C CNN
+F 3 "~" H 7500 3150 50  0001 C CNN
+	1    7500 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L conn:CONN_1 P?
+U 1 1 5EB0F4AD
+P 7350 2400
+F 0 "P?" H 7283 2303 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 7300 2440 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 7350 2400 50  0001 C CNN
+F 3 "" H 7350 2400 50  0001 C CNN
+	1    7350 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7350 2550 7350 2850
+$Comp
+L conn:CONN_1 P?
+U 1 1 5EB10027
+P 7650 2400
+F 0 "P?" H 7583 2303 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 7600 2440 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 7650 2400 50  0001 C CNN
+F 3 "" H 7650 2400 50  0001 C CNN
+	1    7650 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7650 2550 7650 2850
+$Comp
+L conn:CONN_1 P?
+U 1 1 5EB1205F
+P 7350 3600
+F 0 "P?" H 7283 3503 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 7300 3640 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 7350 3600 50  0001 C CNN
+F 3 "" H 7350 3600 50  0001 C CNN
+	1    7350 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7350 3450 7350 3150
+Wire Wire Line
+	7650 3150 7650 3000
+Connection ~ 7650 2850
+$Comp
+L Device:D_Capacitance D?
+U 1 1 5EB17680
+P 8950 3000
+F 0 "D?" H 8950 2745 50  0000 C CNN
+F 1 "D_Capacitance" H 8950 2836 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 8950 3000 50  0001 C CNN
+F 3 "~" H 8950 3000 50  0001 C CNN
+	1    8950 3000
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:D_Capacitance D?
+U 1 1 5EB184A9
+P 8350 3000
+F 0 "D?" H 8350 2745 50  0000 C CNN
+F 1 "D_Capacitance" H 8350 2836 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 8350 3000 50  0001 C CNN
+F 3 "~" H 8350 3000 50  0001 C CNN
+	1    8350 3000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8500 3000 8650 3000
+$Comp
+L conn:CONN_1 P?
+U 1 1 5EB19EDB
+P 8650 3250
+F 0 "P?" H 8583 3153 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 8600 3290 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 8650 3250 50  0001 C CNN
+F 3 "" H 8650 3250 50  0001 C CNN
+	1    8650 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8650 3100 8650 3000
+Connection ~ 8650 3000
+Wire Wire Line
+	8650 3000 8800 3000
+Wire Wire Line
+	7650 3000 8200 3000
+Connection ~ 7650 3000
+Wire Wire Line
+	7650 3000 7650 2850
+$Comp
+L conn:CONN_1 P?
+U 1 1 5EB1C400
+P 9100 3250
+F 0 "P?" H 9033 3153 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 9050 3290 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 9100 3250 50  0001 C CNN
+F 3 "" H 9100 3250 50  0001 C CNN
+	1    9100 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9100 3100 9100 3000
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+U 1 1 5EB1DDC0
+P 6650 3000
+F 0 "C?" H 6543 3008 45  0000 R CNN
+F 1 "10 pF" H 6543 3092 45  0000 R CNN
+F 2 "0402" H 6650 3250 20  0001 C CNN
+F 3 "" H 6650 3000 50  0001 C CNN
+F 4 "" H 6543 3134 60  0000 R CNN "Field4"
+	1    6650 3000
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:D D?
+U 1 1 5EB2724A
+P 7050 3150
+F 0 "D?" V 7004 3229 50  0000 L CNN
+F 1 "D" V 7095 3229 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 7050 3150 50  0001 C CNN
+F 3 "~" H 7050 3150 50  0001 C CNN
+	1    7050 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D?
+U 1 1 5EB27250
+P 7050 2850
+F 0 "D?" V 7004 2929 50  0000 L CNN
+F 1 "D" V 7095 2929 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 7050 2850 50  0001 C CNN
+F 3 "~" H 7050 2850 50  0001 C CNN
+	1    7050 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L conn:CONN_1 P?
+U 1 1 5EB27256
+P 6900 3600
+F 0 "P?" H 6833 3503 40  0000 C CNN
+F 1 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 6850 3640 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 6900 3600 50  0001 C CNN
+F 3 "" H 6900 3600 50  0001 C CNN
+	1    6900 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6900 3450 6900 3150
+Connection ~ 6900 3150
+Wire Wire Line
+	6900 2850 6900 3000
+Wire Wire Line
+	7200 2850 7350 2850
+Connection ~ 7350 2850
+Wire Wire Line
+	7200 3150 7350 3150
+Connection ~ 7350 3150
+Wire Wire Line
+	6900 3000 6750 3000
+Connection ~ 6900 3000
+Wire Wire Line
+	6900 3000 6900 3150
+Text GLabel 9400 3000 2    50   Input ~ 0
+GATE
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+U 1 1 5EB2D82E
+P 9300 3000
+F 0 "C?" H 9193 3008 45  0000 R CNN
+F 1 "10 pF" H 9193 3092 45  0000 R CNN
+F 2 "0402" H 9300 3250 20  0001 C CNN
+F 3 "" H 9300 3000 50  0001 C CNN
+F 4 "" H 9193 3134 60  0000 R CNN "Field4"
+	1    9300 3000
+	0    -1   1    0   
+$EndComp
+Connection ~ 9100 3000
+$EndSCHEMATC

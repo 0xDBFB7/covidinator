@@ -124,3 +124,13 @@ Aha! for stability, the filter (for frequency response) and the phase shift shou
 The thin 6mm FB-reflecting trace seems to actually cause a lot of problems - adds a second pole
 
 Can use PIN diodes as a comb generator
+
+The filter should be sharper to reject alternate modes. Proximity effect could be used to disable
+osc. when too close to body?
+
+0.2 mm x 3 mm biasing lines make a significant difference.
+
+
+HOLD up! We don't need to sweep the LO - we can just use the images on the low side of the mixer
+to catch the 4.5-LO GHz region! 
+
