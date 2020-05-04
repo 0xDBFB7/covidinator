@@ -110,6 +110,14 @@ Exchanged the pin diode for a varactor. The entire spectrum lit up with -10 db s
 
 The current (and, presumably, frequency) actually tracks the HackRF LO sweep!, varying by 5% or so!
 
+Varactor produces a very monotonic shift in F of 500 MHz over 5 V.
 
+Ooh, all sorts of diodes exibit "varicap-like" behavior! Fantastic.
 
+Oh, of course - the varactor isn't being biased above the amplitude, so it's going crazy.
+
+Aha! for stability, the filter (for frequency response) and the phase shift should be optimized seperately.
+
+"Mode hopping" - that's what the pin diode causes. No VCO-like behavior.
 -
+
