@@ -121,3 +121,6 @@ Aha! for stability, the filter (for frequency response) and the phase shift shou
 "Mode hopping" - that's what the pin diode causes. No VCO-like behavior.
 -
 
+The thin 6mm FB-reflecting trace seems to actually cause a lot of problems - adds a second pole
+
+Can use PIN diodes as a comb generator
