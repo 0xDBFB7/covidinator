@@ -134,3 +134,32 @@ osc. when too close to body?
 HOLD up! We don't need to sweep the LO - we can just use the images on the low side of the mixer
 to catch the 4.5-LO GHz region! 
 
+Our substrate thickness isn't conducive to the high-impedance choke traces needed.
+
+I'm being very dumb. I've spent many days just trying different circuits out - learning, I suppose,
+but also not being rigorous. There must be a way to design an oscillator piecewise, in a coherent 
+fashion. For instance:
+
+when a peak appears, I insert a filter. This changes the phase, so I try inserting a phase shifter-
+but this introduces new resonances, etc, etc. This is no way to design a circuit.
+
+[Wu 2013] use 100-ohm choke traces
+
+why am I being so dumb.
+ 
+Pretty sure the entire circuit is wrong. Most circuits have the frequency-determining component
+on the drain or source. I can't model that in qucs using this S-param file.
+
+So there's a very undesirable phase shift introduced with series capacitor at around 2-4 GHz.
+This should cause ocillation at that frequency - fortunately, the gain of the amp
+is very small at that F, so that should be rejected.
+
+People have used varactors to tune across the entire frequency range, but that's pretty tricky
+
+The capacitance of the RF Shottky diodes used varies from 0.28 to 0.22 pF. Most other diodes seem
+to be around 10 pF, with the exception of a MMDL914, which goes from 0.62 to 0.55.
+
+Hey, hang on a minute. The phase shift doesn't need to be 360 deg - it just needs to be a 
+multiple of 360. As long as the FB filter response is correct, we can add phasing lines...
+
+Loss tangent of substrate was wrong, too.

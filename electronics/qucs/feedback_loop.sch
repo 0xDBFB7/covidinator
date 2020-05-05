@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-1430,-1130,5106,3110,0.826499,1374,737>
+  <View=-1430,-1130,5106,3110,0.5645,463,741>
   <Grid=10,10,1>
   <DataSet=feedback_loop.dat>
   <DataDisplay=feedback_loop.dpl>
@@ -21,29 +21,6 @@
   <Line -20 20 0 -40 #000080 2 1>
 </Symbol>
 <Components>
-  <Pac P10 2 -10 1420 18 -26 0 1 "9" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <GND *13 5 -10 1450 0 0 0 0>
-  <Pac P11 2 490 1420 18 -26 0 1 "10" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <GND *14 5 490 1450 0 0 0 0>
-  <MLIN MS7 2 130 1390 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS8 2 390 1390 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <SPfile X5 2 240 1390 -7 -45 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
-  <GND *15 5 240 1420 0 0 0 0>
-  <Pac P13 1 1120 1400 18 -26 0 1 "12" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <GND *18 5 1120 1430 0 0 0 0>
-  <MLIN MS9 1 1260 1370 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <Pac P14 1 1400 1400 18 -26 0 1 "13" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <GND *19 5 1400 1430 0 0 0 0>
-  <.SP SP4 0 1110 1520 0 88 0 0 "log" 1 "2.5 GHz" 1 "20 GHz" 1 "201" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <Eqn Eqn6 0 370 1590 -28 15 0 0 "S21_dB=dB(S[11,9])" 1 "yes" 0>
-  <Eqn Eqn10 0 1370 1570 -28 15 0 0 "microstrip_S21_dB=dB(S[13,12])" 1 "yes" 0>
-  <MLIN MS16 2 310 1280 -115 -26 1 1 "Subst1" 1 "Zwidth" 1 "1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <GND *16 5 400 1260 0 0 0 0>
-  <Pac P12 2 490 1260 18 -26 0 1 "11" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <GND *17 5 490 1290 0 0 0 0>
-  <SPfile X6 2 400 1230 -8 -47 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
-  <.SP SP1 0 80 1550 0 88 0 0 "log" 1 "2.5 GHz" 1 "20 GHz" 1 "201" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <Eqn OptValues1 1 970 720 -28 15 0 0 "L1=1.345160E-02" 1 "L2=2.936499E-03" 1 "yes" 0>
   <Pac P8 0 3770 1690 18 -26 0 1 "7" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
   <GND *9 4 3770 1720 0 0 0 0>
   <L L2 0 3880 1610 -26 10 0 0 "537 pH" 1 "" 0>
@@ -76,22 +53,6 @@
   <MLIN MS20 1 4230 450 -26 20 0 0 "Sub1" 0 "0.790 um" 1 "5.3 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <MLIN MS19 1 4090 570 -26 20 0 0 "Sub1" 0 "316 um" 1 "7.92 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <MLIN MS21 1 4230 570 -26 20 0 0 "Sub1" 0 "0.790 um" 1 "5.3 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <Pac P6 0 3110 1740 18 -26 0 1 "5" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
-  <GND *6 4 3110 1770 0 0 0 0>
-  <C C4 0 3220 1660 -27 10 0 0 "1.57 pF" 1 "" 0 "neutral" 0>
-  <L L1 0 3290 1740 17 -26 0 1 "1.37 nH" 1 "" 0>
-  <GND *7 4 3290 1770 0 0 0 0>
-  <C C5 0 3360 1660 -27 10 0 0 "241 fF" 1 "" 0 "neutral" 0>
-  <Pac P7 0 3430 1740 18 -26 0 1 "6" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
-  <GND *8 4 3430 1770 0 0 0 0>
-  <SUBST Subst1 1 -250 -260 -30 24 0 0 "4.4" 1 "0.79 mm" 1 "32 um" 1 "2e-4" 1 "0.022e-6" 1 "0.15e-6" 1>
-  <Eqn Eqn9 1 620 -320 -31 17 0 0 "phase_shift_optim=max(abs(180-phase(Vfb.v)),5000e6:6000e6)" 1 "yes" 0>
-  <Eqn Eqn8 1 620 -220 -31 17 0 0 "fb_gain_optim=max(Vfb.v/Vamp1.v,5000e6:6000e6)" 1 "yes" 0>
-  <Eqn Eqn3 1 620 -40 -31 17 0 0 "phase_shift=abs(180-phase(Vfb.v))" 1 "yes" 0>
-  <Eqn Eqn5 1 620 -120 -31 17 0 0 "fb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
-  <Eqn Eqn11 1 870 -100 -31 17 0 0 "output_gain=dB(Vout.v/Vsource.v)" 1 "yes" 0>
-  <.AC AC1 1 1240 -200 0 51 0 0 "lin" 1 "2.5 GHz" 1 "10 GHz" 1 "40" 1 "no" 0>
-  <Eqn Eqn14 1 620 50 -31 17 0 0 "two_pass_loop_gain=Vfb_amp.v/Vsource.v" 1 "yes" 0>
   <L L8 1 1710 -860 -26 10 0 0 "0.7 nH" 1 "" 0>
   <GND *25 5 1840 -700 0 0 0 0>
   <MLIN MS32 1 1840 -740 15 -26 0 1 "Subst1" 1 "2.5 mm" 1 "4 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
@@ -99,8 +60,6 @@
   <C C11 1 1790 -860 -26 17 0 0 "4.7pF" 1 "" 0 "neutral" 0>
   <C C12 1 1960 -860 -26 17 0 0 "4.7 pF" 1 "" 0 "neutral" 0>
   <MCOUPLED MS34 1 100 -550 -137 -26 1 1 "Subst1" 1 "Zwidth" 1 "6 mm" 1 "0.38 mm" 1 "Kirschning" 0 "Kirschning" 0 "26.85" 0>
-  <.SP SP6 0 -410 520 0 88 0 0 "lin" 1 "1 GHz" 1 "15 GHz" 1 "30" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <Eqn Eqn13 0 -400 420 -31 17 0 0 "output_dB=dB(S[2,1])" 1 "yes" 0>
   <MLIN MS30 1 1310 -1010 -26 15 0 0 "Subst1" 1 "Zwidth" 1 " 4 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L7 1 1270 -830 -26 10 0 0 "0.7 nH" 1 "" 0>
   <MLIN MS31 1 1240 -920 -115 -26 1 1 "Subst1" 1 "Zwidth" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
@@ -149,79 +108,147 @@
   <R R13 0 4650 30 -26 15 0 0 "R2" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
   <L L36 0 4570 140 -26 10 0 0 "0.7 nH" 1 "" 0>
   <R R15 0 4650 140 -26 15 0 0 "R1" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <.Opt Opt1 0 1590 630 0 51 0 0 "Sim=AC1" 0 "DE=3|50|2|20|0.85|1|3|1e-6|10|100" 0 "Var=C1|yes|3.7e-12|0.3e-12|4.7e-12|LIN_DOUBLE" 0 "Var=L1|yes|0.0135|1e-3|20e-3|LIN_DOUBLE" 0 "Var=L2|yes|0.00294|1e-3|20e-3|LIN_DOUBLE" 0 "Goal=fb_gain|MAX|1" 0 "Goal=phase_shift|GE|300" 0>
   <L L37 1 3740 2540 10 -26 1 3 "0.7 nH" 1 "" 0>
   <GND *26 5 3740 2670 0 0 0 0>
   <C C25 1 3740 2620 17 -26 0 1 "10 pF" 1 "" 0 "neutral" 0>
   <C C26 1 3740 2480 17 -26 0 1 "5 pF" 1 "" 0 "neutral" 0>
-  <.SW SW1 1 1190 640 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "2 pF" 1 "10 pF" 1 "5" 1>
-  <.SW SW2 0 1340 650 0 88 0 0 "AC1" 1 "lin" 1 "R1" 1 "5" 1 "500" 1 "2" 1>
-  <Eqn Eqn16 1 1220 560 -31 17 0 0 "C2=(30e-12)-C1" 1 "yes" 0>
   <R R4 1 1710 430 15 -26 1 3 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
   <GND * 5 1710 460 0 0 0 0>
   <GND * 5 1610 430 0 0 0 0>
   <SPfile X4 1 1610 400 -12 -40 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
-  <Eqn Eqn15 1 1380 560 -31 17 0 0 "R2=500-R1" 1 "yes" 0>
-  <MLIN MS89 1 710 340 -26 -95 0 2 "Subst1" 1 "Zwidth" 1 "8 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <L L38 1 780 340 -26 10 0 0 "0.7 nH" 1 "" 0>
-  <L L39 1 780 450 -26 10 0 0 "0.7 nH" 1 "" 0>
-  <MLIN MS90 1 710 450 -26 15 1 2 "Subst1" 1 "Zwidth" 1 "0.5 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <R R16 1 860 340 -26 15 0 0 "R1" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <R R17 1 860 450 -26 15 0 0 "R2" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <GND *2 5 -20 460 0 0 0 0>
-  <GND *4 5 90 430 0 0 0 0>
-  <Pac P1 1 -20 430 18 -26 0 1 "1" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <SPfile X2 1 90 400 -10 -44 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
-  <GND *20 5 240 50 0 0 0 1>
-  <Pac P18 0 210 50 -26 -78 0 2 "2" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
-  <R R5 1 200 130 -26 -55 1 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <GND *24 5 230 130 0 0 0 1>
-  <MLIN MS10 1 170 260 15 -26 0 1 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <GND *28 5 170 580 0 0 0 0>
-  <MLIN MS83 1 170 510 15 -26 0 1 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS45 1 250 400 -26 20 0 0 "Sub1" 0 "0.47 mm" 1 "6 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <C C30 1 450 400 -26 17 0 0 "10 pF" 1 "" 0 "neutral" 0>
-  <L L43 1 380 400 -26 10 1 2 "0.2 nH" 1 "" 0>
-  <L L40 1 550 340 -26 10 0 0 "0.7 nH" 1 "" 0>
-  <L L41 1 550 450 -26 10 0 0 "0.7 nH" 1 "" 0>
-  <R R18 1 630 340 -26 15 0 0 "R1" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <R R19 1 630 450 -26 15 0 0 "R2" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <GND *30 5 750 700 0 0 0 0>
-  <Eqn Eqn17 1 1380 900 -31 17 0 0 "R1=495" 1 "yes" 0>
-  <GND *29 5 890 700 0 0 0 0>
-  <GND *31 5 750 150 0 0 0 2>
-  <MLIN MS92 1 750 630 15 -26 0 1 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS91 1 890 630 15 -26 0 1 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS93 1 750 190 -115 -26 0 3 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <Eqn MicrostripParameters 1 -250 -30 -31 17 0 0 "Zwidth=1.487e-3" 1 "Lenbias=5e-3" 1 "Zbias=0.2e-3" 1 "yes" 0>
-  <MLIN MS72 2 1480 400 -26 20 0 0 "Sub1" 0 "Zwidth" 1 "3 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <C C17 2 1400 400 -26 17 0 0 "10 pF" 1 "" 0 "neutral" 0>
-  <L L14 2 1320 400 -26 10 1 2 "0.2 nH" 1 "" 0>
-  <GND *27 5 1520 580 0 0 0 0>
-  <MLIN MS82 1 1520 500 15 -26 0 1 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS86 1 920 400 -26 20 0 0 "Sub1" 0 "Zwidth" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <C C29 1 1060 400 -26 17 0 0 "C1" 1 "" 0 "neutral" 0>
-  <L L42 1 990 400 -26 10 1 2 "0.7 nH" 1 "" 0>
-  <MLIN MS87 1 1130 400 -26 20 0 0 "Sub1" 0 "Zwidth" 1 "2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <C C31 1 1260 400 -26 17 0 0 "C1" 1 "" 0 "neutral" 0>
-  <L L44 1 1190 400 -26 10 1 2 "0.7 nH" 1 "" 0>
-  <GND *32 5 1100 610 0 0 0 0>
-  <MLIN MS94 1 1100 530 15 -26 0 1 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <GND *33 5 510 710 0 0 0 0>
-  <MLIN MS95 1 510 640 15 -26 0 1 "Subst1" 1 "Zbias" 1 "Lenbias" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS105 1 1520 500 20 -26 0 1 "Sub1" 0 "0.2 mm" 1 "6 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS107 1 1490 530 -26 -80 0 2 "Sub1" 0 "4 mm" 1 "4 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <R R20 1 1520 560 15 -26 1 3 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <GND *42 5 1520 590 0 0 0 0>
+  <.AC AC1 1 1180 -270 0 51 0 0 "lin" 1 "0.1 GHz" 1 "10 GHz" 1 "40" 1 "no" 0>
+  <Eqn MicrostripParameters 1 -890 -130 -31 17 0 0 "Zwidth=1.487e-3" 1 "Lenbias=5.5e-3" 1 "Zbias=0.2e-3" 1 "yes" 0>
+  <.SP SP6 0 -940 410 0 88 0 0 "lin" 1 "1 GHz" 1 "15 GHz" 1 "30" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <Eqn Eqn13 0 -910 310 -31 17 0 0 "output_dB=dB(S[2,1])" 1 "yes" 0>
+  <GND *2 5 -30 460 0 0 0 0>
+  <GND *4 5 80 430 0 0 0 0>
+  <Pac P1 1 -30 430 18 -26 0 1 "1" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <SPfile X2 1 80 400 -10 -44 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
+  <GND *20 5 230 50 0 0 0 1>
+  <Pac P18 0 200 50 -26 -78 0 2 "2" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <GND *24 5 220 130 0 0 0 1>
+  <MLIN MS10 1 160 260 15 -26 0 1 "Subst1" 1 "Zwidth" 1 "5 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <R R5 1 190 130 -26 -55 1 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <MLIN MS116 1 160 510 20 -26 0 1 "Sub1" 0 "0.2 mm" 1 "6 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *43 5 160 630 0 0 0 0>
+  <MLIN MS117 1 130 550 -26 -80 0 2 "Sub1" 0 "4 mm" 1 "4 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <R R21 1 160 590 15 -26 1 3 "1 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <MLIN MS118 2 250 400 -26 20 0 0 "Sub1" 0 "0.47 mm" 1 "6 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <Pac P6 0 4240 1410 18 -26 0 1 "5" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *6 4 4240 1440 0 0 0 0>
+  <C C4 0 4350 1330 -27 10 0 0 "1.57 pF" 1 "" 0 "neutral" 0>
+  <L L1 0 4420 1410 17 -26 0 1 "1.37 nH" 1 "" 0>
+  <GND *7 4 4420 1440 0 0 0 0>
+  <C C5 0 4490 1330 -27 10 0 0 "241 fF" 1 "" 0 "neutral" 0>
+  <Pac P7 0 4560 1410 18 -26 0 1 "6" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *8 4 4560 1440 0 0 0 0>
+  <Pac P19 1 2190 1890 18 -26 0 1 "20" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *44 5 2190 1920 0 0 0 0>
+  <MLIN MS119 1 2250 1740 -26 15 0 0 "Sub1" 1 "1.491 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *45 5 2300 1610 0 0 0 2>
+  <MLIN MS120 1 2300 1640 15 -15 0 1 "Sub1" 1 "20.52 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS121 1 2340 1740 -26 15 0 0 "Sub1" 1 "1.491 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *46 5 2390 1610 0 0 0 2>
+  <MLIN MS122 1 2390 1640 15 -15 0 1 "Sub1" 1 "81.65 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS123 1 2430 1740 -26 15 0 0 "Sub1" 1 "1.491 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <Pac P20 1 2510 1890 18 -26 0 1 "10" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *47 5 2510 1920 0 0 0 0>
+  <.SP SP7 1 2200 2020 0 88 0 0 "lin" 1 "500 MHz" 1 "50 GHz" 1 "300" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <SUBST Sub2 1 2430 2060 -30 24 0 0 "4.4" 1 "790 um" 1 "32 um" 1 "0" 1 "1e-10" 1 "0" 1>
+  <Eqn Eqn20 1 2580 2120 -28 15 0 0 "S21_dB=dB(S[2,1])" 1 "S11_dB=dB(S[1,1])" 1 "yes" 0>
+  <Pac P21 1 2190 2620 18 -26 0 1 "21" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *50 5 2190 2650 0 0 0 0>
+  <Pac P22 1 2510 2620 18 -26 0 1 "11" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *53 5 2510 2650 0 0 0 0>
+  <.SP SP8 1 2200 2750 0 88 0 0 "lin" 1 "750 MHz" 1 "75 GHz" 1 "300" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <MLIN MS129 1 2260 2470 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *60 5 2310 2340 0 0 0 2>
+  <MLIN MS130 1 2310 2370 15 -15 0 1 "Sub1" 1 "31.52 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS131 1 2350 2470 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *61 5 2400 2340 0 0 0 2>
+  <MLIN MS132 1 2400 2370 15 -15 0 1 "Sub1" 1 "121.3 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS133 1 2440 2470 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <SUBST Subst1 1 -890 -330 -30 24 0 0 "4.4" 1 "0.79 mm" 1 "32 um" 1 "0.02" 1 "0.022e-6" 1 "0.15e-6" 1>
+  <Pac P10 2 -70 2000 18 -26 0 1 "9" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <GND *13 5 -70 2030 0 0 0 0>
+  <Pac P11 2 430 2000 18 -26 0 1 "10" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <GND *14 5 430 2030 0 0 0 0>
+  <MLIN MS7 2 70 1970 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS8 2 330 1970 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <SPfile X5 2 180 1970 -7 -45 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
+  <GND *15 5 180 2000 0 0 0 0>
+  <Pac P13 1 1060 1980 18 -26 0 1 "12" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <GND *18 5 1060 2010 0 0 0 0>
+  <MLIN MS9 1 1200 1950 -26 15 0 0 "Subst1" 1 "Zwidth" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <Pac P14 1 1340 1980 18 -26 0 1 "13" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <GND *19 5 1340 2010 0 0 0 0>
+  <.SP SP4 0 1050 2100 0 88 0 0 "log" 1 "2.5 GHz" 1 "20 GHz" 1 "201" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <Eqn Eqn6 0 310 2170 -28 15 0 0 "S21_dB=dB(S[11,9])" 1 "yes" 0>
+  <Eqn Eqn10 0 1310 2150 -28 15 0 0 "microstrip_S21_dB=dB(S[13,12])" 1 "yes" 0>
+  <MLIN MS16 2 250 1860 -115 -26 1 1 "Subst1" 1 "Zwidth" 1 "1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *16 5 340 1840 0 0 0 0>
+  <Pac P12 2 430 1840 18 -26 0 1 "11" 1 "50 Ohm" 1 "0 dBm" 0 "1" 0 "26.85" 0>
+  <GND *17 5 430 1870 0 0 0 0>
+  <SPfile X6 2 340 1810 -8 -47 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
+  <.SP SP1 0 20 2130 0 88 0 0 "log" 1 "2.5 GHz" 1 "20 GHz" 1 "201" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <Eqn Eqn15 1 1432 984 -31 17 0 0 "R2=500-R1" 1 "yes" 0>
+  <Eqn Eqn17 1 1432 1324 -31 17 0 0 "R1=5" 1 "yes" 0>
+  <Eqn Eqn19 0 1272 1324 -31 17 0 0 "C1=2e-12" 1 "yes" 0>
+  <Eqn Eqn16 1 1282 994 -31 17 0 0 "C2=(30e-12)-C1" 1 "yes" 0>
+  <.SW SW2 0 1400 1070 0 88 0 0 "AC1" 1 "lin" 1 "R1" 1 "5" 1 "500" 1 "2" 1>
+  <.SW SW1 1 1250 1070 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "2 pF" 1 "20 pF" 1 "10" 1>
+  <.SW SW3 0 1110 1070 0 88 0 0 "AC1" 1 "lin" 1 "Leng" 1 "3e-3" 1 "20e-3" 1 "20" 1>
+  <.Opt Opt1 0 1630 1090 0 51 0 0 "Sim=AC1" 0 "DE=3|50|2|20|0.85|1|3|1e-6|10|100" 0 "Var=C1|yes|3.7e-12|0.3e-12|4.7e-12|LIN_DOUBLE" 0 "Var=L1|yes|0.0135|1e-3|20e-3|LIN_DOUBLE" 0 "Var=L2|yes|0.00294|1e-3|20e-3|LIN_DOUBLE" 0 "Goal=fb_gain|MAX|1" 0 "Goal=phase_shift|GE|300" 0>
+  <Eqn Eqn9 1 -810 680 -31 17 0 0 "phase_shift_optim=max(abs(180-phase(Vfb.v)),5000e6:6000e6)" 1 "yes" 0>
+  <Eqn Eqn8 1 -810 780 -31 17 0 0 "fb_gain_optim=max(Vfb.v/Vamp1.v,5000e6:6000e6)" 1 "yes" 0>
+  <Eqn Eqn3 1 -810 960 -31 17 0 0 "phase_shift=abs(180-phase(Vfb.v))" 1 "yes" 0>
+  <Eqn Eqn5 1 -810 880 -31 17 0 0 "fb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
+  <Eqn Eqn11 1 -560 900 -31 17 0 0 "output_gain=dB(Vout.v/Vsource.v)" 1 "yes" 0>
+  <Eqn Eqn14 1 -810 1050 -31 17 0 0 "two_pass_loop_gain=Vfb_amp.v/Vsource.v" 1 "yes" 0>
+  <L L39 1 1330 400 -26 10 0 0 "0.2 nH" 1 "" 0>
+  <C C29 1 1410 400 -26 17 0 0 "1 pF" 1 "" 0 "neutral" 0>
+  <L L40 1 850 400 -26 10 0 0 "0.2 nH" 1 "" 0>
+  <MLIN MS142 1 1120 530 20 -26 0 1 "Sub1" 0 "0.2 mm" 1 "6 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS143 1 1090 560 -26 -80 0 2 "Sub1" 0 "4 mm" 1 "4 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <R R23 1 1120 590 15 -26 1 3 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <GND *65 5 1120 620 0 0 0 0>
+  <Pac P23 0 1240 2800 18 -26 0 1 "4" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *67 4 1240 2830 0 0 0 0>
+  <C C31 0 1350 2800 17 -26 0 1 "134 fF" 1 "" 0 "neutral" 0>
+  <GND *68 4 1350 2830 0 0 0 0>
+  <L L43 0 1420 2720 -26 10 0 0 "0.965 nH" 1 "" 0>
+  <C C32 0 1490 2800 17 -26 0 1 "0.877 pF" 1 "" 0 "neutral" 0>
+  <GND *69 4 1490 2830 0 0 0 0>
+  <Pac P24 0 1600 2800 18 -26 0 1 "14" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
+  <GND *70 4 1600 2830 0 0 0 0>
+  <.SP SP9 0 1250 2900 0 77 0 0 "log" 1 "800 MHz" 1 "80 GHz" 1 "201" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <Eqn Eqn21 0 1470 2910 -28 15 0 0 "S21_dB=dB(S[2,1])" 1 "S11_dB=dB(S[1,1])" 1 "yes" 0>
+  <L L41 1 1120 290 -75 -26 0 3 "0.7 nH" 1 "" 0>
+  <C C30 1 1120 370 -58 -26 0 3 "C1" 1 "" 0 "neutral" 0>
+  <GND *71 5 1120 260 0 0 0 2>
+  <MLIN MS144 1 1020 400 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "1 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <C C28 1 930 400 -26 17 0 0 "1 pF" 1 "" 0 "neutral" 0>
+  <MLIN MS124 1 370 400 -26 15 0 0 "Sub1" 1 "1.491 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *48 5 420 270 0 0 0 2>
+  <MLIN MS125 1 420 300 15 -15 0 1 "Sub1" 1 "20.52 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS126 1 460 400 -26 15 0 0 "Sub1" 1 "1.491 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *49 5 510 270 0 0 0 2>
+  <MLIN MS127 1 510 300 15 -15 0 1 "Sub1" 1 "81.65 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS128 1 550 400 -26 15 0 0 "Sub1" 1 "1.491 mm" 1 "6.806 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS134 1 360 660 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *62 5 410 530 0 0 0 2>
+  <MLIN MS135 1 410 560 15 -15 0 1 "Sub1" 1 "31.52 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS136 1 450 660 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <GND *63 5 500 530 0 0 0 2>
+  <MLIN MS137 1 500 560 15 -15 0 1 "Sub1" 1 "121.3 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS138 1 540 660 -26 15 0 0 "Sub1" 1 "1.5 mm" 1 "4.61 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS139 1 630 660 -26 15 0 0 "Sub1" 1 "1.5  mm" 1 "3 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
 </Components>
 <Wires>
-  <-10 1390 100 1390 "" 0 0 0 "">
-  <420 1390 490 1390 "" 0 0 0 "">
-  <270 1390 310 1390 "" 0 0 0 "">
-  <160 1390 210 1390 "" 0 0 0 "">
-  <1120 1370 1230 1370 "" 0 0 0 "">
-  <1290 1370 1400 1370 "" 0 0 0 "">
-  <310 1390 360 1390 "" 0 0 0 "">
-  <310 1310 310 1390 "" 0 0 0 "">
-  <430 1230 490 1230 "" 0 0 0 "">
-  <310 1230 310 1250 "" 0 0 0 "">
-  <310 1230 370 1230 "" 0 0 0 "">
   <3770 1610 3770 1660 "" 0 0 0 "">
   <3770 1610 3850 1610 "" 0 0 0 "">
   <3950 1610 3950 1660 "" 0 0 0 "">
@@ -248,13 +275,6 @@
   <4120 570 4200 570 "" 0 0 0 "">
   <4020 510 4020 570 "" 0 0 0 "">
   <4020 570 4060 570 "" 0 0 0 "">
-  <3110 1660 3110 1710 "" 0 0 0 "">
-  <3110 1660 3190 1660 "" 0 0 0 "">
-  <3290 1660 3290 1710 "" 0 0 0 "">
-  <3430 1660 3430 1710 "" 0 0 0 "">
-  <3290 1660 3330 1660 "" 0 0 0 "">
-  <3250 1660 3290 1660 "" 0 0 0 "">
-  <3390 1660 3430 1660 "" 0 0 0 "">
   <1740 -860 1760 -860 "" 0 0 0 "">
   <1820 -860 1840 -860 "" 0 0 0 "">
   <1840 -860 1840 -770 "" 0 0 0 "">
@@ -313,63 +333,96 @@
   <3740 2570 3740 2590 "" 0 0 0 "">
   <3740 2650 3740 2670 "" 0 0 0 "">
   <1640 400 1710 400 "Vfb_amp" 1700 350 20 "">
-  <1520 400 1580 400 "" 0 0 0 "">
-  <740 340 750 340 "" 0 0 0 "">
-  <810 450 830 450 "" 0 0 0 "">
-  <890 340 890 400 "" 0 0 0 "">
-  <740 450 750 450 "" 0 0 0 "">
-  <890 400 890 450 "" 0 0 0 "">
-  <810 340 830 340 "" 0 0 0 "">
-  <-20 400 60 400 "Vsource" -80 350 23 "">
-  <120 400 170 400 "Vamp1" 110 310 13 "">
-  <170 50 170 130 "" 0 0 0 "">
-  <170 50 180 50 "" 0 0 0 "">
-  <170 130 170 230 "Vout" 100 60 40 "">
-  <170 290 170 400 "" 0 0 0 "">
-  <170 400 170 480 "" 0 0 0 "">
-  <170 540 170 580 "" 0 0 0 "">
-  <170 400 220 400 "" 0 0 0 "">
-  <280 400 350 400 "" 0 0 0 "">
-  <410 400 420 400 "" 0 0 0 "">
-  <480 400 510 400 "" 0 0 0 "">
-  <660 450 680 450 "" 0 0 0 "">
-  <660 340 680 340 "" 0 0 0 "">
-  <510 340 520 340 "" 0 0 0 "">
-  <580 340 600 340 "" 0 0 0 "">
-  <510 450 520 450 "" 0 0 0 "">
-  <580 450 600 450 "" 0 0 0 "">
-  <510 340 510 400 "" 0 0 0 "">
-  <510 400 510 450 "" 0 0 0 "">
-  <750 220 750 340 "" 0 0 0 "">
-  <750 150 750 160 "" 0 0 0 "">
-  <890 450 890 600 "" 0 0 0 "">
-  <890 660 890 700 "" 0 0 0 "">
-  <750 450 750 600 "" 0 0 0 "">
-  <750 660 750 700 "" 0 0 0 "">
-  <1510 400 1520 400 "Vfb" 1520 330 10 "">
-  <1430 400 1450 400 "" 0 0 0 "">
-  <1350 400 1370 400 "" 0 0 0 "">
+  <1520 400 1580 400 "Vfb" 1510 330 31 "">
   <1520 400 1520 470 "" 0 0 0 "">
-  <1520 530 1520 580 "" 0 0 0 "">
-  <950 400 960 400 "" 0 0 0 "">
-  <1020 400 1030 400 "" 0 0 0 "">
-  <1090 400 1100 400 "" 0 0 0 "">
-  <1220 400 1230 400 "" 0 0 0 "">
-  <1100 560 1100 610 "" 0 0 0 "">
-  <1100 400 1100 500 "" 0 0 0 "">
-  <510 670 510 710 "" 0 0 0 "">
-  <510 450 510 610 "" 0 0 0 "">
+  <-30 400 50 400 "Vsource" -90 350 13 "">
+  <110 400 160 400 "Vamp1" 100 310 3 "">
+  <160 50 160 130 "" 0 0 0 "">
+  <160 50 170 50 "" 0 0 0 "">
+  <160 290 160 400 "" 0 0 0 "">
+  <160 400 160 480 "" 0 0 0 "">
+  <160 130 160 230 "Vout" 90 60 40 "">
+  <160 540 160 550 "" 0 0 0 "">
+  <160 620 160 630 "" 0 0 0 "">
+  <160 550 160 560 "" 0 0 0 "">
+  <160 400 220 400 "" 0 0 0 "">
+  <4240 1330 4240 1380 "" 0 0 0 "">
+  <4240 1330 4320 1330 "" 0 0 0 "">
+  <4420 1330 4420 1380 "" 0 0 0 "">
+  <4560 1330 4560 1380 "" 0 0 0 "">
+  <4420 1330 4460 1330 "" 0 0 0 "">
+  <4380 1330 4420 1330 "" 0 0 0 "">
+  <4520 1330 4560 1330 "" 0 0 0 "">
+  <2190 1740 2190 1860 "" 0 0 0 "">
+  <2190 1740 2220 1740 "" 0 0 0 "">
+  <2510 1740 2510 1860 "" 0 0 0 "">
+  <2460 1740 2510 1740 "" 0 0 0 "">
+  <2280 1740 2300 1740 "" 0 0 0 "">
+  <2300 1740 2310 1740 "" 0 0 0 "">
+  <2300 1670 2300 1740 "" 0 0 0 "">
+  <2370 1740 2390 1740 "" 0 0 0 "">
+  <2390 1740 2400 1740 "" 0 0 0 "">
+  <2390 1670 2390 1740 "" 0 0 0 "">
+  <2190 2470 2190 2590 "" 0 0 0 "">
+  <2510 2470 2510 2590 "" 0 0 0 "">
+  <2510 2470 2520 2470 "" 0 0 0 "">
+  <2470 2470 2510 2470 "" 0 0 0 "">
+  <2290 2470 2310 2470 "" 0 0 0 "">
+  <2310 2470 2320 2470 "" 0 0 0 "">
+  <2310 2400 2310 2470 "" 0 0 0 "">
+  <2380 2470 2400 2470 "" 0 0 0 "">
+  <2400 2470 2410 2470 "" 0 0 0 "">
+  <2400 2400 2400 2470 "" 0 0 0 "">
+  <2190 2470 2230 2470 "" 0 0 0 "">
+  <-70 1970 40 1970 "" 0 0 0 "">
+  <360 1970 430 1970 "" 0 0 0 "">
+  <100 1970 150 1970 "" 0 0 0 "">
+  <1060 1950 1170 1950 "" 0 0 0 "">
+  <1230 1950 1340 1950 "" 0 0 0 "">
+  <210 1970 250 1970 "" 0 0 0 "">
+  <250 1970 300 1970 "" 0 0 0 "">
+  <250 1890 250 1970 "" 0 0 0 "">
+  <370 1810 430 1810 "" 0 0 0 "">
+  <250 1810 250 1830 "" 0 0 0 "">
+  <250 1810 310 1810 "" 0 0 0 "">
+  <1360 400 1380 400 "" 0 0 0 "">
+  <1440 400 1520 400 "" 0 0 0 "">
+  <280 400 320 400 "" 0 0 0 "">
+  <880 400 900 400 "" 0 0 0 "">
+  <1120 400 1120 500 "" 0 0 0 "">
+  <1240 2720 1240 2770 "" 0 0 0 "">
+  <1240 2720 1350 2720 "" 0 0 0 "">
+  <1350 2720 1350 2770 "" 0 0 0 "">
+  <1490 2720 1490 2770 "" 0 0 0 "">
+  <1350 2720 1390 2720 "" 0 0 0 "">
+  <1450 2720 1490 2720 "" 0 0 0 "">
+  <1600 2720 1600 2770 "" 0 0 0 "">
+  <1490 2720 1600 2720 "" 0 0 0 "">
+  <1120 320 1120 340 "" 0 0 0 "">
+  <1120 400 1300 400 "" 0 0 0 "">
+  <1050 400 1120 400 "" 0 0 0 "">
+  <960 400 990 400 "" 0 0 0 "">
+  <320 400 340 400 "" 0 0 0 "">
+  <400 400 420 400 "" 0 0 0 "">
+  <420 400 430 400 "" 0 0 0 "">
+  <420 330 420 400 "" 0 0 0 "">
+  <490 400 510 400 "" 0 0 0 "">
+  <510 400 520 400 "" 0 0 0 "">
+  <510 330 510 400 "" 0 0 0 "">
+  <320 400 320 660 "" 0 0 0 "">
+  <320 660 330 660 "" 0 0 0 "">
+  <390 660 410 660 "" 0 0 0 "">
+  <410 660 420 660 "" 0 0 0 "">
+  <410 590 410 660 "" 0 0 0 "">
+  <480 660 500 660 "" 0 0 0 "">
+  <500 660 510 660 "" 0 0 0 "">
+  <500 590 500 660 "" 0 0 0 "">
+  <660 660 800 660 "" 0 0 0 "">
+  <570 660 600 660 "" 0 0 0 "">
+  <800 400 820 400 "" 0 0 0 "">
+  <800 400 800 660 "" 0 0 0 "">
 </Wires>
 <Diagrams>
-  <Rect 650 1430 281 175 3 #c0c0c0 1 00 1 2.5e+09 5e+09 2e+10 0 0 2 15 1 -1 1 1 315 0 225 "" "" "" "">
-	<"S[11,9]" #0000ff 0 3 0 0 0>
-  </Rect>
-  <Rect 650 1680 281 186 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
-	<"S[10,9]" #0000ff 0 3 0 0 0>
-  </Rect>
-  <Rect 650 1210 284 55 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
-	<"S21_dB" #0000ff 0 3 0 0 0>
-  </Rect>
   <Rect 4560 632 499 222 3 #c0c0c0 1 00 1 2.75e+09 2e+09 2e+10 1 0.25 0.05 0.46655 1 -1 0.5 1 315 0 225 "" "" "" "">
 	<"S[16,15]" #0000ff 0 3 0 0 0>
 	<"S[17,15]" #0000ff 0 3 0 0 0>
@@ -377,59 +430,85 @@
   <Rect 1880 770 570 338 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"phase_shift" #0000ff 0 3 0 0 0>
   </Rect>
-  <Rect 1880 380 562 331 3 #c0c0c0 1 00 1 2.5e+09 1e+09 1e+10 1 -1.70613 5 25 1 -1 0.5 1 315 0 225 "" "" "" "">
+  <Rect 1880 380 562 331 3 #c0c0c0 1 00 1 0 1e+09 1e+10 0 0 0.5 3.81341 1 -1 0.5 1 315 0 225 "" "" "" "">
 	<"fb_gain" #0000ff 0 3 0 0 0>
-	<"Vfb_amp.v" #ff0000 0 3 0 0 0>
   </Rect>
   <Rect 1880 12 590 323 3 #c0c0c0 1 00 1 2.5e+09 1e+09 1e+10 1 0 10 10 1 -1 0.5 1 315 0 225 "" "" "" "">
 	<"two_pass_loop_gain" #0000ff 0 3 0 0 0>
   </Rect>
-  <Rect 2580 181 508 211 3 #c0c0c0 1 00 1 2e+09 2e+09 1e+10 0 0 0.5 2 1 -1 1 1 315 0 225 "" "" "" "">
+  <Rect 2550 380 491 336 3 #c0c0c0 1 00 1 0 2e+09 1e+10 1 1 1 4 1 -1 1 1 315 0 225 "" "" "" "">
+	<"Vfb_amp.v" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 2550 -59 508 211 3 #c0c0c0 1 00 1 2e+09 2e+09 1e+10 0 0 0.5 2 1 -1 1 1 315 0 225 "" "" "" "">
 	<"Vout.v" #aaaaff 0 3 0 0 0>
 	<"Vamp1.v" #0000ff 0 3 0 0 0>
   </Rect>
-  <Rect -420 340 240 160 3 #c0c0c0 1 00 1 0 5e+09 1.5e+10 0 0 5 15 1 -1 1 1 315 0 225 "" "" "" "">
+  <Rect -940 200 240 160 3 #c0c0c0 1 00 1 0 5e+09 1.5e+10 0 0 5 15 1 -1 1 1 315 0 225 "" "" "" "">
 	<"output_dB" #ff0000 0 3 0 0 0>
   </Rect>
-  <Rect 1120 1200 267 64 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+  <Rect 2780 1850 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S[20,10]" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 2720 2500 240 160 3 #c0c0c0 1 00 1 0 2e+10 8e+10 1 -0.0999682 0.5 1.09988 1 -1 1 1 315 0 225 "" "" "" "">
+	<"S[21,11]" #0000ff 0 3 0 0 0>
+	<"S[21,11]" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 590 2010 281 175 3 #c0c0c0 1 00 1 2.5e+09 5e+09 2e+10 0 0 2 15 1 -1 1 1 315 0 225 "" "" "" "">
+	<"S[11,9]" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 590 2260 281 186 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S[10,9]" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 590 1790 284 55 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S21_dB" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 1060 1780 267 64 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"microstrip_S21_dB" #0000ff 0 3 0 0 0>
   </Rect>
 </Diagrams>
 <Paintings>
-  <Rectangle -70 1130 1070 630 #000000 0 1 #c0c0c0 1 0>
   <Rectangle -1390 -1110 6360 4200 #000000 0 1 #c0c0c0 1 0>
   <Text 3840 360 12 #000000 0 "Wilkinson requires a precision microwave resistor.">
   <Text 3850 300 12 #000000 0 "50% Tee splitter for output | feedback loop\n50 -> 100 -> 1/4 λ 70.7 -> 50">
-  <Text 3450 1840 12 #000000 0 "Bessel high-pass filter \n 6 GHz cutoff, tee-type, \n impedance matching 50 Ohm">
-  <Rectangle -530 -400 3320 1380 #000000 0 1 #c0c0c0 1 0>
-  <Text 670 60 12 #000000 0 "Unhelpful because of phase">
+  <Rectangle -970 -430 4110 1830 #000000 0 1 #c0c0c0 1 0>
   <Text 1170 -340 12 #000000 0 "val.V = peak DC voltage\nval.v = peak AC voltage\n\n">
   <Text 1850 -950 12 #000000 0 "6-7 GHz shift, good resonance">
-  <Text 60 890 12 #000000 0 "Using higher-impedance lines raises frequency">
-  <Text 800 880 12 #000000 0 "Adding 1 pF in parallel with the varactor broadens the FB gain.">
-  <Text 800 910 12 #000000 0 "0.2 nH corresponds to a 0402 package.\n">
-  <Text 50 930 12 #000000 0 "A short length of wide (2.5 mm) microstrip completely destroys the FB gain">
-  <Text 50 840 12 #000000 0 "Adding pure inductance to ground (0.2 nH) raises frequency.">
-  <Text 40 780 12 #000000 0 "4mm long microstrip to ground: Fres increases with width >10 mm.\nWhy's that?">
   <Text 30 -680 12 #000000 0 "Replacing DC block cap with a microstrip gap \nwith Zwidth and a 0.38 mm gap destroys the FB gain.">
   <Text 0 -610 12 #000000 0 "Coupler also kills gain.\n">
   <Text 1280 -770 12 #000000 0 "Varactor\n">
   <Text 510 -880 12 #000000 0 "5.5 GHz λ/4 50Z--(?Z)>100Z--(70Z)>50Z \ntransformer. Smoothens Vout power a bit,\nand sharpens resonance at Vfb\nPut immediately at output of Vamp\nWorks really well, recommended, but too long for 8 GHz\n">
   <Text 530 -620 12 #000000 0 "Sharper res, higher FB, and 8.5 GHz max fb\nSlightly mismatched at 7 GHz - only 75 deg phase shift\nToo much power through FB, zero at Vout">
-  <Text 630 -440 12 #000000 0 "Just right.">
   <Text 2450 -990 12 #000000 0 "Basically perfect\n">
   <Text 2820 -840 12 #000000 0 "Also works, sharper resonance\nPrefer 1.5x4 though\n">
   <Text 2270 -600 12 #000000 0 "Contrary to previous belief, the chosen varactor C varies from \n2 to 40 pF.">
   <Text 3240 -840 12 #000000 0 "PIN diode also doesn't have the dynamic range in that phase-shifter capacity">
-  <Text -60 660 12 #000000 0 "The way this is teed doesn't seem to make a difference.\n">
   <Text 1810 -600 12 #000000 0 "Fhigh = 0.5 pF\nFlow = 4 pF">
   <Text 4010 -450 12 #000000 0 "Works pretty well, but PIN inductance not modelled">
   <Text 3450 -370 12 #000000 0 "Good dynamic range. V. good.">
-  <Text 1500 760 12 #000000 0 "Rather than do a transient sim of the oscillation,\nthis second amp represents the first amp on the second\nFB loop around\n">
   <Text 4460 -340 12 #000000 0 "Phase shift is fine, but filter isn't">
   <Text 3740 2400 12 #000000 0 "Varies phase around 5 GHz. Resonance is static.">
   <Text 4140 1750 12 #000000 0 "Bessel low-pass filter \n 5 GHz cutoff, tee-type, \n impedance matching 50 Ohm">
   <Text 4460 -140 12 #000000 0 "Switched line: this works well.">
-  <Arrow 100 630 30 -210 20 8 #000000 0 1 0>
-  <Text -90 200 12 #000000 0 "This length doesn't \naffect the FB loop at all!">
+  <Text -140 690 12 #000000 0 "The way this is teed doesn't seem to make a difference.\n">
+  <Text -100 200 12 #000000 0 "This length doesn't \naffect the FB loop at all!">
+  <Arrow 90 650 30 -210 20 8 #000000 0 1 0>
+  <Text 4580 1510 12 #000000 0 "Bessel high-pass filter \n 6 GHz cutoff, tee-type, \n impedance matching 50 Ohm">
+  <Text 2550 2020 12 #000000 0 "Quarter wave bandpass filter \n Bessel 5 GHz...5.5 GHz \n Impedance matching 50 Ohm">
+  <Text 2550 2750 12 #000000 0 "Quarter wave bandpass filter \n Bessel 7.5 GHz...8 GHz \n Impedance matching 50 Ohm">
+  <Text 2800 2050 12 #000000 0 "Quarter wave bandpass filter \n Bessel 5 GHz...8 GHz \n Impedance matching 50 Ohm">
+  <Rectangle -130 1710 1070 630 #000000 0 1 #c0c0c0 1 0>
+  <Text -500 1290 12 #000000 0 "Using higher-impedance lines raises frequency">
+  <Text -510 1330 12 #000000 0 "A short length of wide (2.5 mm) microstrip completely destroys the FB gain">
+  <Text -510 1240 12 #000000 0 "Adding pure inductance to ground (0.2 nH) raises frequency.">
+  <Text -520 1180 12 #000000 0 "4mm long microstrip to ground: Fres increases with width >10 mm.\nWhy's that?">
+  <Text 110 1280 12 #000000 0 "Adding 1 pF in parallel with the varactor broadens the FB gain.">
+  <Text 110 1310 12 #000000 0 "0.2 nH corresponds to a 0402 package.\n">
+  <Text -1020 1340 12 #000000 0 "Using 8.2 nH bias tees still introduces undesirable modes">
+  <Text -1020 1290 12 #000000 0 "Adding a HP pi or tee filter just doesn't work.">
+  <Text 1410 820 12 #000000 0 "Rather than do a transient sim of the oscillation,\nthis second amp represents the first amp on the second\nFB loop around\n">
+  <Text 750 -530 12 #000000 0 "Just right.">
+  <Text -760 1060 12 #000000 0 "Unhelpful because of phase">
+  <Text 530 770 12 #000000 0 "Quarter wave bandpass filter \n Bessel 7.5 GHz...8 GHz \n Impedance matching 50 Ohm">
+  <Text 1580 2900 12 #000000 0 "Bessel low-pass filter \n 8 GHz cutoff, pi-type, \n impedance matching 50 Ohm">
+  <Text 390 150 12 #000000 0 "Quarter wave bandpass filter \n Bessel 5 GHz...5.5 GHz \n Impedance matching 50 Ohm">
 </Paintings>
