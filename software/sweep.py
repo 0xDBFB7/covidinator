@@ -100,9 +100,9 @@ averaged_data -= background
 
 freqs, averaged_data = peak_detect(averaged_data, freqs)
 
-
-plt.plot(freqs,averaged_data)
-plt.show()
 file = input("filename? > ")
 if file:
     plt.savefig("../media/" + file + ".png")
+    
+plt.plot(freqs,averaged_data)
+plt.show()

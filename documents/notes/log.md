@@ -353,3 +353,4 @@ UIUC, Molecular Dynamics of Viruses:
 Ding, 2004:
 
 > In addition to viral spread through a respiratory route, SARS‐CoV in the intestinal tract, kidney and sweat glands may be excreted via faeces, urine and sweat, thereby leading to virus transmission.
+

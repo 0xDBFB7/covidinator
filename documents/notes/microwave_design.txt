@@ -163,3 +163,19 @@ Hey, hang on a minute. The phase shift doesn't need to be 360 deg - it just need
 multiple of 360. As long as the FB filter response is correct, we can add phasing lines...
 
 Loss tangent of substrate was wrong, too.
+
+Had a quarter-wave notch filter that looked so wonderful - but one of the resonators was 100 mm long!
+
+Quin [2017] use 51k ohm resistors as chokes at 1 GHz.
+
+Neat construction of planar caps using mica insulators in Toyoda [1980]
+
+A stepped-impedance tuned bandpass filter seems to be of reasonable dimensions at these frequencies.
+
+
+
+https://forum.allaboutcircuits.com/threads/finding-power-levels-at-mixers-input.136016/
+"The conversion gain, given in the datasheet, is the ratio of the power at the output to the power at the input. 
+The conversion gain given in the datasheet for the LT5511 is 0dB. That means that the output power is equal to input power. 
+it really couldn't be simpler. Where do integrals come into that?"
+

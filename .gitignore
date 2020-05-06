@@ -2,3 +2,5 @@ documents/mdwiki.html
 *.gcode
 media/
 *.pyc
+*-checkpoint*
+*.ipynb_checkpoints*
