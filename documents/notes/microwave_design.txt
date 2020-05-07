@@ -179,3 +179,4 @@ https://forum.allaboutcircuits.com/threads/finding-power-levels-at-mixers-input.
 The conversion gain given in the datasheet for the LT5511 is 0dB. That means that the output power is equal to input power. 
 it really couldn't be simpler. Where do integrals come into that?"
 
+Admittance is just 1/inductance.
