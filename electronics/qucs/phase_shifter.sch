@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=0,-280,2435,511,1.21,189,69>
+  <View=0,-280,2435,506,0.909092,76,0>
   <Grid=10,10,1>
   <DataSet=phase_shifter.dat>
   <DataDisplay=phase_shifter.dpl>

@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-1430,-1130,5106,3110,0.90917,943,3184>
+  <View=-1430,-1130,5106,3110,0.564528,360,436>
   <Grid=10,10,1>
   <DataSet=feedback_loop.dat>
   <DataDisplay=feedback_loop.dpl>
@@ -219,7 +219,6 @@
   <C C34 1 1110 400 -26 17 0 0 "C1" 1 "" 0 "neutral" 0>
   <C C35 1 1340 400 -26 17 0 0 "C1" 1 "" 0 "neutral" 0>
   <.SP SP8 1 1900 2770 0 88 0 0 "lin" 1 "750 MHz" 1 "20 GHz" 1 "300" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <SUBST Sub3 1 200 2920 -30 24 0 0 "4.4" 1 "790 um" 1 "32 um" 1 "0" 1 "1e-10" 1 "0" 1>
   <Pac P23 1 -260 2700 18 -26 0 1 "25" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
   <GND *72 5 -260 2730 0 0 0 0>
   <MLIN MS143 1 -200 2550 -26 15 0 0 "Sub1" 1 "200 um" 1 "433 um" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
@@ -230,6 +229,7 @@
   <MLIN MS148 1 330 2550 -26 15 0 0 "Sub1" 1 "200 um" 1 "3.231 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <Pac P24 1 410 2710 18 -26 0 1 "24" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
   <GND *73 5 410 2740 0 0 0 0>
+  <SUBST Sub3 1 -40 2870 -30 24 0 0 "4.4" 1 "790 um" 1 "32 um" 1 "0" 1 "1e-10" 1 "0" 1>
 </Components>
 <Wires>
   <3770 1610 3770 1660 "" 0 0 0 "">
@@ -432,17 +432,17 @@
   <Rect 590 2260 281 186 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"S[10,9]" #0000ff 0 3 0 0 0>
   </Rect>
-  <Rect 590 1790 284 55 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
-	<"S21_dB" #0000ff 0 3 0 0 0>
-  </Rect>
   <Rect 1060 1780 267 64 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"microstrip_S21_dB" #0000ff 0 3 0 0 0>
   </Rect>
   <Rect 1610 2790 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"S[22,105]" #0000ff 0 3 0 0 0>
   </Rect>
-  <Rect 760 2680 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+  <Rect 680 2690 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"S[25,24]" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 590 1790 284 55 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S21_dB" #0000ff 0 3 0 0 0>
   </Rect>
 </Diagrams>
 <Paintings>
@@ -491,5 +491,5 @@
   <Text 390 150 12 #000000 0 "Quarter wave bandpass filter \n Bessel 5 GHz...5.5 GHz \n Impedance matching 50 Ohm">
   <Text 320 2880 12 #000000 0 "stepped-impedance lowpass filter \n Bessel 7 GHz...9 GHz \n impedance matching 50 Ohm">
   <Text 100 2830 12 #000000 0 "stepped-impedance lowpass filter \n Bessel 7 GHz...9 GHz \n impedance matching 50 Ohm">
-  <Text -530 2860 12 #000000 0 "stepped-impedance lowpass filter \n Bessel 8 GHz...9 GHz \n impedance matching 50 Ohm">
+  <Text -530 2870 12 #000000 0 "stepped-impedance lowpass filter \n Bessel 8 GHz...9 GHz \n impedance matching 50 Ohm">
 </Paintings>

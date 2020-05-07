@@ -180,3 +180,15 @@ The conversion gain given in the datasheet for the LT5511 is 0dB. That means tha
 it really couldn't be simpler. Where do integrals come into that?"
 
 Admittance is just 1/inductance.
+
+"documentation brigades" that trawl through scientific software repos, making notes on the theory behind
+the software and providing usage and installation guides
+
+Right now, getting a paper into a prestigious journal is linked with its "scientific quality",
+perhaps partially because the peer-review process is integrated with the journal.
+All of these incentives - grants, tenure, etc, is all linked with the name of the journal.
+
+What if we made an independent peer-review system that fit into the preprint-server architecture?
+Like, there's a peer-review ID that's added to the paper once it's peer-reviewed.
+
+
