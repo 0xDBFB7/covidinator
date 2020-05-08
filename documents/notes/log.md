@@ -202,6 +202,8 @@ Chemeris discusses 8.8 GHz  pulses, and finds no effect:
 T4
 ---------------------------------------
 
+Overall isoelectric point: 6.53 [Proteome-pI database]
+[Michen 2009]
 
    Capsid:
    
@@ -236,11 +238,15 @@ Tip shape:
 Influenza:
 ---------------------------------------
 
+Overall isoelectric point: 
+(H1N1: 7.24) (H5N1: 7.08) [Proteome-pI database]
+(H3N1: 6.5) (H3N2: 5.0) ("Other Influenza A" 6.5 to 7.0) [Michen 2009]
+
 Total mass (X49/H3N2): 161 +/- 17 MDa [Ruigrok 1984] 
 
    Envelope:
    
-Host-derived lipid bilayer
+Host-derived lipid bilayer, with concentric M1 capsid
 
 Diameter (X-31/H3N2): 120 (84 to 170) nm x 100 nm [Harris 2006]
 Thickness (X-31/H3N2): 4 nm [Harris 2006]
@@ -260,7 +266,6 @@ Charge:
 Number: 375  
  
 Proteins and models: 
-
 
    Helical nucleocapsid:
 

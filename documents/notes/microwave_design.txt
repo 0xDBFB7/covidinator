@@ -191,4 +191,6 @@ All of these incentives - grants, tenure, etc, is all linked with the name of th
 What if we made an independent peer-review system that fit into the preprint-server architecture?
 Like, there's a peer-review ID that's added to the paper once it's peer-reviewed.
 
+When writing long equations into python, comparing to the source using py2tex is extremely helpful.
+
 

@@ -419,4 +419,12 @@ It is possible to derive net charge directly from CryoEM maps of proteins. Howev
 
 Oh wow, radioactive electrophoresis!
 
-Vary salt concentration
+Vary salt concentration for different conductivities
+
+
+Apparently the isoelectric point *can* be estimated from the protein itself, [Kozlowski 2017], 
+http://isoelectricpointdb.org/
+no way! it's got a database for T4!
+
+http://isoelectricpointdb.org/87/UP000009087_10665_all_isoelectric_point_proteome_Enterobacteria_phage_T4_Bacteriophage_T4.html
+
