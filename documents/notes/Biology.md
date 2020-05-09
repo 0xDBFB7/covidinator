@@ -428,3 +428,21 @@ no way! it's got a database for T4!
 
 http://isoelectricpointdb.org/87/UP000009087_10665_all_isoelectric_point_proteome_Enterobacteria_phage_T4_Bacteriophage_T4.html
 
+
+Note: the following is speculative musing. Please consider carefully.
+
+------ A bronchoscopic therapy
+
+SARS-NCoV is generally found in most of the desirable organs.[] 
+These are shielded by at least 4 cm of chest wall [Schroeder 2013].
+
+Since SARS' mortality rate is primarily through viral pneumonia and respiratory distress 
+[Butany 2006], it may be possible for the emitter to be effective
+ when mounted on a modified brochoscope and periodically inserted into the main bronchus.
+The bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are on the order of 
+7 mm thick. [Chekan 2016]
+
+Few modifications would need to be made to the emitter, besides antenna size, emission pattern and
+encapsulation, so this is a high TRL therapy.
+
+

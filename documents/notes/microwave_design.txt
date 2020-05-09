@@ -193,23 +193,8 @@ Like, there's a peer-review ID that's added to the paper once it's peer-reviewed
 
 When writing long equations into python, comparing to the source using py2tex is extremely helpful.
 
+SIR would probably have been better, due to the slightly better insertion loss and because of the pun.
 
+The analytic comb version finally works; produces a very nicely tunable and very smooth filter.
 
-
-Dear Mr. Kap.
-
-I tremendously appreciate your contributions to the scientific record. Your derivation of an
-optimization method for SIR bandpass filters has been tremendously helpful.
-
-In addition, your paper possesses an understandable quality which many mathematical papers lack,
-probably due to your verbose definition of variables
-
-I must therefore ask WHY ARE YOUR EQUATIONS TYPESET BY YOUR GODDAMN DOG
-Is that Z0^2 or Z2? 
-
-Oh, and Lee, don't think you're getting away scot-free. You say you've got an "analytical method",
-which is "superior to [9, Kap.]'s' optimization method." THEN WHY DO YOU OBTAIN YOUR SLOPE PARAMETER
-FROM SIMULATIONS "to obtain an accurate result"? that doesn't SOUND very ANALYTICAL to ME.
-
-
-
+Unfortunately, the phase shift is fucked.
