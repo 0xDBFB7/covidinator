@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-1430,-1130,5106,3110,0.466552,56,178>
+  <View=-1430,-1130,5106,3110,0.620983,498,870>
   <Grid=10,10,1>
   <DataSet=feedback_loop.dat>
   <DataDisplay=feedback_loop.dpl>

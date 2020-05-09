@@ -197,4 +197,4 @@ SIR would probably have been better, due to the slightly better insertion loss a
 
 The analytic comb version finally works; produces a very nicely tunable and very smooth filter.
 
-Unfortunately, the phase shift is fucked.
+Unfortunately, the phase shift is 
