@@ -198,3 +198,12 @@ SIR would probably have been better, due to the slightly better insertion loss a
 The analytic comb version finally works; produces a very nicely tunable and very smooth filter.
 
 Unfortunately, the phase shift is 
+
+The gap S in the comb does not seem to have a particularly profound effect.
+A filter of order 2 has an unsuitable phase shift, but 3 seems to be just right.
+
+There is some difficulty in implementing the comb, however. Both sides must be strapped
+well to the ground plane while a track of absolutely minimal length loops around - quite inconvienient.
+
+SIRs really do have a better phase response, and can be bent in a more pleasing fashion.
+
