@@ -49460,6 +49460,217 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:alternative>Injury</dcterms:alternative>
         <dc:identifier>DOI 10.1016/j.injury.2013.03.027</dc:identifier>
     </bib:Journal>
+    <z:Attachment rdf:about="#item_2727">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ecee.colorado.edu/~mathys/ecen2420/pdf/UsingFilterTables.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 02:06:11</dcterms:dateSubmitted>
+        <dc:title>UsingFilterTables.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.rfcafe.com/references/electrical/cheby-proto-values.htm">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cafe</foaf:surname>
+                        <foaf:givenName>Kirt Blattenberger RF</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2729"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.rfcafe.com/references/electrical/cheby-proto-values.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.rfcafe.com</dc:description>
+        <dcterms:dateSubmitted>2020-05-09 03:23:15</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>The table below lists prototype element values for the normalized lowpass function, which assumes a cutoff frequency of 1 rad/sec</dcterms:abstract>
+        <dc:title>Chebyshev Filter Lowpass Prototype Element Values</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2729">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.rfcafe.com/references/electrical/cheby-proto-values.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 03:23:18</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://universealacarte.blogspot.com/2020/04/string-theory-and-gravity.html">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+           <z:Blog><dc:title>String Theory and Gravity</dc:title></z:Blog>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2731"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://universealacarte.blogspot.com/2020/04/string-theory-and-gravity.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: Blogger</dc:description>
+        <dcterms:dateSubmitted>2020-05-09 16:02:16</dcterms:dateSubmitted>
+        <dc:title>String Theory and Gravity: How To Find Einstein in the Violin Section</dc:title>
+        <z:shortTitle>String Theory and Gravity</z:shortTitle>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2731">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://universealacarte.blogspot.com/2020/04/string-theory-and-gravity.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 16:02:19</dcterms:dateSubmitted>
+        <dc:title>Blogspot Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:978-1-884932-25-0%20978-1-61353-073-3">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Institution of Engineering and Technology</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                   <foaf:Person><foaf:surname>Rhea</foaf:surname></foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2732"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://digital-library.theiet.org/content/books/ew/sbew010e</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:identifier>ISBN 978-1-884932-25-0 978-1-61353-073-3</dc:identifier>
+        <dc:date>1994-01-01</dc:date>
+        <dc:description>DOI: 10.1049/SBEW010E</dc:description>
+        <dcterms:dateSubmitted>2020-05-09 20:57:58</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>HF Filter Design and Computer Simulation</dc:title>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_2732">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://digital-library-theiet-org.ezproxy.library.yorku.ca/docserver/fulltext/books/ew/sbew010e/SBEW010E.pdf?expires=1589058450&amp;id=id&amp;accname=55892&amp;checksum=CFB3EC2C823E8BDDC17E847EE9AF0DAC</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 20:57:57</dcterms:dateSubmitted>
+        <dc:title>Rhea - 1994 - HF Filter Design and Computer Simulation.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/1127522/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>19</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 0018-9480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/TMTT.1971.1127522</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Davis</foaf:surname>
+                        <foaf:givenName>W.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Khan</foaf:surname>
+                        <foaf:givenName>P.J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/1127522/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>373-380</bib:pages>
+        <dc:date>04/1971</dc:date>
+        <dcterms:dateSubmitted>2020-05-09 21:06:59</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Coaxial Bandpass Filter Design</dc:title>
+    </bib:Article>
+    <bib:Document rdf:about="http://maxima.sourceforge.net/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2736"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://maxima.sourceforge.net/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 22:52:24</dcterms:dateSubmitted>
+        <dc:title>Maxima, a Computer Algebra System</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2736">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://maxima.sourceforge.net/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 22:52:27</dcterms:dateSubmitted>
+        <dc:title>Maxima, a Computer Algebra System</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://maxima.sourceforge.net/docs/manual/intromax.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2738"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://maxima.sourceforge.net/docs/manual/intromax.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 22:55:34</dcterms:dateSubmitted>
+        <dc:title>Introduction to Maxima</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2738">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://maxima.sourceforge.net/docs/manual/intromax.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-09 22:55:34</dcterms:dateSubmitted>
+        <dc:title>Introduction to Maxima</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
     <z:Collection rdf:about="#collection_92">
         <dc:title>bibtex_export (10)</dc:title>
         <dcterms:hasPart rdf:resource="#item_1151"/>
@@ -50362,6 +50573,7 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:hasPart rdf:resource="http://stacks.iop.org/0031-9155/41/i=10/a=026?key=crossref.a585bf20f52fecab37ad9d4a56b3e53e"/>
         <dcterms:hasPart rdf:resource="http://bactra.org/reviews/wolfram/"/>
         <dcterms:hasPart rdf:resource="https://www.scottaaronson.com/democritus/default.html"/>
+        <dcterms:hasPart rdf:resource="https://universealacarte.blogspot.com/2020/04/string-theory-and-gravity.html"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_116">
         <dc:title>COVID</dc:title>
@@ -51662,6 +51874,12 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4503-6585-7"/>
         <dcterms:hasPart rdf:resource="#item_2713"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-85296-777-5"/>
+        <dcterms:hasPart rdf:resource="#item_2727"/>
+        <dcterms:hasPart rdf:resource="https://www.rfcafe.com/references/electrical/cheby-proto-values.htm"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-884932-25-0%20978-1-61353-073-3"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -51674,6 +51892,12 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4503-6585-7"/>
         <dcterms:hasPart rdf:resource="#item_2713"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-85296-777-5"/>
+        <dcterms:hasPart rdf:resource="#item_2727"/>
+        <dcterms:hasPart rdf:resource="https://www.rfcafe.com/references/electrical/cheby-proto-values.htm"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-884932-25-0%20978-1-61353-073-3"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -51686,6 +51910,12 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4503-6585-7"/>
         <dcterms:hasPart rdf:resource="#item_2713"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-85296-777-5"/>
+        <dcterms:hasPart rdf:resource="#item_2727"/>
+        <dcterms:hasPart rdf:resource="https://www.rfcafe.com/references/electrical/cheby-proto-values.htm"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-884932-25-0%20978-1-61353-073-3"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -51698,6 +51928,12 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4503-6585-7"/>
         <dcterms:hasPart rdf:resource="#item_2713"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-85296-777-5"/>
+        <dcterms:hasPart rdf:resource="#item_2727"/>
+        <dcterms:hasPart rdf:resource="https://www.rfcafe.com/references/electrical/cheby-proto-values.htm"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-884932-25-0%20978-1-61353-073-3"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
+        <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_197">
         <dc:title>comb</dc:title>
