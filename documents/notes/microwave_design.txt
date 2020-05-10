@@ -207,3 +207,11 @@ well to the ground plane while a track of absolutely minimal length loops around
 
 SIRs really do have a better phase response, and can be bent in a more pleasing fashion.
 
+"Advanced design techniques and realizations of microwave and RF filters" - doesn't have it
+
+hang on a goddamn minute, x^2 over x? That doesn't make any sense.
+
+Tried just scaling Kap's design by our factor. Worked fantastically, sharp res, except the resonant frequency
+ended up a 24 ghz. Note: two elements were swapped. Shouldn't matter, but anyhow.
+
+Oh wait no, it was right the first time.
