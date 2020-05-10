@@ -36,7 +36,7 @@ Per **Frequency Response of Thin Film Chip Resistors, Vishay** we can actually g
 
 Myriad methods - often mathematically overlapping - such as coarse-grained bead-spring molecular dynamics (via integration of particle motion), algebraic elastic networks (elNémo), and finite-element methods (via solution of governing elastic PDEs - (Ivanovska, 2004, use CADRE, and Bathe (2007)) have been used to great effect for simulation of mechanical properties of viruses. 
 
-Most recently, the ultimate-fidelity all-atom MD methods have also become computationally viable. 
+Most recently, the ultimate-fidelity all-atom MD methods have also become computationally viable (Durrant 2019). 
 
 An MD scheme was chosen for no particularly good reason. In fact, we hardly need the added fidelity of a simulation; an extension of the analytical method used by Yang would probably be more telling of the character of the problem, and would have lended itself better to numerical optimation. As has been more poignantly pointed out before, observation of simulation is as much understanding as observation of reality - it just happens to be less messy. The author is at the moment an incompetent mathematician.
 
@@ -98,6 +98,26 @@ List of properties to test:
   
   - Possible biological effects?
 
+
+## A bronchoscopic therapy
+
+
+SARS-NCoV is generally found in most of the desirable organs.[] 
+These are shielded by at least 4 cm of chest wall [Schroeder 2013].
+
+Since SARS' mortality rate is primarily through viral pneumonia and respiratory distress 
+[Butany 2006], it may be possible for the emitter to be effective
+ when mounted on a modified brochoscope and periodically inserted into the main bronchus.
+The bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are on the order of 
+7 mm thick. [Chekan 2016]
+
+On the other hand, given the 5 mm skin depth in wet tissue, this might not work.
+
+Few modifications would need to be made to the emitter, besides antenna size, emission pattern and
+encapsulation, so this is a high TRL therapy.
+
+
+
 ## 3D Beamforming
 
 Safar (2016) focus power to a small region. In their words:
@@ -131,6 +151,8 @@ This technique is probably not within reach for this project.
 ----
 
 # Oscillator
+
+The oscillator is based off 
 
 Per Khanna (2006), both the source and drain of the active device participate in impedance matching:
 
