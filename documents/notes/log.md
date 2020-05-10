@@ -1,38 +1,14 @@
-## RF Resistors
 
-RF resistors are required for attenuators, Wilkinson power splitters, terminating striplines, and for power measurement.
-
-----
-
-The Vishay FC series appears to be the only brand specified above 6 GHz. Unfortunately, they're quite expensive and only a few values are available.
-
------
-
-> RF resistors should be approximately as wide as the microstrip trace itself
-
----
-
-HB1 pencil lead is a bit too conductive for the purpose, at 2 ohms / cm or so. Difficult to tune, even with a file, and the resistance is pressure-sensitive. The surface could be copper-plated with Gigabeq's plating technique.
-
----
-
-0.08g fine graphite + 0.055g elmer's glue (PVAc) was mixed, squished onto a glass slide. Only a small amount of the graphite was wetted by the PVAc and used - equivalent in volume to the drop, maybe 0.01g at most.
-
-Resistance was in the Mohms.
-
-It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With sufficient contact pressure, 200 ohms could be obtained! Wonderful.
-
-The 3-ohm resistor required for a T-type attenuator might be a bit tricky with this process. A pi-type needs a 250 ohm R.
-
------
-
-Per **Frequency Response of Thin Film Chip Resistors, Vishay** we can actually get away with stock 0603 50 ohm resistors up to 10 GHz - the impedance is off by at most 20%.
-
---------
 
 # Simulation
 
-- Yang: simulation for illustration, analytic expression with solid homogenous sphere for microwave absorption cross-section and shell stress. Experimental microwave absorption data used to obtain Q, and therefore derive the inactivation threshold. Very effective fit to 40% inactivation level, but much higher power required for 100% inactivation. 
+Yang use a COMSOL simulation only for illustration, and analytic expressions using solid homogenous spheres for microwave absorption cross-section and shell stress calculation. Experimental microwave absorption data were used to obtain Q, and therefore derive the inactivation threshold. 
+
+Very effective fit to 40% inactivation level, but much higher power required for 100% inactivation. 
+
+The assumption made that the core and shell contain equal and opposite charges does not seem to be correct, since the isoelectric point of Inf. A is not 7 [see structural below] and it's dragged around in gel electrophoresis.
+
+
 
 Myriad methods - often mathematically overlapping - such as coarse-grained bead-spring molecular dynamics (via integration of particle motion), algebraic elastic networks (elNémo), and finite-element methods (via solution of governing elastic PDEs - (Ivanovska, 2004, use CADRE, and Bathe (2007)) have been used to great effect for simulation of mechanical properties of viruses. 
 
@@ -42,9 +18,9 @@ An MD scheme was chosen for no particularly good reason. In fact, we hardly need
 
 The algebraic normal-mode methods included in many software packages [charmm] do not seem to be sufficient for this task, as they often assume the limit of low-amplitudes.
 
-LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been usable with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, the specific time-domain electric field impulses desired, the many-run parameter sweep required to optimize the impulse, and the chain of software required to synthesize an artificially coarse new geometry, a custom ultra-simplistic, ultra-crude MD code was written.
+LAMMPS, GROMACS, HOOMD-blue, etc were evaluated, and all could been usable with some modification. ~~However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, the specific time-domain electric field impulses desired, the many-run parameter sweep required to optimize the impulse, and the chain of software required to synthesize an artificially coarse new geometry, a custom ultra-simplistic, ultra-crude MD code was written.~~
 
-This could easily have been done with something like blender, much faster and better.
+OpenMM is used.
 
 -------
 
@@ -64,43 +40,50 @@ This could be represented by a friction or damping term in the particle motion f
 
 or an explicit solvation scheme.
 
-------
-
-The following properties are known:
-
-----
-
 Typical timesteps for coarse-grained simulations with leapfrog-like integrators are on the order of 10 femtoseconds.
 
 RK4, while apparently more accurate at larger timesteps, suffers from gradual energy loss, whereas velocity Verlet is more immune to the same.
 
----
 
-List of properties to test:
+# Hypothetical mechanisms to decrease required power
+
+
+## Time domain
+
+[Chemeris 2004] find only thermal damage from extremely high pulses. The [ICNIRP 2019] 
+
+
+## Population-variance frequency chirp
+
+In experiment, Yang found 40% inactivation at the expected 86 W/m^2, but 100% needed 300 W/m^2. 
+
+They used single tones, but there's significant variation in the sizes and shapes (and therefore the resonant frequency) within a viral population. 
+My hypothesis is that this is part of the cause of this discrepancy, in which case a frequency sweep would help bring the power way down.
+
+The inactivation %, microwave absorption cross-section, and 
+
+
+Complete speculation, must be tested with MD or empirically.
+
+- Polarization-kick 'optical centrifuge'
+  
+  - Unknown biological effects?
 
 - Synchrocyclotron-inspired frequency chirp
   
   As the amplitude of oscillation increases, the frequency of maximum amplitude might change.
 
-- Population-variance frequency chirp
+- Superposition of frequencies, frequency-comb, shifting superimposed frequencies independently, sudden phase-shifts,
   
-  The properties of the virus will vary within a population. Perhaps this could describe Yang's results, where 40% were destroyed at the expected field amplitude, but the rest took far more.
+  - It seems like it would be possible to analytically optimize the amplitude of the input wave as a function of time against the stress in the envelope.
 
-- Sudden phase-shift
-  
-  The phase-shift will have to take place within the relaxation time of the viral oscillator.
+# Usage
 
-- Superposition of frequencies, frequency-comb, shifting superimposed frequencies independently
-  
-  - It seems like it would be possible to analytically optimize the amplitude of the input wave as a function of time against the stress in the . 
-
-- Polarization-kick 'optical centrifuge'
-  
-  - Possible biological effects?
-
+"Electromagnetic mask" visor.
 
 ## A bronchoscopic therapy
 
+##### On the other hand, given the 5 mm/(1/e^2 [13.5%]) skin depth in wet tissue, this might not work.
 
 SARS-NCoV is generally found in most of the desirable organs.[] 
 These are shielded by at least 4 cm of chest wall [Schroeder 2013].
@@ -111,14 +94,8 @@ Since SARS' mortality rate is primarily through viral pneumonia and respiratory 
 The bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are on the order of 
 7 mm thick. [Chekan 2016]
 
-On the other hand, given the 5 mm skin depth in wet tissue, this might not work.
 
-Few modifications would need to be made to the emitter, besides antenna size, emission pattern and
-encapsulation, so this is a high TRL therapy.
-
-
-
-## 3D Beamforming
+# 3D Beamforming
 
 Safar (2016) focus power to a small region. In their words:
 
@@ -133,7 +110,7 @@ However, on later review, the technique not only requires each antenna to have a
 > 
 > The frequency range is 1–1.75 GHz
 
-Reducing to 20 signals produces a very similar figure, as does reducing to 3 MHz increment.
+7Reducing to 20 signals produces a very similar figure, as does reducing to 3 MHz increment.
 
 ![](/home/arthurdent/Projects/covidinator/media/Screenshot from 2020-04-21 11-47-02.png)
 
@@ -146,13 +123,13 @@ It is not immediately obvious how this could be implemented. Independent control
 > using phase shifters that can continuously change the phase
 > of the outgoing signals according to (9).
 
-This technique is probably not within reach for this project.
+This technique is probably not within reach or necessary for this project.
 
 ----
 
 # Oscillator
 
-The oscillator is based off 
+The oscillator is based off [Muller 2008], with a filter from [Kapilevich]
 
 Per Khanna (2006), both the source and drain of the active device participate in impedance matching:
 
@@ -381,3 +358,37 @@ Ding, 2004:
 
 > In addition to viral spread through a respiratory route, SARS‐CoV in the intestinal tract, kidney and sweat glands may be excreted via faeces, urine and sweat, thereby leading to virus transmission.
 
+
+
+
+# RF Resistors
+
+RF resistors are required for attenuators, Wilkinson power splitters, terminating striplines, and for power measurement.
+
+----
+
+The Vishay FC series appears to be the only brand specified above 6 GHz. Unfortunately, they're quite expensive and only a few values are available.
+
+-----
+
+> RF resistors should be approximately as wide as the microstrip trace itself
+
+---
+
+
+HB1 pencil lead is a bit too conductive for the purpose, at 2 ohms / cm or so. Difficult to tune, even with a file, and the resistance is pressure-sensitive. The surface could be copper-plated with Gigabeq's plating technique.
+
+---
+
+0.08g fine graphite + 0.055g elmer's glue (PVAc) was mixed, squished onto a glass slide. Only a small amount of the graphite was wetted by the PVAc and used - equivalent in volume to the drop, maybe 0.01g at most.
+Resistance was in the Mohms.
+
+It was then baked with 150c hot air for 1m. Formed a hard plastic layer. With sufficient contact pressure, 200 ohms could be obtained! Wonderful.
+
+The 3-ohm resistor required for a T-type attenuator might be a bit tricky with this process. A pi-type needs a 250 ohm R.
+
+-----
+
+Per **Frequency Response of Thin Film Chip Resistors, Vishay** we can actually get away with stock 0603 50 ohm resistors up to 10 GHz - the impedance is off by at most 20%.
+
+--------
