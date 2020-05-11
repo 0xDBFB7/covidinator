@@ -220,3 +220,9 @@ Scipy's default optimizer moved only a miniscule delta, and so terminated immedi
 Switched to N-M.
 
 Just increasing the number of poles didn't help.
+
+Colpitts has a really great phase response, just peachy, but the resonant f is messed up.
+
+Unexpectedly, adding a 10 pF DC block doesn't affect phase response.
+
+Given these parasitics, varying L just changes the resonance!
