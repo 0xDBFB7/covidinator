@@ -1,0 +1,18 @@
+
+---------------------------------------
+
+[Yang 2015] - root paper on viral resonance inactivation technique.
+
+[Hung 2014] - verbatim replication of above with a different antenna. 
+[Sun 2017] - same, differently-shaped virus.
+
+---------------------------------------
+
+[Mueller 2008] - low-cost X-band oscillator
+
+
+
+---------------------------------------
+
+[Silveira 2018]
+

@@ -215,3 +215,8 @@ Tried just scaling Kap's design by our factor. Worked fantastically, sharp res, 
 ended up a 24 ghz. Note: two elements were swapped. Shouldn't matter, but anyhow.
 
 Oh wait no, it was right the first time.
+
+Scipy's default optimizer moved only a miniscule delta, and so terminated immediately.
+Switched to N-M.
+
+Just increasing the number of poles didn't help.
