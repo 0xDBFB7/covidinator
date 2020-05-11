@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-380,-255,2807,2249,0.620961,0,0>
+  <View=-380,-205,2807,2249,0.8265,272,61>
   <Grid=10,10,1>
   <DataSet=optimize_filter_1.dat>
   <DataDisplay=optimize_filter_1.dpl>
@@ -34,8 +34,8 @@
   <R R1 1 1700 200 15 -26 1 3 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
   <GND *13 5 1700 230 0 0 0 0>
   <MLIN MS8 1 910 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "length_2" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS9 1 1040 170 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS5 1 420 170 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS9 1 1040 170 -26 15 0 0 "Subst1" 1 "4 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS5 1 420 170 -26 15 0 0 "Subst1" 1 "4 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <MLIN MS6 1 550 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "length_2" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L3 1 690 170 -26 -50 0 2 "0.7 nH" 1 "" 0>
   <L L1 1 210 170 -26 -50 0 2 "0.2 nH" 1 "" 0>
@@ -49,6 +49,7 @@
   <L L2 1 1160 170 -26 -50 0 2 "0.2 nH" 1 "" 0>
   <C C6 1 1280 170 -26 -57 0 2 "C_1" 1 "" 0 "neutral" 0>
   <GND *15 5 1550 200 0 0 0 0>
+  <MLIN MS10 1 530 -20 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
 </Components>
 <Wires>
   <120 50 120 170 "" 0 0 0 "">
