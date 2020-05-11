@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-380,-205,2807,2249,0.826492,221,44>
+  <View=-380,-231,2807,2249,0.751359,170,55>
   <Grid=10,10,1>
   <DataSet=optimize_filter_1.dat>
   <DataDisplay=optimize_filter_1.dpl>
@@ -20,7 +20,7 @@
   <GND *1 5 -80 240 0 0 0 0>
   <GND *2 5 40 200 0 0 0 0>
   <.SP SP1 0 -330 550 0 88 0 0 "lin" 1 "0.5 GHz" 1 "15 GHz" 1 "100" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <.AC AC1 1 -310 370 0 51 0 0 "lin" 1 "0.1 GHz" 1 "40 GHz" 1 "100" 1 "no" 0>
+  <.AC AC1 1 -310 370 0 51 0 0 "lin" 1 "0.1 GHz" 1 "15 GHz" 1 "100" 1 "no" 0>
   <.SW SW1 0 -70 560 0 88 0 0 "SP1" 1 "lin" 1 "Spacing" 1 "0.2e-3" 1 "2e-3" 1 "20" 1>
   <MLIN MS4 1 120 20 15 -26 0 1 "Subst1" 1 "1.5 mm" 1 "10 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <R R2 1 150 -130 -26 -55 1 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
@@ -35,20 +35,20 @@
   <R R1 1 1700 200 15 -26 1 3 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
   <GND *13 5 1700 230 0 0 0 0>
   <L L2 1 1250 170 -26 -50 0 2 "0.2 nH" 1 "" 0>
-  <MLIN MS8 1 910 170 -26 15 0 0 "Subst1" 1 "0.501" 1 "beta" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS9 1 1040 170 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "alpha" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS5 1 420 170 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "alpha" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS6 1 550 170 -26 15 0 0 "Subst1" 1 "0.501" 1 "beta" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS8 1 910 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "length_2" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS9 1 1040 170 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS5 1 420 170 -26 15 0 0 "Subst1" 1 "4.139 mm" 1 "length_1" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS6 1 550 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "length_2" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L3 1 690 170 -26 -50 0 2 "0.7 nH" 1 "" 0>
   <L L1 1 210 170 -26 -50 0 2 "0.2 nH" 1 "" 0>
   <.SW SW2 0 130 570 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "0.05 pF" 1 "5 pF" 1 "10" 1>
   <Eqn Eqn2 0 -290 790 -31 17 0 0 "phase_shift=phase(S[2,1])" 1 "yes" 0>
   <Eqn Eqn1 1 -80 390 -31 17 0 0 "phase_shift=abs(180-phase(Vfb.v))" 1 "yes" 0>
   <Eqn Eqn3 1 330 390 -31 17 0 0 "C1=0.3e-12" 1 "yes" 0>
-  <Eqn Eqn6 1 130 1010 -31 17 0 0 "vfb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
   <C C5 1 300 170 -26 -57 0 2 "C_1" 1 "" 0 "neutral" 0>
   <C C7 1 790 170 -26 -57 0 2 "C_varactor" 1 "" 0 "neutral" 0>
-  <C C6 1 1370 170 -26 -57 0 2 "C_2" 1 "" 0 "neutral" 0>
+  <Eqn Eqn6 1 150 860 -31 17 0 0 "vfb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
+  <C C6 1 1370 170 -26 -57 0 2 "C_1" 1 "" 0 "neutral" 0>
 </Components>
 <Wires>
   <120 50 120 170 "" 0 0 0 "">
