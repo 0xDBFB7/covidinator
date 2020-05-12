@@ -221,8 +221,14 @@ Switched to N-M.
 
 Just increasing the number of poles didn't help.
 
-Colpitts has a really great phase response, just peachy, but the resonant f is messed up.
+Colpitts-type has a really great phase response, just peachy, but the resonant f is messed up.
 
 Unexpectedly, adding a 10 pF DC block doesn't affect phase response.
 
 Given these parasitics, varying L just changes the resonance!
+
+Hang on a min, aren't ceramic capacitors already varactors? 
+
+DMM has a very convienient dBm mode.
+
+There's another package for this varactor with a much lower parasitic inductance.
