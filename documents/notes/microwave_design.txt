@@ -252,3 +252,14 @@ mmm the C0G dielectric used in these small caps doesn't have much C/V dependence
 in fact there's zero change! There goes that idea.
 
 mm the 0.7 nH parasitics are actually fine.
+
+mm no. The high-freq 12+GHz modes are amplified by the parasitics - seems to be some sort of resonance.
+
+If capacitors are tied to ground, any small impedance has a substantial effect on the performance.
+This is probably why the last test, with a 0.1 uF 0603 to ground, failed miserably.
+
+1 mW on a 50 ohm trace is about 0.3v.
+
+Definitely need the output to be terminated. Huge distortions otherwise.
+
+

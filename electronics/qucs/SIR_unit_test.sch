@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-380,-707,2763,2249,0.620956,263,301>
+  <View=-380,-707,2843,2249,0.751373,391,320>
   <Grid=10,10,1>
   <DataSet=SIR_unit_test.dat>
   <DataDisplay=SIR_unit_test.dpl>
@@ -37,11 +37,10 @@
   <Eqn Eqn6 1 300 960 -31 17 0 0 "vfb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
   <L L3 1 740 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
   <MLIN MS6 1 600 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "Len2" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <.SW SW3 1 320 580 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "0.3 pF" 1 "1 pF" 1 "2" 1>
+  <.SW SW3 1 320 580 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "0.3 pF" 1 "0.7 pF" 1 "2" 1>
   <L L4 1 950 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
   <C C11 1 900 200 -58 -26 0 3 "C1" 1 "" 0 "neutral" 0>
   <L L7 1 900 300 -75 -26 0 3 "L_parasitic" 1 "" 0>
-  <GND * 5 900 330 0 0 0 0>
   <L L8 1 230 -630 -26 -50 0 2 "0.2 nH" 1 "" 0>
   <C C12 1 860 -630 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
   <L L9 1 760 -630 -26 -50 0 2 "0.2 nH" 1 "" 0>
@@ -60,8 +59,6 @@
   <L L13 1 1180 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
   <L L14 1 1390 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
   <C C19 1 1340 200 -58 -26 0 3 "C1" 1 "" 0 "neutral" 0>
-  <L L15 1 1340 300 -75 -26 0 3 "L_parasitic" 1 "" 0>
-  <GND *16 5 1340 330 0 0 0 0>
   <Eqn Eqn7 1 460 920 -31 17 0 0 "L_parasitic=0.7e-9" 1 "yes" 0>
   <C C8 1 1050 170 -26 -57 0 2 "C2" 1 "" 0 "neutral" 0>
   <C C18 1 1490 170 -26 -57 0 2 "C2" 1 "" 0 "neutral" 0>
@@ -75,7 +72,7 @@
   <MLIN MS16 1 1390 -380 -26 15 0 0 "Subst1" 1 "2 mm" 1 "0.72 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <MLIN MS17 1 -40 -380 -26 15 0 0 "Subst1" 1 "2 mm" 1 "0.72 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <Eqn Eqn3 0 570 600 -31 17 0 0 "C1=0.3e-12" 1 "yes" 0>
-  <Eqn Eqn9 1 880 760 -31 17 0 0 "Len1=0.45e-3*scale_factor" 1 "Len2=Len1 / length_ratio" 1 "scale_factor=1.5" 1 "length_ratio=0.152" 1 "yes" 0>
+  <Eqn Eqn9 1 880 760 -31 17 0 0 "Len1=0.45e-3*scale_factor" 1 "Len2=Len1 / length_ratio" 1 "scale_factor=1.4" 1 "length_ratio=0.152" 1 "yes" 0>
   <Eqn Eqn8 1 880 630 -31 17 0 0 "C2=C1" 1 "C3=0.5e-12" 1 "C4=C1" 1 "yes" 0>
   <C C7 1 840 170 -26 -57 0 2 "C4" 1 "" 0 "neutral" 0>
   <C C17 1 1280 170 -26 -57 0 2 "C4" 1 "" 0 "neutral" 0>
@@ -87,8 +84,9 @@
   <C C5 1 390 170 -26 -57 0 2 "C3" 1 "" 0 "neutral" 0>
   <Eqn Eqn10 1 300 1060 -31 17 0 0 "cross=phase_shift * Vfb.v" 1 "yes" 0>
   <Eqn Eqn11 1 300 1160 -31 17 0 0 "out_cross=cross * Vout.v" 1 "yes" 0>
-  <L L16 1 1060 10 -26 -50 0 2 "L_parasitic" 1 "" 0>
-  <C C20 1 1160 10 -26 -57 0 2 "C2" 1 "" 0 "neutral" 0>
+  <L L15 1 1340 300 -75 -26 0 3 "L_parasitic" 1 "" 0>
+  <GND * 5 900 330 0 0 0 0>
+  <GND *16 5 1340 330 0 0 0 0>
 </Components>
 <Wires>
   <120 50 120 170 "" 0 0 0 "">
@@ -120,7 +118,6 @@
   <1210 170 1250 170 "" 0 0 0 "">
   <1420 170 1460 170 "" 0 0 0 "">
   <1340 170 1360 170 "" 0 0 0 "">
-  <1340 230 1340 270 "" 0 0 0 "">
   <2260 170 2380 170 "" 0 0 0 "">
   <500 170 570 170 "" 0 0 0 "">
   <1520 170 1600 170 "" 0 0 0 "">
@@ -131,12 +128,9 @@
   <420 170 440 170 "" 0 0 0 "">
   <120 170 270 170 "Vamp1" 170 120 13 "">
   <330 170 360 170 "" 0 0 0 "">
-  <1090 10 1130 10 "" 0 0 0 "">
+  <1340 230 1340 270 "" 0 0 0 "">
 </Wires>
 <Diagrams>
-  <Rect 1180 617 1158 237 3 #c0c0c0 1 00 1 0 1e+09 2e+10 1 -0.167847 0.5 1.84845 1 -1 0.5 1 315 0 225 "" "" "" "">
-	<"Vfb.v" #0000ff 0 3 0 0 0>
-  </Rect>
   <Rect 1180 872 1159 206 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
 	<"phase_shift" #0000ff 0 3 0 0 0>
   </Rect>
@@ -150,8 +144,15 @@
   <Rect 1180 1635 1166 220 3 #c0c0c0 1 00 1 0 5e+09 2e+10 1 -54.8729 200 663.602 1 -1 1 1 315 0 225 "" "" "" "">
 	<"out_cross" #ff0000 0 3 0 0 0>
   </Rect>
+  <Tab 730 1170 300 200 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 1 315 0 225 "" "" "" "">
+	<"Len1" #0000ff 0 3 1 0 0>
+	<"Len2" #0000ff 0 3 0 0 0>
+  </Tab>
+  <Rect 1200 647 1158 237 3 #c0c0c0 1 00 1 0 1e+09 2e+10 1 -0.167847 0.5 1.84845 1 -1 0.5 1 315 0 225 "" "" "" "">
+	<"Vfb.v" #0000ff 0 3 0 0 0>
+  </Rect>
 </Diagrams>
 <Paintings>
-  <Text 740 450 12 #000000 0 "stepped-impedance lowpass filter \n Butterworth 8 GHz...2 GHz \n impedance matching 50 Ohm">
   <Text 220 2030 12 #000000 0 "stepped-impedance lowpass filter \n Chebyshev 8 GHz...2 GHz \n impedance matching 50 Ohm">
+  <Text 530 430 12 #000000 0 "stepped-impedance lowpass filter \n Butterworth 8 GHz...2 GHz \n impedance matching 50 Ohm">
 </Paintings>
