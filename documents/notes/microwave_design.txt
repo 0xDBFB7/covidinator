@@ -244,3 +244,7 @@ There's another package for this varactor with a much lower parasitic inductance
 Oh man! Part of the issue disguising the phase shift was the low freq. resolution of the sim!
 
 When multiple 360-0 lines overlap, that's due to the resolution.
+
+Somehow adding another cap section in series between the SIR stages sharpened the filter,
+*and removed all the higher modes!* amazing!
+
