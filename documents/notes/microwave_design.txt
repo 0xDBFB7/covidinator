@@ -248,3 +248,5 @@ When multiple 360-0 lines overlap, that's due to the resolution.
 Somehow adding another cap section in series between the SIR stages sharpened the filter,
 *and removed all the higher modes!* amazing!
 
+mmm the C0G dielectric used in these small caps doesn't have much C/V dependence.
+in fact there's zero change!
