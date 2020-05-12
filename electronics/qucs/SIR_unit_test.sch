@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-380,-707,2807,2249,0.751412,390,263>
+  <View=-380,-707,2807,2249,1.10015,1010,573>
   <Grid=10,10,1>
   <DataSet=SIR_unit_test.dat>
   <DataDisplay=SIR_unit_test.dpl>
@@ -39,9 +39,9 @@
   <Eqn Eqn6 1 300 960 -31 17 0 0 "vfb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
   <C C7 1 840 170 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
   <L L3 1 740 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
-  <MLIN MS5 1 470 170 -26 15 0 0 "Subst1" 1 "2 mm" 1 "0.9 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS6 1 600 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "5.91 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <.SW SW3 1 320 580 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "0.3 pF" 1 "2 pF" 1 "10" 1>
+  <MLIN MS5 1 470 170 -26 15 0 0 "Subst1" 1 "2 mm" 1 "0.72 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS6 1 600 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "4.71 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <.SW SW3 1 320 580 0 88 0 0 "AC1" 1 "lin" 1 "C1" 1 "0.3 pF" 1 "1 pF" 1 "10" 1>
   <C C8 1 1050 170 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
   <L L4 1 950 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
   <SPfile X1 1 2010 170 -10 -44 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
@@ -69,8 +69,8 @@
   <C C5 1 300 170 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
   <L L6 1 1810 170 -26 -50 0 2 "0.2 nH" 1 "" 0>
   <C C10 1 1930 170 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
-  <MLIN MS8 1 1610 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "5.91 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <MLIN MS9 1 1740 170 -26 15 0 0 "Subst1" 1 "2 mm" 1 "0.9 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS8 1 1610 170 -26 15 0 0 "Subst1" 1 "0.501 mm" 1 "4.71 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
+  <MLIN MS9 1 1740 170 -26 15 0 0 "Subst1" 1 "2 mm" 1 "0.72 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <C C17 1 1280 170 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
   <L L13 1 1180 170 -26 -50 0 2 "L_parasitic" 1 "" 0>
   <C C18 1 1490 170 -26 -57 0 2 "C1" 1 "" 0 "neutral" 0>
