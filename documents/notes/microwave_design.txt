@@ -317,3 +317,7 @@ Aha! 10k 0402s directly off the line to a decoupled radial stub works perfectly.
 
 Adding a small amount of inductance before the capacitor bank decreases the power in the higher modes.
 mmm but that's at the cost of a gross phase shift.
+
+Shorting C4 increases the low-frequency mode.
+
+Adding another SIR microstrip hampers the phase response.
