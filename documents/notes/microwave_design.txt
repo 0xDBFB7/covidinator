@@ -262,4 +262,58 @@ This is probably why the last test, with a 0.1 uF 0603 to ground, failed miserab
 
 Definitely need the output to be terminated. Huge distortions otherwise.
 
+The newest board (with bodged-in varactor bias and no varactor bias offset above operating voltage)
+ has two regimes, precisely as expected from simulation;
+it's stable in curent at 1.6 V 0.03 A if Vvaractor > 4 V, or about 0.8 pF.
 
+The sweep is far smaller than expected, however - only around 0.2 GHz.
+ This could be an artifact of the downconverter, but I don't think so.
+
+The lowest frequency is also much higher than expected.
+ 
+I can't break the sim in such a way to reproduce this. It's also getting stuck at a second mode
+occasionally - adding capacitive coupling to the wierd ground dangle, adding the 1.5mm trace
+at the end,
+
+Hmm, but adding coupling from the trace to the ground plane does greatly increase the
+17 GHz mode's amplitude.
+
+Adding the ground dangle causes an issue. That might be it.
+
+Added thick via wire from varactor to ground plane. Much more stable; no second modes.
+
+Correction: there are now three modes. One CC limited at  0.45 V , one at 1.6 V, and one at 0.75.
+Only the 0.75 V mode appears on the downconverter.
+
+The mode that it settles in also seems to be determined by inrush current.
+
+PSU's having a lot of trouble driving the varactors.
+
+This would be a good time for one of those Keithley SMUs.
+
+Adding the bias tees adds a huge mode at a few MHz. Adding the 0.2mm traces worsens the problem - 
+just a direct coupling to the inductors seems to be the best. Adding a 1 K resistor where possible 
+improves the situation.
+
+Bias issues again.
+
+Even the weakest bias coupling to the intermediate junction thingy causes huge distortion.
+
+And removing the second varactor tee means that the other junction is now sensitive.
+
+Putting the 0.2mm trace + inductor before the SIR filters worked a little better,
+just the inductors works even better but still inadequate
+
+leakage resistance of capacitors 
+
+There's a technique (DSPSL) that uses a broken ground plane to create a very high impedance trace.
+
+Adding radial stubs like in [Syrett 1980] is slightly more effective;
+but the stub that's after the varactors still distorts things severely.
+
+600 nH inductors still shift phase, but don't otherwise affect the circuit.
+
+Aha! 10k 0402s directly off the line to a decoupled radial stub works perfectly.
+
+Adding a small amount of inductance before the capacitor bank decreases the power in the higher modes.
+mmm but that's at the cost of a gross phase shift.

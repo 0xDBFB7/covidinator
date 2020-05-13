@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-380,-205,2807,2249,0.751364,146,60>
+  <View=-380,-385,2807,2249,0.751364,146,0>
   <Grid=10,10,1>
   <DataSet=optimize_filter_1.dat>
   <DataDisplay=optimize_filter_1.dpl>

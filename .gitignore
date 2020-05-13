@@ -4,4 +4,4 @@ media/
 *.pyc
 *-checkpoint*
 *.ipynb_checkpoints*
-    
+*.ngc

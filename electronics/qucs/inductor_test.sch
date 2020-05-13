@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-360,-550,3652,2249,0.826531,740,330>
+  <View=-360,-550,3652,2249,0.826531,159,270>
   <Grid=10,10,1>
   <DataSet=inductor_test.dat>
   <DataDisplay=inductor_test.dpl>
