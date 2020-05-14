@@ -321,3 +321,9 @@ mmm but that's at the cost of a gross phase shift.
 Shorting C4 increases the low-frequency mode.
 
 Adding another SIR microstrip hampers the phase response.
+
+Realizing that I've been complacent in documenting designs and testing.
+
+# Rev 4 LO.
+
+Etched. soldered. 

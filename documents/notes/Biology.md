@@ -432,3 +432,20 @@ http://isoelectricpointdb.org/87/UP000009087_10665_all_isoelectric_point_proteom
 Note: the following is speculative musing. Please consider carefully.
 
 
+"shutter-like" polypropylene flat plate lid opened and closed by a notch on end of revolution
+
+ooh or a bunch of spring shutters, one each tube, opened when in position?
+
+-- ------||----------=
+                      <
+-- ------||----------=
+~~ ~~    ||       
+-| |-----||-----| |--
+ | |            | |   < 
+
+Entire thing enclosed and heated? filtered air?
+ 
+the ambient light sensor seems to have a somewhat slower response.
+
+Found an old LTOF converter in the bin. Works really very well.
+
