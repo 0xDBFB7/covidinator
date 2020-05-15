@@ -326,4 +326,13 @@ Realizing that I've been complacent in documenting designs and testing.
 
 # Rev 4 LO.
 
-Etched. soldered. 
+Board design as committed in SIR_unit_test.sch and local_oscillator_v2. Etched. soldered. 
+
+Much lower power consumption than previous versions. Stable startup at Vvaractor = 0, 15...
+
+Strong, stable tone at -30 dB | 5.5 GHZ | 20v varactor bias. 
+
+Somehow I've locked it at 2.2 GHz and can't get it back to 5. Might be an effect of the bias voltage.
+
+Removed the shunt varactor. Now sweeps from 4.8 -5.2 GHz.
+
