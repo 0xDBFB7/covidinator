@@ -135,10 +135,12 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
     frequency_cost = Coeff1 * (abs(desired_center_frequency-fb_peak_frequencies[0])/desired_center_frequency)
     phase_cost = Coeff2 * abs(1.0 - phase_at_peak)
     ratio_cost = Coeff3 * fb_peak_ratio
-    insertion_loss_cost = 1.0 - feedback_voltage
+    insertion_loss_cost = (1.0 - fb_peak_values[0])*0.2
 
-    cost = frequency_cost + phase_cost + fb_peak_ratio
-    print("Cost: {:.4f} (frequency: {:.4f} MHz, phase: {:.4f})".format(cost,fb_peak_frequencies[0]/1e6, phase_at_peak))
+    cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
+
+    print("Cost: {:.4f} (frequency: {:.4f} MHz, phase: {:.4f}, ratio: {:.4f},  |FB|: {:.4f})".format(cost,fb_peak_frequencies[0]/1e6,
+                                                                                                phase_at_peak, fb_peak_ratio, fb_peak_values[0]))
 
     return cost
 
