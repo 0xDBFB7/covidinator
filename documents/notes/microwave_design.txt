@@ -336,3 +336,8 @@ Somehow I've locked it at 2.2 GHz and can't get it back to 5. Might be an effect
 
 Removed the shunt varactor. Now sweeps from 4.8 -5.2 GHz.
 
+Lowpass to bandpass conversion described in "introduction to microwave circuits " 9.4
+
+oh my gosh I've been looking at the wrong phase this whole time
+
+
