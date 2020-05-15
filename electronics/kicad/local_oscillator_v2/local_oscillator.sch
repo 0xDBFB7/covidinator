@@ -214,28 +214,6 @@ F 3 "~" H 3850 4650 50  0001 C CNN
 	1    3850 4650
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:GND #PWR0107
-U 1 1 5ED14708
-P 4000 4950
-F 0 "#PWR0107" H 4000 4950 30  0001 C CNN
-F 1 "GND" H 4000 4880 30  0001 C CNN
-F 2 "" H 4000 4950 50  0001 C CNN
-F 3 "" H 4000 4950 50  0001 C CNN
-	1    4000 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D_Capacitance D2
-U 1 1 5ED0FC00
-P 4000 4800
-F 0 "D2" V 3954 4879 50  0000 L CNN
-F 1 "D_Capacitance" V 4045 4879 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-523" H 4000 4800 50  0001 C CNN
-F 3 "~" H 4000 4800 50  0001 C CNN
-	1    4000 4800
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	2950 4050 5650 4050
 $Comp

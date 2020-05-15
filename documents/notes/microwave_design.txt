@@ -342,18 +342,15 @@ oh my gosh I've been looking at the wrong phase this whole time
 
 ...no, I think I've been looking at the right one
 
-FUCKING IDIOT
+phasing lines seem to have little dependence on width.
 
-FUCK 
+Using the reference hp+lp 180 deg phase shifters on Microwave101's website works.
 
-dalkdjfa;lkdsfj al;dfskj alwejf wed flkdfuadlkcjal;dskjc aljsd flk
+Push-pull amps can provide wide bandwidth 
 
-okay
-fuck
-fffuuuuuuuuuuuuuuuuuuuuuuuuuck
-cufkalsdfkjalskdjf alksdjf lkadf klfuck
-fuuck
-cufkaldkfjfuck
+for reference,
+]
+sleeep is important.
 
 
 
