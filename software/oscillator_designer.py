@@ -62,6 +62,8 @@ def run_sim(x, C_varactor, net_file, data_file):
     netlist = netlist.replace('var_2', str(x[2]))
     netlist = netlist.replace('var_3', str(x[3]))
     netlist = netlist.replace('var_4', str(x[4]*10.0))
+    netlist = netlist.replace('var_5', str(x[5]))
+    netlist = netlist.replace('var_6', str(x[6]))
 
     # netlist = netlist.replace('C_1', str(C_1))
     netlist = netlist.replace('C_varactor', str(C_varactor))
@@ -111,6 +113,8 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
 
 
     feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
+    if(len(feedback_voltage_peak_indices) < 1):
+        return 10.0
 
     fb_peak_values = feedback_voltage[feedback_voltage_peak_indices]
     sorted_indices = np.argsort(fb_peak_values)[::-1]
@@ -125,12 +129,13 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
 
     Coeff1 = 1.0
     Coeff2 = 1.0
-    Coeff3 = 1.0
+    Coeff3 = 0.5
     Coeff4 = 1.0
 
     frequency_cost = Coeff1 * (abs(desired_center_frequency-fb_peak_frequencies[0])/desired_center_frequency)
     phase_cost = Coeff2 * abs(1.0 - phase_at_peak)
     ratio_cost = Coeff3 * fb_peak_ratio
+    insertion_loss_cost = 1.0 - feedback_voltage
 
     cost = frequency_cost + phase_cost + fb_peak_ratio
     print("Cost: {:.4f} (frequency: {:.4f} MHz, phase: {:.4f})".format(cost,fb_peak_frequencies[0]/1e6, phase_at_peak))
@@ -140,17 +145,21 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
 initial_guess = [2.955, 0.45, 1, 0.17]
 bounds = [(0.5,5),(0.1,5.0),(0.5,3),(0.1,10)]
 
-initial_guess = [1,1,1,1,1]
-bounds = [(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10)]
+initial_guess = [1,1,1,1,1,1,1]
+bounds = [(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10)]
 
 
 # you may not like it, but this is the
 # ideal_values = minimize(cost_function, [2.955, 0.45, 10, 0.17], bounds=bounds, method="Nelder-Mead", args=(6e9, 0.3), options={"disp":True, "maxiter":100})["x"]
 
-minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=(6e9, 0.3), options={"disp":True, "maxiter":5})
+desired_center_frequency = 6e9
+varactor_capacitance = 0.3
+minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=(desired_center_frequency, varactor_capacitance), options={"disp":True, "maxiter":3})
 
-ideal_values = basinhopping(cost_function, initial_guess, niter=2, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+ideal_values = basinhopping(cost_function, initial_guess, niter=6, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
 print("Solution: ", ideal_values)
+
+cost_function(ideal_values, desired_center_frequency, varactor_capacitance)
 
 frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_values, 0.3, net_file, data_file)
 
