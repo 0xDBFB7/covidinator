@@ -352,6 +352,6 @@ for reference,
 ]
 sleeep is important.
 
-
+Optimization seems to be improved if all the parameters are approx. of the same order.
 
 

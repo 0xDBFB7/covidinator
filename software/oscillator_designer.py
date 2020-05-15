@@ -4,7 +4,8 @@ import numpy as np
 from scipy.signal import cheby1
 from scipy.signal import find_peaks
 import matplotlib.pyplot as plt
-from scipy.optimize import minimize
+from scipy.optimize import minimize,basinhopping
+
 import math
 from math import sin, cos, pi, sqrt,tan, atan
 from pytexit import py2tex
@@ -30,6 +31,7 @@ data_file = "/mnt/qucs-tmpfs/output.dat"
 
 os.system("QUCSDIR=/usr/local/ /usr/local/bin/qucs -n -i " + schematic_file + " -o " + net_file)
 
+np.set_printoptions(precision=4)
 
 def electrical_to_physical_length(electrical_len, trace_width, frequency):
     return (effective_wavelength(trace_width, substrate_height, substrate_dielectric_constant, frequency) \
@@ -52,25 +54,24 @@ def run_sim(x, C_varactor, net_file, data_file):
 
 #     print("Trying lengths: {:.4f} rad ({:.4f} m) | {:.4f} rad ({:.4f} m) ".format(electrical_length_alpha, length_1, beta, length_2))
 
-    length_1 = x[0]
-    length_2 = x[1]
-    length_3 = x[2]
-    C_1 = x[3]
-
     with open(net_file, 'r') as file:
       netlist = file.read()
 
-    netlist = netlist.replace('length_1', str(length_1) + " mm")
-    netlist = netlist.replace('length_2', str(length_2) + " mm")
-    netlist = netlist.replace('length_3', str(length_3) + " mm")
+    netlist = netlist.replace('var_0', str(x[0]))
+    netlist = netlist.replace('var_1', str(x[1]))
+    netlist = netlist.replace('var_2', str(x[2]))
+    netlist = netlist.replace('var_3', str(x[3]))
+    netlist = netlist.replace('var_4', str(x[4]*10.0))
 
-    netlist = netlist.replace('C_1', str(C_1) + " pF")
-    netlist = netlist.replace('C_varactor', str(C_varactor) + " pF")
+    # netlist = netlist.replace('C_1', str(C_1))
+    netlist = netlist.replace('C_varactor', str(C_varactor))
 
     with open(net_file_modified, 'w') as file:
         file.write(netlist)
 
+    print("---------------- QUCSATOR RUN ----------------")
     sim_return = subprocess.run(['qucsator', '-i', net_file_modified, '-o', data_file], stdout = subprocess.DEVNULL,  check=True)
+    print("---------------- QUCSATOR FIN ----------------")
 
     extracted_data = qucs.extract.load_data(data_file)
 
@@ -100,62 +101,70 @@ def run_sim(x, C_varactor, net_file, data_file):
 #     return peak_freqs, peak_phases, peak_gains
 #
 
-def analyze(freq, Vfb, phases, Vamp2):
-        Vfb_magnitude = [abs(i) for i in Vfb]
-        peak_indice = find_peaks(Vfb_magnitude, height = 0.1)[0][0]
-        print(len(find_peaks(Vfb_magnitude, height = 0.1)[0]))
-        peak_gains.append(Vfb_magnitude[peak_indice])
-        peak_freqs.append(freq[peak_indice])
-        peak_phases.append(phases[peak_indice])
+# def analyze(feedback_voltage, phase_shift):
 
-# def cost_function(x, varactor_capacitance):
-#
-#     freq, Vfb, phases, Vamp2 = run_sim(x, varactor_capacitance, net_file, data_file)
-#
-#
-#     th = signal > 0.5
-#     th[1:][th[:-1] & th[1:]] = False
-#     #peak_freqs, peak_phases, peak_gains = freq_sweep(x)
-#
-#
-#
-#
-#
-#     min_phase = min(peak_phases)
-#     min_gains = min(peak_gains)
-#     span = (max(peak_freqs) - min(peak_freqs))
-#
-#     center_freq = ((max(peak_freqs) - min(peak_freqs))/2.0) + min(peak_freqs)
-#
-#     Coeff1 = 1.0/360.0
-#     Coeff2 = 1.0/4e9
-#     Coeff3 = 1.0/8e9
-#     Coeff4 = 1.0
-#
-#     print(min_phase)
-#
-#     sleep(0.1)
-#
-# #     cost = (Coeff1 * (360.0 - min_phase)) + (Coeff2 * abs((4e9 - span))) +  \
-# #                 (Coeff3 * abs((8e9 - center_freq))) + (Coeff4 * abs((1.0 - min_gains)))
-#     print(cost)
-#     return cost
 
-#for i in np.linspace(0.05, 2, 10):
-#     peak_freqs, peak_phases, peak_gains = freq_sweep([2.955, 0.45, 0.01, i])
-#     print(min(peak_phases))
+def cost_function(x, desired_center_frequency, varactor_capacitance):
+    print("Trying: ",x)
 
-const = 1.0
+    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(x, varactor_capacitance, net_file, data_file)
+
+
+    feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
+
+    fb_peak_values = feedback_voltage[feedback_voltage_peak_indices]
+    sorted_indices = np.argsort(fb_peak_values)[::-1]
+    fb_peak_values = fb_peak_values[sorted_indices]
+    feedback_voltage_peak_indices = feedback_voltage_peak_indices[sorted_indices]
+
+    fb_peak_frequencies = frequency[feedback_voltage_peak_indices]
+
+    fb_peak_ratio = fb_peak_values[1]/fb_peak_values[0]
+
+    phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
+
+    Coeff1 = 1.0
+    Coeff2 = 1.0
+    Coeff3 = 1.0
+    Coeff4 = 1.0
+
+    frequency_cost = Coeff1 * (abs(desired_center_frequency-fb_peak_frequencies[0])/desired_center_frequency)
+    phase_cost = Coeff2 * abs(1.0 - phase_at_peak)
+    ratio_cost = Coeff3 * fb_peak_ratio
+
+    cost = frequency_cost + phase_cost + fb_peak_ratio
+    print("Cost: {:.4f} (frequency: {:.4f} MHz, phase: {:.4f})".format(cost,fb_peak_frequencies[0]/1e6, phase_at_peak))
+
+    return cost
+
+initial_guess = [2.955, 0.45, 1, 0.17]
+bounds = [(0.5,5),(0.1,5.0),(0.5,3),(0.1,10)]
+
+initial_guess = [1,1,1,1,1]
+bounds = [(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10)]
+
+
+# you may not like it, but this is the
+# ideal_values = minimize(cost_function, [2.955, 0.45, 10, 0.17], bounds=bounds, method="Nelder-Mead", args=(6e9, 0.3), options={"disp":True, "maxiter":100})["x"]
+
+minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=(6e9, 0.3), options={"disp":True, "maxiter":5})
+
+ideal_values = basinhopping(cost_function, initial_guess, niter=2, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+print("Solution: ", ideal_values)
+
+frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_values, 0.3, net_file, data_file)
 
 plt.figure()
-plt.plot(freq, phases)
-Vfb_magnitude = [abs(i) for i in Vfb]
-Vamp2_magnitude = [abs(i) for i in Vamp2]
+plt.plot(frequency, phase_shift)
 plt.figure()
-plt.plot(freq, Vfb_magnitude)
-plt.plot(freq, Vamp2_magnitude)
+plt.plot(frequency, feedback_voltage)
+# plt.plot(frequency, output_amplitude)
 
 plt.show()
 
 
-minimize(cost_function, [2.955, 0.45, 1, 0.17], bounds=[(0.5,5),(0.5,5.0),(0.1,10)], args=(0.3), options={"disp":True})
+# for i in np.linspace(0.05, 2, 10):
+#     peak_freqs, peak_phases, peak_gains = freq_sweep([2.955, 0.45, 0.01, i])
+#     print(min(peak_phases))
+#
+# const = 1.0
