@@ -354,4 +354,9 @@ sleeep is important.
 
 Optimization seems to be improved if all the parameters are approx. of the same order.
 
+Using basinhopping works fantastically well. A good (non-tunable) solution is found with 2 hp and 1 lp elements.
+convergence is improved if more MC/stochastic steps are used 
+
+Metal-insulator-metal (MIM) parallel-plate capacitor
+
 
