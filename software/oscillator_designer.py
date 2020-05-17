@@ -146,13 +146,16 @@ initial_guess = [1,1,1,1,1,1,1,1,1]
 bounds = [(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10)]
 
 
-# you may not like it, but this is the
 
 desired_center_frequency = 6e9
 varactor_capacitance = 0.3
 minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=(desired_center_frequency, varactor_capacitance), options={"disp":True, "maxiter":3})
 
-ideal_values = basinhopping(cost_function, initial_guess, niter=6, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+tubthumper = basinhopping
+
+# you may not like it, but this is the
+
+ideal_values = tubthumper(cost_function, initial_guess, niter=6, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
 
 ideal_values = minimize(cost_function, ideal_values, bounds=bounds, method="L-BFGS-B", args=(desired_center_frequency, varactor_capacitance), options={"disp":True, "maxiter":100})["x"]
 

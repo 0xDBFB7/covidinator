@@ -337,6 +337,8 @@ Somehow I've locked it at 2.2 GHz and can't get it back to 5. Might be an effect
 Removed the shunt varactor. Now sweeps from 4.8 -5.2 GHz.
 
 Lowpass to bandpass conversion described in "introduction to microwave circuits " 9.4
+The book on microwave filters (?) had a chapter on designing fixed-group-delay filters.
+
 
 oh my gosh I've been looking at the wrong phase this whole time
 
@@ -357,6 +359,18 @@ Optimization seems to be improved if all the parameters are approx. of the same 
 Using basinhopping works fantastically well. A good (non-tunable) solution is found with 2 hp and 1 lp elements.
 convergence is improved if more MC/stochastic steps are used 
 
-Metal-insulator-metal (MIM) parallel-plate capacitor
+Metal-insulator-metal (MIM) parallel-plate capacitor - that's what that one paper used
+
+man, scipy.basinhopping is extreme. This thing just optimized 9 variables from a random guess
+- in 200 iterations! 
+holy crap! I didn't even know that was possible.
+
+PIN diode switch between antenna and power sensor
+mosfets and current sensing resistor on board
+Only power up second stage amplifier - not oscillator - to minimize transient effects
+probably need a P-channel mosfet on high-side, else grounding will be an issue
+
+
+
 
 

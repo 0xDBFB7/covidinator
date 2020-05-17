@@ -55,12 +55,12 @@ Very nice! So all-atom sims are totally within our grasp now.
 Autoclave diagnostic tapes! cool.
 
 [https://en.wikipedia.org/wiki/Shaker_(laboratory)](https://en.wikipedia.org/wiki/Shaker_(laboratory)
-
+[6;5~]
 "Anyone employing an incubator shaker (thermal shaker) to grow yeast or bacteria in the laboratory needs to beware that under the usual conditions encountered in the lab, the rate at which oxygen diffuses from the gaseous phase into the shaken liquid phase is too slow to keep up with the rate at which the oxygen is consumed by for example E coli dividing every half hour or S cerevisiae dividing every hour. If the investigator measure the oxygen in the shake flask on the shaker -- polarographically, for example -- at mid-exponential phase of growth, the dissolved oxygen concentration will turn out to be zero."
-
 How about a vortex mixer? Small vortexers for 1.5 mL tubes do exist. 
 
 Oh this'll select for resistance to microwaves. Is that even possible? Perhaps mutants of different dimensions will be favored, in which case it should be possible for users to re-tune without re-issuing.
+
 
 "Due to the slower motions of CG, one can often use a timestep of 500 fs rather than the 1 fs time-step"
 
@@ -448,4 +448,87 @@ Entire thing enclosed and heated? filtered air?
 the ambient light sensor seems to have a somewhat slower response.
 
 Found an old LTOF converter in the bin. Works really very well.
+
+by presumably freak coincidence, the autoclaveable caps from the 60 ml polyprop. cans
+fit perfectly on the 15 mL falcon tubes. Liquid-tight seal, too.
+
+Yay!
+
+
+After having been left in the toaster oven at room temperature for about a month, 
+bacterial debris has settled into a pellet at the bottom of the Eppendorf tubes,
+and there's much less of a difference in clarity between the controls and the EX.
+The controls still look clear.
+
+Shaking by hand for 20 seconds re-suspended the material apparently homogenously.
+
+330 ohms used as LED resistor.
+
+FreqCount emits a value of 32244002423133 - oh that's just a rollover bug.
+With a 10 ms integration time, we get transmittance of 1750(clear)-1100(suspended E.coli).
+That's great!
+
+Surprisingly, even despite the lower sensitivity of this sensor to IR, we get a huge increase (6.25x)
+increase in raw resolution in IR vs red. This might be due to the diffused RED leds vs 
+water-clear IR leds. 
+
+Almost no change in IR reflectance or transmittance between cloudy and control, despite
+the higher resolution.
+
+Then again, there's also almost no change in red reflect. or transmit at these integration times.
+A much longer time is required. 100 ms provides a huge effect in transmission, but almost nothing
+in reflection.
+
+Oh, and this is with 1.5 mL Eppendorfs filled to 1 mL, for reference.
+
+At 100 ms integration time, after a small settling time 
+this is extremely immune to ambient light - no perceptible change
+even if a strong flashlight is shined on the sensor. Really fantastic sensor.
+
+There's a far stronger dependence on transmission than reflection.
+
+Still quite position sensitive, however.
+
+oh! three LEDs arranged thus:
+
+o o o 
+
+  @ -->
+
+  ^
+
+would give us distance information, given a known eppendorf size.
+leds arranged vertically would provide 
+
+It seems like transmission ("turbidimetry") is an equally valid technique as scattering 
+("nephelometry").
+
+
+-------------------------------------------------------------
+60 mL broth to safekeeping bottle
+2ml broth to 15 mL Falcon tubes x4 [E6 E7 P6 P7] (8 mL broth)
+autoclave - release steam outside this time
+Inoculate Falcon tubes w. E. coli.
+-------------------------------------------------------------
+Incubate and shake. Measure turbidity. 
+-------------------------------------------------------------
+Dispense one Falcon into two eppendorfs, [E8 E9], to 0.8 mL.
+Add 0.6 mL glycerine. Freeze.
+-------------------------------------------------------------
+Once log phase attained, inoculate 2x Falcon P5 P6 with 0.2 mL phage.
+-------------------------------------------------------------
+Incubate and shake. Measure turbidity. 
+-------------------------------------------------------------
+Optional:
+
+Once clear, dispense P1 P2 into four eppendorfs total,
+1 mL each. Centrifuge at []. Decant supernatant into P5 P6.
+-------------------------------------------------------------
+Dispense 8x 0.2 mL e. coli into eppendorfs S0 - S7.
+-------------------------------------------------------------
+Re-fill E6 E7 to 2 mL - 0.2 mL should remain.
+-------------------------------------------------------------
+
+Determine conductivity? maybe attenuation can account for some of the decrease too? No; some of 
+Yang's experiments used a few drops rather than a cuvette.
 

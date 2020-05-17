@@ -5,3 +5,4 @@ media/
 *-checkpoint*
 *.ipynb_checkpoints*
 *.ngc
+*.FCStd1

@@ -466,7 +466,7 @@
   )
 
   (module Diode_SMD:D_SOD-523 (layer F.Cu) (tedit 586419F0) (tstamp 5EBE1988)
-    (at 87.675 70.65)
+    (at 86.175 70.025 180)
     (descr "http://www.diodes.com/datasheets/ap02001.pdf p.144")
     (tags "Diode SOD523")
     (path /5ED19292)
@@ -497,9 +497,9 @@
     (fp_text user %R (at 0 -1.3) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad 1 smd rect (at -0.7 0 180) (size 0.6 0.7) (layers F.Cu F.Paste F.Mask)
+    (pad 1 smd rect (at -0.7 0) (size 0.6 0.7) (layers F.Cu F.Paste F.Mask)
       (net 8 "Net-(D1-Pad1)"))
-    (pad 2 smd rect (at 0.7 0 180) (size 0.6 0.7) (layers F.Cu F.Paste F.Mask)
+    (pad 2 smd rect (at 0.7 0) (size 0.6 0.7) (layers F.Cu F.Paste F.Mask)
       (net 9 "Net-(C1-Pad1)"))
     (model ${KISYS3DMOD}/Diode_SMD.3dshapes/D_SOD-523.wrl
       (at (xyz 0 0 0))
@@ -581,7 +581,7 @@
   )
 
   (module Capacitors:0603 (layer F.Cu) (tedit 596180EF) (tstamp 5EBE1940)
-    (at 74.05 61.95 135)
+    (at 77.35 65.475 135)
     (descr "GENERIC 1608 (0603) PACKAGE")
     (tags "GENERIC 1608 (0603) PACKAGE")
     (path /5EADDFB9)
