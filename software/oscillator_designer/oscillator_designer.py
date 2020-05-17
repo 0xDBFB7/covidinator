@@ -33,10 +33,6 @@ def electrical_to_physical_length(electrical_len, trace_width, frequency):
                             * (electrical_len/(2.0*pi)))
 
 
-#
-# made a temporary ramfs to avoid burning cycles on SSD - not sure if that's a real issue, but
-#
-# `sudo mount -t tmpfs -o size=100m tmpfs /mnt/qucs-tmpfs/`
 
 def run_sim(x, C_varactor, net_file, data_file):
 
@@ -53,7 +49,7 @@ def run_sim(x, C_varactor, net_file, data_file):
       netlist = file.read()
 
     scale_factors = np.ones_like(x)
-    scale_factors[4] *= 10.0
+    scale_factors[8] *= 10.0
 
     for i in range(0,len(x)):
         netlist = netlist.replace('var_'+str(i), str(x[i]*scale_factors[i]))
@@ -106,6 +102,7 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
 
     feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
     if(len(feedback_voltage_peak_indices) < 1):
+        print("No peaks found, cost = 10")
         return 10.0
 
     fb_peak_values = feedback_voltage[feedback_voltage_peak_indices]
@@ -142,8 +139,8 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
 initial_guess = [2.955, 0.45, 1, 0.17]
 bounds = [(0.5,5),(0.1,5.0),(0.5,3),(0.1,10)]
 
-initial_guess = [1,1,1,1,1,1,1,1,1]
-bounds = [(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10),(0.1,10)]
+initial_guess = [1]*13
+bounds = [(0.1,10)]*13
 
 
 
@@ -154,8 +151,7 @@ minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=(desired_center_f
 tubthumper = basinhopping
 
 # you may not like it, but this is the
-
-ideal_values = tubthumper(cost_function, initial_guess, niter=6, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+ideal_values = tubthumper(cost_function, initial_guess, niter=15, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
 
 ideal_values = minimize(cost_function, ideal_values, bounds=bounds, method="L-BFGS-B", args=(desired_center_frequency, varactor_capacitance), options={"disp":True, "maxiter":100})["x"]
 
@@ -166,13 +162,17 @@ cost_function(ideal_values, desired_center_frequency, varactor_capacitance)
 frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_values, varactor_capacitance, net_file, data_file)
 
 plt.figure()
+plt.title("Phase shift (factor of 360 deg, including active device)")
 plt.plot(frequency, phase_shift)
+plt.xlabel("frequency")
 plt.figure()
+plt.title("Feedback voltage")
+plt.xlabel("frequency")
 plt.plot(frequency, feedback_voltage)
 # plt.plot(frequency, output_amplitude)
 
 plt.show()
-
+plt.savefig("~/Downloads/export.png")
 
 # for i in np.linspace(0.05, 2, 10):
 #     peak_freqs, peak_phases, peak_gains = freq_sweep([2.955, 0.45, 0.01, i])

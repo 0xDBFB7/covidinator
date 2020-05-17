@@ -359,7 +359,8 @@ Optimization seems to be improved if all the parameters are approx. of the same 
 Using basinhopping works fantastically well. A good (non-tunable) solution is found with 2 hp and 1 lp elements.
 convergence is improved if more MC/stochastic steps are used 
 
-Metal-insulator-metal (MIM) parallel-plate capacitor - that's what that one paper used
+Metal-insulator-metal (MIM) parallel-plate capacitor - that's what that one paper used -
+nonlinear dielectric?
 
 man, scipy.basinhopping is extreme. This thing just optimized 9 variables from a random guess
 - in 200 iterations! 
@@ -371,6 +372,7 @@ Only power up second stage amplifier - not oscillator - to minimize transient ef
 probably need a P-channel mosfet on high-side, else grounding will be an issue
 
 
-
+13 variables with microstrip width and length seems to be a bit much. No reasonable 
+solutions found.
 
 

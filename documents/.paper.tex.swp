@@ -1,0 +1,24 @@
+\documentclass[11pt]{article}
+%Gummi|065|=)
+\title{\textbf{Welcome to Gummi 0.6.6}}
+\author{Alexander van der Meij\\
+		Wei-Ning Huang\\
+		Dion Timmermann}
+\date{}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We extend this work rather trivially by:
+\begin{itemize}
+  \item Demonstrating a prototype emitter in an "electromagnetic mask" form-factor, costing about \$5 in prototype quantities, which can be produced in 10-million quantities using existing infrastructure  
+  \item Using a coarse-grained molecular-dynamics simulation 
+  \item Discussing the biological basis for the safety of the device
+  \item We show that some of the variance can be described by variance in the 
+\end{itemize}
+\end{abstract}
+
+\section{Before you start}
+
+\end{document}
