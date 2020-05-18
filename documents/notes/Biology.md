@@ -509,6 +509,7 @@ It seems like transmission ("turbidimetry") is an equally valid technique as sca
 2ml broth to 15 mL Falcon tubes x4 [E6 E7 P6 P7] (8 mL broth)
 autoclave - release steam outside this time
 Inoculate Falcon tubes w. E. coli.
+two eppendorfs with 0.6 mL glycerine.
 -------------------------------------------------------------
 Incubate and shake. Measure turbidity. 
 -------------------------------------------------------------
@@ -544,3 +545,35 @@ hmm, microfluidics. Polyprop and FEP tubing can handle sterilization.
 0.6 + 0.2 * 30
 
 
+Poured the broth into three polyprop. bottles and autoclaved. They crushed quite a bit;
+didn't have the caps opened sufficiently, and there was quite a vacuum when I opened them.
+
+Ran them through again.
+
+E8, E11 are Falcons; E9, E10 are eppendorfs with 0.5 mL glycerine. Eppendorfs didn't open this time.
+
+Oh, and I released the steam immediately after the 20 minute alarm, and almost no condensation was
+present.
+
+
+This time, opened the lid, left everything opened, let cool for 10 mins. That worked very well.
+
+Putting 0.2 mL of E2 into E8. 
+
+
+empty: 
+72, 6400, 1541, 38397
+
+E8, just after inoc.
+
+144, 6812, 2443, 82273
+144, 6811, 2445, 82268
+144, 6811, 2442, 82268
+145, 6811, 2443, 82263
+143, 6811, 2444, 82269
+145, 6809, 2442, 82265
+143, 6810, 2443, 82262
+
+resting against black header
+
+ 

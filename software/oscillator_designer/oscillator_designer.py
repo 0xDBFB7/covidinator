@@ -50,7 +50,7 @@ def run_sim(x, C_varactor, net_file, data_file):
       netlist = file.read()
 
     scale_factors = np.ones_like(x)
-    scale_factors[8] *= 10.0
+    scale_factors[0] *= 10.0
 
     for i in range(0,len(x)):
         netlist = netlist.replace('var_'+str(i), str(x[i]*scale_factors[i]))
@@ -76,12 +76,14 @@ def run_sim(x, C_varactor, net_file, data_file):
 
 #parasitic inductance can vary as required to build the varactor biasing circuit from discretes
 
-def capacitor_costs(x, coefficient):
-    capacitor_indices = [1, 4] #
-    return coefficient * sum([i % 0.5 for i in x[capacitor_values]]) # distance from nearest 0.5
+# def capacitor_costs(x, coefficient):
+#     capacitor_indices = [1, 4] #
+#     return coefficient * sum([i % 0.5 for i in x[capacitor_values]]) # distance from nearest 0.5
+
 
 def cost_function(x, desired_center_frequency, varactor_capacitance, display = False):
     start = time.time()
+
 
     print("Trying: ", x)
 
@@ -131,10 +133,18 @@ def cost_function(x, desired_center_frequency, varactor_capacitance, display = F
 
     return cost
 
+def round_values(x):
+    x = np.array(x)
+
+    capacitor_indices = np.array([0,2,5,7])
+    x[capacitor_indices] = np.array(np.around(x*4)/4)[capacitor_indices]
+    microstrip_indices = np.delete(np.array(list(range(0,num_vars))),capacitor_indices)
+    x[microstrip_indices] = np.array(np.around(x,1))[microstrip_indices]
+    return x
 
 def sweep_cost(x, desired_frequency_range, varactor_capacitance_range):
 
-    # os.system('clear')
+    os.system('clear')
     # sys.stdout.flush()
 
     total_cost = 0
@@ -167,16 +177,19 @@ def optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitanc
     return ideal_values
 
 
-num_vars = 9
+num_vars = 4
 initial_guess = [1]*num_vars
 bounds = [(0.1,10)]*num_vars
 
-varactor_capacitance_range = [0.3, 0.3]
-desired_frequency_range = [5e9, 5e9]
+
+varactor_capacitance_range = [2, 0.3]
+desired_frequency_range = [7e9, 10e9]
 #
 ideal_value = optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range)
 
-# ideal_value = [1.0276, 1.3619, 0.9398, 0.6667, 0.9669, 1.0742, 1.0783, 1.0258, 0.7554]
+
+# ideal_value = round_values(ideal_value)
+
 
 print('='*40)
 print("Solution: ", ideal_value)
@@ -202,7 +215,6 @@ for i in range(0, N_interpolations):
     np.concatenate([phase_shift,phase_shifts])
 
     # np.concatenate([[varactor_capacitance]*len(phase_shift),varactor_values])
-    print(varactor_capacitance)
     #plt.subplot(2, 1, 1, projection='3d')
     # plt.subplot(2, 1, 1)
     # plt.title("Phase shift (factor of 360 deg, including active device)")

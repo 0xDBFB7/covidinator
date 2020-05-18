@@ -389,3 +389,28 @@ A 1.5 mm overlap on a 1.5mm trace with a 0.1 mm sheet of paper (er=2.2) between 
 
 There's a capacitor shortage. Probably doesn't matter for our use-case.
 
+Zinc oxide is a slightly nonlinear capacitor at kilovolts of bias [Guo 2018].
+
+--------------      - aluminized mylar, conductive ink, Graphite?
+ssssssssssssss          - Kapton, mylar layer, screen printed something or other
+------   ---------      - microstrip gap
+
+
+1 Mohm * 1 picofarad = 1 us.
+
+In fact, if a 0.5mm thick conductive layer was added like so:
+
+
+         ||||||    ||||||
+---------------    ----------------
+
+8.8e-12 Farads/m * 5 * (1.5 mm * 0.5 mm) / (0.2 mm) = 0.165 pF
+
+That could be solder, 
+
+S-params are also available for the BFP620. Fantastic.
+
+
+
+
+
