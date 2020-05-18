@@ -108,7 +108,7 @@ def cost_function(x, desired_center_frequency, varactor_capacitance, display = F
 
     phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
 
-    freq_coeff = 1.0
+    freq_coeff = 1.5
     phase_coeff = 1.0
     ratio_coeff = 0.5
     insertion_loss_coeff = 0.2
@@ -133,14 +133,14 @@ def cost_function(x, desired_center_frequency, varactor_capacitance, display = F
 
     return cost
 
-def round_values(x):
-    x = np.array(x)
-
-    capacitor_indices = np.array([0,2,5,7])
-    x[capacitor_indices] = np.array(np.around(x*4)/4)[capacitor_indices]
-    microstrip_indices = np.delete(np.array(list(range(0,num_vars))),capacitor_indices)
-    x[microstrip_indices] = np.array(np.around(x,1))[microstrip_indices]
-    return x
+# def round_values(x):
+#     x = np.array(x)
+#
+#     capacitor_indices = np.array([0,2,5,7])
+#     x[capacitor_indices] = np.array(np.around(x*4)/4)[capacitor_indices]
+#     microstrip_indices = np.delete(np.array(list(range(0,num_vars))),capacitor_indices)
+#     x[microstrip_indices] = np.array(np.around(x,1))[microstrip_indices]
+#     return x
 
 def sweep_cost(x, desired_frequency_range, varactor_capacitance_range):
 
@@ -177,18 +177,19 @@ def optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitanc
     return ideal_values
 
 
-num_vars = 4
+num_vars = 7
 initial_guess = [1]*num_vars
 bounds = [(0.1,10)]*num_vars
-
+initial_guess[4] = 0.2
+initial_guess[3] = 0.2
 
 varactor_capacitance_range = [2, 0.3]
 desired_frequency_range = [7e9, 10e9]
 #
 ideal_value = optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range)
+#ideal_value = [0.1764, 0.1678, 0.1358, 1.1402]
 
-
-# ideal_value = round_values(ideal_value)
+ideal_value = np.array(np.around(ideal_value*5)/5)
 
 
 print('='*40)
@@ -200,14 +201,16 @@ phase_shifts = []
 
 varactor_values = []
 
-N_interpolations = 5
+N_interpolations = 2
+
 
 fig, ax1 = plt.subplots()
 ax2 = ax1.twinx()
-for i in range(0, N_interpolations):
+for i in range(0, N_interpolations+1):
     freq = desired_frequency_range[0] + ((desired_frequency_range[-1]-desired_frequency_range[0])/N_interpolations)*i
     varactor_capacitance = varactor_capacitance_range[0] + ((varactor_capacitance_range[-1]-varactor_capacitance_range[0])/N_interpolations)*i
     varactor_values.append(varactor_capacitance)
+    print(varactor_capacitance)
     cost_function(ideal_value, freq, varactor_capacitance, display = True)
 
     frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_value, varactor_capacitance, net_file, data_file)

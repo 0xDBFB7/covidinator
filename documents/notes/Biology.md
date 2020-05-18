@@ -576,4 +576,14 @@ E8, just after inoc.
 
 resting against black header
 
- 
+incubated at 35 C.
+
+About an hour later, 6:15 05-18:
+
+manually shaken for 10 seconds, 
+
+nephelometer is not sufficiently repeatable.
+
+Transferred 0.2 mL from E0 (refrigerated second generation) to E11. E0 did not have a
+settled region.
+
