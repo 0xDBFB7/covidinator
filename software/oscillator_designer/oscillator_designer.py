@@ -4,8 +4,9 @@ import numpy as np
 from scipy.signal import cheby1
 from scipy.signal import find_peaks
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import minimize,basinhopping
-
+import time
 import math
 from math import sin, cos, pi, sqrt,tan, atan
 from pytexit import py2tex
@@ -71,34 +72,20 @@ def run_sim(x, C_varactor, net_file, data_file):
                             np.array(extracted_data.__dict__["Vout_v"])
 
 
-# varactor_start = 0.3 #pF
-# varactor_end = 5.0 # pf
+
 
 #parasitic inductance can vary as required to build the varactor biasing circuit from discretes
-# simulated annealing?
 
-# def varactor_sweep(x):
-#
-#     feedback_voltages = []
-#     for varactor_capacitance in np.linspace(varactor_start,varactor_end,num=5):
-#
-#         freq, Vfb, phases, Vamp2 = run_sim(x, varactor_capacitance, net_file, data_file)
-#         feedback_voltages.append(Vfb)
-#         Vamp2.append(phases)
-#
-#
-#
-#     return peak_freqs, peak_phases, peak_gains
-#
+def capacitor_costs(x, coefficient):
+    capacitor_indices = [1, 4] #
+    return coefficient * sum([i % 0.5 for i in x[capacitor_values]]) # distance from nearest 0.5
 
-# def analyze(feedback_voltage, phase_shift):
+def cost_function(x, desired_center_frequency, varactor_capacitance, display = False):
+    start = time.time()
 
-
-def cost_function(x, desired_center_frequency, varactor_capacitance):
-    print("Trying: ",x)
+    print("Trying: ", x)
 
     frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(x, varactor_capacitance, net_file, data_file)
-
 
     feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
     if(len(feedback_voltage_peak_indices) < 1):
@@ -131,48 +118,104 @@ def cost_function(x, desired_center_frequency, varactor_capacitance):
 
     cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
 
-    print("Cost: {:.4f} (frequency: {:.4f} MHz, phase: {:.4f}, ratio: {:.4f},  |FB|: {:.4f})".format(cost,fb_peak_frequencies[0]/1e6,
-                                                                                                phase_at_peak, fb_peak_ratio, fb_peak_values[0]))
+    end = time.time()
+    if(display):
+        print("Cost: {:.4f} (frequency: {:.4f} MHz ({:.4f} MHz desired), phase: {:.4f}, ratio: {:.4f},  |FB|: {:.4f}), took {:.4f} ms"
+                                                                                        .format(cost,fb_peak_frequencies[0]/1e6,
+                                                                                                desired_center_frequency/1e6,
+                                                                                                phase_at_peak,
+                                                                                                fb_peak_ratio, fb_peak_values[0],
+                                                                                                (end - start)*1000.0))
+    else:
+        print("Cost: ", cost)
 
     return cost
 
-initial_guess = [2.955, 0.45, 1, 0.17]
-bounds = [(0.5,5),(0.1,5.0),(0.5,3),(0.1,10)]
 
-initial_guess = [1]*13
-bounds = [(0.1,10)]*13
+def sweep_cost(x, desired_frequency_range, varactor_capacitance_range):
+
+    # os.system('clear')
+    # sys.stdout.flush()
+
+    total_cost = 0
+
+    # add "distance from standard value" cost!
+
+    for i in range(0, len(varactor_capacitance_range)):
+        total_cost += cost_function(x, desired_frequency_range[i], varactor_capacitance_range[i])
+        sys.stdout.flush()
+
+    print("\n")
+    # sys.stdout.flush()
+
+    return total_cost
 
 
+def optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range, stochastic_iterations = 5, gradient_iterations = 3, polish_iterations = 10):
+    args = (desired_frequency_range, varactor_capacitance_range)
 
-desired_center_frequency = 6e9
-varactor_capacitance = 0.3
-minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=(desired_center_frequency, varactor_capacitance), options={"disp":True, "maxiter":3})
+    minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=args, options={"disp":True, "maxiter":gradient_iterations})
 
-tubthumper = basinhopping
+    tubthumper = basinhopping
+    ideal_values = tubthumper(sweep_cost, initial_guess, niter=stochastic_iterations, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+    # you may not like it, but this is the ideal
 
-# you may not like it, but this is the
-ideal_values = tubthumper(cost_function, initial_guess, niter=15, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+    #then polish
+    ideal_values = minimize(sweep_cost, ideal_values, bounds=bounds, method="L-BFGS-B", args=args, options={"disp":True, "maxiter":polish_iterations})["x"]
 
-ideal_values = minimize(cost_function, ideal_values, bounds=bounds, method="L-BFGS-B", args=(desired_center_frequency, varactor_capacitance), options={"disp":True, "maxiter":100})["x"]
 
-print("Solution: ", ideal_values)
+    return ideal_values
 
-cost_function(ideal_values, desired_center_frequency, varactor_capacitance)
 
-frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_values, varactor_capacitance, net_file, data_file)
+num_vars = 9
+initial_guess = [1]*num_vars
+bounds = [(0.1,10)]*num_vars
 
-plt.figure()
-plt.title("Phase shift (factor of 360 deg, including active device)")
-plt.plot(frequency, phase_shift)
-plt.xlabel("frequency")
-plt.figure()
-plt.title("Feedback voltage")
-plt.xlabel("frequency")
-plt.plot(frequency, feedback_voltage)
-# plt.plot(frequency, output_amplitude)
+varactor_capacitance_range = [0.3, 0.3]
+desired_frequency_range = [5e9, 5e9]
+#
+ideal_value = optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range)
 
+# ideal_value = [1.0276, 1.3619, 0.9398, 0.6667, 0.9669, 1.0742, 1.0783, 1.0258, 0.7554]
+
+print('='*40)
+print("Solution: ", ideal_value)
+print('='*40)
+
+frequencies = []
+phase_shifts = []
+
+varactor_values = []
+
+N_interpolations = 5
+
+fig, ax1 = plt.subplots()
+ax2 = ax1.twinx()
+for i in range(0, N_interpolations):
+    freq = desired_frequency_range[0] + ((desired_frequency_range[-1]-desired_frequency_range[0])/N_interpolations)*i
+    varactor_capacitance = varactor_capacitance_range[0] + ((varactor_capacitance_range[-1]-varactor_capacitance_range[0])/N_interpolations)*i
+    varactor_values.append(varactor_capacitance)
+    cost_function(ideal_value, freq, varactor_capacitance, display = True)
+
+    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_value, varactor_capacitance, net_file, data_file)
+    # np.concatenate([frequency,frequencies])
+    np.concatenate([phase_shift,phase_shifts])
+
+    # np.concatenate([[varactor_capacitance]*len(phase_shift),varactor_values])
+    print(varactor_capacitance)
+    #plt.subplot(2, 1, 1, projection='3d')
+    # plt.subplot(2, 1, 1)
+    # plt.title("Phase shift (factor of 360 deg, including active device)")
+
+    ax1.plot(frequency, phase_shift)
+    # plt.xlabel("frequency")
+    # plt.subplot(2, 1, 2)
+    # plt.title("Feedback voltage")
+    # plt.xlabel("frequency")
+    ax2.plot(frequency, feedback_voltage)
+
+plt.savefig("/home/arthurdent/Downloads/export.png")
 plt.show()
-plt.savefig("~/Downloads/export.png")
 
 # for i in np.linspace(0.05, 2, 10):
 #     peak_freqs, peak_phases, peak_gains = freq_sweep([2.955, 0.45, 0.01, i])

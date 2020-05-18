@@ -1,21 +1,9 @@
-// -----------------------------------------------------------------------------
-//           OpenMM(tm) HelloArgon example in C++ (June 2009)
-// -----------------------------------------------------------------------------
-// This program demonstrates a simple molecular simulation using the OpenMM
-// API for GPU-accelerated molecular dynamics simulation. The primary goal is
-// to make sure you can compile, link, and run with OpenMM and view the output.
-// The example is available in C++, C, and Fortran 95.
-//
-// The system modeled here is a small number of argon atoms in a vacuum.
-// A multi-frame PDB file is written to stdout which  can be read by VMD or
-// other visualization tool to produce an animation of the resulting trajectory.
-// -----------------------------------------------------------------------------
 
 #include "sim.hpp"
 #include <helpers.hpp>
 
 Sim::Sim(double timestep){
-    OpenMM::Platform::loadPluginsFromDirectory("/home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/lib/plugins");
+    OpenMM::Platform::loadPluginsFromDirectory(OPENMM_PLUGIN_DIRECTORY);
 
     integrator = new OpenMM::LangevinIntegrator(0,2,timestep);
 

@@ -26,6 +26,8 @@
 #define Y 1
 #define Z 2
 
+#define OPENMM_PLUGIN_DIRECTORY "/home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/lib/plugins"
+
 void dump_to_xyz_file(std::string filename, int iteration, const OpenMM::State& state);
 
 

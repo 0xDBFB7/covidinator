@@ -123,3 +123,4 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 //
 //then python -m tools.plot_Ascan LO_test_1_gprMax.out --outputs Ez
 
+// and paraview --state=covidinator/electronics/paraview.pvsm

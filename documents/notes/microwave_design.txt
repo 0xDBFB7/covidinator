@@ -375,4 +375,17 @@ probably need a P-channel mosfet on high-side, else grounding will be an issue
 13 variables with microstrip width and length seems to be a bit much. No reasonable 
 solutions found.
 
+This optimizer will also be useful for tuning the virus simulation itself and for tuning the 
+input waveform against the simulation.
+
+Oh, and IRL! The eppenwolf and turbidimeter can be linked with the optimizer to tune the 
+frequencies & polarizations IRL.
+
+A 0.2 mm thick polyethylene substrate would use 0.58 mm traces. 0.5 is essentially identical to 
+0.79 mm FR4.
+
+A 1.5 mm overlap on a 1.5mm trace with a 0.1 mm sheet of paper (er=2.2) between has a capacitance of 
+0.44 pF. This could be CNC'd in a second step?
+
+There's a capacitor shortage. Probably doesn't matter for our use-case.
 

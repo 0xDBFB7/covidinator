@@ -532,3 +532,15 @@ Re-fill E6 E7 to 2 mL - 0.2 mL should remain.
 Determine conductivity? maybe attenuation can account for some of the decrease too? No; some of 
 Yang's experiments used a few drops rather than a cuvette.
 
+Hmm. How can we do this better?
+
+also, normally distribute shell breaking strength
+
+For optimization, a rapid, large-scale testing procedure will be needed.
+
+hmm, microfluidics. Polyprop and FEP tubing can handle sterilization.
+
+1/16" tubing requires 0.08 ml/cm.
+0.6 + 0.2 * 30
+
+

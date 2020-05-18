@@ -27,8 +27,8 @@ set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} ${CXX_ASAN_FLAGS} -g"
 PROJECT(sim LANGUAGES CXX C)
 
 set(OpenMM_ROOT_DIR /home/arthurdent/Programs/openmm-7.4.1/openmm-7.4.1/install/)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "~/Projects/covidinator/biology/simulation/OpenMM/") #relative?
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "~/Projects/covidinator/biology/simulation/OpenMM/")
 find_package(OpenMP REQUIRED)
 find_package(OpenMM REQUIRED)
 find_package(MathGL2 REQUIRED)
