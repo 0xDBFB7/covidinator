@@ -585,5 +585,14 @@ manually shaken for 10 seconds,
 nephelometer is not sufficiently repeatable.
 
 Transferred 0.2 mL from E0 (refrigerated second generation) to E11. E0 did not have a
-settled region.
+settled region. 
+
+After 3 hours of shaking at temperature, E8 (from the non-refrigerated E2) was positively
+soupy. No vacuum on opening, either. Added to glycerine, put in freezer.
+
+No perceptible difference yet with E11. 
+
+E8 has been put into to the freezer.
+
+
 

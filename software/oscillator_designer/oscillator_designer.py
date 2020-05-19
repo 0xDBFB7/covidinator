@@ -183,13 +183,13 @@ bounds = [(0.1,10)]*num_vars
 initial_guess[4] = 0.2
 initial_guess[3] = 0.2
 
-varactor_capacitance_range = [2, 0.3]
+varactor_capacitance_range = [0.5, 0.3]
 desired_frequency_range = [7e9, 10e9]
 #
 ideal_value = optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range)
 #ideal_value = [0.1764, 0.1678, 0.1358, 1.1402]
 
-ideal_value = np.array(np.around(ideal_value*5)/5)
+ideal_value = np.array(np.ceil(ideal_value*5)/5)
 
 
 print('='*40)
