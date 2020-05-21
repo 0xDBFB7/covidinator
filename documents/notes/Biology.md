@@ -590,9 +590,22 @@ settled region.
 After 3 hours of shaking at temperature, E8 (from the non-refrigerated E2) was positively
 soupy. No vacuum on opening, either. Added to glycerine, put in freezer.
 
-No perceptible difference yet with E11. 
+No perceptible difference yet with E11. Very strange! I would have expected the refrigerated
+e.coli to just take off.
 
 E8 has been put into to the freezer.
 
+10:30, E11 removed from shaker. Some growth.
+
+The field of centrifugal microfluidics has accelerated recently.
+
+1/8 in delrin is still pretty translucent. Should work okay.
 
 
+
+Metal film taped on - autolevelling
+
+
+packing tape lid?
+
+IR thermocouple

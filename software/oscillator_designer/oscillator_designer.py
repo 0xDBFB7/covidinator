@@ -35,7 +35,7 @@ def electrical_to_physical_length(electrical_len, trace_width, frequency):
 
 
 
-def run_sim(x, C_varactor, net_file, data_file):
+def run_sim(x, net_file, data_file):
 
 #     electrical_length_ratio = 0.625
 
@@ -54,8 +54,6 @@ def run_sim(x, C_varactor, net_file, data_file):
 
     for i in range(0,len(x)):
         netlist = netlist.replace('var_'+str(i), str(x[i]*scale_factors[i]))
-
-    netlist = netlist.replace('C_varactor', str(C_varactor))
 
     with open(net_file_modified, 'w') as file:
         file.write(netlist)
@@ -81,13 +79,13 @@ def run_sim(x, C_varactor, net_file, data_file):
 #     return coefficient * sum([i % 0.5 for i in x[capacitor_values]]) # distance from nearest 0.5
 
 
-def cost_function(x, desired_center_frequency, varactor_capacitance, display = False):
+def cost_function(x, retained_values, retained_indices, desired_center_frequency, display = False):
     start = time.time()
-
+    x[retained_indices] = retained_values[retained_indices]
 
     print("Trying: ", x)
 
-    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(x, varactor_capacitance, net_file, data_file)
+    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(x, net_file, data_file)
 
     feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
     if(len(feedback_voltage_peak_indices) < 1):
@@ -133,68 +131,78 @@ def cost_function(x, desired_center_frequency, varactor_capacitance, display = F
 
     return cost
 
-# def round_values(x):
-#     x = np.array(x)
 #
-#     capacitor_indices = np.array([0,2,5,7])
-#     x[capacitor_indices] = np.array(np.around(x*4)/4)[capacitor_indices]
-#     microstrip_indices = np.delete(np.array(list(range(0,num_vars))),capacitor_indices)
-#     x[microstrip_indices] = np.array(np.around(x,1))[microstrip_indices]
-#     return x
-
-def sweep_cost(x, desired_frequency_range, varactor_capacitance_range):
-
-    os.system('clear')
-    # sys.stdout.flush()
-
-    total_cost = 0
-
-    # add "distance from standard value" cost!
-
-    for i in range(0, len(varactor_capacitance_range)):
-        total_cost += cost_function(x, desired_frequency_range[i], varactor_capacitance_range[i])
-        sys.stdout.flush()
-
-    print("\n")
-    # sys.stdout.flush()
-
-    return total_cost
+# def sweep_cost(x, desired_frequency_range, varactor_capacitance_range):
+#
+#     os.system('clear')
+#     # sys.stdout.flush()
+#
+#     total_cost = 0
+#
+#     # add "distance from standard value" cost!
+#
+#     for i in range(0, len(varactor_capacitance_range)):
+#         total_cost += cost_function(x, desired_frequency_range[i], varactor_capacitance_range[i])
+#         sys.stdout.flush()
+#
+#     print("\n")
+#     # sys.stdout.flush()
+#
+#     return total_cost
 
 
-def optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range, stochastic_iterations = 5, gradient_iterations = 3, polish_iterations = 10):
-    args = (desired_frequency_range, varactor_capacitance_range)
+def optimize(bounds, initial_guess, retained_values, retained_indices, desired_frequency, stochastic_iterations = 5, gradient_iterations = 3, polish_iterations = 10):
+    args = (retained_values, retained_indices, desired_frequency)
 
     minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=args, options={"disp":True, "maxiter":gradient_iterations})
 
     tubthumper = basinhopping
-    ideal_values = tubthumper(sweep_cost, initial_guess, niter=stochastic_iterations, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
+    ideal_values = tubthumper(cost_function, initial_guess, niter=stochastic_iterations, minimizer_kwargs=minimizer_kwargs, disp=True, niter_success=5)["x"]
     # you may not like it, but this is the ideal
 
     #then polish
-    ideal_values = minimize(sweep_cost, ideal_values, bounds=bounds, method="L-BFGS-B", args=args, options={"disp":True, "maxiter":polish_iterations})["x"]
+    ideal_values = minimize(cost_function, ideal_values, bounds=bounds, method="L-BFGS-B", args=args, options={"disp":True, "maxiter":polish_iterations})["x"]
 
 
     return ideal_values
 
 
-num_vars = 7
+# could also run two sims at extremes and average retained inductance values
+
+
+num_vars = 9
 initial_guess = [1]*num_vars
 bounds = [(0.1,10)]*num_vars
+
+bounds[3] = (0.3,2)
+bounds[4] = (0.3,2)
+bounds[6] = (0.3,2)
+
 initial_guess[4] = 0.2
 initial_guess[3] = 0.2
 
-varactor_capacitance_range = [0.5, 0.3]
-desired_frequency_range = [7e9, 10e9]
-#
-ideal_value = optimize(bounds, initial_guess, desired_frequency_range, varactor_capacitance_range)
-#ideal_value = [0.1764, 0.1678, 0.1358, 1.1402]
+desired_frequency = 7e9
 
-ideal_value = np.array(np.ceil(ideal_value*5)/5)
+retained_values = np.array([])
+retained_indices = []
 
+frequency_sweep = [7e9, 10e9]
 
-print('='*40)
-print("Solution: ", ideal_value)
-print('='*40)
+ideal_values = []*len(frequency_sweep)
+ideal_values[0] = initial_guess
+# ideal_values.append(initial_guess)
+
+for i in range(0, len(frequency_sweep)):
+    ideal_values.append(optimize(bounds, ideal_values[i], retained_values, retained_indices, frequency_sweep[i]))
+
+    ideal_values[i] = np.array(np.ceil(ideal_values[i]*5)/5)
+
+    retained_values = ideal_values[i]
+    retained_indices = np.array([0,1,2,5,8])
+
+# print('='*40)
+# print("Solution: ", ideal_value)
+# print('='*40)`
 
 frequencies = []
 phase_shifts = []
@@ -206,14 +214,17 @@ N_interpolations = 2
 
 fig, ax1 = plt.subplots()
 ax2 = ax1.twinx()
-for i in range(0, N_interpolations+1):
-    freq = desired_frequency_range[0] + ((desired_frequency_range[-1]-desired_frequency_range[0])/N_interpolations)*i
-    varactor_capacitance = varactor_capacitance_range[0] + ((varactor_capacitance_range[-1]-varactor_capacitance_range[0])/N_interpolations)*i
-    varactor_values.append(varactor_capacitance)
-    print(varactor_capacitance)
-    cost_function(ideal_value, freq, varactor_capacitance, display = True)
+for i in range(0, len(frequency_sweep)):
+    # freq = desired_frequency_range[0] + ((desired_frequency_range[-1]-desired_frequency_range[0])/N_interpolations)*i
+    # varactor_capacitance = varactor_capacitance_range[0] + ((varactor_capacitance_range[-1]-varactor_capacitance_range[0])/N_interpolations)*i
+    # varactor_values.append(varactor_capacitance)
+    # print(varactor_capacitance)
 
-    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_value, varactor_capacitance, net_file, data_file)
+    ideal_value = ideal_values[i]
+
+    cost_function(ideal_value, retained_values, retained_indices, frequency_sweep[i], display = True)
+
+    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(ideal_value, net_file, data_file)
     # np.concatenate([frequency,frequencies])
     np.concatenate([phase_shift,phase_shifts])
 

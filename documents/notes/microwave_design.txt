@@ -410,7 +410,19 @@ That could be solder,
 
 S-params are also available for the BFP620. Fantastic.
 
+A patch antenna at 8 GHz is about 1 cm square.
+
+Patch antenna bandwidths are only on the order of a few percent. 
+U-slot patch antennas look perfect. [Wang 2008] has a design guide.
 
 
+So either you can change the geometry of the antenna to make it  (trim the U, truncate a corner)
+polarized, or you can feed it at two different points with a 90 degree phase shift.
+
+[He 2015] -bbbingo dual-feed wideband U-slot. Uses vias for feed though. 
+
+Could also just use two or four stock antennas at right angles. that'd work, very simple!
+
+U-slot antennas want a thick substrate, however.
 
 
