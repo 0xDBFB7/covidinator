@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-740,-797,5043,940,1.7722,2098,1372>
+  <View=-740,-797,5043,940,1.46466,2637,984>
   <Grid=10,10,1>
   <DataSet=optimize_filter_1.dat>
   <DataDisplay=optimize_filter_1.dpl>
@@ -81,35 +81,35 @@
   <MLIN MS30 1 2360 170 -26 -95 0 2 "Subst1" 1 "0.3 mm" 1 "var_5 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <MLIN MS31 1 2480 170 -26 -95 0 2 "Subst1" 1 "0.3 mm" 1 "var_5 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L36 1 2160 240 -9 -89 0 1 "L_p_SOD523" 1 "" 0>
-  <L L35 1 2160 470 -9 -89 0 1 "L_p_SOD523" 1 "" 0>
-  <L L37 1 2420 470 -9 -89 0 1 "L_p_SOD523" 1 "" 0>
+  <L L35 2 2160 470 -9 -89 0 1 "L_p_SOD523" 1 "" 0>
+  <L L37 2 2420 470 -9 -89 0 1 "L_p_SOD523" 1 "" 0>
   <GND *22 5 2420 510 0 0 0 0>
   <GND *20 5 2160 510 0 0 0 0>
   <L L38 1 2420 240 -9 -89 0 1 "L_p_SOD523" 1 "" 0>
   <MLIN MS27 1 840 310 15 -26 0 1 "Subst1" 1 "0.3 mm" 1 "var_2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L34 1 1170 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
-  <L L33 1 940 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
+  <L L33 2 940 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
   <L L32 2 480 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
   <L L27 1 720 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
   <MLIN MS25 1 300 170 -26 15 0 0 "Subst1" 1 "1.5 mm" 1 "var_0 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <C C25 2 570 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
   <C C17 1 630 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
-  <C C23 1 1010 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
+  <C C23 2 1010 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
   <C C24 1 1100 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
   <C C27 1 2160 310 17 -26 0 1 "var_4 pF" 1 "" 0 "neutral" 0>
-  <C C26 1 2160 390 17 -26 0 1 "var_4 pF" 1 "" 0 "neutral" 0>
-  <C C28 1 2420 390 17 -26 0 1 "var_6 pF" 1 "" 0 "neutral" 0>
+  <C C26 2 2160 390 17 -26 0 1 "var_4 pF" 1 "" 0 "neutral" 0>
+  <C C28 2 2420 390 17 -26 0 1 "var_6 pF" 1 "" 0 "neutral" 0>
   <C C29 1 2420 310 17 -26 0 1 "var_6 pF" 1 "" 0 "neutral" 0>
   <GND *23 5 1640 460 0 0 0 0>
   <MLIN MS32 1 1640 310 15 -26 0 1 "Subst1" 1 "0.3 mm" 1 "var_8 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L39 1 1970 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
-  <L L40 1 1740 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
+  <L L40 1 1740 170 -26 -9 0 0 "L_p_0402" 1 "" 0>
   <L L41 1 1280 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
-  <L L42 1 1520 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
-  <C C31 1 1430 170 -26 17 0 0 "var_7 pF" 1 "" 0 "neutral" 0>
+  <L L42 1 1520 170 -26 -9 0 0 "L_p_0402" 1 "" 0>
   <C C30 1 1370 170 -26 17 0 0 "var_7 pF" 1 "" 0 "neutral" 0>
-  <C C32 1 1810 170 -26 17 0 0 "var_7 pF" 1 "" 0 "neutral" 0>
   <C C33 1 1900 170 -26 17 0 0 "var_7 pF" 1 "" 0 "neutral" 0>
+  <C C32 1 1810 170 -26 17 0 0 "var_9 pF" 1 "" 0 "neutral" 0>
+  <C C31 1 1430 170 -26 17 0 0 "var_9 pF" 1 "" 0 "neutral" 0>
 </Components>
 <Wires>
   <120 50 120 170 "" 0 0 0 "">

@@ -170,13 +170,14 @@ def optimize(bounds, initial_guess, retained_values, retained_indices, desired_f
 # could also run two sims at extremes and average retained inductance values
 
 
-num_vars = 9
+num_vars = 10
 initial_guess = [1]*num_vars
 bounds = [(0.1,10)]*num_vars
 
 bounds[3] = (0.3,2)
 bounds[4] = (0.3,2)
 bounds[6] = (0.3,2)
+bounds[7] = (0.3,2)
 
 # initial_guess[4] = 0.2
 # initial_guess[3] = 0.2
@@ -194,14 +195,14 @@ ideal_values[0] = initial_guess
 for i in range(0, len(frequency_sweep)):
     ideal_values[i] = (optimize(bounds, initial_guess, retained_values, retained_indices, frequency_sweep[i]))
 
-    # ideal_values[i] = np.array(np.ceil(ideal_values[i]*5)/5)
+    ideal_values[i] = np.array(np.round(ideal_values[i],1))
 
     retained_values = ideal_values[i]
-    retained_indices = np.array([0,1,2,5,8])
+    retained_indices = np.array([0,1,2,5,8,9])
 
 ##Sweep all varactor values, determine points with minimum distance to ideal frequency,
 
-
+#[0.5299, 0.4381, 0.7973, 0.8703, 0.5077, 0.4208, 0.3107, 0.4475, 0.5461]
 
 # print('='*40)
 # print("Solution: ", ideal_value)
