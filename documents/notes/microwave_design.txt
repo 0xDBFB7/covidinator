@@ -426,3 +426,19 @@ Could also just use two or four stock antennas at right angles. that'd work, ver
 U-slot antennas want a thick substrate, however.
 
 Writing words here doesn't give the reader a very good idea of what happened; the character is missing.
+
+[Freundorfer 2016] uses BST film as predicted in a microstrip gap. Works reasonably well,
+except the tuning range is only a few percent.
+
+So the Q and parasitic inductance of the varactor seems to have a significant impact on the performance
+of the tunable filter. This sort of makes sense;
+
+7 GHz * 2 pi * 0.7 nH = 31 ohms of inductive reactance:
+-1 / (2 pi * 7 GHz * 0.2 pF) = 113 ohms of capacitive reactance. 
+
+"However, obtaining an octave of tuning
+range in an LC tank oscillator is challenging, 
+primarily because parasitic capacitances form a significant component of tank capacitance. "
+
+Because the optimizer needs the derivative information,
+we have to round to manufacturing tolerances after the sim is complete.
