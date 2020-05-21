@@ -107,7 +107,7 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
     phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
 
     freq_coeff = 4
-    phase_coeff = 3
+    phase_coeff = 1.5
     ratio_coeff = 0.5
     insertion_loss_coeff = 0.2
 
@@ -151,7 +151,7 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
 #     return total_cost
 
 
-def optimize(bounds, initial_guess, retained_values, retained_indices, desired_frequency, stochastic_iterations = 5, gradient_iterations = 3, polish_iterations = 10):
+def optimize(bounds, initial_guess, retained_values, retained_indices, desired_frequency, stochastic_iterations = 7, gradient_iterations = 4, polish_iterations = 10):
     args = (retained_values, retained_indices, desired_frequency)
 
     minimizer_kwargs = dict(method="L-BFGS-B", bounds=bounds, args=args, options={"disp":True, "maxiter":gradient_iterations})
@@ -172,12 +172,12 @@ def optimize(bounds, initial_guess, retained_values, retained_indices, desired_f
 
 num_vars = 9
 initial_guess = [1]*num_vars
-bounds = [(0.1,10)]*num_vars
+bounds = [(0.2,10)]*num_vars
 
-bounds[3] = (0.35,2)
-bounds[4] = (0.35,2)
-bounds[6] = (0.35,2)
-bounds[7] = (0.35,2)
+bounds[2] = (0.35,2)
+# bounds[4] = (0.35,2)
+# bounds[6] = (0.35,2)
+# bounds[7] = (0.35,2)
 
 # initial_guess[4] = 0.2
 # initial_guess[3] = 0.2
@@ -203,7 +203,7 @@ for i in range(0, len(frequency_sweep)):
     # ideal_values[i] = np.array(np.round(ideal_values[i],1))
 
     retained_values = ideal_values[i]
-    retained_indices = np.array([0,2,4,6,8])
+    retained_indices = np.array([0,1,2,5,8])
 
 ##Sweep all varactor values, determine points with minimum distance to ideal frequency,
 

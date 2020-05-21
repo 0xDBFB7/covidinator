@@ -1,11 +1,11 @@
 <Qucs Schematic >
 <Properties>
-  <View=-740,-797,5043,994,1.10043,2316,721>
+  <View=-740,-797,5043,1034,1.33155,652,1383>
   <Grid=10,10,1>
-  <DataSet=optimize_filter_1.dat>
-  <DataDisplay=optimize_filter_1.dpl>
+  <DataSet=test.dat>
+  <DataDisplay=test.dpl>
   <OpenDisplay=1>
-  <Script=optimize_filter_1.m>
+  <Script=test.m>
   <RunScript=0>
   <showFrame=0>
   <FrameText0=Title>
@@ -67,7 +67,7 @@
   <C C12 0 2750 -510 -116 -26 0 3 "C_varactor" 1 "" 0 "neutral" 0>
   <Eqn Eqn7 1 860 860 -31 17 0 0 "phase_shift=-unwrap(angle(Vfb.v))/(2*pi)" 1 "yes" 0>
   <Eqn Eqn6 1 610 860 -31 17 0 0 "vfb_gain=Vfb.v/Vamp1.v" 1 "yes" 0>
-  <.AC AC1 1 300 770 0 51 0 0 "lin" 1 "0.1 GHz" 1 "25 GHz" 1 "100" 1 "no" 0>
+  <.AC AC1 1 300 770 0 51 0 0 "lin" 1 "0.1 GHz" 1 "15 GHz" 1 "100" 1 "no" 0>
   <Eqn Eqn8 1 610 730 -31 17 0 0 "L_p_SOD523=0.7e-9" 1 "yes" 0>
   <GND *21 5 840 460 0 0 0 0>
   <GND *15 5 2870 200 0 0 0 0>
