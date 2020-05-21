@@ -425,4 +425,4 @@ Could also just use two or four stock antennas at right angles. that'd work, ver
 
 U-slot antennas want a thick substrate, however.
 
-
+Writing words here doesn't give the reader a very good idea of what happened; the character is missing.

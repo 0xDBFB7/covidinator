@@ -106,8 +106,8 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
 
     phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
 
-    freq_coeff = 1.5
-    phase_coeff = 1.0
+    freq_coeff = 4
+    phase_coeff = 1.5
     ratio_coeff = 0.5
     insertion_loss_coeff = 0.2
 
@@ -178,27 +178,30 @@ bounds[3] = (0.3,2)
 bounds[4] = (0.3,2)
 bounds[6] = (0.3,2)
 
-initial_guess[4] = 0.2
-initial_guess[3] = 0.2
+# initial_guess[4] = 0.2
+# initial_guess[3] = 0.2
 
-desired_frequency = 7e9
 
 retained_values = np.array([])
 retained_indices = []
 
-frequency_sweep = [7e9, 10e9]
+frequency_sweep = [7e9,10e9]
 
-ideal_values = []*len(frequency_sweep)
+ideal_values = [[]]*len(frequency_sweep)
 ideal_values[0] = initial_guess
 # ideal_values.append(initial_guess)
 
 for i in range(0, len(frequency_sweep)):
-    ideal_values.append(optimize(bounds, ideal_values[i], retained_values, retained_indices, frequency_sweep[i]))
+    ideal_values[i] = (optimize(bounds, initial_guess, retained_values, retained_indices, frequency_sweep[i]))
 
-    ideal_values[i] = np.array(np.ceil(ideal_values[i]*5)/5)
+    # ideal_values[i] = np.array(np.ceil(ideal_values[i]*5)/5)
 
     retained_values = ideal_values[i]
     retained_indices = np.array([0,1,2,5,8])
+
+##Sweep all varactor values, determine points with minimum distance to ideal frequency,
+
+
 
 # print('='*40)
 # print("Solution: ", ideal_value)

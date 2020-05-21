@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-740,-797,5043,940,1.33146,2350,750>
+  <View=-740,-797,5043,940,1.7722,2098,1372>
   <Grid=10,10,1>
   <DataSet=optimize_filter_1.dat>
   <DataDisplay=optimize_filter_1.dpl>
@@ -89,10 +89,10 @@
   <MLIN MS27 1 840 310 15 -26 0 1 "Subst1" 1 "0.3 mm" 1 "var_2 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <L L34 1 1170 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
   <L L33 1 940 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
-  <L L32 1 480 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
+  <L L32 2 480 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
   <L L27 1 720 170 -26 -9 0 0 "L_p_SOD523" 1 "" 0>
   <MLIN MS25 1 300 170 -26 15 0 0 "Subst1" 1 "1.5 mm" 1 "var_0 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <C C25 1 570 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
+  <C C25 2 570 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
   <C C17 1 630 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
   <C C23 1 1010 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
   <C C24 1 1100 170 -26 17 0 0 "var_3 pF" 1 "" 0 "neutral" 0>
