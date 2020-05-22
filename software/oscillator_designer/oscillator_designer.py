@@ -106,17 +106,19 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
 
     phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
 
-    freq_coeff = 4
-    phase_coeff = 1.5
-    ratio_coeff = 0.5
-    insertion_loss_coeff = 0.2
+    # freq_coeff = 4
+    # phase_coeff = 1.5
+    # ratio_coeff = 0.5
+    # insertion_loss_coeff = 0.2
+    #
+    # frequency_cost = freq_coeff * (abs(desired_center_frequency-fb_peak_frequencies[0])/1e9)
+    # phase_cost = phase_coeff * abs(1.0 - phase_at_peak)
+    # ratio_cost = ratio_coeff * fb_peak_ratio
+    # insertion_loss_cost = (1.0 - fb_peak_values[0])*insertion_loss_coeff
 
-    frequency_cost = freq_coeff * (abs(desired_center_frequency-fb_peak_frequencies[0])/1e9)
-    phase_cost = phase_coeff * abs(1.0 - phase_at_peak)
-    ratio_cost = ratio_coeff * fb_peak_ratio
-    insertion_loss_cost = (1.0 - fb_peak_values[0])*insertion_loss_coeff
 
-    cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
+
+    # cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
 
     end = time.time()
     if(display):
@@ -174,10 +176,10 @@ num_vars = 9
 initial_guess = [1]*num_vars
 bounds = [(0.2,10)]*num_vars
 
-bounds[2] = (0.35,2)
-# bounds[4] = (0.35,2)
-# bounds[6] = (0.35,2)
-# bounds[7] = (0.35,2)
+bounds[3] = (0.3,2) #SMV2019
+bounds[4] = (0.3,2)
+bounds[6] = (0.3,2)
+bounds[7] = (0.3,2)
 
 # initial_guess[4] = 0.2
 # initial_guess[3] = 0.2
@@ -200,7 +202,7 @@ ideal_values[0] = initial_guess
 for i in range(0, len(frequency_sweep)):
     ideal_values[i] = (optimize(bounds, initial_guess, retained_values, retained_indices, frequency_sweep[i]))
 
-    # ideal_values[i] = np.array(np.round(ideal_values[i],1))
+    ideal_values[i] = np.array(np.round(ideal_values[i],1))
 
     retained_values = ideal_values[i]
     retained_indices = np.array([0,1,2,5,8])

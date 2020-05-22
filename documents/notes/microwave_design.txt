@@ -442,3 +442,9 @@ primarily because parasitic capacitances form a significant component of tank ca
 
 Because the optimizer needs the derivative information,
 we have to round to manufacturing tolerances after the sim is complete.
+
+[Tserng 1977] talk about load resistors for maximum power output. Also, 45% efficiency. Really good paper.
+
+[Adar 1991] 
+
+ 
