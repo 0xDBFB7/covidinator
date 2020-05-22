@@ -87,24 +87,24 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
 
     frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(x, net_file, data_file)
 
-    feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
-    if(len(feedback_voltage_peak_indices) < 1):
-        print("No peaks found, cost = 10")
-        return 10.0
-
-    fb_peak_values = feedback_voltage[feedback_voltage_peak_indices]
-    sorted_indices = np.argsort(fb_peak_values)[::-1]
-    fb_peak_values = fb_peak_values[sorted_indices]
-    feedback_voltage_peak_indices = feedback_voltage_peak_indices[sorted_indices]
-
-    fb_peak_frequencies = frequency[feedback_voltage_peak_indices]
-
-    if(len(feedback_voltage_peak_indices) > 1):
-        fb_peak_ratio = fb_peak_values[1]/fb_peak_values[0]
-    else:
-        fb_peak_ratio = 0.1
-
-    phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
+    # feedback_voltage_peak_indices = find_peaks(feedback_voltage)[0]
+    # if(len(feedback_voltage_peak_indices) < 1):
+    #     print("No peaks found, cost = 10")
+    #     return 10.0
+    #
+    # fb_peak_values = feedback_voltage[feedback_voltage_peak_indices]
+    # sorted_indices = np.argsort(fb_peak_values)[::-1]
+    # fb_peak_values = fb_peak_values[sorted_indices]
+    # feedback_voltage_peak_indices = feedback_voltage_peak_indices[sorted_indices]
+    #
+    # fb_peak_frequencies = frequency[feedback_voltage_peak_indices]
+    #
+    # if(len(feedback_voltage_peak_indices) > 1):
+    #     fb_peak_ratio = fb_peak_values[1]/fb_peak_values[0]
+    # else:
+    #     fb_peak_ratio = 0.1
+    #
+    # phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
 
     # freq_coeff = 4
     # phase_coeff = 1.5
@@ -117,19 +117,20 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
     # insertion_loss_cost = (1.0 - fb_peak_values[0])*insertion_loss_coeff
 
 
-
     # cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
 
-    end = time.time()
-    if(display):
-        print("Cost: {:.4f} (frequency: {:.4f} MHz ({:.4f} MHz desired), phase: {:.4f}, ratio: {:.4f},  |FB|: {:.4f}), took {:.4f} ms"
-                                                                                        .format(cost,fb_peak_frequencies[0]/1e6,
-                                                                                                desired_center_frequency/1e6,
-                                                                                                phase_at_peak,
-                                                                                                fb_peak_ratio, fb_peak_values[0],
-                                                                                                (end - start)*1000.0))
-    else:
-        print("Cost: ", cost)
+    cost = abs(1.0 - phase_shift[np.abs(frequency-desired_center_frequency).argmin()])
+    #
+    # end = time.time()
+    # if(display):
+    #     print("Cost: {:.4f} (frequency: {:.4f} MHz ({:.4f} MHz desired), phase: {:.4f}, ratio: {:.4f},  |FB|: {:.4f}), took {:.4f} ms"
+    #                                                                                     .format(cost,fb_peak_frequencies[0]/1e6,
+    #                                                                                             desired_center_frequency/1e6,
+    #                                                                                             phase_at_peak,
+    #                                                                                             fb_peak_ratio, fb_peak_values[0],
+    #                                                                                             (end - start)*1000.0))
+    # else:
+    #     print("Cost: ", cost)
 
     return cost
 
@@ -172,14 +173,16 @@ def optimize(bounds, initial_guess, retained_values, retained_indices, desired_f
 # could also run two sims at extremes and average retained inductance values
 
 
-num_vars = 9
+num_vars = 3
 initial_guess = [1]*num_vars
 bounds = [(0.2,10)]*num_vars
 
-bounds[3] = (0.3,2) #SMV2019
-bounds[4] = (0.3,2)
-bounds[6] = (0.3,2)
-bounds[7] = (0.3,2)
+bounds[1] = (0.3,2) #SMV2019
+bounds[3] = (0.3,2)
+bounds[5] = (0.3,2)
+
+# bounds[6] = (0.3,2)
+# bounds[7] = (0.3,2)
 
 # initial_guess[4] = 0.2
 # initial_guess[3] = 0.2
@@ -188,7 +191,7 @@ bounds[7] = (0.3,2)
 retained_values = np.array([])
 retained_indices = []
 
-frequency_sweep = [10e9,7e9]
+frequency_sweep = [10e9,9e9,8e9,7e9]
 
 ideal_values = [[]]*len(frequency_sweep)
 ideal_values[0] = initial_guess
@@ -205,11 +208,13 @@ for i in range(0, len(frequency_sweep)):
     ideal_values[i] = np.array(np.round(ideal_values[i],1))
 
     retained_values = ideal_values[i]
-    retained_indices = np.array([0,1,2,5,8])
+    retained_indices = np.array([0,2,4,6])
 
 ##Sweep all varactor values, determine points with minimum distance to ideal frequency,
 
-#[0.5299, 0.4381, 0.7973, 0.8703, 0.5077, 0.4208, 0.3107, 0.4475, 0.5461]
+# ideal_values[0] = np.array([0.2, 0.3, 0.9, 1.3, 0.6, 0.3, 1. ])
+#
+# ideal_values[1] = np.array([0.2, 0.4, 0.9, 0.6, 0.6, 0.9, 1. ])
 
 # print('='*40)
 # print("Solution: ", ideal_value)

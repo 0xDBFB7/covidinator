@@ -445,6 +445,14 @@ we have to round to manufacturing tolerances after the sim is complete.
 
 [Tserng 1977] talk about load resistors for maximum power output. Also, 45% efficiency. Really good paper.
 
-[Adar 1991] 
+They just use a single vco and inductor at the source.wtf
+
+[Adar 1991]  
+
+[Tsuru 2008 Fig 10] has a great chart of different wideband VCO designs.
 
  
+
+ Oh, and the small SMV2019 still has 0.45 nH, not 0.2.
+
+ 10k resistors will be perfect for biasing at 1 ma (20 ohms on the pin diode), 10v
