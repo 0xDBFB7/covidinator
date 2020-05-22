@@ -106,7 +106,7 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
     #
     # phase_at_peak = phase_shift[feedback_voltage_peak_indices][0]
 
-    # freq_coeff = 4
+    # freq_coeff = 1
     # phase_coeff = 1.5
     # ratio_coeff = 0.5
     # insertion_loss_coeff = 0.2
@@ -119,7 +119,8 @@ def cost_function(x, retained_values, retained_indices, desired_center_frequency
 
     # cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
 
-    cost = abs(1.0 - phase_shift[np.abs(frequency-desired_center_frequency).argmin()])
+    cost = abs(1.0 - phase_shift[np.abs(frequency-desired_center_frequency).argmin()]) + \
+                                1.0/(feedback_voltage[np.abs(frequency-desired_center_frequency).argmin()])
     #
     # end = time.time()
     # if(display):
@@ -178,8 +179,8 @@ initial_guess = [1]*num_vars
 bounds = [(0.2,10)]*num_vars
 
 bounds[1] = (0.3,2) #SMV2019
-bounds[3] = (0.3,2)
-bounds[5] = (0.3,2)
+# bounds[3] = (0.3,2)
+# bounds[5] = (0.3,2)
 
 # bounds[6] = (0.3,2)
 # bounds[7] = (0.3,2)
@@ -202,19 +203,21 @@ ideal_values[0] = initial_guess
 # 28 s in load_data,
 # 53 s in qucs,
 
-for i in range(0, len(frequency_sweep)):
-    ideal_values[i] = (optimize(bounds, initial_guess, retained_values, retained_indices, frequency_sweep[i]))
+# for i in range(0, len(frequency_sweep)):
+#     ideal_values[i] = (optimize(bounds, initial_guess, retained_values, retained_indices, frequency_sweep[i]))
+#
+#     ideal_values[i] = np.array(np.round(ideal_values[i],1))
 
-    ideal_values[i] = np.array(np.round(ideal_values[i],1))
-
-    retained_values = ideal_values[i]
-    retained_indices = np.array([0,2,4,6])
+    # retained_values = ideal_values[i]
+    # retained_indices = np.array([0,2])
 
 ##Sweep all varactor values, determine points with minimum distance to ideal frequency,
 
 # ideal_values[0] = np.array([0.2, 0.3, 0.9, 1.3, 0.6, 0.3, 1. ])
 #
 # ideal_values[1] = np.array([0.2, 0.4, 0.9, 0.6, 0.6, 0.9, 1. ])
+
+print(ideal_values)
 
 # print('='*40)
 # print("Solution: ", ideal_value)

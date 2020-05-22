@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-134,-797,3147,1155,0.826458,540,372>
+  <View=-134,-797,3147,1115,1.21002,1651,784>
   <Grid=10,10,1>
   <DataSet=optimize_filter_1.dat>
   <DataDisplay=optimize_filter_1.dpl>
@@ -102,8 +102,9 @@
   <R R1 1 2550 200 15 -26 1 3 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
   <SPfile X1 1 2400 170 -10 -44 0 0 "/home/arthurdent/Projects/covidinator/electronics/qucs/s2p_CE3520K3/CE3520K3v02n_2-26G_2V_10mA.txt" 0 "rectangular" 0 "linear" 0 "open" 0 "2" 0>
   <MLIN MS26 1 1950 170 -26 15 0 0 "Subst1" 1 "1.5 mm" 1 "var_0 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
-  <L L32 0 1510 110 -26 10 0 0 "0.7 nH" 1 "" 0>
-  <R R3 0 1610 110 -26 15 0 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <L L32 1 1570 330 -26 10 0 0 "0.7 nH" 1 "" 0>
+  <R R3 1 1670 330 -26 15 0 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <MLIN MS29 1 1770 330 -26 15 0 0 "Subst1" 1 "1.5 mm" 1 "var_0 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
 </Components>
 <Wires>
   <120 50 120 170 "" 0 0 0 "">
@@ -182,7 +183,8 @@
   <970 170 1920 170 "" 0 0 0 "">
   <2430 170 2550 170 "Vamp2" 2530 140 70 "">
   <1980 170 2370 170 "Vfb" 2360 140 340 "">
-  <1540 110 1580 110 "" 0 0 0 "">
+  <1600 330 1640 330 "" 0 0 0 "">
+  <1700 330 1740 330 "" 0 0 0 "">
 </Wires>
 <Diagrams>
 </Diagrams>
