@@ -597,7 +597,7 @@ E8 has been put into to the freezer.
 
 10:30, E11 removed from shaker. Some growth.
 
-The field of centrifugal microfluidics has accelerated recently.
+The field of centrifugal microfluidics is accelerating.
 
 1/8 in delrin is still pretty translucent. Should work okay.
 
@@ -609,3 +609,11 @@ Metal film taped on - autolevelling
 packing tape lid?
 
 IR thermocouple
+
+
+
+E. coli is somewhat salt tolerant; but it might be a good idea to expose the phase-salt combination
+first, then dilute 
+
+polycarbonate is autoclavable, but it loses strength rapidly.
+
