@@ -18,7 +18,9 @@ Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 
 
 #### Exposure time
 
-Both Yang and [] arbitrarily chose a 15-minute exposure against H3N2. To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure. 
+Both Yang and [] (apparently arbitrarily) chose a 15-minute exposure in their tests. To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure. 
+
+As opposed to chemical inactivation, where the time dependence is dominated by viscous fluid dynamic effects [Hirose 2017], or ionizing radiation, where a certain dose of photons must be absorbed, 
 
 As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of H3N2 to between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us.
 

@@ -456,3 +456,17 @@ They just use a single vco and inductor at the source.wtf
  Oh, and the small SMV2019 still has 0.45 nH, not 0.2.
 
  10k resistors will be perfect for biasing at 1 ma (20 ohms on the pin diode), 10v
+
+ With 3 bits in series, 20 ohms does attenuate the signal quite substantially.
+
+ So does 10 ohms.
+
+5 ohms requires around 3 mA - and there's two in series, so 6 mA.
+
+undesirable effects occur when two 10k resistors are put in parallel straddling the PiNs, but
+the DC blocking caps can only do 50v, and I don't want to put ones in series.
+
+
+
+
+  

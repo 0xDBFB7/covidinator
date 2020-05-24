@@ -617,3 +617,5 @@ first, then dilute
 
 polycarbonate is autoclavable, but it loses strength rapidly.
 
+
+hey, I've got a huge sheet of 1/8" lexan. Worth a shot.

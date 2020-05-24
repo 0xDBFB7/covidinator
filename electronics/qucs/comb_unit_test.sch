@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=140,165,3320,1812,0.564482,88,240>
+  <View=140,105,3320,1814,0.466514,0,0>
   <Grid=10,10,1>
   <DataSet=comb_unit_test.dat>
   <DataDisplay=comb_unit_test.dpl>

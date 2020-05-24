@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=-360,-1320,3243,2147,0.909196,366,1032>
+  <View=-360,-1320,3243,2146,0.909196,702,2195>
   <Grid=10,10,1>
   <DataSet=SIR_unit_test.dat>
   <DataDisplay=SIR_unit_test.dpl>

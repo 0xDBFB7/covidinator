@@ -2,45 +2,51 @@
 \documentclass[fleqn,10pt]{article}
 
 \usepackage[left=2cm,right=2cm,
-			top=2.25cm,
+			top=1.25cm,
 			bottom=2.25cm,%
 			headheight=11pt,%
 			letterpaper]{geometry}
 			
+\frenchspacing
 			
 \usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{blindtext,graphicx}
 \usepackage[absolute]{textpos}
+\usepackage[parfill]{parskip}
+
+%\usepackage[sfdefault,light]{roboto}
+
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 
-
-\title{The Triangulation of Titling Data in Non-Linear Gaussian Fashion via $\rho$ Series\thanks{No procrastination}}
-\date{2017\\ December}
-\author{John Doe\\ Magic Department\thanks{I am no longer a member of this department}, Richard Miles University 
-\and Richard Row, \LaTeX\ Academy}
+\title{On the application of microwave-acoustic resonant viral inactivation
+\thanks{I would be delighted to include any criticisms or comments you may have; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
+\date{May 2020}
+\author{Based primarily on exceptional work by }
 
 
 \begin{document}
+
+
 
 \flushbottom 
 \maketitle
 \thispagestyle{empty}
 
-This work was prepared by an undergraduate and has not been peer-reviewed. 
-Please consider all claims with the appropriate skepticism.
+This work was prepared by an undergraduate and has not been peer-reviewed. Additionally, the author has no prior experience with either biology or microwave design. 
+Please consider all claims with appropriate skepticism.
 
 
-\begin{textblock}{5}(14,1)
-\noindent University of Nowhere
+\begin{textblock}{5}(1,1)
+\noindent Please view the latest version at github.com/0xDBFB7/covidinator
 \end{textblock}
-\begin{textblock}{5}(1,27)
-\end{textblock}
+%\begin{textblock}{5}(1,27)
+%\end{textblock}
 
-\null\hfill\begin{tabular}[t]{l@{}}
-  \textbf{My e} \\
-  \textit{My University}
+\null\begin{tabular}[t]{l@{}}
+  {Daniel Correia} \\
+  \textit{York University}
 \end{tabular}
 
 
@@ -48,8 +54,9 @@ Please consider all claims with the appropriate skepticism.
 \begin{abstract}
 We extend this landmark work rather trivially by:
 \begin{itemize}
-  \item Testing the time dependence of inactivation
-  \item Demonstrating a prototype emitter in an "electromagnetic mask" form-factor, costing about \$5 in prototype quantities, which can be produced in 10 million-of quantities using existing PCB infrastructure  
+  \item Establishing the time dependence of inactivation
+  \item Demonstrating a modulation scheme that decreases the inactivation threshold to below current safety levels in surrogate bacteriophage
+  \item Demonstrating a prototype emitter in an "electromagnetic mask" form-factor, costing about \$5 in prototype quantities, which can reasonably be produced in 10 million-of quantities
   \item Testing power thresholds in various conditions; biological fluids of various conductivities and pHs
   \item Using a coarse-grained molecular-dynamics simulation to optimize the impulse
   \item Using a virus-in-the-loop optimization with a centrifugal microfluidic system
@@ -66,38 +73,81 @@ We extend this landmark work rather trivially by:
 
 
 
-
+\begin{multicols}{1}
 
 With typical 2.4 GHz microwave exposure, sterilization occurs by heating of the fluid and tissue.
 
 Of course, the temperature of the atoms of the virus undoubtedly increase; but the 
 
+\paragraph{\textbf{Time dependence}}\
 
+
+Both Yang and [] (apparently arbitrarily) used a 15-minute exposure in their tests - a very reasonable decision given the focus of their paper. 
+
+To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure. 
+
+As opposed to chemical inactivation, where the time dependence is dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain dose of photons must be absorbed, one might expect RF 
+
+As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us. 
+
+[] have found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. At low field strengths, such a mechanism could perhaps extend the exposure required to break the capsid or membrane. 
+
+
+
+\end{multicols}
 
 \clearpage
 
 
-
-
-
 \begin{multicols}{1}
 
-
+\noindent\fbox{\parbox{\linewidth}{
+	Toolchain:
+	\begin{itemize}
+	\item QUCS 0.0.20 for AC simulation, with python-qucs and scipy's 'basinhopper' for optimization
+	\item KiCAD for PCB design and schematic capture
+	\item gprMax for FDTD EM simulation
+	\item 
+	\end{itemize}
+}}
+%
 The following properties: P1dB
 
 For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
+%
+\paragraph{\textbf{The feedback loop oscillator}}\
+
+Oscillators must meet the Barkhausen criterion:
+
+\begin{itemize}
+
+\item A 360 degree phase shift around the feedback loop (including the phase shift contribution from the amplifier, which itself varies greatly with frequency)
+\item A loop gain $>1.$ 
+
+\end{itemize}\
+%
+Generally a third element is also used:
+%
+\begin{itemize}
+\item A frequency-selective element that restricts oscillation modes and decreases phase noise.
+\end{itemize}
+%
+We encountered proximity effects from reflections and near-field coupling off nearby flesh; if this instablity, mode-hopping and de-tuning becomes an issue, it could be mitigated by way of shielding (adding a manufacturing step), or a tight filter around the desired mode.
 
 
-\paragraph{} Feedback-loop-oscillator
+
+ design of a triple-tuned oscillator.
 
 
 \paragraph{}
 The buffer amplifiers 
 
+\paragraph{Biasing}\
+
 In our simulations, the varactor-tuned feedback circuit appeared to be particularly sensitive to the introduction of bias-tees. 
 
 
- gate must be weakly biased to ground, otherwise stray charge destroys the oscillation.
+The gate must be weakly pulled to ground, otherwise stray charge destroys the oscillation.
 
 \fancyhead[C]{style 1 with thin line}
 
@@ -105,19 +155,46 @@ In our simulations, the varactor-tuned feedback circuit appeared to be particula
 
 With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms. 
 
-If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm at these frequencies) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
+If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm with the above parameters) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
 
-However, reflections from these structures still appeared to distort signals beyond repair, even with wideband half-moon stubs [Syrett 1980].
+However, reflections from these structures still appeared to distort the frequency/phase response beyond repair, even with ostensibly wideband stubs [Syrett 1980].
 
 \noindent\fbox{\parbox{\linewidth}{
-	Rebuke: despite this blather, many other papers have had success with VCOs at these frequencies.
-
+	Rebuke: despite this blather, many other papers have had success with bias-tees at these frequencies.
 }}
 
-In production, these could be accomodated by graphite-polymer resistors.
+In production, these could be accomodated by graphite-polymer printed resistors. 
 
 
-Timeline
+Odd-pole varactor-loaded combline filters appeared to have excellent phase and frequency response; however, the geometry necessitates low-inductance via stitching to the ground plane.
+
+\noindent\fbox{\parbox{\linewidth}{
+	Rebuke: Others have had great success with varactor-tuned comblines, especially non-grounded lines.
+}}
+
+[Tsuru 2008 fig. 10] is an excellent review of various oscillator designs.
+
+The parasitic inductance of common varactors appears to become problematic at these frequencies (but not for non-wideband use).
+
+
+\clearpage
+
+
+{\Large Captain's Log, Supplemental}
+
+\paragraph{Timeline}
+
+\paragraph{Comments}
+
+\paragraph{Lessons Learned}
+
+When iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. 
+
+Version control alone isn't quite enoughjust having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation; and manually taking notes tended to disrupt the flow of testing.
+
+
+
+
 
 
 \end{multicols}
