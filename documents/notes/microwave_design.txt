@@ -469,5 +469,5 @@ the DC blocking caps can only do 50v, and I don't want to put ones in series.
 If I ever get a swelled head, please remind me that I just wasted an hour
 due to having forgotten how the multimeter diode function works.
 
-
+So, tried a simple low-pass in the last LO test.
   

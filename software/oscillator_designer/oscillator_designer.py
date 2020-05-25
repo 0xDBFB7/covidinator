@@ -226,7 +226,7 @@ bounds[1] = (0.3,2) #SMV2019
 # frequencies = []
 # phase_shifts = []
 #
-# varactor_values = []
+varactor_values = []
 #
 # N_interpolations = 2
 #
@@ -293,6 +293,17 @@ for i in range(0, 2**3):
     plt.title("Feedback voltage")
     plt.plot(frequency, feedback_voltage)
 
+    values[1] = 2
+    frequency, feedback_voltage, phase_shift, output_amplitude = run_sim(values, net_file, data_file)
+
+    plt.subplot(4,2,1)
+    plt.title("Phase shift")
+    plt.plot(frequency, phase_shift)
+    plt.subplot(4,2,2)
+    plt.title("Feedback voltage")
+    plt.plot(frequency, feedback_voltage)
+
+
     for v in np.geomspace(0.31, 2, 10):
         values[1] = v
 
@@ -306,6 +317,8 @@ for i in range(0, 2**3):
         vfb.append(feedback_voltage[np.abs(phase_shift-1.0).argmin()])
         freq.append(frequency[np.abs(phase_shift-1.0).argmin()])
         code.append(i)
+        varactor_values.append(v)
+
 
 # ax1.plot([0,frequency[-1]], [1,1], 'k-', lw=2) # line at phase = 1
 
@@ -321,6 +334,8 @@ plt.title("Frequency sweep")
 plt.subplot(4,2,5)
 plt.title("PIN switch values")
 plt.plot(code)
+plt.plot(varactor_values)
+
 
 plt.savefig("/home/arthurdent/Downloads/export.png")
 plt.show()

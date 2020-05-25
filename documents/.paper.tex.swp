@@ -153,13 +153,13 @@ Oscillators must meet the Barkhausen criterion:
 
 \end{itemize}\
 %
-Generally a third element is also used:
+However, a third element is also required:
 %
 \begin{itemize}
 \item A frequency-selective element that restricts oscillation modes and decreases phase noise.
 \end{itemize}
 %
-We encountered proximity effects from reflections and near-field coupling off nearby flesh; if this instablity, mode-hopping and de-tuning becomes an issue, it could be mitigated by way of shielding (adding a manufacturing step), or a tight filter around the desired mode.
+Without this element, proximity effects from nearby flesh, startup instablity, mode-hopping, and de-tuning were all encountered. 
 
 
 
@@ -220,6 +220,8 @@ The parasitic inductance of common varactors appears to become problematic at th
 \paragraph{Comments by others}
 
 \paragraph{Lessons Learned}
+
+It may be helpful to treat simulations very similarly to IRL experiments. 
 
 When iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. Including a picture with a webcam of the assembled board is also helpful. 
 
