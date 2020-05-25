@@ -470,4 +470,8 @@ If I ever get a swelled head, please remind me that I just wasted an hour
 due to having forgotten how the multimeter diode function works.
 
 So, tried a simple low-pass in the last LO test.
+
+Parts are starting to go out of stock on DigiKey.
+
+
   

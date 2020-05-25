@@ -30,7 +30,7 @@
 
 
 
-\title{On the application of microwave-acoustic resonant viral inactivation
+\title{On the application of microwave acoustic resonant viral inactivation
 \thanks{I would be delighted to include any criticisms or comments anyone may have; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
 \date{May 2020}
 \author{Based primarily on exceptional work by }
@@ -66,10 +66,11 @@ Please consider all claims with appropriate skepticism.
 
 \begin{abstract}
 
-Brief: 
+We extend this landmark work rather trivially by:
+
 
 Aims:
-We extend this landmark work rather trivially by:
+
 \begin{itemize}
   \item Establishing the time dependence of inactivation
   \item Demonstrating a modulation scheme that decreases the inactivation threshold to below current safety levels in surrogate bacteriophage
@@ -118,11 +119,13 @@ In contrast to chemical inactivation, where the time dependence appears to be do
 
 As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us. 
 
-[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds before the lipid fractures,
+[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds before the envelope fractures.
 
 {\color{red}  \} } 
 
 \end{multicols}
+
+
 
 \clearpage
 
@@ -180,9 +183,9 @@ The gate must be weakly pulled to ground, otherwise stray charge destroys the os
 
 
 
-With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms. 
+With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke.
 
-If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm with the above parameters) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
+If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
 
 However, reflections from these structures still appeared to distort the frequency/phase response beyond repair, even with ostensibly wideband stubs [Syrett 1980].
 
@@ -211,6 +214,22 @@ The parasitic inductance of common varactors appears to become problematic at th
 
 
 \clearpage
+
+\paragraph{Acknowledgements}\
+
+This paper is not novel enough to deserve this chapter, but those to be acknowledged are.
+
+Professor Shahramian's excellent video blog {\it The Signal Path} inspired this work.
+
+Hopfstader be damned; despite the name below the abstract, this paper is of course entirely the result of circumstance and luck. Any comparable dimwit to the author would have accomplished the same under the same conditions. 
+
+It is infinitely to be regretted that such equally capable people were stuck in warehouses doing menial 15-hour shifts or assembling smartphones.
+
+Chiefly among the enablers are of course my parents, without which the author would not have existed[] - but who also supported this work financially. 
+
+
+
+One Very Important Thought
 
 
 {\Large Captain's Log, Supplemental}
