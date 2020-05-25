@@ -1,4 +1,3 @@
-
 \documentclass[fleqn,10pt]{article}
 
 \usepackage[left=2cm,right=2cm,
@@ -7,36 +6,50 @@
 			headheight=11pt,%
 			letterpaper]{geometry}
 			
-\frenchspacing
-			
+\frenchspacing			
+
 \usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{blindtext,graphicx}
 \usepackage[absolute]{textpos}
 \usepackage[parfill]{parskip}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{tcolorbox}
+\newtcolorbox{autem}{colback=red!5!white,colframe=red!75!black}
+\newtcolorbox{toolchain}{colback=blue!5!white,colframe=blue!40!black!40}
+%https://tex.stackexchange.com/questions/66154/how-to-construct-a-coloured-box-with-rounded-corners
 
 %\usepackage[sfdefault,light]{roboto}
 
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 
+
+
+
+
+
 \title{On the application of microwave-acoustic resonant viral inactivation
-\thanks{I would be delighted to include any criticisms or comments you may have; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
+\thanks{I would be delighted to include any criticisms or comments anyone may have; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
 \date{May 2020}
 \author{Based primarily on exceptional work by }
 
 
 \begin{document}
 
-
-
 \flushbottom 
 \maketitle
 \thispagestyle{empty}
 
-This work was prepared by an undergraduate and has not been peer-reviewed. Additionally, the author has no prior experience with either biology or microwave design. 
-Please consider all claims with appropriate skepticism.
 
+This work was prepared by an undergraduate and has not been peer-reviewed. 
+
+Additionally, the author has no prior experience with either biology or microwave design. 
+
+Testing was only performed with a surrogate bacteriophage. All experiments must be repeated with Inf. A and then SARS-NCoV-2.
+
+Please consider all claims with appropriate skepticism.
 
 \begin{textblock}{5}(1,1)
 \noindent Please view the latest version at github.com/0xDBFB7/covidinator
@@ -52,6 +65,10 @@ Please consider all claims with appropriate skepticism.
 
 
 \begin{abstract}
+
+Brief: 
+
+Aims:
 We extend this landmark work rather trivially by:
 \begin{itemize}
   \item Establishing the time dependence of inactivation
@@ -71,28 +88,39 @@ We extend this landmark work rather trivially by:
 
 
 
-
-
 \begin{multicols}{1}
 
 With typical 2.4 GHz microwave exposure, sterilization occurs by heating of the fluid and tissue.
 
 Of course, the temperature of the atoms of the virus undoubtedly increase; but the 
 
+\begin{toolchain}
+	{\it \bf [Yang 2015]'s toolchain}
+	\begin{itemize}
+	\item Envelope/liposome breaking strength and stiffness from AFM nanoindentation data
+	\item Analytical expression assuming homogenous sphere for microwave absorption cross-section
+	\item Experimental data from microwave cuvette to 
+	\item COMSOL finite-element for illustration
+	\end{itemize}
+\end{toolchain}
+
+
 \paragraph{\textbf{Time dependence}}\
 
 
-Both Yang and [] (apparently arbitrarily) used a 15-minute exposure in their tests - a very reasonable decision given the focus of their paper. 
+Both Yang and [] used an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision given the focus of their paper. 
 
-To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure. 
+To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure.
 
-As opposed to chemical inactivation, where the time dependence is dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain dose of photons must be absorbed, one might expect RF 
+{\color{red} speculative hypothesizing \{ } 
+
+In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain dose of photons must be absorbed, one might expect RF 
 
 As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us. 
 
-[] have found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. At low field strengths, such a mechanism could perhaps extend the exposure required to break the capsid or membrane. 
+[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds before the lipid fractures,
 
-
+{\color{red}  \} } 
 
 \end{multicols}
 
@@ -105,9 +133,8 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 	Toolchain:
 	\begin{itemize}
 	\item QUCS 0.0.20 for AC simulation, with python-qucs and scipy's 'basinhopper' for optimization
-	\item KiCAD for PCB design and schematic capture
 	\item gprMax for FDTD EM simulation
-	\item 
+	\item KiCAD, wcalc, scikit-rf
 	\end{itemize}
 }}
 %
@@ -168,13 +195,19 @@ In production, these could be accomodated by graphite-polymer printed resistors.
 
 Odd-pole varactor-loaded combline filters appeared to have excellent phase and frequency response; however, the geometry necessitates low-inductance via stitching to the ground plane.
 
-\noindent\fbox{\parbox{\linewidth}{
-	Rebuke: Others have had great success with varactor-tuned comblines, especially non-grounded lines.
-}}
+%\noindent\fbox{\parbox{\linewidth}{
+\begin{autem}
+	{\it autem} Others have had great success with varactor-tuned comblines, especially non-grounded lines.
+\end{autem}
 
 [Tsuru 2008 fig. 10] is an excellent review of various oscillator designs.
 
 The parasitic inductance of common varactors appears to become problematic at these frequencies (but not for non-wideband use).
+
+
+\clearpage
+
+{\Large Mass production}
 
 
 \clearpage
@@ -184,16 +217,17 @@ The parasitic inductance of common varactors appears to become problematic at th
 
 \paragraph{Timeline}
 
-\paragraph{Comments}
+\paragraph{Comments by others}
 
 \paragraph{Lessons Learned}
 
-When iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. 
+When iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. Including a picture with a webcam of the assembled board is also helpful. 
 
-Version control alone isn't quite enoughjust having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation; and manually taking notes tended to disrupt the flow of testing.
+Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation; and manually taking notes tended to disrupt the flow of testing.
 
 
 
+Write a paper to be understood; to be as clear and helpful as possible to the reader.
 
 
 

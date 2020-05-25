@@ -466,7 +466,8 @@ They just use a single vco and inductor at the source.wtf
 undesirable effects occur when two 10k resistors are put in parallel straddling the PiNs, but
 the DC blocking caps can only do 50v, and I don't want to put ones in series.
 
-
+If I ever get a swelled head, please remind me that I just wasted an hour
+due to having forgotten how the multimeter diode function works.
 
 
   
