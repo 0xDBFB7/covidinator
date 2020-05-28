@@ -14,6 +14,7 @@
 \usepackage[absolute]{textpos}
 \usepackage[parfill]{parskip}
 \usepackage[colorlinks]{hyperref}
+\usepackage{hyperref}
 
 \usepackage{tcolorbox}
 \newtcolorbox{autem}{colback=red!5!white,colframe=red!75!black}
@@ -43,13 +44,7 @@
 \thispagestyle{empty}
 
 
-This work was prepared by an undergraduate and has not been peer-reviewed. 
 
-Additionally, the author has no prior experience with either biology or microwave design. 
-
-Testing was only performed with a surrogate bacteriophage. All experiments must be repeated with Inf. A and then SARS-NCoV-2.
-
-Please consider all claims with appropriate skepticism.
 
 \begin{textblock}{5}(1,1)
 \noindent Please view the latest version at github.com/0xDBFB7/covidinator
@@ -84,10 +79,19 @@ Aims:
 \end{abstract}
 
 
+\footnote{footnotes working fine}
+
+This work was prepared by an undergraduate and has not been peer-reviewed. 
+
+Additionally, the author has no prior experience with either biology or microwave design. 
+
+Testing was only performed with a surrogate bacteriophage. All experiments must be repeated with Inf. A and then SARS-NCoV-2.
+
+Please consider all claims with appropriate skepticism.
 
 
-
-
+{\it "You cannot create a VCO that way. It is not easy."}
+{ - An anonymous admirer.}
 
 \begin{multicols}{1}
 
@@ -225,27 +229,55 @@ Hopfstader be damned; despite the name below the abstract, this paper is of cour
 
 It is infinitely to be regretted that such equally capable people were stuck in warehouses doing menial 15-hour shifts or assembling smartphones.
 
-Chiefly among the enablers are of course my parents, without which the author would not have existed[] - but who also supported this work financially. 
+Chiefly among the enablers are of course my parents, Doris and Brian, without which this work would have been done by someone else[] - but who also supported this work financially. 
 
 
 
 One Very Important Thought
 
 
-{\Large Captain's Log, Supplemental}
+\clearpage
+
+{\Large Captain's Log, Supplemental}\\
+
+[Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. 
+
+However, it seems to neglect the I/V characteristic, so we synthesized the SPICE model using an optimization method [Polyfet 1998].
+
+OpenEMS is excellent, with Python bindings, lumped . However, embarassingly, we were not able to resolve all the dependency issues in order to install it.
+
+
+\label{para}
+\ref{para}
 
 \paragraph{Timeline}
 
 \paragraph{Comments by others}
 
-\paragraph{Lessons Learned}
+\paragraph{Lessons Learned} \
+
+
+\rule{\linewidth}{0.2pt}
 
 It may be helpful to treat simulations very similarly to IRL experiments. 
 
-When iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. Including a picture with a webcam of the assembled board is also helpful. 
+This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. Including a picture with a webcam of the assembled board is also helpful. 
 
 Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation; and manually taking notes tended to disrupt the flow of testing.
 
+\rule{\linewidth}{0.2pt}
+
+A great deal of time was spent trying to resolve version conflicts and dependency hells with the numerous libraries used by all the simulation programs. This also wastes developer time - some fraction of issues raised are due to library version conflicts. OpenFOAM's Docker installation is excellent.
+
+Running chroot with the original developer's Linux distribution is also of some utility, but clunky. 
+
+Packaged binaries help this slightly, but of course don't help if modifications are required, and managing shared libraries is still a tricky matter.
+
+In some situations (especially where the library has a permissive licence) it could be useful to consider packaging a complete, batteries-included 'known good' repository, either with the source of all the correct library versions included, or with a script to clone and compile the specific version used, and integrating all the libraries with the build system. 
+
+For instance, this was done with the PDB reader. 
+
+\rule{\linewidth}{0.2pt}
 
 
 Write a paper to be understood; to be as clear and helpful as possible to the reader.
@@ -254,4 +286,5 @@ Write a paper to be understood; to be as clear and helpful as possible to the re
 
 \end{multicols}
 
+\Acrobatmenu{GoBack}{Back}
 \end{document}

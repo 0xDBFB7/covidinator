@@ -272,8 +272,9 @@ low_resistance = 10.0
 vfb = []
 freq = []
 code = []
-for i in range(0, 2**3):
-
+# for i in range(0, 2**3):
+try:
+    i=0
     values = np.zeros(9)
     # values[2] = 0.5
 
@@ -304,7 +305,7 @@ for i in range(0, 2**3):
     plt.plot(frequency, feedback_voltage)
 
 
-    for v in np.geomspace(0.31, 2, 10):
+    for v in np.geomspace(0.05, 0.25, 10):
         values[1] = v
 
         # cost_function(values, retained_values, retained_indices, frequency_sweep[i], display = True)
@@ -319,7 +320,8 @@ for i in range(0, 2**3):
         code.append(i)
         varactor_values.append(v)
 
-
+except:
+    pass
 # ax1.plot([0,frequency[-1]], [1,1], 'k-', lw=2) # line at phase = 1
 
 # ax1.plot(vfb)

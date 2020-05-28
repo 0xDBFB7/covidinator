@@ -168,53 +168,16 @@ F 4 "" H 7293 4734 60  0000 R CNN "Field4"
 	0    1    -1   0   
 $EndComp
 $Comp
-L power:GND #PWR0107
-U 1 1 5EE0E867
-P 6900 5200
-F 0 "#PWR0107" H 6900 5200 30  0001 C CNN
-F 1 "GND" H 6900 5130 30  0001 C CNN
-F 2 "" H 6900 5200 50  0001 C CNN
-F 3 "" H 6900 5200 50  0001 C CNN
-	1    6900 5200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D_Capacitance D4
-U 1 1 5EE0E0B0
-P 6900 5050
-F 0 "D4" V 6854 5129 50  0000 L CNN
-F 1 "D_Capacitance" V 6945 5129 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-523" H 6900 5050 50  0001 C CNN
-F 3 "~" H 6900 5050 50  0001 C CNN
-	1    6900 5050
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0106
-U 1 1 5EE0BB79
-P 7300 5200
-F 0 "#PWR0106" H 7300 5200 30  0001 C CNN
-F 1 "GND" H 7300 5130 30  0001 C CNN
-F 2 "" H 7300 5200 50  0001 C CNN
-F 3 "" H 7300 5200 50  0001 C CNN
-	1    7300 5200
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:D_Capacitance D1
 U 1 1 5ED19292
-P 7300 5050
-F 0 "D1" V 7254 5129 50  0000 L CNN
-F 1 "D_Capacitance" V 7345 5129 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-523" H 7300 5050 50  0001 C CNN
-F 3 "~" H 7300 5050 50  0001 C CNN
-	1    7300 5050
-	0    1    1    0   
+P 7050 4600
+F 0 "D1" H 7050 4345 50  0000 C CNN
+F 1 "D_Capacitance" H 7050 4436 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 7050 4600 50  0001 C CNN
+F 3 "~" H 7050 4600 50  0001 C CNN
+	1    7050 4600
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	7300 4900 7300 4600
-Wire Wire Line
-	6900 4900 6900 4600
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R3
 U 1 1 5ED90539
@@ -265,9 +228,6 @@ F 4 "" H 8352 3366 60  0000 L CNN "Field4"
 	1    8300 3450
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	6900 4600 7300 4600
-Connection ~ 7300 4600
 $Comp
 L SparkFun-Capacitors:6PF-0402-50V-0.5% C2
 U 1 1 5EFFEA49
@@ -305,50 +265,11 @@ F 3 "~" H 5250 4600 50  0001 C CNN
 	1    5250 4600
 	-1   0    0    1   
 $EndComp
-$Comp
-L Device:D_Capacitance D5
-U 1 1 5F005E53
-P 5550 4600
-F 0 "D5" H 5550 4816 50  0000 C CNN
-F 1 "D_Capacitance" H 5550 4725 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-523" H 5550 4600 50  0001 C CNN
-F 3 "~" H 5550 4600 50  0001 C CNN
-	1    5550 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D_Capacitance D6
-U 1 1 5F007895
-P 5850 4600
-F 0 "D6" H 5850 4345 50  0000 C CNN
-F 1 "D_Capacitance" H 5850 4436 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-523" H 5850 4600 50  0001 C CNN
-F 3 "~" H 5850 4600 50  0001 C CNN
-	1    5850 4600
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6000 4600 6050 4600
-Connection ~ 6900 4600
 Wire Wire Line
 	4800 4600 4750 4600
 Wire Wire Line
 	5100 4600 5100 4950
 Connection ~ 5100 4600
-Wire Wire Line
-	5700 4600 5700 4950
-Connection ~ 5700 4600
-$Comp
-L power:GND #PWR0108
-U 1 1 5F009480
-P 5700 4950
-F 0 "#PWR0108" H 5700 4950 30  0001 C CNN
-F 1 "GND" H 5700 4880 30  0001 C CNN
-F 2 "" H 5700 4950 50  0001 C CNN
-F 3 "" H 5700 4950 50  0001 C CNN
-	1    5700 4950
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR0110
 U 1 1 5F009AF7
@@ -412,23 +333,8 @@ F 3 "" H 5500 3500 50  0001 C CNN
 	1    5500 3500
 	0    -1   -1   0   
 $EndComp
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R4
-U 1 1 5F02BE58
-P 6050 4100
-F 0 "R4" V 5955 4168 45  0000 L CNN
-F 1 "10k" V 6039 4168 45  0000 L CNN
-F 2 "0402" H 6050 4250 20  0001 C CNN
-F 3 "" H 6050 4100 60  0001 C CNN
-F 4 " " V 6134 4168 60  0000 L CNN "Field4"
-	1    6050 4100
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	5450 3900 5450 3650
-Wire Wire Line
-	5450 3900 6050 3900
-Connection ~ 5450 3900
 Wire Wire Line
 	5450 3900 5400 3900
 Connection ~ 5400 3900
@@ -436,12 +342,6 @@ Wire Wire Line
 	5400 3900 4750 3900
 Wire Wire Line
 	5400 4600 5400 4300
-Connection ~ 5400 4600
-Wire Wire Line
-	6050 4300 6050 4600
-Connection ~ 6050 4600
-Wire Wire Line
-	6050 4600 6900 4600
 Wire Wire Line
 	4750 4300 4750 4600
 Connection ~ 4750 4600
@@ -461,4 +361,9 @@ Wire Wire Line
 Connection ~ 8300 4150
 Wire Wire Line
 	8300 4150 8300 4300
+Wire Wire Line
+	5400 4600 6900 4600
+Connection ~ 5400 4600
+Wire Wire Line
+	7200 4600 7300 4600
 $EndSCHEMATC

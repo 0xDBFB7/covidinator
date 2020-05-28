@@ -473,5 +473,103 @@ So, tried a simple low-pass in the last LO test.
 
 Parts are starting to go out of stock on DigiKey.
 
+"The oscillator was also operated in self-biased mode. As
+the drain voltage is raised, the drain current increases very
+rapidly at first until oscillation commences and a negative
+bias develops on the gate." 
 
-  
+if not self-biased, they used -3v bias. interesting.
+
+
+this "self-bias" idea is also present in Grebennikov.
+
+
+Even MESFETs need a positive gate threshold. so why is a negative voltage required on the output?
+
+that 9.8 ghz paper also used 
+
+That BST varactor paper used a 1Mohm (!) resistor as a choke.
+
+"Some principal design rules of general validity should be
+respected for designing VCOS in order to avoid parasitic
+oscillations at low frequencies and frequency jumps within
+the effective bandwidth.
+Parasitic oscillations can be avoided if care is taken
+during the choice of the load and the feedback circuit in
+order to force Re ( Z~ ) >0 outside of the band as far as
+possible.
+Frequency jumps are due to phase loops within the
+band. In order to avoid such effects, we design the circuit"
+
+Contacted some people at a microwave lab at the UofT. One said "very interesting",
+
+the other said, approximately, "you cannot make that VCO in microstrip, you need an IC,
+and it'll be expensive and just use UV."
+
+Whenever an expert says you're wrong, it's important to very carefully consider your position and
+the evidence that you have. 
+
+And it's true that most of these designs use CMOS. 
+
+The HB100 radar is definitely a counterexample; it's clearly a fully-microstrip design with 
+an external dielectric resonator. Un-interrupted ground plane, patch antennas.
+All designs seem to have shielding on the back - I guess they encountered the same proximity-effect
+issues.
+
+
+OOO hang on, we don't neccessarily need to modify gprMax to include qucs.
+We can extract two-port parameters from gprMax for each segment of the circuit,
+and add them as seperate files in qucs.
+
+We really should have a transient sim.
+
+Sonnet lite - looks like it's just fdtd, circuit stuff is handled seperately
+
+Matlab RF toolbox has a S-param->spice generator, free trial
+
+LTspice has 2-port parameters, neat
+
+https://www.mathworks.com/matlabcentral/fileexchange/6080-s-parameter-toolbox-z-y-h-g-abcd-t
+s-param toolbox
+
+Modelithics have ADS etc models for the CEL tx and the varactor.
+
+
+According to Modelithics, the CEL device can do 13.8 dBm, or 24 milliwatts.
+
+That's the Typical Gain figure from the datasheet, but I don't think that's the actual max power output.
+
+
+https://github.com/thliebig/openEMS/blob/master/matlab/examples/other/LumpedElement.m openEMS 
+has a lumped element
+
+It's possible to convert S-parameters to SPICE model via [Steenput 1999] via negative resistances,
+but that 
+
+VM of manjaro or void linux for openems
+
+The AD8319 power sensor is only good to 12 dBm. We'd need a precision attenuator at 8 GHz.
+Indeed, all the power sensors on Digikey are only good to 16 dBm (40 mW).
+
+Mini-circuits has SMD attenuators to 43 GHz and power detectors to 8 GHz to 20 dBm (100 mW).
+
+
+
+
+
+
+model_build_run.py -> solve_cpu()
+
+
+Okay, so here's the deal. QUCS's S-param microstrip approximation is great.
+However, they don't work with the transient sim. 
+
+We're really not getting the full picture without a transient sim, I don't think.
+Especially the grounding.
+
+This would be so much easier if I just had Microwave Office, but
+that's really not going to happen,
+and all the free trials of all the programs I've found don't include the 
+"coupled" part of the simulation.
+
+
