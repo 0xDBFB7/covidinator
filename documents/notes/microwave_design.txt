@@ -573,3 +573,40 @@ and all the free trials of all the programs I've found don't include the
 "coupled" part of the simulation.
 
 
+.ic initial conditions looks good. .nodeset isn't it, that's just for convergence.
+also https://sourceforge.net/p/ngspice/discussion/133842/thread/9ec3143b/ 
+uses a voltage supply shorted to a resistor.
+
+`reset` looks good too.
+
+https://github.com/thliebig/openEMS/issues/54 dockerfile! wonderful!
+
+So it looks like modifying GPRmax won't be all too onerous.
+However, it might be a bit too slow for optimization. 
+
+For this reason, it might be a good idea to first make the CEL model and try a transient 
+sim. Probably with the existing qucs-python thingy.
+
+Er, hmm
+
+
+
+http://openems.de/forum/viewtopic.php?t=346
+the loss tangent can be modeled as a conductivity:
+
+substrate.kappa  = 1e-3 * 2*pi*2.45e9 * EPS0*substrate.epsR;
+
+neat!  
+
+and the Debye dispersive module can handle wideband loss. neat!
+
+"8.0 Availability of Practice Chips:
+Assembly practice chips are available from CEL"
+that's cool!
+
+CEL has a great appnote, AN1023, talking about making SPICE models for GaAs parts.
+
+
+
+
+

@@ -1,0 +1,92 @@
+
+.options gmin=1E-12 TNOM = 25
+
+***************************************************************
+*	Infineon	Technologies	AG
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX
+*	VALID	UP	TO	10	GHZ
+*	>>>	BFP620	<<<
+*	(C)	2014	Infineon	Technologies	AG
+*	Version	3.1	Oktober 2014
+***************************************************************
+*.OPTION GMIN= 1.00e-12
+*BFP620 C B E1 E2
+.SUBCKT BFP620 111 22 31 32
+*
+CBEPAR 2 3 1.61E-014
+CBCPAR 2 10 9.206E-014
+CCEPAR 10 3 4.783E-014
+LEx    30 33 2.103E-012
+LBx    20 22 4.68E-010
+LCx    11 111 3.153E-010
+CBEPCK 20 30  7.147E-014
+CBCPCK 11 20  4.512E-016
+CCEPCK 11 30  1.305E-013
+LB   2 20 5.692E-010
+LE   3 30 2.255E-010
+LC   10 11  6.581E-010
+*
+RE1 33 31 1E-03
+RE2 33 32 1E-03
+*
+RSub 4 30 260
+Rcx 1 10 1.449
+*
+Diode_sub 4 1 M_Diode_sub
+*
+.MODEL M_Diode_sub D(
++	IS	=	2.16E-014
++	N	=	1.123
++	RS	=	0.1
++	CJO	=	4E-014
++	TNOM	=	25)
+*
+Q1 1 2 3 4 M_BFP620
+*
+.MODEL 	M_BFP620	NPN(
++	TNOM =	25
++	IS	=	2.057E-015
++	BF	=	1148
++	NF	=	1.008
++	VAF	=	355.5
++	IKF	=	0.2022
++	ISE	=	2.675E-013
++	NE	=	2.946
++	BR	=	309.1
++	NR	=	0.9849
++	VAR	=	1.204
++	IKR	=	0.005842
++	ISC	=	1E-017
++	NC	=	7.2
++	RB	=	8.533
++	IRB	=	0.0007035
++	RBM	=	3.31
++	RE	=	0.02592
++	RC	=	2.429
++	XTB	=	-2.482
++	EG	=	1.034
++	XTI	=	0.808
++	CJE	=	4.356E-013
++	VJE	=	0.337
++	MJE	=	0.004858
++	TF	=	1.4E-012
++	XTF	=	1.466
++	VTF	=	3.079
++	ITF	=	2.083
++	PTF	=	8.82E-016
++	CJC	=	9.958E-014
++	VJC	=	1.68
++	MJC	=	1.715
++	XCJC	=	0.6466
++	TR	=	1E-009
++	CJS	=	8.583E-014
++	MJS	=	0.1744
++         VJS       =         0.1542
++	FC	=	0.8156
++	KF	=	2.56E-011
++	AF	=	1.798)
+***************************************************************
+*
+*
+.ENDS BFP620
+.END

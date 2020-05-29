@@ -3,6 +3,9 @@
 
 #material: 1     6e7     1 0 copper
 //#material: 4.2   0.0001  1 0 substrate
+// Incorporate loss tangent (1e-3 is the loss tangent)
+// substrate.kappa  = 1e-3 * 2*pi*2.45e9 * EPS0*substrate.epsR;
+
 #material: 10.3   0.0001  1 0 substrate
 
 //rel permittivity, conductivity (S/m), rel. permeability, magnetic loss (Ohms/m)
@@ -12,7 +15,7 @@
 from gprMax.input_cmd_funcs import *
 import matplotlib.image as mpimage
 import numpy as np
-import os 
+import os
 import math
 
 time = 2e-9
@@ -41,15 +44,15 @@ substrate_thickness = 0.00079
 
 #ground plane
 cells_from_border = 12
-box(cells_from_border*cell_x, cells_from_border*cell_y, (cells_from_border*cell_z)-math.ceil(copper_thickness/cell_z)*cell_z, 
+box(cells_from_border*cell_x, cells_from_border*cell_y, (cells_from_border*cell_z)-math.ceil(copper_thickness/cell_z)*cell_z,
                             domain_x-(cells_from_border*cell_x), domain_y-(cells_from_border*cell_y), cells_from_border*cell_z, 'copper')
 
-box(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z, 
+box(cells_from_border*cell_x, cells_from_border*cell_y, cells_from_border*cell_z,
                             domain_x-(cells_from_border*cell_x), domain_y-(cells_from_border*cell_y), cells_from_border*cell_z+substrate_thickness, 'substrate')
 
 
 input_filename = "/home/arthurdent/Projects/covidinator/electronics/local_oscillator_test/local_oscillator_test-F.Cu.svg"
-dpi = 0.0254 / cell_x 
+dpi = 0.0254 / cell_x
 os.system("inkscape -z --export-dpi {} {} -e from_kicad.png".format(int(dpi),input_filename))
 
 
@@ -62,20 +65,20 @@ import_pos_z = cells_from_border*cell_z+substrate_thickness;
 
 for x in range(0, img.shape[0]-1):
     for y in range(0, img.shape[1]-1):
-        if(np.sum(img[x,y])): 
+        if(np.sum(img[x,y])):
             position_x = import_pos_x+(y*cell_x)
             position_y = import_pos_y+(x*cell_y) #mirror!
             #plate(position_x, position_y, import_pos_z, \
             #            position_x+cell_x, position_y+cell_y, import_pos_z, 'copper')
             box(position_x, position_y, import_pos_z, \
                                     position_x+cell_x, position_y+cell_y, import_pos_z+copper_thickness, 'copper')
-            
+
 
 tx_pos_x = import_pos_x + 0.005
 tx_pos_y = import_pos_y + 0.00475
 tx_pos_z = import_pos_z - cell_z
 print("#voltage_source: z {} {} {} 50 waveform_1".format(tx_pos_x,tx_pos_y,tx_pos_z))
-#polarization, x,y,z, resistance, waveform          
+#polarization, x,y,z, resistance, waveform
 print("#rx: {} {} {}".format(tx_pos_x,tx_pos_y,tx_pos_z))
 box(tx_pos_x,tx_pos_y,import_pos_z-substrate_thickness,tx_pos_x+cell_x,tx_pos_y+cell_y,import_pos_z-(cell_z*2),'copper') #connect bottom face of transmitter to ground plane
 
@@ -86,7 +89,7 @@ print("#rx: {} {} {}".format(rx_pos_x,rx_pos_y,rx_pos_z))
 box(rx_pos_x,rx_pos_y,import_pos_z-substrate_thickness,rx_pos_x+cell_x,rx_pos_y+cell_y,import_pos_z-(cell_z*2),'copper') #connect bottom face of reciever to ground plane
 
 
-#box(0.005,0.006,import_pos_z-substrate_thickness,0.005+cell_x,0.006+cell_y,import_pos_z+cell_z,'copper') 
+#box(0.005,0.006,import_pos_z-substrate_thickness,0.005+cell_x,0.006+cell_y,import_pos_z+cell_z,'copper')
 #tie source pin to ground plane
 
 
@@ -111,7 +114,7 @@ os.system("rm -r LO_test_1_gprMax_snaps/*")
 /#waveform: contsine 1 7e9 waveform_1
 #waveform: gaussian 1 10e9 waveform_1
 /#waveform: contsine 100 8e9 waveform_1
-/#gaussian 1 
+/#gaussian 1
 
 
 //run with:
