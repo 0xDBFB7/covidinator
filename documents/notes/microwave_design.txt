@@ -610,3 +610,22 @@ CEL has a great appnote, AN1023, talking about making SPICE models for GaAs part
 
 
 
+ngspice is at /home/arthurdent/Programs/ngspice-32/install/bin/ngspice
+
+
+using B620 for now, got https://sourceforge.net/p/qucs/discussion/311050/thread/700dec7a/ error
+
+have to re-compile qucs with that change
+https://github.com/Qucs/qucs/blob/master/qucs-core/src/components/devices/bjt.cpp#L779
+mmmmmmmmm >:|
+okay
+
+
+HOld up. gprMax is a big program, but we really aren't using any of it - just a simple FDTD algo,
+the scripting language, while great, isn't nearly ideal for this application.
+
+let's try python's fdtd!
+
+
+
+

@@ -19,4 +19,3 @@ and yields great results [Thomas]
 geometry_outputs write_vtk(self, G, pbar) , material_threshold=0
 
 
-Cel has AN1023

@@ -1,0 +1,6 @@
+voltage divider netlist
+.include ../models/BFP620.lib
+
+Q1 intc intb 0 BFP620
+.tran 10u 10m
+.end
