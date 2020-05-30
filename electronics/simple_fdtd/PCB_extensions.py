@@ -2,22 +2,17 @@ import fdtd
 
 from cairosvg import svg2png
 import lxml.etree as etree
+from PIL import Image
+import io
+import math
 
 X = 0
 Y = 1
 Z = 2
 
-def import_svg(svg_file, cell_size, pml_cells=10):
-
-    svg = etree.parse(svg_file).getroot()
-    width = float(svg.attrib['width'].strip('cm')) / 100.0 #to meters
-    height = float(svg.attrib['height'].strip('cm')) / 100.0 #to meters
-    print("Imported {} | width: {} | height: {}".format(svg_file, width, height))
-
-    cairosvg.svg2png(url=svg_file, parent_width, parent_height)
-
+def initialize_grid(N_x, N_y, N_z, cell_size, pml_cells):
     grid = fdtd.Grid(
-        (10,10,10),
+        (N_x,N_y,N_z),
         grid_spacing=cell_size,
         permittivity=1.0,
         permeability=1.0
@@ -32,6 +27,32 @@ def import_svg(svg_file, cell_size, pml_cells=10):
     grid[:, -pml_cells:, :] = fdtd.PML(name="pml_yhigh")
     grid[:, : ,0:pml_cells] = fdtd.PML(name="pml_zlow")
     grid[:, : ,-pml_cells:] = fdtd.PML(name="pml_zhigh")
+
+    return grid
+
+def import_svg(svg_file, cell_size, z_height=10e-3, xy_margin=15e-3, z_margin=15e-3, pml_cells=10):
+
+    svg = etree.parse(svg_file).getroot()
+    width = float(svg.attrib['width'].strip('cm')) / 100.0 #to meters
+    height = float(svg.attrib['height'].strip('cm')) / 100.0 #to meters
+    print("Imported {} | width: {}m | height: {}m".format(svg_file, width, height))
+
+
+
+
+    N_x = math.ceil(width/cell_size) + 2*xy_margin
+    N_y = math.ceil(height/cell_size) + 2*xy_margin
+    N_z = math.ceil(z_height/cell_size) + pml_cells+z_margin
+
+    print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
+
+
+
+    image_data = io.BytesIO(svg2png(url=svg_file, output_width=N_x, output_height=N_y))
+    image = Image.open(image_data)
+    pix = image.load()
+
+    grid = initialize_grid(N_x, N_y, N_z, cell_size, pml_cells)
 
     return grid
 
