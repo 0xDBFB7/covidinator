@@ -628,6 +628,14 @@ isn't really suitable for direct calls.
 let's try python's fdtd!
 
 
+airborne or space-based maser?
+
+
+flaport/fdtd - on 'numpy' pegs a single core, does 1.75 iterations per second on a 150^3 mesh.
+that's 20 mm x 20 mm at 0.2 mm/grid - perfect!
+
+ 
+
 
 
 
