@@ -199,6 +199,9 @@ However, reflections from these structures still appeared to distort the frequen
 	Rebuke: despite this blather, many other papers have had success with bias-tees at these frequencies.
 }}
 
+Alternate methods evaluated, failures: 
+
+
 In production, these could be accomodated by graphite-polymer printed resistors. 
 
 
@@ -244,7 +247,7 @@ One Very Important Thought
 
 [Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. 
 
-However, it seems to neglect the I/V characteristic, so we synthesized the SPICE model using an optimization method [Polyfet 1998].
+NDY However, it seems to neglect the I/V characteristic, so we synthesized the SPICE model using an optimization method [Polyfet 1998].
 
 \rule{\linewidth}{0.2pt}
 
@@ -252,8 +255,19 @@ OpenEMS is excellent, with Python bindings, some lumped components, and mesh ref
 
 \rule{\linewidth}{0.2pt}
 
+Simulating the oscillator with an AC sim using the manufacturer's S-parameters and QUCS' microstrip approximations [qucs/optimize\_filter\_1] appeared to yield good agreement with experiment. The peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
+ 
+Dips and peaks in varactor tuning were unexpected; and the tuning range was far smaller than expected.
 
+However, it was thought that a transient simulation - to determine how the spectrum actually evolved as the oscillator run - would improve the situation. 
 
+QUCS' microstrip models were not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support.
+
+\rule{\linewidth}{0.2pt}
+
+Again, inductive biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an N-channel mosfet worked fine. The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. Such a high bias voltage was required to get sufficient current through the PiN while remaining delicate with the vfb.
+
+\rule{\linewidth}{0.2pt}
 
 \label{para}
 \ref{para}
@@ -271,7 +285,9 @@ It may be helpful to treat simulations very similarly to IRL experiments.
 
 This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. Including a picture with a webcam of the assembled board is also helpful. 
 
-Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation; and manually taking notes tended to disrupt the flow of testing.
+Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation. 
+
+Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it!
 
 \rule{\linewidth}{0.2pt}
 

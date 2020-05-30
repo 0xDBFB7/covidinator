@@ -5,26 +5,42 @@ import lxml.etree as etree
 from PIL import Image
 import io
 import math
+from pyevtk.hl import gridToVTK
+from math import pi, ceil
+from scipy.constants import epsilon_0
 
 X = 0
 Y = 1
 Z = 2
 
 class PCB:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    def __init__(self, cell_size, z_height=10e-3, xy_margin=15, z_margin=15, pml_cells=10):
 
-    def initialize_grid(N_x, N_y, N_z, cell_size, pml_cells):
+        self.grid = None
+        self.cell_size = cell_size
+
+        self.z_height = z_height
+        self.xy_margin = xy_margin
+        self.z_margin = z_margin
+
+        self.pml_cells = pml_cells
+
+        self.ground_plane_z_top = None
+        self.component_plane_z = None
+
+
+    def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
             (N_x,N_y,N_z),
-            grid_spacing=cell_size,
+            grid_spacing=self.cell_size,
             permittivity=1.0,
             permeability=1.0
         )
 
         fdtd.PML(1e-8, # stability factor
             None)
+
+        pml_cells = self.pml_cells
 
         grid[0:pml_cells, :, :] = fdtd.PML(name="pml_xlow")
         grid[-pml_cells:, :, :] = fdtd.PML(name="pml_xhigh")
@@ -33,24 +49,38 @@ class PCB:
         grid[:, : ,0:pml_cells] = fdtd.PML(name="pml_zlow")
         grid[:, : ,-pml_cells:] = fdtd.PML(name="pml_zhigh")
 
-        return grid
+        self.grid = grid
 
 
-    def create_ground_and_substrate(ground_plane_thickness, permittivity, xy_margin=15, z_margin=15):
+
+    def create_planes(self, ground_plane_thickness, conductor_conductivity):
         '''
         Using thick copper planes only seems to affect the impedance by about 3%.
-        This should be okay as long as
-
+        This should be okay, but might affect interdigital filters etc.
         '''
 
-        N_ground_plane = ceil(ground_plane_thickness / cell_size)
-        grid[xy_margin:-xy_margin, xy_margin:-xy_margin, z_margin:(z_margin+N_ground_plane)]
-                                                            = fdtd.AbsorbingObject(permittivity=1.7**2, conductivity, name="ground_plane")
+        N_ground_plane = ceil(ground_plane_thickness / self.cell_size)
 
-        grid[11:32, 30:84, 0] = fdtd.Object(permittivity=1.7**2, name="object")
+        self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
+                            = fdtd.AbsorbingObject(permittivity=1.0, conductivity=conductor_conductivity, name="ground_plane")
+
+        self.ground_plane_z_top = self.z_margin+N_ground_plane
 
 
-    def import_svg_pcb(svg_file, cell_size, z_height=10e-3, xy_margin=15, z_margin=15, pml_cells=10):
+    def create_substrate(self, substrate_thickness, substrate_permittivity, loss_tangent, loss_tangent_frequency):
+
+        N_substrate = ceil(substrate_thickness / self.cell_size)
+
+        substrate_conductivity = loss_tangent * (2.0*pi) * loss_tangent_frequency * epsilon_0 * substrate_permittivity;
+
+        self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
+                            = fdtd.AbsorbingObject(permittivity=substrate_permittivity, conductivity=substrate_conductivity, name="substrate")
+
+        self.component_plane_z = self.ground_plane_z_top + N_substrate
+
+
+
+    def initialize_grid_with_svg(self, svg_file):
         '''
 
         xy_margin is the number of cells (including PML cells) to add around the board.
@@ -63,21 +93,20 @@ class PCB:
         height = float(svg.attrib['height'].strip('cm')) / 100.0 #to meters
         print("Imported {} | width: {}m | height: {}m".format(svg_file, width, height))
 
-        N_x = math.ceil(width/cell_size) + 2*(xy_margin)
-        N_y = math.ceil(height/cell_size) + 2*(xy_margin)
-        N_z = math.ceil(z_height/cell_size) + pml_cells+z_margin
+        N_x = math.ceil(width/self.cell_size) + 2*(self.xy_margin)
+        N_y = math.ceil(height/self.cell_size) + 2*(self.xy_margin)
+        N_z = math.ceil(self.z_height/self.cell_size) + self.pml_cells+self.z_margin
 
         print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
-        image_data = io.BytesIO(svg2png(url=svg_file, output_width=N_x, output_height=N_y))
+        self.initialize_grid(N_x, N_y, N_z)
+
+    def construct_copper_geometry_from_svg(self, svg_file):
+
+        image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.grid.N_x, output_height=self.grid.N_y))
         image = Image.open(image_data)
         pix = image.load()
 
-        grid = initialize_grid(N_x, N_y, N_z, cell_size, pml_cells)
-
-        create_ground_and_substrate(
-
-        return grid
 
 
     def e_field_integrate(grid, positive_port, reference_port):
@@ -121,7 +150,9 @@ class PCB:
     #
     # See "The use of SPICE lumped circuits as sub-grid models for FDTD analysis", doi:10.1109/75.289516
     # which deals with lumped elements of a single-cell size, and
-    # "Incorporating non-linear lumped elements in FDTD: the equivalent source method"
+
+    # "Incorporating non-linear lumped elements in FDTD: the equivalent source method", Jason Mix
+    # http://ecee.colorado.edu/microwave/docs/publications/1999/IJNM_JMjdMPM_99.pdf
     # which deals with objects of arbitrary size.
     #
     # You can use this 'equivalent source method' either by line-integrating the currents around a conductor
@@ -145,3 +176,24 @@ class PCB:
         for port in self.component_ports:
             port.voltage = e_field_integrate(G, port, self.reference_port)
             port.voltage_history.append(port.voltage)
+
+    # def E_magnitude():
+    #     return np.sqrt(grid.E[X]**2.0 + grid.E[Y]**2.0 + grid.E[Z]**2.0)
+
+
+    def dump_to_vtk(filename):
+        '''
+        Extension is automatically chosen thais ais a thing
+        '''
+        x = numpy.arange(0, grid.N_x+1)
+        y = numpy.arange(0, grid.N_y+1)
+        z = numpy.arange(0, grid.N_z+1)
+
+        for obj in grid.objects:
+            obj.x.start, obj.x.stop
+
+
+        gridToVTK(filename, x, y, z, cellData = {'Ex': grid.E[X],
+                                                  'Ex': grid.inverse_permittivity[X]
+                                                  '|E|': E_magnitude()
+                                                    })

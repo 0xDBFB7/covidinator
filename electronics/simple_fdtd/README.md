@@ -13,3 +13,5 @@ if in conda, tests have to be run with
 'python -m pytest'
 
 with -s perhaps for console output
+
+pip install pyevtk

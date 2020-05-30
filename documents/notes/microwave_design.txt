@@ -650,3 +650,7 @@ an electric one.
 oh! no, it's fine, he's not using the H-field equs
 
 
+Recent paper on Far UV shows that it might actually be safe, penetration is so low
+that might be an even better method
+
+huge lag on atom. Had to upgrade. sudo chmod 4755 /usr/share/atom/chrome-sandbox too.
