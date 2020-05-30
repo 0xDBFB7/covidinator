@@ -622,9 +622,11 @@ okay
 
 
 HOld up. gprMax is a big program, but we really aren't using any of it - just a simple FDTD algo,
-the scripting language, while great, isn't nearly ideal for this application.
+the scripting language, while great, isn't nearly ideal for this application, and the API
+isn't really suitable for direct calls.
 
 let's try python's fdtd!
+
 
 
 
