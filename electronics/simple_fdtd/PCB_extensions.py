@@ -104,11 +104,21 @@ class PCB:
 
         self.initialize_grid(N_x, N_y, N_z)
 
-    def construct_copper_geometry_from_svg(self, svg_file):
+    def construct_copper_geometry_from_svg(self, copper_thickness, conductor_conductivity, svg_file):
+        PNG_SUPERSAMPLE_FACTOR = 10
 
-        image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.board_N_x, output_height=self.board_N_y))
+        N_top_copper = ceil(copper_thickness / self.cell_size)
+
+        z_slice = slice(self.component_plane_z,(self.component_plane_z+N_top_copper))
+        image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.board_N_x*PNG_SUPERSAMPLE_FACTOR,
+                                                      output_height=self.board_N_y*PNG_SUPERSAMPLE_FACTOR))
         image = Image.open(image_data)
         pix = image.load()
+        for x in range(0, self.board_N_x):
+            for y in range(0, self.board_N_y):
+                if(pix[x*PNG_SUPERSAMPLE_FACTOR,y*PNG_SUPERSAMPLE_FACTOR][3]): #alpha channel
+                    self.grid[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(self.board_N_y-y-1):self.xy_margin+(self.board_N_y-(y)), z_slice] \
+                                        = fdtd.AbsorbingObject(permittivity=1.0, conductivity=conductor_conductivity, name=None)
 
 
 
@@ -192,7 +202,7 @@ class PCB:
         thanks
         https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/
 
-        Paraview needs a 'theshold' operation to view the objects correctly.
+        Paraview needs a theshold operation to view the objects correctly.
         '''
         x = np.arange(0, self.grid.Nx+1)
         y = np.arange(0, self.grid.Ny+1)
