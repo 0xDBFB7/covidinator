@@ -8,7 +8,7 @@ import math
 from pyevtk.hl import gridToVTK
 from math import pi, ceil
 from scipy.constants import epsilon_0
-
+import numpy as np
 X = 0
 Y = 1
 Z = 2
@@ -97,13 +97,16 @@ class PCB:
         N_y = math.ceil(height/self.cell_size) + 2*(self.xy_margin)
         N_z = math.ceil(self.z_height/self.cell_size) + self.pml_cells+self.z_margin
 
+        self.board_N_x = math.ceil(width/self.cell_size)
+        self.board_N_y = math.ceil(height/self.cell_size)
+
         print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
         self.initialize_grid(N_x, N_y, N_z)
 
     def construct_copper_geometry_from_svg(self, svg_file):
 
-        image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.grid.N_x, output_height=self.grid.N_y))
+        image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.board_N_x, output_height=self.board_N_y))
         image = Image.open(image_data)
         pix = image.load()
 
@@ -177,23 +180,39 @@ class PCB:
             port.voltage = e_field_integrate(G, port, self.reference_port)
             port.voltage_history.append(port.voltage)
 
-    # def E_magnitude():
-    #     return np.sqrt(grid.E[X]**2.0 + grid.E[Y]**2.0 + grid.E[Z]**2.0)
+
+    def E_magnitude(self):
+        return np.sqrt(self.grid.E[:,:,:,X]**2.0 + self.grid.E[:,:,:,Y]**2.0 + self.grid.E[:,:,:,Z]**2.0)
 
 
-    def dump_to_vtk(filename):
+    def dump_to_vtk(self, filename, iteration):
         '''
-        Extension is automatically chosen thais ais a thing
+        Extension is automatically chosen, you don't need to supply it
+
+        thanks
+        https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/
+
+        Paraview needs a 'theshold' operation to view the objects correctly.
         '''
-        x = numpy.arange(0, grid.N_x+1)
-        y = numpy.arange(0, grid.N_y+1)
-        z = numpy.arange(0, grid.N_z+1)
+        x = np.arange(0, self.grid.Nx+1)
+        y = np.arange(0, self.grid.Ny+1)
+        z = np.arange(0, self.grid.Nz+1)
 
-        for obj in grid.objects:
-            obj.x.start, obj.x.stop
+        objects = np.zeros_like(self.grid.E[:,:,:,X])
+        for obj in self.grid.objects:
+            if(obj.name == "substrate"):
+                objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
+            else:
+                objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
 
 
-        gridToVTK(filename, x, y, z, cellData = {'Ex': grid.E[X],
-                                                  'Ex': grid.inverse_permittivity[X]
-                                                  '|E|': E_magnitude()
-                                                    })
+        Ex = np.ascontiguousarray(self.grid.E[:,:,:,X])
+        Ey = np.ascontiguousarray(self.grid.E[:,:,:,Y])
+        Ez = np.ascontiguousarray(self.grid.E[:,:,:,Z])
+        Emag = np.ascontiguousarray(self.E_magnitude()) # gridToVTK expects a contiguous array.
+
+        gridToVTK(filename + str(iteration), x, y, z, cellData = {'Ex': Ex,
+                                                                     'Ey': Ey,
+                                                                     'Ez': Ez,
+                                                                     '|E|': Emag,
+                                                                     'objects': objects})
