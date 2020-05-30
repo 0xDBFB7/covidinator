@@ -638,8 +638,15 @@ that's 20 mm x 20 mm at 0.2 mm/grid - perfect!
 
 Kicad crashed, had to remove lockfiles with rm $XDG_RUNTIME_DIR/kicad/*
 
+
+flaport/fdtd seems not to directly support perfect conductors, using a magnetic loss rather than
+an electric one.
  
+"Electromagnetic simulation using the FDTD method" -nope
 
 
+1     6e7     1 0 copper
+
+oh! no, it's fine, he's not using the H-field equs
 
 
