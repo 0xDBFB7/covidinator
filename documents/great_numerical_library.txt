@@ -1,0 +1,12 @@
+Things That Make For A Great Numerical Library
+
+- fast, direct access to a well-documented data structure.
+
+ or, simultaneously, 
+
+- OpenMM-like custom aggregate properties 
+
+- Sensible defaults
+    If the courant condition is a good timestep, consider using it by default.
+    
+- ??? 

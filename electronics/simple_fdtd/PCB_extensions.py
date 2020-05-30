@@ -13,6 +13,17 @@ X = 0
 Y = 1
 Z = 2
 
+class Port:
+    def __init__(self):
+
+        self.SPICE_net = None
+
+        self.voltage = None
+        self.current = None
+        self.voltage_history = []
+        self.current_history = []
+
+
 class PCB:
     def __init__(self, cell_size, z_height=10e-3, xy_margin=15, z_margin=15, pml_cells=10):
 
@@ -28,6 +39,8 @@ class PCB:
         self.ground_plane_z_top = None
         self.component_plane_z = None
 
+        self.reference_port = None
+        self.ports = []
 
     def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
@@ -122,7 +135,7 @@ class PCB:
 
 
 
-    def e_field_integrate(grid, positive_port, reference_port):
+    def e_field_integrate(self, positive_port, reference_port):
         '''
         Determine the potential difference between two ports.
 
@@ -130,29 +143,30 @@ class PCB:
 
         '''
 
-        # np.sum(G.E[x, positive_port.ycoord, positive_port.zcoord][X
 
-        # potential_difference = 0
-        # if(positive_port.xcoord > reference_port.xcoord):
-        #     step = -1
-        # else:
-        #     step = 1
-        # for x in range(positive_port.xcoord,reference_port.xcoord, step):
-        #     potential_difference += G.Ex[x, positive_port.ycoord, positive_port.zcoord] * G.dx * step
-        #
-        # if(positive_port.ycoord > reference_port.ycoord):
-        #     step = -1
-        # else:
-        #     step = 1
-        # for y in range(positive_port.ycoord,reference_port.ycoord, step):
-        #     potential_difference += G.Ey[positive_port.xcoord, y , positive_port.zcoord] * G.dy * step
-        #
-        # if(positive_port.zcoord > reference_port.zcoord):
-        #     step = -1
-        # else:
-        #     step = 1
-        # for z in range(positive_port.zcoord,reference_port.zcoord, step):
-        #     potential_difference += G.Ez[positive_port.xcoord, positive_port.ycoord, z] * G.dz * step
+        # np.sum(G.E[positive_port.xcoord:reference_port., positive_port.ycoord, positive_port.zcoord][X
+
+        potential_difference = 0
+        if(positive_port.xcoord > reference_port.xcoord):
+            step = -1
+        else:
+            step = 1
+        for x in range(positive_port.xcoord,reference_port.xcoord, step):
+            potential_difference += [x, positive_port.ycoord, positive_port.zcoord] * G.dx * step
+
+        if(positive_port.ycoord > reference_port.ycoord):
+            step = -1
+        else:
+            step = 1
+        for y in range(positive_port.ycoord,reference_port.ycoord, step):
+            potential_difference += G.Ey[positive_port.xcoord, y , positive_port.zcoord] * G.dy * step
+
+        if(positive_port.zcoord > reference_port.zcoord):
+            step = -1
+        else:
+            step = 1
+        for z in range(positive_port.zcoord,reference_port.zcoord, step):
+            potential_difference += G.Ez[positive_port.xcoord, positive_port.ycoord, z] * G.dz * step
 
         return potential_difference
 
@@ -190,10 +204,8 @@ class PCB:
             port.voltage = e_field_integrate(G, port, self.reference_port)
             port.voltage_history.append(port.voltage)
 
-
     def E_magnitude(self):
         return np.sqrt(self.grid.E[:,:,:,X]**2.0 + self.grid.E[:,:,:,Y]**2.0 + self.grid.E[:,:,:,Z]**2.0)
-
 
     def dump_to_vtk(self, filename, iteration):
         '''
@@ -204,9 +216,9 @@ class PCB:
 
         Paraview needs a theshold operation to view the objects correctly.
         '''
-        x = np.arange(0, self.grid.Nx+1)
-        y = np.arange(0, self.grid.Ny+1)
-        z = np.arange(0, self.grid.Nz+1)
+        x = np.linspace(0, self.cell_size*self.grid.Nx, self.grid.Nx+1)
+        y = np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1)
+        z = np.linspace(0, self.cell_size*self.grid.Nz, self.grid.Nz+1)
 
         objects = np.zeros_like(self.grid.E[:,:,:,X])
         for obj in self.grid.objects:
@@ -226,3 +238,6 @@ class PCB:
                                                                      'Ez': Ez,
                                                                      '|E|': Emag,
                                                                      'objects': objects})
+
+
+#self.time_step
