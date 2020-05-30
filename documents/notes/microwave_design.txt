@@ -590,6 +590,7 @@ sim. Probably with the existing qucs-python thingy.
 Er, hmm
 
 
+we also need need this fdtd sim if we want to use that cool interdigital design
 
 http://openems.de/forum/viewtopic.php?t=346
 the loss tangent can be modeled as a conductivity:
@@ -633,6 +634,9 @@ airborne or space-based maser?
 
 flaport/fdtd - on 'numpy' pegs a single core, does 1.75 iterations per second on a 150^3 mesh.
 that's 20 mm x 20 mm at 0.2 mm/grid - perfect!
+
+
+Kicad crashed, had to remove lockfiles with rm $XDG_RUNTIME_DIR/kicad/*
 
  
 
