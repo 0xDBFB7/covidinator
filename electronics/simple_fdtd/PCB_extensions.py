@@ -14,9 +14,21 @@ Y = 1
 Z = 2
 
 class Port:
-    def __init__(self):
+    def __init__(self, SPICE_net, x, y, z, dx, dy, dz, axis, current_direction):
 
         self.SPICE_net = None
+
+        self.x = x
+        self.y = y
+        self.z = z
+
+        # A contour around the conductor must be created.
+        self.contour_distance_x = dx
+        self.contour_distance_y = dy
+        self.contour_distance_z = dz
+
+        self.axis = axis
+        self.current_direction = current_direction
 
         self.voltage = None
         self.current = None
@@ -40,7 +52,7 @@ class PCB:
         self.component_plane_z = None
 
         self.reference_port = None
-        self.ports = []
+        self.component_ports = []
 
     def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
@@ -199,7 +211,7 @@ class PCB:
     # """
 
 
-    def compute_voltages(self):
+    def compute_all_voltages(self):
         for port in self.component_ports:
             port.voltage = e_field_integrate(G, port, self.reference_port)
             port.voltage_history.append(port.voltage)
@@ -213,10 +225,12 @@ class PCB:
 
         thanks
         https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/
+        https://bitbucket.org/pauloh/pyevtk/src/default/src/hl.py
 
         Paraview needs a theshold operation to view the objects correctly.
+
         '''
-        x = np.linspace(0, self.cell_size*self.grid.Nx, self.grid.Nx+1)
+        x = np.linspace(0, self.cell_size*self.grid.Nx, self.grid.Nx+1) #there might be an off-by-one error here.
         y = np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1)
         z = np.linspace(0, self.cell_size*self.grid.Nz, self.grid.Nz+1)
 
@@ -238,6 +252,10 @@ class PCB:
                                                                      'Ez': Ez,
                                                                      '|E|': Emag,
                                                                      'objects': objects})
+
+
+
+    # def (self, filename, iteration):
 
 
 #self.time_step
