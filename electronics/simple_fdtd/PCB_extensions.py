@@ -14,18 +14,22 @@ Y = 1
 Z = 2
 
 class Port:
-    def __init__(self, SPICE_net, x, y, z, dx, dy, dz, axis, current_direction):
+    def __init__(self, pcb, SPICE_net, axis, current_direction, F_x, F_y, F_conductor_width, F_z=None, F_conductor_height=None):
 
         self.SPICE_net = None
 
-        self.x = x
-        self.y = y
-        self.z = z
+        if(F_z == None):
+            F_z = pcb.component_plane_z*pcb.cell_size
 
+        self.N_x = int((F_x)/pcb.cell_size)
+        self.N_y = int((F_y)/pcb.cell_size)
+        self.N_z = int((F_z)/pcb.cell_size)
+
+        if(F_conductor_height == None):
+            F_conductor_height = (pcb.component_plane_z-pcb.ground_plane_z_top)*pcb.cell_size
         # A contour around the conductor must be created.
-        self.contour_distance_x = dx
-        self.contour_distance_y = dy
-        self.contour_distance_z = dz
+        self.N_contour_width_div2 = int(ceil((F_conductor_width/2)/pcb.cell_size))
+        self.N_contour_height_div2 = int(ceil((F_conductor_height/2)/pcb.cell_size))
 
         self.axis = axis
         self.current_direction = current_direction
@@ -182,7 +186,8 @@ class PCB:
 
         return potential_difference
 
-
+    # def apply_current_equivalent_source(self, current, port):
+    #     # port.axis
 
     # class LumpedComponent(object):
     # """
@@ -231,7 +236,7 @@ class PCB:
 
         '''
         x = np.linspace(0, self.cell_size*self.grid.Nx, self.grid.Nx+1) #there might be an off-by-one error here.
-        y = np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1)
+        y = np.reverse(np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1))
         z = np.linspace(0, self.cell_size*self.grid.Nz, self.grid.Nz+1)
 
         objects = np.zeros_like(self.grid.E[:,:,:,X])
@@ -240,6 +245,16 @@ class PCB:
                 objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
             else:
                 objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
+
+        ports = np.zeros_like(self.grid.E[:,:,:,X])
+        for port in [i for i in self.component_ports + [self.reference_port] if i]:
+            ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
+                    port.N_y:port.N_y+1,
+                    port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
+            ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
+                    port.N_y-1:port.N_y+1,
+                    port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
+            ports[port.N_x,port.N_y,port.N_z] = 4
 
 
         Ex = np.ascontiguousarray(self.grid.E[:,:,:,X])
@@ -251,7 +266,8 @@ class PCB:
                                                                      'Ey': Ey,
                                                                      'Ez': Ez,
                                                                      '|E|': Emag,
-                                                                     'objects': objects})
+                                                                     'objects': objects,
+                                                                     'ports': ports})
 
 
 
