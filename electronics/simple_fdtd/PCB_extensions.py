@@ -146,7 +146,7 @@ class PCB:
         for x in range(0, self.board_N_x):
             for y in range(0, self.board_N_y):
                 if(pix[x*PNG_SUPERSAMPLE_FACTOR,y*PNG_SUPERSAMPLE_FACTOR][3]): #alpha channel
-                    self.grid[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(self.board_N_y-y-1):self.xy_margin+(self.board_N_y-(y)), z_slice] \
+                    self.grid[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] \
                                         = fdtd.AbsorbingObject(permittivity=1.0, conductivity=conductor_conductivity, name=None)
 
 
@@ -224,7 +224,7 @@ class PCB:
     def E_magnitude(self):
         return np.sqrt(self.grid.E[:,:,:,X]**2.0 + self.grid.E[:,:,:,Y]**2.0 + self.grid.E[:,:,:,Z]**2.0)
 
-    def dump_to_vtk(self, filename, iteration):
+    def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=False, Emag_dump=True, objects_dump=True, ports_dump=True):
         '''
         Extension is automatically chosen, you don't need to supply it
 
@@ -235,39 +235,47 @@ class PCB:
         Paraview needs a theshold operation to view the objects correctly.
 
         '''
+
+
         x = np.linspace(0, self.cell_size*self.grid.Nx, self.grid.Nx+1) #there might be an off-by-one error here.
-        y = np.reverse(np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1))
+        y = np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1)
         z = np.linspace(0, self.cell_size*self.grid.Nz, self.grid.Nz+1)
 
-        objects = np.zeros_like(self.grid.E[:,:,:,X])
-        for obj in self.grid.objects:
-            if(obj.name == "substrate"):
-                objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
-            else:
-                objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
+        cellData = {}
 
-        ports = np.zeros_like(self.grid.E[:,:,:,X])
-        for port in [i for i in self.component_ports + [self.reference_port] if i]:
-            ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
-                    port.N_y:port.N_y+1,
-                    port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
-            ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
-                    port.N_y-1:port.N_y+1,
-                    port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
-            ports[port.N_x,port.N_y,port.N_z] = 4
+        if(objects_dump):
+            objects = np.zeros_like(self.grid.E[:,:,:,X])
+            for obj in self.grid.objects:
+                if(obj.name == "substrate"):
+                    objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
+                else:
+                    objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
+            cellData['objects'] = objects
+
+        if(ports_dump):
+            ports = np.zeros_like(self.grid.E[:,:,:,X])
+            for port in [i for i in self.component_ports + [self.reference_port] if i]:
+                ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
+                        port.N_y:port.N_y+1,
+                        port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
+                ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
+                        port.N_y-1:port.N_y+1,
+                        port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
+                ports[port.N_x,port.N_y,port.N_z] = 4
+            cellData['ports'] = ports
 
 
-        Ex = np.ascontiguousarray(self.grid.E[:,:,:,X])
-        Ey = np.ascontiguousarray(self.grid.E[:,:,:,Y])
-        Ez = np.ascontiguousarray(self.grid.E[:,:,:,Z])
-        Emag = np.ascontiguousarray(self.E_magnitude()) # gridToVTK expects a contiguous array.
+        if(Ex_dump):
+            cellData['Ex'] = np.ascontiguousarray(self.grid.E[:,:,:,X])
+        if(Ey_dump):
+            cellData['Ey'] = np.ascontiguousarray(self.grid.E[:,:,:,Y])
+        if(Ez_dump):
+            cellData['Ez'] = np.ascontiguousarray(self.grid.E[:,:,:,Z])
+        if(Emag_dump):
+            cellData['Emag'] = np.ascontiguousarray(self.E_magnitude()) # gridToVTK expects a contiguous array.
 
-        gridToVTK(filename + str(iteration), x, y, z, cellData = {'Ex': Ex,
-                                                                     'Ey': Ey,
-                                                                     'Ez': Ez,
-                                                                     '|E|': Emag,
-                                                                     'objects': objects,
-                                                                     'ports': ports})
+
+        gridToVTK(filename + str(iteration), x, y, z, cellData = cellData)
 
 
 
