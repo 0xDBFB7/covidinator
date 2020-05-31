@@ -59,7 +59,8 @@
     (pad_drill 0.762)
     (pad_to_mask_clearance 0.051)
     (solder_mask_min_width 0.25)
-    (aux_axis_origin 0 0)
+    (aux_axis_origin 49.8 55.2)
+    (grid_origin 49.8 55.2)
     (visible_elements FFFFFF7F)
     (pcbplotparams
       (layerselection 0x010fc_ffffffff)
@@ -222,10 +223,10 @@
       (net 2 "Net-(C1-Pad1)") (solder_mask_margin 0.1016))
   )
 
-  (segment (start 50.6 56) (end 79.2 56) (width 1.5) (layer F.Cu) (net 0))
-  (segment (start 79.2 56) (end 79.2 77) (width 1.5) (layer F.Cu) (net 0))
   (segment (start 79.2 77) (end 50.6 77) (width 1.5) (layer F.Cu) (net 0))
   (segment (start 50.6 77) (end 50.6 56) (width 1.5) (layer F.Cu) (net 0))
+  (segment (start 50.6 56) (end 79.2 56) (width 1.5) (layer F.Cu) (net 0))
+  (segment (start 79.2 56) (end 79.2 77) (width 1.5) (layer F.Cu) (net 0))
   (segment (start 57.499581 66.6) (end 61.2 66.6) (width 1.5) (layer F.Cu) (net 2) (tstamp 5ED41AE3))
   (segment (start 69.2 66.6) (end 71.700419 66.6) (width 1.5) (layer F.Cu) (net 2) (tstamp 5ED41AE3))
   (segment (start 64 66.6) (end 65.8 66.6) (width 1.5) (layer F.Cu) (net 3))

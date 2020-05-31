@@ -41,7 +41,7 @@ class Port:
 
 
 class PCB:
-    def __init__(self, cell_size, z_height=10e-3, xy_margin=15, z_margin=15, pml_cells=10):
+    def __init__(self, cell_size, z_height=3e-3, xy_margin=15, z_margin=15, pml_cells=10):
 
         self.grid = None
         self.cell_size = cell_size
@@ -186,8 +186,17 @@ class PCB:
 
         return potential_difference
 
-    # def apply_current_equivalent_source(self, current, port):
-    #     # port.axis
+    def apply_current_equivalent_source(self, current, port):
+        ports = np.zeros_like(self.grid.E[:,:,:,X])
+        for port in [i for i in self.component_ports + [self.reference_port] if i]:
+            ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
+                    port.N_y:port.N_y+1,
+                    port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
+            ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
+                    port.N_y-1:port.N_y+1,
+                    port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
+            ports[port.N_x,port.N_y,port.N_z] = 4
+        cellData['ports'] = ports
 
     # class LumpedComponent(object):
     # """
