@@ -14,31 +14,31 @@ Y = 1
 Z = 2
 
 class Port:
-    def __init__(self, pcb, SPICE_net, axis, current_direction, F_x, F_y, F_conductor_width, F_z=None, F_conductor_height=None):
+    def __init__(self, pcb, SPICE_net, F_x, F_y):
 
         self.SPICE_net = None
 
-        if(F_z == None):
-            F_z = pcb.component_plane_z*pcb.cell_size
-
         self.N_x = int((F_x)/pcb.cell_size)
         self.N_y = int((F_y)/pcb.cell_size)
-        self.N_z = int((F_z)/pcb.cell_size)
 
-        if(F_conductor_height == None):
-            F_conductor_height = (pcb.component_plane_z-pcb.ground_plane_z_top)*pcb.cell_size
-        # A contour around the conductor must be created.
-        self.N_contour_width_div2 = int(ceil((F_conductor_width/2)/pcb.cell_size))
-        self.N_contour_height_div2 = int(ceil((F_conductor_height/2)/pcb.cell_size))
+        #add via
+        pcb.grid[self.N_x:self.N_x+1, self.N_y:self.N_y+1, pcb.ground_plane_z_top:pcb.component_plane_z-1] \
+                        = fdtd.AbsorbingObject(permittivity=1.0, conductivity=6e7, name="via")
 
-        self.axis = axis
-        self.current_direction = current_direction
+
+        # if(F_conductor_height == None):
+        #     F_conductor_height = (pcb.component_plane_z-pcb.ground_plane_z_top)*pcb.cell_size
+        # # A contour around the conductor must be created.
+        # self.N_contour_width_div2 = int(ceil((F_conductor_width/2)/pcb.cell_size))
+        # self.N_contour_height_div2 = int(ceil((F_conductor_height/2)/pcb.cell_size))
+
+        # self.axis = axis
+        # self.current_direction = current_direction
 
         self.voltage = None
         self.current = None
         self.voltage_history = []
         self.current_history = []
-
 
 class PCB:
     def __init__(self, cell_size, z_height=3e-3, xy_margin=15, z_margin=15, pml_cells=10):
@@ -55,7 +55,7 @@ class PCB:
         self.ground_plane_z_top = None
         self.component_plane_z = None
 
-        self.reference_port = None
+        # self.reference_port = None
         self.component_ports = []
 
     def initialize_grid(self, N_x, N_y, N_z):
@@ -128,7 +128,8 @@ class PCB:
 
         self.board_N_x = math.ceil(width/self.cell_size)
         self.board_N_y = math.ceil(height/self.cell_size)
-
+        print(self.board_N_x*self.cell_size)
+        print(self.board_N_y*self.cell_size)
         print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
         self.initialize_grid(N_x, N_y, N_z)
@@ -142,6 +143,8 @@ class PCB:
         image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.board_N_x*PNG_SUPERSAMPLE_FACTOR,
                                                       output_height=self.board_N_y*PNG_SUPERSAMPLE_FACTOR))
         image = Image.open(image_data)
+
+        image.show()
         pix = image.load()
         for x in range(0, self.board_N_x):
             for y in range(0, self.board_N_y):
@@ -150,53 +153,57 @@ class PCB:
                                         = fdtd.AbsorbingObject(permittivity=1.0, conductivity=conductor_conductivity, name=None)
 
 
+    #
+    # def e_field_integrate(self, positive_port, reference_port):
+    #     '''
+    #     Determine the potential difference between two ports.
+    #
+    #     Doesn't matter how you integrate.
+    #
+    #     '''
+    #
+    #
+    #     # np.sum(G.E[positive_port.xcoord:reference_port., positive_port.ycoord, positive_port.zcoord][X
+    #
+    #     potential_difference = 0
+    #     if(positive_port.xcoord > reference_port.xcoord):
+    #         step = -1
+    #     else:
+    #         step = 1
+    #     for x in range(positive_port.xcoord,reference_port.xcoord, step):
+    #         potential_difference += [x, positive_port.ycoord, positive_port.zcoord] * G.dx * step
+    #
+    #     if(positive_port.ycoord > reference_port.ycoord):
+    #         step = -1
+    #     else:
+    #         step = 1
+    #     for y in range(positive_port.ycoord,reference_port.ycoord, step):
+    #         potential_difference += G.Ey[positive_port.xcoord, y , positive_port.zcoord] * G.dy * step
+    #
+    #     if(positive_port.zcoord > reference_port.zcoord):
+    #         step = -1
+    #     else:
+    #         step = 1
+    #     for z in range(positive_port.zcoord,reference_port.zcoord, step):
+    #         potential_difference += G.Ez[positive_port.xcoord, positive_port.ycoord, z] * G.dz * step
+    #
+    #     return potential_difference
 
-    def e_field_integrate(self, positive_port, reference_port):
-        '''
-        Determine the potential difference between two ports.
-
-        Doesn't matter how you integrate.
-
-        '''
 
 
-        # np.sum(G.E[positive_port.xcoord:reference_port., positive_port.ycoord, positive_port.zcoord][X
+    # def apply_current_equivalent_source(self, current, port):
 
-        potential_difference = 0
-        if(positive_port.xcoord > reference_port.xcoord):
-            step = -1
-        else:
-            step = 1
-        for x in range(positive_port.xcoord,reference_port.xcoord, step):
-            potential_difference += [x, positive_port.ycoord, positive_port.zcoord] * G.dx * step
 
-        if(positive_port.ycoord > reference_port.ycoord):
-            step = -1
-        else:
-            step = 1
-        for y in range(positive_port.ycoord,reference_port.ycoord, step):
-            potential_difference += G.Ey[positive_port.xcoord, y , positive_port.zcoord] * G.dy * step
-
-        if(positive_port.zcoord > reference_port.zcoord):
-            step = -1
-        else:
-            step = 1
-        for z in range(positive_port.zcoord,reference_port.zcoord, step):
-            potential_difference += G.Ez[positive_port.xcoord, positive_port.ycoord, z] * G.dz * step
-
-        return potential_difference
-
-    def apply_current_equivalent_source(self, current, port):
-        ports = np.zeros_like(self.grid.E[:,:,:,X])
-        for port in [i for i in self.component_ports + [self.reference_port] if i]:
-            ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
-                    port.N_y:port.N_y+1,
-                    port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
-            ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
-                    port.N_y-1:port.N_y+1,
-                    port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
-            ports[port.N_x,port.N_y,port.N_z] = 4
-        cellData['ports'] = ports
+        # ports = np.zeros_like(self.grid.E[:,:,:,X])
+        # for port in [i for i in self.component_ports + [self.reference_port] if i]:
+        #     ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
+        #             port.N_y:port.N_y+1,
+        #             port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
+        #     ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
+        #             port.N_y-1:port.N_y+1,
+        #             port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
+        #     ports[port.N_x,port.N_y,port.N_z] = 4
+        # cellData['ports'] = ports
 
     # class LumpedComponent(object):
     # """
@@ -224,11 +231,22 @@ class PCB:
     #
     # """
 
-
     def compute_all_voltages(self):
         for port in self.component_ports:
-            port.voltage = e_field_integrate(G, port, self.reference_port)
-            port.voltage_history.append(port.voltage)
+            # port.voltage = e_field_integrate(G, port, self.reference_port)
+            port.voltage = self.grid.E[port.N_x,port.N_y,port.component_plane_z-1,Z]/self.cell_size
+            # port.voltage_history.append(port.voltage)
+
+    def apply_all_currents(self):
+        for port in self.component_ports:
+            # port.voltage = e_field_integrate(G, port, self.reference_port)
+            C = 6.0*(self.cell_size**2.0)*self.grid.permittivity[port.N_x,port.N_y,port.component_plane_z-1]
+            print(C)
+            self.grid.E[port.N_x,port.N_y,port.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
+            # Iz = G.dx * (Hx[x, y - 1, z] - Hx[x, y, z]) + G.dy * (Hy[x, y, z] - Hy[x - 1, y, z])
+
+            # port.voltage_history.append(port.voltage)
+
 
     def E_magnitude(self):
         return np.sqrt(self.grid.E[:,:,:,X]**2.0 + self.grid.E[:,:,:,Y]**2.0 + self.grid.E[:,:,:,Z]**2.0)
@@ -263,15 +281,20 @@ class PCB:
 
         if(ports_dump):
             ports = np.zeros_like(self.grid.E[:,:,:,X])
-            for port in [i for i in self.component_ports + [self.reference_port] if i]:
-                ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
-                        port.N_y:port.N_y+1,
-                        port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
-                ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
-                        port.N_y-1:port.N_y+1,
-                        port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
-                ports[port.N_x,port.N_y,port.N_z] = 4
+            for port in [i for i in self.component_ports if i]:
+                    ports[port.N_x,port.N_y,self.component_plane_z-1] = 4
             cellData['ports'] = ports
+            # ports[port.N_x,port.N_y,port.N_z] = 4
+        #     ports = np.zeros_like(self.grid.E[:,:,:,X])
+        #     for port in [i for i in self.component_ports + [self.reference_port] if i]:
+        #         ports[port.N_x-(port.N_contour_width_div2)-1:port.N_x+(port.N_contour_width_div2)+1,
+        #                 port.N_y:port.N_y+1,
+        #                 port.N_z-(port.N_contour_height_div2)-1:port.N_z+(port.N_contour_height_div2)+1] = 3
+        #         ports[port.N_x-(port.N_contour_width_div2):port.N_x+(port.N_contour_width_div2),
+        #                 port.N_y-1:port.N_y+1,
+        #                 port.N_z-(port.N_contour_height_div2):port.N_z+(port.N_contour_height_div2)] = 0
+        #         ports[port.N_x,port.N_y,port.N_z] = 4
+        #     cellData['ports'] = ports
 
 
         if(Ex_dump):

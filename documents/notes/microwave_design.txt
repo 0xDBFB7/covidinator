@@ -654,3 +654,5 @@ Recent paper on Far UV shows that it might actually be safe, penetration is so l
 that might be an even better method
 
 huge lag on atom. Had to upgrade. sudo chmod 4755 /usr/share/atom/chrome-sandbox too.
+
+i always think I can work later without consequence but then my face goes numb
