@@ -9,23 +9,36 @@ from pyevtk.hl import gridToVTK
 from math import pi, ceil
 from scipy.constants import epsilon_0
 import numpy as np
+import torch
+
+from fdtd.backend import NumpyBackend
+
 X = 0
 Y = 1
 Z = 2
 
+
 class Port:
     def __init__(self, pcb, SPICE_net, F_x, F_y):
 
-        self.SPICE_net = None
+        self.SPICE_net = SPICE_net
 
-        self.N_x = int((F_x)/pcb.cell_size)
-        self.N_y = int((F_y)/pcb.cell_size)
+        self.N_x = pcb.xy_margin+int((F_x)/pcb.cell_size)
+        self.N_y = pcb.xy_margin+int((F_y)/pcb.cell_size)
+
+
 
         #add via
         pcb.grid[self.N_x:self.N_x+1, self.N_y:self.N_y+1, pcb.ground_plane_z_top:pcb.component_plane_z-1] \
-                        = fdtd.AbsorbingObject(permittivity=1.0, conductivity=6e7, name="via")
+                        = fdtd.PECObject(name=None)
 
-
+        # copper_above = False
+        # for obj in pcb.grid.objects:
+        #     if(obj.x.start == self.N_x and obj.y.start == self.N_y):
+        #         copper_above = True
+        #
+        # if(not copper_above):
+        #     print("Warning: No copper above {}".format(SPICE_net))
         # if(F_conductor_height == None):
         #     F_conductor_height = (pcb.component_plane_z-pcb.ground_plane_z_top)*pcb.cell_size
         # # A contour around the conductor must be created.
@@ -35,8 +48,8 @@ class Port:
         # self.axis = axis
         # self.current_direction = current_direction
 
-        self.voltage = None
-        self.current = None
+        self.voltage = 0.0
+        self.current = 0.0
         self.voltage_history = []
         self.current_history = []
 
@@ -57,14 +70,15 @@ class PCB:
 
         # self.reference_port = None
         self.component_ports = []
-
+        self.substrate_permittivity = None
+        
     def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
             (N_x,N_y,N_z),
             grid_spacing=self.cell_size,
             permittivity=1.0,
-            permeability=1.0
-        )
+            permeability=1.0)
+            # courant_number = 0.2        )
 
         fdtd.PML(1e-8, # stability factor
             None)
@@ -91,7 +105,7 @@ class PCB:
         N_ground_plane = ceil(ground_plane_thickness / self.cell_size)
 
         self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
-                            = fdtd.AbsorbingObject(permittivity=1.0, conductivity=conductor_conductivity, name="ground_plane")
+                            = fdtd.PECObject(name="ground_plane")
 
         self.ground_plane_z_top = self.z_margin+N_ground_plane
 
@@ -107,7 +121,7 @@ class PCB:
 
         self.component_plane_z = self.ground_plane_z_top + N_substrate
 
-
+        self.substrate_permittivity = substrate_permittivity
 
     def initialize_grid_with_svg(self, svg_file):
         '''
@@ -143,14 +157,12 @@ class PCB:
         image_data = io.BytesIO(svg2png(url=svg_file, output_width=self.board_N_x*PNG_SUPERSAMPLE_FACTOR,
                                                       output_height=self.board_N_y*PNG_SUPERSAMPLE_FACTOR))
         image = Image.open(image_data)
-
-        image.show()
         pix = image.load()
         for x in range(0, self.board_N_x):
             for y in range(0, self.board_N_y):
                 if(pix[x*PNG_SUPERSAMPLE_FACTOR,y*PNG_SUPERSAMPLE_FACTOR][3]): #alpha channel
                     self.grid[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] \
-                                        = fdtd.AbsorbingObject(permittivity=1.0, conductivity=conductor_conductivity, name=None)
+                                        = fdtd.PECObject(name=None)
 
 
     #
@@ -231,25 +243,38 @@ class PCB:
     #
     # """
 
+    # def PEC(self):
+    #     for obj in self.grid.objects:
+    #         if(not obj.name == "substrate"):
+    #             self.grid.E[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop,:] = 0
+
     def compute_all_voltages(self):
         for port in self.component_ports:
             # port.voltage = e_field_integrate(G, port, self.reference_port)
-            port.voltage = self.grid.E[port.N_x,port.N_y,port.component_plane_z-1,Z]/self.cell_size
+            port.voltage = self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z]*self.cell_size
+            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1] = 0
             # port.voltage_history.append(port.voltage)
+
+#permittivity might have to be cubed
+#is there a bug in fdtd/grid/permittivity? Seems like it's not updated unless it's an array
 
     def apply_all_currents(self):
         for port in self.component_ports:
             # port.voltage = e_field_integrate(G, port, self.reference_port)
-            C = 6.0*(self.cell_size**2.0)*self.grid.permittivity[port.N_x,port.N_y,port.component_plane_z-1]
-            print(C)
-            self.grid.E[port.N_x,port.N_y,port.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
+            C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)
+            # math.sin(self.grid.time_steps_passed/50.0)* (100.0/self.cell_size)
+            # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
+            if(port.SPICE_net == 0):
+                self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] -= 100.0/self.cell_size
+
+                 # = 100/(self.cell_size * epsilon_0)
             # Iz = G.dx * (Hx[x, y - 1, z] - Hx[x, y, z]) + G.dy * (Hy[x, y, z] - Hy[x - 1, y, z])
 
             # port.voltage_history.append(port.voltage)
 
 
-    def E_magnitude(self):
-        return np.sqrt(self.grid.E[:,:,:,X]**2.0 + self.grid.E[:,:,:,Y]**2.0 + self.grid.E[:,:,:,Z]**2.0)
+    def E_magnitude(self, E):
+        return np.sqrt(E[:,:,:,X]**2.0 + E[:,:,:,Y]**2.0 + E[:,:,:,Z]**2.0)
 
     def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=False, Emag_dump=True, objects_dump=True, ports_dump=True):
         '''
@@ -270,8 +295,13 @@ class PCB:
 
         cellData = {}
 
+        if(not isinstance(fdtd.backend, NumpyBackend)):
+            E_copy = self.grid.E.cpu()
+        else:
+            E_copy = self.grid.E
+
         if(objects_dump):
-            objects = np.zeros_like(self.grid.E[:,:,:,X])
+            objects = np.zeros_like(E_copy[:,:,:,X])
             for obj in self.grid.objects:
                 if(obj.name == "substrate"):
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
@@ -280,7 +310,7 @@ class PCB:
             cellData['objects'] = objects
 
         if(ports_dump):
-            ports = np.zeros_like(self.grid.E[:,:,:,X])
+            ports = np.zeros_like(E_copy[:,:,:,X])
             for port in [i for i in self.component_ports if i]:
                     ports[port.N_x,port.N_y,self.component_plane_z-1] = 4
             cellData['ports'] = ports
@@ -298,13 +328,13 @@ class PCB:
 
 
         if(Ex_dump):
-            cellData['Ex'] = np.ascontiguousarray(self.grid.E[:,:,:,X])
+            cellData['Ex'] = np.ascontiguousarray(E_copy[:,:,:,X])
         if(Ey_dump):
-            cellData['Ey'] = np.ascontiguousarray(self.grid.E[:,:,:,Y])
+            cellData['Ey'] = np.ascontiguousarray(E_copy[:,:,:,Y])
         if(Ez_dump):
-            cellData['Ez'] = np.ascontiguousarray(self.grid.E[:,:,:,Z])
+            cellData['Ez'] = np.ascontiguousarray(E_copy[:,:,:,Z])
         if(Emag_dump):
-            cellData['Emag'] = np.ascontiguousarray(self.E_magnitude()) # gridToVTK expects a contiguous array.
+            cellData['Emag'] = np.ascontiguousarray(self.E_magnitude(E_copy)) # gridToVTK expects a contiguous array.
 
 
         gridToVTK(filename + str(iteration), x, y, z, cellData = cellData)
