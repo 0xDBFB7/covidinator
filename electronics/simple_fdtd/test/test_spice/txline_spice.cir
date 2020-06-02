@@ -8,11 +8,12 @@ R1 input input_terminated 50
 T1 input_terminated 0 output 0 Z0=50 F=8e9 NL=0.181
 R2 output 0 50
 
-.ic v(input_terminated)=0
-.ic v(output)=0
+.param vin1 = 0
+.param vin2 = 0
 
-set wr_vecnames=1
-wrdata
+.ic v(input_terminated)=vin1
+.ic v(output)=vin2
+
 
 .end
 
@@ -22,3 +23,6 @@ wrdata
 // 1000 timesteps
 
 //print v(output) > output.tsv
+//print v(output)[58]
+//v(output)[10000] gets constrained to end time
+//alterparam vin1 = 0

@@ -11,6 +11,10 @@ from scipy.constants import epsilon_0
 import numpy as np
 import torch
 
+import subprocess
+import sys
+import signal
+
 from fdtd.backend import NumpyBackend
 from fdtd.backend import backend as bd
 
@@ -18,6 +22,14 @@ X = 0
 Y = 1
 Z = 2
 
+#
+# def _set_pdeathsig(sig=signal.SIGTERM):
+#     """help function to ensure once parent process exits, its childrent processes will automatically die
+#     """
+#     def callable():
+#         libc = ctypes.CDLL("libc.so.6")
+#         return libc.prctl(1, sig)
+#     return callable
 
 class Port:
     def __init__(self, pcb, SPICE_net, F_x, F_y):
@@ -53,6 +65,9 @@ class PCB:
         self.substrate_permittivity = None
 
         self.copper_mask = None
+
+        self.SPICE_instance = None
+
 
     def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
@@ -261,3 +276,43 @@ class PCB:
 
 
         gridToVTK(filename + str(iteration), x, y, z, cellData = cellData)
+
+
+
+
+
+    def init_SPICE(self, SPICE_binary, source_file):
+
+        self.SPICE_instance = subprocess.Popen([SPICE_binary, '--pipe'],
+                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT)
+
+        self.SPICE_instance.stdin.write(('source ' + source_file + '\n').encode())
+        self.SPICE_instance.stdin.flush()
+        self.SPICE_instance.stdout.flush()
+        sys.stdout.flush()
+
+        # print(proc.stdout.readline())
+        # print(proc.stdout.readline())
+        # print(proc.stdout.readline())
+
+
+    def get_spice_voltage(SPICE_net):
+        self.SPICE_instance.stdin.flush()
+        self.SPICE_instance.stdout.flush()
+        sys.stdout.flush()
+        self.SPICE_instance.stdin.write(('print v(' + SPICE_net + ')[10000]\n').encode())
+        # proc.stdout.readline()
+
+    def set_spice_voltage(SPICE_net):
+        self.SPICE_instance.stdin.write(('alterparam ' + ' .v').encode())
+
+
+
+    def run_spice_step(self, SPICE_binary, source_file):
+        # resets simulation without reloading file from disk
+        self.SPICE_instance.stdin.write(('reset\n').encode())
+        self.grid.time_step
+
+
+#

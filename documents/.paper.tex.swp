@@ -257,11 +257,14 @@ OpenEMS is excellent, with Python bindings, some lumped components, and mesh ref
 
 Simulating the oscillator with an AC sim using the manufacturer's S-parameters and QUCS' microstrip approximations [qucs/optimize\_filter\_1] appeared to yield good agreement with experiment. The peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
  
-Dips and peaks in varactor tuning were unexpected; and the tuning range was far smaller than expected.
+However, unexpected dips and peaks were found with varactor tuning; and the tuning range was far smaller than expected.
 
-However, it was thought that a transient simulation - to determine how the spectrum actually evolved as the oscillator run - would improve the situation. 
+It was thought that a transient simulation - to determine how the spectrum actually evolved - would improve the situation. 
 
-QUCS' microstrip models were not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support.
+QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support.
+
+
+
 
 \rule{\linewidth}{0.2pt}
 

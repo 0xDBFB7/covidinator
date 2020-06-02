@@ -11,8 +11,6 @@ pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
 pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, 'test/basic_test.svg')
 
 pcb.reference_port = Port(pcb, 0, 0, 0)
-
-
 pcb.component_ports.append(Port(pcb, 0, 11e-3, 11.3e-3))
 pcb.component_ports.append(Port(pcb, 1, 9e-3, 11.3e-3))
 
