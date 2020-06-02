@@ -71,7 +71,7 @@ class PCB:
         # self.reference_port = None
         self.component_ports = []
         self.substrate_permittivity = None
-        
+
     def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
             (N_x,N_y,N_z),
@@ -103,9 +103,9 @@ class PCB:
         '''
 
         N_ground_plane = ceil(ground_plane_thickness / self.cell_size)
-
-        self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
-                            = fdtd.PECObject(name="ground_plane")
+        # 
+        # self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
+        #                     = fdtd.PECObject(name="ground_plane")
 
         self.ground_plane_z_top = self.z_margin+N_ground_plane
 
