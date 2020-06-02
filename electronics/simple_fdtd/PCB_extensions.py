@@ -182,7 +182,6 @@ class PCB:
     def compute_all_voltages(self):
         for port in self.component_ports:
             # port.voltage = self.e_field_integrate(port, self.reference_port)
-
             #since all conductors have zero electric field, this is a reasonable approximation -
             #
             port.voltage = sum(self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z])*self.cell_size

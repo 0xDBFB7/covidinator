@@ -1,0 +1,6 @@
+.title simple_transmission_line_test_spice
+V1 input 0 1
+R1 input input_terminated 50
+
+R2 output 0 50
+.end

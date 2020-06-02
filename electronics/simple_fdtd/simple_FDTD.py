@@ -16,9 +16,9 @@ pcb.reference_port = Port(pcb, 0, 0, 0)
 pcb.component_ports.append(Port(pcb, 0, 11e-3, 11.3e-3))
 pcb.component_ports.append(Port(pcb, 1, 9e-3, 11.3e-3))
 
+print(pcb.grid.time_step)
 dump_step = 20
 for i in range(0,10000):
-
     pcb.grid.update_E()
 
     pcb.zero_conductor_fields()
