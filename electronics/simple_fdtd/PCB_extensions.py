@@ -97,7 +97,7 @@ class PCB:
 
         self.grid = grid
 
-        self.copper_mask = 
+        self.copper_mask = bd.zeros((N_x,N_y,N_z))
 
 
 
@@ -108,9 +108,10 @@ class PCB:
         '''
 
         N_ground_plane = ceil(ground_plane_thickness / self.cell_size)
-        #
+
         # self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
         #                     = fdtd.PECObject(name="ground_plane")
+        self.copper_mask[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] = 1
 
         self.ground_plane_z_top = self.z_margin+N_ground_plane
 
@@ -119,12 +120,12 @@ class PCB:
 
         N_substrate = ceil(substrate_thickness / self.cell_size)
 
-        substrate_conductivity = loss_tangent * (2.0*pi) * 2.4e9 * epsilon_0 * substrate_permittivity;
-
+        substrate_conductivity = loss_tangent * (2.0*pi) * 2.4e9 * epsilon_0 * substrate_permittivity
+        #loss tangent not accounted for
         # substrate_conductivity = 0
         print(substrate_conductivity)
         self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
-                            = fdtd.Object(permittivity=substrate_permittivity, conductivity=substrate_conductivity, name="substrate")
+                            = fdtd.Object(permittivity=substrate_permittivity, name="substrate")
 
 
         self.component_plane_z = self.ground_plane_z_top + N_substrate
@@ -169,8 +170,9 @@ class PCB:
         for x in range(0, self.board_N_x):
             for y in range(0, self.board_N_y):
                 if(pix[x*PNG_SUPERSAMPLE_FACTOR,y*PNG_SUPERSAMPLE_FACTOR][3]): #alpha channel
-                    self.grid[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] \
-                                        = fdtd.PECObject(name=None)
+                    self.copper_mask[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] = 1
+                    # self.grid[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] \
+                    #                     = fdtd.PECObject(name=None)
 
 
     #
@@ -315,6 +317,7 @@ class PCB:
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
                 else:
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
+            objects += self.copper_mask.cpu().numpy()
             cellData['objects'] = objects
 
         if(ports_dump):
