@@ -12,6 +12,7 @@ import numpy as np
 import torch
 
 from fdtd.backend import NumpyBackend
+from fdtd.backend import backend as bd
 
 X = 0
 Y = 1
@@ -72,6 +73,8 @@ class PCB:
         self.component_ports = []
         self.substrate_permittivity = None
 
+        self.copper_mask = None
+
     def initialize_grid(self, N_x, N_y, N_z):
         grid = fdtd.Grid(
             (N_x,N_y,N_z),
@@ -94,6 +97,8 @@ class PCB:
 
         self.grid = grid
 
+        self.copper_mask = 
+
 
 
     def create_planes(self, ground_plane_thickness, conductor_conductivity):
@@ -114,10 +119,13 @@ class PCB:
 
         N_substrate = ceil(substrate_thickness / self.cell_size)
 
-        substrate_conductivity = loss_tangent * (2.0*pi) * loss_tangent_frequency * epsilon_0 * substrate_permittivity;
-        # 
-        # self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
-        #                     = fdtd.AbsorbingObject(permittivity=substrate_permittivity, conductivity=substrate_conductivity, name="substrate")
+        substrate_conductivity = loss_tangent * (2.0*pi) * 2.4e9 * epsilon_0 * substrate_permittivity;
+
+        # substrate_conductivity = 0
+        print(substrate_conductivity)
+        self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
+                            = fdtd.Object(permittivity=substrate_permittivity, conductivity=substrate_conductivity, name="substrate")
+
 
         self.component_plane_z = self.ground_plane_z_top + N_substrate
 
