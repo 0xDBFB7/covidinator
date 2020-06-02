@@ -103,7 +103,7 @@ class PCB:
         '''
 
         N_ground_plane = ceil(ground_plane_thickness / self.cell_size)
-        # 
+        #
         # self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
         #                     = fdtd.PECObject(name="ground_plane")
 
@@ -115,9 +115,9 @@ class PCB:
         N_substrate = ceil(substrate_thickness / self.cell_size)
 
         substrate_conductivity = loss_tangent * (2.0*pi) * loss_tangent_frequency * epsilon_0 * substrate_permittivity;
-
-        self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
-                            = fdtd.AbsorbingObject(permittivity=substrate_permittivity, conductivity=substrate_conductivity, name="substrate")
+        # 
+        # self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
+        #                     = fdtd.AbsorbingObject(permittivity=substrate_permittivity, conductivity=substrate_conductivity, name="substrate")
 
         self.component_plane_z = self.ground_plane_z_top + N_substrate
 

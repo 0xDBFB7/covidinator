@@ -20,24 +20,23 @@ for i in range(0,10000):
 
     # pcb.grid.E[:,:,:,pcb.component_plane_z:pcb.component_plane_z+1] = 0
 
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.component_plane_z,X] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.component_plane_z,Y] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.component_plane_z,Z] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top,X] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top,Y] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top,Z] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z,Z] = 100.0 / (5.0*pcb.cell_size)
+    pcb.grid.E[40:60,40:60,pcb.component_plane_z,X] = 0
+    pcb.grid.E[40:60,40:60,pcb.component_plane_z,Y] = 0
+    pcb.grid.E[40:60,40:60,pcb.component_plane_z,Z] = 0
+    pcb.grid.E[40:60,40:60,pcb.ground_plane_z_top-1,X] = 0
+    pcb.grid.E[40:60,40:60,pcb.ground_plane_z_top-1,Y] = 0
+    pcb.grid.E[40:60,40:60,pcb.ground_plane_z_top-1,Z] = 0
+    pcb.grid.E[55,55,pcb.ground_plane_z_top:pcb.component_plane_z,Z] = 100.0 / (4.0*pcb.cell_size)
 
     pcb.grid.update_E()
 
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.component_plane_z,X] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.component_plane_z,Y] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.component_plane_z,Z] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top,X] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top,Y] = 0
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top,Z] = 0
-
-    pcb.grid.E[pcb.xy_margin:-pcb.xy_margin,pcb.xy_margin:-pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z,Z] = 100.0 / (5.0*pcb.cell_size)
+    pcb.grid.E[40:60,40:60,pcb.component_plane_z,X] = 0
+    pcb.grid.E[40:60,40:60,pcb.component_plane_z,Y] = 0
+    pcb.grid.E[40:60,40:60,pcb.component_plane_z,Z] = 0
+    pcb.grid.E[40:60,40:60,pcb.ground_plane_z_top-1,X] = 0
+    pcb.grid.E[40:60,40:60,pcb.ground_plane_z_top-1,Y] = 0
+    pcb.grid.E[40:60,40:60,pcb.ground_plane_z_top-1,Z] = 0
+    pcb.grid.E[55,55,pcb.ground_plane_z_top:pcb.component_plane_z,Z] = 100.0 / (4.0*pcb.cell_size)
 
     pcb.grid.update_H()
     pcb.grid.time_steps_passed += 1
@@ -47,4 +46,4 @@ for i in range(0,10000):
     print("Step {}".format(i))
     print(pcb.grid.time_passed)
     print(sum(pcb.grid.E[50,50,pcb.ground_plane_z_top:pcb.component_plane_z,Z])*pcb.cell_size)
-    print(sum(pcb.grid.E[50,50,pcb.ground_plane_z_top:pcb.component_plane_z,Z])*pcb.cell_size)
+    print(sum(pcb.grid.E[55,55,pcb.ground_plane_z_top:pcb.component_plane_z,Z])*pcb.cell_size)
