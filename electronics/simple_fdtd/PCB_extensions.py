@@ -97,7 +97,7 @@ class PCB:
 
         self.grid = grid
 
-        self.copper_mask = bd.zeros((N_x,N_y,N_z))
+        self.copper_mask = bd.zeros((N_x,N_y,N_z)).bool()
 
 
 
@@ -253,16 +253,12 @@ class PCB:
     #
     # """
 
-    # def PEC(self):
-    #     for obj in self.grid.objects:
-    #         if(not obj.name == "substrate"):
-    #             self.grid.E[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop,:] = 0
-
     def compute_all_voltages(self):
         for port in self.component_ports:
             # port.voltage = e_field_integrate(G, port, self.reference_port)
-            port.voltage = self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z]*self.cell_size
-            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1] = 0
+            port.voltage = sum(self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z])*self.cell_size
+            # port.voltage = self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z]*self.cell_size
+            # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1] = 0
             # port.voltage_history.append(port.voltage)
 
 #permittivity might have to be cubed
@@ -275,12 +271,21 @@ class PCB:
             # math.sin(self.grid.time_steps_passed/50.0)* (100.0/self.cell_size)
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
             if(port.SPICE_net == 0):
-                self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] -= 100.0/self.cell_size
+                self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 100.0 / (4.0*self.cell_size)
+
+                # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] -= 100.0/self.cell_size
 
                  # = 100/(self.cell_size * epsilon_0)
             # Iz = G.dx * (Hx[x, y - 1, z] - Hx[x, y, z]) + G.dy * (Hy[x, y, z] - Hy[x - 1, y, z])
 
             # port.voltage_history.append(port.voltage)
+
+
+    def zero_conductor_fields(self):
+        self.grid.E[self.copper_mask] = 0
+        self.grid.E[self.copper_mask] = 0
+        self.grid.E[self.copper_mask] = 0
+
 
 
     def E_magnitude(self, E):
@@ -317,7 +322,7 @@ class PCB:
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
                 else:
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
-            objects += self.copper_mask.cpu().numpy()
+            objects += self.copper_mask.cpu().numpy()*2
             cellData['objects'] = objects
 
         if(ports_dump):
@@ -325,6 +330,7 @@ class PCB:
             for port in [i for i in self.component_ports if i]:
                     ports[port.N_x,port.N_y,self.component_plane_z-1] = 4
             cellData['ports'] = ports
+
             # ports[port.N_x,port.N_y,port.N_z] = 4
         #     ports = np.zeros_like(self.grid.E[:,:,:,X])
         #     for port in [i for i in self.component_ports + [self.reference_port] if i]:
