@@ -88,8 +88,7 @@ class PCB:
 
         N_ground_plane = ceil(ground_plane_thickness / self.cell_size)
 
-        # self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] \
-        #                     = fdtd.PECObject(name="ground_plane")
+        #using a copper mask is much faster than an fdtd.object
         self.copper_mask[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.z_margin:(self.z_margin+N_ground_plane)] = 1
 
         self.ground_plane_z_top = self.z_margin+N_ground_plane
@@ -182,11 +181,12 @@ class PCB:
 
     def compute_all_voltages(self):
         for port in self.component_ports:
-            # port.voltage = e_field_integrate(G, port, self.reference_port)
+            # port.voltage = self.e_field_integrate(port, self.reference_port)
+
+            #since all conductors have zero electric field, this is a reasonable approximation -
+            #
             port.voltage = sum(self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z])*self.cell_size
-            # port.voltage = self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z]*self.cell_size
-            # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1] = 0
-            # port.voltage_history.append(port.voltage)
+            port.voltage_history.append(port.voltage)
 
 #permittivity might have to be cubed
 #is there a bug in fdtd/grid/permittivity? Seems like it's not updated unless it's an array
@@ -204,8 +204,6 @@ class PCB:
 
 
     def zero_conductor_fields(self):
-        self.grid.E[self.copper_mask] = 0
-        self.grid.E[self.copper_mask] = 0
         self.grid.E[self.copper_mask] = 0
 
 
