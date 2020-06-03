@@ -1,6 +1,6 @@
 <Qucs Schematic >
 <Properties>
-  <View=0,-39,1074,781,1.21,0,0>
+  <View=0,21,1074,781,1.21,0,0>
   <Grid=10,10,1>
   <DataSet=transient_test.dat>
   <DataDisplay=transient_test.dpl>
@@ -25,6 +25,7 @@
   <MLIN MS1 1 600 130 -26 15 0 0 "Subst1" 1 "1.5 mm" 1 "100 mm" 1 "Hammerstad" 0 "Kirschning" 0 "26.85" 0>
   <GND *2 5 590 370 0 0 0 0>
   <GND *3 5 530 370 0 0 0 0>
+  <SUBST Subst1 1 760 580 -30 24 0 0 "4.4" 1 "0.79 mm" 1 "32 um" 1 "0.02" 1 "0.022e-6" 1 "0.15e-6" 1>
 </Components>
 <Wires>
   <560 400 560 420 "" 0 0 0 "">

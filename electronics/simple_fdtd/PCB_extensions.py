@@ -201,7 +201,7 @@ class PCB:
             # port.voltage = self.e_field_integrate(port, self.reference_port)
             #since all conductors have zero electric field, this is a reasonable approximation -
             #
-            port.voltage = sum(self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z])*self.cell_size
+            port.voltage = float(sum(self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z])*self.cell_size)
             port.voltage_history.append(port.voltage)
 
 #permittivity might have to be cubed
@@ -277,57 +277,41 @@ class PCB:
 
         gridToVTK(filename + str(iteration), x, y, z, cellData = cellData)
 
-
-
-
-    def flush_and_wait(self, val):
-        while True:
-            print(self.SPICE_instance.stdout.peek())
-            if(val in self.SPICE_instance.stdout.peek().decode()):
-                self.SPICE_instance.stdout.read(len(self.SPICE_instance.stdout.peek()))
-                self.SPICE_instance.stdin.flush()
-                self.SPICE_instance.stdout.flush()
-                sys.stdout.flush()
-                break
+# Compiled ngspice 32 with
+# make clean
+#../configure --with-x --enable-xspice --disable-debug --enable-cider
+#--with-readline=yes --with-ngshared --enable-openmp --prefix=/home/arthurdent/Programs/ngspice-32/install/
+# then set export LIBNGSPICE=/home/arthurdent/Programs/ngspice-32/lib/lib/libngspice.so
+# had to compile twice; once with prefix lib and --ngshared,
+# and the other with prefix install and no ngshared
 
 
 
     def init_SPICE(self, SPICE_binary, source_file):
-        #
-        # self.SPICE_instance = subprocess.Popen([SPICE_binary, '--pipe'],
-        #                          stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-        #                         stderr=subprocess.PIPE)
+        ngspyce.source(source_file)
 
-        # self.flush_and_wait('->')
-        self.SPICE_instance.stdin.write(('source ' + source_file + '\n').encode())
-        print(self.SPICE_instance.stdout.peek())
-        self.SPICE_instance.stdin.flush()
-        self.SPICE_instance.stdout.flush()
-        sys.stdout.flush()
-        C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)
-        self.SPICE_instance.stdin.write(('alterparam cell_capacitance = {}\n'.format(C)).encode())
-        print(self.SPICE_instance.stdout.peek())
-        self.SPICE_instance.stdin.flush()
-        self.SPICE_instance.stdout.flush()
-        sys.stdout.flush()
-        # self.flush_and_wait('->')
 
-        # print(proc.stdout.readline())
-        # print(proc.stdout.readline())
-        # print(proc.stdout.readline())
+
+    def set_spice_voltages(self):
+        for port in self.component_ports:
+            self.set_spice_voltage(port.SPICE_net, port.voltage)
+
+    def get_spice_voltages(self):
+        for port in self.component_ports:
+            port.voltage = self.get_spice_voltage(port.SPICE_net)
 
 
     def get_spice_voltage(self, SPICE_net):
-        ngspyce.cmd('print v(' + SPICE_net + ')[1000000]\n')
-
+        return float(ngspyce.cmd('print v(' + SPICE_net + ')[1000000]')[0].split()[2])
 
     def set_spice_voltage(self, SPICE_net, voltage):
-        ngspyce.cmd('alterparam ' + SPICE_net + '_v = ' + str(voltage))
+        print(ngspyce.cmd('alter c' + SPICE_net + ' IC = ' + str(voltage)))
 
     def reset_spice(self):
         # resets simulation without reloading file from disk
-        ngspyce.cmd('reset')
-
+        print(ngspyce.cmd('reset'))
+        C = 6.0*(self.cell_size**3.0)*(self.substrate_permittivity)
+        ngspyce.cmd('alter cstd = {}'.format(C))
 
     def run_spice_step(self):
         ngspyce.cmd('tran {} {}'.format(self.grid.time_step, self.grid.time_step))
