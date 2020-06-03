@@ -9,7 +9,7 @@ R1 input input_terminated 50
 Cinput_terminated input_terminated 0 cstd IC=0
 Coutput output 0 cstd IC=0
 
-.model cstd C cap=10p
+.model cstd C cap=0.01p
 
 //normalized length at frequency (about 3.7 mm irl)
 

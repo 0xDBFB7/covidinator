@@ -117,7 +117,7 @@ def test_spice_alone():
 
 
 
-def disabled_test_spice():
+def test_spice():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
@@ -144,7 +144,6 @@ def disabled_test_spice():
                                                                     pcb.component_ports[1].voltage))
             pcb.reset_spice()
             pcb.set_spice_voltages()
-            pcb.reset_spice()
 
             pcb.run_spice_step()
 
