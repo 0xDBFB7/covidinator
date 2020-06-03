@@ -312,11 +312,11 @@ class PCB:
     def reset_spice(self):
         # resets simulation without reloading file from disk
         self.error(ngspyce.cmd('reset'))
-        # C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
-        # self.error(ngspyce.cmd('alter cstd = {}'.format(C)))
+        C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
+        self.error(ngspyce.cmd('alter cstd = {}'.format(C)))
 
     def run_spice_step(self):
-        ngspyce.cmd('tran {} {}'.format(self.grid.time_step, self.grid.time_step))
+        ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))
 
 
 #
