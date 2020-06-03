@@ -1,15 +1,25 @@
 .title simple_transmission_line_test_spice
 //V1 input 0 1
 
+.param cell_capacitance = 1UF
+
 VIN input 0 SIN(0 1 8e9)
 R1 input input_terminated 50
 
+C1 input_terminated 0 cstd
+
+C2 output 0 cstd
+
+.model cstd C cap=cell_capacitance
 //normalized length at frequency (about 3.7 mm irl)
-T1 input_terminated 0 output 0 Z0=50 F=8e9 NL=0.181
+
+
 R2 output 0 50
 
 .param input_terminated_v = 0
 .param output_v = 0
+.param input_terminated_v = 0
+
 
 .ic v(input_terminated)=input_terminated_v
 .ic v(output)=output_v

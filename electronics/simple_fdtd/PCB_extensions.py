@@ -11,9 +11,12 @@ from scipy.constants import epsilon_0
 import numpy as np
 import torch
 
-import subprocess
-import sys
-import signal
+# import subprocess
+# import sys
+# import signal
+
+import ngspyce
+
 
 from fdtd.backend import NumpyBackend
 from fdtd.backend import backend as bd
@@ -144,8 +147,7 @@ class PCB:
 
         self.board_N_x = math.ceil(width/self.cell_size)
         self.board_N_y = math.ceil(height/self.cell_size)
-        print(self.board_N_x*self.cell_size)
-        print(self.board_N_y*self.cell_size)
+
         print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
         self.initialize_grid(N_x, N_y, N_z)
@@ -208,13 +210,11 @@ class PCB:
     def apply_all_currents(self):
         for port in self.component_ports:
             # port.voltage = e_field_integrate(G, port, self.reference_port)
-            C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)
             # math.sin(self.grid.time_steps_passed/50.0)* (100.0/self.cell_size)
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
             #(self.component_plane_z-self.ground_plane_z_top)
-            if(port.SPICE_net == 0):
-                self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1,Z] = 0
-                self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = 100.0 / (self.cell_size)
+            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1,Z] = 0
+            self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = port.voltage / (self.cell_size)
 
 
     def zero_conductor_fields(self):
@@ -280,39 +280,57 @@ class PCB:
 
 
 
+    def flush_and_wait(self, val):
+        while True:
+            print(self.SPICE_instance.stdout.peek())
+            if(val in self.SPICE_instance.stdout.peek().decode()):
+                self.SPICE_instance.stdout.read(len(self.SPICE_instance.stdout.peek()))
+                self.SPICE_instance.stdin.flush()
+                self.SPICE_instance.stdout.flush()
+                sys.stdout.flush()
+                break
+
+
 
     def init_SPICE(self, SPICE_binary, source_file):
+        #
+        # self.SPICE_instance = subprocess.Popen([SPICE_binary, '--pipe'],
+        #                          stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+        #                         stderr=subprocess.PIPE)
 
-        self.SPICE_instance = subprocess.Popen([SPICE_binary, '--pipe'],
-                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT)
-
+        # self.flush_and_wait('->')
         self.SPICE_instance.stdin.write(('source ' + source_file + '\n').encode())
+        print(self.SPICE_instance.stdout.peek())
         self.SPICE_instance.stdin.flush()
         self.SPICE_instance.stdout.flush()
         sys.stdout.flush()
-
-        # print(proc.stdout.readline())
-        # print(proc.stdout.readline())
-        # print(proc.stdout.readline())
-
-
-    def get_spice_voltage(SPICE_net):
+        C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)
+        self.SPICE_instance.stdin.write(('alterparam cell_capacitance = {}\n'.format(C)).encode())
+        print(self.SPICE_instance.stdout.peek())
         self.SPICE_instance.stdin.flush()
         self.SPICE_instance.stdout.flush()
         sys.stdout.flush()
-        self.SPICE_instance.stdin.write(('print v(' + SPICE_net + ')[10000]\n').encode())
-        # proc.stdout.readline()
+        # self.flush_and_wait('->')
 
-    def set_spice_voltage(SPICE_net):
-        self.SPICE_instance.stdin.write(('alterparam ' + ' .v').encode())
+        # print(proc.stdout.readline())
+        # print(proc.stdout.readline())
+        # print(proc.stdout.readline())
 
 
+    def get_spice_voltage(self, SPICE_net):
+        ngspyce.cmd('print v(' + SPICE_net + ')[1000000]\n')
 
-    def run_spice_step(self, SPICE_binary, source_file):
+
+    def set_spice_voltage(self, SPICE_net, voltage):
+        ngspyce.cmd('alterparam ' + SPICE_net + '_v = ' + str(voltage))
+
+    def reset_spice(self):
         # resets simulation without reloading file from disk
-        self.SPICE_instance.stdin.write(('reset\n').encode())
-        self.grid.time_step
+        ngspyce.cmd('reset')
+
+
+    def run_spice_step(self):
+        ngspyce.cmd('tran {} {}'.format(self.grid.time_step, self.grid.time_step))
 
 
 #

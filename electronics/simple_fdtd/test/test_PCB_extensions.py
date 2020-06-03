@@ -96,12 +96,20 @@ def DISABLED_test_spice():
 
 
 def test_spice_alone():
-        SPICE_source_file = 'test/test_spice/txline_fdtd_spice.cir'
+        SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
+        SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
         pcb = PCB(0.0002)
-
-        pcb.reference_port = Port(pcb, 0, 0, 0)
+        pcb.initialize_grid_with_svg('test/basic_test.svg')
+        pcb.create_planes(0.032e-3, 6e7)
+        pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
         pcb.component_ports.append(Port(pcb, 0, 11e-3, 11.3e-3))
         pcb.component_ports.append(Port(pcb, 1, 9e-3, 11.3e-3))
 
         pcb.init_SPICE(SPICE_binary, SPICE_source_file)
+        pcb.reset_spice()
+        pcb.set_spice_voltage('input_terminated',2)
+        pcb.set_spice_voltage('output',1)
+        pcb.run_spice_step()
+        print(pcb.get_spice_voltage('input_terminated'))
+        print(pcb.get_spice_voltage('output'))

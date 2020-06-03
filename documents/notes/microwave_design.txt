@@ -659,3 +659,8 @@ using an absorbing substrate in fdtd ruins everything. Why's that
 using a conductivity of 0 works fine. hmm is this a physical effect?
 
 http://openems.de/index.php/Material_Property.html uses 'kappa' as conductivity.
+
+Cool, ngspice supports 'CPL' coupled lines, up to 8 coupled.
+
+Section 3.3 in the BFP620 datasheet describes a 50R system - might not even need a matching network?
+
