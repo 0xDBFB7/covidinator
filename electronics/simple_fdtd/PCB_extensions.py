@@ -69,7 +69,7 @@ class PCB:
 
         self.copper_mask = None
 
-        self.SPICE_instance = None
+        self.times = []
 
 
     def initialize_grid(self, N_x, N_y, N_z):
@@ -289,7 +289,7 @@ class PCB:
             print(i)
             sys.exit()
 
-    def init_SPICE(self, SPICE_binary, source_file):
+    def init_SPICE(self, source_file):
         ngspyce.source(source_file)
 
 
@@ -312,9 +312,10 @@ class PCB:
     def reset_spice(self):
         # resets simulation without reloading file from disk
         self.error(ngspyce.cmd('reset'))
-        C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
-        self.error(ngspyce.cmd('alter cstd = {}'.format(C)))
-
+        C = epsilon_0*6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
+        self.error(ngspyce.cmd('altermod cstd cap = {}'.format(C)))
+        print("C", C)
+        
     def run_spice_step(self):
         ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))
 

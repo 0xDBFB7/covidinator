@@ -3,7 +3,8 @@ import pytest
 from PCB_extensions import *
 # torch.set_num_threads(14)
 
-SPICE_binary = '/home/arthurdent/Programs/ngspice-32/install/bin/ngspice'
+import matplotlib.pyplot as plt
+
 
 
 fdtd.set_backend("torch.cuda.float32")
@@ -106,7 +107,7 @@ def test_spice_alone():
         pcb.component_ports.append(Port(pcb, 0, 11e-3, 11.3e-3))
         pcb.component_ports.append(Port(pcb, 1, 9e-3, 11.3e-3))
 
-        pcb.init_SPICE(SPICE_binary, SPICE_source_file)
+        pcb.init_SPICE(SPICE_source_file)
         pcb.reset_spice()
         pcb.set_spice_voltage('input_terminated',10)
         pcb.set_spice_voltage('output',10)
@@ -127,14 +128,14 @@ def test_spice():
         pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
         pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, 'test/basic_test.svg')
 
-        pcb.component_ports.append(Port(pcb, 'input_terminated', 11e-3, 11.3e-3))
-        pcb.component_ports.append(Port(pcb, 'output', 9e-3, 11.3e-3))
+        pcb.component_ports.append(Port(pcb, 'input_terminated', 7.6e-3, 11.3e-3))
+        pcb.component_ports.append(Port(pcb, 'output', 11.3e-3, 11.3e-3))
 
-        pcb.init_SPICE(SPICE_binary, SPICE_source_file)
+        pcb.init_SPICE(SPICE_source_file)
         pcb.reset_spice()
 
         dump_step = 20
-        for i in range(0,10000):
+        for i in range(0,500):
 
             pcb.grid.update_E()
 
@@ -162,3 +163,10 @@ def test_spice():
                                                                     pcb.component_ports[1].voltage,
                                                                     pcb.get_spice_voltage('input_terminated'),
                                                                     pcb.get_spice_voltage('output')))
+            print("Time: {}".format(pcb.grid.time_passed/1.0e-12))
+            pcb.times.append(pcb.grid.time_passed)
+
+        plt.plot(pcb.times, pcb.component_ports[0].voltage_history, label="input_terminated")
+        plt.plot(pcb.times, pcb.component_ports[1].voltage_history, label="output")
+        plt.legend()
+        plt.show()
