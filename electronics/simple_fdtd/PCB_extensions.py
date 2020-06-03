@@ -12,7 +12,7 @@ import numpy as np
 import torch
 
 # import subprocess
-# import sys
+import sys
 # import signal
 
 import ngspyce
@@ -119,7 +119,6 @@ class PCB:
         substrate_conductivity = loss_tangent * (2.0*pi) * 2.4e9 * epsilon_0 * substrate_permittivity
         #loss tangent not accounted for
         # substrate_conductivity = 0
-        print(substrate_conductivity)
         self.grid[self.xy_margin:-self.xy_margin, self.xy_margin:-self.xy_margin, self.ground_plane_z_top:(self.ground_plane_z_top+N_substrate)] \
                             = fdtd.Object(permittivity=substrate_permittivity, name="substrate")
 
@@ -285,7 +284,10 @@ class PCB:
 # had to compile twice; once with prefix lib and --ngshared,
 # and the other with prefix install and no ngshared
 
-
+    def error(self, i):
+        if i:
+            print(i)
+            sys.exit()
 
     def init_SPICE(self, SPICE_binary, source_file):
         ngspyce.source(source_file)
@@ -305,13 +307,13 @@ class PCB:
         return float(ngspyce.cmd('print v(' + SPICE_net + ')[1000000]')[0].split()[2])
 
     def set_spice_voltage(self, SPICE_net, voltage):
-        print(ngspyce.cmd('alter c' + SPICE_net + ' IC = ' + str(voltage)))
+        self.error(ngspyce.cmd('alter c' + SPICE_net + ' IC = ' + str(voltage)))
 
     def reset_spice(self):
         # resets simulation without reloading file from disk
-        print(ngspyce.cmd('reset'))
-        C = 6.0*(self.cell_size**3.0)*(self.substrate_permittivity)
-        ngspyce.cmd('alter cstd = {}'.format(C))
+        self.error(ngspyce.cmd('reset'))
+        # C = 6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
+        # self.error(ngspyce.cmd('alter cstd = {}'.format(C)))
 
     def run_spice_step(self):
         ngspyce.cmd('tran {} {}'.format(self.grid.time_step, self.grid.time_step))

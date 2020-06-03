@@ -110,14 +110,14 @@ def test_spice_alone():
         pcb.reset_spice()
         pcb.set_spice_voltage('input_terminated',10)
         pcb.set_spice_voltage('output',10)
-        pcb.reset_spice()
+        # pcb.reset_spice()
         pcb.run_spice_step()
         print(pcb.get_spice_voltage('input_terminated'))
         print(pcb.get_spice_voltage('output'))
 
 
 
-def test_spice():
+def disabled_test_spice():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
@@ -133,19 +133,6 @@ def test_spice():
         pcb.init_SPICE(SPICE_binary, SPICE_source_file)
         pcb.reset_spice()
 
-        for i in range(0,1000):
-            pcb.reset_spice()
-            pcb.compute_all_voltages()
-
-            pcb.set_spice_voltages()
-            pcb.run_spice_step()
-            pcb.get_spice_voltages()
-
-            pcb.apply_all_currents()
-            print(pcb.get_spice_voltage('output'))
-            print(pcb.get_spice_voltage('input_terminated'))
-
-
         dump_step = 20
         for i in range(0,10000):
 
@@ -153,9 +140,14 @@ def test_spice():
 
             pcb.zero_conductor_fields()
             pcb.compute_all_voltages()
+            print("V1, {} V2 {} ".format(pcb.component_ports[0].voltage,
+                                                                    pcb.component_ports[1].voltage))
             pcb.reset_spice()
-            # pcb.set_spice_voltages()
+            pcb.set_spice_voltages()
+            pcb.reset_spice()
+
             pcb.run_spice_step()
+
             pcb.get_spice_voltages()
 
             pcb.apply_all_currents()
@@ -166,5 +158,8 @@ def test_spice():
             if(i % dump_step == 0):
                 pcb.dump_to_vtk('test/test_spice/dumps/test',i)
             print("Step {}".format(i))
-            print(pcb.component_ports[0].voltage)
-            print(pcb.component_ports[1].voltage)
+
+            print("V1, {} V2 {}, SPice V1 {}, SPice V2 {} ".format(pcb.component_ports[0].voltage,
+                                                                    pcb.component_ports[1].voltage,
+                                                                    pcb.get_spice_voltage('input_terminated'),
+                                                                    pcb.get_spice_voltage('output')))
