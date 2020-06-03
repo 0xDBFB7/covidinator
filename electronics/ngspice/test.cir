@@ -1,6 +1,19 @@
 voltage divider netlist
 .include ../models/BFP620.lib
 
-Q1 intc intb 0 BFP620
-.tran 10u 10m
+X1 C B E1 E2 BFP620
+
+R1 C 0 0 //0 ohm link
+R2 B 0 0 //0 ohm link
+R3 E1 0 0 //0 ohm link
+R4 E2 0 0 //0 ohm link
+
+
+
+.control
+tran 0.1p 100p
+//uic?
+
+.endc
+
 .end

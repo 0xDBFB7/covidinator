@@ -201,7 +201,7 @@ class PCB:
             #since all conductors have zero electric field, this is a reasonable approximation -
             #
             port.voltage = float(sum(self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z])*self.cell_size)
-            port.voltage_history.append(port.voltage)
+            # port.voltage_history.append(port.voltage)
 
 #permittivity might have to be cubed
 #is there a bug in fdtd/grid/permittivity? Seems like it's not updated unless it's an array
@@ -315,9 +315,12 @@ class PCB:
         C = epsilon_0*6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
         self.error(ngspyce.cmd('altermod cstd cap = {}'.format(C)))
         print("C", C)
-        
+
     def run_spice_step(self):
         ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))
 
+    def save_voltages(self):
+        for port in self.component_ports:
+            port.voltage_history.append(port.voltage)
 
 #

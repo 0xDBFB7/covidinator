@@ -247,7 +247,9 @@ One Very Important Thought
 
 [Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. 
 
-NDY However, it seems to neglect the I/V characteristic, so we synthesized the SPICE model using an optimization method [Polyfet 1998].
+NDY However, it seems to neglect the I/V characteristic, so we synthesized the SPICE model using an optimization method [Polyfet 1998]. 
+
+
 
 \rule{\linewidth}{0.2pt}
 
@@ -274,7 +276,9 @@ Again, inductive biasing in the feedback loop was practically impossible. Biasin
 
 Conductors are represented by zeroing all components of the electric field in those regions. 
 
-There are many different possible source geometries, each with their own distortion and 
+There are many different possible source geometries, each introducing their own distortions.
+
+It's possible to link SPICE and FDTD in two main ways; by copying the voltae andafldkjal;sdkjf aldskfj alsdkfj d
 
 
 

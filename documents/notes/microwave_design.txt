@@ -664,3 +664,12 @@ Cool, ngspice supports 'CPL' coupled lines, up to 8 coupled.
 
 Section 3.3 in the BFP620 datasheet describes a 50R system - might not even need a matching network?
 
+
+Tried voltage -> voltage using the capacitor-spice method in []. doesn't really seem to work properly?
+the time delay is right, but everything else is wrong. Doesn't match a spice-only transmission-line
+model at all.
+
+Perhaps should try voltage -> current. 
+
+
+
