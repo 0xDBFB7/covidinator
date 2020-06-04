@@ -1,7 +1,15 @@
 voltage divider netlist
+
+
+
 .include ../models/BFP620.lib
+.include ../models/SMV2019079LF.lib
+
+Vsupply VCC 0 3.0
+
 
 X1 C B E1 E2 BFP620
+X2 0 0 SMV2019079LF
 
 R1 C 0 0 //0 ohm link
 R2 B 0 0 //0 ohm link
@@ -11,9 +19,11 @@ R4 E2 0 0 //0 ohm link
 
 
 .control
-tran 0.1p 100p
+setcs DIOgradingCoeffMax=3.0
+setcs DIOtDepCapMax = 2.0
+tran 0.1p 100p uic
 //uic?
-
+plot C B E1 E2
 .endc
 
 .end

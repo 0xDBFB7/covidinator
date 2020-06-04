@@ -671,5 +671,20 @@ model at all.
 
 Perhaps should try voltage -> current. 
 
+got a 'junction potential too large' error,
+recompiled with an option DIOtDepCapMax. 
 
+src/spicelib/devices/dio/diotemp.c:204
+```
+            double DIOtDepCapMax;
+
+            bool DepCapMaxSet = cp_getvar("DIOtDepCapMax", CP_REAL, &DIOtDepCapMax, 0);
+            /* limit junction potential to max of 1/FC */
+            if((!DepCapMaxSet && here->DIOtDepCap > 1.0) ||
+                (DepCapMaxSet && here->DIOtDepCap > DIOtDepCapMax)) {
+
+```
+
+
+That might adversely affect convergence.
 

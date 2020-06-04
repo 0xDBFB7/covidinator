@@ -1,0 +1,46 @@
+
+.options gmin=1E-12 TNOM = 25
+
+
+//also see appnote
+//http://static6.arrow.com/aropdfconversion/
+//bc7f6c0a4c05eb4b085a4134f8e6439155d80045/
+//47796675645382992varactor_spice_model_an_200315c.pdf
+//SMV2019079LF Anode Cathode
+.SUBCKT SMV2019079LF 101 100
+
+I 101 102 0.7NH
+Rs 102 103 4.8
+Cp 102 100 0.07p
+
+Dvaractor 103 100 varactor_diode_model AREA=1.0
+
+*
+.MODEL varactor_diode_model D(
++	IS	=	1e-14
++	RS	=	0
++   N   =   1
++   tt  =   0
++   CJO =   2.25p
++   M   =   1.4
++   vj  =   3.5
++   eg  =   1.11
++   xti =   3
++   kf  =   0
++   af  =   0
++   fc  =   0.5
++   bv  =   22          //reverse breakdown voltage
++   ibv =   1e-3
++   isr =   0
++   nr  =   2
++   ikf =   0
++   nbv =   1
++   ibvl=   0
++   nbvl=   1
+
++	TNOM	=	27
++   ffe =   1)
+
+//tbv1 ???
+
+.ENDS
