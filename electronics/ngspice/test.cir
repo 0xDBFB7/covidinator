@@ -7,6 +7,7 @@ voltage divider netlist
 
 Vsupply VCC 0 3.0
 
+Lsupply
 
 X1 C B E1 E2 BFP620
 X2 0 0 SMV2019079LF

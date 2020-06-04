@@ -1,0 +1,6 @@
+.options gmin=1E-12 TNOM = 25
+
+.SUBCKT 10pf0402 105 106
+
+Ls 105 107 0.2NH
+Cs 107 106 10p
