@@ -1,9 +1,9 @@
-voltage divider netlist
-
+.title Oscillator
 
 
 .include ../models/BFP620.lib
 .include ../models/SMV2019079LF.lib
+.include ../models/10pf0402.lib
 
 //Vsupply VCC 0 3.0
 Vsupply VCC 0 PULSE(0 3.0 20p 5p 1p 1ms 1ms)
@@ -15,6 +15,9 @@ X1 collector Base E1 E2 BFP620
 
 R1 collector in1 0 //0 ohm link
 R2 Base in2 0 //0 ohm link
+
+//X2 collector in1 10pf0402
+//X3 Base in2 10pf0402
 
 Rbase_pulldown Base 0 10K //0 ohm link
 
@@ -30,21 +33,26 @@ P1 in1 in2 0 b1 b2 0 PLINE
 .param Len=6.549 Rs=0
 + C11=0.3118p C12=-0.1797p C22=0.3118p
 + L11=0.3194NH L12=0.1887NH L22=0.3194NH
+
 //length is in mm
 //these are maxwellian matrix parameters.
 //converted from physical parameters from wcalc
+//coupled_microstrip.wc
 //see Schutt‐Aine appnote,
 //Relations Between Physical
 //and Maxwellian Parameters
 //(symmetric lines)
 
+//X4 0 b1 SMV2019079LF
+//X5 0 b2 SMV2019079LF
+C1 b1 0 0.31p
+C2 b2 0 0.31p
 
-//X2 b1 0 SMV2019079LF
-//X3 b2 0 SMV2019079LF
-C1 b1 0 1.2p
-C2 b2 0 1.2p
+//varactors in series
 
-//Vsupply VEE 0 1.0
+//R6 b1 Vvaractor 10000
+//R7 b2 Vvaractor 10000
+Vcap Vvaractor 0 1.0
 
 
 
@@ -55,7 +63,8 @@ tran 1p 50000ps uic
 //uic?
 plot VCC Base
 plot collector
-spec 0 10e9 3e7 v(collector)
+plot b1 b2
+spec 0 15e9 3e7 v(collector)
 set specwindow = "blackman"
 plot mag(v(collector))
 

@@ -1,0 +1,3 @@
+Varactor test
+
+.include ../models/SMV2019079LF.lib
