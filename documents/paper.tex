@@ -19,7 +19,8 @@
 \usepackage{gensymb}
 \usepackage{csquotes}
 
-
+\usepackage{graphicx}
+\graphicspath{ {../media/} }
 
 \usepackage{tcolorbox}
 \newtcolorbox{autem}{colback=red!5!white,colframe=red!75!black}
@@ -143,7 +144,7 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 	\begin{itemize}
 	\item QUCS 0.0.20 for AC simulation, with python-qucs and scipy's 'basinhopper' for optimization
 	\item gprMax for FDTD EM simulation
-	\item KiCAD, wcalc, scikit-rf
+	\item KiCAD, wcalc, scikit-rf, ngspice
 	\end{itemize}
 }}
 %
@@ -228,6 +229,8 @@ The parasitic inductance of common varactors appears to become problematic at th
 
 This paper is not novel enough to deserve this chapter, but those to be acknowledged are.
 
+The authors of the original paper on 
+
 Professor Shahramian's excellent video blog {\it The Signal Path} inspired this work.
 
 Hopfstader be damned; despite the name below the abstract, this paper is of course entirely the result of circumstance and luck. Any comparable dimwit to the author would have accomplished the same under the same conditions. 
@@ -245,11 +248,13 @@ One Very Important Thought
 
 {\Large Captain's Log, Supplemental}\\
 
-[Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. 
+CEL did not supply a SPICE model for the GaAs FET device used in early prototypes. A FET was chosen because the a gate is ostensibly easier to bias than a base.
 
-NDY However, it seems to neglect the I/V characteristic, so we synthesized the SPICE model using an optimization method [Polyfet 1998]. 
+[Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. However, this neglects the I/V characteristic. 
 
+[Polyfet 1998] describes a simple optimization method to synthesize a SPICE model; it would be useful.
 
+However, since a Si-process device would be required for mass production anyhow, we decided to accept the difficulty in biasing and use a bipolar transistor.
 
 \rule{\linewidth}{0.2pt}
 
@@ -261,16 +266,20 @@ Simulating the oscillator with an AC sim using the manufacturer's S-parameters a
  
 However, unexpected dips and peaks were found with varactor tuning; and the tuning range was far smaller than expected.
 
+A filter design with apparently ideal phase and frequency properties was designed using this process, but again poor agreement was found with experiment.
+
+\hspace*{-0.7cm}   \includegraphics[scale=0.6]{LO_2_pole_test.png}
+
+Because we lacked a spectrum analyzer that could monitor the higher poles of the filter until the bootstrap LO was designed.
+
 It was thought that a transient simulation - to determine how the spectrum actually evolved - would improve the situation. 
 
-QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support.
-
-
+QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively. Coupling can be emulated by introducing discrete coupling capacitors; but 
 
 
 \rule{\linewidth}{0.2pt}
 
-Again, inductive biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an N-channel mosfet worked fine. The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. Such a high bias voltage was required to get sufficient current through the PiN while remaining delicate with the vfb.
+Again, inductive choke biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an N-channel mosfet worked fine. The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. Such a high bias voltage was required to get sufficient current through the PiN while remaining delicate with the vfb.
 
 \rule{\linewidth}{0.2pt}
 
@@ -278,12 +287,17 @@ Conductors are represented by zeroing all components of the electric field in th
 
 There are many different possible source geometries, each introducing their own distortions.
 
-It's possible to link SPICE and FDTD in two main ways; by copying the voltae andafldkjal;sdkjf aldskfj alsdkfj d
-
-
+It's possible to link SPICE and FDTD in two main ways
 
 \rule{\linewidth}{0.2pt}
 
+Bandpass filters can be designed by first designing a low-pass filter prototype (usually Chebychev) (or, in our case, using reference filter component tables), and then transforming this low-pass into a band-pass. [Hunter 2001] is an excellent overview of this process, with many design examples for different filter topologies. 
+
+The coupling coefficient between two low-pass filters determines the band-pass bandwidth.[Hui 2012]
+
+[Hunter 2001] also describes an analytical method to create a filter with the precise group delay - phase shift versus frequency - required for stable oscillation. However, simultaneously compensating for the group delay introduced by the amplifier itself (nearly 180 degrees over the frequency range for the CEL part) seemed complex.
+
+ 
 
 
 \label{para}

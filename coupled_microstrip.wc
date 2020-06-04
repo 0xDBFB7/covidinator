@@ -1,0 +1,124 @@
+#
+# File:      /home/arthurdent/covidinator/coupled_microstrip.wc
+# Modified:  Thu Jun  4 14:50:30 2020
+# Wcalc Version 1.1
+
+[wcalc]
+wcalc_file_version = 0.1
+model_name = coupled_microstrip
+
+
+[coupled_microstrip]
+
+# Coupled microstrip file version
+file_version = 0.1
+
+# Length (meters)
+L = 0.006549
+
+# Width (meters)
+W = 0.002
+
+# Spacing (meters)
+S = 0.0003
+
+# Characteristic Impedance (ohms)
+Z0 = 39.9128374534709
+
+# Coupling coefficient
+k = 0.205526220144069
+
+# Even Mode Characteristic Impedance (ohms)
+Z0e = 49.1655780279917
+
+# Odd Mode Characteristic Impedance (ohms)
+Z0o = 32.4014210242829
+
+# Flag to use z0/k vs z0e/z0o for synthesis
+use_z0k = 0
+
+# Electrical Length (degrees)
+Elen = 101.517772856941
+
+# Frequency of operation
+freq = 7000000000
+
+# User units
+
+# Length, width, substrate and metal thickness units
+units_lwht = 2
+# [mm]
+
+# Incremental inductance units
+units_L = 1-2
+# [nH/mm]
+
+# Incremental resistance units
+units_R = 1-2
+# [mOhm/mm]
+
+# Incremental capacitance units
+units_C = 1-2
+# [pF/mm]
+
+# Incremental conductance units
+units_G = 0-2
+# [uMho/mm]
+
+# Line physical length units
+units_len = 0
+# [nm]
+
+# Frequency units
+units_freq = 4
+# [GHz]
+
+# Loss units
+units_loss = 0
+# [dB]
+
+# Loss/length units
+units_losslen = 0-6
+# [dB/inch]
+
+# Resistivity units
+units_rho = 2-4
+# [Ohm-m]
+
+# Surface roughness units (RMS)
+units_rough = 5
+# [mil]
+
+# Delay units
+units_delay = 3
+# [ns]
+
+# Skin depth units
+units_depth = 5
+# [mil]
+
+# End correction units
+units_deltal = 2
+# [mm]
+
+
+[substrate]
+
+# Height (meters)
+H = 0.00079
+
+# Relative dielectric constant
+ER = 4.4
+
+# Metalization thickness (meters)
+TMET = 3.2e-05
+
+# Metalization resistivity (ohm-meters)
+RHO = 3e-08
+
+# Metalization surface roughness (meters-RMS)
+ROUGH = 2.54e-08
+
+# Dielectric loss tangent
+TAND = 0.02
+

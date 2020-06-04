@@ -5,26 +5,60 @@ voltage divider netlist
 .include ../models/BFP620.lib
 .include ../models/SMV2019079LF.lib
 
-Vsupply VCC 0 3.0
+//Vsupply VCC 0 3.0
+Vsupply VCC 0 PULSE(0 3.0 20p 5p 1p 1ms 1ms)
 
-Lsupply
+Lsupply VCC collector 440NH
 
-X1 C B E1 E2 BFP620
-X2 0 0 SMV2019079LF
+X1 collector Base E1 E2 BFP620
 
-R1 C 0 0 //0 ohm link
-R2 B 0 0 //0 ohm link
-R3 E1 0 0 //0 ohm link
-R4 E2 0 0 //0 ohm link
+
+R1 collector in1 0 //0 ohm link
+R2 Base in2 0 //0 ohm link
+
+Rbase_pulldown Base 0 10K //0 ohm link
+
+R3 E1 0 0
+R4 E2 0 0
+
+P1 in1 in2 0 b1 b2 0 PLINE
+.model PLINE CPL length={Len}
++R=1 0 1
++L={L11} {L12} {L22}
++G=0 0 0
++C={C11} {C12} {C22}
+.param Len=6.549 Rs=0
++ C11=0.3118p C12=-0.1797p C22=0.3118p
++ L11=0.3194NH L12=0.1887NH L22=0.3194NH
+//length is in mm
+//these are maxwellian matrix parameters.
+//converted from physical parameters from wcalc
+//see Schutt‐Aine appnote,
+//Relations Between Physical
+//and Maxwellian Parameters
+//(symmetric lines)
+
+
+//X2 b1 0 SMV2019079LF
+//X3 b2 0 SMV2019079LF
+C1 b1 0 1.2p
+C2 b2 0 1.2p
+
+//Vsupply VEE 0 1.0
 
 
 
 .control
 setcs DIOgradingCoeffMax=3.0
 setcs DIOtDepCapMax = 2.0
-tran 0.1p 100p uic
+tran 1p 50000ps uic
 //uic?
-plot C B E1 E2
+plot VCC Base
+plot collector
+spec 0 10e9 3e7 v(collector)
+set specwindow = "blackman"
+plot mag(v(collector))
+
 .endc
 
 .end
