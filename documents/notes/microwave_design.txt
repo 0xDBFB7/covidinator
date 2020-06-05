@@ -692,6 +692,11 @@ That might adversely affect convergence.
 
 https://github.com/recipy/recipy
 https://github.com/VIDA-NYU/reprozip
+https://pythonhosted.org/Sumatra/handling_data.html
+
+Oh hey, I should have a documentation folder with stuff like backup processes, compilation, etc
+
+Sumatra is great, but all my scripts seem to break when put through it.
 
 
-
+the Galaxy project is really interesting. 

@@ -312,6 +312,17 @@ The coupling coefficient between two low-pass filters determines the band-pass b
 
 [Hunter 2001] also describes an analytical method to create a filter with the precise group delay - phase shift versus frequency - required for stable oscillation. However, simultaneously compensating for the group delay introduced by the amplifier itself (nearly 180 degrees over the frequency range for the CEL part) seemed complex.
 
+\rule{\linewidth}{0.2pt}
+
+NGSPICE's KSPICE coupled transmission lines require the capacitance and inductance per unit length in Maxwell matrix form, rather than the physical $C_{even}$/$L_{even}$ (each line's capacitance and inductance to ground) and $_{odd}$ (between elements) form provided by tools like wcalc. "matrix not positive definite". [Schutt-Aine] discusses this; we reproduce here for convienience.
+
+\[ L_{11} = L_{22} = L_{even}  \]
+\[ L_{12} = L_{21} = L_{odd}  \]
+\[ C_{11} = C_{22} = C_{even}+C_{odd}  \]
+\[ C_{12} = C_{21} {\it{(unused)}} = -C_{odd}  \]
+
+
+\rule{\linewidth}{0.2pt}
  
 
 
@@ -334,6 +345,8 @@ This is obvious to all compentent, but when rapidly iteratively testing with sim
 Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation. 
 
 Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it!
+
+Sacred, recipy, Sumatra
 
 \rule{\linewidth}{0.2pt}
 
