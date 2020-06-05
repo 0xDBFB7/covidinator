@@ -1,3 +1,33 @@
 Varactor test
 
 .include ../models/SMV2019079LF.lib
+
+//Vvaractor Vcap 0 PWL(0 0 1000PS 20)
+Vsupply Vcap 0 PULSE(17 17.1 10ns 5p 7p 1ms 1ms)
+
+R1 Vcap Vcap_ 1000
+X1 0 Vcap_ SMV2019079LF
+
+
+
+atest1 Vcap_ coutput ctest
+.model ctest cmeter(gain=1.0e12)
+
+.ic v(Vcap)=17
+.ic v(Vcap_)=17
+
+
+.control
+setcs DIOgradingCoeffMax=3.0
+setcs DIOtDepCapMax = 2.0
+tran 1p 20000ps uic
+
+plot Vcap_ Vcap
+plot coutput
+
+.endc
+
+.end
+
+//1v: 0.19e-8 s / 1000 ohms = 1.9 pF (correct!)
+//17v: 0.03e-8 s / 1000 ohms = 0.3 pF (correct!)
