@@ -232,7 +232,7 @@ class PCB:
         https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/
         https://bitbucket.org/pauloh/pyevtk/src/default/src/hl.py
 
-        Paraview needs a theshold operation to view the objects correctly.
+        Paraview needs a threshold operation to view the objects correctly.
 
         '''
 

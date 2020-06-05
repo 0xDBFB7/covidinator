@@ -674,7 +674,7 @@ Perhaps should try voltage -> current.
 got a 'junction potential too large' error,
 recompiled with an option DIOtDepCapMax. 
 
-src/spicelib/devices/dio/diotemp.c:204
+src/spicelib/devices/dio/diotemp.c:
 ```
             double DIOtDepCapMax;
 
@@ -687,4 +687,11 @@ src/spicelib/devices/dio/diotemp.c:204
 
 
 That might adversely affect convergence.
+
+
+
+https://github.com/recipy/recipy
+https://github.com/VIDA-NYU/reprozip
+
+
 

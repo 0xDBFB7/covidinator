@@ -5,6 +5,7 @@
 .include ../models/SMV2019079LF.lib
 .include ../models/10pf0402.lib
 
+
 //Vsupply VCC 0 3.0
 Vsupply VCC 0 PULSE(0 3.0 20p 5p 1p 1ms 1ms)
 
@@ -31,6 +32,8 @@ P1 in1 in2 0 b1 b2 0 PLINE
 +G=0 0 0
 +C={C11} {C12} {C22}
 .param Len=6.549 Rs=0
+.param Ceven_ground
+.param Codd_
 + C11=0.3118p C12=-0.1797p C22=0.3118p
 + L11=0.3194NH L12=0.1887NH L22=0.3194NH
 
@@ -61,12 +64,13 @@ setcs DIOgradingCoeffMax=3.0
 setcs DIOtDepCapMax = 2.0
 tran 1p 50000ps uic
 //uic?
-plot VCC Base
-plot collector
-plot b1 b2
-spec 0 15e9 3e7 v(collector)
-set specwindow = "blackman"
-plot mag(v(collector))
+//plot VCC Base
+//plot collector
+//plot b1 b2
+//spec 0 15e9 3e7 v(collector)
+//set specwindow = "blackman"
+//plot mag(v(collector))
+//set spectrum = mag(v(collector))
 
 .endc
 
