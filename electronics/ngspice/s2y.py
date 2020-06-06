@@ -1,2 +1,3 @@
 import skrf as rf
-ring_slot = rf.Network('../skrf/data/ring slot.s2p')
+
+ring_slot = rf.Network('../models/BFP620/')
