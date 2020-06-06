@@ -31,14 +31,23 @@ spectrum = np.fft.fft(v_collector)
 freq = np.fft.fftfreq(len(v_collector), d=(timesteps[-1]-timesteps[0])/len(v_collector))
 
 # plt.plot(v_collector)
+DC_REJECT = 10
 spectrum_indice = np.abs(freq - 20e9).argmin()
-plt.plot(freq[0:spectrum_indice],spectrum[0:spectrum_indice])
+plt.subplot(2,1,1)
+fft_cleaned = spectrum[DC_REJECT:spectrum_indice].clip(min=0)/np.linalg.norm(spectrum[DC_REJECT:spectrum_indice].clip(min=0))
+plt.plot(freq[DC_REJECT:spectrum_indice],fft_cleaned)
+plt.ticklabel_format(style='sci', axis='x', scilimits=(9,9))
+plt.subplot(2,1,2)
+plt.plot(timesteps,v_collector)
 plt.draw()
 plt.pause(0.001)
 
+
 spectrum_file = '/tmp/spectrum.png'
+source_file = 'oscillator_designer_2.py'
+SPICE_file = 'oscillator.cir'
 
 plt.savefig(spectrum_file)
 
-files = [spectrum_file]
+files = [spectrum_file, source_file, SPICE_file]
 store.ask(files)

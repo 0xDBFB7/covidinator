@@ -60,6 +60,7 @@ Vcap Vvaractor 0 1.0
 
 
 .control
+//set num_threads=8
 setcs DIOgradingCoeffMax=3.0
 setcs DIOtDepCapMax = 2.0
 tran 1p 50000ps uic
