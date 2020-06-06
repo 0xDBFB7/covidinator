@@ -17,8 +17,8 @@ X1 collector Base E1 E2 BFP620
 //R1 collector in1 0 //0 ohm link
 //R2 Base in2 0 //0 ohm link
 
-X2 collector in1 10pf0402
-X3 Base in2 10pf0402
+//X2 collector in1 10pf0402
+//X3 Base in2 10pf0402
 
 Rbase_pulldown Base 0 10K //0 ohm link
 
@@ -31,7 +31,7 @@ P1 in1 in2 0 b1 b2 0 PLINE
 +L={L11} {L12} {L22}
 +G=0 0 0
 +C={C11} {C12} {C22}
-.param Len=6.549 Rs=0
+.param Len=6.5 Rs=0
 .param Ceven_ground
 .param Codd_
 + C11=0.3118p C12=-0.1797p C22=0.3118p

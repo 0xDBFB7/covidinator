@@ -21,8 +21,8 @@ import ngspyce
 
 source_file = 'oscillator.cir'
 
+ngspyce.cmd('reset')
 ngspyce.source(source_file)
-
 
 timesteps = ngspyce.vector('time')
 v_collector = ngspyce.vector('v(collector)')
@@ -63,7 +63,7 @@ plt.plot(timesteps[-300:],v_collector[-300:])
 plt.draw()
 plt.pause(0.001)
 
-# numpy.savetxt("foo.csv", a, delimiter=",",fmt='%10.5f')
+#numpy.savetxt("foo.csv", a, delimiter=",",fmt='%10.5f')
 
 
 spectrum_file = '/tmp/spectrum.svg'
