@@ -15,9 +15,9 @@ import subprocess
 import os
 import sys
 
+import store
+
 import ngspyce
-
-
 
 source_file = 'oscillator.cir'
 
@@ -33,4 +33,12 @@ freq = np.fft.fftfreq(len(v_collector), d=(timesteps[-1]-timesteps[0])/len(v_col
 # plt.plot(v_collector)
 spectrum_indice = np.abs(freq - 20e9).argmin()
 plt.plot(freq[0:spectrum_indice],spectrum[0:spectrum_indice])
-plt.show()
+plt.draw()
+plt.pause(0.001)
+
+spectrum_file = '/tmp/spectrum.png'
+
+plt.savefig(spectrum_file)
+
+files = [spectrum_file]
+store.ask(files)
