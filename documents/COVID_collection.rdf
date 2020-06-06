@@ -47170,12 +47170,19 @@ PMID: 15365183</dc:description>
         <dcterms:isPartOf>
            <bib:Journal></bib:Journal>
         </dcterms:isPartOf>
+        <dcterms:isReferencedBy rdf:resource="#item_2875"/>
         <link:link rdf:resource="#item_2635"/>
         <bib:pages>5</bib:pages>
         <z:libraryCatalog>Zotero</z:libraryCatalog>
         <z:language>en</z:language>
         <dc:title>A Wideband, Varactor-tuned Microstrip VCO</dc:title>
     </bib:Article>
+    <bib:Memo rdf:about="#item_2875">
+        <rdf:value>&lt;p&gt;A better version of the schematic is available on p. 386 of &quot;RF and Microwave Transistor Oscillator Design&quot;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
     <z:Attachment rdf:about="#item_2635">
         <z:itemType>attachment</z:itemType>
         <dc:identifier>
@@ -47228,6 +47235,7 @@ PMID: 15365183</dc:description>
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_2870"/>
         <dc:identifier>
             <dcterms:URI>
                <rdf:value>http://ieeexplore.ieee.org/document/1133495/</rdf:value>
@@ -47240,6 +47248,11 @@ PMID: 15365183</dc:description>
         <z:language>en</z:language>
         <dc:title>New Design Approach for Wide-Band FET Voltage-Controlled Oscillators</dc:title>
     </bib:Article>
+    <z:Attachment rdf:about="#item_2870">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>El-Kamali et al_1986_New Design Approach for Wide-Band FET Voltage-Controlled Oscillators.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <rdf:Description rdf:about="http://ieeexplore.ieee.org/document/22080/">
         <z:itemType>conferencePaper</z:itemType>
         <dcterms:isPartOf>
@@ -47274,6 +47287,7 @@ PMID: 15365183</dc:description>
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_2872"/>
         <dc:identifier>
             <dcterms:URI>
                <rdf:value>http://ieeexplore.ieee.org/document/22080/</rdf:value>
@@ -47290,6 +47304,11 @@ PMID: 15365183</dc:description>
         </bib:presentedAt>
         <dc:title>Optimized X and Ku band GaAs MMIC varactor tuned FET oscillators</dc:title>
     </rdf:Description>
+    <z:Attachment rdf:about="#item_2872">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Reese_Beall_1988_Optimized X and Ku band GaAs MMIC varactor tuned FET oscillators.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <bib:Article rdf:about="http://ieeexplore.ieee.org/document/4545889/">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:0018-9480,%201557-9670"/>
@@ -48888,6 +48907,7 @@ Primary reference: Kozlowski, LP (2016) Proteome-pI: proteome isoelectric point.
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_2942"/>
         <dc:identifier>
             <dcterms:URI>
                 <rdf:value>http://link.springer.com/10.1007/978-3-642-27869-3_34</rdf:value>
@@ -48901,6 +48921,12 @@ DOI: 10.1007/978-3-642-27869-3_34</dc:description>
         <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
         <dc:title>The Precise Design of Bandpass Filter Miniaturization Using Microstrip SIR</dc:title>
     </bib:BookSection>
+    <z:Attachment rdf:about="#item_2942">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Hui et al_2012_The Precise Design of Bandpass Filter Miniaturization Using Microstrip SIR.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+        <dc:description>&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml&quot; id=&quot;title&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;&lt;ul xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;list-style-type: none; padding-left:0px&quot; id=&quot;toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;zotero://open-pdf/0_FC8CZKNH/1&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_FC8CZKNH/2&quot;&gt;Design Theory&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_FC8CZKNH/5&quot;&gt;Practicla Design and Result&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_FC8CZKNH/7&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_FC8CZKNH/7&quot;&gt;References&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</dc:description>
+    </z:Attachment>
     <bib:Article rdf:about="http://ieeexplore.ieee.org/document/8008753/">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:1531-1309,%201558-1764"/>
@@ -50497,6 +50523,7 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_2871"/>
         <dc:identifier>
             <dcterms:URI>
                <rdf:value>http://ieeexplore.ieee.org/document/845194/</rdf:value>
@@ -50516,6 +50543,11 @@ A 4.5cm catheter is inadequate for needle thoracostomy in most patients regardle
         <dcterms:alternative>IEEE J. Solid-State Circuits</dcterms:alternative>
         <dc:identifier>DOI 10.1109/4.845194</dc:identifier>
     </bib:Journal>
+    <z:Attachment rdf:about="#item_2871">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Andreani_Mattisson_2000_On the use of MOS varactors in RF VCOs.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <bib:Book rdf:about="urn:isbn:978-1-61353-086-3">
         <z:itemType>book</z:itemType>
         <dc:publisher>
@@ -50936,15 +50968,18 @@ PMCID: PMC6320950</dc:description>
         <z:linkMode>3</z:linkMode>
         <link:type>text/html</link:type>
     </z:Attachment>
-    <bib:Book rdf:about="#item_2791">
-        <z:itemType>book</z:itemType>
+    <bib:Article rdf:about="#item_2791">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
         <link:link rdf:resource="#item_2793"/>
         <link:link rdf:resource="#item_2792"/>
         <dc:date>2007</dc:date>
         <z:libraryCatalog>CiteSeer</z:libraryCatalog>
         <dcterms:abstract>nuary</dcterms:abstract>
-        <dc:title>a, S</dc:title>
-    </bib:Book>
+        <dc:title>Design and development of batch fabricatable metal–insulator–metal diode and microstrip slot antenna as rectenna elements</dc:title>
+    </bib:Article>
     <z:Attachment rdf:about="#item_2793">
         <z:itemType>attachment</z:itemType>
         <dc:identifier>
@@ -52465,6 +52500,7 @@ The flexible bronchoscopy-guided water-cooled MWA is feasible and safe. This ear
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_2863"/>
         <dc:identifier>
             <dcterms:URI>
                <rdf:value>http://ieeexplore.ieee.org/document/148092/</rdf:value>
@@ -52481,6 +52517,11 @@ The flexible bronchoscopy-guided water-cooled MWA is feasible and safe. This ear
         </bib:presentedAt>
         <dc:title>An HBT MMIC wideband VCO</dc:title>
     </rdf:Description>
+    <z:Attachment rdf:about="#item_2863">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Adar_Ramachandran_1991_An HBT MMIC wideband VCO.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <rdf:Description rdf:about="http://ieeexplore.ieee.org/document/1124430/">
         <z:itemType>conferencePaper</z:itemType>
         <dcterms:isPartOf>
@@ -52877,6 +52918,2106 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:dateSubmitted>2020-05-24 19:00:42</dcterms:dateSubmitted>
         <dc:title>Snapshot</dc:title>
         <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.law.cornell.edu/cfr/text/47/15.231">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+            <z:Website>
+               <dc:title>LII / Legal Information Institute</dc:title>
+            </z:Website>
+        </dcterms:isPartOf>
+        <dcterms:isReferencedBy rdf:resource="#item_2857"/>
+        <link:link rdf:resource="#item_2858"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.law.cornell.edu/cfr/text/47/15.231</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.law.cornell.edu</dc:description>
+        <dcterms:dateSubmitted>2020-05-25 23:42:43</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dc:title>47 CFR § 15.231 - Periodic operation in the band 40.66-40.70 MHz and above 70 MHz.</dc:title>
+    </bib:Document>
+    <bib:Memo rdf:about="#item_2857">
+        <rdf:value>&lt;p&gt;Possible exemption for pulsed transmitters&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.arrl.org/part-15-radio-frequency-devices#Conclusion&quot;&gt;http://www.arrl.org/part-15-radio-frequency-devices#Conclusion&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_2858">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.law.cornell.edu/cfr/text/47/15.231</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-25 23:42:47</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/1129597/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>27</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 0018-9480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/TMTT.1979.1129597</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Johnson</foaf:surname>
+                        <foaf:givenName>K.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2873"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/1129597/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>217-227</bib:pages>
+        <dc:date>03/1979</dc:date>
+        <dcterms:dateSubmitted>2020-05-26 03:26:13</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Large Signal GaAs MESFET Oscillator Design</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2873">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Johnson_1979_Large Signal GaAs MESFET Oscillator Design.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/1131561/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>31</prism:volume>
+                <prism:number>8</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 0018-9480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/TMTT.1983.1131561</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gilmore</foaf:surname>
+                        <foaf:givenName>R.J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rosenbaum</foaf:surname>
+                        <foaf:givenName>F.J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2874"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/1131561/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>633-639</bib:pages>
+        <dc:date>08/1983</dc:date>
+        <dcterms:dateSubmitted>2020-05-26 03:47:08</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>An Analytic Approach to Optimum Oscillator Design Using S-Parameters</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2874">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Gilmore_Rosenbaum_1983_An Analytic Approach to Optimum Oscillator Design Using S-Parameters.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.tandfonline.com/doi/full/10.1080/002072197135120">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0020-7217,%201362-3060"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grebennikov</foaf:surname>
+                        <foaf:givenName>A. V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nikiforov</foaf:surname>
+                        <foaf:givenName>V. V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2861"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.tandfonline.com/doi/full/10.1080/002072197135120</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>849-858</bib:pages>
+        <dc:date>12/1997</dc:date>
+        <dcterms:dateSubmitted>2020-05-26 04:03:52</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>An analytic method of microwave transistor oscillator design</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0020-7217,%201362-3060">
+        <prism:volume>83</prism:volume>
+        <prism:number>6</prism:number>
+        <dc:title>International Journal of Electronics</dc:title>
+        <dc:identifier>ISSN 0020-7217, 1362-3060</dc:identifier>
+        <dcterms:alternative>International Journal of Electronics</dcterms:alternative>
+        <dc:identifier>DOI 10.1080/002072197135120</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2861">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Andrei_Grebennikov2/publication/263150887_An_analytic_method_of_microwave_transistor_oscillator_design/links/0046353cb6e3474054000000/An-analytic-method-of-microwave-transistor-oscillator-design.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-26 04:03:51</dcterms:dateSubmitted>
+        <dc:title>Grebennikov and Nikiforov - 1997 - An analytic method of microwave transistor oscilla.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2864">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hamel</foaf:surname>
+                        <foaf:givenName>Professor John Starr</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2866"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>51</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>LC Tank Voltage Controlled Oscillator Tutorial</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2866">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://pldworld.org/_hdl/2/-asic.uwaterloo.ca/files/vcotut.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-26 13:57:14</dcterms:dateSubmitted>
+        <dc:title>vcotut.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2865">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hamel</foaf:surname>
+                        <foaf:givenName>Professor John Starr</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2867"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>51</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>LC Tank Voltage Controlled Oscillator Tutorial</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2867">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://pldworld.org/_hdl/2/-asic.uwaterloo.ca/files/vcotut.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-26 13:56:57</dcterms:dateSubmitted>
+        <dc:title>vcotut.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_2868">
+        <z:itemType>document</z:itemType>
+        <link:link rdf:resource="#item_2869"/>
+        <dc:title>VCO tutorial</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_2869">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>vcotut.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-0-7803-2034-5">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-0-7803-2034-5</dc:identifier>
+                <dc:identifier>DOI 10.1109/INTLEC.1994.396617</dc:identifier>
+                <dc:title>Proceedings of Intelec 94</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Vancouver, BC, Canada</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Robbins</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hawkins</foaf:surname>
+                        <foaf:givenName>J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2876"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/396617/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>307-314</bib:pages>
+        <dc:date>1994</dc:date>
+        <dcterms:dateSubmitted>2020-05-27 03:12:27</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>Intelec 94</dc:title></bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dcterms:abstract>This paper describes an electrical model of a battery that can accurately simulate characteristic battery behaviour during over-current instances. The battery model can be coupled with other distribution component models to simulate the protection performance in telecommunications DC distribution systems.</dcterms:abstract>
+        <dc:title>Battery model for overcurrent protection simulation of DC distribution systems</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_2876">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.telepower.com.au/INT94c.PDF</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 03:12:26</dcterms:dateSubmitted>
+        <dc:title>Robbins and Hawkins - 1994 - Battery model for overcurrent protection simulatio.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://ltwiki.org/files/LTspiceIV/examples/LtSpicePlus/Analisis/S2Spice/S2Spice_C/s2p%20to%20pspice.txt">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2879"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ltwiki.org/files/LTspiceIV/examples/LtSpicePlus/Analisis/S2Spice/S2Spice_C/s2p%20to%20pspice.txt</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 03:15:28</dcterms:dateSubmitted>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2879">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ltwiki.org/files/LTspiceIV/examples/LtSpicePlus/Analisis/S2Spice/S2Spice_C/s2p%20to%20pspice.txt</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 03:15:28</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.modelithics.com/Model">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2881"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.modelithics.com/Model</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 03:23:04</dcterms:dateSubmitted>
+        <dc:title>Modelithics COMPLETE Library - Modelithics, Inc.</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2881">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.modelithics.com/Model</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 03:23:05</dcterms:dateSubmitted>
+        <dc:title>Modelithics COMPLETE Library - Modelithics, Inc.</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2882">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Poole</foaf:surname>
+                        <foaf:givenName>Clive</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Darwazeh</foaf:surname>
+                        <foaf:givenName>Izzat</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2883"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>55</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Lecture 15 - Microwave Oscillator Design - Microwave Active Circuit Analysis and Design</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2883">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.clivepoole.com/wp-content/uploads/2016/07/Lecture-15-Microwave-Oscillator-Design.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 14:50:11</dcterms:dateSubmitted>
+        <dc:title>Lecture-15-Microwave-Oscillator-Design.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://openems.de/index.php/Tutorial:_MRI_LP_Birdcage.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2885"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://openems.de/index.php/Tutorial:_MRI_LP_Birdcage.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 15:19:49</dcterms:dateSubmitted>
+        <dc:title>Tutorial: MRI LP Birdcage - openEMS</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2885">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://openems.de/index.php/Tutorial:_MRI_LP_Birdcage.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 15:19:55</dcterms:dateSubmitted>
+        <dc:title>Tutorial: MRI LP Birdcage - openEMS</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2886">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Steenput</foaf:surname>
+                        <foaf:givenName>Eli</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2887"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>15</bib:pages>
+        <dc:date>1999</dc:date>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Circuit parameter models under rational form, obtained through an identification process for Linear Time Invariant systems, are not readily usable in a Spice simulation. This paper proposes a method to obtain a Spice circuit, built from standard Spice components, that exhibits the same behaviour as the estimated model. The applicability of the method is demonstrated on several models identified from real measurements.</dcterms:abstract>
+        <dc:title>A Spice circuit can be synthesised with a specified set of S-parameters</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2887">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.620.1059&amp;rep=rep1&amp;type=pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-27 18:36:04</dcterms:dateSubmitted>
+        <dc:title>download.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/556448/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>44</prism:volume>
+                <prism:number>12</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 00189480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/22.556448</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ciampolini</foaf:surname>
+                        <foaf:givenName>P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mezzanotte</foaf:surname>
+                        <foaf:givenName>P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Roselli</foaf:surname>
+                        <foaf:givenName>L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sorrentino</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/556448/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>2207-2215</bib:pages>
+        <dc:date>Dec./1996</dc:date>
+        <dcterms:dateSubmitted>2020-05-28 00:13:45</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Accurate and efficient circuit simulation with lumped-element FDTD technique</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/289516/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>4</prism:volume>
+                <prism:number>5</prism:number>
+                <dc:title>IEEE Microwave and Guided Wave Letters</dc:title>
+                <dc:identifier>ISSN 1051-8207</dc:identifier>
+                <dcterms:alternative>IEEE Microw. Guid. Wave Lett.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/75.289516</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Thomas</foaf:surname>
+                        <foaf:givenName>V.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jones</foaf:surname>
+                        <foaf:givenName>M.E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Piket-May</foaf:surname>
+                        <foaf:givenName>M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Taflove</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Harrigan</foaf:surname>
+                        <foaf:givenName>E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2927"/>
+        <link:link rdf:resource="#item_2889"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/289516/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>141-143</bib:pages>
+        <dc:date>05/1994</dc:date>
+        <dcterms:dateSubmitted>2020-05-28 08:09:52</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>The use of SPICE lumped circuits as sub-grid models for FDTD analysis</dc:title>
+    </bib:Article>
+    <bib:Memo rdf:about="#item_2927">
+       <rdf:value>&lt;p&gt;J is the current density (A/m^2).&lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_2889">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Allen_Taflove/publication/3306603_The_use_of_SPICE_lumped_circuits_as_sub-grid_models_for_FDTD_analysis/links/00b7d513f389962a39000000.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-28 08:09:50</dcterms:dateSubmitted>
+        <dc:title>Thomas et al. - 1994 - The use of SPICE lumped circuits as sub-grid model.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://polyfet.pl/pliki/pdf/artykuly/MTT98.pdf">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2892"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://polyfet.pl/pliki/pdf/artykuly/MTT98.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>1998</dc:date>
+        <dcterms:dateSubmitted>2020-05-28 15:30:46</dcterms:dateSubmitted>
+        <dc:title>Extracting SPICE model</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2892">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://polyfet.pl/pliki/pdf/artykuly/MTT98.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-28 15:30:46</dcterms:dateSubmitted>
+        <dc:title>MTT98.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/127522/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>40</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 00189480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/22.127522</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sui</foaf:surname>
+                        <foaf:givenName>W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Christensen</foaf:surname>
+                        <foaf:givenName>D.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Durney</foaf:surname>
+                        <foaf:givenName>C.H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2912"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/127522/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>724-730</bib:pages>
+        <dc:date>4/1992</dc:date>
+        <dcterms:dateSubmitted>2020-05-28 19:51:22</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Extending the two-dimensional FDTD method to hybrid electromagnetic systems with active and passive lumped elements</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2912">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Sui et al_1992_Extending the two-dimensional FDTD method to hybrid electromagnetic systems.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:978-1-351-41047-2">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>Routledge</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kunz</foaf:surname>
+                        <foaf:givenName>Karl S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>Raymond J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2896"/>
+        <link:link rdf:resource="#item_2895"/>
+        <dc:identifier>ISBN 978-1-351-41047-2</dc:identifier>
+        <dc:date>2018-05-04</dc:date>
+        <dc:description>Google-Books-ID: j0taDwAAQBAJ</dc:description>
+        <z:libraryCatalog>Google Books</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The Finite-Difference Time-domain (FDTD) method allows you to compute electromagnetic interaction for complex problem geometries with ease. The simplicity of the approach coupled with its far-reaching usefulness, create the powerful, popular method presented in The Finite Difference Time Domain Method for Electromagnetics. This volume offers timeless applications and formulations you can use to treat virtually any material type and geometry.The Finite Difference Time Domain Method for Electromagnetics explores the mathematical foundations of FDTD, including stability, outer radiation boundary conditions, and different coordinate systems. It covers derivations of FDTD for use with PEC, metal, lossy dielectrics, gyrotropic materials, and anisotropic materials. A number of applications are completely worked out with numerous figures to illustrate the results. It also includes a printed FORTRAN 77 version of the code that implements the technique in three dimensions for lossy dielectric materials. There are many methods for analyzing electromagnetic interactions for problem geometries. With The Finite Difference Time Domain Method for Electromagnetics, you will learn the simplest, most useful of these methods, from the basics through to the practical applications.</dcterms:abstract>
+        <dc:title>The Finite Difference Time Domain Method for Electromagnetics</dc:title>
+        <z:numPages>340</z:numPages>
+    </bib:Book>
+    <bib:Memo rdf:about="#item_2896">
+        <rdf:value>&lt;p&gt;Section 10.4 Lumped Circuit Elements&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_2895">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://books.google.ca/books?id=j0taDwAAQBAJ</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-28 23:44:32</dcterms:dateSubmitted>
+        <dc:title>Google Books Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/311512/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>4</prism:volume>
+                <prism:number>9</prism:number>
+                <dc:title>IEEE Microwave and Guided Wave Letters</dc:title>
+                <dc:identifier>ISSN 1051-8207</dc:identifier>
+                <dcterms:alternative>IEEE Microw. Guid. Wave Lett.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/75.311512</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Thomas</foaf:surname>
+                        <foaf:givenName>V.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Kuok-Mee Ling</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jones</foaf:surname>
+                        <foaf:givenName>M.E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Toland</foaf:surname>
+                        <foaf:givenName>B.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Jenshan Lin</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Itoh</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2913"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/311512/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>296-298</bib:pages>
+        <dc:date>09/1994</dc:date>
+        <dcterms:dateSubmitted>2020-05-28 23:47:03</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>FDTD analysis of an active antenna</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2913">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Thomas et al_1994_FDTD analysis of an active antenna.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2899">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1002/(SICI)1099-1204(199901/04)12:1/2&lt;157::AID-JNM323&gt;3.0.CO;2-V</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mix</foaf:surname>
+                        <foaf:givenName>Jason</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dixon</foaf:surname>
+                        <foaf:givenName>Jonathan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Popovic</foaf:surname>
+                        <foaf:givenName>Zoya</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Piket-May</foaf:surname>
+                        <foaf:givenName>Melinda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2924"/>
+        <link:link rdf:resource="#item_2898"/>
+        <bib:pages>14</bib:pages>
+        <dc:date>1999</dc:date>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>A new approach is presented for modelling three-dimensional lumped elements in the &quot;nite-di!erence time-domain (FDTD) solution of Maxwell's equations. The &quot;nite-di!erence equations for the lumped element's circuit behaviour are derived to produce discrete relationships between the device's terminal currents and voltages. These di!erence equations are then implemented in the FDTD grid with equivalent voltage and current sources based on static &quot;eld approximations. The method can be used for a wide range of applications which include lumped elements that may be passive, active, linear, non-linear, single, and multiple port devices. The underlying advantages of modelling a lumped element in this manner as compared to the more traditional extended FDTD technique is that the lumped element is easily extended across multiple FDTD cells and the need for a separate transcendental equation solver is eliminated. The method is demonstrated by a speci&quot;c example based on the Curtice}Cubic non-linear model for a MESFET. The s-parameters from an FDTD simulation are compared to the manufacturer's measured data and to results from simulations using Hewlett-Packard's Microwave Design System (MDS). Finally, the method is used to model the MESFET in a three port oscillator. Copyright 1999 John Wiley &amp; Sons, Ltd.</dcterms:abstract>
+        <dc:title>Incorporating non-linear lumped elements in FDTD: the equivalent source method</dc:title>
+    </bib:Article>
+    <bib:Memo rdf:about="#item_2924">
+       <rdf:value>&lt;p&gt;Great!&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_2898">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ecee.colorado.edu/microwave/docs/publications/1999/IJNM_JMjdMPM_99.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-29 00:41:55</dcterms:dateSubmitted>
+        <dc:title>Mix et al. - 1999 - Incorporating non-linear lumped elements in FDTD .pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://openems.de/forum/viewtopic.php?t=346">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2901"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://openems.de/forum/viewtopic.php?t=346</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-29 20:43:58</dcterms:dateSubmitted>
+        <dc:title>Output Variables from nf2ff - openEMS.de</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2901">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://openems.de/forum/viewtopic.php?t=346</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-29 20:43:59</dcterms:dateSubmitted>
+        <dc:title>Output Variables from nf2ff - openEMS.de</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2902">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.cel.com/pdf/appnotes/an1023.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-29 22:15:56</dcterms:dateSubmitted>
+        <dc:title>an1023.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.eecs.wsu.edu/~schneidj/ufdtd/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2904"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.eecs.wsu.edu/~schneidj/ufdtd/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 16:15:22</dcterms:dateSubmitted>
+        <dc:title>Understanding the FDTD Method</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2904">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.eecs.wsu.edu/~schneidj/ufdtd/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 16:15:23</dcterms:dateSubmitted>
+        <dc:title>Understanding the FDTD Method</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2905">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.eecs.wsu.edu/~schneidj/ufdtd/chap5.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 16:16:41</dcterms:dateSubmitted>
+        <dc:title>chap5.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+           <z:Blog><dc:title>PyScience</dc:title></z:Blog>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>somada141</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2907"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2014-09-06T01:54:14+00:00</dc:date>
+        <dc:description>Library Catalog: pyscience.wordpress.com</dc:description>
+        <dcterms:dateSubmitted>2020-05-30 20:59:49</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>In this post I will show how to ‘convert’ NumPy arrays to VTK arrays and files by means of the vtk.util.numpy_support module and the little-known PyEVTK package respectively.</dcterms:abstract>
+        <dc:title>NumPy to VTK: Converting your NumPy arrays to VTK arrays and files</dc:title>
+        <z:shortTitle>NumPy to VTK</z:shortTitle>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2907">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 20:59:50</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2909"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 23:54:48</dcterms:dateSubmitted>
+        <dc:title>Programmatic Layout with KiCad and Python</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2909">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 23:54:49</dcterms:dateSubmitted>
+        <dc:title>Programmatic Layout with KiCad and Python</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/204752/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0018926X"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenName>L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Uno</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Adachi</foaf:surname>
+                        <foaf:givenName>S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2911"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/204752/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1577-1583</bib:pages>
+        <dc:date>Dec./1992</dc:date>
+        <dcterms:dateSubmitted>2020-05-31 03:06:04</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>FDTD calculation of radiation patterns, impedance, and gain for a monopole antenna on a conducting box</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0018926X">
+        <prism:volume>40</prism:volume>
+        <prism:number>12</prism:number>
+        <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+        <dc:identifier>ISSN 0018926X</dc:identifier>
+        <dcterms:alternative>IEEE Trans. Antennas Propagat.</dcterms:alternative>
+        <dc:identifier>DOI 10.1109/8.204752</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2911">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Luebbers et al_1992_FDTD calculation of radiation patterns, impedance, and gain for a monopole.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.nature.com/articles/s41586-020-2278-9">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>581</prism:volume>
+                <prism:number>7809</prism:number>
+                <dc:title>Nature</dc:title>
+                <dc:identifier>ISSN 0028-0836, 1476-4687</dc:identifier>
+                <dcterms:alternative>Nature</dcterms:alternative>
+                <dc:identifier>DOI 10.1038/s41586-020-2278-9</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Takata</foaf:surname>
+                        <foaf:givenName>Tsuyoshi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jiang</foaf:surname>
+                        <foaf:givenName>Junzhe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sakata</foaf:surname>
+                        <foaf:givenName>Yoshihisa</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nakabayashi</foaf:surname>
+                        <foaf:givenName>Mamiko</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shibata</foaf:surname>
+                        <foaf:givenName>Naoya</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nandal</foaf:surname>
+                        <foaf:givenName>Vikas</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Seki</foaf:surname>
+                        <foaf:givenName>Kazuhiko</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hisatomi</foaf:surname>
+                        <foaf:givenName>Takashi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Domen</foaf:surname>
+                        <foaf:givenName>Kazunari</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.nature.com/articles/s41586-020-2278-9</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>411-414</bib:pages>
+        <dc:date>5/2020</dc:date>
+        <dcterms:dateSubmitted>2020-05-31 15:28:24</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Photocatalytic water splitting with a quantum efficiency of almost unity</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="http://www.nature.com/articles/nature16454">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>528</prism:volume>
+                <prism:number>7583</prism:number>
+                <dc:title>Nature</dc:title>
+                <dc:identifier>ISSN 0028-0836, 1476-4687</dc:identifier>
+                <dcterms:alternative>Nature</dcterms:alternative>
+                <dc:identifier>DOI 10.1038/nature16454</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Chen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wade</foaf:surname>
+                        <foaf:givenName>Mark T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>Yunsup</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Orcutt</foaf:surname>
+                        <foaf:givenName>Jason S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Alloatti</foaf:surname>
+                        <foaf:givenName>Luca</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Georgas</foaf:surname>
+                        <foaf:givenName>Michael S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Waterman</foaf:surname>
+                        <foaf:givenName>Andrew S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shainline</foaf:surname>
+                        <foaf:givenName>Jeffrey M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Avizienis</foaf:surname>
+                        <foaf:givenName>Rimas R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lin</foaf:surname>
+                        <foaf:givenName>Sen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Moss</foaf:surname>
+                        <foaf:givenName>Benjamin R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kumar</foaf:surname>
+                        <foaf:givenName>Rajesh</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pavanello</foaf:surname>
+                        <foaf:givenName>Fabio</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Atabaki</foaf:surname>
+                        <foaf:givenName>Amir H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cook</foaf:surname>
+                        <foaf:givenName>Henry M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ou</foaf:surname>
+                        <foaf:givenName>Albert J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leu</foaf:surname>
+                        <foaf:givenName>Jonathan C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenName>Yu-Hsin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Asanović</foaf:surname>
+                        <foaf:givenName>Krste</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ram</foaf:surname>
+                        <foaf:givenName>Rajeev J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Popović</foaf:surname>
+                        <foaf:givenName>Miloš A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stojanović</foaf:surname>
+                        <foaf:givenName>Vladimir M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2916"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.nature.com/articles/nature16454</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>534-538</bib:pages>
+        <dc:date>12/2015</dc:date>
+        <dcterms:dateSubmitted>2020-05-31 15:52:42</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Single-chip microprocessor that communicates directly using light</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2916">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://escholarship.org/content/qt4dh1v4px/qt4dh1v4px.pdf?t=p8f8pn</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-31 15:52:38</dcterms:dateSubmitted>
+        <dc:title>qt4dh1v4px.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.nature.com/articles/s41586-020-2150-y">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2918"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.nature.com/articles/s41586-020-2150-y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-31 15:56:36</dcterms:dateSubmitted>
+        <dc:title>Direct-bandgap emission from hexagonal Ge and SiGe alloys | Nature</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2918">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.nature.com/articles/s41586-020-2150-y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-31 15:56:39</dcterms:dateSubmitted>
+        <dc:title>Direct-bandgap emission from hexagonal Ge and SiGe alloys | Nature</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/504308/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>44</prism:volume>
+                <prism:number>7</prism:number>
+                <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+                <dc:identifier>ISSN 0018926X</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Antennas Propagat.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/8.504308</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>R.J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Langdon</foaf:surname>
+                        <foaf:givenName>H.S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2919"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/504308/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1000-1005</bib:pages>
+        <dc:date>7/1996</dc:date>
+        <dcterms:dateSubmitted>2020-05-31 16:20:36</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The finite-differencetime-domain(FDTD) method is being widely applied to antenna and microstrip calculations. One aspect of this application is accurately and efficiently modeling antenna and microstrip feeds within the constraints of FDTD approximations. Several relatively straightforward approaches have been suggested, including gap and frill feeds. More complicated approaches, which involve including the coaxial feed cable in the FDTD calculation space, have also been suggested. A related aspect is the desirability of reducing the number of time steps required for FDTD calculations to converge, especially for transient excitation. In this paper we illustrate that for many geometries a simple gap model with an internal source resistance provides accurate results while greatly reducing the number of time steps required for convergence.</dcterms:abstract>
+        <dc:title>A simple feed model that reduces time steps needed for FDTD antenna and microstrip calculations</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2919">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://pdfs.semanticscholar.org/a735/a949dfbc9e244ac233447fba6f9e65b3f844.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-31 16:20:34</dcterms:dateSubmitted>
+        <dc:title>Luebbers and Langdon - 1996 - A simple feed model that reduces time steps needed.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2921">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>13</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Microwave and Optical Technology Letters</dc:title>
+                <dc:identifier>DOI 10.1002/(SICI)1098-2760(19961005)13:2&lt;99::AID-MOP13&gt;3.0.CO;2-4</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Begassat</foaf:surname>
+                        <foaf:givenName>Y</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ramboz</foaf:surname>
+                        <foaf:givenName>LA</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wong</foaf:surname>
+                        <foaf:givenName>M-F</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hanna</foaf:surname>
+                        <foaf:givenName>V Fouad</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Citerne</foaf:surname>
+                        <foaf:givenName>J</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2923"/>
+        <link:link rdf:resource="#item_2922"/>
+        <bib:pages>99–102</bib:pages>
+        <dc:date>1996</dc:date>
+        <dc:description>Publisher: Wiley Online Library</dc:description>
+        <dc:title>Modeling of an X-band planar balanced mixer with a mixed spice-FDTD program</dc:title>
+    </bib:Article>
+    <bib:Memo rdf:about="#item_2923">
+        <rdf:value>&lt;p&gt;Hang on a minute, this is the exact same formulation as Thomas.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&quot;It is often said that the FDTD enhances the user's understanding of the essential physics underlying the various processes that it can model. Indeed, thanks to the time-domain responses of Figures 3 and 4, the FDTD method helps the user to understand the mixer physical phenomenon. &quot;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_2922">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Begassat et al_1996_Modeling of an X-band planar balanced mixer with a mixed spice-FDTD program.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-0-7803-2581-4">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-0-7803-2581-4</dc:identifier>
+                <dc:identifier>DOI 10.1109/MWSYM.1995.405970</dc:identifier>
+                <dc:title>Proceedings of 1995 IEEE MTT-S International Microwave Symposium</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Orlando, FL, USA</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Chien-Nan Kuo</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Siou Teck Chew</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Houshmand</foaf:surname>
+                        <foaf:givenName>B.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Itoh</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_2926"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/405970/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>357-360</bib:pages>
+        <dc:date>1995</dc:date>
+        <dcterms:dateSubmitted>2020-05-31 21:11:53</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>1995 IEEE MTT-S International Microwave Symposium</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dc:title>FDTD simulation of a microwave amplifier</dc:title>
+    </rdf:Description>
+    <bib:Memo rdf:about="#item_2926">
+        <rdf:value>&lt;p&gt;Yet another method, this time using a small via.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_2928">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.napier.ac.uk/~/media/worktribe/output-290684/application-of-3d-finite-difference-time-domain-fdtd-method-to-predict-radiation-from-a.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-01 18:55:41</dcterms:dateSubmitted>
+        <dc:title>application-of-3d-finite-difference-time-domain-fdtd-method-to-predict-radiation-from-a.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/55775/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>38</prism:volume>
+                <prism:number>7</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 00189480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/22.55775</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sheen</foaf:surname>
+                        <foaf:givenName>D.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ali</foaf:surname>
+                        <foaf:givenName>S.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abouzahra</foaf:surname>
+                        <foaf:givenName>M.D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kong</foaf:surname>
+                        <foaf:givenName>J.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/55775/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>849-857</bib:pages>
+        <dc:date>7/1990</dc:date>
+        <dcterms:dateSubmitted>2020-06-01 18:59:53</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Application of the three-dimensional finite-difference time-domain method to the analysis of planar microstrip circuits</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/267361/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>41</prism:volume>
+                <prism:number>11</prism:number>
+                <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+                <dc:identifier>ISSN 0018926X</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Antennas Propagat.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/8.267361</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/267361/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1586-1588</bib:pages>
+        <dc:date>Nov./1993</dc:date>
+        <dcterms:dateSubmitted>2020-06-02 00:29:29</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Lossy dielectrics in FDTD</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="#item_2932">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rosu</foaf:surname>
+                        <foaf:givenName>Iulian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2931"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>25</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Bias Circuits for RF Devices</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2931">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.qsl.net/va3iul/Bias/Bias_Circuits_for_RF_Devices.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-02 19:15:15</dcterms:dateSubmitted>
+        <dc:title>Rosu - Bias Circuits for RF Devices.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://web.archive.org/web/20120316141638/http://www.national.com/rap/files/datasheet.pdf">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2934"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://web.archive.org/web/20120316141638/http://www.national.com/rap/files/datasheet.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2012-03-16</dc:date>
+        <dcterms:dateSubmitted>2020-06-03 16:52:29</dcterms:dateSubmitted>
+        <dc:title>Wayback Machine</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2934">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://web.archive.org/web/20120316141638if_/http://www.national.com/rap/files/datasheet.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-03 16:52:30</dcterms:dateSubmitted>
+        <dc:title>2012_Wayback Machine.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2935">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://static6.arrow.com/aropdfconversion/bc7f6c0a4c05eb4b085a4134f8e6439155d80045/47796675645382992varactor_spice_model_an_200315c.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-03 21:40:16</dcterms:dateSubmitted>
+        <dc:title>47796675645382992varactor_spice_model_an_200315c.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2937"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 01:29:04</dcterms:dateSubmitted>
+        <dc:title>-fdtd/-voltages: Voltage sources between selected points</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2937">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 01:29:04</dcterms:dateSubmitted>
+        <dc:title>-fdtd/-voltages: Voltage sources between selected points</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://web.archive.org/web/20191204200529/https://www.ece.rutgers.edu/~orfanidi/ewa/ch12.pdf">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2939"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://web.archive.org/web/20191204200529/https://www.ece.rutgers.edu/~orfanidi/ewa/ch12.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2019-12-04</dc:date>
+        <dcterms:dateSubmitted>2020-06-04 18:19:31</dcterms:dateSubmitted>
+        <dc:title>Wayback Machine</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2939">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://web.archive.org/web/20191204200529if_/https://www.ece.rutgers.edu/~orfanidi/ewa/ch12.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 18:19:32</dcterms:dateSubmitted>
+        <dc:title>2019_Wayback Machine.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://sourceforge.net/p/ngspice/mailman/message/34157604/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2941"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://sourceforge.net/p/ngspice/mailman/message/34157604/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 18:57:30</dcterms:dateSubmitted>
+        <dc:title>ngspice / Re: [Ngspice-users] Anybody understand CPL models?</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2941">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://sourceforge.net/p/ngspice/mailman/message/34157604/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 18:57:31</dcterms:dateSubmitted>
+        <dc:title>ngspice / Re: [Ngspice-users] Anybody understand CPL models?</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.tandfonline.com/doi/abs/10.1080/00207217908938683">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>47</prism:volume>
+                <prism:number>6</prism:number>
+                <dc:title>International Journal of Electronics</dc:title>
+                <dc:identifier>ISSN 0020-7217, 1362-3060</dc:identifier>
+                <dcterms:alternative>International Journal of Electronics</dcterms:alternative>
+                <dc:identifier>DOI 10.1080/00207217908938683</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Garg</foaf:surname>
+                        <foaf:givenName>Ramesh</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.tandfonline.com/doi/abs/10.1080/00207217908938683</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>587-591</bib:pages>
+        <dc:date>12/1979</dc:date>
+        <dcterms:dateSubmitted>2020-06-04 19:45:02</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Design equations for coupled microstrip lines</dc:title>
+    </bib:Article>
+    <bib:ConferenceProceedings rdf:about="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf">
+        <z:itemType>presentation</z:itemType>
+        <z:presenters>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Jose Schutt-Aine</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </z:presenters>
+        <link:link rdf:resource="#item_2944"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 19:47:11</dcterms:dateSubmitted>
+        <dc:title>Coupled Transmission Lines</dc:title>
+    </bib:ConferenceProceedings>
+    <z:Attachment rdf:about="#item_2944">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-04 19:47:11</dcterms:dateSubmitted>
+        <dc:title>CoupledTL.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2946">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://sige.com/uploads/documents/Varactor_SPICE_Model_AN_200315C.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 00:24:09</dcterms:dateSubmitted>
+        <dc:title>Varactor_SPICE_Model_AN_200315C.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://henripal.github.io/blog/fp">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>Henri Palacci</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2948"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://henripal.github.io/blog/fp</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2016-09-02T00:00:00+00:00</dc:date>
+        <dc:description>Library Catalog: henripal.github.io</dc:description>
+        <dcterms:dateSubmitted>2020-06-05 16:55:44</dcterms:dateSubmitted>
+        <dcterms:abstract>“Mind-blowing” - that is how I’d most often heard functional programming described before trying it. Now that I have tried it, I absolutely agree. However, the mind-blowing parts are not the first things you learn about a new programming language. That’s why I decided to write this teaser post - I’ll try to explain in the most straightforward way the parts of Haskell and Clojure that blew my mind, without requiring any background in either:</dcterms:abstract>
+        <dc:title>Why try functional programming?</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2948">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://henripal.github.io/blog/fp</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 16:55:46</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.signalharbor.com/73.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2950"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.signalharbor.com/73.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 17:04:26</dcterms:dateSubmitted>
+        <dc:title>On the Origin of &quot;73&quot;</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2950">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.signalharbor.com/73.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 17:04:27</dcterms:dateSubmitted>
+        <dc:title>On the Origin of &quot;73&quot;</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2952">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Müller</foaf:surname>
+                        <foaf:givenName>Rafael</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kornblith</foaf:surname>
+                        <foaf:givenName>Simon</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hinton</foaf:surname>
+                        <foaf:givenName>Geoffrey E</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2951"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>10</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The generalization and learning speed of a multi-class neural network can often be signiﬁcantly improved by using soft targets that are a weighted average of the hard targets and the uniform distribution over labels. Smoothing the labels in this way prevents the network from becoming over-conﬁdent and label smoothing has been used in many state-of-the-art models, including image classiﬁcation, language translation and speech recognition. Despite its widespread use, label smoothing is still poorly understood. Here we show empirically that in addition to improving generalization, label smoothing improves model calibration which can signiﬁcantly improve beam-search. However, we also observe that if a teacher network is trained with label smoothing, knowledge distillation into a student network is much less effective. To explain these observations, we visualize how label smoothing changes the representations learned by the penultimate layer of the network. We show that label smoothing encourages the representations of training examples from the same class to group in tight clusters. This results in loss of information in the logits about resemblances between instances of different classes, which is necessary for distillation, but does not hurt generalization or calibration of the model’s predictions.</dcterms:abstract>
+        <dc:title>When does label smoothing help?</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2951">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://storage.googleapis.com/pub-tools-public-publication-data/pdf/6f643f0fdc2b2598bb9732c7af665b4b259b632c.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 17:59:23</dcterms:dateSubmitted>
+        <dc:title>Müller et al. - When does label smoothing help.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1553-7358"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Noble</foaf:surname>
+                        <foaf:givenName>William Stafford</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2954"/>
+        <link:link rdf:resource="#item_2955"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>e1000424</bib:pages>
+        <dc:date>Jul 31, 2009</dc:date>
+        <dc:description>Publisher: Public Library of Science</dc:description>
+        <dcterms:dateSubmitted>2020-06-05 21:56:23</dcterms:dateSubmitted>
+        <z:libraryCatalog>PLoS Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>A Quick Guide to Organizing Computational Biology Projects</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1553-7358">
+        <prism:volume>5</prism:volume>
+        <prism:number>7</prism:number>
+        <dc:title>PLOS Computational Biology</dc:title>
+        <dc:identifier>ISSN 1553-7358</dc:identifier>
+        <dcterms:alternative>PLOS Computational Biology</dcterms:alternative>
+        <dc:identifier>DOI 10.1371/journal.pcbi.1000424</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2954">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000424&amp;type=printable</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 21:56:24</dcterms:dateSubmitted>
+        <dc:title>Noble_2009_A Quick Guide to Organizing Computational Biology Projects.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2955">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 21:56:32</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://training.galaxyproject.org/training-material/topics/introduction/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2957"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://training.galaxyproject.org/training-material/topics/introduction/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: training.galaxyproject.org</dc:description>
+        <dcterms:dateSubmitted>2020-06-05 21:56:32</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>Galaxy is a scientific workflow, data integration, and da...</dcterms:abstract>
+        <dc:title>Galaxy Training: Introduction to Galaxy Analyses</dc:title>
+        <z:shortTitle>Galaxy Training</z:shortTitle>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2957">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://training.galaxyproject.org/training-material/topics/introduction/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 21:56:34</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682495/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0022-0957"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hayashi</foaf:surname>
+                        <foaf:givenName>Marika</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Feilich</foaf:surname>
+                        <foaf:givenName>Kara L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ellerby</foaf:surname>
+                        <foaf:givenName>David J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2960"/>
+        <link:link rdf:resource="#item_2959"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682495/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>2045-2053</bib:pages>
+        <dc:date>2009-5</dc:date>
+        <dc:description>PMID: 19321647
+PMCID: PMC2682495</dc:description>
+        <dcterms:dateSubmitted>2020-06-05 23:40:55</dcterms:dateSubmitted>
+        <z:libraryCatalog>PubMed Central</z:libraryCatalog>
+        <dcterms:abstract>Explosive dehiscence ballistically disperses seeds in a number of plant species. During dehiscence, mechanical energy stored in specialized tissues is transferred to the seeds to increase their kinetic and potential energies. The resulting seed dispersal patterns have been investigated in some ballistic dispersers, but the mechanical performance of a launch mechanism of this type has not been measured. The properties of the energy storage tissue and the energy transfer efficiency of the launch mechanism were quantified in Impatiens capensis. In this species the valves forming the seed pod wall store mechanical energy. Their mass specific energy storage capacity (124 J kg−1) was comparable with that of elastin and spring steel. The energy storage capacity of the pod tissues was determined by their level of hydration, suggesting a role for turgor pressure in the energy storage mechanism. During dehiscence the valves coiled inwards, collapsing the pod and ejecting the seeds. Dehiscence took 4.2±0.4 ms (mean ±SEM, n=13). The estimated efficiency with which energy was transferred to the seeds was low (0.51±0.26%, mean ±SEM, n=13). The mean seed launch angle (17.4±5.2, mean ±SEM, n=45) fell within the range predicted by a ballistic model to maximize dispersal distance. Low ballistic dispersal efficiency or effectiveness may be characteristic of species that also utilize secondary seed dispersal mechanisms.</dcterms:abstract>
+        <dc:title>The mechanics of explosive seed dispersal in orange jewelweed (Impatiens capensis)</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0022-0957">
+        <prism:volume>60</prism:volume>
+        <prism:number>7</prism:number>
+        <dc:title>Journal of Experimental Botany</dc:title>
+        <dc:identifier>ISSN 0022-0957</dc:identifier>
+        <dcterms:alternative>J Exp Bot</dcterms:alternative>
+        <dc:identifier>DOI 10.1093/jxb/erp070</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2960">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682495/pdf/erp070.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 23:40:57</dcterms:dateSubmitted>
+        <dc:title>Hayashi et al_2009_The mechanics of explosive seed dispersal in orange jewelweed (Impatiens.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2959">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682495/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-05 23:40:56</dcterms:dateSubmitted>
+        <dc:title>PubMed Central Link</dc:title>
+        <z:linkMode>3</z:linkMode>
         <link:type>text/html</link:type>
     </z:Attachment>
     <z:Collection rdf:about="#collection_92">
@@ -53823,6 +55964,9 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="https://docs.fcc.gov/public/attachments/FCC-19-126A1.pdf"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181823/"/>
         <dcterms:hasPart rdf:resource="http://www.latextemplates.com/template/stylish-article"/>
+        <dcterms:hasPart rdf:resource="https://web.archive.org/web/20120316141638/http://www.national.com/rap/files/datasheet.pdf"/>
+        <dcterms:hasPart rdf:resource="https://training.galaxyproject.org/training-material/topics/introduction/"/>
+        <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682495/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_170">
         <dc:title>Biology</dc:title>
@@ -54847,8 +56991,8 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2594"/>
         <dcterms:hasPart rdf:resource="#item_2600"/>
         <dcterms:hasPart rdf:resource="http://www.cel.com/pdf/datasheets/CE3520K3.pdf"/>
-        <dcterms:hasPart rdf:resource="#item_2776"/>
         <dcterms:hasPart rdf:resource="#item_2768"/>
+        <dcterms:hasPart rdf:resource="#item_2776"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Datasheets</dc:title>
         <dcterms:hasPart rdf:resource="#item_2352"/>
@@ -54856,8 +57000,8 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2594"/>
         <dcterms:hasPart rdf:resource="#item_2600"/>
         <dcterms:hasPart rdf:resource="http://www.cel.com/pdf/datasheets/CE3520K3.pdf"/>
-        <dcterms:hasPart rdf:resource="#item_2776"/>
         <dcterms:hasPart rdf:resource="#item_2768"/>
+        <dcterms:hasPart rdf:resource="#item_2776"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_141">
         <dc:title>Flagship</dc:title>
@@ -55023,14 +57167,17 @@ Publisher: Nature Publishing Group</dc:description>
     <z:Collection rdf:about="#collection_155">
         <dc:title>oscillator</dc:title>
         <dcterms:hasPart rdf:resource="#collection_201"/>
+        <dcterms:hasPart rdf:resource="#collection_202"/>
+        <dcterms:hasPart rdf:resource="#collection_209"/>
         <dcterms:hasPart rdf:resource="#collection_196"/>
         <dcterms:hasPart rdf:resource="#collection_194"/>
+        <dcterms:hasPart rdf:resource="#collection_208"/>
+        <dcterms:hasPart rdf:resource="#collection_203"/>
         <dcterms:hasPart rdf:resource="https://www.qsl.net/i/iw1fyv/marker_en.html"/>
         <dcterms:hasPart rdf:resource="/preview/8099899/"/>
         <dcterms:hasPart rdf:resource="#item_1799"/>
         <dcterms:hasPart rdf:resource="#item_1819"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-0748-4"/>
-        <dcterms:hasPart rdf:resource="#item_1838"/>
         <dcterms:hasPart rdf:resource="#item_1843"/>
         <dcterms:hasPart rdf:resource="#item_1845"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4512154/"/>
@@ -55046,7 +57193,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2634"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1133495/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/22080/"/>
-        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="https://scholar.googleusercontent.com/scholar.bib?q=info:YgNfRsQHCMUJ:scholar.google.com/&amp;output=citation&amp;scisdr=CgXihxhbELa-2lXRfnE:AAGBfm0AAAAAXrHUZnFNmbTTcSo-z4e_Z7LMVV-AeHzJ&amp;scisig=AAGBfm0AAAAAXrHUZkLTr07dn-CzdhXuctNz63FX5y3z&amp;scisf=4&amp;ct=citation&amp;cd=-1&amp;hl=en&amp;scfhb=1"/>
         <dcterms:hasPart rdf:resource="#item_2660"/>
         <dcterms:hasPart rdf:resource="https://apps.dtic.mil/dtic/tr/fulltext/u2/a532901.pdf"/>
@@ -55055,7 +57201,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1284799/"/>
         <dcterms:hasPart rdf:resource="http://arxiv.org/abs/1011.6363"/>
         <dcterms:hasPart rdf:resource="#item_2689"/>
-        <dcterms:hasPart rdf:resource="http://scikit-rf.org/"/>
         <dcterms:hasPart rdf:resource="https://app.knovel.com/web/view/khtml/show.v/rcid:kpMACAD00F/cid:kt010R55T2/viewerType:khtml//root_slug:15-microwave-oscillator-design/url_slug:microwave-oscillator?kpromoter=federation&amp;b-toc-cid=kpMACAD00F&amp;b-toc-root-slug=&amp;b-toc-url-slug=microwave-oscillator&amp;b-toc-title=Microwave%20Active%20Circuit%20Analysis%20and%20Design&amp;page=9&amp;view=collapsed&amp;zoom=1"/>
         <dcterms:hasPart rdf:resource="#item_2746"/>
         <dcterms:hasPart rdf:resource="#item_2748"/>
@@ -55080,22 +57225,40 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2836"/>
         <dcterms:hasPart rdf:resource="#item_2838"/>
         <dcterms:hasPart rdf:resource="#item_2839"/>
-        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-0087-3"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1124430/"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-07-149014-6"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-07-147171-8"/>
+        <dcterms:hasPart rdf:resource="https://www.law.cornell.edu/cfr/text/47/15.231"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1129597/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1131561/"/>
+        <dcterms:hasPart rdf:resource="https://www.tandfonline.com/doi/full/10.1080/002072197135120"/>
+        <dcterms:hasPart rdf:resource="#item_2864"/>
+        <dcterms:hasPart rdf:resource="#item_2865"/>
+        <dcterms:hasPart rdf:resource="#item_2868"/>
+        <dcterms:hasPart rdf:resource="http://ltwiki.org/files/LTspiceIV/examples/LtSpicePlus/Analisis/S2Spice/S2Spice_C/s2p%20to%20pspice.txt"/>
+        <dcterms:hasPart rdf:resource="https://www.modelithics.com/Model"/>
+        <dcterms:hasPart rdf:resource="#item_2882"/>
+        <dcterms:hasPart rdf:resource="https://openems.de/index.php/Tutorial:_MRI_LP_Birdcage.html"/>
+        <dcterms:hasPart rdf:resource="#item_2886"/>
+        <dcterms:hasPart rdf:resource="http://polyfet.pl/pliki/pdf/artykuly/MTT98.pdf"/>
+        <dcterms:hasPart rdf:resource="https://sourceforge.net/p/ngspice/mailman/message/34157604/"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
+        <dcterms:hasPart rdf:resource="#item_2946"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>oscillator</dc:title>
         <dcterms:hasPart rdf:resource="#collection_201"/>
+        <dcterms:hasPart rdf:resource="#collection_202"/>
+        <dcterms:hasPart rdf:resource="#collection_209"/>
         <dcterms:hasPart rdf:resource="#collection_196"/>
         <dcterms:hasPart rdf:resource="#collection_194"/>
+        <dcterms:hasPart rdf:resource="#collection_208"/>
+        <dcterms:hasPart rdf:resource="#collection_203"/>
         <dcterms:hasPart rdf:resource="https://www.qsl.net/i/iw1fyv/marker_en.html"/>
         <dcterms:hasPart rdf:resource="/preview/8099899/"/>
         <dcterms:hasPart rdf:resource="#item_1799"/>
         <dcterms:hasPart rdf:resource="#item_1819"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-0748-4"/>
-        <dcterms:hasPart rdf:resource="#item_1838"/>
         <dcterms:hasPart rdf:resource="#item_1843"/>
         <dcterms:hasPart rdf:resource="#item_1845"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4512154/"/>
@@ -55111,7 +57274,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2634"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1133495/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/22080/"/>
-        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="https://scholar.googleusercontent.com/scholar.bib?q=info:YgNfRsQHCMUJ:scholar.google.com/&amp;output=citation&amp;scisdr=CgXihxhbELa-2lXRfnE:AAGBfm0AAAAAXrHUZnFNmbTTcSo-z4e_Z7LMVV-AeHzJ&amp;scisig=AAGBfm0AAAAAXrHUZkLTr07dn-CzdhXuctNz63FX5y3z&amp;scisf=4&amp;ct=citation&amp;cd=-1&amp;hl=en&amp;scfhb=1"/>
         <dcterms:hasPart rdf:resource="#item_2660"/>
         <dcterms:hasPart rdf:resource="https://apps.dtic.mil/dtic/tr/fulltext/u2/a532901.pdf"/>
@@ -55120,7 +57282,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1284799/"/>
         <dcterms:hasPart rdf:resource="http://arxiv.org/abs/1011.6363"/>
         <dcterms:hasPart rdf:resource="#item_2689"/>
-        <dcterms:hasPart rdf:resource="http://scikit-rf.org/"/>
         <dcterms:hasPart rdf:resource="https://app.knovel.com/web/view/khtml/show.v/rcid:kpMACAD00F/cid:kt010R55T2/viewerType:khtml//root_slug:15-microwave-oscillator-design/url_slug:microwave-oscillator?kpromoter=federation&amp;b-toc-cid=kpMACAD00F&amp;b-toc-root-slug=&amp;b-toc-url-slug=microwave-oscillator&amp;b-toc-title=Microwave%20Active%20Circuit%20Analysis%20and%20Design&amp;page=9&amp;view=collapsed&amp;zoom=1"/>
         <dcterms:hasPart rdf:resource="#item_2746"/>
         <dcterms:hasPart rdf:resource="#item_2748"/>
@@ -55145,22 +57306,40 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2836"/>
         <dcterms:hasPart rdf:resource="#item_2838"/>
         <dcterms:hasPart rdf:resource="#item_2839"/>
-        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-0087-3"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1124430/"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-07-149014-6"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-07-147171-8"/>
+        <dcterms:hasPart rdf:resource="https://www.law.cornell.edu/cfr/text/47/15.231"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1129597/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1131561/"/>
+        <dcterms:hasPart rdf:resource="https://www.tandfonline.com/doi/full/10.1080/002072197135120"/>
+        <dcterms:hasPart rdf:resource="#item_2864"/>
+        <dcterms:hasPart rdf:resource="#item_2865"/>
+        <dcterms:hasPart rdf:resource="#item_2868"/>
+        <dcterms:hasPart rdf:resource="http://ltwiki.org/files/LTspiceIV/examples/LtSpicePlus/Analisis/S2Spice/S2Spice_C/s2p%20to%20pspice.txt"/>
+        <dcterms:hasPart rdf:resource="https://www.modelithics.com/Model"/>
+        <dcterms:hasPart rdf:resource="#item_2882"/>
+        <dcterms:hasPart rdf:resource="https://openems.de/index.php/Tutorial:_MRI_LP_Birdcage.html"/>
+        <dcterms:hasPart rdf:resource="#item_2886"/>
+        <dcterms:hasPart rdf:resource="http://polyfet.pl/pliki/pdf/artykuly/MTT98.pdf"/>
+        <dcterms:hasPart rdf:resource="https://sourceforge.net/p/ngspice/mailman/message/34157604/"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
+        <dcterms:hasPart rdf:resource="#item_2946"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>oscillator</dc:title>
         <dcterms:hasPart rdf:resource="#collection_201"/>
+        <dcterms:hasPart rdf:resource="#collection_202"/>
+        <dcterms:hasPart rdf:resource="#collection_209"/>
         <dcterms:hasPart rdf:resource="#collection_196"/>
         <dcterms:hasPart rdf:resource="#collection_194"/>
+        <dcterms:hasPart rdf:resource="#collection_208"/>
+        <dcterms:hasPart rdf:resource="#collection_203"/>
         <dcterms:hasPart rdf:resource="https://www.qsl.net/i/iw1fyv/marker_en.html"/>
         <dcterms:hasPart rdf:resource="/preview/8099899/"/>
         <dcterms:hasPart rdf:resource="#item_1799"/>
         <dcterms:hasPart rdf:resource="#item_1819"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-0748-4"/>
-        <dcterms:hasPart rdf:resource="#item_1838"/>
         <dcterms:hasPart rdf:resource="#item_1843"/>
         <dcterms:hasPart rdf:resource="#item_1845"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4512154/"/>
@@ -55176,7 +57355,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2634"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1133495/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/22080/"/>
-        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="https://scholar.googleusercontent.com/scholar.bib?q=info:YgNfRsQHCMUJ:scholar.google.com/&amp;output=citation&amp;scisdr=CgXihxhbELa-2lXRfnE:AAGBfm0AAAAAXrHUZnFNmbTTcSo-z4e_Z7LMVV-AeHzJ&amp;scisig=AAGBfm0AAAAAXrHUZkLTr07dn-CzdhXuctNz63FX5y3z&amp;scisf=4&amp;ct=citation&amp;cd=-1&amp;hl=en&amp;scfhb=1"/>
         <dcterms:hasPart rdf:resource="#item_2660"/>
         <dcterms:hasPart rdf:resource="https://apps.dtic.mil/dtic/tr/fulltext/u2/a532901.pdf"/>
@@ -55185,7 +57363,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1284799/"/>
         <dcterms:hasPart rdf:resource="http://arxiv.org/abs/1011.6363"/>
         <dcterms:hasPart rdf:resource="#item_2689"/>
-        <dcterms:hasPart rdf:resource="http://scikit-rf.org/"/>
         <dcterms:hasPart rdf:resource="https://app.knovel.com/web/view/khtml/show.v/rcid:kpMACAD00F/cid:kt010R55T2/viewerType:khtml//root_slug:15-microwave-oscillator-design/url_slug:microwave-oscillator?kpromoter=federation&amp;b-toc-cid=kpMACAD00F&amp;b-toc-root-slug=&amp;b-toc-url-slug=microwave-oscillator&amp;b-toc-title=Microwave%20Active%20Circuit%20Analysis%20and%20Design&amp;page=9&amp;view=collapsed&amp;zoom=1"/>
         <dcterms:hasPart rdf:resource="#item_2746"/>
         <dcterms:hasPart rdf:resource="#item_2748"/>
@@ -55210,11 +57387,26 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2836"/>
         <dcterms:hasPart rdf:resource="#item_2838"/>
         <dcterms:hasPart rdf:resource="#item_2839"/>
-        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-0087-3"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1124430/"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-07-149014-6"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-07-147171-8"/>
+        <dcterms:hasPart rdf:resource="https://www.law.cornell.edu/cfr/text/47/15.231"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1129597/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1131561/"/>
+        <dcterms:hasPart rdf:resource="https://www.tandfonline.com/doi/full/10.1080/002072197135120"/>
+        <dcterms:hasPart rdf:resource="#item_2864"/>
+        <dcterms:hasPart rdf:resource="#item_2865"/>
+        <dcterms:hasPart rdf:resource="#item_2868"/>
+        <dcterms:hasPart rdf:resource="http://ltwiki.org/files/LTspiceIV/examples/LtSpicePlus/Analisis/S2Spice/S2Spice_C/s2p%20to%20pspice.txt"/>
+        <dcterms:hasPart rdf:resource="https://www.modelithics.com/Model"/>
+        <dcterms:hasPart rdf:resource="#item_2882"/>
+        <dcterms:hasPart rdf:resource="https://openems.de/index.php/Tutorial:_MRI_LP_Birdcage.html"/>
+        <dcterms:hasPart rdf:resource="#item_2886"/>
+        <dcterms:hasPart rdf:resource="http://polyfet.pl/pliki/pdf/artykuly/MTT98.pdf"/>
+        <dcterms:hasPart rdf:resource="https://sourceforge.net/p/ngspice/mailman/message/34157604/"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
+        <dcterms:hasPart rdf:resource="#item_2946"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_201">
         <dc:title>biasing</dc:title>
@@ -55237,6 +57429,170 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2761"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1130193/"/>
     </z:Collection>
+    <z:Collection rdf:about="#collection_202">
+        <dc:title>designs</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_206"/>
+        <dcterms:hasPart rdf:resource="#collection_205"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>designs</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_206"/>
+        <dcterms:hasPart rdf:resource="#collection_205"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>designs</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_206"/>
+        <dcterms:hasPart rdf:resource="#collection_205"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>designs</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_206"/>
+        <dcterms:hasPart rdf:resource="#collection_205"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_206">
+        <dc:title>fixed</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_204"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>fixed</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_204"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>fixed</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_204"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>fixed</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_204"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>fixed</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_204"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_204">
+        <dc:title>patch_resonator</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>patch_resonator</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>patch_resonator</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>patch_resonator</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>patch_resonator</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>patch_resonator</dc:title>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_205">
+        <dc:title>variable</dc:title>
+        <dcterms:hasPart rdf:resource="#item_1838"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>variable</dc:title>
+        <dcterms:hasPart rdf:resource="#item_1838"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>variable</dc:title>
+        <dcterms:hasPart rdf:resource="#item_1838"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>variable</dc:title>
+        <dcterms:hasPart rdf:resource="#item_1838"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>variable</dc:title>
+        <dcterms:hasPart rdf:resource="#item_1838"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4430798/"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_209">
+        <dc:title>FDTD_SPICE</dc:title>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/289516/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/127522/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-351-41047-2"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/311512/"/>
+        <dcterms:hasPart rdf:resource="#item_2899"/>
+        <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
+        <dcterms:hasPart rdf:resource="#item_2902"/>
+        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
+        <dcterms:hasPart rdf:resource="#item_2905"/>
+        <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
+        <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/504308/"/>
+        <dcterms:hasPart rdf:resource="#item_2921"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-2581-4"/>
+        <dcterms:hasPart rdf:resource="#item_2928"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/55775/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/267361/"/>
+        <dcterms:hasPart rdf:resource="#item_2932"/>
+        <dcterms:hasPart rdf:resource="#item_2935"/>
+        <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>FDTD_SPICE</dc:title>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/289516/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/127522/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-351-41047-2"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/311512/"/>
+        <dcterms:hasPart rdf:resource="#item_2899"/>
+        <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
+        <dcterms:hasPart rdf:resource="#item_2902"/>
+        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
+        <dcterms:hasPart rdf:resource="#item_2905"/>
+        <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
+        <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/504308/"/>
+        <dcterms:hasPart rdf:resource="#item_2921"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-2581-4"/>
+        <dcterms:hasPart rdf:resource="#item_2928"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/55775/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/267361/"/>
+        <dcterms:hasPart rdf:resource="#item_2932"/>
+        <dcterms:hasPart rdf:resource="#item_2935"/>
+        <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>FDTD_SPICE</dc:title>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/289516/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/127522/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-351-41047-2"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/311512/"/>
+        <dcterms:hasPart rdf:resource="#item_2899"/>
+        <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
+        <dcterms:hasPart rdf:resource="#item_2902"/>
+        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
+        <dcterms:hasPart rdf:resource="#item_2905"/>
+        <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
+        <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/504308/"/>
+        <dcterms:hasPart rdf:resource="#item_2921"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-2581-4"/>
+        <dcterms:hasPart rdf:resource="#item_2928"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/55775/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/267361/"/>
+        <dcterms:hasPart rdf:resource="#item_2932"/>
+        <dcterms:hasPart rdf:resource="#item_2935"/>
+        <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>FDTD_SPICE</dc:title>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/289516/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/127522/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-351-41047-2"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/311512/"/>
+        <dcterms:hasPart rdf:resource="#item_2899"/>
+        <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
+        <dcterms:hasPart rdf:resource="#item_2902"/>
+        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
+        <dcterms:hasPart rdf:resource="#item_2905"/>
+        <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
+        <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/504308/"/>
+        <dcterms:hasPart rdf:resource="#item_2921"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-2581-4"/>
+        <dcterms:hasPart rdf:resource="#item_2928"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/55775/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/267361/"/>
+        <dcterms:hasPart rdf:resource="#item_2932"/>
+        <dcterms:hasPart rdf:resource="#item_2935"/>
+        <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+    </z:Collection>
     <z:Collection rdf:about="#collection_196">
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -55255,6 +57611,8 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
+        <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/abs/10.1080/00207217908938683"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -55273,6 +57631,8 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
+        <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/abs/10.1080/00207217908938683"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -55291,6 +57651,8 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
+        <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/abs/10.1080/00207217908938683"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>filter</dc:title>
         <dcterms:hasPart rdf:resource="#collection_197"/>
@@ -55309,6 +57671,8 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1127522/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/"/>
         <dcterms:hasPart rdf:resource="http://maxima.sourceforge.net/docs/manual/intromax.html"/>
+        <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/abs/10.1080/00207217908938683"/>
+        <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_197">
         <dc:title>comb</dc:title>
@@ -55373,6 +57737,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2643"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-5-7782-0270-2"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/827824/"/>
+        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="#item_2681"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>SIR</dc:title>
@@ -55380,6 +57745,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2643"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-5-7782-0270-2"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/827824/"/>
+        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="#item_2681"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>SIR</dc:title>
@@ -55387,6 +57753,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2643"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-5-7782-0270-2"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/827824/"/>
+        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="#item_2681"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>SIR</dc:title>
@@ -55394,6 +57761,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2643"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-5-7782-0270-2"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/827824/"/>
+        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="#item_2681"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>SIR</dc:title>
@@ -55401,6 +57769,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2643"/>
         <dcterms:hasPart rdf:resource="urn:isbn:978-5-7782-0270-2"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/827824/"/>
+        <dcterms:hasPart rdf:resource="#item_2655"/>
         <dcterms:hasPart rdf:resource="#item_2681"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_194">
@@ -55423,6 +57792,24 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#item_2582"/>
         <dcterms:hasPart rdf:resource="#item_2584"/>
         <dcterms:hasPart rdf:resource="#item_2586"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_208">
+        <dc:title>microstrip</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>microstrip</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>microstrip</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>microstrip</dc:title>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_203">
+        <dc:title>varactor</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>varactor</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>varactor</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>varactor</dc:title>
     </z:Collection>
     <z:Collection rdf:about="#collection_159">
         <dc:title>phase_shifters</dc:title>
@@ -55611,6 +57998,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5090-5484-8"/>
         <dcterms:hasPart rdf:resource="#item_2347"/>
         <dcterms:hasPart rdf:resource="http://qucs.sourceforge.net/docs/tutorial/modelbjt.pdf"/>
+        <dcterms:hasPart rdf:resource="http://scikit-rf.org/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>simulation</dc:title>
         <dcterms:hasPart rdf:resource="https://openems.de/index.php/Tutorial:_Microstrip_Notch_Filter.html"/>
@@ -55622,6 +58010,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5090-5484-8"/>
         <dcterms:hasPart rdf:resource="#item_2347"/>
         <dcterms:hasPart rdf:resource="http://qucs.sourceforge.net/docs/tutorial/modelbjt.pdf"/>
+        <dcterms:hasPart rdf:resource="http://scikit-rf.org/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>simulation</dc:title>
         <dcterms:hasPart rdf:resource="https://openems.de/index.php/Tutorial:_Microstrip_Notch_Filter.html"/>
@@ -55633,6 +58022,7 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5090-5484-8"/>
         <dcterms:hasPart rdf:resource="#item_2347"/>
         <dcterms:hasPart rdf:resource="http://qucs.sourceforge.net/docs/tutorial/modelbjt.pdf"/>
+        <dcterms:hasPart rdf:resource="http://scikit-rf.org/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_150">
         <dc:title>splitter</dc:title>
@@ -57265,6 +59655,9 @@ Publisher: Nature Publishing Group</dc:description>
         <dcterms:hasPart rdf:resource="#collection_11"/>
         <dcterms:hasPart rdf:resource="#collection_12"/>
         <dcterms:hasPart rdf:resource="#collection_89"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/s41586-020-2278-9"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/nature16454"/>
+        <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41586-020-2150-y"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_84">
         <dc:title>1000</dc:title>
