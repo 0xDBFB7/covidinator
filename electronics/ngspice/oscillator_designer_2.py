@@ -21,19 +21,21 @@ import ngspyce
 
 source_file = 'oscillator.cir'
 
-    ngspyce.cmd('reset')
-    ngspyce.source(source_file)
 
-    timesteps = ngspyce.vector('time')
-    v_collector = ngspyce.vector('v(collector)')
-    v_base = ngspyce.vector('v(Base)')
-    varactor_bias = ngspyce.vector('v(Varbias)')
+ngspyce.cmd('reset')
+ngspyce.source(source_file)
 
-    stable_running_point = -1*len(v_collector)//3
-    v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
-    spectrum = np.fft.fft(v_collector_trimmed)
-    freq = np.fft.fftfreq(len(v_collector_trimmed), d=(timesteps[-1]-timesteps[stable_running_point])/len(v_collector_trimmed))
+timesteps = ngspyce.vector('time')
+v_collector = ngspyce.vector('v(collector)')
+v_base = ngspyce.vector('v(Base)')
+varactor_bias = ngspyce.vector('v(Varbias)')
 
+stable_running_point = -1*len(v_collector)//3
+v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
+spectrum = np.fft.fft(v_collector_trimmed)
+freq = np.fft.fftfreq(len(v_collector_trimmed), d=(timesteps[-1]-timesteps[stable_running_point])/len(v_collector_trimmed))
+
+# run_sim()
 DC_REJECT = 10
 spectrum_indice = np.abs(freq - 20e9).argmin()
 plt.subplot(2,2,1)

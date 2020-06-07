@@ -25,6 +25,17 @@ ERROR:ngspyce.sharedspice:Error: no circuit loaded
 ERROR:ngspyce.sharedspice:alterparam: no such command available in ngspice
 []
 
+
+that error is thrown by src/frontend/control.c:208.
+
+
+
+
+
+
+
+
 If you mistype the circuit filename for 'source' a few times, the interactive interpreter will
 start to screw up, and then ngspice segfaults.
+
 

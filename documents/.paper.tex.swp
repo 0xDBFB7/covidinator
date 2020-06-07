@@ -283,13 +283,13 @@ On the other hand, a personal device may present issues with compliance\footnote
 
 \paragraph{\textbf{Direct treatments}}\
 
-[Hand 1982] $E_{mag}=1/e$ (13.5\% power density) skin\footnote{electromagnetic skin, not tissue skin}\footnote{well, both, I suppose.} depth of 10 GHz microwave is approximately:
+[Hand 1982] $E_{mag}=1/e$ (13.5\% power density) skin\footnote{electromagnetic skin, not tissue skin}\footnote{well, both, I suppose.} depth is approximately:
 
 \begin{center}
 \begin{tabular}{|l|l|l|}
 \hline
 F=10 GHz          & Dry tissue & Wet tissue \\ \hline
-Penetration depth & 30 mm      & $\sim$5 mm \\ \hline
+Penetration depth & 30 mm      & 5 mm \\ \hline
 \end{tabular}
 \end{center}
 
