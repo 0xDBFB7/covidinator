@@ -88,12 +88,7 @@ Complete speculation, must be tested with MD or empirically.
 SARS-NCoV is generally found in most of the desirable organs.[] 
 These are shielded by at least 4 cm of chest wall [Schroeder 2013].
 
-Since SARS' mortality rate is primarily through viral pneumonia and respiratory distress 
-[Butany 2006], it may be possible for the emitter to be effective
- when mounted on a modified brochoscope and periodically inserted into the main bronchus.
-The bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are on the order of 
-7 mm thick. [Chekan 2016]
-
+ 
 
 # 3D Beamforming
 

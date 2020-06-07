@@ -1,0 +1,30 @@
+
+got a 'junction potential too large' error with a varactor.
+recompiled with a new option DIOtDepCapMax. 
+
+src/spicelib/devices/dio/diotemp.c:204
+```
+            double DIOtDepCapMax;
+
+            bool DepCapMaxSet = cp_getvar("DIOtDepCapMax", CP_REAL, &DIOtDepCapMax, 0);
+            /* limit junction potential to max of 1/FC */
+            if((!DepCapMaxSet && here->DIOtDepCap > 1.0) ||
+                (DepCapMaxSet && here->DIOtDepCap > DIOtDepCapMax)) {
+
+```
+That might adversely affect convergence in some cases, but it works perfectly fine here.
+
+
+Next, the alterparam command is not implemented when using NGSpice as a shared library:
+
+
+>>> ngspyce.cmd('altermod')
+ERROR:ngspyce.sharedspice:Error: no circuit loaded
+[]
+>>> ngspyce.cmd('alterparam')
+ERROR:ngspyce.sharedspice:alterparam: no such command available in ngspice
+[]
+
+If you mistype the circuit filename for 'source' a few times, the interactive interpreter will
+start to screw up, and then ngspice segfaults.
+
