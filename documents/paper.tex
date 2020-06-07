@@ -87,13 +87,12 @@ Aims:
 \end{abstract}
 
 
-\footnote{footnotes working fine}
 
 This work was prepared by an undergraduate and has not been peer-reviewed. 
 
 Additionally, the author has no prior experience with either biology or microwave design. 
 
-Testing was only performed with a surrogate bacteriophage. All experiments must be repeated with Inf. A and then SARS-NCoV-2.
+Testing was only performed with a surrogate bacteriophage. All experiments must be repeated with SARS-NCoV-2.
 
 Please consider all claims with appropriate skepticism.
 
@@ -110,7 +109,7 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 	\begin{itemize}
 	\item Envelope/liposome breaking strength and stiffness from AFM nanoindentation data
 	\item Analytical expression assuming homogenous sphere for microwave absorption cross-section
-	\item Experimental data from microwave cuvette to 
+	\item Experimental absorption data from microwave cuvette -> 
 	\item COMSOL finite-element for illustration
 	\end{itemize}
 \end{toolchain}
@@ -134,13 +133,29 @@ The effectiveness against airborne particles, and to minimize the power required
 
 {\color{red} speculative hypothesizing \{ } 
 
-In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain dose of photons must be absorbed, one might expect RF 
+In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain quantized dose of photons must be absorbed, we expected RF to act instantaneously.
 
 As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us. 
 
 [] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify the properties before the envelope fractures.
 
+Contrary to Far UV, where ozone production.
+
 {\color{red}  \} } 
+
+
+The medium (not specified in the paper, but ATCC recommends that MDCK cells are grown in Eagle's MEM + 10\% fetal bovine serum).
+
+
+
+
+[IEEE C95.1-2019]
+
+[IEEE C95.1-2005]
+
+\footnote{All values have been converted to $W/m^2$ to avoid confusion.}
+
+
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,61 +163,66 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 {\Large Safety}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Because this is an ostensibly novel and niche mechanism, it may behoove us to breifly review the biological basis for the safety limits set by standards organizations. 
-
-For instance, we could question why we might not see such resonances in bodily tissues. After all, approximately similar nanoscopic structures exist in humans; for instance, nuclear pores (120 nm) and the famous microtubules (10x50 nm). 
-
-While from which epidemiological data could be derived. \footnote{The cloud service [scite.ai] was irreplaceable during this. It's like a mirror to an alternate universe where literature made sense.}
-
-[ICNIRP 2020], [ICNIRP 2019], [Adair]
-
-The existence of resonance modes in DNA has been a matter of some contention; but the best data demonstrates 
-quite conclusively 
 
 
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
- [Manikowska 1979] & 9.4 GHz pulsed &  \\ \hline
-\end{tabular}
-\end{center}
+Because this is an ostensibly novel and niche mechanism, it may behoove us to breifly review the biological basis for the safety limits set by standards organizations. \footnote{The idea of biological microwave resonances appears to have originated in [Frohlich 1980].}
 
-\begin{autem}
-	{\it Evidence against safety}\
+Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent. 
+\footnote{[FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
+adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". Things heating up at the Microwave Safety fandom.}
 
-	\begin{itemize}
-	  \item {[Manikowska 1979] / 9.4 GHz pulsed / 2 weeks\
-	  
-	   this is a particularly concerning paper. [Servantie 1989] discusses the (somewhat }
-	  
-	  \item {[Sagripanti 1986] find DNA damage at $8.5 mW/g$ at 2.55 GHz, without undue heating of the solvent.
-	  	}
-	  
-	\end{itemize}\
-	
-	
-	
-\end{autem}
+There are some 20,000 papers on the topic of microwave safety, with solid in vitro, in vivo and epidemiological evidence of safety in the 2.4 GHz and 5.8 GHz bands.
+
+However, "There are limited experimental human data upon which to set limits on exposures above 6 GHz" [Chan 2019]. The frequency ranges above 6 GHz appear to be set primarily by assuming purely thermal mechanisms and introducing a substantial safety factor of 20 or 50x.
 
 
-\begin{toolchain}
-	{\it Evidence for safety:}\
-	\begin{itemize}
-	  \item
- 	\end{itemize}\
-\end{toolchain}
+
+The IEEE standard which the flagship paper [Yang 2015] references [IEEE C95.1–2005] was recently overhauled [IEEE C95.1-2019] with new metrics. The 
+
+For instance, we wondered why we might not see such resonances in bodily tissues. Approximately similar nanoscopic structures exist in humans; for instance, nuclear pores (120 nm) and the famous microtubules (10x50 nm). 
+
+While from which epidemiological data could be derived.\footnote{The cloud service [scite.ai] was irreplaceable during this. It's like a mirror to an alternate universe where literature made sense.}
+
+What we find is a messy affair. Biology is hard.
+
+\rule{\linewidth}{0.2pt}
+
+[Adair 2002] demonstrate theoretically that acoustic resonances are not possible in biological solvents. All resonance modes are strongly overdamped by the surrounding solvent, and no amplitude amplification can take place.
+
+This analysis would seem to disagree with the viral resonance apparently conclusively demonstrated by [Yang 2015]; the PCR result seems especially inarguable. We cannot explain this discrepancy. 
+
+[Liu 2009] cite [Edwards, Swicord 1984], saying: "It was proposed that a hydration layer surrounding DNA molecules could lower the viscoelastic transition
+frequency, raise the quality factor of confined acoustic vibrations, and result in a microwave resonant absorption". But [Adair 2002]'s [Foster 1987] seem to quite conclusively put the kibosh on that idea, demonstrating no resonances and showing previous results to be an artifact of the measurement equipment.
+
+However, [Sagripanti 1986] find DNA damage at $8.5 mW/g$ at 2.55 GHz, with only 0.8C heating of the solvent.
+
+\paragraph{[Manikowska 1979]} \
+
+9.4 GHz pulsed / in vivo, mouse, $0.1-10 \text{mW}/\text{m}^2$ over the whole body for 2 weeks.
+
+This is a particularly concerning result, especially given their $p<0.001$. [Servantie 1989] discusses the (admittedly circuituious) route by which birth defects could occur.
+
+Work by [Manikowska 1985] in the 2.4 GHz range has been contradicted [Beechey 1986], but the 9 GHz range does not appear to have been repeated.
+
+\rule{\linewidth}{0.2pt}
+
+More modern research does not tend to agree with these concerns. As cited by [ICNIRP 2020]'s excellent literature review, [Vijayalaxmi 2006] expose lymphocyte blood cells to pulsed 8.2 GHz radiation for 2 hours at an average power of $10 \text{mW/cm}^2$. They find no change in any of the parameters measured, including various chromosomal parameters. They further discuss previous results.
+
+
+
+We must defer to health experts for interpretation of these data, and will not attempt to draw a conclusion.
+
+
+It would be ideal to have an expert review our claims before publication. However, we tenatively make the following claims:
 
 {\it Please contact the author if you are aware of other salient research, or have a different interpretation.}
 
-Adair, 2002:
 
-The conclusion that there can be no microwave resonances in DNA in water is in accord with the results of measurements in three different laboratories ([Gabriel et al., 1987] [Foster et al., 1987] using techniques designed to detect resonances with amplitudes less than 1/20th of that reported by [Edwards et al. (1984)].
- 
- Evidence of such microwave absorption resonances has been reported ([Edwards et al., 1984] [Grundler and Keilman, 1983], but these results have not been replicated ([Gabriel et al., 1987] [Foster et al., 1987]
+Evidence of such microwave absorption resonances has been reported ([Edwards et al., 1984] [Grundler and Keilman, 1983], but these results have not been replicated ([Gabriel et al., 1987] [Foster et al., 1987]
 
 > We extend analyses that suggest that the damping of the vibratory motion by biological fluids severely restrict such possibilities[].
 
-It is interesting that this analysis would seem to disagree with the viral resonance seen by Yang.
+
 
 [Foster (1987)] find that the DNA resonance found by [Edwards (1987)] was well below the experimental error, given the latter's setup. The Foster paper is of excellent quality.
 
@@ -212,7 +232,6 @@ It is interesting that this analysis would seem to disagree with the viral reson
 
 Via the :
 
-> This is typically described as a function of a relevant dosimetric quantity. For example, below about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass (W kg−1). Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area(W m−2), which we refer to as “absorbed power density”.
 > 
 > Similarly, as there is no evidence that continuous (e.g., sinusoidal) and discontinuous (e.g., pulsed) EMFs result in different biological effects (Kowalczuk et al. 2010; Juutilainen et al. 2011), no theoretical distinction has been made between these types of exposure (all exposures have been considered empirically in terms of whether they adversely affect health)
 
@@ -227,6 +246,18 @@ Chemeris discusses 8.8 GHz  pulses, and finds no effect:
 \footnote{``{\it{For example, below about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}}'' [ICNIRP 2020 \faExternalLink]}
 
 \end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -446,6 +477,23 @@ One Very Important Thought
 \clearpage
 
 {\Large Captain's Log, Supplemental}\\
+
+
+\rule{\linewidth}{0.2pt}
+
+There seems to be a discrepancy between [Yang 2015] and our reading of C95.1-2005. This is very likely a misreading on our part, and so calls into question our understanding of the standard.
+
+They say: "Based on the IEEE Microwave Safety Standard, the spatial averaged value of the power density in air in open public space shall not exceed the equivalent power density of $100(f/3)^{1/5} \text{ W/m}^2$ at frequencies between 3 and 96GHz ($f$ is in GHz). This corresponds to $115 \text{ W}/\text{m}^2$ at 6 GHz". The 115 W @ 6 GHz value corresponds to this equation with a coefficient of 100.
+
+The only reference to a 3 - 96 GHz limit we can find is that of Section 4.6, {\it Relaxation of the power density MPEs for localized exposures}, where the equation is $200 (f/3)^{1/5} \text{ W/m}^2$ [IEEE C95.1-2005]; but this is for controlled, occupational exposures only, referring to Table 8. For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
+
+We don't think this changes the substance of [Yang 2015]'s paper, if it is an error; it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
+
+Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is possible that we have retrieved the wrong standard.
+
+\rule{\linewidth}{0.2pt}
+
+
 
 CEL did not supply a SPICE model for the GaAs FET device used in early prototypes. A FET was chosen because the a gate is ostensibly easier to bias than a base.
 
