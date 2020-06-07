@@ -57,9 +57,11 @@ X7 0 Varbias SMV2019079LF
 
 R6 Varbias Vvaractor 20000
 R7 Varbias Vvaractor 20000
-Vcap Vvaractor 0 3.0
 
-.ic v(Varbias) = 3
+.param varactor_bias_voltage = 15
+Vcap Vvaractor 0 varactor_bias_voltage
+
+.ic v(Varbias) = varactor_bias_voltage
 
 
 .control

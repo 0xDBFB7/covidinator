@@ -685,3 +685,6 @@ Sumatra is great, but all my scripts seem to break when put through it.
 the Galaxy project is really interesting. 
 
 scikit-rf.network has an s2y function - the conversion is really easy
+
+
+file could be fed to spice using circbyline

@@ -28,6 +28,7 @@ ERROR:ngspyce.sharedspice:alterparam: no such command available in ngspice
 
 that error is thrown by src/frontend/control.c:208.
 
+src/sharedspice.c:ngSpice_Command -> runc(
 
 
 

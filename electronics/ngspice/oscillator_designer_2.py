@@ -21,9 +21,25 @@ import ngspyce
 
 source_file = 'oscillator.cir'
 
+# def modify_source():
+#     #the alterparam command is not yet implemented in the shared libary of ngspice. This is a workaround.
+#     with open(net_file, 'r') as file:
+#       netlist = file.read()
+#
+#     scale_factors = np.ones_like(x)
+#     scale_factors[0] *= 10.0
+#
+#     for i in range(0,len(x)):
+#         netlist = netlist.replace('var_'+str(i), str(x[i]*scale_factors[i]))
+#
+#     with open(net_file_modified, 'w') as file:
+#         file.write(netlist)
 
-ngspyce.cmd('reset')
+
 ngspyce.source(source_file)
+print(ngspyce.cmd('alterparam varactor_bias_voltage = 10'))
+ngspyce.cmd('reset')
+ngspyce.cmd('tran 1p 100000ps uic')
 
 timesteps = ngspyce.vector('time')
 v_collector = ngspyce.vector('v(collector)')
