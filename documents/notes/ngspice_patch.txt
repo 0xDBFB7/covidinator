@@ -29,7 +29,7 @@ ERROR:ngspyce.sharedspice:alterparam: no such command available in ngspice
 that error is thrown by src/frontend/control.c:208.
 
 src/sharedspice.c:ngSpice_Command -> runc(
-
+cp_coms[i].co_comname
 
 
 
@@ -40,3 +40,4 @@ If you mistype the circuit filename for 'source' a few times, the interactive in
 start to screw up, and then ngspice segfaults.
 
 
+nope, turned out I just needed to re-compile ngspice lib? strange.

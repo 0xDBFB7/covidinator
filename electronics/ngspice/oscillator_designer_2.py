@@ -21,74 +21,84 @@ import ngspyce
 
 source_file = 'oscillator.cir'
 
-# def modify_source():
-#     #the alterparam command is not yet implemented in the shared libary of ngspice. This is a workaround.
-#     with open(net_file, 'r') as file:
-#       netlist = file.read()
-#
-#     scale_factors = np.ones_like(x)
-#     scale_factors[0] *= 10.0
-#
-#     for i in range(0,len(x)):
-#         netlist = netlist.replace('var_'+str(i), str(x[i]*scale_factors[i]))
-#
-#     with open(net_file_modified, 'w') as file:
-#         file.write(netlist)
-
-
 ngspyce.source(source_file)
-print(ngspyce.cmd('alterparam varactor_bias_voltage = 10'))
-ngspyce.cmd('reset')
-ngspyce.cmd('tran 1p 100000ps uic')
 
-timesteps = ngspyce.vector('time')
-v_collector = ngspyce.vector('v(collector)')
-v_base = ngspyce.vector('v(Base)')
-varactor_bias = ngspyce.vector('v(Varbias)')
+def run_sim(varactor_voltage):
 
-stable_running_point = -1*len(v_collector)//3
-v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
-spectrum = np.fft.fft(v_collector_trimmed)
-freq = np.fft.fftfreq(len(v_collector_trimmed), d=(timesteps[-1]-timesteps[stable_running_point])/len(v_collector_trimmed))
+    ngspyce.cmd(f'alterparam varactor_bias_voltage = {varactor_voltage}')
+    ngspyce.cmd('reset')
+    ngspyce.cmd('tran 1p 100000ps uic')
 
-# run_sim()
-DC_REJECT = 10
-spectrum_indice = np.abs(freq - 20e9).argmin()
-plt.subplot(2,2,1)
-plt.title("Collector freq. spectrum")
-fft_cleaned = spectrum[DC_REJECT:spectrum_indice].clip(min=0)/np.linalg.norm(spectrum[DC_REJECT:spectrum_indice].clip(min=0))
-plt.plot(freq[DC_REJECT:spectrum_indice],fft_cleaned)
-plt.ticklabel_format(style='sci', axis='x', scilimits=(9,9))
-plt.ylabel("mag")
-plt.xlabel("F (GHz)")
+    timesteps = ngspyce.vector('time')
+    v_collector = ngspyce.vector('v(collector)')
+    v_base = ngspyce.vector('v(Base)')
+    varactor_bias = ngspyce.vector('v(Varbias)')
 
-plt.subplot(2,2,2)
-plt.ylabel("V")
-plt.xlabel("T (nanoseconds)")
-plt.plot(timesteps,v_collector, label="Collector voltage")
-plt.plot(timesteps,varactor_bias, label="Varactor voltage")
-plt.plot(timesteps,v_base, label="Base voltage")
-plt.ticklabel_format(style='sci', axis='x', scilimits=(-9,-9))
-plt.legend()
+    stable_running_point = -1*len(v_collector)//3
+    v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
+    spectrum = np.fft.fft(v_collector_trimmed)
+    spectrum_freqs = np.fft.fftfreq(len(v_collector_trimmed), d=(timesteps[-1]-timesteps[stable_running_point])/len(v_collector_trimmed))
 
+    DC_REJECT = 10
+    spectrum_indice = np.abs(spectrum_freqs - 20e9).argmin()
+    fft_cleaned = spectrum[DC_REJECT:spectrum_indice].clip(min=0)/np.linalg.norm(spectrum[DC_REJECT:spectrum_indice].clip(min=0))
+    spectrum_freqs = spectrum_freqs[DC_REJECT:spectrum_indice]
 
-plt.subplot(2,2,3)
-plt.title("ENHANCE collector waveform.")
-plt.ylabel("V")
-plt.xlabel("T (nanoseconds)")
-plt.plot(timesteps[-300:],v_collector[-300:])
+    return np.array(np.abs(fft_cleaned)), np.array(spectrum_freqs)
 
-plt.draw()
-plt.pause(0.001)
+spectra = []
+spectra_freqs = []
 
-#numpy.savetxt("foo.csv", a, delimiter=",",fmt='%10.5f')
+values = []
+for v in np.linspace(0.1, 21, 30):
+    spectrum, spectrum_freqs = run_sim(v)
+    spectra = np.append( np.array(spectra), spectrum, axis=0)
+    spectra_freqs = np.append( np.array(spectra_freqs), spectrum_freqs, axis=0)
+    values = np.append( np.array(values),  np.array([v]*len(spectrum)), axis=0)
+    # print(spectra)
+
+print(np.transpose(spectrum_freqs).shape)
+print(np.transpose(spectra).shape)
+#
+np.savetxt("/tmp/data.csv", np.append(np.append(spectra_freqs.reshape(-1, 1), spectra.reshape(-1, 1), axis=1), values.reshape(-1, 1),axis=1) , delimiter=",",fmt='%10.5f')
+
+# DC_REJECT = 10
+# spectrum_indice = np.abs(freq - 20e9).argmin()
+# plt.subplot(2,2,1)
+# plt.title("Collector freq. spectrum")
+# fft_cleaned = spectrum[DC_REJECT:spectrum_indice].clip(min=0)/np.linalg.norm(spectrum[DC_REJECT:spectrum_indice].clip(min=0))
+# plt.plot(freq[DC_REJECT:spectrum_indice],fft_cleaned)
+# plt.ticklabel_format(style='sci', axis='x', scilimits=(9,9))
+# plt.ylabel("mag")
+# plt.xlabel("F (GHz)")
+#
+# plt.subplot(2,2,2)
+# plt.ylabel("V")
+# plt.xlabel("T (nanoseconds)")
+# plt.plot(timesteps,v_collector, label="Collector voltage")
+# plt.plot(timesteps,varactor_bias, label="Varactor voltage")
+# plt.plot(timesteps,v_base, label="Base voltage")
+# plt.ticklabel_format(style='sci', axis='x', scilimits=(-9,-9))
+# plt.legend()
+
+# plt.subplot(2,2,3)
+# plt.title("ENHANCE collector waveform.")
+# plt.ylabel("V")
+# plt.xlabel("T (nanoseconds)")
+# plt.plot(timesteps[-300:],v_collector[-300:])
+#
+# plt.draw()
+# plt.pause(0.001)
+
 
 
 spectrum_file = '/tmp/spectrum.svg'
 source_file = 'oscillator_designer_2.py'
 SPICE_file = 'oscillator.cir'
+spectrum_3d = '/tmp/3d_spectrum.png'
 
 plt.savefig(spectrum_file)
 
-files = [spectrum_file, source_file, SPICE_file]
+#save to lab notebook
+files = [spectrum_file, source_file, SPICE_file, spectrum_3d]
 store.ask(files)

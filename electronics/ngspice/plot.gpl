@@ -1,0 +1,8 @@
+
+set terminal png
+set output '/tmp/3d_spectrum.png'
+
+set datafile separator ","
+
+
+splot '/tmp/data.csv' using 1:3:2 with impulses
