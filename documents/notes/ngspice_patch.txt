@@ -32,7 +32,7 @@ src/sharedspice.c:ngSpice_Command -> runc(
 cp_coms[i].co_comname
 
 
-
+didn't change anything here.
 
 
 
@@ -41,3 +41,9 @@ start to screw up, and then ngspice segfaults.
 
 
 nope, turned out I just needed to re-compile ngspice lib? strange.
+
+neat - you can do adaptive timestepping in ngspice by using snsave and snload
+
+
+
+modified line 36 of src/spicelib/analysis/traninit.c.

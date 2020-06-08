@@ -619,3 +619,9 @@ polycarbonate is autoclavable, but it loses strength rapidly.
 
 
 hey, I've got a huge sheet of 1/8 
+
+
+Maybe there's something we can do with simple angular momentum on the polarization twist front.
+
+
+T7 

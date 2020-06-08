@@ -121,4 +121,3 @@ ROUGH = 2.54e-08
 
 # Dielectric loss tangent
 TAND = 0.02
-

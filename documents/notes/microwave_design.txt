@@ -688,3 +688,26 @@ scikit-rf.network has an s2y function - the conversion is really easy
 
 
 file could be fed to spice using circbyline
+
+this ngspice doesn't seem to work with timesteps < 1 ps. There is a substantial difference in the oscillation
+between 2 ps and 1 ps.
+
+ERROR:ngspyce.sharedspice:doAnalyses: TRAN:  Timestep too small; time = 1.01622e-15, timestep = 1.25e-24: trouble with node "x4.102"
+
+oh hey, that's probably why the FDTD sim wasn't working. The timestep wasn't right!
+something to re-check later.
+
+
+the actual timestep is limited by ckt->CKTdelmin = 1e-11*ckt->CKTmaxStep; - 
+it seems to be much, much smaller on average than the actual timestep.
+
+
+modified, recompiled: 
+
+ERROR:ngspyce.sharedspice:doAnalyses: TRAN:  Timestep too small; time = 7.55625e-11, timestep = 1.25e-64: trouble with node "x1.2"
+
+ UH OH
+
+ oh noes
+
+ changed it back. modifying reltol doesn't help matters, still 'timestep too small' at tstep<1ps.

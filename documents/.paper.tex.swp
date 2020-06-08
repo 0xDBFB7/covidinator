@@ -378,7 +378,7 @@ The gate must be weakly pulled to ground, otherwise stray charge destroys the os
 
 With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke.
 
-If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
+If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters at 8 GHz) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
 
 However, reflections from these structures still appeared to distort the frequency/phase response beyond repair, even with ostensibly wideband stubs [Syrett 1980].
 
@@ -436,8 +436,38 @@ The techniques and equipment required to produce these are non-trivial. SiGe:C, 
 
 
 
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Large Molecular dynamics simulation}\\
+\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+aa
+
+
+
+
+
+\end{multicols}
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Large Optical centrifuge polarization chirp}\\
+\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+aa
+
+
+
+
+
+\end{multicols}
 
 
 
@@ -453,7 +483,7 @@ This paper is not novel enough to deserve this chapter, but those to be acknowle
 
 The authors of the original paper on 
 
-Professor Shahramian's excellent video blog {\it The Signal Path} inspired this work.
+Professor Shahramian's excellent video blog {\it The Signal Path} inspired this work. Alex Dainis' videos on sterile technique were also useful.
 
 Hopfstader be damned; despite the name below the abstract, this paper is of course entirely the result of circumstance and luck. Any comparable dimwit to the author would have accomplished the same under the same conditions. 
 
@@ -475,11 +505,11 @@ One Very Important Thought
 
 There seems to be a discrepancy between [Yang 2015] and our reading of C95.1-2005. This is very likely a misreading on our part, and so calls into question our understanding of the standard.
 
-They say: "Based on the IEEE Microwave Safety Standard, the spatial averaged value of the power density in air in open public space shall not exceed the equivalent power density of $100(f/3)^{1/5} \text{ W/m}^2$ at frequencies between 3 and 96GHz ($f$ is in GHz). This corresponds to $115 \text{ W}/\text{m}^2$ at 6 GHz". The 115 W @ 6 GHz value corresponds to this equation with a coefficient of 100.
+They say: "Based on the IEEE Microwave Safety Standard, the spatial averaged value of the power density in air in open public space shall not exceed the equivalent power density of $100(f/3)^{1/5} \text{ W/m}^2$ at frequencies between 3 and 96GHz ($f$ is in GHz). This corresponds to $115 \text{ W}/\text{m}^2$ at 6 GHz". The 115 W @ 6 GHz value correctly corresponds to this equation with a coefficient of 100.
 
 The only reference to a 3 - 96 GHz limit we can find is that of Section 4.6, {\it Relaxation of the power density MPEs for localized exposures}, where the equation is $200 (f/3)^{1/5} \text{ W/m}^2$ [IEEE C95.1-2005]; but this is for controlled, occupational exposures only, referring to Table 8. For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
 
-We don't think this changes the substance of [Yang 2015]'s paper, if it is an error; the localized exposure is probably the correct threshold to use, and it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
+We don't think this changes the substance of [Yang 2015]'s paper, if it is an error; the relaxed localized exposure is probably the correct threshold to use, and it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
 
 Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is possible that we have retrieved the wrong standard.
 
@@ -501,20 +531,21 @@ OpenEMS is excellent, with Python bindings, some lumped components, and mesh ref
 
 \rule{\linewidth}{0.2pt}
 
-Simulating the oscillator with an AC sim using the manufacturer's S-parameters and QUCS' microstrip approximations [qucs/optimize\_filter\_1] appeared to yield good agreement with experiment. The peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
+Simulating the oscillator with an AC sim using the manufacturer's S-parameters and QUCS' microstrip approximations [qucs/optimize\_filter\_1] intially appeared to yield good agreement with experiment. Peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
  
 However, unexpected dips and peaks were found with varactor tuning; and the tuning range was far smaller than expected.
 
-A filter design with apparently ideal phase and frequency properties was designed using this process, but again poor agreement was found with experiment.
+A feedback loop filter design with apparently ideal phase and frequency properties was designed using this process; but the behavior of this oscillator did not correspond to reality.
 
 \hspace*{-0.7cm}   \includegraphics[scale=0.6]{LO_2_pole_test.png}
 
-Because we lacked a spectrum analyzer that could monitor the higher poles of the filter until the bootstrap LO was designed.
+Because we lacked a spectrum analyzer that could monitor the higher poles of the filter until the bootstrap LO was designed, we had to rely on in-silico analyeses.
 
 It was thought that a transient simulation - to determine how the spectrum actually evolved - would improve the situation. 
 
-QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively. Coupling can be emulated by introducing discrete coupling capacitors; but 
+As of 0.0.20, QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively. Coupling can be emulated by introducing discrete coupling capacitors
 
+Transient simulations with ngspice matched experiment far more closely.
 
 \rule{\linewidth}{0.2pt}
 
@@ -536,6 +567,8 @@ The coupling coefficient between two low-pass filters determines the band-pass b
 
 [Hunter 2001] also describes an analytical method to create a filter with the precise group delay - phase shift versus frequency - required for stable oscillation. However, simultaneously compensating for the group delay introduced by the amplifier itself (nearly 180 degrees over the frequency range for the CEL part) seemed complex.
 
+Phase shift can be introduced either via a length of microstrip, or a high-pass/low-pass filter [Microwave101]. Adding a fixed microstrip line restricts the tuning range, however, and the filter inevitably affects the frequency response.  
+
 \rule{\linewidth}{0.2pt}
 
 NGSPICE's KSPICE coupled transmission lines require the capacitance and inductance per unit length in Maxwell matrix form, rather than the physical $C_{even}$/$L_{even}$ (each line's capacitance and inductance to ground) and $_{odd}$ (between elements) form provided by tools like wcalc. "matrix not positive definite". [Schutt-Aine] discusses this; we reproduce here for convienience.
@@ -545,9 +578,8 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 \[ C_{11} = C_{22} = C_{even}+C_{odd}  \]
 \[ C_{12} = C_{21} {\it{(unused)}} = -C_{odd}  \]
 
-
 \rule{\linewidth}{0.2pt}
- 
+
 
 
 \label{para}
@@ -562,15 +594,21 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 
 \rule{\linewidth}{0.2pt}
 
-It may be helpful to treat simulations very similarly to IRL experiments. 
+It may be helpful to think of simulations very similarly to IRL experiments. 
 
-This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs) of each distinct test. Including a picture with a webcam of the assembled board is also helpful. 
+A simulation is just a universe in a bottle that you can examine more closely; as with real-world, you can learn much from observation, but 
 
-Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you should be able to see what the input and output was without re-running the simulation. 
+But this need for documentation conflicts with the rapid, iterative cycle necessary for productivity.
+
+This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs, input files) of each distinct test. 
+
+For comparison to experiment, having a webcam take an image of the assembled board is also helpful. 
+
+Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you must be able to see what the input and output was without re-running the simulation. 
 
 Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it!
 
-Sacred, recipy, Sumatra
+Software such as Sumatra, Sacred, recipy, and others. In our case, we used eLabFTW's elabapy bindings.
 
 \rule{\linewidth}{0.2pt}
 
@@ -588,6 +626,24 @@ For instance, this was done with the PDB reader.
 
 
 Write a paper to be understood; to be as clear and helpful as possible to the reader.
+
+\rule{\linewidth}{0.2pt}
+
+We have always encountered wasting extreme amounts of time on subtle assembly mistakes in hardware prototypes. 
+
+In one example, many hours were spent because the enamel insulation on a bodge wire had not burned off completely in the solder joint, leading to a high-impedance connection.
+
+The same has occurred in previous projects; in one example, many days were spent debugging software to fix an apparently slow hardware interrupt, which ended up being the result of a poor solder paste stencil leading to a hidden high-impedance connection to a leadless package.
+
+Many failures are perhaps the result of carelessness in modification and a lack of inspection; but others would only have been found by a 100\% electrical test.
+
+If flying-probe or bed-of-nails tests can be made sufficiently rapid and closely coupled with the existing toolchain, 
+
+In {\it 2001: A space odyssey}, an automated system is shown guiding the troubleshooting of an assembly, apparently generating a fault tree of all the 
+
+\rule{\linewidth}{0.2pt}
+
+
 
 \paragraph{Hall of Hubris} \
 
@@ -617,7 +673,7 @@ However, I think this person may have missed out. Learning
 
 So perhaps it is wise to ponder the ideas of fools for skeet; one always learns target practice, if only an example what not to do, and occasionally one learns positively. I have often found that I learn greatly from working on the projects of others.
 
-We present this only as a cautionary tale in the hopes that someday I will listen, rather than talk.
+We present this only as a cautionary tale in the hopes that someday I will listen.
 
 \rule{\linewidth}{0.2pt}
 
