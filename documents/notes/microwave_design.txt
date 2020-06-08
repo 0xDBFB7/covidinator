@@ -717,3 +717,10 @@ ERROR:ngspyce.sharedspice:doAnalyses: TRAN:  Timestep too small; time = 7.55625e
 "timestep too small" is generally a result of a malformed circuit, apparently.
 that circuit's in the varactor, though, so ???
 
+[Winch 1982] hmm! there's something called a "doubling mode" oscillator, which can accomodate lower 
+frequency transistors. They use 4
+ NE64500 transistors with a fT of 8.5 GHz and get 19 GHz out of it. only 0 dbm, though.
+
+
+ 
+

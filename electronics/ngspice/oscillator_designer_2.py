@@ -38,7 +38,7 @@ def run_sim(varactor_voltage):
     timesteps = ngspyce.vector('time')
     v_collector = ngspyce.vector('v(collector)')
     v_base = ngspyce.vector('v(Base)')
-    varactor_bias = ngspyce.vector('v(Varbias_1)')
+    varactor_bias = ngspyce.vector('v(collector)')
 
     stable_running_point = -1*len(v_collector)//3
     v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
@@ -63,7 +63,7 @@ spectra = []
 values = []
 
 # values = []
-for i,v in enumerate(np.linspace(0.1, 21, 10)):
+for i,v in enumerate(np.linspace(10, 10, 1)):
     values.append(run_sim(v))
     spectrum = values[i][0]
     if(not len(spectra)):
@@ -87,7 +87,7 @@ plt.title("Collector freq. waterfall against varactor voltage")
 ax1.set_xticks(idx)
 ax1.set_xticklabels(["{:1.1f}e9".format(i/1.0e9) for i in spectrum_freqs[idx]])
 # ax1.set_yticks(idx)
-ax1.set_yticklabels(["{:1.1f}".format(i) for i in values[:][5][0]])
+ax1.set_yticklabels(["{:1.1f}".format(i) for i in values[0][:][5]])
 plt.draw()
 plt.pause(0.001)
 # np.savetxt("/tmp/data.csv", np.append(np.append(spectra_freqs.reshape(-1, 1), spectra.reshape(-1, 1), axis=1), values.reshape(-1, 1),axis=1) , delimiter=",",fmt='%10.5f')
