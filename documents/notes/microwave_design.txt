@@ -721,6 +721,9 @@ that circuit's in the varactor, though, so ???
 frequency transistors. They use 4
  NE64500 transistors with a fT of 8.5 GHz and get 19 GHz out of it. only 0 dbm, though.
 
+so I've basically been barking up the wrong tree this whole time. 
+the inductance of essentially any filter structure is too high for a 'direct' RC oscillator.
 
+We get SUPERB stability and frequency response from just a double-tuned varactor thingy.
  
 

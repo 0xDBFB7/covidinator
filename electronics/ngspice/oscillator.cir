@@ -12,12 +12,26 @@ Lsupply VCC collector 440NH
 
 X1 collector Base E1 E2 BFP620
 
-LV1 Base Base_ 0.7NH
-C1 Base_ 0 2p
-LV2 collector collector_ 0.7NH
-C2 collector_ 0 2p
+//LV1 Base Base_ 1.4NH
+//X6 Base Base_ 10pf0402
+X5 Base Base_ SMV2019079LF
+X6 0 Base_ SMV2019079LF
+//C1 Base_ 0 0.3p
+
+
+//LV2 collector collector__ 0.7NH
+//X7 collector 0 10pf0402
+//C2 collector__ 0 0.3p
+
+X7 collector collector__ 10pf0402
+X8 collector__ c__ SMV2019079LF
+X9 0 c__ SMV2019079LF
+//X6 0 Base_ SMV2019079LF
 
 Rbase_pulldown Base 0 10K //0 ohm link
+
+Rc collector__ 0 10K //0 ohm link
+
 
 Lem E1 E_ 440NH
 Rem E_ E__ 100
@@ -31,13 +45,13 @@ Rem2 E1 E2 0
 //X6 Varbias_2 0 10pf0402
 
 
-//R6 Varbias_1 Vvaractor 20000
-//R7 Varbias_2 Vvaractor 20000
+R6 Base_ Vvaractor 20000
+R7 collector__ Vvaractor 20000
 
 
 .param varactor_bias_voltage = 15
 Vcap Vvaractor 0 varactor_bias_voltage
-//.ic v(Varbias_1) = varactor_bias_voltage
+//.ic v(Base_) = varactor_bias_voltage
 //.ic v(Varbias_2) = varactor_bias_voltage
 
 
