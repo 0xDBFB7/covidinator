@@ -1,8 +1,12 @@
-
-set terminal png
-set output '/tmp/3d_spectrum.png'
+#set terminal png
+#set output '/tmp/3d_spectrum.png'
 
 set datafile separator ","
 
 
-splot '/tmp/data.csv' using 1:3:2 with impulses
+#set dgrid3d 100,100
+#set pm3d
+#set view 10,60
+splot '/tmp/data.csv' using 1:3:2 with image
+
+pause -1

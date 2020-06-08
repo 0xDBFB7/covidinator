@@ -39,10 +39,12 @@ def run_sim(varactor_voltage):
     spectrum = np.fft.fft(v_collector_trimmed)
     spectrum_freqs = np.fft.fftfreq(len(v_collector_trimmed), d=(timesteps[-1]-timesteps[stable_running_point])/len(v_collector_trimmed))
 
-    DC_REJECT = 10
-    spectrum_indice = np.abs(spectrum_freqs - 20e9).argmin()
-    fft_cleaned = spectrum[DC_REJECT:spectrum_indice].clip(min=0)/np.linalg.norm(spectrum[DC_REJECT:spectrum_indice].clip(min=0))
-    spectrum_freqs = spectrum_freqs[DC_REJECT:spectrum_indice]
+
+    spectrum_begin_indice = np.abs(spectrum_freqs - 100e6).argmin()
+    spectrum_end_indice = np.abs(spectrum_freqs - 20e9).argmin()
+    fft_cleaned = spectrum[spectrum_begin_indice:spectrum_end_indice].clip(min=0)/ \
+                        np.linalg.norm(spectrum[spectrum_begin_indice:spectrum_end_indice].clip(min=0))
+    spectrum_freqs = spectrum_freqs[spectrum_begin_indice:spectrum_end_indice]
 
     return np.array(np.abs(fft_cleaned)), np.array(spectrum_freqs)
 
@@ -50,17 +52,29 @@ spectra = []
 spectra_freqs = []
 
 values = []
-for v in np.linspace(0.1, 21, 30):
+for v in np.linspace(0.1, 21, 1):
     spectrum, spectrum_freqs = run_sim(v)
-    spectra = np.append( np.array(spectra), spectrum, axis=0)
-    spectra_freqs = np.append( np.array(spectra_freqs), spectrum_freqs, axis=0)
-    values = np.append( np.array(values),  np.array([v]*len(spectrum)), axis=0)
+    if(not spectra):
+        spectra = spectrum.reshape(-1, 1)
+    else:
+        spectra = np.append( spectra, spectrum.reshape(-1, 1), axis=1)
+    # spectra = np.append( np.array(spectra), spectrum, axis=0)
+    # spectra_freqs = np.append( np.array(spectra_freqs), spectrum_freqs, axis=0)
+    # values = np.append( np.array(values),  np.array([v]*len(spectrum)), axis=0)
     # print(spectra)
 
-print(np.transpose(spectrum_freqs).shape)
-print(np.transpose(spectra).shape)
 #
-np.savetxt("/tmp/data.csv", np.append(np.append(spectra_freqs.reshape(-1, 1), spectra.reshape(-1, 1), axis=1), values.reshape(-1, 1),axis=1) , delimiter=",",fmt='%10.5f')
+spectra = np.repeat(spectra, repeats=50, axis=1)
+fig,(ax1) = plt.subplots(1,1)
+ax1.imshow(np.transpose(spectra))
+tick_num = 10
+idx = np.round(np.linspace(0, len(spectra) - 1, tick_num)).astype(int)
+ax1.set_xticks(idx)
+ax1.set_xticklabels(["{:.2E}".format(i) for i in spectrum_freqs[idx]])
+
+# np.savetxt("/tmp/data.csv", np.append(np.append(spectra_freqs.reshape(-1, 1), spectra.reshape(-1, 1), axis=1), values.reshape(-1, 1),axis=1) , delimiter=",",fmt='%10.5f')
+
+#os.system('gnuplot plot.gpl')
 
 # DC_REJECT = 10
 # spectrum_indice = np.abs(freq - 20e9).argmin()
@@ -87,8 +101,8 @@ np.savetxt("/tmp/data.csv", np.append(np.append(spectra_freqs.reshape(-1, 1), sp
 # plt.xlabel("T (nanoseconds)")
 # plt.plot(timesteps[-300:],v_collector[-300:])
 #
-# plt.draw()
-# plt.pause(0.001)
+plt.draw()
+plt.pause(0.001)
 
 
 
