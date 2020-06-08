@@ -711,3 +711,9 @@ ERROR:ngspyce.sharedspice:doAnalyses: TRAN:  Timestep too small; time = 7.55625e
  oh noes
 
  changed it back. modifying reltol doesn't help matters, still 'timestep too small' at tstep<1ps.
+
+ it's not the 0-ohm shunt links, either. 
+
+"timestep too small" is generally a result of a malformed circuit, apparently.
+that circuit's in the varactor, though, so ???
+

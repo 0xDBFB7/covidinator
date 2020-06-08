@@ -33,12 +33,12 @@ def run_sim(varactor_voltage):
     sim_duration = 100000
     n_steps = sim_duration/step_ps
     # ngspyce.cmd(" ")
-    ngspyce.cmd(f'tran 1p {sim_duration}ps uic')
+    ngspyce.cmd(f'tran {step_ps}p {sim_duration}ps uic')
 
     timesteps = ngspyce.vector('time')
     v_collector = ngspyce.vector('v(collector)')
     v_base = ngspyce.vector('v(Base)')
-    varactor_bias = ngspyce.vector('v(Varbias)')
+    varactor_bias = ngspyce.vector('v(Varbias_1)')
 
     stable_running_point = -1*len(v_collector)//3
     v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
