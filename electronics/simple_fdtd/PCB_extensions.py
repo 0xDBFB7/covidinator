@@ -227,7 +227,8 @@ class PCB:
             self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3,Z] = 0 #make a conductor
             self.grid.E[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z,Z] = 0 #make a conductor
 
-            C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
+            C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
+            print(C)
             dvdt = (port.current / C)
             self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] += (dvdt * self.grid.time_step) / (self.cell_size)
             #make a ring of current around the conductor

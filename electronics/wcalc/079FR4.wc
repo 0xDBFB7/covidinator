@@ -1,6 +1,6 @@
 #
 # File:      /home/arthurdent/covidinator/electronics/wcalc/079FR4.wc
-# Modified:  Tue Jun  2 14:10:44 2020
+# Modified:  Tue Jun  9 15:49:20 2020
 # Wcalc Version 1.1
 
 [wcalc]
@@ -39,16 +39,16 @@ units_L = 1-2
 # [nH/mm]
 
 # Incremental resistance units
-units_R = 1-2
-# [mOhm/mm]
+units_R = 2-2
+# [Ohm/mm]
 
 # Incremental capacitance units
 units_C = 1-2
 # [pF/mm]
 
 # Incremental conductance units
-units_G = 0-2
-# [uMho/mm]
+units_G = 2-2
+# [Mho/mm]
 
 # Line physical length units
 units_len = 0
@@ -63,8 +63,8 @@ units_loss = 0
 # [dB]
 
 # Loss/length units
-units_losslen = 0-6
-# [dB/inch]
+units_losslen = 0-2
+# [dB/mm]
 
 # Resistivity units
 units_rho = 2-4
@@ -105,5 +105,5 @@ RHO = 3e-08
 ROUGH = 2.54e-08
 
 # Dielectric loss tangent
-TAND = 0
+TAND = 0.02
 

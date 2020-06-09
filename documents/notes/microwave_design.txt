@@ -730,5 +730,7 @@ We get SUPERB stability and frequency response from just a double-tuned varactor
 The ampere's law magnetic field contour thingy isn't working. IDK.
 
 ngspice does read negative currents correctly.
+
+The sim gets unstable when a smaller capacitance is used. interesting.
  
 
