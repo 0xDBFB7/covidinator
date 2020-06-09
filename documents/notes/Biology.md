@@ -630,3 +630,5 @@ T7
 The hydrophilic/hydrophobic properties of Polycarb don't seem to be ideal for microfluidics.
 This can be modified by UV exposure apparently.
 
+
+

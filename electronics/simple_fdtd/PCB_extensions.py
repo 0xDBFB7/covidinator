@@ -227,13 +227,19 @@ class PCB:
             self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3,Z] = 0 #make a conductor
             self.grid.E[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z,Z] = 0 #make a conductor
 
+            C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
+            dvdt = (port.current / C)
+            self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] += (dvdt * self.grid.time_step) / (self.cell_size)
             #make a ring of current around the conductor
-            contour_length = (4.0*self.cell_size)
+            # contour_length = (4.0*self.cell_size)
 
-            self.grid.H[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = 1.0 * (port.current / contour_length)
-            self.grid.H[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = -1.0 * (port.current / contour_length)
-            self.grid.H[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2,X] = 1.0 * (port.current / contour_length)
-            self.grid.H[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2,X] = -1.0 * (port.current / contour_length)
+
+            # print(port.current)
+            #ostensibly there should be a factor of mu_0 here.
+            # self.grid.H[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = 1.0 * (port.current / contour_length)
+            # self.grid.H[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = -1.0 * (port.current / contour_length)
+            # self.grid.H[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2,X] = 1.0 * (port.current / contour_length)
+            # self.grid.H[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2,X] = -1.0 * (port.current / contour_length)
             # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = port.voltage / (self.cell_size)
 
@@ -326,23 +332,22 @@ class PCB:
         for port in self.component_ports:
             self.set_spice_voltage(port.SPICE_net, port.voltage)
 
-    def get_spice_voltages(self):
+    def get_spice_currents(self):
         for port in self.component_ports:
-            port.voltage = self.get_spice_voltage(port.SPICE_net)
+            port.current = self.get_spice_current(port.SPICE_net)
 
 
-    def get_spice_voltage(self, SPICE_net):
-        return float(ngspyce.cmd('print v(' + SPICE_net + ')[1000000]')[0].split()[2])
+    def get_spice_current(self, SPICE_net):
+        return ngspyce.vector('i(v' + SPICE_net + ")")[-1]
+        # return float(ngspyce.cmd('print v(' + SPICE_net + ')[1000000]')[0].split()[2])
 
     def set_spice_voltage(self, SPICE_net, voltage):
-        self.error(ngspyce.cmd('alter c' + SPICE_net + ' IC = ' + str(voltage)))
+        self.error(ngspyce.cmd('alter v' + SPICE_net + ' = ' + str(voltage)))
 
     def reset_spice(self):
         # resets simulation without reloading file from disk
         self.error(ngspyce.cmd('reset'))
-        C = epsilon_0*6.0*(self.cell_size**2.0)*(self.substrate_permittivity)/self.cell_size
-        self.error(ngspyce.cmd('altermod cstd cap = {}'.format(C)))
-        print("C", C)
+        # self.error(ngspyce.cmd('altermod cstd cap = {}'.format(C)))
 
     def run_spice_step(self):
         ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))

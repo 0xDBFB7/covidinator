@@ -38,7 +38,7 @@ def DISABLED_test_ports():
     pcb.dump_to_vtk('test/test_ports/dumps/test',0)
 
 
-def test_Simple():
+def disabled_test_Simple():
     pcb = PCB(0.0002)
     pcb.initialize_grid_with_svg('test/basic_test.svg')
     pcb.create_planes(0.032e-3, 6e7)
@@ -137,7 +137,7 @@ def disabled_test_spice_alone():
 
 
 
-def disabled_test_spice():
+def test_spice():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
@@ -155,25 +155,23 @@ def disabled_test_spice():
 
         dump_step = 20
         for i in range(0,500):
-
-            pcb.apply_all_currents()
-            pcb.zero_conductor_fields()
             pcb.grid.update_E()
+            pcb.compute_all_voltages()
+            pcb.set_spice_voltages()
             pcb.zero_conductor_fields()
 
-            pcb.compute_all_voltages()
+
             print("V1, {} V2 {} ".format(pcb.component_ports[0].voltage,
                                                                     pcb.component_ports[1].voltage))
             pcb.reset_spice()
-            pcb.set_spice_voltages()
 
             pcb.run_spice_step()
 
-            pcb.get_spice_voltages()
+            pcb.grid.update_H()
 
+            pcb.get_spice_currents()
             pcb.apply_all_currents()
 
-            pcb.grid.update_H()
             pcb.grid.time_steps_passed += 1
 
             pcb.save_voltages()
@@ -182,10 +180,8 @@ def disabled_test_spice():
                 pcb.dump_to_vtk('test/test_spice/dumps/test',i)
             print("Step {}".format(i))
 
-            print("V1, {} V2 {}, SPice V1 {}, SPice V2 {} ".format(pcb.component_ports[0].voltage,
-                                                                    pcb.component_ports[1].voltage,
-                                                                    pcb.get_spice_voltage('input_terminated'),
-                                                                    pcb.get_spice_voltage('output')))
+            print("V1, {} V2 {}".format(pcb.component_ports[0].voltage,
+                                                                    pcb.component_ports[1].voltage))
             print("Time: {}".format(pcb.grid.time_passed/1.0e-12))
             pcb.times.append(pcb.grid.time_passed)
 

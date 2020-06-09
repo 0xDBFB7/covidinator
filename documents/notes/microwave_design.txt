@@ -727,5 +727,6 @@ the inductance of essentially any filter structure is too high for a 'direct' RC
 We get SUPERB stability and frequency response from just a double-tuned varactor thingy.
 
 
+The ampere's law magnetic field contour thingy isn't working. IDK.
  
 
