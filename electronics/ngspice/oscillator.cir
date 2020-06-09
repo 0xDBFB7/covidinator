@@ -35,7 +35,7 @@ Rbase_pulldown Base 0 10K //0 ohm link
 Rc collector__ 0 10K //0 ohm link
 
 Y1 collector 0 output 0 ymod
-.MODEL ymod txl R=23.6 L=0.306e-9 G=0 C=0.122e-12 length=10
+.MODEL ymod txl R=0.0236 L=0.306e-9 G=0 C=0.122e-12 length=10
 //1.5 mm, 50-ohm trace on the 0.79mm substrates
 
 Rout output 0 50

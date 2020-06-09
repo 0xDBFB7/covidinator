@@ -128,12 +128,12 @@ def disabled_test_spice_alone():
 
         pcb.init_SPICE(SPICE_source_file)
         pcb.reset_spice()
-        pcb.set_spice_voltage('input_terminated',10)
-        pcb.set_spice_voltage('output',10)
+        pcb.set_spice_voltage('input_terminated',3)
+        pcb.set_spice_voltage('output',3)
         # pcb.reset_spice()
         pcb.run_spice_step()
-        print(pcb.get_spice_voltage('input_terminated'))
-        print(pcb.get_spice_voltage('output'))
+        print(pcb.get_spice_current('input_terminated'))
+        print(pcb.get_spice_current('output'))
 
 
 
@@ -156,6 +156,7 @@ def test_spice():
         dump_step = 20
         for i in range(0,500):
             pcb.grid.update_E()
+            pcb.reset_spice()
             pcb.compute_all_voltages()
             pcb.set_spice_voltages()
             pcb.zero_conductor_fields()
@@ -163,7 +164,6 @@ def test_spice():
 
             print("V1, {} V2 {} ".format(pcb.component_ports[0].voltage,
                                                                     pcb.component_ports[1].voltage))
-            pcb.reset_spice()
 
             pcb.run_spice_step()
 
@@ -182,6 +182,9 @@ def test_spice():
 
             print("V1, {} V2 {}".format(pcb.component_ports[0].voltage,
                                                                     pcb.component_ports[1].voltage))
+            print("I1, {} I2 {}".format(pcb.component_ports[0].current,
+                                                                    pcb.component_ports[1].current))
+
             print("Time: {}".format(pcb.grid.time_passed/1.0e-12))
             pcb.times.append(pcb.grid.time_passed)
 
