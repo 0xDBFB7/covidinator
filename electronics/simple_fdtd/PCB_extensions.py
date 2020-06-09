@@ -212,8 +212,11 @@ class PCB:
             # math.sin(self.grid.time_steps_passed/50.0)* (100.0/self.cell_size)
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
             #(self.component_plane_z-self.ground_plane_z_top)
-            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-1,Z] = 0
-            self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = port.voltage / (self.cell_size)
+
+
+            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0 #make a conductor 
+            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0
+            # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = port.voltage / (self.cell_size)
 
 
     def zero_conductor_fields(self):

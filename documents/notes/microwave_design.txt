@@ -725,5 +725,7 @@ so I've basically been barking up the wrong tree this whole time.
 the inductance of essentially any filter structure is too high for a 'direct' RC oscillator.
 
 We get SUPERB stability and frequency response from just a double-tuned varactor thingy.
+
+
  
 

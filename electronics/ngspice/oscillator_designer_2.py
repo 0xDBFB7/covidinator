@@ -63,7 +63,7 @@ spectra = []
 values = []
 
 # values = []
-for i,v in enumerate(np.linspace(0, 20, 10)):
+for i,v in enumerate(np.linspace(0, 20, 30)):
     values.append(run_sim(v))
     spectrum = values[i][0]
     if(not len(spectra)):
@@ -78,7 +78,7 @@ for i,v in enumerate(np.linspace(0, 20, 10)):
 #
 
 spectrum_freqs = values[0][1]
-spectra = np.repeat(spectra, repeats=50, axis=1) # make each slice wide enough to be visible
+spectra = np.repeat(spectra, repeats=20, axis=1) # make each slice wide enough to be visible
 fig,(ax1) = plt.subplots(1,1)
 ax1.imshow(np.transpose(spectra), norm=SymLogNorm(0.1))
 tick_num = 10

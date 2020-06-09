@@ -269,6 +269,10 @@ Polypropylene is the ideal material, being almost indefinitely autoclavable. It 
 
 
 
+
+
+
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{1}
@@ -337,6 +341,29 @@ It is relatively easy to produce megawatts of power at these frequency ranges us
 The following properties: P1dB
 
 For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
+
+
+As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Microwave Oscillator Design would have accomplished the task faster.
+
+Designing an oscillator of this type in one step with a few kindergarten equations appears to be well within the reach of modern network analytical techniques. Genetic algorithms are quite well matched to this problem, and many commercial software packages are  [computer microwave design book]. 
+
+In addition, the design of wideband feedback-loop VCOs is a relatively well-explored field, and many reference designs exist. 
+
+The key sticking point - which we missed - seems to be that at these scales, using microstrip design techniques, the parasitics of any possible filter structure are so large that the small change in inductance that varactors can provide cannot tune the circuit by any meaningful amount.
+
+"Using the lead inductances of the bipolar transistor and varactors provides the required value of the base inductance".
+
+Indeed, [Tsuru 2008]'s "tuned circuit" in Fig 8 is, in fact, just the varactors, plus an almost invisible high-impedance line.
+
+We began experimentally by building a scaled version of [Mueller 2008]'s active antenna in microstrip, using a CEL mosfet.
+
+This immediately oscillated perfectly.
+
+
+
+Several analytical filter design methods were 
+
+
 %
 \paragraph{\textbf{The feedback loop oscillator}}\
 
