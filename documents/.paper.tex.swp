@@ -40,7 +40,7 @@
 
 
 \title{On the application of microwave acoustic resonant viral inactivation
-\thanks{I would be delighted to include any criticisms or comments anyone may have; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
+\thanks{I would be delighted to include any criticisms or comments anyone may have, both on substance and comprehensibility; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
 \date{May 2020}
 \author{Based primarily on exceptional work by }
 
@@ -166,7 +166,7 @@ The medium (not specified in the paper, but ATCC recommends that MDCK cells are 
 
 
 
-Because this is an ostensibly novel and niche mechanism, it may behoove us to breifly review the biological basis for the safety limits set by standards organizations. \footnote{The idea of biological microwave resonances appears to have originated in [Frohlich 1980].}
+Because this is an ostensibly novel and niche mechanism, it may behoove us to breifly review the biological basis for the safety limits set by standards organizations. \footnote{The idea of biological microwave resonances appears to have originated in [Frohlich 1968, 1980].}
 
 Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent. 
 \footnote{[FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
@@ -187,7 +187,9 @@ There are some 20,000 papers on the topic of RF safety, with solid in vitro, in 
 
 However, "There are limited experimental human data upon which to set limits on exposures above 6 GHz" [Chan 2019]. Only 2\% of the above papers are on frequencies $>6$ GHz [Vijayalaxmi 2018]. 
 
-In addition, what data remains in this category is of poor quality. As has been starkly demonstrated in the recent hydroxychloroquine contradictions [Gautret 2020] [Geleris 2020], biological research must be essentially perfect to have any meaning at all.
+In addition, what data remains in this category is of varying quality. 
+
+As has been starkly demonstrated in the recent hydroxychloroquine contradictions [Gautret 2020] [Geleris 2020], biological research must be essentially perfect to have any meaning at all.
 
 [Vijayalaxmi 2018] is a remarkable meta-analysis of in vitro data. They synthesize a quality score, rating bindedness, sham controls, dosimetry, and sample size. Quality was inversely, monotonically related to the effect size. An example of the subtle effects that can call into question superfically reasonable results are [
 
@@ -197,14 +199,14 @@ An example of a relevant study that they grade as "quality 1" [Karaca 2011]. Thi
 
 \rule{\linewidth}{0.2pt}
 
-[Adair 2002] demonstrate theoretically that acoustic resonances are not possible in biological solvents. All resonance modes are strongly overdamped by the surrounding solvent, and no amplitude amplification can take place.
+[Adair 2002] demonstrate theoretically that acoustic resonances are, in general, highly unlikely in biological solvents, primarily focusing on DNA. All resonance modes are strongly overdamped by the surrounding solvent, and no amplitude amplification can take place.
 
-This analysis would seem to disagree with the viral resonance apparently conclusively demonstrated by [Yang 2015]; the PCR result seems especially inarguable. We cannot explain this discrepancy. 
+This analysis would seem to disagree with the viral resonance apparently conclusively demonstrated by [Yang 2015] - the PCR result seems especially inarguable. This could be explained by the large charge on the virus compared to the molecules analyzed in Adair. [Yang 2015] find a charge of order $10^7 e$, whereas Adair analyzes a very different regime, "assume coupling to the field through single charges q = e at each end".
 
 [Liu 2009] cite [Edwards, Swicord 1984], saying: "It was proposed that a hydration layer surrounding DNA molecules could lower the viscoelastic transition
 frequency, raise the quality factor of confined acoustic vibrations, and result in a microwave resonant absorption". But [Adair 2002]'s [Foster 1987] seem to quite conclusively put the kibosh on that idea, demonstrating no resonances in DNA with 20x higher precision and showing previous results to be an artifact of the measurement equipment.
 
-The supplemental material to [Vijayalaxmi 2018] has a table of results.
+The supplemental material to [Vijayalaxmi 2018] has a table of studies on this topic. High-quality research in-vitro concurs with.
 
 \paragraph{[Manikowska 1979]} \
 

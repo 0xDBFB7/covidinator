@@ -7,7 +7,7 @@ import io
 import math
 from pyevtk.hl import gridToVTK
 from math import pi, ceil
-from scipy.constants import epsilon_0
+from scipy.constants import mu_0,epsilon_0
 import numpy as np
 import torch
 
@@ -206,6 +206,17 @@ class PCB:
 #permittivity might have to be cubed
 #is there a bug in fdtd/grid/permittivity? Seems like it's not updated unless it's an array
 
+    def create_source_vias(self):
+        for port in self.component_ports:
+            if(port.SPICE_net == 0):
+                pass
+                self.copper_mask[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3] = 1 #make a conductor
+                self.copper_mask[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z] = 1 #make a conductor
+
+                # self.copper_mask[port.N_x:port.N_x+1,port.N_y:port.N_y+1,self.ground_plane_z_top:self.component_plane_z] = 1 # for good measure
+
+
+
     def apply_all_currents(self):
         for port in self.component_ports:
             # port.voltage = e_field_integrate(G, port, self.reference_port)
@@ -213,9 +224,17 @@ class PCB:
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
             #(self.component_plane_z-self.ground_plane_z_top)
 
+            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3,Z] = 0 #make a conductor
+            self.grid.E[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z,Z] = 0 #make a conductor
 
-            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0 #make a conductor 
-            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0
+            #make a ring of current around the conductor
+            contour_length = (4.0*self.cell_size)
+
+            self.grid.H[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = 1.0 * (port.current / contour_length)
+            self.grid.H[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = -1.0 * (port.current / contour_length)
+            self.grid.H[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2,X] = 1.0 * (port.current / contour_length)
+            self.grid.H[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2,X] = -1.0 * (port.current / contour_length)
+            # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = port.voltage / (self.cell_size)
 
 
@@ -265,7 +284,13 @@ class PCB:
             ports = np.zeros_like(E_copy[:,:,:,X])
             for port in [i for i in self.component_ports if i]:
                     ports[port.N_x,port.N_y,self.component_plane_z-1] = 4
+
+                    ports[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2] = 5
+                    ports[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2]  = 5
+                    ports[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2] = 5
+                    ports[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2]  = 5
             cellData['ports'] = ports
+
 
         if(Ex_dump):
             cellData['Ex'] = np.ascontiguousarray(E_copy[:,:,:,X])

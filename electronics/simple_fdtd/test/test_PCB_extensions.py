@@ -47,19 +47,28 @@ def test_Simple():
     # pcb.reference_port = Port(pcb, 0, X, 1.0, 10.0e-3, 10.0e-3, 1.5e-3, )
     pcb.component_ports.append(Port(pcb, 0,  7.6e-3, 11.3e-3))
     pcb.component_ports.append(Port(pcb, 1, 11.3e-3, 11.3e-3))
+    pcb.create_source_vias()
+
 
     for i in range(0,500):
+
         pcb.grid.update_E()
+        pcb.compute_all_voltages()
+        # pcb.save_voltages()
         pcb.zero_conductor_fields()
 
-        pcb.compute_all_voltages()
-        pcb.component_ports[0].voltage = 1.0
-        pcb.apply_all_currents()
+        # print(float(sum(pcb.grid.E[pcb.component_ports[0].N_x+2,pcb.component_ports[0].N_y,pcb.ground_plane_z_top:pcb.component_plane_z,Z])*pcb.cell_size))
+
+
         pcb.grid.update_H()
+        pcb.component_ports[0].current = 1
+
+        pcb.apply_all_currents()
+
         pcb.grid.time_steps_passed += 1
 
-        pcb.save_voltages()
-        # pcb.dump_to_vtk('test/test_spice/dumps/test',i)
+
+        pcb.dump_to_vtk('test/test_spice/dumps/test',i)
         print("Step {}".format(i))
         print(pcb.component_ports[0].voltage)
         print(pcb.component_ports[1].voltage)
@@ -106,7 +115,7 @@ def DISABLED_test_spice():
         print(pcb.component_ports[1].voltage)
 
 
-def test_spice_alone():
+def disabled_test_spice_alone():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
@@ -128,7 +137,7 @@ def test_spice_alone():
 
 
 
-def test_spice():
+def disabled_test_spice():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
