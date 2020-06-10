@@ -344,8 +344,9 @@ The following properties: P1dB
 
 For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
 
+It is commonly claimed that FR4 is a 'slow' substrate, and that the high loss tangent of ~0.02 makes it unsuitable for microwave systems.
 
-However, with this PCB substrate, a loss of only 0.026 dB/mm on signals of minimum 0 dBm.
+However, with this PCB substrate, a loss of only 0.026 dB/mm on signals of minimum 0 dBm. We are also only minimally concerned with $S_{11}$ reflections, noise, or spurs (viruses do not have a discriminating palate), so precise impedance control is not required; the wideband VCO sweep accomodates for any variations in resonant frequency due to wide manufacturing tolerances.
 
 As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Microwave Oscillator Design would have accomplished the task faster.
 

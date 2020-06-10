@@ -13,57 +13,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L SparkFun-Coils:INDUCTOR-0402-3.9NH L3
-U 1 1 5EE07869
-P 3500 2850
-F 0 "L3" H 3553 2892 45  0000 L CNN
-F 1 "220 nH" H 3553 2808 45  0000 L CNN
-F 2 "0402" H 3500 3100 20  0001 C CNN
-F 3 "" H 3500 2850 50  0001 C CNN
-F 4 "" H 3552 2766 60  0000 L CNN "Field4"
-	1    3500 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Coils:INDUCTOR-0402-3.9NH L2
-U 1 1 5EE08A1B
-P 3500 2450
-F 0 "L2" H 3553 2492 45  0000 L CNN
-F 1 "220 nH" H 3553 2408 45  0000 L CNN
-F 2 "0402" H 3500 2700 20  0001 C CNN
-F 3 "" H 3500 2450 50  0001 C CNN
-F 4 "" H 3552 2366 60  0000 L CNN "Field4"
-	1    3500 2450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3500 3050 3950 3050
-Wire Wire Line
-	4850 3050 4750 3050
-$Comp
-L SparkFun-Coils:INDUCTOR-0402-3.9NH L6
-U 1 1 5EE100FA
-P 5350 3050
-F 0 "L6" V 5529 3050 45  0000 C CNN
-F 1 "1 nH" V 5445 3050 45  0000 C CNN
-F 2 "0402" H 5350 3300 20  0001 C CNN
-F 3 "" H 5350 3050 50  0001 C CNN
-F 4 "" H 5402 2966 60  0000 L CNN "Field4"
-	1    5350 3050
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR0101
-U 1 1 5EE11FB7
-P 5550 3050
-F 0 "#PWR0101" H 5550 3050 30  0001 C CNN
-F 1 "GND" H 5550 2980 30  0001 C CNN
-F 2 "" H 5550 3050 50  0001 C CNN
-F 3 "" H 5550 3050 50  0001 C CNN
-	1    5550 3050
-	0    -1   -1   0   
-$EndComp
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R3
 U 1 1 5EE13E6D
@@ -78,9 +29,6 @@ F 4 " " V 4834 2618 60  0000 L CNN "Field4"
 $EndComp
 Wire Wire Line
 	4750 3050 4750 2750
-Connection ~ 4750 3050
-Wire Wire Line
-	4650 3050 4750 3050
 Wire Wire Line
 	3200 3250 3100 3250
 Wire Wire Line
@@ -113,6 +61,7 @@ F 4 "X" H 3350 2700 50  0001 C CNN "Spice_Primitive"
 F 5 "BFP620" H 3350 2700 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 3350 2700 50  0001 C CNN "Spice_Netlist_Enabled"
 F 7 "/home/arthurdent/Projects/covidinator/electronics/models/BFP620.lib" H 3350 2700 50  0001 C CNN "Spice_Lib_File"
+F 8 "3 1 2 4" H 3350 2700 50  0001 C CNN "Spice_Node_Sequence"
 	1    3350 2700
 	1    0    0    -1  
 $EndComp
@@ -158,8 +107,6 @@ $EndComp
 Wire Wire Line
 	3100 3550 3100 3250
 Connection ~ 3100 3250
-Wire Wire Line
-	3100 3250 2750 3250
 $Comp
 L power:GND #PWR0103
 U 1 1 5EE2EA29
@@ -270,69 +217,6 @@ Wire Wire Line
 Wire Wire Line
 	2550 3050 2950 3050
 $Comp
-L Connector:Test_Point TP2
-U 1 1 5EE45334
-P 3500 2250
-F 0 "TP2" H 3558 2368 50  0000 L CNN
-F 1 "Vsource" H 3558 2277 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3700 2250 50  0001 C CNN
-F 3 "~" H 3700 2250 50  0001 C CNN
-F 4 "V" H 3500 2250 50  0001 C CNN "Spice_Primitive"
-F 5 "pulse(0 2 20e-12 5e-12 1e-12 1 1)" H 3500 2250 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 3500 2250 50  0001 C CNN "Spice_Netlist_Enabled"
-	1    3500 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Capacitors:4.7UF0603 C3
-U 1 1 5EE4533B
-P 2950 2250
-F 0 "C3" V 2716 2300 45  0000 C CNN
-F 1 "0.1 uF" V 2800 2300 45  0000 C CNN
-F 2 "0603" H 2950 2500 20  0001 C CNN
-F 3 "" H 2950 2250 50  0001 C CNN
-F 4 "" H 3058 2216 60  0000 L CNN "Field4"
-	1    2950 2250
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3050 2250 3500 2250
-$Comp
-L power:GND #PWR0106
-U 1 1 5EE45343
-P 2750 2250
-F 0 "#PWR0106" H 2750 2250 30  0001 C CNN
-F 1 "GND" H 2750 2180 30  0001 C CNN
-F 2 "" H 2750 2250 50  0001 C CNN
-F 3 "" H 2750 2250 50  0001 C CNN
-	1    2750 2250
-	0    1    1    0   
-$EndComp
-Connection ~ 3500 2250
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R5
-U 1 1 5EE4C71F
-P 4250 3250
-F 0 "R5" V 4155 3318 45  0000 L CNN
-F 1 "10K" V 4239 3318 45  0000 L CNN
-F 2 "0402" H 4250 3400 20  0001 C CNN
-F 3 "" H 4250 3250 60  0001 C CNN
-F 4 " " V 4334 3318 60  0000 L CNN "Field4"
-	1    4250 3250
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0107
-U 1 1 5EE4D5D3
-P 4250 3450
-F 0 "#PWR0107" H 4250 3450 30  0001 C CNN
-F 1 "GND" H 4250 3380 30  0001 C CNN
-F 2 "" H 4250 3450 50  0001 C CNN
-F 3 "" H 4250 3450 50  0001 C CNN
-	1    4250 3450
-	1    0    0    -1  
-$EndComp
-$Comp
 L SparkFun-Resistors:RESISTOR0402 R4
 U 1 1 5EE4E4E0
 P 2450 3750
@@ -360,17 +244,6 @@ Wire Wire Line
 Wire Wire Line
 	2000 3250 2000 4000
 $Comp
-L Device:D D1
-U 1 1 5EE5E8B1
-P 1750 3250
-F 0 "D1" H 1750 3034 50  0000 C CNN
-F 1 "D" H 1750 3125 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-523" H 1750 3250 50  0001 C CNN
-F 3 "~" H 1750 3250 50  0001 C CNN
-	1    1750 3250
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:D D2
 U 1 1 5EE6169E
 P 2250 3250
@@ -388,17 +261,6 @@ $EndComp
 Wire Wire Line
 	2400 3250 2450 3250
 $Comp
-L Device:D D3
-U 1 1 5EE6E7EB
-P 4500 3050
-F 0 "D3" H 4500 2834 50  0000 C CNN
-F 1 "D" H 4500 2925 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-523" H 4500 3050 50  0001 C CNN
-F 3 "~" H 4500 3050 50  0001 C CNN
-	1    4500 3050
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:D D4
 U 1 1 5EE6FD7F
 P 5000 3050
@@ -406,11 +268,13 @@ F 0 "D4" H 5000 3266 50  0000 C CNN
 F 1 "D" H 5000 3175 50  0000 C CNN
 F 2 "Diode_SMD:D_SOD-523" H 5000 3050 50  0001 C CNN
 F 3 "~" H 5000 3050 50  0001 C CNN
+F 4 "X" H 5000 3050 50  0001 C CNN "Spice_Primitive"
+F 5 "SMV2019079LF" H 5000 3050 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5000 3050 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 5000 3050 50  0001 C CNN "Spice_Lib_File"
 	1    5000 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4350 3050 4250 3050
 $Comp
 L power:GND #PWR0102
 U 1 1 5EE21C04
@@ -435,10 +299,10 @@ F 4 "" H 1452 3166 60  0000 L CNN "Field4"
 	0    1    1    0   
 $EndComp
 $Comp
-L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C5
 U 1 1 5EEB34DA
 P 4050 3050
-F 0 "C?" V 3816 3100 45  0000 C CNN
+F 0 "C5" V 3816 3100 45  0000 C CNN
 F 1 "10 pF" V 3900 3100 45  0000 C CNN
 F 2 "0402" H 4050 3300 20  0001 C CNN
 F 3 "" H 4050 3050 50  0001 C CNN
@@ -450,33 +314,31 @@ F 8 "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib" H 40
 	1    4050 3050
 	0    1    1    0   
 $EndComp
-Connection ~ 4250 3050
 $Comp
-L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C2
 U 1 1 5EEB3D3A
-P 2550 3250
-F 0 "C?" V 2316 3300 45  0000 C CNN
-F 1 "10 pF" V 2400 3300 45  0000 C CNN
-F 2 "0402" H 2550 3500 20  0001 C CNN
-F 3 "" H 2550 3250 50  0001 C CNN
-F 4 "" H 2658 3216 60  0000 L CNN "Field4"
-F 5 "X" H 2550 3250 50  0001 C CNN "Spice_Primitive"
-F 6 "10pf0402" H 2550 3250 50  0001 C CNN "Spice_Model"
-F 7 "Y" H 2550 3250 50  0001 C CNN "Spice_Netlist_Enabled"
-F 8 "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib" H 2550 3250 50  0001 C CNN "Spice_Lib_File"
-	1    2550 3250
+P 2600 3250
+F 0 "C2" V 2366 3300 45  0000 C CNN
+F 1 "10 pF" V 2450 3300 45  0000 C CNN
+F 2 "0402" H 2600 3500 20  0001 C CNN
+F 3 "" H 2600 3250 50  0001 C CNN
+F 4 "" H 2708 3216 60  0000 L CNN "Field4"
+F 5 "X" H 2600 3250 50  0001 C CNN "Spice_Primitive"
+F 6 "10pf0402" H 2600 3250 50  0001 C CNN "Spice_Model"
+F 7 "Y" H 2600 3250 50  0001 C CNN "Spice_Netlist_Enabled"
+F 8 "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib" H 2600 3250 50  0001 C CNN "Spice_Lib_File"
+	1    2600 3250
 	0    1    1    0   
 $EndComp
-Connection ~ 2450 3250
 $Comp
-L Connector:Test_Point Vvaractor
+L Connector:Test_Point Vvaractor1
 U 1 1 5EED7014
 P 2000 4400
-F 0 "Vvaractor" V 2195 4472 50  0000 C CNN
+F 0 "Vvaractor1" V 2195 4472 50  0000 C CNN
 F 1 "Vvaractor" V 2104 4472 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2200 4400 50  0001 C CNN
 F 3 "~" H 2200 4400 50  0001 C CNN
-F 4 "I" H 2000 4400 50  0001 C CNN "Spice_Primitive"
+F 4 "V" H 2000 4400 50  0001 C CNN "Spice_Primitive"
 F 5 "dc 1" H 2000 4400 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 2000 4400 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    2000 4400
@@ -484,10 +346,10 @@ F 6 "Y" H 2000 4400 50  0001 C CNN "Spice_Netlist_Enabled"
 $EndComp
 Connection ~ 2000 4400
 $Comp
-L SparkFun-Resistors:RESISTOR0402 R?
+L SparkFun-Resistors:RESISTOR0402 R6
 U 1 1 5EED81DA
 P 2550 2850
-F 0 "R?" V 2455 2918 45  0000 L CNN
+F 0 "R6" V 2455 2918 45  0000 L CNN
 F 1 "50" V 2539 2918 45  0000 L CNN
 F 2 "0402" H 2550 3000 20  0001 C CNN
 F 3 "" H 2550 2850 60  0001 C CNN
@@ -497,14 +359,167 @@ F 4 " " V 2634 2918 60  0000 L CNN "Field4"
 $EndComp
 Connection ~ 2550 3050
 $Comp
-L power:GND #PWR?
+L Device:D D1
+U 1 1 5EE5E8B1
+P 1750 3250
+F 0 "D1" H 1750 3034 50  0000 C CNN
+F 1 "D" H 1750 3125 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 1750 3250 50  0001 C CNN
+F 3 "~" H 1750 3250 50  0001 C CNN
+F 4 "X" H 1750 3250 50  0001 C CNN "Spice_Primitive"
+F 5 "SMV2019079LF" H 1750 3250 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 1750 3250 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 1750 3250 50  0001 C CNN "Spice_Lib_File"
+	1    1750 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D3
+U 1 1 5EE6E7EB
+P 4500 3050
+F 0 "D3" H 4500 2834 50  0000 C CNN
+F 1 "D" H 4500 2925 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 4500 3050 50  0001 C CNN
+F 3 "~" H 4500 3050 50  0001 C CNN
+F 4 "X" H 4500 3050 50  0001 C CNN "Spice_Primitive"
+F 5 "SMV2019079LF" H 4500 3050 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4500 3050 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 4500 3050 50  0001 C CNN "Spice_Lib_File"
+	1    4500 3050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0109
 U 1 1 5EEDC0A6
 P 2550 2650
-F 0 "#PWR?" H 2550 2650 30  0001 C CNN
+F 0 "#PWR0109" H 2550 2650 30  0001 C CNN
 F 1 "GND" H 2550 2580 30  0001 C CNN
 F 2 "" H 2550 2650 50  0001 C CNN
 F 3 "" H 2550 2650 50  0001 C CNN
 	1    2550 2650
 	-1   0    0    1   
 $EndComp
+Connection ~ 3500 2250
+$Comp
+L power:GND #PWR0106
+U 1 1 5EE45343
+P 2750 2250
+F 0 "#PWR0106" H 2750 2250 30  0001 C CNN
+F 1 "GND" H 2750 2180 30  0001 C CNN
+F 2 "" H 2750 2250 50  0001 C CNN
+F 3 "" H 2750 2250 50  0001 C CNN
+	1    2750 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 2250 3500 2250
+$Comp
+L SparkFun-Capacitors:4.7UF0603 C3
+U 1 1 5EE4533B
+P 2950 2250
+F 0 "C3" V 2716 2300 45  0000 C CNN
+F 1 "0.1 uF" V 2800 2300 45  0000 C CNN
+F 2 "0603" H 2950 2500 20  0001 C CNN
+F 3 "" H 2950 2250 50  0001 C CNN
+F 4 "" H 3058 2216 60  0000 L CNN "Field4"
+	1    2950 2250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Test_Point TP2
+U 1 1 5EE45334
+P 3500 2250
+F 0 "TP2" H 3558 2368 50  0000 L CNN
+F 1 "Vsource" H 3558 2277 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3700 2250 50  0001 C CNN
+F 3 "~" H 3700 2250 50  0001 C CNN
+F 4 "V" H 3500 2250 50  0001 C CNN "Spice_Primitive"
+F 5 "pulse(0 2 20e-12 5e-12 1e-12 1 1)" H 3500 2250 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 3500 2250 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3500 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Coils:INDUCTOR-0402-3.9NH L2
+U 1 1 5EE08A1B
+P 3500 2450
+F 0 "L2" H 3553 2492 45  0000 L CNN
+F 1 "220 nH" H 3553 2408 45  0000 L CNN
+F 2 "0402" H 3500 2700 20  0001 C CNN
+F 3 "" H 3500 2450 50  0001 C CNN
+F 4 "" H 3552 2366 60  0000 L CNN "Field4"
+	1    3500 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Coils:INDUCTOR-0402-3.9NH L3
+U 1 1 5EE07869
+P 3500 2850
+F 0 "L3" H 3553 2892 45  0000 L CNN
+F 1 "220 nH" H 3553 2808 45  0000 L CNN
+F 2 "0402" H 3500 3100 20  0001 C CNN
+F 3 "" H 3500 2850 50  0001 C CNN
+F 4 "" H 3552 2766 60  0000 L CNN "Field4"
+	1    3500 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5EE4D5D3
+P 4250 3450
+F 0 "#PWR0107" H 4250 3450 30  0001 C CNN
+F 1 "GND" H 4250 3380 30  0001 C CNN
+F 2 "" H 4250 3450 50  0001 C CNN
+F 3 "" H 4250 3450 50  0001 C CNN
+	1    4250 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R5
+U 1 1 5EE4C71F
+P 4250 3250
+F 0 "R5" V 4155 3318 45  0000 L CNN
+F 1 "10K" V 4239 3318 45  0000 L CNN
+F 2 "0402" H 4250 3400 20  0001 C CNN
+F 3 "" H 4250 3250 60  0001 C CNN
+F 4 " " V 4334 3318 60  0000 L CNN "Field4"
+	1    4250 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4850 3050 4750 3050
+$Comp
+L power:GND #PWR0101
+U 1 1 5EE11FB7
+P 5550 3050
+F 0 "#PWR0101" H 5550 3050 30  0001 C CNN
+F 1 "GND" H 5550 2980 30  0001 C CNN
+F 2 "" H 5550 3050 50  0001 C CNN
+F 3 "" H 5550 3050 50  0001 C CNN
+	1    5550 3050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-Coils:INDUCTOR-0402-3.9NH L6
+U 1 1 5EE100FA
+P 5350 3050
+F 0 "L6" V 5529 3050 45  0000 C CNN
+F 1 "1 nH" V 5445 3050 45  0000 C CNN
+F 2 "0402" H 5350 3300 20  0001 C CNN
+F 3 "" H 5350 3050 50  0001 C CNN
+F 4 "" H 5402 2966 60  0000 L CNN "Field4"
+	1    5350 3050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 3050
+Wire Wire Line
+	4350 3050 4250 3050
+Connection ~ 4750 3050
+Wire Wire Line
+	4650 3050 4750 3050
+Wire Wire Line
+	2800 3250 3100 3250
+Wire Wire Line
+	2450 3250 2500 3250
+Connection ~ 2450 3250
 $EndSCHEMATC

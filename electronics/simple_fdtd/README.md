@@ -63,7 +63,7 @@ Conductors are represented by zeroing all components of the electric field withi
 
 
 
-
+# Usage
 
 Install 'fdtd'
 
@@ -82,3 +82,10 @@ if in conda, tests have to be run with
 with -s perhaps for console output
 
 pip install pyevtk
+
+
+1. Design your schematic and PCB normally. Set the SPICE models in KiCAD.
+2. Export an SVG in KiCAD. Check "Only board area".
+3. Save a copy of the schematic.
+4. Delete all connections between parts in the schematic. Ideally this would happen automatically, but I haven't figured that out yet.
+ Export a SPICE netlist.
