@@ -6,7 +6,7 @@
 .include ../models/10pf0402.lib
 
 
-Vsupply VCC 0 PULSE(0 3.0 20p 5p 1p 1ms 1ms)
+Vsupply VCC 0 PULSE(0 2.0 20p 5p 1p 1ms 1ms)
 
 Lsupply VCC collector 440NH
 
@@ -53,8 +53,8 @@ Rem2 E1 E2 0
 //X6 Varbias_2 0 10pf0402
 
 
-R6 Base_ Vvaractor 20000
-R7 collector__ Vvaractor 20000
+R6 Base_ Vvaractor 10000
+R7 collector__ Vvaractor 10000
 
 
 .param varactor_bias_voltage = 15

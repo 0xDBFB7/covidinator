@@ -732,5 +732,12 @@ The ampere's law magnetic field contour thingy isn't working. IDK.
 ngspice does read negative currents correctly.
 
 The sim gets unstable when a smaller capacitance is used. interesting.
+
+ah, the timestep is too large: (0.02 amps / 1e-15 farad * 0.3 picoseconds) = 6V.
+
+
+
+the issue with kicad text entry just needed an pkill -o ibus-daemon
  
+
 

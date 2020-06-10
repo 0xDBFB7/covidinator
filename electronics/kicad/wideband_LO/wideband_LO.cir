@@ -1,0 +1,28 @@
+.title KiCad schematic
+.include "/home/arthurdent/Projects/covidinator/electronics/models/BFP620.lib"
+L3 Net-_L2-Pad2_ Net-_C4-Pad1_ 220n
+L2 Net-_C3-Pad2_ Net-_L2-Pad2_ 220n
+C5 Net-_C5-Pad1_ Net-_C4-Pad1_ 10p
+L6 Net-_D4-Pad2_ GND 1n
+R3 Vvaractor Net-_D3-Pad1_ RESISTOR0402
+C2 Net-_C2-Pad1_ Net-_C2-Pad2_ 10p
+L1 Net-_D1-Pad2_ GND 1n
+R1 Vvaractor Net-_D1-Pad1_ RESISTOR0402
+XU1 Net-_C2-Pad2_ Net-_L4-Pad1_ Net-_C4-Pad1_ Net-_L4-Pad1_ BFP620
+L5 Net-_L4-Pad2_ Net-_C6-Pad2_ 220n
+L4 Net-_L4-Pad1_ Net-_L4-Pad2_ 220n
+R2 GND Net-_C2-Pad2_ RESISTOR0402
+VTP3 Net-_C6-Pad2_ dc -2
+C6 GND Net-_C6-Pad2_ 0.1u
+TP1 Net-_C4-Pad2_ Vemitter
+C1 GND Vvaractor 0.1u
+C4 Net-_C4-Pad1_ Net-_C4-Pad2_ 10p
+VTP2 Net-_C3-Pad2_ pulse(0 2 20e-12 5e-12 1e-12 1 1)
+C3 GND Net-_C3-Pad2_ 0.1u
+R5 Net-_C5-Pad1_ GND 10K
+R4 GND Net-_C2-Pad1_ RESISTOR0402
+D1 Net-_D1-Pad1_ Net-_D1-Pad2_ D
+D2 Net-_D1-Pad1_ Net-_C2-Pad1_ D
+D3 Net-_D3-Pad1_ Net-_C5-Pad1_ D
+D4 Net-_D3-Pad1_ Net-_D4-Pad2_ D
+.end

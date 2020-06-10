@@ -21,6 +21,14 @@ import ngspyce
 from fdtd.backend import NumpyBackend
 from fdtd.backend import backend as bd
 
+
+from numpy import array
+
+# from pykicad.pcb import *
+# from pykicad.module import * unfortunately, got an error immediately with this. probably for a different version of kicad.
+
+
+
 X = 0
 Y = 1
 Z = 2
@@ -72,13 +80,13 @@ class PCB:
         self.times = []
 
 
-    def initialize_grid(self, N_x, N_y, N_z):
+    def initialize_grid(self, N_x, N_y, N_z, courant_number=None):
         grid = fdtd.Grid(
             (N_x,N_y,N_z),
             grid_spacing=self.cell_size,
             permittivity=1.0,
-            permeability=1.0)
-            # courant_number = 0.2        )
+            permeability=1.0,
+            courant_number = courant_number)
 
         fdtd.PML(1e-8, # stability factor
             None)
@@ -169,31 +177,6 @@ class PCB:
                     #                     = fdtd.PECObject(name=None)
 
 
-    # class LumpedComponent(object):
-    # """
-    #
-    # See "The use of SPICE lumped circuits as sub-grid models for FDTD analysis", doi:10.1109/75.289516
-    # which deals with lumped elements of a single-cell size, and
-
-    # "Incorporating non-linear lumped elements in FDTD: the equivalent source method", Jason Mix
-    # http://ecee.colorado.edu/microwave/docs/publications/1999/IJNM_JMjdMPM_99.pdf
-    # which deals with objects of arbitrary size.
-    #
-    # You can use this 'equivalent source method' either by line-integrating the currents around a conductor
-    # and setting the electric field, or by line-integrating the voltage and setting the magnetic field.
-    #
-    # I chose the latter because it seems to make more sense to set a voltage initial-condition in SPICE than a current.
-    #
-    # 1. Normal electric field update.
-    # 2. Obtain terminal voltages by an electric field line integration from one port to another.
-    # 3. Normal magnetic field update.
-    # 4. Obtain the lumped currents from the voltages - either via SPICE or via analytic expressions for each component
-    # 5. Set H along a contour enclosing the conductor to net_current / Lc
-    # 6. ...
-    # 7. Profit!
-    #
-    #
-    # """
 
     def compute_all_voltages(self):
         for port in self.component_ports:
@@ -356,5 +339,12 @@ class PCB:
     def save_voltages(self):
         for port in self.component_ports:
             port.voltage_history.append(port.voltage)
+
+
+    def import_pcb_pads():
+
+        pcb_string = open('', 'r').read()
+
+
 
 #

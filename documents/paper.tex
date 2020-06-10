@@ -405,7 +405,7 @@ The gate must be weakly pulled to ground, otherwise stray charge destroys the os
 
 
 
-With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke.
+With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke. Use of defected grounds can increase inductance, but this was not evaluated.
 
 If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters at 8 GHz) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
 
@@ -586,7 +586,7 @@ Conductors are represented by zeroing all components of the electric field in th
 
 There are many different possible source geometries, each introducing their own distortions.
 
-It's possible to link SPICE and FDTD in two main ways
+There are many ways of linking SPICE and FDTD. 
 
 \rule{\linewidth}{0.2pt}
 
@@ -649,7 +649,13 @@ Packaged binaries help this slightly, but of course don't help if modifications 
 
 In some situations (especially where the library has a permissive licence) perhaps it could be useful to consider packaging a complete, batteries-included 'known good' repository, either with the source of all the correct library versions included, or with a script to clone and compile the specific version used, and integrating all the libraries with the build system. 
 
-For instance, this was done with the PDB reader. 
+For instance, this was done with the PDB reader in the OpenMM wrapper and JAMES.
+
+\rule{\linewidth}{0.2pt}
+
+There's also a very neat thing that seems to be common in computational biology, but which doesn't seem popular in other fields. After an algorithm or software tool is written (and the source published seperately), a simple CGI frontend is written around it and hosted on the university's servers. eLNemo and the CHARMMing web interface are advanced examples of this. This way, anyone with an input file can get results without futzing around with installation. 
+
+The computational biologists have beat us at our own game.
 
 \rule{\linewidth}{0.2pt}
 
