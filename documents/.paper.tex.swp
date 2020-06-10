@@ -345,9 +345,13 @@ The following properties: P1dB
 For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
 
 
+However, with this PCB substrate, a loss of only 0.026 dB/mm on signals of minimum 0 dBm.
+
 As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Microwave Oscillator Design would have accomplished the task faster.
 
 Designing an oscillator of this type in one step with a few kindergarten equations appears to be well within the reach of modern network analytical techniques. Genetic algorithms are quite well matched to this problem, and many commercial software packages are  [computer microwave design book]. 
+
+Not having a good analytical understanding, we resorted to using a purely computational method.
 
 In addition, the design of wideband feedback-loop VCOs is a relatively well-explored field, and many reference designs exist. 
 

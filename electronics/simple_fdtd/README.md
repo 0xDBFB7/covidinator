@@ -5,11 +5,13 @@ flaport's pytorch cuda integrations make this pleasantly fast.
 
 Better alternatives are
 
-1. OpenEMS (which supports some lumped elements), especially with Dan Harmon's kicad bindings. Supports mesh refinement, which is neat.
-2. gprMax. also amazing,
+1. OpenEMS (which supports some lumped elements), especially with Dan Harmon's pyopenems bindings. Supports mesh refinement, which is neat.
+2. gprMax. also amazing, the api isn't quite right for this sort of application.
 3. MEEP - great, very mature, but seems a bit more optimized for optical.
 4. fdtd++? haven't evaluated.
 
+
+S-expression-S-parameter
 
 
 # Background

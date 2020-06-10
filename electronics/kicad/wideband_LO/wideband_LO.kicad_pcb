@@ -3,7 +3,7 @@
   (general
     (thickness 1.6)
     (drawings 0)
-    (tracks 1)
+    (tracks 4)
     (zones 0)
     (modules 25)
     (nets 17)
@@ -134,7 +134,7 @@
   )
 
   (module Capacitors:0402 (layer F.Cu) (tedit 200000) (tstamp 5EE019A7)
-    (at 98.57912 104.4 180)
+    (at 97.97912 104.2 180)
     (descr "GENERIC 1005 (0402) PACKAGE")
     (tags "GENERIC 1005 (0402) PACKAGE")
     (path /5EE4C71F)
@@ -206,7 +206,7 @@
   )
 
   (module Capacitors:0402 (layer F.Cu) (tedit 200000) (tstamp 5EE00CB7)
-    (at 98.600001 102.4)
+    (at 98.000001 102.2)
     (descr "GENERIC 1005 (0402) PACKAGE")
     (tags "GENERIC 1005 (0402) PACKAGE")
     (path /5EE13E6D)
@@ -314,7 +314,7 @@
   )
 
   (module Capacitors:0402 (layer F.Cu) (tedit 200000) (tstamp 5EE00C6F)
-    (at 99.65 99.4 90)
+    (at 99.05 99.2 90)
     (descr "GENERIC 1005 (0402) PACKAGE")
     (tags "GENERIC 1005 (0402) PACKAGE")
     (path /5EE100FA)
@@ -573,7 +573,7 @@
   )
 
   (module Capacitors:0603 (layer F.Cu) (tedit 596180EF) (tstamp 5EE00B7F)
-    (at 75.45 85.51)
+    (at 101.4 91.6 180)
     (descr "GENERIC 1608 (0603) PACKAGE")
     (tags "GENERIC 1608 (0603) PACKAGE")
     (path /5EE32EB3)
@@ -602,14 +602,14 @@
     (fp_line (start -0.8382 -0.48006) (end -0.33782 -0.48006) (layer Dwgs.User) (width 0.06604))
     (fp_line (start -0.33782 0.4699) (end -0.33782 -0.48006) (layer Dwgs.User) (width 0.06604))
     (fp_line (start -0.8382 0.4699) (end -0.33782 0.4699) (layer Dwgs.User) (width 0.06604))
-    (pad 2 smd rect (at 0.84836 0) (size 1.09982 0.99822) (layers F.Cu F.Paste F.Mask)
+    (pad 2 smd rect (at 0.84836 0 180) (size 1.09982 0.99822) (layers F.Cu F.Paste F.Mask)
       (net 9 "Net-(C6-Pad2)") (solder_mask_margin 0.1016))
-    (pad 1 smd rect (at -0.84836 0) (size 1.09982 0.99822) (layers F.Cu F.Paste F.Mask)
+    (pad 1 smd rect (at -0.84836 0 180) (size 1.09982 0.99822) (layers F.Cu F.Paste F.Mask)
       (net 2 GND) (solder_mask_margin 0.1016))
   )
 
   (module Capacitors:0402 (layer F.Cu) (tedit 200000) (tstamp 5EE00B67)
-    (at 100.4 104.8)
+    (at 100.4 106.4)
     (descr "GENERIC 1005 (0402) PACKAGE")
     (tags "GENERIC 1005 (0402) PACKAGE")
     (path /5EE0CC0E)
@@ -645,7 +645,7 @@
   )
 
   (module Capacitors:0402 (layer F.Cu) (tedit 200000) (tstamp 5EE00B4F)
-    (at 106.6 98.4)
+    (at 104.2 98.2)
     (descr "GENERIC 1005 (0402) PACKAGE")
     (tags "GENERIC 1005 (0402) PACKAGE")
     (path /5EE408DC)
@@ -753,7 +753,7 @@
   )
 
   (module Capacitors:0603 (layer F.Cu) (tedit 596180EF) (tstamp 5EE00B07)
-    (at 71.2 91.8)
+    (at 90.6 90.2)
     (descr "GENERIC 1608 (0603) PACKAGE")
     (tags "GENERIC 1608 (0603) PACKAGE")
     (path /5EE373D5)
@@ -789,7 +789,7 @@
   )
 
   (module Diode_SMD:D_SOD-523 (layer F.Cu) (tedit 586419F0) (tstamp 5EE035CB)
-    (at 99.65 103.4 270)
+    (at 99.05 103.2 270)
     (descr "http://www.diodes.com/datasheets/ap02001.pdf p.144")
     (tags "Diode SOD523")
     (path /5EE6E7EB)
@@ -875,7 +875,7 @@
   )
 
   (module Diode_SMD:D_SOD-523 (layer F.Cu) (tedit 586419F0) (tstamp 5EE03115)
-    (at 99.65 101.400001 90)
+    (at 99.05 101.200001 90)
     (descr "http://www.diodes.com/datasheets/ap02001.pdf p.144")
     (tags "Diode SOD523")
     (path /5EE6FD7F)
@@ -1013,7 +1013,7 @@
   )
 
   (module TestPoint:TestPoint_Pad_1.5x1.5mm (layer F.Cu) (tedit 5A0F774F) (tstamp 5EE00CC5)
-    (at 70.85194 94.7911)
+    (at 108.4 98.2)
     (descr "SMD rectangular pad as test Point, square 1.5mm side length")
     (tags "test point SMD pad rectangle square")
     (path /5EE35A86)
@@ -1039,6 +1039,9 @@
       (net 6 "Net-(C4-Pad2)"))
   )
 
-  (segment (start 99.30042 98.4) (end 100 98.4) (width 1.5) (layer F.Cu) (net 7))
+  (segment (start 108 98.2) (end 105.6 98.2) (width 1.5) (layer F.Cu) (net 6))
+  (segment (start 99.30042 98.2) (end 100 98.2) (width 1.5) (layer F.Cu) (net 7))
+  (segment (start 103.82088 98.2) (end 103.1467 98.2) (width 0.25) (layer F.Cu) (net 7))
+  (segment (start 102.8 98.2) (end 100.2533 98.2) (width 1.5) (layer F.Cu) (net 7))
 
 )

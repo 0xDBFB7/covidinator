@@ -15,6 +15,8 @@ import torch
 import sys
 # import signal
 
+
+
 import ngspyce
 
 
@@ -24,6 +26,8 @@ from fdtd.backend import backend as bd
 
 from numpy import array
 
+
+import sexpdata #hehe
 # from pykicad.pcb import *
 # from pykicad.module import * unfortunately, got an error immediately with this. probably for a different version of kicad.
 
@@ -323,7 +327,7 @@ class PCB:
 
     def get_spice_current(self, SPICE_net):
         return ngspyce.vector('i(v' + SPICE_net + ")")[-1]
-        # return float(ngspyce.cmd('print v(' + SPICE_net + ')[1000000]')[0].split()[2])
+
 
     def set_spice_voltage(self, SPICE_net, voltage):
         self.error(ngspyce.cmd('alter v' + SPICE_net + ' = ' + str(voltage)))
@@ -341,10 +345,7 @@ class PCB:
             port.voltage_history.append(port.voltage)
 
 
-    def import_pcb_pads():
-
-        pcb_string = open('', 'r').read()
-
-
-
-#
+    def import_pcb_pads(self, pcb_file):
+        #'../kicad/fdtd_test/fdtd_test.kicad_pcb'
+        pcb_string = open(pcb_file, 'r').read()
+        sexpdata.loads(pcb_string)[-9]

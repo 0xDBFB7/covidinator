@@ -23,6 +23,6 @@ R5 Net-_C5-Pad1_ GND 10K
 R4 GND Net-_C2-Pad1_ RESISTOR0402
 D1 Net-_D1-Pad1_ Net-_D1-Pad2_ D
 D2 Net-_D1-Pad1_ Net-_C2-Pad1_ D
-D3 Net-_D3-Pad1_ Net-_C5-Pad1_ D
+D3 Net-_D3-Pad1_ Net    -_C5-Pad1_ D
 D4 Net-_D3-Pad1_ Net-_D4-Pad2_ D
 .end
