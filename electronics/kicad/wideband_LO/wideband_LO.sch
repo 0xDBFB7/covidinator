@@ -468,4 +468,43 @@ F 8 "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib" H 25
 	0    1    1    0   
 $EndComp
 Connection ~ 2450 3250
+$Comp
+L Connector:Test_Point Vvaractor
+U 1 1 5EED7014
+P 2000 4400
+F 0 "Vvaractor" V 2195 4472 50  0000 C CNN
+F 1 "Vvaractor" V 2104 4472 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2200 4400 50  0001 C CNN
+F 3 "~" H 2200 4400 50  0001 C CNN
+F 4 "I" H 2000 4400 50  0001 C CNN "Spice_Primitive"
+F 5 "dc 1" H 2000 4400 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 2000 4400 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    2000 4400
+	0    -1   -1   0   
+$EndComp
+Connection ~ 2000 4400
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5EED81DA
+P 2550 2850
+F 0 "R?" V 2455 2918 45  0000 L CNN
+F 1 "50" V 2539 2918 45  0000 L CNN
+F 2 "0402" H 2550 3000 20  0001 C CNN
+F 3 "" H 2550 2850 60  0001 C CNN
+F 4 " " V 2634 2918 60  0000 L CNN "Field4"
+	1    2550 2850
+	0    1    1    0   
+$EndComp
+Connection ~ 2550 3050
+$Comp
+L power:GND #PWR?
+U 1 1 5EEDC0A6
+P 2550 2650
+F 0 "#PWR?" H 2550 2650 30  0001 C CNN
+F 1 "GND" H 2550 2580 30  0001 C CNN
+F 2 "" H 2550 2650 50  0001 C CNN
+F 3 "" H 2550 2650 50  0001 C CNN
+	1    2550 2650
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
