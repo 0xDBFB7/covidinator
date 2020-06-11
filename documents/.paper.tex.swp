@@ -573,7 +573,7 @@ Simulating the oscillator with an AC sim using the manufacturer's S-parameters a
  
 However, unexpected dips and peaks were found with varactor tuning; and the tuning range was far smaller than expected.
 
-A feedback loop filter design with apparently ideal phase and frequency properties was designed using this process; but the behavior of this oscillator did not correspond to reality.
+A feedback loop filter design with apparently ideal phase and frequency properties was designed using this process; but the behavior of this oscillator did not correspond to reality. 
 
 \hspace*{-0.7cm}   \includegraphics[scale=0.6]{LO_2_pole_test.png}
 

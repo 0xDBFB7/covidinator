@@ -6,7 +6,7 @@ from PIL import Image
 import io
 import math
 from pyevtk.hl import gridToVTK
-from math import pi, ceil
+from math import pi, ceil, cos, sin
 from scipy.constants import mu_0,epsilon_0
 import numpy as np
 import torch
@@ -279,10 +279,10 @@ class PCB:
             for port in [i for i in self.component_ports if i]:
                     ports[port.N_x,port.N_y,self.component_plane_z-1] = 4
 
-                    ports[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2] = 5
-                    ports[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2]  = 5
-                    ports[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2] = 5
-                    ports[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2]  = 5
+                    # ports[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2] = 5
+                    # ports[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2]  = 5
+                    # ports[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2] = 5
+                    # ports[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2]  = 5
             cellData['ports'] = ports
 
 
@@ -385,11 +385,29 @@ class PCB:
             module_at = [i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
             module_x = float(module_at[1])*1e-3
             module_y = float(module_at[2])*1e-3
+            module_angle = None
+
+            try: #some modules don't have an angle
+                module_angle = (float(module_at[3])/360.0)*2.0*pi
+            except:
+                pass
+
             module_reference = [i for i in module if isinstance(i, list) and len(i) >= 2 and i[1] == sexpdata.Symbol('reference')][0][2].value()
             for pad_idx, pad in enumerate([i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('pad')]):
                 pad_at = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
-                pad_x = module_x + float(pad_at[1])*1e-3 - aux_origin_x
-                pad_y = module_y + float(pad_at[2])*1e-3 - aux_origin_y
+
+                pad_relative_x = float(pad_at[1])*1e-3
+                pad_relative_y = float(pad_at[2])*1e-3
+
+                if(module_angle): #some modules don't have an angle
+                    pad_rotated_vector_x = pad_relative_x*cos(module_angle) - pad_relative_y*sin(module_angle)
+                    pad_rotated_vector_y = pad_relative_x*sin(module_angle) + pad_relative_y*cos(module_angle)
+                    pad_x = module_x + pad_rotated_vector_x - aux_origin_x
+                    pad_y = module_y + pad_rotated_vector_y - aux_origin_y
+                else:
+                    pad_x = module_x + pad_relative_x - aux_origin_x
+                    pad_y = module_y + pad_relative_y - aux_origin_y
+
                 net = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('net')][0][2]
                 try:
                     net = net.value() #sometimes the net is a sexpdata.Symbol().

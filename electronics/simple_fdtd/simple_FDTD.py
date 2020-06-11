@@ -14,16 +14,18 @@ SPICE_source_file = source_dir + 'wideband_LO.cir'
 
 KiCAD_source_file = source_dir + 'wideband_LO.kicad_pcb'
 
+SVG_source_file = "../kicad/wideband_LO/wideband_LO-F_Cu.svg"
+
 os.system("sed 's/VTP2 nsource /VTP2 nsource 0 /g' " + SPICE_source_file + " > /tmp/mod.cir")
 os.system("sed -i 's/\.end/ /g' /tmp/mod.cir")
 os.system("cat append.cir >> /tmp/mod.cir")
 
 
 pcb = PCB(0.0001)
-pcb.initialize_grid_with_svg('../kicad/wideband_LO/wideband_LO-F_Cu.svg', courant_number = 0.005)
+pcb.initialize_grid_with_svg(SVG_source_file, courant_number = 0.005)
 pcb.create_planes(0.032e-3, 6e7)
 pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
-pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, '../kicad/wideband_LO/wideband_LO-F_Cu.svg')
+pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, SVG_source_file)
 
 
 
