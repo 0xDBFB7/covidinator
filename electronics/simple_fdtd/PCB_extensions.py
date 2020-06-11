@@ -326,15 +326,15 @@ class PCB:
 
 
     def get_spice_current(self, SPICE_net):
-        return ngspyce.vector('i(vs' + SPICE_net + ")")[-1]
+        return ngspyce.vector('i(vs' + SPICE_net.lower() + ")")[-1]
 
 
     def set_spice_voltage(self, SPICE_net, voltage):
-        self.error(ngspyce.cmd('alter vs' + SPICE_net + ' = ' + str(voltage)))
+        self.error(ngspyce.cmd('alter vs' + SPICE_net.lower() + ' = ' + str(voltage)))
 
     def reset_spice(self):
         # resets simulation without reloading file from disk
-        self.error(ngspyce.cmd('reset'))
+        ngspyce.cmd('reset')
         # self.error(ngspyce.cmd('altermod cstd cap = {}'.format(C)))
 
     def run_spice_step(self):
@@ -365,21 +365,21 @@ class PCB:
         pcb_data = sexpdata.loads(pcb_string)
         setup = [i for i in pcb_data if isinstance(i, list) and i[0] == sexpdata.Symbol('setup')][0]
         aux_origin = [i for i in setup if isinstance(i, list) and i[0] == sexpdata.Symbol('aux_axis_origin')][0]
-        aux_origin_x = float(aux_origin[1])
-        aux_origin_y = float(aux_origin[2])
+        aux_origin_x = float(aux_origin[1])*1e-3
+        aux_origin_y = float(aux_origin[2])*1e-3
 
         pads = []
 
         modules = [i for i in pcb_data if isinstance(i, list) and i[0] == sexpdata.Symbol('module')]
         for module in modules:
             module_at = [i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
-            module_x = float(module_at[1])
-            module_y = float(module_at[2])
+            module_x = float(module_at[1])*1e-3
+            module_y = float(module_at[2])*1e-3
             module_reference = [i for i in module if isinstance(i, list) and len(i) >= 2 and i[1] == sexpdata.Symbol('reference')][0][2].value()
             for pad in [i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('pad')]:
                 pad_at = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
-                pad_x = module_x + float(pad_at[1]) - aux_origin_x
-                pad_y = module_y + float(pad_at[2]) - aux_origin_y
+                pad_x = module_x + float(pad_at[1])*1e-3 - aux_origin_x
+                pad_y = module_y + float(pad_at[2])*1e-3 - aux_origin_y
                 net = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('net')][0][2]
                 try:
                     net = net.value() #sometimes the net is a sexpdata.Symbol().
@@ -405,8 +405,7 @@ class PCB:
         for pad_idx,pad in enumerate(pads):
             for idx, line in enumerate(spice_file_array):
                 line_array = line.split()
-                if(not "Vs" in line_array[0] and pad["reference"] in line_array[0]):
-                    print(pad, line)
+                if(line_array and not "Vs" in line_array[0] and pad["reference"] in line_array[0]):
                     line_net_idx = line_array.index(pad["net"])
                     # new_net_name = pad["net"]+str(pad_idx)
                     new_net_name = "NET"+str(pad_idx)
@@ -427,21 +426,21 @@ class PCB:
         for pad_idx,pad in enumerate(pads):
             self.component_ports.append(Port(self, pad["net"], pad['x'], pad['y']))
 
-    def step():
-        pcb.grid.update_E()
-        pcb.reset_spice()
-        pcb.compute_all_voltages()
-        pcb.set_spice_voltages()
-        pcb.zero_conductor_fields()
+    def step(self):
+        self.grid.update_E()
+        self.reset_spice()
+        self.compute_all_voltages()
+        self.set_spice_voltages()
+        self.zero_conductor_fields()
 
-        pcb.run_spice_step()
+        self.run_spice_step()
 
-        pcb.grid.update_H()
+        self.grid.update_H()
 
-        pcb.get_spice_currents()
-        pcb.apply_all_currents()
+        self.get_spice_currents()
+        self.apply_all_currents()
 
-        pcb.grid.time_steps_passed += 1
-        pcb.times.append(pcb.grid.time_passed)
+        self.grid.time_steps_passed += 1
+        self.times.append(pcb.grid.time_passed)
 
-        pcb.save_voltages()
+        self.save_voltages()

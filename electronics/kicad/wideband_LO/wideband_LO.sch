@@ -155,6 +155,9 @@ F 0 "TP1" V 2745 3122 50  0000 C CNN
 F 1 "Vemitter" V 2654 3122 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2750 3050 50  0001 C CNN
 F 3 "~" H 2750 3050 50  0001 C CNN
+F 4 "R" H 2550 3050 50  0001 C CNN "Spice_Primitive"
+F 5 "0" H 2550 3050 50  0001 C CNN "Spice_Model"
+F 6 "N" H 2550 3050 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    2550 3050
 	0    -1   -1   0   
 $EndComp

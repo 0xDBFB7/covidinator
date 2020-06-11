@@ -85,7 +85,8 @@ pip install pyevtk
 
 
 1. Design your schematic and PCB normally. Set the SPICE models in KiCAD.
+2. Set the aux axis origin precisely on the top left corner of the board geometry.
 2. Export an SVG in KiCAD. Check "Only board area".
-3. Save a copy of the schematic.
-4. Delete all connections between parts in the schematic. Ideally this would happen automatically, but I haven't figured that out yet.
- Export a SPICE netlist.
+3. Disable any SPICE components not participating in the simulation.
+4. Export a SPICE netlist.
+5. Fix the netlist if required. Some voltage sources may need the gnd parameter added.

@@ -37,7 +37,6 @@ Dvaractor 103 100 varactor_diode_model AREA=1.0
 +   nbv =   1
 //+   ibvl=   0
 //+   nbvl=   1
-
 +	TNOM	=	27
 //+   ffe =   1
 + )

@@ -1,5 +1,7 @@
 from PCB_extensions import *
 
+import os
+
 fdtd.set_backend("torch.cuda.float32")
 
 
@@ -12,6 +14,11 @@ SPICE_source_file = source_dir + 'wideband_LO.cir'
 
 KiCAD_source_file = source_dir + 'wideband_LO.kicad_pcb'
 
+os.system("sed 's/VTP2 Net-_C3-Pad2_ /VTP2 Net-_C3-Pad2_ 0 /g' " + SPICE_source_file + " > /tmp/mod.cir")
+os.system("sed -i 's/\.end/ /g' /tmp/mod.cir")
+
+os.system("echo '\n.control\nsetcs DIOgradingCoeffMax=3.0\nsetcs DIOtDepCapMax=2.0\n.endc\n.end' >> /tmp/mod.cir")
+
 
 pcb = PCB(0.0001)
 pcb.initialize_grid_with_svg('test/basic_test.svg')
@@ -19,7 +26,9 @@ pcb.create_planes(0.032e-3, 6e7)
 pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
 pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, 'test/basic_test.svg')
 
-pcb.initialize_kicad_and_spice(KiCAD_source_file , SPICE_source_file, '/tmp/wideband_LO_mod.cir')
+
+
+pcb.initialize_kicad_and_spice(KiCAD_source_file , "/tmp/mod.cir", '/tmp/wideband_LO_mod.cir')
 
 pcb.create_source_vias()
 
