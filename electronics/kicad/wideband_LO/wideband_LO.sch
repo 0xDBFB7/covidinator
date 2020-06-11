@@ -119,16 +119,16 @@ F 3 "" H 3100 3950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Test_Point TP3
+L Connector:Test_Point TPEM1
 U 1 1 5EE3076A
 P 3500 4250
-F 0 "TP3" H 3442 4276 50  0000 R CNN
+F 0 "TPEM1" H 3442 4276 50  0000 R CNN
 F 1 "Vemitter" H 3442 4367 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3700 4250 50  0001 C CNN
 F 3 "~" H 3700 4250 50  0001 C CNN
 F 4 "V" H 3500 4250 50  0001 C CNN "Spice_Primitive"
 F 5 "dc -2" H 3500 4250 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 3500 4250 50  0001 C CNN "Spice_Netlist_Enabled"
+F 6 "N" H 3500 4250 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    3500 4250
 	-1   0    0    1   
 $EndComp
@@ -148,16 +148,16 @@ Wire Wire Line
 	3950 4250 3500 4250
 Connection ~ 3500 4250
 $Comp
-L Connector:Test_Point TP1
+L Connector:Test_Point TPOP1
 U 1 1 5EE35A86
 P 2550 3050
-F 0 "TP1" V 2745 3122 50  0000 C CNN
+F 0 "TPOP1" V 2745 3122 50  0000 C CNN
 F 1 "Voutput" V 2654 3122 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2750 3050 50  0001 C CNN
 F 3 "~" H 2750 3050 50  0001 C CNN
 F 4 "R" H 2550 3050 50  0001 C CNN "Spice_Primitive"
 F 5 "100M" H 2550 3050 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 2550 3050 50  0001 C CNN "Spice_Netlist_Enabled"
+F 6 "N" H 2550 3050 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    2550 3050
 	0    -1   -1   0   
 $EndComp
@@ -330,10 +330,10 @@ F 8 "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib" H 26
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:Test_Point Vvaractor1
+L Connector:Test_Point TPVAR1
 U 1 1 5EED7014
 P 2000 4400
-F 0 "Vvaractor1" V 2195 4472 50  0000 C CNN
+F 0 "TPVAR1" V 2195 4472 50  0000 C CNN
 F 1 " " V 2104 4472 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2200 4400 50  0001 C CNN
 F 3 "~" H 2200 4400 50  0001 C CNN
@@ -424,16 +424,16 @@ F 4 "" H 3058 2216 60  0000 L CNN "Field4"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:Test_Point TP2
+L Connector:Test_Point TPSO1
 U 1 1 5EE45334
 P 3500 2250
-F 0 "TP2" H 3558 2368 50  0000 L CNN
+F 0 "TPSO1" H 3558 2368 50  0000 L CNN
 F 1 "Vsource" H 3558 2277 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3700 2250 50  0001 C CNN
 F 3 "~" H 3700 2250 50  0001 C CNN
 F 4 "V" H 3500 2250 50  0001 C CNN "Spice_Primitive"
-F 5 "pulse(0 2 20e-12 5e-12 1e-12 1 1)" H 3500 2250 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 3500 2250 50  0001 C CNN "Spice_Netlist_Enabled"
+F 5 "pulse(0 2 20p 5p 1p 1 1)" H 3500 2250 50  0001 C CNN "Spice_Model"
+F 6 "N" H 3500 2250 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    3500 2250
 	1    0    0    -1  
 $EndComp

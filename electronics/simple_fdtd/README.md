@@ -33,6 +33,7 @@ but probably distorts the signal significantly.
 
 Conductors are represented by zeroing all components of the electric field within. They're supposed to have zero thickness - I think only one edge-layer of E components are zeroed, but that's worth double-checking.
 
+Each pad on the board gets a Port object and a corresponding voltage source in SPICE, with a new unique net name.
 
 # class LumpedComponent(object):
 # """
@@ -82,6 +83,7 @@ if in conda, tests have to be run with
 with -s perhaps for console output
 
 pip install pyevtk
+
 
 
 1. Design your schematic and PCB normally. Set the SPICE models in KiCAD.

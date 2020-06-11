@@ -1,0 +1,30 @@
+
+
+//start vsources
+
+
+//end vsources
+
+//user-defined
+
+Rvarbias NETTPVAR10 NETTPVAR0_ 1
+Vvarbias NETTPVAR0_ 0 10
+
+RNETTPSO0_ NETTPSO10 NETTPSO0_ 1
+Vvarbias2 NETTPSO0_ 0 1
+
+
+RNETTPEM10_ NETTPEM10 NETTPEM0_ 1
+Vvarbias3 NETTPEM0_ 0 -1
+
+//end user-defined
+
+.control
+
+setcs DIOgradingCoeffMax=3.0
+setcs DIOtDepCapMax=2.0
+
+
+
+.endc
+.end

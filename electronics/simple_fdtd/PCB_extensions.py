@@ -161,7 +161,7 @@ class PCB:
 
         print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
-        self.initialize_grid(N_x, N_y, N_z, courant_number)
+        self.initialize_grid(N_x, N_y, N_z, courant_number=courant_number)
 
     def construct_copper_geometry_from_svg(self, copper_thickness, conductor_conductivity, svg_file):
         PNG_SUPERSAMPLE_FACTOR = 10
@@ -215,7 +215,7 @@ class PCB:
             self.grid.E[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z,Z] = 0 #make a conductor
 
             C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
-            print(C)
+            # print(C)
             dvdt = (port.current / C)
             self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] += (dvdt * self.grid.time_step) / (self.cell_size)
             #make a ring of current around the conductor
@@ -318,19 +318,29 @@ class PCB:
 
     def set_spice_voltages(self):
         for port in self.component_ports:
-            self.set_spice_voltage(port.SPICE_net, port.voltage)
+            try:
+                self.set_spice_voltage(port.SPICE_net, port.voltage)
+            except:
+                print(f"No such source vs{port.SPICE_net}")
 
     def get_spice_currents(self):
         for port in self.component_ports:
-            port.current = self.get_spice_current(port.SPICE_net)
+            try:
+                port.current = self.get_spice_current(port.SPICE_net)
+            except:
+                port.current = 0
 
 
     def get_spice_current(self, SPICE_net):
-        return ngspyce.vector('i(vs' + SPICE_net.lower() + ")")[-1]
+        try:
+            return ngspyce.vector('i(vs' + SPICE_net.lower() + ")")[-1]
+        except:
+            print(f"No such source vs{port.SPICE_net}")
+            return 0
 
 
     def set_spice_voltage(self, SPICE_net, voltage):
-        self.error(ngspyce.cmd('alter vs' + SPICE_net.lower() + ' = ' + str(voltage)))
+        ngspyce.cmd('alter vs' + SPICE_net.lower() + ' = ' + str(voltage))
 
     def reset_spice(self):
         # resets simulation without reloading file from disk
@@ -344,10 +354,10 @@ class PCB:
         for port in self.component_ports:
             port.voltage_history.append(port.voltage)
 
-    def initialize_kicad_and_spice(self, kicad_filename,SPICE_filename, SPICE_modified_filename):
+    def initialize_kicad_and_spice(self, kicad_filename,SPICE_filename, SPICE_modified_filename, skip_source_creation_names):
         pads = self.parse_kicad_pcb(kicad_filename)
         spice_file_string = open(SPICE_filename, 'r').read()
-        pads, spice_file_string = self.munge_SPICE_nets(pads, spice_file_string)
+        pads, spice_file_string = self.munge_SPICE_nets(pads, spice_file_string, skip_source_creation_names)
         self.insert_ports(pads)
 
         with open(SPICE_modified_filename, 'w') as file:
@@ -376,7 +386,7 @@ class PCB:
             module_x = float(module_at[1])*1e-3
             module_y = float(module_at[2])*1e-3
             module_reference = [i for i in module if isinstance(i, list) and len(i) >= 2 and i[1] == sexpdata.Symbol('reference')][0][2].value()
-            for pad in [i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('pad')]:
+            for pad_idx, pad in enumerate([i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('pad')]):
                 pad_at = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
                 pad_x = module_x + float(pad_at[1])*1e-3 - aux_origin_x
                 pad_y = module_y + float(pad_at[2])*1e-3 - aux_origin_y
@@ -387,38 +397,40 @@ class PCB:
                     pass
                 net = net.replace("(", "_")
                 net = net.replace(")", "_")
-                pads.append({"reference": module_reference, "x": pad_x, "y": pad_y, "net": net})
+                pads.append({"reference": module_reference, "x": pad_x, "y": pad_y, "net": net, "mod_pad_idx": pad_idx})
                 # self.component_ports.append(Port(self, , ))
 
 
         return pads
 
 
-    def munge_SPICE_nets(self, pads, spice_file_string):
+    def munge_SPICE_nets(self, pads, spice_file_string, skip_source_creation_names):
         '''
         Renames SPICE nets and pad nets so each pad is only connected to its port, not other components,
         then inserts the voltage sources needed for SPICE<->FDTD coupling.
+
+        Some pads could already have sources defined; we skip source creation for these.
         '''
 
         spice_file_array = spice_file_string.splitlines()
 
         for pad_idx,pad in enumerate(pads):
-            for idx, line in enumerate(spice_file_array):
+            new_net_name = "NET"+pad["reference"]+str(pad["mod_pad_idx"])
+            if(not pad["reference"] in skip_source_creation_names):
+                spice_file_array.insert(spice_file_array.index('//start vsources')+1,"Vs"+new_net_name + " " + new_net_name + " 0 0")
+
+            for idx, line in enumerate(spice_file_array[0:spice_file_array.index('//start vsources')]):
                 line_array = line.split()
                 if(line_array and not "Vs" in line_array[0] and pad["reference"] in line_array[0]):
                     line_net_idx = line_array.index(pad["net"])
                     # new_net_name = pad["net"]+str(pad_idx)
-                    new_net_name = "NET"+str(pad_idx)
                     line_array[line_net_idx] = new_net_name
-
-                    pads[pad_idx]["net"] = new_net_name
 
                     spice_file_array[idx] = " ".join(line_array)
 
-                    spice_file_array.insert(idx+1,"Vs"+new_net_name + " " + new_net_name + " 0 0")
-
                     break
 
+            pads[pad_idx]["net"] = new_net_name
 
         return pads, "\n".join(spice_file_array)
 
@@ -441,6 +453,6 @@ class PCB:
         self.apply_all_currents()
 
         self.grid.time_steps_passed += 1
-        self.times.append(pcb.grid.time_passed)
+        self.times.append(self.grid.time_passed)
 
         self.save_voltages()

@@ -352,6 +352,8 @@ As a result of our gross incompetence, the oscillator was designed via an inane,
 
 Designing an oscillator of this type in one step with a few kindergarten equations appears to be well within the reach of modern network analytical techniques. Genetic algorithms are quite well matched to this problem, and many commercial software packages are  [computer microwave design book]. 
 
+Initially, 
+
 Not having a good analytical understanding, we resorted to using a purely computational method.
 
 In addition, the design of wideband feedback-loop VCOs is a relatively well-explored field, and many reference designs exist. 
@@ -362,9 +364,11 @@ The key sticking point - which we missed - seems to be that at these scales, usi
 
 Indeed, [Tsuru 2008]'s "tuned circuit" in Fig 8 is, in fact, just the varactors, plus an almost invisible high-impedance line.
 
-We began experimentally by building a scaled version of [Mueller 2008]'s active antenna in microstrip, using a CEL mosfet.
+We began experimentally by building a scaled version of [Mueller 2008]'s active antenna on FR4, using a CEL mosfet.
 
 This immediately oscillated perfectly.
+
+
 
 
 
