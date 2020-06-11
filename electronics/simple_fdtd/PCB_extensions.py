@@ -139,7 +139,7 @@ class PCB:
 
         self.substrate_permittivity = substrate_permittivity
 
-    def initialize_grid_with_svg(self, svg_file):
+    def initialize_grid_with_svg(self, svg_file, courant_number = None):
         '''
 
         xy_margin is the number of cells (including PML cells) to add around the board.
@@ -161,7 +161,7 @@ class PCB:
 
         print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
-        self.initialize_grid(N_x, N_y, N_z)
+        self.initialize_grid(N_x, N_y, N_z, courant_number)
 
     def construct_copper_geometry_from_svg(self, copper_thickness, conductor_conductivity, svg_file):
         PNG_SUPERSAMPLE_FACTOR = 10
@@ -326,11 +326,11 @@ class PCB:
 
 
     def get_spice_current(self, SPICE_net):
-        return ngspyce.vector('i(v' + SPICE_net + ")")[-1]
+        return ngspyce.vector('i(vs' + SPICE_net + ")")[-1]
 
 
     def set_spice_voltage(self, SPICE_net, voltage):
-        self.error(ngspyce.cmd('alter v' + SPICE_net + ' = ' + str(voltage)))
+        self.error(ngspyce.cmd('alter vs' + SPICE_net + ' = ' + str(voltage)))
 
     def reset_spice(self):
         # resets simulation without reloading file from disk
@@ -344,13 +344,24 @@ class PCB:
         for port in self.component_ports:
             port.voltage_history.append(port.voltage)
 
+    def initialize_kicad_and_spice(self, kicad_filename,SPICE_filename, SPICE_modified_filename):
+        pads = self.parse_kicad_pcb(kicad_filename)
+        spice_file_string = open(SPICE_filename, 'r').read()
+        pads, spice_file_string = self.munge_SPICE_nets(pads, spice_file_string)
+        self.insert_ports(pads)
 
-    def parse_kicad_pcb(self, pcb_file):
+        with open(SPICE_modified_filename, 'w') as file:
+            file.write(spice_file_string)
+
+        self.init_SPICE(SPICE_modified_filename)
+        self.reset_spice()
+
+    def parse_kicad_pcb(self, pcb_filename):
         '''
-        given a .kicad_pcb file, returns a list of module_reference, abs pad_x, abs pad_y, net
+        given a .kicad_pcb filename, returns a list of module_reference, abs pad_x, abs pad_y, net
         '''
 
-        pcb_string = open(pcb_file, 'r').read()
+        pcb_string = open(pcb_filename, 'r').read()
         pcb_data = sexpdata.loads(pcb_string)
         setup = [i for i in pcb_data if isinstance(i, list) and i[0] == sexpdata.Symbol('setup')][0]
         aux_origin = [i for i in setup if isinstance(i, list) and i[0] == sexpdata.Symbol('aux_axis_origin')][0]
@@ -374,8 +385,9 @@ class PCB:
                     net = net.value() #sometimes the net is a sexpdata.Symbol().
                 except:
                     pass
-
-                pads.append([module_reference,pad_x,pad_y,net])
+                net = net.replace("(", "_")
+                net = net.replace(")", "_")
+                pads.append({"reference": module_reference, "x": pad_x, "y": pad_y, "net": net})
                 # self.component_ports.append(Port(self, , ))
 
 
@@ -384,13 +396,52 @@ class PCB:
 
     def munge_SPICE_nets(self, pads, spice_file_string):
         '''
-        then inserts voltage sources needed for SPICE<->FDTD coupling,
-
+        Renames SPICE nets and pad nets so each pad is only connected to its port, not other components,
+        then inserts the voltage sources needed for SPICE<->FDTD coupling.
         '''
 
+        spice_file_array = spice_file_string.splitlines()
 
-        spice_file_string_out
+        for pad_idx,pad in enumerate(pads):
+            for idx, line in enumerate(spice_file_array):
+                line_array = line.split()
+                if(not "Vs" in line_array[0] and pad["reference"] in line_array[0]):
+                    print(pad, line)
+                    line_net_idx = line_array.index(pad["net"])
+                    # new_net_name = pad["net"]+str(pad_idx)
+                    new_net_name = "NET"+str(pad_idx)
+                    line_array[line_net_idx] = new_net_name
+
+                    pads[pad_idx]["net"] = new_net_name
+
+                    spice_file_array[idx] = " ".join(line_array)
+
+                    spice_file_array.insert(idx+1,"Vs"+new_net_name + " " + new_net_name + " 0 0")
+
+                    break
 
 
+        return pads, "\n".join(spice_file_array)
 
-        return pads_out, spice_file_string_out
+    def insert_ports(self, pads):
+        for pad_idx,pad in enumerate(pads):
+            self.component_ports.append(Port(self, pad["net"], pad['x'], pad['y']))
+
+    def step():
+        pcb.grid.update_E()
+        pcb.reset_spice()
+        pcb.compute_all_voltages()
+        pcb.set_spice_voltages()
+        pcb.zero_conductor_fields()
+
+        pcb.run_spice_step()
+
+        pcb.grid.update_H()
+
+        pcb.get_spice_currents()
+        pcb.apply_all_currents()
+
+        pcb.grid.time_steps_passed += 1
+        pcb.times.append(pcb.grid.time_passed)
+
+        pcb.save_voltages()

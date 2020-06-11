@@ -137,7 +137,7 @@ def disabled_test_spice_alone():
 
 
 
-def disabled_test_spice():
+def disabled_test_spice_txline():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
@@ -200,4 +200,10 @@ def test_kicad_import():
 def test_munge_SPICE_nets():
     pcb = PCB(0.0001)
 
-    pads = ["D2", 0, 0, 'Net-_D1-Pad1_']
+    pads = [{"reference": "D2", "x": 0, "y": 0, "net": 'Net-_D1-Pad1_'}]
+    spice_file_string = "XD2 Net-_D1-Pad1_ Net-_C2-Pad2_ SMV2019079LF\n"
+
+    pads, spice_file_string = pcb.munge_SPICE_nets(pads,spice_file_string)
+
+# def test_insert_ports():
+#     pcb = PCB(0.0001)

@@ -1,7 +1,7 @@
 
 This is a simple Python wrapper for flaport/fdtd and ngspice that supports KiCAD PCB import.
 
-flaport's pytorch cuda integrations make this pleasantly fast.
+flaport's pytorch CUDA integrations make this pleasantly fast. Good on ya, flaport!
 
 Better alternatives are
 
