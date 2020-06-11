@@ -152,19 +152,15 @@ L Connector:Test_Point TP1
 U 1 1 5EE35A86
 P 2550 3050
 F 0 "TP1" V 2745 3122 50  0000 C CNN
-F 1 "Vemitter" V 2654 3122 50  0000 C CNN
+F 1 "Voutput" V 2654 3122 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2750 3050 50  0001 C CNN
 F 3 "~" H 2750 3050 50  0001 C CNN
 F 4 "R" H 2550 3050 50  0001 C CNN "Spice_Primitive"
-F 5 "0" H 2550 3050 50  0001 C CNN "Spice_Model"
-F 6 "N" H 2550 3050 50  0001 C CNN "Spice_Netlist_Enabled"
+F 5 "100M" H 2550 3050 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 2550 3050 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    2550 3050
 	0    -1   -1   0   
 $EndComp
-Text GLabel 2000 4400 3    50   Input ~ 0
-Vvaractor
-Text GLabel 4750 2350 1    50   Input ~ 0
-Vvaractor
 $Comp
 L SparkFun-Capacitors:4.7UF0603 C1
 U 1 1 5EE373D5
@@ -338,7 +334,7 @@ L Connector:Test_Point Vvaractor1
 U 1 1 5EED7014
 P 2000 4400
 F 0 "Vvaractor1" V 2195 4472 50  0000 C CNN
-F 1 "Vvaractor" V 2104 4472 50  0000 C CNN
+F 1 " " V 2104 4472 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2200 4400 50  0001 C CNN
 F 3 "~" H 2200 4400 50  0001 C CNN
 F 4 "V" H 2000 4400 50  0001 C CNN "Spice_Primitive"
@@ -347,7 +343,6 @@ F 6 "Y" H 2000 4400 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    2000 4400
 	0    -1   -1   0   
 $EndComp
-Connection ~ 2000 4400
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R6
 U 1 1 5EED81DA
@@ -525,4 +520,15 @@ Wire Wire Line
 Wire Wire Line
 	2450 3250 2500 3250
 Connection ~ 2450 3250
+Text GLabel 3500 2250 2    50   Input ~ 0
+nsource
+Text GLabel 2700 3050 0    50   Input ~ 0
+noutput
+Text GLabel 3500 4250 0    50   Input ~ 0
+nemitter
+Connection ~ 2000 4400
+Text GLabel 2000 4400 3    50   Input ~ 0
+nvaractor
+Text GLabel 4750 2350 1    50   Input ~ 0
+nvaractor
 $EndSCHEMATC

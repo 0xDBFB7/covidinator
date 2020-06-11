@@ -14,7 +14,7 @@ SPICE_source_file = source_dir + 'wideband_LO.cir'
 
 KiCAD_source_file = source_dir + 'wideband_LO.kicad_pcb'
 
-os.system("sed 's/VTP2 Net-_C3-Pad2_ /VTP2 Net-_C3-Pad2_ 0 /g' " + SPICE_source_file + " > /tmp/mod.cir")
+os.system("sed 's/VTP2 nsource /VTP2 nsource 0 /g' " + SPICE_source_file + " > /tmp/mod.cir")
 os.system("sed -i 's/\.end/ /g' /tmp/mod.cir")
 
 os.system("echo '\n.control\nsetcs DIOgradingCoeffMax=3.0\nsetcs DIOtDepCapMax=2.0\n.endc\n.end' >> /tmp/mod.cir")

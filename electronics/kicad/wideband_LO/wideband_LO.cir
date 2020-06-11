@@ -2,29 +2,30 @@
 .include "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib"
 .include "/home/arthurdent/Projects/covidinator/electronics/models/BFP620.lib"
 .include "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib"
-R3 Vvaractor Net-_D3-Pad1_ 10K
-R1 Vvaractor Net-_D1-Pad1_ 10K
+R3 nvaractor Net-_D3-Pad1_ 10K
+R1 nvaractor Net-_D1-Pad1_ 10K
 XU1 Net-_C4-Pad1_ Net-_C2-Pad1_ Net-_L4-Pad1_ Net-_L4-Pad1_ BFP620
-L5 Net-_L4-Pad2_ Net-_C6-Pad2_ 220n
+L5 Net-_L4-Pad2_ nemitter 220n
 L4 Net-_L4-Pad1_ Net-_L4-Pad2_ 220n
 R2 GND Net-_C2-Pad1_ 10K
-VTP3 Net-_C6-Pad2_ 0 dc -2
-C6 GND Net-_C6-Pad2_ 0.1u
-C1 GND Vvaractor 0.1u
-XC4 Net-_C4-Pad1_ Net-_C4-Pad2_ 10pf0402
+VTP3 nemitter dc -2
+C6 GND nemitter 0.1u
+RTP1 noutput 0 100M
+C1 GND nvaractor 0.1u
+XC4 Net-_C4-Pad1_ noutput 10pf0402
 R4 GND Net-_C2-Pad2_ 10K
 XD2 Net-_D1-Pad1_ Net-_C2-Pad2_ SMV2019079LF
 XD4 Net-_D3-Pad1_ Net-_D4-Pad2_ SMV2019079LF
 L1 Net-_D1-Pad2_ GND 1n
 XC5 Net-_C5-Pad1_ Net-_C4-Pad1_ 10pf0402
 XC2 Net-_C2-Pad1_ Net-_C2-Pad2_ 10pf0402
-Vvaractor1 Vvaractor dc 1
-R6 GND Net-_C4-Pad2_ 50
+Vvaractor1 nvaractor dc 1
+R6 GND noutput 50
 XD1 Net-_D1-Pad1_ Net-_D1-Pad2_ SMV2019079LF
 XD3 Net-_D3-Pad1_ Net-_C5-Pad1_ SMV2019079LF
-C3 GND Net-_C3-Pad2_ 0.1u
-VTP2 Net-_C3-Pad2_ pulse(0 2 20e-12 5e-12 1e-12 1 1)
-L2 Net-_C3-Pad2_ Net-_L2-Pad2_ 220n
+C3 GND nsource 0.1u
+VTP2 nsource pulse(0 2 20e-12 5e-12 1e-12 1 1)
+L2 nsource Net-_L2-Pad2_ 220n
 L3 Net-_L2-Pad2_ Net-_C4-Pad1_ 220n
 R5 Net-_C5-Pad1_ GND 10K
 L6 Net-_D4-Pad2_ GND 1n
