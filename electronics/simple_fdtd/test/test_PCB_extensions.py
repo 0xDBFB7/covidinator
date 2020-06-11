@@ -137,7 +137,7 @@ def disabled_test_spice_alone():
 
 
 
-def test_spice():
+def disabled_test_spice():
         SPICE_source_file = '/home/arthurdent/covidinator/electronics/simple_fdtd/'
         SPICE_source_file += 'test/test_spice/txline_fdtd_spice.cir'
 
@@ -192,3 +192,12 @@ def test_spice():
         plt.plot(pcb.times, pcb.component_ports[1].voltage_history, label="output")
         plt.legend()
         plt.show()
+
+def test_kicad_import():
+    pcb = PCB(0.0001)
+    pads = pcb.parse_kicad_pcb('../kicad/wideband_LO/wideband_LO.kicad_pcb')
+
+def test_munge_SPICE_nets():
+    pcb = PCB(0.0001)
+
+    pads = ["D2", 0, 0, 'Net-_D1-Pad1_']

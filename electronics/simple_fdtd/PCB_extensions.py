@@ -345,7 +345,52 @@ class PCB:
             port.voltage_history.append(port.voltage)
 
 
-    def import_pcb_pads(self, pcb_file):
-        #'../kicad/fdtd_test/fdtd_test.kicad_pcb'
+    def parse_kicad_pcb(self, pcb_file):
+        '''
+        given a .kicad_pcb file, returns a list of module_reference, abs pad_x, abs pad_y, net
+        '''
+
         pcb_string = open(pcb_file, 'r').read()
-        sexpdata.loads(pcb_string)[-9]
+        pcb_data = sexpdata.loads(pcb_string)
+        setup = [i for i in pcb_data if isinstance(i, list) and i[0] == sexpdata.Symbol('setup')][0]
+        aux_origin = [i for i in setup if isinstance(i, list) and i[0] == sexpdata.Symbol('aux_axis_origin')][0]
+        aux_origin_x = float(aux_origin[1])
+        aux_origin_y = float(aux_origin[2])
+
+        pads = []
+
+        modules = [i for i in pcb_data if isinstance(i, list) and i[0] == sexpdata.Symbol('module')]
+        for module in modules:
+            module_at = [i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
+            module_x = float(module_at[1])
+            module_y = float(module_at[2])
+            module_reference = [i for i in module if isinstance(i, list) and len(i) >= 2 and i[1] == sexpdata.Symbol('reference')][0][2].value()
+            for pad in [i for i in module if isinstance(i, list) and i[0] == sexpdata.Symbol('pad')]:
+                pad_at = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('at')][0]
+                pad_x = module_x + float(pad_at[1]) - aux_origin_x
+                pad_y = module_y + float(pad_at[2]) - aux_origin_y
+                net = [i for i in pad if isinstance(i, list) and i[0] == sexpdata.Symbol('net')][0][2]
+                try:
+                    net = net.value() #sometimes the net is a sexpdata.Symbol().
+                except:
+                    pass
+
+                pads.append([module_reference,pad_x,pad_y,net])
+                # self.component_ports.append(Port(self, , ))
+
+
+        return pads
+
+
+    def munge_SPICE_nets(self, pads, spice_file_string):
+        '''
+        then inserts voltage sources needed for SPICE<->FDTD coupling,
+
+        '''
+
+
+        spice_file_string_out
+
+
+
+        return pads_out, spice_file_string_out
