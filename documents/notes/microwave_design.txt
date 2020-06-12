@@ -768,4 +768,18 @@ This could be mitigated by better choosing the initial guess timestep.
 Right now 4 iters of the SPICE takes 30 ms, while a small, coarse FDTD takes 20.
 So not a huge deal, but it does mean that switching to half-precision won't make a big difference.
 
+the two transistor pins are the squeaky wheels that get the timestep. wierd. adding an rshunt doesn't 
+do anything.
+
+yeah, the transistor pins are doing this:
+
+NETU10 6.32961368560791 1929.1538000106812
+NETU12 -6.32961368560791 -1929.1538000106812
+
+wack.
+
+RE1 33 31 1E-03
+RE2 33 32 1E-03
+
+that's probably why.
 

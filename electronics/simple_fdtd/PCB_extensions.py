@@ -227,6 +227,9 @@ class PCB:
 
             C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
             # print(C)
+
+            C *= 10.0
+
             dvdt = (port.current / C)
 
             port.voltage += (dvdt * self.grid.time_step)
@@ -493,17 +496,17 @@ class PCB:
 
     def step(self):
 
+        self.forcings()
 
         self.to_taste()
 
         self.grid.update_E()
 
+        self.zero_conductor_fields()
         self.compute_all_voltages()
         # self.constrain_values()
-        self.zero_conductor_fields()
 
         self.grid.update_H()
-
 
 
         self.grid.time_steps_passed += 1
@@ -516,9 +519,14 @@ class PCB:
 
         # self = self.adaptive_timestep(failsafe_timestep)
 
+    def forcings(self):
+        for port in self.component_ports:
+        # if(current > 0.5
+        # port.voltage = np.clip(port.voltage, -40, 40)
+            port.current = np.clip(port.current, -10, 10)
+
     def to_taste(self):
         #Using an adaptive timestep method as per [Ciampolini 1995]
-        self.compute_all_voltages()
 
         failsafe_port_voltages = []
         for idx,port in enumerate(self.component_ports):
@@ -539,26 +547,29 @@ class PCB:
             # for port in self.component_ports:
             #     print(port.SPICE_net, port.voltage, port.current)
             #
-
             self.reset_spice()
             self.set_spice_voltages()
             self.run_spice_step()
             self.get_spice_currents()
+            self.forcings()
+
             self.apply_all_currents()
             ngspyce.cmd("destroy all")
-
             #
             # for port in self.component_ports:
             #     print(port.SPICE_net, port.voltage, port.current)
 
-            delta_v = max([abs(failsafe_port_voltages[idx]-val.voltage) for idx,val in enumerate(self.component_ports)])
+            delta_vs = [abs(failsafe_port_voltages[idx]-val.voltage) for idx,val in enumerate(self.component_ports)]
+            delta_v = max(delta_vs)
+            fastest_net = self.component_ports[delta_vs.index(delta_v)].SPICE_net
+
             # print("Delta V:" , delta_v)
-            convergence = delta_v < 0.1
+            convergence = delta_v < 0.01
 
             if(convergence):
                 break
             else:
-                self.set_time_step(self.grid.time_step*0.01)
+                self.set_time_step(self.grid.time_step*0.5)
                 # print("Decreased timestep to " , self.grid.time_step)
 
                 for idx,port in enumerate(self.component_ports):
