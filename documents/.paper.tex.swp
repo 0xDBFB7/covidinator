@@ -468,6 +468,17 @@ The largest RFID plants can produce
 The techniques and equipment required to produce these are non-trivial. SiGe:C, for instance, requires, 
 
 
+Figures are not forthcoming, 
+
+Given the supply difficulties of comparatively simple materials such as Tyvek at pandemic scales, it is difficult to imagine that RF semiconductor production can be immediately re-tasked and scaled to this degree. 
+
+\paragraph{\textbf{Direct treatments}}\
+
+The main concern is the large filament heater power, which  Use of cold-cathode field-emitter arrays would alleviate this issue, but at the cost of complexity.
+
+Small tungsten incandescent lights are available down to 0.05 watts. With a suitable high-efficiency cathode coating, a pulsed heater power of less than 0.02
+
+
 
 
 

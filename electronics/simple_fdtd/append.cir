@@ -18,6 +18,8 @@ RNETTPEM10_ NETTPEM10 NETTPEM0_ 1
 Vvarbias3 NETTPEM0_ 0 -1
 
 //end user-defined
+.option rseries = 1.0e-4
+
 
 .control
 

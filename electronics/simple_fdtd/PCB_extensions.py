@@ -6,12 +6,14 @@ from PIL import Image
 import io
 import math
 from pyevtk.hl import gridToVTK
-from math import pi, ceil, cos, sin
+from math import pi, ceil, cos, sin, log
 from scipy.constants import mu_0,epsilon_0
 import numpy as np
 import torch
 
 from importlib import reload
+
+import gc
 
 
 # import subprocess
@@ -19,6 +21,7 @@ import sys
 # import signal
 
 
+import copy
 
 import ngspyce
 from ngspyce.sharedspice import *
@@ -63,9 +66,10 @@ class Port:
         self.current = 0.0
         self.voltage_history = []
         self.current_history = []
+        self.dvdt = []
 
 class PCB:
-    def __init__(self, cell_size, z_height=3e-3, xy_margin=15, z_margin=15, pml_cells=10):
+    def __init__(self, cell_size, z_height=2e-3, xy_margin=15, z_margin=11, pml_cells=10):
 
         self.grid = None
         self.cell_size = cell_size
@@ -110,8 +114,11 @@ class PCB:
 
         self.grid = grid
 
-        self.copper_mask = bd.zeros((N_x,N_y,N_z)).bool()
 
+        if(not isinstance(fdtd.backend, NumpyBackend)):
+            self.copper_mask = bd.zeros((N_x,N_y,N_z)).bool()
+        else:
+            self.copper_mask = np.zeros((N_x,N_y,N_z), dtype=bool)
 
 
     def create_planes(self, ground_plane_thickness, conductor_conductivity):
@@ -221,7 +228,11 @@ class PCB:
             C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
             # print(C)
             dvdt = (port.current / C)
+
             self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] += (dvdt * self.grid.time_step) / (self.cell_size)
+
+            port.dvdt = dvdt
+
             #make a ring of current around the conductor
             # contour_length = (4.0*self.cell_size)
 
@@ -244,6 +255,8 @@ class PCB:
     def E_magnitude(self, E):
         return np.sqrt(E[:,:,:,X]**2.0 + E[:,:,:,Y]**2.0 + E[:,:,:,Z]**2.0)
 
+
+
     def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=False, Emag_dump=True, objects_dump=True, ports_dump=True):
         '''
         Extension is automatically chosen, you don't need to supply it
@@ -265,8 +278,10 @@ class PCB:
 
         if(not isinstance(fdtd.backend, NumpyBackend)):
             E_copy = self.grid.E.cpu()
+            cu_mask = self.copper_mask.cpu().numpy()
         else:
             E_copy = self.grid.E
+            cu_mask = self.copper_mask
 
         if(objects_dump):
             objects = np.zeros_like(E_copy[:,:,:,X])
@@ -275,7 +290,7 @@ class PCB:
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
                 else:
                     objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
-            objects += self.copper_mask.cpu().numpy()*2
+            objects += cu_mask*2
             cellData['objects'] = objects
 
         if(ports_dump):
@@ -462,19 +477,31 @@ class PCB:
 
         # ngspyce.__init__("")
         # ngspyce.source('/tmp/wideband_LO_mod.cir')
+
+    # def constrain_values(self):
+    #     for port in self.component_ports:
+    #         if(current > 0.5
+            # port.voltage = np.clip(port.voltage, -40, 40)
+            # port.current = np.clip(port.current, -1, 1)
+
     def step(self):
+
+
         self.grid.update_E()
 
         self.reset_spice()
 
         self.compute_all_voltages()
+        # self.constrain_values()
         self.set_spice_voltages()
         self.zero_conductor_fields()
 
-        self.run_spice_step()
         self.grid.update_H()
 
+        self.run_spice_step()
+
         self.get_spice_currents()
+        # self.constrain_values()
         self.apply_all_currents()
 
         self.grid.time_steps_passed += 1
@@ -482,4 +509,35 @@ class PCB:
 
         self.save_voltages()
 
+
         ngspyce.cmd("destroy all")
+        # self = self.adaptive_timestep(failsafe_timestep)
+
+
+    def set_time_step(self, ts):
+        self.grid.time_step = ts
+        self.grid.courant_number = self.grid.time_step/(self.grid.grid_spacing / 3.0e8)
+
+
+def adaptive_timestep(pcb, failsafe_timestep):
+    # timestep of the simulation
+    convergence = True
+    for idx,port in enumerate(pcb.component_ports):
+        print(port.voltage-failsafe_timestep.component_ports[idx].voltage)
+        if(abs(port.voltage-failsafe_timestep.component_ports[idx].voltage) > 1):
+            convergence = False
+
+    # print(convergence)
+    # if(convergence):
+    #     pcb.set_time_step(pcb.grid.time_step*2.0)
+    #
+    #     del failsafe_timestep
+    #     gc.collect() #even works on pytorch tensors! amazing!
+    #     return pcb
+    # else:
+    failsafe_timestep.set_time_step(pcb.grid.time_step*0.01)
+    del pcb
+    gc.collect() #even works on pytorch tensors! amazing!
+
+    # print(id(failsafe_timestep.grid)) = None
+    return failsafe_timestep, convergence

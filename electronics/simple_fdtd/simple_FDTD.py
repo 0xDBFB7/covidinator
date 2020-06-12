@@ -1,9 +1,12 @@
 from PCB_extensions import *
 
+import time
 import os
 
-fdtd.set_backend("torch.cuda.float32")
-
+import copy
+# fdtd.set_backend("torch.cuda.HalfTensor")
+# fdtd.set_backend("torch.cuda.float32")
+fdtd.set_backend("numpy")
 
 import matplotlib.pyplot as plt
 
@@ -16,13 +19,14 @@ KiCAD_source_file = source_dir + 'wideband_LO.kicad_pcb'
 
 SVG_source_file = "../kicad/wideband_LO/wideband_LO-F_Cu.svg"
 
+os.system("rm dumps/*")
 os.system("sed 's/VTP2 nsource /VTP2 nsource 0 /g' " + SPICE_source_file + " > /tmp/mod.cir")
 os.system("sed -i 's/\.end/ /g' /tmp/mod.cir")
 os.system("cat append.cir >> /tmp/mod.cir")
 
 
-pcb = PCB(0.0001)
-pcb.initialize_grid_with_svg(SVG_source_file, courant_number = 0.01)
+pcb = PCB(0.0002)
+pcb.initialize_grid_with_svg(SVG_source_file, courant_number = 0.001)
 pcb.create_planes(0.032e-3, 6e7)
 pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
 pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, SVG_source_file)
@@ -36,7 +40,15 @@ pcb.create_source_vias()
 
 
 dump_step = 200
-for i in range(0,100000):
+i = 0
+clock_time_before = 0
+sim_time_before = 0
+
+end_time = 100e-12
+convergence = True
+
+while(pcb.grid.time_passed < end_time):
+    failsafe_timestep=copy.deepcopy(pcb)
 
     pcb.step()
 
@@ -44,14 +56,20 @@ for i in range(0,100000):
         pcb.dump_to_vtk('dumps/test',i)
 
     print("Step {}".format(i))
-    for i in pcb.component_ports:
-        print(i.SPICE_net, i.voltage, i.current)
+    for port in pcb.component_ports:
+        print(port.SPICE_net, port.voltage, port.current)
 
     print("Time: {}".format(pcb.grid.time_passed/1.0e-12))
+    psps = ((pcb.grid.time_passed/1.0e-12)-sim_time_before)/(time.time()-clock_time_before)
+    print("{} ps/s".format(psps))
+    print("{} minutes left".format((((end_time/1.0e-12)-sim_time_before)/psps)/60.0))
+    clock_time_before = time.time()
+    sim_time_before = pcb.grid.time_passed/1.0e-12
+    print(pcb.grid.time_step)
+    i+=1
+    if(i > 1):
+        pcb,convergence = adaptive_timestep(pcb,failsafe_timestep)
+    # print("PCB2",id(pcb.grid.E))
 
-
-
-plt.plot(pcb.times, pcb.component_ports[0].voltage_history, label="input_terminated")
-plt.plot(pcb.times, pcb.component_ports[1].voltage_history, label="output")
-plt.legend()
-plt.show()
+for port in pcb.component_ports:
+    np.savetxt("data/"+port.SPICE_net+".csv", np.array(port.voltage_history).reshape(-1, 1), delimiter=",",fmt='%10.5f')

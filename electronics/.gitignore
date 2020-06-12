@@ -10,3 +10,4 @@
 *.dpl
 *.vtr
 models/BFP620/*
+*.csv
