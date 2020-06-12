@@ -632,3 +632,12 @@ This can be modified by UV exposure apparently.
 
 
 
+Bought verbatim CD-Rs. Some worn red scotchbrite easily takes off the laquer, metal, and dye layers,
+leaving a reasonable finish.
+
+The surface is indeed conductive after the laquer is removed. Perfect for CNC alignment.
+
+
+
+
+

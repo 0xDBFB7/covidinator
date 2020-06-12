@@ -66,7 +66,6 @@ class Port:
         self.current = 0.0
         self.voltage_history = []
         self.current_history = []
-        self.dvdt = []
 
 class PCB:
     def __init__(self, cell_size, z_height=2e-3, xy_margin=15, z_margin=11, pml_cells=10):
@@ -229,9 +228,9 @@ class PCB:
             # print(C)
             dvdt = (port.current / C)
 
-            self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] += (dvdt * self.grid.time_step) / (self.cell_size)
+            port.voltage += (dvdt * self.grid.time_step)
 
-            port.dvdt = dvdt
+            self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] = port.voltage / (self.cell_size)
 
             #make a ring of current around the conductor
             # contour_length = (4.0*self.cell_size)
@@ -372,6 +371,8 @@ class PCB:
     def save_voltages(self):
         for port in self.component_ports:
             port.voltage_history.append(port.voltage)
+            port.current_history.append(port.current)
+
 
     def initialize_kicad_and_spice(self, kicad_filename,SPICE_filename, SPICE_modified_filename, skip_source_creation_names):
         pads = self.parse_kicad_pcb(kicad_filename)
@@ -487,57 +488,101 @@ class PCB:
     def step(self):
 
 
-        self.grid.update_E()
+        self.to_taste()
 
-        self.reset_spice()
+        self.grid.update_E()
 
         self.compute_all_voltages()
         # self.constrain_values()
-        self.set_spice_voltages()
         self.zero_conductor_fields()
 
         self.grid.update_H()
 
-        self.run_spice_step()
 
-        self.get_spice_currents()
-        # self.constrain_values()
-        self.apply_all_currents()
 
         self.grid.time_steps_passed += 1
         self.times.append(self.grid.time_passed)
 
-        self.save_voltages()
+
+        # [abs(i.voltage i.voltage) for i in enumerate(pcb.component_ports)]
 
 
-        ngspyce.cmd("destroy all")
         # self = self.adaptive_timestep(failsafe_timestep)
 
+    def to_taste(self):
+        #Using an adaptive timestep method as per [Ciampolini 1995]
+        self.compute_all_voltages()
+
+        failsafe_port_voltages = []
+        for idx,port in enumerate(self.component_ports):
+            failsafe_port_voltages.append(port.voltage)
+        # failsafe_ports = copy.deepcopy(self.component_ports)
+
+        delta_v = 0
+
+        self.set_time_step(self.grid.time_step*5.0)
+
+        while(True):
+
+
+            # for port in self.component_ports:
+            #     print(port.SPICE_net, port.voltage, port.current)
+            #
+
+            self.reset_spice()
+            self.set_spice_voltages()
+            self.run_spice_step()
+            self.get_spice_currents()
+            self.apply_all_currents()
+            ngspyce.cmd("destroy all")
+
+            #
+            # for port in self.component_ports:
+            #     print(port.SPICE_net, port.voltage, port.current)
+
+            delta_v = max([abs(failsafe_port_voltages[idx]-val.voltage) for idx,val in enumerate(self.component_ports)])
+            print("Delta V:" , delta_v)
+            convergence = delta_v < 0.01
+
+            if(convergence):
+                break
+            else:
+                self.set_time_step(self.grid.time_step*0.01)
+                print("Decreased timestep to " , self.grid.time_step)
+
+                for idx,port in enumerate(self.component_ports):
+                    port.voltage = failsafe_port_voltages[idx]
+                    # port.current = failsafe_ports[idx].current
+
+            # prev_convergence = copy.copy(new_convergence)
+
+
+        self.save_voltages()
 
     def set_time_step(self, ts):
         self.grid.time_step = ts
         self.grid.courant_number = self.grid.time_step/(self.grid.grid_spacing / 3.0e8)
 
-
-def adaptive_timestep(pcb, failsafe_timestep):
-    # timestep of the simulation
-    convergence = True
-    for idx,port in enumerate(pcb.component_ports):
-        print(port.voltage-failsafe_timestep.component_ports[idx].voltage)
-        if(abs(port.voltage-failsafe_timestep.component_ports[idx].voltage) > 1):
-            convergence = False
-
-    # print(convergence)
-    # if(convergence):
-    #     pcb.set_time_step(pcb.grid.time_step*2.0)
-    #
-    #     del failsafe_timestep
-    #     gc.collect() #even works on pytorch tensors! amazing!
-    #     return pcb
-    # else:
-    failsafe_timestep.set_time_step(pcb.grid.time_step*0.01)
-    del pcb
-    gc.collect() #even works on pytorch tensors! amazing!
-
-    # print(id(failsafe_timestep.grid)) = None
-    return failsafe_timestep, convergence
+#
+# def adaptive_timestep(pcb, failsafe_timestep):
+#     # timestep of the simulation
+#     convergence = True
+#     for idx,port in enumerate(pcb.component_ports):
+#         print(port.voltage-failsafe_timestep.component_ports[idx].voltage)
+#         if(abs(port.voltage-failsafe_timestep.component_ports[idx].voltage) > 1):
+#             convergence = False
+#
+#     # print(convergence)
+#     # if(convergence):
+#     #     pcb.set_time_step(pcb.grid.time_step*2.0)
+#     #
+#     #     del failsafe_timestep
+#     #     gc.collect() #even works on pytorch tensors! amazing!
+#     #     return pcb
+#     # else:
+#     failsafe_timestep.set_time_step(pcb.grid.time_step*0.01)
+#     del pcb
+#     gc.collect() #even works on pytorch tensors! amazing!
+#
+#     # print(id(failsafe_timestep.grid)) = None
+#     return failsafe_timestep, convergence

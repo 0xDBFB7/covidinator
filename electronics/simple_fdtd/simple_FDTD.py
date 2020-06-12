@@ -5,8 +5,8 @@ import os
 
 import copy
 # fdtd.set_backend("torch.cuda.HalfTensor")
-# fdtd.set_backend("torch.cuda.float32")
-fdtd.set_backend("numpy")
+fdtd.set_backend("torch.cuda.float32")
+# fdtd.set_backend("numpy")
 
 import matplotlib.pyplot as plt
 
@@ -48,7 +48,6 @@ end_time = 100e-12
 convergence = True
 
 while(pcb.grid.time_passed < end_time):
-    failsafe_timestep=copy.deepcopy(pcb)
 
     pcb.step()
 
@@ -56,6 +55,7 @@ while(pcb.grid.time_passed < end_time):
         pcb.dump_to_vtk('dumps/test',i)
 
     print("Step {}".format(i))
+
     for port in pcb.component_ports:
         print(port.SPICE_net, port.voltage, port.current)
 
@@ -67,9 +67,7 @@ while(pcb.grid.time_passed < end_time):
     sim_time_before = pcb.grid.time_passed/1.0e-12
     print(pcb.grid.time_step)
     i+=1
-    if(i > 1):
-        pcb,convergence = adaptive_timestep(pcb,failsafe_timestep)
-    # print("PCB2",id(pcb.grid.E))
+
 
 for port in pcb.component_ports:
     np.savetxt("data/"+port.SPICE_net+".csv", np.array(port.voltage_history).reshape(-1, 1), delimiter=",",fmt='%10.5f')
