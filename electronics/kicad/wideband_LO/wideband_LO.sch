@@ -254,6 +254,7 @@ F 4 "X" H 2250 3250 50  0001 C CNN "Spice_Primitive"
 F 5 "SMV2019079LF" H 2250 3250 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 2250 3250 50  0001 C CNN "Spice_Netlist_Enabled"
 F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 2250 3250 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 2250 3250 50  0001 C CNN "Spice_Node_Sequence"
 	1    2250 3250
 	1    0    0    -1  
 $EndComp
@@ -271,6 +272,7 @@ F 4 "X" H 5000 3050 50  0001 C CNN "Spice_Primitive"
 F 5 "SMV2019079LF" H 5000 3050 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 5000 3050 50  0001 C CNN "Spice_Netlist_Enabled"
 F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 5000 3050 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 5000 3050 50  0001 C CNN "Spice_Node_Sequence"
 	1    5000 3050
 	1    0    0    -1  
 $EndComp
@@ -368,6 +370,7 @@ F 4 "X" H 1750 3250 50  0001 C CNN "Spice_Primitive"
 F 5 "SMV2019079LF" H 1750 3250 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 1750 3250 50  0001 C CNN "Spice_Netlist_Enabled"
 F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 1750 3250 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 1750 3250 50  0001 C CNN "Spice_Node_Sequence"
 	1    1750 3250
 	-1   0    0    1   
 $EndComp
@@ -383,6 +386,7 @@ F 4 "X" H 4500 3050 50  0001 C CNN "Spice_Primitive"
 F 5 "SMV2019079LF" H 4500 3050 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 4500 3050 50  0001 C CNN "Spice_Netlist_Enabled"
 F 7 "/home/arthurdent/Projects/covidinator/electronics/models/SMV2019079LF.lib" H 4500 3050 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 4500 3050 50  0001 C CNN "Spice_Node_Sequence"
 	1    4500 3050
 	-1   0    0    1   
 $EndComp

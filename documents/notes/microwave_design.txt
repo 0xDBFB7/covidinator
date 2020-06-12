@@ -758,3 +758,14 @@ that's 7.5 ma at 7.5v.
 
 wire-bonded filament? 0.01mm nichrome is available.
 
+cell capacitance value needs to be re-checked. 
+
+Ciampolini 1995 iteratively try dts until convergence. They use a simple set of lumped-element 
+equations, not a big, bulky SPICE sim, so that's fine. There's a significant "downshifting" effect.
+
+This could be mitigated by better choosing the initial guess timestep.
+
+Right now 4 iters of the SPICE takes 30 ms, while a small, coarse FDTD takes 20.
+So not a huge deal, but it does mean that switching to half-precision won't make a big difference.
+
+

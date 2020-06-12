@@ -327,8 +327,8 @@ class PCB:
 
     def error(self, i):
         if i:
-            print(i)
-            sys.exit()
+            print("Error", i)
+            sys.exit("Spice error")
 
     def init_SPICE(self, source_file):
         ngspyce.source(source_file)
@@ -369,7 +369,10 @@ class PCB:
     def run_spice_step(self):
         # ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))
         ngspyce.cmd('tran 1p 1p uic'.format(self.grid.time_step, self.grid.time_step))
-
+        # WARNING ! THIS IS WRONG !
+        # for any non-linear circuit, this will produce incorrect results.
+        # with this combination of parts,
+        # ngspice refuses to sim at tstep < 1p.
 
     def save_voltages(self):
         for port in self.component_ports:
@@ -524,8 +527,12 @@ class PCB:
 
         delta_v = 0
 
-        self.set_time_step(self.grid.time_step*5.0)
+        # this coefficient is somewhat tricky.
+        # higher, and the loop below will have to try more timesteps to find convergence.
+        # lower, and changes in required timestep will take longer to propagate.
+        self.set_time_step(self.grid.time_step*4.0)
 
+        # a better convergence metric would be useful.
         while(True):
 
 
@@ -546,7 +553,7 @@ class PCB:
 
             delta_v = max([abs(failsafe_port_voltages[idx]-val.voltage) for idx,val in enumerate(self.component_ports)])
             # print("Delta V:" , delta_v)
-            convergence = delta_v < 0.01
+            convergence = delta_v < 0.1
 
             if(convergence):
                 break
