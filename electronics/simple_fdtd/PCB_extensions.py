@@ -11,6 +11,9 @@ from scipy.constants import mu_0,epsilon_0
 import numpy as np
 import torch
 
+from importlib import reload
+
+
 # import subprocess
 import sys
 # import signal
@@ -18,6 +21,7 @@ import sys
 
 
 import ngspyce
+from ngspyce.sharedspice import *
 
 
 from fdtd.backend import NumpyBackend
@@ -456,15 +460,18 @@ class PCB:
         for pad_idx,pad in enumerate(pads):
             self.component_ports.append(Port(self, pad["net"], pad['x'], pad['y']))
 
+        # ngspyce.__init__("")
+        # ngspyce.source('/tmp/wideband_LO_mod.cir')
     def step(self):
         self.grid.update_E()
+
         self.reset_spice()
+
         self.compute_all_voltages()
         self.set_spice_voltages()
         self.zero_conductor_fields()
 
         self.run_spice_step()
-
         self.grid.update_H()
 
         self.get_spice_currents()
@@ -474,3 +481,5 @@ class PCB:
         self.times.append(self.grid.time_passed)
 
         self.save_voltages()
+
+        ngspyce.cmd("destroy all")
