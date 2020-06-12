@@ -70,6 +70,7 @@ class Port:
 class PCB:
     def __init__(self, cell_size, z_height=2e-3, xy_margin=15, z_margin=11, pml_cells=10):
 
+        self.time = 0
         self.grid = None
         self.cell_size = cell_size
 
@@ -89,7 +90,7 @@ class PCB:
         self.copper_mask = None
 
         self.times = []
-
+        self.time_step_history = []
 
     def initialize_grid(self, N_x, N_y, N_z, courant_number=None):
         grid = fdtd.Grid(
@@ -366,7 +367,9 @@ class PCB:
         # self.error(ngspyce.cmd('altermod cstd cap = {}'.format(C)))
 
     def run_spice_step(self):
-        ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))
+        # ngspyce.cmd('tran {} {} uic'.format(self.grid.time_step, self.grid.time_step))
+        ngspyce.cmd('tran 1p 1p uic'.format(self.grid.time_step, self.grid.time_step))
+
 
     def save_voltages(self):
         for port in self.component_ports:
@@ -501,7 +504,8 @@ class PCB:
 
 
         self.grid.time_steps_passed += 1
-        self.times.append(self.grid.time_passed)
+        self.time += self.grid.time_step # the adaptive
+        self.times.append(self.time)
 
 
         # [abs(i.voltage i.voltage) for i in enumerate(pcb.component_ports)]
@@ -541,14 +545,14 @@ class PCB:
             #     print(port.SPICE_net, port.voltage, port.current)
 
             delta_v = max([abs(failsafe_port_voltages[idx]-val.voltage) for idx,val in enumerate(self.component_ports)])
-            print("Delta V:" , delta_v)
+            # print("Delta V:" , delta_v)
             convergence = delta_v < 0.01
 
             if(convergence):
                 break
             else:
                 self.set_time_step(self.grid.time_step*0.01)
-                print("Decreased timestep to " , self.grid.time_step)
+                # print("Decreased timestep to " , self.grid.time_step)
 
                 for idx,port in enumerate(self.component_ports):
                     port.voltage = failsafe_port_voltages[idx]
