@@ -23,6 +23,9 @@ Vvarbias3 NETTPEM0_ 0 -1
 .option rseries = 1.0e-4
 .option rshunt = 100M
 
+set xtrtol=10
+set rtol=10
+
 .control
 
 setcs DIOgradingCoeffMax=3.0

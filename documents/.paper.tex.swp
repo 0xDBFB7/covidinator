@@ -370,6 +370,15 @@ Indeed, [Tsuru 2008]'s "tuned circuit" in Fig 8 is, in fact, just the varactors,
 
 We began experimentally by building a scaled version of [Mueller 2008]'s active antenna on FR4, using a CEL mosfet.
 
+
+
+Optimizing S-parameter simulations of the feedback loop and negative-resistance device did not produce an accurate picture of the oscillator. While the phase and frequency response appeared to be excellent, the transient response painted a different picture:
+
+[gnuplot transient sim here]
+
+The complete transient simulation matched reality very closely. 
+
+
 This immediately oscillated perfectly.
 
 

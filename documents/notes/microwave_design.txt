@@ -783,3 +783,10 @@ RE2 33 32 1E-03
 
 that's probably why.
 
+
+Run one SPICE step, then iterate until equilibrium.
+
+Trim the excess copper?
+
+_FORTIFY_SOURCE -cool
+

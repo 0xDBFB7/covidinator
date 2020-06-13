@@ -28,7 +28,7 @@ os.system("cat append.cir >> /tmp/mod.cir")
 
 
 pcb = PCB(0.0002)
-pcb.initialize_grid_with_svg(SVG_source_file, courant_number = 0.001)
+pcb.initialize_grid_with_svg(SVG_source_file, courant_number = 0.01)
 pcb.create_planes(0.032e-3, 6e7)
 pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
 pcb.construct_copper_geometry_from_svg(0.032e-3, 6e7, SVG_source_file)
@@ -42,7 +42,7 @@ pcb.create_source_vias()
 
 print_step = 50
 
-dump_step = 30
+dump_step = 1000
 i = 0
 clock_time_before = 0
 sim_time_before = 0
@@ -53,6 +53,9 @@ clock_time_start = time.time()
 clock_time_before = time.time()
 sim_time_before = pcb.time/1.0e-12
 
+for i in range(0, 100):
+    pcb.FDTD_step()
+
 while(pcb.time < end_time):
 
     pcb.step()
@@ -62,7 +65,7 @@ while(pcb.time < end_time):
     psps = ((time_ps)-sim_time_before)/(time.time()-clock_time_before)
     # minutes_left = ((end_time/((time.time()-clock_time_start)/time_ps))/60.0)
 
-    if(i % print_step  == 0):
+    if(i % print_step == 0):
         print("Step {}".format(i))
         print("Time: {:.5f} ps, step {:.2e}, clock dt {:.4f} ms, {:.2e} ps/s" \
                                 .format(time_ps, pcb.grid.time_step, (time.time()-clock_time_before)/1e-3, psps))

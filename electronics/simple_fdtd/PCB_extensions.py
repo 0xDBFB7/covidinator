@@ -500,24 +500,26 @@ class PCB:
 
         self.to_taste()
 
-        self.grid.update_E()
+        self.FDTD_step()
 
-        self.zero_conductor_fields()
         self.compute_all_voltages()
-        # self.constrain_values()
-
-        self.grid.update_H()
-
-
-        self.grid.time_steps_passed += 1
-        self.time += self.grid.time_step # the adaptive
-        self.times.append(self.time)
 
 
         # [abs(i.voltage i.voltage) for i in enumerate(pcb.component_ports)]
 
 
         # self = self.adaptive_timestep(failsafe_timestep)
+
+    def FDTD_step():
+        self.grid.update_E()
+
+        self.zero_conductor_fields()
+        # self.constrain_values()
+        self.grid.update_H()
+
+        self.grid.time_steps_passed += 1
+        self.time += self.grid.time_step # the adaptive
+        self.times.append(self.time)
 
     def forcings(self):
         for port in self.component_ports:
