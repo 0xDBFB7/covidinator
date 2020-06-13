@@ -25,6 +25,7 @@ Vvarbias3 NETTPEM0_ 0 -1
 
 set xtrtol=10
 set rtol=10
+set reltol=10
 
 .control
 

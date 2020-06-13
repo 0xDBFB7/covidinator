@@ -790,3 +790,19 @@ Trim the excess copper?
 
 _FORTIFY_SOURCE -cool
 
+The BFP620 has a larger heatsinking lead on the second emitter pin. The thick
+50-ohm output trace should be connected to that.
+
+That makes it refuse to oscillate, and I CBA to figure out why. The oscillator
+won't need dissipation anyhow - the buffer amp will be the hot bit.
+
+copper tape as jumper?
+
+Digikey sells cool little SMD jumpers. 
+
+maybe I've always been attacking this via problem the wrong way in the past. We really just need 
+to jump over traces - jumpers on the solder side are pretty well perfect?
+
+OOOh! Modular design!
+
+

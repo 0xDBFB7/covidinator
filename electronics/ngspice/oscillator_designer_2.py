@@ -36,7 +36,7 @@ def run_sim(varactor_voltage):
     ngspyce.cmd(f'tran {step_ps}p {sim_duration}ps uic')
 
     timesteps = ngspyce.vector('time')
-    v_collector = ngspyce.vector('v(collector)')
+    v_collector = ngspyce.vector('v(E1)')
     v_base = ngspyce.vector('v(Base)')
     varactor_bias = ngspyce.vector('v(Base_)')
 
