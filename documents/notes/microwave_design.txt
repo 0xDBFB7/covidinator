@@ -806,3 +806,6 @@ to jump over traces - jumpers on the solder side are pretty well perfect?
 OOOh! Modular design!
 
 
+ah - the fast, switching P-mos for pulses can be after the slow, regulated supply.
+
+
