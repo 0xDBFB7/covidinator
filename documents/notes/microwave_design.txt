@@ -808,4 +808,10 @@ OOOh! Modular design!
 
 ah - the fast, switching P-mos for pulses can be after the slow, regulated supply.
 
+make a fault tree for a Type 1 error state, to make sure we're not drawing the wrong conclusions
 
+
+The pads were too large on all the 0402 parts.
+
+
+oh my god. I figured out why the sim wasn't working. NONE OF THE PADS ARE IN THE RIGHT PLACE.

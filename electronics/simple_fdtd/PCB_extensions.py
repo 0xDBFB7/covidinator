@@ -61,7 +61,9 @@ class Port:
         self.N_x = pcb.xy_margin+int((F_x)/pcb.cell_size)
         self.N_y = pcb.xy_margin+int((F_y)/pcb.cell_size)
 
-
+        if(not pcb.copper_mask[self.N_x, self.N_y, component_plane_z]):
+            print("Error: port added with no copper above.")
+            sys.exit()
         self.voltage = 0.0
         self.current = 0.0
         self.voltage_history = []
