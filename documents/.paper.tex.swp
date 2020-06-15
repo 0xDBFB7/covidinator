@@ -94,7 +94,7 @@ Additionally, the author has no prior experience with either biology or microwav
 
 Though the original research used Inf. A, our testing was only performed with a surrogate bacteriophage. All experiments must be repeated with SARS-NCoV-2.
 
-Additionally, other mechanisms may produce superior results and should be evaluated in the same context. Recent data on far UVC [Buonanno 2017] indicate safety.
+Additionally, other sterilization techniques may produce superior results and should be evaluated in the same context. Data on far UVC [Buonanno 2017] indicate safety.
 
 Please consider all claims with appropriate skepticism.
 
@@ -143,16 +143,6 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 
 
 {\color{red}  \} } 
-
-
-The medium (not specified in the paper, but ATCC recommends that MDCK cells are grown in Eagle's MEM + 10\% fetal bovine serum).
-
-
-
-
-[IEEE C95.1-2019]
-
-[IEEE C95.1-2005]
 
 \footnote{All values have been converted to $W/m^2$ to avoid confusion.}
 
@@ -350,7 +340,7 @@ For ease of design and simulation, a device with Touchstone S-parameters and SPI
 
 It is commonly claimed that FR4 is a 'slow' substrate, and that the high loss tangent of ~0.02 makes it unsuitable for microwave systems.
 
-However, with this PCB substrate, a loss of only 0.026 dB/mm on signals of minimum 0 dBm. We are also only minimally concerned with $S_{11}$ reflections, noise, or spurs (viruses do not have a discriminating palate), so precise impedance control is not required; the wideband VCO sweep accomodates for any variations in resonant frequency due to wide manufacturing tolerances.
+However, with this PCB substrate, the expected loss of only 0.026 dB/mm on signals of minimum 0 dBm is patently acceptable. As viruses do not have a discriminating palate, we are also only minimally concerned with $S_{11}$ reflections, noise, or spurs, so precise impedance control is not required; the wideband VCO sweep accomodates for any variations in resonant frequency due to wide manufacturing tolerances.
 
 As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Microwave Oscillator Design would have accomplished the task faster.
 
@@ -387,6 +377,7 @@ This immediately oscillated perfectly.
 
 Several analytical filter design methods were 
 
+This is apparently known as a "double-tuned" wideband.
 
 %
 \paragraph{\textbf{The feedback loop oscillator}}\
@@ -406,7 +397,8 @@ However, a third element is also required:
 \item A frequency-selective element that restricts oscillation modes and decreases phase noise.
 \end{itemize}
 %
-Without this element, proximity effects from nearby flesh, startup instablity, mode-hopping, and de-tuning were all encountered. 
+
+With large feedback-loop structures, such as PiN switched lines, proximity effects from nearby flesh would detune the oscillator to a s
 
 
 
@@ -454,7 +446,15 @@ Odd-pole varactor-loaded combline filters appeared to have excellent phase and f
 
 The parasitic inductance of common varactors appears to become problematic at these frequencies (but not for non-wideband use).
 
+\paragraph{\textbf{Spacing}}\
 
+FDTD results still yielded some coupling at 2 mm isolation.
+
+\paragraph{\textbf{Via stitching}}\
+
+Rather than the almost universal technique of via stitching components immediately to the ground plane (a tedious process with our prototyping setup), a large ground pour on the component layer was used, similar to [Hunter? combline]. Since we use microstrip rather than coplanar waveguide, 
+
+Since the ground plane does not participate in the DC bias at all, no vias are required in the final device. This means that the comparatively slow drilling, electroless strike and electroplating steps are unneccesary for this device.
 
 
 
@@ -523,7 +523,6 @@ aa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-aa
 
 
 
@@ -550,11 +549,9 @@ Professor Shahramian's excellent video blog {\it The Signal Path} inspired this 
 
 Dr. Dainis' videos on microbiological technique were also useful.
 
-Hopfstader be damned; despite the name below the abstract, this paper is of course entirely the result of circumstance and luck. Any comparable dimwit to the author would have accomplished the same under the same conditions. 
+Special thanks to all the people - most equally capable of writing this paper if provided the opportunity - who work menial shifts at the component suppliers that remained open that were so critical. Hopfstader be damned; despite the name below the abstract, this paper is of course entirely the result of circumstance and luck. 
 
-It is infinitely to be regretted that such equally capable people were stuck in warehouses doing menial 15-hour shifts or assembling smartphones.
-
-Chiefly among the enablers are of course my parents, Doris and Brian, without which this work would have been done by someone else[] - but who also supported this work financially. Brian  
+Chiefly among the enablers are of course my parents, Doris and Brian, without whom this work would have been done by someone else, and who also supported this work financially. 
 
 
 
@@ -572,11 +569,11 @@ There seems to be a discrepancy between [Yang 2015] and our reading of C95.1-200
 
 They say: "Based on the IEEE Microwave Safety Standard, the spatial averaged value of the power density in air in open public space shall not exceed the equivalent power density of $100(f/3)^{1/5} \text{ W/m}^2$ at frequencies between 3 and 96GHz ($f$ is in GHz). This corresponds to $115 \text{ W}/\text{m}^2$ at 6 GHz". The 115 W @ 6 GHz value correctly corresponds to this equation with a coefficient of 100.
 
-The only reference to a 3 - 96 GHz limit we can find is that of Section 4.6, {\it Relaxation of the power density MPEs for localized exposures}, where the equation is $200 (f/3)^{1/5} \text{ W/m}^2$ [IEEE C95.1-2005]; but this is for controlled, occupational exposures only, referring to Table 8. For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
-
-We don't think this changes the substance of [Yang 2015]'s paper, if it is an error; the relaxed localized exposure is probably the correct threshold to use, and it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
+The only reference to a 3 - 96 GHz limit we can find is that of Section 4.6, {\it Relaxation of the power density MPEs for localized exposures}, where the equation is $200 (f/3)^{1/5} \text{ W/m}^2$ [IEEE C95.1-2005], for controlled occupational exposures, referring to Table 8. For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
 
 Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is possible that we have retrieved the wrong standard.
+
+In any case, this doesn't change the substance of [Yang 2015]'s paper; the relaxed localized exposure is probably the correct threshold to use, and it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
 
 \rule{\linewidth}{0.2pt}
 
@@ -614,7 +611,15 @@ Transient simulations with ngspice matched experiment far more closely.
 
 \rule{\linewidth}{0.2pt}
 
-Again, inductive choke biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an N-channel mosfet worked fine. The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. Such a high bias voltage was required to get sufficient current through the PiN while remaining delicate with the vfb.
+Again, inductive choke biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an 2N7002P N-channel mosfet worked fine. 
+
+The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. A high bias voltage of 48V was required to get sufficient current through the two 10K resistors and the PiN diode to obtain a low impedance while remaining delicate with the vfb.
+
+The PiN diode used has a resting resistance of 500 ohms, 5 ohms at 2 mA and 2 ohms at ??. 
+
+48V is a little tight on the 50V rated voltage of our DC blocking capacitors.
+
+Each activated PiN diode should be biased separately, since putting 2x 2 mA through 20K would take an impractical 80V.
 
 \rule{\linewidth}{0.2pt}
 

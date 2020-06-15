@@ -815,3 +815,6 @@ The pads were too large on all the 0402 parts.
 
 
 oh my god. I figured out why the sim wasn't working. NONE OF THE PADS ARE IN THE RIGHT PLACE.
+
+rudimentary buck converter. It's a terrible idea to feed an RF device with a switching supply;
+all the noise will be injected into the carrier. It's fine in this case I think though.
