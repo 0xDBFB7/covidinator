@@ -50,14 +50,14 @@ U 1 1 5F0BDCCE
 P 5600 1800
 F 0 "R12" V 5695 1732 45  0000 R CNN
 F 1 "10K" V 5611 1732 45  0000 R CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 5600 1950 20  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5600 1950 20  0001 C CNN
 F 3 "" H 5600 1800 60  0001 C CNN
 F 4 " " V 5516 1732 60  0000 R CNN "Field4"
 	1    5600 1800
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7300 4300 7650 4300
+	7300 4300 7600 4300
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0103
 U 1 1 5F0B2EDF
@@ -123,41 +123,6 @@ F 3 "" H 7100 4600 60  0001 C CNN
 F 4 " " V 7184 4668 60  0000 L CNN "Field4"
 	1    7100 4600
 	-1   0    0    1   
-$EndComp
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R19
-U 1 1 5F09CB05
-P 7650 4900
-F 0 "R19" V 7745 4832 45  0000 R CNN
-F 1 "1k" V 7661 4832 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 7650 5050 20  0001 C CNN
-F 3 "" H 7650 4900 60  0001 C CNN
-F 4 " " V 7566 4832 60  0000 R CNN "Field4"
-	1    7650 4900
-	0    -1   -1   0   
-$EndComp
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R18
-U 1 1 5F09CAFE
-P 7650 4500
-F 0 "R18" V 7745 4432 45  0000 R CNN
-F 1 "30k" V 7661 4432 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 7650 4650 20  0001 C CNN
-F 3 "" H 7650 4500 60  0001 C CNN
-F 4 " " V 7566 4432 60  0000 R CNN "Field4"
-	1    7650 4500
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR0116
-U 1 1 5F09CAF7
-P 7650 5100
-F 0 "#PWR0116" H 7650 5100 30  0001 C CNN
-F 1 "GND" H 7650 5030 30  0001 C CNN
-F 2 "" H 7650 5100 50  0001 C CNN
-F 3 "" H 7650 5100 50  0001 C CNN
-	1    7650 5100
-	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	4800 4300 5000 4300
@@ -329,7 +294,7 @@ U 1 1 5EF918DB
 P 6250 1800
 F 0 "R10" V 6345 1732 45  0000 R CNN
 F 1 "1k" V 6261 1732 45  0000 R CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 6250 1950 20  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6250 1950 20  0001 C CNN
 F 3 "" H 6250 1800 60  0001 C CNN
 F 4 " " V 6166 1732 60  0000 R CNN "Field4"
 	1    6250 1800
@@ -344,7 +309,7 @@ L SparkFun-Resistors:RESISTOR0402 R11
 U 1 1 5EFCAE51
 P 6800 2000
 F 0 "R11" V 6895 1932 45  0000 R CNN
-F 1 "30k" V 6811 1932 45  0000 R CNN
+F 1 "30k" H 6811 1932 45  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 6800 2150 20  0001 C CNN
 F 3 "" H 6800 2000 60  0001 C CNN
 F 4 " " V 6716 1932 60  0000 R CNN "Field4"
@@ -406,17 +371,6 @@ F 4 "" H 6208 4366 60  0000 L CNN "Field4"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Transistor_FET:BSS84 Q2
-U 1 1 5EFB71D5
-P 5200 4400
-F 0 "Q2" V 5543 4400 50  0000 C CNN
-F 1 "BSS84" V 5452 4400 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 5400 4325 50  0001 L CIN
-F 3 "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf" H 5200 4400 50  0001 L CNN
-	1    5200 4400
-	0    1    -1   0   
-$EndComp
-$Comp
 L Transistor_FET:BSS84 Q3
 U 1 1 5EFA7A24
 P 6700 4400
@@ -431,19 +385,17 @@ Text GLabel 3350 2950 2    50   Input ~ 0
 ~VARACTOR_PWM
 Text GLabel 3350 3150 2    50   Input ~ 0
 VARACTOR_FEEDBACK
-Text GLabel 7650 4700 2    50   Input ~ 0
-pulse_feedback
-Text GLabel 3350 3250 2    50   Input ~ 0
+Text GLabel 3350 2800 2    50   Input ~ 0
 BIAS_PWM
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0105
 U 1 1 5F1E0DE3
-P 3350 3650
-F 0 "#SUPPLY0105" H 3400 3650 45  0001 L BNN
-F 1 "3.3V" V 3350 3778 45  0000 L CNN
-F 2 "" V 3308 3777 60  0000 L CNN
-F 3 "" H 3350 3650 60  0001 C CNN
-	1    3350 3650
+P 3350 3550
+F 0 "#SUPPLY0105" H 3400 3550 45  0001 L BNN
+F 1 "3.3V" V 3350 3678 45  0000 L CNN
+F 2 "" V 3308 3677 60  0000 L CNN
+F 3 "" H 3350 3550 60  0001 C CNN
+	1    3350 3550
 	0    1    1    0   
 $EndComp
 $Comp
@@ -457,21 +409,17 @@ F 3 "" H 3350 3750 50  0001 C CNN
 	1    3350 3750
 	0    -1   -1   0   
 $EndComp
-Text GLabel 6700 5000 3    50   Input ~ 0
-PULSE_INPUT
-Text GLabel 3350 2800 2    50   Input ~ 0
-~PULSE_INPUT
 Text GLabel 5600 2000 0    50   Input ~ 0
 ~VARACTOR_PWM
 Text GLabel 7100 2200 2    50   Input ~ 0
 VARACTOR_FEEDBACK
 Text GLabel 7100 3150 1    50   Input ~ 0
 CURRENT_SENSE
-Text GLabel 3350 3450 2    50   Input ~ 0
+Text GLabel 3350 3050 2    50   Input ~ 0
 CURRENT_SENSE
 Text GLabel 5200 5650 3    50   Input ~ 0
 VSOURCE_PWM
-Text GLabel 3350 3550 2    50   Input ~ 0
+Text GLabel 3350 3650 2    50   Input ~ 0
 VSOURCE_PWM
 $Comp
 L SparkFun-Connectors:CONN_10SMD_MALE J1
@@ -485,24 +433,12 @@ F 4 "" H 3208 4781 60  0000 C CNN "Field4"
 	1    3250 3750
 	1    0    0    -1  
 $EndComp
-Text GLabel 3350 3050 2    50   Input ~ 0
+Text GLabel 3350 3450 2    50   Input ~ 0
 source_supply_feedback
 Text GLabel 3350 3350 2    50   Input ~ 0
 pulse_feedback
 Wire Wire Line
 	3350 2850 3350 2800
-$Comp
-L SparkFun-Connectors:CONN_02 J2
-U 1 1 5F20BF2F
-P 3350 1950
-F 0 "J2" H 3308 2360 45  0000 C CNN
-F 1 "CONN_02" H 3308 2276 45  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3350 2200 20  0001 C CNN
-F 3 "" H 3350 1950 50  0001 C CNN
-F 4 "XXX-00000" H 3308 2181 60  0000 C CNN "Field4"
-	1    3350 1950
-	1    0    0    -1  
-$EndComp
 $Comp
 L power2:+48V #PWR0103
 U 1 1 5F20FDFE
@@ -525,32 +461,9 @@ F 3 "" H 5900 1400 50  0001 C CNN
 	1    5900 1400
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0106
-U 1 1 5F212AC1
-P 3450 1950
-F 0 "#PWR0106" H 3450 1950 30  0001 C CNN
-F 1 "GND" H 3450 1880 30  0001 C CNN
-F 2 "" H 3450 1950 50  0001 C CNN
-F 3 "" H 3450 1950 50  0001 C CNN
-	1    3450 1950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	5400 4300 5650 4300
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R2
-U 1 1 5F2086A8
-P 5650 5000
-F 0 "R2" V 5745 4932 45  0000 R CNN
-F 1 "1k" V 5661 4932 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 5650 5150 20  0001 C CNN
-F 3 "" H 5650 5000 60  0001 C CNN
-F 4 " " V 5566 4932 60  0000 R CNN "Field4"
-	1    5650 5000
-	0    -1   -1   0   
-$EndComp
-Text GLabel 5650 5200 2    50   Input ~ 0
+Text GLabel 5650 4800 2    50   Input ~ 0
 source_supply_feedback
 $Comp
 L power:GND #PWR0113
@@ -568,4 +481,116 @@ Wire Wire Line
 Connection ~ 5650 4300
 Wire Wire Line
 	5650 4300 5850 4300
+Text Notes 7850 4000 0    50   ~ 0
+Two 2.2r because that's all I've got.
+Text Notes 8000 6150 0    50   ~ 0
+Originally used a P-channel in the linear region,\nbut the BSS84-F in stock SOA is only 0.05 A at DC in linear region\nwow! very surprised!
+$Comp
+L dk_Transistors-Bipolar-BJT-Single:MMBT4401 Q2
+U 1 1 5EE95D01
+P 5200 4400
+F 0 "Q2" V 5547 4400 60  0000 C CNN
+F 1 "MMBT4401" V 5441 4400 60  0000 C CNN
+F 2 "digikey-footprints:SOT-23-3" H 5400 4600 60  0001 L CNN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N4401.pdf" H 5400 4700 60  0001 L CNN
+F 4 "MMBT4401FSCT-ND" H 5400 4800 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401" H 5400 4900 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 5400 5000 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 5400 5100 60  0001 L CNN "Family"
+F 8 "https://www.fairchildsemi.com/datasheets/2N/2N4401.pdf" H 5400 5200 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401/MMBT4401FSCT-ND/458974" H 5400 5300 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT-23" H 5400 5400 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 5400 5500 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5400 5600 60  0001 L CNN "Status"
+	1    5200 4400
+	0    -1   -1   0   
+$EndComp
+Text GLabel 7600 4500 2    50   Input ~ 0
+pulse_feedback
+Wire Wire Line
+	7600 4300 7600 4500
+Connection ~ 7600 4300
+Wire Wire Line
+	7600 4300 7650 4300
+$Comp
+L SparkFun-Capacitors:4.7UF0603 C2
+U 1 1 5EEA123E
+P 4800 4400
+F 0 "C2" V 4566 4450 45  0000 C CNN
+F 1 "0.1 uF" V 4650 4450 45  0000 C CNN
+F 2 "0603" H 4800 4650 20  0001 C CNN
+F 3 "" H 4800 4400 50  0001 C CNN
+F 4 "" H 4908 4366 60  0000 L CNN "Field4"
+	1    4800 4400
+	-1   0    0    1   
+$EndComp
+Connection ~ 4800 4300
+$Comp
+L power:GND #PWR0102
+U 1 1 5EEA228C
+P 4800 4600
+F 0 "#PWR0102" H 4800 4600 30  0001 C CNN
+F 1 "GND" H 4800 4530 30  0001 C CNN
+F 2 "" H 4800 4600 50  0001 C CNN
+F 3 "" H 4800 4600 50  0001 C CNN
+	1    4800 4600
+	1    0    0    -1  
+$EndComp
+Text GLabel 6700 5000 3    50   Input ~ 0
+~PULSE_INPUT
+Text GLabel 4650 3250 0    50   Input ~ 0
+BIAS_PWM
+$Comp
+L Connector:Test_Point TP1
+U 1 1 5EEB43DF
+P 3450 1850
+F 0 "TP1" H 3508 1968 50  0000 L CNN
+F 1 "Test_Point" H 3508 1877 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3650 1850 50  0001 C CNN
+F 3 "~" H 3650 1850 50  0001 C CNN
+	1    3450 1850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Test_Point TP2
+U 1 1 5EEBBE60
+P 4650 3250
+F 0 "TP2" H 4708 3368 50  0000 L CNN
+F 1 "Test_Point" H 4708 3277 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 4850 3250 50  0001 C CNN
+F 3 "~" H 4850 3250 50  0001 C CNN
+	1    4650 3250
+	0    1    1    0   
+$EndComp
+Text GLabel 3350 3250 2    50   Input ~ 0
+~PULSE_INPUT
+$Comp
+L Connector:Test_Point TP?
+U 1 1 5EEC794F
+P 7400 1550
+F 0 "TP?" H 7458 1668 50  0000 L CNN
+F 1 "Test_Point" H 7458 1577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 7600 1550 50  0001 C CNN
+F 3 "~" H 7600 1550 50  0001 C CNN
+	1    7400 1550
+	0    1    1    0   
+$EndComp
+Connection ~ 6800 1800
+Text GLabel 6800 1800 2    50   Input ~ 0
+VARACTOR_OUT
+Text GLabel 7400 1550 0    50   Input ~ 0
+VARACTOR_OUT
+$Comp
+L Connector:Test_Point TP?
+U 1 1 5EECA2A9
+P 8750 4350
+F 0 "TP?" H 8808 4468 50  0000 L CNN
+F 1 "Test_Point" H 8808 4377 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 8950 4350 50  0001 C CNN
+F 3 "~" H 8950 4350 50  0001 C CNN
+	1    8750 4350
+	0    1    1    0   
+$EndComp
+Text GLabel 8750 4350 0    50   Input ~ 0
+nsource
 $EndSCHEMATC

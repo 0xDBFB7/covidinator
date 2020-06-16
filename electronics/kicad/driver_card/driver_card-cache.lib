@@ -22,6 +22,23 @@ X V+ 5 -100 300 150 D 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
+# Connector_Test_Point
+#
+DEF Connector_Test_Point TP 0 30 N N 1 F N
+F0 "TP" 0 270 50 H V C CNN
+F1 "Connector_Test_Point" 0 200 50 H V C CNN
+F2 "" 200 0 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
+$FPLIST
+ Pin*
+ Test*
+$ENDFPLIST
+DRAW
+C 0 130 30 0 1 0 N
+X 1 1 0 0 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # SparkFun-Capacitors_4.7UF0603
 #
 DEF SparkFun-Capacitors_4.7UF0603 C 0 40 N N 1 L N
@@ -40,41 +57,6 @@ P 2 1 0 0 0 0 0 20 N
 P 2 1 0 0 0 100 0 80 N
 X 1 1 0 200 100 D 40 40 1 1 P
 X 2 2 0 -100 100 U 40 40 1 1 P
-ENDDRAW
-ENDDEF
-#
-# SparkFun-Connectors_CONN_02
-#
-DEF SparkFun-Connectors_CONN_02 J 0 40 N Y 1 L N
-F0 "J" -200 200 45 H V L BNN
-F1 "SparkFun-Connectors_CONN_02" -200 -150 45 H V L BNN
-F2 "1X02" 0 250 20 H I C CNN
-F3 "" 0 0 50 H I C CNN
-F4 "XXX-00000" 0 300 60 H V C CNN
-$FPLIST
- *1X02*
- *JST-2-PTH-NS*
- *1X02_NO_SILK*
- *SCREWTERMINAL-3.5MM-2*
- *SCREWTERMINAL-3.5MM-2-NS*
- *SCREWTERMINAL-3.5MM-2_LOCK*
- *SCREWTERMINAL-5MM-2*
- *JST-2-PTH*
- *JST-2-PTH-KIT*
- *1X02_LOCK*
- *1X02_LOCK_LONGPADS*
- *1X02_PP_HOLES_ONLY*
- *MOLEX-1X2*
- *MOLEX-1X2_LOCK*
- *1X02_LONGPADS*
- *1X02_XTRA_BIG*
- *1X02_RA_PTH_FEMALE*
- *SPRINGTERMINAL-2.54MM-2*
-$ENDFPLIST
-DRAW
-S 0 -50 -200 150 1 0 0 f
-X 1 1 100 0 100 L 40 40 1 1 P
-X 2 2 100 100 100 L 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -242,6 +224,36 @@ P 4 0 1 0 130 -15 115 10 145 10 130 -15 N
 X G 1 -200 0 100 R 50 50 1 1 I
 X S 2 100 -200 100 U 50 50 1 1 P
 X D 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# dk_Transistors-Bipolar-BJT-Single_MMBT4401
+#
+DEF dk_Transistors-Bipolar-BJT-Single_MMBT4401 Q 0 0 Y Y 1 F N
+F0 "Q" -126 166 60 H V L CNN
+F1 "dk_Transistors-Bipolar-BJT-Single_MMBT4401" 206 0 60 V V C CNN
+F2 "digikey-footprints:SOT-23-3" 200 200 60 H I L CNN
+F3 "https://www.fairchildsemi.com/datasheets/2N/2N4401.pdf" 200 300 60 H I L CNN
+F4 "MMBT4401FSCT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "MMBT4401" 200 500 60 H I L CNN "MPN"
+F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
+F7 "Transistors - Bipolar (BJT) - Single" 200 700 60 H I L CNN "Family"
+F8 "https://www.fairchildsemi.com/datasheets/2N/2N4401.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/on-semiconductor/MMBT4401/MMBT4401FSCT-ND/458974" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "TRANS NPN 40V 0.6A SOT-23" 200 1000 60 H I L CNN "Description"
+F11 "ON Semiconductor" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+C 0 0 128 0 1 0 f
+P 2 0 1 0 -150 0 -100 0 N
+P 2 0 1 0 -140 0 0 0 N
+P 2 0 1 0 0 -50 100 -100 N
+P 2 0 1 0 0 50 100 100 N
+P 2 0 1 0 0 100 0 -100 N
+P 4 0 1 0 60 -50 80 -90 40 -100 60 -50 F
+X B 1 -200 0 100 R 50 50 1 1 I
+X E 2 100 -200 100 U 50 50 1 1 P
+X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #

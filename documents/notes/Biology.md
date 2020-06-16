@@ -641,3 +641,18 @@ The surface is indeed conductive after the laquer is removed. Perfect for CNC al
 
 
 
+We should follow the guidelines in Vjl. Comprehensive review, and "
+In their publication, the Organization for Economic Co-operation and
+Development (32) provides excellent guidance and details,
+for in vitro and in vivo genetic toxicology testing, which
+need to be incorporated when experiments using RF are
+initiated."
+
+Sham, positive control (heater? UV LED?), blinded trials (software randomization probably qualifies?), 
+accurate dosimetry.
+
+Should contact vijay@uthscsa.edu about reviewing our methodology.
+
+Also should contact Yang et al about the formula issue.
+
+
