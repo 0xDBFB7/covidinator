@@ -29,3 +29,5 @@ or perhaps the cutter diameter was set too large? Some regions were grooved, rat
 Tried the new toaster oven; seemed like the temperature ramp was too slow, the board seemed to get 
 a bit overheated. oven probably needed preheating.
 
+
+0.17 mm tool diameter setting is even better.

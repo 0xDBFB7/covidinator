@@ -31509,6 +31509,7 @@ PMCID: PMC5439676</dc:description>
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_2978"/>
         <dc:subject>Barfuss_Book_Club</dc:subject>
         <dc:identifier>
             <dcterms:URI>
@@ -31522,6 +31523,11 @@ PMCID: PMC5439676</dc:description>
         <z:language>en</z:language>
         <dc:title>Sharp Resonances in Yeast Growth Prove Nonthermal Sensitivity to Microwaves</dc:title>
     </bib:Article>
+    <z:Attachment rdf:about="#item_2978">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Grundler_Keilmann_1983_Sharp Resonances in Yeast Growth Prove Nonthermal Sensitivity to Microwaves.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <bib:Article rdf:about="https://doi.org/10.1007/s00396-002-0691-2">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:1435-1536"/>
@@ -32591,6 +32597,7 @@ PMCID: PMC5981065</dc:description>
             </rdf:Seq>
         </bib:authors>
         <dcterms:isReferencedBy rdf:resource="#item_1921"/>
+        <link:link rdf:resource="#item_2995"/>
         <dc:identifier>
             <dcterms:URI>
                <rdf:value>http://link.springer.com/10.1007/BF01964370</rdf:value>
@@ -32608,6 +32615,11 @@ PMCID: PMC5981065</dc:description>
 &lt;p&gt;The largest proportion of such metaphases was seen following exposure to 0.1 and 10.0 mW/cm^2, 15.2% and 30.4% respectively.&lt;/p&gt;
 &lt;p&gt;Whereas one would expect the metaphase proportion to increase linearly with power.&lt;/p&gt;</rdf:value>
     </bib:Memo>
+    <z:Attachment rdf:about="#item_2995">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Manikowska et al_1979_Effects of 9.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <bib:Article rdf:about="http://www.tandfonline.com/doi/full/10.1080/09553008614550431">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:0020-7616"/>
@@ -32628,6 +32640,7 @@ PMCID: PMC5981065</dc:description>
             </rdf:Seq>
         </bib:authors>
         <dcterms:isReferencedBy rdf:resource="#item_1922"/>
+        <link:link rdf:resource="#item_2986"/>
         <dc:subject>Barfuss_Book_Club</dc:subject>
         <dc:identifier>
             <dcterms:URI>
@@ -32652,6 +32665,11 @@ PMCID: PMC5981065</dc:description>
     <bib:Memo rdf:about="#item_1922">
         <rdf:value>&lt;p&gt;Microwave absorption of aqueous solutions of DNA in the 8-12 GHz frequency range has been previously reported (Swicord and Davis 1982).&lt;/p&gt;</rdf:value>
     </bib:Memo>
+    <z:Attachment rdf:about="#item_2986">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Sagripanti_Swicord_1986_DNA Structural Changes Caused by Microwave Radiation.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <bib:Article rdf:about="#item_1924">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf>
@@ -33693,18 +33711,6 @@ Publisher: Innovation, Science and Economic Development Canada</dc:description>
         </dc:identifier>
         <dcterms:dateSubmitted>2020-03-19 02:00:24</dcterms:dateSubmitted>
         <dc:title>rf_3_biological_effects_rf_radiation.pdf</dc:title>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_1992">
-        <z:itemType>attachment</z:itemType>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>http://users.ntua.gr/mmakro/IEEEStandards.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2020-03-19 02:37:15</dcterms:dateSubmitted>
-        <dc:title>IEEEStandards.pdf</dc:title>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
@@ -42816,7 +42822,7 @@ PMCID: PMC5504984</dc:description>
         <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
         <z:language>en</z:language>
         <dcterms:abstract>Radiofrequency electromagnetic fields (EMFs) are used to enable a number of modern devices, including mobile telecommunications infrastructure and phones, Wi-Fi, and Bluetooth. As radiofrequency EMFs at sufficiently high power levels can adversely affect health, ICNIRP published Guidelines in 1998 for human exposure to time-varying EMFs up to 300 GHz, which included the radiofrequency EMF spectrum. Since that time, there has been a considerable body of science further addressing the relation between radiofrequency EMFs and adverse health outcomes, as well as significant developments in the technologies that use radiofrequency EMFs. Accordingly, ICNIRP has updated the radiofrequency EMF part of the 1998 Guidelines. This document presents these revised Guidelines, which provide protection for humans from exposure to EMFs from 100 kHz to 300 GHz.</dcterms:abstract>
-        <dc:title>Guidelines for Limiting Exposure to Electromagnetic Fields (100 kHz to 300 GHz):</dc:title>
+        <dc:title>ICNIRP GUIDELINES 2020</dc:title>
         <z:shortTitle>Guidelines for Limiting Exposure to Electromagnetic Fields (100 kHz to 300 GHz)</z:shortTitle>
     </bib:Article>
     <bib:Journal rdf:about="urn:issn:0017-9078">
@@ -49159,6 +49165,15 @@ DOI: 10.1007/978-3-642-27869-3_34</dc:description>
                 <dc:identifier>DOI 10.1371/journal.pmed.0030059</dc:identifier>
             </bib:Journal>
         </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Nicholls</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
         <link:link rdf:resource="#item_2718"/>
         <link:link rdf:resource="#item_2717"/>
         <dc:identifier>
@@ -55020,6 +55035,2552 @@ PMCID: PMC2682495</dc:description>
         <z:linkMode>3</z:linkMode>
         <link:type>text/html</link:type>
     </z:Attachment>
+    <bib:Article rdf:about="#item_2962">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Banerjee</foaf:surname>
+                        <foaf:givenName>Sanjay</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2961"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>46</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>SiGe(C) MOSFET Technology</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2961">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.aps.org/units/fiap/meetings/presentations/upload/banerjee.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 15:45:46</dcterms:dateSubmitted>
+        <dc:title>Banerjee - SiGe(C) MOSFET Technology.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2963">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>2</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>IEEE Microwave Magazine</dc:title>
+                <dc:identifier>DOI 10.1109/6668.924919</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Osepchuk</foaf:surname>
+                        <foaf:givenName>John M</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Petersen</foaf:surname>
+                        <foaf:givenName>Ronald C</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1992"/>
+        <bib:pages>57–69</bib:pages>
+        <dc:date>2001</dc:date>
+        <dc:description>Publisher: IEEE</dc:description>
+        <dc:title>Safety standards for exposure to RF electromagnetic fields</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1992">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://users.ntua.gr/mmakro/IEEEStandards.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-03-19 02:37:15</dcterms:dateSubmitted>
+        <dc:title>IEEEStandards.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250060209">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>6</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Bioelectromagnetics</dc:title>
+                <dc:identifier>ISSN 1521-186X</dc:identifier>
+                <dc:identifier>DOI 10.1002/bem.2250060209</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kues</foaf:surname>
+                        <foaf:givenName>Henry A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hirst</foaf:surname>
+                        <foaf:givenName>Lawrence W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lutty</foaf:surname>
+                        <foaf:givenName>Gerard A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>D'Anna</foaf:surname>
+                        <foaf:givenName>Salvatore A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dunkelberger</foaf:surname>
+                        <foaf:givenName>Gregory R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2968"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250060209</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>Copyright © 1985 Wiley‐Liss, Inc., A Wiley Company</dc:rights>
+        <bib:pages>177-188</bib:pages>
+        <dc:date>1985</dc:date>
+        <dc:description>_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/bem.2250060209</dc:description>
+        <dcterms:dateSubmitted>2020-06-06 19:56:57</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Both eyes of anesthetized cynomolgus monkeys (Macaca fascicularis) were irradiated with 2.45-GHz microwaves, either pulsed or continuous wave. In vivo corneal endothelial abnormalities were observed by specular microscopy and confirmed through histologic techniques after a 16- to 48-hour postexposure period. Pulsed microwaves with an average power density of 10 mW/cm2 (equivalent to a specific absorption rate (SAR) = 2.6 W/kg) produced these effects, while levels of 20-30 mW/cm2 (equivalent to a SAR = 5.3 to 7.8 W/kg) with continuous wave irradiation were required to produce similar changes.</dcterms:abstract>
+        <dc:title>Effects of 2.45-GHz microwaves on primate corneal endothelium</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2968">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Kues et al_1985_Effects of 2.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://search.ieice.org/bin/summary.php?id=e77-b_6_762&amp;category=B&amp;year=1994&amp;lang=E&amp;abst=">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:,%200916-8516"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kamimura</foaf:surname>
+                        <foaf:givenName>Yoshitsugu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saito</foaf:surname>
+                        <foaf:givenName>Ken-ichi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saiga</foaf:surname>
+                        <foaf:givenName>Toshikazu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Amemiya</foaf:surname>
+                        <foaf:givenName>Yoshifumi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2967"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://search.ieice.org/bin/summary.php?id=e77-b_6_762&amp;category=B&amp;year=1994&amp;lang=E&amp;abst=</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>762-765</bib:pages>
+        <dc:date>1994/06/25</dc:date>
+        <dc:description>Publisher: The Institute of Electronics, Information and Communication Engineers</dc:description>
+        <dcterms:dateSubmitted>2020-06-06 19:57:28</dcterms:dateSubmitted>
+        <z:libraryCatalog>search.ieice.org</z:libraryCatalog>
+        <dcterms:abstract>In 1985, Kues et al. (Bioelectromagnetics, 6, pp.177-188, 1985) reported that corneal endothelial abnormalities were observed after a 4-hour exposure of anesthetized monkey eyes to 2.45GHz CW. We have traced their experimental study without anesthetization. Although we irradiated with power density exceeding the threshold of 30mW/cm&lt;SUP&gt;2&lt;/SUP&gt; obtained by them, we could not observe the same abnormalities as they did.</dcterms:abstract>
+        <dc:title>Effect of 2.45GHz Microwave Irradiation on Monkey Eyes</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:,%200916-8516">
+        <prism:volume>E77-B</prism:volume>
+        <prism:number>6</prism:number>
+        <dc:title>IEICE TRANSACTIONS on Communications</dc:title>
+        <dc:identifier>ISSN , 0916-8516</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2967">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://search.ieice.org/bin/summary.php?id=e77-b_6_762</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 19:57:31</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://journals.lww.com/00004032-198905000-00028">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>56</prism:volume>
+                <prism:number>5</prism:number>
+                <dc:title>Health Physics</dc:title>
+                <dc:identifier>ISSN 0017-9078</dc:identifier>
+                <dcterms:alternative>Health Physics</dcterms:alternative>
+                <dc:identifier>DOI 10.1097/00004032-198905000-00028</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Servantie</foaf:surname>
+                        <foaf:givenName>B.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2970"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://journals.lww.com/00004032-198905000-00028</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>781-786</bib:pages>
+        <dc:date>05/1989</dc:date>
+        <dcterms:dateSubmitted>2020-06-06 20:21:10</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Damage Criteria for Determining Microwave Exposure:</dc:title>
+        <z:shortTitle>Damage Criteria for Determining Microwave Exposure</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2970">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>servantie1989.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://scite.ai">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2973"/>
+        <dc:identifier>
+           <dcterms:URI><rdf:value>https://scite.ai</rdf:value></dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: scite.ai</dc:description>
+        <dcterms:dateSubmitted>2020-06-06 20:36:53</dcterms:dateSubmitted>
+        <dcterms:abstract>scite combines natural language processing with a network of experts to evaluate the veracity of scientific work</dcterms:abstract>
+        <dc:title>scite_</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2973">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+           <dcterms:URI><rdf:value>https://scite.ai/</rdf:value></dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 20:37:11</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://scite.ai/reports/effects-of-9-4-ghz-microwave-rlzLrD">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2974"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://scite.ai/reports/effects-of-9-4-ghz-microwave-rlzLrD</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: scite.ai</dc:description>
+        <dcterms:dateSubmitted>2020-06-06 20:36:47</dcterms:dateSubmitted>
+        <dcterms:abstract>Exposure to 9.4 GHz pulsed microwaves at low power densities for 1 h/day during 2 weeks induces in adult male Balb/c mice disturbances in meiosis, consisting in an increase of translocations and the appearance of cells with several chromosome pair remaining univalents at MI.</dcterms:abstract>
+        <dc:title>Effects of 9.4 GHz microwave exposure on meiosis in mice</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2974">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://scite.ai/reports/10.1007/BF01964370</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 20:37:11</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1080/09553008614551321">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>50</prism:volume>
+                <prism:number>5</prism:number>
+                <dc:title>International Journal of Radiation Biology and Related Studies in Physics, Chemistry and Medicine</dc:title>
+                <dc:identifier>ISSN 0020-7616</dc:identifier>
+                <dc:identifier>DOI 10.1080/09553008614551321</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Beechey</foaf:surname>
+                        <foaf:givenName>C. V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brooker</foaf:surname>
+                        <foaf:givenName>D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kowalczuk</foaf:surname>
+                        <foaf:givenName>C. I.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saunders</foaf:surname>
+                        <foaf:givenName>R. D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Searle</foaf:surname>
+                        <foaf:givenName>A. G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2977"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1080/09553008614551321</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>909-918</bib:pages>
+        <dc:date>January 1, 1986</dc:date>
+        <dc:description>Publisher: Taylor &amp; Francis
+_eprint: https://doi.org/10.1080/09553008614551321</dc:description>
+        <dcterms:dateSubmitted>2020-06-06 21:00:30</dcterms:dateSubmitted>
+        <z:libraryCatalog>Taylor and Francis+NEJM</z:libraryCatalog>
+        <dcterms:abstract>Hybrid male mice were exposed to 2·45 GHz microwaves for 30 min/day, 6 days a week for two consecutive weeks at power densities of 1·0, 100 or 400 W m−2, with sham-exposed controls. Rectal temperatures before and after exposure were measured on days 1, 6 and 12. Measurements made on day 1 were treated with caution because of heterogeneity in rectal temperatures taken before exposure between the groups of mice given different treatments. On days 6 and 12, rectal temperatures rose by approximately 1°C in mice sham exposed, or exposed to 1 W m−2 or 100 W m−2. Only in the group of mice exposed to 400 W m−2 was the mean rise in rectal temperature during exposure (about 3°C) significantly increased above the sham value. In groups killed 2–3 days after treatment (mainly meiotic exposure) frequencies of chromosome aberrations in spermatocytes showed no significant heterogeneity although the highest frequency of 1·5 per cent was at the highest (400 W m−2 power density. Another group killed 30 days after 100 W m−2 exposures (spermatogonial sampling) showed no significant increase over controls in chromosome aberration frequency. There was a small but significant increase in sperm count with increasing power density in mice killed 12–13 days after exposure, but a non-significant one in those exposed as spermatogonia (killed 41 days later). Thus effects were markedly less severe than those reported previously by Manikowska-Czerska et al. (1985) with a very similar radiation regime and were probably caused by the temperature enhancement.</dcterms:abstract>
+        <dc:title>Cytogenetic Effects of Microwave Irradiation on Male Germ Cells of the Mouse</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2977">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Beechey et al_1986_Cytogenetic Effects of Microwave Irradiation on Male Germ Cells of the Mouse.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2979">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>52</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>Biophysical journal</dc:title>
+                <dc:identifier>DOI 10.1016/S0006-3495(87)83231-9</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Foster</foaf:surname>
+                        <foaf:givenName>KR</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Epstein</foaf:surname>
+                        <foaf:givenName>BR</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gealt</foaf:surname>
+                        <foaf:givenName>MA</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2980"/>
+        <bib:pages>421–425</bib:pages>
+        <dc:date>1987</dc:date>
+        <dc:description>Publisher: Elsevier</dc:description>
+        <dc:title>&quot; Resonances&quot; in the dielectric absorption of DNA?</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2980">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Foster et al_1987_ Resonances in the dielectric absorption of DNA.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_2981">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mazar</foaf:surname>
+                        <foaf:givenName>Haim</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2982"/>
+        <link:link rdf:resource="#item_2983"/>
+        <dc:date>December 3, 2019</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dcterms:abstract>Compliance with human exposure limits for EMF is a significant health and safety issue to regulators, service providers and wireless equipment suppliers. I serve as the inter-sector International Telecommunications Union (ITU) officer on electromagnetic fields EMF. On behalf of ITU, I was invited to the 4th Warsaw International Conference “EMF fields and the future of telecommunications'. It is organised by the Polish Ministry of Digital Affairs and the National Institute of Telecommunications; honorary patronage of the Ministries of Health and the Environment. The presentation compares and contrasts the 15 Oct 2019 95.1 EMF standard and the forthcoming International Commission On Non-Ionizing Radiation Protection (ICNIRP) Guidelines, to limit EMF radiation. 
+There is no scientific reason to use different exposure limits in different countries. Administrations should follow the updated ICNIRP (and IEEE limits). Europeans
+may follow EU Recommendation 1999/519/EC on EMF (ICNIRP levels)</dcterms:abstract>
+        <dc:title>EMF, New ICNIRP Guidelines and IEEE C95.1-2019 Standard: Differences and Similarities</dc:title>
+        <z:shortTitle>EMF, New ICNIRP Guidelines and IEEE C95.1-2019 Standard</z:shortTitle>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_2982">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Haim_Mazar/publication/337815714_EMF_New_ICNIRP_Guidelines_and_IEEE_C951-2019_Standard_Differences_and_Similarities/links/5deb9b4c299bf10bc3478613/EMF-New-ICNIRP-Guidelines-and-IEEE-C951-2019-Standard-Differences-and-Similarities.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 23:02:18</dcterms:dateSubmitted>
+        <dc:title>Mazar_2019_EMF, New ICNIRP Guidelines and IEEE C95.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2983">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/337815714_EMF_New_ICNIRP_Guidelines_and_IEEE_C951-2019_Standard_Differences_and_Similarities</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 23:02:18</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:978-0-7381-4834-2%20978-0-7381-4835-9">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>New York</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Institute of Electrical and Electronics Engineers</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Institute of Electrical and Electronics Engineers</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2984"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/servlet/opac?punumber=10830</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:identifier>ISBN 978-0-7381-4834-2 978-0-7381-4835-9</dc:identifier>
+        <dc:date>2006</dc:date>
+        <dc:description>OCLC: 782268300</dc:description>
+        <dcterms:dateSubmitted>2020-06-06 23:06:52</dcterms:dateSubmitted>
+        <z:libraryCatalog>Open WorldCat</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>IEEE C95.1-2005</dc:title>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_2984">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://emfguide.itu.int/pdfs/C95.1-2005.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-06 23:06:49</dcterms:dateSubmitted>
+        <dc:title>Institute of Electrical and Electronics Engineers - 2006 - IEEE standard for safety levels with respect to hu.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.ebea.org/get-ieee-c95-standards-for-free/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2988"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.ebea.org/get-ieee-c95-standards-for-free/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 00:14:44</dcterms:dateSubmitted>
+        <dc:title>Get IEEE C95™ STANDARDS for free | EBEA</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2988">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.ebea.org/get-ieee-c95-standards-for-free/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 00:14:46</dcterms:dateSubmitted>
+        <dc:title>Get IEEE C95™ STANDARDS for free | EBEA</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Report rdf:about="https://ieeexplore.ieee.org/document/8859679/">
+        <z:itemType>report</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>IEEE</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <link:link rdf:resource="#item_2989"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/document/8859679/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>ISBN: 9781504455480
+DOI: 10.1109/IEEESTD.2019.8859679</dc:description>
+        <dcterms:dateSubmitted>2020-06-07 00:15:34</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>C95.1-2019</dc:title>
+    </bib:Report>
+    <z:Attachment rdf:about="#item_2989">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.gencourt.state.nh.us/statstudcomm/committees/1474/documents/IEEE%20Standard%20for%20Safety%20Levels%20with%20Respect%20to%20Human%20Exposure.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 00:15:32</dcterms:dateSubmitted>
+        <dc:title>IEEE Standard for Safety Levels with Respect to Hu.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-1-4673-6432-4">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-1-4673-6432-4</dc:identifier>
+                <dc:identifier>DOI 10.1109/ICC.2015.7248688</dc:identifier>
+                <dc:title>2015 IEEE International Conference on Communications (ICC)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>London</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wu</foaf:surname>
+                        <foaf:givenName>Ting</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rappaport</foaf:surname>
+                        <foaf:givenName>Theodore S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Collins</foaf:surname>
+                        <foaf:givenName>Christopher M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2991"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/7248688/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>2423-2429</bib:pages>
+        <dc:date>6/2015</dc:date>
+        <dcterms:dateSubmitted>2020-06-07 00:45:50</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2015 IEEE International Conference on Signal Processing for Communications (ICC)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dcterms:abstract>With increasing interest in millimeter-wave wireless communications, investigations on interactions between the human body and millimeter-wave devices are becoming important. This paper gives examples of today’s regulatory requirements, and provides an example for a 60 GHz transceiver. Also, the propagation characteristics of millimeter-waves in the presence of the human body are studied, and four models representing different body parts are considered to evaluate thermal effects of millimeter-wave radiation on the body. Simulation results show that about 34% to 42% of the incident power is reflected at the skin surface at 60 GHz. This paper shows that power density is not suitable to determine exposure compliance when millimeter wave devices are used very close to the body. A temperature-based technique for the evaluation of safety compliance is proposed in this paper.</dcterms:abstract>
+        <dc:title>The human body and millimeter-wave wireless communication systems: Interactions and implications</dc:title>
+        <z:shortTitle>The human body and millimeter-wave wireless communication systems</z:shortTitle>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_2991">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/pdf/1503.05944.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 00:45:46</dcterms:dateSubmitted>
+        <dc:title>Wu et al. - 2015 - The human body and millimeter-wave wireless commun.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://bioone.org/journals/radiation-research/volume-191/issue-1/RR15117.1/Comprehensive-Review-of-Quality-of-Publications-and-Meta-Analysis-of/10.1667/RR15117.1.full">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0033-7587"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Vijayalaxmi</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prihoda</foaf:surname>
+                        <foaf:givenName>Thomas J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2997"/>
+        <link:link rdf:resource="#item_2998"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://bioone.org/journals/radiation-research/volume-191/issue-1/RR15117.1/Comprehensive-Review-of-Quality-of-Publications-and-Meta-Analysis-of/10.1667/RR15117.1.full</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>20</bib:pages>
+        <dc:date>2018-10-19</dc:date>
+        <dcterms:dateSubmitted>2020-06-07 02:47:31</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Comprehensive Review of Quality of Publications and Meta-Analysis of Genetic Damage in Mammalian Cells Exposed to Non-Ionizing Radiofrequency Fields</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0033-7587">
+        <prism:volume>191</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Radiation Research</dc:title>
+        <dc:identifier>ISSN 0033-7587</dc:identifier>
+        <dcterms:alternative>Radiation Research</dcterms:alternative>
+        <dc:identifier>DOI 10.1667/RR15117.1</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2997">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>_Prihoda_2018_Comprehensive Review of Quality of Publications and Meta-Analysis of Genetic.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2998">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Supplemental Material</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>Medium</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ariga</foaf:surname>
+                        <foaf:givenName>Aki</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3000"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2019-10-06T23:09:28.117Z</dc:date>
+        <dc:description>Library Catalog: blog.chezo.uno</dc:description>
+        <dcterms:dateSubmitted>2020-06-07 03:06:14</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>(Note: Oct 7th, 2019)
+As of Oct. 2019, I launched a documentation site and Google Colab notebook for tabula-py. The FAQ would be good place…</dcterms:abstract>
+        <dc:title>tabula-py: Extract table from PDF into Python DataFrame</dc:title>
+        <z:shortTitle>tabula-py</z:shortTitle>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3000">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 03:06:18</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://colab.research.google.com/notebooks/intro.ipynb">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3002"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://colab.research.google.com/notebooks/intro.ipynb</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: colab.research.google.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-07 03:07:19</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dc:title>Google Colaboratory</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3002">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://colab.research.google.com/notebooks/intro.ipynb</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 03:07:23</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://link.springer.com/10.1007/s11060-011-0644-z">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0167-594X,%201573-7373"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Karaca</foaf:surname>
+                        <foaf:givenName>Emin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Durmaz</foaf:surname>
+                        <foaf:givenName>Burak</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Altug</foaf:surname>
+                        <foaf:givenName>Huseyin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yildiz</foaf:surname>
+                        <foaf:givenName>Teoman</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Guducu</foaf:surname>
+                        <foaf:givenName>Candan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Irgi</foaf:surname>
+                        <foaf:givenName>Melis</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Koksal</foaf:surname>
+                        <foaf:givenName>Mehtap Gulcihan Cinar</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ozkinay</foaf:surname>
+                        <foaf:givenName>Ferda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gunduz</foaf:surname>
+                        <foaf:givenName>Cumhur</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cogulu</foaf:surname>
+                        <foaf:givenName>Ozgur</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3003"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://link.springer.com/10.1007/s11060-011-0644-z</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>53-58</bib:pages>
+        <dc:date>1/2012</dc:date>
+        <dcterms:dateSubmitted>2020-06-07 03:13:20</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>The genotoxic effect of radiofrequency waves on mouse brain</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0167-594X,%201573-7373">
+        <prism:volume>106</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Journal of Neuro-Oncology</dc:title>
+        <dc:identifier>ISSN 0167-594X, 1573-7373</dc:identifier>
+        <dcterms:alternative>J Neurooncol</dcterms:alternative>
+        <dc:identifier>DOI 10.1007/s11060-011-0644-z</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3003">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://d1wqtxts1xzle7.cloudfront.net/44834850/The_genotoxic_effect_of_radiofrequency_w20160417-15230-a2qwos.pdf?1460939672=&amp;response-content-disposition=inline%3B+filename%3DThe_genotoxic_effect_of_radiofrequency_w.pdf&amp;Expires=1591503187&amp;Signature=UoI00zsxvzjcZNblisnB1YYqsXR9xzbDGniQp0c7qXkbBIeU~p4y4NSy0NuJFwFVra2tLujS7YzDq7YuZCdwgi7sMON7~1NMXukA-gu9u6vzoM8MCg1o~QQBJRwJ9DsIleidJz8VYuPQ1qr2LYLM0~dHzKWm5M5iLzU~~0WuFbUkVmrdscYQNVzTSj9A2-MfipcBWVBKxw1hkZqePgnxqRjA7pVx9n8RQVjT7MP5PVhtTw5T6lsuhNnepoFNT9cSNdncTsXgjNJ89NCwu9PaSQYVXLg0qEQGxrEbApxUNm1sExvePmLYDy2ZdMk6xiHe1x86GK9ngmIwsjHCW6UiDg__&amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 03:13:18</dcterms:dateSubmitted>
+        <dc:title>Karaca et al. - 2012 - The genotoxic effect of radiofrequency waves on mo.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://onlinelibrary.wiley.com/doi/abs/10.1002/em.22353">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0893-6692,%201098-2280"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Vijayalaxmi</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Foster</foaf:surname>
+                        <foaf:givenName>Kenneth R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Miyakoshi</foaf:surname>
+                        <foaf:givenName>Junji</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Verschaeve</foaf:surname>
+                        <foaf:givenName>Luc</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://onlinelibrary.wiley.com/doi/abs/10.1002/em.22353</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>291-293</bib:pages>
+        <dc:date>02/2020</dc:date>
+        <dcterms:dateSubmitted>2020-06-07 15:24:54</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Comments on the “Evaluation of the Genotoxicity of Cell Phone Radiofrequency Radiation in Male and Female Rats and Mice Following Subchronic Exposure” by Smith‐Roe et al.</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0893-6692,%201098-2280">
+        <prism:volume>61</prism:volume>
+        <prism:number>2</prism:number>
+        <dc:title>Environmental and Molecular Mutagenesis</dc:title>
+        <dc:identifier>ISSN 0893-6692, 1098-2280</dc:identifier>
+        <dcterms:alternative>Environ Mol Mutagen</dcterms:alternative>
+        <dc:identifier>DOI 10.1002/em.22353</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="#item_3006">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>61</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Environmental and Molecular Mutagenesis</dc:title>
+                <dc:identifier>ISSN 0893-6692, 1098-2280</dc:identifier>
+                <dcterms:alternative>Environ Mol Mutagen</dcterms:alternative>
+                <dc:identifier>DOI 10.1002/em.22353</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Vijayalaxmi</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Foster</foaf:surname>
+                        <foaf:givenName>Kenneth R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Miyakoshi</foaf:surname>
+                        <foaf:givenName>Junji</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Verschaeve</foaf:surname>
+                        <foaf:givenName>Luc</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://onlinelibrary.wiley.com/doi/abs/10.1002/em.22353</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>291-293</bib:pages>
+        <dc:date>02/2020</dc:date>
+        <dcterms:dateSubmitted>2020-06-07 15:29:14</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Comments on the “Evaluation of the Genotoxicity of Cell Phone Radiofrequency Radiation in Male and Female Rats and Mice Following Subchronic Exposure” by Smith‐Roe et al.</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="#item_3007">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1938-5404"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vijayalaxmi</foaf:surname>
+                        <foaf:givenName>null</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prihoda</foaf:surname>
+                        <foaf:givenName>Thomas J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3008"/>
+        <bib:pages>353-362</bib:pages>
+        <dc:date>10 2019</dc:date>
+        <dc:description>PMID: 31390310</dc:description>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <z:language>eng</z:language>
+        <dcterms:abstract>There has been ongoing debate and discussion concerning whether the funding source influenced the outcome of research on human health effects from exposure to radiofrequency fields (RF, electromagnetic waves that carry energy as they propagate in air and dense media). In a study of 225 publications, in which we sought to determine a possible association between the funding source(s), quality and outcome in a total of 2,160 genetic damage assessment tests of mammalian cells exposed to RF energy, we made several observations. One finding was that a great majority of researchers had acknowledged government agencies as the funding source (53%, 120 of 225 publications), while a small number of scientists mentioned mobile phone industry as the financial source (9%, 20 of 225 publications). Numerous investigators did not mention the funding source (26%, 58 of 225 publications). Secondly, industry-funded investigations were of better quality and utilized quality control measures, i.e., blind evaluation, adequate description of dosimetry, positive controls and/or sham-exposed controls, compared to those funded by the government. Another observation was that in industry-funded studies, the d values (effect size or standardized mean difference between the cells exposed to RF energy and sham-exposed controls) were consistently lower than in government-funded studies. In addition, compared to government-funded studies, a higher percentage of industry-funded studies reported no difference in genetic damage between RF- and sham-exposed cells (80% for industry-funded studies versus 49% for government-funded studies). Finally, we observed that industry-funded studies were less likely to report an increase in genetic damage in cells exposed to RF energy (10%) compared to government-funded studies (23%). In view of the large difference between the percentage of publications funded by government and industry (53% or 122 of 225 publications for government, compared to 9% or 29 of 225 publications for industry), caution should be used when debating and discussing the above observations. Overall, it is important to include the quality control measures in the investigations, and also mention the funding source in published studies.</dcterms:abstract>
+        <dc:title>Funding Source, Quality of Publications and Outcome in Genetic Damage in Mammalian Cells Exposed to Non-Ionizing Radiofrequency Fields</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1938-5404">
+        <prism:volume>192</prism:volume>
+        <prism:number>4</prism:number>
+        <dc:title>Radiation Research</dc:title>
+        <dc:identifier>ISSN 1938-5404</dc:identifier>
+        <dcterms:alternative>Radiat. Res.</dcterms:alternative>
+        <dc:identifier>DOI 10.1667/RR15364.1</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3008">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/31390310</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 15:31:03</dcterms:dateSubmitted>
+        <dc:title>PubMed entry</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3009">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>187</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>Radiation Research</dc:title>
+                <dc:identifier>ISSN 1938-5404</dc:identifier>
+                <dcterms:alternative>Radiat. Res.</dcterms:alternative>
+                <dc:identifier>DOI 10.1667/RR0010CC.1</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Buonanno</foaf:surname>
+                        <foaf:givenName>Manuela</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ponnaiya</foaf:surname>
+                        <foaf:givenName>Brian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Welch</foaf:surname>
+                        <foaf:givenName>David</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stanislauskas</foaf:surname>
+                        <foaf:givenName>Milda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Randers-Pehrson</foaf:surname>
+                        <foaf:givenName>Gerhard</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Smilenov</foaf:surname>
+                        <foaf:givenName>Lubomir</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lowy</foaf:surname>
+                        <foaf:givenName>Franklin D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Owens</foaf:surname>
+                        <foaf:givenName>David M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brenner</foaf:surname>
+                        <foaf:givenName>David J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3011"/>
+        <link:link rdf:resource="#item_3010"/>
+        <bib:pages>483-491</bib:pages>
+        <dc:date>04 2017</dc:date>
+        <dc:description>PMID: 28225654
+PMCID: PMC5552051</dc:description>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <z:language>eng</z:language>
+        <dcterms:abstract>We have previously shown that 207-nm ultraviolet (UV) light has similar antimicrobial properties as typical germicidal UV light (254 nm), but without inducing mammalian skin damage. The biophysical rationale is based on the limited penetration distance of 207-nm light in biological samples (e.g. stratum corneum) compared with that of 254-nm light. Here we extended our previous studies to 222-nm light and tested the hypothesis that there exists a narrow wavelength window in the far-UVC region, from around 200-222 nm, which is significantly harmful to bacteria, but without damaging cells in tissues. We used a krypton-chlorine (Kr-Cl) excimer lamp that produces 222-nm UV light with a bandpass filter to remove the lower- and higher-wavelength components. Relative to respective controls, we measured: 1. in vitro killing of methicillin-resistant Staphylococcus aureus (MRSA) as a function of UV fluence; 2. yields of the main UV-associated premutagenic DNA lesions (cyclobutane pyrimidine dimers and 6-4 photoproducts) in a 3D human skin tissue model in vitro; 3. eight cellular and molecular skin damage endpoints in exposed hairless mice in vivo. Comparisons were made with results from a conventional 254-nm UV germicidal lamp used as positive control. We found that 222-nm light kills MRSA efficiently but, unlike conventional germicidal UV lamps (254 nm), it produces almost no premutagenic UV-associated DNA lesions in a 3D human skin model and it is not cytotoxic to exposed mammalian skin. As predicted by biophysical considerations and in agreement with our previous findings, far-UVC light in the range of 200-222 nm kills bacteria efficiently regardless of their drug-resistant proficiency, but without the skin damaging effects associated with conventional germicidal UV exposure.</dcterms:abstract>
+        <dc:title>Germicidal Efficacy and Mammalian Skin Safety of 222-nm UV Light</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3011">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://bioone.org/journals/Radiation-Research/volume-187/issue-4/RR0010CC.1/Germicidal-Efficacy-and-Mammalian-Skin-Safety-of-222-nm-UV/10.1667/RR0010CC.1.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 15:34:00</dcterms:dateSubmitted>
+        <dc:title>Buonanno et al_2017_Germicidal Efficacy and Mammalian Skin Safety of 222-nm UV Light.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3010">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/28225654</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 15:33:57</dcterms:dateSubmitted>
+        <dc:title>PubMed entry</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:09248579"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gautret</foaf:surname>
+                        <foaf:givenName>Philippe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lagier</foaf:surname>
+                        <foaf:givenName>Jean-Christophe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Parola</foaf:surname>
+                        <foaf:givenName>Philippe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hoang</foaf:surname>
+                        <foaf:givenName>Van Thuan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Meddeb</foaf:surname>
+                        <foaf:givenName>Line</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mailhe</foaf:surname>
+                        <foaf:givenName>Morgane</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Doudier</foaf:surname>
+                        <foaf:givenName>Barbara</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Courjon</foaf:surname>
+                        <foaf:givenName>Johan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Giordanengo</foaf:surname>
+                        <foaf:givenName>Valérie</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vieira</foaf:surname>
+                        <foaf:givenName>Vera Esteves</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dupont</foaf:surname>
+                        <foaf:givenName>Hervé Tissot</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Honoré</foaf:surname>
+                        <foaf:givenName>Stéphane</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Colson</foaf:surname>
+                        <foaf:givenName>Philippe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chabrière</foaf:surname>
+                        <foaf:givenName>Eric</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>La Scola</foaf:surname>
+                        <foaf:givenName>Bernard</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rolain</foaf:surname>
+                        <foaf:givenName>Jean-Marc</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brouqui</foaf:surname>
+                        <foaf:givenName>Philippe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Raoult</foaf:surname>
+                        <foaf:givenName>Didier</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3012"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>105949</bib:pages>
+        <dc:date>3/2020</dc:date>
+        <dcterms:dateSubmitted>2020-06-07 15:56:19</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Background Chloroquine and hydroxychloroquine have been found to be efficient on SARS-CoV-2, and reported to be efficient in Chinese COV-19 patients. We evaluate the role of hydroxychloroquine on respiratory viral loads. Patients and methods French Confirmed COVID-19 patients were included in a single arm protocol from early March to March 16th, to receive 600mg of hydroxychloroquine daily and their viral load in nasopharyngeal swabs was tested daily in a hospital setting. Depending on their clinical presentation, azithromycin was added to the treatment. Untreated patients from another center and cases refusing the protocol were included as negative controls. Presence and absence of virus at Day6-post inclusion was considered the end point.
+Results Six patients were asymptomatic, 22 had upper respiratory tract infection symptoms and eight had lower respiratory tract infection symptoms. Twenty cases were treated in this study and showed a significant reduction of the viral carriage at D6-post inclusion compared to controls, and much lower average carrying duration than reported of untreated patients in the literature. Azithromycin added to hydroxychloroquine was significantly more efficient for virus elimination.
+Conclusion Please cite this work as Gautret et al. (2020) Hydroxychloroquine and azithromycin as a treatment of COVID‐19: results of an open‐label non‐randomized clinical trial. International Journal of Antimicrobial Agents – In Press 17 March 2020 – DOI : 10.1016/j.ijantimicag.2020.105949</dcterms:abstract>
+        <dc:title>Hydroxychloroquine and azithromycin as a treatment of COVID-19: results of an open-label non-randomized clinical trial</dc:title>
+        <z:shortTitle>Hydroxychloroquine and azithromycin as a treatment of COVID-19</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:09248579">
+        <dc:title>International Journal of Antimicrobial Agents</dc:title>
+        <dc:identifier>ISSN 09248579</dc:identifier>
+        <dcterms:alternative>International Journal of Antimicrobial Agents</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/j.ijantimicag.2020.105949</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3012">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.mediterranee-infection.com/wp-content/uploads/2020/03/Hydroxychloroquine_final_DOI_IJAA.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 15:56:17</dcterms:dateSubmitted>
+        <dc:title>Gautret et al. - 2020 - Hydroxychloroquine and azithromycin as a treatment.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1056/NEJMoa2012410">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0028-4793"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Geleris</foaf:surname>
+                        <foaf:givenName>Joshua</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Yifei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Platt</foaf:surname>
+                        <foaf:givenName>Jonathan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zucker</foaf:surname>
+                        <foaf:givenName>Jason</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baldwin</foaf:surname>
+                        <foaf:givenName>Matthew</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hripcsak</foaf:surname>
+                        <foaf:givenName>George</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Labella</foaf:surname>
+                        <foaf:givenName>Angelena</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Manson</foaf:surname>
+                        <foaf:givenName>Daniel K.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kubin</foaf:surname>
+                        <foaf:givenName>Christine</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Barr</foaf:surname>
+                        <foaf:givenName>R. Graham</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sobieszczyk</foaf:surname>
+                        <foaf:givenName>Magdalena E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schluger</foaf:surname>
+                        <foaf:givenName>Neil W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3015"/>
+        <link:link rdf:resource="#item_3016"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1056/NEJMoa2012410</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>null</bib:pages>
+        <dc:date>May 7, 2020</dc:date>
+        <dc:description>Publisher: Massachusetts Medical Society
+_eprint: https://doi.org/10.1056/NEJMoa2012410</dc:description>
+        <dcterms:dateSubmitted>2020-06-07 15:57:48</dcterms:dateSubmitted>
+        <z:libraryCatalog>Taylor and Francis+NEJM</z:libraryCatalog>
+        <dc:title>Observational Study of Hydroxychloroquine in Hospitalized Patients with Covid-19</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0028-4793">
+        <prism:volume>0</prism:volume>
+        <prism:number>0</prism:number>
+        <dc:title>New England Journal of Medicine</dc:title>
+        <dc:identifier>ISSN 0028-4793</dc:identifier>
+        <dc:identifier>DOI 10.1056/NEJMoa2012410</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3015">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.nejm.org/doi/pdf/10.1056/NEJMoa2012410</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 15:57:49</dcterms:dateSubmitted>
+        <dc:title>Geleris et al_2020_Observational Study of Hydroxychloroquine in Hospitalized Patients with Covid-19.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3016">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.nejm.org/doi/full/10.1056/NEJMoa2012410</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-07 15:57:51</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0021929015006739">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0021-9290"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Faustino</foaf:surname>
+                        <foaf:givenName>Vera</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Catarino</foaf:surname>
+                        <foaf:givenName>Susana O.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lima</foaf:surname>
+                        <foaf:givenName>Rui</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Minas</foaf:surname>
+                        <foaf:givenName>Graça</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3019"/>
+        <link:link rdf:resource="#item_3018"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0021929015006739</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>2280-2292</bib:pages>
+        <dc:date>July 26, 2016</dc:date>
+        <dcterms:dateSubmitted>2020-06-08 17:16:40</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>One of the most popular methods to fabricate biomedical microfluidic devices is by using a soft-lithography technique. However, the fabrication of the moulds to produce microfluidic devices, such as SU-8 moulds, usually requires a cleanroom environment that can be quite costly. Therefore, many efforts have been made to develop low-cost alternatives for the fabrication of microstructures, avoiding the use of cleanroom facilities. Recently, low-cost techniques without cleanroom facilities that feature aspect ratios more than 20, for fabricating those SU-8 moulds have been gaining popularity among biomedical research community. In those techniques, Ultraviolet (UV) exposure equipment, commonly used in the Printed Circuit Board (PCB) industry, replaces the more expensive and less available Mask Aligner that has been used in the last 15 years for SU-8 patterning. Alternatively, non-lithographic low-cost techniques, due to their ability for large-scale production, have increased the interest of the industrial and research community to develop simple, rapid and low-cost microfluidic structures. These alternative techniques include Print and Peel methods (PAP), laserjet, solid ink, cutting plotters or micromilling, that use equipment available in almost all laboratories and offices. An example is the xurography technique that uses a cutting plotter machine and adhesive vinyl films to generate the master moulds to fabricate microfluidic channels. In this review, we present a selection of the most recent lithographic and non-lithographic low-cost techniques to fabricate microfluidic structures, focused on the features and limitations of each technique. Only microfabrication methods that do not require the use of cleanrooms are considered. Additionally, potential applications of these microfluidic devices in biomedical engineering are presented with some illustrative examples.</dcterms:abstract>
+        <dc:title>Biomedical microfluidic devices by using low-cost fabrication techniques: A review</dc:title>
+        <z:shortTitle>Biomedical microfluidic devices by using low-cost fabrication techniques</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0021-9290">
+        <dcterms:isPartOf>
+            <bib:Series>
+                <dc:title>Selected Articles from the International Conference on CFD in Medicine and Biology (Albufeira, Portugal – August 30th - September 4th, 2015)</dc:title>
+            </bib:Series>
+        </dcterms:isPartOf>
+        <prism:volume>49</prism:volume>
+        <prism:number>11</prism:number>
+        <dc:title>Journal of Biomechanics</dc:title>
+        <dc:identifier>ISSN 0021-9290</dc:identifier>
+        <dcterms:alternative>Journal of Biomechanics</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/j.jbiomech.2015.11.031</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3019">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://bibliotecadigital.ipb.pt/bitstream/10198/15393/1/24.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-08 17:16:46</dcterms:dateSubmitted>
+        <dc:title>Faustino et al_2016_Biomedical microfluidic devices by using low-cost fabrication techniques.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+        <dc:description>&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml&quot; id=&quot;title&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;&lt;ul xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;list-style-type: none; padding-left:0px&quot; id=&quot;toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/1&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/2&quot;&gt;Materials and methods&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/2&quot;&gt;Working fluids, experimental setup, and labeled RBC tracking&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:24px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/2&quot;&gt;Working fluids and RBC labeling&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/2&quot;&gt;Microchannels, experimental setup and temperature control&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/2&quot;&gt;Tracking of labeled RBCs&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/3&quot;&gt;Rheological measurements&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/3&quot;&gt;RBC radial dispersion coefficient&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/3&quot;&gt;Results and discussion&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/3&quot;&gt;RBCs flowing at various regions in the 100μm capillary&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/3&quot;&gt;Motion of individual RBCs at different radial positions&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/3&quot;&gt;Radial dispersion coefficient by radial positions&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/4&quot;&gt;Radial dispersion coefficient at different temperatures&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/5&quot;&gt;Comparison with other studies&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/5&quot;&gt;Conclusions&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/6&quot;&gt;Conflict of interest statement&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/6&quot;&gt;Acknowledgments&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_JDNE9G39/6&quot;&gt;References&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</dc:description>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3018">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/abs/pii/S0021929015006739</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-08 17:16:42</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://doi.wiley.com/10.1002/fld.2188">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:02712091"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shuttleworth</foaf:surname>
+                        <foaf:givenName>Robert R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elman</foaf:surname>
+                        <foaf:givenName>Howard C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Long</foaf:surname>
+                        <foaf:givenName>Kevin R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Templeton</foaf:surname>
+                        <foaf:givenName>Jeremy A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3020"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://doi.wiley.com/10.1002/fld.2188</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>383-404</bib:pages>
+        <dc:date>2011-02-10</dc:date>
+        <dcterms:dateSubmitted>2020-06-08 17:26:07</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>We demonstrate the performance of a fast computational algorithm for modeling the design of a microﬂuidic mixing device. The device uses an electrokinetic process, induced charge electroosmosis [17], by which a ﬂow through the device is driven by a set of charged obstacles in it. Its design is realized by manipulating the shape and orientation of the obstacles in order to maximize the amount of ﬂuid mixing within the device. The computation entails the solution of a constrained optimization problem in which function evaluations require the numerical solution of a set of partial diﬀerential equations: a potential equation, the incompressible Navier-Stokes equations, and a mass transport equation. The most expensive component of the function evaluation (which must be performed at every step of an iteration for the optimization) is the solution of the Navier-Stokes equations. We show that by using some new robust algorithms for this task [11, 16], based on certain preconditioners that take advantage of the structure of the linearized problem, this computation can be done eﬃciently. Using this computational strategy, in conjunction with a derivative-free pattern search algorithm for the optimization, applied to a ﬁnite element discretization of the problem, we are able to determine optimal conﬁgurations of microﬂuidic devices.</dcterms:abstract>
+        <dc:title>Fast solvers for models of ICEO microfluidic flows</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:02712091">
+        <prism:volume>65</prism:volume>
+        <prism:number>4</prism:number>
+        <dc:title>International Journal for Numerical Methods in Fluids</dc:title>
+        <dc:identifier>ISSN 02712091</dc:identifier>
+        <dcterms:alternative>Int. J. Numer. Meth. Fluids</dcterms:alternative>
+        <dc:identifier>DOI 10.1002/fld.2188</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3020">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://drum.lib.umd.edu/bitstream/handle/1903/7499/main_tr.pdf?sequence=1&amp;isAllowed=y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-08 17:26:05</dcterms:dateSubmitted>
+        <dc:title>Shuttleworth et al. - 2011 - Fast solvers for models of ICEO microfluidic flows.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://linkinghub.elsevier.com/retrieve/pii/S0925400515306882">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>226</prism:volume>
+                <dc:title>Sensors and Actuators B: Chemical</dc:title>
+                <dc:identifier>ISSN 09254005</dc:identifier>
+                <dcterms:alternative>Sensors and Actuators B: Chemical</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/j.snb.2015.11.100</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jankowski</foaf:surname>
+                        <foaf:givenName>P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Garstecki</foaf:surname>
+                        <foaf:givenName>P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3022"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://linkinghub.elsevier.com/retrieve/pii/S0925400515306882</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>151-155</bib:pages>
+        <dc:date>04/2016</dc:date>
+        <dcterms:dateSubmitted>2020-06-08 17:59:48</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>In this report we present a simple method for preparation of stable hydrophilic surface modiﬁcation of polycarbonate. The method uses branched polyethyleneimine (BPEI) and poly(ethylene-alt-maleic anhydride) (PEMA) as the reagents for the ﬁrst steps of modiﬁcation, followed by hydrolysis of maleic anhydride groups on the polymer surface. The method yields the polymer surface rich in carboxylic acid groups and may thus be also useful for further surface modiﬁcation protocols (e.g. immobilization of enzymes on the surface of the polymer). The method has been designed particularly for use in microﬂuidics applications. The surfaces obtained via the method are extremely durable and can be stored without any special conditions for at least one year.</dcterms:abstract>
+        <dc:title>Stable hydrophilic surface of polycarbonate</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3022">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ichf.pong.pl/i/publications/118.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-08 17:59:46</dcterms:dateSubmitted>
+        <dc:title>Jankowski and Garstecki - 2016 - Stable hydrophilic surface of polycarbonate.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-1-4244-7599-5">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-1-4244-7599-5</dc:identifier>
+                <dc:identifier>DOI 10.1109/IECBES.2010.5742282</dc:identifier>
+                <dc:title>2010 IEEE EMBS Conference on Biomedical Engineering and Sciences (IECBES)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Kuala Lumpur, Malaysia</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ibrahim</foaf:surname>
+                        <foaf:givenName>Fatimah</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jahanshahi</foaf:surname>
+                        <foaf:givenName>Peyman</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abd Rahman</foaf:surname>
+                        <foaf:givenName>Noorsaadah</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Maria Kahar Bador Abdul Kahar</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Madou</foaf:surname>
+                        <foaf:givenName>Marc</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nozari</foaf:surname>
+                        <foaf:givenName>Ali A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Soin</foaf:surname>
+                        <foaf:givenName>Norhayati</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Siti Zawiah Md Dawal</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abi Samra</foaf:surname>
+                        <foaf:givenName>Kameel</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3024"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/5742282/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>466-470</bib:pages>
+        <dc:date>11/2010</dc:date>
+        <dcterms:dateSubmitted>2020-06-08 18:01:20</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2010 IEEE EMBS Conference on Biomedical Engineering and Sciences (IECBES)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dc:title>Analysis and experiment of centrifugal force for microfluidic ELISA CD platform</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3024">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://eprints.um.edu.my/9255/1/Analysis_and_experiment_of_centrifugal_force_for_microfluidic_ELISA_CD_platform______________________.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-08 18:01:18</dcterms:dateSubmitted>
+        <dc:title>Ibrahim et al. - 2010 - Analysis and experiment of centrifugal force for m.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/1051884/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>17</prism:volume>
+                <prism:number>6</prism:number>
+                <dc:title>IEEE Journal of Solid-State Circuits</dc:title>
+                <dc:identifier>ISSN 0018-9200, 1558-173X</dc:identifier>
+                <dcterms:alternative>IEEE J. Solid-State Circuits</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/JSSC.1982.1051884</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Winch</foaf:surname>
+                        <foaf:givenName>R.G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3027"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/1051884/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1214-1219</bib:pages>
+        <dc:date>12/1982</dc:date>
+        <dcterms:dateSubmitted>2020-06-08 21:28:40</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Wide-band varactor-tuned oscillators</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3027">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Winch_1982_Wide-band varactor-tuned oscillators.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3028">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.infineon.com/dgdl/Annual+Report+2019.pdf?fileId=5546d4616e8d476e016e9958480f0029</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-09 14:33:25</dcterms:dateSubmitted>
+        <dc:title>Annual+Report+2019.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3029">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.infineon.com/dgdl/Infineon_Half_Year_Financial_Report_2020.pdf?fileId=5546d46171bf52ac017203e081dd002a</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-09 14:36:38</dcterms:dateSubmitted>
+        <dc:title>Infineon_Half_Year_Financial_Report_2020.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/375228/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>43</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+                <dc:identifier>ISSN 00189480</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Microwave Theory Techn.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/22.375228</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Buechler</foaf:surname>
+                        <foaf:givenName>D.N.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Roper</foaf:surname>
+                        <foaf:givenName>D.H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Durney</foaf:surname>
+                        <foaf:givenName>C.H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Christensen</foaf:surname>
+                        <foaf:givenName>D.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3030"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/375228/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>810-814</bib:pages>
+        <dc:date>4/1995</dc:date>
+        <dcterms:dateSubmitted>2020-06-09 18:04:36</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The modeling of voltage and current sources as either added or replaced sources in FDTD simulations is described and their differences discussed in terms of a transmission line analogy. An infinitesimal current element (ICE) is used to illustrate the validation of added source modeling and to study the errors involved with modeling an infinitesimal element within the finite-sized FDTD grid. This model is also used to illustrate the behavior of radiation boundary conditions as their near-field position with respect to the source is varied. We characterize the errors due to modeling and boundary conditions and give guidelines for obtaining acceptable accuracy in simulations.</dcterms:abstract>
+        <dc:title>Modeling sources in the FDTD formulation and their use in quantifying source and boundary condition errors</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3030">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://collections.lib.utah.edu/dl_files/0c/e6/0ce6f0b1096a5d27376a6de534e3bc634a042bda.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-09 18:04:34</dcterms:dateSubmitted>
+        <dc:title>Buechler et al. - 1995 - Modeling sources in the FDTD formulation and their.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-0-7803-5015-1">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>1</prism:volume>
+                <dc:identifier>ISBN 978-0-7803-5015-1</dc:identifier>
+                <dc:identifier>DOI 10.1109/ISEMC.1998.750142</dc:identifier>
+                <dc:title>1998 IEEE EMC Symposium. International Symposium on Electromagnetic Compatibility. Symposium Record (Cat. No.98CH36253)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Denver, CO, USA</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brench</foaf:surname>
+                        <foaf:givenName>C.E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ramahi</foaf:surname>
+                        <foaf:givenName>O.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3032"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/750142/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>491-494</bib:pages>
+        <dc:date>1998</dc:date>
+        <dcterms:dateSubmitted>2020-06-09 18:05:52</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>International Symposium on Electromagnetic Compatibility (EMC'98)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dc:title>Source selection criteria for FDTD models</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3032">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ipen.br/biblioteca/cd/ieee/1999/Proceed/00550.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-09 18:05:51</dcterms:dateSubmitted>
+        <dc:title>Brench and Ramahi - 1998 - Source selection criteria for FDTD models.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3035">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>See</foaf:surname>
+                        <foaf:givenName>C H</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abd-Alhameed</foaf:surname>
+                        <foaf:givenName>R A</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Excell</foaf:surname>
+                        <foaf:givenName>P S</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3034"/>
+        <bib:pages>4</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The standard Finite-difference Time-domain (FDTD) method requires extremely small time-step sizes when modelling scattering objects that are large compared with the wavelength. This is especially so in modelling biological cells having sizes of the order of a few tens of micrometers. This can become impractical due to the unaffordable computation times required. This problem can be overcome by implementing a quasi-static approximate version of FDTD, based on transferring the working frequency to a higher frequency, to reduce the number of time steps required. Then, the generated internal field at the higher frequency can be scaled back to the frequency of interest. This paper presents an approach to modelling and analysis of the HH (Hodgkin and Huxley) membrane model that is represented as an electrical circuit on the surface of a biological equivalent spherical cell. Since the external medium of the biological cell is lossy material, a modified Berenger perfectly matched layer absorbing boundary condition is used to truncate the computation grid. The total fields of the simulated structures have been shown to give reasonable and stable result at 900 and 1800 MHz.</dcterms:abstract>
+        <dc:title>Electromagnetic Modelling of Biological Cells Using Lumped Element-FDTD</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3034">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.ursi.org/proceedings/procGA05/pdf/KP.7(01456).pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-09 19:55:32</dcterms:dateSubmitted>
+        <dc:title>See et al. - Electromagnetic Modelling of Biological Cells Usin.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836">
+        <z:itemType>encyclopediaArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Book><dc:title>Wikipedia</dc:title></bib:Book>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3037"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>Creative Commons Attribution-ShareAlike License</dc:rights>
+        <dc:date>2020-03-08T20:24:04Z</dc:date>
+        <dc:description>Page Version ID: 944598836</dc:description>
+        <dcterms:dateSubmitted>2020-06-09 23:22:55</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wikipedia</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>A DNA field-effect transistor (DNAFET) is a field-effect transistor which uses the field-effect due to the partial charges of DNA molecules to function as a biosensor. The structure of DNAFETs is similar to that of MOSFETs, with the exception of the gate structure which, in DNAFETs, is replaced by a layer of immobilized ssDNA (single-stranded DNA) molecules which act as surface receptors. When complementary DNA strands hybridize to the receptors, the charge distribution near the surface changes, which in turn modulates current transport through the semiconductor transducer.
+Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (causing many hereditary diseases) and for DNA sequencing. Their main advantage compared to optical detection methods in common use today is that they do not require labeling of molecules. Furthermore, they work continuously and (near) real-time. DNAFETs are highly selective since only specific binding modulates charge transport.</dcterms:abstract>
+        <dc:title>DNA field-effect transistor</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3037">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-09 23:22:56</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://johnvagabondscience.wordpress.com/2008/10/12/damped-oscillations/">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+            <z:Blog>
+               <dc:title>John Vagabond's Physics and Chemistry Blog</dc:title>
+            </z:Blog>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vagabond</foaf:surname>
+                        <foaf:givenName>John</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3039"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://johnvagabondscience.wordpress.com/2008/10/12/damped-oscillations/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2008-10-12T13:08:42+00:00</dc:date>
+        <dc:description>Library Catalog: johnvagabondscience.wordpress.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-11 15:33:07</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>We know that in reality, a mass on a spring  or a pendulum won’t oscillate for ever. Frictional forces will diminish the amplitude of oscillation until eventually the system comes to r…</dcterms:abstract>
+        <dc:title>Damped Oscillations and Q factor</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3039">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://johnvagabondscience.wordpress.com/2008/10/12/damped-oscillations/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-11 15:33:11</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://linkinghub.elsevier.com/retrieve/pii/0375960179900409">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>70</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Physics Letters A</dc:title>
+                <dc:identifier>ISSN 03759601</dc:identifier>
+                <dcterms:alternative>Physics Letters A</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/0375-9601(79)90040-9</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wiegel</foaf:surname>
+                        <foaf:givenName>F.W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3041"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://linkinghub.elsevier.com/retrieve/pii/0375960179900409</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>112-113</bib:pages>
+        <dc:date>2/1979</dc:date>
+        <dcterms:dateSubmitted>2020-06-11 17:18:45</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Rotational friction coefficient of a permeable cylinder in a viscous fluid</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3041">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://core.ac.uk/download/pdf/11472101.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-11 17:18:43</dcterms:dateSubmitted>
+        <dc:title>11472101.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3042">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hadﬁeld</foaf:surname>
+                        <foaf:givenName>Roy</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3043"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>4</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Rotational Analogies for Viscous Drag</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3043">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://physics.wooster.edu/JrIS/Files/Web_Article_Hadfield.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-11 17:19:44</dcterms:dateSubmitted>
+        <dc:title>Web_Article_Hadfield.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://aip.scitation.org/doi/10.1063/1.440288">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0021-9606,%201089-7690"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tirado</foaf:surname>
+                        <foaf:givenName>María M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>de la Torre</foaf:surname>
+                        <foaf:givenName>José García</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3045"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://aip.scitation.org/doi/10.1063/1.440288</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1986-1993</bib:pages>
+        <dc:date>1980-08-15</dc:date>
+        <dcterms:dateSubmitted>2020-06-11 17:23:05</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Rotational dynamics of rigid, symmetric top macromolecules. Application to circular cylinders</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0021-9606,%201089-7690">
+        <prism:volume>73</prism:volume>
+        <prism:number>4</prism:number>
+        <dc:title>The Journal of Chemical Physics</dc:title>
+        <dc:identifier>ISSN 0021-9606, 1089-7690</dc:identifier>
+        <dcterms:alternative>The Journal of Chemical Physics</dcterms:alternative>
+        <dc:identifier>DOI 10.1063/1.440288</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3045">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://leonardo.inf.um.es/macromol/publications/015JCP80.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-11 17:23:03</dcterms:dateSubmitted>
+        <dc:title>015JCP80.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://linkinghub.elsevier.com/retrieve/pii/000925096987020X">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:00092509"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Davis</foaf:surname>
+                        <foaf:givenName>M.H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3048"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://linkinghub.elsevier.com/retrieve/pii/000925096987020X</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1769-1776</bib:pages>
+        <dc:date>12/1969</dc:date>
+        <dcterms:dateSubmitted>2020-06-11 17:25:22</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Exact solutions of the Stokes equations are derived for the case of two unequal spheres slowly rotating or translating perpendicular to their line of centers in a quiescent, unbounded viscous fluid, following Wakiya[l6]. Numerical results are presented for the force and torque coefficients for size ratios from 1.0 to 10.0, and separations down to 0.001 times the radius of the smaller.</dcterms:abstract>
+        <dc:title>The slow translation and rotation of two unequal spheres in a viscous fluid</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:00092509">
+        <prism:volume>24</prism:volume>
+        <prism:number>12</prism:number>
+        <dc:title>Chemical Engineering Science</dc:title>
+        <dc:identifier>ISSN 00092509</dc:identifier>
+        <dcterms:alternative>Chemical Engineering Science</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/0009-2509(69)87020-X</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3048">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://d1wqtxts1xzle7.cloudfront.net/50508067/1-s2.0-000925096987020X-main.pdf?1479933149=&amp;response-content-disposition=inline%3B+filename%3DThe_slow_translation_and_rotation_of_two.pdf&amp;Expires=1591899834&amp;Signature=Ds84eb~7fIwBg07HekOq--5LmpTN~aYEjfe7U560BVpCEKCSZSRvh5xjKDingmZOlQdFJ949nB9dLJbzbk0wiAWT-qAoVqy7UBTYAtk4LWyHlxcVtfNhAllb9-kWvJPnOR8sc7GotpEOfYXan8sI6AaiLqBqzREEUmkNz06Hrf1mbY0BpYGLvbHT0~VolKOzEU7tUzyKBSwefpO7kNm6L3uiXWAp~shn0CgyH6BoxAVrC~cnGST0Rnrmf6On5GQNgYKGoob7LhO3PfsFWA1Vy02hk8WI9EBGeLW7qL4aqGtMalyhFeunD~ErAHu8nw0TYWGVrmrosWebTiP0kM2W-A__&amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-11 17:25:21</dcterms:dateSubmitted>
+        <dc:title>1-s2.0-000925096987020X-main.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://pubs.acs.org/doi/abs/10.1021/j100243a020">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0022-3654,%201541-5740"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dote</foaf:surname>
+                        <foaf:givenName>Janis L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kivelson</foaf:surname>
+                        <foaf:givenName>Daniel</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://pubs.acs.org/doi/abs/10.1021/j100243a020</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>3889-3893</bib:pages>
+        <dc:date>09/1983</dc:date>
+        <dcterms:dateSubmitted>2020-06-11 17:25:18</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Hydrodynamic rotational friction coefficients for nonspheroidal particles</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0022-3654,%201541-5740">
+        <prism:volume>87</prism:volume>
+        <prism:number>20</prism:number>
+        <dc:title>The Journal of Physical Chemistry</dc:title>
+        <dc:identifier>ISSN 0022-3654, 1541-5740</dc:identifier>
+        <dcterms:alternative>J. Phys. Chem.</dcterms:alternative>
+        <dc:identifier>DOI 10.1021/j100243a020</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="http://aip.scitation.org/doi/10.1063/1.1680910">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>60</prism:volume>
+                <prism:number>11</prism:number>
+                <dc:title>The Journal of Chemical Physics</dc:title>
+                <dc:identifier>ISSN 0021-9606, 1089-7690</dc:identifier>
+                <dcterms:alternative>The Journal of Chemical Physics</dcterms:alternative>
+                <dc:identifier>DOI 10.1063/1.1680910</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hu</foaf:surname>
+                        <foaf:givenName>Chih‐Ming</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zwanzig</foaf:surname>
+                        <foaf:givenName>Robert</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://aip.scitation.org/doi/10.1063/1.1680910</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>4354-4357</bib:pages>
+        <dc:date>06/1974</dc:date>
+        <dcterms:dateSubmitted>2020-06-11 17:32:40</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Rotational friction coefficients for spheroids with the slipping boundary condition</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="http://aip.scitation.org/doi/10.1063/1.1733516">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>38</prism:volume>
+                <prism:number>10</prism:number>
+                <dc:title>The Journal of Chemical Physics</dc:title>
+                <dc:identifier>ISSN 0021-9606, 1089-7690</dc:identifier>
+                <dcterms:alternative>The Journal of Chemical Physics</dcterms:alternative>
+                <dc:identifier>DOI 10.1063/1.1733516</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Steele</foaf:surname>
+                        <foaf:givenName>William A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://aip.scitation.org/doi/10.1063/1.1733516</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>2404-2410</bib:pages>
+        <dc:date>1963-05-15</dc:date>
+        <dcterms:dateSubmitted>2020-06-11 17:40:46</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Molecular Reorientation in Liquids. I. Distribution Functions and Friction Constants</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/6515660/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>3</prism:volume>
+                <prism:number>9</prism:number>
+                <dc:title>IEEE Transactions on Components, Packaging and Manufacturing Technology</dc:title>
+                <dc:identifier>ISSN 2156-3950, 2156-3985</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Compon., Packag. Manufact. Technol.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/TCPMT.2013.2258715</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Hsin-Hsiang Su</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Chih-Wen Kuo</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kitazawa</foaf:surname>
+                        <foaf:givenName>Toshihide</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/6515660/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1506-1511</bib:pages>
+        <dc:date>09/2013</dc:date>
+        <dcterms:dateSubmitted>2020-06-12 02:11:47</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>A Novel Approach for Modeling Diodes Without Reducing the Time Step in the FDTD Method</dc:title>
+    </bib:Article>
+    <rdf:Description rdf:about="http://ieeexplore.ieee.org/document/4137252/">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/EUMA.1995.337038</dc:identifier>
+                <dc:title>25th European Microwave Conference, 1995</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Bologna, Italy</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ciampolini</foaf:surname>
+                        <foaf:givenName>P</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mezzanotte</foaf:surname>
+                        <foaf:givenName>P</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Roselli</foaf:surname>
+                        <foaf:givenName>L</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sorrentino</foaf:surname>
+                        <foaf:givenName>R</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3053"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/4137252/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>636-640</bib:pages>
+        <dc:date>10/1995</dc:date>
+        <dcterms:dateSubmitted>2020-06-12 02:30:22</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+               <dc:title>25th European Microwave Conference, 1995</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dcterms:abstract>A technique is proposed for increasing the computational efficiency of a mixed-mode FDTD ciruit simulator. The FDTD algorithm is coupled to a set of equations which describes both linear and non linear lumped elements. The simulation time step is adaptively adjusted by monitorng the convergence of the NewtonRaphson procedure adopted for the non-linear solution. This considerably speeds up the simulation, with respect to the adoption of a worst-case, fixed time step. The propagation of a high speed digital signal along a transmission lines is presented as an example. Simulation results are compared with SPICE outputs, showing excellent agreement.</dcterms:abstract>
+        <dc:title>Efficient simulation of high speed digital circuits using time adaptive FD-TD technique</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3053">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Luca_Roselli/publication/224690506_Efficient_simulation_of_high_speed_digital_circuits_using_time_adaptive_FD-TD_technique/links/0912f513462037a1c0000000.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-12 02:30:20</dcterms:dateSubmitted>
+        <dc:title>0912f513462037a1c0000000.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://linkinghub.elsevier.com/retrieve/pii/S0022311500006231">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>290-293</prism:volume>
+                <dc:title>Journal of Nuclear Materials</dc:title>
+                <dc:identifier>ISSN 00223115</dc:identifier>
+                <dcterms:alternative>Journal of Nuclear Materials</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/S0022-3115(00)00623-1</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Janeschitz</foaf:surname>
+                        <foaf:givenName>G</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://linkinghub.elsevier.com/retrieve/pii/S0022311500006231</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1-11</bib:pages>
+        <dc:date>03/2001</dc:date>
+        <dcterms:dateSubmitted>2020-06-12 14:55:08</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Plasma–wall interaction issues in ITER</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3055">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.semiconductor-today.com/features/PDF/semiconductor-today-june-july-2018-GaAs-wafer.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-12 15:14:51</dcterms:dateSubmitted>
+        <dc:title>semiconductor-today-june-july-2018-GaAs-wafer.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3056">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wilson</foaf:surname>
+                        <foaf:givenName>Mark</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3058"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>4</bib:pages>
+        <dc:date>2003</dc:date>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>GaAs has enjoyed a relatively unchallenged position as the RF semiconductor material of choice for many RF applications at or above 1GHz, but particularly in RF front-end sockets for cellular telephones. But, over the past several years SiGeC BiCMOS technology has pushed GaAs out of many of these sockets due to it’s high performance, high level of integration, and low cost attributes. Will this trend continue to the power amplifier? Is this technology really cheaper to develop and manufacture RF product solutions than GaAs? Is SiGeC really the RF technology of the future, or only a short-lived fad to be pushed aside by RF CMOS? This paper will explore the driving factors behind these questions, and moreover, explore the product entry and manufacturing cost differences for GaAs HBT, and SiGeC BiCMOS technology.</dcterms:abstract>
+        <dc:title>GaAs and SiGeC BiCMOS Cost Comparison – Is SiGeC Always Cheaper?</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3058">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://csmantech.org/OldSite/Digests/2003/2003PDF/1-3.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-12 15:14:46</dcterms:dateSubmitted>
+        <dc:title>1-3.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3057">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.semiconductor-today.com/features/PDF/semiconductor-today-june-july-2018-GaAs-wafer.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-12 15:14:39</dcterms:dateSubmitted>
+        <dc:title>semiconductor-today-june-july-2018-GaAs-wafer.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3059">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.analog.com/media/en/technical-documentation/data-sheets/AD8319.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-14 02:10:37</dcterms:dateSubmitted>
+        <dc:title>AD8319.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3060">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://watermark.silverchair.com/531.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAm0wggJpBgkqhkiG9w0BBwagggJaMIICVgIBADCCAk8GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMjTOwZQFDv4P857jQAgEQgIICIPGPM3qLYt5jyoeemLz8kCmml7zmBFnCLK0LfTQgiwOoJ0smFJ9tkh0scz9Kg6N0N_eqioF5Sxw9pWgj6Kzvi7wFUyxbPFC5b98Y1mPk6QvaM7RfNvl8GnK5EAj8VghUW8J1xVlLkEXB4lRQ7XYZfftTlRsMo2DbOGovYseOL9l1KYVznHYpuPdAmQyiV9N1Z6ffGso9PaJHllHBt1SHdnpkNyqpS23QtG_wR7H44-Vi748mlZSrz_6zSIOe_IxowYRibAXJ4rlGgocmcMT3lWpi186c7E4JJ9N6oD5iXd-Lw1rTyauSICdsENnRCVAoxzQlZvEngNZg-KuV2LQOXWeM0tD3F_XqRSbs1RHUl5LbUMtUM-vDhtVFqNKrQIZC3LYiOieM5umOF8XhHRxbtUIRae1qmZyCMvuNuo7Y3dP76D3NJIV8Xz0NJIFVxvZNQXEKMo9pdTKZanKjGFkyqBbOA8a6pKIDzAUhKK42y4tInEADcLWiK9uXO6NiMOVHlFwsdpPCXkkgbAJ85WRz2cLdh2Zb6oXbJtgagw4ZjbrUK63VKFWs4p_YK06dLhEV3k2zWzpsVh39o3Zow1UfcjRaIp4NPN-G41KSk53oR0hnUjmz2pNNYMcF8BvHC6jiifZFp1i1HUOLf-amV-rPr3wPhFjrg3p0WPHjXp9RtMbo0d8HyjRrknIMosO3DzcY77HhjL89JyqJOWtO4x3AYo0</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-14 16:08:56</dcterms:dateSubmitted>
+        <dc:title>531.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3061">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.microbiologyresearch.org/docserver/fulltext/jgv/65/4/JV0650040799.pdf?expires=1592152242&amp;id=id&amp;accname=guest&amp;checksum=135C9B309E01A7AF2E6485B18D037665</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-14 16:17:41</dcterms:dateSubmitted>
+        <dc:title>JV0650040799.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <z:Collection rdf:about="#collection_92">
         <dc:title>bibtex_export (10)</dc:title>
         <dcterms:hasPart rdf:resource="#item_1151"/>
@@ -55967,12 +58528,16 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://web.archive.org/web/20120316141638/http://www.national.com/rap/files/datasheet.pdf"/>
         <dcterms:hasPart rdf:resource="https://training.galaxyproject.org/training-material/topics/introduction/"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682495/"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0022311500006231"/>
+        <dcterms:hasPart rdf:resource="#item_3055"/>
+        <dcterms:hasPart rdf:resource="#item_3057"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_170">
         <dc:title>Biology</dc:title>
         <dcterms:hasPart rdf:resource="#collection_139"/>
         <dcterms:hasPart rdf:resource="#collection_200"/>
         <dcterms:hasPart rdf:resource="#collection_161"/>
+        <dcterms:hasPart rdf:resource="#collection_212"/>
         <dcterms:hasPart rdf:resource="#collection_138"/>
         <dcterms:hasPart rdf:resource="#collection_171"/>
         <dcterms:hasPart rdf:resource="#collection_188"/>
@@ -55990,11 +58555,14 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S095656631830410X"/>
         <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/s10544-012-9735-7"/>
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-017-13732-2/"/>
+        <dcterms:hasPart rdf:resource="#item_3035"/>
+        <dcterms:hasPart rdf:resource="https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Biology</dc:title>
         <dcterms:hasPart rdf:resource="#collection_139"/>
         <dcterms:hasPart rdf:resource="#collection_200"/>
         <dcterms:hasPart rdf:resource="#collection_161"/>
+        <dcterms:hasPart rdf:resource="#collection_212"/>
         <dcterms:hasPart rdf:resource="#collection_138"/>
         <dcterms:hasPart rdf:resource="#collection_171"/>
         <dcterms:hasPart rdf:resource="#collection_188"/>
@@ -56012,6 +58580,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S095656631830410X"/>
         <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/s10544-012-9735-7"/>
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-017-13732-2/"/>
+        <dcterms:hasPart rdf:resource="#item_3035"/>
+        <dcterms:hasPart rdf:resource="https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_139">
         <dc:title>E. Coli</dc:title>
@@ -56142,21 +58712,37 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#item_2387"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1177/2211068215599786"/>
         <dcterms:hasPart rdf:resource="https://www.thingiverse.com/thing:2487351"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0021929015006739"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/fld.2188"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0925400515306882"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-7599-5"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>automation</dc:title>
         <dcterms:hasPart rdf:resource="#item_2387"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1177/2211068215599786"/>
         <dcterms:hasPart rdf:resource="https://www.thingiverse.com/thing:2487351"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0021929015006739"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/fld.2188"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0925400515306882"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-7599-5"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>automation</dc:title>
         <dcterms:hasPart rdf:resource="#item_2387"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1177/2211068215599786"/>
         <dcterms:hasPart rdf:resource="https://www.thingiverse.com/thing:2487351"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0021929015006739"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/fld.2188"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0925400515306882"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-7599-5"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>automation</dc:title>
         <dcterms:hasPart rdf:resource="#item_2387"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1177/2211068215599786"/>
         <dcterms:hasPart rdf:resource="https://www.thingiverse.com/thing:2487351"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0021929015006739"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/fld.2188"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0925400515306882"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4244-7599-5"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_168">
         <dc:title>centrifuge</dc:title>
@@ -56249,6 +58835,13 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289433/"/>
         <dcterms:hasPart rdf:resource="https://ehs.princeton.edu/book/export/html/380"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1177/109135059700200309"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_212">
+        <dc:title>microfluidics</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>microfluidics</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>microfluidics</dc:title>
     </z:Collection>
     <z:Collection rdf:about="#collection_138">
         <dc:title>P. Syringae</dc:title>
@@ -56564,6 +59157,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1186/s12985-019-1182-0"/>
         <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/10.1021/acscentsci.9b01071"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0969212616301216"/>
+        <dcterms:hasPart rdf:resource="#item_3060"/>
+        <dcterms:hasPart rdf:resource="#item_3061"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>structural</dc:title>
         <dcterms:hasPart rdf:resource="#collection_190"/>
@@ -56577,6 +59172,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1186/s12985-019-1182-0"/>
         <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/10.1021/acscentsci.9b01071"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0969212616301216"/>
+        <dcterms:hasPart rdf:resource="#item_3060"/>
+        <dcterms:hasPart rdf:resource="#item_3061"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>structural</dc:title>
         <dcterms:hasPart rdf:resource="#collection_190"/>
@@ -56590,6 +59187,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1186/s12985-019-1182-0"/>
         <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/10.1021/acscentsci.9b01071"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0969212616301216"/>
+        <dcterms:hasPart rdf:resource="#item_3060"/>
+        <dcterms:hasPart rdf:resource="#item_3061"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_190">
         <dc:title>electrostatic</dc:title>
@@ -56993,6 +59592,7 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="http://www.cel.com/pdf/datasheets/CE3520K3.pdf"/>
         <dcterms:hasPart rdf:resource="#item_2768"/>
         <dcterms:hasPart rdf:resource="#item_2776"/>
+        <dcterms:hasPart rdf:resource="#item_3059"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Datasheets</dc:title>
         <dcterms:hasPart rdf:resource="#item_2352"/>
@@ -57002,6 +59602,7 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="http://www.cel.com/pdf/datasheets/CE3520K3.pdf"/>
         <dcterms:hasPart rdf:resource="#item_2768"/>
         <dcterms:hasPart rdf:resource="#item_2776"/>
+        <dcterms:hasPart rdf:resource="#item_3059"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_141">
         <dc:title>Flagship</dc:title>
@@ -57029,6 +59630,7 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#collection_159"/>
         <dcterms:hasPart rdf:resource="#collection_140"/>
         <dcterms:hasPart rdf:resource="#collection_174"/>
+        <dcterms:hasPart rdf:resource="#collection_213"/>
         <dcterms:hasPart rdf:resource="#collection_185"/>
         <dcterms:hasPart rdf:resource="#collection_148"/>
         <dcterms:hasPart rdf:resource="#collection_157"/>
@@ -57051,6 +59653,7 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#collection_159"/>
         <dcterms:hasPart rdf:resource="#collection_140"/>
         <dcterms:hasPart rdf:resource="#collection_174"/>
+        <dcterms:hasPart rdf:resource="#collection_213"/>
         <dcterms:hasPart rdf:resource="#collection_185"/>
         <dcterms:hasPart rdf:resource="#collection_148"/>
         <dcterms:hasPart rdf:resource="#collection_157"/>
@@ -57245,6 +59848,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://sourceforge.net/p/ngspice/mailman/message/34157604/"/>
         <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
         <dcterms:hasPart rdf:resource="#item_2946"/>
+        <dcterms:hasPart rdf:resource="#item_2962"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1051884/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>oscillator</dc:title>
         <dcterms:hasPart rdf:resource="#collection_201"/>
@@ -57326,6 +59931,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://sourceforge.net/p/ngspice/mailman/message/34157604/"/>
         <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
         <dcterms:hasPart rdf:resource="#item_2946"/>
+        <dcterms:hasPart rdf:resource="#item_2962"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1051884/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>oscillator</dc:title>
         <dcterms:hasPart rdf:resource="#collection_201"/>
@@ -57407,6 +60014,8 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://sourceforge.net/p/ngspice/mailman/message/34157604/"/>
         <dcterms:hasPart rdf:resource="http://emlab.uiuc.edu/ece451/appnotes/CoupledTL.pdf"/>
         <dcterms:hasPart rdf:resource="#item_2946"/>
+        <dcterms:hasPart rdf:resource="#item_2962"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1051884/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_201">
         <dc:title>biasing</dc:title>
@@ -57520,6 +60129,10 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#item_2932"/>
         <dcterms:hasPart rdf:resource="#item_2935"/>
         <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/375228/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>FDTD_SPICE</dc:title>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
@@ -57544,6 +60157,10 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#item_2932"/>
         <dcterms:hasPart rdf:resource="#item_2935"/>
         <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/375228/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>FDTD_SPICE</dc:title>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
@@ -57568,6 +60185,10 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#item_2932"/>
         <dcterms:hasPart rdf:resource="#item_2935"/>
         <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/375228/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>FDTD_SPICE</dc:title>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
@@ -57592,6 +60213,10 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="#item_2932"/>
         <dcterms:hasPart rdf:resource="#item_2935"/>
         <dcterms:hasPart rdf:resource="http://www.gdfidl.de/Manual/_fdtd_voltages_Voltage_sour.html"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/375228/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_196">
         <dc:title>filter</dc:title>
@@ -57891,6 +60516,22 @@ PMCID: PMC2682495</dc:description>
         <dc:title>pin_diodes</dc:title>
         <dcterms:hasPart rdf:resource="#item_2330"/>
     </z:Collection>
+    <z:Collection rdf:about="#collection_213">
+        <dc:title>production</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3028"/>
+        <dcterms:hasPart rdf:resource="#item_3029"/>
+        <dcterms:hasPart rdf:resource="#item_3056"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>production</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3028"/>
+        <dcterms:hasPart rdf:resource="#item_3029"/>
+        <dcterms:hasPart rdf:resource="#item_3056"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>production</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3028"/>
+        <dcterms:hasPart rdf:resource="#item_3029"/>
+        <dcterms:hasPart rdf:resource="#item_3056"/>
+    </z:Collection>
     <z:Collection rdf:about="#collection_185">
         <dc:title>rectifier</dc:title>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5386-2416-6"/>
@@ -57922,70 +60563,151 @@ PMCID: PMC2682495</dc:description>
     </z:Collection>
     <z:Collection rdf:about="#collection_157">
         <dc:title>safety</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_210"/>
+        <dcterms:hasPart rdf:resource="#collection_211"/>
         <dcterms:hasPart rdf:resource="https://link.aps.org/doi/10.1103/PhysRevLett.51.1214"/>
         <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01964370"/>
         <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/full/10.1080/09553008614550431"/>
         <dcterms:hasPart rdf:resource="https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01904.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/989978/"/>
-        <dcterms:hasPart rdf:resource="#item_1992"/>
-        <dcterms:hasPart rdf:resource="#item_1993"/>
         <dcterms:hasPart rdf:resource="#item_1994"/>
         <dcterms:hasPart rdf:resource="http://www.fda.gov/industry/regulated-products/radiation-emitting-electronic-products"/>
         <dcterms:hasPart rdf:resource="https://www.ecfr.gov/cgi-bin/text-idx?SID=c0317e47ab78884b99ca4d694f210edb&amp;mc=true&amp;tpl=/ecfrbrowse/Title21/21cfr1010_main_02.tpl"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bip.360211209"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5504984/"/>
-        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
         <dcterms:hasPart rdf:resource="https://transition.fcc.gov/oet/spectrum/table/fcctable.pdf"/>
         <dcterms:hasPart rdf:resource="https://docs.fcc.gov/public/attachments/FCC-19-126A1.pdf"/>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0006349502754738"/>
-        <dcterms:hasPart rdf:resource="https://reader.elsevier.com/reader/sd/pii/S0006349587832319?token=A3D5E0F5D51E8E8DEB9551A248DE31E4771E5A74163490AA94FB6A82E974D10D283C12531CA3EBFA4BD64A223F2A247D"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.20652"/>
         <dcterms:hasPart rdf:resource="#item_2497"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S1383571803003140"/>
+        <dcterms:hasPart rdf:resource="#item_2963"/>
+        <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250060209"/>
+        <dcterms:hasPart rdf:resource="https://search.ieice.org/bin/summary.php?id=e77-b_6_762&amp;category=B&amp;year=1994&amp;lang=E&amp;abst="/>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/00004032-198905000-00028"/>
+        <dcterms:hasPart rdf:resource="https://scite.ai"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1080/09553008614551321"/>
+        <dcterms:hasPart rdf:resource="#item_2979"/>
+        <dcterms:hasPart rdf:resource="https://bioone.org/journals/radiation-research/volume-191/issue-1/RR15117.1/Comprehensive-Review-of-Quality-of-Publications-and-Meta-Analysis-of/10.1667/RR15117.1.full"/>
+        <dcterms:hasPart rdf:resource="https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302"/>
+        <dcterms:hasPart rdf:resource="https://colab.research.google.com/notebooks/intro.ipynb"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/s11060-011-0644-z"/>
+        <dcterms:hasPart rdf:resource="#item_3006"/>
+        <dcterms:hasPart rdf:resource="#item_3007"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>safety</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_210"/>
+        <dcterms:hasPart rdf:resource="#collection_211"/>
         <dcterms:hasPart rdf:resource="https://link.aps.org/doi/10.1103/PhysRevLett.51.1214"/>
         <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01964370"/>
         <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/full/10.1080/09553008614550431"/>
         <dcterms:hasPart rdf:resource="https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01904.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/989978/"/>
-        <dcterms:hasPart rdf:resource="#item_1992"/>
-        <dcterms:hasPart rdf:resource="#item_1993"/>
         <dcterms:hasPart rdf:resource="#item_1994"/>
         <dcterms:hasPart rdf:resource="http://www.fda.gov/industry/regulated-products/radiation-emitting-electronic-products"/>
         <dcterms:hasPart rdf:resource="https://www.ecfr.gov/cgi-bin/text-idx?SID=c0317e47ab78884b99ca4d694f210edb&amp;mc=true&amp;tpl=/ecfrbrowse/Title21/21cfr1010_main_02.tpl"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bip.360211209"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5504984/"/>
-        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
         <dcterms:hasPart rdf:resource="https://transition.fcc.gov/oet/spectrum/table/fcctable.pdf"/>
         <dcterms:hasPart rdf:resource="https://docs.fcc.gov/public/attachments/FCC-19-126A1.pdf"/>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0006349502754738"/>
-        <dcterms:hasPart rdf:resource="https://reader.elsevier.com/reader/sd/pii/S0006349587832319?token=A3D5E0F5D51E8E8DEB9551A248DE31E4771E5A74163490AA94FB6A82E974D10D283C12531CA3EBFA4BD64A223F2A247D"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.20652"/>
         <dcterms:hasPart rdf:resource="#item_2497"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S1383571803003140"/>
+        <dcterms:hasPart rdf:resource="#item_2963"/>
+        <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250060209"/>
+        <dcterms:hasPart rdf:resource="https://search.ieice.org/bin/summary.php?id=e77-b_6_762&amp;category=B&amp;year=1994&amp;lang=E&amp;abst="/>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/00004032-198905000-00028"/>
+        <dcterms:hasPart rdf:resource="https://scite.ai"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1080/09553008614551321"/>
+        <dcterms:hasPart rdf:resource="#item_2979"/>
+        <dcterms:hasPart rdf:resource="https://bioone.org/journals/radiation-research/volume-191/issue-1/RR15117.1/Comprehensive-Review-of-Quality-of-Publications-and-Meta-Analysis-of/10.1667/RR15117.1.full"/>
+        <dcterms:hasPart rdf:resource="https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302"/>
+        <dcterms:hasPart rdf:resource="https://colab.research.google.com/notebooks/intro.ipynb"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/s11060-011-0644-z"/>
+        <dcterms:hasPart rdf:resource="#item_3006"/>
+        <dcterms:hasPart rdf:resource="#item_3007"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>safety</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_210"/>
+        <dcterms:hasPart rdf:resource="#collection_211"/>
         <dcterms:hasPart rdf:resource="https://link.aps.org/doi/10.1103/PhysRevLett.51.1214"/>
         <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01964370"/>
         <dcterms:hasPart rdf:resource="http://www.tandfonline.com/doi/full/10.1080/09553008614550431"/>
         <dcterms:hasPart rdf:resource="https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01904.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/989978/"/>
-        <dcterms:hasPart rdf:resource="#item_1992"/>
-        <dcterms:hasPart rdf:resource="#item_1993"/>
         <dcterms:hasPart rdf:resource="#item_1994"/>
         <dcterms:hasPart rdf:resource="http://www.fda.gov/industry/regulated-products/radiation-emitting-electronic-products"/>
         <dcterms:hasPart rdf:resource="https://www.ecfr.gov/cgi-bin/text-idx?SID=c0317e47ab78884b99ca4d694f210edb&amp;mc=true&amp;tpl=/ecfrbrowse/Title21/21cfr1010_main_02.tpl"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bip.360211209"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5504984/"/>
-        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
         <dcterms:hasPart rdf:resource="https://transition.fcc.gov/oet/spectrum/table/fcctable.pdf"/>
         <dcterms:hasPart rdf:resource="https://docs.fcc.gov/public/attachments/FCC-19-126A1.pdf"/>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0006349502754738"/>
-        <dcterms:hasPart rdf:resource="https://reader.elsevier.com/reader/sd/pii/S0006349587832319?token=A3D5E0F5D51E8E8DEB9551A248DE31E4771E5A74163490AA94FB6A82E974D10D283C12531CA3EBFA4BD64A223F2A247D"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.20652"/>
         <dcterms:hasPart rdf:resource="#item_2497"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S1383571803003140"/>
+        <dcterms:hasPart rdf:resource="#item_2963"/>
+        <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/bem.2250060209"/>
+        <dcterms:hasPart rdf:resource="https://search.ieice.org/bin/summary.php?id=e77-b_6_762&amp;category=B&amp;year=1994&amp;lang=E&amp;abst="/>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/00004032-198905000-00028"/>
+        <dcterms:hasPart rdf:resource="https://scite.ai"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1080/09553008614551321"/>
+        <dcterms:hasPart rdf:resource="#item_2979"/>
+        <dcterms:hasPart rdf:resource="https://bioone.org/journals/radiation-research/volume-191/issue-1/RR15117.1/Comprehensive-Review-of-Quality-of-Publications-and-Meta-Analysis-of/10.1667/RR15117.1.full"/>
+        <dcterms:hasPart rdf:resource="https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302"/>
+        <dcterms:hasPart rdf:resource="https://colab.research.google.com/notebooks/intro.ipynb"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/s11060-011-0644-z"/>
+        <dcterms:hasPart rdf:resource="#item_3006"/>
+        <dcterms:hasPart rdf:resource="#item_3007"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_210">
+        <dc:title>standards</dc:title>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
+        <dcterms:hasPart rdf:resource="#item_2981"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7381-4834-2%20978-0-7381-4835-9"/>
+        <dcterms:hasPart rdf:resource="http://www.ebea.org/get-ieee-c95-standards-for-free/"/>
+        <dcterms:hasPart rdf:resource="https://ieeexplore.ieee.org/document/8859679/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-6432-4"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>standards</dc:title>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
+        <dcterms:hasPart rdf:resource="#item_2981"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7381-4834-2%20978-0-7381-4835-9"/>
+        <dcterms:hasPart rdf:resource="http://www.ebea.org/get-ieee-c95-standards-for-free/"/>
+        <dcterms:hasPart rdf:resource="https://ieeexplore.ieee.org/document/8859679/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-6432-4"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>standards</dc:title>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
+        <dcterms:hasPart rdf:resource="#item_2981"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7381-4834-2%20978-0-7381-4835-9"/>
+        <dcterms:hasPart rdf:resource="http://www.ebea.org/get-ieee-c95-standards-for-free/"/>
+        <dcterms:hasPart rdf:resource="https://ieeexplore.ieee.org/document/8859679/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-6432-4"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>standards</dc:title>
+        <dcterms:hasPart rdf:resource="http://journals.lww.com/10.1097/HP.0000000000001210"/>
+        <dcterms:hasPart rdf:resource="#item_2981"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-0-7381-4834-2%20978-0-7381-4835-9"/>
+        <dcterms:hasPart rdf:resource="http://www.ebea.org/get-ieee-c95-standards-for-free/"/>
+        <dcterms:hasPart rdf:resource="https://ieeexplore.ieee.org/document/8859679/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-6432-4"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_211">
+        <dc:title>X-Band</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>X-Band</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>X-Band</dc:title>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>X-Band</dc:title>
     </z:Collection>
     <z:Collection rdf:about="#collection_156">
         <dc:title>simulation</dc:title>
@@ -58055,11 +60777,27 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://link.aps.org/doi/10.1103/PhysRevLett.85.542"/>
         <dcterms:hasPart rdf:resource="http://www.nature.com/articles/35024192"/>
         <dcterms:hasPart rdf:resource="https://asmedigitalcollection.asme.org/appliedmechanics/article/28/1/127/445805/Stress-Distribution-in-a-Rotating-Spherical-Shell"/>
+        <dcterms:hasPart rdf:resource="https://johnvagabondscience.wordpress.com/2008/10/12/damped-oscillations/"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/0375960179900409"/>
+        <dcterms:hasPart rdf:resource="#item_3042"/>
+        <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.440288"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/000925096987020X"/>
+        <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/abs/10.1021/j100243a020"/>
+        <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1680910"/>
+        <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1733516"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>optical_centrifuge</dc:title>
         <dcterms:hasPart rdf:resource="https://link.aps.org/doi/10.1103/PhysRevLett.85.542"/>
         <dcterms:hasPart rdf:resource="http://www.nature.com/articles/35024192"/>
         <dcterms:hasPart rdf:resource="https://asmedigitalcollection.asme.org/appliedmechanics/article/28/1/127/445805/Stress-Distribution-in-a-Rotating-Spherical-Shell"/>
+        <dcterms:hasPart rdf:resource="https://johnvagabondscience.wordpress.com/2008/10/12/damped-oscillations/"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/0375960179900409"/>
+        <dcterms:hasPart rdf:resource="#item_3042"/>
+        <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.440288"/>
+        <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/000925096987020X"/>
+        <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/abs/10.1021/j100243a020"/>
+        <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1680910"/>
+        <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1733516"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_133">
         <dc:title>other_mechanisms</dc:title>
@@ -58076,6 +60814,7 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://www.spiedigitallibrary.org/journals/Journal-of-Biomedical-Optics/volume-12/issue-6/064030/Inactivation-of-viruses-by-laser-driven-coherent-excitations-via-impulsive/10.1117/1.2821713.full"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3800408/"/>
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-019-52759-5"/>
+        <dcterms:hasPart rdf:resource="#item_3009"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>other_mechanisms</dc:title>
         <dcterms:hasPart rdf:resource="http://www.oatext.com/a-medical-device-forming-a-protective-barrier-that-deactivates-four-major-common-cold-viruses.php"/>
@@ -58091,6 +60830,7 @@ PMCID: PMC2682495</dc:description>
         <dcterms:hasPart rdf:resource="https://www.spiedigitallibrary.org/journals/Journal-of-Biomedical-Optics/volume-12/issue-6/064030/Inactivation-of-viruses-by-laser-driven-coherent-excitations-via-impulsive/10.1117/1.2821713.full"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3800408/"/>
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-019-52759-5"/>
+        <dcterms:hasPart rdf:resource="#item_3009"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_193">
         <dc:title>SHG</dc:title>
