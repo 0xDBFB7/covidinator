@@ -31,7 +31,7 @@ signed long dark_corrected_sample(int pin){
   digitalWrite(pin, 1);
   while (!FreqCount.available());
   unsigned long light_count = FreqCount.read();  
-
+)
   
   return (signed long)(light_count)-(signed long)dark_count;
 }

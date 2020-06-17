@@ -483,8 +483,8 @@ Wire Wire Line
 	5650 4300 5850 4300
 Text Notes 7850 4000 0    50   ~ 0
 Two 2.2r because that's all I've got.
-Text Notes 8000 6150 0    50   ~ 0
-Originally used a P-channel in the linear region,\nbut the BSS84-F in stock SOA is only 0.05 A at DC in linear region\nwow! very surprised!
+Text Notes 7600 5850 0    50   ~ 0
+Originally used a P-channel in the linear region,\nbut at 3.3v, the Safe Operating Area at DC of the BSS84-F \nonly goes up to 50 mA - remarkable!
 $Comp
 L dk_Transistors-Bipolar-BJT-Single:MMBT4401 Q2
 U 1 1 5EE95D01
@@ -565,26 +565,25 @@ $EndComp
 Text GLabel 3350 3250 2    50   Input ~ 0
 ~PULSE_INPUT
 $Comp
-L Connector:Test_Point TP?
+L Connector:Test_Point TP3
 U 1 1 5EEC794F
 P 7400 1550
-F 0 "TP?" H 7458 1668 50  0000 L CNN
+F 0 "TP3" H 7458 1668 50  0000 L CNN
 F 1 "Test_Point" H 7458 1577 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 7600 1550 50  0001 C CNN
 F 3 "~" H 7600 1550 50  0001 C CNN
 	1    7400 1550
 	0    1    1    0   
 $EndComp
-Connection ~ 6800 1800
 Text GLabel 6800 1800 2    50   Input ~ 0
 VARACTOR_OUT
 Text GLabel 7400 1550 0    50   Input ~ 0
 VARACTOR_OUT
 $Comp
-L Connector:Test_Point TP?
+L Connector:Test_Point TP4
 U 1 1 5EECA2A9
 P 8750 4350
-F 0 "TP?" H 8808 4468 50  0000 L CNN
+F 0 "TP4" H 8808 4468 50  0000 L CNN
 F 1 "Test_Point" H 8808 4377 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 8950 4350 50  0001 C CNN
 F 3 "~" H 8950 4350 50  0001 C CNN
@@ -593,4 +592,6 @@ F 3 "~" H 8950 4350 50  0001 C CNN
 $EndComp
 Text GLabel 8750 4350 0    50   Input ~ 0
 nsource
+Text Notes 7900 1150 0    50   ~ 0
+We could use an op-amp to provide the feedback \nfor both of these circuits, lessening the load on the Teensy,\nbut whatever
 $EndSCHEMATC

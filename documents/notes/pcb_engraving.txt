@@ -31,3 +31,5 @@ a bit overheated. oven probably needed preheating.
 
 
 0.17 mm tool diameter setting is even better.
+
+Man, this tool is still going strong after 15+ boards! Incredible

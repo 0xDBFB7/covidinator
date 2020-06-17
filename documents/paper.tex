@@ -328,12 +328,23 @@ It is relatively easy to produce megawatts of power at these frequency ranges us
 \noindent\fbox{\parbox{\linewidth}{
 	Toolchain:
 	\begin{itemize}
-	\item QUCS 0.0.20 for AC simulation, with python-qucs and scipy's 'basinhopper' for optimization
+	\item Failed oscillator feedback-loop optimization toolchain: QUCS 0.0.20 + python-qucs + scipy's 'basinhopper'
+	\item Successful A slightly modified ngspice + ngspyce + pyEVTK
 	\item gprMax for FDTD EM simulation
 	\item KiCAD, wcalc, scikit-rf, ngspice
 	\end{itemize}
 }}
 %
+
+
+The oscillator is a 'wideband double-tuned varactor VCO', based almost verbatim on [Tsuru 2008] and the reference design in Figure 8.36, p378 of [Grebennikov 2007]. 
+
+The rest of the papers in the bibliography were highly enlightening regarding the principles of microwave oscillator design.
+
+This topology of oscillator worked marvellously on essentially the first try. 
+
+The process by which we failed miserably to design our own oscillator topology is detailed in the supplemental.
+
 The following properties: P1dB
 
 For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
@@ -352,7 +363,7 @@ Not having a good analytical understanding, we resorted to using a purely comput
 
 In addition, the design of wideband feedback-loop VCOs is a relatively well-explored field, and many reference designs exist. 
 
-The key sticking point - which we missed - seems to be that at these scales, using microstrip design techniques, the parasitics of any possible filter structure are so large that the small change in inductance that varactors can provide cannot tune the circuit by any meaningful amount.
+The key sticking point - which we missed - seems to be that at these scales, using microstrip design techniques, the parasitics of any possible filter structure are so large that the small change in impedance that varactors can provide cannot tune the circuit by any meaningful amount.
 
 "Using the lead inductances of the bipolar transistor and varactors provides the required value of the base inductance".
 
@@ -679,6 +690,10 @@ Version control alone isn't quite enough. Just having a simulation setup file so
 Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it!
 
 Software such as Sumatra, Sacred, recipy, and others. In our case, we used eLabFTW's elabapy bindings.
+
+\rule{\linewidth}{0.2pt}
+
+It is far easier to use existing, well-characterized reference designs verbatim than to modify 
 
 \rule{\linewidth}{0.2pt}
 
