@@ -39,11 +39,13 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 # Settings below this point usually do not need to be edited
 #************************************************************************
 
+#-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
+
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -isystem$(COREPATH)
+CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -I$(COREPATH)
 
 # compiler options for C++ only
-CXXFLAGS = -std=gnu++0x -felide-constructors -fno-exceptions -fno-rtti
+CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -felide-constructors -fno-exceptions -fno-rtti
 
 # compiler options for C only
 CFLAGS =
@@ -107,6 +109,9 @@ TCPP_FILES := $(filter-out $(COREPATH)/main.cpp, $(TCPP_FILES))
 C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
+
+CPP_FILES := $(filter-out test_main.cpp, $(TCPP_FILES))
+
 
 #-isystem
 

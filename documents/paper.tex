@@ -369,19 +369,6 @@ The key sticking point - which we missed - seems to be that at these scales, usi
 
 Indeed, [Tsuru 2008]'s "tuned circuit" in Fig 8 is, in fact, just the varactors, plus an almost invisible high-impedance line.
 
-We began experimentally by building a scaled version of [Mueller 2008]'s active antenna on FR4, using a CEL mosfet.
-
-
-
-Optimizing S-parameter simulations of the feedback loop and negative-resistance device did not produce an accurate picture of the oscillator. While the phase and frequency response appeared to be excellent, the transient response painted a different picture:
-
-[gnuplot transient sim here]
-
-The complete transient simulation matched reality very closely. 
-
-
-This immediately oscillated perfectly.
-
 
 
 
@@ -504,7 +491,7 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 
 
-
+\end{multicols}
 
 
 
@@ -569,10 +556,21 @@ Chiefly among the enablers are of course my parents, Doris and Brian, without wh
 One Very Important Thought
 
 
+
+
+
+
+
+
+
+
+
+
+
 \clearpage
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\Large Captain's Log, Supplemental}\\
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \rule{\linewidth}{0.2pt}
 
@@ -588,15 +586,13 @@ In any case, this doesn't change the substance of [Yang 2015]'s paper; the relax
 
 \rule{\linewidth}{0.2pt}
 
-
-
-CEL did not supply a SPICE model for the GaAs FET device used in early prototypes. A FET was chosen because the a gate is ostensibly easier to bias than a base.
+CEL did not supply a SPICE model for the GaAs FET device used in early prototypes. A FET was originally because a gate is ostensibly easier to bias than a base; but this turned out to be unfounded.
 
 [Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. However, this neglects the I/V characteristic. 
 
-[Polyfet 1998] describes a simple optimization method to synthesize a SPICE model; it would be useful.
+[Polyfet 1998] describes a simple optimization method to synthesize a SPICE model for an active device, and CEL appnote provides some details for GaAs devices.
 
-However, since a Si-process device would be required for mass production anyhow, we decided to accept the difficulty in biasing and use a bipolar transistor.
+
 
 \rule{\linewidth}{0.2pt}
 
@@ -604,19 +600,52 @@ OpenEMS is excellent, with Python bindings, some lumped components, and mesh ref
 
 \rule{\linewidth}{0.2pt}
 
-Simulating the oscillator with an AC sim using the manufacturer's S-parameters and QUCS' microstrip approximations [qucs/optimize\_filter\_1] intially appeared to yield good agreement with experiment. Peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
+We began experimentally by building a scaled version of [Mueller 2008]'s active antenna crudely with copper tape, using a CEL [] FET.
+
+
+
+We then manually tried a number of filter designs, using the manufacturer's S-parameters and QUCS' microstrip approximations. This intially appeared to yield good agreement with experiment. Peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
+
+A crude, inane, and extremely disorganized trial-and-error procedure was performed for many weeks. A wide variety of analytical methods for filter design were attempted, but simultaneously obtaining the correct phase shift and frequency response was somewhat difficult. The parasitic inductance of the varactors always seemed to destroy our most perfect creations.
+
+An SIR filter has the added advantage of confusing epidemiologists greatly.
+
+Eventually, QUCS, zonca/python-qucs, and scipy's basinhopper was used with the cost function somewhat similar to that described in [Kaplevich]:
+
+\begin{verbatim}
+    freq_coeff = 1
+    phase_coeff = 1.5
+    ratio_coeff = 0.5
+    insertion_loss_coeff = 0.2
  
-However, unexpected dips and peaks were found with varactor tuning; and the tuning range was far smaller than expected.
+    frequency_cost = freq_coeff * (abs(desired_center_frequency-fb_peak_frequencies[0])/1e9)
+    phase_cost = phase_coeff * abs(1.0 - phase_at_peak)
+    ratio_cost = ratio_coeff * fb_peak_ratio
+    insertion_loss_cost = insertion_loss_coeff*(1.0 - fb_peak_values[0])
+    cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
+\end{verbatim}
 
-A feedback loop filter design with apparently ideal phase and frequency properties was designed using this process; but the behavior of this oscillator did not correspond to reality. 
+Optimizing first for the high frequency, fixing the inductor and microstrip values, and then optimizing for the varactor values at the low frequency.
 
-\hspace*{-0.7cm}   \includegraphics[scale=0.6]{LO_2_pole_test.png}
+This produced a seemingly acceptable feedback loop:
 
-Because we lacked a spectrum analyzer that could monitor the higher poles of the filter until the bootstrap LO was designed, we had to rely on in-silico analyeses.
+\includegraphics[scale=1]{LO_2_pole_test.png}
+
+However, when this was built, varactor tuning performance was abysmal, with hops and peaks; and the tuning range was far smaller than expected.
 
 It was thought that a transient simulation - to determine how the spectrum actually evolved - would improve the situation. 
 
-As of 0.0.20, QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively. Coupling can be emulated by introducing discrete coupling capacitors
+As of 0.0.20, QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively.
+
+\includegraphics[scale=0.5]{3d_spectrum_2.png}
+
+The complete transient simulation matched reality very closely. 
+
+
+
+
+Because we lacked a spectrum analyzer that could monitor the higher poles of the filter until the bootstrap LO was designed, we had to rely on in-silico analyeses.
+
 
 Transient simulations with ngspice matched experiment far more closely.
 
@@ -703,7 +732,7 @@ Running chroot with the original developer's Linux distribution is also of some 
 
 Packaged binaries help this slightly, but of course don't help if modifications are required, and managing shared libraries is still a tricky matter.
 
-In some situations (especially where the library has a permissive licence) perhaps it could be useful to consider packaging a complete, batteries-included 'known good' repository, either with the source of all the correct library versions included, or with a script to clone and compile the specific version used, and integrating all the libraries with the build system. 
+In some situations (especially where the library has a permissive licence) perhaps it could be useful to consider packaging a complete, batteries-included 'known good' repository, either with the source of all the correct library versions included, or with a script to clone and compile the specific version used, integrating all the libraries with the build system. 
 
 For instance, this was done with the PDB reader in the OpenMM wrapper and JAMES.
 
@@ -722,7 +751,7 @@ Write a paper to be understood; to be as clear and helpful as possible to the re
 
 We have always encountered wasting extreme amounts of time on subtle assembly mistakes in hardware prototypes. 
 
-In one example, many hours were spent because the enamel insulation on a bodge wire had not burned off completely in the solder joint, leading to a high-impedance connection.
+In one example in this project, many hours were wasted because the enamel insulation on a bodge wire had not burned off completely in the solder joint, leading to a high-impedance connection.
 
 The same has occurred in previous projects; in one example, many days were spent debugging software to fix an apparently slow hardware interrupt, which ended up being the result of a poor solder paste stencil leading to a hidden high-impedance connection to a leadless package.
 
@@ -732,10 +761,13 @@ If flying-probe or bed-of-nails tests can be made sufficiently rapid and closely
 
 In {\it 2001: A space odyssey}, an automated system is shown guiding the troubleshooting of an assembly, apparently generating a fault tree of all the 
 
-Boundary-scan features can really 
+Boundary-scan features might really help 
 
 \rule{\linewidth}{0.2pt}
 
+The ability to almost immediately compare simulation to experiment was quite important.
+
+\rule{\linewidth}{0.2pt}
 
 
 \paragraph{Hall of Hubris} \
@@ -770,7 +802,7 @@ We present this only as a cautionary tale in the hopes that someday I will liste
 
 \rule{\linewidth}{0.2pt}
 
-\end{multicols}
+%\end{multicols}
 
 \Acrobatmenu{GoBack}{Back}
 \end{document}
