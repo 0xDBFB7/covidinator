@@ -40,7 +40,7 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 #************************************************************************
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -I$(COREPATH)
+CPPFLAGS = -Wall -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -isystem$(COREPATH)
 
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++0x -felide-constructors -fno-exceptions -fno-rtti
@@ -100,10 +100,15 @@ LC_FILES := $(wildcard $(LIBRARYPATH)/*/*.c)
 LCPP_FILES := $(wildcard $(LIBRARYPATH)/*/*.cpp)
 TC_FILES := $(wildcard $(COREPATH)/*.c)
 TCPP_FILES := $(wildcard $(COREPATH)/*.cpp)
+
+# the cores/ folder already includes an example main.c file. we want to ignore that.
 TCPP_FILES := $(filter-out $(COREPATH)/main.cpp, $(TCPP_FILES))
+
 C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
+
+#-isystem
 
 # include paths for libraries
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))

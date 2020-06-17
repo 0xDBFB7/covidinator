@@ -826,6 +826,9 @@ The RF power detector becomes really non-linear at beyond -10 dB; that means thr
 
 We should probably compare with a SPICE sim of the RF shottky rectifier.
 
-It would be interesting to combine boundary-scan with SPICE. 
+It would be interesting to combine boundary-scan with SPICE. Correlate nets with pins,
+apply random impulses, see how the output compares.
+There would be a concept like "hardware test coverage"; how much of the hardware has been exhausted
+
 
 
