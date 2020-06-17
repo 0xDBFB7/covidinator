@@ -1,7 +1,5 @@
-// #pragma GCC diagnostic push
-// #pragma GCC diagnostic ignored "-Wall"
+
 //#include "WProgram.h"
-// #pragma GCC diagnostic pop
 
 
 

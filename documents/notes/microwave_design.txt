@@ -831,4 +831,18 @@ apply random impulses, see how the output compares.
 There would be a concept like "hardware test coverage"; how much of the hardware has been exhausted
 
 
+Infineon AN_1807 is really neat, on using diode detectors for power sensing. Ez pz, no complex
+matching networks required like [Tan 2018] use.
+
+"Furthermore, PN junction diodes are
+minority semiconductor devices suffering from the low recombination velocity of the minority carriers in the
+space charge region, whereas Schottky diodes are controlled by the charge transport over the barrier from the
+majority carriers. This leads to very fast switching action for the Schottky diodes and makes them very
+attractive for RF and microwave rectification."
+
+Neat! We can use the AD chip to leapfrog-calibrate the Infineon chip, comparing with SPICE.
+
+
+
+
 

@@ -110,7 +110,8 @@ C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
 
-CPP_FILES := $(filter-out test_main.cpp, $(CPP_FILES))
+CPP_FILES := $(filter-out src/main.cpp, $(CPP_FILES))
+CPP_FILES += $(wildcard test_hw/*.cpp)
 
 
 #-isystem
