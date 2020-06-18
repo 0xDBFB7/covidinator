@@ -35,7 +35,7 @@ L SparkFun-Capacitors:4.7UF0603 C1
 U 1 1 5F0C3B35
 P 6450 1900
 F 0 "C1" V 6216 1950 45  0000 C CNN
-F 1 "10 uF" V 6300 1950 45  0000 C CNN
+F 1 "10 nF" V 6300 1950 45  0000 C CNN
 F 2 "0603" H 6450 2150 20  0001 C CNN
 F 3 "" H 6450 1900 50  0001 C CNN
 F 4 "" H 6558 1866 60  0000 L CNN "Field4"
@@ -596,4 +596,7 @@ Text Notes 7900 1150 0    50   ~ 0
 We could use an op-amp to provide the feedback \nfor both of these circuits, lessening the load on the Teensy,\nbut whatever
 Text Notes 7900 3550 0    50   ~ 0
 5 ohms * 0.1 uF = 500 ns - that filter cap on the oscillator has to go\n- some nF should be okay
+Wire Wire Line
+	6050 1800 6450 1800
+Connection ~ 6050 1800
 $EndSCHEMATC

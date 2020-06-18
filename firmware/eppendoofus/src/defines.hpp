@@ -1,0 +1,3 @@
+
+
+#define CORE_CLOCK_FREQ 120e6

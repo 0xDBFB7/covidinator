@@ -1,3 +1,6 @@
+#include "defines.hpp"
+
+
 #ifndef MOCK_INCLUDES
 
 #include "mocks.hpp"

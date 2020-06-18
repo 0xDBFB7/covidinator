@@ -842,6 +842,32 @@ attractive for RF and microwave rectification."
 
 Neat! We can use the AD chip to leapfrog-calibrate the Infineon chip, comparing with SPICE.
 
+en532276.pdf great paper on EEPROM longevity.
+"This is a quantum-mechanical process known as Fowler-Nordheim tunneling. The key to this
+tunneling is that the electrons barely disturb the oxide layer, so the process can be repeated millions
+of times. A flash cell uses a different programming technique, called Channel Hot Electron
+Programming, that damages the oxide layer with every write. That’s why E2’s have much higher
+endurance than flash, which is usually specified to only 10,000 cycles."
+
+"To expand on that last point, we at Microchip are very proud of our endurance."
+
+
+p-channel foldback 
+
+
+okay, so, we want to ramp the frequency over a 0.1 us pulse.
+
+
+Adding another mosfet to discharge the LP filter cap,
+10 uF * 1 ohms = 10000 ns, so that's not going to do it.
+
+the DAC doesn't seem to be capable of producing nanosecond pulses.
+the external DACs that I have can't either.
+
+Using a 10 nF cap on each rail now.
+
+
+
 
 
 

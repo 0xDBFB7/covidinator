@@ -23,11 +23,12 @@ void VCO_driver::set_oscillator_bias(float voltage){
     // ripple = ((Vsupply/R)/C)*(1/freq)
     // ((20 V / 1000 ohms) / 10 uF) * (1 / 14 kHz) -> V
     // freq = Vsupply / (C*R*ripple_voltage)
-    // freq =
+    // 10 uF * 10k = 0.1 s - no prob!
 
 
     duty_cycle = voltage/3.3;
-    analogWriteFrequency(4, 375000);
+
+    analogWriteFrequency(4, compute_max_PWM_freq());
     analogWrite(VBIAS_PWM_PIN, duty_cycle);
 }
 
