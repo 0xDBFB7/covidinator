@@ -13,4 +13,5 @@ void digitalWriteFast(int pin, bool state){
 }
 
 void delay(int ms){
+    
 }
