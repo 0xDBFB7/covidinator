@@ -594,4 +594,6 @@ Text GLabel 8750 4350 0    50   Input ~ 0
 nsource
 Text Notes 7900 1150 0    50   ~ 0
 We could use an op-amp to provide the feedback \nfor both of these circuits, lessening the load on the Teensy,\nbut whatever
+Text Notes 7900 3550 0    50   ~ 0
+5 ohms * 0.1 uF = 500 ns - that filter cap on the oscillator has to go\n- some nF should be okay
 $EndSCHEMATC
