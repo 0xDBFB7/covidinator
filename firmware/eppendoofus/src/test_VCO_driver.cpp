@@ -13,7 +13,6 @@ void tearDown(void) {
 
 
 void VCO_test_1(){
-
     TEST_ASSERT_FLOAT_WITHIN(0.1, 0.1, 0.1);
 }
 

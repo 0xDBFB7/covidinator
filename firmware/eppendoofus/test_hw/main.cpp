@@ -7,10 +7,8 @@
 
 
 int main(void){
-    // Serial1.begin(115200);
 
     UNITY_BEGIN();
-    // std::string blah = "";
 
     run_VCO_tests();
 

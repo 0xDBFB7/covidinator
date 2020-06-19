@@ -880,3 +880,4 @@ there's no capacitance on the 48V rail input. should be fixed
 
 It would be very interesting to do a FOIA request to see how the Curiosity Rover peeps do 
 hardware checkout.
+

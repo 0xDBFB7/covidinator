@@ -230,7 +230,7 @@ class PCB:
             C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
             # print(C)
 
-            C *= 10.0
+            # C *= 10.0
 
             dvdt = (port.current / C)
 

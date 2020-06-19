@@ -13,6 +13,8 @@ struct VCO_driver{
     int VPULSE_FEEDBACK_PIN = 0;
     int CURRENT_SENSE_PIN = 0;
 
+    String name = "";
+
     void set_base_bias_voltage(float voltage);
     float get_base_bias_voltage();
     VCO_driver();
@@ -32,11 +34,15 @@ void VCO_driver::set_base_bias_voltage(float voltage){
     // freq = Vsupply / (C*R*ripple_voltage)
     // 10 uF * 10k = 0.1 s - no prob!
 
+
+
     float duty_cycle = voltage/CORE_SUPPLY_VOLTAGE;
 
     int max_val = pow(2.0, ANALOG_WRITE_RESOLUTION);
 
     analogWrite(VBASE_BIAS_PWM_PIN, int(max_val * duty_cycle));
+
+    LOG("Base bias voltage changed to " + str(voltage));
 }
 
 
