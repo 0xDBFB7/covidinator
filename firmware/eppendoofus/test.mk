@@ -42,7 +42,8 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH)
+CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -DUNITY_INCLUDE_CONFIG_H -MMD $(OPTIONS)
+CPPFLAGS += -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH) -IUnity/src/ 
 
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -felide-constructors -fno-exceptions -fno-rtti
@@ -54,7 +55,7 @@ CFLAGS =
 LDFLAGS = -Os -Wl,--gc-sections -mthumb
 
 # additional libraries to link
-LIBS = -lm
+LIBS = -lm  -lstdc++
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)
@@ -134,6 +135,7 @@ post_compile: $(TARGET).hex
 
 reboot:
 	@-$(abspath $(TOOLSPATH))/teensy_reboot
+
 
 upload: post_compile reboot
 
