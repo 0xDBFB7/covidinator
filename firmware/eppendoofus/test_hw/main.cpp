@@ -7,8 +7,16 @@ int main(void){
 
     Serial.begin(115200);
 
-    run_all();
 
-    
+
+    while(true){
+        for(int i = 1000; i < 3000; i++){
+
+        }
+        yield();
+    }
+    // run_all();
+
+
 
 }

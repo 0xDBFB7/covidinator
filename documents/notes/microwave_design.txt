@@ -868,6 +868,16 @@ Using a 10 nF cap on each rail now.
 
 
 
+ghrr usb linux pki silly LAN grumble grumble
+
+lxi discover 
+lxi screenshot --address 192.168.0.26 --plugin rigol-1000z
+
+works great.
+
+
+
+
 
 
 
