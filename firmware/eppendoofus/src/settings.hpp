@@ -8,7 +8,6 @@
 
 
 #ifdef MOCK_INCLUDES
-#define DAC_write analogWrite
 #else
-#include "WProgram.h
+#define DAC_write analogWrite
 #endif

@@ -4,7 +4,7 @@ struct VCO_driver{
     int VARACTOR_OUTPUT_PIN = 0;
     int VARACTOR_FEEDBACK_PIN = 0;
 
-    int VBIAS_PWM_PIN = 0;
+    int VBASE_BIAS_PWM_PIN = 0;
 
 
     int VSOURCE_PWM_PIN = 0;
@@ -13,16 +13,17 @@ struct VCO_driver{
     int VPULSE_FEEDBACK_PIN = 0;
     int CURRENT_SENSE_PIN = 0;
 
-    void set_base_bias(float voltage);
+    void set_base_bias_voltage(float voltage);
     float get_base_bias_voltage();
+    VCO_driver();
 };
 
-void VCO_driver::VCO_driver(){
+VCO_driver::VCO_driver(){
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
     pinMode(VARACTOR_OUTPUT_PIN, OUTPUT);
 }
 
-void VCO_driver::set_base_bias(float voltage){
+void VCO_driver::set_base_bias_voltage(float voltage){
     // I/C = dV/dt
     // dt = 1/frequency
     // I = (Vsupply/R)
@@ -35,21 +36,21 @@ void VCO_driver::set_base_bias(float voltage){
 
     int max_val = pow(2.0, ANALOG_WRITE_RESOLUTION);
 
-    analogWrite(VBIAS_PWM_PIN, int(max_val * duty_cycle));
+    analogWrite(VBASE_BIAS_PWM_PIN, int(max_val * duty_cycle));
 }
 
 
-//
-// float VCO_driver::get_base_bias_voltage(){
-//     pinMode(, OUTPUT);
-//
-//     pinMode(V, OUTPUT);
-// }
-//
+float VCO_driver::get_base_bias_voltage(){
+    pinMode(VBASE_BIAS_PWM_PIN, INPUT);
+
+    pinMode(VBASE_BIAS_PWM_PIN, OUTPUT);
+    return 0;
+}
+
 // float VCO_driver::set_source_voltage(){
 //
 // }
-//
+
 
 
 

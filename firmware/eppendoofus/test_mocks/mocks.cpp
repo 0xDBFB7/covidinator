@@ -14,14 +14,14 @@ void digitalWriteFast(int pin, bool state){
     pin_states[pin] = state;
 }
 
-void digitalWriteFast(int pin, bool state){
-    pin_states[pin] = state;
+bool digitalReadFast(int pin){
+    return pin_states[pin];
 }
 
 void delay(int ms){
 
 }
 
-void analogWrite(int pin, int ){
-
+void analogWrite(int pin, int value){
+    
 }

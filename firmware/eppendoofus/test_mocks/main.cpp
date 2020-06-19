@@ -1,15 +1,11 @@
 #include "mocks.hpp"
 
+#include "test_VCO_driver.hpp"
+#include "VCO_driver.hpp"
 
 
 
 int main(void)
 {
-	pinMode(13, OUTPUT);
-	while (1) {
-		digitalWriteFast(13, HIGH);
-		delay(100);
-		digitalWriteFast(13, LOW);
-		delay(100);
-	}
+	run_VCO_tests();
 }
