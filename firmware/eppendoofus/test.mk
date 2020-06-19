@@ -113,6 +113,7 @@ INO_FILES := $(wildcard src/*.ino)
 CPP_FILES := $(filter-out src/main.cpp, $(CPP_FILES))
 CPP_FILES += $(wildcard test_hw/*.cpp)
 
+C_FILES := $(wildcard Unity/src/*.c)
 
 #-isystem
 
