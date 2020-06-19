@@ -208,10 +208,9 @@ class PCB:
 
     def create_source_vias(self):
         for port in self.component_ports:
-            if(port.SPICE_net == 0):
-                pass
-                self.copper_mask[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3] = 1 #make a conductor
-                self.copper_mask[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z] = 1 #make a conductor
+
+            self.copper_mask[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3] = 1 #make a conductor
+            self.copper_mask[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z] = 1 #make a conductor
 
                 # self.copper_mask[port.N_x:port.N_x+1,port.N_y:port.N_y+1,self.ground_plane_z_top:self.component_plane_z] = 1 # for good measure
 
@@ -487,6 +486,7 @@ class PCB:
         for pad_idx,pad in enumerate(pads):
             self.component_ports.append(Port(self, pad["net"], pad['x'], pad['y']))
 
+        self.create_source_vias()
         # ngspyce.__init__("")
         # ngspyce.source('/tmp/wideband_LO_mod.cir')
 
