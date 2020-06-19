@@ -42,8 +42,13 @@ float VCO_driver::get_base_bias_voltage(){
 
     pinMode(V, OUTPUT);
 
-    
+
 }
+
+float VCO_driver::set_source_voltage(){
+
+}
+
 
 
 
