@@ -876,9 +876,4 @@ lxi screenshot --address 192.168.0.26 --plugin rigol-1000z
 works great.
 
 
-
-
-
-
-
-
+there's no capacitance on the 48V rail input. should be fixed

@@ -38,16 +38,18 @@ void VCO_driver::set_base_bias(float voltage){
     analogWrite(VBIAS_PWM_PIN, int(max_val * duty_cycle));
 }
 
-float VCO_driver::get_base_bias_voltage(){
 
-    pinMode(V, OUTPUT);
-
-
-}
-
-float VCO_driver::set_source_voltage(){
-
-}
+//
+// float VCO_driver::get_base_bias_voltage(){
+//     pinMode(, OUTPUT);
+//
+//     pinMode(V, OUTPUT);
+// }
+//
+// float VCO_driver::set_source_voltage(){
+//
+// }
+//
 
 
 
