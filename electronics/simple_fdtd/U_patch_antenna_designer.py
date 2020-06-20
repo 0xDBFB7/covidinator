@@ -18,7 +18,7 @@ os.system("rm data/*")
 
 
 pcb = PCB(0.0002)
-pcb.initialize_grid(int(0.015/pcb.cell_size),int(0.025/pcb.cell_size), int(0.01/pcb.cell_size))
+pcb.initialize_grid(int(0.015/pcb.cell_size),int(0.025/pcb.cell_size), int(0.01/pcb.cell_size), courant_number = None)
 
 pcb.create_planes(0.032e-3, 6e7)
 pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
@@ -81,13 +81,14 @@ while(pcb.time < end_time):
         pcb.dump_to_vtk('dumps/test',pcb.grid.time_steps_passed)
         prev_dump_time = pcb.time
 
-    source_voltage = sin(2.0*pi*pcb.time*frequency)
-
+    # print("Period:",2.0*pi*pcb.time*frequency)
+    # source_voltage = sin(2.0*pi*pcb.time*frequency)
+    source_voltage = 1.0
     source_current = (source_voltage - pcb.component_ports[0].voltage) / 50.0
 
     pcb.component_ports[0].current = source_current
 
-    # pcb.to_taste()
+    pcb.to_taste()
     # pcb.apply_all_currents()
 
     pcb.FDTD_step()
@@ -98,7 +99,7 @@ while(pcb.time < end_time):
         print(port.SPICE_net, port.voltage, port.current)
 
 
-    print(pcb.time)
+    print("T:",pcb.time)
 
 for port in pcb.component_ports:
     np.savetxt("data/"+str(port.SPICE_net)+".csv", np.array(port.voltage_history).reshape(-1, 1), delimiter=",",fmt='%10.5f')

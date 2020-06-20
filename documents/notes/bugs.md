@@ -43,3 +43,18 @@ At that point a gdb backtrace was enlightening.
 The cause was an acos call that went beyond -1, to -1.00000012.
 
 wait, what? 
+
+
+############ ASDFasdklfalsdkfjasldkcu fuck
+
+in numpy, indexing into a matrix like this works:
+
+print(a[1,1,1])
+
+but setting 
+
+a[1,1,1]  
+
+doesnTt? what
+
+slice notatioport.N_x:port.N_x+1

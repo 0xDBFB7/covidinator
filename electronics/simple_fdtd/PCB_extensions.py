@@ -240,16 +240,16 @@ class PCB:
             # self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] = port.voltage / (self.cell_size)
 
             #equation 4, 5 in [Toland 1993]
-            self.current = 1.0
+            # self.current = 1.0
             z_slice = slice(self.component_plane_z-3,self.component_plane_z-2)
 
             perm_factor = ((self.substrate_permittivity * 8.85e-12)/self.grid.time_step)
             E_n = self.grid.E[port.N_x,port.N_y,z_slice,Z]*perm_factor
 
-            L_H =  ((self.grid.H[port.N_x,port.N_y-1,z_slice,X] - self.grid.H[port.N_x,port.N_y,z_slice,X]) * self.cell_size)
-            L_H += ((self.grid.H[port.N_x,port.N_y,z_slice,Y] - self.grid.H[port.N_x-1,port.N_y,z_slice,Y]) * self.cell_size)
+            L_H =  ((self.grid.H[port.N_x,port.N_y-1,z_slice,X] - self.grid.H[port.N_x,port.N_y,z_slice,X]) / self.cell_size)
+            L_H += ((self.grid.H[port.N_x,port.N_y,z_slice,Y] - self.grid.H[port.N_x-1,port.N_y,z_slice,Y]) / self.cell_size)
 
-            I = (port.old_current+port.current)/(2.0*(self.cell_size**2.0))
+            I = -1.0*(port.old_current+port.current)/(2.0*(self.cell_size**2.0))
             print(E_n, L_H, I)
             E_new =  E_n
             E_new += L_H
@@ -518,6 +518,7 @@ class PCB:
         self.run_spice_step()
         self.get_spice_currents()
         self.forcings()
+        ngspyce.cmd("destroy all")
 
 
         self.to_taste()
@@ -552,12 +553,18 @@ class PCB:
 
     def to_taste(self):
         #Using an adaptive timestep method as per [Ciampolini 1995]
+        self.compute_all_voltages()
+
+        z_slice = slice(self.component_plane_z-3,self.component_plane_z-2)
 
         failsafe_port_voltages = []
         failsafe_port_currents = []
+        failsafe_port_old_currents = []
+
         for idx,port in enumerate(self.component_ports):
-            failsafe_port_voltages.append(port.voltage)
+            failsafe_port_voltages.append(self.grid.E[port.N_x,port.N_y,z_slice,Z].cpu())
             failsafe_port_currents.append(port.current)
+            failsafe_port_old_currents.append(port.old_current)
         # failsafe_ports = copy.deepcopy(self.component_ports)
 
         delta_v = 0
@@ -580,7 +587,7 @@ class PCB:
             #
 
             self.apply_all_currents()
-            ngspyce.cmd("destroy all")
+            self.compute_all_voltages()
             #
             # for port in self.component_ports:
             #     print(port.SPICE_net, port.voltage, port.current)
@@ -588,7 +595,7 @@ class PCB:
             delta_vs = [abs(failsafe_port_voltages[idx]-val.voltage) for idx,val in enumerate(self.component_ports)]
             delta_v = max(delta_vs)
             fastest_net = self.component_ports[delta_vs.index(delta_v)].SPICE_net
-
+            print("DV",delta_v)
             # print("Delta V:" , delta_v)
             convergence = delta_v < 0.1
 
@@ -596,11 +603,13 @@ class PCB:
                 break
             else:
                 self.set_time_step(self.grid.time_step*0.5)
-                # print("Decreased timestep to " , self.grid.time_step)
+                print("Decreased timestep to " , self.grid.time_step)
 
                 for idx,port in enumerate(self.component_ports):
-                    port.voltage = failsafe_port_voltages[idx]
+                    self.grid.E[port.N_x:port.N_x+1,port.N_y:port.N_y+1,z_slice,Z] = failsafe_port_voltages[idx]
+                    print("AAAAAAAA",self.grid.E[port.N_x,port.N_y,z_slice,Z])
                     port.current = failsafe_port_currents[idx]
+                    port.old_current = failsafe_port_old_currents[idx]
 
             # prev_convergence = copy.copy(new_convergence)
 
