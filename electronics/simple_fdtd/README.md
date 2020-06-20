@@ -94,6 +94,9 @@ pip install pyevtk
 5. Add sources in append.cir
 
 
-The timestep SPICE requires to properly resolve circuits is often below 1e-20, far lower than the speed-of-light Courant limit that FDTD requires for most reasonable mesh sizes.
+The timestep SPICE requires to properly resolve circuits can sometimes drop below 1e-20s, far lower than the speed-of-light Courant limit that FDTD requires for most reasonable mesh sizes.
 
 For this reason, the adaptive timestep method described by [Ciampolini 1995] is used.
+
+
+TODO: fix spice timestep
