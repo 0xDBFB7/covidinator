@@ -5,8 +5,6 @@ from PCB_extensions import *
 
 import matplotlib.pyplot as plt
 
-
-
 fdtd.set_backend("torch.cuda.float32")
 # fdtd.set_backend("numpy")
 
