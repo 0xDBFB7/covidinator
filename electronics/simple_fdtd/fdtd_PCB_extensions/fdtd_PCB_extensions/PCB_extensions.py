@@ -33,15 +33,12 @@ from fdtd.backend import backend as bd
 from numpy import array
 
 
-import sexpdata #hehe
 # from pykicad.pcb import *
 # from pykicad.module import * unfortunately, got an error immediately with this. probably for a different version of kicad.
-
 
 X = 0
 Y = 1
 Z = 2
-
 
 class PCB:
     def __init__(self, cell_size, z_height=2e-3, xy_margin=15, z_margin=11, pml_cells=10):

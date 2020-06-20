@@ -74,7 +74,7 @@
 
 \begin{abstract}
 
-We extend this landmark work rather trivially by:
+We extend this landmark work rather trivially by:\\
 
 
 Aims:
@@ -96,17 +96,21 @@ Aims:
 \end{abstract}
 
 
+\begin{autem}
+	{\large  \it autem} \\
 	
-This work was prepared by an undergraduate and has not been peer-reviewed. 
+	This work was prepared by an undergraduate and has not been peer-reviewed. Additionally, the author has no prior experience with either biology or microwave design. \\
 
-Additionally, the author has no prior experience with either biology or microwave design. 
+	While our study is very simple, biology is of such complexity that a tremendous amount of care must be taken before any conclusion can be drawn at all. It is not likely that we have taken sufficient care.\\ 
 
-Though the original research used Inf. A, our testing was only performed with a surrogate bacteriophage. All experiments must be repeated with SARS-NCoV-2.
+	Though the original research used Inf. A, our testing was only performed with a surrogate bacteriophage. All experiments must be repeated with SARS-NCoV-2. \\
 
-Additionally, other sterilization techniques may produce superior results and should be evaluated in the same context. Data on far UVC [Buonanno 2017] indicate safety.
+	Additionally, other sterilization techniques may produce superior results and should be evaluated in the same context. Data on far UV [Buonanno 2017] indicate safety.\\
 
-Please consider all claims with appropriate skepticism.
+	Please consider all claims with appropriate skepticism.
 
+\end{autem}
+	
 
 \begin{multicols}{1}
 
@@ -167,12 +171,14 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 
 Because this is an ostensibly novel and niche mechanism, it may behoove us to breifly review the biological basis for the safety limits set by standards organizations. \footnote{The idea of biological microwave resonances appears to have originated in [Frohlich 1968, 1980].}
 
+
+\includegraphics[scale=0.5]{cells.png}
+
+
 Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent. 
 \footnote{[FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
 adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". Things heating up at the Microwave Safety fandom.}
 
-
-The IEEE standard which the flagship paper [Yang 2015] references [IEEE C95.1-2005] was recently overhauled [IEEE C95.1-2019] with new metrics.
 
 For instance, it is reasonable to wonder why we might not see such resonances in bodily tissues. Approximately similar nanoscopic structures exist in humans, such as nuclear pores (120 nm) and the famous microtubules (10x50 nm). 
 
@@ -189,6 +195,10 @@ However, "There are limited experimental human data upon which to set limits on 
 In addition, what data remains in this category is of varying quality. 
 
 As has been starkly demonstrated in the recent hydroxychloroquine contradictions [Gautret 2020] [Geleris 2020], biological research must be essentially perfect to have any meaning at all.
+
+
+The IEEE standard which the flagship paper [Yang 2015] references [IEEE C95.1-2005] was recently overhauled [IEEE C95.1-2019] with new metrics.
+
 
 [Vijayalaxmi 2018] is a remarkable meta-analysis of in vitro data. They synthesize a quality score, rating bindedness, sham controls, dosimetry, and sample size. Quality was inversely, monotonically related to the effect size. An example of the subtle effects that can call into question superfically reasonable results are [
 
