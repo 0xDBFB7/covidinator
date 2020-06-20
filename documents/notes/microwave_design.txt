@@ -885,3 +885,9 @@ Dipole (toroidal emission pattern) and monopole antennas can easily be made with
 bandwidth and gain.
 
 There was sufficient gradient information in the QUCS simulation for optimization. 
+
+man, infineon is cool! they supply a "Budgetary Price €/1k" for their devices. 
+
+The BAT15 shottky SPICE model is only valid to 6 GHz. That sux.
+
+darnit, that infineon appnote used the BAT15-02EL, whereas I've only got BAT15-03s. dagnabbit
