@@ -57,9 +57,6 @@ import copy
 import ngspyce
 from ngspyce.sharedspice import *
 
-
-
-
 from numpy import array
 
 # from pykicad.pcb import *
