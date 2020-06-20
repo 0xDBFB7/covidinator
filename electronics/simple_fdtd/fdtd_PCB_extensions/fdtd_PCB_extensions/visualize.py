@@ -1,6 +1,6 @@
 
 
-def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=False, Emag_dump=True, objects_dump=True, ports_dump=True):
+def dump_to_vtk(pcb, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=False, Emag_dump=True, objects_dump=True, ports_dump=True):
     '''
     Extension is automatically chosen, you don't need to supply it
 
@@ -13,22 +13,22 @@ def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump
     '''
 
 
-    x = np.linspace(0, self.cell_size*self.grid.Nx, self.grid.Nx+1) #there might be an off-by-one error here.
-    y = np.linspace(0, self.cell_size*self.grid.Ny, self.grid.Ny+1)
-    z = np.linspace(0, self.cell_size*self.grid.Nz, self.grid.Nz+1)
+    x = np.linspace(0, pcb.cell_size*pcb.grid.Nx, pcb.grid.Nx+1) #there might be an off-by-one error here.
+    y = np.linspace(0, pcb.cell_size*pcb.grid.Ny, pcb.grid.Ny+1)
+    z = np.linspace(0, pcb.cell_size*pcb.grid.Nz, pcb.grid.Nz+1)
 
     cellData = {}
 
     if(not isinstance(fdtd.backend, NumpyBackend)):
-        E_copy = self.grid.E.cpu()
-        cu_mask = self.copper_mask.cpu().numpy()
+        E_copy = pcb.grid.E.cpu()
+        cu_mask = pcb.copper_mask.cpu().numpy()
     else:
-        E_copy = self.grid.E
-        cu_mask = self.copper_mask
+        E_copy = pcb.grid.E
+        cu_mask = pcb.copper_mask
 
     if(objects_dump):
         objects = np.zeros_like(E_copy[:,:,:,X])
-        for obj in self.grid.objects:
+        for obj in pcb.grid.objects:
             if(obj.name == "substrate"):
                 objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
             else:
@@ -38,13 +38,13 @@ def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump
 
     if(ports_dump):
         ports = np.zeros_like(E_copy[:,:,:,X])
-        for port in [i for i in self.component_ports if i]:
-                ports[port.N_x,port.N_y,self.component_plane_z-1] = 4
+        for port in [i for i in pcb.component_ports if i]:
+                ports[port.N_x,port.N_y,pcb.component_plane_z-1] = 4
 
-                # ports[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2] = 5
-                # ports[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2]  = 5
-                # ports[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2] = 5
-                # ports[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2]  = 5
+                # ports[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,pcb.component_plane_z-3:pcb.component_plane_z-2] = 5
+                # ports[port.N_x-1:port.N_x,port.N_y:port.N_y+1,pcb.component_plane_z-3:pcb.component_plane_z-2]  = 5
+                # ports[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,pcb.component_plane_z-3:pcb.component_plane_z-2] = 5
+                # ports[port.N_x:port.N_x+1,port.N_y-1:port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2]  = 5
         cellData['ports'] = ports
 
 
@@ -55,7 +55,7 @@ def dump_to_vtk(self, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump
     if(Ez_dump):
         cellData['Ez'] = np.ascontiguousarray(E_copy[:,:,:,Z])
     if(Emag_dump):
-        cellData['Emag'] = np.ascontiguousarray(self.E_magnitude(E_copy)) # gridToVTK expects a contiguous array.
+        cellData['Emag'] = np.ascontiguousarray(pcb.E_magnitude(E_copy)) # gridToVTK expects a contiguous array.
 
 
     gridToVTK(filename + str(iteration), x, y, z, cellData = cellData)

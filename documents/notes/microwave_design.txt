@@ -891,3 +891,7 @@ man, infineon is cool! they supply a "Budgetary Price €/1k" for their devices.
 The BAT15 shottky SPICE model is only valid to 6 GHz. That sux.
 
 darnit, that infineon appnote used the BAT15-02EL, whereas I've only got BAT15-03s. dagnabbit
+
+
+ZX47-40-S+ looks like the right power detector.
+
