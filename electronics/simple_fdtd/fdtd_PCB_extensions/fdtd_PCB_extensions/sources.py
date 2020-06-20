@@ -83,11 +83,6 @@ def zero_conductor_fields(self):
     self.grid.E[self.copper_mask] = 0
 
 
-
-def E_magnitude(self, E):
-    return np.sqrt(E[:,:,:,X]**2.0 + E[:,:,:,Y]**2.0 + E[:,:,:,Z]**2.0)
-
-
 def FDTD_step(self):
     self.grid.update_E()
 

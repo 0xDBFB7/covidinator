@@ -31,7 +31,36 @@ from fdtd.backend import backend as bd
 
 
 from numpy import array
+import fdtd
 
+from cairosvg import svg2png
+import lxml.etree as etree
+from PIL import Image
+import io
+import math
+from math import pi, ceil, cos, sin, log
+from scipy.constants import mu_0,epsilon_0
+import numpy as np
+import torch
+
+from importlib import reload
+
+import gc
+
+
+# import subprocess
+import sys
+# import signal
+
+import copy
+
+import ngspyce
+from ngspyce.sharedspice import *
+
+
+
+
+from numpy import array
 
 # from pykicad.pcb import *
 # from pykicad.module import * unfortunately, got an error immediately with this. probably for a different version of kicad.
