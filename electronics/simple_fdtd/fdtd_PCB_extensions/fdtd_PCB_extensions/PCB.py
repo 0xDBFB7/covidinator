@@ -62,6 +62,8 @@ from numpy import array
 # from pykicad.pcb import *
 # from pykicad.module import * unfortunately, got an error immediately with this. probably for a different version of kicad.
 
+
+
 X = 0
 Y = 1
 Z = 2

@@ -2,7 +2,7 @@ import pytest
 
 import fdtd_PCB_extensions as fd
 
-@pytest.fixture()
+@pytest.fixture
 def setup_basic_grid():
     pcb = fd.PCB(0.0002)
     fd.initialize_grid_with_svg(pcb, 'test_files/basic_test.svg')

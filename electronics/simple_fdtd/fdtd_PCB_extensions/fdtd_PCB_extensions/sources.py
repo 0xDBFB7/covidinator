@@ -1,4 +1,7 @@
 
+
+#need a function that slices including the PML margin
+
 class Port:
     def __init__(self, pcb, SPICE_net, F_x, F_y):
 
@@ -9,25 +12,24 @@ class Port:
 
         if(not pcb.copper_mask[self.N_x, self.N_y, pcb.component_plane_z]):
             raise Exception("Port added without copper above.")
-            sys.exit()
 
         self.voltage = 0.0
         self.current = 0.0
         self.voltage_history = []
         self.current_history = []
 
-        self.copper_mask[self.N_x,self.N_y,pcb.ground_plane_z_top:pcb.component_plane_z-3] = 1 #make a conductor
-        self.copper_mask[self.N_x,self.N_y,pcb.component_plane_z-2:pcb.component_plane_z] = 1 #make a conductor
+        pcb.copper_mask[self.N_x,self.N_y,pcb.ground_plane_z_top:pcb.component_plane_z-3] = 1 #make a conductor
+        pcb.copper_mask[self.N_x,self.N_y,pcb.component_plane_z-2:pcb.component_plane_z] = 1 #make a conductor
 
 
 
-def compute_all_voltages(self):
-    for port in self.component_ports:
+def compute_all_voltages(pcb):
+    for port in pcb.component_ports:
         # port.voltage = self.e_field_integrate(port, self.reference_port)
         # Perfect Electrical Conductors have zero internal electric field
 
         port.voltage = float(sum(self.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z])*self.cell_size)
-        # port.voltage_history.append(port.voltage)
+        port.voltage_history.append(port.voltage)
 
 def compute_all_currents(self):
     for idx, port in enumerate(self.component_ports):
@@ -79,22 +81,22 @@ def compute_all_currents(self):
         port.old_current = port.current
 
 
-def zero_conductor_fields(self):
-    self.grid.E[self.copper_mask] = 0
+def zero_conductor_fields(pcb):
+    pcb.grid.E[self.copper_mask] = 0
 
 
-def FDTD_step(self):
-    self.grid.update_E()
+def FDTD_step(pcb):
+    pcb.grid.update_E()
 
-    self.zero_conductor_fields()
+    zero_conductor_fields(pcb)
 
-    self.apply_all_currents()
+    apply_all_currents(pcb)
     # self.constrain_values()
-    self.grid.update_H()
+    pcb.grid.update_H()
 
-    self.grid.time_steps_passed += 1
-    self.time += self.grid.time_step # the adaptive
-    self.times.append(self.time)
+    pcb.grid.time_steps_passed += 1
+    pcb.time += self.grid.time_step # the adaptive
+    pcb.times.append(self.time)
 
 
 #
