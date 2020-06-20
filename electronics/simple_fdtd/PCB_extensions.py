@@ -61,13 +61,17 @@ class Port:
         self.N_x = pcb.xy_margin+int((F_x)/pcb.cell_size)
         self.N_y = pcb.xy_margin+int((F_y)/pcb.cell_size)
 
-        if(not pcb.copper_mask[self.N_x, self.N_y, component_plane_z]):
+        if(not pcb.copper_mask[self.N_x, self.N_y, pcb.component_plane_z]):
             print("Error: port added with no copper above.")
             sys.exit()
         self.voltage = 0.0
         self.current = 0.0
+        self.old_current = 0.0
         self.voltage_history = []
         self.current_history = []
+
+        pcb.create_source_vias()
+
 
 class PCB:
     def __init__(self, cell_size, z_height=2e-3, xy_margin=15, z_margin=11, pml_cells=10):
@@ -176,6 +180,7 @@ class PCB:
 
         self.initialize_grid(N_x, N_y, N_z, courant_number=courant_number)
 
+
     def construct_copper_geometry_from_svg(self, copper_thickness, conductor_conductivity, svg_file):
         PNG_SUPERSAMPLE_FACTOR = 10
 
@@ -218,38 +223,46 @@ class PCB:
 
     def apply_all_currents(self):
         for port in self.component_ports:
-            # port.voltage = e_field_integrate(G, port, self.reference_port)
-            # math.sin(self.grid.time_steps_passed/50.0)* (100.0/self.cell_size)
-            # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1,Z] += (port.current*self.cell_size / C) * self.grid.time_step
-            #(self.component_plane_z-self.ground_plane_z_top)
 
-            self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3,Z] = 0 #make a conductor
-            self.grid.E[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z,Z] = 0 #make a conductor
+            #
+            # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3,Z] = 0 #make a conductor
+            # self.grid.E[port.N_x,port.N_y,self.component_plane_z-2:self.component_plane_z,Z] = 0 #make a conductor
+            #
+            # C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
+            # # print(C)
+            #
+            # # C *= 10.0
+            #
+            # dvdt = (port.current / C)
+            #
+            # port.voltage += (dvdt * self.grid.time_step)
+            #
+            # self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] = port.voltage / (self.cell_size)
 
-            C = epsilon_0*(self.cell_size**2.0)*(self.substrate_permittivity)/(1.0*self.cell_size)
-            # print(C)
+            #equation 4, 5 in [Toland 1993]
+            self.current = 1.0
+            z_slice = slice(self.component_plane_z-3,self.component_plane_z-2)
 
-            # C *= 10.0
+            perm_factor = ((self.substrate_permittivity * 8.85e-12)/self.grid.time_step)
+            E_n = self.grid.E[port.N_x,port.N_y,z_slice,Z]*perm_factor
 
-            dvdt = (port.current / C)
+            L_H =  ((self.grid.H[port.N_x,port.N_y-1,z_slice,X] - self.grid.H[port.N_x,port.N_y,z_slice,X]) * self.cell_size)
+            L_H += ((self.grid.H[port.N_x,port.N_y,z_slice,Y] - self.grid.H[port.N_x-1,port.N_y,z_slice,Y]) * self.cell_size)
 
-            port.voltage += (dvdt * self.grid.time_step)
+            I = (port.old_current+port.current)/(2.0*(self.cell_size**2.0))
+            print(E_n, L_H, I)
+            E_new =  E_n
+            E_new += L_H
+            E_new -= I
 
-            self.grid.E[port.N_x,port.N_y,self.component_plane_z-3:self.component_plane_z-2,Z] = port.voltage / (self.cell_size)
+            E_new /= perm_factor
 
-            #make a ring of current around the conductor
-            # contour_length = (4.0*self.cell_size)
+            self.grid.E[port.N_x,port.N_y,z_slice,Z] = E_new
 
 
-            # print(port.current)
-            #ostensibly there should be a factor of mu_0 here.
-            # self.grid.H[port.N_x+1:port.N_x+2,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = 1.0 * (port.current / contour_length)
-            # self.grid.H[port.N_x-1:port.N_x,port.N_y:port.N_y+1,self.component_plane_z-3:self.component_plane_z-2,Y] = -1.0 * (port.current / contour_length)
-            # self.grid.H[port.N_x:port.N_x+1,port.N_y+1:port.N_y+2,self.component_plane_z-3:self.component_plane_z-2,X] = 1.0 * (port.current / contour_length)
-            # self.grid.H[port.N_x:port.N_x+1,port.N_y-1:port.N_y,self.component_plane_z-3:self.component_plane_z-2,X] = -1.0 * (port.current / contour_length)
-            # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z,Z] = 0
-            # self.grid.E[port.N_x,port.N_y,self.component_plane_z-1:self.component_plane_z,Z] = port.voltage / (self.cell_size)
+            print("E_new",E_new)
 
+            port.old_current = port.current
 
     def zero_conductor_fields(self):
         self.grid.E[self.copper_mask] = 0
@@ -500,6 +513,13 @@ class PCB:
 
         self.forcings()
 
+        self.reset_spice()
+        self.set_spice_voltages()
+        self.run_spice_step()
+        self.get_spice_currents()
+        self.forcings()
+
+
         self.to_taste()
 
         self.FDTD_step()
@@ -507,15 +527,16 @@ class PCB:
         self.compute_all_voltages()
 
 
-        # [abs(i.voltage i.voltage) for i in enumerate(pcb.component_ports)]
-
+        # [abs(i.voltage i    pcb.apply_all_currents()
 
         # self = self.adaptive_timestep(failsafe_timestep)
 
-    def FDTD_step():
+    def FDTD_step(self):
         self.grid.update_E()
 
         self.zero_conductor_fields()
+
+        self.apply_all_currents()
         # self.constrain_values()
         self.grid.update_H()
 
@@ -533,11 +554,17 @@ class PCB:
         #Using an adaptive timestep method as per [Ciampolini 1995]
 
         failsafe_port_voltages = []
+        failsafe_port_currents = []
         for idx,port in enumerate(self.component_ports):
             failsafe_port_voltages.append(port.voltage)
+            failsafe_port_currents.append(port.current)
         # failsafe_ports = copy.deepcopy(self.component_ports)
 
         delta_v = 0
+
+
+
+
 
         # this coefficient is somewhat tricky.
         # higher, and the loop below will have to try more timesteps to find convergence.
@@ -551,11 +578,6 @@ class PCB:
             # for port in self.component_ports:
             #     print(port.SPICE_net, port.voltage, port.current)
             #
-            self.reset_spice()
-            self.set_spice_voltages()
-            self.run_spice_step()
-            self.get_spice_currents()
-            self.forcings()
 
             self.apply_all_currents()
             ngspyce.cmd("destroy all")
@@ -568,7 +590,7 @@ class PCB:
             fastest_net = self.component_ports[delta_vs.index(delta_v)].SPICE_net
 
             # print("Delta V:" , delta_v)
-            convergence = delta_v < 0.01
+            convergence = delta_v < 0.1
 
             if(convergence):
                 break
@@ -578,7 +600,7 @@ class PCB:
 
                 for idx,port in enumerate(self.component_ports):
                     port.voltage = failsafe_port_voltages[idx]
-                    # port.current = failsafe_ports[idx].current
+                    port.current = failsafe_port_currents[idx]
 
             # prev_convergence = copy.copy(new_convergence)
 
