@@ -64,7 +64,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
 
 print_step = 50
 
-dump_step = 0.1e-12
+#dump_step = 1e-12
 i = 0
 clock_time_before = 0
 sim_time_before = 0
@@ -78,15 +78,17 @@ create_patch_antenna(pcb, 0.005, 0.005)
 prev_dump_time = 0
 while(pcb.time < end_time):
 
-    if(abs(pcb.time-prev_dump_time) > dump_step):
-
+    if(abs(pcb.time-prev_dump_time) > dump_step or pcb.grid.time_steps_passed == 0):
+        #paraview gets confused if the first number isn't zero.
         fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
         prev_dump_time = pcb.time
 
     # print("Period:",2.0*pi*pcb.time*frequency)
-    # source_voltage = sin(2.0*pi*pcb.time*frequency)
-    source_voltage = 1.0
+    source_voltage = sin(2.0*pi*pcb.time*frequency)
+    # source_voltage = 1.0
     source_current = (source_voltage - pcb.component_ports[0].voltage) / 50.0
+
+    
 
     pcb.component_ports[0].current = source_current
 

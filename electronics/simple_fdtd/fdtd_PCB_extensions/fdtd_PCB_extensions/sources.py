@@ -120,8 +120,11 @@ def FDTD_step(pcb):
     max_delta_V = compute_deltas(pcb)
     voltage_tolerance = 0.01
     courant_time_step = 0.9 / (3*(3e8/pcb.cell_size))
-    required_time_step = voltage_tolerance / max_delta_V
+    required_time_step = voltage_tolerance / max(max_delta_V, 1e-5) #avoid div0
     set_time_step(pcb, min(courant_time_step, required_time_step))
+
+    print("max_delta_V {:.3e}, | time_step: {:.3e} | * {:.3f}".format(max_delta_V, pcb.grid.time_step, pcb.grid.time_step*max_delta_V))
+
 
     apply_deltas(pcb)
 

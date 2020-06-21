@@ -16,14 +16,18 @@ S-expression-S-parameter
 
 # Background
 
-Coupling SPICE and FDTD is a mature field.
+Coupling SPICE and FDTD is a mature, erm, field.
 
 There are numerous subtly different methods of coupling; either voltage integrated from the grid is injected into SPICE, then the computed current is put back onto the grid with a H-field source, or the other way around [Mix 1999].
 
-[Thomas 1994] represents the source cell's capacitance in SPICE, and lets SPICE integrate the voltage on the capacitor before directly putting that voltage on the grid.
+[Thomas 1994] fields a method of represents the source cell's capacitance in SPICE, and lets SPICE integrate the voltage on the capacitor before directly putting that voltage on the grid.
 
-We do the same, except the cell capacitance is integrated in the FDTD loop. This is a dumbass way to do it, since the timestep must be horrifically small to resolve the voltage properly.
-We couldn't make the other methods work in short order.
+~~We do the same, except the cell capacitance is integrated in the FDTD loop. This is a dumbass way to do it, since the timestep must be horrifically small to resolve the voltage properly.
+We couldn't make the other methods work in short order.~~
+
+The
+
+We use a simple current source, a la equation 4, 5 in [Toland 1993], and https://www.eecs.wsu.edu/~schneidj/ufdtd/chap3.pdf, eq. 3.28
 
 There are also many different source geometries, each introducing their own distortion; Ampere's law current contours around each conductor [Mix 1999], voltage via staircases
 from the ground plane [Luebbers 1996], current sources in the plane of the trace, with vias to the ground plane, etc.
@@ -34,6 +38,8 @@ but probably distorts the signal significantly.
 Conductors are represented by zeroing all components of the electric field within. They're supposed to have zero thickness - I think only one edge-layer of E components are zeroed, but that's worth double-checking.
 
 Each pad on the board gets a Port object and a corresponding voltage source in SPICE, with a new unique net name.
+
+
 
 # class LumpedComponent(object):
 # """
@@ -102,4 +108,7 @@ For this reason, the adaptive timestep method described by [Ciampolini 1995] is 
 TODO: fix spice timestep
 
 
-profile with 
+profile with
+
+
+The port current used is different in sign from the convention usually used in FDTD codes. Positive port current induces a positive voltage difference on the port.
