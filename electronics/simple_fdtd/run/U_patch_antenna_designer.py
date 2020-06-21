@@ -1,6 +1,7 @@
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
 
+import numpy as np
 from math import sin, pi
 import time
 import os
@@ -18,9 +19,13 @@ os.system("rm data/*")
 #Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
+patch_width = 0.005
+patch_length = 0.005
+feed_length = 0.005
 
 pcb = fd.PCB(0.0002)
-fd.initialize_grid(pcb,int(0.015/pcb.cell_size),int(0.025/pcb.cell_size), int(0.01/pcb.cell_size), courant_number = None)
+fd.initialize_grid(pcb,int(patch_width/pcb.cell_size)+2*(pcb.xy_margin),int((patch_length+feed_length)/pcb.cell_size)+2*(pcb.xy_margin),
+                                int(0.01/pcb.cell_size), courant_number = None)
 
 fd.create_planes(pcb,0.032e-3, 6e7)
 fd.create_substrate(pcb,0.8e-3, 4.4, 0.02, 9e9)
@@ -29,7 +34,7 @@ fd.create_substrate(pcb,0.8e-3, 4.4, 0.02, 9e9)
 
 def create_patch_antenna(pcb, patch_width, patch_length):
     MICROSTRIP_FEED_WIDTH = 1.5e-3
-    MICROSTRIP_FEED_LENGTH = 10e-3
+    MICROSTRIP_FEED_LENGTH = 5e-3
 
     z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
 
@@ -62,45 +67,70 @@ def create_patch_antenna(pcb, patch_width, patch_length):
 #
 # def compute_patch_dimensions():
 
-print_step = 50
 
-#dump_step = 1e-12
-i = 0
-clock_time_before = 0
-sim_time_before = 0
+def sim_VSWR(pcb, freqs):
+    print_step = 50
+    # dump_step = 2e-12
+    dump_step = None
 
-end_time = 1250e-12
+    create_patch_antenna(pcb, 0.005, 0.005)
+    #A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
+    prev_dump_time = 0
 
-frequency = 8e9
+    delivered_power = np.zeros_like(freqs)
 
-create_patch_antenna(pcb, 0.005, 0.005)
-#A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
-prev_dump_time = 0
-while(pcb.time < end_time):
+    for f_idx, frequency in enumerate(freqs):
 
-    if(abs(pcb.time-prev_dump_time) > dump_step or pcb.grid.time_steps_passed == 0):
-        #paraview gets confused if the first number isn't zero.
-        fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
-        prev_dump_time = pcb.time
+        end_time = (1.0 / frequency) * 5.0 # 5 periods of the sine
 
-    # print("Period:",2.0*pi*pcb.time*frequency)
-    source_voltage = sin(2.0*pi*pcb.time*frequency)
-    # source_voltage = 1.0
-    source_current = (source_voltage - pcb.component_ports[0].voltage) / 50.0
+        energy = 0
+        pcb.grid.reset()
+        fd.reset(pcb)
 
-    
-
-    pcb.component_ports[0].current = source_current
-
-    fd.FDTD_step(pcb)
+        # while(pcb.time < end_time):
+        while(pcb.grid.time_steps_passed < 100):
 
 
+            if(dump_step and (abs(pcb.time-prev_dump_time) > dump_step or pcb.grid.time_steps_passed == 0)):
+                #paraview gets confused if the first number isn't zero.
+                fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
+                prev_dump_time = pcb.time
 
-    for port in pcb.component_ports:
-        print(port.SPICE_net, port.voltage, port.current)
+            # print("Period:",2.0*pi*pcb.time*frequency)
+            source_voltage = sin(2.0*pi*pcb.time*frequency)
+            # source_voltage = 1.0
+            source_current = (source_voltage - pcb.component_ports[0].voltage) / 50.0
+
+            pcb.component_ports[0].current = source_current
+
+            fd.FDTD_step(pcb)
 
 
-    print("T:",pcb.time)
 
-for port in pcb.component_ports:
-    np.savetxt("data/"+str(port.SPICE_net)+".csv", np.array(port.voltage_history).reshape(-1, 1), delimiter=",",fmt='%10.5f')
+            power = pcb.component_ports[0].voltage * source_current
+            energy += power * pcb.grid.time_step
+
+            if(pcb.grid.time_steps_passed % print_step == 0):
+                for port in pcb.component_ports:
+                    print(port.SPICE_net, port.voltage, port.current)
+
+                print("T: ",pcb.time)
+                print("%: ",(pcb.time/end_time)*100.0)
+                # print(power)
+
+
+        delivered_power[f_idx] = energy / end_time
+
+    return delivered_power
+
+
+freqs = np.linspace(2e9, 5e9, 10)
+
+delivered_power = sim_VSWR(pcb, freqs)
+# plt.plot(freqs, delivered_power)
+# plt.show()
+
+# for port in pcb.component_ports:
+#     np.savetxt("data/"+str(port.SPICE_net)+".csv", np.array(port.voltage_history).reshape(-1, 1), delimiter=",",fmt='%10.5f')
+#
+# np.savetxt("data/times.csv", np.array(pcb.times).reshape(-1, 1), delimiter=",",fmt='%10.5f')

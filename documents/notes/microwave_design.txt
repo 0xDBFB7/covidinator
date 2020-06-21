@@ -895,3 +895,46 @@ darnit, that infineon appnote used the BAT15-02EL, whereas I've only got BAT15-0
 
 ZX47-40-S+ looks like the right power detector.
 
+
+flaport/fdtd only seems to use 36% of the GPU capacity, even though cprofile sez
+
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   1014/1    0.004    0.000   13.785   13.785 {built-in method builtins.exec}
+        1    0.000    0.000   13.785   13.785 U_patch_antenna_designer.py:1(<module>)
+        1    0.005    0.005   11.272   11.272 U_patch_antenna_designer.py:71(sim_VSWR)
+     1000    0.010    0.000   11.264    0.011 sources.py:117(FDTD_step)
+     1000    0.061    0.000    5.395    0.005 grid.py:275(update_E)
+     1000    0.061    0.000    5.366    0.005 grid.py:301(update_H)
+     6000    4.356    0.001    4.356    0.001 boundaries.py:449(update_phi_H)
+     6000    4.316    0.001    4.316    0.001 boundaries.py:421(update_phi_E)
+     2063    0.002    0.000    1.653    0.001 backend.py:214(zeros)
+     2063    1.649    0.001    1.651    0.001 {built-in method zeros}
+
+I think that means it's being way less efficient with PCIe transfers. 
+
+nvvp:
+
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   31.03%  1.24629s    137000  9.0970us  3.0720us  1.2425ms  _ZN2at6native6legacy18elementwise_kernelILi128ELi4EZNS0_15gpu_kernel_implIZZZNS0_15add_kernel_cudaERNS_14TensorIteratorEN3c106ScalarEENKUlvE_clEvENKUlvE2_clEvEUlffE_EEvS5_RKT_EUliE2_EEviT1_
+                   13.62%  547.06ms     65008  8.4150us  1.5350us  195.96us  _ZN2at6native6legacy18elementwise_kernelILi128ELi4EZNS0_15gpu_kernel_implIZZZNS0_21copy_device_to_deviceERNS_14TensorIteratorEbENKUlvE_clEvENKUlvE2_clEvEUlfE_EEvS5_RKT_EUliE2_EEviT1_
+                   13.43%  539.44ms     76000  7.0970us  2.2720us  1.2233ms  _ZN2at6native6legacy18elementwise_kernelILi512ELi1EZNS0_15gpu_kernel_implIZZZNS0_15add_kernel_cudaERNS_14TensorIteratorEN3c106ScalarEENKUlvE_clEvENKUlvE2_clEvEUlffE_EEvS5_RKT_EUliE0_EEviT1_
+                   10.62%  426.53ms     50012  8.5280us  2.3680us  59.198us  _ZN2at6native6modern29vectorized_elementwise_kernelILi4EZZZNS0_15mul_kernel_cudaERNS_14TensorIteratorEENKUlvE_clEvENKUlvE2_clEvEUlffE_NS_6detail5ArrayIPcLi3EEEEEviT0_T1_
+                    8.38%  336.49ms     64008  5.2560us  2.5920us  595.02us  _ZN2at6native6legacy18elementwise_kernelILi512ELi1EZNS0_15gpu_kernel_implIZZZNS0_21copy_device_to_deviceERNS_14TensorIteratorEbENKUlvE_clEvENKUlvE2_clEvEUlfE_EEvS5_RKT_EUliE0_EEviT1_
+                    6.41%  257.38ms     49000  5.2520us  2.9120us  151.58us  _ZN2at6native6legacy18elementwise_kernelILi128ELi4EZNS0_15gpu_kernel_implIZZZNS0_15mul_kernel_cudaERNS_14TensorIteratorEENKUlvE_clEvENKUlvE2_clEvEUlffE_EEvS5_RKT_EUliE2_EEviT1_
+                    5.24%  210.31ms      3000  70.103us  65.214us  83.773us  void thrust::cuda_cub::core::_kernel_agent<thrust::cuda_cub::__parallel_for::ParallelForAgent<thrust::cuda_cub::__transform::unary_transform_f<thrust::permutation_iterator<thrust::device_ptr<long>, thrust::transform_iterator<strided_range<thrust::device_ptr<long>>::stride_functor, thrust::counting_iterator<long, thrust::use_default, thrust::use_default, thrust::use_default>, thrust::use_default, thrust::use_default>>, thrust::permutation_iterator<thrust::device_ptr<long>, thrust::transform_iterator<strided_range<thrust::device_ptr<long>>::stride_functor, thrust::counting_iterator<long, thrust::use_default, thrust::use_default, thrust::use_default>, thrust::use_default, thrust::use_default>>, thrust::cuda_cub::__transform::no_stencil_tag, idx_functor, thrust::cuda_cub::__transform::always_true_predicate>, long>, thrust::cuda_cub::__transform::unary_transform_f<thrust::permutation_iterator<thrust::device_ptr<long>, thrust::transform_iterator<strided_range<thrust::device_ptr<long>>::stride_functor, thrust::counting_iterator<long, thrust::use_default, thrust::use_default, thrust::use_default>, thrust::use_default, thrust::use_default>>, thrust::permutation_iterator<thrust::device_ptr<long>, thrust::transform_iterator<strided_range<thrust::device_ptr<long>>::stride_functor, thrust::counting_iterator<long, thrust::use_default, thrust::use_default, thrust::use_default>, thrust::use_default, thrust::use_default>>, thrust::cuda_cub::__transform::no_stencil_tag, idx_functor, thrust::cuda_cub::__transform::always_true_predicate>, long>(thrust::device_ptr<long>, thrust::device_ptr<long>)
+
+
+
+
+huh. 
+
+
+python module.__file__  is neat.
+
+
+Upgrading pytorch increased utilization to 41%, not super great.
+
+half-precision - the E field is of the right magnitude, but the H-field
+needs to be scaled.
+

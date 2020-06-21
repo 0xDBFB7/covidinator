@@ -84,7 +84,7 @@ def initialize_grid_with_svg(pcb, svg_file, courant_number = None):
 
     print("Into a {} x {} x {} mesh".format(N_x, N_y, N_z))
 
-    initialize_grid(pcb,N_x, N_y, N_z, courant_number=courant_number)
+    initialize_grid(pcb, N_x, N_y, N_z, courant_number=courant_number)
 
 
 def construct_copper_geometry_from_svg(pcb, copper_thickness, conductor_conductivity, svg_file):

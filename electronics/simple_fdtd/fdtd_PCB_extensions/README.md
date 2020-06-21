@@ -112,3 +112,5 @@ profile with
 
 
 The port current used is different in sign from the convention usually used in FDTD codes. Positive port current induces a positive voltage difference on the port.
+
+python setup.py develop
