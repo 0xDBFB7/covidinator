@@ -1,4 +1,6 @@
-from PCB_extensions import *
+import fdtd_PCB_extensions as fd
+from fdtd_PCB_extensions import fdtd
+
 from math import sin, pi
 import time
 import os
@@ -17,11 +19,11 @@ os.system("rm data/*")
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
 
-pcb = PCB(0.0002)
-pcb.initialize_grid(int(0.015/pcb.cell_size),int(0.025/pcb.cell_size), int(0.01/pcb.cell_size), courant_number = None)
+pcb = fd.PCB(0.0002)
+fd.initialize_grid(pcb,int(0.015/pcb.cell_size),int(0.025/pcb.cell_size), int(0.01/pcb.cell_size), courant_number = None)
 
-pcb.create_planes(0.032e-3, 6e7)
-pcb.create_substrate(0.8e-3, 4.4, 0.02, 9e9)
+fd.create_planes(pcb,0.032e-3, 6e7)
+fd.create_substrate(pcb,0.8e-3, 4.4, 0.02, 9e9)
 
 
 
@@ -47,7 +49,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
                                         pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
     pcb.component_ports = [] # wipe ports
-    pcb.component_ports.append(Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y+fp_N_y-1)*pcb.cell_size))
+    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y+fp_N_y-1)*pcb.cell_size))
 
 
 
@@ -78,7 +80,7 @@ while(pcb.time < end_time):
 
     if(abs(pcb.time-prev_dump_time) > dump_step):
 
-        pcb.dump_to_vtk('dumps/test',pcb.grid.time_steps_passed)
+        fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
         prev_dump_time = pcb.time
 
     # print("Period:",2.0*pi*pcb.time*frequency)
@@ -88,11 +90,8 @@ while(pcb.time < end_time):
 
     pcb.component_ports[0].current = source_current
 
-    pcb.to_taste()
-    # pcb.apply_all_currents()
+    fd.FDTD_step(pcb)
 
-    pcb.FDTD_step()
-    pcb.compute_all_voltages()
 
 
     for port in pcb.component_ports:

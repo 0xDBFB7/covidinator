@@ -1,3 +1,4 @@
+from fdtd_PCB_extensions import X,Y,Z
 
 
 #need a function that slices including the PML margin
@@ -15,6 +16,7 @@ class Port:
 
         self.voltage = 0.0
         self.current = 0.0
+        self.dV_dt = 0.0
         self.voltage_history = []
         self.current_history = []
 
@@ -28,11 +30,13 @@ def compute_all_voltages(pcb):
         # port.voltage = self.e_field_integrate(port, self.reference_port)
         # Perfect Electrical Conductors have zero internal electric field
 
-        port.voltage = float(sum(self.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z])*self.cell_size)
+        port.voltage = float(sum(pcb.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z])*pcb.cell_size)
         port.voltage_history.append(port.voltage)
 
-def compute_all_currents(self):
-    for idx, port in enumerate(self.component_ports):
+def compute_deltas(pcb):
+    # delta_vs = []
+    max_delta_V = 0.0
+    for idx, port in enumerate(pcb.component_ports):
 
         #
         # self.grid.E[port.N_x,port.N_y,self.ground_plane_z_top:self.component_plane_z-3,Z] = 0 #make a conductor
@@ -55,48 +59,82 @@ def compute_all_currents(self):
         # a slightly simplified version is
         # https://www.eecs.wsu.edu/~schneidj/ufdtd/chap3.pdf, eq. 3.26
         # Aha! First we let the update occur normally, *then* we apply the J source, eq. 3.28 in the latter.
-
+        # Toland uses a current averaging method
         # self.current = 1.0
 
-        z_slice = slice(self.component_plane_z-3,self.component_plane_z-2)
 
-        perm_factor = ((self.substrate_permittivity * 8.85e-12)/self.grid.time_step)
-        E_n = self.grid.E[port.N_x,port.N_y,z_slice,Z]*perm_factor
+        # scale_factor = (pcb.grid.time_step/(pcb.substrate_permittivity * 8.85e-12))
 
-        L_H =  ((self.grid.H[port.N_x,port.N_y-1,z_slice,X] - self.grid.H[port.N_x,port.N_y,z_slice,X]) / self.cell_size)
-        L_H += ((self.grid.H[port.N_x,port.N_y,z_slice,Y] - self.grid.H[port.N_x-1,port.N_y,z_slice,Y]) / self.cell_size)
+        z_slice = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
+        permittivity = pcb.substrate_permittivity * 8.85e-12
 
-        I = -1.0*(port.old_current+port.current)/(2.0*(self.cell_size**2.0))
-        print(E_n, L_H, I)
-        E_new =  E_n
-        E_new += L_H
-        E_new -= I
+        current_density = port.current/(pcb.cell_size*pcb.cell_size)
 
-        E_new /= perm_factor
+        dE_dt = 1.0 * (current_density/permittivity)
 
-        self.grid.E[port.N_x,port.N_y,z_slice,Z] = E_new
+        port.dV_dt = dE_dt * pcb.cell_size
 
-        print("E_new",E_new)
+        if(abs(port.dV_dt) > max_delta_V):
+            max_delta_V = abs(port.dV_dt)
 
-        port.old_current = port.current
+        # self.grid.E[port.N_x,port.N_y,z_slice,Z] -=
+        #
+        #
+        # E_n = self.grid.E[port.N_x,port.N_y,z_slice,Z]*perm_factor
+        #
+        # L_H =  ((self.grid.H[port.N_x,port.N_y-1,z_slice,X] - self.grid.H[port.N_x,port.N_y,z_slice,X]) / self.cell_size)
+        # L_H += ((self.grid.H[port.N_x,port.N_y,z_slice,Y] - self.grid.H[port.N_x-1,port.N_y,z_slice,Y]) / self.cell_size)
+        #
+        # I = -1.0*(port.old_current+port.current)/(2.0*(self.cell_size**2.0))
+        # print(E_n, L_H, I)
+        # E_new =  E_n
+        # E_new += L_H
+        # E_new -= I
+        #
+        # E_new /= perm_factor
+        #
+        # self.grid.E[port.N_x,port.N_y,z_slice,Z] = E_new
+        #
+        # print("E_new",E_new)
+        #
+        # port.old_current = port.current
+    return max_delta_V
+
+def apply_deltas(pcb):
+    for idx, port in enumerate(pcb.component_ports):
+        port.voltage += (port.dV_dt * pcb.grid.time_step)
+
+        pcb.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z] = port.voltage / (pcb.cell_size)
 
 
 def zero_conductor_fields(pcb):
-    pcb.grid.E[self.copper_mask] = 0
+    pcb.grid.E[pcb.copper_mask] = 0
+
+
+# def compute_time_step(pcb, max_delta_V):
 
 
 def FDTD_step(pcb):
+
+    compute_all_voltages(pcb)
+    max_delta_V = compute_deltas(pcb)
+    voltage_tolerance = 0.01
+    courant_time_step = 0.9 / (3*(3e8/pcb.cell_size))
+    required_time_step = voltage_tolerance / max_delta_V
+    set_time_step(pcb, min(courant_time_step, required_time_step))
+
+    apply_deltas(pcb)
+
     pcb.grid.update_E()
 
     zero_conductor_fields(pcb)
 
-    apply_all_currents(pcb)
     # self.constrain_values()
     pcb.grid.update_H()
 
     pcb.grid.time_steps_passed += 1
-    pcb.time += self.grid.time_step # the adaptive
-    pcb.times.append(self.time)
+    pcb.time += pcb.grid.time_step # the adaptive
+    pcb.times.append(pcb.time)
 
 
 #
@@ -160,6 +198,6 @@ def FDTD_step(pcb):
 #         # prev_convergence = copy.copy(new_convergence)
 
 
-def set_time_step(self, ts):
-    self.grid.time_step = ts
-    self.grid.courant_number = self.grid.time_step/(self.grid.grid_spacing / 3.0e8)
+def set_time_step(pcb, ts):
+    pcb.grid.time_step = ts
+    pcb.grid.courant_number = pcb.grid.time_step/(pcb.grid.grid_spacing / 3.0e8)

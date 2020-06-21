@@ -100,3 +100,6 @@ For this reason, the adaptive timestep method described by [Ciampolini 1995] is 
 
 
 TODO: fix spice timestep
+
+
+profile with 
