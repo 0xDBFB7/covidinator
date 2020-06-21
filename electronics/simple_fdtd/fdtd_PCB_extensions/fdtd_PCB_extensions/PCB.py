@@ -22,8 +22,8 @@ import sys
 
 import copy
 
-import ngspyce
-from ngspyce.sharedspice import *
+# import ngspyce
+# from ngspyce.sharedspice import *
 
 
 from fdtd.backend import NumpyBackend
@@ -54,8 +54,8 @@ import sys
 
 import copy
 
-import ngspyce
-from ngspyce.sharedspice import *
+# import ngspyce
+# from ngspyce.sharedspice import *
 
 from numpy import array
 
