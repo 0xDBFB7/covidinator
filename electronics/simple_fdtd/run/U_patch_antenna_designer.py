@@ -111,8 +111,9 @@ def sim_VSWR(pcb):
 
         port = pcb.component_ports[0]
 
-        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
+        # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
 
+        source_voltage = sin(2.0 * pi * 10e9 * pcb.time)
 
         z_slice = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
         pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = source_voltage / (pcb.cell_size)
@@ -137,8 +138,8 @@ def sim_VSWR(pcb):
         voltages = np.append(voltages, source_voltage)
         currents = np.append(currents, current)
 
-        if(sum(abs(currents[-300:-1])) < 0.05 and len(currents) > 300):
-            break
+        # if(sum(abs(currents[-300:-1])) < 20 and len(currents) > 300):
+        #     break
 
 
     print("=========== Finished! ============")
@@ -171,10 +172,11 @@ currents = np.pad(currents, (0, required_length), 'edge')
 times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 
 voltage_spectrum = np.fft.fft(voltages)
+current_spectrum = np.fft.fft(currents)
+
 # spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
 spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.grid.time_step)
 
-current_spectrum = np.fft.fft(currents)
 
 # return spectrum_freqs, voltage_spectrum, current_spectrum
 
@@ -185,15 +187,16 @@ plt.plot(times_padded, voltages)
 plt.figure()
 plt.plot(times_padded, currents)
 plt.figure()
-# plt.plot(spectrum_freqs[begin_freq:end_freq], voltage_spectrum[begin_freq:end_freq])
-# plt.plot(spectrum_freqs[begin_freq:end_freq], current_spectrum[begin_freq:end_freq])
-power_spectrum = -1.0*((voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])).real)
-power_spectrum /= np.linalg.norm(power_spectrum)
-
-plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
+plt.plot(spectrum_freqs[begin_freq:end_freq], voltage_spectrum[begin_freq:end_freq], label="volt")
+plt.plot(spectrum_freqs[begin_freq:end_freq], current_spectrum[begin_freq:end_freq], label="curr")
+plt.legend()
+# power_spectrum = -1.0*((voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])).real)
+# power_spectrum /= np.linalg.norm(power_spectrum)
+# plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
-plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]))
+# plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]))
+plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
 
 plt.show()
 
