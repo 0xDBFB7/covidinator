@@ -16,28 +16,28 @@ import pickle
 fdtd.set_backend("torch.cuda.float32")
 # fdtd.set_backend("numpy")
 
-os.system("rm dumps/*")
-os.system("rm data/*")
+
 
 
 #Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
-patch_width = 0.0222
-patch_length = 0.017
-feed_length = 0.005
+patch_width = 11.4e-3
+patch_length = 8.7e-3
+feed_length = 5e-3
 
-pcb = fd.PCB(0.0001)
-fd.initialize_grid(pcb,int(patch_width/pcb.cell_size)+2*(pcb.xy_margin),int((patch_length+feed_length)/pcb.cell_size)+2*(pcb.xy_margin),
-                                int(0.01/pcb.cell_size)+2*(pcb.xy_margin), courant_number = None)
+substrate_thickness = 0.79e-3
+pcb = fd.PCB(0.0002)
+fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
+                                int(0.01/pcb.cell_size), courant_number = None)
 
-fd.create_planes(pcb,0.032e-3, 6e7)
-fd.create_substrate(pcb,1.6e-3, 4.4, 0.02, 9e9)
+fd.create_planes(pcb, 0.032e-3, 6e7)
+fd.create_substrate(pcb, substrate_thickness, 4.4, 0.02, 9e9)
 
 
 
 def create_patch_antenna(pcb, patch_width, patch_length):
-    MICROSTRIP_FEED_WIDTH = 3.1e-3
+    MICROSTRIP_FEED_WIDTH = 1.5e-3
     MICROSTRIP_FEED_LENGTH = 5e-3
 
     z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
@@ -82,9 +82,9 @@ def gaussian_derivative_pulse(pcb, dt, beta):
     return part_one * part_two
 
 
-def sim_VSWR(pcb, freqs):
+def sim_VSWR(pcb):
     print_step = 50
-    dump_step = None
+    dump_step = 50e-12
 
     # print(pcb.grid.time_step)
     #A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
@@ -144,7 +144,9 @@ filename = 'globalsave.pkl'
 try:
     dill.load_session(filename)
 except:
-    voltages, currents = sim_VSWR(pcb, freqs)
+    os.system("rm dumps/*")
+    os.system("rm data/*")
+    voltages, currents = sim_VSWR(pcb)
     dill.dump_session(filename)
 
 desired_res = 300 #100 points below F_max

@@ -1,5 +1,6 @@
 ####  
 
+
 #### Issue:
 
 Location of <vector> allocation caused OpenMD to share, causing phantom forces.
@@ -81,4 +82,7 @@ The pytorch backend seems to introduce a
 A carefully-written routine of this sort should take 
 
 
- 
+A simulation wasn't corresponding to reality. It was found that, due to changing the reference design,
+the thicker substrate had caused the copper to go into the PML.
+
+A simple geometry sanity check would have caught this much earlier.

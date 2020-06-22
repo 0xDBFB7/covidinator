@@ -5,6 +5,9 @@ from .PCB import *
 
 
 def initialize_grid(pcb, N_x, N_y, N_z, courant_number=None):
+    N_x += 2*(pcb.xy_margin)
+    N_y += 2*(pcb.xy_margin)
+    N_z += pcb.pml_cells+pcb.z_margin
     grid = fdtd.Grid(
         (N_x,N_y,N_z),
         grid_spacing=pcb.cell_size,
@@ -75,9 +78,10 @@ def initialize_grid_with_svg(pcb, svg_file, courant_number = None):
     height = float(svg.attrib['height'].strip('cm')) / 100.0 #to meters
     print("Imported {} | width: {}m | height: {}m".format(svg_file, width, height))
 
-    N_x = math.ceil(width/pcb.cell_size) + 2*(pcb.xy_margin)
-    N_y = math.ceil(height/pcb.cell_size) + 2*(pcb.xy_margin)
-    N_z = math.ceil(pcb.z_height/pcb.cell_size) + pcb.pml_cells+pcb.z_margin
+    N_x = math.ceil(width/pcb.cell_size)
+    N_y = math.ceil(height/pcb.cell_size)
+    N_z = math.ceil(pcb.z_height/pcb.cell_size)
+    #margins now baked into initialize_grid
 
     pcb.board_N_x = math.ceil(width/pcb.cell_size)
     pcb.board_N_y = math.ceil(height/pcb.cell_size)
