@@ -24,12 +24,19 @@ fdtd.set_backend("torch.cuda.float32")
 
 patch_width = 11.4e-3
 patch_length = 8.7e-3
-feed_length = 5e-3
+feed_length = 0.1e-3
+substrate_thickness = 0.8e-3
 
-substrate_thickness = 0.79e-3
+
+# patch_width =  22.26e-3
+# patch_length = 16.95e-3
+# feed_length = 5e-3
+# substrate_thickness = 1.6e-3
+
+
 pcb = fd.PCB(0.0002)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
-                                int(0.01/pcb.cell_size), courant_number = None)
+                                int(0.005/pcb.cell_size), courant_number = None)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, 4.4, 0.02, 9e9)
@@ -50,15 +57,15 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     p_N_x = int(patch_width / pcb.cell_size)
     p_N_y = int(patch_length / pcb.cell_size)
     pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
-
-    #feedport
-    fp_N_x = int(MICROSTRIP_FEED_WIDTH/pcb.cell_size)
-    fp_N_y = int(MICROSTRIP_FEED_LENGTH/pcb.cell_size)
-    pcb.copper_mask[pcb.xy_margin+(p_N_x//2 - (fp_N_x//2)):pcb.xy_margin+(p_N_x//2 + (fp_N_x//2)),  \
-                                        pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
+    #
+    # #feedport
+    # fp_N_x = int(MICROSTRIP_FEED_WIDTH/pcb.cell_size)
+    # fp_N_y = int(MICROSTRIP_FEED_LENGTH/pcb.cell_size)
+    # pcb.copper_mask[pcb.xy_margin+(p_N_x//2 - (fp_N_x//2)):pcb.xy_margin+(p_N_x//2 + (fp_N_x//2)),  \
+    #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
     pcb.component_ports = [] # wipe ports
-    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y+fp_N_y-1)*pcb.cell_size))
+    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y-1)*pcb.cell_size))
 
 
 
@@ -84,39 +91,40 @@ def gaussian_derivative_pulse(pcb, dt, beta):
 
 def sim_VSWR(pcb):
     print_step = 50
-    dump_step = 50e-12
+    dump_step = None
 
     # print(pcb.grid.time_step)
     #A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
 
     prev_dump_time = 0
 
-    end_time = 500e-12 # the key phrase here is "If after all transients have dissipated."
+    # end_time = 1500e-12 # the key phrase here is "If after all transients have dissipated."
     #they use 2000 timesteps at 1.8 ps each.
 
-    energy = 0
     pcb.grid.reset()
     fd.reset(pcb)
 
 
-    voltages = []
-    currents = []
-    while(pcb.time < end_time):
+    voltages = np.array([])
+    currents = np.array([])
+    while(True):
 
         port = pcb.component_ports[0]
 
-        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/3e11
+        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
 
-        pcb.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z] = source_voltage / (pcb.cell_size)
 
-        current = ((pcb.grid.H[port.N_x,port.N_y-1,pcb.component_plane_z-3:pcb.component_plane_z-2,X]-
-                    pcb.grid.H[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,X])*pcb.cell_size)
-        current += ((pcb.grid.H[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Y]-
-                    pcb.grid.H[port.N_x-1,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Y])*pcb.cell_size)
+        z_slice = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
+        pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = source_voltage / (pcb.cell_size)
+
+        current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
+                    pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
+        current += ((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]-
+                    pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
         current = current.cpu()
 
 
-        if(dump_step and (abs(pcb.time-prev_dump_time) > dump_step or pcb.grid.time_steps_passed == 0)):
+        if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
             #paraview gets confused if the first number isn't zero.
             fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
             prev_dump_time = pcb.time
@@ -124,11 +132,14 @@ def sim_VSWR(pcb):
         fd.just_FDTD_step(pcb)
 
         if(pcb.grid.time_steps_passed % print_step == 0):
-            print("%: ",(pcb.time/end_time)*100.0)
+            # print("%: ",(pcb.time/end_time)*100.0)
+            print(sum(abs(currents[-300:-1])))
+        voltages = np.append(voltages, source_voltage)
+        currents = np.append(currents, current)
 
+        if(sum(abs(currents[-300:-1])) < 0.05 and len(currents) > 300):
+            break
 
-        voltages.append(source_voltage)
-        currents.append(current)
 
     print("=========== Finished! ============")
 
@@ -154,8 +165,10 @@ fft_F_max = 15e9
 required_length = int(desired_res / (fft_F_max * pcb.grid.time_step))
 print(required_length)
 
-voltages = np.pad(voltages, (0, required_length), 'constant')
-currents = np.pad(currents, (0, required_length), 'constant')
+voltages = np.pad(voltages, (0, required_length), 'edge')
+currents = np.pad(currents, (0, required_length), 'edge')
+
+times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 
 voltage_spectrum = np.fft.fft(voltages)
 # spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
@@ -168,19 +181,19 @@ current_spectrum = np.fft.fft(currents)
 begin_freq = np.abs(spectrum_freqs - 1e9).argmin()
 end_freq = np.abs(spectrum_freqs - 15e9).argmin()
 
-# plt.plot(pcb.times, voltages)
-# plt.figure()
-# plt.plot(pcb.times, currents)
+plt.plot(times_padded, voltages)
+plt.figure()
+plt.plot(times_padded, currents)
 plt.figure()
 # plt.plot(spectrum_freqs[begin_freq:end_freq], voltage_spectrum[begin_freq:end_freq])
 # plt.plot(spectrum_freqs[begin_freq:end_freq], current_spectrum[begin_freq:end_freq])
-power_spectrum = -1.0*voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])
+power_spectrum = -1.0*((voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])).real)
 power_spectrum /= np.linalg.norm(power_spectrum)
 
 plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
-plt.plot(spectrum_freqs[begin_freq:end_freq],voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])
+plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]))
 
 plt.show()
 

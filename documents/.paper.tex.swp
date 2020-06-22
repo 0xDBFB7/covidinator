@@ -732,7 +732,7 @@ It is important to remember to normalize the gaussian pulse, or else numerical n
 
 Though uneven dt FFTs exist, the time step can be constant here .
 
-
+A step impulse (1 first timestep, 0 otherwise) can also be used, though the performance is almost unusable worse.
 
 \rule{\linewidth}{0.2pt}
 

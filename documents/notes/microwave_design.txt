@@ -1057,3 +1057,21 @@ except:
 works fantastically.
 
 
+
+25 dBm ->
+ Audio industory:
+  0.316228 W in 600 Ohm registance
+  13.7745 V rms across 600 Ohm
+ Television industory:
+  0.316228 V rms across 75 Ohm
+  0.00133333 W
+Radio frequency engineering:
+  3.97635 V rms across 50 Ohm
+  0.316228 W
+
+the bat63 doesn't have a spice model. the bat1504W does, but doesn't specify valid freq.
+15-02 doesn't.
+the bat62 does, but I can't get it.
+
+
+
