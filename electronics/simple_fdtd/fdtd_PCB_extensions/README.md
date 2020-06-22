@@ -119,3 +119,5 @@ definitely need the github version of /fdtd.
 
 
 The method for determining antenna impedance is [Luebbers 1992], particularly eq. 2, and applied in [Penney 1994].
+Penney uses a derivative gaussian function - a Gaussian multiplied by the n-th Hermite polynomial. No idea why.
+they use a pulse width of 32 timesteps.

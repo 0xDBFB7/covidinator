@@ -114,7 +114,7 @@ def zero_conductor_fields(pcb):
 # def compute_time_step(pcb, max_delta_V):
 
 
-def FDTD_step(pcb):
+def just_FDTD_step(pcb):
 
     # compute_all_voltages(pcb)
     # max_delta_V = compute_deltas(pcb)
@@ -124,7 +124,7 @@ def FDTD_step(pcb):
     # # set_time_step(pcb, min(courant_time_step, required_time_step))
     #
     # # print("max_delta_V {:.3e}, | time_step: {:.3e} | * {:.3f}".format(max_delta_V, pcb.grid.time_step, pcb.grid.time_step*max_delta_V))
-    #
+    # this is not at all correct. We need the difference in voltage between the two times 
     #
     # apply_deltas(pcb)
 
