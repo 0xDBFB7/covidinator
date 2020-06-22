@@ -68,6 +68,10 @@ def create_patch_antenna(pcb, patch_width, patch_length):
 # def compute_patch_dimensions():
 
 
+#Using the VSWR method from [Penney 1994],
+
+
+
 def sim_VSWR(pcb, freqs):
     print_step = 50
     # dump_step = 2e-12
@@ -79,52 +83,54 @@ def sim_VSWR(pcb, freqs):
 
     delivered_power = np.zeros_like(freqs)
 
-    for f_idx, frequency in enumerate(freqs):
+    # end_time = (1.0 / frequency) * 0.1 # 5 periods of the sine
+    end_time = 500e-12
 
-        end_time = (1.0 / frequency) * 3.0 # 5 periods of the sine
+    energy = 0
+    pcb.grid.reset()
+    fd.reset(pcb)
+    power = 0
+    while(pcb.time < end_time):
+    # while(pcb.grid.time_steps_passed < 10):
 
-        energy = 0
-        pcb.grid.reset()
-        fd.reset(pcb)
+        pcb.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z] = port.voltage / (pcb.cell_size)
 
-        while(pcb.time < end_time):
-        # while(pcb.grid.time_steps_passed < 10):
+        if(dump_step and (abs(pcb.time-prev_dump_time) > dump_step or pcb.grid.time_steps_passed == 0)):
+            #paraview gets confused if the first number isn't zero.
+            fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
+            prev_dump_time = pcb.time
+
+        # print("Period:",2.0*pi*pcb.time*frequency)
+        source_voltage = sin(2.0*pi*pcb.time*frequency)
+        # source_voltage = 1.0
+        source_current = (source_voltage - pcb.component_ports[0].voltage) / 50.0
+
+        pcb.component_ports[0].current = source_current
+
+        fd.FDTD_step(pcb)
+        #
+
+        if(abs(source_voltage - pcb.component_ports[0].voltage) > power):
+            power = abs(source_voltage - pcb.component_ports[0].voltage)
+        # energy += power * pcb.grid.time_step
+
+        for port in pcb.component_ports:
+            print(port.SPICE_net, port.voltage, port.current)
 
 
-            if(dump_step and (abs(pcb.time-prev_dump_time) > dump_step or pcb.grid.time_steps_passed == 0)):
-                #paraview gets confused if the first number isn't zero.
-                fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
-                prev_dump_time = pcb.time
+        if(pcb.grid.time_steps_passed % print_step == 0):
 
-            # print("Period:",2.0*pi*pcb.time*frequency)
-            source_voltage = sin(2.0*pi*pcb.time*frequency)
-            # source_voltage = 1.0
-            source_current = (source_voltage - pcb.component_ports[0].voltage) / 50.0
+            # print("T: ",pcb.time)
+            print("%: ",(pcb.time/end_time)*100.0)
+            print(power)
 
-            pcb.component_ports[0].current = source_current
-
-            fd.FDTD_step(pcb)
-            #
-
-
-            power = (source_voltage - pcb.component_ports[0].voltage) * source_current
-            energy += power * pcb.grid.time_step
-
-            if(pcb.grid.time_steps_passed % print_step == 0):
-                for port in pcb.component_ports:
-                    print(port.SPICE_net, port.voltage, port.current)
-
-                # print("T: ",pcb.time)
-                print("%: ",(pcb.time/end_time)*100.0)
-                print(power)
-
-        print("=========== Finished {:.3e} ============".format(frequency))
-        delivered_power[f_idx] = energy / end_time
+    print("=========== Finished {:.3e} ============".format(frequency))
+    delivered_power[f_idx] = power
 
     return delivered_power
 
 
-freqs = np.linspace(1e9, 6e9, 10)
+freqs = np.linspace(1e9, 6e9, 30)
 
 delivered_power = sim_VSWR(pcb, freqs)
 plt.plot(freqs, delivered_power)

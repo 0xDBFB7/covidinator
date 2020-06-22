@@ -1012,3 +1012,14 @@ CUDA time total: 70.876ms
 need to remember to delete the GPU boot disk.
 
 
+Computing the power through the source resistor didn't seem to be right,
+found a paper describing an fourier method that also cuts way down on the number of iterations.
+great!
+just take the fourier transform of the current and voltage, and divide the two.
+they use a gaussian derivative function (hermitian function?). I'm not sure why.
+
+Another paper also talks about the current measurement geometry. good stuff.
+
+it seems like most of the good papers on the fdtd method can be found by filtering <1998.
+since then, HFSS and ADS have become so prevalent that the methods aren't even discussed 
+anymore.

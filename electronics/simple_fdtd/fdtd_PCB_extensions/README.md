@@ -116,3 +116,6 @@ The port current used is different in sign from the convention usually used in F
 python setup.py develop
 
 definitely need the github version of /fdtd.
+
+
+The method for determining antenna impedance is [Luebbers 1992], particularly eq. 2, and applied in [Penney 1994].
