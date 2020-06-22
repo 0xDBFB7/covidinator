@@ -138,6 +138,9 @@ def sim_VSWR(pcb):
         voltages = np.append(voltages, source_voltage)
         currents = np.append(currents, current)
 
+        if(len(currents) > 10000):
+            break
+
         # if(sum(abs(currents[-300:-1])) < 20 and len(currents) > 300):
         #     break
 
