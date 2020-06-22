@@ -23,7 +23,7 @@ patch_width = 0.0222
 patch_length = 0.017
 feed_length = 0.005
 
-pcb = fd.PCB(0.0004)
+pcb = fd.PCB(0.0005)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size)+2*(pcb.xy_margin),int((patch_length+feed_length)/pcb.cell_size)+2*(pcb.xy_margin),
                                 int(0.01/pcb.cell_size), courant_number = None)
 
@@ -81,7 +81,7 @@ def sim_VSWR(pcb, freqs):
 
     for f_idx, frequency in enumerate(freqs):
 
-        end_time = (1.0 / frequency) * 2.0 # 5 periods of the sine
+        end_time = (1.0 / frequency) * 3.0 # 5 periods of the sine
 
         energy = 0
         pcb.grid.reset()
@@ -107,7 +107,7 @@ def sim_VSWR(pcb, freqs):
             #
 
 
-            power = pcb.component_ports[0].voltage * source_current
+            power = (source_voltage - pcb.component_ports[0].voltage) * source_current
             energy += power * pcb.grid.time_step
 
             if(pcb.grid.time_steps_passed % print_step == 0):
@@ -116,7 +116,7 @@ def sim_VSWR(pcb, freqs):
 
                 # print("T: ",pcb.time)
                 print("%: ",(pcb.time/end_time)*100.0)
-            #     # print(power)
+                print(power)
 
         print("=========== Finished {:.3e} ============".format(frequency))
         delivered_power[f_idx] = energy / end_time
@@ -124,7 +124,7 @@ def sim_VSWR(pcb, freqs):
     return delivered_power
 
 
-freqs = np.linspace(2e9, 5e9, 10)
+freqs = np.linspace(1e9, 6e9, 10)
 
 delivered_power = sim_VSWR(pcb, freqs)
 plt.plot(freqs, delivered_power)
