@@ -1044,4 +1044,16 @@ ooh, there's also an uneven fft.
 
 
 every time I test the analysis part of this program, I re-run the simulation. that's stupid and slow.
-using dill to persist the whole session, then reload.
+But there's a lot of state I might need, and there's really no reason why I'll need to persist 
+any of this data after. using dill to persist the whole session, then reload.
+a game changer!
+
+try:
+    dill.load_session(filename)
+except:
+    voltages, currents = sim_VSWR(pcb, freqs)
+    dill.dump_session(filename)
+
+works fantastically.
+
+

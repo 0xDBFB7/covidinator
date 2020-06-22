@@ -711,14 +711,26 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 
 \rule{\linewidth}{0.2pt}
 
-In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum voltage deviation from the non-FDTD portion is less than some threshold.
-
+In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the non-FDTD portion is less than some threshold.
 
 
 \rule{\linewidth}{0.2pt}
 
-A similar mismatch exists for FFT methods, but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_bin = n_bin * (1 / (N_simulation * dt)) $ , the majority of the frequency points exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_simulation$ is extremely large.
+The frequency impedance of an antenna can be determined by applying a gaussian pulse to a hard voltage source on the feedline, running the simulation until the transients have all died out while logging the voltage and current at each timestep, and then taking the fourier transform of the voltage and current. This is much faster and 
 
+However, a similar mismatch to the SPICE exists for FFT methods, but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_bin = n_bin * (1 / (N_simulation * dt)) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_simulation$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
+
+There's more than enough 'information entropy' in 2000 FDTD points for most antennas. But you need some 30,000 points to get 10 bins below 20 GHz!
+
+There are a few methods of changing the FFT bin size artificially, which [Bi 1992] reviews. You can "use a manual fourier integration over the frequency region of interest".
+
+But, in a personally staggering turn of events which will presumably be familiar to statisticans and preposterous to everyone else, a far simpler method is to {\it discard} 95\% of the data! Re-sampling some fraction of the current  
+
+An equally simple method that seemed to produce better results in our case is to {\it pad }
+
+It is important to remember to normalize the gaussian pulse, or else numerical noise will be introduced.
+
+Though uneven dt FFTs exist, the time step can be constant here .
 
 \rule{\linewidth}{0.2pt}
 
@@ -758,6 +770,18 @@ Software such as Sumatra, Sacred, recipy, and others. In our case, we used eLabF
 \rule{\linewidth}{0.2pt}
 
 It is far easier to use existing, well-characterized reference designs verbatim than to modify 
+
+\rule{\linewidth}{0.2pt}
+
+When rapidly testing data analyses which aren't really conducive to unit testing, I previously used to run the whole simulation, look at the analysis, re-run the sim, etc.
+
+This is slow. I often don't change the input parameters for the sim, but just the analysis. However, there's often a large amount of state to persist to disk.
+
+Saving the entire session with 'dill' is very helpful.
+
+\rule{\linewidth}{0.2pt}
+
+Software opacity is evil.
 
 \rule{\linewidth}{0.2pt}
 

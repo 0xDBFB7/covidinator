@@ -27,7 +27,7 @@ patch_width = 0.0222
 patch_length = 0.017
 feed_length = 0.005
 
-pcb = fd.PCB(0.0002)
+pcb = fd.PCB(0.0001)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size)+2*(pcb.xy_margin),int((patch_length+feed_length)/pcb.cell_size)+2*(pcb.xy_margin),
                                 int(0.01/pcb.cell_size)+2*(pcb.xy_margin), courant_number = None)
 
@@ -72,7 +72,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
 # def compute_patch_dimensions():
 
 
-def gaussian_derivative(pcb, dt, beta):
+def gaussian_derivative_pulse(pcb, dt, beta):
     t = pcb.time
     s = 4.0/(beta*dt)
     b = (t - beta*dt)
@@ -91,9 +91,8 @@ def sim_VSWR(pcb, freqs):
 
     prev_dump_time = 0
 
-    # end_time = (1.0 / frequency) * 0.1 # 5 periods of the sine
     end_time = 500e-12 # the key phrase here is "If after all transients have dissipated."
-    #they use 2000 timesteps at 1 ps each.
+    #they use 2000 timesteps at 1.8 ps each.
 
     energy = 0
     pcb.grid.reset()
@@ -106,7 +105,7 @@ def sim_VSWR(pcb, freqs):
 
         port = pcb.component_ports[0]
 
-        source_voltage = gaussian_derivative(pcb, 4e-12, 32)/3e11
+        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/3e11
 
         pcb.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z] = source_voltage / (pcb.cell_size)
 
@@ -138,21 +137,23 @@ def sim_VSWR(pcb, freqs):
 
     return voltages, currents
 
-freqs = np.linspace(1e9, 6e9, 30)
 
 create_patch_antenna(pcb, patch_width, patch_length)
 
 filename = 'globalsave.pkl'
-
 try:
     dill.load_session(filename)
 except:
     voltages, currents = sim_VSWR(pcb, freqs)
     dill.dump_session(filename)
 
+desired_res = 300 #100 points below F_max
+fft_F_max = 15e9
+required_length = int(desired_res / (fft_F_max * pcb.grid.time_step))
+print(required_length)
 
-voltages = np.pad(voltages, (0, 10000), 'constant')
-currents = np.pad(currents, (0, 10000), 'constant')
+voltages = np.pad(voltages, (0, required_length), 'constant')
+currents = np.pad(currents, (0, required_length), 'constant')
 
 voltage_spectrum = np.fft.fft(voltages)
 # spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
