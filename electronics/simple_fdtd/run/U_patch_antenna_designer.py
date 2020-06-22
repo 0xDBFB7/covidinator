@@ -9,9 +9,9 @@ import os
 import matplotlib.pyplot as plt
 import copy
 from scipy.signal import gausspulse
-
+import dill
 from pytexit import py2tex
-
+import pickle
 # fdtd.set_backend("torch.float32")
 fdtd.set_backend("torch.cuda.float32")
 # fdtd.set_backend("numpy")
@@ -29,7 +29,7 @@ feed_length = 0.005
 
 pcb = fd.PCB(0.0002)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size)+2*(pcb.xy_margin),int((patch_length+feed_length)/pcb.cell_size)+2*(pcb.xy_margin),
-                                int(0.01/pcb.cell_size), courant_number = None)
+                                int(0.01/pcb.cell_size)+2*(pcb.xy_margin), courant_number = None)
 
 fd.create_planes(pcb,0.032e-3, 6e7)
 fd.create_substrate(pcb,1.6e-3, 4.4, 0.02, 9e9)
@@ -72,8 +72,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
 # def compute_patch_dimensions():
 
 
-def gaussian_derivative(pcb, beta):
-    dt = pcb.grid.time_step
+def gaussian_derivative(pcb, dt, beta):
     t = pcb.time
     s = 4.0/(beta*dt)
     b = (t - beta*dt)
@@ -87,12 +86,14 @@ def sim_VSWR(pcb, freqs):
     print_step = 50
     dump_step = None
 
+    # print(pcb.grid.time_step)
     #A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
 
     prev_dump_time = 0
 
     # end_time = (1.0 / frequency) * 0.1 # 5 periods of the sine
-    end_time = 1000e-12 # the key phrase here is "If after all transients have dissipated."
+    end_time = 500e-12 # the key phrase here is "If after all transients have dissipated."
+    #they use 2000 timesteps at 1 ps each.
 
     energy = 0
     pcb.grid.reset()
@@ -105,7 +106,7 @@ def sim_VSWR(pcb, freqs):
 
         port = pcb.component_ports[0]
 
-        source_voltage = gaussian_derivative(pcb, 32)
+        source_voltage = gaussian_derivative(pcb, 4e-12, 32)/3e11
 
         pcb.grid.E[port.N_x,port.N_y,pcb.component_plane_z-3:pcb.component_plane_z-2,Z] = source_voltage / (pcb.cell_size)
 
@@ -132,34 +133,53 @@ def sim_VSWR(pcb, freqs):
 
     print("=========== Finished! ============")
 
-    voltages = np.array(voltages)[::10]
-    currents = np.array(currents)[::10]
+    voltages = np.array(voltages)
+    currents = np.array(currents)
 
-    voltage_spectrum = np.fft.fft(voltages)
-    spectrum_freqs = np.fft.fftfreq(len(voltages), d=end_time/len(voltages))
-
-    current_spectrum = np.fft.fft(currents)
-
-    # return spectrum_freqs, voltage_spectrum, current_spectrum
-
-    begin_freq = np.abs(spectrum_freqs - 1e9).argmin()
-    end_freq = np.abs(spectrum_freqs - 15e9).argmin()
-
-    # plt.plot(pcb.times, voltages)
-    # plt.plot(pcb.times, currents)
-    # plt.plot(spectrum_freqs[begin_freq:end_freq], voltage_spectrum[begin_freq:end_freq])
-    # plt.plot(spectrum_freqs[begin_freq:end_freq], current_spectrum[begin_freq:end_freq])
-    power_spectrum = -1.0*voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])
-    power_spectrum /= np.linalg.norm(power_spectrum)
-    plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
-
-    plt.show()
+    return voltages, currents
 
 freqs = np.linspace(1e9, 6e9, 30)
 
 create_patch_antenna(pcb, patch_width, patch_length)
 
-sim_VSWR(pcb, freqs)
+filename = 'globalsave.pkl'
+
+try:
+    dill.load_session(filename)
+except:
+    voltages, currents = sim_VSWR(pcb, freqs)
+    dill.dump_session(filename)
+
+
+voltages = np.pad(voltages, (0, 10000), 'constant')
+currents = np.pad(currents, (0, 10000), 'constant')
+
+voltage_spectrum = np.fft.fft(voltages)
+# spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
+spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.grid.time_step)
+
+current_spectrum = np.fft.fft(currents)
+
+# return spectrum_freqs, voltage_spectrum, current_spectrum
+
+begin_freq = np.abs(spectrum_freqs - 1e9).argmin()
+end_freq = np.abs(spectrum_freqs - 15e9).argmin()
+
+# plt.plot(pcb.times, voltages)
+# plt.figure()
+# plt.plot(pcb.times, currents)
+plt.figure()
+# plt.plot(spectrum_freqs[begin_freq:end_freq], voltage_spectrum[begin_freq:end_freq])
+# plt.plot(spectrum_freqs[begin_freq:end_freq], current_spectrum[begin_freq:end_freq])
+power_spectrum = -1.0*voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])
+power_spectrum /= np.linalg.norm(power_spectrum)
+
+plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
+
+plt.figure()
+plt.plot(spectrum_freqs[begin_freq:end_freq],voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])
+
+plt.show()
 
 
 # for port in pcb.component_ports:

@@ -11,3 +11,4 @@
 *.vtr
 models/BFP620/*
 *.csv
+*.pkl

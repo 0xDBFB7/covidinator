@@ -1025,5 +1025,23 @@ since then, HFSS and ADS have become so prevalent that the methods aren't even d
 anymore.
 
 because the sample frequency required by the courant limit is so high, most of the fft 
-is way higher than our region of interest
-we sub-sample a small fraction 
+is way higher than our region of interest. If we sub-sample a small fraction, 
+the freq goes down.
+
+hmm no that's stupid
+
+whatever
+
+ah fuck it was in the PML
+
+noise was caused by the huge scaling factor in the gaussian.
+
+no! it's not stupid! [Furse 2000]
+"“Desampling” has be en used to minimize the computational
+requirements o f Fourier transform computations [14], " 
+
+ooh, there's also an uneven fft. 
+
+
+every time I test the analysis part of this program, I re-run the simulation. that's stupid and slow.
+using dill to persist the whole session, then reload.

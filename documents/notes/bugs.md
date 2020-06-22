@@ -1,4 +1,4 @@
-#### 
+####  
 
 #### Issue:
 
@@ -47,15 +47,38 @@ wait, what?
 
 ############ ASDFasdklfalsdkfjasldkcu fuck
 
-in numpy, indexing into a matrix like this works:
+in tensor, indexing into a matrix like this works:
 
 print(a[1,1,1])
 
 but setting 
 
-a[1,1,1]  
+a[1,1,1] = 1
 
 doesnTt? what
 
 slice notatioport.N_x:port.N_x+1
 
+#### Large values 
+
+##### Issue
+
+A non-normalized gaussian pulse with amplitude 3e8 V introduced numerical noise into 
+the simulation which otherwise appeared to be a timestep issue.
+
+##### Discovery 
+
+##### Solution
+
+Bounds-checking? Visibility of internal state?
+
+
+
+#### High-level abstraction performance
+
+The pytorch backend seems to introduce a 
+
+A carefully-written routine of this sort should take 
+
+
+ 

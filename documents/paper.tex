@@ -711,6 +711,20 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 
 \rule{\linewidth}{0.2pt}
 
+In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum voltage deviation from the non-FDTD portion is less than some threshold.
+
+
+
+\rule{\linewidth}{0.2pt}
+
+A similar mismatch exists for FFT methods, but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_bin = n_bin * (1 / (N_simulation * dt)) $ , the majority of the frequency points exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_simulation$ is extremely large.
+
+
+\rule{\linewidth}{0.2pt}
+
+
+
+\rule{\linewidth}{0.2pt}
 
 
 \label{para}
