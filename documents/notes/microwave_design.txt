@@ -938,3 +938,77 @@ Upgrading pytorch increased utilization to 41%, not super great.
 half-precision - the E field is of the right magnitude, but the H-field
 needs to be scaled.
 
+dammit, no change on V100! setting cudnn.benchmark = true doesn't change anything.
+only 18% utilization.
+
+hmm, this is a particularly small mesh, only 50x50x50 or so.
+
+I mean, there would still be a massive speedup if transfers weren't occuring
+there is probably something in my code that's forcing a copy of some sort.
+
+tried a 64-core machine with OMP_THREADS set, no go.
+
+python -m torch.utils.bottleneck doesn't yield anything enlightening.
+
+--------------------------------------------------------------------------------
+  autograd profiler output (CPU mode)
+--------------------------------------------------------------------------------
+        top 15 events sorted by cpu_time_total
+
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Name                  Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  Input Shapes                         
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+slice                 66.82%           61.782ms         66.82%           61.782ms         61.782ms         NaN              0.000us          0.000us          1                []                                   
+select                13.47%           12.456ms         13.47%           12.456ms         12.456ms         NaN              0.000us          0.000us          1                []                                   
+slice                 6.93%            6.411ms          6.93%            6.411ms          6.411ms          NaN              0.000us          0.000us          1                []                                   
+slice                 3.54%            3.270ms          3.54%            3.270ms          3.270ms          NaN              0.000us          0.000us          1                []                                   
+size                  1.71%            1.582ms          1.71%            1.582ms          1.582ms          NaN              0.000us          0.000us          1                []                                   
+index_put_            0.86%            792.870us        0.86%            792.870us        792.870us        NaN              0.000us          0.000us          1                []                                   
+_index_put_impl_      0.85%            787.119us        0.85%            787.119us        787.119us        NaN              0.000us          0.000us          1                []                                   
+nonzero               0.79%            728.690us        0.79%            728.690us        728.690us        NaN              0.000us          0.000us          1                []                                   
+index_put_            0.77%            710.295us        0.77%            710.295us        710.295us        NaN              0.000us          0.000us          1                []                                   
+_index_put_impl_      0.76%            704.874us        0.76%            704.874us        704.874us        NaN              0.000us          0.000us          1                []                                   
+slice                 0.71%            658.297us        0.71%            658.297us        658.297us        NaN              0.000us          0.000us          1                []                                   
+nonzero               0.70%            651.735us        0.70%            651.735us        651.735us        NaN              0.000us          0.000us          1                []                                   
+index_put_            0.70%            643.129us        0.70%            643.129us        643.129us        NaN              0.000us          0.000us          1                []                                   
+index_put_            0.69%            641.685us        0.69%            641.685us        641.685us        NaN              0.000us          0.000us          1                []                                   
+_index_put_impl_      0.69%            635.184us        0.69%            635.184us        635.184us        NaN              0.000us          0.000us          1                []                                   
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Self CPU time total: 92.455ms
+CUDA time total: 0.000us
+
+--------------------------------------------------------------------------------
+  autograd profiler output (CUDA mode)
+--------------------------------------------------------------------------------
+        top 15 events sorted by cpu_time_total
+
+	Because the autograd profiler uses the CUDA event API,
+	the CUDA time column reports approximately max(cuda_time, cpu_time).
+	Please ignore this output if your code does not use CUDA.
+
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Name                  Self CPU total %  Self CPU total   CPU total %      CPU total        CPU time avg     CUDA total %     CUDA total       CUDA time avg    Number of Calls  Input Shapes                         
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+view                  35.57%           25.179ms         35.57%           25.179ms         25.179ms         35.56%           25.202ms         25.202ms         1                []                                   
+select                6.11%            4.323ms          6.11%            4.323ms          4.323ms          6.10%            4.322ms          4.322ms          1                []                                   
+mul                   4.84%            3.427ms          4.84%            3.427ms          3.427ms          4.84%            3.428ms          3.428ms          1                []                                   
+slice                 4.78%            3.385ms          4.78%            3.385ms          3.385ms          4.80%            3.403ms          3.403ms          1                []                                   
+sub                   4.77%            3.380ms          4.77%            3.380ms          3.380ms          4.77%            3.381ms          3.381ms          1                []                                   
+slice                 4.69%            3.319ms          4.69%            3.319ms          3.319ms          4.70%            3.330ms          3.330ms          1                []                                   
+slice                 4.57%            3.238ms          4.57%            3.238ms          3.238ms          4.59%            3.252ms          3.252ms          1                []                                   
+slice                 4.57%            3.232ms          4.57%            3.232ms          3.232ms          4.56%            3.232ms          3.232ms          1                []                                   
+slice                 4.49%            3.182ms          4.49%            3.182ms          3.182ms          4.51%            3.193ms          3.193ms          1                []                                   
+index_put_            4.46%            3.156ms          4.46%            3.156ms          3.156ms          4.45%            3.156ms          3.156ms          1                []                                   
+_index_put_impl_      4.43%            3.136ms          4.43%            3.136ms          3.136ms          4.43%            3.139ms          3.139ms          1                []                                   
+slice                 4.39%            3.108ms          4.39%            3.108ms          3.108ms          4.39%            3.109ms          3.109ms          1                []                                   
+select                4.15%            2.936ms          4.15%            2.936ms          2.936ms          4.14%            2.936ms          2.936ms          1                []                                   
+slice                 4.11%            2.910ms          4.11%            2.910ms          2.910ms          4.11%            2.910ms          2.910ms          1                []                                   
+slice                 4.07%            2.883ms          4.07%            2.883ms          2.883ms          4.07%            2.883ms          2.883ms          1                []                                   
+--------------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  ---------------  -----------------------------------  
+Self CPU time total: 70.792ms
+CUDA time total: 70.876ms
+
+
+need to remember to delete the GPU boot disk.
+
+

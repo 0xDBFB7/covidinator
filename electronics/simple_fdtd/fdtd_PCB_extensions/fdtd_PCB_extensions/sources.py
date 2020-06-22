@@ -118,12 +118,12 @@ def FDTD_step(pcb):
 
     compute_all_voltages(pcb)
     max_delta_V = compute_deltas(pcb)
-    voltage_tolerance = 0.01
+    voltage_tolerance = 0.5
     courant_time_step = 0.9 / (3*(3e8/pcb.cell_size))
     required_time_step = voltage_tolerance / max(max_delta_V, 1e-5) #avoid div0
     set_time_step(pcb, min(courant_time_step, required_time_step))
 
-    # print("max_delta_V {:.3e}, | time_step: {:.3e} | * {:.3f}".format(max_delta_V, pcb.grid.time_step, pcb.grid.time_step*max_delta_V))
+    print("max_delta_V {:.3e}, | time_step: {:.3e} | * {:.3f}".format(max_delta_V, pcb.grid.time_step, pcb.grid.time_step*max_delta_V))
 
 
     apply_deltas(pcb)
@@ -145,6 +145,11 @@ def reset(pcb):
         port.current = 0
         port.voltage_history = []
         port.current_history = []
+
+    pcb.grid.time_steps_passed = 0
+    pcb.time = 0
+    # pcb.times.append(pcb.time)
+
 #
 # def forcings(self):
 #     for port in self.component_ports:
