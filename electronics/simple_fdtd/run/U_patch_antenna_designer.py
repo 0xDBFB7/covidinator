@@ -138,8 +138,7 @@ def sim_VSWR(pcb):
 
     prev_dump_time = 0
 
-    # end_time = 1500e-12 # the key phrase here is "If after all transients have dissipated."
-    #they use 2000 timesteps at 1.8 ps each.
+    # end_time = 1500e-12
 
     pcb.grid.reset()
     fd.reset(pcb)
@@ -166,6 +165,7 @@ def sim_VSWR(pcb):
                     pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
         # current
         current = current.cpu()
+        current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
 
         if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
@@ -185,7 +185,9 @@ def sim_VSWR(pcb):
         # if(len(currents) > 10000):
         #     break
 
-        if(sum(abs(currents[-300:-1])) < 20 and len(currents) > 300):
+        if(sum(abs(currents[-300:-1])) < 0.020 and len(currents) > 300):
+            # the key phrase here is "after all transients have dissipated."
+            #they use 2000 timesteps at 1.8 ps each.
             break
 
 
@@ -217,7 +219,7 @@ print(required_length)
 
 voltages = np.pad(voltages, (0, required_length), 'edge')
 currents = np.pad(currents, (0, required_length), 'edge')
-# currents /= mu_0
+
 times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 
 # factor of 50000000
@@ -230,7 +232,6 @@ current_spectrum = np.fft.fft(currents)
 
 # spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
 spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.grid.time_step)
-
 
 # return spectrum_freqs, voltage_spectrum, current_spectrum
 
@@ -252,7 +253,7 @@ plt.legend()
 # plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
-impedance_spectrum = (voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])*mu_0*(pcb.cell_size/pcb.grid.time_step)
+impedance_spectrum = abs(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])
 plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum)
 plt.savefig('/tmp/impedance_spectrum.svg')
 # # plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
@@ -262,7 +263,7 @@ plt.savefig('/tmp/impedance_spectrum.svg')
 plt.draw()
 plt.pause(0.001)
 
-files = ['/tmp/voltages.svg', '/tmp/currents.svg', '/tmp/spectrum.svg', plot_file]
+files = ['/tmp/voltages.svg', '/tmp/currents.svg', '/tmp/spectrum.svg', '/tmp/impedance_spectrum.svg', "U_patch_antenna_designer.py"]
 store.ask(files)
 
 

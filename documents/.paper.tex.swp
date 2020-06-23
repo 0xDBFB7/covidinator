@@ -294,11 +294,11 @@ Polypropylene is the ideal material, being almost indefinitely autoclavable. It 
 
 \paragraph{\textbf{Personal 'electromagnetic mask'}}\
 
-Even with judicious use of phased-arrays, power-combining, etc, each transistor can only reasonably sterilize approx. $ 1 \text{ m}^3 $.
+Even with judicious use of phased-arrays, spatial power-combining, etc, each transistor can only reasonably sterilize approx. $ 1 \text{ m}^3 $.
 
 We therefore demonstrate this form factor because, superficially, there are fewer people than there are places. 
 
-On the other hand, a personal device may present issues with participation and production volume.
+On the other hand, a personal device may present issues with participation and production volume. 
 
 \paragraph{\textbf{Direct treatments}}\
 
@@ -316,7 +316,7 @@ SARS is found widely distributed throughout the most desirable organs [Ding 2004
 
 However, destruction of lung tissue appears to be the primary cause of death via SARS [Nicholls 2006]. 
 
-A minimally-invasive bronchoscopic technique may be effective when mounted on a modified brochoscope and periodically inserted into the main bronchus, a la [Yuan 2019].
+A minimally-invasive bronchoscopic technique may be effective when mounted on a modified brochoscope and periodically inserted into the main bronchus, as demonstrated by [Yuan 2019].
 
 The bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are only on the order of 
 7 mm thick [Chekan 2016].
@@ -325,9 +325,11 @@ Further study is required to validate this method.
 
 \paragraph{\textbf{More fanciful concepts}}\
 
-Many weather radar systems operate in these X-band frequency ranges. 
+Many systems operate in these X-band frequency ranges; and precision 
 
-It is relatively easy to produce megawatts of power at these frequency ranges using Klystrons. Airborne phased-arrays.
+It is relatively easy to produce megawatts of power at these frequency ranges using Klystrons.
+
+Existing marine, weather, and aviation radar systems often use the X-band; depending on the focusing power
 
 
 
@@ -415,9 +417,7 @@ However, a third element is also required:
 \end{itemize}
 %
 
-With large feedback-loop structures, such as PiN switched lines, proximity effects from nearby flesh would detune the oscillator to a s
-
-
+With large feedback-loop structures, such as long PiN-switched phasing lines, proximity effects from nearby flesh would detune the oscillator significantly.
 
  design of a triple-tuned oscillator.
 
@@ -716,25 +716,43 @@ In practice, the timestep required to obtain convergence in particularly tight c
 
 \rule{\linewidth}{0.2pt}
 
-The frequency impedance of an antenna can be determined by applying a gaussian pulse to a hard voltage source on the feedline, running the simulation until the transients have all died out while logging the voltage and current at each timestep, and then taking the fourier transform of the voltage and current. This is much faster and 
+Originally tried 
 
-However, a similar mismatch to the SPICE exists for FFT methods, but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_bin = n_bin * (1 / (N_simulation * dt)) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_simulation$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
+The frequency impedance of an antenna can be determined by:
+
+\begin{itemize}
+  \item Applying a gaussian pulse to a hard voltage source on the feedline
+  \item Running the simulation until the transients have all died out below some threshold, while logging the source voltage and current at each timestep
+  
+  \item Taking the fourier transform of the (real) excitation voltage and current (producing a complex result, mind you)
+  \item Taking the ratio of the two complex spectra.
+\end{itemize}
+
+However, a similar mismatch to the SPICE exists for fourier methods, but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_{bin} = n_{bin} / (N_{simulation} \ dt) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_{simulation}$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
 
 There's more than enough 'information entropy' in 2000 FDTD points for most antennas. But you need some 30,000 points to get 10 bins below 20 GHz!
 
 There are a few methods of changing the FFT bin size artificially, which [Bi 1992] reviews. You can "use a manual fourier integration over the frequency region of interest".
 
-But, in a personally staggering turn of events which will presumably be familiar to statisticans and preposterous to everyone else, a far simpler method is to {\it discard} 95\% of the data! Re-sampling some fraction of the current  
+But, in a personally staggering turn of events which will presumably be familiar to statisticans and preposterous to everyone else, a far simpler method is to {\it discard} 95\% of the data, by down-sampling to 1/10th.
 
-An equally simple method that seemed to produce better results in our case is to {\it pad }
+An equally simple method that seemed to produce better results in our case is to pad the voltage and current samples to the correct length. 
+
+It's so thumpingly unintuitive to me that adding 50,000 zeros to a 5000 value dataset can improve the resolution of a measurement by 300-fold.
 
 It is important to remember to normalize the gaussian pulse, or else numerical noise will be introduced. The precise magnitude is not important - [Luebbers 1992/1991] use 100v, others use 1v, etc.
 
-Though uneven dt FFTs exist, the time step can be constant here .
+Though uneven dt FFTs exist, the time step can be made constant at the courant limit.
 
-A step impulse (1 first timestep, 0 otherwise) can also be used, though the performance is almost unusable worse.
+A step impulse (1 first timestep, 0 otherwise) has been used in some works, though in our case the performance was horrid.
 
-A method of moments solver
+A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
+
+\rule{\linewidth}{0.2pt}
+
+Many equations in papers on the FDTD method are supplied without explicit scaling factors. For instance, for use with flaport/fdtd the H-field to current line integral in [] requires scaling by $\mu_0  (dx/dt)$, where $\mu_0$ is the vacuum magnetic permittivity, dx the cell size, and dt the timestep - despite the equation already possessing a deceptive set of $dx$-es.
+
+Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run a test using a unit-aware calculator such as {\it sharkdp/insect}.
 
 \rule{\linewidth}{0.2pt}
 
