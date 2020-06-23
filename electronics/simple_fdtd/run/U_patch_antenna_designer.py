@@ -23,13 +23,13 @@ fdtd.set_backend("torch.cuda.float32")
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
 # analytic 8 GHz patch antenna - ~240 ohms at the edge
-# patch_width = 11.4e-3
-# patch_length = 8.7e-3
-# feed_length = 5e-3
-# substrate_thickness = 0.8e-3
-# dielectric_constant = 4.4
+patch_width = 11.4e-3
+patch_length = 8.7e-3
+feed_length = 5e-3
+substrate_thickness = 0.8e-3
+dielectric_constant = 4.4
 
-
+#
 # patch_width =  22.26e-3
 # patch_length = 16.95e-3
 # feed_length = 5e-3
@@ -37,12 +37,12 @@ fdtd.set_backend("torch.cuda.float32")
 # A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
 # return loss -19.5 dB, VSWR 1.237, impedance
 
-#[Samaras 2004]
-patch_width =  59.4e-3
-patch_length = 40.4e-3
-feed_length = 0e-3
-substrate_thickness = 1.27e-3
-dielectric_constant = 2.42
+# #[Samaras 2004]
+# patch_width =  59.4e-3
+# patch_length = 40.4e-3
+# feed_length = 0e-3
+# substrate_thickness = 1.27e-3
+# dielectric_constant = 2.42
 
 pcb = fd.PCB(0.0002)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
