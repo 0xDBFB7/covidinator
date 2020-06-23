@@ -1,7 +1,7 @@
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
 from fdtd_PCB_extensions import X,Y,Z
-
+from scipy.constants import mu_0
 import numpy as np
 from math import sin, pi, pow, exp
 import time
@@ -22,17 +22,27 @@ fdtd.set_backend("torch.cuda.float32")
 #Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
-patch_width = 11.4e-3
-patch_length = 8.7e-3
-feed_length = 0.1e-3
-substrate_thickness = 0.8e-3
+# analytic 8 GHz patch antenna - ~240 ohms at the edge
+# patch_width = 11.4e-3
+# patch_length = 8.7e-3
+# feed_length = 5e-3
+# substrate_thickness = 0.8e-3
+# dielectric_constant = 4.4
 
 
 # patch_width =  22.26e-3
 # patch_length = 16.95e-3
 # feed_length = 5e-3
 # substrate_thickness = 1.6e-3
+# A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
+# return loss -19.5 dB, VSWR 1.237, impedance
 
+#[Samaras 2004]
+patch_width =  59.4e-3
+patch_length = 40.4e-3
+feed_length = 0e-3
+substrate_thickness = 1.27e-3
+dielectric_constant = 2.42
 
 pcb = fd.PCB(0.0002)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
@@ -44,7 +54,7 @@ fd.create_substrate(pcb, substrate_thickness, 4.4, 0.02, 9e9)
 
 
 def create_patch_antenna(pcb, patch_width, patch_length):
-    MICROSTRIP_FEED_WIDTH = 1.5e-3
+    MICROSTRIP_FEED_WIDTH = 3e-3
     MICROSTRIP_FEED_LENGTH = 5e-3
 
     z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
@@ -57,7 +67,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     p_N_x = int(patch_width / pcb.cell_size)
     p_N_y = int(patch_length / pcb.cell_size)
     pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
-    #
+
     # #feedport
     # fp_N_x = int(MICROSTRIP_FEED_WIDTH/pcb.cell_size)
     # fp_N_y = int(MICROSTRIP_FEED_LENGTH/pcb.cell_size)
@@ -65,7 +75,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
     pcb.component_ports = [] # wipe ports
-    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y-1)*pcb.cell_size))
+    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y//2+p_N_y//4-1)*pcb.cell_size))
 
 
 
@@ -94,7 +104,6 @@ def sim_VSWR(pcb):
     dump_step = None
 
     # print(pcb.grid.time_step)
-    #A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
 
     prev_dump_time = 0
 
@@ -111,17 +120,20 @@ def sim_VSWR(pcb):
 
         port = pcb.component_ports[0]
 
-        # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
+        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
 
-        source_voltage = sin(2.0 * pi * 10e9 * pcb.time)
+        # source_voltage = sin(2.0 * pi * 10e9 * pcb.time)
 
         z_slice = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
-        pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = source_voltage / (pcb.cell_size)
+        z_slice_2 = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
+
+        pcb.grid.E[port.N_x,port.N_y,z_slice_2,Z] = source_voltage / (pcb.cell_size)
 
         current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
                     pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
         current += ((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]-
                     pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
+        # current
         current = current.cpu()
 
 
@@ -135,14 +147,15 @@ def sim_VSWR(pcb):
         if(pcb.grid.time_steps_passed % print_step == 0):
             # print("%: ",(pcb.time/end_time)*100.0)
             print(sum(abs(currents[-300:-1])))
+
         voltages = np.append(voltages, source_voltage)
         currents = np.append(currents, current)
-
-        if(len(currents) > 10000):
-            break
-
-        # if(sum(abs(currents[-300:-1])) < 20 and len(currents) > 300):
+        #
+        # if(len(currents) > 10000):
         #     break
+
+        if(sum(abs(currents[-300:-1])) < 20 and len(currents) > 300):
+            break
 
 
     print("=========== Finished! ============")
@@ -154,6 +167,8 @@ def sim_VSWR(pcb):
 
 
 create_patch_antenna(pcb, patch_width, patch_length)
+
+
 
 filename = 'globalsave.pkl'
 try:
@@ -171,11 +186,16 @@ print(required_length)
 
 voltages = np.pad(voltages, (0, required_length), 'edge')
 currents = np.pad(currents, (0, required_length), 'edge')
-
+# currents /= mu_0
 times_padded = np.pad(pcb.times, (0, required_length), 'edge')
+
+# factor of 50000000
 
 voltage_spectrum = np.fft.fft(voltages)
 current_spectrum = np.fft.fft(currents)
+#
+# voltage_spectrum /= np.max(abs(voltage_spectrum)) # normalize to 1 - why?
+# current_spectrum *= np.max(abs(currents))/np.max(abs(current_spectrum)) # why?
 
 # spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
 spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.grid.time_step)
@@ -190,17 +210,18 @@ plt.plot(times_padded, voltages)
 plt.figure()
 plt.plot(times_padded, currents)
 plt.figure()
-plt.plot(spectrum_freqs[begin_freq:end_freq], voltage_spectrum[begin_freq:end_freq], label="volt")
-plt.plot(spectrum_freqs[begin_freq:end_freq], current_spectrum[begin_freq:end_freq], label="curr")
+plt.plot(spectrum_freqs[begin_freq:end_freq], abs(voltage_spectrum[begin_freq:end_freq]), label="volt")
+plt.plot(spectrum_freqs[begin_freq:end_freq], abs(current_spectrum[begin_freq:end_freq]), label="curr")
 plt.legend()
 # power_spectrum = -1.0*((voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])).real)
 # power_spectrum /= np.linalg.norm(power_spectrum)
 # plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
-# plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]))
-plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
-
+plt.plot(spectrum_freqs[begin_freq:end_freq],abs(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])*mu_0*(pcb.cell_size/pcb.grid.time_step))
+# # plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
+# plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]).real)
+# plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]).imag)
 plt.show()
 
 

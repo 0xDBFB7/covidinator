@@ -1075,3 +1075,22 @@ the bat62 does, but I can't get it.
 
 
 
+using a sine excitation doesn't help. fft's working fine though!
+
+was off by a factor of mu0:
+
+>>> 1 V / (0.01 T * 0.01 m) -> ohms
+
+  1 V / (0.01 T × 0.01 m) ➞ Ω
+
+  Conversion error:
+
+    Cannot convert unit V/(T·m) (base units: m·s⁻¹)
+                to unit Ω (base units: A⁻²·kg·m²·s⁻³)
+
+
+>>> mu0 * 1 V / ( 0.01 tesla * 0.01 m) -> ohms
+
+  mu0 × (1 V / (0.01 T × 0.01 m)) ➞ Ω
+
+   = 0.0125664 Ω

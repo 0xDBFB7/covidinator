@@ -734,6 +734,8 @@ Though uneven dt FFTs exist, the time step can be constant here .
 
 A step impulse (1 first timestep, 0 otherwise) can also be used, though the performance is almost unusable worse.
 
+A method of moments solver
+
 \rule{\linewidth}{0.2pt}
 
 The impedance of a microstrip antenna varies with position on its plane. Probe feeds that couple a microstrip to a specific point are often used.
