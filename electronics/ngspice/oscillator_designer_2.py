@@ -16,6 +16,9 @@ import os
 import sys
 from matplotlib.colors import SymLogNorm
 
+#include store.py
+import sys
+sys.path.append('/home/arthurdent/covidinator/electronics/')
 import store
 
 import ngspyce

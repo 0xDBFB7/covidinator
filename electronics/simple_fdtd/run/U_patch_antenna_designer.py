@@ -16,7 +16,10 @@ import pickle
 fdtd.set_backend("torch.cuda.float32")
 # fdtd.set_backend("numpy")
 
-
+#include store.py
+import sys
+sys.path.append('/home/arthurdent/covidinator/electronics/')
+import store
 
 
 #Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
@@ -235,22 +238,33 @@ begin_freq = np.abs(spectrum_freqs - 1e9).argmin()
 end_freq = np.abs(spectrum_freqs - 15e9).argmin()
 
 plt.plot(times_padded, voltages)
+plt.savefig('/tmp/voltages.svg')
 plt.figure()
 plt.plot(times_padded, currents)
+plt.savefig('/tmp/currents.svg')
 plt.figure()
 plt.plot(spectrum_freqs[begin_freq:end_freq], abs(voltage_spectrum[begin_freq:end_freq]), label="volt")
 plt.plot(spectrum_freqs[begin_freq:end_freq], abs(current_spectrum[begin_freq:end_freq]), label="curr")
+plt.savefig('/tmp/spectrum.svg')
 plt.legend()
 # power_spectrum = -1.0*((voltage_spectrum[begin_freq:end_freq]*np.conj(current_spectrum[begin_freq:end_freq])).real)
 # power_spectrum /= np.linalg.norm(power_spectrum)
 # plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
-plt.plot(spectrum_freqs[begin_freq:end_freq],abs(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])*mu_0*(pcb.cell_size/pcb.grid.time_step))
+impedance_spectrum = (voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])*mu_0*(pcb.cell_size/pcb.grid.time_step)
+plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum)
+plt.savefig('/tmp/impedance_spectrum.svg')
 # # plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
 # plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]).real)
 # plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]).imag)
-plt.show()
+
+plt.draw()
+plt.pause(0.001)
+
+files = ['/tmp/voltages.svg', '/tmp/currents.svg', '/tmp/spectrum.svg', plot_file]
+store.ask(files)
+
 
 
 # for port in pcb.component_ports:
