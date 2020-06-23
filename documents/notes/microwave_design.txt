@@ -1094,3 +1094,8 @@ was off by a factor of mu0:
   mu0 × (1 V / (0.01 T × 0.01 m)) ➞ Ω
 
    = 0.0125664 Ω
+
+
+so, after adding all the right scaling factors, we match up with [Samaras 2004]
+by 5% or so, and agree with simple analytic methods by 20%. that's good enough for me!
+

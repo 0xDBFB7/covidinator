@@ -23,11 +23,11 @@ fdtd.set_backend("torch.cuda.float32")
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
 # analytic 8 GHz patch antenna - ~240 ohms at the edge
-patch_width = 11.4e-3
-patch_length = 8.7e-3
-feed_length = 5e-3
-substrate_thickness = 0.8e-3
-dielectric_constant = 4.4
+# patch_width = 11.4e-3
+# patch_length = 8.7e-3
+# feed_length = 5e-3
+# substrate_thickness = 0.8e-3
+# dielectric_constant = 4.4
 
 #
 # patch_width =  22.26e-3
@@ -36,20 +36,22 @@ dielectric_constant = 4.4
 # substrate_thickness = 1.6e-3
 # A good reference design on 1.6 mm FR4 is 10.1109/ATSIP.2016.7523197 [Werfelli 2016]
 # return loss -19.5 dB, VSWR 1.237, impedance
+# I'm not convinced that this ref. design is correct.
 
-# #[Samaras 2004]
-# patch_width =  59.4e-3
-# patch_length = 40.4e-3
-# feed_length = 0e-3
-# substrate_thickness = 1.27e-3
-# dielectric_constant = 2.42
+
+#[Samaras 2004]
+patch_width =  59.4e-3
+patch_length = 40.4e-3
+feed_length = 0e-3
+substrate_thickness = 1.27e-3
+dielectric_constant = 2.42
 
 pcb = fd.PCB(0.0002)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
                                 int(0.005/pcb.cell_size), courant_number = None)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
-fd.create_substrate(pcb, substrate_thickness, 4.4, 0.02, 9e9)
+fd.create_substrate(pcb, substrate_thickness, dielectric_constant, 0.02, 9e9)
 
 
 
@@ -74,19 +76,45 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     # pcb.copper_mask[pcb.xy_margin+(p_N_x//2 - (fp_N_x//2)):pcb.xy_margin+(p_N_x//2 + (fp_N_x//2)),  \
     #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
+
+    probe_position = (p_N_y//2+p_N_y//4-1)
+
     pcb.component_ports = [] # wipe ports
-    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, (p_N_y//2+p_N_y//4-1)*pcb.cell_size))
+    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
 
 
 
     # pcb.copper_mask[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] = 1
 
-# def create_U_patch_antenna(patch_width, patch_length, slot_length, slot_width, feed_x_position):
+def create_U_patch_antenna(patch_width, patch_length, slot_length, slot_width, ):
 #     # U-patch antenna from 10.1109/LAWP.2007.914122.
-#     MICROSTRIP_FEED_WIDTH = 1.5e-3
-#
-#
-# def compute_patch_dimensions():
+    z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
+
+    #wipe copper
+    pcb.copper_mask[:, :, z_slice] = 0
+    pcb.copper_mask[:,:,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
+
+    #rectangle
+    p_N_x = int(patch_width / pcb.cell_size)
+    p_N_y = int(patch_length / pcb.cell_size)
+    pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
+
+    # #feedport
+    # fp_N_x = int(MICROSTRIP_FEED_WIDTH/pcb.cell_size)
+    # fp_N_y = int(MICROSTRIP_FEED_LENGTH/pcb.cell_size)
+    # pcb.copper_mask[pcb.xy_margin+(p_N_x//2 - (fp_N_x//2)):pcb.xy_margin+(p_N_x//2 + (fp_N_x//2)),  \
+    #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
+
+    # U slot
+    pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
+    pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
+
+
+    probe_position = (p_N_y-1)
+
+    pcb.component_ports = [] # wipe ports
+    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
+
 
 
 def gaussian_derivative_pulse(pcb, dt, beta):
@@ -168,7 +196,7 @@ def sim_VSWR(pcb):
 
 create_patch_antenna(pcb, patch_width, patch_length)
 
-
+# create_U_patch_antenna(pcb, patch_width, patch_length)
 
 filename = 'globalsave.pkl'
 try:
