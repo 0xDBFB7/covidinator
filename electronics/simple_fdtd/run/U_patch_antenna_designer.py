@@ -42,14 +42,14 @@ import store
 # I'm not convinced that this ref. design is correct.
 
 
-#[Samaras 2004]
+# [Samaras 2004]
 patch_width =  59.4e-3
 patch_length = 40.4e-3
 feed_length = 0e-3
-substrate_thickness = 1.27e-3
+substrate_thickness = 1.2e-3
 dielectric_constant = 2.42
 
-pcb = fd.PCB(0.0002)
+pcb = fd.PCB(0.0004)
 fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
                                 int(0.005/pcb.cell_size), courant_number = None)
 
@@ -80,7 +80,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
 
-    probe_position = (p_N_y//2+p_N_y//4-1)
+    probe_position = (p_N_y//2-1)
 
     pcb.component_ports = [] # wipe ports
     pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
@@ -88,37 +88,37 @@ def create_patch_antenna(pcb, patch_width, patch_length):
 
 
     # pcb.copper_mask[self.xy_margin+x:self.xy_margin+x+1, self.xy_margin+(y):self.xy_margin+(y)+1, z_slice] = 1
-
-def create_U_patch_antenna(patch_width, patch_length, slot_length, slot_width, ):
-#     # U-patch antenna from 10.1109/LAWP.2007.914122.
-    z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
-
-    #wipe copper
-    pcb.copper_mask[:, :, z_slice] = 0
-    pcb.copper_mask[:,:,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-
-    #rectangle
-    p_N_x = int(patch_width / pcb.cell_size)
-    p_N_y = int(patch_length / pcb.cell_size)
-    pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
-
-    # #feedport
-    # fp_N_x = int(MICROSTRIP_FEED_WIDTH/pcb.cell_size)
-    # fp_N_y = int(MICROSTRIP_FEED_LENGTH/pcb.cell_size)
-    # pcb.copper_mask[pcb.xy_margin+(p_N_x//2 - (fp_N_x//2)):pcb.xy_margin+(p_N_x//2 + (fp_N_x//2)),  \
-    #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
-
-    # U slot
-    pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
-    pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
-
-
-    probe_position = (p_N_y-1)
-
-    pcb.component_ports = [] # wipe ports
-    pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
-
-
+#
+# def create_U_patch_antenna(patch_width, patch_length, slot_length, slot_width, ):
+# #     # U-patch antenna from 10.1109/LAWP.2007.914122.
+#     z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
+#
+#     #wipe copper
+#     pcb.copper_mask[:, :, z_slice] = 0
+#     pcb.copper_mask[:,:,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
+#
+#     #rectangle
+#     p_N_x = int(patch_width / pcb.cell_size)
+#     p_N_y = int(patch_length / pcb.cell_size)
+#     pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
+#
+#     # #feedport
+#     # fp_N_x = int(MICROSTRIP_FEED_WIDTH/pcb.cell_size)
+#     # fp_N_y = int(MICROSTRIP_FEED_LENGTH/pcb.cell_size)
+#     # pcb.copper_mask[pcb.xy_margin+(p_N_x//2 - (fp_N_x//2)):pcb.xy_margin+(p_N_x//2 + (fp_N_x//2)),  \
+#     #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
+#
+#     # U slot
+#     pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
+#     pcb.copper_mask[pcb.xy_margin:pcb.xy_margin+p_N_x, pcb.xy_margin:pcb.xy_margin+p_N_y, z_slice] = 1
+#
+#
+#     probe_position = (p_N_y-1)
+#
+#     pcb.component_ports = [] # wipe ports
+#     pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
+#
+#
 
 def gaussian_derivative_pulse(pcb, dt, beta):
     t = pcb.time
@@ -129,6 +129,7 @@ def gaussian_derivative_pulse(pcb, dt, beta):
     part_two = -2.0*(s**2.0)*b
     return part_one * part_two
 
+#500 ohms
 
 def sim_VSWR(pcb):
     print_step = 50
@@ -157,7 +158,6 @@ def sim_VSWR(pcb):
         z_slice = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
         z_slice_2 = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
 
-        pcb.grid.E[port.N_x,port.N_y,z_slice_2,Z] = source_voltage / (pcb.cell_size)
 
         current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
                     pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
@@ -166,6 +166,11 @@ def sim_VSWR(pcb):
         # current
         current = current.cpu()
         current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+
+        voltage_2 = (50.0*current - source_voltage)
+
+        pcb.grid.E[port.N_x,port.N_y,z_slice_2,Z] = voltage_2 / (pcb.cell_size)
+
 
 
         if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
@@ -179,13 +184,13 @@ def sim_VSWR(pcb):
             # print("%: ",(pcb.time/end_time)*100.0)
             print(sum(abs(currents[-300:-1])))
 
-        voltages = np.append(voltages, source_voltage)
+        voltages = np.append(voltages, source_voltage-voltage_2)
         currents = np.append(currents, current)
         #
         # if(len(currents) > 10000):
         #     break
 
-        if(sum(abs(currents[-300:-1])) < 0.020 and len(currents) > 300):
+        if(sum(abs(currents[-300:-1])) < 0.05 and len(currents) > 300):
             # the key phrase here is "after all transients have dissipated."
             #they use 2000 timesteps at 1.8 ps each.
             break
@@ -227,7 +232,7 @@ times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 voltage_spectrum = np.fft.fft(voltages)
 current_spectrum = np.fft.fft(currents)
 #
-# voltage_spectrum /= np.max(abs(voltage_spectrum)) # normalize to 1 - why?
+# voltage_spectrum *= np.max(abs(voltages))/np.max(abs(voltage_spectrum)) # normalize to 1 - why?
 # current_spectrum *= np.max(abs(currents))/np.max(abs(current_spectrum)) # why?
 
 # spectrum_freqs = np.fft.fftfreq(len(voltages), d=pcb.time/len(voltages))
@@ -262,6 +267,8 @@ plt.savefig('/tmp/impedance_spectrum.svg')
 
 plt.draw()
 plt.pause(0.001)
+#
+# print("Z: ", impedance_spectrum[np.abs(spectrum_freqs - 2.3e9).argmin()])
 
 files = ['/tmp/voltages.svg', '/tmp/currents.svg', '/tmp/spectrum.svg', '/tmp/impedance_spectrum.svg', "U_patch_antenna_designer.py"]
 store.ask(files)

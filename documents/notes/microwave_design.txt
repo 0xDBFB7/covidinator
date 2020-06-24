@@ -1099,3 +1099,9 @@ was off by a factor of mu0:
 so, after adding all the right scaling factors, we match up with [Samaras 2004]
 by 5% or so, and agree with simple analytic methods by 20%. that's good enough for me!
 
+
+we should compare the conductivity of the nutrient broth and the phage broth...
+
+
+this fourier technique is also used in electrochemistry - fourier impedance spectroscopy.
+

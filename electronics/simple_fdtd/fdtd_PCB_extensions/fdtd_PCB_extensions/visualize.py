@@ -39,7 +39,7 @@ def dump_to_vtk(pcb, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=
                 objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 1
             else:
                 objects[obj.x.start:obj.x.stop, obj.y.start:obj.y.stop, obj.z.start:obj.z.stop] = 2
-        objects += cu_mask*2
+        objects += cu_mask*2 
         cellData['objects'] = objects
 
     if(ports_dump):
