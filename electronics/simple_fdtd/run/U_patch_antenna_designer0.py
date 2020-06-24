@@ -146,21 +146,20 @@ def sim_VSWR(pcb):
 
 
     voltages = np.array([])
+    voltage_2s = np.array([])
 
     currents = np.array([])
-    currents_2 = np.array([])
-
     while(True):
 
         port = pcb.component_ports[0]
 
         source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
 
+        # source_voltage = sin(2.0 * pi * 10e9 * pcb.time)
 
+        z_slice = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
+        z_slice_2 = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
 
-        z_slice = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
-
-        pcb.grid.E[port.N_x,port.N_y,z_slice_2,Z] = source_voltage / (pcb.cell_size)
 
         current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
                     pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
@@ -170,17 +169,9 @@ def sim_VSWR(pcb):
         current = current.cpu()
         current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
-        # account for Yee cell inaccuracies [Fang 1994].
-        z_slice_2 = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
+        voltage_2 = (50.0*current + source_voltage)
 
-        current_2 = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
-                    pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
-        current_2 += ((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]-
-                    pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
-        # current
-        current_2 = current_2.cpu()
-        current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
-
+        pcb.grid.E[port.N_x,port.N_y,z_slice_2,Z] = voltage_2 / (pcb.cell_size)
 
 
 
@@ -196,9 +187,8 @@ def sim_VSWR(pcb):
             print(sum(abs(currents[-300:-1])))
 
         voltages = np.append(voltages, source_voltage)
+        voltage_2s = np.append(voltage_2s, voltage_2)
         currents = np.append(currents, current)
-        currents_2 = np.append(currents_2, current_2)
-
         #
         # if(len(currents) > 10000):
         #     break
@@ -214,7 +204,7 @@ def sim_VSWR(pcb):
     voltages = np.array(voltages)
     currents = np.array(currents)
 
-    return voltages, currents, currents_2
+    return voltages, voltage_2s, currents
 
 
 create_patch_antenna(pcb, patch_width, patch_length)
@@ -277,6 +267,7 @@ plt.legend()
 # plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
+impedance_spectrum = abs(voltage_spectrum_2[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])/50
 
 # impedance_spectrum = abs(voltage_spectrum_2*50.0 / (voltage_spectrum - voltage_spectrum_2))
 

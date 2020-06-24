@@ -40000,6 +40000,7 @@ Publisher: Nature Publishing Group</dc:description>
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
+        <link:link rdf:resource="#item_3072"/>
         <dc:identifier>
             <dcterms:URI>
                 <rdf:value>https://ieeexplore.ieee.org/document/8563898/</rdf:value>
@@ -40016,6 +40017,11 @@ Publisher: Nature Publishing Group</dc:description>
         </bib:presentedAt>
         <dc:title>Design of a High-Conversion-Efficiency X-Band Rectifier for Microwave Wireless Power Transmission</dc:title>
     </rdf:Description>
+    <z:Attachment rdf:about="#item_3072">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Tan_Liu_2018_Design of a High-Conversion-Efficiency X-Band Rectifier for Microwave Wireless.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <bib:Article rdf:about="https://linkinghub.elsevier.com/retrieve/pii/S0927796X9800014X">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:0927796X"/>
@@ -51447,44 +51453,6 @@ PMCID: PMC6320950</dc:description>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
-    <bib:Article rdf:about="https://digital-library.theiet.org/content/journals/10.1049/el_19950950">
-        <z:itemType>journalArticle</z:itemType>
-        <dcterms:isPartOf rdf:resource="urn:issn:0013-5194,%201350-911X"/>
-        <bib:authors>
-            <rdf:Seq>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Lee</foaf:surname>
-                        <foaf:givenName>K.-F.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Huynh</foaf:surname>
-                        <foaf:givenName>T.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-            </rdf:Seq>
-        </bib:authors>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://digital-library.theiet.org/content/journals/10.1049/el_19950950</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <bib:pages>1310-1312</bib:pages>
-        <dc:date>1995-08-03</dc:date>
-        <dcterms:dateSubmitted>2020-05-20 02:29:05</dcterms:dateSubmitted>
-        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
-        <z:language>en</z:language>
-        <dc:title>Single-layer single-patch wideband microstrip antenna</dc:title>
-    </bib:Article>
-    <bib:Journal rdf:about="urn:issn:0013-5194,%201350-911X">
-        <prism:volume>31</prism:volume>
-        <prism:number>16</prism:number>
-        <dc:title>Electronics Letters</dc:title>
-        <dc:identifier>ISSN 0013-5194, 1350-911X</dc:identifier>
-        <dc:identifier>DOI 10.1049/el:19950950</dc:identifier>
-    </bib:Journal>
     <bib:Article rdf:about="https://www.tandfonline.com/doi/full/10.1163/156939308787543723">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:0920-5071,%201569-3937"/>
@@ -51730,56 +51698,6 @@ PMCID: PMC6320950</dc:description>
         <z:linkMode>1</z:linkMode>
         <link:type>text/html</link:type>
     </z:Attachment>
-    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/5466402/">
-        <z:itemType>journalArticle</z:itemType>
-        <dcterms:isPartOf rdf:resource="urn:issn:1045-9243"/>
-        <bib:authors>
-            <rdf:Seq>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Lee</foaf:surname>
-                        <foaf:givenName>Kai Fang</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Steven Yang</foaf:surname>
-                        <foaf:givenName>Shing Lung</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Kishk</foaf:surname>
-                        <foaf:givenName>Ahmed A.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Luk</foaf:surname>
-                        <foaf:givenName>Kwai Man</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-            </rdf:Seq>
-        </bib:authors>
-        <dc:identifier>
-            <dcterms:URI>
-               <rdf:value>http://ieeexplore.ieee.org/document/5466402/</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <bib:pages>71-88</bib:pages>
-        <dc:date>02/2010</dc:date>
-        <dcterms:dateSubmitted>2020-05-20 02:51:48</dcterms:dateSubmitted>
-        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
-        <dc:title>The Versatile U-Slot Patch Antenna</dc:title>
-    </bib:Article>
-    <bib:Journal rdf:about="urn:issn:1045-9243">
-        <prism:volume>52</prism:volume>
-        <prism:number>1</prism:number>
-        <dc:title>IEEE Antennas and Propagation Magazine</dc:title>
-        <dc:identifier>ISSN 1045-9243</dc:identifier>
-        <dcterms:alternative>IEEE Antennas Propag. Mag.</dcterms:alternative>
-        <dc:identifier>DOI 10.1109/MAP.2010.5466402</dc:identifier>
-    </bib:Journal>
     <bib:Article rdf:about="http://ieeexplore.ieee.org/document/6994273/">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf rdf:resource="urn:issn:1536-1225,%201548-5757"/>
@@ -53846,18 +53764,6 @@ Publisher: Nature Publishing Group</dc:description>
         <dc:title>Understanding the FDTD Method</dc:title>
         <z:linkMode>1</z:linkMode>
         <link:type>text/html</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_2905">
-        <z:itemType>attachment</z:itemType>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://www.eecs.wsu.edu/~schneidj/ufdtd/chap5.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2020-05-30 16:16:41</dcterms:dateSubmitted>
-        <dc:title>chap5.pdf</dc:title>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
     </z:Attachment>
     <bib:Document rdf:about="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/">
         <z:itemType>blogPost</z:itemType>
@@ -57581,6 +57487,3331 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
+    <z:Attachment rdf:about="#item_3062">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.oecd.org/chemicalsafety/testing/Genetic%20Toxicology%20Guidance%20Document%20Aug%2031%202015.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 02:27:38</dcterms:dateSubmitted>
+        <dc:title>Genetic Toxicology Guidance Document Aug 31 2015.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3063">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://wingman-sw.com/papers/ProgressBeforeHardware.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 18:39:50</dcterms:dateSubmitted>
+        <dc:title>ProgressBeforeHardware.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.throwtheswitch.org/build/cmake">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>Throw The Switch</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3065"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.throwtheswitch.org/build/cmake</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.throwtheswitch.org</dc:description>
+        <dcterms:dateSubmitted>2020-06-16 18:50:06</dcterms:dateSubmitted>
+        <z:language>en-US</z:language>
+        <dc:title>cmake</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3065">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.throwtheswitch.org/build/cmake</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 18:50:08</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3067"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 20:47:28</dcterms:dateSubmitted>
+        <dc:title>attenuator</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3067">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 20:47:28</dcterms:dateSubmitted>
+        <dc:title>n_catalog_partition16_en.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.diodes.com/assets/Datasheets/ds30149.pdf">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3066"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.diodes.com/assets/Datasheets/ds30149.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 20:14:50</dcterms:dateSubmitted>
+        <dc:title>BSS84</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3066">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.diodes.com/assets/Datasheets/ds30149.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-16 20:14:50</dcterms:dateSubmitted>
+        <dc:title>ds30149.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://dx.plos.org/10.1371/journal.pone.0080244">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>8</prism:volume>
+                <prism:number>11</prism:number>
+                <dc:title>PLoS ONE</dc:title>
+                <dc:identifier>ISSN 1932-6203</dc:identifier>
+                <dcterms:alternative>PLoS ONE</dcterms:alternative>
+                <dc:identifier>DOI 10.1371/journal.pone.0080244</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nishimura</foaf:surname>
+                        <foaf:givenName>Hidekazu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sakata</foaf:surname>
+                        <foaf:givenName>Soichiro</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kaga</foaf:surname>
+                        <foaf:givenName>Akikazu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Harrod</foaf:surname>
+                        <foaf:givenName>Kevin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_3071"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dx.plos.org/10.1371/journal.pone.0080244</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>e80244</bib:pages>
+        <dc:date>2013-11-27</dc:date>
+        <dcterms:dateSubmitted>2020-06-17 14:46:57</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Microbial pathogens of respiratory infectious diseases are often transmitted through particles in sneeze and cough. Therefore, understanding the particle movement is important for infection control. Images of a sneeze induced by nasal cavity stimulation by healthy adult volunteers, were taken by a digital high-vision, high-speed video system equipped with a computer system and treated as a research model. The obtained images were enhanced electronically, converted to digital images every 1/300 s, and subjected to vector analysis of the bioparticles contained in the whole sneeze cloud using automatic image processing software. The initial velocity of the particles or their clusters in the sneeze was greater than 6 m/s, but decreased as the particles moved forward; the momentums of the particles seemed to be lost by 0.15–0.20 s and started a diffusion movement. An approximate equation of a function of elapsed time for their velocity was obtained from the vector analysis to represent the dynamics of the front-line particles. This methodology was also applied for a cough. Microclouds contained in a smoke exhaled with a voluntary cough by a volunteer after smoking one breath of cigarette, were traced as the visible, aerodynamic surrogates for invisible bioparticles of cough. The smoke cough microclouds had an initial velocity greater than 5 m/s. The fastest microclouds were located at the forefront of cloud mass that moving forward; however, their velocity clearly decreased after 0.05 s and they began to diffuse in the environmental airflow. The maximum direct reaches of the particles and microclouds driven by sneezing and coughing unaffected by environmental airflows were estimated by calculations using the obtained equations to be about 84 cm and 30 cm from the mouth, respectively, both achieved in about 0.2 s, suggesting that data relating to the dynamics of sneeze and cough became available by calculation.</dcterms:abstract>
+        <dc:title>A New Methodology for Studying Dynamics of Aerosol Particles in Sneeze and Cough Using a Digital High-Vision, High-Speed Video System and Vector Analyses</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3071">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0080244&amp;type=printable</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-17 14:46:55</dcterms:dateSubmitted>
+        <dc:title>file.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3073">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>4</prism:volume>
+                <dc:identifier>DOI 10.1109/MWSYM.1999.780315</dc:identifier>
+                <dc:title>1999 IEEE MTT-S International Microwave Symposium Digest (Cat. No.99CH36282)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Klahn</foaf:surname>
+                        <foaf:givenName>G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3075"/>
+        <link:link rdf:resource="#item_3074"/>
+        <bib:pages>1773-1776 vol.4</bib:pages>
+        <dc:date>June 1999</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>1999 IEEE MTT-S International Microwave Symposium Digest (Cat. No.99CH36282)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>All communication systems require some form of output power reporting as a means to manage the power efficiency of the output spectrum. Traditionally, this task has been performed with diode detectors. Diode detectors are non-linear devices and require elaborate compensation techniques to linearize and operate as a true RMS (Root Mean Square) detector over a wide dynamic and temperature range. A true RMS power detection scheme has been developed, which has a 22 dB dynamic range with /spl plusmn/1 dB accuracy and operates over a temperature range of -40/spl deg/C to +80/spl deg/C.</dcterms:abstract>
+        <dc:title>True RMS power detection with high dynamic range</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3075">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/780315?arnumber=780315</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-17 20:44:22</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3074">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=780315&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NzgwMzE1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-17 20:44:18</dcterms:dateSubmitted>
+        <dc:title>Klahn_1999_True RMS power detection with high dynamic range.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3076">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.infineon.com/dgdl/Infineon-AN_1807_PL32_1808_132434_RF%20and%20microwave%20power%20detection%20-AN-v01_00-EN.pdf?fileId=5546d46265f064ff0166440727be1055</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-17 20:51:43</dcterms:dateSubmitted>
+        <dc:title>Infineon-AN_1807_PL32_1808_132434_RF and microwave power detection -AN-v01_00-EN.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://web.archive.org/web/20060614013429/http://www.iaea.org/Publications/Booklets/SealedRadioactiveSources/pdfs/handout_scrap.pdf">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3078"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://web.archive.org/web/20060614013429/http://www.iaea.org/Publications/Booklets/SealedRadioactiveSources/pdfs/handout_scrap.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2006-06-14</dc:date>
+        <dcterms:dateSubmitted>2020-06-17 22:38:02</dcterms:dateSubmitted>
+        <dc:title>Wayback Machine</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3078">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://web.archive.org/web/20060614013429if_/http://www.iaea.org:80/Publications/Booklets/SealedRadioactiveSources/pdfs/handout_scrap.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-17 22:38:03</dcterms:dateSubmitted>
+        <dc:title>PDF Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://numba.pydata.org/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3080"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://numba.pydata.org/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-18 02:31:26</dcterms:dateSubmitted>
+        <dc:title>Numba: A High Performance Python Compiler</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3080">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://numba.pydata.org/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-18 02:31:27</dcterms:dateSubmitted>
+        <dc:title>Numba: A High Performance Python Compiler</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3081">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.microchip.com/stellent/groups/SiteComm_sg/documents/Training_Tutorials/en532276.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-18 17:32:14</dcterms:dateSubmitted>
+        <dc:title>en532276.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3082">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.csun.edu/~ih20409/SCHOOL1/RAMP%20GENERATORS.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-18 19:34:49</dcterms:dateSubmitted>
+        <dc:title>RAMP GENERATORS.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3083">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.trinamic.com/fileadmin/assets/Products/ICs_Documents/TMC5160A_Datasheet_Rev1.14.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 02:26:03</dcterms:dateSubmitted>
+        <dc:title>TMC5160A_Datasheet_Rev1.14.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.embedded.com/preventing-dynamic-allocation/">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+           <z:Blog><dc:title>Embedded.com</dc:title></z:Blog>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saks</foaf:surname>
+                        <foaf:givenName>Dan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3085"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.embedded.com/preventing-dynamic-allocation/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2010-03-09T13:29:00+00:00</dc:date>
+        <dc:description>Library Catalog: www.embedded.com
+Section: Blog</dc:description>
+        <dcterms:dateSubmitted>2020-06-19 04:36:19</dcterms:dateSubmitted>
+        <z:language>en-US</z:language>
+        <dcterms:abstract>Last summer, I wrote a column entitled &quot;Poor reasons for rejecting C++&quot; in which I sought to dispel some misconceptions about C++.1 Among the many reader</dcterms:abstract>
+        <dc:title>Preventing dynamic allocation</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3085">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.embedded.com/preventing-dynamic-allocation/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 04:36:21</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3086">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.asc.ohio-state.edu/jayaprakash.1/633/RPF39.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 15:31:38</dcterms:dateSubmitted>
+        <dc:title>RPF39.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/1512228/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1531-1309"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Jihak Jung</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Wooyoung Choi</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Jaehoon Choi</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3089"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/1512228/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>703-705</bib:pages>
+        <dc:date>10/2005</dc:date>
+        <dcterms:dateSubmitted>2020-06-19 15:37:21</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>A small wideband microstrip-fed monopole antenna</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1531-1309">
+        <prism:volume>15</prism:volume>
+        <prism:number>10</prism:number>
+        <dc:title>IEEE Microwave and Wireless Components Letters</dc:title>
+        <dc:identifier>ISSN 1531-1309</dc:identifier>
+        <dcterms:alternative>IEEE Microw. Wireless Compon. Lett.</dcterms:alternative>
+        <dc:identifier>DOI 10.1109/LMWC.2005.856834</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3089">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://tech.mweda.com/download/hwrf/hfss/A+small+wideband+microstrip-fed+monopole+antenna.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 15:37:20</dcterms:dateSubmitted>
+        <dc:title>A+small+wideband+microstrip-fed+monopole+antenna.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://doi.wiley.com/10.1002/mop.20396">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0895-2477,%201098-2760"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eldek</foaf:surname>
+                        <foaf:givenName>Abdelnasser A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elsherbeni</foaf:surname>
+                        <foaf:givenName>Atef Z.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Smith</foaf:surname>
+                        <foaf:givenName>Charles E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3092"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://doi.wiley.com/10.1002/mop.20396</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>123-126</bib:pages>
+        <dc:date>2004-10-20</dc:date>
+        <dcterms:dateSubmitted>2020-06-19 15:46:43</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Wideband microstrip-fed printed bow-tie antenna for phased-array systems</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0895-2477,%201098-2760">
+        <prism:volume>43</prism:volume>
+        <prism:number>2</prism:number>
+        <dc:title>Microwave and Optical Technology Letters</dc:title>
+        <dc:identifier>ISSN 0895-2477, 1098-2760</dc:identifier>
+        <dcterms:alternative>Microw. Opt. Technol. Lett.</dcterms:alternative>
+        <dc:identifier>DOI 10.1002/mop.20396</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3092">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://d1wqtxts1xzle7.cloudfront.net/44795878/Wideband_microstripfed_printed_bowtie_an20160416-6986-19gk0iv.pdf?1460822463=&amp;response-content-disposition=inline%3B+filename%3DWideband_microstrip-fed_printed_bow-tie.pdf&amp;Expires=1592585187&amp;Signature=Rdv1TYsQNFi5TuUGfV~7S~pTbUCMnH~jP-XZmh7MLEVQcf9aT0832DCkL-NDgO4n-TagQMaCF57ebpsqXcis~CwdRJOTsK7KKskyMbQxoVfhQtvymtyeaal~601DP97gYy5VRrYMkGYHlAcgWK06zfNO1QJs2jXDgr26fJrHY25V~WxH~AB9ne~Khgv11SKgJODLMai~YAosFLi89eSM4ST0ixhW7iBEBlMh9ljSkXs0TEugt-Mjw~ejEX-hx5QkCfFZzU5tyY7~Qc3rjFpyDMtqj-GPI2HLVm6CQ6OS03VDyR00bZPeJukHWNB2odsp7NHF-Oh1XUb5a5uNLGWkuw__&amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 15:46:41</dcterms:dateSubmitted>
+        <dc:title>Wideband_microstripfed_printed_bowtie_an20160416-6986-19gk0iv.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3094">
+        <z:itemType>document</z:itemType>
+        <link:link rdf:resource="#item_3095"/>
+        <dc:title>Analysis of Broad Banding and Minimization Techniques for Square Patch Antenna</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3095">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>kumar2010.pdf</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-1-4799-3540-6%20978-1-4799-3538-3%20978-1-4799-3537-6">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-1-4799-3540-6 978-1-4799-3538-3 978-1-4799-3537-6</dc:identifier>
+                <dc:identifier>DOI 10.1109/APS.2014.6904755</dc:identifier>
+                <dc:title>2014 IEEE Antennas and Propagation Society International Symposium (APSURSI)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Memphis, TN, USA</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bito</foaf:surname>
+                        <foaf:givenName>Jo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tehrani</foaf:surname>
+                        <foaf:givenName>Bijan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cook</foaf:surname>
+                        <foaf:givenName>Benjamin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tentzeris</foaf:surname>
+                        <foaf:givenName>Manos</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3097"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6904755</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>854-855</bib:pages>
+        <dc:date>7/2014</dc:date>
+        <dcterms:dateSubmitted>2020-06-19 16:17:07</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2014 IEEE International Symposium on Antennas and Propagation &amp; USNC/URSI National Radio Science Meeting</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dcterms:abstract>A fully inkjet-printed multi-layer microstrip patch antenna with a CPW to microstrip line transition is designed and demonstrated for the first time in this paper. Both metallic layers and SU-8 substrate are fabricated with an additive inkjet printing process. The patch antenna is designed to operate at 14 GHz, and the operation of the antenna is confirmed in measurement validating that fully additively-processed RF devices are a new option for post processing RF devices with substrate independence.</dcterms:abstract>
+        <dc:title>Fully inkjet-printed multilayer microstrip patch antenna for Ku-band applications</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3097">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Manos_Tentzeris/publication/286814062_Fully_inkjet-printed_multilayer_microstrip_patch_antenna_for_Ku-band_applications/links/5778070408aead7ba0746163/Fully-inkjet-printed-multilayer-microstrip-patch-antenna-for-Ku-band-applications.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:17:06</dcterms:dateSubmitted>
+        <dc:title>Fully-inkjet-printed-multilayer-microstrip-patch-antenna-for-Ku-band-applications.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3098">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>1</prism:volume>
+                <dc:identifier>DOI 10.1109/APMC.1997.659350</dc:identifier>
+                <dc:title>Proceedings of 1997 Asia-Pacific Microwave Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chow</foaf:surname>
+                        <foaf:givenName>Y.L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shiu</foaf:surname>
+                        <foaf:givenName>K.H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3099"/>
+        <link:link rdf:resource="#item_3100"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>antenna feeds</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>antenna theory</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>broadbanding theory</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Coaxial components</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>coaxial probe feed</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Feeds</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Frequency</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ground plane</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Impedance</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Magnetic resonance</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Magnetic separation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstripline feed</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Narrowband</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>patch antenna</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Patch antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Probes</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>reactance cancellation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>slot cuts</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>245-248 vol.1</bib:pages>
+        <dc:date>December 1997</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>Proceedings of 1997 Asia-Pacific Microwave Conference</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>The aim of this paper is to understand the cause of the narrow band in a microstrip patch antennas. The paper points out that the cause is due to heavy reactance cancellation. The cause is the same regardless how the patch is fed, by a coaxial probe or through a short slot by a microstripline under the ground plane. With the cause known, one can confidently design broadband patches with extra slot cuts on the patch or on the ground plane. Two specific examples are given.</dcterms:abstract>
+        <dc:title>A theory on the broadbanding of a patch antenna</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3099">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/abstract/document/659350</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:18:14</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3100">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=659350&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzY1OTM1MA==</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:18:08</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/4473036/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>7</prism:volume>
+                <dc:title>IEEE Antennas and Wireless Propagation Letters</dc:title>
+                <dc:identifier>ISSN 1536-1225, 1548-5757</dc:identifier>
+                <dcterms:alternative>Antennas Wirel. Propag. Lett.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/LAWP.2008.921326</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Coulibaly</foaf:surname>
+                        <foaf:givenName>Y.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Denidni</foaf:surname>
+                        <foaf:givenName>T.A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Boutayeb</foaf:surname>
+                        <foaf:givenName>H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3102"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/4473036/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>341-345</bib:pages>
+        <dc:date>2008</dc:date>
+        <dcterms:dateSubmitted>2020-06-19 16:20:41</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>A new microstrip fed low proﬁle broadband dielectric resonator antenna is proposed. The antenna is composed of a dielectric resonator, a microstrip fed stepped patch and an intermediate substrate. The stepped patch and the intermediate substrate allow to widen the matching bandwidth. Using a ﬁnite integration method (CST Microwave), a parametric investigation was performed for the optimization. To validate our analysis, a prototype of the optimized antenna was fabricated and measured. The predicted results are computed with measured data and good agreement is reported. With the proposed antenna, a fractional bandwidth of 50% around the center frequency 10 GHz is achieved, and relatively stable radiation patterns are obtained in the matching band.</dcterms:abstract>
+        <dc:title>Broadband Microstrip-Fed Dielectric Resonator Antenna for X-Band Applications</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3102">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Halim_Boutayeb/publication/224309388_Broadband_Microstrip-Fed_Dielectric_Resonator_Antenna_for_X-Band_Applications/links/0fcfd50e9353aa2719000000.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:20:39</dcterms:dateSubmitted>
+        <dc:title>0fcfd50e9353aa2719000000.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3103">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/ICMMT45702.2019.8992183</dc:identifier>
+                <dc:title>2019 International Conference on Microwave and Millimeter Wave Technology (ICMMT)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhou</foaf:surname>
+                        <foaf:givenName>Tian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Qi</foaf:surname>
+                        <foaf:givenName>Shi-Shan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Yong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Huang</foaf:surname>
+                        <foaf:givenName>Hui</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wu</foaf:surname>
+                        <foaf:givenName>Wen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3104"/>
+        <link:link rdf:resource="#item_3105"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>antenna feeds</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>broadband antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>differential feeding</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>frequency 26.5 GHz to 40 GHz</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ka-band antenna</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antenna arrays</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>millimetre wave antenna arrays</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>single layer microstrip patch antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>wideband patch antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>wideband phase shifter</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>wideband property</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>1-3</bib:pages>
+        <dc:date>May 2019</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2019 International Conference on Microwave and Millimeter Wave Technology (ICMMT)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>In this paper, a Ka-band wideband single layer microstrip patch antenna with a 180° phase shifter is proposed. Compared with the conventional patch antenna, this patch antenna has a few advantageous features such as simple structure, wider bandwidth and low cost. The wideband property can be obtained by combining the wideband patch antenna and the wideband 180° phase shifter. Differential feeding is adopted in order to increase the symmetry of the radiation patterns. The geometry structure, working principle, design method and simulated results are described in detail. The designed antenna has an impedance bandwidth of 18.2%, and its peak gain can reach about 7.43 dB.</dcterms:abstract>
+        <dc:title>Ka-Band Single Layer Wideband Microstrip Patch Antenna</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3104">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/8992183?arnumber=8992183</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:35:13</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3105">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=8992183&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9ODk5MjE4Mw==</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:35:08</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3106">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1558-4143"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>Kai Fang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Steven Yang</foaf:surname>
+                        <foaf:givenName>Shing Lung</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kishk</foaf:surname>
+                        <foaf:givenName>Ahmed A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luk</foaf:surname>
+                        <foaf:givenName>Kwai Man</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3107"/>
+        <link:link rdf:resource="#item_3108"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Frequency</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Patch antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Broadband antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>circular polarization</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>circular-polarization applications</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>dual-band operation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Geometry</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Lungs</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>multifrequency antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Multifrequency antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Polarization</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>single-patch wideband antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>slot antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Slot antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>triple-band operation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>U-slot antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>U-slot patch antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Wideband</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>wideband antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>71-88</bib:pages>
+        <dc:date>February 2010</dc:date>
+        <dc:description>Conference Name: IEEE Antennas and Propagation Magazine</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dcterms:abstract>The U-slot patch antenna was originally developed as a single-layer, single-patch wideband antenna. It has recently been shown that it can also be designed to perform a number of other functions. In this paper, a comprehensive account is given on the development of this antenna. Emphasis is placed on experimental and simulation results for various U-slot topologies, illustrating the antenna's versatility in several practical applications. These include wideband, dual- and triple-band operation with small and large frequency ratios, as well as for circular-polarization applications.</dcterms:abstract>
+        <dc:title>The Versatile U-Slot Patch Antenna</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1558-4143">
+        <prism:volume>52</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>IEEE Antennas and Propagation Magazine</dc:title>
+        <dc:identifier>ISSN 1558-4143</dc:identifier>
+        <dc:identifier>DOI 10.1109/MAP.2010.5466402</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3107">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/5466402?arnumber=5466402</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:36:19</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3108">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=5466402&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NTQ2NjQwMg==</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:36:15</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3109">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0013-5194"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Huynh</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>K.-F.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3110"/>
+        <link:link rdf:resource="#item_3111"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>bandwidth</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>900 MHz</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>coaxially-fed antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>rectangular patch</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>single-layer configuration</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>single-patch antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>U-shaped slot</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>UHF devices</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>UHF operation</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>wideband microstrip antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>1310-1312</bib:pages>
+        <dc:date>August 1995</dc:date>
+        <dc:description>Conference Name: Electronics Letters</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dcterms:abstract>A coaxially-fed single-layer single-patch wide-band microstrip antenna in the form of a rectangular patch with a U-shaped slot is discussed. Measurements showed that this antenna can attain 10-40% impedance bandwidth without the need of adding parasitic patches in another layer or in the same layer.&lt;&gt;</dcterms:abstract>
+        <dc:title>Single-layer single-patch wideband microstrip antenna</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0013-5194">
+        <prism:volume>31</prism:volume>
+        <prism:number>16</prism:number>
+        <dc:title>Electronics Letters</dc:title>
+        <dc:identifier>ISSN 0013-5194</dc:identifier>
+        <dc:identifier>DOI 10.1049/el:19950950</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3110">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/408283?arnumber=408283</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:37:29</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3111">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=408283&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NDA4Mjgz</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:37:25</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3112">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/RAICS.2011.6069430</dc:identifier>
+                <dc:title>2011 IEEE Recent Advances in Intelligent Computational Systems</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Srilakshmi</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Koteswararao</foaf:surname>
+                        <foaf:givenName>N.V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Srinivasarao</foaf:surname>
+                        <foaf:givenName>D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3113"/>
+        <link:link rdf:resource="#item_3114"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Bandwidth</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Slot antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>double-sided printed antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Microstrip</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>microstrip line</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>partial ground plane</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>semielliptical shaped slots</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>single layer printed compact antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Ultra wideband antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>X band application</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>X band printed microstrip compact antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>851-855</bib:pages>
+        <dc:date>Sep. 2011</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2011 IEEE Recent Advances in Intelligent Computational Systems</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>A single layer printed compact antenna for X band application is proposed. The proposed antenna, having a total size of 30 × 22 mm, consists of a patch fed by a Microstrip line and a partial ground plane. The slot on patch and the modified ground plane with semielliptical shaped slots on its top edge helps to increase the bandwidth of the proposed antenna. The double-sided printed antenna has a bandwidth (VSWR ≤ 1.5) from 6.4 to 13.6 GHz and a maximum gain of 5.9 dBi. Antenna radiation patterns show stable variation within its operating band.</dcterms:abstract>
+        <dc:title>X band printed microstrip compact antenna with slots in ground plane and patch</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3113">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/6069430?arnumber=6069430</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:41:04</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3114">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=6069430&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NjA2OTQzMA==</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:41:01</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://onlinelibrary.wiley.com/doi/abs/10.1002/mop.31010">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1098-2760"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sahoo</foaf:surname>
+                        <foaf:givenName>Swarnaprava</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mishra</foaf:surname>
+                        <foaf:givenName>Laxmi Prasad</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mohanty</foaf:surname>
+                        <foaf:givenName>Mihir Narayan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mishra</foaf:surname>
+                        <foaf:givenName>Rabindra Kishore</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3116"/>
+        <link:link rdf:resource="#item_3117"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>bandwidth</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ground plane</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>planar radiator</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>truncated ground plane</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>UWB radiator</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/abs/10.1002/mop.31010</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>© 2018 Wiley Periodicals, Inc.</dc:rights>
+        <bib:pages>578-583</bib:pages>
+        <dc:date>2018</dc:date>
+        <dc:description>_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/mop.31010</dc:description>
+        <dcterms:dateSubmitted>2020-06-19 16:46:09</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>In this article, an improved double-sided printed compact UWB monopole planar radiator and a method for improving its bandwidth for ultra-wideband application is suggested. Results show that using right angled triangular slots on the partial ground plane under the microstrip feed line (a patch radiator with a compact dimension of 14.5 × 14.75 mm2) is achieved a bandwidth of 14.3 GHz. It varies from 3.2 to 17.5 GHz for S11 &lt; −10 dB (VSWR &lt; 2) with center frequency of 10.35 GHz, whereas the measured bandwidth 14 GHz varies from 3.1 to 17.1 GHz. Moreover, it has a stable radiation pattern across the whole bandwidth and attains an average gain of 4.2 dBi and highest gain of 6.4 dBi at 12.5 GHz.</dcterms:abstract>
+        <dc:title>Design of compact UWB monopole planar antenna with modified partial ground plane</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1098-2760">
+        <prism:volume>60</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Microwave and Optical Technology Letters</dc:title>
+        <dc:identifier>ISSN 1098-2760</dc:identifier>
+        <dc:identifier>DOI 10.1002/mop.31010</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3116">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/mop.31010</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:46:16</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3117">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/full/10.1002/mop.31010</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:46:14</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="#item_3118">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <foaf:name>National Aeronautics and Space Administration</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <link:link rdf:resource="#item_3119"/>
+        <dc:description>Google-Books-ID: 9BgDAAAAIAAJ</dc:description>
+        <z:libraryCatalog>Google Books</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>NASA Technical Memorandum</dc:title>
+        <z:numPages>238</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_3119">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://books.google.ca/books?id=9BgDAAAAIAAJ</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:49:21</dcterms:dateSubmitted>
+        <dc:title>Google Books Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3120">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/EIC.1973.7468714</dc:identifier>
+                <dc:title>1973 EIC 11th Electrical Insulation Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Munson</foaf:surname>
+                        <foaf:givenName>Robert</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3121"/>
+        <link:link rdf:resource="#item_3122"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Bandwidth</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Feeds</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Microstrip</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>aerodynamic engineer</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>aerodynamic flow</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>aircraft antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>antenna arrays</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>antenna paper thin</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Gain</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>high velocity aircraft</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>mechanical engineer</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>mechanical structure</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antenna arrays</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip phased array antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>military communication</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>missiles</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Missiles</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>rockets</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>thin antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>281-283</bib:pages>
+        <dc:date>Sep. 1973</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+               <dc:title>1973 EIC 11th Electrical Insulation Conference</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>High velocity aircraft, missiles, and rockets require conformai, thin antennas. Ideally, an antenna &quot;paper thin&quot; would best suit the aerodynamic and mechanical engineer. This antenna would neither, disturb the aerodynamic flow, nor would it protrude inwardly to disrupt the mechanical structure.</dcterms:abstract>
+        <dc:title>Microstrip phased array antennas</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3121">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/7468714?arnumber=7468714</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:57:45</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3122">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=7468714&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NzQ2ODcxNA==</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 16:57:42</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://nvlpubs.nist.gov/nistpubs/jres/71C/jresv71Cn2p119_A1b.pdf">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0022-4316"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Scott</foaf:surname>
+                        <foaf:givenName>Arnold H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kinard</foaf:surname>
+                        <foaf:givenName>Joseph R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3129"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://nvlpubs.nist.gov/nistpubs/jres/71C/jresv71Cn2p119_A1b.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>119</bib:pages>
+        <dc:date>4/1967</dc:date>
+        <dcterms:dateSubmitted>2020-06-19 18:58:57</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Polymeric materials for dielectric reference specimens</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0022-4316">
+        <prism:volume>71C</prism:volume>
+        <prism:number>2</prism:number>
+        <dc:title>Journal of Research of the National Bureau of Standards, Section C: Engineering and Instrumentation</dc:title>
+        <dc:identifier>ISSN 0022-4316</dc:identifier>
+        <dcterms:alternative>J. RES. NATL. BUR. STAN. SECT. C. ENG. INSTR.</dcterms:alternative>
+        <dc:identifier>DOI 10.6028/jres.071C.014</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3129">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://nvlpubs.nist.gov/nistpubs/jres/71C/jresv71Cn2p119_A1b.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 18:58:55</dcterms:dateSubmitted>
+        <dc:title>Scott and Kinard - 1967 - Polymeric materials for dielectric reference speci.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-1-4673-8526-8">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-1-4673-8526-8</dc:identifier>
+                <dc:identifier>DOI 10.1109/ATSIP.2016.7523197</dc:identifier>
+                <dc:title>2016 2nd International Conference on Advanced Technologies for Signal and Image Processing (ATSIP)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Monastir</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>IEEE</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Werfelli</foaf:surname>
+                        <foaf:givenName>Houda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tayari</foaf:surname>
+                        <foaf:givenName>Khaoula</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chaoui</foaf:surname>
+                        <foaf:givenName>Mondher</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lahiani</foaf:surname>
+                        <foaf:givenName>Mongi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ghariani</foaf:surname>
+                        <foaf:givenName>Hamadi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3131"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/document/7523197/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>798-803</bib:pages>
+        <dc:date>3/2016</dc:date>
+        <dcterms:dateSubmitted>2020-06-19 19:01:48</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2016 2nd International Conference on Advanced Technologies for Signal and Image Processing (ATSIP)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dcterms:abstract>The purpose of this paper is to design a microstrip rectangular antenna in Advance Design System Momentum (ADS). The resonant frequency of antenna is 4.1GHz. The reflection coefficient is less than 10dB for a frequency range of 3.1GHz to 5.1 GHz. The proposed rectangular patch antenna has been devise using Glass Epoxy substrate (FR4) with dielectric constant (єr = 4.4), loss tangent (tan δ) equal to 0.02. This rectangular patch is excited using transmission lines of particular length and width. Various parameters, for example the gain, S parameters, directivity and efficiency of the designed rectangular antenna are obtained from ADS Momentum.</dcterms:abstract>
+        <dc:title>Design of rectangular microstrip patch antenna</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3131">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Mongi_Lahiani/publication/305705158_Design_of_rectangular_microstrip_patch_antenna/links/5a2e53ac45851552ae7f1a9c/Design-of-rectangular-microstrip-patch-antenna.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 19:01:47</dcterms:dateSubmitted>
+        <dc:title>Werfelli et al. - 2016 - Design of rectangular microstrip patch antenna.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3133">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.photonics.intec.ugent.be/download/phd_259.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-19 22:27:28</dcterms:dateSubmitted>
+        <dc:title>phd_259.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3134">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1557-9670"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Reddy</foaf:surname>
+                        <foaf:givenName>V.S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Garg</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3136"/>
+        <link:link rdf:resource="#item_3135"/>
+        <bib:pages>1603-1608</bib:pages>
+        <dc:date>Sep. 1999</dc:date>
+        <dc:description>Conference Name: IEEE Transactions on Microwave Theory and Techniques</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dcterms:abstract>An improved extended finite-difference time-domain formulation for the analysis of active linear and nonlinear microwave circuits is presented in this paper. Here, we have selected the current source approach and have tried to update all the electric-field components on the active sheet. Central-difference approximation has been used for the discretization of the resultant set of state equations. The equivalent circuit of the device has been treated as a zero-dimensional circuit with respect to the wave propagation. The results based on this formulation show good agreement with analytically obtained data for circuits like amplifiers and oscillators.</dcterms:abstract>
+        <dc:title>An improved extended FDTD formulation for active microwave circuits</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1557-9670">
+        <prism:volume>47</prism:volume>
+        <prism:number>9</prism:number>
+        <dc:title>IEEE Transactions on Microwave Theory and Techniques</dc:title>
+        <dc:identifier>ISSN 1557-9670</dc:identifier>
+        <dc:identifier>DOI 10.1109/22.788599</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3136">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/788599?arnumber=788599</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 02:01:43</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3135">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=788599&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9Nzg4NTk5</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 02:01:40</dcterms:dateSubmitted>
+        <dc:title>Reddy_Garg_1999_An improved extended FDTD formulation for active microwave circuits.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://molssi-seamm.github.io/html/users/reproducibility.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3139"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://molssi-seamm.github.io/html/users/reproducibility.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 18:19:49</dcterms:dateSubmitted>
+        <dc:title>Reproducibility and Replicability — SEAMM 0.8 documentation</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3139">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://molssi-seamm.github.io/html/users/reproducibility.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 18:19:49</dcterms:dateSubmitted>
+        <dc:title>Reproducibility and Replicability — SEAMM 0.8 documentation</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3140">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.infineon.com/dgdl/Infineon-BAT15-03W-DS-v01_00-EN.pdf?fileId=5546d46265f064ff01663896078c4e80</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 20:44:23</dcterms:dateSubmitted>
+        <dc:title>Infineon-BAT15-03W-DS-v01_00-EN.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3143">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Walters</foaf:surname>
+                        <foaf:givenName>Kent</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3142"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>2</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Introduction to Schottky Rectifiers</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3142">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.microsemi.com/document-portal/doc_view/14630-introduction-to-schottky-rectifiers</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 21:04:41</dcterms:dateSubmitted>
+        <dc:title>Walters - Introduction to Schottky Rectifiers.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3146">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+               <dc:title>URL www. eecs. wsu. edu/schneidj/ufdtd</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schneider</foaf:surname>
+                        <foaf:givenName>John B</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3137"/>
+        <link:link rdf:resource="#item_2905"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <dc:date>2015</dc:date>
+        <dc:title>Understanding the finite-difference time-domain method; 2010</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3137">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.eecs.wsu.edu/~schneidj/ufdtd/chap3.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-20 05:32:27</dcterms:dateSubmitted>
+        <dc:title>chap3.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2905">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.eecs.wsu.edu/~schneidj/ufdtd/chap5.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-05-30 16:16:41</dcterms:dateSubmitted>
+        <dc:title>chap5.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3148">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marek</foaf:surname>
+                        <foaf:givenName>James Raley</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3149"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>119</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>AN INVESTIGATION OF A DESIGN FOR A FINITE-DIFFERENCE TIME DOMAIN (FDTD) HARDWARE ACCELERATOR THESIS</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3149">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://apps.dtic.mil/sti/pdfs/ADA243823.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 00:52:54</dcterms:dateSubmitted>
+        <dc:title>ADA243823.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="#item_3150">
+        <z:itemType>book</z:itemType>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jackson</foaf:surname>
+                        <foaf:givenName>David R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Alexopoulos</foaf:surname>
+                        <foaf:givenName>Nicolaos G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3151"/>
+        <link:link rdf:resource="#item_3152"/>
+        <z:libraryCatalog>CiteSeer</z:libraryCatalog>
+        <dcterms:abstract>Abstract-Simple approximate formulas for the input resistance, bandwidth, and radiation efficiency of a resonant rectangular microstrip patch are derived. These formulas become increasingly accurate as the substrate thickness decreases. Because the formulas are derived from approximations of a rigorous Sommerfeld solution, they provide insight into the effect of the substrate parameters on the patch properties, in addition to providing approximate design equations. I.</dcterms:abstract>
+        <dc:title>Communications Simple Approximate Formulas for Input Resistance, Bandwidth, and Efficiency of a Resonant Rectangular Patch</dc:title>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_3151">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.458.5469&amp;rep=rep1&amp;type=pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 00:54:20</dcterms:dateSubmitted>
+        <dc:title>Citeseer - Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3152">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.458.5469</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 00:54:20</dcterms:dateSubmitted>
+        <dc:title>Citeseer - Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3153">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1558-2221"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Penney</foaf:surname>
+                        <foaf:givenName>C.W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>R.J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_3154"/>
+        <link:link rdf:resource="#item_3155"/>
+        <link:link rdf:resource="#item_3156"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Antenna radiation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>aperture antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>cavity backing</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>dielectric substrate</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Dielectric substrates</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>electric impedance</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>electromagnetic wave scattering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>FDTD</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>FDTD analysis</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Finite difference methods</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite difference time-domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite element method</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite-difference time-domain</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>frequency</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>gain</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>gain patterns</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>grade_a</dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ground plane</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Impedance</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>impedance measurements</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>infinite ground planes</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>input impedance</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Performance analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Performance gain</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>radar cross section</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Radar cross section</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>radar cross-sections</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Radar scattering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>radiation pattern</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>scattered field</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>scattering</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>semicircular spiral</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>spiral antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Spirals</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>square Archimedean spiral</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Time domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>1328-1332</bib:pages>
+        <dc:date>Sep. 1994</dc:date>
+        <dc:description>Conference Name: IEEE Transactions on Antennas and Propagation</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dcterms:abstract>A finite-difference time-domain (FDTD) analysis of spiral antennas is performed to calculate input impedance, antenna gain, and scattering. A semicircular spiral mounted on a dielectric substrate was simulated for computing the input impedance versus frequency. The gain and scattering computations were performed on a square Archimedean spiral mounted in a ground plane with a cavity backing. Total-field FDTD calculations are used to compute the impedance and gain patterns, while a specially modified scattered-field approach for aperture antennas in infinite ground planes is used for the scattering results. Comparisons are made with published impedance measurements and gain and scattering calculations done with a finite element method. Good results were obtained for impedance, radiation, and scattering.&lt;&gt;</dcterms:abstract>
+        <dc:title>Input impedance, radiation pattern, and radar cross section of spiral antennas using FDTD</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1558-2221">
+        <prism:volume>42</prism:volume>
+        <prism:number>9</prism:number>
+        <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+        <dc:identifier>ISSN 1558-2221</dc:identifier>
+        <dc:identifier>DOI 10.1109/8.318663</dc:identifier>
+    </bib:Journal>
+    <bib:Memo rdf:about="#item_3154">
+        <rdf:value>&lt;p&gt;Describes impedance fourier technique&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3155">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/318663?arnumber=318663</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 01:04:54</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3156">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=318663&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9MzE4NjYz</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 01:04:50</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3157">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>69</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>Journal of the Serbian Chemical Society</dc:title>
+                <dc:identifier>ISSN 0352-5139</dc:identifier>
+                <dcterms:alternative>J. Serb. Chem. Soc.</dcterms:alternative>
+                <dc:identifier>DOI 10.2298/JSC0403239L</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lazic</foaf:surname>
+                        <foaf:givenName>Marija</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Simovic</foaf:surname>
+                        <foaf:givenName>Kornelija</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Miskovic-Stankovic</foaf:surname>
+                        <foaf:givenName>Vesna</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jovanic</foaf:surname>
+                        <foaf:givenName>Predrag</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kicevic</foaf:surname>
+                        <foaf:givenName>Dusan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3158"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.doiserbia.nb.rs/Article.aspx?ID=0352-51390403239L</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>239-249</bib:pages>
+        <dc:date>2004</dc:date>
+        <dcterms:dateSubmitted>2020-06-22 02:04:36</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The influence of the deposition parameters on the porosity of thin alumina films electrophoretically deposited on steel from aqueous suspensions was investigated. The effects of the applied voltage, deposition time, suspension temperature and the solid content of the aqueous suspension on the porosity of the obtained alumina films have been determined using optical microscopy coupled with image analysis. It was shown that the lowest film porosity was obtained from a suspension containing 20 wt.% alumina powder at the lowest applied voltage (30 V), for a longer deposition time (10 min) using a suspension temperature of 30 ºC. This behavior can be explained by the smaller amount of hydrogen evolved on the cathode during the electrophoretic deposition process.</dcterms:abstract>
+        <dc:title>The influence of the deposition parameters on the porosity of thin alumina films on steel</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3158">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://vinar.vin.bg.ac.rs/bitstream/handle/123456789/2759/2755.pdf?sequence=1&amp;isAllowed=y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 02:04:34</dcterms:dateSubmitted>
+        <dc:title>2755.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3159">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>40</prism:volume>
+                <prism:number>11</prism:number>
+                <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+                <dc:identifier>ISSN 1558-2221</dc:identifier>
+                <dc:identifier>DOI 10.1109/8.202717</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>R.J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Beggs</foaf:surname>
+                        <foaf:givenName>J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3161"/>
+        <link:link rdf:resource="#item_3160"/>
+        <dc:subject>grade_a</dc:subject>
+        <bib:pages>1403-1407</bib:pages>
+        <dc:date>November 1992</dc:date>
+        <dc:description>Conference Name: IEEE Transactions on Antennas and Propagation</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dcterms:abstract>Absolute gain and radiation efficiency are calculated using the finite-difference-time-domain (FDTD) method. The method described utilizes pulsed excitation, so that wideband results are available from a single FDTD computation. The approach is demonstrated for a simple wire antenna geometry, and is validated by comparison with results obtained using the method of moments.&lt;&gt;</dcterms:abstract>
+        <dc:title>FDTD calculation of wide-band antenna gain and efficiency</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3161">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/202717?arnumber=202717</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 04:24:32</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3160">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=202717&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9MjAyNzE3</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 04:24:28</dcterms:dateSubmitted>
+        <dc:title>Luebbers_Beggs_1992_FDTD calculation of wide-band antenna gain and efficiency.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3162">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.add.ece.ufl.edu/4511/references/ImprovingFFTResoltuion.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 05:43:04</dcterms:dateSubmitted>
+        <dc:title>ImprovingFFTResoltuion.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/894179/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1045-9243"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Furse</foaf:surname>
+                        <foaf:givenName>C.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3163"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/894179/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>24-34</bib:pages>
+        <dc:date>12/2000</dc:date>
+        <dcterms:dateSubmitted>2020-06-22 15:33:31</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This tutorial compares several methods of converting from the time to the frequency domain for FDTD simulations. Applica­ tions include calculations of field or power distributions, antenna impedance, and radiation patterns. The traditional Fouriertransform methods are compared to two methods based on the solution of linear equations. This tutorial describes how to program and use these techniques, and evaluates their effectiveness for several applications, including analysis of a millimeter-resolution human model underneath a 60-Hz power iine, antenna-radiation pattern and impedance calculations, the cal­ culation o f the coupling of a cellular telephone to the human head, and geophysical-prospecting simulations.</dcterms:abstract>
+        <dc:title>Faster than Fourier: ultra-efficient time-to-frequency-domain conversions for FDTD simulations</dc:title>
+        <z:shortTitle>Faster than Fourier</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1045-9243">
+        <prism:volume>42</prism:volume>
+        <prism:number>6</prism:number>
+        <dc:title>IEEE Antennas and Propagation Magazine</dc:title>
+        <dc:identifier>ISSN 1045-9243</dc:identifier>
+        <dcterms:alternative>IEEE Antennas Propag. Mag.</dcterms:alternative>
+        <dc:identifier>DOI 10.1109/74.894179</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3163">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://collections.lib.utah.edu/dl_files/e4/5a/e45acfb4a04ce3fac7d60f475f325863a9c8fb4a.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 15:33:29</dcterms:dateSubmitted>
+        <dc:title>Furse - 2000 - Faster than Fourier ultra-efficient time-to-frequ.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3166">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>40</prism:volume>
+                <prism:number>8</prism:number>
+                <dc:title>IEEE transactions on microwave theory and techniques</dc:title>
+                <dc:identifier>DOI 10.1109/22.149539</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bi</foaf:surname>
+                        <foaf:givenName>Zhiqiang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shen</foaf:surname>
+                        <foaf:givenName>Ying</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wu</foaf:surname>
+                        <foaf:givenName>Keli</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Litva</foaf:surname>
+                        <foaf:givenName>John</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3165"/>
+        <bib:pages>1611–1619</bib:pages>
+        <dc:date>1992</dc:date>
+        <dc:description>Publisher: IEEE</dc:description>
+        <dc:title>Fast finite-difference time-domain analysis of resonators using digital filtering and spectrum estimation techniques</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3165">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.ee.cuhk.edu.hk/~klwu/pdf/mtt199208.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 16:47:31</dcterms:dateSubmitted>
+        <dc:title>mtt199208.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/6182698/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>60</prism:volume>
+                <prism:number>5</prism:number>
+                <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+                <dc:identifier>ISSN 0018-926X, 1558-2221</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Antennas Propagat.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/TAP.2012.2189698</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hayes</foaf:surname>
+                        <foaf:givenName>G. J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Ju-Hee So</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Qusba</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dickey</foaf:surname>
+                        <foaf:givenName>M. D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lazzi</foaf:surname>
+                        <foaf:givenName>G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3167"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/6182698/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>2151-2156</bib:pages>
+        <dc:date>05/2012</dc:date>
+        <dcterms:dateSubmitted>2020-06-22 17:48:55</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This paper describes a ﬂexible microstrip patch antenna that incorporates a novel multi-layer construction consisting of a liquid metal (eutectic gallium indium) encased in an elastomer. The combined properties of the ﬂuid and the elastomeric substrate result in a ﬂexible and durable antenna that is well suited for conformal antenna applications. Injecting the metal into microﬂuidic channels provides a simple way to deﬁne the shape of the liquid, which is stabilized mechanically by a thin oxide skin that forms spontaneously on its surface. This approach has proven sufﬁcient for forming simple, single layer antenna geometries, such as dipoles. More complex ﬂuidic antennas, particularly those featuring large, co-planar sheet-like geometries, require additional design considerations to achieve the desired shape of the metal. Here, a multi-layer patch antenna is fabricated using specially designed serpentine channels that take advantage of the unique rheological properties of the liquid metal alloy. The ﬂexibility of the resulting antennas is demonstrated and the antenna parameters are characterized through simulation and measurement in both the relaxed and ﬂexed states.</dcterms:abstract>
+        <dc:title>Flexible Liquid Metal Alloy (EGaIn) Microstrip Patch Antenna</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3167">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/A_Qusba/publication/254058971_Flexible_Liquid_Metal_Alloy_EGaIn_Microstrip_Patch_Antenna/links/5877d3f008aebf17d3bbc810/Flexible-Liquid-Metal-Alloy-EGaIn-Microstrip-Patch-Antenna.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 17:48:54</dcterms:dateSubmitted>
+        <dc:title>Hayes et al. - 2012 - Flexible Liquid Metal Alloy (EGaIn) Microstrip Pat.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3170">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal><dc:title>Microstrip Antennas</dc:title></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ai</foaf:surname>
+                        <foaf:givenName>Kirtland</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_3174"/>
+        <link:link rdf:resource="#item_3169"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>61</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Analysis of rectangular microstrip antennas</dc:title>
+    </bib:Article>
+    <bib:Memo rdf:about="#item_3174">
+       <rdf:value>&lt;p&gt;All&lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3169">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19840012667.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 18:00:41</dcterms:dateSubmitted>
+        <dc:title>Ai - Analysis of rectangular microstrip antennas.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3175">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>4</prism:volume>
+                <dc:identifier>DOI 10.1109/APS.1997.625384</dc:identifier>
+                <dc:title>IEEE Antennas and Propagation Society International Symposium 1997. Digest</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luk</foaf:surname>
+                        <foaf:givenName>K.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tong</foaf:surname>
+                        <foaf:givenName>K.F.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shum</foaf:surname>
+                        <foaf:givenName>S.M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>K.F.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>R.Q.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_3178"/>
+        <link:link rdf:resource="#item_3177"/>
+        <link:link rdf:resource="#item_3176"/>
+        <bib:pages>2111-2114 vol.4</bib:pages>
+        <dc:date>July 1997</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>IEEE Antennas and Propagation Society International Symposium 1997. Digest</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>The U-slot rectangular patch antenna has been found experimentally to provide impedance and gain bandwidths of about 30% without the need for stacked or coplanar parasitic elements. Simulation results of the U-slot patch using FDTD analysis are presented. Comparisons with measured results are also given.</dcterms:abstract>
+        <dc:title>FDTD analysis of U-slot rectangular patch antenna</dc:title>
+    </rdf:Description>
+    <bib:Memo rdf:about="#item_3178">
+        <rdf:value>&lt;p&gt;The input impedance of the antenna is determined from the ratio of the Fourier transform of the voltage wave and the Fourier transform of the input current wave.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;It is seen that, because of the thickness of the substrate, the input impedance has a large inductive component and it is not possible to obtain a VSWR less than 2 for any feed position.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;It is evident that one of the effects of a properly designed U-slot is to introduce a capacitive component which counteracts the inductive component.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3177">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/625384?arnumber=625384</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 19:08:56</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3176">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=625384&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NjI1Mzg0</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 19:08:53</dcterms:dateSubmitted>
+        <dc:title>Luk et al_1997_FDTD analysis of U-slot rectangular patch antenna.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3180">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>46</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>IEEE Antennas and Propagation Magazine</dc:title>
+                <dc:identifier>ISSN 1558-4143</dc:identifier>
+                <dc:identifier>DOI 10.1109/MAP.2004.1305543</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Samaras</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kouloglou</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sahalos</foaf:surname>
+                        <foaf:givenName>J.N.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3182"/>
+        <link:link rdf:resource="#item_3181"/>
+        <bib:pages>90-92</bib:pages>
+        <dc:date>April 2004</dc:date>
+        <dc:description>Conference Name: IEEE Antennas and Propagation Magazine</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dcterms:abstract>The variation with feed position of the input impedance of a rectangular patch antenna is investigated theoretically. Two different feed types are examined: an inset microstrip line, and a coaxial probe. The finite-difference time-domain (FDTD) technique is used for the calculations. Numerical results are compared with published measurements and other theoretical models.</dcterms:abstract>
+        <dc:title>A note on the impedance variation with feed position of a rectangular microstrip-patch antenna</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3182">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/1305543?arnumber=1305543</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-23 00:11:51</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3181">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/ielx5/74/28992/01305543.pdf?tp=&amp;arnumber=1305543&amp;isnumber=28992&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD9hcm51bWJlcj0xMzA1NTQz</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-23 00:11:47</dcterms:dateSubmitted>
+        <dc:title>Samaras et al_2004_A note on the impedance variation with feed position of a rectangular.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3183">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g-t-ds.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-23 19:18:43</dcterms:dateSubmitted>
+        <dc:title>consma001-smd-g-t-ds.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3184">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.tf.uni-kiel.de/servicezentrum/neutral/praktika/anleitungen/copy_of_m208.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 00:29:44</dcterms:dateSubmitted>
+        <dc:title>copy_of_m208.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://iopscience.iop.org/article/10.1088/0957-0233/19/10/105102">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0957-0233,%201361-6501"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lewis</foaf:surname>
+                        <foaf:givenName>George K</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lewis</foaf:surname>
+                        <foaf:givenName>George K</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Olbricht</foaf:surname>
+                        <foaf:givenName>William</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_3186"/>
+        <link:link rdf:resource="#item_3187"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://iopscience.iop.org/article/10.1088/0957-0233/19/10/105102</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>105102</bib:pages>
+        <dc:date>2008-10-01</dc:date>
+        <dcterms:dateSubmitted>2020-06-24 00:38:05</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This paper explains the circuitry and signal processing to perform electrical impedance spectroscopy on piezoelectric materials and ultrasound transducers. Here, we measure and compare the impedance spectra of 2−5 MHz piezoelectrics, but the methodology applies for 700 kHz–20 MHz ultrasonic devices as well. Using a 12 ns wide 5 volt pulsing circuit as an impulse, we determine the electrical impedance curves experimentally using Ohm's law and fast Fourier transform (FFT), and compare results with mathematical models. The method allows for rapid impedance measurement for a range of frequencies using a narrow input pulse, digital oscilloscope and FFT techniques. The technique compares well to current methodologies such as network and impedance analyzers while providing additional versatility in the electrical impedance measurement. The technique is theoretically simple, easy to implement and completed with ordinary laboratory instrumentation for minimal cost.</dcterms:abstract>
+        <dc:title>Cost-effective broad-band electrical impedance spectroscopy measurement circuit and signal analysis for piezo-materials and ultrasound transducers</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0957-0233,%201361-6501">
+        <prism:volume>19</prism:volume>
+        <prism:number>10</prism:number>
+        <dc:title>Measurement Science and Technology</dc:title>
+        <dc:identifier>ISSN 0957-0233, 1361-6501</dc:identifier>
+        <dcterms:alternative>Meas. Sci. Technol.</dcterms:alternative>
+        <dc:identifier>DOI 2008082803131300</dc:identifier>
+    </bib:Journal>
+    <bib:Memo rdf:about="#item_3186">
+        <rdf:value>&lt;p&gt;same fft impedance spectroscopy technique, uses  50 ohm series termination&lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3187">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://europepmc-org.ezproxy.library.yorku.ca/backend/ptpmcrender.fcgi?accid=PMC2600501&amp;blobtype=pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 00:38:03</dcterms:dateSubmitted>
+        <dc:title>ptpmcrender.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/1296841/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>52</prism:volume>
+                <prism:number>5</prism:number>
+                <dc:title>IEEE Transactions on Antennas and Propagation</dc:title>
+                <dc:identifier>ISSN 0018-926X</dc:identifier>
+                <dcterms:alternative>IEEE Trans. Antennas Propagat.</dcterms:alternative>
+                <dc:identifier>DOI 10.1109/TAP.2004.827510</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Venkatarayalu</foaf:surname>
+                        <foaf:givenName>N.V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenName>C.-C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Teixeira</foaf:surname>
+                        <foaf:givenName>F.L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3189"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/1296841/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1318-1323</bib:pages>
+        <dc:date>05/2004</dc:date>
+        <dcterms:dateSubmitted>2020-06-24 00:48:13</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>A detailed characterization of the input impedance of ultrawide-band (UWB) dielectric horn antennas is presented using the finite-difference time-domain (FDTD) technique. The FDTD model is first validated by computing the characteristic impedance of two conical plate transmission lines (including planar bow-tie antennas) and comparing the results to analytical solutions. The FDTD model is next used to calculate the surge impedance of dielectric horn antennas using the conical plates as launchers. Design curves of the surge impedance for different choices of geometries and dielectric loadings are provided. The modeled antennas are particularly attractive for applications such as UWB ground penetrating radars (GPR) applications.</dcterms:abstract>
+        <dc:title>Numerical Modeling of Ultrawide-Band Dielectric Horn Antennas Using FDTD</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3189">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://cpb-us-w2.wpmucdn.com/u.osu.edu/dist/3/47088/files/2017/06/venk04-1yo2qby.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 00:48:11</dcterms:dateSubmitted>
+        <dc:title>venk04-1yo2qby.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3190">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>2</prism:volume>
+                <dc:identifier>DOI 10.1109/CCECE.1998.685640</dc:identifier>
+                <dc:title>Conference Proceedings. IEEE Canadian Conference on Electrical and Computer Engineering (Cat. No.98TH8341)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Boulmalf</foaf:surname>
+                        <foaf:givenName>M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Delisle</foaf:surname>
+                        <foaf:givenName>G.Y.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_3191"/>
+        <link:link rdf:resource="#item_3192"/>
+        <link:link rdf:resource="#item_3193"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>antenna feeds</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microstrip antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Broadband antennas</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Finite difference methods</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite difference time-domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite-difference time-domain</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Time domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>2.4 GHz</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Antenna feeds</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>broadband characteristics</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Electromagnetic analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>electromagnetic coupling</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Electromagnetic coupling</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>EM coupled microstrip antenna</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>fast Fourier transforms</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>FDTD method</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Frequency domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>frequency domain parameters</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ISM band</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microstrip feedline</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>optimisation</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>optimization</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Optimization methods</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>optimizing device</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Tuning</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>tuning stub</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>UHF</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>UHF antennas</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>886-889 vol.2</bib:pages>
+        <dc:date>May 1998</dc:date>
+        <dc:description>ISSN: 0840-7789</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>Conference Proceedings. IEEE Canadian Conference on Electrical and Computer Engineering (Cat. No.98TH8341)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>The finite-difference time-domain (FDTD) method is used to analyse and optimize the broadband characteristics of an electromagnetically coupled microstrip antenna using a short tuning stub in the microstrip feedline as the optimizing device. Frequency domain parameters are calculated over the entire frequency of interest and extended to fast Fourier transforms. The electromagnetically coupled microstrip antenna is treated using the FDTD method.</dcterms:abstract>
+        <dc:title>Optimization of coupled microstrip antenna in the 2.4 GHz ISM band</dc:title>
+    </rdf:Description>
+    <bib:Memo rdf:about="#item_3191">
+        <rdf:value>&lt;p&gt;impedance to return loss&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3192">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/685640?arnumber=685640</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 00:52:23</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3193">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=685640&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9Njg1NjQw</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 00:52:19</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3194">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>34</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>IEEE Transactions on Electromagnetic Compatibility</dc:title>
+                <dc:identifier>DOI 10.1109/15.155855</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Luebbers</foaf:surname>
+                        <foaf:givenName>Raymond</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kunz</foaf:surname>
+                        <foaf:givenName>Karl</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3179"/>
+        <bib:pages>357–359</bib:pages>
+        <dc:date>1992</dc:date>
+        <dc:description>Publisher: IEEE</dc:description>
+        <dc:title>Finite difference time domain calculations of antenna mutual coupling</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3179">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19920011200.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-22 20:58:29</dcterms:dateSubmitted>
+        <dc:title>19920011200.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3195">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>3</prism:volume>
+                <dc:identifier>DOI 10.1109/APS.1994.408185</dc:identifier>
+                <dc:title>Proceedings of IEEE Antennas and Propagation Society International Symposium and URSI National Radio Science Meeting</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Jiayuan Fang</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Danwei Xue</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3196"/>
+        <link:link rdf:resource="#item_3197"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Impedance</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>electric impedance</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Finite difference methods</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite difference time-domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>finite-difference time-domain</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Time domain analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>characteristic impedance</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Distributed parameter circuits</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Electronics packaging</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>electronics packaging interconnects</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>equivalent circuit model</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Equivalent circuits</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>FDTD computations</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>FDTD numerical results</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Fourier transformed current</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Fourier transformed voltage</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>integrated circuit interconnections</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Integrated circuit interconnections</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Integrated circuit modeling</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>interconnection discontinuity</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>microwave integrated circuits</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microwave integrated circuits</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microwave theory and techniques</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>numerical solution</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>packaging</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ratio</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>transmission line</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>transmission line theory</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>1814-1817 vol.3</bib:pages>
+        <dc:date>June 1994</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>Proceedings of IEEE Antennas and Propagation Society International Symposium and URSI National Radio Science Meeting</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>The finite-difference time-domain (FDTD) method has been widely used in the modeling of microwave integrated circuits and interconnects in electronics packaging. One of the most important properties computed for a transmission line is its characteristic impedance, which is often used in the extraction of the equivalent circuit model of an interconnection discontinuity. The calculation of the characteristic impedance from FDTD numerical results seems to be trivial it can simply be obtained by the ratio of the Fourier transformed voltage and the Fourier transformed current. However, it is shown that, if the characteristic impedance is not calculated properly, significant amount of error can be introduced in its numerical solution.</dcterms:abstract>
+        <dc:title>Precautions in the calculation of impedance in FDTD computations</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3196">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/408185?arnumber=408185</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 03:23:09</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3197">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=408185&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NDA4MTg1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 03:23:05</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
     <z:Collection rdf:about="#collection_92">
         <dc:title>bibtex_export (10)</dc:title>
         <dcterms:hasPart rdf:resource="#item_1151"/>
@@ -58116,9 +61347,11 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
     <z:Collection rdf:about="#collection_124">
         <dc:title>electrophoresis</dc:title>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0955221996001136"/>
+        <dcterms:hasPart rdf:resource="#item_3157"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>electrophoresis</dc:title>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0955221996001136"/>
+        <dcterms:hasPart rdf:resource="#item_3157"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_70">
         <dc:title>FAST-SPS</dc:title>
@@ -58497,6 +61730,7 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#collection_167"/>
         <dcterms:hasPart rdf:resource="#collection_133"/>
         <dcterms:hasPart rdf:resource="#collection_193"/>
+        <dcterms:hasPart rdf:resource="#collection_214"/>
         <dcterms:hasPart rdf:resource="#collection_183"/>
         <dcterms:hasPart rdf:resource="#collection_134"/>
         <dcterms:hasPart rdf:resource="https://academic.oup.com/cid/advance-article/doi/10.1093/cid/ciaa227/5800047"/>
@@ -58531,6 +61765,11 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0022311500006231"/>
         <dcterms:hasPart rdf:resource="#item_3055"/>
         <dcterms:hasPart rdf:resource="#item_3057"/>
+        <dcterms:hasPart rdf:resource="https://web.archive.org/web/20060614013429/http://www.iaea.org/Publications/Booklets/SealedRadioactiveSources/pdfs/handout_scrap.pdf"/>
+        <dcterms:hasPart rdf:resource="#item_3081"/>
+        <dcterms:hasPart rdf:resource="#item_3082"/>
+        <dcterms:hasPart rdf:resource="#item_3086"/>
+        <dcterms:hasPart rdf:resource="#item_3133"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_170">
         <dc:title>Biology</dc:title>
@@ -58557,6 +61796,7 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-017-13732-2/"/>
         <dcterms:hasPart rdf:resource="#item_3035"/>
         <dcterms:hasPart rdf:resource="https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836"/>
+        <dcterms:hasPart rdf:resource="https://dx.plos.org/10.1371/journal.pone.0080244"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Biology</dc:title>
         <dcterms:hasPart rdf:resource="#collection_139"/>
@@ -58582,6 +61822,7 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-017-13732-2/"/>
         <dcterms:hasPart rdf:resource="#item_3035"/>
         <dcterms:hasPart rdf:resource="https://en.wikipedia.org/w/index.php?title=DNA_field-effect_transistor&amp;oldid=944598836"/>
+        <dcterms:hasPart rdf:resource="https://dx.plos.org/10.1371/journal.pone.0080244"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_139">
         <dc:title>E. Coli</dc:title>
@@ -59593,6 +62834,11 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_2768"/>
         <dcterms:hasPart rdf:resource="#item_2776"/>
         <dcterms:hasPart rdf:resource="#item_3059"/>
+        <dcterms:hasPart rdf:resource="https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf"/>
+        <dcterms:hasPart rdf:resource="https://www.diodes.com/assets/Datasheets/ds30149.pdf"/>
+        <dcterms:hasPart rdf:resource="#item_3083"/>
+        <dcterms:hasPart rdf:resource="#item_3140"/>
+        <dcterms:hasPart rdf:resource="#item_3183"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Datasheets</dc:title>
         <dcterms:hasPart rdf:resource="#item_2352"/>
@@ -59603,6 +62849,11 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_2768"/>
         <dcterms:hasPart rdf:resource="#item_2776"/>
         <dcterms:hasPart rdf:resource="#item_3059"/>
+        <dcterms:hasPart rdf:resource="https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf"/>
+        <dcterms:hasPart rdf:resource="https://www.diodes.com/assets/Datasheets/ds30149.pdf"/>
+        <dcterms:hasPart rdf:resource="#item_3083"/>
+        <dcterms:hasPart rdf:resource="#item_3140"/>
+        <dcterms:hasPart rdf:resource="#item_3183"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_141">
         <dc:title>Flagship</dc:title>
@@ -59681,46 +62932,156 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
     </z:Collection>
     <z:Collection rdf:about="#collection_136">
         <dc:title>antenna</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_216"/>
         <dcterms:hasPart rdf:resource="https://electronics.stackexchange.com/questions/290725/how-to-design-a-10ghz-pcb-antenna"/>
         <dcterms:hasPart rdf:resource="https://www.mdpi.com/2076-3417/8/12/2653"/>
         <dcterms:hasPart rdf:resource="#item_1874"/>
         <dcterms:hasPart rdf:resource="http://www.emtalk.com/mpacalc.php?er=4&amp;h=2.5&amp;h_units_list=hmm&amp;fr=8.4&amp;Operation=Analyze&amp;La=7.6647335621&amp;L_units_list=Lmm&amp;Wa=11.2938487863&amp;W_units_list=Wmm&amp;Rin="/>
         <dcterms:hasPart rdf:resource="https://www.qsl.net/5b4az/pkg/nec2/xnec2c/doc/xnec2c.html"/>
-        <dcterms:hasPart rdf:resource="https://digital-library.theiet.org/content/journals/10.1049/el_19950950"/>
         <dcterms:hasPart rdf:resource="https://www.tandfonline.com/doi/full/10.1163/156939308787543723"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4400941/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/5498981/"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.4218/etrij.06.0205.0132"/>
-        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/5466402/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6994273/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1512228/"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/mop.20396"/>
+        <dcterms:hasPart rdf:resource="#item_3094"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4799-3540-6%20978-1-4799-3538-3%20978-1-4799-3537-6"/>
+        <dcterms:hasPart rdf:resource="#item_3098"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4473036/"/>
+        <dcterms:hasPart rdf:resource="#item_3103"/>
+        <dcterms:hasPart rdf:resource="#item_3106"/>
+        <dcterms:hasPart rdf:resource="#item_3109"/>
+        <dcterms:hasPart rdf:resource="#item_3112"/>
+        <dcterms:hasPart rdf:resource="http://onlinelibrary.wiley.com/doi/abs/10.1002/mop.31010"/>
+        <dcterms:hasPart rdf:resource="#item_3118"/>
+        <dcterms:hasPart rdf:resource="#item_3120"/>
+        <dcterms:hasPart rdf:resource="https://nvlpubs.nist.gov/nistpubs/jres/71C/jresv71Cn2p119_A1b.pdf"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-8526-8"/>
+        <dcterms:hasPart rdf:resource="#item_3148"/>
+        <dcterms:hasPart rdf:resource="#item_3150"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6182698/"/>
+        <dcterms:hasPart rdf:resource="#item_3170"/>
+        <dcterms:hasPart rdf:resource="#item_3180"/>
+        <dcterms:hasPart rdf:resource="#item_3184"/>
+        <dcterms:hasPart rdf:resource="https://iopscience.iop.org/article/10.1088/0957-0233/19/10/105102"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1296841/"/>
+        <dcterms:hasPart rdf:resource="#item_3190"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>antenna</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_216"/>
         <dcterms:hasPart rdf:resource="https://electronics.stackexchange.com/questions/290725/how-to-design-a-10ghz-pcb-antenna"/>
         <dcterms:hasPart rdf:resource="https://www.mdpi.com/2076-3417/8/12/2653"/>
         <dcterms:hasPart rdf:resource="#item_1874"/>
         <dcterms:hasPart rdf:resource="http://www.emtalk.com/mpacalc.php?er=4&amp;h=2.5&amp;h_units_list=hmm&amp;fr=8.4&amp;Operation=Analyze&amp;La=7.6647335621&amp;L_units_list=Lmm&amp;Wa=11.2938487863&amp;W_units_list=Wmm&amp;Rin="/>
         <dcterms:hasPart rdf:resource="https://www.qsl.net/5b4az/pkg/nec2/xnec2c/doc/xnec2c.html"/>
-        <dcterms:hasPart rdf:resource="https://digital-library.theiet.org/content/journals/10.1049/el_19950950"/>
         <dcterms:hasPart rdf:resource="https://www.tandfonline.com/doi/full/10.1163/156939308787543723"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4400941/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/5498981/"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.4218/etrij.06.0205.0132"/>
-        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/5466402/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6994273/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1512228/"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/mop.20396"/>
+        <dcterms:hasPart rdf:resource="#item_3094"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4799-3540-6%20978-1-4799-3538-3%20978-1-4799-3537-6"/>
+        <dcterms:hasPart rdf:resource="#item_3098"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4473036/"/>
+        <dcterms:hasPart rdf:resource="#item_3103"/>
+        <dcterms:hasPart rdf:resource="#item_3106"/>
+        <dcterms:hasPart rdf:resource="#item_3109"/>
+        <dcterms:hasPart rdf:resource="#item_3112"/>
+        <dcterms:hasPart rdf:resource="http://onlinelibrary.wiley.com/doi/abs/10.1002/mop.31010"/>
+        <dcterms:hasPart rdf:resource="#item_3118"/>
+        <dcterms:hasPart rdf:resource="#item_3120"/>
+        <dcterms:hasPart rdf:resource="https://nvlpubs.nist.gov/nistpubs/jres/71C/jresv71Cn2p119_A1b.pdf"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-8526-8"/>
+        <dcterms:hasPart rdf:resource="#item_3148"/>
+        <dcterms:hasPart rdf:resource="#item_3150"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6182698/"/>
+        <dcterms:hasPart rdf:resource="#item_3170"/>
+        <dcterms:hasPart rdf:resource="#item_3180"/>
+        <dcterms:hasPart rdf:resource="#item_3184"/>
+        <dcterms:hasPart rdf:resource="https://iopscience.iop.org/article/10.1088/0957-0233/19/10/105102"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1296841/"/>
+        <dcterms:hasPart rdf:resource="#item_3190"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>antenna</dc:title>
+        <dcterms:hasPart rdf:resource="#collection_216"/>
         <dcterms:hasPart rdf:resource="https://electronics.stackexchange.com/questions/290725/how-to-design-a-10ghz-pcb-antenna"/>
         <dcterms:hasPart rdf:resource="https://www.mdpi.com/2076-3417/8/12/2653"/>
         <dcterms:hasPart rdf:resource="#item_1874"/>
         <dcterms:hasPart rdf:resource="http://www.emtalk.com/mpacalc.php?er=4&amp;h=2.5&amp;h_units_list=hmm&amp;fr=8.4&amp;Operation=Analyze&amp;La=7.6647335621&amp;L_units_list=Lmm&amp;Wa=11.2938487863&amp;W_units_list=Wmm&amp;Rin="/>
         <dcterms:hasPart rdf:resource="https://www.qsl.net/5b4az/pkg/nec2/xnec2c/doc/xnec2c.html"/>
-        <dcterms:hasPart rdf:resource="https://digital-library.theiet.org/content/journals/10.1049/el_19950950"/>
         <dcterms:hasPart rdf:resource="https://www.tandfonline.com/doi/full/10.1163/156939308787543723"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4400941/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/5498981/"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.4218/etrij.06.0205.0132"/>
-        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/5466402/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6994273/"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1512228/"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/mop.20396"/>
+        <dcterms:hasPart rdf:resource="#item_3094"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4799-3540-6%20978-1-4799-3538-3%20978-1-4799-3537-6"/>
+        <dcterms:hasPart rdf:resource="#item_3098"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4473036/"/>
+        <dcterms:hasPart rdf:resource="#item_3103"/>
+        <dcterms:hasPart rdf:resource="#item_3106"/>
+        <dcterms:hasPart rdf:resource="#item_3109"/>
+        <dcterms:hasPart rdf:resource="#item_3112"/>
+        <dcterms:hasPart rdf:resource="http://onlinelibrary.wiley.com/doi/abs/10.1002/mop.31010"/>
+        <dcterms:hasPart rdf:resource="#item_3118"/>
+        <dcterms:hasPart rdf:resource="#item_3120"/>
+        <dcterms:hasPart rdf:resource="https://nvlpubs.nist.gov/nistpubs/jres/71C/jresv71Cn2p119_A1b.pdf"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-4673-8526-8"/>
+        <dcterms:hasPart rdf:resource="#item_3148"/>
+        <dcterms:hasPart rdf:resource="#item_3150"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6182698/"/>
+        <dcterms:hasPart rdf:resource="#item_3170"/>
+        <dcterms:hasPart rdf:resource="#item_3180"/>
+        <dcterms:hasPart rdf:resource="#item_3184"/>
+        <dcterms:hasPart rdf:resource="https://iopscience.iop.org/article/10.1088/0957-0233/19/10/105102"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/1296841/"/>
+        <dcterms:hasPart rdf:resource="#item_3190"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_216">
+        <dc:title>matching_sim</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3153"/>
+        <dcterms:hasPart rdf:resource="#item_3159"/>
+        <dcterms:hasPart rdf:resource="#item_3162"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/894179/"/>
+        <dcterms:hasPart rdf:resource="#item_3166"/>
+        <dcterms:hasPart rdf:resource="#item_3175"/>
+        <dcterms:hasPart rdf:resource="#item_3194"/>
+        <dcterms:hasPart rdf:resource="#item_3195"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>matching_sim</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3153"/>
+        <dcterms:hasPart rdf:resource="#item_3159"/>
+        <dcterms:hasPart rdf:resource="#item_3162"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/894179/"/>
+        <dcterms:hasPart rdf:resource="#item_3166"/>
+        <dcterms:hasPart rdf:resource="#item_3175"/>
+        <dcterms:hasPart rdf:resource="#item_3194"/>
+        <dcterms:hasPart rdf:resource="#item_3195"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>matching_sim</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3153"/>
+        <dcterms:hasPart rdf:resource="#item_3159"/>
+        <dcterms:hasPart rdf:resource="#item_3162"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/894179/"/>
+        <dcterms:hasPart rdf:resource="#item_3166"/>
+        <dcterms:hasPart rdf:resource="#item_3175"/>
+        <dcterms:hasPart rdf:resource="#item_3194"/>
+        <dcterms:hasPart rdf:resource="#item_3195"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>matching_sim</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3153"/>
+        <dcterms:hasPart rdf:resource="#item_3159"/>
+        <dcterms:hasPart rdf:resource="#item_3162"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/894179/"/>
+        <dcterms:hasPart rdf:resource="#item_3166"/>
+        <dcterms:hasPart rdf:resource="#item_3175"/>
+        <dcterms:hasPart rdf:resource="#item_3194"/>
+        <dcterms:hasPart rdf:resource="#item_3195"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_160">
         <dc:title>attenuator</dc:title>
@@ -60115,8 +63476,6 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_2899"/>
         <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
         <dcterms:hasPart rdf:resource="#item_2902"/>
-        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
-        <dcterms:hasPart rdf:resource="#item_2905"/>
         <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
         <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
@@ -60133,6 +63492,8 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
+        <dcterms:hasPart rdf:resource="#item_3134"/>
+        <dcterms:hasPart rdf:resource="#item_3146"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>FDTD_SPICE</dc:title>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
@@ -60143,8 +63504,6 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_2899"/>
         <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
         <dcterms:hasPart rdf:resource="#item_2902"/>
-        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
-        <dcterms:hasPart rdf:resource="#item_2905"/>
         <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
         <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
@@ -60161,6 +63520,8 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
+        <dcterms:hasPart rdf:resource="#item_3134"/>
+        <dcterms:hasPart rdf:resource="#item_3146"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>FDTD_SPICE</dc:title>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
@@ -60171,8 +63532,6 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_2899"/>
         <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
         <dcterms:hasPart rdf:resource="#item_2902"/>
-        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
-        <dcterms:hasPart rdf:resource="#item_2905"/>
         <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
         <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
@@ -60189,6 +63548,8 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
+        <dcterms:hasPart rdf:resource="#item_3134"/>
+        <dcterms:hasPart rdf:resource="#item_3146"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>FDTD_SPICE</dc:title>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/556448/"/>
@@ -60199,8 +63560,6 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_2899"/>
         <dcterms:hasPart rdf:resource="http://openems.de/forum/viewtopic.php?t=346"/>
         <dcterms:hasPart rdf:resource="#item_2902"/>
-        <dcterms:hasPart rdf:resource="https://www.eecs.wsu.edu/~schneidj/ufdtd/"/>
-        <dcterms:hasPart rdf:resource="#item_2905"/>
         <dcterms:hasPart rdf:resource="https://pyscience.wordpress.com/2014/09/06/numpy-to-vtk-converting-your-numpy-arrays-to-vtk-arrays-and-files/"/>
         <dcterms:hasPart rdf:resource="http://www.jeffmcbride.net/2019/05/28/programatic-layout-with-kicad-and-python.html"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/204752/"/>
@@ -60217,6 +63576,8 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="urn:isbn:978-0-7803-5015-1"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/6515660/"/>
         <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4137252/"/>
+        <dcterms:hasPart rdf:resource="#item_3134"/>
+        <dcterms:hasPart rdf:resource="#item_3146"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_196">
         <dc:title>filter</dc:title>
@@ -60535,12 +63896,21 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
     <z:Collection rdf:about="#collection_185">
         <dc:title>rectifier</dc:title>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5386-2416-6"/>
+        <dcterms:hasPart rdf:resource="#item_3073"/>
+        <dcterms:hasPart rdf:resource="#item_3076"/>
+        <dcterms:hasPart rdf:resource="#item_3143"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>rectifier</dc:title>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5386-2416-6"/>
+        <dcterms:hasPart rdf:resource="#item_3073"/>
+        <dcterms:hasPart rdf:resource="#item_3076"/>
+        <dcterms:hasPart rdf:resource="#item_3143"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>rectifier</dc:title>
         <dcterms:hasPart rdf:resource="urn:isbn:978-1-5386-2416-6"/>
+        <dcterms:hasPart rdf:resource="#item_3073"/>
+        <dcterms:hasPart rdf:resource="#item_3076"/>
+        <dcterms:hasPart rdf:resource="#item_3143"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_148">
         <dc:title>resistor</dc:title>
@@ -60596,6 +63966,7 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_3007"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
+        <dcterms:hasPart rdf:resource="#item_3062"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>safety</dc:title>
         <dcterms:hasPart rdf:resource="#collection_210"/>
@@ -60631,6 +64002,7 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_3007"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
+        <dcterms:hasPart rdf:resource="#item_3062"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>safety</dc:title>
         <dcterms:hasPart rdf:resource="#collection_210"/>
@@ -60666,6 +64038,7 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dcterms:hasPart rdf:resource="#item_3007"/>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
+        <dcterms:hasPart rdf:resource="#item_3062"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_210">
         <dc:title>standards</dc:title>
@@ -60840,6 +64213,21 @@ Arrays of DNAFETs can be used for detecting single nucleotide polymorphisms (cau
         <dc:title>SHG</dc:title>
         <dcterms:hasPart rdf:resource="http://msp.ucsd.edu/syllabi/170.13f/course-notes/node2.html"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6976383/"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_214">
+        <dc:title>software_quality</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3063"/>
+        <dcterms:hasPart rdf:resource="http://www.throwtheswitch.org/build/cmake"/>
+        <dcterms:hasPart rdf:resource="http://numba.pydata.org/"/>
+        <dcterms:hasPart rdf:resource="https://www.embedded.com/preventing-dynamic-allocation/"/>
+        <dcterms:hasPart rdf:resource="https://molssi-seamm.github.io/html/users/reproducibility.html"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>software_quality</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3063"/>
+        <dcterms:hasPart rdf:resource="http://www.throwtheswitch.org/build/cmake"/>
+        <dcterms:hasPart rdf:resource="http://numba.pydata.org/"/>
+        <dcterms:hasPart rdf:resource="https://www.embedded.com/preventing-dynamic-allocation/"/>
+        <dcterms:hasPart rdf:resource="https://molssi-seamm.github.io/html/users/reproducibility.html"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_183">
         <dc:title>stats</dc:title>
