@@ -2,6 +2,7 @@ import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
 from fdtd_PCB_extensions import X,Y,Z
 from scipy.constants import mu_0
+import scipy.constants
 import numpy as np
 from math import sin, pi, pow, exp
 import time
@@ -26,11 +27,11 @@ import store
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
 #analytic 8 GHz patch antenna - ~240 ohms at the edge
-patch_width = 11.4e-3
-patch_length = 8.7e-3
-feed_length = 5e-3
-substrate_thickness = 0.8e-3
-dielectric_constant = 4.4
+# patch_width = 11.4e-3
+# patch_length = 8.7e-3
+# feed_length = 5e-3
+# substrate_thickness = 0.8e-3
+# dielectric_constant = 4.4
 
 #
 # patch_width =  22.26e-3
@@ -43,11 +44,11 @@ dielectric_constant = 4.4
 
 
 # [Samaras 2004]
-# patch_width =  59.4e-3
-# patch_length = 40.4e-3
-# feed_length = 0e-3
-# substrate_thickness = 1.2e-3
-# dielectric_constant = 2.42
+patch_width =  59.4e-3
+patch_length = 40.4e-3
+feed_length = 0e-3
+substrate_thickness = 1.2e-3
+dielectric_constant = 2.42
 
 pcb = fd.PCB(0.0004)
 fd.initialize_grid(pcb,int((patch_width+20.0e-3)/pcb.cell_size),int((patch_length+20.0e-3+feed_length)/pcb.cell_size),
@@ -275,7 +276,9 @@ plt.legend()
 
 plt.figure()
 
-impedance_spectrum = abs(2.0*voltage_spectrum/(current_spectrum+current_spectrum_2))
+Z0 = scipy.constants.physical_constants['characteristic impedance of vacuum'][0]
+
+impedance_spectrum = (abs(2.0*voltage_spectrum/(current_spectrum+current_spectrum_2)) - Z0) / 2.0
 
 plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 # plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
@@ -291,6 +294,8 @@ plt.pause(0.001)
 
 files = ['/tmp/voltages.svg', '/tmp/currents.svg', '/tmp/spectrum.svg', '/tmp/impedance_spectrum.svg', "U_patch_antenna_designer.py"]
 store.ask(files)
+
+
 
 
 

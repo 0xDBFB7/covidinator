@@ -1107,4 +1107,13 @@ this fourier technique is also used in electrochemistry - fourier impedance spec
 
 
 650 obs - 163 desired
-400 obs - 
+400 obs - 11 desired
+750 obs - 240 desired
+377 obs - 0 desired
+
+after the simulation is complete, but before any analysis takes place,
+ transfer the whole dataset into global state, and 
+persist the whole simulation sessionwith dill. Ideally, this would be stored along with the
+file used to create it and the parameters, so that the analysis can be re-run 
+with slightly changed parameters. 
+

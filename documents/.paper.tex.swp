@@ -750,7 +750,11 @@ A step impulse (1 first timestep, 0 otherwise) has been used in some works, thou
 
 A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
 
-This technique is equivalent to that 
+This technique is equivalent to that used in electrochemistry for fourier impedance - except they seem to usually use a known impedance source rather than a hard source.
+
+The duration of the simulation is very important. When they say 
+
+Further, there is a correction factor of 
 
 \rule{\linewidth}{0.2pt}
 
