@@ -1124,3 +1124,9 @@ okay, so the final answer is; subtract the vacuum permittivity, divide by 2.
 
 Trying to find an anti-static material (less dusty than wood) for use as the surface.
 
+trimming the initial pulse doesn't work - obvs, since the voltage is zero after the pulse!
+
+feels like we might be running into the limits of float32 precision. 
+
+the discrepancy between float32 and float64 runs is about 2e-9. Given that our signal 
+is 1e-6 or so, that's plausible?

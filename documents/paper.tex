@@ -756,7 +756,7 @@ Though uneven dt FFTs exist, the time step can be constant at the courant limit 
 
 A step impulse (1 first timestep, 0 otherwise) has been used in some works, though in our case performance was quite horrid.
 
-A correction factor due to the staggered magnetic field of the Yee lattice should be introduced;  Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
+A correction factor due to the staggered magnetic field of the Yee lattice should be introduced; [Fang 1994]. Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
 
 A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
 
@@ -766,7 +766,9 @@ Allowing the simulation to run for long enough that all transients dissipate is 
 
 [Samaras 2004] has a very useful set of experimental and FDTD data for calibration and comparison. Comparing a probe via source in the different positions, we obtained agreement of $\sim 7\%$ in impedance and $\sim 5\%$ in frequency.
 
+The type of feed-port may affect the convergence rate by introducing unphysical transients.
 
+Simply monitoring the source current during the simulation is deceptive. Periodically monitoring the fourier transform 
 
 \rule{\linewidth}{0.2pt}
 
