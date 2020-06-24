@@ -25,7 +25,7 @@ import store
 #Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
 
-# analytic 8 GHz patch antenna - ~240 ohms at the edge
+#analytic 8 GHz patch antenna - ~240 ohms at the edge
 patch_width = 11.4e-3
 patch_length = 8.7e-3
 feed_length = 5e-3
@@ -49,8 +49,8 @@ dielectric_constant = 4.4
 # substrate_thickness = 1.2e-3
 # dielectric_constant = 2.42
 
-pcb = fd.PCB(0.0002)
-fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_length)/pcb.cell_size),
+pcb = fd.PCB(0.0004)
+fd.initialize_grid(pcb,int((patch_width+20.0e-3)/pcb.cell_size),int((patch_length+20.0e-3+feed_length)/pcb.cell_size),
                                 int(0.005/pcb.cell_size), courant_number = None)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
@@ -80,7 +80,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
 
-    probe_position = (p_N_y//2+p_N_y//4-1)
+    probe_position = (p_N_y-1)
 
     pcb.component_ports = [] # wipe ports
     pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
@@ -156,11 +156,9 @@ def sim_VSWR(pcb):
 
         source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/26.804e9
 
+        z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
 
-
-        z_slice = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
-
-        pcb.grid.E[port.N_x,port.N_y,z_slice_2,Z] = source_voltage / (pcb.cell_size)
+        pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = source_voltage / (pcb.cell_size)
 
         current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
                     pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
@@ -171,12 +169,12 @@ def sim_VSWR(pcb):
         current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
         # account for Yee cell inaccuracies [Fang 1994].
-        z_slice_2 = slice(pcb.component_plane_z-3,pcb.component_plane_z-2)
+        z_slice_2 = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
 
-        current_2 = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
-                    pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
-        current_2 += ((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]-
-                    pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
+        current_2 = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice_2,X]-
+                    pcb.grid.H[port.N_x,port.N_y,z_slice_2,X])*pcb.cell_size)
+        current_2 += ((pcb.grid.H[port.N_x,port.N_y,z_slice_2,Y]-
+                    pcb.grid.H[port.N_x-1,port.N_y,z_slice_2,Y])*pcb.cell_size)
         # current
         current_2 = current_2.cpu()
         current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
@@ -203,7 +201,7 @@ def sim_VSWR(pcb):
         # if(len(currents) > 10000):
         #     break
 
-        if(len(currents) > 1000):
+        if(sum(abs(currents[-700:-1])) < 0.0005 and len(currents) > 300):
             # the key phrase here is "after all transients have dissipated."
             #they use 2000 timesteps at 1.8 ps each.
             break
@@ -227,7 +225,7 @@ try:
 except:
     os.system("rm dumps/*")
     os.system("rm data/*")
-    voltages, voltage_2s, currents = sim_VSWR(pcb)
+    voltages, currents, currents_2 = sim_VSWR(pcb)
     dill.dump_session(filename)
 
 desired_res = 300 #100 points below F_max
@@ -236,18 +234,18 @@ required_length = int(desired_res / (fft_F_max * pcb.grid.time_step))
 print(required_length)
 
 voltages = np.pad(voltages, (0, required_length), 'edge')
-voltage_2s = np.pad(voltage_2s, (0, required_length), 'edge')
 
 currents = np.pad(currents, (0, required_length), 'edge')
+currents_2 = np.pad(currents_2, (0, required_length), 'edge')
 
 times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 
 # factor of 50000000
 
 voltage_spectrum = np.fft.fft(voltages)
-voltage_spectrum_2 = np.fft.fft(voltage_2s)
 
 current_spectrum = np.fft.fft(currents)
+current_spectrum_2 = np.fft.fft(currents_2)
 #
 # voltage_spectrum *= np.max(abs(voltages))/np.max(abs(voltage_spectrum)) # normalize to 1 - why?
 # current_spectrum *= np.max(abs(currents))/np.max(abs(current_spectrum)) # why?
@@ -261,7 +259,6 @@ begin_freq = np.abs(spectrum_freqs - 1e9).argmin()
 end_freq = np.abs(spectrum_freqs - 15e9).argmin()
 
 plt.plot(times_padded, voltages)
-plt.plot(times_padded, voltage_2s)
 
 plt.savefig('/tmp/voltages.svg')
 plt.figure()
@@ -278,9 +275,9 @@ plt.legend()
 
 plt.figure()
 
-# impedance_spectrum = abs(voltage_spectrum_2*50.0 / (voltage_spectrum - voltage_spectrum_2))
+impedance_spectrum = abs(2.0*voltage_spectrum/(current_spectrum+current_spectrum_2))
 
-plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum)
+plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 # plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 plt.savefig('/tmp/impedance_spectrum.svg')
 # # plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))

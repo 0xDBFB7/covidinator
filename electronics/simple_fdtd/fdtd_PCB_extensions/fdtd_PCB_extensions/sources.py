@@ -20,8 +20,8 @@ class Port:
         self.voltage_history = []
         self.current_history = []
 
-        pcb.copper_mask[self.N_x,self.N_y,pcb.ground_plane_z_top:pcb.component_plane_z-3] = 1 #make a conductor
-        pcb.copper_mask[self.N_x,self.N_y,pcb.component_plane_z-2:pcb.component_plane_z] = 1 #make a conductor
+        pcb.copper_mask[self.N_x,self.N_y,pcb.ground_plane_z_top:pcb.component_plane_z-1] = 1 #make a conductor
+        pcb.copper_mask[self.N_x,self.N_y,pcb.component_plane_z:pcb.component_plane_z] = 1 #make a conductor
 
 
 
@@ -124,7 +124,7 @@ def just_FDTD_step(pcb):
     # # set_time_step(pcb, min(courant_time_step, required_time_step))
     #
     # # print("max_delta_V {:.3e}, | time_step: {:.3e} | * {:.3f}".format(max_delta_V, pcb.grid.time_step, pcb.grid.time_step*max_delta_V))
-    # this is not at all correct. We need the difference in voltage between the two times 
+    # this is not at all correct. We need the difference in voltage between the two times
     #
     # apply_deltas(pcb)
 

@@ -750,6 +750,8 @@ A step impulse (1 first timestep, 0 otherwise) has been used in some works, thou
 
 A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
 
+This technique is equivalent to that 
+
 \rule{\linewidth}{0.2pt}
 
 Many equations in papers on the FDTD method are supplied without explicit scaling factors. For instance, for use with flaport/fdtd the H-field to current line integral in [] requires scaling by $\mu_0  (dx/dt)$, where $\mu_0$ is the vacuum magnetic permittivity, dx the cell size, and dt the timestep - despite the equation already possessing a deceptive set of $dx$-es.

@@ -1105,3 +1105,6 @@ we should compare the conductivity of the nutrient broth and the phage broth...
 
 this fourier technique is also used in electrochemistry - fourier impedance spectroscopy.
 
+
+650 obs - 163 desired
+400 obs - 
