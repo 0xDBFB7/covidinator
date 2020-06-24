@@ -192,7 +192,7 @@ def sim_VSWR(pcb):
 
         if(pcb.grid.time_steps_passed % print_step == 0):
             # print("%: ",(pcb.time/end_time)*100.0)
-            print(sum(abs(currents[-300:-1])))
+            print(sum(abs(currents[-700:-1]))/700.0, pcb.grid.time_steps_passed)
 
         voltages = np.append(voltages, source_voltage)
         currents = np.append(currents, current)
@@ -202,7 +202,7 @@ def sim_VSWR(pcb):
         # if(len(currents) > 10000):
         #     break
 
-        if(sum(abs(currents[-700:-1])) < 0.0005 and len(currents) > 300):
+        if(sum(abs(currents[-700:-1]))/700.0 < 1e-8 and len(currents) > 300):
             # the key phrase here is "after all transients have dissipated."
             #they use 2000 timesteps at 1.8 ps each.
             break

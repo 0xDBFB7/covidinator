@@ -1115,5 +1115,12 @@ after the simulation is complete, but before any analysis takes place,
  transfer the whole dataset into global state, and 
 persist the whole simulation sessionwith dill. Ideally, this would be stored along with the
 file used to create it and the parameters, so that the analysis can be re-run 
-with slightly changed parameters. 
+with slightly changed parameters.
+
+
+
+okay, so the final answer is; subtract the vacuum permittivity, divide by 2.
+ 
+
+Trying to find an anti-static material (less dusty than wood) for use as the surface.
 

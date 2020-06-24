@@ -623,6 +623,9 @@ OpenEMS is excellent, with Python bindings, some lumped components, and mesh ref
 
 \rule{\linewidth}{0.2pt}
 
+The oscillator design is a testament  This highlights that a computation is not a substitute for understanding.
+
+
 We began experimentally by building a scaled version of [Mueller 2008]'s active antenna crudely with copper tape, using a CEL [] FET.
 
 
@@ -720,41 +723,50 @@ In practice, the timestep required to obtain convergence in particularly tight c
 
 Originally tried 
 
-The frequency impedance of an antenna can be determined by:
+The impedance of an antenna over frequency can be determined by:
 
 \begin{itemize}
-  \item Applying a gaussian pulse to a hard voltage source on the feedline
+  \item Applying a gaussian pulse to a hard voltage source - in our case, applied to a via connecting the path (or probe)
   \item Running the simulation until the transients have all died out below some threshold, while logging the source voltage and current at each timestep
-  
   \item Taking the fourier transform of the (real) excitation voltage and current (producing a complex result, mind you)
   \item Taking the ratio of the two complex spectra.
 \end{itemize}
 
-However, a similar mismatch to the SPICE exists for fourier methods, but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_{bin} = n_{bin} / (N_{simulation} \ dt) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_{simulation}$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
+This is the computational equivalent of dropping a piano off a balcony to see which key is stuck.
+
+See [Penney 1994], [Luebbers 1992], [Luebbers 1991], [Luk 1997]. 
+
+Our implementation is in electronics/simple\_fdtd/runs/U.py.
+
+A similar mismatch to the SPICE exists for fourier methods - but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_{bin} = n_{bin} / (N_{simulation} \ dt) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_{simulation}$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
 
 There's more than enough 'information entropy' in 2000 FDTD points for most antennas. But you need some 30,000 points to get 10 bins below 20 GHz!
 
 There are a few methods of changing the FFT bin size artificially, which [Bi 1992] reviews. You can "use a manual fourier integration over the frequency region of interest".
 
-But, in a personally staggering turn of events which will presumably be familiar to statisticans and preposterous to everyone else, a far simpler method is to {\it discard} 95\% of the data, by down-sampling to 1/10th.
+But, in a staggering turn of events which will presumably be familiar to statisticans and preposterous to everyone else, a far simpler method is to {\it discard} 95\% of the data, by down-sampling to 1/10th or so.
 
-An equally simple method that seemed to produce better results in our case is to pad the voltage and current samples to the correct length. 
+An equally simple method that seemed to produce better results in our case is to pad the voltage and current samples to the correct length. The jump discontinuity introduced by padding with zeros has a negligible effect.
 
 It's so thumpingly unintuitive to me that adding 50,000 zeros to a 5000 value dataset can improve the resolution of a measurement by 300-fold.
 
-It is important to remember to normalize the gaussian pulse, or else numerical noise will be introduced. The precise magnitude is not important - [Luebbers 1992/1991] use 100v, others use 1v, etc.
+It is important to remember to normalize the gaussian pulse, or else numerical noise will be introduced. The magnitude is not important - [Luebbers 1992] use 100v, others use 1v, etc.
 
-Though uneven dt FFTs exist, the time step can be made constant at the courant limit.
+Though uneven dt FFTs exist, the time step can be constant at the courant limit for this simulation.
 
-A step impulse (1 first timestep, 0 otherwise) has been used in some works, though in our case the performance was horrid.
+A step impulse (1 first timestep, 0 otherwise) has been used in some works, though in our case performance was quite horrid.
+
+A correction factor due to the staggered magnetic field of the Yee lattice should be introduced;  Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
 
 A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
 
-This technique is equivalent to that used in electrochemistry for fourier impedance - except they seem to usually use a known impedance source rather than a hard source.
+This technique is equivalent to that used in electrochemistry, known as fourier impedance spectroscopy - except they seem to usually use a known impedance source rather than a hard source, presumably because ideal hard sources don't exist in reality.
 
-The duration of the simulation is very important. When they say 
+Allowing the simulation to run for long enough that all transients dissipate is important for accuracy - deceptive dips in the current can cause early termination. A surprising amount of detail is contributed by even the smallest current levels. Our threshold is 1e-7 amps for 700 iterations.
 
-Further, there is a correction factor of 
+[Samaras 2004] has a very useful set of experimental and FDTD data for calibration and comparison. Comparing a probe via source in the different positions, we obtained agreement of $\sim 7\%$ in impedance and $\sim 5\%$ in frequency.
+
+
 
 \rule{\linewidth}{0.2pt}
 
