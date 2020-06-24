@@ -56,7 +56,7 @@ fd.initialize_grid(pcb,int(patch_width/pcb.cell_size),int((patch_length+feed_len
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, dielectric_constant, 0.02, 9e9)
 
-
+#22 ohms or so
 
 def create_patch_antenna(pcb, patch_width, patch_length):
     MICROSTRIP_FEED_WIDTH = 3e-3
@@ -80,7 +80,7 @@ def create_patch_antenna(pcb, patch_width, patch_length):
     #                                     pcb.xy_margin+p_N_y:pcb.xy_margin+p_N_y+fp_N_y, z_slice] = 1
 
 
-    probe_position = (p_N_y//2-1)
+    probe_position = (p_N_y-1)
 
     pcb.component_ports = [] # wipe ports
     pcb.component_ports.append(fd.Port(pcb, 0, ((p_N_x//2)-1)*pcb.cell_size, probe_position*pcb.cell_size))
@@ -146,6 +146,8 @@ def sim_VSWR(pcb):
 
 
     voltages = np.array([])
+    voltage_2s = np.array([])
+
     currents = np.array([])
     while(True):
 
@@ -184,13 +186,14 @@ def sim_VSWR(pcb):
             # print("%: ",(pcb.time/end_time)*100.0)
             print(sum(abs(currents[-300:-1])))
 
-        voltages = np.append(voltages, source_voltage-voltage_2)
+        voltages = np.append(voltages, source_voltage)
+        voltage_2s = np.append(voltage_2s, voltage_2)
         currents = np.append(currents, current)
         #
         # if(len(currents) > 10000):
         #     break
 
-        if(sum(abs(currents[-300:-1])) < 0.05 and len(currents) > 300):
+        if(len(currents) > 1000):
             # the key phrase here is "after all transients have dissipated."
             #they use 2000 timesteps at 1.8 ps each.
             break
@@ -201,7 +204,7 @@ def sim_VSWR(pcb):
     voltages = np.array(voltages)
     currents = np.array(currents)
 
-    return voltages, currents
+    return voltages, voltage_2s, currents
 
 
 create_patch_antenna(pcb, patch_width, patch_length)
@@ -214,7 +217,7 @@ try:
 except:
     os.system("rm dumps/*")
     os.system("rm data/*")
-    voltages, currents = sim_VSWR(pcb)
+    voltages, voltage_2s, currents = sim_VSWR(pcb)
     dill.dump_session(filename)
 
 desired_res = 300 #100 points below F_max
@@ -223,6 +226,8 @@ required_length = int(desired_res / (fft_F_max * pcb.grid.time_step))
 print(required_length)
 
 voltages = np.pad(voltages, (0, required_length), 'edge')
+voltage_2s = np.pad(voltage_2s, (0, required_length), 'edge')
+
 currents = np.pad(currents, (0, required_length), 'edge')
 
 times_padded = np.pad(pcb.times, (0, required_length), 'edge')
@@ -230,6 +235,8 @@ times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 # factor of 50000000
 
 voltage_spectrum = np.fft.fft(voltages)
+voltage_spectrum_2 = np.fft.fft(voltage_2s)
+
 current_spectrum = np.fft.fft(currents)
 #
 # voltage_spectrum *= np.max(abs(voltages))/np.max(abs(voltage_spectrum)) # normalize to 1 - why?
@@ -244,6 +251,8 @@ begin_freq = np.abs(spectrum_freqs - 1e9).argmin()
 end_freq = np.abs(spectrum_freqs - 15e9).argmin()
 
 plt.plot(times_padded, voltages)
+plt.plot(times_padded, voltage_2s)
+
 plt.savefig('/tmp/voltages.svg')
 plt.figure()
 plt.plot(times_padded, currents)
@@ -258,8 +267,11 @@ plt.legend()
 # plt.plot(spectrum_freqs[begin_freq:end_freq],power_spectrum)
 
 plt.figure()
-impedance_spectrum = abs(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])
-plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum)
+# impedance_spectrum = abs(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq])
+
+impedance_spectrum = abs(voltage_spectrum_2*50.0 / (voltage_spectrum - voltage_spectrum_2))
+
+plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 plt.savefig('/tmp/impedance_spectrum.svg')
 # # plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
 # plt.plot(spectrum_freqs[begin_freq:end_freq],(voltage_spectrum[begin_freq:end_freq]/current_spectrum[begin_freq:end_freq]).real)
