@@ -656,3 +656,7 @@ Should contact vijay@uthscsa.edu about reviewing our methodology.
 Also should contact Yang et al about the formula issue.
 
 You can centrifuge phage, but it's hard; adding PEG helps
+
+
+Made a mandrel for the CD. about 1mm of runout. should touch that up using the motor axis itself.
+

@@ -1130,3 +1130,51 @@ feels like we might be running into the limits of float32 precision.
 
 the discrepancy between float32 and float64 runs is about 2e-9. Given that our signal 
 is 1e-6 or so, that's plausible?
+
+
+
+what were the mistakes that they made in the DNA resonance paper? How do we prevent them?
+
+
+Saving a little bit of some design effort by using a few op-amps as the feedback loops for
+the voltage and current controllers. 
+
+This is especially useful because the FreqCount library depends on a lack of interrupts,
+and a regular PID update interrupt would have to be disabled for a spell during capture.
+
+Quite a bit of noise in the loop at about 10-50 khz. 
+
+Adding capacitance to the servo loop actually harms noise performance, which I guess makes sense.
+
+
+Accidentally put 5v into the Teensy briefly. oooooooops. still seems to be working, however.
+
+Adding capacitance to the op-amp input makes no difference. Adding a 1k series resistor to the
+mosfet base also
+doesn't help.
+
+adding capacitance after the series resistor doesn't do it.
+
+Adding 100 nF at the output does just fine - 40 mV.
+heh, that's 0.1uf.
+
+ooo! openHTF!
+
+huh, so how do we solve voltage follower instability?
+
+Adding 50r to the top of the MOSFET didn't help either.
+
+man, I am so friggin incompetent.
+
+there's an interesting disconnect here; we're using this teensy just so we can monitor a few analog
+voltages and set a few values, but now we need to target two separate platforms
+(the spect. analyzer on the PC side and the ) and define a nice and reliable interface.
+
+that's garbage. Ideally we'd have an RPi with GPIO, one codebase, logging direct to files rather
+than through a serial port, etc...
+
+or a DAQ card on the main computer here - something specifically not NI-visa based.
+
+ that would actually be a neat paradigm - very close to a PXI chassis, but woke.
+
+ 
