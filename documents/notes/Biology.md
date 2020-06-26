@@ -660,3 +660,8 @@ You can centrifuge phage, but it's hard; adding PEG helps
 
 Made a mandrel for the CD. about 1mm of runout. should touch that up using the motor axis itself.
 
+
+
+if we ever get the phi6, we could request that they send us an empty jug of 
+the broth used to culture it
+

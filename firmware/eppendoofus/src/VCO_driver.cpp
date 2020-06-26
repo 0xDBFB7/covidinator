@@ -24,7 +24,7 @@ VCO_driver::VCO_driver(){
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
     pinMode(VARACTOR_OUTPUT_PIN, OUTPUT);
 }
-//
+
 // void VCO_driver::set_base_bias_voltage(float voltage){
 //     // I/C = dV/dt
 //     // dt = 1/frequency
@@ -63,7 +63,7 @@ void VCO_driver::generate_varactor_tuning_table_checks(){
 void VCO_driver::generate_varactor_tuning_table(){
     ////////////////CHECKS/////////////////
     generate_varactor_tuning_table_checks();
-    
+
 }
 
 void VCO_driver::set_tuning_varactor_voltage(float voltage){

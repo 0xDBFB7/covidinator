@@ -103,9 +103,24 @@ Aims:
 
 	While our study is very simple, biology is of such complexity that a tremendous amount of care must be taken before any conclusion can be drawn at all. It is not likely that we have taken sufficient care.\\ 
 
+This is especially true with RF biophysics. The literature is littered with otherwise impeccably perormed research which was later demonstrated to be an artifact. \\
+
 	Though the original research used Inf. A, our testing was only performed with a surrogate bacteriophage. All experiments must be repeated with SARS-NCoV-2. \\
 
 	Additionally, other sterilization techniques may produce superior results and should be evaluated in the same context. Data on far UV [Buonanno 2017] indicate safety.\\
+
+It has occurred before that otherwise striking resonances were detected and replication found them to be artifacts of the measurement equipment. [Foster 1987] even offers this disclaimer:
+
+"To detect the DNA resonances with the probe
+technique requires correction for system errors that are
+potentially much larger than the effect to be studied and
+lead to resonance-like artifacts. This is true even with the
+more precise instrumentation used in this study. Such data
+are easily misinterpreted, and we suggest this might have
+happened in the former study."
+
+The direct inactivation plaque and PCR data from [Yang], replicated by [Sun], is a somewhat convincing corroboration that this effect is not an artifact, but hundreds of convincing and  wrong papers exist in the literature. Our data is crude and imprecise, our equipment hastily constructed, and should not be considered validation of this effect even existing. \\
+
 
 	Please consider all claims with appropriate skepticism.
 
@@ -141,6 +156,7 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{\textbf{Time dependence}}\
 
+The chain of literature -> -> 
 
 Both Yang and [] used an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision given the focus of their paper. 
 
@@ -175,10 +191,10 @@ Because this is an ostensibly novel and niche mechanism, it may behoove us to br
 \includegraphics[scale=0.5]{cells.png}
 
 
-Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent. 
-\footnote{[FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
+\footnote{Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent.  [FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
 adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". Things heating up at the Microwave Safety fandom.}
 
+There are also things.
 
 For instance, it is reasonable to wonder why we might not see such resonances in bodily tissues. Approximately similar nanoscopic structures exist in humans, such as nuclear pores (120 nm) and the famous microtubules (10x50 nm). 
 
@@ -829,11 +845,17 @@ Software opacity is evil.
 
 \rule{\linewidth}{0.2pt}
 
-A great deal of time was spent trying to resolve version conflicts and dependency hells with the numerous libraries used by all the simulation programs. This also wastes developer time - some fraction of issues raised are due to library version conflicts. OpenFOAM's Docker installation is excellent.
-
-Running chroot with the original developer's Linux distribution is also of some utility, but clunky. 
+A great deal of time was spent trying to resolve version conflicts and dependency hells with the numerous libraries used by all the simulation programs. Over a week was spent trying to recursively track down all the This also wastes developer time - some fraction of issues raised are due to library version conflicts. 
 
 Packaged binaries help this slightly, but of course don't help if modifications are required, and managing shared libraries is still a tricky matter.
+
+Good solutions include OpenFOAM's Docker installation. In some cases, using chroot with the original developer's Linux distribution is also of some utility.
+
+But this all seems like quite a lot of overhead and opacity for what ultimately doesn't seem a super-complex problem: deterministically obtain a known-good version of a library, build locally, and set paths appropriately.
+
+A good example might be gTest's cmake integration.
+
+In the extreme, systems exist to extract every 
 
 In some situations (especially where the library has a permissive licence) perhaps it could be useful to consider packaging a complete, batteries-included 'known good' repository, either with the source of all the correct library versions included, or with a script to clone and compile the specific version used, integrating all the libraries with the build system. 
 

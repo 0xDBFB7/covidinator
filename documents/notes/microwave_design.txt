@@ -1133,7 +1133,7 @@ is 1e-6 or so, that's plausible?
 
 
 
-what were the mistakes that they made in the DNA resonance paper? How do we prevent them?
+
 
 
 Saving a little bit of some design effort by using a few op-amps as the feedback loops for
@@ -1160,11 +1160,11 @@ heh, that's 0.1uf.
 
 ooo! openHTF!
 
-huh, so how do we solve voltage follower instability?
+huh, so how do we solve voltage follower instability? 
 
 Adding 50r to the top of the MOSFET didn't help either.
 
-man, I am so friggin incompetent.
+man, I am so friggin incompetent. It's the simplest possible circuit! 
 
 there's an interesting disconnect here; we're using this teensy just so we can monitor a few analog
 voltages and set a few values, but now we need to target two separate platforms
@@ -1177,4 +1177,34 @@ or a DAQ card on the main computer here - something specifically not NI-visa bas
 
  that would actually be a neat paradigm - very close to a PXI chassis, but woke.
 
- 
+So, TLV9062, 5k to ground, 20k to positive to properly scale for the DAC, 
+output to mosfet voltage follower, 200 nF on the output, and like 100 mV of noise.
+Best-case, that causes ~30 MHz freq. modulation of the output.
+
+could use some sort of high-voltage buffer amp, but of course we can't use that in the final design
+and I'd like to work all the kinks out now if possible
+
+Screw this. Let's do a PID.
+
+Erm, on second thought; the LO doesn't need to sweep very rapidly, so we're okay with an extra few
+uF on that. The 
+
+-----------------------------------------
+
+what were the mistakes that they made in the DNA resonance paper? How do we prevent them?
+
+Reviewing the Foster paper on the technique.
+
+First, Edwards used a reflection method, sticking a cut piece of coax into a container
+of the solution. Radiation effects were not accounted for. Foster use a transmission method 
+like Yang.
+
+
+> and care was taken to ensure
+that the frequency range included the frequency corresponding to one 
+quarter of a wavelength in the sample, a prerequisite for accurate
+measurements.
+
+
+"This process was repeated using several samples of varying thickness,"
+
