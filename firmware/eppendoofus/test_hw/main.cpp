@@ -1,7 +1,6 @@
 #include "WProgram.h"
 
 // OpenHTF could be a viable alternative to this.
-
 #include "unity.h"
 
 #include "test_VCO_driver.hpp"

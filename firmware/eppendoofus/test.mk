@@ -43,7 +43,7 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 
 # CPPFLAGS = compiler options for C and C++
 CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -DUNITY_INCLUDE_CONFIG_H -MMD $(OPTIONS)
-CPPFLAGS += -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH) -IUnity/src/ 
+CPPFLAGS += -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH) -IUnity/src/
 
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -felide-constructors -fno-exceptions -fno-rtti
@@ -109,10 +109,12 @@ TCPP_FILES := $(filter-out $(COREPATH)/main.cpp, $(TCPP_FILES))
 
 C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
+CPP_FILES += $(wildcard src/native/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
 
 CPP_FILES := $(filter-out src/main.cpp, $(CPP_FILES))
 CPP_FILES += $(wildcard test_hw/*.cpp)
+
 
 C_FILES := $(wildcard Unity/src/*.c)
 

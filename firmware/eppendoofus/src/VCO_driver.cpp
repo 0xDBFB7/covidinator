@@ -68,7 +68,7 @@ void VCO_driver::generate_varactor_tuning_table(){
 
 void VCO_driver::set_tuning_varactor_voltage(float voltage){
 
-    DAC_write();
+    // DAC_write();
 
 }
 

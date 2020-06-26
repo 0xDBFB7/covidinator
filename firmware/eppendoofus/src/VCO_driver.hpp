@@ -3,6 +3,7 @@
 #ifdef MOCK_INCLUDES
 
 #include "mocks.hpp"
+#include <WString.h>
 
 #else
 

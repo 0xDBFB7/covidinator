@@ -1,6 +1,8 @@
 #include "test_VCO_driver.hpp"
 
-#include "unity.h"
+void run_VCO_tests(){
+    RUN_TEST(VCO_test_1);
+}
 
 
 void setUp(void) {
@@ -20,12 +22,10 @@ void VCO_test_1(){
 
 
 
-void run_VCO_tests(){
-    RUN_TEST(VCO_test_1);
-}
-
 
 
 #ifdef MOCK_INCLUDES
+
 #else
+
 #endif

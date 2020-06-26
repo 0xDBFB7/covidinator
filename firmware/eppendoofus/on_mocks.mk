@@ -1,13 +1,19 @@
 # The name of your project (used to name the compiled .hex file)
 TARGET = $(notdir $(CURDIR))
 
-CPPFLAGS = -Wall -Werror -g -Os -ffunction-sections -fdata-sections -Isrc -Itest_mocks -IUnity/src/ -DMOCK_INCLUDES -DUNITY_INCLUDE_CONFIG_H
+# path location for Teensy 3 core
+COREPATH = /home/arthurdent/Programs/arduino-1.8.12-linux64/arduino-1.8.12/hardware/teensy/avr/cores/teensy3/
+
+
+
+CPPFLAGS = -Wall -Werror -g -Os -ffunction-sections -fdata-sections -Isrc -Itest_mocks -IUnity/src/ -DMOCK_INCLUDES -DUNITY_INCLUDE_CONFIG_H -I$(COREPATH)
 
 # compiler options for C++ only
-CXXFLAGS =   -std=gnu++0x -Wno-c++14-compat -felide-constructors -fno-exceptions -fno-rtti
+CXXFLAGS =   -std=gnu++0x -Wno-c++14-compat -felide-constructors -fno-exceptions
 
 # compiler options for C only
 CFLAGS =
+
 
 # linker options
 LDFLAGS = -Os -Wl,--gc-sections
