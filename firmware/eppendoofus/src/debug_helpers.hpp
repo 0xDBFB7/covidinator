@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-#include <string>
+#include "WString.h"
 
 #define DEBUG_PRINT
 
@@ -18,5 +18,3 @@ void debug_preamble_printer(std::string function, int line, std::string file, st
 
 #define debug_array(input, start, end) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); pretty_print_array(input, start, end);
 #define debug_val(input) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); print(" = " + input);
-
-#endif
