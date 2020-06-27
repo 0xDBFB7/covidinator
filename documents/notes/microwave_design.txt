@@ -1216,4 +1216,6 @@ https://github.com/PHaroZ/arduino-snap
 
 can persist program state after each segment of the experiment so as to restart
 
-the mlx90621 has a 60x16 deg FOV.
+the mlx90621 has a 60x16 deg FOV. 
+
+hey... the CD is conductive. We could totally CNC conductors onto it.

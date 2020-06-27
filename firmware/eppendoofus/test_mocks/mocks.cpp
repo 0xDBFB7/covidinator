@@ -27,3 +27,13 @@ void delay(int ms){
 void analogWrite(int pin, int value){
     analog_values[pin] = value;
 }
+
+void print(){
+    std::cout << n;
+}
+
+void println(){
+    std::cout << n << "\n";
+}
+
+std::cout << n;

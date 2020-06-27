@@ -28,3 +28,6 @@ void debug_preamble_printer(std::string function, int line, std::string file, st
 // }
 // template void pretty_print_array(float * input, int start, int length);
 // template void pretty_print_array(int * input, int start, int length);
+
+
+//Serial.println(founded_dev.getName().c_str());

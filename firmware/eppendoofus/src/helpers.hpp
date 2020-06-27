@@ -1,25 +1,21 @@
+#include "WString.h"
+#include <string>
+
+
 #ifdef MOCK_INCLUDES
 
-#define print(n) std::cout << n << "\n"
 
 #else
 
-#define print(n) Serial1.println(n)
 
 #endif
 
+#undef constrain
 
 template<class T>
-const T& constrain(const T& x, const T& a, const T& b) {
-    if(x < a) {
-        return a;
-    }
-    else if(b < x) {
-        return b;
-    }
-    else
-        return x;
-}
+const T& constrain(const T& x, const T& a, const T& b);
+
+std::string WString_to_std_string(String input);
 
 
 // void compute_max_PWM_freq(){

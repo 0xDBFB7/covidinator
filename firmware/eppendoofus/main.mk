@@ -42,10 +42,10 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -I$(COREPATH)
+CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(COREPATH) -fsingle-precision-constant
 
 # compiler options for C++ only
-CXXFLAGS = -std=gnu++0x -Wno-c++14-compat 
+CXXFLAGS = -std=gnu++0x -Wno-c++14-compat
 
 # compiler options for C only
 CFLAGS =
