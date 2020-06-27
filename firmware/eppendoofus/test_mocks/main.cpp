@@ -10,9 +10,11 @@
 // #include "VCO_driver.hpp"
 #include <iostream>
 
-void setUp(){ //unused due to different dir structure.
+void setUp(){
+	reset_mocks();
 }
 void tearDown(){
+	reset_mocks();
 }
 
 

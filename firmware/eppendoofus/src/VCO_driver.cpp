@@ -1,22 +1,40 @@
 #include "VCO_driver.hpp"
 
 float voltage_divider(float vout, float Rtop, float Rbottom){
-    return (vout/((Rtop+Rbottom)/Rbottom));
+    return (vout/(Rbottom/(Rtop+Rbottom)));
+}
+
+void transistor_driver::print(std::string message){
+}
+
+
+transistor_driver::transistor_driver(){
+    analogWriteResolution(ANALOG_WRITE_RESOLUTION);
+    pinMode(VBASE_BIAS_PWM_PIN, OUTPUT);
+    analogWrite(VBASE_BIAS_PWM_PIN, 0);
 }
 
 
 
-struct transistor_driver{
-    int VBASE_BIAS_PWM_PIN = 0;
-
-    void set_base_bias_voltage(float voltage);
-    float get_base_bias_voltage();
-
-};
-
 void transistor_driver::set_base_bias_voltage(float voltage){
     //freqs: https://www.pjrc.com/teensy/td_pulse.html
-    //with 10 uF and 10k, 
+    //with 10 uF and 10k,
+    //(3.3 V / 10000 ohms )/10 uF * 1 / 14.6e3 Hz -> V = 0.0022 v
+    //of ripple - 0.226% at 1v. That should be sufficient.
+    //otherwise, we can probably increase that to 50 or 100k.
+    (*this).print("");
+
+    if(voltage > CORE_SUPPLY_VOLTAGE || voltage < 0){
+        //????
+        run_abort("improper voltage");
+        return;
+    }
+
+    float value = (voltage/CORE_SUPPLY_VOLTAGE);
+
+    analogWrite(VBASE_BIAS_PWM_PIN, value);
+
+    (*this).print("Updated base bias.");
 }
 
 
@@ -27,13 +45,8 @@ struct VCO_driver{
 
 
 
-    int VSOURCE_PWM_PIN = 0;
-    int PULSE_INPUT_PIN = 0;
-    int VSOURCE_FEEDBACK_PIN = 0;
-    int VPULSE_FEEDBACK_PIN = 0;
-    int CURRENT_SENSE_PIN = 0;
 
-    String name = "";
+    std::string name = "";
 
     VCO_driver();
     void varactor_feedback_voltage();

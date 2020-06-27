@@ -1,7 +1,8 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
-
+#include <vector>
+#include <algorithm>
 
 #define HIGH 1
 #define LOW 0
@@ -16,3 +17,4 @@ bool digitalWriteFast(int pin);
 void analogWrite(int pin, int value);
 void delay(int ms);
 void analogWriteResolution(int res);
+void reset_mocks();

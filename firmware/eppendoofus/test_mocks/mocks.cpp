@@ -4,10 +4,9 @@
 
 
 
-bool pin_modes[NUM_PINS] = {0}; //global state! Probably a good idea to make a wrapper class around GPIOs...
-bool pin_states[NUM_PINS] = {0};
-
-int analog_values[NUM_PINS] = {0};
+std::vector<bool> pin_modes(NUM_PINS); //global state! Probably a good idea to make a wrapper class around GPIOs...
+std::vector<bool> pin_states(NUM_PINS);
+std::vector<int> analog_values(NUM_PINS);
 
 
 void pinMode(int pin, bool mode){
@@ -28,4 +27,10 @@ void delay(int ms){
 
 void analogWrite(int pin, int value){
     analog_values[pin] = value;
+}
+
+void reset_mocks(){
+    std::fill(pin_modes.begin(), pin_modes.end(), 0);
+    std::fill(pin_states.begin(), pin_states.end(), 0);
+    std::fill(analog_values.begin(), analog_values.end(), 0);
 }

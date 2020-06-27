@@ -1,4 +1,3 @@
-// #include <FreqCount.h>
 //
 // const int VIS_transmittance_out = 0;
 // const int VIS_reflectance_out = 1;
