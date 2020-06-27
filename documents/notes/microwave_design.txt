@@ -1208,3 +1208,11 @@ measurements.
 
 "This process was repeated using several samples of varying thickness,"
 
+-----------------------------------------
+
+Looking for a pre-built protocol, doesn't seem like there is one.
+https://github.com/PHaroZ/arduino-snap
+
+
+can persist program state after each segment of the experiment so as to restart
+

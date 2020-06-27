@@ -130,7 +130,8 @@ The direct inactivation plaque and PCR data from [Yang], replicated by [Sun], is
 \begin{multicols}{1}
 
 
-With typical 2.4 GHz microwave exposure, sterilization occurs by heating of the fluid and tissue.
+
+With typical 2.4 GHz microwave exposure, sterilization can only occur by heating of the fluid and tissue.
 
 Of course, the temperature of the atoms of the virus undoubtedly increase; but the 
 
@@ -154,9 +155,24 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The chain of literature Fruluch -> ([Sun ] | [Yang 2015]) establishes that spherical virions possess a weak dipole resonance mode which happens to fall within the microwave spectrum, at approximately the X-band (6-10 GHz).
+
+This is a non-ionizing, non-thermal technique; 
+
+This resonance mode 
+
+The myth that 2.4 GHz was chosen because it "couples strongly with water" is largely false; but this is 
+
+
+This is quite surprising, and should perhaps be considered with some trepidation, since 
+
+
+
+
 \paragraph{\textbf{Time dependence}}\
 
-The chain of literature -> -> 
+
 
 Both Yang and [] used an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision given the focus of their paper. 
 

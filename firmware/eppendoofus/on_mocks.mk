@@ -9,7 +9,7 @@ COREPATH = /home/arthurdent/Programs/arduino-1.8.12-linux64/arduino-1.8.12/hardw
 CPPFLAGS = -Wall -Werror -g -Os -ffunction-sections -fdata-sections -Isrc -Itest_mocks -IUnity/src/ -DMOCK_INCLUDES -DUNITY_INCLUDE_CONFIG_H -I$(COREPATH)
 
 # compiler options for C++ only
-CXXFLAGS =   -std=gnu++0x -Wno-c++14-compat -felide-constructors -fno-exceptions
+CXXFLAGS =   -std=gnu++0x -Wno-c++14-compat
 
 # compiler options for C only
 CFLAGS =

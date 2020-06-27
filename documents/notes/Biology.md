@@ -695,3 +695,9 @@ amplitude of a forced, oscillating system at resonance is exactly Q times the di
 The Fourier analysis of a square wave yields odd harmonics with relative amplitude A1/n . 
 The excitation of an oscillator of natural frequency 20 rad/s with a 4 rad/s square wave gives maximum 
 excitation at n=5, even though the driving amplitude is down by a factor of 5.
+
+I'm not sure I fully understand something fundamental here. In [Yang 2015], 
+
+
+
+

@@ -27,13 +27,14 @@ PID::PID(float P_, float I_, float D_, float windup_, float min_output_, float m
     windup = windup_;
     min_output = min_output_;
     max_output = max_output_;
-
 }
 
 
 
 float PID::process_PID(float value, float target_value, unsigned long time){
+
     float dt = (time-previous_time);
+    if(dt == 0) throw std::invalid_argument("0div");
     float error = value-target_value; // ostensibly rollover safe!
     integral = integral + (error*dt);
     float derivative = (error - previous_error)/dt;
