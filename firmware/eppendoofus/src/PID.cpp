@@ -1,25 +1,8 @@
 #include "PID.hpp"
 
-struct PID{
 
-    float P = 0;
-    float I = 0;
-    float D = 0;
 
-    float integral = 0;
-    float previous_error = 0;
-
-    float min_output = 0;
-    float max_output = 0;
-    float windup = 0;
-    unsigned long previous_time = 0;
-
-    PID(float P_, float I_, float D_, float windup_, float min_output_, float max_output_);
-    float process_PID(float value, float target_value, unsigned long time);
-
-};
-
-PID::PID(float P_, float I_, float D_, float windup_, float min_output_, float max_output_){
+PID::PID(float P_, float I_, float D_, float windup_, float min_output_, float max_output_, unsigned long time){
     //not idiomatic :(
     P = P_;
     I = I_;
@@ -27,14 +10,16 @@ PID::PID(float P_, float I_, float D_, float windup_, float min_output_, float m
     windup = windup_;
     min_output = min_output_;
     max_output = max_output_;
+    previous_time = time;
 }
-
-
 
 float PID::process_PID(float value, float target_value, unsigned long time){
 
     float dt = (time-previous_time);
-    if(dt == 0) throw std::invalid_argument("0div");
+    if(dt == 0){
+         debug("Error: 0DIV"); //positively no exception handling!
+         return previous_output;
+     }
     float error = value-target_value; // ostensibly rollover safe!
     integral = integral + (error*dt);
     float derivative = (error - previous_error)/dt;
@@ -45,6 +30,8 @@ float PID::process_PID(float value, float target_value, unsigned long time){
 
     previous_error = error;
     previous_time = time;
+
+    previous_output = output;
 
     return output;
 }

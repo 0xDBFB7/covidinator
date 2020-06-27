@@ -6,8 +6,8 @@ std::string WString_to_std_string(String input){
 }
 
 
-template<class T>
-const T& constrain(const T& x, const T& a, const T& b) {
+// template <class T>
+float constrain(float x, float a, float b) {
     if(x < a) {
         return a;
     }
@@ -17,3 +17,4 @@ const T& constrain(const T& x, const T& a, const T& b) {
     else
         return x;
 }
+// template float constrain(float x, float a, float b) {
