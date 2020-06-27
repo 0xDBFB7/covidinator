@@ -18,6 +18,8 @@ struct VCO_driver{
     void set_base_bias_voltage(float voltage);
     float get_base_bias_voltage();
     VCO_driver();
+    void varactor_feedback_voltage();
+    void set_tuning_varactor_voltage(float voltage);
 };
 
 VCO_driver::VCO_driver(){
@@ -53,18 +55,18 @@ VCO_driver::VCO_driver(){
 // }
 
 void VCO_driver::varactor_feedback_voltage(){
-
+    
 }
-
-void VCO_driver::generate_varactor_tuning_table_checks(){
-    DAC_write(VARACTOR_OUTPUT_PIN);
-}
-
-void VCO_driver::generate_varactor_tuning_table(){
-    ////////////////CHECKS/////////////////
-    generate_varactor_tuning_table_checks();
-
-}
+//
+// void VCO_driver::generate_varactor_tuning_table_checks(){
+//     DAC_write(VARACTOR_OUTPUT_PIN);
+// }
+//
+// void VCO_driver::generate_varactor_tuning_table(){
+//     ////////////////CHECKS/////////////////
+//     generate_varactor_tuning_table_checks();
+//
+// }
 
 void VCO_driver::set_tuning_varactor_voltage(float voltage){
 

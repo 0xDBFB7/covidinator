@@ -665,3 +665,33 @@ Made a mandrel for the CD. about 1mm of runout. should touch that up using the m
 if we ever get the phi6, we could request that they send us an empty jug of 
 the broth used to culture it
 
+
+
+
+There seems to be a discrepancy between [Yang 2015] and our reading of C95.1-2005. This is very likely a misreading on our part, and so calls into question our understanding of the standard.
+
+They say: "Based on the IEEE Microwave Safety Standard, the spatial averaged value of the power density in air in open public space shall not exceed the equivalent power density of $100(f/3)^{1/5} \text{ W/m}^2$ at frequencies between 3 and 96GHz ($f$ is in GHz). This corresponds to $115 \text{ W}/\text{m}^2$ at 6 GHz". The 115 W @ 6 GHz value correctly corresponds to this equation with a coefficient of 100.
+
+The only reference to a 3 - 96 GHz limit we can find is that of Section 4.6, {\it Relaxation of the power density MPEs for localized exposures}, where the equation is $200 (f/3)^{1/5} \text{ W/m}^2$ [IEEE C95.1-2005], for controlled occupational exposures, referring to Table 8. For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
+
+Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is possible that we have retrieved the wrong standard.
+
+In any case, this doesn't change the substance of [Yang 2015]'s paper; the relaxed localized exposure is probably the correct threshold to use, and it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
+
+we can see if there's a syncrotron-like shift by measuring the absorption versus amplitude.
+
+
+
+http://spiff.rit.edu/classes/phys283/lectures/forced_ii/forced_ii.html
+
+when we measure the phage resonance, we need to use the full-width-half-maximum power
+
+> Let's make a graph showing the power dissipated as a function of the driving frequency. It will have a peak close(*) to the natural frequency of the system, and some width around that peak.
+
+> (*) yes, the maximum dissipated power occurs at a slightly lower frequency than ω0, but for most cases of interest, this difference is very small. Assuming the peak is exactly at the natural frequency will simplify some of the expressions which follow, so let's do that.
+
+amplitude of a forced, oscillating system at resonance is exactly Q times the displacement by a static force of the same size.
+
+The Fourier analysis of a square wave yields odd harmonics with relative amplitude A1/n . 
+The excitation of an oscillator of natural frequency 20 rad/s with a 4 rad/s square wave gives maximum 
+excitation at n=5, even though the driving amplitude is down by a factor of 5.

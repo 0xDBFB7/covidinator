@@ -166,7 +166,7 @@ The effectiveness against airborne particles, and to minimize the power required
 
 In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain quantized dose of photons must be absorbed, we expected RF to act instantaneously.
 
-As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 1 us. 
+As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 100 nanoseconds.???????????FIXME
 
 [] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify the properties before the envelope fractures.
 
@@ -328,14 +328,13 @@ Penetration depth & 30 mm      & 5 mm \\ \hline
 \end{tabular}
 \end{center}
 
-SARS is found widely distributed throughout the most desirable organs [Ding 2004], shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely. 
+SARS is found widely distributed throughout the most favorable organs [Ding 2004], shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely.
 
 However, destruction of lung tissue appears to be the primary cause of death via SARS [Nicholls 2006]. 
 
-A minimally-invasive bronchoscopic technique may be effective when mounted on a modified brochoscope and periodically inserted into the main bronchus, as demonstrated by [Yuan 2019].
+A bronchoscopic technique may therefore be effective, very similarly to that demonstrated by [Yuan 2019]: the bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are only on the order of 7 mm thick [Chekan 2016]. 
 
-The bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are only on the order of 
-7 mm thick [Chekan 2016].
+There is considerable tolerance in the 
 
 Further study is required to validate this method.
 
@@ -347,7 +346,9 @@ It is relatively easy to produce megawatts of power at these frequency ranges us
 
 Existing marine, weather, and aviation radar systems often use the X-band; depending on the focusing power
 
+\paragraph{}
 
+Finally, there is one concern. Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). We do not have the biological knowledge to know if this is plausible; it is simply worth mentioning.
 
 \end{multicols}
 
@@ -485,9 +486,9 @@ FDTD results still yielded some coupling at 2 mm isolation.
 
 \paragraph{\textbf{Via stitching}}\
 
-Rather than the almost universal technique of via stitching components immediately to the ground plane (a tedious process with our prototyping setup), a large ground pour on the component layer was used, similar to [Hunter? combline]. Since we use microstrip rather than coplanar waveguide, 
+Rather than the almost universal technique of via stitching components immediately to the ground plane (a tedious process with our prototyping setup), a large ground pour on the component layer was used wherever ground was needed, as mentioned in [Hunter? combline]. Since we use microstrip rather than coplanar waveguide, 
 
-Since the ground plane does not participate in the DC bias at all, no vias are required in the final device. This means that the comparatively slow drilling, electroless strike and electroplating steps are unneccesary for this device.
+Since the ground plane does not participate in the DC bias at all, no vias are required in the final device. This means that the drilling, electroless strike and electroplating steps are unnecessary for production.
 
 
 
@@ -531,41 +532,6 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 
 
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Molecular dynamics simulation}\\
-\begin{multicols}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-aa
-
-
-
-
-
-\end{multicols}
-
-
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Optical centrifuge polarization chirp}\\
-\begin{multicols}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-\end{multicols}
-
-
-
-
 
 
 
@@ -576,11 +542,13 @@ aa
 
 This paper is not novel enough to deserve this chapter, but those to be acknowledged are.
 
-The authors of the original papers deserve the credit for this entire work; it is rare that such a is served on a silver platter.
+The authors of the original papers deserve the credit for this entire work;  it is rare that such a monumental finding is served on a silver platter.
 
 Professor Shahramian's excellent video blog {\it The Signal Path} inspired this work. 
 
 Dr. Dainis' videos on microbiological technique were also useful.
+
+Thanks to the professors at York and beyond for returning my emails. 
 
 Thanks to L.H. for wisdom regarding this project.
 
@@ -605,23 +573,64 @@ One Very Important Thought
 
 
 
-
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\Large Captain's Log, Supplemental}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\paragraph{Molecular dynamics simulation}
+\
+%\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It was originally expected that a large part of this work would be done in-silico, as we did not anticipate having access to suitable RF test equipment. 
+
+Some time was spent attempting to set up a molecular dynamics toolchain capable of simulating an entire virus. 
+
+Having an approximate simulation of the this technique would be useful for a number of reasons: 
+
+We would have a better idea of the transferability to SARS, without wasting the time of experts with BSL-3/4 labs.
+
+The impulse could be subjected to the same optimization as the RF feedback loop. A number of parameters (such as phase, polarization)
+
+
+
+Coarse-graining also greatly increases the allowable timestep.
+
+
+%\end{multicols}
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Large Optical centrifuge polarization chirp}\\
+\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+\end{multicols}
+
+
+
+
+\clearpage
 \rule{\linewidth}{0.2pt}
 
-There seems to be a discrepancy between [Yang 2015] and our reading of C95.1-2005. This is very likely a misreading on our part, and so calls into question our understanding of the standard.
+There seems to be a discrepancy between [Yang 2015] and our reading of [C95.1-2005].
 
-They say: "Based on the IEEE Microwave Safety Standard, the spatial averaged value of the power density in air in open public space shall not exceed the equivalent power density of $100(f/3)^{1/5} \text{ W/m}^2$ at frequencies between 3 and 96GHz ($f$ is in GHz). This corresponds to $115 \text{ W}/\text{m}^2$ at 6 GHz". The 115 W @ 6 GHz value correctly corresponds to this equation with a coefficient of 100.
+They use a threshold in open public space of $100(f/3)^{1/5} \text{ W/m}^2$. The 115 W @ 6 GHz they provide correctly corresponds to this equation with a coefficient of 100.
 
-The only reference to a 3 - 96 GHz limit we can find is that of Section 4.6, {\it Relaxation of the power density MPEs for localized exposures}, where the equation is $200 (f/3)^{1/5} \text{ W/m}^2$ [IEEE C95.1-2005], for controlled occupational exposures, referring to Table 8. For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
+For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
 
-Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is possible that we have retrieved the wrong standard.
-
-In any case, this doesn't change the substance of [Yang 2015]'s paper; the relaxed localized exposure is probably the correct threshold to use, and it just means the mechanism is more useful for healthcare workers who acknowledge the risks.
+Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is very possible that we have retrieved the wrong standard.
 
 \rule{\linewidth}{0.2pt}
 
@@ -742,7 +751,7 @@ Originally tried
 The impedance of an antenna over frequency can be determined by:
 
 \begin{itemize}
-  \item Applying a gaussian pulse to a hard voltage source - in our case, applied to a via connecting the path (or probe)
+  \item Applying a gaussian pulse to a voltage source - in our case, applied to a via connecting the path (or probe)
   \item Running the simulation until the transients have all died out below some threshold, while logging the source voltage and current at each timestep
   \item Taking the fourier transform of the (real) excitation voltage and current (producing a complex result, mind you)
   \item Taking the ratio of the two complex spectra.
@@ -772,7 +781,7 @@ Though uneven dt FFTs exist, the time step can be constant at the courant limit 
 
 A step impulse (1 first timestep, 0 otherwise) has been used in some works, though in our case performance was quite horrid.
 
-A correction factor due to the staggered magnetic field of the Yee lattice should be introduced; [Fang 1994]. Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
+A correction factor due to the staggered magnetic field of the Yee lattice must be introduced; [Fang 1994]. Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
 
 A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
 
@@ -782,9 +791,11 @@ Allowing the simulation to run for long enough that all transients dissipate is 
 
 [Samaras 2004] has a very useful set of experimental and FDTD data for calibration and comparison. Comparing a probe via source in the different positions, we obtained agreement of $\sim 7\%$ in impedance and $\sim 5\%$ in frequency.
 
-The type of feed-port may affect the convergence rate by introducing unphysical transients.
+The use of a hard source feed-port affects the number of timesteps required by introducing unphysical transients. Using a port with a virtual 50-ohm resistance reduces the computational requirements by a large factor; see [Luebbers 1996].
 
-Simply monitoring the source current during the simulation is deceptive. Periodically monitoring the fourier transform 
+Simply monitoring the source current during the simulation is somewhat deceptive. Periodically monitoring the change in the fourier transform seems to be a better convergence metric.
+
+
 
 \rule{\linewidth}{0.2pt}
 
