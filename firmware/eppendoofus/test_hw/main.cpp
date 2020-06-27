@@ -9,6 +9,12 @@
 #include "test_main.hpp"
 
 
+void setUp(){ //unused due to different dir structure.
+}
+void tearDown(){
+}
+
+
 int main(void){
 
     UNITY_BEGIN();
@@ -16,10 +22,8 @@ int main(void){
     run_VCO_tests();
 
     run_PID_tests();
-    run_main_tests();
+    // run_main_tests();
 
     return UNITY_END();
-
-
-
+        
 }

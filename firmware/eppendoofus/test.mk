@@ -46,7 +46,7 @@ CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -DUN
 CPPFLAGS += -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH) -IUnity/src/ -Isrc/native
 
 # compiler options for C++ only
-CXXFLAGS = -std=gnu++0x -Wno-c++14-compat
+CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -fno-exceptions
 
 # compiler options for C only
 CFLAGS =

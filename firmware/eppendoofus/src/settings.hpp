@@ -1,5 +1,5 @@
 
-#define CORE_CLOCK_FREQ 120e6
+#define CORE_CLOCK_FREQ 180e6
 
 #define CORE_SUPPLY_VOLTAGE 3.3
 

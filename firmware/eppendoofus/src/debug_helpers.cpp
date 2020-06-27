@@ -2,10 +2,11 @@
 
 
 void debug_preamble_printer(std::string function, int line, std::string file, std::string name){
-  print("\n\033[1;36m");
-  print("\033[1;36m" + "\033[0m | \033[1;36m" + "line " +
-                "\033[0m | \033[1;36m" + function + "\033[0m | \033[1;33m" + name);
-  print("\033[0m");
+    std::string preamble;
+    preamble = preamble + "\n\033[1;36m";
+    preamble = preamble + "\033[1;36m" + "\033[0m | \033[1;36m" + "line " +
+                "\033[0m | \033[1;36m" + function + "\033[0m | \033[1;33m" + name + "\033[0m";
+
 }
 
 // template<typename T>

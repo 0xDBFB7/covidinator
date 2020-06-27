@@ -2,9 +2,9 @@
 
 
 void PID_test_1(){
-    for(int i = 0; i < 100; i++){
-        
-    }
+    desired_val = 0.5;
+    pid = PID(1,1,1, 0.5, 0.2, 0.7);
+    PID.process_PID();
 }
 
 void run_PID_tests(){

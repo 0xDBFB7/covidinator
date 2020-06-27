@@ -3,7 +3,7 @@
 
 
 void print(std::string input){
-    DEBUG_SERIAL.println(n.c_str());
+    DEBUG_SERIAL.println(input.c_str());
 }
 
 void println(std::string input){

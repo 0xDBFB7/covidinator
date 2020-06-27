@@ -8,7 +8,15 @@ from time import sleep
 #do a https://numpy.org/doc/stable/reference/generated/numpy.correlate.html
 # to determine VCO shift
 
-def run_sweep(start_freq, end_freq, bin_width, gain_db, samples_per_freq_multiplier, N_sweeps=1, LO_freq=0.0):
+def create_freq_bins(start_freq, end_freq, bin_width):
+    N_points = int(((end_freq-start_freq)*1e6)/bin_width)
+
+    freqs = np.linspace(start_freq, end_freq, N_points)
+
+    return freqs
+
+
+def run_sweep(freqs, start_freq, end_freq, bin_width, gain_db, samples_per_freq_multiplier, N_sweeps=1, LO_freq=0.0):
     '''
     start_freq, end_freq: freq in MHz.
     bin_width: FFT bin in Hz.
@@ -26,7 +34,7 @@ def run_sweep(start_freq, end_freq, bin_width, gain_db, samples_per_freq_multipl
     #two sweeps are generally required to fill the entire spectrum.
 
 
-    freqs = np.zeros(N_sweeps*N_points)
+    # freqs = np.zeros(N_sweeps*N_points)
     data = np.zeros(N_sweeps*N_points)
 
 
