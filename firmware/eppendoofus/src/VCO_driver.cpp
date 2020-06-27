@@ -1,10 +1,30 @@
 #include "VCO_driver.hpp"
 
+float voltage_divider(float vout, float Rtop, float Rbottom){
+    return (vout/((Rtop+Rbottom)/Rbottom));
+}
+
+
+
+struct transistor_driver{
+    int VBASE_BIAS_PWM_PIN = 0;
+
+    void set_base_bias_voltage(float voltage);
+    float get_base_bias_voltage();
+
+};
+
+void transistor_driver::set_base_bias_voltage(float voltage){
+    //freqs: https://www.pjrc.com/teensy/td_pulse.html
+    //with 10 uF and 10k, 
+}
+
+
 struct VCO_driver{
     int VARACTOR_OUTPUT_PIN = 0;
     int VARACTOR_FEEDBACK_PIN = 0;
 
-    int VBASE_BIAS_PWM_PIN = 0;
+
 
 
     int VSOURCE_PWM_PIN = 0;
@@ -15,8 +35,6 @@ struct VCO_driver{
 
     String name = "";
 
-    void set_base_bias_voltage(float voltage);
-    float get_base_bias_voltage();
     VCO_driver();
     void varactor_feedback_voltage();
     void set_tuning_varactor_voltage(float voltage);
@@ -55,7 +73,7 @@ VCO_driver::VCO_driver(){
 // }
 
 void VCO_driver::varactor_feedback_voltage(){
-    
+
 }
 //
 // void VCO_driver::generate_varactor_tuning_table_checks(){

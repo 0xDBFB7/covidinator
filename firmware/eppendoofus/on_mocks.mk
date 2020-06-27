@@ -4,7 +4,7 @@ TARGET = $(notdir $(CURDIR))
 # path location for Teensy 3 core
 COREPATH = /home/arthurdent/Programs/arduino-1.8.12-linux64/arduino-1.8.12/hardware/teensy/avr/cores/teensy3/
 
-
+#https://github.com/apmorton/teensy-template
 
 CPPFLAGS = -Wall -Werror -g -Os -ffunction-sections -fdata-sections -Isrc -Itest_mocks -IUnity/src/ -DMOCK_INCLUDES -DUNITY_INCLUDE_CONFIG_H -I$(COREPATH) -fsingle-precision-constant
 

@@ -11,6 +11,7 @@
 
 #endif
 
+float voltage_divider(float vout, float Rtop, float Rbottom);
 
 //======================
 //[ SETTINGS ]
