@@ -6,7 +6,7 @@
 .include ../models/10pf0402.lib
 
 
-Vsupply VCC 0 PULSE(0 1.3 20p 5p 1p 1ms 1ms)
+Vsupply VCC 0 PULSE(0 2.0 20p 5p 1p 1ms 1ms)
 
 Lsupply VCC collector 440NH
 
@@ -43,7 +43,7 @@ Rout output 0 50
 
 Lem E1 E_ 440NH
 Rem E_ E__ 1
-Vem E__ 0 -0.7
+Vem E__ 0 -1
 
 
 Rem2 E1 E2 0

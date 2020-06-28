@@ -41,7 +41,8 @@ def run_sim(varactor_voltage):
     timesteps = ngspyce.vector('time')
     v_collector = ngspyce.vector('v(E1)')
     v_base = ngspyce.vector('v(Base)')
-    varactor_bias = ngspyce.vector('v(Base_)')
+    varactor_bias = ngspyce.vector('v(Vvaractor)')
+    output = ngspyce.vector('v(output)')
 
     stable_running_point = -1*len(v_collector)//3
     v_collector_trimmed = v_collector[stable_running_point:] # lots of noise on startup. we want to trim that out of the FFT.
@@ -60,13 +61,17 @@ def run_sim(varactor_voltage):
 
     fft_cleaned = fft_cleaned[:int(600)] # trim all spectra to the same length 2ps,800, 5ps, 600
     spectrum_freqs = spectrum_freqs[:int(600)]
-    return [np.array(np.abs(fft_cleaned)), np.array(spectrum_freqs), timesteps, v_collector, v_base, varactor_bias]
+    return [np.array(np.abs(fft_cleaned)), np.array(spectrum_freqs), timesteps, v_collector, v_base, varactor_bias, output]
 
 spectra = []
 values = []
 
 # values = []
-for i,v in enumerate(np.linspace(0, 20, 30)):
+
+# NUM_SPECTRA = 30
+NUM_SPECTRA = 5
+
+for i,v in enumerate(np.linspace(0, 20, NUM_SPECTRA)):
     values.append(run_sim(v))
     spectrum = values[i][0]
     if(not len(spectra)):
@@ -125,7 +130,10 @@ for i in values[0], values[-1]:
     plt.ylabel("V")
     plt.xlabel("T (nanoseconds)")
     plt.plot(i[2][-300:],i[3][-300:])
-
+    print(np.max(i[6][-300:]))
+    print(np.min(i[6][-300:]))
+    print(np.max(i[3][-300:]))
+    print(np.min(i[3][-300:]))
     plt.draw()
     plt.pause(0.001)
 

@@ -1250,10 +1250,56 @@ Awesomesauce!
 
 The CEL device has a safe operating range up to 3.3 V - a swing of 1.5 V, still only 40 mW.
 
-Oh, we also have that crazy-expensive device. What's that again?
+Oh, we also have that crazy-expensive device. What's that again? Ah, MWT-173
 
 That can do 250 mW at 5V.
 
+Looking back at our ngspice oscillator sim, the voltage swing on the output of the 
+Z50 transmission line is as expected,
+varying from 1.44 V at 6 GHz to 2.18 at 10 GHz. 
+
+The voltage directly on the cathode is quite different, however, wiggling from 
+2 to -3 volts, which is very concerning. Poor matching, I suppose?
+
+TX power is therefore
+ 
+
+for validation of this issue, [Leuschner 2010]:
+
+Generating
+high RF power from low supply voltages poses also another
+problem: the optimum load impedance of the PA output
+stage transistors becomes very small. A matching network
+with a high transformation ratio is needed to transform the
+antenna impedance of 50 to the optimum load impedance.
+High transformation ratios usually result in small bandwidth and higher losses. Possible solutions are the use of
+either non-standard high power RF devices or special circuit
+topologies using only the available standard devices.
 
 
+oh neat, one paper altered the applied base voltage to set the impedance match. That's cool!
 
+Indeed, changing the oscillator sim base bias to 0.7v improves the matching significantly - 
+at the cost of slightly lower output power of course.
+
+[Sowlati 2002]
+
+"Reported CMOS power amplifiers have DC voltage below
+the recommended voltage, but DC+RF voltage levels exceeding
+this value [4]. In this circumstance, the output power of the
+amplifier degrades up to 1dB after continuous operation for
+70-80 hours [5]"
+
+oh, wow! Okay, a burn-in test is required.
+
+"G2 follows the RF signal at D2 in both
+positive and negative swings around its DC value. This is suitable for Class AB/B design, where the signal has roughly the
+same positive and negative variations around the supply voltage."
+
+"However, in Class E power amplifier design, the voltage swing
+can be about three times the supply voltage (with a larger positive variation than negative around supply),"
+
+
+Including the jupyter with 'standalone' didn't work, so via pdf has to do.
+
+"jupyter nbconvert optical_centrifuge.ipynb --no-input --to pdf"
