@@ -9,6 +9,7 @@ void transistor_driver::print(std::string message){
 
 
 transistor_driver::transistor_driver(){
+    //split up because the preamp is just a bare transistor
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
     pinMode(VBASE_BIAS_PWM_PIN, OUTPUT);
     analogWrite(VBASE_BIAS_PWM_PIN, 0);

@@ -1219,3 +1219,41 @@ can persist program state after each segment of the experiment so as to restart
 the mlx90621 has a 60x16 deg FOV. 
 
 hey... the CD is conductive. We could totally CNC conductors onto it.
+
+
+
+The peak transistor collector voltage of 2V should only give us 40 milliwatts.
+does that mean we have to couple to 10 ohms or something and then match back to 50?
+
+oh, and Vpk is probably only 0.75V (Vpk vs Vpp).
+
+P = (0.707 * Vpk) ^ 2 / R
+
+
+
+I think so. Okay, no problem, 1/4 wavelength 25r line on the collector might do it
+
+hm, no - we need a wideband impedance transformer to do that - stubs perhaps?
+
+ah, damn. So even though our active device 
+can totally do some hundreds of mW, 
+
+ooh, but what if we cascode? Then our applied voltage
+can be 4 or even 6 V, and we don't need a huge 25 ohm trace and appropriate matching.
+
+yeah, looking online, cascoding applies equally well
+to RF circuits.
+
+we need a so-called shunt-feedback cascode.
+
+Awesomesauce!
+
+The CEL device has a safe operating range up to 3.3 V - a swing of 1.5 V, still only 40 mW.
+
+Oh, we also have that crazy-expensive device. What's that again?
+
+That can do 250 mW at 5V.
+
+
+
+
