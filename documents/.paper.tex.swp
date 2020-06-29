@@ -26,7 +26,7 @@
 
 \null\begin{tabular}[t]{l@{}}
   {Daniel Correia}\ \orcidlink{0000-0002-9353-0216}  \\
-  \textit{York University}
+  \textit{????????? York??????}
 \end{tabular}
 
 
@@ -85,9 +85,46 @@ The direct inactivation plaque and PCR data from [Yang], replicated by [Sun], is
 
 \end{autem}
 	
-
+\clearpage
 \begin{multicols}{1}
 
+
+\paragraph{{\Large the gist}}\
+
+Any claims of 
+
+
+
+The chain of literature 
+%
+[Fr\"{o}hlich 1968] \textrightarrow \ [Fr\"{o}hlich 1980] \textrightarrow \ [Liu 2009] \textrightarrow \ ([Hung 2014] $\parallel$ [Yang 2015] $\parallel$ [Sun 2017])\footnote{We have probably missed several steps in this chain out of haste.} apparently culminates in the flagship work we focus on in this paper,
+
+{\it Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses} [Yang 2015].
+%
+
+estabilishes that - unique to certain viruses, and apparently unlike human cell structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-band (6-10 GHz).
+
+More critically, [Yang 2015] (in parallel with [Hung 2014]) theoretically model and then experimentally demonstrate that the electric field strength required to produce an amplitude of vibration sufficient to tear the lipid envelope of the order of magnitude of 100 V/m.
+
+They demonstrate this with both a plaque and PCR assay, with fantastic agreement to the theoretical model.
+
+
+
+This is a non-ionizing, non-thermal technique.
+
+Microwave resonant absorption of viruses through dipolar coupling with confined acoustic vibrations
+
+This resonance mode 
+
+The myth that 2.4 GHz was chosen because it "couples strongly with water" is largely false; but this is 
+
+
+This is quite surprising, and should perhaps be considered with some trepidation, since 
+
+\footnote{This {\it confined} acoustic resonance is apparently distinct from common-and-garden pipe-organ acoustic resonance. Rather than simple covalent or Lennard-Jones interaction between particles, if [Fr\"{o}hlich 1968] is to be believed at these nanoscopic scales a sort of coherent wavefunction is set up among the particles of the virus which produces coupling modes not otherwise expected. We confess to not yet understanding this phenomenon; fortunately, while helpful, the details of how this mode appears is not critical to implementing this technique.}
+
+
+\footnote{``{For example, below about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}'' [ICNIRP 2020 \faExternalLink] }
 
 
 With typical 2.4 GHz microwave exposure, sterilization can only occur by heating of the fluid and tissue.
@@ -106,25 +143,6 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 
 \end{multicols}
 
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The chain of literature Fruluch -> ([Sun ] | [Yang 2015]) establishes that spherical virions possess a weak dipole resonance mode which happens to fall within the microwave spectrum, at approximately the X-band (6-10 GHz).
-
-This is a non-ionizing, non-thermal technique; 
-
-This resonance mode 
-
-The myth that 2.4 GHz was chosen because it "couples strongly with water" is largely false; but this is 
-
-
-This is quite surprising, and should perhaps be considered with some trepidation, since 
 
 
 
@@ -148,7 +166,7 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 
 {\color{red}  \} } 
 
-\footnote{All values have been converted to $W/m^2$ to avoid confusion.}
+\footnote{All values have been converted to $\text{W/m}^2$ to avoid confusion. 100 $\text{W/m}^2 = 50 \text{mW/cm}^2$}
 
 
 
@@ -373,34 +391,7 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 
 
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Acknowledgements}\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-This paper is not novel enough to deserve this chapter, but those to be acknowledged are.
-
-The authors of the original papers deserve the credit for this entire work;  it is rare that such a monumental finding is served on a silver platter.
-
-Professor Shahramian's excellent video blog {\it The Signal Path} inspired this work. 
-
-Dr. Dainis' videos on microbiological technique were also useful.
-
-Thanks to the professors at York and beyond for returning my emails. 
-
-Thanks to L.H. for wisdom regarding this project.
-
-Thanks to P.B and H.P. for tolerating ramblings and M. for the hug.
-
-Special thanks to all the people - most equally capable of writing this paper if provided the opportunity - who work menial shifts at the component suppliers that remained open that were so critical. Hopfstader be damned; despite the name below the abstract, this paper is of course entirely the result of circumstance and luck. 
-
-Chiefly among the enablers are of course my parents, Doris and Brian, without whom this work would have been done by someone else, and who also supported this work financially. 
-
-
-
-One Very Important Thought
+\subfile{acknowledgement}
 
 
 

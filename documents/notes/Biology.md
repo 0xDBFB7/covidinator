@@ -699,5 +699,10 @@ excitation at n=5, even though the driving amplitude is down by a factor of 5.
 I'm not sure I fully understand something fundamental here. In [Yang 2015], 
 
 
+"Influenza liposomes at 13C and 26C
+were on average, respectively, 40% and 10% stiffer, than at 37C".
+
+That's bad! Does that mean our resonance will shift significantly over temp? 
+
 
 

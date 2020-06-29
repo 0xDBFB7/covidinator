@@ -1303,3 +1303,6 @@ can be about three times the supply voltage (with a larger positive variation th
 Including the jupyter with 'standalone' didn't work, so via pdf has to do.
 
 "jupyter nbconvert optical_centrifuge.ipynb --no-input --to pdf"
+
+there need to be no spaces after the $$ math mode entry in jupyter, else
+Latex gives an error.
