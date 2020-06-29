@@ -5,7 +5,7 @@
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Captain's Log, Supplemental}\\
+{\Huge Captain's Log, Supplemental}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{Molecular dynamics simulation}
@@ -84,7 +84,71 @@ CEL did not supply a SPICE model for the GaAs FET device used in early prototype
 
 OpenEMS is excellent, with Python bindings, some lumped components, and mesh refinement. However, embarassingly, we were not able to resolve all the dependency issues in order to install it.
 
+
+\PRLsep{{\itshape Wherein an oscillator is designed }}
+
+
+\paragraph{Biasing}\
+
+In our simulations, the varactor-tuned feedback circuit appeared to be particularly sensitive to the introduction of bias-tees. 
+
+
+The gate must be weakly pulled to ground, otherwise stray charge destroys the oscillation.
+
+\fancyhead[C]{style 1 with thin line}
+
+
+
+With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke. Use of defected grounds can increase inductance, but this was not evaluated.
+
+If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters at 8 GHz) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
+
+However, reflections from these structures still appeared to distort the frequency/phase response beyond repair, even with ostensibly wideband stubs [Syrett 1980].
+
+\noindent\fbox{\parbox{\linewidth}{
+	Rebuke: despite this blather, many other papers have had success with bias-tees at these frequencies.
+}}
+
+Alternate methods evaluated, failures: 
+
+
+In production, these could be accomodated by graphite-polymer printed resistors. 
+
+
+Odd-pole varactor-loaded combline filters appeared to have excellent phase and frequency response; however, the geometry necessitates low-inductance via stitching to the ground plane.
+
+%\noindent\fbox{\parbox{\linewidth}{
+\begin{autem}
+	{\it autem} Others have had great success with varactor-tuned comblines, especially non-grounded lines.
+\end{autem}
+
+[Tsuru 2008 fig. 10] is an excellent review of various oscillator designs.
+
+The parasitic inductance of common varactors appears to become problematic at these frequencies (but not for non-wideband use).
+
+\paragraph{\textbf{Spacing}}\
+
+FDTD results still yielded some coupling at 2 mm isolation.
+
+\paragraph{\textbf{Via stitching}}\
+
+Rather than the almost universal technique of via stitching components immediately to the ground plane (a tedious process with our prototyping setup), a large ground pour on the component layer was used wherever ground was needed, as mentioned in [Hunter? combline]. Since we use microstrip rather than coplanar waveguide, 
+
+Since the ground plane does not participate in the DC bias at all, no vias are required in the final device. This means that the drilling, electroless strike and electroplating steps are unnecessary for production.
+
+
+\paragraph{A}
 \rule{\linewidth}{0.2pt}
+
+Microwave design has a reputation for being the purview of wizards. The software [Microwave Office], Agilent ADS, or Mathworks 
+
+It seems there's a subset of these, where wide tolerances and poor performance are acceptable, that does not require a goatee or the sale of firstborn.
+
+Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
+
+We are also aided by the fact that what took a \$150,000 computing cluster a decade ago can be done in a few minutes by a single budget GPU.
+
+With judicious application of reference designs, it seems to be possible to design 
 
 The oscillator design is a testament  This highlights that a computation is not a substitute for understanding.
 
@@ -126,12 +190,21 @@ It was thought that a transient simulation - to determine how the spectrum actua
 
 As of 0.0.20, QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively.
 
-\includegraphics[scale=0.5]{3d_spectrum_2.png}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{3d_spectrum_2.png}
+\end{figure}
 
 The complete transient simulation matched reality very closely. 
 
+"Wideband", p. 378, Figure 8.36, dnw
 
+\begin{figure}[H]
+	\includesvg[width=\textwidth]{wideband_LO_2_simulated_tuning}
+ 	\caption{"Wideband VCO 2": BFP620  \\
+ 	 Oscillator tuning simulated with electronics/ngspice/oscillator\_designer\_2.py commit <>, eLabID 20200613-d28a8004c...}
+\end{figure}
 
+The pad size 
 
 Because we lacked a spectrum analyzer that could monitor the higher poles of the filter until the bootstrap LO was designed, we had to rely on in-silico analyeses.
 
@@ -182,9 +255,10 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the non-FDTD portion is less than some threshold.
 
 
-\rule{\linewidth}{0.2pt}
+\PRLsep{{\itshape Wherein an oscillator is designed }}
 
-Originally tried 
+\clearpage
+\PRLsep{ Wherein antennas are characterized}
 
 The impedance of an antenna over frequency can be determined by:
 

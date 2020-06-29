@@ -330,54 +330,6 @@ With large feedback-loop structures, such as long PiN-switched phasing lines, pr
 \paragraph{}
 The buffer amplifiers 
 
-\paragraph{Biasing}\
-
-In our simulations, the varactor-tuned feedback circuit appeared to be particularly sensitive to the introduction of bias-tees. 
-
-
-The gate must be weakly pulled to ground, otherwise stray charge destroys the oscillation.
-
-\fancyhead[C]{style 1 with thin line}
-
-
-
-With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke. Use of defected grounds can increase inductance, but this was not evaluated.
-
-If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters at 8 GHz) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
-
-However, reflections from these structures still appeared to distort the frequency/phase response beyond repair, even with ostensibly wideband stubs [Syrett 1980].
-
-\noindent\fbox{\parbox{\linewidth}{
-	Rebuke: despite this blather, many other papers have had success with bias-tees at these frequencies.
-}}
-
-Alternate methods evaluated, failures: 
-
-
-In production, these could be accomodated by graphite-polymer printed resistors. 
-
-
-Odd-pole varactor-loaded combline filters appeared to have excellent phase and frequency response; however, the geometry necessitates low-inductance via stitching to the ground plane.
-
-%\noindent\fbox{\parbox{\linewidth}{
-\begin{autem}
-	{\it autem} Others have had great success with varactor-tuned comblines, especially non-grounded lines.
-\end{autem}
-
-[Tsuru 2008 fig. 10] is an excellent review of various oscillator designs.
-
-The parasitic inductance of common varactors appears to become problematic at these frequencies (but not for non-wideband use).
-
-\paragraph{\textbf{Spacing}}\
-
-FDTD results still yielded some coupling at 2 mm isolation.
-
-\paragraph{\textbf{Via stitching}}\
-
-Rather than the almost universal technique of via stitching components immediately to the ground plane (a tedious process with our prototyping setup), a large ground pour on the component layer was used wherever ground was needed, as mentioned in [Hunter? combline]. Since we use microstrip rather than coplanar waveguide, 
-
-Since the ground plane does not participate in the DC bias at all, no vias are required in the final device. This means that the drilling, electroless strike and electroplating steps are unnecessary for production.
-
 
 
 

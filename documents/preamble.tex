@@ -24,6 +24,14 @@
 \usepackage{standalone}
 \usepackage{pdfpages}
 \usepackage{subfiles}
+\usepackage{svg}
+\usepackage{sidecap}
+\usepackage{float}
+\usepackage{amssymb}
+
+
+\newlength{\PRLlen}
+\newcommand*\PRLsep[1]{{\itshape \Large\settowidth{\PRLlen}{#1}\advance\PRLlen by -\textwidth\divide\PRLlen by -2\noindent\makebox[\the\PRLlen]{\resizebox{\the\PRLlen}{1pt}{$\blacktriangleleft$}}\raisebox{-.5ex}{#1}\makebox[\the\PRLlen]{\resizebox{\the\PRLlen}{1pt}{$\blacktriangleright$}}\bigskip}}
 
 
 \usepackage{graphicx}

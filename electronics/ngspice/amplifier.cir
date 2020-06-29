@@ -1,5 +1,6 @@
 .title Oscillator
 
+//Cascoded amp from [Sowlati 2002]
 
 .include ../models/BFP620.lib
 .include ../models/SMV2019079LF.lib
@@ -8,27 +9,16 @@
 
 Vsupply VCC 0 PULSE(0 2.0 20p 5p 1p 1ms 1ms)
 
-Lsupply VCC collector 440NH
+Lsupply VCC D2 440NH
 
-X1 collector Base E1 E2 BFP620
+X1 D2 upper_base upper_E1 upper_E2 BFP620
+X2 collector base_ upper_E1 upper_E2 BFP620
 
-//LV1 Base Base_ 1.4NH
-//X6 Base Base_ 10pf0402
-X5 Base Base_ SMV2019079LF
-X6 b___ Base_ SMV2019079LF
-LV3 b___ 0 0NH
-//C1 Base_ 0 0.3p
-
-
-//LV2 collector collector__ 0.7NH
-//X7 collector 0 10pf0402
-//C2 collector__ 0 0.3p
 
 X7 collector collector__ 10pf0402
-X8 collector__ c__ SMV2019079LF
-X9 c___ c__ SMV2019079LF
+
 LV2 c___ 0 0NH
-//X6 0 Base_ SMV2019079LF
+
 
 Rbase_pulldown Base 0 10K //0 ohm link
 
@@ -43,7 +33,7 @@ Rout output 0 50
 
 Lem E1 E_ 440NH
 Rem E_ E__ 1
-Vem E__ 0 -1
+Vem S1 0 -0.7
 
 
 Rem2 E1 E2 0
@@ -68,7 +58,7 @@ Vcap Vvaractor 0 varactor_bias_voltage
 
 setcs DIOgradingCoeffMax=3.0
 setcs DIOtDepCapMax = 2.0
-//tran 1p 100000ps uic
+tran 1p 100000ps uic
 //uic?
 //plot VCC Base
 //plot collector

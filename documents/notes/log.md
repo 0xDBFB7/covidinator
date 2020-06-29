@@ -8,8 +8,6 @@ Very effective fit to 40% inactivation level, but much higher power required for
 
 The assumption made that the core and shell contain equal and opposite charges does not seem to be correct, since the isoelectric point of Inf. A is not 7 [see structural below] and it's dragged around in gel electrophoresis.
 
-
-
 Myriad methods - often mathematically overlapping - such as coarse-grained bead-spring molecular dynamics (via integration of particle motion), algebraic elastic networks (elNémo), and finite-element methods (via solution of governing elastic PDEs - (Ivanovska, 2004, use CADRE, and Bathe (2007)) have been used to great effect for simulation of mechanical properties of viruses. 
 
 Most recently, the ultimate-fidelity all-atom MD methods have also become computationally viable (Durrant 2019). 
@@ -18,9 +16,9 @@ An MD scheme was chosen for no particularly good reason. In fact, we hardly need
 
 The algebraic normal-mode methods included in many software packages [charmm] do not seem to be sufficient for this task, as they often assume the limit of low-amplitudes.
 
-LAMMPS, GROMACS, HOOMD-blue, etc were evaluated, and all could been usable with some modification. ~~However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, the specific time-domain electric field impulses desired, the many-run parameter sweep required to optimize the impulse, and the chain of software required to synthesize an artificially coarse new geometry, a custom ultra-simplistic, ultra-crude MD code was written.~~
+LAMMPS, GROMACS, HOOMD-blue, etc were evaluated, and all could been usable with some modification. ~~However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, the specific time-domain electric field impulses desired, the many-run parameter sweep required to optimize the impulse, and the chain of software required to synthesize an artificially coarse new geometry, a custom ultra-simplistic, ultra-crude MD code was written.~~ It was then abandoned in favour of OpenMM; we had succumbed to the not-invented-here fallacy.
 
-OpenMM is used.
+
 
 -------
 
