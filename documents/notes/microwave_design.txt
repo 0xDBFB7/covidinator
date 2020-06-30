@@ -1308,7 +1308,18 @@ Including the jupyter with 'standalone' didn't work, so via pdf has to do.
 there need to be no spaces after the $$ math mode entry in jupyter, else
 Latex gives an error.
 
-One issue with jupyter notebooks are that they seem to encourage a sort of non-modular
+One issue with jupyter notebooks is that they seem to encourage a sort of non-modular
 coding. 
+
+The resonant frequency is not the optimal excitation frequency because of the second term
+in the sqrt. 
+
+"Candidates for the local maximum and minimum in some interval are 
+1. Critical points 
+2. the endpoints 
+3. (not applicable since our function is continuous and well-behaved)"
+
+
+The distribution of the breaking force has a profound effect on the electric field.
 
 
