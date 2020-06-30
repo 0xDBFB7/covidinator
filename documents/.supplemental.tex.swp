@@ -318,9 +318,11 @@ Many equations in papers on the FDTD method are supplied without explicit scalin
 
 Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run a test using a unit-aware calculator such as {\it sharkdp/insect}.
 
-\rule{\linewidth}{0.2pt}
+\PRLsep{{\itshape The antenna itself }}
 
-The impedance of a microstrip antenna varies with position on its plane. Probe feeds that couple a microstrip to a specific point are often used.
+The impedance of a patch antenna varies with position on its surface. Probe feeds to a specific point on the patch
+
+Unfortunately, patch antennas have a relatively narrow bandwidth.
 
 \rule{\linewidth}{0.2pt}
 

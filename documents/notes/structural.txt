@@ -1,0 +1,133 @@
+Coliphage T4
+---------------------------------------
+
+Overall isoelectric point: 6.53 [Proteome-pI database]
+[Michen 2009]
+
+   Capsid:
+   
+Length 120 +/- 3 nm | Width 85 +/- 2 nm [Baschong 1988]
+Thickness: 5.7 +/- 0.5 nm [Baschong 1988]
+Mass 82 MDa [Fokine (2004)]
+
+Charge: +360 e+ [Tarasova 2018]
+(but we expect a surface charge density around −0.2 e/nm^2, which conflicts with this.
+some other protein must be coating the dsDNA) [Nap 2014]
+
+Proteins and models: 
+
+capsid: gp23, gp24 [PDB:1YUE]
+w CryoEM EM-6XXX 
+Fitted CryoEM 5VF3 (isometric mutant)
+
+   dsDNA: --done--
+
+Mass: 112 MDa [Fokine (2004)]
+Size: 172 kbp dsDNA [Fokine (2004)]
+Charge: 344k e- [2e-/bp from phosphate group assumed for DNA]
+
+Model as tightly packed charged beads restrained with an L-J force.
+
+   Nanoindentation:
+
+Empty? Lambda (50 nm), Empty? Phi29 (54 nm) [] [Roos 2009]
+Full T7 (57 +/- 2.2 nm) [Vörös 2016]
+Tip shape:  
+
+
+Influenza:
+---------------------------------------
+
+Overall isoelectric point: 
+(H1N1: 7.24) (H5N1: 7.08) [Proteome-pI database]
+(H3N1: 6.5) (H3N2: 5.0) ("Other Influenza A" 6.5 to 7.0) [Michen 2009]
+
+Total mass (X49/H3N2): 161 +/- 17 MDa [Ruigrok 1984] 
+
+   Envelope:
+   
+Host-derived lipid bilayer, with M1 matrix proteins supporting core
+
+Diameter (X-31/H3N2): 120 (84 to 170) nm x 100 nm [Harris 2006]
+Thickness (X-31/H3N2): 4 nm [Harris 2006]
+Mass: 
+Distribution: a wide variety of shapes and sizes. 
+Aspect ratios from 1.2 (70.9%) to >7 (13%). [Harris 2006] 
+
+Charge: 
+Expected (1.16e7 e- based on equal shell core assumption) [Yang 2015]
+
+
+ 
+Proteins and models: 
+
+   Helical nucleocapsid:
+
+[Durrant (supplemental)][Compans 1972][SCHULZE ][Nermut 1970]
+
+Spike:
+
+Mass (each):
+Mass (total): 
+Charge (each):
+Charge (total):
+Overall charge:
+
+
+
+   ssRNA Genome (ds?)
+  
+
+
+   Nanoindentation:
+
+
+Empty liposome (PR8/H1N1): 
+[Li, 2011]
+Tip: BL-RC150VB, V-shape, radius 30 nm
+
+
+Batting average: 0.35
+
+
+Coronaviridae
+---------------------------------------
+
+
+Diameter (SARS-nCOV-2): 80 to 160 nm [Liu, 2020]
+[Masters 2006]
+
+
+   Envelope:
+   
+Host-derived lipid bilayer, with M (also known as E1) membrane proteins supporting core
+
+   Helical nucleocapsid:
+
+
+
+   Spike proteins:
+
+
+
+   Genome:
+
+   RNA
+
+
+   
+
+   Nanoindentation:
+   
+Not available.
+
+Marchetti
+
+
+Phi6
+---------------------------------------
+
+Models: Capsids on VIPERdb, (envelope?)
+
+
+

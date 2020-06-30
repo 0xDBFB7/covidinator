@@ -60602,7 +60602,7 @@ Section: Blog</dc:description>
         </bib:authors>
         <link:link rdf:resource="#item_3179"/>
         <bib:pages>357–359</bib:pages>
-        <dc:date>1992</dc:date>
+        <dc:date>1991</dc:date>
         <dc:description>Publisher: IEEE</dc:description>
         <dc:title>Finite difference time domain calculations of antenna mutual coupling</dc:title>
     </bib:Article>
@@ -60809,6 +60809,1575 @@ Section: Blog</dc:description>
         </dc:identifier>
         <dcterms:dateSubmitted>2020-06-24 03:23:05</dcterms:dateSubmitted>
         <dc:title>IEEE Xplore Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Report rdf:about="http://www.osti.gov/servlets/purl/920838-SEkLR5/">
+        <z:itemType>report</z:itemType>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brocato</foaf:surname>
+                        <foaf:givenName>Robert Wesley</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3198"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.osti.gov/servlets/purl/920838-SEkLR5/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>SAND2004-6577, 920838</bib:pages>
+        <dc:date>2004-12-01</dc:date>
+        <dc:description>DOI: 10.2172/920838</dc:description>
+        <dcterms:dateSubmitted>2020-06-24 04:49:16</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This paper describes the development of a set of software tools useful for analyzing ultra-wideband (UWB) antennas and structures. These tools are used to perform finite difference time domain (FDTD) simulation of a conical antenna with continuous wave (CW) and UWB pulsed excitations. The antenna is analyzed using spherical coordinate-based FDTD equations that are derived from first principles. The simulation results for CW excitation are compared to simulation and measured results from published sources; the results for UWB excitation are new.</dcterms:abstract>
+        <prism:number>SAND2004-6577, 920838</prism:number>
+        <dc:title>FDTD simulation tools for UWB antenna analysis.</dc:title>
+    </bib:Report>
+    <z:Attachment rdf:about="#item_3198">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://core.ac.uk/download/pdf/71317759.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-24 04:49:15</dcterms:dateSubmitted>
+        <dc:title>Brocato - 2004 - FDTD simulation tools for UWB antenna analysis..pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.painscience.com/articles/repetitive-strain-injuries.php">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>www.PainScience.com</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3201"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.painscience.com/articles/repetitive-strain-injuries.php</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.painscience.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-25 01:45:25</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>Five surprising, important facts about RSI like carpal tunnel syndrome or runner’s knee.</dcterms:abstract>
+        <dc:title>Repetitive Strain Injuries Tutorial</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3201">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.painscience.com/articles/repetitive-strain-injuries.php</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 01:45:26</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://ecee.colorado.edu/~bart/book/book/chapter7/ch7_3.htm">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3203"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ecee.colorado.edu/~bart/book/book/chapter7/ch7_3.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 04:04:10</dcterms:dateSubmitted>
+        <dc:title>MOSFET analysis</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3203">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ecee.colorado.edu/~bart/book/book/chapter7/ch7_3.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 04:04:11</dcterms:dateSubmitted>
+        <dc:title>MOSFET analysis</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3204">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.csun.edu/~ltietz/cta468/L28/DVD4Dummies2001v1.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 17:59:55</dcterms:dateSubmitted>
+        <dc:title>DVD4Dummies2001v1.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.bunniestudios.com/blog/?p=5450">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+           <z:Blog></z:Blog>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3206"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.bunniestudios.com/blog/?p=5450</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.bunniestudios.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-25 18:32:01</dcterms:dateSubmitted>
+        <z:language>en-US</z:language>
+        <dc:title>Exclave: Hardware Testing in Mass Production, Made Easier « bunnie's blog</dc:title>
+        <z:shortTitle>Exclave</z:shortTitle>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3206">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.bunniestudios.com/blog/?p=5450</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 18:32:09</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.bunniestudios.com/blog/?p=4981">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+           <z:Blog></z:Blog>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3208"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.bunniestudios.com/blog/?p=4981</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.bunniestudios.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-25 18:35:07</dcterms:dateSubmitted>
+        <z:language>en-US</z:language>
+        <dc:title>Why I’m Using Bitmarks on my Products « bunnie's blog</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3208">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.bunniestudios.com/blog/?p=4981</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 18:35:09</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://sound-au.com/articles/followers.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://sound-au.com/articles/followers.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 19:09:15</dcterms:dateSubmitted>
+        <dc:title>Voltage Followers</dc:title>
+    </bib:Document>
+    <bib:Document rdf:about="#item_3210">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3211"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://sound-au.com/articles/followers.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 19:09:34</dcterms:dateSubmitted>
+        <dc:title>Voltage Followers</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3211">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://sound-au.com/articles/followers.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 19:09:35</dcterms:dateSubmitted>
+        <dc:title>Voltage Followers</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://electronics.stackexchange.com/questions/423189/error-handling-in-embedded-systems-development">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+            <z:Website>
+               <dc:title>Electrical Engineering Stack Exchange</dc:title>
+            </z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3213"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://electronics.stackexchange.com/questions/423189/error-handling-in-embedded-systems-development</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: electronics.stackexchange.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-25 20:21:38</dcterms:dateSubmitted>
+        <dc:title>c - Error handling in embedded systems development</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3213">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://electronics.stackexchange.com/questions/423189/error-handling-in-embedded-systems-development</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 20:21:42</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.drdobbs.com/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>Dr. Dobb's</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3215"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.drdobbs.com/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.drdobbs.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-25 20:24:55</dcterms:dateSubmitted>
+        <dcterms:abstract>Software tools and techniques for global software development. Dr. Dobb's features articles, source code, blogs,forums,video tutorials, and audio podcasts, as well as articles from Dr. Dobb's Journal, BYTE.com, C/C++ Users Journal, and Software Development magazine.</dcterms:abstract>
+        <dc:title>Dr. Dobb's | Good stuff for serious developers: Programming Tools, Code, C++, Java, HTML5, Cloud, Mobile, Testing</dc:title>
+        <z:shortTitle>Dr. Dobb's | Good stuff for serious developers</z:shortTitle>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3215">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.drdobbs.com/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 20:24:57</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://ieeexplore.ieee.org/document/4314902/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0018-9456"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stuchly</foaf:surname>
+                        <foaf:givenName>Maria A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stuchly</foaf:surname>
+                        <foaf:givenName>Stanislaw S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3216"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://ieeexplore.ieee.org/document/4314902/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>176-183</bib:pages>
+        <dc:date>1980</dc:date>
+        <dcterms:dateSubmitted>2020-06-25 23:48:01</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Coaxial line reflection methods for measuring dielectric properties of biological materials at radio (RF) and microwave (MF) frequencies are reviewed and compared from the point of view of their relative uncertainties of measurement of lossy substances with high dielectric constant. Advantages and limitations of different methods and some practical recommendations are presented.</dcterms:abstract>
+        <dc:title>Coaxial Line Reflection Methods for Measuring Dielectric Properties of Biological Substances at Radio and Microwave Frequencies-A Review</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0018-9456">
+        <prism:volume>29</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>IEEE Transactions on Instrumentation and Measurement</dc:title>
+        <dc:identifier>ISSN 0018-9456</dc:identifier>
+        <dcterms:alternative>IEEE Trans. Instrum. Meas.</dcterms:alternative>
+        <dc:identifier>DOI 10.1109/TIM.1980.4314902</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3216">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Maria_Stuchly/publication/3093510_Coaxial_Line_Reflection_Methods_for_Measuring_Dielectric_Properties_of_Biological_Substances_at_Radio_and_Microwave_Frequencies-A_Review/links/5550daae08ae956a5d25da23.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 23:47:59</dcterms:dateSubmitted>
+        <dc:title>Stuchly and Stuchly - 1980 - Coaxial Line Reflection Methods for Measuring Diel.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3219">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>47</prism:volume>
+                <dc:title>CANADIAN BIOSYSTEMS ENGINEERING</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Venkatesh</foaf:surname>
+                        <foaf:givenName>M S</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Raghavan</foaf:surname>
+                        <foaf:givenName>G S V</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3218"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>17</bib:pages>
+        <dc:date>2005</dc:date>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>An overview of dielectric properties measuring techniques</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3218">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Vijaya_Raghavan5/publication/235435108_An_Overview_of_Dielectric_Properties_Measuring_Techniques/links/0046353b57fe32f70d000000.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-25 23:52:59</dcterms:dateSubmitted>
+        <dc:title>Venkatesh and Raghavan - 2005 - An overview of dielectric properties measuring tec.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3220">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ww1.microchip.com/downloads/en/DeviceDoc/22039d.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-26 16:10:54</dcterms:dateSubmitted>
+        <dc:title>MCP4725.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.3420">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3222"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.3420</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-26 16:39:45</dcterms:dateSubmitted>
+        <dc:title>Phys. Rev. Lett. 82, 3420 (1999) - Optical Centrifuge for Molecules</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3222">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.3420</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-26 16:39:46</dcterms:dateSubmitted>
+        <dc:title>Phys. Rev. Lett. 82, 3420 (1999) - Optical Centrifuge for Molecules</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0020746208000644">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0020-7462"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Holsapple</foaf:surname>
+                        <foaf:givenName>K. A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3225"/>
+        <link:link rdf:resource="#item_3224"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0020746208000644</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>733-742</bib:pages>
+        <dc:date>October 1, 2008</dc:date>
+        <dcterms:dateSubmitted>2020-06-26 17:49:06</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The analysis of the stresses in one-, two- and three-dimensional spinning bodies is discussed in a systematic and comprehensive way. First elastic solutions are derived for rods, for elliptical-shaped flat disks and for ellipsoidal solid bodies spinning about their sideways axes. Then the spins for first plastic yield are found in each case using each of the Tresca and the von Mises yield conditions. Then upper and lower bounds on the maximum allowable limit spins where the body would globally fail assuming perfectly plastic behavior are derived. The elastic solutions at first yield always give a lower bound to that limit spin, but global failure generally does not occur until the spin is increased. A way to calculate an improved lower bound is illustrated. Upper bounds are found in a simple and new way. The method uses the fact that the volume-averaged stresses can be calculated directly from the loadings without the need for any actual stress solutions, and then it is proved that the use of those average stresses in the yield functions always gives an upper bound to the limit loads. That use of the statically determinate average stresses to obtain meaningful plastic upper bounds to limit loads is though to be a new method, and can be applied to any shape. Finally, several finite element calculations are used to determine the quantitative relations between the lower and upper bounds and the actual limit spins for ellipsoidal bodies. The results are of interest in the spin of planetary bodies, where they explain the nature of an average-stress approximate method, and in the analysis of spinning bodies in general. In addition, the approach gives a very interesting example of the utility of the limit analysis approaches of plasticity theories.</dcterms:abstract>
+        <dc:title>Spinning rods, elliptical disks and solid ellipsoidal bodies: Elastic and plastic stresses and limit spins</dc:title>
+        <z:shortTitle>Spinning rods, elliptical disks and solid ellipsoidal bodies</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0020-7462">
+        <prism:volume>43</prism:volume>
+        <prism:number>8</prism:number>
+        <dc:title>International Journal of Non-Linear Mechanics</dc:title>
+        <dc:identifier>ISSN 0020-7462</dc:identifier>
+        <dcterms:alternative>International Journal of Non-Linear Mechanics</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/j.ijnonlinmec.2008.03.011</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3225">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://pdf.sciencedirectassets.com/271594/1-s2.0-S0020746208X00095/1-s2.0-S0020746208000644/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDoaCXVzLWVhc3QtMSJGMEQCIChuziN6h4kvlYaH3Gn%2BmYB7f3ojMQHrHgE9sZr5tiD5AiA75rxEJuqGoWaWs%2FAbaulnTKuVMrp8FebZZFuNGqSQQyq9AwjC%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDA1OTAwMzU0Njg2NSIMlokuaKp3E7fMgbO3KpEDBjmcsxPKW3wvsip8RIPbmAaKGS2%2FCMjS7krTWFFn5F0IyF7TX5zdv4hoE67%2BBQo3KRpl8dUEY7KINI0WrHgzCp6UjWFdaNc8ycbrnw9nGBORegxDp122%2FQTFWrbrQypIhEXExQs5Mkmpamiy5uNCdNCBm0djBJOHFErySfCHZCa0tnXnse61CGCIgo4%2BFmreAPfSTzi059jiAokh2D2si1IcvQZ%2F1A3KOY3bvDwcn1IS%2BxrpifvmX6J%2BlKVImlSo93ukjNaufK08ZIuu7fNjXqn9tCI2zYQc0VOKiVrfICMHURFGpTgWA0UOQkyCXVkO0WVK8GQxy3zXDUl71NxBTZIKIBczm%2FybrtD6vUYpw0WtabDsD5raGbVRunf44YJnzebUJK9G48ralMyWfaXAbc8q7WzCtzRHLrXQZbEOCDljrByu4%2BY71%2B9lOPhZdD83wwW2CyRehmwCpgvdgDkqChB0k3xUu5AA%2F0KFLI8FUTHLAbQ8TwROqr8fnMnBPpa1NJd2GTbqGNerw1iuM4IuLMMwkdvY9wU67AHPmn%2B87mBWPjx5DE8rahEugJI2LaMZ7rDt6AXgKYX81lg%2FPZOUI2tLDQxs5CUontL9cs6AVL9QP7h%2FwLI%2BpwstBAvAeKmXmtYaMQnjj%2B0mxI0gXTplYbmsF%2BkRhLICNz4rdmox7nc2JFEEZztUNWdrnPCMzQzO3cE1Zss18NLs%2FxYX88N6KhjsPcR5N%2BXSwHEBVsfPhvuwMuUmrwrZMD334d3mT61%2BJ7LlIWREqp82kneb%2BhRqinO5PSRCEOwy7vFLlvXRmDuWdpqS7TWLjXrOnkcvFvKrHnK%2B3qeEKdwis3IySibx0bb6KRpbTw%3D%3D&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200626T174906Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTY32GNZU5T%2F20200626%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=34cf1f1ff400613a66b7d384040fc8612a64cf7bba0e8bdf5df880a17d3e2ae4&amp;hash=f3a4f86d0c5ffd0b22501e06898ec433bb86c962cd55280309e34a686aa7bd47&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=S0020746208000644&amp;tid=spdf-8948af98-cbfe-4c99-8ed9-4694f6be5ed5&amp;sid=1b1000de6649d6404999f510b1ea9c9a3ad2gxrqa&amp;type=client</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-26 17:49:09</dcterms:dateSubmitted>
+        <dc:title>Holsapple_2008_Spinning rods, elliptical disks and solid ellipsoidal bodies.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+        <dc:description>&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml&quot; id=&quot;title&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;&lt;ul xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;list-style-type: none; padding-left:0px&quot; id=&quot;toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/1&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/2&quot;&gt;Spinning rods&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/2&quot;&gt;Elastic and plastic stresses in a spinning flat elliptical disk&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/2&quot;&gt;The elastic solution in an elliptical disk&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/3&quot;&gt;First yield in an elliptical disk&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/3&quot;&gt;Fully plastic solutions in an elliptical disk&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:24px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/3&quot;&gt;Fully plastic solutions in a circular disk&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/3&quot;&gt;Fully plastic solutions in an elliptical disk&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/4&quot;&gt;Lower bound solutions for the limit spin&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/4&quot;&gt;Average stresses and upper bound solutions for the elliptical disk&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/6&quot;&gt;Spinning ellipsoidal bodies&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/10&quot;&gt;Summary and conclusions&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/10&quot;&gt;Acknowledgment&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/10&quot;&gt;Appendix A. A theorem about average stresses and upper bounds to limit loads&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_9I4CZ34B/10&quot;&gt;References&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</dc:description>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3224">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0020746208000644</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-26 17:49:08</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://arxiv.org/abs/1712.02126">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+               <dc:title>arXiv:1712.02126 [cond-mat, physics:physics]</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Krishnam</foaf:surname>
+                        <foaf:givenName>Ujjawal</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jha</foaf:surname>
+                        <foaf:givenName>Prafulla K.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_3227"/>
+        <link:link rdf:resource="#item_3229"/>
+        <link:link rdf:resource="#item_3228"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/1712.02126</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2018-03-09</dc:date>
+        <dc:description>arXiv: 1712.02126</dc:description>
+        <dcterms:dateSubmitted>2020-06-27 01:10:20</dcterms:dateSubmitted>
+        <z:libraryCatalog>arXiv.org</z:libraryCatalog>
+        <dcterms:abstract>Effect of high and low Reynolds number is studied on low frequency vibrational modes of a spherical virus embedded in the aqueous medium. We have used an analytical approach based on fluid dynamic and classical Lamb theory to calculate the vibrational modes of a virus with material parameters of lysozyme crystal in water. The obvious size effect on the vibrational modes is observed. The estimated damping time which is of the order of picosecond varies with Reynolds number and shows a high value for a critical Reynolds number. The stationary eigenfrequency regions are observed for every quantum number l and n suggesting the most probable Re ranges for acoustic treatment of viruses in order to detect or annihilate the virus using corresponding viruswater configuration.</dcterms:abstract>
+        <dc:title>On detection and annihilation of spherical virus embedded in a fluid matrix at low and moderate Reynolds number</dc:title>
+    </bib:Article>
+    <bib:Memo rdf:about="#item_3227">
+       <rdf:value>Comment: 18 pages, 4 figures, 3 tables</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3229">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/abs/1712.02126</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-27 01:10:23</dcterms:dateSubmitted>
+        <dc:title>arXiv.org Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3228">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/pdf/1712.02126.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-27 01:10:21</dcterms:dateSubmitted>
+        <dc:title>Krishnam_Jha_2018_On detection and annihilation of spherical virus embedded in a fluid matrix at.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="http://www.hth.com/snap/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3231"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.hth.com/snap/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-27 15:37:55</dcterms:dateSubmitted>
+        <dc:title>S.N.A.P - Scaleable Node Address Protocol</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3231">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.hth.com/snap/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-27 15:37:57</dcterms:dateSubmitted>
+        <dc:title>S.N.A.P - Scaleable Node Address Protocol</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.melexis.com/en/product/MLX90621/Far-Infrared-Sensor-Array-High-Speed-Low-Noise">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>Melexis</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3233"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.melexis.com/en/product/MLX90621/Far-Infrared-Sensor-Array-High-Speed-Low-Noise</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Library Catalog: www.melexis.com</dc:description>
+        <dcterms:dateSubmitted>2020-06-27 16:50:07</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>IR sensor array that can measure temperature distribution at high speed with low noise on a surface or in a room with a 16x4 RES and total FOV of 120°x30°, 60°x15° or 40°x10°.</dcterms:abstract>
+        <dc:title>Far infrared sensor array at high speed with low noise (16x4 RES)</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3233">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.melexis.com/en/product/MLX90621/Far-Infrared-Sensor-Array-High-Speed-Low-Noise</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-27 16:50:12</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3234">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ieee.li/pdf/essay/cascode_amplifiers.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 00:21:03</dcterms:dateSubmitted>
+        <dc:title>cascode_amplifiers.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3235">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/APCCAS.2006.342446</dc:identifier>
+                <dc:title>APCCAS 2006 - 2006 IEEE Asia Pacific Conference on Circuits and Systems</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Ruey-Lue</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Su</foaf:surname>
+                        <foaf:givenName>Yan-Kuin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:givenName>Chien-Hsuan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3237"/>
+        <link:link rdf:resource="#item_3236"/>
+        <bib:pages>367-369</bib:pages>
+        <dc:date>December 2006</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>APCCAS 2006 - 2006 IEEE Asia Pacific Conference on Circuits and Systems</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>In this paper, a two-stage cascaded power amplifier (PA), which consists of cascode topology, for ultrawideband (UWB) systems operating in the 3.1-4.8 GHz frequency range is presented. The shunt-shunt feedback is used to arrive at wideband matching. A three-section ladder output network is exploited to achieve excellent output match in a wideband fashion and to optimize the power performance. The PA is implemented by TSMC 0.18mm mixed signal/RF process. The measured results show the following performance: S21 of 20.7-dB, more than 10-dB input and output return loss, 5.8% maximum power-added-efficiency and 2.57dBm output P1dB with 15.57dB power gain at 3GHz</dcterms:abstract>
+        <dc:title>3 5 GHz Cascoded UWB Power Amplifier</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3237">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/abstract/document/4145407</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 00:35:59</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3236">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=4145407&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzQxNDU0MDc=</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 00:35:54</dcterms:dateSubmitted>
+        <dc:title>Wang et al_2006_3 5 GHz Cascoded UWB Power Amplifier.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3238">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.mwtinc.com/wp-content/uploads/2017/01/mwt-1.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 00:46:19</dcterms:dateSubmitted>
+        <dc:title>MWT-173.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3239">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/RFIC.2010.5477401</dc:identifier>
+                <dc:title>2010 IEEE Radio Frequency Integrated Circuits Symposium</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leuschner</foaf:surname>
+                        <foaf:givenName>Stephan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pinarello</foaf:surname>
+                        <foaf:givenName>Sandro</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hodel</foaf:surname>
+                        <foaf:givenName>Uwe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mueller</foaf:surname>
+                        <foaf:givenName>Jan-Erik</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Klar</foaf:surname>
+                        <foaf:givenName>Heinrich</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3241"/>
+        <link:link rdf:resource="#item_3240"/>
+        <bib:pages>395-398</bib:pages>
+        <dc:date>May 2010</dc:date>
+        <dc:description>ISSN: 2375-0995</dc:description>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2010 IEEE Radio Frequency Integrated Circuits Symposium</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>A novel, high ruggedness power amplifier topology in a 65-nm CMOS technology is proposed. The proposed stacked cascode topology uses only standard devices available in a modern triple-well CMOS process to achieve breakdown voltages of more than 18V. The power amplifier stage delivers 28 dBm output power at a power-added efficiency (PAE) of 69.9% from a 3.6V supply. The saturation gain is 18 dB. A watt-level power amplifier for GSM low-band operation with 31-dBm output power and 61% PAE is presented.</dcterms:abstract>
+        <dc:title>A 31-dBm, high ruggedness power amplifier in 65-nm standard CMOS with high-efficiency stacked-cascode stages</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3241">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/5477401?arnumber=5477401</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 01:17:15</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3240">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=5477401&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9NTQ3NzQwMQ==</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 01:17:13</dcterms:dateSubmitted>
+        <dc:title>Leuschner et al_2010_A 31-dBm, high ruggedness power amplifier in 65-nm standard CMOS with.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="#item_3242">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>1</prism:volume>
+                <dc:identifier>DOI 10.1109/ISSCC.2002.993048</dc:identifier>
+                <dc:title>2002 IEEE International Solid-State Circuits Conference. Digest of Technical Papers (Cat. No.02CH37315)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sowlati</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leenaerts</foaf:surname>
+                        <foaf:givenName>D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3244"/>
+        <link:link rdf:resource="#item_3243"/>
+        <bib:pages>294-467 vol.1</bib:pages>
+        <dc:date>February 2002</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2002 IEEE International Solid-State Circuits Conference. Digest of Technical Papers (Cat. No.02CH37315)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <dcterms:abstract>A two-stage self-biased cascode power amplifier in 0.18 /spl mu/m CMOS process for Class 1 Bluetooth application provides 23 dBm output power with 31 dB gain and 42% PAE at 2.4 GHz. The power amplifier die occupies 0.46 mm/sup 2/.</dcterms:abstract>
+        <dc:title>A 2.4 GHz 0.18 /spl mu/m CMOS self-biased cascode power amplifier with 23 dBm output power</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3244">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/document/993048?arnumber=993048</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 03:07:45</dcterms:dateSubmitted>
+        <dc:title>IEEE Xplore Abstract Record</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3243">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=993048&amp;ref=aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL3N0YW1wL3N0YW1wLmpzcD90cD0mYXJudW1iZXI9OTkzMDQ4</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 03:07:42</dcterms:dateSubmitted>
+        <dc:title>Sowlati_Leenaerts_2002_A 2.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3245">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/MarkKac.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-28 03:17:05</dcterms:dateSubmitted>
+        <dc:title>MarkKac.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://en.wikipedia.org/w/index.php?title=Coulomb_explosion&amp;oldid=951503112">
+        <z:itemType>encyclopediaArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Book><dc:title>Wikipedia</dc:title></bib:Book>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3247"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://en.wikipedia.org/w/index.php?title=Coulomb_explosion&amp;oldid=951503112</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>Creative Commons Attribution-ShareAlike License</dc:rights>
+        <dc:date>2020-04-17T14:06:40Z</dc:date>
+        <dc:description>Page Version ID: 951503112</dc:description>
+        <dcterms:dateSubmitted>2020-06-29 03:51:25</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wikipedia</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Coulombic explosions are a mechanism for transforming energy in intense electromagnetic fields into atomic motion and are thus useful for controlled destruction of relatively robust molecules.  The explosions are a prominent technique in laser-based machining, and appear naturally in certain high-energy reactions.</dcterms:abstract>
+        <dc:title>Coulomb explosion</dc:title>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3247">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://en.wikipedia.org/w/index.php?title=Coulomb_explosion&amp;oldid=951503112</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 03:51:30</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1007/s10152-005-0019-y">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1438-3888"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Berking</foaf:surname>
+                        <foaf:givenName>Stefan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Herrmann</foaf:surname>
+                        <foaf:givenName>Klaus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3249"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1007/s10152-005-0019-y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>180-188</bib:pages>
+        <dc:date>2006-09-01</dc:date>
+        <dcterms:dateSubmitted>2020-06-29 04:05:26</dcterms:dateSubmitted>
+        <z:libraryCatalog>Springer Link</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Cnidaria catch and kill their prey by means of nematocysts. A nematocyst consists of a capsule containing a coiled tubule. On triggering, the cyst extrudes this tubule in an extremely rapid manner. The mechanisms and driving forces of discharge are still unknown. We found nematocysts of various cnidarians to be acidic inside and propose that the pH difference between cyst matrix and cytoplasm drives the discharge of cysts. For large cysts of Aiptasia we calculated that the internal concentration of protons and protonated carboxyl groups is about 5 M. Cysts contain polyacids in a high concentration. At a low pH several of the carboxyl groups of the polymer are uncharged. The carboxyl groups dissociate when, on triggering, the proton concentration becomes balanced across the cyst membrane. The speed of protons in water is extremely rapid. Thus, the equilibration of the proton concentration initially results in a negative net charge within the cyst and therefore in a sudden electrostatic repulsion between the dissociated carboxyl groups of the polymer. This causes an increase in the pressure of the matrix against the cyst wall. We suggest that this nonosmotic pressure increase causes the first and extremely rapid step of discharge. We propose that in a second step cations and water are taken up, generating an increase in osmotic pressure. A change in the pH value may also facilitate the invagination and evagination, respectively, of the tubule.</dcterms:abstract>
+        <dc:title>Formation and discharge of nematocysts is controlled by a proton gradient across the cyst membrane</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1438-3888">
+        <prism:volume>60</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Helgoland Marine Research</dc:title>
+        <dc:identifier>ISSN 1438-3888</dc:identifier>
+        <dcterms:alternative>Helgol Mar Res</dcterms:alternative>
+        <dc:identifier>DOI 10.1007/s10152-005-0019-y</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3249">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://link.springer.com/content/pdf/10.1007%2Fs10152-005-0019-y.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 04:05:28</dcterms:dateSubmitted>
+        <dc:title>Berking_Herrmann_2006_Formation and discharge of nematocysts is controlled by a proton gradient.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+        <dc:description>&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml&quot; id=&quot;title&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;&lt;ul xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;list-style-type: none; padding-left:0px&quot; id=&quot;toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/1&quot;&gt;Art&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/1&quot;&gt;Abs1&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/1&quot;&gt;Sec1&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/2&quot;&gt;Sec2&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/2&quot;&gt;Sec3&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/2&quot;&gt;Sec4&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/2&quot;&gt;Fig1&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/3&quot;&gt;Sec5&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/3&quot;&gt;Sec6&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/3&quot;&gt;Tab1&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/4&quot;&gt;Fig2&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/5&quot;&gt;Sec7&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/5&quot;&gt;Sec8&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/6&quot;&gt;Sec9&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/7&quot;&gt;Sec10&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/7&quot;&gt;Fig3&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;Ack&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;Bib&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR1&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR2&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR3&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR4&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR5&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR6&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR7&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR8&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR9&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR10&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR11&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR12&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR13&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR14&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/8&quot;&gt;CR15&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR16&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR17&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR18&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR19&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR20&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR21&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_GX4VV9VW/9&quot;&gt;CR22&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</dc:description>
+    </z:Attachment>
+    <bib:Article rdf:about="http://doi.wiley.com/10.1002/qua.560020505">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:00207608"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fröhlich</foaf:surname>
+                        <foaf:givenName>H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3250"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://doi.wiley.com/10.1002/qua.560020505</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>641-649</bib:pages>
+        <dc:date>09/1968</dc:date>
+        <dcterms:dateSubmitted>2020-06-29 04:58:40</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Long-range coherence and energy storage in biological systems: LONG-RANGE COHERENCE IN BIOLOGICAL SYSTEMS</dc:title>
+        <z:shortTitle>Long-range coherence and energy storage in biological systems</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:00207608">
+        <prism:volume>2</prism:volume>
+        <prism:number>5</prism:number>
+        <dc:title>International Journal of Quantum Chemistry</dc:title>
+        <dc:identifier>ISSN 00207608</dc:identifier>
+        <dcterms:alternative>Int. J. Quantum Chem.</dcterms:alternative>
+        <dc:identifier>DOI 10.1002/qua.560020505</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3250">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://ayuba.fr/pdf/frohlich1968b.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 04:58:38</dcterms:dateSubmitted>
+        <dc:title>Fröhlich - 1968 - Long-range coherence and energy storage in biologi.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:BookSection rdf:about="http://www.sciencedirect.com/science/article/pii/S0065253908602590">
+        <z:itemType>bookSection</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Book>
+                <prism:volume>53</prism:volume>
+                <dc:title>Advances in Electronics and Electron Physics</dc:title>
+            </bib:Book>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Academic Press</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fröhlich</foaf:surname>
+                        <foaf:givenName>H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marton</foaf:surname>
+                        <foaf:givenName>L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marton</foaf:surname>
+                        <foaf:givenName>C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_3253"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0065253908602590</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>85-152</bib:pages>
+        <dc:date>January 1, 1980</dc:date>
+        <dc:description>DOI: 10.1016/S0065-2539(08)60259-0</dc:description>
+        <dcterms:dateSubmitted>2020-06-29 04:59:11</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This chapter discusses the biological effects of microwaves. It is emphasized that an appropriate discussion of the experimental results with regard to nonthermal effects must frequently consider thermal effects as well. The amount of energy transfer from the radiation to the material varies slowly with frequency and is largely governed by the dielectric loss. Within reasonable limits, this loss is proportional to the intensity of the radiation. Nonthermal effects, on the other hand, occur in certain frequency regions only, and usually exhibit saturation at rather low intensity. As a consequence, nonthermal effects might be drowned by the thermal ones. This is in particular to be expected when the sign of the considered effect in the nonthermal region is opposite to that of the thermal effect. As an example, consider the reduction of the rate of growth of certain bacteria arising from irradiation at 73.6 Hz as discussed. Temperature increase, on the other hand, increases the rate of growth, thus canceling the nonthermal effect at sufficiently high intensity.</dcterms:abstract>
+        <dc:title>The Biological Effects of Microwaves and Related Questions</dc:title>
+    </bib:BookSection>
+    <z:Attachment rdf:about="#item_3253">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0065253908602590</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 04:59:13</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://trs.jpl.nasa.gov/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3255"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://trs.jpl.nasa.gov/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 15:28:32</dcterms:dateSubmitted>
+        <dc:title>JPL TRS Home</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3255">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://trs.jpl.nasa.gov/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 15:28:34</dcterms:dateSubmitted>
+        <dc:title>JPL TRS Home</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2005-6419"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>Jeong Woo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Son</foaf:surname>
+                        <foaf:givenName>Ji-Seon</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Choi</foaf:surname>
+                        <foaf:givenName>Jin-Wook</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Han</foaf:surname>
+                        <foaf:givenName>Young-Jin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lee</foaf:surname>
+                        <foaf:givenName>Jun-Rae</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3258"/>
+        <link:link rdf:resource="#item_3257"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>189-194</bib:pages>
+        <dc:date>2014-3</dc:date>
+        <dc:description>PMID: 24729839
+PMCID: PMC3983413</dc:description>
+        <dcterms:dateSubmitted>2020-06-29 17:44:18</dcterms:dateSubmitted>
+        <z:libraryCatalog>PubMed Central</z:libraryCatalog>
+        <dcterms:abstract>Background
+Recently, multi-planar reconstruction of the three-dimensional (3D) spiral chest CT scan has demonstrated superiority in the evaluation of the tracheobronchial tree. The goal of this study was to measure the lengths of the right and left main bronchi and their anteroposterior (AP) and transverse (TR) diameters using the 3D and two-dimensional (2D) images in the same adult respectively, and to evaluate the degree of correlation between them.
+
+Methods
+We measured the lengths of the right and left main bronchi from the carina to the first of their branches and the AP and TR diameters at the mid-portion of the right main bronchus and 2 cm below the carina in the left main bronchus. We determined the size of the left-sided double-lumen tube (DLT) based on the measured AP diameter of the left main bronchus from the 3D and 2D images, respectively.
+
+Results
+There was moderate correlation between the lengths of both main bronchi obtained from the 3D images and the 2D images, and between the AP diameter of the left main bronchus obtained from the 3D images and the 2D images. Same sized DLTs were estimated in 69% of the men and 34% of the women.
+
+Conclusions
+The lengths of the right and left main bronchi and their AP and TR diameters obtained from 3D images were not strongly correlated with those from 2D images. Therefore, a further study is needed to verify the superiority of 3D images in selecting the appropriate size of left-sided DLT.</dcterms:abstract>
+        <dc:title>The comparison of the lengths and diameters of main bronchi measured from two-dimensional and three-dimensional images in the same patients</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2005-6419">
+        <prism:volume>66</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Korean Journal of Anesthesiology</dc:title>
+        <dc:identifier>ISSN 2005-6419</dc:identifier>
+        <dcterms:alternative>Korean J Anesthesiol</dcterms:alternative>
+        <dc:identifier>DOI 10.4097/kjae.2014.66.3.189</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3258">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/pdf/kjae-66-189.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 17:44:19</dcterms:dateSubmitted>
+        <dc:title>Lee et al_2014_The comparison of the lengths and diameters of main bronchi measured from.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3257">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 17:44:18</dcterms:dateSubmitted>
+        <dc:title>PubMed Central Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:978-1-62410-223-3">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 978-1-62410-223-3</dc:identifier>
+                <dc:identifier>DOI 10.2514/6.2013-1572</dc:identifier>
+                <dc:title>54th AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics, and Materials Conference</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Boston, Massachusetts</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>American Institute of Aeronautics and Astronautics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Contreras</foaf:surname>
+                        <foaf:givenName>Michael</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Trease</foaf:surname>
+                        <foaf:givenName>Brian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bojanowski</foaf:surname>
+                        <foaf:givenName>Cezary</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kulak</foaf:surname>
+                        <foaf:givenName>Ronald F.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3260"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arc.aiaa.org/doi/10.2514/6.2013-1572</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2013-04-08</dc:date>
+        <dcterms:dateSubmitted>2020-06-29 18:29:02</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>54th AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics, and Materials Conference</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+        <z:language>en</z:language>
+        <dc:title>Characterizing Wheel-Soil Interaction Loads Using Meshfree Finite Element Methods: A Sensitivity Analysis for Design Trade Studies</dc:title>
+        <z:shortTitle>Characterizing Wheel-Soil Interaction Loads Using Meshfree Finite Element Methods</z:shortTitle>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_3260">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://trs.jpl.nasa.gov/bitstream/handle/2014/44143/13-1389_A1b.pdf?sequence=1&amp;isAllowed=y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 18:29:00</dcterms:dateSubmitted>
+        <dc:title>13-1389_A1b.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://link.springer.com/10.1007/BF01309926">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0304-8608,%201432-8798"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bosch</foaf:surname>
+                        <foaf:givenName>F. X.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3261"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://link.springer.com/10.1007/BF01309926</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>311-317</bib:pages>
+        <dc:date>9/1985</dc:date>
+        <dcterms:dateSubmitted>2020-06-29 19:08:25</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>The heterogeneity in charge of the influenza virus glycoproteins, hemagglutinin (HA) and neuraminidase (NA) is retained, when glycosylation is inhibited by tunieamyein (TM) or 2-deoxyglucose (2-dg). This is in contrast to the charge heterogeneity of the G protein of vesicular stomatitis virus (VSV), which is mainly due to heterogenous sulfation of the carbohydrate side chains and therefore is abolished by the above mentioned inhibitors of glycosylation. Thus, the charge heterogeneity of influenza virus glycoproteins might be attributable to some as yet mddentified modifications of the polypeptide backbone.</dcterms:abstract>
+        <dc:title>Studies on the development of the charge heterogeneity of the influenza virus glycoproteins</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0304-8608,%201432-8798">
+        <prism:volume>83</prism:volume>
+        <prism:number>3-4</prism:number>
+        <dc:title>Archives of Virology</dc:title>
+        <dc:identifier>ISSN 0304-8608, 1432-8798</dc:identifier>
+        <dcterms:alternative>Archives of Virology</dcterms:alternative>
+        <dc:identifier>DOI 10.1007/BF01309926</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_3261">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link-springer-com.ezproxy.library.yorku.ca/content/pdf/10.1007/BF01309926.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 19:08:24</dcterms:dateSubmitted>
+        <dc:title>Bosch - 1985 - Studies on the development of the charge heterogen.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3263">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.microbiologyresearch.org/docserver/fulltext/jgv/61/2/JV0610020217.pdf?expires=1593461591&amp;id=id&amp;accname=guest&amp;checksum=5BAF0341D8247514B4C61584095A5351</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 19:59:06</dcterms:dateSubmitted>
+        <dc:title>JV0610020217.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>5</prism:volume>
+                <prism:number>12</prism:number>
+                <dc:title>PLOS ONE</dc:title>
+                <dc:identifier>ISSN 1932-6203</dc:identifier>
+                <dcterms:alternative>PLOS ONE</dcterms:alternative>
+                <dc:identifier>DOI 10.1371/journal.pone.0015674</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Arinaminpathy</foaf:surname>
+                        <foaf:givenName>Nimalan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grenfell</foaf:surname>
+                        <foaf:givenName>Bryan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3265"/>
+        <link:link rdf:resource="#item_3266"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>e15674</bib:pages>
+        <dc:date>Dec 30, 2010</dc:date>
+        <dc:description>Publisher: Public Library of Science</dc:description>
+        <dcterms:dateSubmitted>2020-06-29 20:22:05</dcterms:dateSubmitted>
+        <z:libraryCatalog>PLoS Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Background Influenza viruses show a significant capacity to evade host immunity; this is manifest both as large occasional jumps in the antigenic phenotype of viral surface molecules and in gradual antigenic changes leading to annual influenza epidemics in humans. Recent mouse studies show that avidity for host cells can play an important role in polyclonal antibody escape, and further that electrostatic charge of the hemagglutinin glycoprotein can contribute to such avidity. Methodology/Principal Findings We test the role of glycoprotein charge on sequence data from the three major subtypes of influenza A in humans, using a simple method of calculating net glycoprotein charge. Of all subtypes, H3N2 in humans shows a striking pattern of increasing positive charge since its introduction in 1968. Notably, this trend applies to both hemagglutinin and neuraminidase glycoproteins. In the late 1980s hemagglutinin charge reached a plateau, while neuraminidase charge started to decline. We identify key groups of amino acid sites involved in this charge trend. Conclusions/Significance To our knowledge these are the first indications that, for human H3N2, net glycoprotein charge covaries strongly with antigenic drift on a global scale. Further work is needed to elucidate how such charge interacts with other immune escape mechanisms, such as glycosylation, and we discuss important questions arising for future study.</dcterms:abstract>
+        <dc:title>Dynamics of Glycoprotein Charge in the Evolutionary History of Human Influenza</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3265">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0015674&amp;type=printable</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:22:07</dcterms:dateSubmitted>
+        <dc:title>Arinaminpathy_Grenfell_2010_Dynamics of Glycoprotein Charge in the Evolutionary History of Human Influenza.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3266">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:22:11</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3268">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Penhoet</foaf:surname>
+                        <foaf:givenName>Edward E</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3267"/>
+        <dc:subject>⛔ No DOI found</dc:subject>
+        <bib:pages>9</bib:pages>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>The Structure and Synthesis of Influenza Virus Phosphoproteins</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3267">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.jbc.org/content/256/11/5368.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:38:16</dcterms:dateSubmitted>
+        <dc:title>Penhoet - The Structure and Synthesis of Influenza Virus Pho.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.virology.ws/2009/04/30/structure-of-influenza-virus/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_3270"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.virology.ws/2009/04/30/structure-of-influenza-virus/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:43:38</dcterms:dateSubmitted>
+        <dc:title>Structure of influenza virus</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_3270">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.virology.ws/2009/04/30/structure-of-influenza-virus/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:43:42</dcterms:dateSubmitted>
+        <dc:title>Structure of influenza virus</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_3271">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://deepblue.lib.umich.edu/bitstream/handle/2027.42/33847/0000105.pdf?sequence=1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:58:35</dcterms:dateSubmitted>
+        <dc:title>0000105.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://europepmc.org/article/med/1891873">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <dcterms:isReferencedBy rdf:resource="#item_3276"/>
+        <link:link rdf:resource="#item_3273"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://europepmc.org/article/med/1891873</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:58:53</dcterms:dateSubmitted>
+        <dc:title>[The anomalous isoelectric properties of influenza virus matrix protein M1]. - Abstract - Europe PMC</dc:title>
+    </bib:Document>
+    <bib:Memo rdf:about="#item_3276">
+        <rdf:value>&lt;p&gt;Full text not available.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_3273">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://europepmc.org/article/med/1891873</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 20:58:56</dcterms:dateSubmitted>
+        <dc:title>[The anomalous isoelectric properties of influenza virus matrix protein M1]. - Abstract - Europe PMC</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.nature.com/articles/s41598-017-16986-y">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>7</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Scientific Reports</dc:title>
+                <dc:identifier>ISSN 2045-2322</dc:identifier>
+                <dcterms:alternative>Sci Rep</dcterms:alternative>
+                <dc:identifier>DOI 10.1038/s41598-017-16986-y</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shtykova</foaf:surname>
+                        <foaf:givenName>Eleonora V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dadinova</foaf:surname>
+                        <foaf:givenName>Liubov A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fedorova</foaf:surname>
+                        <foaf:givenName>Natalia V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Golanikov</foaf:surname>
+                        <foaf:givenName>Andrey E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bogacheva</foaf:surname>
+                        <foaf:givenName>Elena N.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ksenofontov</foaf:surname>
+                        <foaf:givenName>Alexander L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baratova</foaf:surname>
+                        <foaf:givenName>Liudmila A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shilova</foaf:surname>
+                        <foaf:givenName>Liudmila A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tashkin</foaf:surname>
+                        <foaf:givenName>Vsevolod Yu.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Galimzyanov</foaf:surname>
+                        <foaf:givenName>Timur R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jeffries</foaf:surname>
+                        <foaf:givenName>Cy M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Svergun</foaf:surname>
+                        <foaf:givenName>Dmitri I.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Batishchev</foaf:surname>
+                        <foaf:givenName>Oleg V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_3274"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.nature.com/articles/s41598-017-16986-y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>16793</bib:pages>
+        <dc:date>12/2017</dc:date>
+        <dcterms:dateSubmitted>2020-06-29 21:00:30</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Influenza virus Matrix Protein M1 preserves its conformation with pH, changing multimerization state at the priming stage due to electrostatics</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_3274">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.nature.com/articles/s41598-017-16986-y.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2020-06-29 21:00:29</dcterms:dateSubmitted>
+        <dc:title>Shtykova et al. - 2017 - Influenza virus Matrix Protein M1 preserves its co.pdf</dc:title>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
@@ -61770,6 +63339,13 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3082"/>
         <dcterms:hasPart rdf:resource="#item_3086"/>
         <dcterms:hasPart rdf:resource="#item_3133"/>
+        <dcterms:hasPart rdf:resource="https://www.painscience.com/articles/repetitive-strain-injuries.php"/>
+        <dcterms:hasPart rdf:resource="http://arxiv.org/abs/1712.02126"/>
+        <dcterms:hasPart rdf:resource="#item_3245"/>
+        <dcterms:hasPart rdf:resource="https://en.wikipedia.org/w/index.php?title=Coulomb_explosion&amp;oldid=951503112"/>
+        <dcterms:hasPart rdf:resource="https://doi.org/10.1007/s10152-005-0019-y"/>
+        <dcterms:hasPart rdf:resource="https://trs.jpl.nasa.gov/"/>
+        <dcterms:hasPart rdf:resource="urn:isbn:978-1-62410-223-3"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_170">
         <dc:title>Biology</dc:title>
@@ -61856,6 +63432,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://pubs.rsna.org/doi/10.1148/rg.2018170097"/>
         <dcterms:hasPart rdf:resource="#item_2724"/>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0020138313001617"/>
+        <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>lungs</dc:title>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1324952/"/>
@@ -61863,6 +63440,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://pubs.rsna.org/doi/10.1148/rg.2018170097"/>
         <dcterms:hasPart rdf:resource="#item_2724"/>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0020138313001617"/>
+        <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>lungs</dc:title>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1324952/"/>
@@ -61870,6 +63448,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://pubs.rsna.org/doi/10.1148/rg.2018170097"/>
         <dcterms:hasPart rdf:resource="#item_2724"/>
         <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0020138313001617"/>
+        <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983413/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_161">
         <dc:title>microbiology</dc:title>
@@ -62079,10 +63658,13 @@ Section: Blog</dc:description>
     </z:Collection>
     <z:Collection rdf:about="#collection_212">
         <dc:title>microfluidics</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3204"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>microfluidics</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3204"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>microfluidics</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3204"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_138">
         <dc:title>P. Syringae</dc:title>
@@ -62400,6 +63982,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0969212616301216"/>
         <dcterms:hasPart rdf:resource="#item_3060"/>
         <dcterms:hasPart rdf:resource="#item_3061"/>
+        <dcterms:hasPart rdf:resource="https://www.virology.ws/2009/04/30/structure-of-influenza-virus/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>structural</dc:title>
         <dcterms:hasPart rdf:resource="#collection_190"/>
@@ -62415,6 +63998,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0969212616301216"/>
         <dcterms:hasPart rdf:resource="#item_3060"/>
         <dcterms:hasPart rdf:resource="#item_3061"/>
+        <dcterms:hasPart rdf:resource="https://www.virology.ws/2009/04/30/structure-of-influenza-virus/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>structural</dc:title>
         <dcterms:hasPart rdf:resource="#collection_190"/>
@@ -62430,6 +64014,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0969212616301216"/>
         <dcterms:hasPart rdf:resource="#item_3060"/>
         <dcterms:hasPart rdf:resource="#item_3061"/>
+        <dcterms:hasPart rdf:resource="https://www.virology.ws/2009/04/30/structure-of-influenza-virus/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_190">
         <dc:title>electrostatic</dc:title>
@@ -62511,6 +64096,13 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/elps.1150030204"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150050404"/>
         <dcterms:hasPart rdf:resource="https://JVI.asm.org/content/28/3/917"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01309926"/>
+        <dcterms:hasPart rdf:resource="#item_3263"/>
+        <dcterms:hasPart rdf:resource="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674"/>
+        <dcterms:hasPart rdf:resource="#item_3268"/>
+        <dcterms:hasPart rdf:resource="#item_3271"/>
+        <dcterms:hasPart rdf:resource="https://europepmc.org/article/med/1891873"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/s41598-017-16986-y"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>electrophoresis</dc:title>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/002228367090077X"/>
@@ -62518,6 +64110,13 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/elps.1150030204"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150050404"/>
         <dcterms:hasPart rdf:resource="https://JVI.asm.org/content/28/3/917"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01309926"/>
+        <dcterms:hasPart rdf:resource="#item_3263"/>
+        <dcterms:hasPart rdf:resource="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674"/>
+        <dcterms:hasPart rdf:resource="#item_3268"/>
+        <dcterms:hasPart rdf:resource="#item_3271"/>
+        <dcterms:hasPart rdf:resource="https://europepmc.org/article/med/1891873"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/s41598-017-16986-y"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>electrophoresis</dc:title>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/002228367090077X"/>
@@ -62525,6 +64124,13 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/elps.1150030204"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150050404"/>
         <dcterms:hasPart rdf:resource="https://JVI.asm.org/content/28/3/917"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01309926"/>
+        <dcterms:hasPart rdf:resource="#item_3263"/>
+        <dcterms:hasPart rdf:resource="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674"/>
+        <dcterms:hasPart rdf:resource="#item_3268"/>
+        <dcterms:hasPart rdf:resource="#item_3271"/>
+        <dcterms:hasPart rdf:resource="https://europepmc.org/article/med/1891873"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/s41598-017-16986-y"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>electrophoresis</dc:title>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/002228367090077X"/>
@@ -62532,6 +64138,13 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/elps.1150030204"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150050404"/>
         <dcterms:hasPart rdf:resource="https://JVI.asm.org/content/28/3/917"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01309926"/>
+        <dcterms:hasPart rdf:resource="#item_3263"/>
+        <dcterms:hasPart rdf:resource="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674"/>
+        <dcterms:hasPart rdf:resource="#item_3268"/>
+        <dcterms:hasPart rdf:resource="#item_3271"/>
+        <dcterms:hasPart rdf:resource="https://europepmc.org/article/med/1891873"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/s41598-017-16986-y"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>electrophoresis</dc:title>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/002228367090077X"/>
@@ -62539,6 +64152,13 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/elps.1150030204"/>
         <dcterms:hasPart rdf:resource="https://onlinelibrary.wiley.com/doi/abs/10.1002/elps.1150050404"/>
         <dcterms:hasPart rdf:resource="https://JVI.asm.org/content/28/3/917"/>
+        <dcterms:hasPart rdf:resource="http://link.springer.com/10.1007/BF01309926"/>
+        <dcterms:hasPart rdf:resource="#item_3263"/>
+        <dcterms:hasPart rdf:resource="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015674"/>
+        <dcterms:hasPart rdf:resource="#item_3268"/>
+        <dcterms:hasPart rdf:resource="#item_3271"/>
+        <dcterms:hasPart rdf:resource="https://europepmc.org/article/med/1891873"/>
+        <dcterms:hasPart rdf:resource="http://www.nature.com/articles/s41598-017-16986-y"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_191">
         <dc:title>nanoindentation</dc:title>
@@ -62839,6 +64459,9 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3083"/>
         <dcterms:hasPart rdf:resource="#item_3140"/>
         <dcterms:hasPart rdf:resource="#item_3183"/>
+        <dcterms:hasPart rdf:resource="#item_3220"/>
+        <dcterms:hasPart rdf:resource="https://www.melexis.com/en/product/MLX90621/Far-Infrared-Sensor-Array-High-Speed-Low-Noise"/>
+        <dcterms:hasPart rdf:resource="#item_3238"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Datasheets</dc:title>
         <dcterms:hasPart rdf:resource="#item_2352"/>
@@ -62854,6 +64477,9 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3083"/>
         <dcterms:hasPart rdf:resource="#item_3140"/>
         <dcterms:hasPart rdf:resource="#item_3183"/>
+        <dcterms:hasPart rdf:resource="#item_3220"/>
+        <dcterms:hasPart rdf:resource="https://www.melexis.com/en/product/MLX90621/Far-Infrared-Sensor-Array-High-Speed-Low-Noise"/>
+        <dcterms:hasPart rdf:resource="#item_3238"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_141">
         <dc:title>Flagship</dc:title>
@@ -62862,6 +64488,8 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.3074371"/>
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-017-04089-7"/>
         <dcterms:hasPart rdf:resource="https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/qua.560020505"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0065253908602590"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Flagship</dc:title>
         <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/2014RS005481"/>
@@ -62869,12 +64497,16 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.3074371"/>
         <dcterms:hasPart rdf:resource="https://www.nature.com/articles/s41598-017-04089-7"/>
         <dcterms:hasPart rdf:resource="https://www.ebi.ac.uk/pdbe/entry/emdb/EMD-6082"/>
+        <dcterms:hasPart rdf:resource="http://doi.wiley.com/10.1002/qua.560020505"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0065253908602590"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_131">
         <dc:title>Microwave</dc:title>
         <dcterms:hasPart rdf:resource="#collection_158"/>
+        <dcterms:hasPart rdf:resource="#collection_218"/>
         <dcterms:hasPart rdf:resource="#collection_136"/>
         <dcterms:hasPart rdf:resource="#collection_160"/>
+        <dcterms:hasPart rdf:resource="#collection_217"/>
         <dcterms:hasPart rdf:resource="#collection_145"/>
         <dcterms:hasPart rdf:resource="#collection_179"/>
         <dcterms:hasPart rdf:resource="#collection_155"/>
@@ -62896,8 +64528,10 @@ Section: Blog</dc:description>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>Microwave</dc:title>
         <dcterms:hasPart rdf:resource="#collection_158"/>
+        <dcterms:hasPart rdf:resource="#collection_218"/>
         <dcterms:hasPart rdf:resource="#collection_136"/>
         <dcterms:hasPart rdf:resource="#collection_160"/>
+        <dcterms:hasPart rdf:resource="#collection_217"/>
         <dcterms:hasPart rdf:resource="#collection_145"/>
         <dcterms:hasPart rdf:resource="#collection_179"/>
         <dcterms:hasPart rdf:resource="#collection_155"/>
@@ -62929,6 +64563,25 @@ Section: Blog</dc:description>
         <dc:title>absorption</dc:title>
         <dcterms:hasPart rdf:resource="https://propagation.ece.gatech.edu/ECE6390/project/Fall2012/Team09/Team9GeoSatTech_website_FINAL/SatCom%20website/atmosphericAttenuation.html"/>
         <dcterms:hasPart rdf:resource="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2149302/"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_218">
+        <dc:title>amplifier</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3234"/>
+        <dcterms:hasPart rdf:resource="#item_3235"/>
+        <dcterms:hasPart rdf:resource="#item_3239"/>
+        <dcterms:hasPart rdf:resource="#item_3242"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>amplifier</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3234"/>
+        <dcterms:hasPart rdf:resource="#item_3235"/>
+        <dcterms:hasPart rdf:resource="#item_3239"/>
+        <dcterms:hasPart rdf:resource="#item_3242"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>amplifier</dc:title>
+        <dcterms:hasPart rdf:resource="#item_3234"/>
+        <dcterms:hasPart rdf:resource="#item_3235"/>
+        <dcterms:hasPart rdf:resource="#item_3239"/>
+        <dcterms:hasPart rdf:resource="#item_3242"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_136">
         <dc:title>antenna</dc:title>
@@ -63052,6 +64705,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3175"/>
         <dcterms:hasPart rdf:resource="#item_3194"/>
         <dcterms:hasPart rdf:resource="#item_3195"/>
+        <dcterms:hasPart rdf:resource="http://www.osti.gov/servlets/purl/920838-SEkLR5/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>matching_sim</dc:title>
         <dcterms:hasPart rdf:resource="#item_3153"/>
@@ -63062,6 +64716,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3175"/>
         <dcterms:hasPart rdf:resource="#item_3194"/>
         <dcterms:hasPart rdf:resource="#item_3195"/>
+        <dcterms:hasPart rdf:resource="http://www.osti.gov/servlets/purl/920838-SEkLR5/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>matching_sim</dc:title>
         <dcterms:hasPart rdf:resource="#item_3153"/>
@@ -63072,6 +64727,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3175"/>
         <dcterms:hasPart rdf:resource="#item_3194"/>
         <dcterms:hasPart rdf:resource="#item_3195"/>
+        <dcterms:hasPart rdf:resource="http://www.osti.gov/servlets/purl/920838-SEkLR5/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>matching_sim</dc:title>
         <dcterms:hasPart rdf:resource="#item_3153"/>
@@ -63082,6 +64738,7 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="#item_3175"/>
         <dcterms:hasPart rdf:resource="#item_3194"/>
         <dcterms:hasPart rdf:resource="#item_3195"/>
+        <dcterms:hasPart rdf:resource="http://www.osti.gov/servlets/purl/920838-SEkLR5/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_160">
         <dc:title>attenuator</dc:title>
@@ -63092,6 +64749,22 @@ Section: Blog</dc:description>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>attenuator</dc:title>
         <dcterms:hasPart rdf:resource="https://www.daycounter.com/Circuits/Variable-Attenuator/Variable-Attenuator.phtml"/>
+    </z:Collection>
+    <z:Collection rdf:about="#collection_217">
+        <dc:title>controller</dc:title>
+        <dcterms:hasPart rdf:resource="https://ecee.colorado.edu/~bart/book/book/chapter7/ch7_3.htm"/>
+        <dcterms:hasPart rdf:resource="#item_3210"/>
+        <dcterms:hasPart rdf:resource="http://www.hth.com/snap/"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>controller</dc:title>
+        <dcterms:hasPart rdf:resource="https://ecee.colorado.edu/~bart/book/book/chapter7/ch7_3.htm"/>
+        <dcterms:hasPart rdf:resource="#item_3210"/>
+        <dcterms:hasPart rdf:resource="http://www.hth.com/snap/"/>
+        <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
+        <dc:title>controller</dc:title>
+        <dcterms:hasPart rdf:resource="https://ecee.colorado.edu/~bart/book/book/chapter7/ch7_3.htm"/>
+        <dcterms:hasPart rdf:resource="#item_3210"/>
+        <dcterms:hasPart rdf:resource="http://www.hth.com/snap/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_145">
         <dc:title>downconverter</dc:title>
@@ -63967,6 +65640,8 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
         <dcterms:hasPart rdf:resource="#item_3062"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4314902/"/>
+        <dcterms:hasPart rdf:resource="#item_3219"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>safety</dc:title>
         <dcterms:hasPart rdf:resource="#collection_210"/>
@@ -64003,6 +65678,8 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
         <dcterms:hasPart rdf:resource="#item_3062"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4314902/"/>
+        <dcterms:hasPart rdf:resource="#item_3219"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>safety</dc:title>
         <dcterms:hasPart rdf:resource="#collection_210"/>
@@ -64039,6 +65716,8 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://linkinghub.elsevier.com/retrieve/pii/S0924857920300996"/>
         <dcterms:hasPart rdf:resource="https://doi.org/10.1056/NEJMoa2012410"/>
         <dcterms:hasPart rdf:resource="#item_3062"/>
+        <dcterms:hasPart rdf:resource="http://ieeexplore.ieee.org/document/4314902/"/>
+        <dcterms:hasPart rdf:resource="#item_3219"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_210">
         <dc:title>standards</dc:title>
@@ -64158,6 +65837,8 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/abs/10.1021/j100243a020"/>
         <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1680910"/>
         <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1733516"/>
+        <dcterms:hasPart rdf:resource="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.3420"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0020746208000644"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>optical_centrifuge</dc:title>
         <dcterms:hasPart rdf:resource="https://link.aps.org/doi/10.1103/PhysRevLett.85.542"/>
@@ -64171,6 +65852,8 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="https://pubs.acs.org/doi/abs/10.1021/j100243a020"/>
         <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1680910"/>
         <dcterms:hasPart rdf:resource="http://aip.scitation.org/doi/10.1063/1.1733516"/>
+        <dcterms:hasPart rdf:resource="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.3420"/>
+        <dcterms:hasPart rdf:resource="http://www.sciencedirect.com/science/article/pii/S0020746208000644"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_133">
         <dc:title>other_mechanisms</dc:title>
@@ -64221,6 +65904,11 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://numba.pydata.org/"/>
         <dcterms:hasPart rdf:resource="https://www.embedded.com/preventing-dynamic-allocation/"/>
         <dcterms:hasPart rdf:resource="https://molssi-seamm.github.io/html/users/reproducibility.html"/>
+        <dcterms:hasPart rdf:resource="https://www.bunniestudios.com/blog/?p=5450"/>
+        <dcterms:hasPart rdf:resource="https://www.bunniestudios.com/blog/?p=4981"/>
+        <dcterms:hasPart rdf:resource="https://sound-au.com/articles/followers.html"/>
+        <dcterms:hasPart rdf:resource="https://electronics.stackexchange.com/questions/423189/error-handling-in-embedded-systems-development"/>
+        <dcterms:hasPart rdf:resource="http://www.drdobbs.com/"/>
         <rdf:type rdf:resource="http://www.zotero.org/namespaces/export#Collection"/>
         <dc:title>software_quality</dc:title>
         <dcterms:hasPart rdf:resource="#item_3063"/>
@@ -64228,6 +65916,11 @@ Section: Blog</dc:description>
         <dcterms:hasPart rdf:resource="http://numba.pydata.org/"/>
         <dcterms:hasPart rdf:resource="https://www.embedded.com/preventing-dynamic-allocation/"/>
         <dcterms:hasPart rdf:resource="https://molssi-seamm.github.io/html/users/reproducibility.html"/>
+        <dcterms:hasPart rdf:resource="https://www.bunniestudios.com/blog/?p=5450"/>
+        <dcterms:hasPart rdf:resource="https://www.bunniestudios.com/blog/?p=4981"/>
+        <dcterms:hasPart rdf:resource="https://sound-au.com/articles/followers.html"/>
+        <dcterms:hasPart rdf:resource="https://electronics.stackexchange.com/questions/423189/error-handling-in-embedded-systems-development"/>
+        <dcterms:hasPart rdf:resource="http://www.drdobbs.com/"/>
     </z:Collection>
     <z:Collection rdf:about="#collection_183">
         <dc:title>stats</dc:title>

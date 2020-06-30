@@ -61,3 +61,8 @@ It remains to be seen how much not-invented-here fallacy was baked into this pro
    · 11 months ago  
    
    They can be refrigerated up to a year without any change in labeled titer.
+
+
+double-wide, with 'resources' and 'figures' on the right pane? Emphasizes other documents
+and figures more
+

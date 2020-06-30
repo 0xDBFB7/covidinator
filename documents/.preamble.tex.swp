@@ -28,6 +28,7 @@
 \usepackage{sidecap}
 \usepackage{float}
 \usepackage{amssymb}
+\usepackage{textcomp}
 
 
 \newlength{\PRLlen}

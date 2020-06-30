@@ -1299,6 +1299,7 @@ same positive and negative variations around the supply voltage."
 "However, in Class E power amplifier design, the voltage swing
 can be about three times the supply voltage (with a larger positive variation than negative around supply),"
 
+We're definitely not a class E amp - just a class A. 
 
 Including the jupyter with 'standalone' didn't work, so via pdf has to do.
 
@@ -1306,3 +1307,8 @@ Including the jupyter with 'standalone' didn't work, so via pdf has to do.
 
 there need to be no spaces after the $$ math mode entry in jupyter, else
 Latex gives an error.
+
+One issue with jupyter notebooks are that they seem to encourage a sort of non-modular
+coding. 
+
+

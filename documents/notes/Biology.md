@@ -705,4 +705,24 @@ were on average, respectively, 40% and 10% stiffer, than at 37C".
 That's bad! Does that mean our resonance will shift significantly over temp? 
 
 
+Also, I keep plugging in numbers into the relaxation time figure, but I can't get anything over
+1 period. Weird.
 
+
+
+[Arinaminpathy 2010] find that the charge on various strains of Inf. A 
+glycoproteins have varied strongly since 1968. Amazing!
+
+
+from that paper, "Charge can indeed be determined from amino acid sequences".
+
+"Determines the virion's shape: spherical or filamentous. Clinical isolates of influenza are characterized by the presence of significant proportion
+ of filamentous virions, whereas after multiple passage on eggs or cell culture, virions have only spherical morphology.
+  Filamentous virions are thought to be important to infect neighboring cells, and spherical 
+virions more suited to spread through aerosol between hosts organisms."
+
+https://www.uniprot.org/uniprot/P03485
+
+Amino-sequence determined net charges can often be quite incorrect. In the case of 
+
+baseball card 
