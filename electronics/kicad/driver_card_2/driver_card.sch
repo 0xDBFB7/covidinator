@@ -25,9 +25,9 @@ F 3 "" H 5600 1600 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7950 3650 7950 3350
+	7800 3450 7800 3150
 Wire Wire Line
-	7550 5200 7550 4800
+	7400 5000 7400 4600
 Wire Wire Line
 	4400 5400 4400 5650
 $Comp
@@ -57,7 +57,7 @@ F 4 " " V 5516 1732 60  0000 R CNN "Field4"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	8150 4500 8450 4500
+	8000 4300 8300 4300
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0103
 U 1 1 5F0B2EDF
@@ -108,20 +108,20 @@ F 4 "" H 4308 4966 60  0000 L CNN "Field4"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	8150 4500 8150 4800
-Connection ~ 8150 4500
+	8000 4300 8000 4600
+Connection ~ 8000 4300
 Wire Wire Line
-	8150 4250 8150 4500
+	8000 4050 8000 4300
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R17
 U 1 1 5F09ED98
-P 7950 4800
-F 0 "R17" V 7855 4868 45  0000 L CNN
-F 1 "2.2r" V 7939 4868 45  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 7950 4950 20  0001 C CNN
-F 3 "" H 7950 4800 60  0001 C CNN
-F 4 " " V 8034 4868 60  0000 L CNN "Field4"
-	1    7950 4800
+P 7800 4600
+F 0 "R17" V 7705 4668 45  0000 L CNN
+F 1 "2.2r" V 7789 4668 45  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7800 4750 20  0001 C CNN
+F 3 "" H 7800 4600 60  0001 C CNN
+F 4 " " V 7884 4668 60  0000 L CNN "Field4"
+	1    7800 4600
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
@@ -142,23 +142,23 @@ $EndComp
 $Comp
 L power:GND #PWR0115
 U 1 1 5F0715F5
-P 8250 4050
-F 0 "#PWR0115" H 8250 4050 30  0001 C CNN
-F 1 "GND" H 8250 3980 30  0001 C CNN
-F 2 "" H 8250 4050 50  0001 C CNN
-F 3 "" H 8250 4050 50  0001 C CNN
-	1    8250 4050
+P 8100 3850
+F 0 "#PWR0115" H 8100 3850 30  0001 C CNN
+F 1 "GND" H 8100 3780 30  0001 C CNN
+F 2 "" H 8100 3850 50  0001 C CNN
+F 3 "" H 8100 3850 50  0001 C CNN
+	1    8100 3850
 	0    -1   -1   0   
 $EndComp
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0102
 U 1 1 5F06F21D
-P 7650 4050
-F 0 "#SUPPLY0102" H 7700 4050 45  0001 L BNN
-F 1 "3.3V" V 7650 4178 45  0000 L CNN
-F 2 "" V 7608 4177 60  0000 L CNN
-F 3 "" H 7650 4050 60  0001 C CNN
-	1    7650 4050
+P 7500 3850
+F 0 "#SUPPLY0102" H 7550 3850 45  0001 L BNN
+F 1 "3.3V" V 7500 3978 45  0000 L CNN
+F 2 "" V 7458 3977 60  0000 L CNN
+F 3 "" H 7500 3850 60  0001 C CNN
+	1    7500 3850
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -175,40 +175,40 @@ $EndComp
 $Comp
 L power:GND #PWR0112
 U 1 1 5F06BB87
-P 7650 3750
-F 0 "#PWR0112" H 7650 3750 30  0001 C CNN
-F 1 "GND" H 7650 3680 30  0001 C CNN
-F 2 "" H 7650 3750 50  0001 C CNN
-F 3 "" H 7650 3750 50  0001 C CNN
-	1    7650 3750
+P 7500 3550
+F 0 "#PWR0112" H 7500 3550 30  0001 C CNN
+F 1 "GND" H 7500 3480 30  0001 C CNN
+F 2 "" H 7500 3550 50  0001 C CNN
+F 3 "" H 7500 3550 50  0001 C CNN
+	1    7500 3550
 	-1   0    0    1   
 $EndComp
 $Comp
 L SparkFun-Capacitors:4.7UF0603 C10
 U 1 1 5F06AAD3
-P 7650 3950
-F 0 "C10" V 7416 4000 45  0000 C CNN
-F 1 "0.1 uF" V 7500 4000 45  0000 C CNN
-F 2 "0603" H 7650 4200 20  0001 C CNN
-F 3 "" H 7650 3950 50  0001 C CNN
-F 4 "" H 7758 3916 60  0000 L CNN "Field4"
-	1    7650 3950
+P 7500 3750
+F 0 "C10" V 7266 3800 45  0000 C CNN
+F 1 "0.1 uF" V 7350 3800 45  0000 C CNN
+F 2 "0603" H 7500 4000 20  0001 C CNN
+F 3 "" H 7500 3750 50  0001 C CNN
+F 4 "" H 7608 3716 60  0000 L CNN "Field4"
+	1    7500 3750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7750 4250 7850 4250
+	7600 4050 7700 4050
 Wire Wire Line
-	8150 4250 8050 4250
-Connection ~ 7650 4050
+	8000 4050 7900 4050
+Connection ~ 7500 3850
 $Comp
 L Amplifier_Current:INA194 U2
 U 1 1 5F064800
-P 7950 3950
-F 0 "U2" H 8294 3996 50  0000 L CNN
-F 1 "INA194" H 8294 3905 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 7950 3950 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ina193.pdf" H 7950 3950 50  0001 C CNN
-	1    7950 3950
+P 7800 3750
+F 0 "U2" H 8144 3796 50  0000 L CNN
+F 1 "INA194" H 8144 3705 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 7800 3750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ina193.pdf" H 7800 3750 50  0001 C CNN
+	1    7800 3750
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -224,20 +224,20 @@ F 4 " " V 6716 2332 60  0000 R CNN "Field4"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7750 4800 7750 4500
+	7600 4600 7600 4300
 Wire Wire Line
-	7750 4500 7750 4250
-Connection ~ 7750 4500
+	7600 4300 7600 4050
+Connection ~ 7600 4300
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R16
 U 1 1 5F048AA5
-P 7950 4500
-F 0 "R16" V 7855 4568 45  0000 L CNN
-F 1 "2.2r" V 7939 4568 45  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 7950 4650 20  0001 C CNN
-F 3 "" H 7950 4500 60  0001 C CNN
-F 4 " " V 8034 4568 60  0000 L CNN "Field4"
-	1    7950 4500
+P 7800 4300
+F 0 "R16" V 7705 4368 45  0000 L CNN
+F 1 "2.2r" V 7789 4368 45  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7800 4450 20  0001 C CNN
+F 3 "" H 7800 4300 60  0001 C CNN
+F 4 " " V 7884 4368 60  0000 L CNN "Field4"
+	1    7800 4300
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -288,20 +288,6 @@ F 4 " " V 5816 1532 60  0000 R CNN "Field4"
 	0    -1   -1   0   
 $EndComp
 Connection ~ 6450 1800
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R10
-U 1 1 5EF918DB
-P 6250 1800
-F 0 "R10" V 6345 1732 45  0000 R CNN
-F 1 "1k" V 6261 1732 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6250 1950 20  0001 C CNN
-F 3 "" H 6250 1800 60  0001 C CNN
-F 4 " " V 6166 1732 60  0000 R CNN "Field4"
-	1    6250 1800
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	5900 1800 6050 1800
 Connection ~ 5900 1800
 Connection ~ 6800 2200
 $Comp
@@ -327,17 +313,17 @@ F 3 "" H 6800 2600 50  0001 C CNN
 	1    6800 2600
 	1    0    0    -1  
 $EndComp
-Text GLabel 8500 4500 2    50   Input ~ 0
+Text GLabel 8350 4300 2    50   Input ~ 0
 nsource
 $Comp
 L Transistor_FET:BSS84 Q3
 U 1 1 5EFA7A24
-P 7550 4600
-F 0 "Q3" H 7756 4646 50  0000 L CNN
-F 1 "BSS84" H 7756 4555 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7750 4525 50  0001 L CIN
-F 3 "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf" H 7550 4600 50  0001 L CNN
-	1    7550 4600
+P 7400 4400
+F 0 "Q3" H 7606 4446 50  0000 L CNN
+F 1 "BSS84" H 7606 4355 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7600 4325 50  0001 L CIN
+F 3 "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf" H 7400 4400 50  0001 L CNN
+	1    7400 4400
 	0    1    -1   0   
 $EndComp
 Text GLabel 3350 2950 2    50   Input ~ 0
@@ -372,7 +358,7 @@ Text GLabel 5600 2000 0    50   Input ~ 0
 ~VARACTOR_PWM
 Text GLabel 7100 2200 2    50   Input ~ 0
 VARACTOR_FEEDBACK
-Text GLabel 7950 3350 1    50   Input ~ 0
+Text GLabel 7800 3150 1    50   Input ~ 0
 CURRENT_SENSE
 Text GLabel 3350 3050 2    50   Input ~ 0
 CURRENT_SENSE
@@ -442,13 +428,13 @@ F 12 "Active" H 4600 5600 60  0001 L CNN "Status"
 	1    4400 4400
 	0    -1   -1   0   
 $EndComp
-Text GLabel 8450 4700 2    50   Input ~ 0
+Text GLabel 8300 4500 2    50   Input ~ 0
 pulse_feedback
 Wire Wire Line
-	8450 4500 8450 4700
-Connection ~ 8450 4500
+	8300 4300 8300 4500
+Connection ~ 8300 4300
 Wire Wire Line
-	8450 4500 8500 4500
+	8300 4300 8350 4300
 $Comp
 L SparkFun-Capacitors:4.7UF0603 C2
 U 1 1 5EEA123E
@@ -517,21 +503,18 @@ VARACTOR_OUT
 $Comp
 L Connector:Test_Point TP4
 U 1 1 5EECA2A9
-P 9600 4550
-F 0 "TP4" H 9658 4668 50  0000 L CNN
-F 1 "Test_Point" H 9658 4577 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 9800 4550 50  0001 C CNN
-F 3 "~" H 9800 4550 50  0001 C CNN
-	1    9600 4550
+P 9450 4350
+F 0 "TP4" H 9508 4468 50  0000 L CNN
+F 1 "Test_Point" H 9508 4377 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 9650 4350 50  0001 C CNN
+F 3 "~" H 9650 4350 50  0001 C CNN
+	1    9450 4350
 	0    1    1    0   
 $EndComp
-Text GLabel 9600 4550 0    50   Input ~ 0
+Text GLabel 9450 4350 0    50   Input ~ 0
 nsource
 Text Notes 7900 1150 0    50   ~ 0
 We could use an op-amp to provide the feedback \nfor both of these circuits, lessening the load on the Teensy,\nbut whatever
-Wire Wire Line
-	6050 1800 6450 1800
-Connection ~ 6050 1800
 $Comp
 L SparkFun-Capacitors:4.7UF0603 C?
 U 1 1 5EEF63C1
@@ -621,21 +604,23 @@ $EndComp
 $Comp
 L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U?
 U 1 1 5EFC2AA9
-P 7150 5300
-F 0 "U?" H 7594 5403 60  0000 L CNN
-F 1 "MCP1416T-E_OT" H 7594 5297 60  0000 L CNN
-F 2 "digikey-footprints:SOT-753" H 7350 5500 60  0001 L CNN
-F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7350 5600 60  0001 L CNN
-F 4 "MCP1416T-E/OTCT-ND" H 7350 5700 60  0001 L CNN "Digi-Key_PN"
-F 5 "MCP1416T-E/OT" H 7350 5800 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H 7350 5900 60  0001 L CNN "Category"
-F 7 "PMIC - Gate Drivers" H 7350 6000 60  0001 L CNN "Family"
-F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7350 6100 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 7350 6200 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 7350 6300 60  0001 L CNN "Description"
-F 11 "Microchip Technology" H 7350 6400 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7350 6500 60  0001 L CNN "Status"
-	1    7150 5300
+P 7000 5100
+F 0 "U?" H 7444 5203 60  0000 L CNN
+F 1 "MCP1416T-E_OT" H 7444 5097 60  0000 L CNN
+F 2 "digikey-footprints:SOT-753" H 7200 5300 60  0001 L CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7200 5400 60  0001 L CNN
+F 4 "MCP1416T-E/OTCT-ND" H 7200 5500 60  0001 L CNN "Digi-Key_PN"
+F 5 "MCP1416T-E/OT" H 7200 5600 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 7200 5700 60  0001 L CNN "Category"
+F 7 "PMIC - Gate Drivers" H 7200 5800 60  0001 L CNN "Family"
+F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7200 5900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 7200 6000 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 7200 6100 60  0001 L CNN "Description"
+F 11 "Microchip Technology" H 7200 6200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7200 6300 60  0001 L CNN "Status"
+	1    7000 5100
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5900 1800 6450 1800
 $EndSCHEMATC

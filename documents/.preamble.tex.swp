@@ -29,6 +29,7 @@
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{textcomp}
+\usepackage{lettrine}
 
 
 \newlength{\PRLlen}

@@ -73,7 +73,12 @@ Charge (each):
 Charge (total):
 Overall charge:
 
+M:
 
+https://www.uniprot.org/uniprot/P03485
+
+
+http://isoelectricpointdb.org/79/UP000006679_93838.fasta all proteins!
 
    ssRNA Genome (ds?)
   

@@ -726,3 +726,13 @@ https://www.uniprot.org/uniprot/P03485
 Amino-sequence determined net charges can often be quite incorrect. In the case of 
 
 baseball card 
+
+While there is "[The anomalous isoelectric properties of influenza virus matrix protein M1].",
+the isoelectric point of M1 in the db matches that found in gel electrophoresis very well.
+
+https://pypi.org/project/isoelectric/
+
+isoelectric point can be converted to net charge via the Henderson-Hasselbalch equation,
+but I'm not sure if that's particularly accurate.
+
+

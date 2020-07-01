@@ -1323,3 +1323,5 @@ in the sqrt.
 The distribution of the breaking force has a profound effect on the electric field.
 
 
+The e-field distribution model shows that 
+

@@ -77,12 +77,21 @@ Bounds-checking? Visibility of internal state?
 
 #### High-level abstraction performance
 
-The pytorch backend seems to introduce a 
+The pytorch backend seems to introduce a bottleneck
 
 A carefully-written routine of this sort should take 
 
 
-A simulation wasn't corresponding to reality. It was found that, due to changing the reference design,
-the thicker substrate had caused the copper to go into the PML.
+A simulation wasn't corresponding to reality. It was found that, due to changing the reference design, the thicker substrate had caused the copper to go into the PML.
 
 A simple geometry sanity check would have caught this much earlier.
+
+#### A unit mistake 
+
+The reciprocal of the spring constant in [Li] was about on the order of that in [Yang], so I assumed I had just missed a ^-1 somewhere and plugged it in.
+
+Only on later checking did I realize that this was just pure numerology, and the two were
+totally unrelated.
+
+
+
