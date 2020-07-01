@@ -584,26 +584,6 @@ Wire Wire Line
 Wire Wire Line
 	4600 4300 5450 4300
 $Comp
-L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U?
-U 1 1 5EFC2AA9
-P 7150 5300
-F 0 "U?" H 7594 5403 60  0000 L CNN
-F 1 "MCP1416T-E_OT" H 7594 5297 60  0000 L CNN
-F 2 "digikey-footprints:SOT-753" H 7350 5500 60  0001 L CNN
-F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7350 5600 60  0001 L CNN
-F 4 "MCP1416T-E/OTCT-ND" H 7350 5700 60  0001 L CNN "Digi-Key_PN"
-F 5 "MCP1416T-E/OT" H 7350 5800 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H 7350 5900 60  0001 L CNN "Category"
-F 7 "PMIC - Gate Drivers" H 7350 6000 60  0001 L CNN "Family"
-F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7350 6100 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 7350 6200 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 7350 6300 60  0001 L CNN "Description"
-F 11 "Microchip Technology" H 7350 6400 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7350 6500 60  0001 L CNN "Status"
-	1    7150 5300
-	1    0    0    -1  
-$EndComp
-$Comp
 L SparkFun-Resistors:RESISTOR0402 R?
 U 1 1 5EFC6FC4
 P 5450 4900
@@ -636,6 +616,26 @@ F 2 "SOT23-6" H 6050 6650 20  0001 C CNN
 F 3 "" H 6050 6350 50  0001 C CNN
 F 4 "" H 6050 6631 60  0000 C CNN "Field4"
 	1    6050 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U?
+U 1 1 5EFC2AA9
+P 7150 5300
+F 0 "U?" H 7594 5403 60  0000 L CNN
+F 1 "MCP1416T-E_OT" H 7594 5297 60  0000 L CNN
+F 2 "digikey-footprints:SOT-753" H 7350 5500 60  0001 L CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7350 5600 60  0001 L CNN
+F 4 "MCP1416T-E/OTCT-ND" H 7350 5700 60  0001 L CNN "Digi-Key_PN"
+F 5 "MCP1416T-E/OT" H 7350 5800 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 7350 5900 60  0001 L CNN "Category"
+F 7 "PMIC - Gate Drivers" H 7350 6000 60  0001 L CNN "Family"
+F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 7350 6100 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 7350 6200 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 7350 6300 60  0001 L CNN "Description"
+F 11 "Microchip Technology" H 7350 6400 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7350 6500 60  0001 L CNN "Status"
+	1    7150 5300
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

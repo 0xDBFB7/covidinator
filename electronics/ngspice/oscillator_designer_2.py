@@ -33,7 +33,7 @@ def run_sim(varactor_voltage):
     ngspyce.cmd('reset')
     # ngspyce.cmd('stop after 10000')
     step_ps = 1 #not always obeyed - ngspice sets its own timestep.
-    sim_duration = 100000
+    sim_duration = 300000
     n_steps = sim_duration/step_ps
     # ngspyce.cmd(" ")
     ngspyce.cmd(f'tran {step_ps}p {sim_duration}ps uic')
@@ -130,14 +130,24 @@ for i in values[0], values[-1]:
     plt.ylabel("V")
     plt.xlabel("T (nanoseconds)")
     plt.plot(i[2][-300:],i[3][-300:])
-    print(np.max(i[6][-300:]))
-    print(np.min(i[6][-300:]))
+    print(np.max(i[6][-1*(len(i[6])//3):]))#voutput
+    print(np.min(i[6][-1*(len(i[6])//3):]))
     print(np.max(i[3][-300:]))
-    print(np.min(i[3][-300:]))
+    print(np.min(i[3][-300:]))#vcollector
     plt.draw()
     plt.pause(0.001)
 
+
+
+
 plt.savefig('/tmp/plots.svg')
+
+for i in values:
+    #https://www.rfcafe.com/references/electrical/pwr2volts.htm
+    avg_voltage = np.mean(i[6][-1*(len(i[6])//3):])
+    rms_voltage = np.sqrt(np.mean((i[6][-1*(len(i[6])//3):] - avg_voltage)**2.0))
+    rms_output_power = np.sqrt(rms_voltage)**2.0 / 50.0
+    print("V, P: ",rms_voltage, rms_output_power)
 
 spectrum_file = '/tmp/spectrum.svg'
 plot_file = '/tmp/plots.svg'
