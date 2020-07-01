@@ -3,90 +3,13 @@
 
 \include{preamble}
 
-
-\title{On the application of microwave acoustic resonant viral inactivation
-\thanks{I would be delighted to include any criticisms or comments anyone may have, both on substance and comprehensibility; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}
-\date{May 2020}
-\author{Based primarily on exceptional work by }
-
-
-\begin{document}
-
-\flushbottom 
-\maketitle
-\thispagestyle{empty}
-
-
-
-\begin{textblock}{5}(1,1)
-\noindent Please view the latest version at github.com/0xDBFB7/covidinator
-\end{textblock}
-%\begin{textblock}{5}(1,27)
-%\end{textblock}
-
-\null\begin{tabular}[t]{l@{}}
-  {Daniel Correia}\ \orcidlink{0000-0002-9353-0216}  \\
-  \textit{????????? York??????}
-\end{tabular}
-
-
-
-\begin{abstract}
-
-We extend this landmark work rather trivially by:\\
-
-
-Aims:
-
-\begin{itemize}
-  \item Establishing the time dependence of inactivation
-  \item Demonstrating a modulation scheme that decreases the inactivation threshold to below current safety levels in surrogate bacteriophage
-  \item Demonstrating a prototype emitter in an "electromagnetic mask" form-factor, costing about \$5 in prototype quantities, which can reasonably be produced in 10 million-of quantities
-  \item Testing power thresholds in various conditions; biological fluids of various conductivities and pHs
-  \item Using a coarse-grained molecular-dynamics simulation to optimize the impulse
-  \item Using a virus-in-the-loop optimization with a centrifugal microfluidic system
-  \item Discussing the biological basis for the safety of the device
-  \item Showing that the deviation from the expected theshold could be explained by variance in the 
-  
-\end{itemize}
-
-{Perhaps notable that a completely free and open-source toolchain was used for the entire project, including FDTD microwave antenna optimization. This work can be replicated with \$500 in equipment.}
-
-\end{abstract}
-
-
-\begin{autem}
-	{\large  \it autem} \\
+\include{title}
 	
-	This work was prepared by an undergraduate and has not been peer-reviewed. Additionally, the author has no prior experience with either biology or microwave design. \\
 
-	While our study is very simple, biology is of such complexity that a tremendous amount of care must be taken before any conclusion can be drawn at all. It is not likely that we have taken sufficient care.\\ 
-
-This is especially true with RF biophysics. The literature is littered with otherwise impeccably perormed research which was later demonstrated to be an artifact. \\
-
-	Though the original research used Inf. A, our testing was only performed with a surrogate bacteriophage. All experiments must be repeated with SARS-NCoV-2. \\
-
-	Additionally, other sterilization techniques may produce superior results with less faffing about and should be evaluated in the same context. Data on far UV [Buonanno 2017] indicates safety.\\
-
-It has occurred before that otherwise striking resonances were detected and replication found them to be artifacts of the measurement equipment. [Foster 1987] even offers this disclaimer:
-
-"To detect the DNA resonances with the probe
-technique requires correction for system errors that are
-potentially much larger than the effect to be studied and
-lead to resonance-like artifacts. This is true even with the
-more precise instrumentation used in this study. Such data
-are easily misinterpreted, and we suggest this might have
-happened in the former study."
-
-The direct inactivation plaque and PCR data from [Yang], replicated by [Sun], is a somewhat convincing corroboration that this effect is not an artifact, but hundreds of convincing and  wrong papers exist in the literature. Our data is crude and imprecise, our equipment hastily constructed, and should not be considered validation of this effect even existing. \\
-
-
-	Please consider all claims with appropriate skepticism.
-
-\end{autem}
-	
 \clearpage
 \begin{multicols}{1}
+
+
 
 
 \paragraph{{\Large the gist}}\
@@ -97,20 +20,16 @@ Any claims of
 
 The chain of literature 
 %
-[Fr\"{o}hlich 1968] \textrightarrow \ [Fr\"{o}hlich 1980] \textrightarrow \ [Liu 2009] \textrightarrow \ ([Hung 2014] $\parallel$ [Yang 2015] $\parallel$ [Sun 2017])\footnote{We have probably missed several steps in this chain out of haste.} apparently culminates in the flagship work we focus on in this paper,
+[Fr\"{o}hlich 1968] \textrightarrow \ [Fr\"{o}hlich 1980] \textrightarrow \ [Liu 2009] \textrightarrow \ ([Hung 2014] $\parallel$ [Yang 2015] $\parallel$ [Sun 2017])\footnote{We have not conducted a thorough review; many more papers are probably involved.} apparently culminates in the flagship work we focus on in this paper,
 
 {\it Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses} [Yang 2015].
 %
 
-estabilishes that - unique to certain viruses, and apparently unlike human cell structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-band (6-10 GHz).
+estabilishes that - unique to certain viruses, and apparently unlike human cell structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-Band (6-10 GHz).
 
-More critically, [Yang 2015] (in parallel with [Hung 2014]) theoretically model and then experimentally demonstrate that the electric field strength required to produce an amplitude of vibration sufficient to tear the lipid envelope of the order of magnitude of 100 V/m.
+More critically, [Yang 2015] (and, in parallel, [Hung 2014]) theoretically model and then experimentally demonstrate in various strains of Influenza A that the electric field strength required to produce an amplitude of vibration sufficient to tear the lipid envelope is approximately 100 V/m, below safety limits.\footnote{See supplemental.}
 
-They demonstrate this with both a plaque and PCR assay, with fantastic agreement to the theoretical model.
-
-
-
-This is a non-ionizing, non-thermal technique.
+They demonstrate this with both a plaque and PCR assay, with fantastic agreement with the theoretical model.
 
 Microwave resonant absorption of viruses through dipolar coupling with confined acoustic vibrations
 
@@ -119,12 +38,37 @@ This resonance mode
 The myth that 2.4 GHz was chosen because it "couples strongly with water" is largely false; but this is 
 
 
-This is quite surprising, and should perhaps be considered with some trepidation, since 
+It cannot be overstated how unexpected and unusual this finding appears to be (at least, based on our limited research and experience). 
 
-\footnote{This {\it confined} acoustic resonance is apparently distinct from common-and-garden pipe-organ acoustic resonance. Rather than simple covalent or Lennard-Jones interaction between particles, if [Fr\"{o}hlich 1968] is to be believed at these nanoscopic scales a sort of coherent wavefunction is set up among the particles of the virus which produces coupling modes not otherwise expected. We confess to not yet understanding this phenomenon; fortunately, while helpful, the details of how this mode appears is not critical to implementing this technique.}
+The RF safety limits set by standards organizations are themselves based on the assumption that no resonances exist in biological tissues, and (as we shall see), this claim is grounded in solid in vitro (albeit limited in vivo) evidence. 
+
+It is difficult to reconcile this discrepancy. A failure tree is included below.
+
+
+If this mechanism exists, it would seem to provide the following advantages over other methods such as UV or cold-plasma sterilization:
+
+\begin{itemize}
+  \item This is a non-ionizing, non-thermal technique.
+  \item Far-field and moderately penetrating inactivation. 
+  			
+  \item 
+  
+\end{itemize}
+
+
+
+
+
+It should be noted that this {\it confined} acoustic resonance is apparently distinct from common-and-garden pipe-organ acoustic resonance. Beside the standard Coulomb-like and Lennard-Jones-like interactions between constituent particles, if Fr\"{o}hlich is to be believed at these nanoscopic scales a sort of coherent wavefunction is set up among the particles of the virus which produces coupling modes not otherwise expected. 
+
+We confess to not yet understanding this phenomenon; fortunately, while helpful, the details of how this mode appears are not critical to implementing this technique.
 
 
 \footnote{``{For example, below about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}'' [ICNIRP 2020 \faExternalLink] }
+
+
+
+\footnote{All values have been converted to $\text{W/m}^2$ to avoid confusion. 100 $\text{ W/m}^2 = 10 \text{ mW/cm}^2 = 10 \text{ dBm/cm}^2$.}
 
 
 With typical 2.4 GHz microwave exposure, sterilization can only occur by heating of the fluid and tissue.
@@ -144,8 +88,61 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 \end{multicols}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \clearpage
-{\Large The discrepancy}\\
+{\Large \it Talkin' 'bout the Variation}\\
+
+[Yang 2015] theoretically model the virus to determine the minimum electric field required to destroy it. 
+
+They assume that the virus is a simple damped harmonic oscillator, where the 'core' and 'shell' oscillate in opposition.
+
+They determine the net charge experimentally from microwave absorption measurements.
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+ \hline\hline
+ 1 & 6 & 87837 & 787 \\ 
+ \hline
+ 2 & 7 & 78 & 5415 \\
+ \hline
+ 3 & 545 & 778 & 7507 \\
+ \hline
+ 4 & 545 & 18744 & 7560 \\
+ \hline
+ 5 & 88 & 788 & 6344 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -159,9 +156,9 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 \paragraph{\textbf{Time dependence}}\
 
 
-Both Yang and [] used an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision given the focus of their paper. 
+Both [Yang 2015] and [Hung 2014] use an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision, given the focus of their paper. 
 
-The effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure.
+The effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must establish the required duration of exposure.
 
 {\color{red} speculative hypothesizing \{ } 
 
@@ -174,7 +171,6 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 
 {\color{red}  \} } 
 
-\footnote{All values have been converted to $\text{W/m}^2$ to avoid confusion. 100 $\text{W/m}^2 = 50 \text{mW/cm}^2$}
 
 
 
