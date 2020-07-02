@@ -1350,3 +1350,40 @@ SPICE BJT models don't seem to include breakdown voltages.
 Using a capacitive BJT biasing like in https://www.jstage.jst.go.jp/article/elex/advpub/0/advpub_10.20130470/_pdf
 gets us some of the way there. It's really sensitive to the biasing sharing between the
 two amplifiers.
+
+/RF power amplifiers/, someone:
+
+"If V0 = Vdc, the peak instantaneous collector voltage is 2Vdc, and the
+peak instantaneous collector current is 2Idc. The power output capability of
+the Class A amplifier is therefore 0.125".
+
+That sucks!
+
+
+
+
+2.3.2 Amplifier Biasing
+The impedance of the circuitry biasing the base is critical to the voltage
+handling capability of a bipolar device [30]. At high V ce, impact-ionization in the
+base-collector junction (large reverse bias) generates excess holes that are swept
+into the base region (reverse base current). With an open base (high impedance
+bias), the reverse current is injected back into the emitter increasing the collector
+current. This promotes impact-ionization (positive-feedback) and leads to early
+breakdown (BVCEO ≈ 1.8 V in this process). A low impedance biasing circuit that
+can source and sink current (behave as voltage source), drains the reverse base
+current, increasing the breakdown voltage to BVCES ≈ 5.5 V. Simulations of the
+unit PA with shorted base (Fig. 2.7) indicate a reverse DC base current of 0.25 mA
+(for the bottom devices) at full power.
+
+
+Aha! 
+
+
+Using 4-layer stackups can provide a thinner substrate [CuriousMarc],
+or even flex processes [Dharmon].
+
+
+With a sufficiently low-impedance bias, then, we should be able to run a single transistor up to
+5 V.
+
+
