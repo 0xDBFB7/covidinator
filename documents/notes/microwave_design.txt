@@ -1386,4 +1386,5 @@ or even flex processes [Dharmon].
 With a sufficiently low-impedance bias, then, we should be able to run a single transistor up to
 5 V.
 
+Infineon has an entire appnote about this problem, AN003.pdf. 
 

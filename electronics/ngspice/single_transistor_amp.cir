@@ -1,38 +1,34 @@
 .title Amp
 
-//Cascoded amp from [Sowlati 2002]
-
 .include ../models/BFP620.lib
 .include ../models/SMV2019079LF.lib
 .include ../models/10pf0402.lib
 
 
-Vsupply VCC 0 PULSE(0 4.0 20p 50p 10p 1ms 1ms)
+Vsupply VCC 0 PULSE(0 5.0 20p 50p 10p 1ms 1ms)
 
 Lsupply VCC D2 440NH
 
-X1 D2 upper_base upper_E1 upper_E2 BFP620
-X2 upper_E1 lower_base lower_E1 lower_E2 BFP620
+X1 D2 base E1 E2 BFP620
+
+Re E1 0 25
 
 
-Vupper_base upper_base_bias 0 3
-Lupper_base upper_base upper_base_bias 440NH
-C1 upper_base upper_base_ 0.1uF
-Rb upper_base_ 0 50
+Vbase base_bias 0 0.7
 
+Rb base base_bias 50
 
-Rgnd lower_E1 0 50
+Rbase base_ base 0
+Cin input base_ 100pF
+
+Vinp input 0 SIN(0 1 8e9 0 0 0)
+
 
 Y1 D2 0 output 0 ymod
 .MODEL ymod txl R=0.0236 L=0.306e-9 G=0.0001125 C=0.122e-12 length=10
 //1.5 mm, 50-ohm trace on the 0.79mm substrates
+
 Rout output 0 50
-
-
-Vlower_base lower_base_bias 0 1
-Llower_base lower_base lower_base_bias 440NH
-C2 lower_base_ lower_base
-Vinp lower_base_ 0 SIN(0 0.7 8e9 0 0 0)
 
 .control
 //set num_threads=8
@@ -41,8 +37,7 @@ setcs DIOgradingCoeffMax=3.0
 setcs DIOtDepCapMax = 2.0
 tran 1p 300000ps uic
 //uic?
-plot D2 upper_E1
-plot upper_base-upper_E1 lower_base
+plot D2 base
 plot output
 //plot collector
 //plot b1 b2
