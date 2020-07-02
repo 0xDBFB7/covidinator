@@ -1331,3 +1331,22 @@ Matching with L-section has very little impact on the OP power.
 this cascode technique is also known as a "HiVP" or "Stacked amplifier" technique.
 
 neat - Class D purely switched amps are common in RF PAs too.
+
+Matching the stacked amplifier with a L-stub ind+cap designed in QUCS using the datasheet
+smith chart does work, but 
+In the BFP620 datasheet they give a curve at 3V, which would be over the Vceo limit.
+looking into this,
+The max voltage situation is much more complicated in BJTs than in mosfets.
+At a high enough collector voltage, the base is pulled high through an internal
+diode, the transistor turns on and is essentially shorted (Vceo.)
+
+This is that '2.3v' breakdown voltage rating.
+
+However, the Vces - shorted base breakdown voltage - is 7.5V.
+
+SPICE BJT models don't seem to include breakdown voltages.
+
+
+Using a capacitive BJT biasing like in https://www.jstage.jst.go.jp/article/elex/advpub/0/advpub_10.20130470/_pdf
+gets us some of the way there. It's really sensitive to the biasing sharing between the
+two amplifiers.
