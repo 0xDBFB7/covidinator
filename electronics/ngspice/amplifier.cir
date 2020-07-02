@@ -16,6 +16,8 @@ X2 upper_E1 lower_base lower_E1 lower_E2 BFP620
 
 C1 upper_base upper_base_ 10pF
 Rb upper_base_ 0 100
+Rb2 upper_base D2 1000
+
 //X3 upper_base 0 10pf0402
 
 Rgnd lower_E1 0 0
