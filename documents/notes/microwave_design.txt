@@ -1325,3 +1325,9 @@ The distribution of the breaking force has a profound effect on the electric fie
 
 The e-field distribution model shows that 
 
+The oscillator has an OP power of about 10 mW, as would be expected. 
+Matching with L-section has very little impact on the OP power.
+
+this cascode technique is also known as a "HiVP" or "Stacked amplifier" technique.
+
+neat - Class D purely switched amps are common in RF PAs too.

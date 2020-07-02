@@ -736,3 +736,7 @@ isoelectric point can be converted to net charge via the Henderson-Hasselbalch e
 but I'm not sure if that's particularly accurate.
 
 
+pI - pH = log10(1/q)
+
+q = 1/exp(pI - pH)
+

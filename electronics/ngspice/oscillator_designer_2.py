@@ -69,7 +69,7 @@ values = []
 # values = []
 
 # NUM_SPECTRA = 30
-NUM_SPECTRA = 5
+NUM_SPECTRA = 2
 
 for i,v in enumerate(np.linspace(0, 20, NUM_SPECTRA)):
     values.append(run_sim(v))

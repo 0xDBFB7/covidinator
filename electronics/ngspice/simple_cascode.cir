@@ -14,12 +14,16 @@ Lsupply VCC D2 440NH
 X1 D2 upper_base upper_E1 upper_E2 BFP620
 X2 upper_E1 lower_base lower_E1 lower_E2 BFP620
 
-C1 upper_base upper_base_ 10pF
-Rb upper_base_ 0 100
+Rb1 upper_base D2 100
+Rb2 upper_base lower_base 50
 //X3 upper_base 0 10pf0402
 
 Rgnd lower_E1 0 0
 
+
+Rbase_pulldown Base 0 10K //0 ohm link
+
+Rc collector__ 0 10K //0 ohm link
 
 Y1 collector 0 output 0 ymod
 .MODEL ymod txl R=0.0236 L=0.306e-9 G=0.0001125 C=0.122e-12 length=10
@@ -27,10 +31,10 @@ Y1 collector 0 output 0 ymod
 
 Rout output 0 50
 
-Lupper_bias upper_bias upper_base 50NH
+//Rlower_base_bias lower_base lower_base_bias 10000
 Vupper_bias upper_bias 0 3
 
-Rb3 lower_base lower_base_r 10
+Rb3 lower_base lower_base_r 25
 Vinp lower_base_r 0 SIN(1 1 8e9 0 0 0)
 
 .control
@@ -40,8 +44,8 @@ setcs DIOgradingCoeffMax=3.0
 setcs DIOtDepCapMax = 2.0
 tran 1p 300000ps uic
 //uic?
-plot D2 upper_E1
-plot upper_base-upper_E1 lower_base
+plot D2
+plot upper_base upper_E1
 //plot collector
 //plot b1 b2
 //spec 0 15e9 3e7 v(collector)
