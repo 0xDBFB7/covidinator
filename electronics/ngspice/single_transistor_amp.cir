@@ -11,7 +11,7 @@ Lsupply VCC D2 440NH
 
 X1 D2 base E1 E2 BFP620
 
-Re E1 0 25
+Re E1 0 0
 
 
 Vbase base_bias 0 0.7
