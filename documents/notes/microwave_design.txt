@@ -1413,3 +1413,10 @@ we can only hope to get perhaps 17 dBm - 40 mW, 4v p-p.
 
 The CEL device has a gain of 12 dBm over frequency.
 
+The BFP540 has a base current of 8 mA and a Vceo of 5v. 
+The MCH4020 doesn't even list the max base current.MCH4020
+
+We could even get away without the switchable attenuators and downconverter;
+we don't need to transmit at full power with the SA in place. 
+
+

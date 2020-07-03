@@ -33,7 +33,7 @@ def run_sim(varactor_voltage):
     ngspyce.cmd('reset')
     # ngspyce.cmd('stop after 10000')
     step_ps = 1 #not always obeyed - ngspice sets its own timestep.
-    sim_duration = 300000
+    sim_duration = 100000
     n_steps = sim_duration/step_ps
     # ngspyce.cmd(" ")
     ngspyce.cmd(f'tran {step_ps}p {sim_duration}ps uic')
@@ -69,7 +69,7 @@ values = []
 # values = []
 
 # NUM_SPECTRA = 30
-NUM_SPECTRA = 2
+NUM_SPECTRA = 5
 
 for i,v in enumerate(np.linspace(0, 20, NUM_SPECTRA)):
     values.append(run_sim(v))
