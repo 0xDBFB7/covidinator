@@ -143,18 +143,6 @@ Since the ground plane does not participate in the DC bias at all, no vias are r
 \paragraph{A}
 \rule{\linewidth}{0.2pt}
 
-Microwave design has a reputation for being the purview of wizards. The software [Microwave Office], Agilent ADS, or Mathworks 
-
-It seems there's a subset of these, where wide tolerances and poor performance are acceptable, that does not require a goatee or the sale of firstborn.
-
-Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
-
-We are also aided by the fact that what took a \$150,000 computing cluster a decade ago can be done in a few minutes by a single budget GPU.
-
-With judicious application of reference designs, it seems to be possible to design 
-
-The oscillator design is a testament  This highlights that a computation is not a substitute for understanding.
-
 
 We began experimentally by building a scaled version of [Mueller 2008]'s active antenna crudely with copper tape, using a CEL [] FET.
 
@@ -164,9 +152,9 @@ We then manually tried a number of filter designs, using the manufacturer's S-pa
 
 A crude, inane, and extremely disorganized trial-and-error procedure was performed for many weeks. A wide variety of analytical methods for filter design were attempted, but simultaneously obtaining the correct phase shift and frequency response was somewhat difficult. The parasitic inductance of the varactors always seemed to destroy our most perfect creations.
 
-An SIR filter has the added advantage of confusing epidemiologists greatly.
+Using an SIR filter has the added advantage of confusing epidemiologists greatly.
 
-Eventually, QUCS, zonca/python-qucs, and scipy's basinhopper was used with the cost function somewhat similar to that described in [Kaplevich]:
+Eventually, QUCS, zonca/python-qucs, and scipy's basinhopper were used with the cost function somewhat similar to that described in [Kaplevich]:
 
 \begin{verbatim}
     freq_coeff = 1
@@ -255,15 +243,38 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 
 \rule{\linewidth}{0.2pt}
 
-In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the non-FDTD portion is less than some threshold.
+In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the SPICE portion is less than some threshold.
+
+
+\PRLsep{{\itshape Power amplifier }}
+
+The amplifier and oscillator are separate for ease of design; this way the phase response of the amplifier is of no consequence. 
+
+Our target power for the test is about 0.01 W, mandating a $2 \sqrt(2)$ V peak to peak RF swing on the Z=50 output.
+
+The $V_{CEO}$ breakdown of the bipolar transistor in question is only 2.3V. Above this value, current begins to flow from the emitter to the base, turning on the transistor and causing thermal runaway.
+
+
+One solution would be to match transistors at a lower impedance [Leuschner 2010]:
+
+\begin{quote}
+Generating high RF power from low supply voltages poses also another problem: the optimum load impedance of the PA output stage transistors becomes very small. A matching network with a high transformation ratio is needed to transform the antenna impedance of 50 to the optimum load impedance. High transformation ratios usually result in small bandwidth and higher losses. Possible solutions are the use of either non-standard high power RF devices or special circuit topologies using only the available standard devices.
+\end{quote}
+
+
+
+Use of so-called stacked, HiVP, or collector-feedback cascode designs allows the 
 
 
 \PRLsep{{\itshape Wherein an oscillator is designed }}
 
+
 \clearpage
 \PRLsep{ Wherein antennas are characterized}
 
-The impedance of an antenna over frequency can be determined by:
+Method-of-moments solvers like NEC-2 are typical for simulating antennas. However, most commonly-available packages cannot handle multiple dielectric constants, like the air and substrate for a patch antenna.
+
+The impedance of an antenna over frequency can be determined in FDTD by:
 
 \begin{itemize}
   \item Applying a gaussian pulse to a voltage source - in our case, applied to a via connecting the path (or probe)
@@ -280,7 +291,7 @@ Our implementation is in electronics/simple\_fdtd/runs/U.py.
 
 A similar mismatch to the SPICE exists for fourier methods - but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_{bin} = n_{bin} / (N_{simulation} \ dt) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_{simulation}$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
 
-There's more than enough 'information entropy' in 2000 FDTD points for most antennas. But you need some 30,000 points to get 10 bins below 20 GHz!
+There's more than enough 'information entropy' in 4000 FDTD points for most antennas. But you need some 30,000 points to get 10 bins below 20 GHz!
 
 There are a few methods of changing the FFT bin size artificially, which [Bi 1992] reviews. You can "use a manual fourier integration over the frequency region of interest".
 
@@ -298,7 +309,6 @@ A step impulse (1 first timestep, 0 otherwise) has been used in some works, thou
 
 A correction factor due to the staggered magnetic field of the Yee lattice must be introduced; [Fang 1994]. Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
 
-A method of moments solver like NEC-2 may have provided faster results; but handling of multiple dielectrics does not seem to be simple.
 
 This technique is equivalent to that used in electrochemistry, known as fourier impedance spectroscopy - except they seem to usually use a known impedance source rather than a hard source, presumably because ideal hard sources don't exist in reality.
 
@@ -314,9 +324,9 @@ The units of the FFT (unlike those of the continuous FT) remain in volts
 
 \rule{\linewidth}{0.2pt}
 
-Many equations in papers on the FDTD method are supplied without explicit scaling factors. For instance, for use with flaport/fdtd the H-field to current line integral in [] requires scaling by $\mu_0  (dx/dt)$, where $\mu_0$ is the vacuum magnetic permittivity, dx the cell size, and dt the timestep - despite the equation already possessing a deceptive set of $dx$-es.
+Most equations in papers on the FDTD method are supplied without explicit scaling factors. For instance, for use with flaport/fdtd the H-field to current line integral in [] requires scaling by $\mu_0  (dx/dt)$, where $\mu_0$ is the vacuum magnetic permittivity, dx the cell size, and dt the timestep - despite the equation already possessing a deceptive set of $dx$-es.
 
-Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run a test using a unit-aware calculator such as {\it sharkdp/insect}.
+Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run dimensional analysis using a unit-aware calculator such as {\it sharkdp/insect}.
 
 \PRLsep{{\itshape The antenna itself }}
 

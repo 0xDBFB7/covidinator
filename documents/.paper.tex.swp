@@ -68,7 +68,7 @@ If this mechanism exists, it would seem to provide the following advantages over
 We confess to not yet understanding this phenomenon; fortunately, while helpful, the details of how this mode appears are not critical to implementing this technique.}
 
 
-\footnote{``{For example, below about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}'' [ICNIRP 2020 \faExternalLink] }
+\footnote{``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}'' [ICNIRP 2020 \faExternalLink] }
 
 
 
@@ -288,6 +288,16 @@ Finally, there is one concern. Use of this technique will provide a selection bi
 }}
 %
 
+
+Microwave design has a reputation for being the purview of wizards. Modern RF software packages like HFSS, Microwave Office, Agilent's ADS, and Mathworks' RF toolbox, for which; component models 
+
+Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
+
+Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
+
+We are also aided by the fact that what took a \$150,000 computing cluster a single decade ago can now be done in a few minutes by a single budget GPU.
+
+The oscillator design is a testament  This highlights that a computation is not a substitute for understanding.
 
 The oscillator is a 'wideband double-tuned varactor VCO', based almost verbatim on [Tsuru 2008] and the reference design in Figure 8.36, p378 of [Grebennikov 2007]. 
 

@@ -1388,3 +1388,28 @@ With a sufficiently low-impedance bias, then, we should be able to run a single 
 
 Infineon has an entire appnote about this problem, AN003.pdf. 
 
+We've also been ignoring one possible optimization route: the power is pulsed.
+
+"Active antenna"
+
+Turning off the amplifier power has the expected result.
+
+If the base impedance is made low enough that runaway is unlikely (150r or so), the input match is too 
+poor 
+
+the 1.2V "Vebo" spec is the peak /reverse/ voltage allowed; the clue is in the order of the 
+E-B-O - in all other specs the positive goes first, so this would be -1.2v on the base.
+That makes more sense.
+
+"It has since been shown that reverse breakdown of the B-E junction, even if current limited, causes long time beta degradation."
+, widlar claimed otherwise
+
+The limiting value then becomes the 3 mA max base current.
+
+putting a sense resistor on the base, we're pushing 14 milliamps on the amplifier. that's no good.
+
+Aha. The gain (Fig. 9) at 6 GHz is only 10 dB. If we're putting in a 10 dBm signal,
+we can only hope to get perhaps 17 dBm - 40 mW, 4v p-p.
+
+The CEL device has a gain of 12 dBm over frequency.
+

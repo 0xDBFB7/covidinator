@@ -6,36 +6,26 @@
 .include ../models/10pf0402.lib
 
 
-Vsupply VCC 0 PULSE(0 5 20p 5p 1p 1ms 1ms)
+Vsupply VCC 0 PULSE(0 1 20p 5p 1p 1ms 1ms)
 
 Lsupply VCC collector 440NH
 
 X1 collector Base E1 E2 BFP620
 
-//LV1 Base Base_ 1.4NH
-//X6 Base Base_ 10pf0402
+
 X5 Base Base_ SMV2019079LF
 X6 b___ Base_ SMV2019079LF
 LV3 b___ 0 0NH
-//C1 Base_ 0 0.3p
 
-
-//LV2 collector collector__ 0.7NH
-//X7 collector 0 10pf0402
-//C2 collector__ 0 0.3p
 
 X7 collector collector__ 10pf0402
 X8 collector__ c__ SMV2019079LF
 X9 c___ c__ SMV2019079LF
 LV2 c___ 0 0NH
-//X6 0 Base_ SMV2019079LF
 
 Rbase_pulldown Base 0 10K //0 ohm link
 
 Rc collector__ 0 10K //0 ohm link
-
-//Lmatch collector collector_matched 1nH
-//Cmatch collector_matched 0 0.3pF
 
 //collector_matched
 Y1 collector 0 output 0 ymod
