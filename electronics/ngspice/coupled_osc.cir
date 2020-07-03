@@ -42,13 +42,13 @@ Y1 collector 0 output 0 ymod
 
 Rout output 0 50
 
-Y2 amp_C 0 amp_output 0 ymod
+Y2 amp_C_2 0 amp_output 0 ymod
 .MODEL ymod txl R=0.0236 L=0.306e-9 G=0.0001125 C=0.122e-12 length=5
 Vamp_supply amp_supply 0 PULSE(0 5 50n 1n 1p 1ms 1ms)
 Rsupply2 amp_supply amp_C 100
 X2 amp_C amp_Base 0 0 BFP620
 
-Rbase1 amp_Base_ amp_Base 0
+Rbase1 amp_Base_ amp_Base 250
 C2 output amp_Base_ 100pF
 Rbase2 amp_Base amp_bias 150
 Vbias amp_bias 0 0.7
@@ -57,6 +57,11 @@ Lem E1 E_ 440NH
 Rem E_ E__ 1
 Vem E__ 0 -1.0
 
+Rsupply3 amp_supply amp_C_2 100
+X3 amp_C_2 amp_Base_2 0 0 BFP620
+Rbase4 amp_Base__ amp_Base_2 100
+C4 amp_C_2 amp_Base__ 100pF
+Rbase5 amp_Base_2 amp_bias 150
 
 Rem2 E1 E2 0
 
@@ -86,6 +91,7 @@ tran 1p 300000ps uic
 //uic?
 plot output
 plot amp_output
+plot v(amp_Base_)-v(amp_Base)
 //plot collector
 //plot b1 b2
 //spec 0 15e9 3e7 v(collector)
