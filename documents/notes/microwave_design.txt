@@ -1419,4 +1419,17 @@ The MCH4020 doesn't even list the max base current.MCH4020
 We could even get away without the switchable attenuators and downconverter;
 we don't need to transmit at full power with the SA in place. 
 
+SMP connectors look perfect for this use.
+
+All the low-freq. components can be removed by subtracting a sample with the LO off.
+
+The diode detector has a fall time of 10 us, much too slow for our purposes.
+It would be possible to pull down the output with a fet, sort of like a chopper amp - 
+to get better performance
+
+The impedance of the diode detector circuit is 0 in the steady-state! We still have to terminate
+with 50 ohms before! How strange that the BAT15 appnote didn't do that.
+
+Temperature compensation in the diode detector is not required above 0 dBm.
+
 

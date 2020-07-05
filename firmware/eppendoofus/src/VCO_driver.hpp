@@ -3,13 +3,16 @@
 #ifdef MOCK_INCLUDES
 
 #include "mocks.hpp"
-#include <WString.h>
-#include "except.hpp"
+
 #else
-
-#include "WProgram.h"
-
 #endif
+
+
+
+#include "except.hpp"
+#include "WProgram.h"
+#include <string>
+#include <WString.h>
 
 
 struct transistor_driver{

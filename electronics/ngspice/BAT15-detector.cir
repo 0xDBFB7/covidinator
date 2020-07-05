@@ -1,0 +1,44 @@
+.title Amp
+
+.include ../models/bat15_04w/BAT_15-04W.txt
+
+
+
+Rbase base_ base 0
+Cin input base_ 100pF
+
+Vinp input_v 0 SIN(0 1.5 8e9 0 0 0)
+Rinput input_v input_v_terminated 50
+
+Y2 input_v_terminated 0 input 0 ymod
+.MODEL ymod txl R=0.0236 L=0.306e-9 G=0.0001125 C=0.122e-12 length=10
+//1.5 mm, 50-ohm trace on the 0.79mm substrates
+
+X1 0 output input BAT1504W
+
+Rout output 0 50
+
+//.option rseries = 1.0e-2
+//.option rshunt = 100M
+
+.control
+//set num_threads=8
+
+setcs DIOgradingCoeffMax=3.0
+setcs DIOtDepCapMax = 2.0
+tran 1p 300000ps uic
+//uic?
+plot D2 base
+plot output
+plot input_v_terminated
+plot v(base)-v(base_sen)
+//plot collector
+//plot b1 b2
+//spec 0 15e9 3e7 v(collector)
+//set specwindow = "blackman"
+//plot mag(v(collector))
+//set spectrum = mag(v(collector))
+
+.endc
+
+.end

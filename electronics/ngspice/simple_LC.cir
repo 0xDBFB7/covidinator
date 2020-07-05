@@ -13,25 +13,14 @@ Lsupply VCC collector 440NH
 X1 collector Base E1 E2 BFP620
 
 //LV1 Base Base_ 1.4NH
-X10 Base Base__ 10pf0402
-X5 Base__ Base_ SMV2019079LF
+//X6 Base Base_ 10pf0402
+X5 Base Base_ SMV2019079LF
 X6 b___ Base_ SMV2019079LF
-LV3 b___ 0 2.7NH
+LV3 b___ 0 1NH
 //C1 Base_ 0 0.3p
 
 
-//LV2 collector collector__ 0.7NH
-//X7 collector 0 10pf0402
-//C2 collector__ 0 0.3p
-
-X7 collector collector__ 10pf0402
-X8 collector__ c__ SMV2019079LF
-X9 c___ c__ SMV2019079LF
-LV2 c___ 0 2.7NH
-//X6 0 Base_ SMV2019079LF
-
 Rbase_pulldown Base 0 10K //0 ohm link
-Rbase_pulldown2 Base__ 0 10K //0 ohm link
 
 Rc collector__ 0 10K //0 ohm link
 
@@ -47,7 +36,7 @@ Rout output 0 50
 
 
 Lem E1 E_ 440NH
-Rem E_ E__ 100
+Rem E_ E__ 0
 Vem E__ 0 -1.0
 
 

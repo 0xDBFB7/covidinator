@@ -1,0 +1,75 @@
+*****************************************************************************
+* Infineon AG - Discrete & RF Semiconductors                                *
+* SPICE2G6 Model: Schottky Diode BAT 15-04W (chip D0315F in SOT323 package) *        
+* Filename:       BAT_1504W_v1.txt                                          *
+* Version:        1.0                                                       *
+* Date:           March 2009                                                *
+* Author:         M. Jauvion                                                *
+*****************************************************************************
+*                                                                           *
+*                                                                           *
+*                                                                           *
+*                                                                           *
+*                                                                           *
+*****************************************************************************
+
+.SUBCKT BAT1504W 1 2 3
+R1I	1	11	1.9	
+L1I	11	111	1.2n
+X13	111	1111	D0315F
+C1I	1	1111	85f
+R2I	2	22	1.9	
+L2I	22	222	1.2n
+X32	1111	222	D0315F
+C2I	2	1111	85f
+L3I	1111	3	.15n
+.ENDS BAT1504W 
+
+.SUBCKT D0315F  10  20
+RS	10  	11	3.2
+DSAT 	11	111	DSAT
+DMAIN	111	20	DMAIN
+DLOW	111	20	DLOW
+RREV	10	12	0
+DREV	20	12	DREV
+CP	10	20	135f
+
+.MODEL DSAT D
++IS=61.7m 
++N=.5 
++CJO=1f 
++EG=.69 
++XTI=2.5 
++TNOM=25
+
+.MODEL DLOW D
++IS=1p 
++N=2 
++EG=.69 
++XTI=2.5 
++TNOM=25
+
+.MODEL DMAIN D
++IS=94.26n 
++N=1.039 
++CJ0=106.3f 
++M=49.7m 
++MJSW=.33 
++VJ=.1 
++FC=.5 
++FCS=.5
++TT=.1f
++EG=.69 
++XTI=2.5 
++TNOM=25
+
+.MODEL DREV D
++IS=112.9n 
++N=45 
++EG=.69 
++XTI=2.5 
++TNOM=25
+
+.ENDS D0315F
+
+

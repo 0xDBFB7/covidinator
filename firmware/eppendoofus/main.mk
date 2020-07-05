@@ -45,7 +45,7 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(COREPATH) -fsingle-precision-constant
 
 # compiler options for C++ only
-CXXFLAGS = -std=gnu++0x -Wno-c++14-compat 
+CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -fno-exceptions
 
 # compiler options for C only
 CFLAGS =
@@ -110,6 +110,8 @@ C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
 CPP_FILES += $(wildcard src/native/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
+
+CPP_FILES := $(filter-out $(wildcard src/test_*.cpp), $(CPP_FILES))
 
 CPP_FILES := $(filter-out test_main.cpp, $(CPP_FILES))
 
