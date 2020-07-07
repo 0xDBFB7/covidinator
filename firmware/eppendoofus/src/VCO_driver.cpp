@@ -1,15 +1,12 @@
 #include "VCO_driver.hpp"
 
-float voltage_divider(float vout, float Rtop, float Rbottom){
-    return (vout/(Rbottom/(Rtop+Rbottom)));
-}
-
 void transistor_driver::print(std::string message){
 }
 
 
 transistor_driver::transistor_driver(){
     //split up because the preamp is just a bare transistor
+
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
     pinMode(VBASE_BIAS_PWM_PIN, OUTPUT);
     analogWrite(VBASE_BIAS_PWM_PIN, 0);
@@ -38,26 +35,26 @@ void transistor_driver::set_base_bias_voltage(float voltage){
     (*this).print("Updated base bias.");
 }
 
-
-struct VCO_driver{
-    int VARACTOR_OUTPUT_PIN = 0;
-    int VARACTOR_FEEDBACK_PIN = 0;
-
-
-
-
-
-    std::string name = "";
-
-    VCO_driver();
-    void varactor_feedback_voltage();
-    void set_tuning_varactor_voltage(float voltage);
-};
-
-VCO_driver::VCO_driver(){
-    analogWriteResolution(ANALOG_WRITE_RESOLUTION);
-    pinMode(VARACTOR_OUTPUT_PIN, OUTPUT);
-}
+//
+// struct VCO_driver{
+//     int VARACTOR_OUTPUT_PIN = 0;
+//     int VARACTOR_FEEDBACK_PIN = 0;
+//
+//
+//
+//
+//
+//     std::string name = "";
+//
+//     VCO_driver();
+//     void varactor_feedback_voltage();
+//     void set_tuning_varactor_voltage(float voltage);
+// };
+//
+// VCO_driver::VCO_driver(){
+//     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
+//     pinMode(VARACTOR_OUTPUT_PIN, OUTPUT);
+// }
 
 // void VCO_driver::set_base_bias_voltage(float voltage){
 //     // I/C = dV/dt
@@ -89,6 +86,8 @@ VCO_driver::VCO_driver(){
 void VCO_driver::varactor_feedback_voltage(){
 
 }
+
+
 //
 // void VCO_driver::generate_varactor_tuning_table_checks(){
 //     DAC_write(VARACTOR_OUTPUT_PIN);

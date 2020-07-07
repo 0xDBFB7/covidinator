@@ -17,4 +17,12 @@ float constrain(float x, float a, float b) {
     else
         return x;
 }
+
+
+
+float voltage_divider(float vout, float Rtop, float Rbottom){
+    return (vout/(Rbottom/(Rtop+Rbottom)));
+}
+
+
 // template float constrain(float x, float a, float b) {

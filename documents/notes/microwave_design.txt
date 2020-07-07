@@ -1480,3 +1480,18 @@ advances have been made in our knowledge of the biological effects of exposure t
 increased knowledge strengthens the basis for and confidence in the statement that the MPEs and BRs in this
 standard are protective against established adverse health effects with a large margin of safety."
 
+The results of the recent modelling of the inactivation threshold over frequency 
+show that (depending on the value of *k*) a wideband VCO sweep is of little importance. 
+It is unfortunate that this was discovered so late in the project, 
+since a great deal of time was spent trying to make everything
+broadband. When one frequency can be assumed, you have many more tools in the RF toolbox;
+quarter-wavelength lines are well-behaved, patch antennas need not be broadband, etc.
+
+need to fix the mu dx/dt scale factor in the FDTD<->SPICE sim.
+
+Silicon carbide has a distinctive absorption spectrum between 8 and 12 GHz.
+30% b/w SiC to epoxy makes a nice 7 GHz reference [Ting 2016].
+
+
+
+

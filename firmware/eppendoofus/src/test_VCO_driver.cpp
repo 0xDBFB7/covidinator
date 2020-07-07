@@ -8,10 +8,6 @@ void VCO_sense_test_1(){
 }
 
 
-void VCO_(){
-
-
-
 void run_VCO_tests(){
     RUN_TEST(VCO_sense_test_1);
 }

@@ -33,14 +33,22 @@ CPP_FILES := $(wildcard src/*.cpp)
 
 CPP_FILES := $(filter-out src/main.cpp, $(CPP_FILES))
 CPP_FILES += $(wildcard test_mocks/*.cpp)
+CPP_FILES += $(wildcard src/*.cc)
+
 C_FILES := $(wildcard Unity/src/*.c)
 
-SOURCES := $(CPP_FILES:.cpp=.o) $(TCPP_FILES:.cpp=.o) $(C_FILES:.c=.o)
+SOURCES := $(CPP_FILES:.cpp=.o) $(CPP_FILES:.cc=.o) $(TCPP_FILES:.cpp=.o) $(C_FILES:.c=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
 
-all: $(TARGET)
+all: $(TARGET) proto
 
 build: $(TARGET)
+
+
+proto:
+	protoc --python_out=host/ src/messages.proto
+	protoc -I=src/ --cpp_out=src/ src/messages.proto
+	rename src/messages.pb.cc src/messages.pb.cpp # would otherwise have to add a bunch of extra boilerplate to the makefile
 
 
 $(BUILDDIR)/%.o: %.cpp

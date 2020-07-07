@@ -5,12 +5,14 @@
 #include "mocks.hpp"
 
 #else
+
+#include "WProgram.h"
+
 #endif
 
 
 
 #include "except.hpp"
-#include "WProgram.h"
 #include <string>
 #include <WString.h>
 
@@ -18,12 +20,12 @@
 struct transistor_driver{
     std::string name = "";
 
-    int VBASE_BIAS_PWM_PIN = 0;
+    int BASE_BIAS_PWM_PIN = 0;
 
-    int VSOURCE_PWM_PIN = 0;
+    int SOURCE_PWM_PIN = 0;
     int PULSE_INPUT_PIN = 0;
-    int VSOURCE_FEEDBACK_PIN = 0;
-    int VPULSE_FEEDBACK_PIN = 0;
+    int SOURCE_FEEDBACK_PIN = 0;
+    int PULSE_FEEDBACK_PIN = 0;
     int CURRENT_SENSE_PIN = 0;
 
     void set_base_bias_voltage(float voltage);
@@ -33,11 +35,17 @@ struct transistor_driver{
     transistor_driver();
 };
 
+struct varactor_driver{
+    std::string name = "";
+
+    int VARACTOR_INPUT_PIN = ;
+    int VARACTOR_FEEDBACK_PIN = ;
+    void set_varactor_voltage(float voltage);
 
 
-
-
-float voltage_divider(float vout, float Rtop, float Rbottom);
+    void print(std::string message);
+    varactor_driver();
+};
 
 
 

@@ -2,10 +2,12 @@
 TARGET = $(notdir $(CURDIR))
 
 # The teensy version to use, 30, 31, 35, 36, or LC
-TEENSY = 36
+# 36
+TEENSY = LC
 
 # Set to 24000000, 48000000, or 96000000 to set CPU core speed
-TEENSY_CORE_SPEED = 180000000
+#180000000
+TEENSY_CORE_SPEED = 48000000
 
 # Some libraries will require this to be defined
 # If you define this, you will break the default main.cpp
@@ -54,7 +56,7 @@ CFLAGS =
 LDFLAGS = -Os -Wl,--gc-sections -mthumb
 
 # additional libraries to link
-LIBS = -lm  -lstdc++
+LIBS = -lm
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)
@@ -109,6 +111,8 @@ TCPP_FILES := $(filter-out $(COREPATH)/main.cpp, $(TCPP_FILES))
 C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
 CPP_FILES += $(wildcard src/native/*.cpp)
+CPP_FILES += $(wildcard src/*.cc)
+
 INO_FILES := $(wildcard src/*.ino)
 
 CPP_FILES := $(filter-out $(wildcard src/test_*.cpp), $(CPP_FILES))
@@ -121,10 +125,10 @@ CPP_FILES := $(filter-out test_main.cpp, $(CPP_FILES))
 # include paths for libraries
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
 
-SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
+SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(CPP_FILES:.cc=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
 
-all: hex
+all: hex proto
 
 build: $(TARGET).elf
 
@@ -135,6 +139,12 @@ post_compile: $(TARGET).hex
 
 reboot:
 	@-$(abspath $(TOOLSPATH))/teensy_reboot
+
+proto:
+	protoc --python_out=host/ src/messages.proto
+	protoc -I=src/ --cpp_out=src/ src/messages.proto
+	rename src/messages.pb.cc src/messages.pb.cpp # would otherwise have to add a bunch of extra boilerplate to the makefile
+
 
 upload: post_compile reboot
 

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+//package tutorial;
+
+message VCO_set {
+  required string name = 1;
+  required int32 power = 2;
+  required float tuning_voltage = 3;
+}
