@@ -1,27 +1,6 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Amplifier_Current_INA194
-#
-DEF Amplifier_Current_INA194 U 0 10 Y Y 1 F N
-F0 "U" 150 150 50 H V C CNN
-F1 "Amplifier_Current_INA194" 150 -150 50 H V C CNN
-F2 "Package_TO_SOT_SMD:SOT-23-5" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-ALIAS INA194 INA195
-$FPLIST
- *SOT*23*
-$ENDFPLIST
-DRAW
-P 4 0 1 10 200 0 -200 200 -200 -200 200 0 f
-X ~ 1 300 0 100 L 50 50 1 1 O
-X GND 2 -100 -300 150 U 50 50 1 1 W
-X + 3 -300 100 100 R 50 50 1 1 I
-X - 4 -300 -100 100 R 50 50 1 1 I
-X V+ 5 -100 300 150 D 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
 # Connector_Test_Point
 #
 DEF Connector_Test_Point TP 0 30 N N 1 F N
@@ -39,14 +18,14 @@ X 1 1 0 0 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# SparkFun-Capacitors_10UF-1206-6.3V-20%
+# SparkFun-Capacitors_1.0UF-1206-50V-10%
 #
-DEF SparkFun-Capacitors_10UF-1206-6.3V-20% C 0 40 N N 1 L N
+DEF SparkFun-Capacitors_1.0UF-1206-50V-10% C 0 40 N N 1 L N
 F0 "C" 60 115 45 H V L BNN
-F1 "SparkFun-Capacitors_10UF-1206-6.3V-20%" 60 -85 45 H V L BNN
+F1 "SparkFun-Capacitors_1.0UF-1206-50V-10%" 60 -85 45 H V L BNN
 F2 "1206" 0 250 20 H I C CNN
 F3 "" 0 0 50 H I C CNN
-F4 "CAP-10057" 0 300 60 H V C CNN
+F4 "CAP-09822" 0 300 60 H V C CNN
 $FPLIST
  *1206*
 $ENDFPLIST
@@ -81,29 +60,25 @@ X 2 2 0 -100 100 U 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
-# SparkFun-Connectors_CONN_10SMD_MALE
+# SparkFun-Connectors_CONN_06SMD
 #
-DEF SparkFun-Connectors_CONN_10SMD_MALE J 0 40 N Y 1 L N
-F0 "J" -200 1000 45 H V L BNN
-F1 "SparkFun-Connectors_CONN_10SMD_MALE" -200 -150 45 H V L BNN
-F2 "1X10_SMD_MALE" 0 1100 20 H I C CNN
+DEF SparkFun-Connectors_CONN_06SMD J 0 40 N Y 1 L N
+F0 "J" -200 600 45 H V L BNN
+F1 "SparkFun-Connectors_CONN_06SMD" -200 -150 45 H V L BNN
+F2 "1X06-SMD_RA_MALE" 0 700 20 H I C CNN
 F3 "" 0 0 50 H I C CNN
-F4 "CONN-11291" 0 1150 60 H V C CNN
+F4 "CONN-08971" 0 750 60 H V C CNN
 $FPLIST
- *1X10_SMD_MALE*
+ *1X06-SMD_RA_MALE*
 $ENDFPLIST
 DRAW
-S 0 -50 -200 950 0 1 0 f
+S 0 -50 -200 550 0 1 0 f
 X 1 1 100 0 100 L 40 40 1 1 P
-X 10 10 100 900 100 L 40 40 1 1 P
 X 2 2 100 100 100 L 40 40 1 1 P
 X 3 3 100 200 100 L 40 40 1 1 P
 X 4 4 100 300 100 L 40 40 1 1 P
 X 5 5 100 400 100 L 40 40 1 1 P
 X 6 6 100 500 100 L 40 40 1 1 P
-X 7 7 100 600 100 L 40 40 1 1 P
-X 8 8 100 700 100 L 40 40 1 1 P
-X 9 9 100 800 100 L 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -270,72 +245,6 @@ X D 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# dk_PMIC-Gate-Drivers_MCP1416T-E_OT
-#
-DEF dk_PMIC-Gate-Drivers_MCP1416T-E_OT U 0 20 Y Y 1 F N
-F0 "U" -200 350 60 H V C CNN
-F1 "dk_PMIC-Gate-Drivers_MCP1416T-E_OT" 100 -250 60 H V L CNN
-F2 "digikey-footprints:SOT-753" 200 200 60 H I L CNN
-F3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" 200 300 60 H I L CNN
-F4 "MCP1416T-E/OTCT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
-F5 "MCP1416T-E/OT" 200 500 60 H I L CNN "MPN"
-F6 "Integrated Circuits (ICs)" 200 600 60 H I L CNN "Category"
-F7 "PMIC - Gate Drivers" 200 700 60 H I L CNN "Family"
-F8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" 200 900 60 H I L CNN "DK_Detail_Page"
-F10 "IC MOSFET DVR 1.5A HS SOT23-5" 200 1000 60 H I L CNN "Description"
-F11 "Microchip Technology" 200 1100 60 H I L CNN "Manufacturer"
-F12 "Active" 200 1200 60 H I L CNN "Status"
-DRAW
-S -250 250 250 -150 0 1 0 f
-X NC 1 -250 -50 150 R 50 50 1 1 N N
-X VDD 2 0 400 150 D 50 50 1 1 W
-X IN 3 -400 100 150 R 50 50 1 1 I
-X GND 4 0 -300 150 U 50 50 1 1 W
-X OUT 5 400 100 150 L 50 50 1 1 O
-ENDDRAW
-ENDDEF
-#
-# dk_PMIC-Voltage-Regulators-Linear_AZ1117CH-3_3TRG1
-#
-DEF dk_PMIC-Voltage-Regulators-Linear_AZ1117CH-3_3TRG1 U 0 20 Y Y 1 F N
-F0 "U" 50 150 60 H V C CNN
-F1 "dk_PMIC-Voltage-Regulators-Linear_AZ1117CH-3_3TRG1" 50 250 60 H V C CNN
-F2 "digikey-footprints:SOT-223" 200 200 60 H I L CNN
-F3 "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf" 200 300 60 H I L CNN
-F4 "AZ1117CH-3.3TRG1DICT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
-F5 "AZ1117CH-3.3TRG1" 200 500 60 H I L CNN "MPN"
-F6 "Integrated Circuits (ICs)" 200 600 60 H I L CNN "Category"
-F7 "PMIC - Voltage Regulators - Linear" 200 700 60 H I L CNN "Family"
-F8 "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F9 "/product-detail/en/diodes-incorporated/AZ1117CH-3.3TRG1/AZ1117CH-3.3TRG1DICT-ND/4505206" 200 900 60 H I L CNN "DK_Detail_Page"
-F10 "IC REG LINEAR 3.3V 800MA SOT223" 200 1000 60 H I L CNN "Description"
-F11 "Diodes Incorporated" 200 1100 60 H I L CNN "Manufacturer"
-F12 "Active" 200 1200 60 H I L CNN "Status"
-DRAW
-S -200 100 300 -300 0 1 0 f
-X ADJ/GND 1 0 -400 100 U 50 50 1 1 W
-X OUT 2 400 0 100 L 50 50 1 1 w
-X IN 3 -300 0 100 R 50 50 1 1 W
-X VOUT 4 400 -100 100 L 50 50 1 1 w
-ENDDRAW
-ENDDEF
-#
-# power2_+12V
-#
-DEF power2_+12V #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power2_+12V" 0 140 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 2 0 1 0 -30 50 0 100 N
-P 2 0 1 0 0 0 0 100 N
-P 2 0 1 0 0 100 30 50 N
-X +12V 1 0 0 0 U 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
 # power2_+48V
 #
 DEF power2_+48V #PWR 0 0 Y Y 1 F P
@@ -348,6 +257,20 @@ P 2 0 1 0 -30 50 0 100 N
 P 2 0 1 0 0 0 0 100 N
 P 2 0 1 0 0 100 30 50 N
 X +48V 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# power_+5V
+#
+DEF power_+5V #PWR 0 40 Y Y 1 F P
+F0 "#PWR" 0 90 20 H I C CNN
+F1 "power_+5V" 0 90 30 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 0 50 20 0 1 0 N
+P 4 0 1 0 0 0 0 30 0 30 0 30 N
+X +5V 1 0 0 0 U 20 20 0 0 W N
 ENDDRAW
 ENDDEF
 #

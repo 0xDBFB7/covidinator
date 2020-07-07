@@ -1419,7 +1419,7 @@ The MCH4020 doesn't even list the max base current.MCH4020
 We could even get away without the switchable attenuators and downconverter;
 we don't need to transmit at full power with the SA in place. 
 
-SMP connectors look perfect for this use.
+SMP connectors like 1868-1116-ND‎look perfect for this use.
 
 All the low-freq. components can be removed by subtracting a sample with the LO off.
 
@@ -1432,4 +1432,51 @@ with 50 ohms before! How strange that the BAT15 appnote didn't do that.
 
 Temperature compensation in the diode detector is not required above 0 dBm.
 
+The on-off switch can be capacitive; when it's put on, it turns on.
+
+The attenuator could be automatic - comparator on the diode detector, 
+
+If the impedance of the diode detector is truly infinity at steady-state, we don't need to switch
+it in and out of the circuit; it can just be constantly hanging off the amplifiers.
+
+a 100pF capacitor on the detector 
+
+chrome --js-flags="--max_old_space_size=XXX"
+or --max_old_space_size
+might fix the ppapi pdf viewer issue
+
+have some spare lm317-like regs, figured they'd have better power dissipation
+aldfja;sdfljk lsdkfj aldkf j
+starts up at max voltage rather than the other, which sucks
+
+The current sense amp is too slow. durn.
+
+
+" However, for
+pulsed waveforms, especially those of a low duty factor, the thermal crossover can extend to much higher
+frequencies (in the megahertz region). This standard contains criteria to protect against adverse electrostimulation effects for pulsed waveforms having fundamental frequencies above 100 kHz. "
+
+C95.1-2005
+
+Neither ICNIRP nor IEEE specifiy e-field restrictions above 6 GHz.
+
+"f) For exposures to pulsed RF fields in the range of 100 kHz to 300 GHz, the peak pulse power densities are limited by the use of time averaging and the limit on peak E field, with one exception: the
+total incident energy density during any one-tenth second period within the averaging time shall not
+exceed one-fifth of the total energy density permitted during the entire averaging time for a continuous field (1/5 of 144 J/kg), i.e.,"
+
+C95.1-2005 Annex B, "Identification of levels of RF exposure responsible for adverse
+effects: summary of the literature", has an excellent overview 
+
+oh, here's a gold quote:
+
+"Further examination of the RF literature reveals no reproducible low level (non-thermal) effect that would
+occur even under extreme environmental exposures. The scientific consensus is that there are no accepted
+theoretical mechanisms that would suggest the existence of such effects. This consensus further supports the
+analysis presented in this section, i.e., that harmful effects are and will be due to excessive absorption of
+energy, resulting in heating that can result in a detrimentally elevated temperature. The accepted mechanism
+is RF energy absorbed by the biological system through interaction with polar molecules (dielectric relaxation) or interactions with ions (ohmic loss) is rapidly dispersed to all modes of the system leading to an
+average energy rise or temperature elevation. Since publication of ANSI C95.1-1982 [B6], significant
+advances have been made in our knowledge of the biological effects of exposure to RF energy. This
+increased knowledge strengthens the basis for and confidence in the statement that the MPEs and BRs in this
+standard are protective against established adverse health effects with a large margin of safety."
 

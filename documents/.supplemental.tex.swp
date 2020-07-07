@@ -31,6 +31,8 @@ We also did not understand the *confined* part in the *confined* acoustic resona
 
 Simulating the aggregate bose condensate wavefunction is well beyond us.
 
+
+
 %\end{multicols}
 
 
@@ -60,6 +62,11 @@ Simulating the aggregate bose condensate wavefunction is well beyond us.
 \end{multicols}
 
 
+
+Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent.  [FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
+adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". 
+
+Things heating up at the Microwave Safety fandom.
 
 
 \clearpage
@@ -252,10 +259,9 @@ The amplifier and oscillator are separate for ease of design; this way the phase
 
 Our target power for the test is about 0.01 W, mandating a $2 \sqrt(2)$ V peak to peak RF swing on the Z=50 output.
 
-The $V_{CEO}$ breakdown of the bipolar transistor in question is only 2.3V. Above this value, current begins to flow from the emitter to the base, turning on the transistor and causing thermal runaway.
+The $V_{CEO}$ breakdown of the bipolar transistor in question is only 2.3V. Above this value, current begins to flow from the emitter to the base, turning on the transistor and causing thermal runaway. If the base bias can source current, 
 
-
-One solution would be to match transistors at a lower impedance [Leuschner 2010]:
+One solution would be to match the output to a lower impedance [Leuschner 2010]:
 
 \begin{quote}
 Generating high RF power from low supply voltages poses also another problem: the optimum load impedance of the PA output stage transistors becomes very small. A matching network with a high transformation ratio is needed to transform the antenna impedance of 50 to the optimum load impedance. High transformation ratios usually result in small bandwidth and higher losses. Possible solutions are the use of either non-standard high power RF devices or special circuit topologies using only the available standard devices.
@@ -263,7 +269,7 @@ Generating high RF power from low supply voltages poses also another problem: th
 
 
 
-Use of so-called stacked, HiVP, or collector-feedback cascode designs allows the 
+Use of so-called stacked, HiVP, or collector-feedback cascode designs can also allow the RF voltage to be distributed over many devices.
 
 
 \PRLsep{{\itshape Wherein an oscillator is designed }}
@@ -277,7 +283,7 @@ Use of so-called stacked, HiVP, or collector-feedback cascode designs allows the
 \clearpage
 \PRLsep{ Wherein antennas are characterized}
 
-Method-of-moments solvers like NEC-2 are typical for simulating antennas. However, most commonly-available packages cannot handle multiple dielectric constants, like the air and substrate for a patch antenna.
+Method-of-moments solvers like NEC-2 are typical for simulating antennas. However, most commonly-available packages don't seem to handle multiple dielectric constants, such as the air and substrate for a patch antenna.
 
 The impedance of an antenna over frequency can be determined in FDTD by:
 
@@ -354,6 +360,8 @@ Unfortunately, patch antennas have a relatively narrow bandwidth.
 
 \rule{\linewidth}{0.2pt}
 
+Automatic, no-effort documentation of simulation and experiment runs is critical.
+
 It may be helpful to think of simulations very similarly to IRL experiments. 
 
 A simulation is just a universe in a bottle that you can examine more closely; as with real-world, you can learn much from observation, but 
@@ -363,6 +371,8 @@ But this need for documentation conflicts with the rapid, iterative cycle necess
 This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs, input files) of each distinct test. 
 
 For comparison to experiment, having a webcam take an image of the assembled board is also helpful. 
+
+Many months of testing have vanished into the ether due to 
 
 Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you must be able to see what the input and output was without re-running the simulation. 
 
@@ -412,18 +422,13 @@ The computational biologists have beat us at our own game.
 
 \rule{\linewidth}{0.2pt}
 
-
-Write a paper to be understood; to be as clear and helpful as possible to the reader.
-
-\rule{\linewidth}{0.2pt}
-
 We have always encountered wasting extreme amounts of time on subtle assembly mistakes in hardware prototypes. 
 
 In one example in this project, many hours were wasted because the enamel insulation on a bodge wire had not burned off completely in the solder joint, leading to a high-impedance connection.
 
 The same has occurred in previous projects; in one example, many days were spent debugging software to fix an apparently slow hardware interrupt, which ended up being the result of a poor solder paste stencil leading to a hidden high-impedance connection to a leadless package.
 
-Many failures are perhaps the result of carelessness in modification and a lack of inspection; but others would only have been found by a 100\% electrical test.
+Many failures are the result of carelessness in modification and lack of inspection. Others would only have been found by a 100\% electrical test.
 
 If flying-probe or bed-of-nails tests can be made sufficiently rapid and closely coupled with the existing toolchain, 
 
@@ -433,10 +438,21 @@ Boundary-scan features might really help
 
 \rule{\linewidth}{0.2pt}
 
-The ability to almost immediately compare simulation to experiment was quite important.
+The ability to almost immediately compare simulation to experiment was essential.
 
 \rule{\linewidth}{0.2pt}
 
+This project started at the tail end of a project to produce ceramics. Many weeks were wasted; I had convinced myself that ceramics were required over FR4. 
+
+\rule{\linewidth}{0.2pt}
+
+I originally rationalized not contacting others about . There are some 10,000 labs working on a cure; it's not helpful to have random amateurs tying up expert time with ignorant flights of fancy. 
+
+Later, as the project became more mature and seemed likely, this morphed into a sort of arrogance.
+
+An expert in microwave engineering could probably have completed this entire project in a few days, rather than the months it took us.
+
+\rule{\linewidth}{0.2pt}
 
 \paragraph{Hall of Hubris} \
 

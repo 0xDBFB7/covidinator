@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -120,10 +120,10 @@ F 4 "XXX-00000" H 3807 2819 60  0000 C CNN "Field4"
 	-1   0    0    1   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0106
 U 1 1 5EA7383E
 P 3150 3200
-F 0 "#PWR?" H 3150 3200 30  0001 C CNN
+F 0 "#PWR0106" H 3150 3200 30  0001 C CNN
 F 1 "GND" H 3150 3130 30  0001 C CNN
 F 2 "" H 3150 3200 50  0001 C CNN
 F 3 "" H 3150 3200 50  0001 C CNN
@@ -131,14 +131,34 @@ F 3 "" H 3150 3200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0107
 U 1 1 5EA73896
 P 3150 3250
-F 0 "#PWR?" H 3150 3250 30  0001 C CNN
+F 0 "#PWR0107" H 3150 3250 30  0001 C CNN
 F 1 "GND" H 3150 3180 30  0001 C CNN
 F 2 "" H 3150 3250 50  0001 C CNN
 F 3 "" H 3150 3250 50  0001 C CNN
 	1    3150 3250
 	0    1    1    0   
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J?
+U 1 1 5F1B7015
+P 4550 4200
+F 0 "J?" H 4628 4447 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 4628 4341 60  0000 C CNN
+F 2 "digikey-footprints:RF_SMA_Receptical_Vertical_CONSMA001-SMD-G" H 4750 4400 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 4750 4500 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 4750 4600 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 4750 4700 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 4750 4800 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 4750 4900 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 4750 5000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 4750 5100 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 4750 5200 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 4750 5300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4750 5400 60  0001 L CNN "Status"
+	1    4550 4200
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

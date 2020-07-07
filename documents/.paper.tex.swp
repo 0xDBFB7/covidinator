@@ -5,6 +5,7 @@
 
 \include{title}
 	
+\include{introduction}
 
 \clearpage
 
@@ -34,17 +35,17 @@ The chain of literature
 {\it Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses} [Yang 2015].
 %
 
-estabilishes that - unique to certain viruses, and apparently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-Band (6-10 GHz).
+estabilishes that - unique to certain viruses, and apparently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-Band, around 7-10 GHz.
 
-More critically, [Yang 2015] (and, in parallel, [Hung 2014]) theoretically model and then experimentally demonstrate in various strains of Influenza A that the electric field strength required to produce an amplitude of vibration sufficient to tear the envelope is approximately 100 V/m, below safety limits even for continous point-blank exposure.\footnote{See supplemental.}
+More critically, [Yang 2015] (and, in parallel, [Hung 2014]) theoretically model and then experimentally validate in various strains of Influenza A that - due to this acoustic-resonance effect - the power levels required to crack the lipid envelope are on the order of magnitude of the safety limits even for continous point-blank exposure.\footnote{See supplemental.}
 
-They demonstrate this with both a plaque and PCR assay, with fantastic agreement with the theoretical model.\footnote{As we will discuss, there are a few issues with the experimental technique.; sham, blinding, and dosimetry demanded by [Vjl.] are not mentioned.}
+They demonstrate this with both a plaque and PCR assay, finding good agreement with the theoretical model.\footnote{As we will discuss, there are a few issues with the experimental technique.; sham, blinding, and dosimetry demanded by [Vjl.] are not mentioned.}
 
-Like pumping a tire swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. 
+Like pumping a swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. 
 
 \lettrine{It} cannot be overstated how unexpected and dubious this finding appears to be -at least, based on our limited research and experience to date. 
 
-For the RF safety limits set by standards organizations are themselves based on the assumption that no resonances exist in biological tissues, and (as we shall see), this claim is grounded in solid {\it in vitro} (albeit limited {\it in vivo}) evidence. 
+For even the RF power limits set by standards organizations appear to be based on the observation that few significant resonance modes exist in biological tissues, and (as we shall see), this is grounded in solid {\it in vitro} (albeit limited {\it in vivo}) evidence. 
 
 It is difficult to reconcile this discrepancy. A failure tree is included below.
 
@@ -52,9 +53,13 @@ It is difficult to reconcile this discrepancy. A failure tree is included below.
 If this mechanism exists, it would seem to provide the following advantages over other methods such as UV or cold-plasma sterilization:
 
 \begin{itemize}
-  \item This is a non-ionizing, non-thermal, non-chemical technique.
-  \item Far-field and moderately penetrating inactivation. 
-  		
+  \item This is a non-ionizing, non-thermal
+%
+\footnote{It may be useful to define 'non-thermal'; it caused us some confusion. Certainly the proteins of the virion locally absorb energy and increase in temperature. The key is that, when excited in this manner, the energies in the envelope are poorly modelled by the Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'. In contrast, with typical 2.4 GHz microwave exposure, sterilization can only occur by aggregate heating of the fluid and tissue.}
+%
+, non-chemical technique, harmless for continuous exposure to tissue, which produces no ozone, can be effective inside bodily tissues, and can readily be produced with \$1 - scale devices.
+  
+  \item Potentially far-field and moderately penetrating inactivation. 
   \item 
   
 \end{itemize}
@@ -75,10 +80,6 @@ We confess to not yet understanding this phenomenon; fortunately, while helpful,
 \footnote{All values have been converted to $\text{W/m}^2$ to avoid confusion. 100 $\text{ W/m}^2 = 10 \text{ mW/cm}^2 = 10 \text{ dBm/cm}^2$.}
 
 
-With typical 2.4 GHz microwave exposure, sterilization can only occur by heating of the fluid and tissue.
-
-Of course, the temperature of the atoms of the virus undoubtedly increase; but the 
-
 \begin{toolchain}
 	{\it \bf [Yang 2015]'s toolchain}
 	\begin{itemize}
@@ -91,30 +92,41 @@ Of course, the temperature of the atoms of the virus undoubtedly increase; but t
 
 \end{multicols}
 
+\clearpage
 
+[IEEE C95.1-2005], Annex B, "Identification of levels of RF exposure responsible for adverse
+effects: summary of the literature",
 
+\begin{quote}
+Further examination of the RF literature reveals no reproducible low level (non-thermal) effect that would
+occur even under extreme environmental exposures. The scientific consensus is that there are no accepted
+theoretical mechanisms that would suggest the existence of such effects. This consensus further supports the
+analysis presented in this section, i.e., that harmful effects are and will be due to excessive absorption of
+energy, resulting in heating that can result in a detrimentally elevated temperature. The accepted mechanism
+is RF energy absorbed by the biological system through interaction with polar molecules (dielectric relaxation) or interactions with ions (ohmic loss) is rapidly dispersed to all modes of the system leading to an
+average energy rise or temperature elevation. Since publication of ANSI C95.1-1982 [B6], significant
+advances have been made in our knowledge of the biological effects of exposure to RF energy. This
+increased knowledge strengthens the basis for and confidence in the statement that the MPEs and BRs in this
+standard are protective against established adverse health effects with a large margin of safety.
 
+\end{quote}
 
-
-
-
-
-
-
-
-
-
+The human body contains proteins with all sorts of net charges. 
 
 
 
 \clearpage
 {\Large \it Talkin' 'bout the Variation}\\
 
-[Yang 2015] theoretically model the virus to determine the minimum electric field required to destroy it. 
+To re-cap, [Yang 2015] theoretically model the virus to determine the minimum electric field required to destroy it. 
 
-They assume that the virus is a simple damped harmonic oscillator, where the 'core' and 'shell' oscillate in opposition.
+They assume that the virus is a simple damped harmonic oscillator, where the 'core' and 'shell' oscillate in opposition. 
 
 They determine the net charge experimentally from microwave absorption measurements.
+
+Since [Yang] try to compute the {\it threshold}, they use a value of 400 pN for the breaking strength of the envelope, obtained from [Li 2011]. However,  
+
+"95%.".
 
 \begin{center}
  \begin{tabular}{||c c c c||} 
@@ -159,6 +171,7 @@ They determine the net charge experimentally from microwave absorption measureme
 \clearpage
 \paragraph{\textbf{Time dependence}}\
 
+The fact that the viral inactivation is non-thermal
 
 Both [Yang 2015] and [Hung 2014] use an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision, given the focus of their paper. 
 
@@ -224,7 +237,7 @@ Polypropylene is the ideal material, being almost indefinitely autoclavable. It 
 
 \paragraph{\textbf{Personal 'electromagnetic mask'}}\
 
-Even with judicious use of phased-arrays, spatial power-combining, etc, each transistor can only reasonably sterilize approx. $ 1 \text{ m}^3 $.
+Even with judicious use of phased-arrays, spatial power-combining, etc, each transistor can only reasonably maintain sterility in approx. $ 0.1 \text{ m}^3 $.
 
 We therefore demonstrate this form factor because, superficially, there are fewer people than there are places. 
 
@@ -255,7 +268,9 @@ The main bronchus is about 8 mm in diameter, which is smaller than the patch ant
 
 Many systems operate in these X-band frequency ranges; and precision 
 
-It is relatively easy to produce megawatts of power at these frequency ranges using Klystrons.
+It is easy to produce megawatts of power at these frequency ranges using Klystrons. Assuming an appropriate antenna, a single 50MW SLAC XL-class klystron with a PRF of 180 Hz can sanitize almost a square kilometer every second. \footnote{A new meaning of 'asceptic field'.}
+
+On the other hand, if this is conducted in outdoor free-space, sunlight
 
 Existing marine, weather, and aviation radar systems often use the X-band; depending on the focusing power
 
@@ -303,11 +318,9 @@ The oscillator is a 'wideband double-tuned varactor VCO', based almost verbatim 
 
 The rest of the papers in the bibliography were highly enlightening regarding the principles of microwave oscillator design.
 
-This topology of oscillator worked marvellously on essentially the first try. 
+
 
 The process by which we failed miserably to design our own oscillator topology is detailed in the supplemental.
-
-The following properties: P1dB
 
 For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
 
@@ -315,11 +328,12 @@ It is commonly claimed that FR4 is a 'slow' substrate, and that the high loss ta
 
 However, with this PCB substrate, the expected loss of only 0.026 dB/mm on signals of minimum 0 dBm is patently acceptable. As viruses do not have a discriminating palate, we are also only minimally concerned with $S_{11}$ reflections, noise, or spurs, so precise impedance control is not required; the wideband VCO sweep accomodates for any variations in resonant frequency due to wide manufacturing tolerances.
 
+
 As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Microwave Oscillator Design would have accomplished the task faster.
 
 Designing an oscillator of this type in one step with a few kindergarten equations appears to be well within the reach of modern network analytical techniques. Genetic algorithms are quite well matched to this problem, and many commercial software packages are  [computer microwave design book]. 
 
-Initially, 
+This topology of oscillator worked marvellously on essentially the first try.
 
 Not having a good analytical understanding, we resorted to using a purely computational method.
 
@@ -368,28 +382,37 @@ The buffer amplifiers
 
 
 
+\end{multicols}
+
 
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Large Interference}\\
+\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\Large Mass production}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-If this 'electromagnetic mask' form is the ideal (not nearly ), a minimum of 5 GaAs or SiGe:C transistors will be required.
-
-There are, for instance, 1 million hospital beds in the U.S. [AHA 2018]. 
-
-It is difficult to determine the supply capacity for these modern semiconductor processes. A few fermi est
-
-GaAs MMIC market of \$2.2 Bn USD / random sample of MMIC prices = 
-
-3e9 wifi connected devices produced each year.
+If this 'electromagnetic mask' form is the ideal (not nearly), 
 
 The largest RFID plants can produce
 
-While it is possible to use conventional Si devices at these frequencies, especially with second-harmonic techniques [Winch 1982], obtaining the required output power is not trivial.
+a minimum of 5 GaAs or SiGe:C transistors will be required. Without SOI or, it does not appear that 
 
-The techniques and equipment required to produce these are non-trivial. SiGe:C, for instance, requires, 
+As a lower bound, there are 1 million hospital beds in the U.S. [AHA 2018]; and as an upper bound obtaining global herd immunity would take 1.75 billion units.
+
+It is difficult to determine the supply capacity for these semiconductor processes; information is not forthcoming from the manufacturers. Fermi estimates \footnote{GaAs MMIC market of \$2.2 Bn USD / random sample of MMIC prices = about 2 Bil devices / yr, 3e9 wifi connected devices produced each year,}
+
+
+
+It is possible to use common Si-based devices at these frequencies, especially with second-harmonic techniques [Winch 1982]. However, obtaining the required gain and output power is not a trivial matter. 
+
+The techniques and equipment required to produce these devices are extremely complex; load-lock UHV,  
 
 
 Figures are not forthcoming, 
@@ -397,6 +420,10 @@ Figures are not forthcoming,
 Given the supply difficulties of comparatively simple materials such as Tyvek at pandemic scales, it is difficult to imagine that RF semiconductor production can be immediately re-tasked and scaled to this degree. 
 
 \paragraph{\textbf{Vacuum RF triode}}\
+
+
+
+Especially combined with an integral titanium sorption pump,
 
 One concern is the large filament heater power, which prevents the use of low-cost button cells for power. Use of cold-cathode field-emitter arrays would alleviate this issue, but at the cost of complexity.
 
