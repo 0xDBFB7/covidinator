@@ -1492,6 +1492,8 @@ need to fix the mu dx/dt scale factor in the FDTD<->SPICE sim.
 Silicon carbide has a distinctive absorption spectrum between 8 and 12 GHz.
 30% b/w SiC to epoxy makes a nice 7 GHz reference [Ting 2016].
 
+Maintain consistent pin naming
+
 
 
 

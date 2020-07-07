@@ -8,8 +8,8 @@ transistor_driver::transistor_driver(){
     //split up because the preamp is just a bare transistor
 
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
-    pinMode(VBASE_BIAS_PWM_PIN, OUTPUT);
-    analogWrite(VBASE_BIAS_PWM_PIN, 0);
+    pinMode(BASE_BIAS_PWM_PIN, OUTPUT);
+    analogWrite(BASE_BIAS_PWM_PIN, 0);
 }
 
 
@@ -30,7 +30,7 @@ void transistor_driver::set_base_bias_voltage(float voltage){
 
     float value = (voltage/CORE_SUPPLY_VOLTAGE);
 
-    analogWrite(VBASE_BIAS_PWM_PIN, value);
+    analogWrite(BASE_BIAS_PWM_PIN, value);
 
     (*this).print("Updated base bias.");
 }

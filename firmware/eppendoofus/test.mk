@@ -149,6 +149,11 @@ proto:
 	rename src/messages.pb.cc src/messages.pb.cpp # would otherwise have to add a bunch of extra boilerplate to the makefile
 
 
+
+loopback:
+	socat PTY,link=/dev/ttyV1 PTY,link=/dev/ttyV2
+
+
 upload: post_compile reboot
 
 $(BUILDDIR)/%.o: %.c

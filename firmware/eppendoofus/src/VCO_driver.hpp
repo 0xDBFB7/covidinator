@@ -38,8 +38,8 @@ struct transistor_driver{
 struct varactor_driver{
     std::string name = "";
 
-    int VARACTOR_INPUT_PIN = ;
-    int VARACTOR_FEEDBACK_PIN = ;
+    int VARACTOR_INPUT_PIN = 0;
+    int VARACTOR_FEEDBACK_PIN = 0;
     void set_varactor_voltage(float voltage);
 
 

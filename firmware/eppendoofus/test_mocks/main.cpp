@@ -25,6 +25,7 @@ int main(void)
 
 	run_VCO_tests();
 	run_PID_tests();
+	run_host_comms_tests();
 
 	return UNITY_END();
 
