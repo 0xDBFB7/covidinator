@@ -42,19 +42,19 @@ PROTOBUF_PATH = libraries/protobuf/protobuf-host/
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -mthumb -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(PROTOBUF_PATH)/include/ -I$(COREPATH) -fsingle-precision-constant
+CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -DTEENSYDUINO=124 -fdata-sections -DUNITY_INCLUDE_CONFIG_H -MMD $(OPTIONS) -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(PROTOBUF_PATH)/include/ -I$(COREPATH) -fsingle-precision-constant
 
 # compiler options for C++ only
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -fno-exceptions
 
 # compiler options for C only
 CFLAGS =
 
 # linker options
-LDFLAGS = -mthumb
+LDFLAGS = -Os -Wl,--gc-sections -mthumb
 
 # additional libraries to link
-LIBS = -lm -lprotobuf -lprotobuf
+LIBS = -lm
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)
@@ -123,7 +123,7 @@ CPP_FILES := $(filter-out test_main.cpp, $(CPP_FILES))
 # include paths for libraries
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
 
-SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(CPP_FILES:.cc=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
+SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
 
 all: hex proto

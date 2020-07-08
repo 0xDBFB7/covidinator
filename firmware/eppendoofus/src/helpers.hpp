@@ -1,6 +1,6 @@
 #include "WString.h"
 #include <string>
-
+#include "base64.h"
 
 #ifdef MOCK_INCLUDES
 
