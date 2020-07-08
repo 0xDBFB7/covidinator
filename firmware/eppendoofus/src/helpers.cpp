@@ -24,5 +24,10 @@ float voltage_divider(float vout, float Rtop, float Rbottom){
     return (vout/(Rbottom/(Rtop+Rbottom)));
 }
 
+namespace std
+{
+    void std::call_once(){
+    }
+}
 
 // template float constrain(float x, float a, float b) {

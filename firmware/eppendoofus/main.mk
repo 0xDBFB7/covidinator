@@ -37,15 +37,15 @@ LIBRARYPATH = libraries
 # path location for the arm-none-eabi compiler
 COMPILERPATH = $(TOOLSPATH)/arm/bin
 
-PROTOBUF_PATH = /home/arthurdent/Programs/protobuf-3.12.3/
+PROTOBUF_PATH = libraries/protobuf/protobuf-host/
 
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -mthumb -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(PROTOBUF_PATH)/src/ -I$(COREPATH) -fsingle-precision-constant
+CPPFLAGS = -mthumb -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(PROTOBUF_PATH)/include/ -I$(COREPATH) -fsingle-precision-constant
 
 # compiler options for C++ only
-CXXFLAGS =
+CXXFLAGS = -std=c++11
 
 # compiler options for C only
 CFLAGS =
@@ -54,7 +54,7 @@ CFLAGS =
 LDFLAGS = -mthumb
 
 # additional libraries to link
-LIBS = -lm -lprotobuf
+LIBS = -lm -lprotobuf -lprotobuf
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)
@@ -139,9 +139,10 @@ reboot:
 	@-$(abspath $(TOOLSPATH))/teensy_reboot
 
 proto:
-	protoc --python_out=host/ src/messages.proto
-	protoc -I=src/ --cpp_out=src/ src/messages.proto
-	rename src/messages.pb.cc src/messages.pb.cpp # would otherwise have to add a bunch of extra boilerplate to the makefile
+	$(PROTOBUF_PATH)/bin/protoc --python_out=host/ src/messages.proto
+	$(PROTOBUF_PATH)/bin/protoc -I=src/ --cpp_out=src/ src/messages.proto
+	mv src/messages.pb.cc src/messages.pb.cpp
+	# would otherwise have to add a bunch of extra boilerplate to the makefile
 
 
 upload: post_compile reboot
