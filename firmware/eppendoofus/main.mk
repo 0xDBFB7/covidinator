@@ -37,26 +37,24 @@ LIBRARYPATH = libraries
 # path location for the arm-none-eabi compiler
 COMPILERPATH = $(TOOLSPATH)/arm/bin
 
-#************************************************************************
-# Settings below this point usually do not need to be edited
-#************************************************************************
+PROTOBUF_PATH = /home/arthurdent/Programs/protobuf-3.12.3/
 
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(COREPATH) -fsingle-precision-constant
+CPPFLAGS = -mthumb -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Isrc/native -I$(PROTOBUF_PATH)/src/ -I$(COREPATH) -fsingle-precision-constant
 
 # compiler options for C++ only
-CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -fno-exceptions
+CXXFLAGS =
 
 # compiler options for C only
 CFLAGS =
 
 # linker options
-LDFLAGS = -Os -Wl,--gc-sections -mthumb
+LDFLAGS = -mthumb
 
 # additional libraries to link
-LIBS = -lm
+LIBS = -lm -lprotobuf
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)

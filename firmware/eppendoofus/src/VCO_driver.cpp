@@ -35,22 +35,22 @@ void transistor_driver::set_base_bias_voltage(float voltage){
     (*this).print("Updated base bias.");
 }
 
-//
-// struct VCO_driver{
-//     int VARACTOR_OUTPUT_PIN = 0;
-//     int VARACTOR_FEEDBACK_PIN = 0;
-//
-//
-//
-//
-//
-//     std::string name = "";
-//
-//     VCO_driver();
-//     void varactor_feedback_voltage();
-//     void set_tuning_varactor_voltage(float voltage);
-// };
-//
+
+struct VCO_driver{
+    int VARACTOR_OUTPUT_PIN = 0;
+    int VARACTOR_FEEDBACK_PIN = 0;
+
+
+
+
+
+    std::string name = "";
+
+    VCO_driver();
+    void varactor_feedback_voltage();
+    void set_tuning_varactor_voltage(float voltage);
+};
+
 // VCO_driver::VCO_driver(){
 //     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
 //     pinMode(VARACTOR_OUTPUT_PIN, OUTPUT);

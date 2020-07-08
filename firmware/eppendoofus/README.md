@@ -15,5 +15,7 @@ the following types of messages are sent:
 a
 
 
-Uses protobufs. Though I'm sure it exists, I couldn't find a simple 
+Uses protobufs. Though I'm sure it exists, I couldn't find a simple
 S.N.A.P protocol
+
+Protobuf needs to be installed.

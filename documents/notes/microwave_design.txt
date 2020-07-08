@@ -1494,6 +1494,18 @@ Silicon carbide has a distinctive absorption spectrum between 8 and 12 GHz.
 
 Maintain consistent pin naming
 
+the downconverter could probably be replaced with a diode mixer.
+
+"
+An unbalanced mixer, in addition to producing a product signal, allows both input signals to pass through and appear as components in the output.
+A single balanced mixer is arranged with one of its inputs applied to a balanced (differential) circuit so that either the local oscillator (LO) or signal input (RF) is suppressed at the output, but not both.
+A double balanced mixer has both its inputs applied to differential circuits, so that neither of the input signals and only the product signal appears at the output.[1] Double balanced mixers are more complex and require higher drive levels than unbalanced and single balanced designs."
+
+cool!
+
+On youtube, some dude has built a 20 GHz oscillator on breadboard
+
+amazing
 
 
 

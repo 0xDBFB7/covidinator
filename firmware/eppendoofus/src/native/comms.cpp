@@ -14,6 +14,6 @@ void println(std::string input){
 
 
 
-void host_comms_available(){
+int host_comms_available(){
     return HOST_SERIAL.available();
 }
