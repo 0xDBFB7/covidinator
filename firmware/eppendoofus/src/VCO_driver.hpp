@@ -17,7 +17,7 @@
 
 
 struct transistor_driver{
-    std::string name = "";
+    String name = "";
 
     int BASE_BIAS_PWM_PIN = 0;
 
@@ -42,7 +42,7 @@ struct varactor_driver{
     void set_varactor_voltage(float voltage);
 
 
-    void print(std::string message);
+    void print(String message);
     varactor_driver();
 };
 

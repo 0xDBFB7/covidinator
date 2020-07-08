@@ -53,9 +53,8 @@ build: $(TARGET)
 
 
 proto:
-	protoc --python_out=host/ src/messages.proto
-	protoc -I=src/ --cpp_out=src/ src/messages.proto
-	rename src/messages.pb.cc src/messages.pb.cpp # would otherwise have to add a bunch of extra boilerplate to the makefile
+	$(PROTOBUF_PATH)/bin/protoc --python_out=host/ src/messages.proto
+	$(PROTOBUF_C_PATH)/bin/protoc-c -I=src/ --c_out=src/ src/messages.proto
 
 
 $(BUILDDIR)/%.o: %.cpp

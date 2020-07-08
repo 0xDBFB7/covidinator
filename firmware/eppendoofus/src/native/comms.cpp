@@ -1,19 +1,19 @@
 #include "comms.hpp"
 
 void init_debug_comms(){
-    DEBUG_SERIAL.begin(115200);
+    debug_serial.begin(115200);
 }
 
-void debug_print(std::string input){
-    DEBUG_SERIAL.println(input.c_str());
+void debug_print(String input){
+    debug_serial.println(input.c_str());
 }
 
-void debug_println(std::string input){
-    print(input + "\n");
+void debug_println(String input){
+    debug_serial.print(String(input.c_str()) + "\n");
 }
 
 
 
 int host_comms_available(){
-    return HOST_SERIAL.available();
+    return host_serial.available();
 }

@@ -37,6 +37,9 @@ LIBRARYPATH = libraries
 # path location for the arm-none-eabi compiler
 COMPILERPATH = $(TOOLSPATH)/arm/bin
 
+
+PROTOBUF_PATH = libraries/protobuf/protobuf-host/
+PROTOBUF_C_PATH = libraries/protobuf-c/protobuf-host/
 #************************************************************************
 # Settings below this point usually do not need to be edited
 #************************************************************************
@@ -45,7 +48,7 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 
 # CPPFLAGS = compiler options for C and C++
 CPPFLAGS = -Wall -Werror -g -Os -mthumb -ffunction-sections -fdata-sections -DUNITY_INCLUDE_CONFIG_H -MMD $(OPTIONS) -fsingle-precision-constant
-CPPFLAGS += -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH) -IUnity/src/ -Isrc/native
+CPPFLAGS += -DTEENSYDUINO=124 -I$(LIBRARYPATH)/SerialTransfer/src/ -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -Itest_hw -I$(COREPATH) -IUnity/src/ -Isrc/native
 
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -fno-exceptions
@@ -57,7 +60,7 @@ CFLAGS =
 LDFLAGS = -Os -Wl,--gc-sections -mthumb
 
 # additional libraries to link
-LIBS = -lm  -lstdc++
+LIBS = -lm -lstdc++
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)
@@ -111,23 +114,22 @@ TCPP_FILES := $(filter-out $(COREPATH)/main.cpp, $(TCPP_FILES))
 
 C_FILES := $(wildcard src/*.c)
 CPP_FILES := $(wildcard src/*.cpp)
-CPP_FILES += $(wildcard src/native/*.cpp)
-CPP_FILES += $(wildcard src/*.cc)
 
+CPP_FILES += $(wildcard test_hw/*.cpp)
+
+CPP_FILES += $(wildcard src/native/*.cpp)
 INO_FILES := $(wildcard src/*.ino)
 
 CPP_FILES := $(filter-out src/main.cpp, $(CPP_FILES))
-CPP_FILES += $(wildcard test_hw/*.cpp)
 
-
-C_FILES := $(wildcard Unity/src/*.c)
+C_FILES += $(wildcard Unity/src/*.c)
 
 #-isystem
 
 # include paths for libraries
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
 
-SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(CPP_FILES:.cc=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
+SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
 
 all: hex proto
@@ -144,11 +146,8 @@ reboot:
 
 
 proto:
-	protoc --python_out=host/ src/messages.proto
-	protoc -I=src/ --cpp_out=src/ src/messages.proto
-	rename src/messages.pb.cc src/messages.pb.cpp # would otherwise have to add a bunch of extra boilerplate to the makefile
-
-
+	$(PROTOBUF_PATH)/bin/protoc --python_out=host/ src/messages.proto
+	$(PROTOBUF_C_PATH)/bin/protoc-c -I=src/ --c_out=src/ src/messages.proto
 
 loopback:
 	socat PTY,link=/dev/ttyV1 PTY,link=/dev/ttyV2

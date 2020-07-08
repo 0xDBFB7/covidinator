@@ -1529,5 +1529,8 @@ There are even preempt-RT kernels for RPi!
 
 Injection-locked oscillators look pretty fine.
 
+https://rust-embedded.github.io/cortex-m-quickstart/cortex_m_quickstart/ rust looks great!
+
+
 
 

@@ -19,3 +19,6 @@
 
 
 #define MAX_MSG_SIZE  4096
+
+#define HOST_BAUD_RATE 115200
+#define DEBUG_BAUD_RATE 115200

@@ -44,7 +44,7 @@ struct VCO_driver{
 
 
 
-    std::string name = "";
+    String name = "";
 
     VCO_driver();
     void varactor_feedback_voltage();

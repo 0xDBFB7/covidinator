@@ -1,16 +1,16 @@
 #include "debug_helpers.hpp"
 
 
-void debug_preamble_printer(std::string function, int line, std::string file, std::string name){
-    std::string preamble;
+void debug_preamble_printer(String function, int line, String file, String name){
+    String preamble;
     preamble = preamble + "\n\033[1;36m";
     preamble = preamble + "\033[1;36m" + "\033[0m | \033[1;36m" + "line " +
                 "\033[0m | \033[1;36m" + function + "\033[0m | \033[1;33m" + name + "\033[0m";
-    debug_serial.println(String(preamble.c_str()));
+    debug_serial.println();
 }
 
 // template<typename T>
-// void array_stats(T * input, int start, int end, std::string name, std::string name, std::string name){
+// void array_stats(T * input, int start, int end, String name, String name, String name){
 //
 // }
 //

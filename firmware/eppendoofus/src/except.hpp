@@ -3,4 +3,4 @@
 
 extern int aborted;
 
-void run_abort(std::string cause);
+void run_abort(String cause);

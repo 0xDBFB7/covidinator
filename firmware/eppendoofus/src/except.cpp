@@ -3,7 +3,7 @@
 int aborted = 0;
 
 
-void run_abort(std::string cause){
+void run_abort(String cause){
     debug("Aborting!");
 
 }

@@ -1,46 +1,22 @@
-import time
+
 from pySerialTransfer import pySerialTransfer as txfer
+import src/messages_pb2
 
-
-if __name__ == '__main__':
     try:
-        link = txfer.SerialTransfer('COM17')
-
+        link = txfer.SerialTransfer('/dev/ttyUSB1')
         link.open()
-        time.sleep(2) # allow some time for the Arduino to completely reset
+
 
         while True:
             send_size = 0
 
-            ###################################################################
-            # Send a list
-            ###################################################################
-            list_ = [1, 3]
+            serialized_protobuf = SerializeToString()
             list_size = link.tx_obj(list_)
             send_size += list_size
 
-            ###################################################################
-            # Send a string
-            ###################################################################
-            str_ = 'hello'
-            str_size = link.tx_obj(str_, send_size) - send_size
-            send_size += str_size
-
-            ###################################################################
-            # Send a float
-            ###################################################################
-            float_ = 5.234
-            float_size = link.tx_obj(float_, send_size) - send_size
-            send_size += float_size
-
-            ###################################################################
-            # Transmit all the data to send in a single packet
-            ###################################################################
             link.send(send_size)
 
-            ###################################################################
-            # Wait for a response and report any errors while receiving packets
-            ###################################################################
+
             while not link.available():
                 if link.status < 0:
                     if link.status == txfer.CRC_ERROR:
