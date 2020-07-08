@@ -8,6 +8,11 @@ void println(std::string input){
     std::cout << input << "\n";
 }
 
+std::string WString_to_std_string(String input){
+    std::string output = input.c_str();
+    return output;
+}
+
 
 //thanks https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/!
 void init_host_comms(){

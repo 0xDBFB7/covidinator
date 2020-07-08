@@ -12,3 +12,5 @@ void println(std::string input);
 void init_host_comms();
 
 int host_comms_available();
+
+std::string WString_to_std_string(String input);

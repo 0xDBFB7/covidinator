@@ -1,6 +1,6 @@
 
 
-#define CORE_CLOCK_FREQ 180e6
+#define CORE_CLOCK_FREQ F_CPU
 
 #define CORE_SUPPLY_VOLTAGE 3.3
 
@@ -14,3 +14,8 @@
 #else
 #define DAC_write analogWrite
 #endif
+
+
+
+
+#define MAX_MSG_SIZE  4096

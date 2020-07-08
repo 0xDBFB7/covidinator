@@ -38,7 +38,7 @@ LIBRARYPATH = libraries
 COMPILERPATH = $(TOOLSPATH)/arm/bin
 
 PROTOBUF_PATH = libraries/protobuf/protobuf-host/
-
+PROTOBUF_C_PATH = libraries/protobuf-c/protobuf-host/
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
@@ -140,8 +140,7 @@ reboot:
 
 proto:
 	$(PROTOBUF_PATH)/bin/protoc --python_out=host/ src/messages.proto
-	$(PROTOBUF_PATH)/bin/protoc -I=src/ --cpp_out=src/ src/messages.proto
-	mv src/messages.pb.cc src/messages.pb.cpp
+	$(PROTOBUF_C_PATH)/bin/protoc-c -I=src/ --c_out=src/ src/messages.proto
 	# would otherwise have to add a bunch of extra boilerplate to the makefile
 
 

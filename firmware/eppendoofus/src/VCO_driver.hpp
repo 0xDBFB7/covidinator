@@ -13,7 +13,6 @@
 
 
 #include "except.hpp"
-#include <string>
 #include <WString.h>
 
 
@@ -31,12 +30,12 @@ struct transistor_driver{
     void set_base_bias_voltage(float voltage);
     float get_base_bias_voltage();
 
-    void print(std::string message);
+    void print(String message);
     transistor_driver();
 };
 
 struct varactor_driver{
-    std::string name = "";
+    String name = "";
 
     int VARACTOR_INPUT_PIN = 0;
     int VARACTOR_FEEDBACK_PIN = 0;

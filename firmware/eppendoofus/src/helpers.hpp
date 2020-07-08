@@ -16,9 +16,6 @@
 // const T& constrain(const T& x, const T& a, const T& b);
 float constrain(float x, float a, float b);
 
-
-std::string WString_to_std_string(String input);
-
 float voltage_divider(float vout, float Rtop, float Rbottom);
 
 

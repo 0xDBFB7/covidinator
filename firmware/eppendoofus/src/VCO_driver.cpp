@@ -1,6 +1,6 @@
 #include "VCO_driver.hpp"
 
-void transistor_driver::print(std::string message){
+void transistor_driver::print(String message){
 }
 
 

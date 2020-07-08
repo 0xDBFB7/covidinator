@@ -28,3 +28,11 @@ google/protobuf/stubs/common.cc:50:2: error: #error "No suitable threading libra
   https://groups.google.com/forum/#!topic/protobuf/WRA7uSZzC3c
 
 Fortunately, pthread is only required in stubs/once.h; we just overwrite that, removing the relevant issues.
+
+No go. needs lstdc++. Ultimately, just going to roll my own format.
+
+
+We have to use Arduino's WString rather than std::string because of size limitations.
+
+There has to be some packet-framing lib out there.
+https://github.com/PowerBroker2/SerialTransfer - only 256 chars, 

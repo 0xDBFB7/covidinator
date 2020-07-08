@@ -1507,5 +1507,27 @@ On youtube, some dude has built a 20 GHz oscillator on breadboard
 
 amazing
 
+I'm spending so much time on just getting a simple communication bus between the host and the teensy.
+deframing, reliable CRC, 
+In one case, I need to send a 32x64 array from the thermal imager to the host.
+
+There's this machine, screaming along at 3.5 GHz, with plenty of space and interface
+for logging and all manner of minutia,
+and yet I'm connecting this tiny little restrictive device to it just so I can turn some pins on
+and off?
+
+That's crazy.
+
+Parallel ports can do MHz with low latencies; the linuxcnc machine here already does this!
+ It's probably possible to run everything here through a shift register and an ADC,
+mock out all the Arduino GPIO to use the parallel port, and run everything natively. 
+
+PCI cards would also do it, of course.
+
+A suitably-powerful RPi-like device could probably do this.
+There are even preempt-RT kernels for RPi!
+
+Injection-locked oscillators look pretty fine.
+
 
 
