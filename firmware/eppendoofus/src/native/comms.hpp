@@ -6,9 +6,9 @@
 #define HOST_SERIAL Serial2
 
 
-void print(std::string input);
+void debug_print(std::string input);
 
-void println(std::string input);
+void debug_println(std::string input);
 
 int host_comms_available();
 void init_host_comms();

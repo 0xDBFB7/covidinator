@@ -2,7 +2,7 @@
 
 
 void test_host_comms_init(){
-    init_host_comms();
+    host_serial.begin();
 }
 
 void run_host_comms_tests(){

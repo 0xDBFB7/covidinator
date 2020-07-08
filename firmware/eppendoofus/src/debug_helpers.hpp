@@ -15,5 +15,5 @@ void pretty_print_array(T * input, int start, int end);
 void debug_preamble_printer(std::string function, int line, std::string file, std::string name);
 
 #define debug_array(input, start, end) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); pretty_print_array(input, start, end);
-#define debug_val(input) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); print(" = " + input);
-#define debug(input) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); print(input);
+#define debug_val(input) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); debug_serial.println(" = " + input);
+#define debug(input) debug_preamble_printer(__FUNCTION__, __LINE__, __FILENAME__, #input); debug_serial.println(input);

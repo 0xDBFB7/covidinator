@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'H\003',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12src/messages.proto\">\n\x07VCO_set\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\r\n\x05power\x18\x02 \x02(\x05\x12\x16\n\x0etuning_voltage\x18\x03 \x02(\x02\x42\x02H\x03'
+  serialized_pb=b'\n\x12src/messages.proto\">\n\x07VCO_set\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\r\n\x05power\x18\x02 \x02(\x05\x12\x16\n\x0etuning_voltage\x18\x03 \x02(\x02\"4\n\rinput_message\x12\x18\n\x04msg1\x18\x01 \x01(\x0b\x32\x08.VCO_setH\x00\x42\t\n\x07messageB\x02H\x03'
 )
 
 
@@ -70,7 +70,49 @@ _VCO_SET = _descriptor.Descriptor(
   serialized_end=84,
 )
 
+
+_INPUT_MESSAGE = _descriptor.Descriptor(
+  name='input_message',
+  full_name='input_message',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='msg1', full_name='input_message.msg1', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='message', full_name='input_message.message',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=86,
+  serialized_end=138,
+)
+
+_INPUT_MESSAGE.fields_by_name['msg1'].message_type = _VCO_SET
+_INPUT_MESSAGE.oneofs_by_name['message'].fields.append(
+  _INPUT_MESSAGE.fields_by_name['msg1'])
+_INPUT_MESSAGE.fields_by_name['msg1'].containing_oneof = _INPUT_MESSAGE.oneofs_by_name['message']
 DESCRIPTOR.message_types_by_name['VCO_set'] = _VCO_SET
+DESCRIPTOR.message_types_by_name['input_message'] = _INPUT_MESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 VCO_set = _reflection.GeneratedProtocolMessageType('VCO_set', (_message.Message,), {
@@ -79,6 +121,13 @@ VCO_set = _reflection.GeneratedProtocolMessageType('VCO_set', (_message.Message,
   # @@protoc_insertion_point(class_scope:VCO_set)
   })
 _sym_db.RegisterMessage(VCO_set)
+
+input_message = _reflection.GeneratedProtocolMessageType('input_message', (_message.Message,), {
+  'DESCRIPTOR' : _INPUT_MESSAGE,
+  '__module__' : 'src.messages_pb2'
+  # @@protoc_insertion_point(class_scope:input_message)
+  })
+_sym_db.RegisterMessage(input_message)
 
 
 DESCRIPTOR._options = None

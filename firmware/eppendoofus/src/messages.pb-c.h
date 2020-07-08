@@ -16,6 +16,7 @@ PROTOBUF_C__BEGIN_DECLS
 
 
 typedef struct _VCOSet VCOSet;
+typedef struct _InputMessage InputMessage;
 
 
 /* --- enums --- */
@@ -33,6 +34,25 @@ struct  _VCOSet
 #define VCO_SET__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&vco_set__descriptor) \
     , NULL, 0, 0 }
+
+
+typedef enum {
+  INPUT_MESSAGE__MESSAGE__NOT_SET = 0,
+  INPUT_MESSAGE__MESSAGE_MSG1 = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(INPUT_MESSAGE__MESSAGE)
+} InputMessage__MessageCase;
+
+struct  _InputMessage
+{
+  ProtobufCMessage base;
+  InputMessage__MessageCase message_case;
+  union {
+    VCOSet *msg1;
+  };
+};
+#define INPUT_MESSAGE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&input_message__descriptor) \
+    , INPUT_MESSAGE__MESSAGE__NOT_SET, {0} }
 
 
 /* VCOSet methods */
@@ -54,10 +74,32 @@ VCOSet *
 void   vco_set__free_unpacked
                      (VCOSet *message,
                       ProtobufCAllocator *allocator);
+/* InputMessage methods */
+void   input_message__init
+                     (InputMessage         *message);
+size_t input_message__get_packed_size
+                     (const InputMessage   *message);
+size_t input_message__pack
+                     (const InputMessage   *message,
+                      uint8_t             *out);
+size_t input_message__pack_to_buffer
+                     (const InputMessage   *message,
+                      ProtobufCBuffer     *buffer);
+InputMessage *
+       input_message__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   input_message__free_unpacked
+                     (InputMessage *message,
+                      ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
 typedef void (*VCOSet_Closure)
                  (const VCOSet *message,
+                  void *closure_data);
+typedef void (*InputMessage_Closure)
+                 (const InputMessage *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -66,6 +108,7 @@ typedef void (*VCOSet_Closure)
 /* --- descriptors --- */
 
 extern const ProtobufCMessageDescriptor vco_set__descriptor;
+extern const ProtobufCMessageDescriptor input_message__descriptor;
 
 PROTOBUF_C__END_DECLS
 

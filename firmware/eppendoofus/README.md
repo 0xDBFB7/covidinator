@@ -35,4 +35,7 @@ No go. needs lstdc++. Ultimately, just going to roll my own format.
 We have to use Arduino's WString rather than std::string because of size limitations.
 
 There has to be some packet-framing lib out there.
-https://github.com/PowerBroker2/SerialTransfer - only 256 chars, 
+https://github.com/PowerBroker2/SerialTransfer - only 256 chars,
+
+
+Have to remove #include "arduino.h" from SerialTransfer to mock

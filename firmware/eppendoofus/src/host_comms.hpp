@@ -1,5 +1,4 @@
 #include "comms.hpp"
-extern "C"
-{
+#include "SerialTransfer.h"
+
 #include "messages.pb-c.h"
-}

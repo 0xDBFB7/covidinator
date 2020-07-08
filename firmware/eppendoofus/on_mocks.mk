@@ -4,9 +4,16 @@ TARGET = $(notdir $(CURDIR))
 # path location for Teensy 3 core
 COREPATH = /home/arthurdent/Programs/arduino-1.8.12-linux64/arduino-1.8.12/hardware/teensy/avr/cores/teensy3/
 
+PROTOBUF_PATH = libraries/protobuf/protobuf-host/
+PROTOBUF_C_PATH = libraries/protobuf-c/protobuf-host/
+
+LIBRARYPATH = libraries
+
+
 #https://github.com/apmorton/teensy-template
 
-CPPFLAGS = -Wall -Werror -g -Os -ffunction-sections -fdata-sections -Isrc -Itest_mocks -IUnity/src/ -DMOCK_INCLUDES -DUNITY_INCLUDE_CONFIG_H -I$(COREPATH) -fsingle-precision-constant
+CPPFLAGS = -Wall -Werror -g -Os -ffunction-sections -fdata-sections -Isrc -Itest_mocks -IUnity/src/ -DMOCK_INCLUDES -fsingle-precision-constant
+CPPFLAGS += -I$(LIBRARYPATH)/SerialTransfer/src/ -DUNITY_INCLUDE_CONFIG_H -I$(PROTOBUF_PATH)/include/ -I$(PROTOBUF_C_PATH)/include/ -I$(COREPATH)
 
 # compiler options for C++ only
 CXXFLAGS =   -std=gnu++0x -Wno-c++14-compat
