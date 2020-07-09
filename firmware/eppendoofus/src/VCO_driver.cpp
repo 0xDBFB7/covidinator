@@ -41,9 +41,6 @@ struct VCO_driver{
     int VARACTOR_FEEDBACK_PIN = 0;
 
 
-
-
-
     String name = "";
 
     VCO_driver();

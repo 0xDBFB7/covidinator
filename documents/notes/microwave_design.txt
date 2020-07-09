@@ -1552,3 +1552,38 @@ there's something called a 'Super I/O bus' controller.
 
 ooh, maybe I should have used an esp32.
 
+"As already known [9],
+due to the fi eld-spread ing factor 1 R , the peak of the radiated
+power density did not occur at the focal point (where all fi eld
+contributions sum in phase, due to the proper aperture phase
+tapering), but the peak occurred at a point between the antenna’s
+aperture and the focal point (at a distance R0 from the antenna’s
+plane)."
+
+they also say the effect of the antenna element itself is quite small
+
+"Thus high power densities require small spots, which are
+produced by large antennas at short wavelengths. Power
+density (PD) is, for any focused antenna (Bickmore and
+Hansen, [41): "
+Aha!
+
+
+[Hansen 1985] Eq. 9 with the exact phase approximation of (19) looks good. The other approximation described only works for arrays > 20 lambda.
+
+maybe we should simplify this a bit. Use [Sun]'s microstrip absorption thing, but
+use a linear sliding cuvette rather than the centrifugal technique. That way we don't need antennas, the whole thing can go in an oven,
+easier to replicate with SARS, no issues with 
+alignment.
+ The one disadvantage is the aeration and mixing, and possibly hetrogeneity 
+
+ballpoint pen springs to maintain consistent pressure
+
+hey, oxy acetylene torch oxygen is probably sterile, right? we can bubble with that
+
+shipping from mini-circuits is $100. That sucks.
+
+ah yes, so the Yee lattice current is just averaged. That impedance equation with 2V/ i1 i2 is
+just what you get when you average ohm's law.
+
+

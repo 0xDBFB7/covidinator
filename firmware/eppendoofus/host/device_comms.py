@@ -32,7 +32,7 @@ def find_devices():
 
 def connect():
     HOST_COMM_PORT, DEBUG_PORT = find_devices();
-    return PyCmdMessenger.ArduinoBoard(HOST_COMM_PORT, baud_rate=115200)
+    return PyCmdMessenger.ArduinoBoard(HOST_COMM_PORT, baud_rate=115200, int_bytes=4,long_bytes=4, float_bytes=4, double_bytes=8)
 
 
 

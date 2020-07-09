@@ -9,6 +9,8 @@ int main(void)
 	cmdMessenger.printLfCr();
 
 	cmdMessenger.sendCmd(kStatus,"INIT");
+	
+	attachCommandCallbacks();
 
 	while(1){
 		cmdMessenger.feedinSerialData();

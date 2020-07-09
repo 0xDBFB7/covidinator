@@ -15,7 +15,6 @@ def create_freq_bins(start_freq, end_freq, bin_width):
 
     return freqs
 
-
 #pickle and save background?
 
 def run_sweep(freqs, start_freq, end_freq, bin_width, gain_db, samples_per_freq_multiplier, N_sweeps=1, LO_freq=0.0):

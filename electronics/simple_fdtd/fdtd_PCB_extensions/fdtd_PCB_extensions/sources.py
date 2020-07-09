@@ -23,6 +23,37 @@ class Port:
         pcb.copper_mask[self.N_x,self.N_y,pcb.ground_plane_z_top:pcb.component_plane_z-1] = 1 #make a conductor
         pcb.copper_mask[self.N_x,self.N_y,pcb.component_plane_z:pcb.component_plane_z] = 1 #make a conductor
 
+    def get_current():
+        #[Luebbers 1996]
+
+        z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
+
+        current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
+                    pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
+        current += ((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]-
+                    pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
+
+        current = current.cpu()
+        current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+
+        # account for Yee cell inaccuracies [Fang 1994].
+        z_slice_2 = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
+
+        current_2 = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice_2,X]-
+                    pcb.grid.H[port.N_x,port.N_y,z_slice_2,X])*pcb.cell_size)
+        current_2 += ((pcb.grid.H[port.N_x,port.N_y,z_slice_2,Y]-
+                    pcb.grid.H[port.N_x-1,port.N_y,z_slice_2,Y])*pcb.cell_size)
+        # current
+        current_2 = current_2.cpu()
+        current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+
+
+        current = ((current+current_2) / 2.0)
+
+        return current
+
+    def set_voltage(voltage):
+        pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = voltage / (pcb.cell_size)
 
 
 def compute_all_voltages(pcb):
