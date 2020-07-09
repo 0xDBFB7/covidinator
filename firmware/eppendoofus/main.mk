@@ -55,7 +55,7 @@ CFLAGS =
 LDFLAGS = -Os -Wl,--gc-sections -mthumb
 
 # additional libraries to link
-LIBS = -lm
+LIBS = -lm -lstdc++
 
 # compiler options specific to teensy version
 ifeq ($(TEENSY), 30)
@@ -142,7 +142,6 @@ reboot:
 proto:
 	$(PROTOBUF_PATH)/bin/protoc --python_out=host/ src/messages.proto
 	$(PROTOBUF_C_PATH)/bin/protoc-c -I=src/ --c_out=src/ src/messages.proto
-	# would otherwise have to add a bunch of extra boilerplate to the makefile
 
 
 upload: post_compile reboot
