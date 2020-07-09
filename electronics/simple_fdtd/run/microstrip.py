@@ -53,11 +53,12 @@ fluid_width = 1e-3
 
 pcb = fd.PCB(0.0002, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((5e-3)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.005/pcb.cell_size), courant_number = None)
+                                int(0.005/pcb.cell_size), courant_number = 0.1)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)
 
+#large changes in dielectric constants seem to require lower courant numbers for stability.
 
 z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
 
@@ -74,14 +75,21 @@ m_w_N = int((microstrip_width/2)/pcb.cell_size)
 pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
                     pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
 
+f_w_N = int((fluid_width/2)/pcb.cell_size)
 
 #polycarb ribbon
 pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
-            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon")
+            (pcb.component_plane_z+1+int(fluid_thickness/pcb.cell_size)):(pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon")
+
+pcb.grid[pcb.xy_margin:centerline-f_w_N, pcb.xy_margin:-pcb.xy_margin, \
+            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon1")
+# pcb.grid[centerline+f_w_N:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
+#             (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon2")
+#
+#
 
 
 #fluid
-f_w_N = int((fluid_width/2)/pcb.cell_size)
 pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
             (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(fluid_thickness/pcb.cell_size))] \
                     = fdtd.Object(permittivity=fluid_dielectric_constant, name="fluid")
@@ -90,7 +98,7 @@ pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports
 pcb.component_ports.append(fd.Port(pcb, 0, int((5e-3 / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length*pcb.cell_size)-pcb.cell_size))
-# pcb.component_ports.append(fd.Port(pcb, 0, int((5e-3 / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size))
+pcb.component_ports.append(fd.Port(pcb, 0, int((5e-3 / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size))
 
 
 
@@ -130,7 +138,6 @@ while(pcb.grid.time_steps_passed < (20 * 2.0 * pi * f)):
 
 
     pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
-    # pcb.component_ports[1].set_voltage(pcb, 0)
 
     print(current)
 

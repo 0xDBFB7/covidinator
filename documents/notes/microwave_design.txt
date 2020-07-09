@@ -1591,3 +1591,6 @@ email prof. shariar about artifacts
 for bsl, use piezo and cell phone microphone to get data out
 
 got NaNs again. Numpy has an errormode function, pytorch has an anomaly_detect function.
+
+Neither seemed to work, but manually narrowed it down to overlapping objects.
+Report issue to flaport: objects overlap causes nan

@@ -49,7 +49,6 @@ class Port:
         current_2 = float(current_2.cpu())
         current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
-        print(current, current_2)
         current = ((current+current_2) / 2.0)
 
         return current
