@@ -1586,4 +1586,8 @@ shipping from mini-circuits is $100. That sucks.
 ah yes, so the Yee lattice current is just averaged. That impedance equation with 2V/ i1 i2 is
 just what you get when you average ohm's law.
 
+email prof. shariar about artifacts
+
+for bsl, use piezo and cell phone microphone to get data out
+
 
