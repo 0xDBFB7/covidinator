@@ -1,5 +1,6 @@
 from fdtd_PCB_extensions import X,Y,Z
 from scipy.constants import mu_0
+from math import sin, pi, pow, exp
 
 
 #need a function that slices including the PML margin
@@ -34,7 +35,7 @@ class Port:
         current += ((pcb.grid.H[self.N_x,self.N_y,z_slice,Y]-
                     pcb.grid.H[self.N_x-1,self.N_y,z_slice,Y])*pcb.cell_size)
 
-        current = current.cpu()
+        current = float(current.cpu())
         current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
         # account for Yee cell inaccuracies [Fang 1994].
@@ -45,19 +46,30 @@ class Port:
         current_2 += ((pcb.grid.H[self.N_x,self.N_y,z_slice_2,Y]-
                     pcb.grid.H[self.N_x-1,self.N_y,z_slice_2,Y])*pcb.cell_size)
         # current
-        current_2 = current_2.cpu()
+        current_2 = float(current_2.cpu())
         current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
-
+        print(current, current_2)
         current = ((current+current_2) / 2.0)
 
         return current
 
     def set_voltage(self, pcb, voltage):
-        z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
+        z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
 
         pcb.grid.E[self.N_x,self.N_y,z_slice,Z] = voltage / (pcb.cell_size)
 
+
+
+def gaussian_derivative_pulse(pcb, dt, beta):
+    #have to normalize
+    t = pcb.time
+    s = 4.0/(beta*dt)
+    b = (t - beta*dt)
+    exponent_1 = -1.0*((s)**2.0)*((b)**2.0)
+    part_one = exp(exponent_1)
+    part_two = -2.0*(s**2.0)*b
+    return part_one * part_two
 
 def compute_all_voltages(pcb):
     for port in pcb.component_ports:

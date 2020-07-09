@@ -1,9 +1,13 @@
+import torch
+import numpy as np
+
+np.seterr(all='raise')
+torch.autograd.set_detect_anomaly(True)
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
-from fdtd_PCB_extensions import X,Y,Z
+from fdtd_PCB_extensions import X,Y,Z, gaussian_derivative_pulse
 from scipy.constants import mu_0
 import scipy.constants
-import numpy as np
 from math import sin, pi, pow, exp
 import time
 import os
@@ -14,14 +18,20 @@ import dill
 from pytexit import py2tex
 import pickle
 
-# fdtd.set_backend("torch.float64")
+import numpy as np
+
 fdtd.set_backend("torch.cuda.float32")
+
+
 # fdtd.set_backend("numpy")
 
 #include store.py
 import sys
 sys.path.append('/home/arthurdent/covidinator/electronics/')
 import store
+
+os.system("rm dumps/*")
+os.system("rm data/*")
 
 #Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
 #Water permittivity @ 10 GHz: 65 - use AbsorbingObject
@@ -41,7 +51,7 @@ fluid_dielectric_constant = 65
 fluid_thickness = 1e-3
 fluid_width = 1e-3
 
-pcb = fd.PCB(0.00005, xy_margin=15, z_margin=15)
+pcb = fd.PCB(0.0002, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((5e-3)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
                                 int(0.005/pcb.cell_size), courant_number = None)
 
@@ -80,39 +90,49 @@ pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports
 pcb.component_ports.append(fd.Port(pcb, 0, int((5e-3 / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length*pcb.cell_size)-pcb.cell_size))
-pcb.component_ports.append(fd.Port(pcb, 0, int((5e-3 / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size))
+# pcb.component_ports.append(fd.Port(pcb, 0, int((5e-3 / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size))
 
 
-#
-# def gaussian_derivative_pulse(pcb, dt, beta):
-#     t = pcb.time
-#     s = 4.0/(beta*dt)
-#     b = (t - beta*dt)
-#     exponent_1 = -1.0*((s)**2.0)*((b)**2.0)
-#     part_one = exp(exponent_1)
-#     part_two = -2.0*(s**2.0)*b
-#     return part_one * part_two
 
 
 print_step = 500
-dump_step = 500
+dump_step = None #10e-12
 
 prev_dump_time = 0
 
 f = 8e9
 while(pcb.grid.time_steps_passed < (20 * 2.0 * pi * f)):
 
-    # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9/100.0)
-    source_voltage = sin(pcb.time * 2.0 * pi * f)
-    source_resistive_voltage = (50.0 * pcb.component_ports[0].get_current(pcb))
+    # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9/100.0)
+    # source_voltage = sin(pcb.time * 2.0 * pi * f)
+    # source_resistive_voltage = (50.0 * pcb.component_ports[0].get_current(pcb))
+    # pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
+    #
+    # source_voltage = 0
+    # source_resistive_voltage = (50.0 * pcb.component_ports[1].get_current(pcb))
+    # pcb.component_ports[1].set_voltage(pcb, source_voltage + source_resistive_voltage)
+    #
+    # print(source_voltage)
+    # print(pcb.component_ports[0].get_current(pcb))
+    # print(pcb.component_ports[1].get_current(pcb))
+
+    port = pcb.component_ports[0]
+
+    source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9/100.0)
+    print(source_voltage)
+
+    z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
+
+    current = pcb.component_ports[0].get_current(pcb)
+    #[Luebbers 1996]
+
+    source_resistive_voltage = (50.0 * current)
+
+
     pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
+    # pcb.component_ports[1].set_voltage(pcb, 0)
 
-    source_voltage = 0
-    source_resistive_voltage = (50.0 * pcb.component_ports[1].get_current(pcb))
-    pcb.component_ports[1].set_voltage(pcb, source_voltage + source_resistive_voltage)
-
-    print(pcb.component_ports[0].get_current(pcb))
-    print(pcb.component_ports[1].get_current(pcb))
+    print(current)
 
     if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
         #paraview gets confused if the first number isn't zero.
