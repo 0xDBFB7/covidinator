@@ -1,72 +1,60 @@
 
 from pySerialTransfer import pySerialTransfer as txfer
-import src/messages_pb2
+import messages_pb2
+import pyudev
+import serial
+import sys
 
-    try:
-        link = txfer.SerialTransfer('/dev/ttyUSB1')
-        link.open()
-
-
-        while True:
-            send_size = 0
-
-            serialized_protobuf = SerializeToString()
-            list_size = link.tx_obj(list_)
-            send_size += list_size
-
-            link.send(send_size)
+context = pyudev.Context()
 
 
-            while not link.available():
-                if link.status < 0:
-                    if link.status == txfer.CRC_ERROR:
-                        print('ERROR: CRC_ERROR')
-                    elif link.status == txfer.PAYLOAD_ERROR:
-                        print('ERROR: PAYLOAD_ERROR')
-                    elif link.status == txfer.STOP_BYTE_ERROR:
-                        print('ERROR: STOP_BYTE_ERROR')
-                    else:
-                        print('ERROR: {}'.format(link.status))
+def find_devices():
+    #udevadm info -q all -a /dev/ttyUSBX
+    DEBUG_PORT = ''
+    for device in context.list_devices(subsystem='tty'):
+    	if(device["ID_PRODUCT"] ==  "6001"):
+    		DEBUG_PORT = device["DEVNAME"]
 
-            ###################################################################
-            # Parse response list
-            ###################################################################
-            rec_list_  = link.rx_obj(obj_type=type(list_),
-                                     obj_byte_size=list_size,
-                                     list_format='i')
+    print("Debug port: " + DEBUG_PORT)
 
-            ###################################################################
-            # Parse response string
-            ###################################################################
-            rec_str_   = link.rx_obj(obj_type=type(str_),
-                                     obj_byte_size=str_size,
-                                     start_pos=list_size)
+    HOST_COMM_PORT = ''
+    for device in context.list_devices(subsystem='tty'):
+    	if(device["ID_PRODUCT"] == "7523"):
+    		HOST_COMM_PORT = device["DEVNAME"]
 
-            ###################################################################
-            # Parse response float
-            ###################################################################
-            rec_float_ = link.rx_obj(obj_type=type(float_),
-                                     obj_byte_size=float_size,
-                                     start_pos=(list_size + str_size))
+    return HOST_COMM_PORT, DEBUG_PORT
 
-            ###################################################################
-            # Display the received data
-            ###################################################################
-            print('SENT: {} {} {}'.format(list_, str_, float_))
-            print('RCVD: {} {} {}'.format(rec_list_, rec_str_, rec_float_))
-            print(' ')
 
-    except KeyboardInterrupt:
-        try:
-            link.close()
-        except:
-            pass
+def get_link():
+    HOST_COMM_PORT, DEBUG_PORT = find_devices();
+    link = txfer.SerialTransfer(HOST_COMM_PORT)
+    link.open()
 
-    except:
-        import traceback
-        traceback.print_exc()
+    return link
 
-        try:
-            link.close()
-        except:
-            pass
+def send_message(link):
+
+    serialized_protobuf = SerializeToString()
+    size = link.tx_obj(serialized_protobuf)
+
+    link.send(size)
+
+
+
+def recieve_message(link):
+    print("Waiting for message")
+    while not link.available() and t:
+        if link.status < 0:
+            if link.status == txfer.CRC_ERROR:
+                print('ERROR: CRC_ERROR')
+            elif link.status == txfer.PAYLOAD_ERROR:
+                print('ERROR: PAYLOAD_ERROR')
+            elif link.status == txfer.STOP_BYTE_ERROR:
+                print('ERROR: STOP_BYTE_ERROR')
+            else:
+                print('ERROR: {}'.format(link.status))
+
+
+    rec_str_   = link.rx_obj(obj_type=type(str_),
+                             obj_byte_size=str_size,
+                             start_pos=list_size)

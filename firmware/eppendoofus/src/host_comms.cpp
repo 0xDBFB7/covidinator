@@ -1,4 +1,12 @@
-// #include "host_comms.hpp"
+#include "host_comms.hpp"
+
+
+
+void parse_command(){
+    
+}
+
+
 // //
 // // unsigned char converted_bytes[4];
 // //
@@ -25,15 +33,15 @@
 //     void init();
 // };
 //
-// void host_comms::init(Stream comms){
-//     host_transfer.begin(comms);
+// void host_comms::init(){
+//     host_serial.begin(comms);
 // }
 //
 //
 // void send_message(){
 //     Type2 type2_msg;
 //
-//     MyOneofMessage msg = {PROTOBUF_C_MESSAGE_INIT(&my_oneof_message__descriptor), 
+//     MyOneofMessage msg = {PROTOBUF_C_MESSAGE_INIT(&my_oneof_message__descriptor), \
 //     SECOND_POSSIBLE_TYPE, &type_2_msg};
 //
 //     CMessage msg = CMESSAGE__INIT;  // CMessage (repeated int32)
@@ -50,14 +58,11 @@
 //
 //     cmessage__pack (&msg, host_transfer.txBuff);              // Pack the data
 //
-//     host_transfer.txBuff[0] = msg_type;
-//
 //     sendSize = host_transfer.txObj(testStruct, sendSize);
 //
 //     host_transfer.sendData(sendSize);
 //
 //     return 0;
-//
 // }
 //
 // void host_comms::recieve_message(){
@@ -72,16 +77,13 @@
 //     size_t msg_len = read_buffer (MAX_MSG_SIZE, buf);
 //
 //     msg = cmessage__unpack (NULL, msg_len, buf); // Deserialize the serialized input
-//     if (msg == NULL)
-//     { // Something failed
-//     debug_print("error unpacking incoming message\n");
-//     return 1;
+//     if (msg == NULL){ // Something failed
+//         debug_print("error unpacking incoming message\n");
+//         return 1;
 //     }
 //
-//     for (i = 0; i < msg->n_c; i++)
-//     { // Iterate through all repeated int32
-//     if (i > 0)
-//     printf ("%d", msg->c[i]);
+//     for (i = 0; i < msg->n_c; i++){ // Iterate through all repeated int32
+//         if (i > 0) printf ("%d", msg->c[i]);
 //     }
 //
 //     cmessage__free_unpacked(msg,NULL); // Free the message from unpack()

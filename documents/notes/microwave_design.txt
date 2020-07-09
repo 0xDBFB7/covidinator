@@ -1549,3 +1549,6 @@ the X370 driver!
 Intel has a tightly-coupled "PCH platform controller" with some gpio.
 
 there's something called a 'Super I/O bus' controller.
+
+ooh, maybe I should have used an esp32.
+
