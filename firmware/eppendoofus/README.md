@@ -39,3 +39,7 @@ https://github.com/PowerBroker2/SerialTransfer - only 256 chars,
 
 
 Have to remove #include "arduino.h" from SerialTransfer to mock
+
+Now we have a real problem. We can't fit std::string on the teensy; but we can't include WString in the mocked build. So we'd either have to re-implement WString, or only use char*s, or give up on mocking.
+
+I will do this last option.

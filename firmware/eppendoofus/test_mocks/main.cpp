@@ -6,6 +6,7 @@
 
 #include "test_VCO_driver.hpp"
 #include "test_PID.hpp"
+#include "test_host_comms.hpp"
 
 // #include "VCO_driver.hpp"
 #include <iostream>

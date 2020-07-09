@@ -8,6 +8,14 @@
 #include <sys/ioctl.h>   /* Serial Port IO Controls */
 #include <unistd.h>
 
+#include <cstdio>
+#include <cstdlib>
+#include <fcntl.h>
+#include <string>
+#include <sys/ioctl.h>
+#include <termios.h>
+#include <unistd.h>
+
 std::string WString_to_std_string(String input);
 
 #define TYPE_HOST 0
@@ -15,12 +23,16 @@ std::string WString_to_std_string(String input);
 
 struct Stream{
     bool type = 0;
-    void write();
+    int serial_port = 0;
+    void write(String message);
+    void write(unsigned char * message, int len);
+
     int available();
-    void begin();
+    void begin(int _);
     void print(String input);
     void println(String input);
     void close();
+    unsigned char read();
     Stream(bool type);
 };
 

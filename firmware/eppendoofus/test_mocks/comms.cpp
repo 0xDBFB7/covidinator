@@ -21,32 +21,38 @@ Stream::Stream(bool type){
 }
 
 //thanks https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/!
-void Stream::begin(){
+void Stream::begin(int _){
     if(type == TYPE_DEBUG){ //this is positively inane.
-        int serial_port = open("/dev/ttyV1", O_RDWR);
-
+        serial_port = open("/dev/ttyV1", O_RDWR);
         if (serial_port < 0) {
             printf("Error %i from open: %s\n", errno, strerror(errno));
         }
 
-        unsigned char msg[] = { 'H', 'e', 'l', 'l', 'o', '\r' };
-        write(serial_port, "Hello, world!", sizeof(msg));
     }
 }
 
-void Stream::read(){
-    char read_buf [256];
-    memset(&read_buf, '\0', sizeof(read_buf));
-    int n = read(serial_port, &read_buf, sizeof(read_buf));
+void Stream::write(String message){
+    ::write(serial_port, message.c_str(), message.length()); //override self.write and use the fcntl write
+}
+
+void Stream::write(unsigned char * message, int len){
+    ::write(serial_port, message, len); //override self.write and use the fcntl write
+}
+
+unsigned char Stream::read(){
+    unsigned char read_char = 0;
+    ::read(serial_port, &read_char, sizeof(read_char));
+    return read_char;
 }
 
 int Stream::available(){
     if(type == TYPE_HOST){ //this is positively inane.
         int bytes;
-        ioctl(fd, FIONBIO, &bytes);
+        ioctl(serial_port, FIONBIO, &bytes);
         printf("Number of bytes = %d\n", bytes);
         return bytes;
     }
     else{ //what?
+        return 0;
     }
 }

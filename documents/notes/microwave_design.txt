@@ -1531,6 +1531,21 @@ Injection-locked oscillators look pretty fine.
 
 https://rust-embedded.github.io/cortex-m-quickstart/cortex_m_quickstart/ rust looks great!
 
+Even debian has a modern realtime kernel! Neat!
+https://packages.debian.org/search?keywords=linux-image-rt
 
+https://buy.advantech.com/Buy-Online/bymodel-PCI-1710.htm
 
+advantech has a few pcie cards < $150, but they're all really slow.
 
+PicoEBD FPGA looks really good - only 4 IOs, but they're all probably very fast.
+
+https://www.versalogic.com/product/serial-i-o/
+this looks like a good option
+
+https://github.com/torvalds/linux/blob/master/drivers/gpio/gpio-amdpt.c wow! Looks like that's
+the X370 driver!
+
+Intel has a tightly-coupled "PCH platform controller" with some gpio.
+
+there's something called a 'Super I/O bus' controller.

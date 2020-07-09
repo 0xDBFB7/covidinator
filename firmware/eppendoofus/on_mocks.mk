@@ -34,7 +34,8 @@ CC = gcc
 BUILDDIR = $(abspath $(CURDIR)/build)
 
 # the cores/ folder already includes an example main.c file. we want to ignore that.
-TCPP_FILES := $(filter-out $(COREPATH)/main.cpp, $(TCPP_FILES))
+#TC_FILES := $(COREPATH)/WString.c
+#TCPP_FILES := $(COREPATH)/WString.cpp
 
 CPP_FILES := $(wildcard src/*.cpp)
 
@@ -44,7 +45,12 @@ CPP_FILES += $(wildcard src/*.cc)
 
 C_FILES := $(wildcard Unity/src/*.c)
 
-SOURCES := $(CPP_FILES:.cpp=.o) $(CPP_FILES:.cc=.o) $(TCPP_FILES:.cpp=.o) $(C_FILES:.c=.o)
+LC_FILES := $(wildcard $(LIBRARYPATH)/*/*.c)
+LCPP_FILES := $(wildcard $(LIBRARYPATH)/*/*.cpp)
+L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
+
+
+SOURCES := $(CPP_FILES:.cpp=.o) $(TCPP_FILES:.cpp=.o) $(C_FILES:.c=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
 
 all: $(TARGET) proto
