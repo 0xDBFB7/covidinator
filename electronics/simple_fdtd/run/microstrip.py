@@ -51,9 +51,9 @@ fluid_dielectric_constant = 65
 fluid_thickness = 1e-3
 fluid_width = 1e-3
 
-pcb = fd.PCB(0.0001, xy_margin=15, z_margin=15)
+pcb = fd.PCB(0.00005, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((5e-3)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.005/pcb.cell_size), courant_number = 0.1)
+                                int(0.0025/pcb.cell_size), courant_number = 0.1)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)
@@ -101,7 +101,7 @@ dump_step = 2e-12
 prev_dump_time = 0
 
 f = 8e9
-while(pcb.grid.time_steps_passed < (20 * 2.0 * pi * f)):
+while(pcb.time < (2.0 * 2.0 * pi * f)):
 
     # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9/100.0)
     # source_resistive_voltage = (50.0 * pcb.component_ports[0].get_current(pcb))

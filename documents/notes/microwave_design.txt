@@ -1594,3 +1594,32 @@ got NaNs again. Numpy has an errormode function, pytorch has an anomaly_detect f
 
 Neither seemed to work, but manually narrowed it down to overlapping objects.
 Report issue to flaport: objects overlap causes nan
+
+Conductivity and impedance of broth changes with bacterial growth!
+
+"The resonant frequency is represented by , is the relative
+permittivity, is the quality factor and is the resonant
+frequency difference. Previous studies have shown that
+bacteria and other microbes have dielectric properties[6].
+Hence relating the dielectric constant of the bacteria and the "
+
+"change in the dielectric constant when the bacterial count is in
+the range 1 to 4. Hence the sensor is sensitive enough to detect
+Escherichia coli cells as low as 1 bacterial cell in 50 µL of the
+sample. " WHAT
+
+WHAAAAAT
+
+what?
+
+[Yuen 2009] do it the other way around; cut double-sided tape and stick two layers of Mylar on either side. They also use a "cutting mat".
+
+Mylar is apparently autoclaveable! Neat!
+Cutting mylar on the plotter is a bit tricky, but doable. Definitely need a backing
+pad - cardstock worked fine; however, using adhesive definitely blocks all the channels.
+
+
+
+
+
+

@@ -154,6 +154,7 @@ Since [Yang] try to compute the {\it threshold}, they use a value of 400 pN for 
 
 
 [Vj] mention the importance of precise dosimetry. Even simple structures can produce hot-spots 
+Yang et al use both a plastic cuvette, and a single drop of solution on a glass slide; in either case, a sharp change dielectric constant is present.
 
 To the extreme, some papers have used
 
