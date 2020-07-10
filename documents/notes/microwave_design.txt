@@ -1560,7 +1560,8 @@ tapering), but the peak occurred at a point between the antenna’s
 aperture and the focal point (at a distance R0 from the antenna’s
 plane)."
 
-they also say the effect of the antenna element itself is quite small
+they also say the effect of the antenna element radiation pattern itself is quite small
+The dipole far-field equation is a good fit.
 
 "Thus high power densities require small spots, which are
 produced by large antennas at short wavelengths. Power
@@ -1619,7 +1620,6 @@ Cutting mylar on the plotter is a bit tricky, but doable. Definitely need a back
 pad - cardstock worked fine; however, using adhesive definitely blocks all the channels.
 
 
-
-
+ah! a level curve! Take the partial derivatives of the E-field function, 
 
 

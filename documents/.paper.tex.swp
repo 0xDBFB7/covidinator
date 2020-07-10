@@ -11,14 +11,13 @@
 
 \paragraph{To-do list}
 
-The following have to be done before production can be started:
+We see the following steps that must be undertaken before production can be started:
 
 \begin{itemize}
   \item Re-run the experiment with 
-  \item 
-  		
-  \item 
-  
+  \item Verify 
+  \item Failure-tree to ensure that power levels can never go above specified values.
+  \item Obtain special permission from the FCC?
 \end{itemize}
 
 \clearpage
@@ -43,9 +42,11 @@ They demonstrate this with both a plaque and PCR assay, finding good agreement w
 
 Like pumping a swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. 
 
-\lettrine{It} cannot be overstated how unexpected and dubious this finding appears to be -at least, based on our limited research and experience to date. 
+\lettrine{It} cannot be overstated how unexpected and dubious this finding appears to be -at least, based on our limited research and experience to date.
 
 For even the RF power limits set by standards organizations appear to be based on the observation that few significant resonance modes exist in biological tissues, and (as we shall see), this is grounded in solid {\it in vitro} (albeit limited {\it in vivo}) evidence. 
+
+This may account for why this paper has been ignored.
 
 It is difficult to reconcile this discrepancy. A failure tree is included below.
 
@@ -55,7 +56,7 @@ If this mechanism exists, it would seem to provide the following advantages over
 \begin{itemize}
   \item This is a non-ionizing, non-thermal
 %
-\footnote{It may be useful to define 'non-thermal'; it caused us some confusion. Certainly the proteins of the virion locally absorb energy and increase in temperature. The key is that, when excited in this manner, the energies in the envelope are poorly modelled by the Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'. In contrast, with typical 2.4 GHz microwave exposure, sterilization can only occur by aggregate heating of the fluid and tissue.}
+\footnote{It may be useful to define 'non-thermal'; it caused us some confusion. Certainly the proteins of the virion locally absorb energy and increase in temperature. The key is that, when excited in this manner, the energies in the envelope are poorly modelled by a Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'. In contrast, with typical 2.4 GHz microwave exposure, sterilization can only occur by aggregate heating of the fluid and tissue.}
 %
 , non-chemical technique, harmless for continuous exposure to tissue, which produces no ozone, can be effective inside bodily tissues, and can readily be produced with \$1 - scale devices.
   
@@ -113,6 +114,11 @@ standard are protective against established adverse health effects with a large 
 
 The human body contains proteins with all sorts of net charges. 
 
+Other physiological effects include changes in the permeability of membranes, direct nerve stimulation, and others. These are all accounted for in the time-domain equation and the 6-minute averaging period.
+
+This would seem to open an obvious route of optimization. If the virus is destroyed in tens of nanoseconds - essentially governed by instantaneous power. But tissue damage requires *energy deposition*. 
+
+Obviously, the solution is thus to turn the CW microwave signal into an effectively instantaneous pulse.
 
 
 \clearpage
@@ -277,9 +283,20 @@ On the other hand, if this is conducted in outdoor free-space, sunlight
 
 Existing marine, weather, and aviation radar systems often use the X-band; depending on the focusing power
 
+\paragraph{Sensing}
+
+
+Surprisingly, there is little discussion on microwave virus detection, with the notable exception of [Mehrotra 2019]. Such scholarly silence is usually an indicator that a technique is impossible for reasons so obvious they scarcely bear repeating. 
+
+However, [Oberoi 2012] find that they can detect a single E. Coli bacterium in 50 uL of broth via a microwave cavity. This is so unbelievable that we are inclined to look for methodological issues. 
+
+Frequency-domain measurements can be made with incredible precision; and there are many parameters by which virions could be discriminated; ring-up time of the resonance, excitation non-linearity, precise microwave spectroscopy, etc.
+
 \paragraph{}
 
-Finally, there is one concern. Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). We do not have the biological knowledge to know if this is plausible; it is simply worth mentioning.
+Finally, there is one concern. It has been shown that virions can effect large-scale changes in the electric charges of their []. 
+
+Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). We do not have the biological knowledge to know if this is plausible; it is simply worth mentioning. 
 
 \end{multicols}
 
@@ -400,6 +417,14 @@ The buffer amplifiers
 {\Large Mass production}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+We've got a thing 
+that's called 
+Radar Love
+We've got a wave
+in the air
+Radar Love
+
+Almost all components on the device can be replicated with fully vertically-integrated first-principles. Capacitors can be
 
 If this 'electromagnetic mask' form is the ideal (not nearly), 
 
