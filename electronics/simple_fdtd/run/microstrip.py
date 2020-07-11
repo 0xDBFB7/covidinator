@@ -83,13 +83,13 @@ pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
 pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
             (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon")
 
-
-#fluid
-f_w_N = int((fluid_width/2)/pcb.cell_size)
-pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
-            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(fluid_thickness/pcb.cell_size))] \
-                    = fdtd.AbsorbingObject(conductivity=0.010, permittivity=fluid_dielectric_constant, name="fluid")
-
+#
+# #fluid
+# f_w_N = int((fluid_width/2)/pcb.cell_size)
+# pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
+#             (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(fluid_thickness/pcb.cell_size))] \
+#                     = fdtd.AbsorbingObject(conductivity=0.010, permittivity=fluid_dielectric_constant, name="fluid")
+#
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports

@@ -1,6 +1,6 @@
 from fdtd_PCB_extensions import X,Y,Z
-from scipy.constants import mu_0
-from math import sin, pi, pow, exp
+from scipy.constants import mu_0, epsilon_0
+from math import sin, pi, pow, exp, sqrt
 
 
 #need a function that slices including the PML margin
@@ -36,7 +36,7 @@ class Port:
                     pcb.grid.H[self.N_x-1,self.N_y,z_slice,Y])*pcb.cell_size)
 
         current = float(current.cpu())
-        current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+        current /= (pcb.cell_size/sqrt(mu_0))
 
         # account for Yee cell inaccuracies [Fang 1994].
         z_slice_2 = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
@@ -47,7 +47,7 @@ class Port:
                     pcb.grid.H[self.N_x-1,self.N_y,z_slice_2,Y])*pcb.cell_size)
         # current
         current_2 = float(current_2.cpu())
-        current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+        current_2 /= (pcb.cell_size/sqrt(mu_0))
 
         current = ((current+current_2) / 2.0)
 
@@ -56,7 +56,7 @@ class Port:
     def set_voltage(self, pcb, voltage):
         z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
 
-        pcb.grid.E[self.N_x,self.N_y,z_slice,Z] = voltage / (pcb.cell_size)
+        pcb.grid.E[self.N_x,self.N_y,z_slice,Z] = sqrt(epsilon_0) * (voltage / (pcb.cell_size))
 
 
 

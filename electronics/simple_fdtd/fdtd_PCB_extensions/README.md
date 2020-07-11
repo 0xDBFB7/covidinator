@@ -39,7 +39,7 @@ Conductors are represented by zeroing all components of the electric field withi
 
 Each pad on the board gets a Port object and a corresponding voltage source in SPICE, with a new unique net name.
 
-
+It should be noted that flaport/fdtd uses different units.
 
 # class LumpedComponent(object):
 # """

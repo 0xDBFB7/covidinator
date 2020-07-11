@@ -1666,4 +1666,6 @@ hang on, from flaport's thesis current density is J du / sqrt(eps0)
 
 Aha! Flaport uses different normalized units! Genius! Discussed in section 4.1.2
 
-And the current density is 
+0.001 / sqrt(eps0)
+
+Man, failure to draw the correct conclusions lurks behind every corner. 
