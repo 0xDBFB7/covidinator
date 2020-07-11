@@ -59,7 +59,7 @@ fluid_width = 1e-3
 
 pcb = fd.PCB(0.00005, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((5e-3)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.0025/pcb.cell_size), courant_number = None)
+                                int(0.0025/pcb.cell_size), courant_number = 0.4)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)

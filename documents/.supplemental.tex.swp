@@ -329,7 +329,7 @@ The amplifier and oscillator are separate for ease of design; this way the phase
 
 Our target power for the test is about 0.01 W, mandating a $2 \sqrt(2)$ V peak to peak RF swing on the Z=50 output.
 
-The $V_{CEO}$ breakdown of the bipolar transistor in question is only 2.3V. Above this value, current begins to flow from the emitter to the base, turning on the transistor and causing thermal runaway. If the base bias can source current, 
+The $V_{CEO}$ breakdown of the bipolar transistor in question is only 2.3V. Above this value, current begins to flow from the emitter to the base, turning on the transistor and causing thermal runaway. If the base bias has a low enough impedance and can source current, this $V_{CEO}$ can be violated safely. [Toshiba, Bipolar Transistors, some other paper on the strong base bias]
 
 One solution would be to match the output to a lower impedance [Leuschner 2010]:
 
@@ -341,7 +341,7 @@ Generating high RF power from low supply voltages poses also another problem: th
 
 Use of so-called stacked, HiVP, or collector-feedback cascode designs can also allow the RF voltage to be distributed over many devices.
 
-
+It should also be noted that when stressed, these devices can fail with a slow power-output degradation over weeks, an effect not usually found in lower-frequency designs. 
 
 
 
@@ -505,6 +505,10 @@ If flying-probe or bed-of-nails tests can be made sufficiently rapid and closely
 In {\it 2001: A space odyssey}, an automated system is shown guiding the troubleshooting of an assembly, apparently generating a fault tree of all the 
 
 Boundary-scan features might really help 
+
+\rule{\linewidth}{0.2pt}
+
+Numerology doesn't pay
 
 \rule{\linewidth}{0.2pt}
 

@@ -156,7 +156,9 @@ Since [Yang] try to compute the {\it threshold}, they use a value of 400 pN for 
 
 
 
+Of course, this application is hardly much better than an N95 mask, except that it is non-disposable and provides protection for eyes and skin.
 
+Vomit
 
 
 [Vj] mention the importance of precise dosimetry. Even simple structures can produce hot-spots 
@@ -277,7 +279,7 @@ The main bronchus is about 8 mm in diameter, which is smaller than the patch ant
 
 Many systems operate in these X-band frequency ranges; and precision 
 
-It is easy to produce megawatts of power at these frequency ranges using Klystrons. Assuming an appropriate antenna, a single 50MW SLAC XL-class klystron with a PRF of 180 Hz can sanitize almost a square kilometer every second. \footnote{A new meaning of 'asceptic field'.}
+It is easy to produce megawatts of power at these frequency ranges using Klystrons. Assuming an appropriate antenna, a single 50MW SLAC XL-class klystron with a PRF of 180 Hz could sanitize almost a square kilometer every second. \footnote{Giving 'asceptic field' new meaning.}
 
 On the other hand, if this is conducted in outdoor free-space, sunlight
 
@@ -332,75 +334,6 @@ Before about 2005, however, it seems to have been somewhat the norm to write a s
 
 We are also aided by the fact that what took a \$150,000 computing cluster a single decade ago can now be done in a few minutes by a single budget GPU.
 
-The oscillator design is a testament  This highlights that a computation is not a substitute for understanding.
-
-The oscillator is a 'wideband double-tuned varactor VCO', based almost verbatim on [Tsuru 2008] and the reference design in Figure 8.36, p378 of [Grebennikov 2007]. 
-
-The rest of the papers in the bibliography were highly enlightening regarding the principles of microwave oscillator design.
-
-
-
-The process by which we failed miserably to design our own oscillator topology is detailed in the supplemental.
-
-For ease of design and simulation, a device with Touchstone S-parameters and SPICE files is greatly preferable.
-
-It is commonly claimed that FR4 is a 'slow' substrate, and that the high loss tangent of ~0.02 makes it unsuitable for microwave systems.
-
-However, with this PCB substrate, the expected loss of only 0.026 dB/mm on signals of minimum 0 dBm is patently acceptable. As viruses do not have a discriminating palate, we are also only minimally concerned with $S_{11}$ reflections, noise, or spurs, so precise impedance control is not required; the wideband VCO sweep accomodates for any variations in resonant frequency due to wide manufacturing tolerances.
-
-
-As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Microwave Oscillator Design would have accomplished the task faster.
-
-Designing an oscillator of this type in one step with a few kindergarten equations appears to be well within the reach of modern network analytical techniques. Genetic algorithms are quite well matched to this problem, and many commercial software packages are  [computer microwave design book]. 
-
-This topology of oscillator worked marvellously on essentially the first try.
-
-Not having a good analytical understanding, we resorted to using a purely computational method.
-
-In addition, the design of wideband feedback-loop VCOs is a relatively well-explored field, and many reference designs exist. 
-
-The key sticking point - which we missed - seems to be that at these scales, using microstrip design techniques, the parasitics of any possible filter structure are so large that the small change in impedance that varactors can provide cannot tune the circuit by any meaningful amount.
-
-"Using the lead inductances of the bipolar transistor and varactors provides the required value of the base inductance".
-
-Indeed, [Tsuru 2008]'s "tuned circuit" in Fig 8 is, in fact, just the varactors, plus an almost invisible high-impedance line.
-
-
-
-
-
-Several analytical filter design methods were 
-
-This is apparently known as a "double-tuned" wideband.
-
-%
-\paragraph{\textbf{The feedback loop oscillator}}\
-
-Oscillators must meet the Barkhausen criterion:
-
-\begin{itemize}
-
-\item A 360 degree phase shift around the feedback loop (including the phase shift contribution from the amplifier, which itself varies greatly with frequency)
-\item A loop gain $>1.$ 
-
-\end{itemize}\
-%
-However, a third element is also required:
-%
-\begin{itemize}
-\item A frequency-selective element that restricts oscillation modes and decreases phase noise.
-\end{itemize}
-%
-
-With large feedback-loop structures, such as long PiN-switched phasing lines, proximity effects from nearby flesh would detune the oscillator significantly.
-
- design of a triple-tuned oscillator.
-
-
-\paragraph{}
-The buffer amplifiers 
-
-
 
 \end{multicols}
 
@@ -451,7 +384,7 @@ Given the supply difficulties of comparatively simple materials such as Tyvek at
 
 
 
-Especially combined with an integral titanium sorption pump,
+Especially combined with an integrated titanium sorption pump,
 
 One concern is the large filament heater power, which prevents the use of low-cost button cells for power. Use of cold-cathode field-emitter arrays would alleviate this issue, but at the cost of complexity.
 

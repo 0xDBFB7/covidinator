@@ -1670,6 +1670,7 @@ Aha! Flaport uses different normalized units! Genius! Discussed in section 4.1.2
 
 Man, failure to draw the correct conclusions lurks behind every corner. This would have completely invalidated our simulations.
 
+implementation ripped back out, flaport's is totally correct:
 
         # TODO: FIXME: Object coefficients are not updated if the timestep is altered after registration.
 
@@ -1699,4 +1700,11 @@ Man, failure to draw the correct conclusions lurks behind every corner. This wou
         loc = (self.x, self.y, self.z)
         self.grid.E[loc] *= self.coefficient_1
         self.grid.E[loc] += self.coefficient_2 * curl_H[loc]
+
+
+flaport:
+
+"This is just me trying to post-hoc an excuse for such an idiotic mistake, 
+but it might be useful to mention that a conductivity in Siemens should 
+be normalized by 1 / (dx / eps_0) as per your thesis"
 
