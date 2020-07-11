@@ -1,9 +1,10 @@
 from pyevtk.hl import gridToVTK
 from .PCB import *
-
+from math import pi, ceil, cos, sin, log, sqrt
+from scipy.constants import mu_0,epsilon_0
 
 def E_magnitude(E):
-    return np.sqrt(E[:,:,:,X]**2.0 + E[:,:,:,Y]**2.0 + E[:,:,:,Z]**2.0)
+    return np.sqrt(E[:,:,:,X]**2.0 + E[:,:,:,Y]**2.0 + E[:,:,:,Z]**2.0) / sqrt(epsilon_0)
 
 
 def dump_to_vtk(pcb, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=False, Emag_dump=True, objects_dump=True, ports_dump=True):
@@ -52,11 +53,11 @@ def dump_to_vtk(pcb, filename, iteration, Ex_dump=False, Ey_dump=False, Ez_dump=
 
 
     if(Ex_dump):
-        cellData['Ex'] = np.ascontiguousarray(E_copy[:,:,:,X])
+        cellData['Ex'] = np.ascontiguousarray(E_copy[:,:,:,X]) / sqrt(epsilon_0)
     if(Ey_dump):
-        cellData['Ey'] = np.ascontiguousarray(E_copy[:,:,:,Y])
+        cellData['Ey'] = np.ascontiguousarray(E_copy[:,:,:,Y]) / sqrt(epsilon_0)
     if(Ez_dump):
-        cellData['Ez'] = np.ascontiguousarray(E_copy[:,:,:,Z])
+        cellData['Ez'] = np.ascontiguousarray(E_copy[:,:,:,Z]) / sqrt(epsilon_0)
     if(Emag_dump):
         cellData['Emag'] = np.ascontiguousarray(E_magnitude(E_copy)) # gridToVTK expects a contiguous array.
 

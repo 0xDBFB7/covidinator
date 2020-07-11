@@ -37,6 +37,7 @@ class Port:
 
         current = float(current.cpu())
         current /= (pcb.cell_size/sqrt(mu_0))
+        #field normalized according to Flaport's thesis, chapter 4.1.6
 
         # account for Yee cell inaccuracies [Fang 1994].
         z_slice_2 = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)

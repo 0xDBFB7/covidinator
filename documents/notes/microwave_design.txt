@@ -1668,4 +1668,35 @@ Aha! Flaport uses different normalized units! Genius! Discussed in section 4.1.2
 
 0.001 / sqrt(eps0)
 
-Man, failure to draw the correct conclusions lurks behind every corner. 
+Man, failure to draw the correct conclusions lurks behind every corner. This would have completely invalidated our simulations.
+
+
+        # TODO: FIXME: Object coefficients are not updated if the timestep is altered after registration.
+
+        super()._register_grid(grid=grid, x=x, y=y, z=z)
+        self.coefficient_1 = (2.0 * (self.permittivity*VACUUM_PERMITTIVITY) - self.conductivity * self.grid.time_step) /\
+                                (2.0 * (self.permittivity*VACUUM_PERMITTIVITY) + self.conductivity * self.grid.time_step)
+        self.coefficient_2 = (2.0 * self.grid.time_step) /\
+                                ((2.0 * self.permittivity*VACUUM_PERMITTIVITY) + (self.conductivity * self.grid.time_step))
+
+    def update_E(self, curl_H):
+        """ Custom update equations for inside the absorbing object
+
+        Lossy media update equation coefficients stolen from
+
+        Inan, Umran S., and Robert A. Marshall. Numerical electromagnetics: the FDTD method. Cambridge University Press, 2011.
+        eq. 4.24b, page 91
+
+        and
+
+        Schneider, John B. "Understanding the finite-difference time-domain method."
+        School of electrical engineering and computer science
+        Washington State University (2010): 28.
+        Chapter 3.12
+
+        """
+        # TODO: FIXME: Object coefficients are not updated if the timestep is altered after registration.
+        loc = (self.x, self.y, self.z)
+        self.grid.E[loc] *= self.coefficient_1
+        self.grid.E[loc] += self.coefficient_2 * curl_H[loc]
+

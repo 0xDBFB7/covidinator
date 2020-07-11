@@ -6,7 +6,7 @@ from PIL import Image
 import io
 import math
 from pyevtk.hl import gridToVTK
-from math import pi, ceil, cos, sin, log
+from math import pi, ceil, cos, sin, log, sqrt
 from scipy.constants import mu_0,epsilon_0
 import numpy as np
 import torch
