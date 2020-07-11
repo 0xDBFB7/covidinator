@@ -1,8 +1,12 @@
-import torch
-import numpy as np
+# import torch
+# import numpy as np
+# import gc
+# torch.cuda.empty_cache()
+#
+# gc.collect()
 
-np.seterr(all='raise')
-torch.autograd.set_detect_anomaly(True)
+# np.seterr(all='raise')
+# torch.autograd.set_detect_anomaly(True)
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
 from fdtd_PCB_extensions import X,Y,Z, gaussian_derivative_pulse
@@ -84,7 +88,7 @@ pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
 f_w_N = int((fluid_width/2)/pcb.cell_size)
 pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
             (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(fluid_thickness/pcb.cell_size))] \
-                    = fdtd.Object(permittivity=fluid_dielectric_constant, name="fluid")
+                    = fdtd.AbsorbingObject(conductivity=0.010, permittivity=fluid_dielectric_constant, name="fluid")
 
 
 fd.dump_to_vtk(pcb,'dumps/test',0)

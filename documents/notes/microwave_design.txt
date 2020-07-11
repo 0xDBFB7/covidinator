@@ -1621,5 +1621,49 @@ pad - cardstock worked fine; however, using adhesive definitely blocks all the c
 
 
 ah! a level curve! Take the partial derivatives of the E-field function, 
+https://math.stackexchange.com/questions/382748/partial-derivative-with-maxima,
+set all three to zero 
+(???)
 
 
+"a well-designed
+circuit will not be dependent upon initial conditions for
+proper operation.)"
+
+They're talking about noise, but I like to think they're talking more about a multivac-like initial condition.
+
+Injection locked arrays can do +- 20 degrees. That's a 7 cm line at 10 cm.
+Good enough for a test, I guess.
+
+Ah, but that's with a linear phase progression, whereas we need a parabolic phase. 
+
+Pytorch couldn't allocate memory; had to close paraview, even though plenty of GPU mem remained.
+strange!
+
+flaport/fdtd is giving wierd results for absorbing boundaries; and the update equations don't
+seem to correspond to those in other textbooks. Section 4.1.7 in his thesis discusses.
+
+
+In flaport/FDTD, object coefficients are not updated if the timestep is updated after
+grid registration. 
+
+Using the equations from 
+
+        Lossy media update equation coefficients stolen from
+
+        Inan, Umran S., and Robert A. Marshall. Numerical electromagnetics: the FDTD method. Cambridge University Press, 2011.
+        eq. 4.24b, page 91
+
+        and
+
+        Schneider, John B. "Understanding the finite-difference time-domain method."
+        School of electrical engineering and computer science
+        Washington State University (2010): 28.
+        Chapter 3.12
+
+
+hang on, from flaport's thesis current density is J du / sqrt(eps0)
+
+Aha! Flaport uses different normalized units! Genius! Discussed in section 4.1.2
+
+And the current density is 
