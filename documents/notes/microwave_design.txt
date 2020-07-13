@@ -1708,3 +1708,15 @@ flaport:
 but it might be useful to mention that a conductivity in Siemens should 
 be normalized by 1 / (dx / eps_0) as per your thesis"
 
+
+Now here's an idea. There's already papers on using liquid metals to make antennas. What if we use saline to make microstrips? Then the circuit can be reconfigured at will, 
+phase shifters can be made 
+
+
+Density of epoxy is about the same as water, so 30% w/w SiC should be fine.
+
+One layer of mylar will be sufficient - 0.45 mm 
+
+mention safesump inc. conflict of interest otherwise.
+
+sudo ln -s /home/arthurdent/Programs/julia-1.4.2/bin/julia /usr/bin/
