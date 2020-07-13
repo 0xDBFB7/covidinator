@@ -25,6 +25,14 @@ We see the following steps that must be undertaken before production can be star
 
 
 
+We've got a thing 
+that's called 
+Radar Love
+We've got a wave
+in the air
+
+The phased-array techdemo.
+
 \paragraph{{\Large the gist}}\
 
 The chain of literature 
@@ -34,7 +42,7 @@ The chain of literature
 {\it Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses} [Yang 2015].
 %
 
-estabilishes that - unique to certain viruses, and apparently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-Band, around 7-10 GHz.
+estabilishes that - unique to certain viruses, and apparently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately the X-Band, at around 8 GHz.
 
 More critically, [Yang 2015] (and, in parallel, [Hung 2014]) theoretically model and then experimentally validate in various strains of Influenza A that - due to this acoustic-resonance effect - the power levels required to crack the lipid envelope are on the order of magnitude of the safety limits even for continous point-blank exposure.\footnote{See supplemental.}
 
@@ -42,7 +50,26 @@ They demonstrate this with both a plaque and PCR assay, finding good agreement w
 
 Like pumping a swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. 
 
-\lettrine{It} cannot be overstated how unexpected and dubious this finding appears to be -at least, based on our limited research and experience to date.
+
+If this mechanism exists, it would seem to provide significant advantages over existing UV or cold-plasma sterilization. 
+
+If the extensions made in our paper are valid, this is a non-ionizing, non-thermal
+%
+\footnote{It may be useful to define 'non-thermal'; it caused us some confusion. Certainly the proteins of the virion locally absorb energy and increase in temperature. The key is that, when excited in this manner, the energies in the envelope are poorly modelled by a Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'. In contrast, with typical 2.4 GHz microwave exposure, sterilization can only occur by aggregate heating of the fluid and tissue.} 
+%
+, non-chemical technique, harmless for continuous exposure to tissue, produces no ozone, can readily be produced with \$1 - scale devices.
+
+Moreover, it would act instantaneously, and - perhaps most critically - could be made to act {\bf within infected tissues}; and is minimally absorbed by air, allowing action in the far-field, scaling to square-kilometer areas with single installations.
+
+\begin{autem}
+
+{\it autem}\\
+
+That paragraph may cut an impressive figure; but recall that the rest of this paper
+
+\end{autem}
+
+\lettrine{It} cannot be overstated how unexpected and positively dubious this finding appears to be -at least, based on our limited research and experience to date.
 
 For even the RF power limits set by standards organizations appear to be based on the observation that few significant resonance modes exist in biological tissues, and (as we shall see), this is grounded in solid {\it in vitro} (albeit limited {\it in vivo}) evidence. 
 
@@ -50,20 +77,6 @@ This may account for why this paper has been ignored.
 
 It is difficult to reconcile this discrepancy. A failure tree is included below.
 
-
-If this mechanism exists, it would seem to provide the following advantages over other methods such as UV or cold-plasma sterilization:
-
-\begin{itemize}
-  \item This is a non-ionizing, non-thermal
-%
-\footnote{It may be useful to define 'non-thermal'; it caused us some confusion. Certainly the proteins of the virion locally absorb energy and increase in temperature. The key is that, when excited in this manner, the energies in the envelope are poorly modelled by a Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'. In contrast, with typical 2.4 GHz microwave exposure, sterilization can only occur by aggregate heating of the fluid and tissue.}
-%
-, non-chemical technique, harmless for continuous exposure to tissue, which produces no ozone, can be effective inside bodily tissues, and can readily be produced with \$1 - scale devices.
-  
-  \item Potentially far-field and moderately penetrating inactivation. 
-  \item 
-  
-\end{itemize}
 
 
 
@@ -81,15 +94,6 @@ We confess to not yet understanding this phenomenon; fortunately, while helpful,
 \footnote{All values have been converted to $\text{W/m}^2$ to avoid confusion. 100 $\text{ W/m}^2 = 10 \text{ mW/cm}^2 = 10 \text{ dBm/cm}^2$.}
 
 
-\begin{toolchain}
-	{\it \bf [Yang 2015]'s toolchain}
-	\begin{itemize}
-	\item Envelope/liposome breaking strength and stiffness from AFM nanoindentation data
-	\item Analytical expression assuming homogenous sphere for microwave absorption cross-section
-	\item Experimental absorption data from microwave cuvette -> 
-	\item COMSOL finite-element for illustration
-	\end{itemize}
-\end{toolchain}
 
 \end{multicols}
 
@@ -114,9 +118,32 @@ standard are protective against established adverse health effects with a large 
 
 The human body contains proteins with all sorts of net charges. 
 
-Other physiological effects include changes in the permeability of membranes, direct nerve stimulation, and others. These are all accounted for in the time-domain equation and the 6-minute averaging period.
+Other physiological effects include changes in the permeability of membranes, direct nerve stimulation; these are all accounted for in the time-domain equation and the 6-minute averaging period.
 
-This would seem to open an obvious route of optimization. If the virus is destroyed in tens of nanoseconds - essentially governed by instantaneous power. But tissue damage requires *energy deposition*. 
+
+To drive home this point, apparently the best-quality evidence available fulfills sham requirements [Vijayalaxmi 2006] provide in-vitro. They expose blood lymphocytes to pulse power  in precisely the regime required in this work; 8.2 GHz, 8 ns duration and 50 khz repetition rate, pulse power densities of 250,000 $W/m^2$\footnote{computed from average power / duty cycle}, for 2 hours, and find no genotoxicity. [Chemeris 2004] use 8.8 GHz, 180 ns pulse width, peak power 65,000 W , repetition rate 50 Hz, exposure duration 40 min, on frog etheyrocytes?
+
+So it appears that this is not merely rules-lawyering to exploit a loophole in the regulations; it is a physically-informed effect.
+
+\begin{autem}
+
+These papers (the best quality we are aware of) were extensively cherry-picked from the literature based on the results of a meta-analysis [Vj. 2019], listing the requirements for reliable in-vitro RF experiments.\\
+
+How sensitive this research is, [Chemeris 2004] mention:\\
+
+"The increase in DNA damage after exposure of cells to HPPP EMF shown in Table 2 was due to the temperature rise in the cell suspension by 3.5±0.1 ◦C. This was confirmed in sham-exposure experiments and experiments with incubation of cells for 40 min under the corresponding temperature conditions."\\
+
+There are a substantial number of papers in the literature which show positive effect sizes; these are listed in the bibliography. \\
+
+The literature reviews conducted by standards organizations.\\
+
+We are not aware of any past uses of these microwave en-masse. We do not have the 
+
+\end{autem}
+
+This would seem to open an obvious avenue of optimization. If the virus is destroyed in tens of nanoseconds - essentially governed by instantaneous power. But tissue damage requires *energy deposition*. 
+
+
 
 Obviously, the solution is thus to turn the CW microwave signal into an effectively instantaneous pulse.
 
@@ -254,26 +281,25 @@ We therefore demonstrate this form factor because, superficially, there are fewe
 
 On the other hand, a personal device may present issues with participation and production volume. 
 
-\paragraph{\textbf{Direct treatments}}\
+\paragraph{\textbf{Direct treatments at the fundamental}}\
 
-[Hand 1982] $E_{mag}=1/e$ (13.5\% power density) skin\footnote{electromagnetic skin, not tissue skin}\footnote{well, both, I suppose.} depth is approximately:
+Via [Hand 1982], the $E_{mag}=1/e$ penetration depth\footnote{"skin skin depth?"} is approximately 40 mm for 'dry' tissues and 5 mm for 'wet'. 
 
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
-F=10 GHz          & Dry tissue & Wet tissue \\ \hline
-Penetration depth & 30 mm      & 5 mm \\ \hline
-\end{tabular}
-\end{center}
 
-SARS is found widely distributed throughout the most favorable organs [Ding 2004], shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely.
 
-However, destruction of lung tissue appears to be the primary cause of death via SARS [Nicholls 2006]. 
+SARS is found widely distributed throughout many of the most favoured organs [Ding 2004], shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely.
+
+However, destruction of lung tissue appears to be significant in the lethality of SARS [Nicholls 2006]. 
 
 A bronchoscopic technique may therefore be effective, very similarly to that demonstrated by [Yuan 2019]: in adults, the bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are only on the order of 7 mm thick [Chekan 2016]. 
 
 The main bronchus is about 8 mm in diameter, which is smaller than the patch antenna used here; a monopole (or multiple, phased monopoles) like is probably more suitable.
 
+\paragraph{\textbf{Subharmonics}}\
+
+The 8 GHz wave need not be the fundamental. A modulated carrier wave with a more deeply penetrating wavelength which then locally interferes to produce the 8 GHz tone within the tissue could be useful.
+
+The penetration depth shortens as frequency increases, until the so-called 'optical windows' in the absorption spectra of tissues, particularly in the near-IR range. 
 
 \paragraph{\textbf{More fanciful concepts}}\
 
@@ -328,7 +354,7 @@ Use of this technique will provide a selection bias towards immunity to electrom
 
 Microwave design has a reputation for being the purview of wizards. Modern RF software packages like HFSS, Microwave Office, Agilent's ADS, and Mathworks' RF toolbox, for which; component models 
 
-Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
+Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be accurately modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
 
 Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
 
@@ -350,12 +376,7 @@ We are also aided by the fact that what took a \$150,000 computing cluster a sin
 {\Large Mass production}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We've got a thing 
-that's called 
-Radar Love
-We've got a wave
-in the air
-Radar Love
+
 
 Almost all components on the device can be replicated with fully vertically-integrated first-principles. Capacitors can be
 

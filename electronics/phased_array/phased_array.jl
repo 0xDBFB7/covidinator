@@ -2,14 +2,33 @@ using Test
 import LinearAlgebra: norm
 import PhysicalConstants.CODATA2014: Z_0
 
-function dipole_E_field_at_point(point::Vector{Float64}, phase::Float64, lambda::Float64, dipole_length::Float64)
-    # The real part of equation 3 from
-    # Design Criteria for Near-Field-Focused Planar Arrays,
-    # [Buffi 2012]
-    R = norm(point)
-    
-    a = (Z_0 / (4 * lambda * R)) * l * excite_current * sin(2*pi*R/lambda)
+# function element_parabolic_phase_shift(focal_point::Vector{Float64}, element_position::Vector{Float64})
+#     """
+#     From
+#
+#     """
+#
+#     return phi
+# end
 
+function dipole_E_field_at_point(point::Vector{Float64}, element_position::Vector{Float64}, phase_shift::Float64, current_amplitude::Float64,
+                                lambda::Float64, dipole_length::Float64)
+    """
+    X-polarized.
+
+    Point vector in meters, phase in radians, lambda and length in meters.
+    The real part of equation 3 from
+    Design Criteria for Near-Field-Focused Planar Arrays,
+    [Buffi 2012]
+    """
+    Rhat = point - element_position
+
+    unit_Rhat = Rhat / norm(Rhat)
+    unit_Dxhat = [dipole_length]
+
+    E = (Z_0 / (4 * lambda * R)) * dipole_length * excite_current * sin((2*pi*R/lambda) + phase_shift) * () *
+
+    return E
 end
 
 

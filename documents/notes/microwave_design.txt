@@ -1720,3 +1720,28 @@ One layer of mylar will be sufficient - 0.45 mm
 mention safesump inc. conflict of interest otherwise.
 
 sudo ln -s /home/arthurdent/Programs/julia-1.4.2/bin/julia /usr/bin/
+
+a scaled, trimmed sine wave might be close to the parabola function. 
+
+
+
+OOOOOOh wait
+
+X-rays, but hard to control phase for interference and hard to modulate - terahertz,
+hard to generate
+
+There's a so-called optical window in the near-ir. Either two interfering beams, or 
+modulating one beam.
+
+[Zhang] uses chicken breast to test. 
+
+Consider racial differences in absorption.
+
+Still seems like penetration depths above 3 cm are unlikely.
+
+austinman tissue frequency http://sites.utexas.edu/austinmanaustinwomanmodels/am-faq/#change
+
+
+
+
+
