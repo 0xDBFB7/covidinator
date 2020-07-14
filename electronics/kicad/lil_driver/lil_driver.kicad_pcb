@@ -136,7 +136,7 @@
   )
 
   (module Silicon-Standard:SOT23-6 (layer F.Cu) (tedit 5961E542) (tstamp 5F04A18F)
-    (at 174.4 100)
+    (at 173.8 100.2)
     (descr SOT23-6)
     (tags SOT23-6)
     (path /5F403C9D)

@@ -159,6 +159,12 @@ They determine the net charge experimentally from microwave absorption measureme
 
 Since [Yang] try to compute the {\it threshold}, they use a value of 400 pN for the breaking strength of the envelope, obtained from [Li 2011]. However,  
 
+\begin{autem}
+
+
+
+\end{autem}
+
 "95%.".
 
 \begin{center}
@@ -313,18 +319,19 @@ Existing marine, weather, and aviation radar systems often use the X-band; depen
 
 \paragraph{Sensing}
 
-
 Surprisingly, there is little discussion on microwave virus detection, with the notable exception of [Mehrotra 2019]. Such scholarly silence is usually an indicator that a technique is impossible for reasons so obvious they scarcely bear repeating. 
 
-However, [Oberoi 2012] find that they can detect a single E. Coli bacterium in 50 uL of broth via a microwave cavity. This is so unbelievable that we are inclined to look for methodological issues. 
+However, [Oberoi 2012] find that - in controlled conditions - they can detect a single E. Coli bacterium in 50 uL of broth via a microwave cavity. 
 
-Frequency-domain measurements can be made with incredible precision; and there are many parameters by which virions could be discriminated; ring-up time of the resonance, excitation non-linearity, precise microwave spectroscopy, etc.
+Of course, discriminating miniscule returns in free-space is not easy; but with precise knowledge of this resonance mode, it may become somewhat easier. Frequency-domain measurements can be made with incredible precision; and there are many parameters by which virions could be discriminated; ring-up time of the resonance, excitation non-linearity, etc.
 
 \paragraph{}
 
-Finally, there is one concern. It has been shown that virions can effect large-scale changes in the electric charges of their []. 
+It has been shown that virions can effect large-scale changes in the electric charges of their []. 
 
-Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). We do not have the biological knowledge to know if this is plausible; it is simply worth mentioning. 
+Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). 
+
+We do not have the biological knowledge to know if this is plausible; it simply seemed worth mentioning. 
 
 \end{multicols}
 

@@ -1743,5 +1743,62 @@ austinman tissue frequency http://sites.utexas.edu/austinmanaustinwomanmodels/am
 
 
 
+What features do we want?
+
+
+Bottom:
+
+capacitive sensor 
+hole for turbidimeter, turbidimeter
+hole for 
+heater trace
+Lowpass filter
+ambient thermistor
+Near and far-end power sensors
+
+FLuidic:
+
+alignment pins on all layers
+space to flush down with argon
+Laser cut well #, plate #
+
+encoder notch a specified distance from cuvette centerline
+
+
+
+
+
+SiC (isolated well)
+
+
+
+Top:
+
+led for turbidimeter
+IR led for encoder
+hole for microbolometer
+transmission power sensor?
+capacitive sensor ground electrode
+
+
+Later, m
+
+
+
+raised antenna on second board stacked above first? 
+
+we'll have to measure conductivity separately, I think. graphite is a common material for sensor 
+electrodes; but I can't think of how we can measure it.
+
+Silver is definitely out.
+
+It's possible to determine the conductivity from the capacitance; but it looks hard.
+
+
+Could use a solenoid to clamp the fluidic disc -  eh, nah
+
+
+Takes 7 amps to heat a 1mm trace to 120 C
+https://www.4pcb.com/trace-width-calculator.html
 
 

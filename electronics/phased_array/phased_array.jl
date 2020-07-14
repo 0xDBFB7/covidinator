@@ -2,14 +2,15 @@ using Test
 import LinearAlgebra: norm
 import PhysicalConstants.CODATA2014: Z_0
 
-# function element_parabolic_phase_shift(focal_point::Vector{Float64}, element_position::Vector{Float64})
-#     """
-#     From
-#
-#     """
-#
-#     return phi
-# end
+function element_parabolic_phase_shift(focal_point::Vector{Float64}, element_position::Vector{Float64})
+    """
+    From
+
+    """
+
+    return phi
+
+end
 
 function dipole_E_field_at_point(point::Vector{Float64}, element_position::Vector{Float64}, phase_shift::Float64, current_amplitude::Float64,
                                 lambda::Float64, dipole_length::Float64)
