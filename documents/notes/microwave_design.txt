@@ -1802,3 +1802,7 @@ Takes 7 amps to heat a 1mm trace to 120 C
 https://www.4pcb.com/trace-width-calculator.html
 
 
+It would be nice to be able to simulate the pneumatics of the microfluidic system
+before it's built.
+
+These Mesa Electronics fpga cards look badass! 

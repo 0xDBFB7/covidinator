@@ -1,33 +1,24 @@
 from solid import *
+from solid.utils import *
 # pip install git+https://github.com/SolidCode/SolidPython.git
 import os
 
+OPENSCAD_BINARY = "~/Programs/OpenSCAD-2019.05-x86_64.AppImage"
+#OpenSCAD 2015 doesn't add units to SVG output.
+
+FRAME_WIDTH = 50
+FRAME_HEIGHT = 1.58
+
+CUVETTE_LENGTH = 5
+
+WINDOW_LENGTH = 10
 
 
-d = square(10)
+layer_0 = square(10)
 
+frame = linear_extrude(height=FRAME_HEIGHT, center=False)(layer_0)
 
-
-scad_render_to_file(d, 'output.scad')
-os.system("openscad output.scad -o output.svg")
-
-#
-#
-# import drawSvg as draw
-#
-# d = difference()(
-#     cube(10),
-# )
-#
-#
-# d = draw.Drawing(200, 100, origin='center', displayInline=False)
-#
-#
-# # Draw a rectangle
-# d.append(draw.Rectangle(0,0,40,50, fill='#1248ff'))
-#
-#
-# d.setPixelScale(2)  # Set number of pixels per geometry unit
-# #d.setRenderSize(400,200)  # Alternative to setPixelScale
-# d.saveSvg('example.svg')
-# d.savePng('example.png')
+scad_render_to_file(layer_0, 'output/layer_0.scad')
+scad_render_to_file(frame, 'output/frame.scad')
+os.system(f"{OPENSCAD_BINARY} output/layer_0.scad -o output/layer_0.svg")
+os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")

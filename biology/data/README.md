@@ -1,0 +1,1 @@
+Protein pIs and sequences were retreived via the proteome-pI database and 

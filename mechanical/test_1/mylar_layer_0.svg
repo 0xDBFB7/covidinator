@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
      inkscape:cx="73.459238"
-     inkscape:cy="85.936653"
+     inkscape:cy="77.053588"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -56,8 +56,15 @@
        id="rect5831"
        width="5"
        height="1"
-       x="11.017308"
-       y="-266.23438"
+       x="14.135612"
+       y="-267.93527"
        transform="scale(1,-1)" />
+    <rect
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.31526417;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5855"
+       width="5.0081844"
+       height="35.199032"
+       x="6.6618304"
+       y="257.02899" />
   </g>
 </svg>
