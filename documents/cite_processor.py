@@ -27,7 +27,8 @@ items = refs["items"]
 
 # they can also be standalone notes, with the key "note" present.
 
-if(int(os.system("git diff --exit-code --quiet")) or int(os.system("git diff --cached --exit-code --quiet"))):
+changes = int(os.system("git diff --exit-code --quiet"))
+if( or int(os.system("git diff --cached --exit-code --quiet"))):
     print("Uncommitted changes are present. Commit before running.")
     raise
 
