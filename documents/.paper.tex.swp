@@ -149,7 +149,9 @@ We are not aware of any past uses of these microwave en-masse. We do not have th
 
 \end{autem}
 
+\cite{POLAROGRAPHICOXYGENSENSORS}
 
+\bibliography{flagship}
 
 \clearpage
 {\Large \it Talkin' 'bout the Variation}\\
@@ -436,4 +438,6 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 
 
+\bibliography{1.bib}{}
+\bibliographystyle{plain}
 \end{document}

@@ -277,7 +277,9 @@ With large feedback-loop structures, such as long PiN-switched phasing lines, pr
 The buffer amplifiers 
 
 
+\rule{\linewidth}{0.2pt}
 
+In case you're wondering, like I was, why the voltage coefficient of capacitors 
 
 \rule{\linewidth}{0.2pt}
 
@@ -420,13 +422,11 @@ Unfortunately, patch antennas have a relatively narrow bandwidth.
 
 \PRLsep{{\itshape Power sensing }}
 
-The diode detector power sensor is based on the Infineon appnote [] and  itself based on a circuit from The Art Of Electronics. 
+The diode detector power sensor is based on the Infineon appnote [] and [], itself based on a circuit from The Art Of Electronics. 
 
 A detailed description of various diode detectors are found in []. Because the steady-state current through the detector is very small, the microstrip can simply be terminated in the standard manner.
 
 The Mini-Circuits ZX47-40-S+ would be an excellent low-cost COTS alternative.
-
-
 
 \PRLsep{{\itshape Fluidics }}
 
