@@ -1806,3 +1806,4 @@ It would be nice to be able to simulate the pneumatics of the microfluidic syste
 before it's built.
 
 These Mesa Electronics fpga cards look badass! 
+LinuxCNC has a packaged debian 9 RT kernel - the stock debian one is probably better though

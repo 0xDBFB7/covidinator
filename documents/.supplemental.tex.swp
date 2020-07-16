@@ -418,24 +418,39 @@ Unfortunately, patch antennas have a relatively narrow bandwidth.
 \rule{\linewidth}{0.2pt}
 
 
+\PRLsep{{\itshape Power sensing }}
+
+The diode detector power sensor is based on the Infineon appnote [] and  itself based on a circuit from The Art Of Electronics. 
+
+A detailed description of various diode detectors are found in []. Because the steady-state current through the detector is very small, the microstrip can simply be terminated in the standard manner.
+
+The Mini-Circuits ZX47-40-S+ would be an excellent low-cost COTS alternative.
+
+
+
 \PRLsep{{\itshape Fluidics }}
 
 We had anticipated having to perform a large number of tests for optimization of the impulse. Automating tests also has the advantage of removing operator bias, and (in our case) minimizing artifacts from the sample holder. Since all the components were already computer-controlled, it seemed little extra effort.
 
 We originally planned on using techniques from the rapidly accelerating field of centrifugal microfluidics, using a broadband patch antenna smaller than the cuvette, and measuring transmission absorption.
 
-However, aligning seemed liable to produce artifacts; runout in the spindle could be 
+Centrifugal microfluidics has the advantage of getting a pump for free; mixing can be effected by generating vortexes by accelerating and decelerating quickly; and because everything is circular, it is easier to design equidistant.
 
-Sterilization is often effected by cytotoxic gas []; not having such a setup, autoclaving was our only resort.
+However, aligning seemed liable to produce artifacts; runout in the spindle;
 
+
+Sterilization is often effected by cytotoxic gas []. UV we resorted to autoclaving, warping.
 
 Th edges are charred; however, we have not found any discussion of toxicity of the laser cut edges, so we assume they're fine.
 
 
 In a crude version of transmission welding. Tx welding usually relies on one material being transparent, and the other opaque - clear and black plastics, for instance. We obtained nearly useable results by scuffing one surface and rubbing in fine graphite powder.
 
+Both the hydrophobicity / wetting angle of the substrate (useful for valves with a certain threshold pressure, among other things), the adhesive surface energy, and sterilization can all be effected by UVC exposure. Unfortunately, we were not confident in the homogeneity of the 
+
 Not all plastics can be laser welded.
 
+3DuF; this is an excellent program 
 
 
 One problem with the formal, academic paper format is that one starts to believe what is written, which is a death sentence for accurate reasoning. We try to avoid this by being unprofessional.
