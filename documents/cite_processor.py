@@ -15,3 +15,6 @@ items = refs["items"]
 # they can also be standalone notes, with the key "note" present.
 
 print(collections)
+
+
+files = glob.glob('*.tex')

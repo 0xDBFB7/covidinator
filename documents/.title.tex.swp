@@ -1,6 +1,5 @@
-
-
-
+\documentclass[paper.tex]{subfiles}
+\begin{document}
 
 \title{Maxwell's Silver Hammer: On the application of pulsed microwave acoustic resonant viral inactivation
 \thanks{{\small I would be delighted to include any criticisms or comments anyone may have, both on substance and comprehensibility; preferably leave them on the GitHub issues page, or email therobotist@gmail.com, @0xDBFB7 on Twitter, or irc.0xDBFB7.com:6667 \#covid.}}}
@@ -8,7 +7,7 @@
 \author{Based primarily on exceptional work by }
 
 
-\begin{document}
+
 
 \flushbottom 
 \maketitle
@@ -35,20 +34,27 @@ We extend this landmark work rather trivially by:\\
 
 
 Aims:
-this is primarily bookkeeping.
-\begin{itemize}
-  \item Establishing the time dependence of inactivation
-  \item Demonstrating a modulation scheme that decreases the inactivation threshold to below current safety levels in surrogate bacteriophage
-  \item Demonstrating a prototype emitter in an "electromagnetic mask" form-factor, costing about \$5 in prototype quantities, which can reasonably be produced in 10 million-of quantities
-  \item Testing power thresholds in various conditions; biological fluids of various conductivities and pHs
-  \item Using a coarse-grained molecular-dynamics simulation to optimize the impulse
-  \item Using a virus-in-the-loop optimization with a centrifugal microfluidic system
-  \item Discussing the biological basis for the safety of the device
-  \item Showing that the deviation from the expected theshold could be explained by variance in the 
-  
-\end{itemize}
+this is primarily bookkeeping.\\
 
-{Perhaps notable that a completely free and open-source toolchain was used for the entire project, including FDTD microwave antenna optimization. This work can be replicated with \$500 in equipment.}
+Legend:  \cmark $ = $ crude experiment, not nearly definitive, needs more work $\vert$ $\thicksim$ $ = $ crude experiment, not nearly definitive, needs more work $\vert$ \xmark \ $ = $ definitely not.\\
+
+\begin{itemize}
+  \item Establishing the time dependence of inactivation in surrogate bacteriophage $\vert$ \cmark
+  \item Demonstrating a modulation scheme that decreases the inactivation threshold to below current safety levels in surrogate bacteriophage $\vert$ \cmark
+  \item Demonstrating a prototype emitter in an "electromagnetic mask" form-factor, costing about \$5 in prototype quantities, which can reasonably be produced in 10 million-of quantities $\vert$ $\thicksim$
+  \item Testing power thresholds in various conditions; biological fluids of various conductivities and pHs $\vert$ \xmark
+  \item Synthesizing a coarse-grained molecular-dynamics simulation of the mechanism $\vert$ \xmark
+  \item Using a virus-in-the-loop optimization with a centrifugal microfluidic system
+  \item Discussing the biological basis for the safety of the device $\vert$ \cmark
+  \item Showing that the deviation from the expected theshold could be explained by variance in the viron $\vert$ \cmark
+  \item Taking 4 months to design a circuit with 2 transistors, thereby potentially leading to the maiming of hundreds of thousands of people and causing untold economic losses through negligence $\vert$ \cmark
+  
+\end{itemize}\
+
+
+
+It is perhaps notable that a completely free and open-source toolchain was used for the entire project.
 
 \end{abstract}
 
+\end{document}

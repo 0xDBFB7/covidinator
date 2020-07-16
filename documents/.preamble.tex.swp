@@ -1,4 +1,5 @@
 
+
 \usepackage[left=2cm,right=2cm,
 			top=1.25cm,
 			bottom=2.25cm,%
@@ -30,9 +31,14 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{lettrine}
+%\usepackage[T1]{fontenc}
 
 \usepackage{etoolbox}
 \AtBeginEnvironment{quote}{\small}
+
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 
 
@@ -52,5 +58,4 @@
 
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
-
 

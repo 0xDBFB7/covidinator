@@ -1,13 +1,18 @@
 \documentclass[fleqn,10pt]{article}
 
 
+
 \include{preamble}
 
-\include{title}
+\begin{document}
+
+\subfile{title}
 	
-\include{introduction}
+\subfile{introduction}
 
 \clearpage
+
+
 
 \paragraph{To-do list}
 
@@ -100,6 +105,7 @@ We confess to not yet understanding this phenomenon; fortunately, while helpful,
 A poignant summary of the consensus is found in [IEEE C95.1-2005], Annex B, "Identification of levels of RF exposure responsible for adverse effects: summary of the literature".
 
 \begin{quote}
+%%%%%%%%%%%
 Further examination of the RF literature reveals no reproducible low level (non-thermal) effect that would
 occur even under extreme environmental exposures. The scientific consensus is that there are no accepted
 theoretical mechanisms that would suggest the existence of such effects. This consensus further supports the
@@ -113,19 +119,17 @@ standard are protective against established adverse health effects with a large 
 
 \end{quote}
 
-Unfortunately, the power levels required by 
+Unfortunately, the buried lede is that the power levels shown by [Yang 2015] are about twice the continuous safety levels. 
 
 However, there is an obvious avenue of optimization. If the virus is destroyed in a few dozen nanoseconds via an electric field amplitude incidentally caused by an instantaneous power $\text{P}$, but tissue damage requires a temperature rise due to an energy deposition $\text{P} \  \text{dt}$, then we should minimize dt.\
 
 We thus turn the CW microwave signal into a series of effectively instantaneous pulses.
 
+The safety standards of [IEEE] and [ICNIRP] account for such time-domain modulation by specifying both an average power limit over a 6 minute period, and a time-integrated energy deposition limit. All known non-thermal and thermal physiological effects, including changes in the permeability of membranes, direct nerve stimulation, etc, are accounted for by obeying those two limits.
 
-The human body contains proteins with all sorts of net charges. 
+To drive home this point, apparently the best-quality evidence available fulfills sham requirements [Vijayalaxmi 2006] provide in-vitro. They expose blood lymphocytes to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration and 50 khz repetition rate, a whopping pulse power density of 250,000 $\text{W/m}^2$\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100 $\text{W/m}^2$ (the safety limit), for 2 hours, finding no change in any of the measured quantities. 
 
-All known non-thermal physiological effects, including changes in the permeability of membranes, direct nerve stimulation are accounted for in the time-domain equation and the 6-minute averaging period.
-
-
-To drive home this point, apparently the best-quality evidence available fulfills sham requirements [Vijayalaxmi 2006] provide in-vitro. They expose blood lymphocytes to pulse power  in precisely the regime required in this work; 8.2 GHz, 8 ns duration and 50 khz repetition rate, pulse power densities of 250,000 $\text{W/m}^2$\footnote{computed from average power / duty cycle}, average power 100 $\text{W/m}^2$ \footnote{the safety limit}, for 2 hours, finding no change in any of the measured quantities. [Chemeris 2004] use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, on frog etheyrocytes, and find genotoxicity only from the temperature rise.
+Simlarly, [Chemeris 2004] use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, on frog etheyrocytes, and find genotoxicity only from the temperature rise.
 
 So it appears that this is not merely rules-lawyering to exploit a loophole in the regulations; it is a physically-informed effect.
 
@@ -133,7 +137,7 @@ So it appears that this is not merely rules-lawyering to exploit a loophole in t
 
 These papers (the best quality we are aware of) were extensively cherry-picked from the literature based on the results of a meta-analysis [Vj. 2019], listing the requirements for reliable in-vitro RF experiments.\\
 
-How sensitive this research is, [Chemeris 2004] mention:
+To illustrate how sensitive this research is, [Chemeris 2004] mention:
 
 \begin{quote}
 
@@ -226,7 +230,7 @@ In contrast to chemical inactivation, where the time dependence appears to be do
 
 As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 100 nanoseconds.???????????FIXME
 
-[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify the properties before the envelope fractures.
+[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify properties before the envelope fractures.
 
 
 {\color{red}  \} } 
