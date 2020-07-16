@@ -6,6 +6,7 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import re
 import glob
+import os
 #difflib
 #pip install fuzzywuzzy
 #pip install python-Levenshtein
@@ -26,6 +27,9 @@ items = refs["items"]
 
 # they can also be standalone notes, with the key "note" present.
 
+if(int(os.system("git diff --exit-code > /dev/null")) or int(os.system("git diff --cached --exit-code > /dev/null"))):
+    print("Uncommitted changes are present. Commit before running.")
+    raise
 
 # print(collections)
 
@@ -56,7 +60,7 @@ for tex_file in tex_files:
     # offset = 0
     for i in range(0, len(keys)):
         key = keys[i]
-        tag_start = key.end() 
+        tag_start = key.end()
         tag_end = tex.find('}',tag_start)
         text_begin = tex.find('[',tag_end)
         text_end = tex.find(']',text_begin)
@@ -64,10 +68,9 @@ for tex_file in tex_files:
         fuzzy_tag = tex[tag_start:tag_end]
 
         highest = process.extractOne(fuzzy_tag,cite_keys)
-        print(highest)
         ref_item = filtered_items[cite_keys.index(highest[0])]
 
-        print(fuzzy_tag, ref_item["title"], ref_item["itemID"])
+        print(fuzzy_tag, " = ", ref_item["title"], ref_item["itemID"])
 
         formatted_reference = str(ref_item["itemID"])
 
@@ -86,17 +89,20 @@ for tex_file in tex_files:
         # length of the inserted string minus the length of the string that was there
         keys = list(re.finditer(CITE_TAG, tex)) # keys have moved
 
-    #
-    # supercollections = re.finditer(COLLECT_TAG, tex)
-    # for supercollection in supercollections:
-    #     tag_start = supercollection.end()
-    #     tag_end = tex.find('}',tag_start)
-    #     text_begin = tex.find('{',tag_end)
-    #     text_end = tex.find('}',text_begin)
-    #
-    #     # "note"
-    #
-    #     keys = re.finditer(CITE_TAG, tex) # keys have moved
+    #Collections
+    keys = list(re.finditer(COLLECT_TAG, tex))
+    for i in range(0, len(keys)):
+        key = keys[i]
+        tag_start = key.end()
+        tag_end = tex.find('}',tag_start)
+        text_begin = tex.find('[',tag_end)
+        text_end = tex.find(']',text_begin)
+
+        tag = tex[tag_start:tag_end]
+
+
+
+        keys = list(re.finditer(CITE_TAG, tex))
 
 
     with open(tex_file, "w+") as f:
