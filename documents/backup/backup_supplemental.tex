@@ -1,0 +1,605 @@
+\documentclass[paper.tex]{subfiles}
+\begin{document}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Huge Captain's Log, Supplemental}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Molecular dynamics simulation}
+\
+%\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It was originally expected that a large part of this work would be done in-silico, as we did not anticipate having access to suitable RF test equipment. 
+
+Some time was spent attempting to set up a molecular dynamics toolchain capable of simulating an entire virus. 
+
+Having an approximate simulation of the this technique would be useful for a number of reasons: 
+
+We would have a better idea of the transferability to SARS, without wasting the time of experts with BSL-3/4 labs.
+
+The impulse could be subjected to the same optimization as the RF feedback loop. A number of parameters (such as phase, polarization)
+
+
+
+Coarse-graining also greatly increases the allowable timestep.
+
+We also did not understand the *confined* part in the *confined* acoustic resonance.
+
+Simulating the aggregate bose condensate wavefunction is well beyond us.
+
+
+
+%\end{multicols}
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Large Optical centrifuge polarization chirp}\\
+\begin{multicols}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\includepdf[
+    %% Include all pages of the PDF
+    pages=-,
+    %% make this page have the usual page style
+    %% (you can change it to plain etc). By default pdfpages
+    %% sets the pagecommand to \pagestyle{empty}
+    pagecommand={\thispagestyle{empty}},  
+    %% Add a "section" entry to the ToC with the heading
+    %% "Quilling Shapes" and the label "sec:shapes"
+    addtotoc={1,section,1,Quilling Shapes,sec:shapes}]
+%% The pdf file itself
+{optical_centrifuge.pdf}
+
+
+\end{multicols}
+
+
+
+Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent.  [FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
+adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". 
+
+Things heating up at the Microwave Safety fandom.
+
+
+\clearpage
+\rule{\linewidth}{0.2pt}
+
+There seems to be a discrepancy between [Yang 2015] and our reading of [C95.1-2005].
+
+They use a threshold in open public space of $100(f/3)^{1/5} \text{ W/m}^2$. The 115 W @ 6 GHz they provide correctly corresponds to this equation with a coefficient of 100.
+
+For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
+
+Different versions of the IEEE standard have used equations of equivalent form but with different coefficients [Wu 2015]; it is entirely possible that we have retrieved the wrong standard.
+
+\rule{\linewidth}{0.2pt}
+
+CEL did not supply a SPICE model for the GaAs FET device used in early prototypes. A FET was originally because a gate is ostensibly easier to bias than a base; but this turned out to be unfounded.
+
+[Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. However, this neglects the I/V characteristic. 
+
+[Polyfet 1998] describes a simple optimization method to synthesize a SPICE model for an active device, and CEL appnote provides some details for GaAs devices.
+
+
+
+\rule{\linewidth}{0.2pt}
+
+OpenEMS is excellent, with Python bindings, some lumped components, and mesh refinement. However, embarassingly, we were not able to resolve all the dependency issues in order to install it.
+
+
+\PRLsep{{\itshape Wherein an oscillator is designed }}
+
+
+\paragraph{Biasing}\
+
+In our simulations, the varactor-tuned feedback circuit appeared to be particularly sensitive to the introduction of bias-tees. 
+
+
+The gate must be weakly pulled to ground, otherwise stray charge destroys the oscillation.
+
+\fancyhead[C]{style 1 with thin line}
+
+
+
+With 0.79 mm FR4 substrate and 0.2 mm (8 mil) wide traces, the maximum impedance achievable was about 115 ohms, which did not appear to be sufficient as an RF choke. Use of defected grounds can increase inductance, but this was not evaluated.
+
+If suitably high-impedance traces are not available, a common technique is to use a quarter-wavelength line (approximately 6 mm long with the above parameters at 8 GHz) terminated with a stub to produce a virtual short or open circuit [Seo 2007]. 
+
+However, reflections from these structures still appeared to distort the frequency/phase response beyond repair, even with ostensibly wideband stubs [Syrett 1980].
+
+\noindent\fbox{\parbox{\linewidth}{
+	Rebuke: despite this blather, many other papers have had success with bias-tees at these frequencies.
+}}
+
+Alternate methods evaluated, failures: 
+
+
+In production, these could be accomodated by graphite-polymer printed resistors. 
+
+
+Odd-pole varactor-loaded combline filters appeared to have excellent phase and frequency response; however, the geometry necessitates low-inductance via stitching to the ground plane.
+
+%\noindent\fbox{\parbox{\linewidth}{
+\begin{autem}
+	{\it autem} Others have had great success with varactor-tuned comblines, especially non-grounded lines.
+\end{autem}
+
+[Tsuru 2008 fig. 10] is an excellent review of various oscillator designs.
+
+The parasitic inductance of common varactors appears to become problematic at these frequencies (but not for non-wideband use).
+
+\paragraph{\textbf{Spacing}}\
+
+FDTD results still yielded some coupling at 2 mm isolation.
+
+\paragraph{\textbf{Via stitching}}\
+
+Rather than the almost universal technique of via stitching components immediately to the ground plane (a tedious process with our prototyping setup), a large ground pour on the component layer was used wherever ground was needed, as mentioned in [Hunter? combline]. Since we use microstrip rather than coplanar waveguide, 
+
+Since the ground plane does not participate in the DC bias at all, no vias are required in the final device. This means that the drilling, electroless strike and electroplating steps are unnecessary for production.
+
+
+\PRLsep{{\itshape The wideband oscillator }}
+
+Not having access to any RF equipment, we needed an oscillator tunable over the X-band.
+
+There are many oscillators. The HB100 uses a dielectric resonator, for instance; cavity-based methods with mechanical tuning; active antennas using. 
+
+
+The literature is quite mature, partly due to the FCC's recent ultrawideband communications guides.
+
+As a result of our gross incompetence, the oscillator was designed via an inane, roundabout, and fiendishly tedious manner, and our description of this technique only contributes to the field by being suitable for a dartboard; our analysis can only hold water when combined with paper mache; and a lesser invertebrate in posession of a copy of Grebennikov's excellent Microwave Oscillator Design would have accomplished the task faster.
+
+
+Designing an oscillator of this type in one step with a few kindergarten equations appears to be well within the reach of modern network analytical techniques. Genetic algorithms are quite well matched to this problem, and many commercial software packages are  [computer microwave design book]. 
+
+
+We began experimentally by building a scaled version of [Mueller 2008]'s active antenna crudely with copper tape, using a CEL [] GaAs FET.
+
+
+We then manually tried a number of filter designs, using the manufacturer's S-parameters and QUCS' microstrip approximations. This intially appeared to yield good agreement with experiment. Peaks in the feedback voltage simulation corresponded approximately with peaks in the observed spectrum. [figures from LO prototype N]. 
+
+A crude, inane, and extremely disorganized trial-and-error procedure was performed for many weeks. A wide variety of analytical methods for filter design were attempted [documents/global.ipynb], but simultaneously obtaining the correct phase shift and frequency response was somewhat difficult. Adding the parasitic inductance of the varactors always seemed to destroy our most perfect creations.
+
+Using an SIR filter has the added advantage of confusing epidemiologists.
+
+Eventually, QUCS, zonca/python-qucs, and scipy's basinhopper were used with a cost function somewhat similar to that described in [Kaplevich]:
+
+\begin{verbatim}
+    freq_coeff = 1
+    phase_coeff = 1.5
+    ratio_coeff = 0.5
+    insertion_loss_coeff = 0.2
+ 
+    frequency_cost = freq_coeff * (abs(desired_center_frequency-fb_peak_frequencies[0])/1e9)
+    phase_cost = phase_coeff * abs(1.0 - phase_at_peak)
+    ratio_cost = ratio_coeff * fb_peak_ratio
+    insertion_loss_cost = insertion_loss_coeff*(1.0 - fb_peak_values[0])
+    cost = frequency_cost + phase_cost + fb_peak_ratio + insertion_loss_cost
+\end{verbatim}
+
+Optimizing first for the high frequency, fixing the inductor and microstrip values, and then optimizing for the varactor values at the low frequency.
+
+This produced a seemingly acceptable feedback loop (note the group delay / phase progression):
+
+\includegraphics[scale=1]{LO_2_pole_test.png}
+
+However, when this was built, varactor tuning performance was abysmal, with hops and peaks; and the tuning range was far smaller than expected.
+
+It was thought that a transient simulation - to determine how the spectrum actually evolved - would improve the situation. 
+
+As of 0.0.20, QUCS' microstrip models are not yet compatible with transient simulations; and some improved filter designs required simulating coupling between more than two microstrips, which QUCS did not yet support natively.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{3d_spectrum_2.png}
+\end{figure}
+
+The complete transient simulation matched reality very closely. 
+
+\begin{figure}[H]
+	\includesvg[width=\textwidth]{wideband_LO_2_simulated_tuning}
+ 	\caption{"Wideband VCO 2": BFP620  \\
+ 	 Oscillator tuning simulated with electronics/ngspice/oscillator\_designer\_2.py commit <>, eLabID 20200613-d28a8004c...}
+\end{figure}
+
+
+The oscillator design is a testament  This highlights that a computation is not a substitute for understanding.
+
+The key sticking point seems to be that as frequency increases, using microstrip design techniques, the parasitics of any filter structure are so large that the small change in impedance that the varactors can provide does not tune the circuit by any meaningful amount.
+
+The two varactors on each tuning circuit each contribute 0.7 nH and between 0.35 to 2.4 pF; each blocking capacitor contributes about 0.2 nH. The frequency range of the oscillator can be selected by adding between 0.5 nH to 1.5 nH symmetrically to both tuning circuits. 
+
+"Using the lead inductances of the bipolar transistor and varactors provides the required value of the base inductance".
+
+Indeed, [Tsuru 2008]'s "tuned circuit" in Fig 8 is, in fact, just the varactors, plus an almost invisible high-impedance line.
+
+
+The final oscillator is a 'wideband double-tuned varactor VCO', based almost verbatim on [Tsuru 2008] and the reference design in Figure 8.36, p378 of [Grebennikov 2007]. 
+
+
+
+The rest of the papers in the bibliography were highly enlightening regarding the principles of microwave oscillator design.
+
+For ease of design and simulation, selecting a device with both Touchstone S-parameters and SPICE models is greatly preferable.
+
+It is commonly claimed that FR4 is a 'slow' substrate, and that the high loss tangent of ~0.02 makes it unsuitable for microwave systems.
+
+However, with this PCB substrate, the expected loss of only 0.026 dB/mm on signals of minimum 0 dBm is patently acceptable. As viruses do not have a discriminating palate, we are also only minimally concerned with $S_{11}$ reflections, noise, or spurs, so precise impedance control is not required; the wideband VCO sweep accomodates for any variations in resonant frequency due to wide manufacturing tolerances.
+
+
+This topology of oscillator worked marvellously on essentially the first try.
+
+Not having a good analytical understanding, we resorted to using a purely computational method.
+
+In addition, the design of wideband feedback-loop VCOs is a relatively well-explored field, and many reference designs exist. 
+
+Merely scaling designs like [] was not effective.
+
+
+
+
+
+Several analytical filter design methods were 
+
+This is apparently known as a "double-tuned" wideband.
+
+
+Oscillators must meet the Barkhausen criterion:
+
+\begin{itemize}
+
+\item A 360 degree phase shift around the feedback loop (including the phase shift contribution from the amplifier, which itself varies greatly with frequency)
+\item A loop gain $>1.$ 
+
+\end{itemize}\
+%
+However, a third element is also required:
+%
+\begin{itemize}
+\item A frequency-selective element that restricts oscillation modes and decreases phase noise.
+\end{itemize}
+%
+
+With large feedback-loop structures, such as long PiN-switched phasing lines, proximity effects from nearby flesh would detune the oscillator significantly.
+
+ design of a triple-tuned oscillator.
+
+
+\paragraph{}
+The buffer amplifiers 
+
+
+\rule{\linewidth}{0.2pt}
+
+In case you're wondering, like I was, why the voltage coefficient of capacitors 
+
+\rule{\linewidth}{0.2pt}
+
+Again, inductive choke biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an 2N7002P N-channel mosfet worked fine. 
+
+The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. A high bias voltage of 48V was required to get sufficient current through the two 10K resistors and the PiN diode to obtain a low impedance while remaining delicate with the vfb.
+
+The PiN diode used has a resting resistance of 500 ohms, 5 ohms at 2 mA and 2 ohms at ??. 
+
+48V is a little tight on the 50V rated voltage of our DC blocking capacitors.
+
+Each activated PiN diode should be biased separately, since putting 2x 2 mA through 20K would take an impractical 80V.
+
+\rule{\linewidth}{0.2pt}
+
+Conductors are represented by zeroing all components of the electric field in those regions. 
+
+There are many different possible source geometries, each introducing their own distortions.
+
+There are many ways of linking SPICE and FDTD. 
+
+\rule{\linewidth}{0.2pt}
+
+Bandpass filters can be designed by first designing a low-pass filter prototype (usually Chebychev) (or, in our case, using reference filter component tables), and then transforming this low-pass into a band-pass. [Hunter 2001] is an excellent overview of this process, with many design examples for different filter topologies. 
+
+The coupling coefficient between two low-pass filters determines the band-pass bandwidth.[Hui 2012]
+
+[Hunter 2001] also describes an analytical method to create a filter with the precise group delay - phase shift versus frequency - required for stable oscillation. However, simultaneously compensating for the group delay introduced by the amplifier itself (nearly 180 degrees over the frequency range for the CEL part) seemed complex.
+
+Phase shift can be introduced either via a length of microstrip, or a high-pass/low-pass filter [Microwave101]. Adding a fixed microstrip line restricts the tuning range, however, and the filter inevitably affects the frequency response.  
+
+\rule{\linewidth}{0.2pt}
+
+NGSPICE's KSPICE coupled transmission lines require the capacitance and inductance per unit length in Maxwell matrix form, rather than the physical $C_{even}$/$L_{even}$ (each line's capacitance and inductance to ground) and $_{odd}$ (between elements) form provided by tools like wcalc. "matrix not positive definite". [Schutt-Aine] discusses this; we reproduce here for convienience.
+
+\[ L_{11} = L_{22} = L_{even}  \]
+\[ L_{12} = L_{21} = L_{odd}  \]
+\[ C_{11} = C_{22} = C_{even}+C_{odd}  \]
+\[ C_{12} = C_{21} {\it{(unused)}} = -C_{odd}  \]
+
+\rule{\linewidth}{0.2pt}
+
+In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the SPICE portion is less than some threshold.
+
+
+\PRLsep{{\itshape Power amplifier }}
+
+The amplifier and oscillator are separate for ease of design; this way the phase response of the amplifier is of no consequence. 
+
+Our target power for the test is about 0.01 W, mandating a $2 \sqrt(2)$ V peak to peak RF swing on the Z=50 output.
+
+The $V_{CEO}$ breakdown of the bipolar transistor in question is only 2.3V. Above this value, current begins to flow from the emitter to the base, turning on the transistor and causing thermal runaway. If the base bias has a low enough impedance and can source current, this $V_{CEO}$ can be violated safely. [Toshiba, Bipolar Transistors, some other paper on the strong base bias]
+
+One solution would be to match the output to a lower impedance [Leuschner 2010]:
+
+\begin{quote}
+Generating high RF power from low supply voltages poses also another problem: the optimum load impedance of the PA output stage transistors becomes very small. A matching network with a high transformation ratio is needed to transform the antenna impedance of 50 to the optimum load impedance. High transformation ratios usually result in small bandwidth and higher losses. Possible solutions are the use of either non-standard high power RF devices or special circuit topologies using only the available standard devices.
+\end{quote}
+
+
+
+Use of so-called stacked, HiVP, or collector-feedback cascode designs can also allow the RF voltage to be distributed over many devices.
+
+It should also be noted that when stressed, these devices can fail with a slow power-output degradation over weeks, an effect not usually found in lower-frequency designs. 
+
+
+
+\PRLsep{{\itshape Power sensing }}
+
+
+
+
+\clearpage
+\PRLsep{ Wherein antennas are characterized}
+
+Method-of-moments solvers like NEC-2 are typical for simulating antennas. However, most commonly-available packages don't seem to handle multiple dielectric constants, such as the air and substrate for a patch antenna.
+
+The impedance of an antenna over frequency can be determined in FDTD by:
+
+\begin{itemize}
+  \item Applying a gaussian pulse to a voltage source - in our case, applied to a via connecting the path (or probe)
+  \item Running the simulation until the transients have all died out below some threshold, while logging the source voltage and current at each timestep
+  \item Taking the fourier transform of the (real) excitation voltage and current (producing a complex result, mind you)
+  \item Taking the ratio of the two complex spectra.
+\end{itemize}
+
+This is the computational equivalent of dropping a piano off a balcony to see which key is stuck.
+
+See [Penney 1994], [Luebbers 1992], [Luebbers 1991], [Luk 1997]. 
+
+Our implementation is in electronics/simple\_fdtd/runs/U.py.
+
+A similar mismatch to the SPICE exists for fourier methods - but in the other direction.  The courant limit often demands fine timesteps, but since each FFT bin is $ f_{bin} = n_{bin} / (N_{simulation} \ dt) $ , the majority of the FFT bins exist into the hundreds or thousands of GHz, leaving no resolution in the low-frequency domain of interest unless $N_{simulation}$ is extremely large - even if all the transients in the simulation have died down, you still have to keep the sim running to make the FFT happy! 
+
+There's more than enough 'information entropy' in 4000 FDTD points for most antennas. But you need some 30,000 points to get 10 bins below 20 GHz!
+
+There are a few methods of changing the FFT bin size artificially, which [Bi 1992] reviews. You can "use a manual fourier integration over the frequency region of interest".
+
+But, in a staggering turn of events which will presumably be familiar to statisticans and preposterous to everyone else, a far simpler method is to {\it discard} 95\% of the data, by down-sampling to 1/10th or so.
+
+An equally simple method that seemed to produce better results in our case is to pad the voltage and current samples to the correct length. The jump discontinuity introduced by padding with zeros has a negligible effect.
+
+It's so thumpingly unintuitive to me that adding 50,000 zeros to a 5000 value dataset can improve the resolution of a measurement by 300-fold.
+
+It is important to remember to normalize the gaussian pulse, or else numerical noise will be introduced. The magnitude is not important - [Luebbers 1992] use 100v, others use 1v, etc.
+
+Though uneven dt FFTs exist, the time step can be constant at the courant limit for this simulation.
+
+A step impulse (1 first timestep, 0 otherwise) has been used in some works, though in our case performance was quite horrid.
+
+A correction factor due to the staggered magnetic field of the Yee lattice must be introduced; [Fang 1994]. Their $Z_2$ equation (correcting for spatial inaccuracies, but not temporal) was sufficient.
+
+
+This technique is equivalent to that used in electrochemistry, known as fourier impedance spectroscopy - except they seem to usually use a known impedance source rather than a hard source, presumably because ideal hard sources don't exist in reality.
+
+Allowing the simulation to run for long enough that all transients dissipate is important for accuracy - deceptive dips in the current can cause early termination. A surprising amount of detail is contributed by even the smallest current levels. Our threshold is 1e-7 amps for 700 iterations.
+
+[Samaras 2004] has a very useful set of experimental and FDTD data for calibration and comparison. Comparing a probe via source in the different positions, we obtained agreement of $\sim 7\%$ in impedance and $\sim 5\%$ in frequency.
+
+The use of a hard source feed-port affects the number of timesteps required by introducing unphysical transients. Using a port with a virtual 50-ohm resistance reduces the computational requirements by a large factor; see [Luebbers 1996].
+
+Simply monitoring the source current during the simulation is somewhat deceptive. Periodically monitoring the change in the fourier transform seems to be a better convergence metric.
+
+The units of the FFT (unlike those of the continuous FT) remain in volts.
+
+\rule{\linewidth}{0.2pt}
+
+Most equations in papers on the FDTD method are supplied without making the scaling factors explicit; some need multiplying by the Courant number, For use with flaport/fdtd the H-field to current line integral in [] requires scaling by $\mu_0 * (dx/dt)$, where $\mu_0$ is the vacuum magnetic permittivity, dx the cell size, and dt the timestep - despite the equation already possessing a deceptive set of $dx$-es.
+
+Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run dimensional analysis using a unit-aware calculator such as {\it sharkdp/insect}.
+
+\PRLsep{{\itshape The antenna itself }}
+
+The impedance of a patch antenna varies with position on its surface. Probe feeds to a specific point on the patch
+
+Unfortunately, patch antennas have a relatively narrow bandwidth.
+
+\rule{\linewidth}{0.2pt}
+
+
+\PRLsep{{\itshape Power sensing }}
+
+The diode detector power sensor is based on the Infineon appnote [] and [], itself based on a circuit from The Art Of Electronics. 
+
+A detailed description of various diode detectors are found in []. Because the steady-state current through the detector is very small, the microstrip can simply be terminated in the standard manner.
+
+The Mini-Circuits ZX47-40-S+ would be an excellent low-cost COTS alternative.
+
+\PRLsep{{\itshape Fluidics }}
+
+We had anticipated having to perform a large number of tests for optimization of the impulse. Automating tests also has the advantage of removing operator bias, and (in our case) minimizing artifacts from the sample holder. Since all the components were already computer-controlled, it seemed little extra effort.
+
+We originally planned on using techniques from the rapidly accelerating field of centrifugal microfluidics, using a broadband patch antenna smaller than the cuvette, and measuring transmission absorption.
+
+Centrifugal microfluidics has the advantage of getting a pump for free; mixing can be effected by generating vortexes by accelerating and decelerating quickly; and because everything is circular, it is easier to design equidistant.
+
+However, aligning seemed liable to produce artifacts; runout in the spindle;
+
+
+Sterilization is often effected by cytotoxic gas []. UV we resorted to autoclaving, warping.
+
+Th edges are charred; however, we have not found any discussion of toxicity of the laser cut edges, so we assume they're fine.
+
+
+In a crude version of transmission welding. Tx welding usually relies on one material being transparent, and the other opaque - clear and black plastics, for instance. We obtained nearly useable results by scuffing one surface and rubbing in fine graphite powder.
+
+Both the hydrophobicity / wetting angle of the substrate (useful for valves with a certain threshold pressure, among other things), the adhesive surface energy, and sterilization can all be effected by UVC exposure. Unfortunately, we were not confident in the homogeneity of the 
+
+Not all plastics can be laser welded.
+
+3DuF; this is an excellent program 
+
+
+One problem with the formal, academic paper format is that one starts to believe what is written, which is a death sentence for accurate reasoning. We try to avoid this by being unprofessional.
+
+\label{para}
+\ref{para}
+
+\paragraph{Timeline}
+
+\paragraph{Comments by others}
+
+\paragraph{Lessons Learned} \
+
+
+\rule{\linewidth}{0.2pt}
+
+Automatic, no-effort documentation of simulation and experiment runs is critical.
+
+It may be helpful to think of simulations very similarly to IRL experiments. 
+
+A simulation is just a universe in a bottle that you can examine more closely; as with real-world, you can learn much from observation, but 
+
+But this need for documentation conflicts with the rapid, iterative cycle necessary for productivity.
+
+This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs, input files) of each distinct test. 
+
+For comparison to experiment, having a webcam take an image of the assembled board is also helpful. 
+
+Many months of testing have vanished into the ether due to 
+
+Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you must be able to see what the input and output was without re-running the simulation. 
+
+Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it!
+
+Software such as Sumatra, Sacred, recipy, and others. In our case, we used eLabFTW's elabapy bindings.
+
+\rule{\linewidth}{0.2pt}
+
+It is far easier to use existing, well-characterized reference designs verbatim than to modify 
+
+\rule{\linewidth}{0.2pt}
+
+When rapidly testing data analyses which aren't really conducive to unit testing, I previously used to run the whole simulation, look at the analysis, re-run the sim, etc.
+
+This is slow. I often don't change the input parameters for the sim, but just the analysis. However, there's often a large amount of state to persist to disk.
+
+Saving the entire session with 'dill' is very helpful.
+
+\rule{\linewidth}{0.2pt}
+
+Software opacity is evil.
+
+\rule{\linewidth}{0.2pt}
+
+A great deal of time was spent trying to resolve version conflicts and dependency hells with the numerous libraries used by all the simulation programs. Over a week was spent trying to recursively track down all the This also wastes developer time - some fraction of issues raised are due to library version conflicts. 
+
+Packaged binaries help this slightly, but of course don't help if modifications are required, and managing shared libraries is still a tricky matter.
+
+Good solutions include OpenFOAM's Docker installation. In some cases, using chroot with the original developer's Linux distribution is also of some utility.
+
+But this all seems like quite a lot of overhead and opacity for what ultimately doesn't seem a super-complex problem: deterministically obtain a known-good version of a library, build locally, and set paths appropriately.
+
+A good example might be gTest's cmake integration.
+
+In the extreme, systems exist to extract every 
+
+In some situations (especially where the library has a permissive licence) perhaps it could be useful to consider packaging a complete, batteries-included 'known good' repository, either with the source of all the correct library versions included, or with a script to clone and compile the specific version used, integrating all the libraries with the build system. 
+
+For instance, this was done with the PDB reader in the OpenMM wrapper and JAMES.
+
+\rule{\linewidth}{0.2pt}
+
+There's also a very neat thing that seems to be common in computational biology, but which doesn't seem popular in other fields. After an algorithm or software tool is written (and the source published seperately), a simple CGI frontend is written around it and hosted on the university's servers. eLNemo and the CHARMMing web interface are advanced examples of this. This way, anyone with an input file can get results without futzing around with installation. 
+
+The computational biologists have beat us at our own game.
+
+\rule{\linewidth}{0.2pt}
+
+We have always encountered wasting extreme amounts of time on subtle assembly mistakes in hardware prototypes. 
+
+In one example in this project, many hours were wasted because the enamel insulation on a bodge wire had not burned off completely in the solder joint, leading to a high-impedance connection.
+
+The same has occurred in previous projects; in one example, many days were spent debugging software to fix an apparently slow hardware interrupt, which ended up being the result of a poor solder paste stencil leading to a hidden high-impedance connection to a leadless package.
+
+Many failures are the result of carelessness in modification and lack of inspection. Others would only have been found by a 100\% electrical test.
+
+If flying-probe or bed-of-nails tests can be made sufficiently rapid and closely coupled with the existing toolchain, 
+
+In {\it 2001: A space odyssey}, an automated system is shown guiding the troubleshooting of an assembly, apparently generating a fault tree of all the 
+
+Boundary-scan features might really help 
+
+\rule{\linewidth}{0.2pt}
+
+Numerology doesn't pay
+
+\rule{\linewidth}{0.2pt}
+
+The ability to almost immediately compare simulation to experiment was essential.
+
+\rule{\linewidth}{0.2pt}
+
+This project started at the tail end of a project to produce ceramics. Many weeks were wasted; I had convinced myself that ceramics were required over FR4. 
+
+\rule{\linewidth}{0.2pt}
+
+I originally rationalized not contacting others about . There are some 10,000 labs working on a cure; it's not helpful to have random amateurs tying up expert time with ignorant flights of fancy. 
+
+Later, as the project became more mature and seemed likely, this morphed into a sort of arrogance.
+
+An expert in microwave engineering could probably have completed this entire project in a few days, rather than the months it took us.
+
+\rule{\linewidth}{0.2pt}
+
+\paragraph{Hall of Hubris} \
+
+Lest our hats stop fitting
+
+\rule{\linewidth}{0.2pt}
+
+An inane remark:
+
+\begin{displayquote}
+We believe once we have the P. Syringae host, we from environmental samples
+\end{displayquote}
+
+Truly the depths of Dunning-Kruger.
+
+\rule{\linewidth}{0.2pt}
+
+An expert and distinguished gentleman that we contacted regarding assistance resolving transients in our microstrip VCO stated the following:
+
+
+
+This was a perfectly sensible remark; it is almost always the case that (at X-band, no less!) a custom IC would have been needed to build a VCO.
+
+Also, if taken in the context of a tired, overworked PI getting an unsolicited email from an excessively verbose undergraduate at a different university, I hardly think I would have replied differently.
+
+However, I think this person may have missed out. Learning 
+
+So perhaps it is wise to ponder the ideas of fools for skeet; one always learns target practice, if only an example what not to do, and occasionally one learns positively. I have often found that I learn greatly from working on the projects of others.
+
+We present this only as a cautionary tale in the hopes that someday I will listen.
+
+\rule{\linewidth}{0.2pt}
+
+%\end{multicols}
+
+\Acrobatmenu{GoBack}{Back}
+
+
+\end{document}

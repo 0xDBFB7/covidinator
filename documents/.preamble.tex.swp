@@ -40,6 +40,8 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
+\newcommand{\supercite}[1]{}
+\newcommand{\supercollection}[1]{}
 
 
 \newlength{\PRLlen}
