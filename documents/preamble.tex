@@ -15,8 +15,7 @@
 \usepackage{blindtext,graphicx}
 \usepackage[absolute]{textpos}
 \usepackage[parfill]{parskip}
-\usepackage[colorlinks]{hyperref}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,citecolor=brown]{hyperref}
 \usepackage{gensymb}
 \usepackage{csquotes}
 \usepackage{amsmath}
@@ -33,6 +32,9 @@
 \usepackage{lettrine}
 %\usepackage[T1]{fontenc}
 
+\usepackage{natbib}
+
+
 \usepackage{etoolbox}
 \AtBeginEnvironment{quote}{\small}
 
@@ -40,8 +42,13 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
+
+\usepackage{packages/multibib}
+
+
+
 \newcommand{\supercite}[1]{}
-\newcommand{\supercollection}[1]{}
+\newcommand{\supercollect}[1]{}
 
 
 \newlength{\PRLlen}

@@ -6,13 +6,15 @@
 
 \begin{document}
 
+\nocite{*}
+
 \subfile{title}
 	
 \subfile{introduction}
 
 \clearpage
 
-
+\bibliographystyle{plainnat} 
 
 \paragraph{To-do list}
 
@@ -28,16 +30,12 @@ We see the following steps that must be undertaken before production can be star
 \clearpage
 \begin{multicols}{1}
 
-\supercite{Yang Efficient 2016}[1789 \href{https://doi.org/10.1038/srep18030}{\faExternalLink}]
-\supercite{Yang Efficient 2016}[1789 \href{https://doi.org/10.1038/srep18030}{\faExternalLink}]
-
-\supercite{Yang Efficient 2016}[1789 \href{https://doi.org/10.1038/srep18030}{\faExternalLink}]
 
 
 
-[Frolich 1968] [Frolich 1980] \textrightarrow \ ([Hung 2014] $\parallel$ [Yang 2015] $\parallel$ [Sun 2017])\footnote{We have not conduc98 \href{https://doi.org/10.2514/3.29363}{\faExternalLink}ently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately 8 GHz.
+\cite{frohlichLongrangeCoherenceEnergy1968} \textrightarrow \ \cite{frohlichBiologicalEffectsMicrowaves1980} \textrightarrow \ (\cite{hungFocusingReflectarrayIts2014} $\parallel$ \cite{yangEfficientStructureResonance2015} $\parallel$ \cite{sunResonantDipolarCoupling2017})\footnote{We have not conducently unlike human cellular structures, as we shall see} - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately 8 GHz.
 
-More critically, [Yang 2015] (and, in parallel, [Hung 2014]) theoretically model and then experimentally validate in various strains of Influenza A that - due to this acoustic-resonance effect - the power density levels required to crack the lipid envelope are near the safety limits for continuous exposure to humans.\footnote{Sort of. See below and supplemental.}
+More critically, [] (and, in parallel, [Hung 2014]) theoretically model and then experimentally validate in various strains of Influenza A that - due to this acoustic-resonance effect - the power density levels required to crack the lipid envelope are near the safety limits for continuous exposure to humans.\footnote{Sort of. See below and supplemental.}
 
 They demonstrate this with both a plaque and PCR assay, finding good agreement with the theoretical model.\footnote{As we will discuss, there are a few issues with the experimental technique.; sham, blinding, and dosimetry demanded by [Vjl.] are not mentioned.}
 
@@ -65,7 +63,7 @@ The previous paragraph may cut an impressive figure; but it hinges on all the re
 
 \lettrine{It} cannot be overstated how unexpected and positively dubious this finding appears to be -at least, based on our limited research and experience to date.
 
-For even the RF power limits set by standards organizations appear to be based on the observation that few significant resonance modes exist in biological tissues, and (as we shall see), this is grounded in solid {\it in vitro} (albeit more limited {\it in vivo}) evidence. 
+For even the RF power limits set by standards organizations appear to be based on the observation that no significant resonance modes exist in biological tissues, and (as we shall see), this is grounded in solid {\it in vitro} (albeit more limited {\it in vivo}) evidence. 
 
 This may account for why this paper has been ignored.
 
@@ -142,8 +140,6 @@ We are not aware of any past uses of these microwave en-masse. We do not have th
 \end{autem}
 
 \cite{POLAROGRAPHICOXYGENSENSORS}
-
-\collect{Flagship}
 
 \clearpage
 {\Large \it Talkin' 'bout the Variation}\\
@@ -427,9 +423,6 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 
 
+\bibliography{references}
 
-
-
-\bibliography{1.bib}{}
-\bibliographystyle{plain}
 \end{document}

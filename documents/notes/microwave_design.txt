@@ -1807,3 +1807,10 @@ before it's built.
 
 These Mesa Electronics fpga cards look badass! 
 LinuxCNC has a packaged debian 9 RT kernel - the stock debian one is probably better though
+
+
+There are too many citations to just dump at the end of the document. I want to
+duplicate the Zotero 'collection' tree format in the LaTeX.
+
+
+https://citeas.org/api

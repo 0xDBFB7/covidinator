@@ -1,6 +1,6 @@
 import json
 from pybtex.database import parse_file
-from pybtex import Engine
+import pybtex
 
 import difflib
 import Levenshtein as lev
@@ -20,6 +20,8 @@ JSON_INPUT = 'references.json'
 BIB_INPUT = 'references.bib'
 BIB_STYLE = 'physical-review-letters.csl'
 
+bibtex = pybtex.database.parse_file(BIB_INPUT)
+
 refs = json.loads(open(JSON_INPUT).read())
 collections = refs["collections"]
 # A tree of
@@ -31,8 +33,8 @@ items = refs["items"]
 # they can also be standalone notes, with the key "note" present.
 
 changes = int(os.system("git diff --exit-code --quiet --ignore-submodules -- . ':(exclude)cite_processor.py'"))
-cached_changes = int(os.system("git diff --exit-code --quiet --ignore-submodules -- . ':(exclude)cite_processor.py' --cached"))
-if(changes or cached_changes):
+# cached_changes = int(os.system("git diff --exit-code --quiet --ignore-submodules -- . ':(exclude)cite_processor.py' --cached"))
+if(changes):
     print("Uncommitted changes are present. Commit before running.")
     raise
 
@@ -51,7 +53,7 @@ tex_files.pop(tex_files.index("preamble.tex")) # don't include the definition of
 # Cite keys
 
 CITE_TAG = 'supercite{'
-COLLECT_TAG = 'supercollection{'
+COLLECT_TAG = 'supercollect{'
 
 itemIDs = [x["itemID"] for x in items if "itemID" in x.keys()]
 itemID_filtered = [x for x in items if "itemID" in x.keys()]
@@ -60,7 +62,11 @@ itemID_filtered = [x for x in items if "itemID" in x.keys()]
 cite_keys = [x["citekey"] for x in items if "citekey" in x.keys()]
 filtered_items = [x for x in items if "citekey" in x.keys()]
 
-collection_keys = [x["name"] for x in collections]
+print()
+
+collections_filtered = [x for x in collections.values() if "name" in x.keys()]
+collection_keys = [x["name"] for x in collections_filtered]
+
 
 for tex_file in tex_files:
 
@@ -86,7 +92,8 @@ for tex_file in tex_files:
 
         print(fuzzy_tag, " = ", ref_item["title"], ref_item["itemID"])
 
-        formatted_reference = str(ref_item["itemID"])
+        # formatted_reference = str(ref_item["itemID"])
+        formatted_reference = "\cite{" + ref_item["citekey"] + "}"
 
         #add url
         if("DOI" in ref_item.keys()):
@@ -103,33 +110,37 @@ for tex_file in tex_files:
         # length of the inserted string minus the length of the string that was there
         keys = list(re.finditer(CITE_TAG, tex)) # keys have moved
 
-    #Collections
-    keys = list(re.finditer(COLLECT_TAG, tex))
-    for i in range(0, len(keys)):
-        key = keys[i]
-        tag_start = key.end()
-        tag_end = tex.find('}',tag_start)
-        text_begin = tex.find('[',tag_end)
-        text_end = tex.find(']',text_begin)
-
-        tag = tex[tag_start:tag_end]
-
-        highest = process.extractOne(tag,collection_keys)
-        collection = collections[collection_keys.index(highest[0])]
-
-        #from collection itemID to item
-        cite_keys = []
-        for i in collection["items"]:
-            item = itemID_filtered[itemIDs.index(i)]
-            cite_keys.append(item["citekey"])
-
-        format_from_file(BIB_INPUT, BIB_STYLE, citations=[])
-
-
-        tex = tex[:text_begin+1] + formatted_bibliography + tex[text_end:]
-
-
-        keys = list(re.finditer(CITE_TAG, tex))
+    # #Collections
+    # keys = list(re.finditer(COLLECT_TAG, tex))
+    # for i in range(0, len(keys)):
+    #     key = keys[i]
+    #     tag_start = key.end()
+    #     tag_end = tex.find('}',tag_start)
+    #     text_begin = tex.find('[',tag_end)
+    #     text_end = tex.find(']',text_begin)
+    #
+    #     tag = tex[tag_start:tag_end]
+    #
+    #     highest = process.extractOne(tag,collection_keys)
+    #     collection = collections_filtered[collection_keys.index(highest[0])]
+    #
+    #
+    #     #from collection itemID to cite key
+    #     cite_keys = []
+    #     for i in collection["items"]:
+    #         item = itemID_filtered[itemIDs.index(i)]
+    #         cite_keys.append(item["citekey"])
+    #
+    #     # collection_bibtex = [for i in ]
+    #
+    #     collection_bibtex.to_file('bibliographies/' + tag + '.bib')
+    #
+    #     # formatted_bibliography = pybtex.Engine.format_from_file(BIB_INPUT, BIB_STYLE, citations=cite_keys)
+    #
+    #     # tex = tex[:text_begin+1] + formatted_bibliography + tex[text_end:]
+    #
+    #
+    #     keys = list(re.finditer(CITE_TAG, tex))
 
 
     with open(tex_file, "w+") as f:
