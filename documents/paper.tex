@@ -1,3 +1,8 @@
+% arara: pdflatex: { shell: yes } 
+% arara: biber
+% arara: pdflatex: { shell: yes }
+% arara: clean: { files: [ test.aux, test.log] }
+
 \documentclass[fleqn,10pt]{article}
 
 
@@ -14,7 +19,7 @@
 
 \clearpage
 
-\bibliographystyle{plainnat} 
+%\bibliographystyle{plainnat} 
 
 \paragraph{To-do list}
 
@@ -27,7 +32,7 @@ We see the following steps that must be undertaken before production can be star
   \item Obtain special permission from the FCC?
 \end{itemize}
 
-\clearpage
+\clearpage	
 \begin{multicols}{1}
 
 
@@ -88,7 +93,7 @@ We confess to not yet understanding this phenomenon; fortunately, while helpful,
 
 
 
-A poignant summary of the consensus is found in [IEEE C95.1-2005], Annex B, "Identification of levels of RF exposure responsible for adverse effects: summary of the literature".
+A poignant summary of the consensus is found in \cite{instituteofelectricalandelectronicsengineersIEEEC95120052006}, Annex B, "Identification of levels of RF exposure responsible for adverse effects: summary of the literature".
 
 \begin{quote}
 %%%%%%%%%%%
@@ -139,7 +144,9 @@ We are not aware of any past uses of these microwave en-masse. We do not have th
 
 \end{autem}
 
-\cite{POLAROGRAPHICOXYGENSENSORS}
+\clearpage
+\printbibliography[heading=none, title={}, keyword={Flagship}]
+\printbibliography[heading=none, title={}, keyword={standards}]
 
 \clearpage
 {\Large \it Talkin' 'bout the Variation}\\
@@ -423,6 +430,7 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 
 
-\bibliography{references}
+
+%\printbibliography[ title={Other references}]
 
 \end{document}

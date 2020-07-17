@@ -16,6 +16,9 @@ import os
 #Export Better BibTeX JSON from Zotero,
 # And also a Better BibTeX BibTeX.
 
+#Munge a LaTeX document with fuzzy-matched cite keys
+
+
 JSON_INPUT = 'references.json'
 BIB_INPUT = 'references.bib'
 BIB_STYLE = 'physical-review-letters.csl'
@@ -75,42 +78,42 @@ for tex_file in tex_files:
     with open("backup/backup_" + tex_file, "w+") as f:
         f.write(tex)
 
+    #
+    # keys = list(re.finditer(CITE_TAG, tex))
+    # # offset = 0
+    # for i in range(0, len(keys)):
+    #     key = keys[i]
+    #     tag_start = key.end()
+    #     tag_end = tex.find('}',tag_start)
+    #     text_begin = tex.find('[',tag_end)
+    #     text_end = tex.find(']',text_begin)
+    #
+    #     fuzzy_tag = tex[tag_start:tag_end]
+    #
+    #     highest = process.extractOne(fuzzy_tag,cite_keys)
+    #     ref_item = filtered_items[cite_keys.index(highest[0])]
+    #
+    #     print(fuzzy_tag, " = ", ref_item["title"], ref_item["itemID"])
+    #
+    #     # formatted_reference = str(ref_item["itemID"])
+    #     formatted_reference = "\cite{" + ref_item["citekey"] + "}"
+    #
+    #     #add url
+    #     if("DOI" in ref_item.keys()):
+    #         formatted_reference += " \href{https://doi.org/" + ref_item["DOI"] + "}{\\faExternalLink}"
+    #     elif("URL" in ref_item.keys()):
+    #         formatted_reference += " \href{" + ref_item["URL"] + "}{\\faExternalLink}"
+    #     else:
+    #         print("No url for item " + ref_item["title"])
+    #
+    #
+    #     tex = tex[:text_begin+1] + formatted_reference + tex[text_end:]
+    #
+    #     # offset += len(formatted_reference) - (text_end-text_begin) + 1
+    #     # length of the inserted string minus the length of the string that was there
+    #     keys = list(re.finditer(CITE_TAG, tex)) # keys have moved
 
-    keys = list(re.finditer(CITE_TAG, tex))
-    # offset = 0
-    for i in range(0, len(keys)):
-        key = keys[i]
-        tag_start = key.end()
-        tag_end = tex.find('}',tag_start)
-        text_begin = tex.find('[',tag_end)
-        text_end = tex.find(']',text_begin)
-
-        fuzzy_tag = tex[tag_start:tag_end]
-
-        highest = process.extractOne(fuzzy_tag,cite_keys)
-        ref_item = filtered_items[cite_keys.index(highest[0])]
-
-        print(fuzzy_tag, " = ", ref_item["title"], ref_item["itemID"])
-
-        # formatted_reference = str(ref_item["itemID"])
-        formatted_reference = "\cite{" + ref_item["citekey"] + "}"
-
-        #add url
-        if("DOI" in ref_item.keys()):
-            formatted_reference += " \href{https://doi.org/" + ref_item["DOI"] + "}{\\faExternalLink}"
-        elif("URL" in ref_item.keys()):
-            formatted_reference += " \href{" + ref_item["URL"] + "}{\\faExternalLink}"
-        else:
-            print("No url for item " + ref_item["title"])
-
-
-        tex = tex[:text_begin+1] + formatted_reference + tex[text_end:]
-
-        # offset += len(formatted_reference) - (text_end-text_begin) + 1
-        # length of the inserted string minus the length of the string that was there
-        keys = list(re.finditer(CITE_TAG, tex)) # keys have moved
-
-    # #Collections
+    #Collections
     # keys = list(re.finditer(COLLECT_TAG, tex))
     # for i in range(0, len(keys)):
     #     key = keys[i]

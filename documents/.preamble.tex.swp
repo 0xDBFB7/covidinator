@@ -8,14 +8,14 @@
 			
 \frenchspacing			
 
-
+\nonstopmode
 
 \usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{blindtext,graphicx}
 \usepackage[absolute]{textpos}
 \usepackage[parfill]{parskip}
-\usepackage[colorlinks=true,citecolor=]{hyperref}
+\usepackage[colorlinks=true,citecolor=brown]{hyperref}
 \usepackage{gensymb}
 \usepackage{csquotes}
 \usepackage{amsmath}
@@ -32,8 +32,12 @@
 \usepackage{lettrine}
 %\usepackage[T1]{fontenc}
 
-\usepackage{natbib}
 
+
+\usepackage[backend=bibtex8]{biblatex}
+%\usepackage[backend=biber]{biblatex}
+
+\addbibresource{processed.bib}
 
 \usepackage{etoolbox}
 \AtBeginEnvironment{quote}{\small}
@@ -43,12 +47,12 @@
 \newcommand{\xmark}{\ding{55}}%
 
 
-\usepackage{packages/multibib}
 
 
 
-\newcommand{\supercite}[1]{}
-\newcommand{\supercollect}[1]{}
+
+%\newcommand{\supercite}[1]{}
+%\newcommand{\supercollect}[1]{}
 
 
 \newlength{\PRLlen}

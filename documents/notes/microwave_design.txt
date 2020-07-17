@@ -1814,3 +1814,22 @@ duplicate the Zotero 'collection' tree format in the LaTeX.
 
 
 https://citeas.org/api
+
+tried to install biblatex via
+tlmgr install biblatex
+turns out a bunch of the old mirrors were broken, had to run 
+tlmgr update --self
+and then 
+tlmgr install biblatex
+a few times.
+
+BibLatex export with Better Bibtex threw an error; restarted Zotero and it was fixed.
+
+Using a Zotero Better Bibtex postscript now
+
+nextCollection only goes one way, and it's already exhausted
+Args passed 
+            cache = this.postscript(this, this.item, translator_1.Translator, Zotero);
+
+
+Switched from gummi to texstudio for biblatex. This bibliography is literal sex though
