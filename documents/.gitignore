@@ -31,3 +31,4 @@ packages/
 *.fdb_latexmk
 *.xml
 *.bcf
+*.pdf
