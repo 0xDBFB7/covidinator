@@ -6,7 +6,7 @@ def initialize():
 
     Name this run
     Fluidic plate ID
-    
+
 
     print("Fill phage into all selected cuvettes.")
     Simulataneously and separately
@@ -29,13 +29,16 @@ RF
 
 Expose phage, mix with log bacteria, monitor.
 
+Bare 
+
 Sham
 
 ?
 
 Positive control
 
-Bring temperature to 120c with trace.
+Bring phage cuvette temperature to 120c with trace.
+
 
 
 Autoclaved

@@ -35,9 +35,11 @@
 
 
 %\usepackage{biblatex}
-\usepackage[backend=bibtex8]{biblatex}
+\usepackage[backend=bibtex8, sorting=none]{biblatex}
 
 \addbibresource{processed.bib}
+%biblatex has a zoterordfxml
+% might avoid the need for python bibtex_collections.py
 
 \usepackage{etoolbox}
 \AtBeginEnvironment{quote}{\small}
