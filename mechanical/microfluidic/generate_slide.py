@@ -53,7 +53,6 @@ CULTURE_CUVETTE_X = CUVETTE_WIDTH
 culture_cuvette_y = total_cuvette_volume / CUVETTE_THICKNESS / CULTURE_CUVETTE_X
 
 
-
 FRAME_LENGTH = ((CUVETTE_LENGTH/2.0) + CUVETTE_SPACING) * (NUM_CUVETTES) + 2*FRAME_END_MARGIN
 
 print(FRAME_WIDTH, FRAME_LENGTH)
@@ -144,9 +143,9 @@ for i in range(0, NUM_CUVETTES):
 
     # cuvette_features = ir_encoder_slit + cuvette + port_1 + port_2 + channel_3
 
-    layer_1 -= ir_encoder_slit + cuvette + port_1 + port_2 + port_channel_1 + port_channel_2 + channel_3
-    layer_2 -= ir_encoder_slit + cuvette + port_1 + port_2
-    layer_3 -= ir_encoder_slit + port_1 + port_2
+    layer_1 -= cuvette + port_1 + port_2 + port_channel_1 + port_channel_2 + channel_3
+    layer_2 -= cuvette + port_1 + port_2
+    layer_3 -= port_1 + port_2
 
 
 
