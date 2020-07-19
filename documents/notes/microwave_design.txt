@@ -1832,4 +1832,22 @@ Args passed
             cache = this.postscript(this, this.item, translator_1.Translator, Zotero);
 
 
-Switched from gummi to texstudio for biblatex. This bibliography is literal sex though
+Switched from gummi to texstudio for biblatex. This bibliography is awesome though
+
+To refresh all cite keys, select all, select "refresh keys", then select one or two and refresh.
+
+Using a "bifurcating (BF) distributor".
+
+We may want the ability to run headless; to ship the card to some BSL3 lab and have a spectrum 
+taken, without needing a computer. We won't need the spectrum analyzer for that case.
+The codebase should be set up for this.
+
+We could just PiN-diode switch the exposure cuvette rather than mechanically
+moving the slide. That might be an option for the future.
+
+Ethanol precipitation to find free DNA
+
+
+Don't forget the lipid bilayer, and don't forget the genome!
+
+Synthesize a metric involving 

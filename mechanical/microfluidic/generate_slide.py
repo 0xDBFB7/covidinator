@@ -2,7 +2,7 @@ from solid import *
 from solid.utils import *
 # pip install git+https://github.com/SolidCode/SolidPython.git
 import os
-
+from math import log2
 #when-changed generate_slide.py -v -c "python %f"
 
 OPENSCAD_BINARY = "~/Programs/OpenSCAD-2019.05-x86_64.AppImage"
@@ -11,7 +11,7 @@ OPENSCAD_BINARY = "~/Programs/OpenSCAD-2019.05-x86_64.AppImage"
 #Mylar 0.10mm -
 #9495MP 0.14mm -
 #Mylar 0.10mm -
-#9495MP 0.14mm -
+#9495MP 0.14mm - remove from windows, otherwise they'll be all sticky
 #Polycarbonate 3.175 mm
 
 thicknesses = [0.10, 0.14]
@@ -25,9 +25,9 @@ CENTERLINE = FRAME_WIDTH / 2.0
 WINDOW_WIDTH = 10.0
 
 O_RING_OD = 4.15 # McMaster-Carr 003 size Viton O-ring
-O_RING_PORT_SIZE = 1.5
+O_RING_PORT_SIZE = 1.8
 SYRINGE_OD = 1.8
-O_RING_THICKNESS = 1.5
+O_RING_THICKNESS = 1.8
 
 TEXT_SIZE = 3
 
@@ -38,8 +38,8 @@ IR_ENCODER_SLIT_LENGTH = 0.1
 
 CHANNEL_WIDTH = 0.2
 
-NUM_CUVETTES = 15
-CUVETTE_SPACING = 6.0 # between
+NUM_CUVETTES = 2**3
+CUVETTE_SPACING = 10.0 # center-to-center
 CUVETTE_LENGTH = 0.8
 CUVETTE_WIDTH = 10
 CUVETTE_THICKNESS = 0.14 + 0.1 + 0.14
@@ -49,13 +49,16 @@ LEADER_HOLE_DIA = 2.0
 total_cuvette_volume = NUM_CUVETTES * CUVETTE_LENGTH * CUVETTE_WIDTH * CUVETTE_THICKNESS
 print(total_cuvette_volume * 0.001)
 
-culture_cuvette_y = 0
-CULTURE_CUVETTE_X = 0
+CULTURE_CUVETTE_X = CUVETTE_WIDTH
+culture_cuvette_y = total_cuvette_volume / CUVETTE_THICKNESS / CULTURE_CUVETTE_X
 
-FRAME_LENGTH = ((CUVETTE_LENGTH/2.0) + CUVETTE_SPACING) * (NUM_CUVETTES) + 2*FRAME_END_MARGIN
+
+FRAME_LENGTH = ((CUVETTE_LENGTH/2.0) + CUVETTE_SPACING) * (NUM_CUVETTES) + culture_cuvette_y + 2*FRAME_END_MARGIN
 
 print(FRAME_WIDTH, FRAME_LENGTH)
+print(NUM_CUVETTES*CUVETTE_SPACING + culture_cuvette_y)
 
+window_length = CUVETTE_SPACING / 1.5
 
 
 layer_0 = square([FRAME_WIDTH, FRAME_LENGTH],center=False)
@@ -78,8 +81,30 @@ frame = square([FRAME_WIDTH, FRAME_LENGTH],center=False)
 frame -= translate([CENTERLINE,FRAME_LENGTH - (LEADER_HOLE_DIA*1.5)])(circle(d=LEADER_HOLE_DIA))
 frame = linear_extrude(height=FRAME_THICKNESS, center=False)(frame)
 
+def tree(n, spacing, segment_length):
+    #Regnier bifurcating distributor
+    #binary tree
+
+    num_hierarchies = int(log2(n))
+    tree = translate([-segment_length, n*spacing])(\
+        square([segment_length, CHANNEL_WIDTH],center=False))
+    for i in range(0, num_hierarchies):
+
+        for j in range(0, int(2**i)):
+            print(i)
+            segment_start = (j * ((n*spacing)/(int(2**i)/2))) + (spacing*n / int(2**i) / 2) - spacing
+            tree += translate([i*segment_length, segment_start])(\
+                    square([CHANNEL_WIDTH, spacing * 2**(num_hierarchies-i)],center=False))
+
+            channel = square([segment_length, CHANNEL_WIDTH], center=False)
+            channel = translate([i*segment_length, segment_start])(channel)
+            channel_2 = square([segment_length, CHANNEL_WIDTH], center=False)
+            channel_2 = translate([i*segment_length, segment_start + spacing * 2**(num_hierarchies-i)])(channel_2)
+            tree += channel + channel_2
+
+    return tree
+
 for i in range(0, NUM_CUVETTES):
-    window_length = CUVETTE_SPACING / 2
     cuvette_y_centerline = i*CUVETTE_SPACING + window_length/2.0 + FRAME_END_MARGIN
 
     ir_encoder_slit = square([IR_ENCODER_SLIT_WIDTH,IR_ENCODER_SLIT_LENGTH],center=False)
@@ -89,25 +114,57 @@ for i in range(0, NUM_CUVETTES):
     cuvette = square([CUVETTE_WIDTH,CUVETTE_LENGTH],center=False)
     cuvette = translate([CENTERLINE-(CUVETTE_WIDTH/2) ,cuvette_y_centerline-(CUVETTE_LENGTH/2)])(cuvette)
 
+    port = translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(\
+                circle(d=SYRINGE_OD))
+    frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port)
+
     cuvette_features = ir_encoder_slit + cuvette
 
-    layer_0 -= cuvette_features
+    # layer_0 -= cuvette_features
     layer_1 -= cuvette_features
     layer_2 -= cuvette_features
+    layer_3 -= ir_encoder_slit
 
-    window = cube([CUVETTE_WIDTH, window_length, FRAME_THICKNESS])
+    window = square([CUVETTE_WIDTH, window_length])
     window = translate([CENTERLINE-WINDOW_WIDTH/2, cuvette_y_centerline-(window_length/2)])(window)
-    frame -= cylinder(1)
-    frame -= window
+    layer_3 -= window
+    frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(window)
 
 
 
+    frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(\
+                cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
-header = '$fa = 0.1;\n$fs = 0.1;'
+
+bacteria_tree = tree(8, CUVETTE_SPACING, 3)
+layer_1 -= translate([CENTERLINE - (13),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
+
+#This should be re-written with
+# matrix multiply mask operations for each layer; window*[false, false, false, true]
+# oop objects
+
+header = '$fa = 0.5;\n$fs = 0.5;'
 scad_render_to_file(layer_0, 'output/layer_0.scad', file_header = header)
+scad_render_to_file(layer_1, 'output/layer_1.scad', file_header = header)
+scad_render_to_file(layer_2, 'output/layer_2.scad', file_header = header)
+scad_render_to_file(layer_3, 'output/layer_3.scad', file_header = header)
+
+
 scad_render_to_file(frame, 'output/frame.scad', file_header = header)
 os.system(f"{OPENSCAD_BINARY} output/layer_0.scad -o output/layer_0.svg")
+os.system(f"{OPENSCAD_BINARY} output/layer_1.scad -o output/layer_1.svg")
+os.system(f"{OPENSCAD_BINARY} output/layer_2.scad -o output/layer_2.svg")
+os.system(f"{OPENSCAD_BINARY} output/layer_3.scad -o output/layer_3.svg")
 os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
+#
+# os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_0.svg > output/layer_0.svg")
+# os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_1.svg > output/layer_1.svg")
+
+os.system('find output/ -type f -exec sed -i \'s/stroke-width="0.5"/stroke-width="0"/g\' {} \;')
+os.system('find output/ -type f -exec sed -i \'s/fill="lightgray"/fill="black"/g\' {} \;')
+
+
+
 
 #meshlab output/frame.stl
 #xdg-open layer_0.svg

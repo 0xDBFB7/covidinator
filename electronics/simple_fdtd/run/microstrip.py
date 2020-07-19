@@ -53,12 +53,14 @@ ribbon_dielectric_constant = 2.9
 ribbon_thickness = 1.6e-3
 ribbon_length = 10e-3
 
+cover_tape_thickness = 0.1e-3
+
 fluid_dielectric_constant = 65
-fluid_thickness = 1e-3
-fluid_width = 1e-3
+fluid_thickness = (0.14+0.1+0.14) * 1e-3
+fluid_width = 0.8e-3
 
 pcb = fd.PCB(0.00005, xy_margin=15, z_margin=15)
-fd.initialize_grid(pcb,int((5e-3)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
+fd.initialize_grid(pcb,int((10e-3)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
                                 int(0.0025/pcb.cell_size), courant_number = 0.4)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
@@ -75,22 +77,36 @@ centerline = int((5e-3 / pcb.cell_size ) / 2.0) + pcb.xy_margin
 pcb.copper_mask[:, :, z_slice] = 0
 pcb.copper_mask[:,:,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
 
+microstrip_gap = 3e-3 # distance to ground plane
 #microstrip line
 m_w_N = int((microstrip_width/2)/pcb.cell_size)
 pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
                     pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+# pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size), \
+#                     pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size):-pcb.xy_margin, \
+                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+
+
+#cover tape
+pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
+            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(cover_tape_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="cover_tape")
 
 
 #polycarb ribbon
 pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
-            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon")
+        (pcb.component_plane_z+1+int(cover_tape_thickness/pcb.cell_size)):\
+            (pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon")
+
+
 
 
 #fluid
 conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
 f_w_N = int((fluid_width/2)/pcb.cell_size)
 pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
-            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(fluid_thickness/pcb.cell_size))] \
+            (pcb.component_plane_z+1+int(cover_tape_thickness/pcb.cell_size)):(pcb.component_plane_z+1+\
+                                    int(cover_tape_thickness/pcb.cell_size))+int(fluid_thickness/pcb.cell_size)] \
                     = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
 
 
