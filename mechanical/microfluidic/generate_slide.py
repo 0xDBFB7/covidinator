@@ -22,7 +22,7 @@ FRAME_X_MARGIN = 8.0
 FRAME_END_MARGIN = FRAME_WIDTH / 2
 CENTERLINE = FRAME_WIDTH / 2.0
 
-WINDOW_WIDTH = 12.0
+WINDOW_WIDTH = 10.0
 
 O_RING_OD = 4.15 # McMaster-Carr 003 size Viton O-ring
 O_RING_PORT_SIZE = 1.8
@@ -38,7 +38,7 @@ IR_ENCODER_SLIT_LENGTH = 0.1
 
 CHANNEL_WIDTH = 0.2
 
-NUM_CUVETTES = 2**4
+NUM_CUVETTES = 2**3
 CUVETTE_SPACING = 8.0 # center-to-center
 CUVETTE_LENGTH = 0.8
 CUVETTE_WIDTH = 10
@@ -51,6 +51,7 @@ print(total_cuvette_volume * 0.001)
 
 CULTURE_CUVETTE_X = CUVETTE_WIDTH
 culture_cuvette_y = total_cuvette_volume / CUVETTE_THICKNESS / CULTURE_CUVETTE_X
+
 
 
 FRAME_LENGTH = ((CUVETTE_LENGTH/2.0) + CUVETTE_SPACING) * (NUM_CUVETTES) + 2*FRAME_END_MARGIN
@@ -104,7 +105,7 @@ def tree(n, spacing, segment_length):
             channel_2 = translate([i*segment_length, segment_start + spacing * 2**(num_hierarchies-i)])(channel_2)
             tree += channel + channel_2
 
-    return tree
+    return tree, num_hierarchies
 
 for i in range(0, NUM_CUVETTES):
     cuvette_y_centerline = i*(CUVETTE_SPACING) + window_length/2.0 + FRAME_END_MARGIN
@@ -116,12 +117,12 @@ for i in range(0, NUM_CUVETTES):
     cuvette = square([CUVETTE_WIDTH,CUVETTE_LENGTH],center=False)
     cuvette += translate([0, CUVETTE_LENGTH*3])(
                     square([CUVETTE_WIDTH*2,CUVETTE_LENGTH],center=False))
-    cuvette = translate([CENTERLINE-(CUVETTE_WIDTH/2) ,cuvette_y_centerline-(CUVETTE_LENGTH/2)])(cuvette)
+    cuvette = translate([CENTERLINE-(CUVETTE_WIDTH/2), cuvette_y_centerline-(CUVETTE_LENGTH/2)])(cuvette)
 
-    port_2 = translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD*1.5, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
+    port_2 = translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
                 circle(d=SYRINGE_OD))
     frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_2)
-    frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD*1.5, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
+    frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
                 cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
     port_1 = translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(
@@ -135,7 +136,7 @@ for i in range(0, NUM_CUVETTES):
                     square([CUVETTE_WIDTH/2+1,CHANNEL_WIDTH],center=False))
 
     port_channel_2 = translate([CENTERLINE+WINDOW_WIDTH, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
-                    square([CUVETTE_WIDTH/2+1,CHANNEL_WIDTH],center=False))
+                    square([CUVETTE_WIDTH/2+2,CHANNEL_WIDTH],center=False))
 
     channel_3 = translate([CENTERLINE-WINDOW_WIDTH/2, cuvette_y_centerline])(\
                     square([CHANNEL_WIDTH, CUVETTE_LENGTH*3],center=False))
@@ -158,17 +159,19 @@ for i in range(0, NUM_CUVETTES):
     frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(\
                 cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
-
-bacteria_tree = tree(16, CUVETTE_SPACING/2, 3)
-layer_1 -= translate([CENTERLINE - (16),window_length/2.0 + FRAME_END_MARGIN+CUVETTE_LENGTH*3])(bacteria_tree)
+tree_segment_length = 3
+bacteria_tree, num_hierarchies = tree(NUM_CUVETTES, CUVETTE_SPACING/2, tree_segment_length)
+layer_1 -= translate([CENTERLINE - (3*(num_hierarchies+1)),window_length/2.0 + FRAME_END_MARGIN+CUVETTE_LENGTH*3])(bacteria_tree)
 # layer_2 -= translate([CENTERLINE - (13),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
 
-port_1 = translate([9, FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)])(
+port_1 = translate([(3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(
             circle(d=SYRINGE_OD))
 frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_1)
 layer_1 -= port_1
-frame -= translate([9, FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)])(\
+frame -= translate([(3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(\
             cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
+
+
 
 #This should be re-written with
 # matrix multiply mask operations for each layer; window*[false, false, false, true]
@@ -186,7 +189,7 @@ os.system(f"{OPENSCAD_BINARY} output/layer_0.scad -o output/layer_0.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_1.scad -o output/layer_1.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_2.scad -o output/layer_2.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_3.scad -o output/layer_3.svg")
-# os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
+os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
 #
 # os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_0.svg > output/layer_0.svg")
 # os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_1.svg > output/layer_1.svg")
