@@ -19,10 +19,10 @@ thicknesses = [0.10, 0.14]
 FRAME_WIDTH = 50.0
 FRAME_THICKNESS = 3.175
 FRAME_X_MARGIN = 8.0
-FRAME_END_MARGIN = FRAME_WIDTH / 2
+FRAME_END_MARGIN = FRAME_WIDTH / 3
 CENTERLINE = FRAME_WIDTH / 2.0
 
-WINDOW_WIDTH = 10.0
+WINDOW_WIDTH = 20.0
 
 O_RING_OD = 4.15 # McMaster-Carr 003 size Viton O-ring
 O_RING_PORT_SIZE = 1.8
@@ -36,10 +36,10 @@ ID = 0
 IR_ENCODER_SLIT_WIDTH = 5
 IR_ENCODER_SLIT_LENGTH = 0.1
 
-CHANNEL_WIDTH = 0.2
+CHANNEL_WIDTH = 0.3
 
 NUM_CUVETTES = 2**4
-CUVETTE_SPACING = 8.0 # center-to-center
+CUVETTE_SPACING = 4.0 # center-to-center
 CUVETTE_LENGTH = 0.8
 CUVETTE_WIDTH = 10
 CUVETTE_THICKNESS = 0.14 + 0.1 + 0.14
@@ -114,15 +114,15 @@ for i in range(0, NUM_CUVETTES):
                                     cuvette_y_centerline-window_length/2])(ir_encoder_slit)
 
     cuvette = square([CUVETTE_WIDTH,CUVETTE_LENGTH],center=False)
-    cuvette += translate([0, CUVETTE_LENGTH*3])(
-                    square([CUVETTE_WIDTH*2,CUVETTE_LENGTH],center=False))
+    cuvette += translate([CUVETTE_WIDTH+1, 0])(
+                    square([CUVETTE_WIDTH,CUVETTE_LENGTH],center=False))
     cuvette = translate([CENTERLINE-(CUVETTE_WIDTH/2), cuvette_y_centerline-(CUVETTE_LENGTH/2)])(cuvette)
-
-    port_2 = translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
-                circle(d=SYRINGE_OD))
-    frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_2)
-    frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
-                cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
+    #
+    # port_2 = translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
+    #             circle(d=SYRINGE_OD))
+    # frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_2)
+    # frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
+    #             cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
     port_1 = translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(
                 circle(d=SYRINGE_OD))
@@ -131,21 +131,21 @@ for i in range(0, NUM_CUVETTES):
                 cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
 
-    port_channel_1 = translate([CENTERLINE+WINDOW_WIDTH/2, cuvette_y_centerline])(\
+    port_channel_1 = translate([CENTERLINE+(CUVETTE_WIDTH/2), cuvette_y_centerline])(\
                     square([CUVETTE_WIDTH/2+1,CHANNEL_WIDTH],center=False))
-
-    port_channel_2 = translate([CENTERLINE+WINDOW_WIDTH, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
-                    square([CUVETTE_WIDTH/2+2,CHANNEL_WIDTH],center=False))
-
-    channel_3 = translate([CENTERLINE-WINDOW_WIDTH/2, cuvette_y_centerline])(\
-                    square([CHANNEL_WIDTH, CUVETTE_LENGTH*3],center=False))
-
+    #
+    # port_channel_2 = translate([CENTERLINE+WINDOW_WIDTH, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
+    #                 square([CUVETTE_WIDTH/2+2,CHANNEL_WIDTH],center=False))
+    #
+    # channel_3 = translate([CENTERLINE-WINDOW_WIDTH/2, cuvette_y_centerline])(\
+    #                 square([CHANNEL_WIDTH, CUVETTE_LENGTH*3],center=False))
+    #
 
     # cuvette_features = ir_encoder_slit + cuvette + port_1 + port_2 + channel_3
 
-    layer_1 -= cuvette + port_1 + port_2 + port_channel_1 + port_channel_2 + channel_3
-    layer_2 -= cuvette + port_1 + port_2
-    layer_3 -= port_1 + port_2
+    layer_1 -= cuvette + port_1 + port_channel_1
+    layer_2 -= cuvette + port_1
+    layer_3 -= port_1
 
 
 
@@ -160,7 +160,7 @@ for i in range(0, NUM_CUVETTES):
 
 tree_segment_length = 3
 bacteria_tree, num_hierarchies = tree(NUM_CUVETTES, CUVETTE_SPACING/2, tree_segment_length)
-layer_1 -= translate([CENTERLINE - (3*(num_hierarchies+1)),window_length/2.0 + FRAME_END_MARGIN+CUVETTE_LENGTH*3])(bacteria_tree)
+layer_1 -= translate([CENTERLINE - (3*(num_hierarchies+1)),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
 # layer_2 -= translate([CENTERLINE - (13),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
 
 port_1 = translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(
