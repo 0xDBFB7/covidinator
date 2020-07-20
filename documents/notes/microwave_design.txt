@@ -1851,3 +1851,12 @@ Ethanol precipitation to find free DNA
 Don't forget the lipid bilayer, and don't forget the genome!
 
 Synthesize a metric involving 
+
+
+
+USB stopped working after plugging in the laser cutter webcam.
+Used 'sudo dmesg -wH' to get the xhci id (0000:00XXXXXXX), then used
+echo -n "0000:00:XXX.xXxx" | sudo tee /sys/bus/pci/drivers/xhci_hcd/unbind
+echo -n "0000:00:XXX.xXxx" | sudo tee /sys/bus/pci/drivers/xhci_hcd/bind
+to reactivate.
+

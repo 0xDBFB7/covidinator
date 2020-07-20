@@ -38,7 +38,7 @@ IR_ENCODER_SLIT_LENGTH = 0.1
 
 CHANNEL_WIDTH = 0.2
 
-NUM_CUVETTES = 2**3
+NUM_CUVETTES = 2**4
 CUVETTE_SPACING = 8.0 # center-to-center
 CUVETTE_LENGTH = 0.8
 CUVETTE_WIDTH = 10
@@ -63,8 +63,8 @@ window_length = CUVETTE_SPACING / 1.5
 
 
 layer_0 = square([FRAME_WIDTH, FRAME_LENGTH],center=False)
-layer_0 -= translate([1,1])(text("0 M" + str(ID), TEXT_SIZE))
-layer_0 -= translate([CENTERLINE,FRAME_LENGTH - (LEADER_HOLE_DIA*1.5)])(circle(d=LEADER_HOLE_DIA))
+# layer_0 -= translate([1,1])(text("0 M" + str(ID), TEXT_SIZE))
+# layer_0 -= translate([CENTERLINE,FRAME_LENGTH - (LEADER_HOLE_DIA*1.5)])(circle(d=LEADER_HOLE_DIA))
 
 layer_1 = square([FRAME_WIDTH, FRAME_LENGTH],center=False)
 layer_1 -= translate([1,1])(text("1 A", TEXT_SIZE))
@@ -163,18 +163,22 @@ bacteria_tree, num_hierarchies = tree(NUM_CUVETTES, CUVETTE_SPACING/2, tree_segm
 layer_1 -= translate([CENTERLINE - (3*(num_hierarchies+1)),window_length/2.0 + FRAME_END_MARGIN+CUVETTE_LENGTH*3])(bacteria_tree)
 # layer_2 -= translate([CENTERLINE - (13),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
 
-port_1 = translate([(3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(
+port_1 = translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(
             circle(d=SYRINGE_OD))
 frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_1)
 layer_1 -= port_1
-frame -= translate([(3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(\
+frame -= translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(\
             cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
-
 
 
 #This should be re-written with
 # matrix multiply mask operations for each layer; window*[false, false, false, true]
 # oop objects
+
+
+layer_1 = layer_0 - layer_1
+layer_2 = layer_0 - layer_2
+layer_3 = layer_0 - layer_3
 
 header = '$fa = 0.5;\n$fs = 0.5;'
 scad_render_to_file(layer_0, 'output/layer_0.scad', file_header = header)
@@ -188,7 +192,7 @@ os.system(f"{OPENSCAD_BINARY} output/layer_0.scad -o output/layer_0.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_1.scad -o output/layer_1.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_2.scad -o output/layer_2.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_3.scad -o output/layer_3.svg")
-os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
+# os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
 #
 # os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_0.svg > output/layer_0.svg")
 # os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_1.svg > output/layer_1.svg")
