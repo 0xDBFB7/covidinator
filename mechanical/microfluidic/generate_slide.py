@@ -19,7 +19,7 @@ thicknesses = [0.10, 0.14]
 FRAME_WIDTH = 50.0
 FRAME_THICKNESS = 3.175
 FRAME_X_MARGIN = 8.0
-FRAME_END_MARGIN = FRAME_WIDTH / 3
+FRAME_END_MARGIN = FRAME_WIDTH / 2
 CENTERLINE = FRAME_WIDTH / 2.0
 
 WINDOW_WIDTH = 20.0
@@ -39,7 +39,7 @@ IR_ENCODER_SLIT_LENGTH = 0.1
 CHANNEL_WIDTH = 0.3
 
 NUM_CUVETTES = 2**4
-CUVETTE_SPACING = 4.0 # center-to-center
+CUVETTE_SPACING = 5 # center-to-center
 CUVETTE_LENGTH = 0.8
 CUVETTE_WIDTH = 10
 CUVETTE_THICKNESS = 0.14 + 0.1 + 0.14
@@ -56,10 +56,9 @@ culture_cuvette_y = total_cuvette_volume / CUVETTE_THICKNESS / CULTURE_CUVETTE_X
 FRAME_LENGTH = ((CUVETTE_LENGTH/2.0) + CUVETTE_SPACING) * (NUM_CUVETTES) + 2*FRAME_END_MARGIN
 
 print(FRAME_WIDTH, FRAME_LENGTH)
-print(NUM_CUVETTES*CUVETTE_SPACING + culture_cuvette_y)
+print((NUM_CUVETTES-1)*CUVETTE_SPACING + culture_cuvette_y)
 
 window_length = CUVETTE_SPACING / 1.5
-
 
 
 layer_0 = square([FRAME_WIDTH, FRAME_LENGTH],center=False)
@@ -124,15 +123,17 @@ for i in range(0, NUM_CUVETTES):
     # frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + CUVETTE_WIDTH/1.5 + O_RING_OD, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
     #             cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
-    port_1 = translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(
+    # port_x = CENTERLINE+WINDOW_WIDTH/2 + 1 + O_RING_OD*1.5+(i%2)
+    port_x = CENTERLINE+WINDOW_WIDTH/2 + 1 + O_RING_OD*1.5
+    port_1 = translate([port_x, cuvette_y_centerline])(
                 circle(d=SYRINGE_OD))
     frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_1)
-    frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(\
+    frame -= translate([port_x, cuvette_y_centerline])(\
                 cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
 
     port_channel_1 = translate([CENTERLINE+(CUVETTE_WIDTH/2), cuvette_y_centerline])(\
-                    square([CUVETTE_WIDTH/2+1,CHANNEL_WIDTH],center=False))
+                    square([port_x - (CENTERLINE+(CUVETTE_WIDTH/2)),CHANNEL_WIDTH],center=False))
     #
     # port_channel_2 = translate([CENTERLINE+WINDOW_WIDTH, cuvette_y_centerline+CUVETTE_LENGTH*3])(\
     #                 square([CUVETTE_WIDTH/2+2,CHANNEL_WIDTH],center=False))
@@ -144,30 +145,32 @@ for i in range(0, NUM_CUVETTES):
     # cuvette_features = ir_encoder_slit + cuvette + port_1 + port_2 + channel_3
 
     layer_1 -= cuvette + port_1 + port_channel_1
-    layer_2 -= cuvette + port_1
+    layer_2 -= port_1
     layer_3 -= port_1
 
 
 
-    window = square([CUVETTE_WIDTH, window_length])
-    window = translate([CENTERLINE-WINDOW_WIDTH/2, cuvette_y_centerline-(window_length/2.5)])(window)
+    window = square([WINDOW_WIDTH, window_length])
+    window = translate([CENTERLINE-CUVETTE_WIDTH/1.5, cuvette_y_centerline-(window_length/2.5)])(window)
     layer_3 -= window
     frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(window)
     # layer_1 -= window
 
-    frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(\
-                cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
+    # frame -= translate([CENTERLINE+WINDOW_WIDTH/2 + O_RING_OD*1.5, cuvette_y_centerline])(\
+    #             cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
 tree_segment_length = 3
 bacteria_tree, num_hierarchies = tree(NUM_CUVETTES, CUVETTE_SPACING/2, tree_segment_length)
 layer_1 -= translate([CENTERLINE - (3*(num_hierarchies+1)),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
 # layer_2 -= translate([CENTERLINE - (13),window_length/2.0 + FRAME_END_MARGIN])(bacteria_tree)
 
-port_1 = translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(
+port_1 = translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)-0.5])(
             circle(d=SYRINGE_OD))
 frame -= linear_extrude(height=FRAME_THICKNESS, center=False)(port_1)
 layer_1 -= port_1
-frame -= translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)+1])(\
+layer_2 -= port_1
+layer_3 -= port_1
+frame -= translate([CENTERLINE - (3*(num_hierarchies+1)), FRAME_END_MARGIN+(((NUM_CUVETTES)*CUVETTE_SPACING)/2)-0.5])(\
             cylinder(d=O_RING_OD, h=O_RING_THICKNESS, center=False))
 
 
@@ -192,13 +195,14 @@ os.system(f"{OPENSCAD_BINARY} output/layer_0.scad -o output/layer_0.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_1.scad -o output/layer_1.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_2.scad -o output/layer_2.svg")
 os.system(f"{OPENSCAD_BINARY} output/layer_3.scad -o output/layer_3.svg")
-# os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
-#
+os.system(f"{OPENSCAD_BINARY} output/frame.scad -o output/frame.stl")
+
 # os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_0.svg > output/layer_0.svg")
 # os.system("xsltproc --stringparam stroke-width 0px svglinewidth.xsl output/layer_1.svg > output/layer_1.svg")
 
 os.system('find output/ -type f -exec sed -i \'s/stroke-width="0.5"/stroke-width="0"/g\' {} \;')
 os.system('find output/ -type f -exec sed -i \'s/fill="lightgray"/fill="black"/g\' {} \;')
+
 
 
 

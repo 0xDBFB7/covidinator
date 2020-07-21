@@ -99,9 +99,9 @@ However, that the spectra of all these effects would combine to produce a peak a
 \clearpage
 \rule{\linewidth}{0.2pt}
 
-There seems to be a discrepancy between [Yang 2015] and our reading of [C95.1-2005].
+There seems to be a discrepancy between \cite{Efficient2015} and our reading of [C95.1-2005].
 
-They use a threshold in open public space of $100(f/3)^{1/5} \text{ W/m}^2$. The 115 W @ 6 GHz they provide correctly corresponds to this equation with a coefficient of 100.
+They use a threshold in open public space of $100(f/3)^{1/5} \text{ W/m}^2$. The 115 W @ 6 GHz figure they provide corresponds to this equation with a coefficient of 100.
 
 For Table 9, general public, the equation is $18.56 (f)^{0.699} \text{ W/m}^2$, or $64.93 \text{ W}/\text{m}^2$ @ 6 GHz. 
 
@@ -124,6 +124,7 @@ OpenEMS is excellent, with Python bindings, some lumped components, and mesh ref
 
 \PRLsep{{\itshape Wherein an oscillator is designed }}
 
+We did not discover how little of an effect a wideband sweep would have until late in the project; for this reason, much of the below caters towards wideband circuits and could be greatly simplified for single-frequency operation.
 
 \paragraph{Biasing}\
 
@@ -372,9 +373,7 @@ Use of so-called stacked, HiVP, or collector-feedback cascode designs can also a
 
 It should also be noted that when stressed, these devices can fail with a slow power-output degradation over weeks, an effect not usually found in lower-frequency designs. 
 
-
-
-\PRLsep{{\itshape Power sensing }}
+\printbibliography[heading=none, title={}, keyword={amplifier}]
 
 
 
@@ -454,6 +453,8 @@ The diode detector power sensor is based on the Infineon appnote [] and [], itse
 A detailed description of various diode detectors are found in []. Because the steady-state current through the detector is very small, the microstrip can simply be terminated in the standard manner.
 
 The Mini-Circuits ZX47-40-S+ would be an excellent low-cost COTS alternative.
+
+\printbibliography[heading=none, title={}, keyword={rectifier}]
 
 \PRLsep{{\itshape Fluidics }}
 

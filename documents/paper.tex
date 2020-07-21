@@ -49,9 +49,9 @@ The phased-array techdemo.
 
 The chain of literature 
 %
-\cite{Longrange1968} \textrightarrow \ \cite{Biological1980} \textrightarrow \ [Liu 2009] \textrightarrow \ ([Hung 2014] $\parallel$ [Yang 2015] $\parallel$ [Sun 2017])\footnote{We have not conducted a thorough review; many more papers are probably involved.} apparently culminates in the flagship work we focus on in this paper,
+\cite{Longrange1968} \textrightarrow \ \cite{Biological1980} \textrightarrow \ \cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{We have not conducted a thorough review; many more papers are probably involved.} apparently culminates in the flagship work we focus on in this paper,
 
-{\it Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses} [Yang 2015].
+{\it Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses} \cite{Efficient2015}.
 %
 
 which establishes that - unique to certain viruses, and apparently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately 8 GHz.
@@ -82,13 +82,13 @@ The previous paragraph may cut an impressive figure; but it hinges on all the re
 
 \end{autem}
 
-\lettrine{It} cannot be overstated how unexpected and positively dubious this finding appears to be -at least, based on our limited research and experience to date.
+\lettrine{It} cannot be overstated how unexpected and positively dubious this finding appears to be - that is, based on our limited research and inexperience to date.
 
-For even the RF power limits set by standards organizations appear to be based on the observation that no significant resonance modes exist in biological tissues, and (as we shall see), this is grounded in solid {\it in vitro} (albeit more limited {\it in vivo}) evidence. 
+For even the RF power limits set by standards organizations like \cite{ICNIRP2020} \cite{IEEE2006} appear to be based on the observation that no significant resonance modes exist in biological tissues due to damping forces from the surrounding tissue \cite{Vibrational2002}. As we shall see, this is grounded in solid {\it in vitro} (albeit more limited {\it in vivo}) evidence. 
 
 This may account for why this paper has been ignored.
 
-The precise structure and charge of the virion appears to be a singular anomaly in this otherwise catagorical non-existence.
+The precise structure and charge of the virion appears to be a singular anomaly in this otherwise categorical non-existence.
 
 
 \footnote{It should be noted that this {\it confined} acoustic resonance is subtly distinct from common-and-garden pipe-organ acoustic resonance; this is apparently not a strictly classical phenomenon. Besides standard Coulomb-like and Lennard-Jones-like interactions between constituent particles, if Fr\"{o}hlich is to be believed at these nanoscopic scales there are also wave-function interactions among the particles of the virus which can shift storage to modes not otherwise expected.
@@ -108,7 +108,45 @@ We confess to not yet understanding this phenomenon; fortunately, while helpful,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\begin{table} 
+	\centering
+	\begin{threeparttable}
+		\caption{Safety limits from various standards}
+		\begin{tabular}{lllll}
+			\toprule
+			Stubhead & \( df \) & \( f \) & \( \Wsqm \) & \( p \) \\
+			\midrule
+			&     \multicolumn{4}{c}{Spanning text}     \\
+			Row 1    & 1        & 0.67    & 0.55       & 0.41    \\
+			Row 2    & 2        & 0.02    & 0.01       & 0.39    \\
+			Row 3    & 3        & 0.15    & 0.33       & 0.34    \\
+			Row 4    & 4        & 1.00    & 0.76       & 0.54    \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\small
+			\item This is where authors provide additional information about
+			the data, including whatever notes are needed.
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
 
+All pertinent restrictions for frequency $<$ 6 GHz, for general public.
+ICNIRP 2020, Table 2, "Basic restrictions for electromagnetic field exposure",
+20 \Wsqm, averaged over a 6 min period, averaged over a square $4 \text{cm}^2$ surface area of the body.
+
+Whole-body average SAR $<$ 0.08 W/kg
+
+And, additionally, 
+
+ICNIRP 2020, Table 3, Basic Restrictions
+
+
+
+
+
+
+\clearpage
 
 A poignant summary of the consensus is found in \cite{IEEE2006}, Annex B, "Identification of levels of RF exposure responsible for adverse effects: summary of the literature".
 
@@ -133,11 +171,13 @@ However, there is an obvious avenue of optimization. If the virus is destroyed i
 
 We thus turn the CW microwave signal into a series of effectively instantaneous pulses.
 
+Note that contrary to the limits at lower frequencies, neither ICNIRP nor IEEE appear to explicitly specify a maximum electric field; only the maximum power is specified (thereby implicitly restricting the electric field magnitude).
+
 The safety standards of [IEEE] and [ICNIRP] account for such time-domain modulation by specifying both an average power limit over a 6 minute period, and a time-integrated energy deposition limit. All known non-thermal and thermal physiological effects, including changes in the permeability of membranes, direct nerve stimulation, etc, are accounted for by obeying those two limits.
 
-To drive home this point, apparently the best-quality evidence available fulfills sham requirements [Vijayalaxmi 2006] provide in-vitro. They expose blood lymphocytes to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration and 50 khz repetition rate, a whopping pulse power density of 250,000 $\text{W/m}^2$\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100 $\text{W/m}^2$ (the safety limit), for 2 hours, finding no change in any of the measured quantities. 
+To drive home this point, apparently the best-quality evidence available fulfills sham requirements provide in-vitro. They expose blood lymphocytes to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration and 50 khz repetition rate, a whopping pulse power density of 250,000 $\text{W/m}^2$\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100 $\text{W/m}^2$ (the safety limit), for 2 hours, finding no change in any of the measured quantities. 
 
-Simlarly, [Chemeris 2004] use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, on frog etheyrocytes, and find genotoxicity only from the temperature rise.
+Similarly, [Chemeris 2004] use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, and find genotoxicity purely due to the temperature rise.
 
 So it appears that this is not merely rules-lawyering to exploit a loophole in the regulations; it is a physically-informed effect.
 
@@ -269,8 +309,14 @@ As a damped, driven oscillator, the ring-up time of the virus depends on the Q f
 
 
 
+\clearpage
+{\Large \it The plausibility of low-cost microwave masks}\\
 
+With the most recent few generations of semiconductor processes, producing significant powers in the X-band has become inexpensive. Silicon transistors are limited in their output power and gain; Silicon-on-insulator topologies 
 
+This is perhaps most readily illustrated with the HB100 radar module. This device implements a complete doppler radar with two RF MOSFETS and a dielectric resonator. It operates at 10.6 GHz, yet are produced for under \$3. The PCB is stock FR4.
+
+Our crude experimentation has yielded about 10 mW with a single SiGe:C transistor, the Infineon BFP620 (\$ 0.34 apiece \@ 1000-of.). For the personal microwave sterilizer, given the threshold levels found by Yang, this corresponds to a cost per sterilized cubic centimeter of approx. \cite{BFP620H7764XTSA1}.
 
 
 
@@ -307,6 +353,8 @@ Polypropylene is the ideal material, being almost indefinitely autoclavable. It 
 {\Large Modes of application}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The mechanism restricts the possible modes of application; it would be useful to 
+
 \paragraph{\textbf{Personal 'electromagnetic mask'}}\
 
 Even with judicious use of phased-arrays, spatial power-combining, etc, each transistor can only reasonably maintain sterility in approx. $ 0.1 \text{ m}^3 $.
@@ -321,13 +369,15 @@ Via [Hand 1982], the $E_{mag}=1/e$ penetration depth\footnote{"skin skin depth?"
 
 
 
-SARS is found widely distributed throughout many of the most favoured organs [Ding 2004], shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely.
+SARS is found widely distributed throughout many of the most favoured organs \cite{Organ2004}, shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely.
 
 However, destruction of lung tissue appears to be significant in the lethality of SARS [Nicholls 2006]. 
 
 A bronchoscopic technique may therefore be effective, very similarly to that demonstrated by [Yuan 2019]: in adults, the bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are only on the order of 7 mm thick [Chekan 2016]. 
 
 The main bronchus is about 8 mm in diameter, which is smaller than the patch antenna used here; a monopole (or multiple, phased monopoles) like is probably more suitable.
+
+{\color{red} speculation \{ } 
 
 \paragraph{\textbf{Subharmonics}}\
 
@@ -353,17 +403,10 @@ However, [Oberoi 2012] find that - in controlled conditions - they can detect a 
 
 Of course, discriminating miniscule returns in free-space is not easy; but with precise knowledge of this resonance mode, it may become somewhat easier. Frequency-domain measurements can be made with incredible precision; and there are many parameters by which virions could be discriminated; ring-up time of the resonance, excitation non-linearity, etc.
 
-\paragraph{}
-
-It has been shown that virions can effect large-scale changes in the electric charges of their []. 
-
-Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). 
-
-We do not have the biological knowledge to know if this is plausible; it simply seemed worth mentioning. 
 
 \end{multicols}
 
-
+{\color{red} speculation \} } 
 
 
 
@@ -450,7 +493,14 @@ Small tungsten incandescent lights are available down to 0.05 watts. With a suit
 
 \end{multicols}
 
+\clearpage
+\paragraph{}
 
+It has been shown that virions can effect large-scale changes in the electric charges of their []. 
+
+Use of this technique will provide a selection bias towards immunity to electromagnetic fields, which could perhaps be effected by preferring extreme-sized mutants (shifting the resonance away from the applied field). 
+
+We do not have the biological knowledge to know if this is plausible; it simply seemed worth mentioning. 
 
 
 
