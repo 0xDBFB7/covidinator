@@ -11,6 +11,13 @@
 
 \begin{document}
 
+We've got a thing 
+that's called 
+Radar Love
+We've got a wave
+in the air
+
+The phased-array techdemo.
 
 
 \subfile{title}
@@ -37,13 +44,6 @@ We see the following steps that must be undertaken before production can be star
 
 
 
-We've got a thing 
-that's called 
-Radar Love
-We've got a wave
-in the air
-
-The phased-array techdemo.
 
 \paragraph{{\Large the gist}}\
 
@@ -86,7 +86,7 @@ The previous paragraph may cut an impressive figure; but it hinges on all the re
 
 For even the RF power limits set by standards organizations like \cite{ICNIRP2020} \cite{IEEE2006} appear to be based on the observation that no significant resonance modes exist in biological tissues due to damping forces from the surrounding tissue \cite{Vibrational2002}. As we shall see, this is grounded in solid {\it in vitro} (albeit more limited {\it in vivo}) evidence. 
 
-This may account for why this paper has been ignored.
+This may account for why this paper has been largely ignored.
 
 The precise structure and charge of the virion appears to be a singular anomaly in this otherwise categorical non-existence.
 
@@ -142,8 +142,12 @@ And, additionally,
 ICNIRP 2020, Table 3, Basic Restrictions
 
 
+\clearpage
+{\Large \it The contenders}\\
 
 
+
+Protein net charges extracted from protein sequences compiled by the proteome-pI database \cite{ProteomepI2017} and UniProt using localCIDER \cite{CIDER2017} \ghfile{biology/data/net_charge.py}. 
 
 
 \clearpage
@@ -166,6 +170,8 @@ standard are protective against established adverse health effects with a large 
 \end{quote}
 
 Unfortunately, the buried lede is that the power levels shown by [Yang 2015] are about twice the continuous safety levels. 
+
+\paragraph{Time-domain modulation}
 
 However, there is an obvious avenue of optimization. If the virus is destroyed in a few dozen nanoseconds via an electric field amplitude incidentally caused by an instantaneous power $\text{P}$, but tissue damage requires a temperature rise due to an energy deposition $\text{P} \  \text{dt}$, then we should minimize dt.\
 
@@ -218,6 +224,26 @@ In the absence of publication bias, since the sampling error is random, all stud
 \printbibliography[heading=none, title={}, keyword={standards}]
 
 
+
+\clearpage
+{\Large \it Time-dependence}\\
+
+The fact that the viral inactivation is non-thermal
+
+Both [Yang 2015] and [Hung 2014] use an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision, given the focus of their paper. 
+
+The effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must establish the required duration of exposure.
+
+{\color{red} speculative hypothesizing \{ } 
+
+In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain quantized dose of photons must be absorbed, we expected RF to act instantaneously.
+
+As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 100 nanoseconds.???????????FIXME
+
+[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify properties before the envelope fractures.
+
+
+{\color{red}  \} } 
 
 
 
@@ -279,26 +305,6 @@ To the extreme, some papers have used
 
 
 
-
-\clearpage
-\paragraph{\textbf{Time dependence}}\
-
-The fact that the viral inactivation is non-thermal
-
-Both [Yang 2015] and [Hung 2014] use an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision, given the focus of their paper. 
-
-The effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must establish the required duration of exposure.
-
-{\color{red} speculative hypothesizing \{ } 
-
-In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain quantized dose of photons must be absorbed, we expected RF to act instantaneously.
-
-As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 100 nanoseconds.???????????FIXME
-
-[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify properties before the envelope fractures.
-
-
-{\color{red}  \} } 
 
 
 
@@ -515,6 +521,6 @@ We do not have the biological knowledge to know if this is plausible; it simply 
 
 \nocite{*}
 
-%\printbibliography[ title={Other references}]
+\printbibliography[ title={All references}]
 
 \end{document}
