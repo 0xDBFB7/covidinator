@@ -1861,3 +1861,5 @@ echo -n "0000:00:XXX.xXxx" | sudo tee /sys/bus/pci/drivers/xhci_hcd/bind
 to reactivate.
 
 Microfluidics: small channels, big headaches.
+
+Use a drill 

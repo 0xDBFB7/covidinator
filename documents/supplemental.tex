@@ -78,8 +78,12 @@ addtotoc={1,section,1,Quilling Shapes,sec:shapes}]
 
 
 
-Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent.  [FCC-19-126A1] an FCC memorandum wherein the FCC tells groups to respectfully screw themselves no fewer than three times: ''Similarly, IEEE-ICES urges the Commission to
-adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". 
+Contrary to some [Hardell 2017] reports, we do not find the FCC and ICNIRP to be significantly affected by special interest groups; their rationales appear to be transparent.  [FCC-19-126A1], for instance, is a particularly entertaining memorandum:
+
+\begin{quote} 
+Similarly, IEEE-ICES urges the Commission to adopt a higher SAR exposure limit of 2 W/kg averaged over 10 g. [snip] We are not persuaded that the IEC standard should be adopted at this time.", "Medtronic and the AAMI-CRMD recommend a more relaxed threshold of 20 mW. We decline to increase the 1-mW threshold.". 
+
+\end{quote}
 
 Things heating up at the Microwave Safety fandom.
 
@@ -471,11 +475,11 @@ The Mini-Circuits ZX47-40-S+ would be an excellent low-cost COTS alternative.
 
 \printbibliography[heading=none, title={}, keyword={rectifier}]
 
-\PRLsep{{\itshape Fluidics }}
+\PRLsep{{\itshape Microfluidics: small channels, big headaches }}
 
 We had anticipated having to perform a large number of tests for optimization of the impulse. Automating tests also has the advantage of removing operator bias, and (in our case) minimizing artifacts from the sample holder. Since all the components were already computer-controlled, it seemed little extra effort.
 
-We originally planned on using techniques from the rapidly accelerating field of centrifugal microfluidics, using a broadband patch antenna smaller than the cuvette, and measuring transmission absorption.
+We originally planned on using techniques from the rapidly accelerating field of centrifugal microfluidics, using a broadband patch antenna smaller than the cuvette, and measuring transmission through the cuvette.
 
 Centrifugal microfluidics has the advantage of getting a pump for free; mixing can be effected by generating vortexes by accelerating and decelerating quickly; and because everything is circular, it is easier to design equidistant.
 
@@ -497,6 +501,41 @@ Not all plastics can be laser welded.
 
 3DuF; this is an excellent program 
 
+
+
+The final process was as follows:
+
+Just using a single-sided tape over micromachined channels didn't work for us; the tape remains sticky and stuck to the bottom of the channel, blocking it.
+
+\begin{itemize}
+	\item 1/16" 003 size Viton O-rings McMaster-Carr \#9464K103, 
+	\item 3M 467MP 0.051 mm double-sided adhesive transfer tape with 200MP acrylic adhesive, DigiKey 3M9726-ND.
+	Various other tapes were tried, such as 9495MP; the laser was not powerful enough to cut these.
+	While the intermittent temperature rating is over 121 C, the high-pressure steam environment does seem to degrade any exposed regions of tape.
+	
+	A CO2 laser is usually used to cut these otherwise transparent materials. We only had a diode laser. However, the front and back paper liners absorb sufficient laser power to melt the tape between. This produces horrible results, but was sufficient for this purpose. With our 2.5 W, ~0.15 mm spot size, 450 mm/min for the tape.
+	
+	\item MG Chemicals 416-T Laser Printer Transparency Film, 0.1 mm thick. Presumably a PET/Mylar material.
+	
+	\item A vinyl cutter was used to cut the openings in the top mylar cover slip.
+	\item Cover plate machined from polycarbonate with a 1/16" two-flute carbide endmill, 24000 RPM, between 500 and 1000 mm/min, up to 1.5 mm step-down. G-code generated with MeshCAM. This seems to withstand the autoclave without any damage.
+	\item Note: the tape preferentially sticks to the back liner, rather than the front.
+	Rub the thing hard with a 
+	Aluminum foil
+	
+\end{itemize}
+
+
+Making this device ourselves was a grave mistake that cost many lives. We should have used \cite{Straight}, a COTS version which we discovered halfway through. 
+
+I'm sorry.
+
+\printbibliography[title={General fluidics resources}, keyword={microfluidics}]
+
+\printbibliography[title={Centrifugal}, keyword={centrifugal}]
+
+
+\PRLsep{{\itshape aaaaa }}
 
 One problem with the formal, academic paper format is that one starts to believe what is written, which is a death sentence for accurate reasoning. We try to avoid this by being unprofessional.
 
