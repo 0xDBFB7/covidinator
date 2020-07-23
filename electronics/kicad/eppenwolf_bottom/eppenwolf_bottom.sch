@@ -549,4 +549,26 @@ F 3 "" H 2800 2150 60  0001 C CNN
 	1    2800 2150
 	1    0    0    -1  
 $EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY?
+U 1 1 5F496F4D
+P 2150 2550
+F 0 "#SUPPLY?" H 2200 2550 45  0001 L BNN
+F 1 "3.3V" H 2150 2720 45  0000 C CNN
+F 2 "" H 2150 2731 60  0000 C CNN
+F 3 "" H 2150 2550 60  0001 C CNN
+	1    2150 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Test_Point bolometer_power
+U 1 1 5F4972C7
+P 2150 2550
+F 0 "bolometer_power" H 2208 2668 50  0000 L CNN
+F 1 " " H 2208 2577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2350 2550 50  0001 C CNN
+F 3 "~" H 2350 2550 50  0001 C CNN
+	1    2150 2550
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

@@ -106,8 +106,8 @@
   (gr_line (start 184 88) (end 184 33) (layer Edge.Cuts) (width 0.05))
   (gr_line (start 116 88) (end 184 88) (layer Edge.Cuts) (width 0.05))
   (gr_line (start 116 34) (end 116 88) (layer Edge.Cuts) (width 0.05))
-  (gr_line (start 93 35) (end 41 35) (layer Dwgs.User) (width 0.15))
-  (gr_line (start 91 101) (end 93 35) (layer Dwgs.User) (width 0.15))
+  (gr_line (start 40 40) (end 90 40) (layer Dwgs.User) (width 0.15))
+  (gr_line (start 90 40) (end 90 70) (layer Dwgs.User) (width 0.15))
   (gr_line (start 43 101) (end 91 101) (layer Dwgs.User) (width 0.15))
   (gr_line (start 41 41) (end 43 101) (layer Dwgs.User) (width 0.15))
 
