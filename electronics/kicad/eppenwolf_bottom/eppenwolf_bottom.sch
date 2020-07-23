@@ -1,4 +1,552 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 30 0
 EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+U 1 1 5F01536C
+P 9500 2250
+F 0 "C?" H 9608 2342 45  0000 L CNN
+F 1 "100 pF" H 9608 2258 45  0000 L CNN
+F 2 "0402" H 9500 2500 20  0001 C CNN
+F 3 "" H 9500 2250 50  0001 C CNN
+F 4 "" H 9608 2216 60  0000 L CNN "Field4"
+	1    9500 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F016B90
+P 9500 2350
+F 0 "#PWR?" H 9500 2350 30  0001 C CNN
+F 1 "GND" H 9500 2280 30  0001 C CNN
+F 2 "" H 9500 2350 50  0001 C CNN
+F 3 "" H 9500 2350 50  0001 C CNN
+	1    9500 2350
+	1    0    0    -1  
+$EndComp
+Connection ~ 9500 2050
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F0217ED
+P 9950 2250
+F 0 "R?" V 9855 2318 45  0000 L CNN
+F 1 "10k" V 9939 2318 45  0000 L CNN
+F 2 "0402" H 9950 2400 20  0001 C CNN
+F 3 "" H 9950 2250 60  0001 C CNN
+F 4 " " V 10034 2318 60  0000 L CNN "Field4"
+	1    9950 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F021FD0
+P 9950 2450
+F 0 "#PWR?" H 9950 2450 30  0001 C CNN
+F 1 "GND" H 9950 2380 30  0001 C CNN
+F 2 "" H 9950 2450 50  0001 C CNN
+F 3 "" H 9950 2450 50  0001 C CNN
+	1    9950 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 2050 9950 2050
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+U 1 1 5F417FFD
+P 9500 2900
+F 0 "C?" H 9608 2992 45  0000 L CNN
+F 1 "100 pF" H 9608 2908 45  0000 L CNN
+F 2 "0402" H 9500 3150 20  0001 C CNN
+F 3 "" H 9500 2900 50  0001 C CNN
+F 4 "" H 9608 2866 60  0000 L CNN "Field4"
+	1    9500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F418003
+P 9500 3000
+F 0 "#PWR?" H 9500 3000 30  0001 C CNN
+F 1 "GND" H 9500 2930 30  0001 C CNN
+F 2 "" H 9500 3000 50  0001 C CNN
+F 3 "" H 9500 3000 50  0001 C CNN
+	1    9500 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 2700 9300 2700
+Connection ~ 9500 2700
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F41800C
+P 9950 2900
+F 0 "R?" V 9855 2968 45  0000 L CNN
+F 1 "10k" V 9939 2968 45  0000 L CNN
+F 2 "0402" H 9950 3050 20  0001 C CNN
+F 3 "" H 9950 2900 60  0001 C CNN
+F 4 " " V 10034 2968 60  0000 L CNN "Field4"
+	1    9950 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F418012
+P 9950 3100
+F 0 "#PWR?" H 9950 3100 30  0001 C CNN
+F 1 "GND" H 9950 3030 30  0001 C CNN
+F 2 "" H 9950 3100 50  0001 C CNN
+F 3 "" H 9950 3100 50  0001 C CNN
+	1    9950 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 2700 9950 2700
+$Comp
+L Diode:BAS40-04 D?
+U 1 1 5F418019
+P 9000 2800
+F 0 "D?" H 9000 3125 50  0000 C CNN
+F 1 "BAT15-04" H 9000 3034 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8750 3100 50  0001 L CNN
+F 3 "http://www.vishay.com/docs/85701/bas40v.pdf" H 8880 2900 50  0001 C CNN
+	1    9000 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Test_Point TP11
+U 1 1 5F3B3B4F
+P 4800 1650
+F 0 "TP11" H 4858 1768 50  0000 L CNN
+F 1 "capacitance_sensing" H 4858 1677 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 5000 1650 50  0001 C CNN
+F 3 "~" H 5000 1650 50  0001 C CNN
+	1    4800 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_06SMD J1
+U 1 1 5F3F9DD3
+P 6700 3350
+F 0 "J1" H 6472 3505 45  0000 R CNN
+F 1 "CONN_06SMD" H 6472 3589 45  0000 R CNN
+F 2 "1X06-SMD_RA_MALE" H 6700 4050 20  0001 C CNN
+F 3 "" H 6700 3350 50  0001 C CNN
+F 4 "CONN-08971" H 6472 3684 60  0000 R CNN "Field4"
+	1    6700 3350
+	-1   0    0    1   
+$EndComp
+Text GLabel 9000 2900 0    50   Input ~ 0
+far_end
+Text GLabel 9050 1150 0    50   Input ~ 0
+far_end
+$Comp
+L SparkFun-Resistors:0.75OHM-0805-1_4W-1% R?
+U 1 1 5F437F78
+P 9050 1350
+F 0 "R?" V 9092 1282 45  0000 R CNN
+F 1 "50R" V 9008 1282 45  0000 R CNN
+F 2 "0805" H 9050 1500 20  0001 C CNN
+F 3 "" H 9050 1350 60  0001 C CNN
+F 4 "" H 9050 1471 60  0000 C CNN "Field4"
+	1    9050 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F43C5BD
+P 9050 1550
+F 0 "#PWR?" H 9050 1550 30  0001 C CNN
+F 1 "GND" H 9050 1480 30  0001 C CNN
+F 2 "" H 9050 1550 50  0001 C CNN
+F 3 "" H 9050 1550 50  0001 C CNN
+	1    9050 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F43D2B9
+P 6100 1850
+F 0 "R?" V 6195 1782 45  0000 R CNN
+F 1 "180" V 6111 1782 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6100 2000 20  0001 C CNN
+F 3 "" H 6100 1850 60  0001 C CNN
+F 4 " " V 6016 1782 60  0000 R CNN "Field4"
+	1    6100 1850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9500 2050 9300 2050
+$Comp
+L Diode:BAS40-04 D?
+U 1 1 5F013846
+P 9000 2150
+F 0 "D?" H 9000 2475 50  0000 C CNN
+F 1 "BAT15-04" H 9000 2384 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8750 2450 50  0001 L CNN
+F 3 "http://www.vishay.com/docs/85701/bas40v.pdf" H 8880 2250 50  0001 C CNN
+	1    9000 2150
+	1    0    0    -1  
+$EndComp
+Text GLabel 8700 2050 0    50   Input ~ 0
+far_end
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F457BCB
+P 4800 1850
+F 0 "R?" V 4895 1782 45  0000 R CNN
+F 1 "1M" V 4811 1782 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4800 2000 20  0001 C CNN
+F 3 "" H 4800 1850 60  0001 C CNN
+F 4 " " V 4716 1782 60  0000 R CNN "Field4"
+	1    4800 1850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-DiscreteSemi:MOSFET-NCH-FDD8780 Q?
+U 1 1 5F45A0EF
+P 5150 3900
+F 0 "Q?" H 5314 3995 45  0000 L CNN
+F 1 "MOSFET-NCH-FDD8780" H 5314 3911 45  0000 L CNN
+F 2 "DPAK" H 5150 4200 20  0001 C CNN
+F 3 "" H 5150 3900 50  0001 C CNN
+F 4 "TRANS-09984" H 5314 3816 60  0000 L CNN "Field4"
+	1    5150 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F43D6D9
+P 6100 2250
+F 0 "R?" V 6195 2182 45  0000 R CNN
+F 1 "180" V 6111 2182 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6100 2400 20  0001 C CNN
+F 3 "" H 6100 2250 60  0001 C CNN
+F 4 " " V 6016 2182 60  0000 R CNN "Field4"
+	1    6100 2250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F45E930
+P 4950 4200
+F 0 "R?" V 5045 4132 45  0000 R CNN
+F 1 "180" V 4961 4132 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4950 4350 20  0001 C CNN
+F 3 "" H 4950 4200 60  0001 C CNN
+F 4 " " V 4866 4132 60  0000 R CNN "Field4"
+	1    4950 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F45F828
+P 5250 4100
+F 0 "#PWR?" H 5250 4100 30  0001 C CNN
+F 1 "GND" H 5250 4030 30  0001 C CNN
+F 2 "" H 5250 4100 50  0001 C CNN
+F 3 "" H 5250 4100 50  0001 C CNN
+	1    5250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F46000A
+P 4950 4400
+F 0 "#PWR?" H 4950 4400 30  0001 C CNN
+F 1 "GND" H 4950 4330 30  0001 C CNN
+F 2 "" H 4950 4400 50  0001 C CNN
+F 3 "" H 4950 4400 50  0001 C CNN
+	1    4950 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 3700 5250 3350
+Wire Wire Line
+	5250 3350 5400 3350
+Wire Wire Line
+	5050 3350 5250 3350
+Connection ~ 5250 3350
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F461B7D
+P 2800 2350
+F 0 "R?" V 2895 2282 45  0000 R CNN
+F 1 "5k" V 2811 2282 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2800 2500 20  0001 C CNN
+F 3 "" H 2800 2350 60  0001 C CNN
+F 4 " " V 2716 2282 60  0000 R CNN "Field4"
+	1    2800 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F46128F
+P 3600 2350
+F 0 "R?" V 3695 2282 45  0000 R CNN
+F 1 "5k" V 3611 2282 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 3600 2500 20  0001 C CNN
+F 3 "" H 3600 2350 60  0001 C CNN
+F 4 " " V 3516 2282 60  0000 R CNN "Field4"
+	1    3600 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Test_Point TP?
+U 1 1 5F4692E1
+P 5250 3050
+F 0 "TP?" H 5308 3168 50  0000 L CNN
+F 1 "capacitance_sensing" H 5308 3077 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 5450 3050 50  0001 C CNN
+F 3 "~" H 5450 3050 50  0001 C CNN
+	1    5250 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F46A86C
+P 4050 4050
+F 0 "R?" V 4145 3982 45  0000 R CNN
+F 1 "THERM" V 4061 3982 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4050 4200 20  0001 C CNN
+F 3 "" H 4050 4050 60  0001 C CNN
+F 4 " " V 3966 3982 60  0000 R CNN "Field4"
+	1    4050 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F46B969
+P 4050 3650
+F 0 "R?" V 4145 3582 45  0000 R CNN
+F 1 "10k" V 4061 3582 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4050 3800 20  0001 C CNN
+F 3 "" H 4050 3650 60  0001 C CNN
+F 4 " " V 3966 3582 60  0000 R CNN "Field4"
+	1    4050 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F46D4E6
+P 4050 4250
+F 0 "#PWR?" H 4050 4250 30  0001 C CNN
+F 1 "GND" H 4050 4180 30  0001 C CNN
+F 2 "" H 4050 4250 50  0001 C CNN
+F 3 "" H 4050 4250 50  0001 C CNN
+	1    4050 4250
+	1    0    0    -1  
+$EndComp
+Text GLabel 4800 1650 0    50   Input ~ 0
+capacitance_sense
+Text GLabel 4800 2050 0    50   Input ~ 0
+capacitance_drive
+Text GLabel 6100 2450 0    50   Input ~ 0
+turbidimeter_LED_drive
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+U 1 1 5F479A94
+P 9500 3750
+F 0 "C?" H 9608 3842 45  0000 L CNN
+F 1 "100 pF" H 9608 3758 45  0000 L CNN
+F 2 "0402" H 9500 4000 20  0001 C CNN
+F 3 "" H 9500 3750 50  0001 C CNN
+F 4 "" H 9608 3716 60  0000 L CNN "Field4"
+	1    9500 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F479A9A
+P 9500 3850
+F 0 "#PWR?" H 9500 3850 30  0001 C CNN
+F 1 "GND" H 9500 3780 30  0001 C CNN
+F 2 "" H 9500 3850 50  0001 C CNN
+F 3 "" H 9500 3850 50  0001 C CNN
+	1    9500 3850
+	1    0    0    -1  
+$EndComp
+Connection ~ 9500 3550
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F479AA2
+P 9950 3750
+F 0 "R?" V 9855 3818 45  0000 L CNN
+F 1 "10k" V 9939 3818 45  0000 L CNN
+F 2 "0402" H 9950 3900 20  0001 C CNN
+F 3 "" H 9950 3750 60  0001 C CNN
+F 4 " " V 10034 3818 60  0000 L CNN "Field4"
+	1    9950 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F479AA8
+P 9950 3950
+F 0 "#PWR?" H 9950 3950 30  0001 C CNN
+F 1 "GND" H 9950 3880 30  0001 C CNN
+F 2 "" H 9950 3950 50  0001 C CNN
+F 3 "" H 9950 3950 50  0001 C CNN
+	1    9950 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 3550 9950 3550
+$Comp
+L SparkFun-Capacitors:6PF-0402-50V-0.5% C?
+U 1 1 5F479AB0
+P 9500 4400
+F 0 "C?" H 9608 4492 45  0000 L CNN
+F 1 "100 pF" H 9608 4408 45  0000 L CNN
+F 2 "0402" H 9500 4650 20  0001 C CNN
+F 3 "" H 9500 4400 50  0001 C CNN
+F 4 "" H 9608 4366 60  0000 L CNN "Field4"
+	1    9500 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F479AB6
+P 9500 4500
+F 0 "#PWR?" H 9500 4500 30  0001 C CNN
+F 1 "GND" H 9500 4430 30  0001 C CNN
+F 2 "" H 9500 4500 50  0001 C CNN
+F 3 "" H 9500 4500 50  0001 C CNN
+	1    9500 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4200 9300 4200
+Connection ~ 9500 4200
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5F479ABF
+P 9950 4400
+F 0 "R?" V 9855 4468 45  0000 L CNN
+F 1 "10k" V 9939 4468 45  0000 L CNN
+F 2 "0402" H 9950 4550 20  0001 C CNN
+F 3 "" H 9950 4400 60  0001 C CNN
+F 4 " " V 10034 4468 60  0000 L CNN "Field4"
+	1    9950 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F479AC5
+P 9950 4600
+F 0 "#PWR?" H 9950 4600 30  0001 C CNN
+F 1 "GND" H 9950 4530 30  0001 C CNN
+F 2 "" H 9950 4600 50  0001 C CNN
+F 3 "" H 9950 4600 50  0001 C CNN
+	1    9950 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4200 9950 4200
+$Comp
+L Diode:BAS40-04 D?
+U 1 1 5F479ACC
+P 9000 4300
+F 0 "D?" H 9000 4625 50  0000 C CNN
+F 1 "BAT15-04" H 9000 4534 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8750 4600 50  0001 L CNN
+F 3 "http://www.vishay.com/docs/85701/bas40v.pdf" H 8880 4400 50  0001 C CNN
+	1    9000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 3550 9300 3550
+$Comp
+L Diode:BAS40-04 D?
+U 1 1 5F479AD4
+P 9000 3650
+F 0 "D?" H 9000 3975 50  0000 C CNN
+F 1 "BAT15-04" H 9000 3884 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8750 3950 50  0001 L CNN
+F 3 "http://www.vishay.com/docs/85701/bas40v.pdf" H 8880 3750 50  0001 C CNN
+	1    9000 3650
+	1    0    0    -1  
+$EndComp
+Text GLabel 8700 3550 0    50   Input ~ 0
+near_end
+Text GLabel 9000 4400 0    50   Input ~ 0
+near_end
+Text GLabel 4050 3850 0    50   Input ~ 0
+thermistor
+$Comp
+L Connector:Test_Point bolometer_SDA
+U 1 1 5F47D096
+P 2800 2550
+F 0 "bolometer_SDA" H 2858 2668 50  0000 L CNN
+F 1 " " H 2858 2577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3000 2550 50  0001 C CNN
+F 3 "~" H 3000 2550 50  0001 C CNN
+	1    2800 2550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Test_Point bolometer_SCL
+U 1 1 5F47DBCC
+P 3600 2550
+F 0 "bolometer_SCL" H 3658 2668 50  0000 L CNN
+F 1 " " H 3658 2577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3800 2550 50  0001 C CNN
+F 3 "~" H 3800 2550 50  0001 C CNN
+	1    3600 2550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Test_Point TP?
+U 1 1 5F47FAC3
+P 6100 1650
+F 0 "TP?" H 6158 1768 50  0000 L CNN
+F 1 "capacitance_sensing" H 6158 1677 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 6300 1650 50  0001 C CNN
+F 3 "~" H 6300 1650 50  0001 C CNN
+	1    6100 1650
+	1    0    0    -1  
+$EndComp
+Text GLabel 9950 2050 2    50   Input ~ 0
+far_end_power_sense_2
+Text GLabel 9950 2700 2    50   Input ~ 0
+far_end_power_sense_1
+Text GLabel 9950 4200 2    50   Input ~ 0
+far_end_power_sense_1
+Text GLabel 9950 3550 2    50   Input ~ 0
+far_end_power_sense_2
+Text Notes 4500 7200 0    50   ~ 0
+TODO: add LP filter from qucs/lp_filter.sch\n
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY?
+U 1 1 5F495EC8
+P 3600 2150
+F 0 "#SUPPLY?" H 3650 2150 45  0001 L BNN
+F 1 "3.3V" H 3600 2320 45  0000 C CNN
+F 2 "" H 3600 2331 60  0000 C CNN
+F 3 "" H 3600 2150 60  0001 C CNN
+	1    3600 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY?
+U 1 1 5F496969
+P 2800 2150
+F 0 "#SUPPLY?" H 2850 2150 45  0001 L BNN
+F 1 "3.3V" H 2800 2320 45  0000 C CNN
+F 2 "" H 2800 2331 60  0000 C CNN
+F 3 "" H 2800 2150 60  0001 C CNN
+	1    2800 2150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

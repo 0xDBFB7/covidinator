@@ -1762,7 +1762,7 @@ alignment pins on all layers
 space to flush down with argon
 Laser cut well #, plate #
 
-encoder notch a specified distance from cuvette centerline
+cencoder notch a specified distance from cuvette centerline
 
 
 
@@ -1862,4 +1862,8 @@ to reactivate.
 
 Microfluidics: small channels, big headaches.
 
-Use a drill 
+Use corded drill as a centrifuge for mixing -
+no! Use palm sander!
+
+
+

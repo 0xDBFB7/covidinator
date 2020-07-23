@@ -1,27 +1,82 @@
-\documentclass[fleqn,10pt]{article}
+\documentclass[fleqn,10pt]{paper}
+
+\usepackage[left=2cm,right=2cm,
+top=0cm,
+bottom=2.25cm,%
+headheight=11pt,%
+letterpaper]{geometry}
+
+\include{preamble}
+
+
+\title{Maxwell's Silver Hammer, briefly:\\ On the application of pulsed microwave acoustic resonant viral inactivation}
+
 
 \begin{document}
 
-Brief: Pulsed microwave-acoustic resonant virus inactivation
+\maketitle
 
-Note: please doubt
+%\footnote{The}
 
-Mechanism
+This is a heavily condensed version of a (hideously unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.
 
-Evidence for effectiveness:
+I think it is important that you doubt and scrutinize everything written. This hinges on minutia and 
+
+{\Large \textbf{The mechanism}}
+
+The literature is littered with irreproducible claims of non-thermal effects; however, this certainly appears to be a singular anomaly.
+
+\cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017}) appear to establish that the net charge, mass, and envelope stiffness of a few species of viruses supports a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz.
+
+They appear to demonstrate that this allows a comparatively inconsequential electromagnetic field magnitude to produce mechanical stresses sufficient to crack the lipid envelope, destroying the virus.
+
+By extending this work into the time-domain, pulsing the field at nanosecond scales, it appears to reduce the threshold to less than 1/Xth of all safety limits. Better yet, by scanning the focal point or beam , a significant area can be treated with a relatively small output power.
+
+\cite{Efficient2015} test with various strains of Influenza A, we test with Coliphage T4; structural similarities with NCoV mean this
 
 
 
-Evidence against effectiveness:
+These authors above deserve all the credit for this finding; nothing in this work is even remotely novel.
+
+{\Large \textbf{How is this better than the alternatives?}}
+
+It penetrates tissue.
+
+{\Large \textbf{Is it safe?}}
+
+The consensus is that the environment not favorable to create such modes; damping from the surrounding fluids is too strong \cite{Vibrational2002}. 
+
+Quality in-vitro data supports this assertion. \cite{Cytogenetic2006} expose blood cells (a representative cell) to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration, 50 khz repetition rate, a whopping pulse power density of 250,000\Wsqm\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100\Wsqm (the safety limit), for 2 hours, finding no change in any of the measured quantities. 
+
+Similarly, \cite{DNA2004} use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, and find genotoxicity purely due through the expected thermal mode. 
+
+[Foster 1987]
+
+\footnote{These are cherry-picked.}
+
+The literature reviews of \cite{ICNIRP2020} and \cite{C95} that they have conducted are far more exhaustive than ours.
+
+Whether this is due to a specific feature of the virion or simply, we are unsure. The lipid bilayer of the virion differs in composition from that of the host cell.
 
 This works because the damage mechanism 
 
-Tasks
+{\Large \textbf{How do we wield this sword?}}
 
-Implementation guide
+Results seem to indicate that any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 10 ns will be sterilized. This is not a particularly demanding requirement.
 
-Results seem to indicate that any region with an electric field strength greater than 150 V/m between for 10 ns will be sterilized.
+With modern semiconductor processes, it is trivial to produce 
 
+It is possible to create these conditions within human tissues; attenuation limits the safe treatment depth to about 3 cm.
 
+\begin{autem}
+	a
+\end{autem}
 
+%\centering {\color{red} \faHeart}
+
+\clearpage
+
+\printbibliography[heading=none, title={}]
+
+\end{document}
 

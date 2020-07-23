@@ -28,6 +28,18 @@ def initialize():
     print("Fill phage into all selected cuvettes.")
     Simulataneously and separately
 
+#centrifuge down bacteria lightly to concentrate
+#Mix with fresh broth
+#Vortex for X seconds?
+#
+# Rajnovic 2019
+# Overnight cultures of E. coli were centrifuged and the pellets resuspended in 0.1 mM PB to
+# achieve a concentration of 10^10 cfu/mL.
+# The resulting suspensions were subject to serial dilution
+#
+# For each assay, 160 μL of LB were mixed with
+# 20 μL phage solution, 20 μL of bacteria solution and 20μL of PB in
+
 
 def bacteria_alone_control():
     //repeated twice
