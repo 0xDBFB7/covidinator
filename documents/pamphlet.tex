@@ -9,7 +9,7 @@ letterpaper]{geometry}
 \include{preamble}
 
 
-\title{Maxwell's Silver Hammer, summarized:\\ On the application of pulsed microwave acoustic resonant viral inactivation}
+\title{On pulsed microwave acoustic resonant viral inactivation: summary}
 
 
 \begin{document}
@@ -18,21 +18,25 @@ letterpaper]{geometry}
 
 %\footnote{The}
 
-This is a heavily condensed version of a (hideously unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Assign blame to Daniel Correia [TODO affiliation] \orcidlink{0000-0002-9353-0216}}
+This is a heavily condensed version of a (hideously unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO affiliation] \orcidlink{0000-0002-9353-0216}}
 
 Both the microwave and dosimetric components \footnote{field field?} appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, is possible that none of what is discussed below actually exists.  
 
 {\Large \textbf{The mechanism}}
 
-The literature is littered with irreproducible claims of non-thermal effects; however, this certainly appears to be a singular anomaly.
+The literature is littered with irreproducible claims of non-thermal effects; however, this appears to be a singular anomaly.
 
-\cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{A great many papers are involved.} appear to establish that the net charge, mass, and envelope stiffness of a few species of viruses supports a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz.
+\cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{A great many papers are involved.} appear to establish that the net charge, mass distribution, and envelope stiffness of a few species of viruses supports a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz.
 
 They appear to demonstrate that this allows a comparatively inconsequential electromagnetic field magnitude to produce mechanical stresses sufficient to crack the lipid envelope, destroying the virus.
 
-By extending this work into the time-domain, pulsing the field at nanosecond scales, it appears to reduce the threshold to less than 1/Xth of all safety limits. Better yet, by scanning the focal point or beam , a significant area can be treated with a relatively small output power.
+\cite{Efficient2015} specifically provides a reasonable spherical-cow model for how this could occur that agrees well with experiment.
 
-\cite{Efficient2015} test with various strains of Influenza A, we test with Coliphage T4; structural similarities with NCoV mean this
+This work can be extended with the following assertion: the virus' Q factor is only 2, meaning that the steady-state amplitude should be reached in some nanoseconds. 
+
+Barring protein mechanical fatigue [] or other mechanisms that could prolong the inactivation duration, pulsing the field at nanosecond scales, it appears to reduce the threshold to less than 1/Xth of all safety limits. Better yet, by scanning the focal point, a significant area can be treated with a relatively small transmit power.
+
+\cite{Efficient2015} test with various strains of Influenza A, we test with Coliphage T4; structural similarities with NCoV mean this is may be transferable.
 
 
 
@@ -40,7 +44,7 @@ These authors above deserve all the credit for this finding; nothing in this wor
 
 {\Large \textbf{How is this better than the alternatives?}}
 
-It penetrates tissue.
+It produces no ozone and causes no damage to tissue (unlike near UV) even during continuous exposure, penetrates tissue (unlike far UV and cold-plasma), and 
 
 {\Large \textbf{Is it safe?}}
 
@@ -62,7 +66,11 @@ This works because the damage mechanism
 
 {\Large \textbf{How do we wield this sword?}}
 
-Results seem to indicate that any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 10 ns will be sterilized. This is not a particularly demanding requirement. We provide a reference design that costs \$3 in prototype quantities.
+If this is correct, any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 10 ns will be sterilized. 
+
+This is not a particularly demanding requirement. 
+
+We provide a reference design that costs \$3 in prototype quantities.
 
 With modern semiconductor processes, it is trivial to produce 
 
@@ -72,11 +80,34 @@ It is possible to create these conditions within human tissues; attenuation limi
 	a
 \end{autem}
 
+
+{\Large \textbf{Tasks}}
+
+We can see the following 
+
+\begin{itemize}
+	\item To prevent duplication of work, are any other teams working on this now? It seems a rather obvious technique. A thorough review of arxiv etc should be performed.
+	\item Double-check all figures and assumptions.
+	\item Get permission to use York University as affiliation, post on arxiv.
+	\item Send off spectrometer (or, ideally, a more precise piece of equipment) to a BSL with a sample of NCoV to obtain the spectra and thresholds.
+	\item Determine the ideal application (requires detailed sims), finish the design for the electromagnetic mask, start bronchoscopic trials?
+			
+	\item Check with the FCC/Industry Canada if we can get a temporary exemption for these intentional radiators?
+	
+\end{itemize}
+
 %\centering {\color{red} \faHeart}
 
 \clearpage
 
+
+
+
 \printbibliography[heading=none, title={}]
+
+
+
+
 
 \end{document}
 

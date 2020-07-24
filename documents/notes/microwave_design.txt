@@ -1865,5 +1865,14 @@ Microfluidics: small channels, big headaches.
 Use corded drill as a centrifuge for mixing -
 no! Use palm sander!
 
+eee
 
+probably would have been a good idea to use the 3mm substrate for the fluidic chip.
+
+The screw on the linear slide can be extended. The magnet is just glued on.
+
+The dead volume of the slide might affect the measurement.
+
+275 mm/min, 20krpm, 0.8 mm step-down does such a good job on the exterior milling of the
+PCB.
 
