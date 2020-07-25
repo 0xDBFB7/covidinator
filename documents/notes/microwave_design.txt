@@ -1876,3 +1876,5 @@ The dead volume of the slide might affect the measurement.
 275 mm/min, 20krpm, 0.8 mm step-down does such a good job on the exterior milling of the
 PCB.
 
+450 mm/min works very well on this black cardstock.
+

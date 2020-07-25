@@ -13,3 +13,5 @@ then postprocessed with invert_probing.sh.
 Board clamped to skim-cut MDF sheet and cut with regular scissors.
 
 
+Paste stencils were laser cut from 80-weight black cardstock at 450 mm/min, 100%.
+
