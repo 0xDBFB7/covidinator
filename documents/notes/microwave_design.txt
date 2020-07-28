@@ -1882,3 +1882,10 @@ PCB.
 
 Draw a little sharpie mark as the registration point?
 
+
+Now this is a tricky problem. We want to be able to run the board headless, just in case
+we have to bring it to a BSL lab. However, we also need to get data
+from the oscope etc; so which of the devices should be the host?
+
+
+

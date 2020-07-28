@@ -8,9 +8,7 @@ import sys
 
 context = pyudev.Context()
 
-commands = [["VCO_set",""],
-            ["VCO_status","s"]
-            ["REPLY","i"]
+
 
 
 def find_devices():
@@ -32,43 +30,7 @@ def find_devices():
 
 def connect():
     HOST_COMM_PORT, DEBUG_PORT = find_devices();
-    return PyCmdMessenger.ArduinoBoard(HOST_COMM_PORT, baud_rate=115200, int_bytes=4,long_bytes=4, float_bytes=4, double_bytes=8)
 
 
-
-
-
-#
-# def get_link():
-#     HOST_COMM_PORT, DEBUG_PORT = find_devices();
-#     link = txfer.SerialTransfer(HOST_COMM_PORT)
-#     link.open()
-#
-#     return link
-#
-# def send_message(link):
-#
-#     serialized_protobuf = SerializeToString()
-#     size = link.tx_obj(serialized_protobuf)
-#
-#     link.send(size)
-#
-#
-#
-# def recieve_message(link):
-#     print("Waiting for message")
-#     while not link.available() and t:
-#         if link.status < 0:
-#             if link.status == txfer.CRC_ERROR:
-#                 print('ERROR: CRC_ERROR')
-#             elif link.status == txfer.PAYLOAD_ERROR:
-#                 print('ERROR: PAYLOAD_ERROR')
-#             elif link.status == txfer.STOP_BYTE_ERROR:
-#                 print('ERROR: STOP_BYTE_ERROR')
-#             else:
-#                 print('ERROR: {}'.format(link.status))
-#
-#
-#     rec_str_   = link.rx_obj(obj_type=type(str_),
-#                              obj_byte_size=str_size,
-#                              start_pos=list_size)
+def communicate():
+    
