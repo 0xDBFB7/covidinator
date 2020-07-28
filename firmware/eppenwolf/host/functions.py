@@ -1,4 +1,2 @@
 
-
-def VCO_set():
-    
+VCO_SET, *_ = range(100)    

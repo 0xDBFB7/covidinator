@@ -1,10 +1,13 @@
 
 # from pySerialTransfer import pySerialTransfer as txfer
 # import messages_pb2
+# import PyCmdMessenger
 import pyudev
-import PyCmdMessenger
+
 import serial
 import sys
+
+import zlib
 
 context = pyudev.Context()
 
@@ -31,9 +34,8 @@ def find_devices():
 def connect():
     HOST_COMM_PORT, DEBUG_PORT = find_devices();
 
-
-
-def run_command():
+def send_command():
     
+    crc = zlib.crc32(s)
 
     while():

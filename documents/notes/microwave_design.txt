@@ -1887,5 +1887,11 @@ Now this is a tricky problem. We want to be able to run the board headless, just
 we have to bring it to a BSL lab. However, we also need to get data
 from the oscope etc; so which of the devices should be the host?
 
+Man, serilization sucks!
+
+Binary: needs deframing, not human readable.
+
+Protocol buffers: where do we put the checksum? Implementations are pretty messy and
+will cause bugs.
 
 
