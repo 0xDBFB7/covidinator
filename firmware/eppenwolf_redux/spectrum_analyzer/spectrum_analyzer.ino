@@ -1,5 +1,5 @@
 
-#define COMMS_SERIAL Serial
+#define COMMS_SERIAL Serial1
 
 #define LO_POWER_PIN 2
 #define VARACTOR_PWM_PIN 3
@@ -64,11 +64,9 @@ void setup(){
 
 void loop(){
 
-  if(Serial.available() > 0){
+  if(COMMS_SERIAL.available() > 0){
     //protocol: 0 10.4\n
     String input = COMMS_SERIAL.readStringUntil("\n");
-    Serial.println(input);
-    Serial.println(input.length());
     if(input.length() > 2){
   
       bool LO_state = (input.substring(0, 1).toInt() != 0); //failure to convert yields a zero, that's fine.
@@ -76,7 +74,7 @@ void loop(){
       
       LO_power(LO_state); 
       varactor_set(varactor_voltage);
-      Serial.println("Done.");
+      COMMS_SERIAL.println("Done.");
     }
     else{
       COMMS_SERIAL.println("ERROR: serial badness");

@@ -1880,3 +1880,5 @@ PCB.
 
 
 
+Draw a little sharpie mark as the registration point?
+

@@ -1,7 +1,7 @@
 \documentclass[fleqn,10pt]{paper}
 
 \usepackage[left=2cm,right=2cm,
-top=0cm,
+top=0.5cm,
 bottom=2.25cm,%
 headheight=11pt,%
 letterpaper]{geometry}
@@ -18,13 +18,18 @@ letterpaper]{geometry}
 
 %\footnote{The}
 
-This is a heavily condensed version of a (hideously unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO affiliation] \orcidlink{0000-0002-9353-0216}}
+This is a heavily condensed version of a (horribly unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO affiliation] \orcidlink{0000-0002-9353-0216}}
 
-Both the microwave and dosimetric components \footnote{field field?} appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, is possible that none of what is discussed below actually exists.  
+
+
+Both the microwave and dosimetric components \footnote{field field?} appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, it is entirely possible that none of what is discussed below actually exists.  
+
+This project was rushed, terribly managed, and not nearly as rigorous as the field demands. This may well end up being a waste of time. I'm very sorry.
+
+%The literature is littered with irreproducible claims of non-thermal effects; however, this appears to be a singular anomaly.
 
 {\Large \textbf{The mechanism}}
 
-The literature is littered with irreproducible claims of non-thermal effects; however, this appears to be a singular anomaly.
 
 \cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{A great many papers are involved.} appear to establish that the net charge, mass distribution, and envelope stiffness of a few species of viruses supports a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz.
 
@@ -32,53 +37,37 @@ They appear to demonstrate that this allows a comparatively inconsequential elec
 
 \cite{Efficient2015} specifically provides a reasonable spherical-cow model for how this could occur that agrees well with experiment.
 
-This work can be extended with the following assertion: the virus' Q factor is only 2, meaning that the steady-state amplitude should be reached in some nanoseconds. 
+However, this work would seem to be more useful if extended with the following assertion: the virus' Q factor is only about 2, meaning that the steady-state amplitude and stresses should be reached in some nanoseconds.
 
-Barring protein mechanical fatigue [] or other mechanisms that could prolong the inactivation duration, pulsing the field at nanosecond scales, it appears to reduce the threshold to less than 1/Xth of all safety limits. Better yet, by scanning the focal point, a significant area can be treated with a relatively small transmit power.
+Barring protein mechanical fatigue \cite{Mechanical2013} or some other mechanism that could prolong the inactivation duration, it appears to be possible to reduce the required power density to a minuscule fraction of all safety limits by pulsing the field at nanosecond scales. Better yet, by then scanning the focal point, a significant area can be treated with a relatively small transmit power.
 
 \cite{Efficient2015} test with various strains of Influenza A, we test with Coliphage T4; structural similarities with NCoV mean this is may be transferable.
 
-
-
 These authors above deserve all the credit for this finding; nothing in this work is even remotely novel.
-
-{\Large \textbf{How is this better than the alternatives?}}
-
-It produces no ozone and causes no damage to tissue (unlike near UV) even during continuous exposure, penetrates tissue (unlike far UV and cold-plasma), and 
 
 {\Large \textbf{Is it safe?}}
 
-The consensus is that the environment not favorable to create such modes; damping from the surrounding fluids is too strong \cite{Vibrational2002}. 
+The consensus is that conditions in human tissues are highly unfavorable for any such resonance modes; damping from biological solvents is too strong \cite{Vibrational2002}. Harm occurs only through thermal mechanisms; therefore an almost arbitrarily powerful pulse can be safely applied for infinitesimal periods.
 
-Quality in-vitro data supports this assertion. \cite{Cytogenetic2006} expose blood cells (a representative cell) to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration, 50 khz repetition rate, a whopping pulse power density of 250,000\Wsqm\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100\Wsqm (the safety limit), for 2 hours, finding no change in any of the measured quantities. 
+Quality in-vitro data supports this assertion. \cite{Cytogenetic2006} expose blood cells (a representative cell) to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration, 50 khz repetition rate, a whopping pulse power density of 250,000\Wsqm\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100\Wsqm (the safety limit), for 2 hours, finding no change in any of the measured quantities. \cite{DNA2004} replicate this finding, finding genotoxicity purely through the expected thermal mode. \footnote{These papers were cherry-picked from a sea of positive results. See the full paper for the rationale.}
 
-Similarly, \cite{DNA2004} use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, and find genotoxicity purely due through the expected thermal mode. 
+The literature reviews of \cite{ICNIRP2020} and \cite{C95} are exhaustive; however, there is not a great deal of in-vivo evidence in this frequency range\cite{New2019}\cite{Comprehensive2018}.
 
-[Foster 1987]
+We are unsure what specific feature of the virion accounts for this discrepancy. The lipid bilayer of the virion differs in composition from that of the host cell, imparting a different net charge.
 
-\footnote{These are cherry-picked.}
-
-The literature reviews of \cite{ICNIRP2020} and \cite{C95} that they have conducted are far more exhaustive than ours.
-
-Whether this is due to a specific feature of the virion or simply, we are unsure. The lipid bilayer of the virion differs in composition from that of the host cell.
-
-This works because the damage mechanism 
-
+\clearpage 
 {\Large \textbf{How do we wield this sword?}}
 
-If this is correct, any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 100 ns.
+If the above is correct, any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 100 ns will be sterilized.
 
-This is not a particularly demanding requirement.
+This is not a particularly demanding requirement, and lends itself to a wide variety of applications, many of which could be implemented almost immediately.
 
-It is possible to create these conditions within human tissues. Depending on the type of tissue, this field strength appears to be safely produced a minimum of 3 cm thickness (suitable for targeted sterilization of lungs etc with a bronchoscopic technique), up to 200 cm (entirely removing the virus from the body). \ghfile{documents/pulse.ipynb} We await the reply
+First, depending on the type of tissue, this field strength can apparently be safely produced a minimum of 3 cm deep (suitable for targeted sterilization of lungs or other organs with bronchoscopic techniques), up to 200 cm (eradicating the virus from the body). \ghfile{documents/pulse.ipynb}. We are working to narrow these bounds now.
 
 On an individual level, the free-space-combined output of, say, a few dozen SiGe:C or GaAs transistors (\$0.3 apiece [BFP620]) should suffice to locally protect the major vulnerabilities like mouth, nose, eyes, hair and any surfaces that the hands contact. This arguably wouldn't provide many advantages over simple masks, however.
 \ghfile{documents/global.ipynb}
 
-
-
-
-We provide a reference design that costs \$3 in prototype quantities.
+On the other extreme, installations with Klystrons could sterilize square-kilometer areas.
 
 
 \begin{autem}
@@ -93,10 +82,10 @@ We can see the following
 \begin{itemize}
 	\item To prevent duplication of work, are any other teams working on this now? It seems a rather obvious technique. A thorough review of arxiv etc should be performed.
 	\item Double-check all figures and assumptions.
-	\item Get permission to use York University as affiliation, post on arxiv.
 	\item Send off spectrometer (or, ideally, a more precise piece of equipment) to a BSL with a sample of NCoV to obtain the spectra and thresholds.
-	\item Determine the ideal application (requires detailed sims), finish the design for the electromagnetic mask, start bronchoscopic trials?
-			
+	\item get the gosh-darned AustinMan voxel team to reply to my gosh-darned emails
+	\item Determine the ideal application to focus effort on
+	\item ???????
 	\item Check with the FCC/Industry Canada if we can get a temporary exemption for these intentional radiators?
 	
 \end{itemize}
