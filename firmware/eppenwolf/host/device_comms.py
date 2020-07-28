@@ -32,5 +32,8 @@ def connect():
     HOST_COMM_PORT, DEBUG_PORT = find_devices();
 
 
-def communicate():
+
+def run_command():
     
+
+    while():
