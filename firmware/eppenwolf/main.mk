@@ -124,10 +124,21 @@ CPP_FILES := $(filter-out test_main.cpp, $(CPP_FILES))
 # include paths for libraries
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
 
+
+LCPP_FILES += $(wildcard $(LIBRARYPATH)/TMCStepper/src/*.cpp)
+LCPP_FILES += $(wildcard $(LIBRARYPATH)/TMCStepper/src/source/*.cpp)
+
+L_INC += -I$(LIBRARYPATH)/TMCStepper/src/
+L_INC += -I$(LIBRARYPATH)/TMCStepper/src/source/
+
+LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/SPI/*.cpp)
+L_INC += -I$(COREPATH)/../../libraries/SPI/
+
+
 SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
 
-all: hex proto
+all: hex
 
 build: $(TARGET).elf
 

@@ -5,7 +5,7 @@
 #include "SerialTransfer.h"
 
 
-SerialTransfer host_transfer;
+extern SerialTransfer host_transfer;
 
 
 // #include <CmdMessenger.h>  // CmdMessenger
@@ -13,5 +13,7 @@ SerialTransfer host_transfer;
 // extern "C"{
 // #include "messages.pb-c.h"
 // }
-/
+
+void loopback();
+
 #endif
