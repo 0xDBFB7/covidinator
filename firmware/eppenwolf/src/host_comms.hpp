@@ -3,17 +3,15 @@
 
 #include "comms.hpp"
 #include "SerialTransfer.h"
+
+
+SerialTransfer host_transfer;
+
+
 // #include <CmdMessenger.h>  // CmdMessenger
 
 // extern "C"{
 // #include "messages.pb-c.h"
 // }
-//
-// extern CmdMessenger cmdMessenger;
-//
-// enum
-// {
-//   kSetLed              ,
-//   kStatus              ,
-// };
-// #endif
+/
+#endif

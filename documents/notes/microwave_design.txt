@@ -1895,3 +1895,8 @@ Protocol buffers: where do we put the checksum? Implementations are pretty messy
 will cause bugs.
 
 
+there must be a better way to do this sort of thing.
+
+Some UWB antennas have notches for the outlawed regions of the FCC standard;
+this one does not appear to.
+
