@@ -1900,3 +1900,5 @@ there must be a better way to do this sort of thing.
 Some UWB antennas have notches for the outlawed regions of the FCC standard;
 this one does not appear to.
 
+Finally broke through the mental block I had on looking up the citations of the Li 2009 paper.
+One paper discusses with reference to COVID: no mention of pulsed.

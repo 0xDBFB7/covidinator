@@ -2,7 +2,7 @@
 #include "WProgram.h"
 #include "settings.hpp"
 
-#define log_serial Serial1
+#define debug_serial Serial1
 #define host_serial Serial2
 
 

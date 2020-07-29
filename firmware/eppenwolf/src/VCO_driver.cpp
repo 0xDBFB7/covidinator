@@ -3,8 +3,10 @@
 #define BASE_BIAS_PIN 10 //PWM
 #define VARACTOR_PIN 10 //PWM
 
-#define BASE_BIAS_GAIN
-#define BASE_BIAS_GAIN 
+// non-inverting config. = 1 + Rf/Rin
+#define BASE_BIAS_GAIN 11
+#define VARACTOR_GAIN 11
+
 
 
 
