@@ -2,15 +2,15 @@ import sys
 sys.path.append('/home/arthurdent/covidinator/firmware/eppendoofus/host/')
 
 import device_comms
-
+from device_comms import *
+import pytest
 link = device_comms.connect()
 
 
 def test_loopback():
     send_size = 0
     float_ = 563.5
-    float_size = link.tx_obj(float_, send_size) - send_size
-    send_size += float_size
+    send_size += add_float(link, send_size, float_)
     link.send(send_size, packet_id=10)
 
     while not link.available():
@@ -24,7 +24,11 @@ def test_loopback():
             else:
                 print('ERROR: {}'.format(link.status))
 
-    rec_float_ = link.rx_obj(obj_type=type(float_),
-                                     obj_byte_size=float_size,
-                                     start_pos=(list_size + str_size))
+    rec_float_ = link.rx_obj(obj_type=type(float()),
+                                     obj_byte_size=4,
+                                     start_pos=(0))
+
+    clear_buffers(link)
+
+    assert rec_float_ == pytest.approx(float_)
     assert link.idByte == 10

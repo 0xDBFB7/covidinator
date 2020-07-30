@@ -1,5 +1,6 @@
 
 from pySerialTransfer import pySerialTransfer as txfer
+
 # import messages_pb2
 # import PyCmdMessenger
 import pyudev
@@ -38,4 +39,11 @@ def connect():
 
     return link
 
-# def send_command(id, args):
+
+def add_float(link, send_size, val):
+    float_size = link.tx_obj(float(val), send_size) - send_size
+    return float_size
+
+def clear_buffers(link):
+    link.txBuff = [' ' for i in range(txfer.MAX_PACKET_SIZE - 1)]
+    link.rxBuff = [' ' for i in range(txfer.MAX_PACKET_SIZE - 1)]
