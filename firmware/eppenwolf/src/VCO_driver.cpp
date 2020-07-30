@@ -43,9 +43,10 @@ void pulse_VCO(int pulse_duration){
 
 
 void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state){
+    const float lm317_offset_voltage = 1.5;
     uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
     uint16_t base_bias_value = ((base_bias_voltage/BASE_BIAS_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
-    uint16_t supply_value = ((supply_voltage/SUPPLY_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+    uint16_t supply_value = (((supply_voltage-lm317_offset_voltage)/SUPPLY_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
 
     analogWrite(VARACTOR_PWM_PIN, varactor_value);
     analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);

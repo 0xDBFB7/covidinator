@@ -24,11 +24,10 @@ def test_loopback():
             else:
                 print('ERROR: {}'.format(link.status))
 
-    rec_float_ = link.rx_obj(obj_type=type(float()),
-                                     obj_byte_size=4,
-                                     start_pos=(0))
+    pos = 0
+    val, pos = rx_float(link, pos)
 
     clear_buffers(link)
 
-    assert rec_float_ == pytest.approx(float_)
+    assert val == pytest.approx(float_)
     assert link.idByte == 10
