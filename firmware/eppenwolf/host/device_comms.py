@@ -42,7 +42,7 @@ def connect():
 
 def add_float(link, send_size, val):
     float_size = link.tx_obj(float(val), send_size) - send_size
-    return float_size
+    return send_size + float_size
 
 
 def rx_float(link, position):

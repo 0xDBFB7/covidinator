@@ -10,7 +10,7 @@ link = device_comms.connect()
 def test_loopback():
     send_size = 0
     float_ = 563.5
-    send_size += add_float(link, send_size, float_)
+    send_size = add_float(link, send_size, float_)
     link.send(send_size, packet_id=10)
 
     while not link.available():

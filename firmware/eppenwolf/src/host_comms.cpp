@@ -29,4 +29,20 @@ void loopback(){
 }
 
 
-set_VCO_handler()
+void set_VCO_handler(){
+    uint16_t recSize = 0;
+
+    float base_bias_voltage, varactor_voltage, supply_voltage, power_state;
+    recSize = host_transfer.rxObj(base_bias_voltage, recSize);
+    recSize = host_transfer.rxObj(varactor_voltage, recSize);
+    recSize = host_transfer.rxObj(supply_voltage, recSize);
+    recSize = host_transfer.rxObj(power_state, recSize);
+
+    set_VCO(base_bias_voltage, varactor_voltage, supply_voltage, (power_state != 0.0));
+    printf("VCO set to %f, %f, %f, %i\n", base_bias_voltage, varactor_voltage, supply_voltage, (power_state != 0.0));
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+    host_transfer.sendData(sendSize, 10);
+}
