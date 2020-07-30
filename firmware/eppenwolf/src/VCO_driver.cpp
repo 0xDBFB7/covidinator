@@ -1,15 +1,55 @@
 #include "VCO_driver.hpp"
 
-#define BASE_BIAS_PIN 10 //PWM
-#define VARACTOR_PIN 10 //PWM
+#define BASE_BIAS_PWM_PIN 10 //PWM
+#define VARACTOR_PWM_PIN 10 //PWM
+
+#define PULSE_PIN 10
+
 
 // non-inverting config. = 1 + Rf/Rin
 #define BASE_BIAS_GAIN 11
 #define VARACTOR_GAIN 11
+#define SUPPLY_GAIN 11
+
+void init_VCO(){
+    analogWriteResolution(ANALOG_WRITE_RESOLUTION);
+    analogReadResolution(ANALOG_READ_RESOLUTION);
+
+    pinMode(BASE_BIAS_PWM_PIN, OUTPUT);
+    pinMode(VARACTOR_PWM_PIN, OUTPUT);
+    pinMode(PULSE_PIN, OUTPUT);
+
+    analogWrite(BASE_BIAS_PWM_PIN, 0);
+    analogWrite(VARACTOR_PWM_PIN, 0);
+    digitalWriteFast(PULSE_PIN, 0);
+}
 
 
+void pulse_VCO(int pulse_duration){
+    noInterrupts(); //sei
+    digitalWriteFast(PULSE_PIN, 1);
+    volatile int i = 0;
+    for(i = 0; i < 10; i++){
+        // asm volatile("nop");
+    }
+    digitalWriteFast(PULSE_PIN, 0);
+    interrupts();
+    //cli
+}
 
 
+void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state){
+    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+    uint16_t base_bias_value = ((base_bias_voltage/BASE_BIAS_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+    uint16_t supply_value = ((supply_voltage/SUPPLY_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+
+    analogWrite(VARACTOR_PWM_PIN, varactor_value);
+    analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
+    analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
+    digitalWriteFast(PULSE_PIN, power_state);
+}
+
+// void get_current()
 
 //
 //

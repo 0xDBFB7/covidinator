@@ -9,9 +9,8 @@ import sys
 import functions
 import zlib
 
+
 context = pyudev.Context()
-
-
 
 
 def find_devices():

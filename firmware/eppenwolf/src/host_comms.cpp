@@ -30,6 +30,4 @@ void loopback(){
     sendSize = host_transfer.txObj(t, sendSize);
 
     host_transfer.sendData(sendSize, 0);
-
-
 }
