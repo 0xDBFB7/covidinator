@@ -134,6 +134,9 @@ L_INC += -I$(LIBRARYPATH)/TMCStepper/src/source/
 LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/SPI/*.cpp)
 L_INC += -I$(COREPATH)/../../libraries/SPI/
 
+LCPP_FILES += $(wildcard $(LIBRARYPATH)/SerialTransfer/src/*.cpp)
+L_INC += -I$(LIBRARYPATH)/SerialTransfer/src/
+
 
 SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))
@@ -153,7 +156,6 @@ reboot:
 proto:
 	$(PROTOBUF_PATH)/bin/protoc --python_out=host/ src/messages.proto
 	$(PROTOBUF_C_PATH)/bin/protoc-c -I=src/ --c_out=src/ src/messages.proto
-
 
 upload: post_compile reboot
 

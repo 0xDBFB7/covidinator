@@ -16,4 +16,6 @@ extern SerialTransfer host_transfer;
 
 void loopback();
 
+void dispatch();
+
 #endif

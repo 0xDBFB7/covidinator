@@ -1,9 +1,11 @@
 #include "VCO_driver.hpp"
 
-#define BASE_BIAS_PWM_PIN 10 //PWM
+#define BASE_BIAS_PWM_PIN 9 //PWM
 #define VARACTOR_PWM_PIN 10 //PWM
 
-#define PULSE_PIN 10
+#define SUPPLY_PIN 16
+
+#define PULSE_PIN 17
 
 
 // non-inverting config. = 1 + Rf/Rin
@@ -14,6 +16,7 @@
 void init_VCO(){
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
     analogReadResolution(ANALOG_READ_RESOLUTION);
+    analogWriteFrequency(VARACTOR_PWM_PIN, 11718.75);
 
     pinMode(BASE_BIAS_PWM_PIN, OUTPUT);
     pinMode(VARACTOR_PWM_PIN, OUTPUT);
@@ -21,6 +24,7 @@ void init_VCO(){
 
     analogWrite(BASE_BIAS_PWM_PIN, 0);
     analogWrite(VARACTOR_PWM_PIN, 0);
+    analogWrite(SUPPLY_PIN, 0);
     digitalWriteFast(PULSE_PIN, 0);
 }
 
@@ -45,7 +49,8 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
 
     analogWrite(VARACTOR_PWM_PIN, varactor_value);
     analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
-    analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
+    analogWrite(SUPPLY_PIN, supply_value);
+
     digitalWriteFast(PULSE_PIN, power_state);
 }
 

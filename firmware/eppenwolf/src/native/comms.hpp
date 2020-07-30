@@ -2,8 +2,8 @@
 #include "WProgram.h"
 #include "settings.hpp"
 
-#define debug_serial Serial1
-#define host_serial Serial2
+#define debug_serial Serial3
+#define host_serial Serial1
 
 
 // void debug_print(String input);

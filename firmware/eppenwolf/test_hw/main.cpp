@@ -19,11 +19,14 @@ int main(void){
 
     UNITY_BEGIN();
 
-    run_VCO_tests();
+    host_serial.begin(HOST_BAUD_RATE);
+    debug_serial.begin(DEBUG_BAUD_RATE);
 
-    run_PID_tests();
+    // run_VCO_tests();
+
+    // run_PID_tests();
     // run_main_tests();
 
     return UNITY_END();
-        
+
 }

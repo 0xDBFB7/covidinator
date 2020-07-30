@@ -1902,3 +1902,6 @@ this one does not appear to.
 
 Finally broke through the mental block I had on looking up the citations of the Li 2009 paper.
 One paper discusses with reference to COVID: no mention of pulsed.
+
+The area of the microstrip is some 0.75 cm^2. That's larger than I had expected, but
+should be okay.

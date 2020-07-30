@@ -9,7 +9,7 @@ letterpaper]{geometry}
 \include{preamble}
 
 
-\title{On pulsed microwave acoustic resonant viral inactivation: summary}
+\title{{\it Maxwell's Silver Hammer:}\\ On pulsed microwave acoustic resonant viral inactivation}
 
 
 \begin{document}
@@ -22,9 +22,9 @@ This is a heavily condensed version of a (horribly unfinished) paper at \href{ht
 
 
 
-Both the microwave and dosimetric components \footnote{field field?} appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, it is entirely possible that none of what is discussed below actually exists.  
+Both the microwave and microbiological components of this field\footnote{field field?} appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, it is entirely possible that none of what is discussed below actually exists.  
 
-This project was rushed, terribly managed, and not nearly as rigorous as the field demands. This may well end up being a waste of time. I'm very sorry.
+This project was rushed and slow, terribly managed, and not nearly as rigorous as the field demands. This may well end up being a waste of time. I'm very sorry.
 
 %The literature is littered with irreproducible claims of non-thermal effects; however, this appears to be a singular anomaly.
 
@@ -35,11 +35,11 @@ This project was rushed, terribly managed, and not nearly as rigorous as the fie
 
 They appear to demonstrate that this allows a comparatively inconsequential electromagnetic field magnitude to produce mechanical stresses sufficient to crack the lipid envelope, destroying the virus.
 
-\cite{Efficient2015} specifically provides a reasonable spherical-cow model for how this could occur that agrees well with experiment.
+\cite{Efficient2015} specifically provides a reasonable spherical-cow model for how this could occur that agrees well with experiment. \footnote{See also \ghfile{documents/biology.ipynb}}
 
 However, this work would seem to be more useful if extended with the following assertion: the virus' Q factor is only about 2, meaning that the steady-state amplitude and stresses should be reached in some nanoseconds.
 
-Barring protein mechanical fatigue \cite{Mechanical2013} or some other mechanism that could prolong the inactivation duration, it appears to be possible to reduce the required power density to a minuscule fraction of all safety limits by pulsing the field at nanosecond scales. Better yet, by then scanning the focal point, a significant area can be treated with a relatively small transmit power.
+Barring protein mechanical fatigue \cite{Mechanical2013} or some other mechanism that could prolong the inactivation duration, it appears to be possible to reduce the required power density to a minuscule fraction of all safety limits by pulsing the field at nanosecond scales. This incidentally allows scanning of a focal point, a significant area can be treated with a relatively small transmit power.
 
 \cite{Efficient2015} test with various strains of Influenza A, we test with Coliphage T4; structural similarities with NCoV mean this is may be transferable.
 
@@ -47,7 +47,7 @@ These authors above deserve all the credit for this finding; nothing in this wor
 
 {\Large \textbf{Is it safe?}}
 
-The consensus is that conditions in human tissues are highly unfavorable for any such resonance modes; damping from biological solvents is too strong \cite{Vibrational2002}. Harm occurs only through thermal mechanisms; therefore an almost arbitrarily powerful pulse can be safely applied for infinitesimal periods.
+The consensus is that conditions in our cells are highly unfavorable for any such resonance modes; damping from biological solvents is too strong \cite{Vibrational2002}. Harm occurs only through thermal mechanisms; therefore an almost arbitrarily powerful pulse can be safely applied for infinitesimal periods.
 
 Quality in-vitro data supports this assertion. \cite{Cytogenetic2006} expose blood cells (a representative cell) to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration, 50 khz repetition rate, a whopping pulse power density of 250,000\Wsqm\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100\Wsqm (the safety limit), for 2 hours, finding no change in any of the measured quantities. \cite{DNA2004} replicate this finding, finding genotoxicity purely through the expected thermal mode. \footnote{These papers were cherry-picked from a sea of positive results. See the full paper for the rationale.}
 
@@ -60,14 +60,15 @@ We are unsure what specific feature of the virion accounts for this discrepancy.
 
 If the above is correct, any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 100 ns will be sterilized.
 
-This is not a particularly demanding requirement, and lends itself to a wide variety of applications, many of which could be implemented almost immediately.
+This is not a particularly demanding requirement, and lends itself to a wide variety of applications, many of which could be implemented almost immediately. 
 
-First, depending on the type of tissue, this field strength can apparently be safely produced a minimum of 3 cm deep (suitable for targeted sterilization of lungs or other organs with bronchoscopic techniques), up to 200 cm (eradicating the virus from the body). \ghfile{documents/pulse.ipynb}. We are working to narrow these bounds now.
+First, depending on the type of tissue, this field strength can apparently be safely produced a minimum of 3 cm deep (suitable for targeted sterilization of lungs or other organs with bronchoscopic techniques), up to 200 cm (eradicating the virus from the body) \cite{Physical1982}. We are working to narrow these bounds now.
 
-On an individual level, the free-space-combined output of, say, a few dozen SiGe:C or GaAs transistors (\$0.3 apiece [BFP620]) should suffice to locally protect the major vulnerabilities like mouth, nose, eyes, hair and any surfaces that the hands contact. This arguably wouldn't provide many advantages over simple masks, however.
-\ghfile{documents/global.ipynb}
+On an individual level, the free-space-combined output of, say, a few dozen SiGe:C or GaAs transistors (\$0.3 apiece [BFP620]), very similarly to our reference design, should suffice to locally protect the major vulnerabilities like mouth, nose, eyes, hair and any surfaces that the hands contact. This arguably wouldn't provide many advantages over simple masks, however. 
 
-On the other extreme, installations with Klystrons could sterilize square-kilometer areas.
+Unlike UV, the X-band is minimally attenuated by air. Common areas could be illuminated by magnetron systems.
+
+On the other extreme, installations with megawatt-scale klystrons could sterilize square-kilometer areas at a time. 
 
 
 \begin{autem}
