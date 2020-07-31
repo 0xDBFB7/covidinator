@@ -1,19 +1,13 @@
 //From https://github.com/teemuatlut/TMCStepper
+#include "stepper.hpp"
 
-/**
- * Author Teemu Mäntykallio
- * Initializes the library and runs the stepper motor.
- */
-
-#include <TMCStepper.h>
-
-#define EN_PIN           38 // Enable
-#define DIR_PIN          55 // Direction
-#define STEP_PIN         54 // Step
+#define EN_PIN           5 // Enable
+#define DIR_PIN          11 // Direction
+#define STEP_PIN         12 // Step
 #define CS_PIN           42 // Chip select
-#define SW_MOSI          66 // Software Master Out Slave In (MOSI)
-#define SW_MISO          44 // Software Master In Slave Out (MISO)
-#define SW_SCK           64 // Software Slave Clock (SCK)
+#define SW_MOSI          23 // Software Master Out Slave In (MOSI)
+#define SW_MISO          4 // Software Master In Slave Out (MISO)
+#define SW_SCK           22 // Software Slave Clock (SCK)
 
 #define R_SENSE 0.075f // Match to your driver
                      // SilentStepStick series use 0.11
@@ -26,6 +20,18 @@
 
 TMC5160Stepper driver = TMC5160Stepper(CS_PIN, R_SENSE, SW_MOSI, SW_MISO, SW_SCK);
 
+void init_stepper(){
+    driver.begin();
+	driver.rms_current(200);
+	driver.en_pwm_mode(1);
+
+	pinMode(EN_PIN, OUTPUT);
+	pinMode(STEP_PIN, OUTPUT);
+	// digitalWrite(EN_PIN, LOW); 	// Enable
+}
+
+void step(direction, number){
+}
 
 // void setup() {
 // 	Serial.begin(9600);

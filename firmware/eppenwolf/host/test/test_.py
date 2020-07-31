@@ -14,16 +14,7 @@ def test_loopback():
     send_size = add_float(link, send_size, float_)
     link.send(send_size, packet_id=10)
 
-    while not link.available():
-        if link.status < 0:
-            if link.status == txfer.CRC_ERROR:
-                print('ERROR: CRC_ERROR')
-            elif link.status == txfer.PAYLOAD_ERROR:
-                print('ERROR: PAYLOAD_ERROR')
-            elif link.status == txfer.STOP_BYTE_ERROR:
-                print('ERROR: STOP_BYTE_ERROR')
-            else:
-                print('ERROR: {}'.format(link.status))
+    wait_for_response(link)
 
     pos = 0
     val, pos = rx_float(link, pos)
@@ -35,4 +26,7 @@ def test_loopback():
 
 
 def test_VCO_driver():
+    set_VCO(link, 3, 2, 1, 0);
+#
+def test_turbidimeter():
     set_VCO(link, 3, 2, 1, 0);

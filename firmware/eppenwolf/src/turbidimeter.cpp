@@ -1,6 +1,6 @@
 #include "turbidimeter.hpp"
 
-const int VIS_transmittance_LED_pin = 0;
+const int VIS_transmittance_LED_pin = 23;
 
 
 turbidimeter turbidimeter_instance;
@@ -21,7 +21,6 @@ signed long turbidimeter::dark_corrected_sample(){
   digitalWriteFast(VIS_transmittance_LED_pin, 1);
   while (!FreqCount.available());
   unsigned long light_count = FreqCount.read();
-)
 
   return (signed long)(light_count)-(signed long)dark_count;
 }

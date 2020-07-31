@@ -38,6 +38,18 @@ def connect():
 
     return link
 
+def wait_for_response(link):
+    while not link.available():
+        if link.status < 0:
+            if link.status == txfer.CRC_ERROR:
+                print('ERROR: CRC_ERROR')
+            elif link.status == txfer.PAYLOAD_ERROR:
+                print('ERROR: PAYLOAD_ERROR')
+            elif link.status == txfer.STOP_BYTE_ERROR:
+                print('ERROR: STOP_BYTE_ERROR')
+            else:
+                print('ERROR: {}'.format(link.status))
+
 
 def add_float(link, send_size, val):
     float_size = link.tx_obj(float(val), send_size) - send_size
