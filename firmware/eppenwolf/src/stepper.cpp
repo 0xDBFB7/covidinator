@@ -1,7 +1,7 @@
 //From https://github.com/teemuatlut/TMCStepper
 #include "stepper.hpp"
 
-#define EN_PIN           5 // Enable
+// #define EN_PIN           5 // Enable
 #define DIR_PIN          11 // Direction
 #define STEP_PIN         12 // Step
 #define CS_PIN           42 // Chip select
@@ -25,12 +25,16 @@ void init_stepper(){
 	driver.rms_current(200);
 	driver.en_pwm_mode(1);
 
-	pinMode(EN_PIN, OUTPUT);
+	// pinMode(EN_PIN, OUTPUT);
 	pinMode(STEP_PIN, OUTPUT);
-	// digitalWrite(EN_PIN, LOW); 	// Enable
+    pinMode(DIR_PIN, OUTPUT);
 }
 
-void step(direction, number){
+void step(bool direction, int number){
+	digitalWrite(STEP_PIN, HIGH);
+	delayMicroseconds(10);
+	digitalWrite(STEP_PIN, LOW);
+	delayMicroseconds(10);
 }
 
 // void setup() {

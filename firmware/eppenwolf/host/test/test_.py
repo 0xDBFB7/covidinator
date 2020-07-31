@@ -29,4 +29,4 @@ def test_VCO_driver():
     set_VCO(link, 3, 2, 1, 0);
 #
 def test_turbidimeter():
-    set_VCO(link, 3, 2, 1, 0);
+    print(sample_turbidity(link))

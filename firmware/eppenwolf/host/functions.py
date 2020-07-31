@@ -16,3 +16,18 @@ def set_VCO(link, base_bias_voltage, varactor_voltage, supply_voltage, power_sta
     val, pos = rx_float(link, pos)
 
     clear_buffers(link)
+
+
+def sample_turbidity(link):
+    send_size = 0
+    send_size = add_float(link, send_size, 0)
+    link.send(send_size, packet_id=1)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return val

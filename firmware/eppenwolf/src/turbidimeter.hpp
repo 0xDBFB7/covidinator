@@ -3,7 +3,7 @@
 
 #include <FreqCount.h>
 #include "WProgram.h"
-
+#include "comms.hpp"
 
 
 struct turbidimeter{

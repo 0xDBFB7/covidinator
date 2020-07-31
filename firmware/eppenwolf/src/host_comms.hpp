@@ -21,4 +21,6 @@ void dispatch();
 
 void set_VCO_handler();
 
+void move();
+
 #endif

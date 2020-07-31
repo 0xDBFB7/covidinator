@@ -9,6 +9,7 @@ void dispatch(){
         switch(host_transfer.currentPacketID()) {
             case 0: set_VCO_handler(); break;
             case 1: turbidimeter_instance.sample_turbidity(); break;
+            case 2: move(); break;
             case 10: loopback(); break;
         }
         //screw function pointers!
@@ -48,13 +49,30 @@ void set_VCO_handler(){
 }
 
 void turbidimeter::sample_turbidity(){
-    // uint16_t recSize = 0;
+    uint16_t recSize = 0;
+    float t;
+    recSize = host_transfer.rxObj(t, recSize);
+
     float turbidity_value = turbidimeter_instance.dark_corrected_sample();
 
     uint16_t sendSize = 0;
     sendSize = host_transfer.txObj(turbidity_value, sendSize);
 
     host_transfer.sendData(sendSize, 0);
+}
+
+void move(){
+    // uint16_t recSize = 0;
+    // float direction;
+    // recSize = host_transfer.rxObj(t, recSize);
+    // float step;
+    // recSize = host_transfer.rxObj(t, recSize);
+    //
+    // //
+    //
+    // uint16_t sendSize = 0;
+    // sendSize = host_transfer.txObj(turbidity_value, sendSize);
+    // host_transfer.sendData(sendSize, 0);
 }
 
 //
