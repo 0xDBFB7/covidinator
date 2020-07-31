@@ -4,6 +4,7 @@
 #include "comms.hpp"
 #include "SerialTransfer.h"
 #include "VCO_driver.hpp"
+#include "turbidimeter.hpp"
 
 extern SerialTransfer host_transfer;
 

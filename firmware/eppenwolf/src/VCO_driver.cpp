@@ -25,7 +25,7 @@ void init_VCO(){
     analogWrite(BASE_BIAS_PWM_PIN, 0);
     analogWrite(VARACTOR_PWM_PIN, 0);
     analogWrite(SUPPLY_PIN, 0);
-    
+
     //p-channel inverts!
     digitalWriteFast(PULSE_PIN, 1);
 }
@@ -67,6 +67,8 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
     digitalWriteFast(PULSE_PIN, !power_state);
 
     debug_serial.printf("\nVCO set to %f, %f, %f, %i\n", base_bias_voltage, varactor_voltage, supply_voltage, power_state);
+    //now that's what I call convenience.
+
 }
 
 // void get_current()
