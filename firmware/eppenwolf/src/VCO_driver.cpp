@@ -25,34 +25,48 @@ void init_VCO(){
     analogWrite(BASE_BIAS_PWM_PIN, 0);
     analogWrite(VARACTOR_PWM_PIN, 0);
     analogWrite(SUPPLY_PIN, 0);
-    digitalWriteFast(PULSE_PIN, 0);
+    
+    //p-channel inverts!
+    digitalWriteFast(PULSE_PIN, 1);
 }
 
 
 void pulse_VCO(int pulse_duration){
     noInterrupts(); //sei
-    digitalWriteFast(PULSE_PIN, 1);
+
+    //p-channel inverts!
+    digitalWriteFast(PULSE_PIN, 0);
     volatile int i = 0;
     for(i = 0; i < 10; i++){
         // asm volatile("nop");
     }
-    digitalWriteFast(PULSE_PIN, 0);
+    digitalWriteFast(PULSE_PIN, 1);
     interrupts();
     //cli
 }
 
 
 void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state){
+    //
+    // base_bias_voltage = constrain(base_bias_voltage, 0, ANALOG_WRITE_MAX_VAL);
+    // varactor_voltage = constrain(varactor_voltage, 0, ANALOG_WRITE_MAX_VAL);
+    supply_voltage = constrain(supply_voltage, 1.5, 6);
+
     const float lm317_offset_voltage = 1.5;
-    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
     uint16_t base_bias_value = ((base_bias_voltage/BASE_BIAS_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
     uint16_t supply_value = (((supply_voltage-lm317_offset_voltage)/SUPPLY_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
 
-    analogWrite(VARACTOR_PWM_PIN, varactor_value);
+
+
     analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
+    analogWrite(VARACTOR_PWM_PIN, varactor_value);
     analogWrite(SUPPLY_PIN, supply_value);
 
-    digitalWriteFast(PULSE_PIN, power_state);
+    //p-channel inverts!
+    digitalWriteFast(PULSE_PIN, !power_state);
+
+    debug_serial.printf("\nVCO set to %f, %f, %f, %i\n", base_bias_voltage, varactor_voltage, supply_voltage, power_state);
 }
 
 // void get_current()

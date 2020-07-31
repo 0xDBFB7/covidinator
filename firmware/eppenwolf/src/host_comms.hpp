@@ -3,7 +3,7 @@
 
 #include "comms.hpp"
 #include "SerialTransfer.h"
-
+#include "VCO_driver.hpp"
 
 extern SerialTransfer host_transfer;
 
@@ -17,5 +17,7 @@ extern SerialTransfer host_transfer;
 void loopback();
 
 void dispatch();
+
+void set_VCO_handler();
 
 #endif

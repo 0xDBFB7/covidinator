@@ -39,7 +39,7 @@ void set_VCO_handler(){
     recSize = host_transfer.rxObj(power_state, recSize);
 
     set_VCO(base_bias_voltage, varactor_voltage, supply_voltage, (power_state != 0.0));
-    printf("VCO set to %f, %f, %f, %i\n", base_bias_voltage, varactor_voltage, supply_voltage, (power_state != 0.0));
+    //now that's what I call convenience.
 
     uint16_t sendSize = 0;
     sendSize = host_transfer.txObj(0, sendSize);

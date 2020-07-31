@@ -4,6 +4,7 @@ sys.path.append('/home/arthurdent/covidinator/firmware/eppendoofus/host/')
 import device_comms
 from device_comms import *
 import pytest
+from functions import *
 link = device_comms.connect()
 
 
@@ -31,3 +32,7 @@ def test_loopback():
 
     assert val == pytest.approx(float_)
     assert link.idByte == 10
+
+
+def test_VCO_driver():
+    set_VCO(link, 3, 2, 1, 0);

@@ -7,7 +7,6 @@ import pyudev
 
 import serial
 import sys
-import functions
 import zlib
 
 context = pyudev.Context()
