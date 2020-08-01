@@ -10,6 +10,7 @@ void dispatch(){
             case 0: set_VCO_handler(); break;
             case 1: turbidimeter_instance.sample_turbidity(); break;
             case 2: move(); break;
+            case 3: home(); break;
             case 10: loopback(); break;
         }
         //screw function pointers!
@@ -50,7 +51,7 @@ void set_VCO_handler(){
 
 void turbidimeter::sample_turbidity(){
     uint16_t recSize = 0;
-    float t;
+    float t; //always need to read something
     recSize = host_transfer.rxObj(t, recSize);
 
     float turbidity_value = turbidimeter_instance.dark_corrected_sample();
@@ -62,18 +63,21 @@ void turbidimeter::sample_turbidity(){
 }
 
 void move(){
-    // uint16_t recSize = 0;
-    // float direction;
-    // recSize = host_transfer.rxObj(t, recSize);
-    // float step;
-    // recSize = host_transfer.rxObj(t, recSize);
-    //
-    // //
-    //
-    // uint16_t sendSize = 0;
-    // sendSize = host_transfer.txObj(turbidity_value, sendSize);
-    // host_transfer.sendData(sendSize, 0);
+    uint16_t recSize = 0;
+    float direction;
+    recSize = host_transfer.rxObj(direction, recSize);
+    float step;
+    recSize = host_transfer.rxObj(step, recSize);
+
+    move_relative(direction, step);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+    host_transfer.sendData(sendSize, 0);
 }
+
+
+
 
 //
 // void read_all(){

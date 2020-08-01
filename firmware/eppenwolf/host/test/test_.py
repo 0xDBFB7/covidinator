@@ -30,3 +30,7 @@ def test_VCO_driver():
 #
 def test_turbidimeter():
     print(sample_turbidity(link))
+
+def test_relative_move():
+    move_relative(link, 0,10)
+    move_relative(link, 1,10)

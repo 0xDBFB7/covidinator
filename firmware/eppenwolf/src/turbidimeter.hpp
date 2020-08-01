@@ -5,6 +5,7 @@
 #include "WProgram.h"
 #include "comms.hpp"
 
+const int VIS_transmittance_LED_pin = 5;
 
 struct turbidimeter{
     void init();

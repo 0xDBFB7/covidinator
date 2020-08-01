@@ -1905,3 +1905,16 @@ One paper discusses with reference to COVID: no mention of pulsed.
 
 The area of the microstrip is some 0.75 cm^2. That's larger than I had expected, but
 should be okay.
+
+
+TMC driver isn't working for some reason. Might relate to the use of software SPI on the teensy
+
+Swapped R1/R2 on the BOB. Didn't seem to work?
+
+Ah, it's because of the current limit. The current limit doesn't go low enough!
+
+Works now.
+
+Slide can get stuck when at the motor end extreme. Have to home against the other extreme.
+
+PLA bearing surfaces on the preload plate were a little scratchy. Added some teflon film.
