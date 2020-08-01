@@ -10,8 +10,10 @@ filename="${filename%.*}"
 # git clone https://bitbucket.org/romildo/pygnoweb/
 # -filter $PWD/pygnoweb/pygnoweb.py
 
+# noweave  -latex -delay $1 > $1.tex
+# notangle -R$filename.py $1 > $1.py
+#
+# cp $1.tex ../../../documents/
 
-noweave  -latex -delay $1 > $1.tex
-notangle -R$filename.py $1 > $1.py
-
-cp $1.tex ../../../documents/
+# pweave $1 -o ../../../documents/$filename.tex -f texminted
+# pweave runs the file. This is highly unwanted.

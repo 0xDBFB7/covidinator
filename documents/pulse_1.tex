@@ -4,7 +4,7 @@
 \clearpage
 {\Large \it Experiment 2:}\\
 
-@
+
 Our aims with this experiment are to perform the following:
 
 \begin{itemize}
@@ -21,11 +21,20 @@ Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly int
 
 
 
-<<pulse_1.py>>=
+
+\begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
 import device_comms
 import sweep
+\end{minted}
+\begin{minted}[fontsize=\small, xleftmargin=0.5em, mathescape, frame = leftline]{text}
+---------------------------------------------------------------------------ModuleNotFoundError
+Traceback (most recent call last)<ipython-input-1-821b060eb2e8> in
+<module>
+----> 1 import device_comms
+      2 import sweep
+ModuleNotFoundError: No module named 'device_comms'
+\end{minted}
 
-@
 
 
 # T - 5 hours
