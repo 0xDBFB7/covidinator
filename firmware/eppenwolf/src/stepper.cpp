@@ -17,27 +17,34 @@
 
 #define DEG_PER_STEP 18.0
 #define SCREW_PITCH 0.5 //mm
-
 #define MICROSTEPS 16
+const float distance_per_step = ((DEG_PER_STEP / 360.0) * SCREW_PITCH);
+
 // https://www.trinamic.com/support/eval-kits/details/tmc5160-bob/
 //  (STEP = REFL, DIR = REFR)
 
 TMC5160Stepper driver = TMC5160Stepper(CS_PIN, R_SENSE, SW_MOSI, SW_MISO, SW_SCK);
 
-//Direction "1" moves toward the motor end, +x, greater channel index
-//0 moves toward the far end, lower channel index
+//Direction "0" moves toward the motor end, +x, greater channel index
+//1 moves toward the far end, lower channel index
+
+// 0 ---->
+// <---- 1
 
 float position = 0;
 
 #define CUVETTE_SPACING 5.0
-#define HOME_OFFSET 3.0
+#define HOME_OFFSET 0.0 //distance from home point to first cuvette
 
 #define STALL_THRESH 30
+
+
 
 #define function_microstrip 0
 #define function_turbidimeter 1
 
-const float function_offsets[] = {0.0, -3.0};
+const float function_offsets[] = {0.0, 3.0};
+
 
 void init_stepper(){
     // driver.begin();
@@ -83,18 +90,15 @@ void move_absolute(float new_position){
     debug_serial.printf("Moving to %f from %f\n", new_position, position);
     float delta = new_position - position;
 
-    move_relative((delta > 0), fabs(delta));
+    move_relative((delta < 0), fabs(delta));
 
     position = new_position;
-
 }
 
 void move_relative(bool direction, float distance){
     //ignores all 'position' info.
 
     digitalWrite(DIR_PIN, direction);
-
-    float distance_per_step = ((DEG_PER_STEP / 360.0) * SCREW_PITCH);
 
     int num_steps = distance/distance_per_step * MICROSTEPS;
 
@@ -109,19 +113,23 @@ void move_relative(bool direction, float distance){
 
 }
 
+
+
 void home(){
-    digitalWrite(DIR_PIN, 0);
-    driver.toff(5);
-    for(int i = 0; i < num_steps; i++){
-        int stall = driver.sg_result();
-        if(stall < 30){
-            break;
-        }
-    	digitalWriteFast(STEP_PIN, HIGH);
-    	delayMicroseconds(30);
-    	digitalWriteFast(STEP_PIN, LOW);
-    	delayMicroseconds(30);
+    while(!digitalReadFast(7)){
+        move_relative(0,1);
     }
+    move_relative(0,5);
+    driver.toff(5);
+
+    digitalWrite(DIR_PIN, 1);
+    while(digitalReadFast(7)){
+        digitalWriteFast(STEP_PIN, HIGH);
+        delayMicroseconds(50);
+        digitalWriteFast(STEP_PIN, LOW);
+        delayMicroseconds(50);
+    }
+
     driver.toff(0);
     position = 0;
     move_to_cuvette(0, 0);

@@ -24,3 +24,23 @@ signed long turbidimeter::dark_corrected_sample(){
 
   return (signed long)(light_count)-(signed long)dark_count;
 }
+
+
+signed long fast_light_to_freq(){
+    //fast, inaccurate version of dark_corrected_sample
+    signed long result = 0;
+    for(int i = 0; i < 10; i++){
+        digitalWriteFast(VIS_transmittance_LED_pin, 1);
+        delayMicroseconds(5);
+        while(!digitalReadFast(13));
+        while(digitalReadFast(13)){ result++; };
+        digitalWriteFast(VIS_transmittance_LED_pin, 0);
+        delayMicroseconds(5);
+        while(!digitalReadFast(13));
+        while(digitalReadFast(13)){ result--; };
+    }
+    // debug_serial.println(result);
+
+    digitalWriteFast(VIS_transmittance_LED_pin, 1);
+    return result/10;
+}

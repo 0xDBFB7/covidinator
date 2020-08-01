@@ -23,5 +23,6 @@ void dispatch();
 void set_VCO_handler();
 
 void move();
+void home_cmd();
 
 #endif

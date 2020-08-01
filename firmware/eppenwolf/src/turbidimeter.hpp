@@ -16,4 +16,7 @@ struct turbidimeter{
 
 extern turbidimeter turbidimeter_instance;
 
+signed long fast_light_to_freq();
+
+
 #endif

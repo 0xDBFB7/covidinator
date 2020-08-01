@@ -1918,3 +1918,11 @@ Works now.
 Slide can get stuck when at the motor end extreme. Have to home against the other extreme.
 
 PLA bearing surfaces on the preload plate were a little scratchy. Added some teflon film.
+
+Swapped out the LED for a higher brightness one.
+
+Homing using the same thing is pretty tricky. Going to add a separate sensor.
+
+Stallguard doesn't seem to be working. It only updates once every *full* step, but still doesn't
+seem to provide a good enough result.
+ 

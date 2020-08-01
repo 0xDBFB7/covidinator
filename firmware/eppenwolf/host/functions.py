@@ -49,7 +49,14 @@ def move_relative(link, direction, distance):
 
     return val
 
-def home():
-    global position
-    position = 0
-    move_relative(0, 80)
+def home(link):
+    send_size = 0
+    send_size = add_float(link, send_size, 0)
+    link.send(send_size, packet_id=3)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)

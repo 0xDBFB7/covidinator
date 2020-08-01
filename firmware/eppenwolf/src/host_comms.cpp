@@ -10,7 +10,7 @@ void dispatch(){
             case 0: set_VCO_handler(); break;
             case 1: turbidimeter_instance.sample_turbidity(); break;
             case 2: move(); break;
-            case 3: home(); break;
+            case 3: home_cmd(); break;
             case 10: loopback(); break;
         }
         //screw function pointers!
@@ -76,7 +76,18 @@ void move(){
     host_transfer.sendData(sendSize, 0);
 }
 
+void home_cmd(){
+    uint16_t recSize = 0;
+    float t; //always need to read something
+    recSize = host_transfer.rxObj(t, recSize);
 
+    home();
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+    host_transfer.sendData(sendSize, 0);
+}
 
 
 //
