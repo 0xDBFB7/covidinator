@@ -25,16 +25,7 @@ Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly int
 import device_comms
 import sweep
 
-
 @
-
-
-# T - 5 hours
-
-
-# Phage+Bacteria / Bacteria-only / phage only?
-
-# expose (parameters) / sham / thermal positives
 
 For each of the animal and human published studies, four
 predetermined and specific quality control measures were used to
@@ -51,6 +42,15 @@ compare with the observations made in RF exposure conditions)
 were included in the experiments, S or nS. However, it was not our
 intention to ‘‘rank’’ the publications either to exclude or include
 the reported data in the meta-analysis.
+
+
+# T - 5 hours
+
+
+# Phage+Bacteria / Bacteria-only / phage only?
+
+# expose (parameters) / sham / thermal positives
+
 
 def initialize():
     # Name this run

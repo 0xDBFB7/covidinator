@@ -1,0 +1,25 @@
+\documentclass[paper.tex]{subfiles}
+\begin{document}
+
+\clearpage
+{\Large Experiment 1:}\\
+
+
+<<microwave_spectrum.py>>=
+import sys
+sys.path.append('/home/arthurdent/covidinator/firmware/eppendoofus/host/')
+
+import device_comms
+import sweep
+
+@
+
+<<>>=
+
+
+
+
+
+@
+
+\end{document}
