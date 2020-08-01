@@ -19,6 +19,10 @@
 
 void init_VCO();
 void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state);
+
+void LO_power(bool power);
+void LO_tune(int target_voltage);
+
 // struct transistor_driver{
 //     String name = "";
 //

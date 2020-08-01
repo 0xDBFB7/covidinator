@@ -1,6 +1,10 @@
 import device_comms
 import sweep
 
+
+# T - 5 hours
+
+
 # Phage+Bacteria / Bacteria-only / phage only?
 # expose (parameters) / sham / thermal positives
 
@@ -54,7 +58,7 @@ def bacteria_and_phage_control():
 def bacteria_and_inactivated_phage_positive_control():
     //
 
-
+"Blank" repeatablity test with just water in all cuvettes
 
 
 Add a small amount of growing e.coli to a new nutrient broth,

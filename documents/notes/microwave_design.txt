@@ -1940,3 +1940,4 @@ take the derivative=0 of the fast_turbidity reading for the fine alignment?
 
 Having the board like this makes servicing more difficult.
 
+Yang don't mention how the spectrometer was calibrated.

@@ -1,5 +1,10 @@
 #include "VCO_driver.hpp"
 
+
+#define LO_POWER_PIN 2
+#define LO_VARACTOR_PWM_PIN 3
+
+
 #define BASE_BIAS_PWM_PIN 9 //PWM
 #define VARACTOR_PWM_PIN 10 //PWM
 
@@ -28,6 +33,10 @@ void init_VCO(){
 
     //p-channel inverts!
     digitalWriteFast(PULSE_PIN, 1);
+
+
+    pinMode(LO_POWER_PIN, OUTPUT);
+    pinMode(LO_VARACTOR_PWM_PIN, OUTPUT);
 }
 
 
@@ -70,6 +79,20 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
     //now that's what I call convenience.
 
 }
+
+
+void LO_power(bool power){
+  digitalWrite(2, power);
+}
+
+void LO_tune(int target_voltage){
+
+    const int mosfet_threshold = 0.7;
+    const int supply = 15.0;
+    analogWrite(LO_VARACTOR_PWM_PIN, (ANALOG_WRITE_MAX_VAL - target_voltage) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VALUE));
+}
+
+
 
 // void get_current()
 
