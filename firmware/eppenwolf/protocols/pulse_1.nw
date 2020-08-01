@@ -1,6 +1,9 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
+\clearpage
+{\Large \it Experiment 2:}\\
+
 @
 Our aims with this experiment are to perform the following:
 
@@ -12,21 +15,17 @@ Our aims with this experiment are to perform the following:
 
 In the end, performing this was a mistake; but by the time we realized this we had already put in the bulk of the time.
 
-The 
-
-Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using literate programming.
 
 
+Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
 
 
-<<microwave_spectrum.py>>=
+
+<<pulse_1.py>>=
 import device_comms
 import sweep
 
 @
-
-
-aaaaaaaaaaaaa
 
 
 # T - 5 hours
@@ -35,21 +34,21 @@ aaaaaaaaaaaaa
 # Phage+Bacteria / Bacteria-only / phage only?
 # expose (parameters) / sham / thermal positives
 
-# For each of the animal and human published studies, four
-# predetermined and specific quality control measures were used to
-# assess the quality of the publication.
-# 1. Whether or not the researchers have used ‘‘blind’’ evaluations to
-# avoid individual ‘‘bias’’, B or nB;
-# 2. Whether or not there was detailed/adequate description of
-# ‘‘dosimetry’’ in the publication for independent replication/
-# confirmation studies, D or nD.
-# 3. Whether or not ‘‘positive controls’’ were included in the
-# experiment(s) to replicate/confirm the observations, P or nP.
-# 4. Whether or not ‘‘sham-exposed controls’’ (more appropriate to
-# compare with the observations made in RF exposure conditions)
-# were included in the experiments, S or nS. However, it was not our
-# intention to ‘‘rank’’ the publications either to exclude or include
-# the reported data in the meta-analysis.
+For each of the animal and human published studies, four
+predetermined and specific quality control measures were used to
+assess the quality of the publication.
+1. Whether or not the researchers have used ‘‘blind’’ evaluations to
+avoid individual ‘‘bias’’, B or nB;
+2. Whether or not there was detailed/adequate description of
+‘‘dosimetry’’ in the publication for independent replication/
+confirmation studies, D or nD.
+3. Whether or not ‘‘positive controls’’ were included in the
+experiment(s) to replicate/confirm the observations, P or nP.
+4. Whether or not ‘‘sham-exposed controls’’ (more appropriate to
+compare with the observations made in RF exposure conditions)
+were included in the experiments, S or nS. However, it was not our
+intention to ‘‘rank’’ the publications either to exclude or include
+the reported data in the meta-analysis.
 
 def initialize():
     # Name this run
