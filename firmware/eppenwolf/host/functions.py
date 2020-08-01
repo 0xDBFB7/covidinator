@@ -49,6 +49,10 @@ def move_relative(link, direction, distance):
 
     return val
 
+
+
+
+
 def home(link):
     send_size = 0
     send_size = add_float(link, send_size, 0)
@@ -60,3 +64,18 @@ def home(link):
     val, pos = rx_float(link, pos)
 
     clear_buffers(link)
+
+
+def move_absolute(link, position):
+    send_size = 0
+    send_size = add_float(link, send_size, position)
+    link.send(send_size, packet_id=4)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return val

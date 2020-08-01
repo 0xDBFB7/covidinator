@@ -11,6 +11,9 @@ void dispatch(){
             case 1: turbidimeter_instance.sample_turbidity(); break;
             case 2: move(); break;
             case 3: home_cmd(); break;
+            case 4: move_absolute_cmd(); break;
+            case 5: move_to_cuvette_cmd(); break;
+
             case 10: loopback(); break;
         }
         //screw function pointers!
@@ -70,6 +73,30 @@ void move(){
     recSize = host_transfer.rxObj(step, recSize);
 
     move_relative(direction, step);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+    host_transfer.sendData(sendSize, 0);
+}
+
+void move_absolute_cmd(){
+    uint16_t recSize = 0;
+    float position;
+    recSize = host_transfer.rxObj(position, recSize);
+
+    move_absolute(position);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+    host_transfer.sendData(sendSize, 0);
+}
+
+void move_to_cuvette_cmd(){
+    uint16_t recSize = 0;
+    float position;
+    recSize = host_transfer.rxObj(position, recSize);
+
+    move_absolute(position);
 
     uint16_t sendSize = 0;
     sendSize = host_transfer.txObj(0, sendSize);

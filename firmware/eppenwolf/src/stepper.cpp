@@ -34,7 +34,7 @@ TMC5160Stepper driver = TMC5160Stepper(CS_PIN, R_SENSE, SW_MOSI, SW_MISO, SW_SCK
 float position = 0;
 
 #define CUVETTE_SPACING 5.0
-#define HOME_OFFSET 0.0 //distance from home point to first cuvette
+#define HOME_OFFSET -53.2 //distance from home point to first cuvette
 
 #define STALL_THRESH 30
 
@@ -119,7 +119,7 @@ void home(){
     while(!digitalReadFast(7)){
         move_relative(0,1);
     }
-    move_relative(0,5);
+    move_relative(0,1);
     driver.toff(5);
 
     digitalWrite(DIR_PIN, 1);

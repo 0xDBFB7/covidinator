@@ -24,5 +24,7 @@ void set_VCO_handler();
 
 void move();
 void home_cmd();
+void move_absolute_cmd();
+void move_to_cuvette_cmd();
 
 #endif
