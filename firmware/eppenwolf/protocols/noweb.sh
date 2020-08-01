@@ -1,2 +1,8 @@
-noweave -index -latex $1 > $1_nw_.tex
-notangle -R$1 $1 > $1_nw_.py
+filename=$(basename -- "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+noweave -latex -delay $1 > $1.tex
+notangle -R$filename.py $1 > $1.py
+
+cp $1.tex ../../../documents/
