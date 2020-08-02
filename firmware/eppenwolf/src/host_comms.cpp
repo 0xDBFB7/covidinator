@@ -13,6 +13,8 @@ void dispatch(){
             case 3: home_cmd(); break;
             case 4: move_absolute_cmd(); break;
             case 5: move_to_cuvette_cmd(); break;
+            case 6: LO_power_cmd(); break;
+            case 7: LO_tune_cmd(); break;
 
             case 10: loopback(); break;
         }
@@ -93,10 +95,12 @@ void move_absolute_cmd(){
 
 void move_to_cuvette_cmd(){
     uint16_t recSize = 0;
-    float position;
-    recSize = host_transfer.rxObj(position, recSize);
+    float id;
+    float function;
+    recSize = host_transfer.rxObj(id, recSize);
+    recSize = host_transfer.rxObj(function, recSize);
 
-    move_absolute(position);
+    move_to_cuvette(id, function);
 
     uint16_t sendSize = 0;
     sendSize = host_transfer.txObj(0, sendSize);
@@ -115,6 +119,34 @@ void home_cmd(){
 
     host_transfer.sendData(sendSize, 0);
 }
+
+void LO_power_cmd(){
+    uint16_t recSize = 0;
+    float lo_power;
+    recSize = host_transfer.rxObj(lo_power, recSize);
+
+    LO_power(lo_power);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+    host_transfer.sendData(sendSize, 0);
+}
+
+
+void LO_tune_cmd(){
+    uint16_t recSize = 0;
+    float lo_tune; //always need to read something
+    recSize = host_transfer.rxObj(lo_tune, recSize);
+
+    LO_tune(lo_tune);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+    host_transfer.sendData(sendSize, 0);
+}
+
 
 
 //

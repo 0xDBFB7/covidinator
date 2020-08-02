@@ -85,11 +85,10 @@ void LO_power(bool power){
   digitalWrite(2, power);
 }
 
-void LO_tune(int target_voltage){
+void LO_tune(float value){
 
     const int mosfet_threshold = 0.7;
-    const int supply = 15.0;
-    analogWrite(LO_VARACTOR_PWM_PIN, (ANALOG_WRITE_MAX_VAL - target_voltage) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VALUE));
+    analogWrite(LO_VARACTOR_PWM_PIN, (ANALOG_WRITE_MAX_VAL - (value*ANALOG_WRITE_MAX_VAL)) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VAL));
 }
 
 

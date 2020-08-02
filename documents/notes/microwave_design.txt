@@ -1941,3 +1941,11 @@ take the derivative=0 of the fast_turbidity reading for the fine alignment?
 Having the board like this makes servicing more difficult.
 
 Yang don't mention how the spectrometer was calibrated.
+
+Tried using literal programming to integrate protocol with code. Not super great.
+
+Small amount of misalignment with the cuvette; needs a little bit of tweaking from the ideal 5mm spacing.
+Obviously it would have been ideal if I'd just 
+properly added the IR alignment holes to the design, but whatever.
+Right now we're trying to maintain alignment from one home pos over 80mm,
+rather than the distance from each ir hole to each cuvette.

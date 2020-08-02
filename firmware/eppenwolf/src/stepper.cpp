@@ -33,17 +33,18 @@ TMC5160Stepper driver = TMC5160Stepper(CS_PIN, R_SENSE, SW_MOSI, SW_MISO, SW_SCK
 
 float position = 0;
 
-#define CUVETTE_SPACING 5.0
-#define HOME_OFFSET -53.2 //distance from home point to first cuvette
+#define CUVETTE_SPACING 4.9966
+#define HOME_OFFSET -52.55 //distance from home point to first cuvette
 
 #define STALL_THRESH 30
 
-
+// 22.2
+// -53.200001
 
 #define function_microstrip 0
 #define function_turbidimeter 1
 
-const float function_offsets[] = {0.0, 3.0};
+const float function_offsets[] = {0.0, 4.0};
 
 
 void init_stepper(){
@@ -83,6 +84,7 @@ void init_stepper(){
 }
 
 void move_to_cuvette(int index, int function){
+    move_absolute(HOME_OFFSET); //backlash compensation
     move_absolute(HOME_OFFSET + index*CUVETTE_SPACING + function_offsets[function]);
 }
 

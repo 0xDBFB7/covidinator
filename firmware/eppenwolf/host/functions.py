@@ -79,3 +79,46 @@ def move_absolute(link, position):
     clear_buffers(link)
 
     return val
+
+def move_to_cuvette(link, id, function):
+    send_size = 0
+    send_size = add_float(link, send_size, id)
+    send_size = add_float(link, send_size, function)
+    link.send(send_size, packet_id=5)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return val
+
+def LO_power(link, power):
+    send_size = 0
+    send_size = add_float(link, send_size, power)
+    link.send(send_size, packet_id=6)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return val
+
+def LO_tune(link, val):
+    send_size = 0
+    send_size = add_float(link, send_size, val)
+    link.send(send_size, packet_id=7)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return val

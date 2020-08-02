@@ -14,7 +14,7 @@ int main(void)
 	init_VCO();
 	init_stepper();
 
-	home();
+	// home();
 	while(1){
 		dispatch();
 	}

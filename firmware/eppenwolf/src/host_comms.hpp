@@ -26,5 +26,7 @@ void move();
 void home_cmd();
 void move_absolute_cmd();
 void move_to_cuvette_cmd();
+void LO_power_cmd();
+void LO_tune_cmd();
 
 #endif
