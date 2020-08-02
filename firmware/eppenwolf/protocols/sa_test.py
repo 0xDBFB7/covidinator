@@ -1,28 +1,31 @@
 import sys
-sys.path.append('/home/arthurdent/covidinator/firmware/eppendoofus/host/')
+sys.path.append('/home/arthurdent/covidinator/firmware/eppenwolf/host/')
 
 import device_comms
 import sweep
+import numpy as np
+from matplotlib import pyplot as plt
+
 
 averages = 5
 
-freqs = np.zeros(0) #this gets set on the first run, and persists throughout to anchor frequencies
+bin_width = 1000000
+freqs = sweep.create_freq_bins(1, 12000, bin_width)
 
-frequency_bins = np.linspace()
 
-freqs, background = sweep.take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
 
-input("Do something! >")
+background = sweep.run_sweep(freqs, bin_width, 1, 6000, 30.0, 0)
 
-freqs, averaged_data = sweep.take_sample(freqs, averages, 1, 6000, 100000, 30.0, 0)
-
-averaged_data -= background
-
-freqs, averaged_data = peak_detect(averaged_data, freqs)
-
-file = input("filename? > ")
-if file:
-    plt.savefig("../media/" + file + ".png")
-
-plt.plot(freqs,averaged_data)
+# freqs, averaged_data = sweep.take_sample(freqs, averages, 1, 6000, bin_width, 30.0, 0)
+#
+# averaged_data -= background
+#
+# freqs, averaged_data = peak_detect(averaged_data, freqs)
+#
+#
+# file = input("filename? > ")
+# if file:
+#     plt.savefig("../media/" + file + ".png")
+#
+plt.plot(freqs,background)
 plt.show()
