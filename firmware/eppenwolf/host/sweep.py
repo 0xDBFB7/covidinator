@@ -4,6 +4,7 @@ import numpy as np
 import math
 from time import sleep
 import functions
+from scipy.signal import find_peaks
 #do a https://numpy.org/doc/stable/reference/generated/numpy.correlate.html
 # to determine VCO shift
 
@@ -61,27 +62,51 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
             for i in range(0, (len(new_input))-4):
                 freq = (new_input[0] + ((new_input[1] - new_input[0]) / (len(new_input)-4))*i)
                 indice = np.abs(freqs - freq).argmin()
-                # hackrf_sweep does not seem to be totally deterministic.
-                # so we sort into bins.
-                data[indice] = new_input[i+4]
+                val = new_input[i+4]
+                # if(not np.isnan(val) and np.isfinite(val)):
+                    # hackrf_sweep does not seem to be totally deterministic.
+                    # so we sort into bins.
+                data[indice] = val
                 hits[indice] = 1
+                # else:
+                #     data[indice] = 0
+                #     hits[indice] = 1
 
             percent_hit = hits[start_indice:end_indice].sum() / (end_indice-start_indice)
-            if(percent_hit == 1.0):
-                break
+            # if(percent_hit == 1.0):
+            #     break
 
         except Exception as e:
             print(e)
             print(line)
             pass
 
+    noise_floor = np.mean(data)
+    data[np.isnan(data)] = noise_floor
+    data[np.logical_not(np.isfinite(data))] = noise_floor 
+
     print(f"Hit {percent_hit*100.0}% of the requested frequencies.")
     return data
 
-def peak_detect(data, freqs, peak_interval=50):
-    peaks_data = np.array([max(data[i:i+peak_interval]) for i in range(0, len(data), peak_interval)])
-    peaks_freqs = [freqs[i] for i in range(0, len(data), peak_interval)]
-    return peaks_freqs, peaks_data
+def peak_detect(data, freqs):
+
+    # peak_indices = data.argsort()[-3:][::-1]
+    # peak_freqs = freqs[peak_indices]
+    # peak_values = data[peak_indices]
+
+
+
+    peak_indices = find_peaks(data)[0]
+    peak_indices = (peak_indices[np.argsort(data[peak_indices])])[::-1]
+    peak_freqs = freqs[peak_indices]
+    peak_values = data[peak_indices]
+
+    return peak_freqs, peak_values
+
+# def peak_detect(data, freqs, peak_interval=50):
+#     peaks_data = np.array([max(data[i:i+peak_interval]) for i in range(0, len(data), peak_interval)])
+#     peaks_freqs = [freqs[i] for i in range(0, len(data), peak_interval)]
+#     return peaks_freqs, peaks_data
 
 
 

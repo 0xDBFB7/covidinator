@@ -19,7 +19,9 @@ while(True):
     background = np.zeros_like(freqs)
     LO = np.zeros_like(freqs)
 
-    for i in range(0, 5):
+    averages = 2
+
+    for i in range(0, averages):
         LO_power(link, 0)
         LO_tune(link, 0.4)
         # set_VCO(link, 5, v, 8, 0)
@@ -31,8 +33,8 @@ while(True):
         sleep(0.5)
         LO += sweep.run_sweep(freqs, bin_width, 4000, 7250, 40, 0, 8192)
 
-    background /= 5
-    LO /= 5
+    background /= averages
+    LO /= averages
     LO -= background
 
 
@@ -45,6 +47,6 @@ while(True):
     LO_power(link, 0)
 
     plt.clf()
-    plt.plot(freqs,LO-background)
+    plt.plot(freqs,LO)
     plt.draw()
     plt.pause(0.01)
