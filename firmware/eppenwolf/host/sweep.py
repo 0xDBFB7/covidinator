@@ -47,7 +47,7 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
     data = np.zeros_like(freqs)
     hits = np.zeros_like(freqs)
 
-    N_sweeps = 1
+    N_sweeps = 2
 
     # lna_gain = 0 + int(float(gain_db)/8.0)*8
     # vga_gain = 0 + int(float((gain_db/40.0)*62.0)/2.0)*2
@@ -63,14 +63,14 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
                 freq = (new_input[0] + ((new_input[1] - new_input[0]) / (len(new_input)-4))*i)
                 indice = np.abs(freqs - freq).argmin()
                 val = new_input[i+4]
-                # if(not np.isnan(val) and np.isfinite(val)):
+                if(not np.isnan(val) and np.isfinite(val)):
                     # hackrf_sweep does not seem to be totally deterministic.
                     # so we sort into bins.
-                data[indice] = val
-                hits[indice] = 1
+                    data[indice] = val
+                    hits[indice] = 1
                 # else:
                 #     data[indice] = 0
-                #     hits[indice] = 1
+                #     hits[indice] = 0
 
             percent_hit = hits[start_indice:end_indice].sum() / (end_indice-start_indice)
             # if(percent_hit == 1.0):
@@ -88,7 +88,6 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
 
 def remove_naughty(data):
     #set all naughty values to the average of the neighboring values.
-    naughty = np.logical_or(np.isnan(data), np.isinf(data))
     noise_floor = np.mean(data[np.logical_not(naughty)])
     # data[naughty] = (data[np.roll(naughty,1)] + data[np.roll(naughty,-1)])/2
     # naughty = np.logical_or(np.isnan(data), np.isinf(data))
@@ -100,9 +99,9 @@ def peak_detect(data, freqs):
     # peak_indices = data.argsort()[-3:][::-1]
     # peak_freqs = freqs[peak_indices]
     # peak_values = data[peak_indices]
+    naughty = np.logical_or(np.isnan(data), np.isinf(data))
 
-
-    peak_indices = find_peaks(data)[0]
+    peak_indices = find_peaks(data[np.logical_not(naughty)])[0]
     peak_indices = (peak_indices[np.argsort(data[peak_indices])])[::-1]
     peak_freqs = freqs[peak_indices]
     peak_values = data[peak_indices]
