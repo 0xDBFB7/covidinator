@@ -81,11 +81,18 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
             print(line)
             pass
 
-    noise_floor = np.mean(data)
-    data[np.isnan(data)] = noise_floor
-    data[np.logical_not(np.isfinite(data))] = noise_floor 
+
 
     print(f"Hit {percent_hit*100.0}% of the requested frequencies.")
+    return data
+
+def remove_naughty(data):
+    #set all naughty values to the average of the neighboring values.
+    naughty = np.logical_or(np.isnan(data), np.isinf(data))
+    noise_floor = np.mean(data[np.logical_not(naughty)])
+    # data[naughty] = (data[np.roll(naughty,1)] + data[np.roll(naughty,-1)])/2
+    # naughty = np.logical_or(np.isnan(data), np.isinf(data))
+    data[naughty] = noise_floor
     return data
 
 def peak_detect(data, freqs):
@@ -93,7 +100,6 @@ def peak_detect(data, freqs):
     # peak_indices = data.argsort()[-3:][::-1]
     # peak_freqs = freqs[peak_indices]
     # peak_values = data[peak_indices]
-
 
 
     peak_indices = find_peaks(data)[0]
