@@ -1949,3 +1949,100 @@ Obviously it would have been ideal if I'd just
 properly added the IR alignment holes to the design, but whatever.
 Right now we're trying to maintain alignment from one home pos over 80mm,
 rather than the distance from each ir hole to each cuvette.
+
+Seems like I used a capacitor rather than an inductor when building the wideband pa.
+Fixing now.
+
+Important that parts be put on the right way around for identification.
+
+There's a hell of a lot of noise on the supply to the wideband pa. adding 100uF fixes it.
+
+The other bias leg is fine.
+
+PA works now. Drifts just like the LO.
+
+PA is pretty choppy / hole-y and isn't drawing a huge amount of current. 
+
+Might be because of the 100r resistor?
+
+Removing the slide changes the frequency response.
+
+Okay, wtf?
+
+The slightest load brings the supply down to 2v. wtf?
+
+Ah, I had put an artificial limit on the voltage.
+
+Neither of the LOs work properly now.
+
+Screw this. We need a better tuner than this; something with a crazy high Q, 
+where we don't need to worry about drift or whatever.
+
+The HMC732 is a nice 6-12 GHz VCO. Only three of the pins are used, so it
+wouldn't be that hard to use. It's about $200 apiece.
+
+\cite{Tunable2010} has a nice review of different tuning techniques.
+Mechanical is particularly useful because it's orthogonal to electrical.
+
+\cite{Wideband1981} describe using a 1/4 wavelength stub in an open-ended cavity to tune.
+
+\cite{WaveguideCavity1982} it's particularly useful because cavities allow easy power combining.
+
+\cite{Study2014a}, F is unaffected by radii; the radii affect the C and L, changing the quarter-wavelength length,
+
+phase/distance = 2 pi * F * sqrt(L * C)
+
+Where C = 2 pi e0 / ln(b/a), 
+L = mu 0 
+
+where b is the inner rad of outer and a is the outer rad of inner.
+
+As the quarter-wave length gets very small, Q drops.
+
+Whoa! Ferrite permeability tuning is awesome! \cite{MicrostripTunable2009} - this one
+uses magnetite.
+
+oh, that's just a YIG!
+
+MSW Straight Edge Resonator 
+
+https://web.mit.edu/22.09/ClassHandouts/Charged%20Particle%20Accel/CHAP12.PDF
+
+Unfortunately, cylindrical resonators don't just have one mode; there's a sometimes interfering
+progression as length changes.
+
+Holy crap they just sell cheap 15 GHz synths! lmx2595 apparently among others
+
+HMC732
+
+Alright. So. I can buy a HMC732.
+
+# Let's review.
+
+We've just found a few papers that talk about exactly we're doing here; but there's no *Data*.
+To begin a viable test, we need to actually take data.
+
+To test in the field, we will need pulsed microwave power.
+
+The phage lysis assay won't work on SARS. The typical PCR sars test won't work either.
+
+It's possible that the spectrum will change once the virus is broken. This itself might 
+be an effective assay. We need to test this on the bench.
+
+We really do need that VCO.
+
+If the CNC can't do the QFN package, could bondwire.
+
+The power levels aren't enough on their own
+
+Somehow one of the inductors on the LO got disconnected. Fixed. 
+
+
+
+
+
+
+
+
+
+

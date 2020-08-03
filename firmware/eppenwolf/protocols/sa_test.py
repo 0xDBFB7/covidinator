@@ -5,27 +5,46 @@ import device_comms
 import sweep
 import numpy as np
 from matplotlib import pyplot as plt
-
+from functions import *
+from time import sleep
+link = device_comms.connect()
 
 averages = 5
 
-bin_width = 1000000
+bin_width = 5000000
 freqs = sweep.create_freq_bins(1, 12000, bin_width)
+v = 0
+while(True):
+
+    background = np.zeros_like(freqs)
+    LO = np.zeros_like(freqs)
+
+    for i in range(0, 5):
+        LO_power(link, 0)
+        LO_tune(link, 0.4)
+        # set_VCO(link, 5, v, 8, 0)
+        sleep(0.5)
+        background += sweep.run_sweep(freqs, bin_width, 4000, 7250, 40, 0, 8192)
+
+        LO_power(link, 1)
+        # set_VCO(link, 5, v, 8, 1)
+        sleep(0.5)
+        LO += sweep.run_sweep(freqs, bin_width, 4000, 7250, 40, 0, 8192)
+
+    background /= 5
+    LO /= 5
+    LO -= background
 
 
+    peak_freqs, peak_values = sweep.peak_detect(LO, freqs)
+    print(peak_freqs[0:5])
+    print(peak_values[0:5])
 
-background = sweep.run_sweep(freqs, bin_width, 1, 6000, 30.0, 0)
+    v += 2
 
-# freqs, averaged_data = sweep.take_sample(freqs, averages, 1, 6000, bin_width, 30.0, 0)
-#
-# averaged_data -= background
-#
-# freqs, averaged_data = peak_detect(averaged_data, freqs)
-#
-#
-# file = input("filename? > ")
-# if file:
-#     plt.savefig("../media/" + file + ".png")
-#
-plt.plot(freqs,background)
-plt.show()
+    LO_power(link, 0)
+
+    plt.clf()
+    plt.plot(freqs,LO-background)
+    plt.draw()
+    plt.pause(0.01)

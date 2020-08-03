@@ -59,7 +59,7 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
     //
     // base_bias_voltage = constrain(base_bias_voltage, 0, ANALOG_WRITE_MAX_VAL);
     // varactor_voltage = constrain(varactor_voltage, 0, ANALOG_WRITE_MAX_VAL);
-    supply_voltage = constrain(supply_voltage, 1.5, 6);
+    supply_voltage = constrain(supply_voltage, 1.5, 12);
 
     const float lm317_offset_voltage = 1.5;
     uint16_t base_bias_value = ((base_bias_voltage/BASE_BIAS_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
@@ -82,13 +82,17 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
 
 
 void LO_power(bool power){
-  digitalWrite(2, power);
+    // analogWriteFrequency(LO_VARACTOR_PWM_PIN, 50000.0);
+    debug_serial.printf("LO power set to %i\n", power);
+    digitalWrite(2, power);
 }
 
 void LO_tune(float value){
 
     const int mosfet_threshold = 0.7;
-    analogWrite(LO_VARACTOR_PWM_PIN, (ANALOG_WRITE_MAX_VAL - (value*ANALOG_WRITE_MAX_VAL)) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VAL));
+    int lo_val = (ANALOG_WRITE_MAX_VAL - (value*ANALOG_WRITE_MAX_VAL)) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VAL);
+    debug_serial.printf("LO tune set to %i\n", lo_val);
+    analogWrite(LO_VARACTOR_PWM_PIN, lo_val);
 }
 
 

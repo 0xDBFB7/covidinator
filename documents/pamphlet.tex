@@ -18,16 +18,16 @@ letterpaper]{geometry}
 
 %\footnote{The}
 
-This is a condensed version of a (horribly unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO affiliation] \orcidlink{0000-0002-9353-0216}}
+This is a condensed version of a (horribly unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO: affiliation] \orcidlink{0000-0002-9353-0216}}
 
 
-\subfile{pulse_1.tex}
+%\subfile{pulse_1.tex}
 
 
 
-Both the microwave and microbiology components of this field\footnote{field field?} appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, it is entirely possible that none of what is discussed below actually exists.  
+Both the microwave and microbiology components of this field appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, it is entirely possible that none of what is discussed below actually exists.
 
-This project was rushed and slow, terribly managed, and not nearly as rigorous as the field demands. This may well end up being a waste of time.
+Please distrust our analysis. 
 
 %The literature is littered with irreproducible claims of non-thermal effects; however, this appears to be a singular anomaly.
 
@@ -48,6 +48,16 @@ Barring protein mechanical fatigue \cite{Mechanical2013} or some other mechanism
 
 These authors above deserve all the credit for this finding; nothing in this work is even remotely novel.
 
+\begin{autem}
+	It should be noted that all of the claims we make hinge on this nanosecond inactivation. \cite{Efficient2015} and \cite{focusing2014} use a 15-minute exposure, which is apparently the norm for this field. 
+\end{autem}
+
+{\Large \textbf{Advantages over existing techniques}}
+
+From crude attenuation data, this pulsed field can be safely produced at least 3 cm deep in tissue. This would seem to be unlike any other mechanisms like near or far\cite{Germicidal2017}UV. suitable for targeted sterilization of with bronchoscopic techniques), opening up a particularly interesting direct treatment modality. We are trying to verify this now with FDTD sims.
+
+Also unlike UV, the X-band is minimally attenuated by air; in the extreme, installations with megawatt-scale klystrons could potentially prevent airborne transmission in square-kilometer areas.
+
 {\Large \textbf{Is it safe?}}
 
 The consensus is that conditions in our cells are highly unfavorable for any such resonance modes; damping from biological solvents is too strong \cite{Vibrational2002}. Harm occurs only through thermal mechanisms; therefore an almost arbitrarily powerful pulse can be safely applied for infinitesimal periods.
@@ -61,34 +71,10 @@ We are unsure what specific feature of the virion accounts for this discrepancy.
 \clearpage 
 {\Large \textbf{How do we wield this sword?}}
 
-If the above is correct, any region with a power density in the 7 to 9 GHz band greater than 300\Wsqm \ for 100 ns will be sterilized. (TODO field strength)
-
 This is not a particularly demanding requirement, and lends itself to a wide variety of applications, many of which could be implemented almost immediately. 
-
-First, depending on the type of tissue, this field strength can apparently be safely produced a minimum of 3 cm deep (suitable for targeted sterilization of lungs or other organs with bronchoscopic techniques), up to 200 cm (eradicating the virus from the body) \cite{Physical1982}. We are working to narrow these bounds now.
 
 On an individual level, the free-space-combined output of, say, a few dozen SiGe:C or GaAs transistors (\$0.3 apiece [BFP620]), very similarly to our reference design, should suffice to locally protect the major vulnerabilities like mouth, nose, eyes, hair and any surfaces that the hands contact. This arguably wouldn't provide many advantages over simple masks, however. 
 
-Unlike UV, the X-band is minimally attenuated by air. Common areas could be illuminated by magnetron systems.
-
-On the other extreme, installations with megawatt-scale klystrons could sterilize square-kilometer areas at a time. 
-
-
-
-{\Large \textbf{Tasks}}
-
-We can see the following 
-
-\begin{itemize}
-	\item To prevent duplication of work, are any other teams working on this now? It seems a rather obvious technique. A thorough review of arxiv etc should be performed.
-	\item Double-check all figures and assumptions.
-	\item Send off spectrometer (or, ideally, a more precise piece of equipment) to a BSL with a sample of NCoV to obtain the spectra and thresholds.
-	\item get the gosh-darned AustinMan voxel team to reply to my gosh-darned emails
-	\item Determine the ideal application to focus effort on
-	\item ???????
-	\item Check with the FCC/Industry Canada if we can get a temporary exemption for these intentional radiators?
-	
-\end{itemize}
 
 %\centering {\color{red} \faHeart}
 
