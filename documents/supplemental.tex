@@ -114,17 +114,17 @@ However, since the result is unexpected, we would like to mention a few means by
 
 \end{quote}
 
-The frequency-dependent inactivation result in Figure 4b is difficult to explain without invoking non-thermal mechanisms. Only one  It is not mentioned how this applied power level was measured. 
+The frequency-dependent inactivation result in Figure 4b of \cite{Efficient2015} is difficult to explain without invoking non-thermal mechanisms. Only one  It is not mentioned how this applied power level was measured. 
 
 The amplifier in question is not available on the supplier's website \cite{Microwaved} has gain flatness of 3.5 dB over 6-12 GHz - just over 1 octave. The amplifier used in [Hung] is not mentioned; because the frequency range mentioned (6 GHz to 18 GHz) is the same as that of the amplifier, we assume the same amplifier was used. 
 
 If the amplifier happened to be matched better at 8 GHz than 12 GHz.
 
-\cite{EM6969}
+
 
 QPJ-06183640
 
-Similarly, the gain of the EM-6969 antenna varies from 17 dBi to 21 dBi over the frequency range in Figure 3.
+Similarly, the gain of the EM-6969 antenna\cite{EM6969} varies from 17 dBi to 21 dBi over the frequency range in Figure 3.
 
 However, that the spectra of all these effects would combine to produce a peak at precisely the resonant frequency determined by the entirely different microwave cuvette is highly implausible; and so Figure 4b really does seem to be good evidence of such an effect.
 
@@ -141,6 +141,30 @@ Different versions of the IEEE standard have used equations of equivalent form b
 
 \rule{\linewidth}{0.2pt}
 
+
+
+\PRLsep{{\itshape Wherein an oscillator is designed }}
+
+Three incorrect pieces of information conspired to lead us to try to develop an inexpensive ultrawideband oscillator.
+
+\begin{itemize}
+	\item The assumption that a broadband frequency sweep would drastically improve the inactivation threshold, and moreover that 
+	\item The ideal 
+	\item The assumption that the only YIG-tuned 
+\end{itemize}
+
+There are really two different conflicting criteria: 
+
+A low-cost, wide-band
+
+Unfortunately, designing wideband microwave circuits is significantly more difficult than for a particular frequency. Quarter-wavelength 
+
+Varactor diodes are a GaAs hyper-abrupt junction diode.
+
+We were warned that this would be difficult: 
+
+
+
 CEL did not supply a SPICE model for the GaAs FET device used in early prototypes. A FET was originally because a gate is ostensibly easier to bias than a base; but this turned out to be unfounded.
 
 [Steenput 1999] has an interesting analytic method to synthesize a SPICE model suitable for a transient simulations from S-parameter measurements using negative resistances. However, this neglects the I/V characteristic. 
@@ -151,12 +175,11 @@ CEL did not supply a SPICE model for the GaAs FET device used in early prototype
 
 \rule{\linewidth}{0.2pt}
 
-OpenEMS is excellent, with Python bindings, some lumped components, and mesh refinement. However, embarassingly, we were not able to resolve all the dependency issues in order to install it.
+OpenEMS is excellent, with Python bindings, some lumped components, and mesh refinement. However, embarrassingly, we were not able to resolve all the dependency issues in order to install it.
 
 
-\PRLsep{{\itshape Wherein an oscillator is designed }}
 
-We did not discover how little of an effect a wideband sweep would have until late in the project; for this reason, much of the below caters towards wideband circuits and could be greatly simplified for single-frequency operation.
+
 
 \paragraph{Biasing}\
 

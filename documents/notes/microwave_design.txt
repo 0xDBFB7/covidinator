@@ -2037,12 +2037,90 @@ The power levels aren't enough on their own
 
 Somehow one of the inductors on the LO got disconnected. Fixed. 
 
+Thought maybe the LO had drifted overnight, but actually I'd just forgotten to turn on the power.
+
+
+SA works great now, except the power output of the VCO is abysmal - or perhaps this design
+of rf dtector is just 100x less sensitive? 
+
+Replaced resistor on VCO with 50 ohms.
+
+
+Now, it's useful to backtrack and wonder why we decided to make our own VCO.
+
+First, we had not yet gotten the data showing that a broad frequency sweep isn't particularly important
+to the inactivation power threshold.
+
+Therefore, everything was designed with ultrawideband techniques in mind.
+
+Additionally, the "electromagnetic mask" form factor (requiring a cheap oscillator) is now secondary
+to the "direct exposure", high-pulse-power treatment. This probably won't use semiconductor devices at all!
+
+ Threshold isn't as important as before because of the pulsed/
+
+
+
+Rather than switching components in and out of the feedback loop, couldn't we just switch 
+entire oscillators (+filters, even) for each frequency band? If we want to span 1 GHz 
+
+Frequency multiplying +filtering seems pretty tricky.
+
+Removed the inductors from both varactor legs on VCO. Now the circuit is very stable, tunes from 
+7 to 6.4 GHz.
+
+Re-added inductor on the collector. Unstable again.
+
+Removed varactor and coupling cap from base. Nothing. 
+
+One of the diodes on the base is definitely the wrong way around. darnit!
+
+Flipped it around, (stock Wideband LO + 0.6 nH) draws a lot of current but not obviously any RF power.
+
+with 0.6 nH, no cathode varactor, sweeps from 6.4 to 6.6 GHz (??)
+
+### Coaxial tuned oscillators.
+
+Dielectric
+
+This technique goes way back.
+
+
+
+Tunable coplanar waveguide
+
+1/4-wave air coax is 15 mm at 5 ghz and 8 mm at 10GHz.
+
+the‎LMX2595 is amazing, but it looks like there's a lot of supporting stuff to use it properly.
+While it doesn't need the HV supply, it does need an XO or other 100MHz oscillator.
+
+In that sense the HMC732 is simpler to use.
+
+"13 GHz Frequency Counter Prescaler" - really neat! This'll be way easier than the SA.
+
+Rather than using a PiN-switch or motorized slide, we could just get the operator to drop the cuvette into place
+in different positions with metal pins for registration
+
+A temp-controlled plate reader could be used instead of this convoluted LTOF converter.
+Sufficiently small microplates might have a small enough volume - spacing by two might work
+384-well plates have a volume of 40 uL, diameter 3.3 mm, 
+1536-well plates have a diameter of 1.7 mm
+https://www.perkinelmer.com/lab-products-and-services/application-support-knowledgebase/microplates/plate-dimensions.html
+Flat-bottom or optical "low well base" plates look suitable, have a 200 uL bottom film.
+
+Apparently 1536-well plates are hard to work with. 
+
+Might work with the 1.6 mm substrate 3mm 50Z trace or a wideband 25Z trace?
 
 
 
 
+Write a checklist of things to test
+
+All three power sensor types
+
+The -6 dBm, 0.15v p-p output of the div-8 is just below the input thresholds of the 
+div4. Need to amplify that up.
 
 
-
-
+Add fuse if battery powered
 

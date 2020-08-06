@@ -21,6 +21,11 @@ def create_freq_bins(start_freq, end_freq, bin_width):
 
 #pickle and save background?
 
+# class spectrum():
+#     def __init__(freqs):
+
+
+
 def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, samples_per_freq):
     '''
     start_freq, end_freq: freq in MHz.
@@ -47,7 +52,7 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
     data = np.zeros_like(freqs)
     hits = np.zeros_like(freqs)
 
-    N_sweeps = 2
+    N_sweeps = 1
 
     # lna_gain = 0 + int(float(gain_db)/8.0)*8
     # vga_gain = 0 + int(float((gain_db/40.0)*62.0)/2.0)*2
@@ -63,11 +68,11 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
                 freq = (new_input[0] + ((new_input[1] - new_input[0]) / (len(new_input)-4))*i)
                 indice = np.abs(freqs - freq).argmin()
                 val = new_input[i+4]
-                if(not np.isnan(val) and np.isfinite(val)):
+                # if(not np.isnan(val) and np.isfinite(val)):
                     # hackrf_sweep does not seem to be totally deterministic.
                     # so we sort into bins.
-                    data[indice] = val
-                    hits[indice] = 1
+                data[indice] = val
+                hits[indice] = 1
                 # else:
                 #     data[indice] = 0
                 #     hits[indice] = 0
@@ -99,14 +104,18 @@ def peak_detect(data, freqs):
     # peak_indices = data.argsort()[-3:][::-1]
     # peak_freqs = freqs[peak_indices]
     # peak_values = data[peak_indices]
-    naughty = np.logical_or(np.isnan(data), np.isinf(data))
+    # naughty = np.logical_or(np.isnan(data), np.isinf(data))
+    data[data > 1000] = 0 # for some reason, isinf() checks don't work.
 
-    peak_indices = find_peaks(data[np.logical_not(naughty)])[0]
+    peak_indices = find_peaks(data)[0]
     peak_indices = (peak_indices[np.argsort(data[peak_indices])])[::-1]
+
+
+
     peak_freqs = freqs[peak_indices]
     peak_values = data[peak_indices]
 
-    return peak_freqs, peak_values
+    return peak_freqs, peak_values, peak_indices
 
 # def peak_detect(data, freqs, peak_interval=50):
 #     peaks_data = np.array([max(data[i:i+peak_interval]) for i in range(0, len(data), peak_interval)])
