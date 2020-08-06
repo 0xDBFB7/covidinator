@@ -2098,7 +2098,7 @@ In that sense the HMC732 is simpler to use.
 "13 GHz Frequency Counter Prescaler" - really neat! This'll be way easier than the SA.
 
 Rather than using a PiN-switch or motorized slide, we could just get the operator to drop the cuvette into place
-in different positions with metal pins for registration
+in different positions - metal pins for registration?
 
 A temp-controlled plate reader could be used instead of this convoluted LTOF converter.
 Sufficiently small microplates might have a small enough volume - spacing by two might work
@@ -2110,8 +2110,6 @@ Flat-bottom or optical "low well base" plates look suitable, have a 200 uL botto
 Apparently 1536-well plates are hard to work with. 
 
 Might work with the 1.6 mm substrate 3mm 50Z trace or a wideband 25Z trace?
-
-
 
 
 Write a checklist of things to test
