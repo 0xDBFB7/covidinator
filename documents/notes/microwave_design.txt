@@ -2136,6 +2136,17 @@ The power output of the HMC732 varies greatly with temperature, decreasing as te
 
 Built up the VCO drivers and everything. This 5-24v step-up converter does a nice job. 
 
+Somehow #define -ing just before a function caused a runtime fault. what a weird error!
+No, misdiagnosed. IDK.
+
+Noise on the output of the 20v regulator is un-measurable. Very nice. 
+However, that's totally swamped by the noise on the DAC. Seems to be caused by the noise on the
+3.3V rail.  
+Added a lin. reg to the DAC 3v3, no change. Removed all capacitance at the output of the op-amp.
+18 mV of noise now. Perfection.
+
+
+
 
 
 

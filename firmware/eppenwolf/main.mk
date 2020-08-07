@@ -138,7 +138,8 @@ LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/FreqCount/*.cpp)
 L_INC += -I$(COREPATH)/../../libraries/FreqCount/
 LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/FreqMeasure/*.cpp)
 L_INC += -I$(COREPATH)/../../libraries/FreqMeasure/
-
+LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/Wire/*.cpp)
+L_INC += -I$(COREPATH)/../../libraries/Wire/
 
 LCPP_FILES += $(wildcard $(LIBRARYPATH)/SerialTransfer/src/*.cpp)
 L_INC += -I$(LIBRARYPATH)/SerialTransfer/src/
