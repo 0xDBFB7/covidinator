@@ -143,6 +143,9 @@ L_INC += -I$(COREPATH)/../../libraries/FreqMeasure/
 LCPP_FILES += $(wildcard $(LIBRARYPATH)/SerialTransfer/src/*.cpp)
 L_INC += -I$(LIBRARYPATH)/SerialTransfer/src/
 
+LCPP_FILES += $(wildcard $(LIBRARYPATH)/MCP4725/MCP4725/*.cpp)
+L_INC += -I$(LIBRARYPATH)/MCP4725/MCP4725/
+
 
 SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))

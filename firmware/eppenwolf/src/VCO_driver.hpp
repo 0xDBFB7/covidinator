@@ -9,8 +9,9 @@
 #include "WProgram.h"
 
 #endif
+#include "Wire.h"
 
-
+#include "MCP4725.h"
 
 #include "except.hpp"
 #include <WString.h>

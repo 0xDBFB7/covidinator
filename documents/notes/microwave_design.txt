@@ -2134,6 +2134,8 @@ Had to push the QFN down a bit to seat.
 
 The power output of the HMC732 varies greatly with temperature, decreasing as temp increases.
 
+Built up the VCO drivers and everything. This 5-24v step-up converter does a nice job. 
+
 
 
 

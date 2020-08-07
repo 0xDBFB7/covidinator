@@ -37,6 +37,8 @@ void init_VCO(){
 
     pinMode(LO_POWER_PIN, OUTPUT);
     pinMode(LO_VARACTOR_PWM_PIN, OUTPUT);
+
+    dac.begin(0x62);
 }
 
 
@@ -54,6 +56,7 @@ void pulse_VCO(int pulse_duration){
     //cli
 }
 
+#define DAC_MAX_VAL 4095
 
 void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state){
     //
@@ -63,13 +66,14 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
 
     const float lm317_offset_voltage = 1.5;
     uint16_t base_bias_value = ((base_bias_voltage/BASE_BIAS_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
-    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * DAC_MAX_VAL;
     uint16_t supply_value = (((supply_voltage-lm317_offset_voltage)/SUPPLY_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
 
 
+    dac.setVoltage(varactor_value);
 
     analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
-    analogWrite(VARACTOR_PWM_PIN, varactor_value);
+    // analogWrite(VARACTOR_PWM_PIN, varactor_value);
     analogWrite(SUPPLY_PIN, supply_value);
 
     //p-channel inverts!
