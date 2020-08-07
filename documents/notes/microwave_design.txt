@@ -2122,3 +2122,20 @@ div4. Need to amplify that up.
 
 Add fuse if battery powered
 
+Soldered the HMC732. That's nerve wracking!
+
+Putting a little dot of ink on the side of a non-castellated QFN where the pins start
+helps alignment.
+
+If the device you're using shows the internal schematic, 
+after soldering, doing a quick diode test to see if the values correspond is very helpful.
+Had to push the QFN down a bit to seat.
+
+
+The power output of the HMC732 varies greatly with temperature, decreasing as temp increases.
+
+
+
+
+
+
