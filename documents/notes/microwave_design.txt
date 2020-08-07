@@ -2145,7 +2145,8 @@ However, that's totally swamped by the noise on the DAC. Seems to be caused by t
 Added a lin. reg to the DAC 3v3, no change. Removed all capacitance at the output of the op-amp.
 18 mV of noise now. Perfection.
 
-
+The DAC wasn't responding. The MCP4725 has 0b1100 + two address bits + A0: adafruit seems to order
+parts with 10, whereas digikey uses 00. 
 
 
 
