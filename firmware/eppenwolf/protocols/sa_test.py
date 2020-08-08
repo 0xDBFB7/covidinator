@@ -22,15 +22,15 @@ v = 0
 downconverter_max = 4e9
 DC_IF_gap = 0.5e8
 
-VCO_voltage = 3
+VCO_voltage = 8
 VCO_supply_voltage = 10
 VCO_base_voltage = 3
 
 spectrum = np.zeros_like(freqs)
 
 
-for b in range(0, 1):
-
+# for b in range(0, 1):
+while(True):
     background = np.zeros_like(freqs)
     LO = np.zeros_like(freqs)
     low_range = np.zeros_like(freqs)
@@ -39,6 +39,7 @@ for b in range(0, 1):
     averages = 2
 
     set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
+    input("Turn off VCO")
 
     for i in range(0, averages):
         LO_power(link, 0)
@@ -68,7 +69,9 @@ for b in range(0, 1):
     print(peak_freqs[0:5])
     print(peak_values[0:5])
 
-    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 1)
+    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
+    input("Turn on VCO")
+
     sleep(0.5)
     for i in range(0, averages):
         high_range += sweep.run_sweep(freqs, bin_width, 0, 7250, 40, 0, 8192)
@@ -83,7 +86,7 @@ for b in range(0, 1):
     high_range[0:LO_index] = 0
 
     LO_power(link, 0)
-    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 1)
+    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
     sleep(0.5)
     for i in range(0, averages):
         low_range += sweep.run_sweep(freqs, bin_width, 0, 7250, 40, 0, 8192)
@@ -96,19 +99,20 @@ for b in range(0, 1):
     LO_power(link, 0)
     set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
 
-    # plt.figure(0)
-    # plt.clf()
-    # plt.plot(freqs,LO)
-    # plt.figure(1)
-    # plt.clf()
-    # # plt.plot(freqs,low_range)
-    # # plt.plot(freqs,high_range)
-    # plt.draw()
-    # plt.pause(0.01)
+    plt.figure(0)
+    plt.clf()
+    plt.plot(freqs,LO)
+    plt.figure(1)
+    plt.clf()
+    plt.plot(freqs,low_range)
+    plt.plot(freqs,high_range)
+    plt.ticklabel_format(style='sci', axis='x', scilimits=(9,9))
+    plt.draw()
+    plt.pause(0.01)
 
-spectrum /= 1
+# spectrum /= 1
 
 # dill.dump_session('globalsave.pkl')
 
-plt.plot(freqs, spectrum)
-plt.show()
+# plt.plot(freqs, spectrum)
+# plt.show()

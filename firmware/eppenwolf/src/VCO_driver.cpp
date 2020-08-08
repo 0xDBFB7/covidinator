@@ -41,6 +41,8 @@ void init_VCO(){
     pinMode(LO_VARACTOR_PWM_PIN, OUTPUT);
 
     vco_varactor_DAC.begin(0x60);
+    vco_varactor_DAC.setVoltage(0);
+
 }
 
 

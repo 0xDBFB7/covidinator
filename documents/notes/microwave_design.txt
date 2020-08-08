@@ -2148,6 +2148,23 @@ Added a lin. reg to the DAC 3v3, no change. Removed all capacitance at the outpu
 The DAC wasn't responding. The MCP4725 has 0b1100 + two address bits + A0: adafruit seems to order
 parts with 10, whereas digikey uses 00. 
 
+I thought I wouldn't need to turn off the LO, but actually this way we can't differential
+the SA. Darnit.
+
+At first it looked like something was dramatically wrong; everything was a mess, there were 
+tones everywhere, nothing corresponded to the varactor voltage, current draw was way higher than expected. 
+Had an existential crisis thinking that perhaps RF is way more complex than I had made it out to be; maybe
+you need to be way more careful to get any result at all; 
+
+then noticed that the varactor voltage was wiggling around a bunch, circa 500 mV. Added a 10k in series, 
+
+If noise has such a profound effect on the performance, perhaps the homebrew LO *was* actually working
+it just was noisy as all hell.
+
+
+
+
+
 
 
 
