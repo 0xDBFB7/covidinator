@@ -2161,6 +2161,19 @@ then noticed that the varactor voltage was wiggling around a bunch, circa 500 mV
 If noise has such a profound effect on the performance, perhaps the homebrew LO *was* actually working
 it just was noisy as all hell.
 
+Maybe we can tolerate 5k / 5k on PiN diodes. Then we can use the 24V rail.
+
+The amplifier drew so much current that the linear reg went into overtemp shutdown.
+Stuck a heatsink onto it and dropped the voltage, now it's back.
+
+Getting a maximum of 21 mV with the simple inductor bias + BFP620,
+where the 1 dBm output of the sig. gen is 20 mV.
+
+Swapped out the BFP620 for the CEL mosfet. Got to 50 mV output before it started smoking.
+
+Had accidentally commented out the part that constrained.
+
+Swapped out one of the bias inductors for a 50R resistor. Much lower power output.
 
 
 

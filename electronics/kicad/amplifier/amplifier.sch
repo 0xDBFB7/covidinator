@@ -151,7 +151,7 @@ L SparkFun-Resistors:RESISTOR0402 R1
 U 1 1 5F960EE5
 P 3400 3100
 F 0 "R1" V 3305 3168 45  0000 L CNN
-F 1 "RESISTOR0402" V 3389 3168 45  0000 L CNN
+F 1 "10k" V 3389 3168 45  0000 L CNN
 F 2 "0402" H 3400 3250 20  0001 C CNN
 F 3 "" H 3400 3100 60  0001 C CNN
 F 4 " " V 3484 3168 60  0000 L CNN "Field4"
@@ -164,20 +164,61 @@ Connection ~ 3400 2900
 $Comp
 L Connector:Test_Point TPSO2
 U 1 1 5F964277
-P 3400 3300
-F 0 "TPSO2" H 3458 3418 50  0000 L CNN
-F 1 "Vsource" H 3458 3327 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3600 3300 50  0001 C CNN
-F 3 "~" H 3600 3300 50  0001 C CNN
-F 4 "V" H 3400 3300 50  0001 C CNN "Spice_Primitive"
-F 5 "pulse(0 2 20p 5p 1p 1 1)" H 3400 3300 50  0001 C CNN "Spice_Model"
-F 6 "N" H 3400 3300 50  0001 C CNN "Spice_Netlist_Enabled"
-	1    3400 3300
+P 3400 3500
+F 0 "TPSO2" H 3458 3618 50  0000 L CNN
+F 1 "Vsource" H 3458 3527 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3600 3500 50  0001 C CNN
+F 3 "~" H 3600 3500 50  0001 C CNN
+F 4 "V" H 3400 3500 50  0001 C CNN "Spice_Primitive"
+F 5 "pulse(0 2 20p 5p 1p 1 1)" H 3400 3500 50  0001 C CNN "Spice_Model"
+F 6 "N" H 3400 3500 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3400 3500
 	-1   0    0    1   
 $EndComp
 $Comp
+L power:GND #PWR0102
+U 1 1 5F96B8DD
+P 2750 3100
+F 0 "#PWR0102" H 2750 3100 30  0001 C CNN
+F 1 "GND" H 2750 3030 30  0001 C CNN
+F 2 "" H 2750 3100 50  0001 C CNN
+F 3 "" H 2750 3100 50  0001 C CNN
+	1    2750 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:4.7UF0603 C1
+U 1 1 5F96C23F
+P 3650 3400
+F 0 "C1" V 3416 3450 45  0000 C CNN
+F 1 "100 nF" V 3500 3450 45  0000 C CNN
+F 2 "0603" H 3650 3650 20  0001 C CNN
+F 3 "" H 3650 3400 50  0001 C CNN
+F 4 "" H 3758 3366 60  0000 L CNN "Field4"
+	1    3650 3400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5F96EBEA
+P 3750 3400
+F 0 "#PWR0103" H 3750 3400 30  0001 C CNN
+F 1 "GND" H 3750 3330 30  0001 C CNN
+F 2 "" H 3750 3400 50  0001 C CNN
+F 3 "" H 3750 3400 50  0001 C CNN
+	1    3750 3400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3400 3300 3400 3400
+Wire Wire Line
+	3400 3400 3450 3400
+Connection ~ 3400 3400
+Wire Wire Line
+	3400 3400 3400 3500
+$Comp
 L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J1
-U 1 1 5F1B7015
+U 1 1 5F97581C
 P 2750 2900
 F 0 "J1" H 2828 3147 60  0000 C CNN
 F 1 "CONSMA001-SMD-G" H 2828 3041 60  0000 C CNN
@@ -193,6 +234,19 @@ F 10 "CONN SMA RCPT STR 50 OHM SMD" H 2950 3900 60  0001 L CNN "Description"
 F 11 "Linx Technologies Inc." H 2950 4000 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 2950 4100 60  0001 L CNN "Status"
 	1    2750 2900
+	1    0    0    -1  
+$EndComp
+Text Notes 1100 4350 0    50   ~ 0
+The small gap between the board and this SMD connector is\na bit concerning; some sort of resonance could probably be set up\nin there.
+$Comp
+L 0xDBFB7:CE3520K3 U2
+U 1 1 5F97ADF9
+P 6100 3400
+F 0 "U2" H 6244 3446 50  0000 L CNN
+F 1 "CE3520K3" H 6244 3355 50  0000 L CNN
+F 2 "0xDBFB7:4-Micro-X" H 6100 3400 50  0001 C CNN
+F 3 "" H 6100 3400 50  0001 C CNN
+	1    6100 3400
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
