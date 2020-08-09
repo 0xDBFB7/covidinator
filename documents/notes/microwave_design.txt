@@ -2132,7 +2132,7 @@ after soldering, doing a quick diode test to see if the values correspond is ver
 Had to push the QFN down a bit to seat.
 
 
-The power output of the HMC732 varies greatly with temperature, decreasing as temp increases.
+The power output of the HMC732 varies greatly with, decreasing as temp increases.
 
 Built up the VCO drivers and everything. This 5-24v step-up converter does a nice job. 
 
@@ -2218,3 +2218,29 @@ There's about 70 mV of noise on the supply.
 Should disconnect each segment, terminate, and probe to see if it's causing the noise and pops.
 
 Ah the chrome pdf problem seems to be related to the cache - 
+
+Y'know, the output levels on the HMC732 aren't really right. Directly connected to the hackrf,
+there's 0db of gain, we're at -60 dB - not at all what I would expect. Maybe a pin isn't connected?
+
+Directly connecting the output probe to the terminated end power sensor, we get 0.12v; about 0.2 dBm,
+which is the right order of magnitude.
+
+The hackrf still picks up WiFi properly. 
+
+This hackrf + downconverter really isn't working for me. It's impossible to determine what's what, levels
+are off by -40 dB, etc, etc.
+
+The power detector output lead seems to have some RF on it; by putting my finger in various
+positions, there's a sine superimposed on it.
+
+Anything over 5V definitely blows the CEL fets.
+
+Even with two fet gain stages, still can't get above 0.22 V on the power sensor.
+
+The notched lead of the MWT-173 is the gate.
+
+
+With CEL -> MWT 2 stage amp, got 0.5 Vpp on one power sensor, and -0.3 on the other power sensor.
+
+
+
