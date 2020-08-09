@@ -127,7 +127,7 @@
   )
 
   (module 0xDBFB7:4-Micro-X (layer F.Cu) (tedit 5E8E9CC3) (tstamp 5F2EF94D)
-    (at 162.65 82.65)
+    (at 164 103.6)
     (path /5F97ADF9)
     (fp_text reference U2 (at 0 5.072) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))

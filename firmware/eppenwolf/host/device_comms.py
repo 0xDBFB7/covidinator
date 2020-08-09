@@ -8,7 +8,8 @@ import pyudev
 import serial
 import sys
 import zlib
-
+import numpy as np
+from time import sleep
 context = pyudev.Context()
 #
 # def find_devices():

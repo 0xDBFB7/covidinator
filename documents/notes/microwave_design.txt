@@ -2171,15 +2171,50 @@ where the 1 dBm output of the sig. gen is 20 mV.
 
 Swapped out the BFP620 for the CEL mosfet. Got to 50 mV output before it started smoking.
 
-Had accidentally commented out the part that constrained.
+Had accidentally commented out the part that constrained the output voltages, so all the previous
+tests were at 10V.
 
-Swapped out one of the bias inductors for a 50R resistor. Much lower power output.
+Swapped out one of the bias inductors for a 50R resistor. Much lower power output - 27 mV.
+
+Swapped out for one of the MWT-173 devices, and put back the two inductors. @5v, ~100 mW input,
+0.25v output (nice!).
+
+This even though the gain is only 10 dB. Strange - probably need to add a second gain stage.
+
+Almost no variation in o-p power over the whole freq. range.
+
+Reg. still floated above the setpoint; added 440 ohms to the output, now it's perfect.
+
+With this MWT amp, there are two regimes: 0.5v output one, and a 0.05v output one.
+I think it might be oscillating at 7 or so GHz, and that's causing the increase in gain
+without needing the multiple stages.
+
+There are definitely three modes that it's hopping between.
+
+It's hard to tell on the SA. The LO is really intermittent now for some reason.
+Fixed, set LO tuning to 1.0.
+
+Removed the MWT, swapped for a CEL. At 0, 0, 6, 1, 0.15v from one sensor and -0.09 from the other??
+Tried again, got 0.24 on one and -0.09 on the other
+
+Dude. This is so cool. Disconnected the VCO from the amplifier and fed it straight into the downconverter.
+There are a few resonance modes here that I don't like. By putting my finger over the 
+feed, I can damp the modes. Super cool.
 
 
+Turning on the power, the whole noise floor increases;
+background peaks rise by 10db or so. 
 
+Using a blank SMA connector as a probe works great.
+Using this technique, found that the amp is oscillating at about 4 GHz. Correction, that's 10 GHz.
 
+The tone appears whenever the VCO is txing. It's not obviously caused by the mosefet.
 
+Adding a series resistor can apparently help damp these issues;
+poor grounding can also cause it.
 
+There's about 70 mV of noise on the supply.
 
+Should disconnect each segment, terminate, and probe to see if it's causing the noise and pops.
 
-
+Ah the chrome pdf problem seems to be related to the cache - 

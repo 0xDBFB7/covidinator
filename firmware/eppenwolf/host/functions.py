@@ -122,3 +122,9 @@ def LO_tune(link, val):
     clear_buffers(link)
 
     return val
+
+def varactor_voltage_sweep(link, VCO_supply, start_voltage, end_voltage, step, delay):
+    for i in np.arange(start_voltage, end_voltage, step):
+        set_VCO(link, 0, i, VCO_supply, 1)
+        print(f"Sweeping through {i} V")
+        sleep(delay)

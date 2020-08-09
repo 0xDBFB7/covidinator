@@ -22,13 +22,13 @@ v = 0
 downconverter_max = 4e9
 DC_IF_gap = 0.5e8
 
-VCO_voltage = 8
-VCO_supply_voltage = 10
-VCO_base_voltage = 3
+VCO_voltage = 10
+VCO_supply_voltage = 6
+VCO_base_voltage = 0
 
 spectrum = np.zeros_like(freqs)
 
-
+# 8V: 7.32 GHz.
 # for b in range(0, 1):
 while(True):
     background = np.zeros_like(freqs)
@@ -39,11 +39,11 @@ while(True):
     averages = 2
 
     set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
-    input("Turn off VCO")
+    # input("Turn off VCO")
 
     for i in range(0, averages):
         LO_power(link, 0)
-        LO_tune(link, 0.35)
+        LO_tune(link, 1)
         sleep(0.2)
         background += sweep.run_sweep(freqs, bin_width, 0, 7250, 40, 0, 8192)
 
@@ -69,8 +69,8 @@ while(True):
     print(peak_freqs[0:5])
     print(peak_values[0:5])
 
-    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
-    input("Turn on VCO")
+    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 1)
+    # input("Turn on VCO")
 
     sleep(0.5)
     for i in range(0, averages):
@@ -86,7 +86,7 @@ while(True):
     high_range[0:LO_index] = 0
 
     LO_power(link, 0)
-    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 0)
+    set_VCO(link, VCO_base_voltage, VCO_voltage, VCO_supply_voltage, 1)
     sleep(0.5)
     for i in range(0, averages):
         low_range += sweep.run_sweep(freqs, bin_width, 0, 7250, 40, 0, 8192)
