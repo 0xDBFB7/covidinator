@@ -128,3 +128,18 @@ def varactor_voltage_sweep(link, VCO_supply, start_voltage, end_voltage, step, d
         set_VCO(link, 0, i, VCO_supply, 1)
         print(f"Sweeping through {i} V")
         sleep(delay)
+
+
+def pulse(link, duration):
+    send_size = 0
+    send_size = add_float(link, send_size, duration)
+    link.send(send_size, packet_id=8)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return val

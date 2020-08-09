@@ -186,10 +186,10 @@ F 3 "" H 6100 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Test_Point TPOP?
+L Connector:Test_Point TPOP2
 U 1 1 5F97D0D2
 P 2950 2900
-F 0 "TPOP?" V 3145 2972 50  0000 C CNN
+F 0 "TPOP2" V 3145 2972 50  0000 C CNN
 F 1 "Voutput" V 3054 2972 50  0000 C CNN
 F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3150 2900 50  0001 C CNN
 F 3 "~" H 3150 2900 50  0001 C CNN

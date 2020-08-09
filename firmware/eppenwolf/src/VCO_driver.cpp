@@ -46,14 +46,19 @@ void init_VCO(){
 }
 
 
-void pulse_VCO(int pulse_duration){
+void pulse_VCO(int pulse_duration_nanoseconds){
+
+    int pulse_cycles = (pulse_duration_nanoseconds * 1.0e-9) / (1.0 / ((float)F_CPU));
+    pulse_cycles /= 10; // about 20% off.
+
     noInterrupts(); //sei
+
+    volatile int i = 0;
 
     //p-channel inverts!
     digitalWriteFast(PULSE_PIN, 0);
-    volatile int i = 0;
-    for(i = 0; i < 10; i++){
-        // asm volatile("nop");
+    for(i = 0; i < pulse_cycles; i++){
+        asm volatile("nop");
     }
     digitalWriteFast(PULSE_PIN, 1);
     interrupts();

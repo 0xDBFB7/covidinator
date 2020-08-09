@@ -1,4 +1,5 @@
 
+
 In order to satisfy the Barkhausen condition for oscillation, a 180 degree phase shift is required 
 in the feedback loop. The inverting mosfet itself contributes the remaining 180 degrees.
 
@@ -2242,5 +2243,10 @@ The notched lead of the MWT-173 is the gate.
 
 With CEL -> MWT 2 stage amp, got 0.5 Vpp on one power sensor, and -0.3 on the other power sensor.
 
+Rise time on the supply is about 400 ns, on the power sensor is more like 600 ns.
 
+With this setup, the minimum pulse duration is about 400 ns - that seems to be limited by DigitalWrite
+Fast, actually.
+
+The hardware seems to be capable of 280 ns fwhm. 
 

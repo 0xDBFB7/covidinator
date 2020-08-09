@@ -15,7 +15,7 @@ void dispatch(){
             case 5: move_to_cuvette_cmd(); break;
             case 6: LO_power_cmd(); break;
             case 7: LO_tune_cmd(); break;
-
+            case 8: pulse_cmd(); break;
             case 10: loopback(); break;
         }
         //screw function pointers!
@@ -141,6 +141,21 @@ void LO_tune_cmd(){
     recSize = host_transfer.rxObj(lo_tune, recSize);
 
     LO_tune(lo_tune);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+    host_transfer.sendData(sendSize, 0);
+}
+
+
+
+void pulse_cmd(){
+    uint16_t recSize = 0;
+    float pulse_nanoseconds; //always need to read something
+    recSize = host_transfer.rxObj(pulse_nanoseconds, recSize);
+
+    pulse_VCO(pulse_nanoseconds);
 
     uint16_t sendSize = 0;
     sendSize = host_transfer.txObj(0, sendSize);

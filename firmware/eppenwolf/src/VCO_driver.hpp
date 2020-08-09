@@ -23,7 +23,7 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
 
 void LO_power(bool power);
 void LO_tune(float target_value);
-
+void pulse_VCO(int pulse_duration_nanoseconds);
 // struct transistor_driver{
 //     String name = "";
 //
