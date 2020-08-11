@@ -1,0 +1,101 @@
+
+Built up the prescaler, with attenuator and 50R pulldowns. 
+Connected to the 0dbM output of the VCO. Not a sausage. 
+Added an AC coupling cap to the first stage. No dice.
+
+Removed 10db attenuator. Worked perfectly!
+
+Replaced the 50rs with 100rs to avoid overdriving the outputs.
+
+The x4 stage definitely cuts out at 2.8 V.
+
+By varying the x4 stage VCC voltage, I can get the freq. to vary by as much as 1 GHz. that's no good!
+Looks like that's due to jitter and missed transitions.
+
+It also occasionally drops out completely. I don't know if that's the input dropping below the threshold, or the output.
+
+Really has trouble above 11GHz, presumably because of the threshold
+
+Thought it was an input bias issue, doesn't seem like it.
+
+Tried using the probe to measure the amplified line. Only read about 3629 MHz. 
+
+Directly connected the VCO back to the preamp. The x4 stages are off.
+Now, if I raise the VCO freq, I see the entire spectrum light up.
+
+Removing the prescaler amp appears to fix this problem; the prescaler remains stable to 12 GHz.
+
+So there's something between the interaction of the amplified signal and the
+prescaler input that's causing the problem.
+
+Increasing the amplifier pullup to 100R only minimally improved things.
+
+We have our first case of poor grounding causing an issue! The prescaler amplifier tab
+was connected to a copper pour. Strapping this pour to a nearby pad seems to have improved the
+frequency response a bit.
+
+This thing puts out so much emi, the power sensor is reading 35 mV!
+
+Now we have a problem. The f vs tuning voltage graph for the HMC732 says we should expect 
+~8 GHz at 5.2v GHz. However, on the /4 stage output we actually see 1100 khz, or 9 GHz!
+
+The HMC732 is reporting the correct value of 8260 MHz.
+
+Decreasing Vcc, we get 808 khz on output, which is 6600 MHz!
+
+At 6 GHz, 5v thresholds, 100r pullup, we have perfect agreement. Peak signal level is about -25 dB.
+
+7 GHz: same. Peak signal level is now a few db below.
+8GHz: same.
+8.2: same. Perfect aggreement.
+9: there's no longer a peak to check.
+
+The behavior when it unlocks versus when there's no input signal is pretty similar. I
+think there just isn't a high enough signal level to check!
+
+Connecting the probe to the power microstrip only bleeds off a small amount of power - 
+maybe 0.1 v. The losses from this coax seem to be pretty high.
+
+It would have been very helpful to put a diode detector on all the segments of this prescaler.
+Oh well.
+
+Removing the termination resistor and connecting the coax directly to the output of the 
+high-power strip, still can't get the nice and pretty regime.
+Ah, that's because I didn't solder it right. Re-soldered. At 5v we get the pretty regime
+for about half the spectrum.
+
+Re-soldered the connector on the prescaler, connecting directly to the ground plane now.
+Slightly better, I think. Still not good enough for any kind of metrology.
+
+
+This RG-316 coax is only specced to /3 GHz!
+
+Using a single-diode detector didn't work for some reason. using the grounded-diode works great.
+
+
+Oh man, having this diode detector probe is amazing. Had to use an 0603 capacitor as the ac-coupling
+probe; but now we can see, for instance, that there is 0.5v of RF on both amplifier "grounding" pads;
+there is a clear standing wave on the 
+
+The middle of the two-inductor bias tee is wiggling a lot; replacing this with 1 1.5 uH would be better.
+
+
+
+It would be helpful to be able to click on a virtual PCB where this testpoint was made, 
+building up a gradual simulation of the
+
+Trying to back up and vanquish all resonances and losses bit by bit.
+
+The output of the VCO is very small indeed,
+and imperceptible at above 6 V.
+
+There was ~70 mV of RF on the ground pour; tried the solder+copper bottom via technique, iddn't work,
+used some copper wire, no change in the output.
+
+Now this is very interesting - we now have a proper VNA sort of thing. The two peaks that I saw in the 
+spectrum analyzer are now super prominent.
+
+Continue on elab for plots.
+
+
+

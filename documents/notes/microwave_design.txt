@@ -2250,3 +2250,9 @@ Fast, actually.
 
 The hardware seems to be capable of 280 ns fwhm. 
 
+Paraffin melts at 37c - perfect phase-change regulator for bacteria?
+
+
+
+
+

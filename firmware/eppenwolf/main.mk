@@ -169,6 +169,9 @@ proto:
 
 upload: post_compile reboot
 
+monitor:
+	picocom --baud=115200 /dev/ttyUSB1 --imap lfcrlf
+
 $(BUILDDIR)/%.o: %.c
 	@echo -e "[CC]\t$<"
 	@mkdir -p "$(dir $@)"
