@@ -14,26 +14,17 @@ import sweep
 
 @
 
-
-Our aims with this experiment are to perform the following:
-
-\begin{itemize}
-\item Crudely demonstrate the pulse hypothesis. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation.
-    While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
-\item Avoid any ambiguity regarding the 7 C temperature rise seen in the previous paper.
-\item Demonstrate a cheap microwave spectrometer that could be quickly used on NCoV.
-\end{itemize}
-
-In the end, performing this was probably a mistake; but by the time we realized this we had already put in the bulk of the time.
-
-Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
-
 It cannot be overstated how sensitive this measurement is. At 12 GHz, merely bringing one's hand near the coaxial line almost doubled
 the power sensor reading.
 
-<<>>=
+<<microwave_spectrum.py>>=
+import random
 
+@
 
+We randomize \cite{first2000}
+
+<<microwave_spectrum.py>>=
 
 
 

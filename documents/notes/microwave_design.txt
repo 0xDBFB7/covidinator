@@ -2252,6 +2252,15 @@ The hardware seems to be capable of 280 ns fwhm.
 
 Paraffin melts at 37c - perfect phase-change regulator for bacteria?
 
+Using CPWG means we can tune the size of the waveguide; unfortunately, the
+fringe field might be smaller.
+
+Apparently randomization is generally a good idea. Unfortunately, we're below where the central-limit
+theorem would start to take effect; at least two runs would be required.
+
+
+
+
 
 
 

@@ -139,8 +139,6 @@ F 3 "" H 3400 3300 50  0001 C CNN
 	1    3400 3300
 	1    0    0    -1  
 $EndComp
-Text Notes 1100 4350 0    50   ~ 0
-The small gap between the board and this SMD connector is\na bit concerning; some sort of resonance could probably be set up\nin there.
 $Comp
 L 0xDBFB7:CE3520K3 U2
 U 1 1 5F97ADF9
@@ -214,10 +212,10 @@ F 8 "/home/arthurdent/Projects/covidinator/electronics/models/10pf0402.lib" H 28
 	0    -1   -1   0   
 $EndComp
 $Comp
-L SparkFun-Capacitors:4.7UF0603 C?
+L SparkFun-Capacitors:4.7UF0603 C5
 U 1 1 5F355F2B
 P 4150 2300
-F 0 "C?" V 3916 2350 45  0000 C CNN
+F 0 "C5" V 3916 2350 45  0000 C CNN
 F 1 "100 nF" V 4000 2350 45  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" H 4150 2550 20  0001 C CNN
 F 3 "" H 4150 2300 50  0001 C CNN
@@ -226,10 +224,10 @@ F 4 "" H 4258 2266 60  0000 L CNN "Field4"
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0103
 U 1 1 5F3567EF
 P 4350 2300
-F 0 "#PWR?" H 4350 2300 30  0001 C CNN
+F 0 "#PWR0103" H 4350 2300 30  0001 C CNN
 F 1 "GND" H 4350 2230 30  0001 C CNN
 F 2 "" H 4350 2300 50  0001 C CNN
 F 3 "" H 4350 2300 50  0001 C CNN

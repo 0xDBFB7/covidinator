@@ -143,3 +143,8 @@ def pulse(link, duration):
     clear_buffers(link)
 
     return val
+
+def read_multimeter():
+    multimeter.write("val?\r\n".encode())
+    val = float(multimeter.readline())
+    return val
