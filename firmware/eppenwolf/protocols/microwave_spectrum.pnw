@@ -28,6 +28,8 @@ In the end, performing this was probably a mistake; but by the time we realized 
 
 Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
 
+It cannot be overstated how sensitive this measurement is. At 12 GHz, merely bringing one's hand near the coaxial line almost doubled
+the power sensor reading.
 
 <<>>=
 
