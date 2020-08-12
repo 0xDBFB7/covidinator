@@ -5,6 +5,7 @@
 {\Large Experiment 1:}\\
 
 
+
 <<microwave_spectrum.py>>=
 import sys
 sys.path.append('/home/arthurdent/covidinator/firmware/eppendoofus/host/')
@@ -22,7 +23,15 @@ import random
 
 @
 
-We randomize \cite{first2000}
+Positions of the three quantities on the slide are randomized\cite{first2000}. 
+
+
+\section{Preparation}
+
+Autoclave
+
+
+
 
 <<microwave_spectrum.py>>=
 

@@ -6,6 +6,7 @@
 #include "VCO_driver.hpp"
 #include "turbidimeter.hpp"
 #include "stepper.hpp"
+#include "thermal.hpp"
 
 extern SerialTransfer host_transfer;
 
@@ -29,5 +30,6 @@ void move_to_cuvette_cmd();
 void LO_power_cmd();
 void LO_tune_cmd();
 void pulse_cmd();
+void measure_temperature_cmd();
 
 #endif

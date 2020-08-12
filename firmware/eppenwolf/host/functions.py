@@ -144,6 +144,24 @@ def pulse(link, duration):
 
     return val
 
+def get_temperatures(link):
+    send_size = 0
+    send_size = add_float(link, send_size, duration)
+    link.send(send_size, packet_id=9)
+
+    wait_for_response(link)
+
+    pos = 0
+    ambient, pos = rx_float(link, pos)
+    max, pos = rx_float(link, pos)
+    min, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+    return ambient, max, min
+
+
+
 def read_multimeter():
     multimeter.write("val?\r\n".encode())
     val = float(multimeter.readline())

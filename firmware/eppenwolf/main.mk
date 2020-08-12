@@ -42,12 +42,13 @@ PROTOBUF_C_PATH = libraries/protobuf-c/protobuf-host/
 #-isystem doesn't work here for some reason (arm toolchain?), so -pedantic causes a number of warnings
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -Werror -g -Os -mthumb  -ffunction-sections -fdata-sections -MMD $(OPTIONS) -Isrc -Isrc/native  -fsingle-precision-constant
+CPPFLAGS = -Wall -Werror  -g -Os -mthumb  -ffunction-sections -fdata-sections -MMD $(OPTIONS) -Isrc -Isrc/native  -fsingle-precision-constant
 CPPFLAGS += -DTEENSYDUINO=124  -DF_CPU=$(TEENSY_CORE_SPEED)
 CPPFLAGS += -I$(LIBRARYPATH)/SerialTransfer/src/ -DUNITY_INCLUDE_CONFIG_H -I$(PROTOBUF_PATH)/include/ -I$(PROTOBUF_PATH)/include/ -I$(COREPATH)
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++0x -Wno-c++14-compat -fno-exceptions
 
+CXXFLAGS += -Wno-pointer-arith -Wno-conversion-null -Wno-unused-variable # MLX lib
 # compiler options for C only
 CFLAGS =
 
@@ -147,6 +148,8 @@ L_INC += -I$(LIBRARYPATH)/SerialTransfer/src/
 LCPP_FILES += $(wildcard $(LIBRARYPATH)/MCP4725/MCP4725/*.cpp)
 L_INC += -I$(LIBRARYPATH)/MCP4725/MCP4725/
 
+LCPP_FILES += $(wildcard $(LIBRARYPATH)/MLX90621_Arduino_Camera/readTemperatures/*.cpp)
+L_INC += -I$(LIBRARYPATH)/MLX90621_Arduino_Camera/readTemperatures/
 
 SOURCES := $(C_FILES:.c=.o) $(CPP_FILES:.cpp=.o) $(INO_FILES:.ino=.o) $(TC_FILES:.c=.o) $(TCPP_FILES:.cpp=.o) $(LC_FILES:.c=.o) $(LCPP_FILES:.cpp=.o)
 OBJS := $(foreach src,$(SOURCES), $(BUILDDIR)/$(src))

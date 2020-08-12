@@ -13,6 +13,7 @@ int main(void)
 	turbidimeter_instance.init();
 	init_VCO();
 	init_stepper();
+	init_thermal();
 
 	// home();
 	while(1){
