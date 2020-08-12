@@ -366,6 +366,14 @@ In case you're wondering, like I was, why the voltage coefficient of capacitors
 
 \rule{\linewidth}{0.2pt}
 
+Much of this project was done in 1.5 mm microstrip with a 2.5 to 3 mm routed isolation. However, it became apparent that the inductance of vias with the ground plane was too great. It has been suggested that low-inductance vias in prototypes \cite{Microwavee}
+
+Grounded coplanar waveguide, where the primary ground plane is on the top side of the board, presents many advantages, and in later testing appeared to provide much better performance. connectors can interface with the top side; the sizes are much more compatible with small SMD devices.
+
+
+
+\rule{\linewidth}{0.2pt}
+
 Again, inductive choke biasing in the feedback loop was practically impossible. Biasing PiN diodes with a 10kohm resistor, (with 330 ohm safety resistor) one to 48V bias and another through an 2N7002P N-channel mosfet worked fine. 
 
 The oscillator ran fine with a PiN bias of 2.34 mA. [LO prototype N]. A high bias voltage of 48V was required to get sufficient current through the two 10K resistors and the PiN diode to obtain a low impedance while remaining delicate with the vfb.

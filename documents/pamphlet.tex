@@ -18,7 +18,7 @@ letterpaper]{geometry}
 
 %\footnote{The}
 
-This is a condensed version of a (horribly unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO: affiliation] \orcidlink{0000-0002-9353-0216}}
+This is a condensed version of a (horribly unfinished) paper at \href{https://www.github.com/0xDBFB7/covidinator/documents/paper.pdf}{\faGithub/0xDBFB7/covidinator}.\footnote{Daniel Correia [TODO: affiliation] \orcidlink{0000-0002-9353-0216}} A paltry few more details and a bibliography are available therein.
 
 
 %\subfile{pulse_1.tex}
@@ -27,36 +27,50 @@ This is a condensed version of a (horribly unfinished) paper at \href{https://ww
 
 Both the microwave and microbiology components of this field appear to be unusually sensitive to experimental design and exceptionally prone to artifacts that cause false positive results: \cite{Microwave1982} $\neq$ \cite{Resonances1987}, \cite{Effects1985a} $\neq$ \cite{Cytogenetic1986}, \cite{Comprehensive2018}. Though the cited articles have taken care to avoid these effects, it is entirely possible that none of what is discussed below actually exists.
 
-Please distrust our analysis. 
+Please distrust our analysis.
 
 %The literature is littered with irreproducible claims of non-thermal effects; however, this appears to be a singular anomaly.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../media/eppenwolf.jpg}
+	\caption{Failure is just success rounded down.}
+\end{figure}
+
+
+\clearpage
 
 {\Large \textbf{The mechanism}}
 
 
-\cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{A great many papers are involved.} appear to establish that the net charge, mass distribution, and envelope stiffness of a few species of viruses support a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz for Inf. A.
+\cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{A great many more papers are involved.} appear to establish that the net charge, mass distribution, and envelope stiffness of a few species of viruses support a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz for Inf. A.
 
 They appear to demonstrate that this allows a comparatively inconsequential electromagnetic field magnitude to produce mechanical stresses sufficient to crack the lipid envelope, destroying the virus.
 
 \cite{Efficient2015} specifically provides a reasonable spherical-cow model for how this could occur that agrees well with experiment.\footnote{See also \ghfile{documents/biology.ipynb}}
 
-However, this work would seem to be more useful if extended with the following assertion: the virus' Q factor is only about 2, meaning that the steady-state amplitude and stresses should be reached in some nanoseconds.
+However, this work would seem to be more useful if extended with the following assertion: the virus' Q factor has been determined to be only about 2, meaning that the steady-state amplitude and stresses should be reached in some nanoseconds.
 
-Barring protein mechanical fatigue \cite{Mechanical2013} or some other mechanism that could prolong the inactivation duration, it appears to be possible to reduce the required power density to a minuscule fraction of all safety limits by pulsing the field at nanosecond scales. This incidentally allows scanning of a focal point, a significant area can be treated with a relatively small transmit power.
+Barring protein mechanical fatigue \cite{Mechanical2013} or some other mechanism that could prolong the inactivation duration, it appears to be possible to reduce the required dissipated energy density to a minuscule fraction of all safety limits by pulsing the field at nanosecond scales. This incidentally also permits scanning of a focal point so that a significant area can be treated with a relatively small transmit power.
 
-\cite{Efficient2015} test with various strains of Influenza A, we are testing with Coliphage T4; structural similarities with NCoV mean this is may be transferable. 
+\cite{Efficient2015} test with various strains of Influenza A, we are testing with Coliphage T4; structural similarities with NCoV mean this may be transferable. 
 
 These authors above deserve all the credit for this finding; nothing in this work is even remotely novel.
 
 \begin{autem}
-	It should be noted that all of the claims we make hinge on this nanosecond inactivation. \cite{Efficient2015} and \cite{focusing2014} use a 15-minute exposure, which is apparently the norm for this field. 
+	It should be noted that all of the claims we make hinge on this hypothesis of nanosecond-scale inactivation. \cite{Efficient2015} and \cite{focusing2014} use a 15-minute exposure, which is apparently the norm for this field. We are trying to obtain data to more firmly establish this now.
 \end{autem}
+
+
 
 {\Large \textbf{Advantages over existing techniques}}
 
-From crude attenuation data, this pulsed field can be safely produced at least 3 cm deep in tissue. This would seem to be unlike any other mechanisms like near or far\cite{Germicidal2017}UV. suitable for targeted sterilization of with bronchoscopic techniques), opening up a particularly interesting direct treatment modality. We are trying to verify this now with FDTD sims.
+From crude attenuation data, this pulsed field can be safely produced at least 3 cm deep in tissue. This would seem to be unlike any other mechanisms in its specificity; near or far\cite{Germicidal2017}UV, chemical sterilization, etc. This opens up a particularly interesting direct treatment modality.
 
 Also unlike UV, the X-band is minimally attenuated by air; in the extreme, installations with megawatt-scale klystrons could potentially prevent airborne transmission in square-kilometer areas.
+
+Equally unlike other techniques, if the assumptions above hold, this would act instantaneously, providing $>$ 80\% inactivation in the targeted area (depending on some population parameters).
+
+The amplifiers for this frequency range fall within the regime of many off-the-shelf radar systems; miniature personal emitters could be produced for $ < \$10$ with semiconductor amplifiers; and the high-power systems for direct treatment are only a few orders of magnitude above that.
 
 {\Large \textbf{Is it safe?}}
 
@@ -68,18 +82,15 @@ The literature reviews of \cite{ICNIRP2020} and \cite{C95} are exhaustive; howev
 
 We are unsure what specific feature of the virion accounts for this discrepancy. The lipid bilayer of the virion differs in composition from that of the host cell, imparting a different net charge.
 
-\clearpage 
-{\Large \textbf{How do we wield this sword?}}
-
-This is not a particularly demanding requirement, and lends itself to a wide variety of applications, many of which could be implemented almost immediately. 
-
-On an individual level, the free-space-combined output of, say, a few dozen SiGe:C or GaAs transistors (\$0.3 apiece [BFP620]), very similarly to our reference design, should suffice to locally protect the major vulnerabilities like mouth, nose, eyes, hair and any surfaces that the hands contact. This arguably wouldn't provide many advantages over simple masks, however. 
-
 
 %\centering {\color{red} \faHeart}
 
 \clearpage
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{biology/output_35_1.png}
+\end{figure}
 
 
 

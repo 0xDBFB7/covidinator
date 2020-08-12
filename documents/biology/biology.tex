@@ -1,0 +1,1165 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range
+    \makeatletter % fix for grffile with XeLaTeX
+    \def\Gread@@xetex#1{%
+      \IfFileExists{"\Gin@base".bb}%
+      {\Gread@eps{\Gin@base.bb}}%
+      {\Gread@@xetex@aux#1}%
+    }
+    \makeatother
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{biology}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        \ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{math} \PY{k+kn}{import} \PY{n}{pi}\PY{p}{,} \PY{n}{sqrt}
+\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k+kn}{import} \PY{n}{curve\PYZus{}fit}
+\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{constants} \PY{k+kn}{import} \PY{n}{elementary\PYZus{}charge}
+\PY{k+kn}{from} \PY{n+nn}{pytexit} \PY{k+kn}{import} \PY{n}{py2tex}
+\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k+kn}{import} \PY{n}{gaussian\PYZus{}kde}
+\PY{k+kn}{from} \PY{n+nn}{tabulate} \PY{k+kn}{import} \PY{n}{tabulate}
+
+\PY{n}{MDa} \PY{o}{=} \PY{l+m+mf}{1.6605e\PYZhy{}21} \PY{c+c1}{\PYZsh{}kg}
+\PY{n}{nm} \PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}9}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}[Lauffer 1944]: diameter 109 +/\PYZhy{} 16.65 nm}
+\PY{c+c1}{\PYZsh{}[Ruigrok 1984]: diameter 115 +/\PYZhy{} 12 nm}
+
+\PY{n}{mean\PYZus{}diameter} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{109.0}\PY{o}{+}\PY{l+m+mf}{115.0}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0}
+
+\PY{n}{sigma\PYZus{}diameter} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{16.65}\PY{o}{+}\PY{l+m+mi}{12}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0} \PY{c+c1}{\PYZsh{}average}
+
+\PY{c+c1}{\PYZsh{}[Ruigrok 1984]: mass 160 MDa +/\PYZhy{} 17 MDa}
+\PY{n}{sigma\PYZus{}mass} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{17.0}\PY{o}{+}\PY{l+m+mf}{24.0}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0}
+
+\PY{n}{mean\PYZus{}mass} \PY{o}{=} \PY{l+m+mi}{160}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}check if variation in  variation in volume corresponds to the variation in mass}
+\PY{c+c1}{\PYZsh{} mass is only }
+\PY{n}{avg\PYZus{}radius} \PY{o}{=} \PY{l+m+mf}{57.5} 
+\PY{n}{one\PYZus{}sigma\PYZus{}pos\PYZus{}rad} \PY{o}{=} \PY{n}{avg\PYZus{}radius} \PY{o}{+} \PY{p}{(}\PY{n}{sigma\PYZus{}diameter}\PY{o}{/}\PY{l+m+mf}{2.0}\PY{p}{)}
+\PY{n}{volume\PYZus{}sigma} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{/}\PY{l+m+mf}{3.0}\PY{p}{)} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{p}{(}\PY{n}{one\PYZus{}sigma\PYZus{}pos\PYZus{}rad}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{/}\PY{l+m+mf}{3.0}\PY{p}{)} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{p}{(}\PY{n}{avg\PYZus{}radius}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}
+\PY{n}{volume\PYZus{}sigma}
+\PY{n}{avg\PYZus{}mass} \PY{o}{=} \PY{l+m+mf}{75.0}
+\PY{n}{vol\PYZus{}one\PYZus{}sigma\PYZus{}mass} \PY{o}{=} \PY{n}{avg\PYZus{}mass}\PY{o}{*}\PY{n}{volume\PYZus{}sigma}
+\PY{n}{vol\PYZus{}one\PYZus{}sigma\PYZus{}mass}
+\PY{c+c1}{\PYZsh{}it doesn\PYZsq{}t}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+19.84851961247638
+\end{Verbatim}
+\end{tcolorbox}
+        
+    We know the variation in the diameter and therefore that in the volume.
+There is, surprisingly, almost no variation in the total spike mass, so
+we subtract that first. We would expect \(\sigma = 19.8\) MDa variation
+if volume and mass were proportional, and see \(\sigma = 17\) MDa of
+variation.
+
+We therefore assume that mass and volume are proportional.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}Extracted from [Li 2011] using https://apps.automeris.io/wpd/,}
+
+\PY{c+c1}{\PYZsh{} count = np.array([2.9816513761467904,}
+\PY{c+c1}{\PYZsh{} 6.0091743119266035,}
+\PY{c+c1}{\PYZsh{} 15.045871559633028,}
+\PY{c+c1}{\PYZsh{} 21.14678899082569,}
+\PY{c+c1}{\PYZsh{} 17.93577981651376,}
+\PY{c+c1}{\PYZsh{} 11.10091743119266,}
+\PY{c+c1}{\PYZsh{} 11.972477064220184,}
+\PY{c+c1}{\PYZsh{} 11.972477064220184,}
+\PY{c+c1}{\PYZsh{} 15.458715596330272,}
+\PY{c+c1}{\PYZsh{} 8.119266055045873,}
+\PY{c+c1}{\PYZsh{} 19.174311926605505,}
+\PY{c+c1}{\PYZsh{} 9.908256880733944,}
+\PY{c+c1}{\PYZsh{} 6.834862385321103,}
+\PY{c+c1}{\PYZsh{} 5.045871559633027,}
+\PY{c+c1}{\PYZsh{} 7.018348623853214,}
+\PY{c+c1}{\PYZsh{} 2.018348623853214,}
+\PY{c+c1}{\PYZsh{} 1.0091743119266046])}
+
+\PY{n}{breaking\PYZus{}force\PYZus{}count} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[} \PY{l+m+mf}{3.}\PY{p}{,}  \PY{l+m+mf}{6.}\PY{p}{,} \PY{l+m+mf}{15.}\PY{p}{,} \PY{l+m+mf}{21.}\PY{p}{,} \PY{l+m+mf}{18.}\PY{p}{,} \PY{l+m+mf}{11.}\PY{p}{,} \PY{l+m+mf}{12.}\PY{p}{,} \PY{l+m+mf}{12.}\PY{p}{,} \PY{l+m+mf}{15.}\PY{p}{,}  \PY{l+m+mf}{8.}\PY{p}{,} \PY{l+m+mf}{19.}\PY{p}{,} \PY{l+m+mf}{10.}\PY{p}{,}  \PY{l+m+mf}{7.}\PY{p}{,}
+        \PY{l+m+mf}{5.}\PY{p}{,}  \PY{l+m+mf}{7.}\PY{p}{,}  \PY{l+m+mf}{2.}\PY{p}{,}  \PY{l+m+mf}{1.}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}rounded}
+
+
+\PY{n}{breaking\PYZus{}force\PYZus{}bins} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.24179620034542312}\PY{p}{,}
+\PY{l+m+mf}{0.33851468048359246}\PY{p}{,}
+\PY{l+m+mf}{0.4421416234887737}\PY{p}{,}
+\PY{l+m+mf}{0.5423143350604491}\PY{p}{,}
+\PY{l+m+mf}{0.6528497409326425}\PY{p}{,}
+\PY{l+m+mf}{0.753022452504318}\PY{p}{,}
+\PY{l+m+mf}{0.8186528497409327}\PY{p}{,}
+\PY{l+m+mf}{0.9395509499136444}\PY{p}{,}
+\PY{l+m+mf}{1.0466321243523315}\PY{p}{,}
+\PY{l+m+mf}{1.143350604490501}\PY{p}{,}
+\PY{l+m+mf}{1.2469775474956826}\PY{p}{,}
+\PY{l+m+mf}{1.3506044905008636}\PY{p}{,}
+\PY{l+m+mf}{1.4300518134715028}\PY{p}{,}
+\PY{l+m+mf}{1.5474956822107082}\PY{p}{,}
+\PY{l+m+mf}{1.6165803108808294}\PY{p}{,}
+\PY{l+m+mf}{1.7305699481865287}\PY{p}{,}
+\PY{l+m+mf}{1.9412780656303976}\PY{p}{]} \PY{c+c1}{\PYZsh{} bin midpoints}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{N} \PY{o}{=} \PY{l+m+mi}{5000}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{fitting-breaking-force-with-gaussian---doesnt-work-particularly-well}{%
+\subsubsection{Fitting breaking force with gaussian - doesn't work
+particularly
+well}\label{fitting-breaking-force-with-gaussian---doesnt-work-particularly-well}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{gaussian}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{mean}\PY{p}{,} \PY{n}{amplitude}\PY{p}{,} \PY{n}{standard\PYZus{}deviation}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{amplitude} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{mean}\PY{p}{)} \PY{o}{/} \PY{n}{standard\PYZus{}deviation}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2}\PY{p}{)}
+
+\PY{n}{popt}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{curve\PYZus{}fit}\PY{p}{(}\PY{n}{gaussian}\PY{p}{,} \PY{n}{breaking\PYZus{}force\PYZus{}bins}\PY{p}{,} \PY{n}{breaking\PYZus{}force\PYZus{}count}\PY{p}{)}
+\PY{n}{mean\PYZus{}breaking\PYZus{}force} \PY{o}{=} \PY{n}{popt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\PY{n}{sigma\PYZus{}breaking\PYZus{}force} \PY{o}{=} \PY{n+nb}{abs}\PY{p}{(}\PY{n}{popt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}curve\PYZus{}fit can sometimes return negative.}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Liposome breaking force mean=}\PY{l+s+si}{\PYZob{}:.3f\PYZcb{}}\PY{l+s+s2}{ sigma=}\PY{l+s+si}{\PYZob{}:.3f\PYZcb{}}\PY{l+s+s2}{ pN}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{mean\PYZus{}breaking\PYZus{}force}\PY{p}{,} \PY{n}{sigma\PYZus{}breaking\PYZus{}force}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}this could also include some of the non\PYZhy{}infective mutants}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Liposome breaking force mean=0.839 sigma=0.733 pN
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}overriding with tweaked values because non\PYZhy{}bimodal}
+\PY{c+c1}{\PYZsh{} mean\PYZus{}breaking\PYZus{}force = 0.839}
+\PY{c+c1}{\PYZsh{} sigma\PYZus{}breaking\PYZus{}force = 0.45}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{weights} \PY{o}{=} \PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}count}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}count}\PY{p}{)}\PY{p}{)}
+\PY{n}{resamples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{choice}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}bins}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{N}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{n}{weights}\PY{p}{)}
+
+\PY{n}{breaking\PYZus{}force\PYZus{}kernel} \PY{o}{=} \PY{n}{gaussian\PYZus{}kde}\PY{p}{(}\PY{n}{resamples}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} breaking\PYZus{}force\PYZus{}kernel.set\PYZus{}bandwidth(0.5)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{mean\PYZus{}charge} \PY{o}{=} \PY{l+m+mf}{1e7}
+\PY{n}{sigma\PYZus{}charge} \PY{o}{=} \PY{l+m+mf}{1e5} \PY{c+c1}{\PYZsh{}placeholder \PYZhy{} fixme}
+\end{Verbatim}
+\end{tcolorbox}
+
+    Now we run into a problem. We don't know the dependence of k, the spring
+constant, on any of the parameters in an actual virus. It is determined
+by the strength of the intermolecular forces and is a free parameter.
+
+From {[}Li 2011{]}, Figure 3a we see that the empty liposome stiffness
+is negatively correlated with size; but the stiffness of the empty
+liposome appears to be hundreds of times smaller than that of the full
+virion.
+
+From running ensembles with different values of k\_sigma, while the
+distribution of the resonant frequencies is very sensitive to this
+parameter, the inactivation threshold is not; so we guess a resonable
+figure.
+
+Figure 4b in Yang is dependent on k vs f\_res, and the overall
+absorption cross-section data in Figure 3b includes the sum of all the
+absorption cross-sections of all the variance. It is likely possible to
+extract the remaining data from these plots; but, since none of this is
+applicable to SARS-NCoV, this exceeds our patience.
+
+The upshot is that all the resonant frequency distributions below are
+just guesses.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{mean\PYZus{}mu} \PY{o}{=} \PY{l+m+mf}{14.5} \PY{o}{*} \PY{n}{MDa} 
+\PY{n}{mean\PYZus{}k} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{2.0} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{l+m+mf}{8.2e9}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{o}{*} \PY{n}{mean\PYZus{}mu} \PY{c+c1}{\PYZsh{}from [Yang]}
+
+\PY{n}{sigma\PYZus{}spring\PYZus{}constant} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{0.07}\PY{o}{*}\PY{n}{mean\PYZus{}k}\PY{p}{)}\PY{o}{/}\PY{n}{sigma\PYZus{}diameter} \PY{c+c1}{\PYZsh{} nN / nm}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{means} \PY{o}{=} \PY{p}{[}\PY{n}{mean\PYZus{}diameter}\PY{p}{,} \PY{n}{mean\PYZus{}mass}\PY{p}{,} \PY{n}{mean\PYZus{}breaking\PYZus{}force}\PY{p}{,} \PY{n}{mean\PYZus{}charge}\PY{p}{,} \PY{n}{mean\PYZus{}k}\PY{p}{]} \PY{c+c1}{\PYZsh{}oh he\PYZsq{}s got the means all right.}
+
+\PY{n}{var\PYZus{}diameter} \PY{o}{=} \PY{p}{(}\PY{n}{sigma\PYZus{}diameter}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{c+c1}{\PYZsh{}variance is the square of the standard deviation.}
+\PY{n}{var\PYZus{}mass} \PY{o}{=} \PY{p}{(}\PY{n}{sigma\PYZus{}mass}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{c+c1}{\PYZsh{}inertia is a property of matter.}
+\PY{n}{var\PYZus{}breaking\PYZus{}force} \PY{o}{=} \PY{p}{(}\PY{n}{sigma\PYZus{}breaking\PYZus{}force}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}
+\PY{n}{var\PYZus{}charge} \PY{o}{=} \PY{p}{(}\PY{n}{sigma\PYZus{}charge}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}
+\PY{n}{var\PYZus{}spring\PYZus{}constant} \PY{o}{=} \PY{p}{(}\PY{n}{sigma\PYZus{}spring\PYZus{}constant}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}
+
+
+\PY{c+c1}{\PYZsh{}diameter varies with diameter, varies with mass, with breaking force, and with charge}
+\PY{n}{cov\PYZus{}diameter} \PY{o}{=}        \PY{p}{[}\PY{n}{var\PYZus{}diameter}\PY{p}{,} \PY{n}{sigma\PYZus{}diameter}\PY{o}{*}\PY{n}{sigma\PYZus{}mass}\PY{o}{*}\PY{l+m+mf}{0.95}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+
+\PY{n}{cov\PYZus{}mass} \PY{o}{=}            \PY{p}{[}\PY{n}{sigma\PYZus{}diameter}\PY{o}{*}\PY{n}{sigma\PYZus{}mass}\PY{o}{*}\PY{l+m+mf}{0.95}\PY{p}{,} \PY{n}{var\PYZus{}mass}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+
+\PY{n}{cov\PYZus{}breaking\PYZus{}force} \PY{o}{=}  \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{var\PYZus{}breaking\PYZus{}force}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+
+\PY{n}{cov\PYZus{}charge} \PY{o}{=}          \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{var\PYZus{}charge}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+
+\PY{n}{cov\PYZus{}spring\PYZus{}constant} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{var\PYZus{}spring\PYZus{}constant}\PY{p}{]}
+
+
+\PY{n}{covariance\PYZus{}matrix} \PY{o}{=} \PY{p}{[}\PY{n}{cov\PYZus{}diameter}\PY{p}{,} 
+                     \PY{n}{cov\PYZus{}mass}\PY{p}{,}
+                     \PY{n}{cov\PYZus{}breaking\PYZus{}force}\PY{p}{,}
+                     \PY{n}{cov\PYZus{}charge}\PY{p}{,}
+                     \PY{n}{cov\PYZus{}spring\PYZus{}constant}\PY{p}{]}
+
+
+
+
+\PY{n}{covariance\PYZus{}matrix} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{covariance\PYZus{}matrix}\PY{p}{)} \PY{c+c1}{\PYZsh{}must be symmetric positive semidefinite;}
+\PY{c+c1}{\PYZsh{}eigenvalues must be }
+
+\PY{n}{diameter\PYZus{}samples}\PY{p}{,}\PY{n}{mass\PYZus{}samples}\PY{p}{,}\PY{n}{breaking\PYZus{}force\PYZus{}samples}\PY{p}{,}\PY{n}{charge\PYZus{}samples}\PY{p}{,} \PY{n}{spring\PYZus{}constant\PYZus{}samples}\PYZbs{}
+                \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{multivariate\PYZus{}normal}\PY{p}{(}\PY{n}{means}\PY{p}{,} \PY{n}{covariance\PYZus{}matrix}\PY{p}{,} \PY{n}{N}\PY{p}{)}\PY{o}{.}\PY{n}{T}
+
+
+\PY{n}{diameter\PYZus{}samples} \PY{o}{=} \PY{n}{diameter\PYZus{}samples}\PY{o}{.}\PY{n}{T} \PY{c+c1}{\PYZsh{}first .T lets us access with ,, operator, second .T gets us our 1d array back}
+\PY{n}{mass\PYZus{}samples} \PY{o}{=} \PY{n}{mass\PYZus{}samples}\PY{o}{.}\PY{n}{T}
+\PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{=} \PY{n}{breaking\PYZus{}force\PYZus{}samples}\PY{o}{.}\PY{n}{T} 
+\PY{n}{charge\PYZus{}samples} \PY{o}{=} \PY{n}{charge\PYZus{}samples}\PY{o}{.}\PY{n}{T} 
+\PY{n}{spring\PYZus{}constant\PYZus{}samples} \PY{o}{=} \PY{n}{spring\PYZus{}constant\PYZus{}samples}\PY{o}{.}\PY{n}{T} 
+\end{Verbatim}
+\end{tcolorbox}
+
+    The liposome breaking force is distributed in an obstinately
+non-gaussian bimodal manner, so we override the covariance matrix and
+introduce a gaussian KDE sampled from the force histogram in {[}Li
+2011{]}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}ignore the above covariant normal breaking forces, resample from KDE}
+\PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{=} \PY{n}{gaussian\PYZus{}kde}\PY{o}{.}\PY{n}{resample}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}kernel}\PY{p}{,} \PY{n}{N}\PY{p}{)}\PY{o}{.}\PY{n}{T}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}choose only infectious particles [Lauffer 1944]}
+\PY{n}{remove\PYZus{}indices} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{nonzero}\PY{p}{(}\PY{p}{(}\PY{n}{diameter\PYZus{}samples} \PY{o}{\PYZlt{}} \PY{l+m+mf}{80.0}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nonzero}\PY{p}{(}\PY{p}{(}\PY{n}{diameter\PYZus{}samples} \PY{o}{\PYZgt{}} \PY{l+m+mf}{135.0}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}choose only positive breaking forces}
+\PY{n}{remove\PYZus{}indices} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{remove\PYZus{}indices}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nonzero}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{\PYZlt{}} \PY{l+m+mf}{0.0}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{remove\PYZus{}indices} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{remove\PYZus{}indices}\PY{p}{)}
+
+\PY{n}{diameter\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{delete}\PY{p}{(}\PY{n}{diameter\PYZus{}samples}\PY{p}{,} \PY{n}{remove\PYZus{}indices}\PY{p}{)}
+\PY{n}{mass\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{delete}\PY{p}{(}\PY{n}{mass\PYZus{}samples}\PY{p}{,} \PY{n}{remove\PYZus{}indices}\PY{p}{)}
+\PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{delete}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}samples}\PY{p}{,} \PY{n}{remove\PYZus{}indices}\PY{p}{)}
+\PY{n}{charge\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{delete}\PY{p}{(}\PY{n}{charge\PYZus{}samples}\PY{p}{,} \PY{n}{remove\PYZus{}indices}\PY{p}{)}
+\PY{n}{spring\PYZus{}constant\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{delete}\PY{p}{(}\PY{n}{spring\PYZus{}constant\PYZus{}samples}\PY{p}{,} \PY{n}{remove\PYZus{}indices}\PY{p}{)}
+
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{diameter\PYZus{}samples}\PY{p}{,}\PY{n}{mass\PYZus{}samples}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{diameter\PYZus{}samples}\PY{p}{,}\PY{n}{breaking\PYZus{}force\PYZus{}samples}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZgt{} \PYZdq{}More than 95\PYZpc{} puncture events occurred above 0.4 nN.\PYZdq{}}
+\PY{n}{above\PYZus{}point\PYZus{}4} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{shape}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{\PYZgt{}} \PY{l+m+mf}{0.4}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{/} \PY{n+nb}{len}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}samples}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} probably because of the clipped normal. np multivariate doesn\PYZsq{}t support beyond normal,}
+\PY{c+c1}{\PYZsh{} so that\PYZsq{}ll have to be good enough.}
+\PY{c+c1}{\PYZsh{} altered distribution to better fit breaking force; now it\PYZsq{}s 92\PYZpc{}}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{breaking\PYZus{}force\PYZus{}samples}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{diameter\PYZus{}samples}\PY{p}{,} \PY{n}{spring\PYZus{}constant\PYZus{}samples}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{n}{above\PYZus{}point\PYZus{}4}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+0.9249410250911431
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_17_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_17_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_17_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_17_4.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{figure}
+\centering
+\includegraphics{attachment:Screenshot\%20from\%202020-06-29\%2013-11-21.png}
+\caption{Screenshot\%20from\%202020-06-29\%2013-11-21.png}
+\end{figure}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} convert everything to base SI}
+
+\PY{n}{diameter\PYZus{}samples} \PY{o}{*}\PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}9} \PY{c+c1}{\PYZsh{} nm}
+\PY{n}{mass\PYZus{}samples} \PY{o}{*}\PY{o}{=} \PY{n}{MDa} \PY{c+c1}{\PYZsh{}MDa}
+\PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{*}\PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}9} \PY{c+c1}{\PYZsh{}nN}
+\PY{n}{charge\PYZus{}samples} \PY{o}{*}\PY{o}{=} \PY{n}{elementary\PYZus{}charge}
+
+\PY{c+c1}{\PYZsh{} afm pressure}
+\PY{n}{afm\PYZus{}tip\PYZus{}radius} \PY{o}{=} \PY{l+m+mf}{30e\PYZhy{}9} \PY{c+c1}{\PYZsh{}m}
+\PY{n}{afm\PYZus{}area} \PY{o}{=} \PY{n}{pi}\PY{o}{*}\PY{p}{(}\PY{n}{afm\PYZus{}tip\PYZus{}radius}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}
+
+\PY{n}{breaking\PYZus{}stress\PYZus{}samples} \PY{o}{=} \PY{n}{breaking\PYZus{}force\PYZus{}samples} \PY{o}{/} \PY{n}{afm\PYZus{}area} \PY{c+c1}{\PYZsh{} now to Pa}
+\end{Verbatim}
+\end{tcolorbox}
+
+    We very simply extend {[}Yang 2015{]}'s analysis to include the
+distribution of viral particles.
+
+We have to continue using Inf. A rather than the target SARS-NCoV-2
+because of an apparent lack of AFM nanoindentation data. While both
+virions have a lipid bilayer
+
+\begin{verbatim}
+The majority of virions (n = 78) may be described as spherical (axial ratio 1.2), the remainder are oval or   kidney-shaped with axial ratios up to 1.4 (n = 17) or more elongated with axial ratios as high as 7.7 (n = 15). The outer diameters of the spherical virions ranged from 84 to 170 nm (mean, 120 nm).
+\end{verbatim}
+
+Note that, per {[}Lauffer 1944{]}, of Inf A and B, ``the infectious
+particles have diameters within the range 80 to 135{[}nm{]}''.
+
+{[}Yang 2015{]}'s MDCK plaque assay is already sensitive to infectivity;
+the extreme-sized non-infective mutants would already be filtered out.
+Their PCR assay might not be; the DNA of all non-infectious mutants
+would be considered.
+
+{[}Yang 2015{]} use a minimum force of 400 pN, though their reference,
+{[}Li 2011{]}, mention that
+
+\begin{quote}
+More than 95\% puncture events occurred above 0.4 nN.
+\end{quote}
+
+This probably accounts for the high 100\% threshold.
+
+The distribution of breaking strengths in {[}Li 2011{]} (Figure 5b) is
+bimodal, and a naive gaussian fit does not produce the above 95\%
+figure. Rather than implement a unimodal+bimodal covariant sampling
+function, we tweaked the gaussian parameters to accordingly. We hope
+that the deities of statistical best practice are not displeased.
+
+The mass, diameter, and breaking force are presumably not independently
+distributed. The correlations between the three variables do not seem to
+be documented in the literature.
+
+{[}Li 2011{]}, the AFM data is from {[}H1N1{]} rather than the H3N1 or
+H5N1.
+
+We therefore need the CoV for NCoV.
+
+There seems to be little variation in the mass of the spike proteins;
+intact H3N1 is 161 MDa +/- 17, with spikes removed, 75 MDa +/- 17.
+{[}Ruigrok 1984{]}
+
+Influenza is found in two different morphologies; the one found in the
+lab is almost entirely the spherical variant, whereas filamentous
+variant is often associated with infections in humans. Because it is
+rare in the lab, this is not part of the cause of {[}Yang 2015{]}'s
+discrepancy; and NCoV does not seem to exhibit such pleomorphic
+tendencies.
+
+The average stiffness of the liposome varies approximately linearly from
+0.025 to 0.015 from 80 to 135 nm {[}Li 2011{]}, plus a random
+distribution with approx. 0.0025 sigma.
+
+Size and weight are assumed to be uncorrelated with breaking strength.
+
+From {[}Yang 2015{]}, eq. 7,
+
+\[A = \frac{q E_0}{\mu \sqrt{((2 \pi f_{res})^2 - (2 \pi f_{excite})^2)^2 + \left(\frac{(2 \pi f_{res})(2 \pi f_{excite})}{Q}\right)^2}}\]
+
+The resonant frequency varies as \(\sqrt{k/m^*}\).
+
+Assuming (as Yang et al do) that the core and shell have 90\% and 10\%
+of the mass,
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{reduced\PYZus{}masses\PYZus{}mu} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.9}\PY{o}{*}\PY{n}{mass\PYZus{}samples}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{n}{mass\PYZus{}samples}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{mass\PYZus{}samples}\PY{p}{)} 
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{resonant\PYZus{}frequencies} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{spring\PYZus{}constant\PYZus{}samples}\PY{o}{/}\PY{n}{reduced\PYZus{}masses\PYZus{}mu}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{o}{*}\PY{n}{pi}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Predicted distribution of resonant frequencies of infective Inf. A}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ticklabel\PYZus{}format}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sci}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scilimits}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Frequency}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Text(0, 0.5, 'Count')
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_23_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Unfortunately, this distribution is very sensitive to the values of k
+
+    A surprising source the sadists that drag cracked virions through
+acrylamide gel and then irradiate them for sport.
+
+Two dimensional gel electrophoresis resolves both the mass and the
+isoelectric point (where the net charge and that of the solution are in
+equilibrium) of large structures. {[}Privalsky 1978{]} provides us a
+coarse. view of the charges and relative abundances in the virus.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{PIL} \PY{k+kn}{import} \PY{n}{Image}
+
+\PY{n}{im} \PY{o}{=} \PY{n}{Image}\PY{o}{.}\PY{n}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{../media/Inf\PYZus{}A\PYZus{}2d\PYZus{}gel\PYZus{}Privalsky.png}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} Can be many different formats.}
+\PY{n}{pix} \PY{o}{=} \PY{n}{im}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{p}{)}
+
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{im}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{2d gel electrophoresis [Privalsky 1978]}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Isoelectric point (proportional to net charge)}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ \PYZlt{}\PYZhy{} Basic | Neutral | Acid \PYZhy{}\PYZgt{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Molecular weight}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{NP has MW 60000 Da}\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+'NP has MW 60000 Da'
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_26_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    There's substantial hetrogeneity in the charge of the proteins with the
+exception of the nucleocapsid protein NP. The M proteins have run off
+the basic end. The followup work {[}Privalsky 1980{]} indeed finds the M
+protein to be very basic. {[}Shtykova 2017{]} discusses the charge on
+the M1 matrix protein.
+
+confusingly, there are two different M proteins, sometimes called ``M''
+and sometimes called ``M1''.
+
+{[}Bosch 1984{]} discusses the charge hetrogenetity a bit, but not quite
+relevant.
+
+    \begin{figure}
+\centering
+\includegraphics{attachment:influenza-virion3.jpg}
+\caption{influenza-virion3.jpg}
+\end{figure}
+
+From https://www.virology.ws/2009/04/30/structure-of-influenza-virus/,
+CC-BY-3.0
+
+    \begin{figure}
+\centering
+\includegraphics{attachment:512px-Coronavirus_virion_structure.svg.png}
+\caption{512px-Coronavirus\_virion\_structure.svg.png}
+\end{figure}
+
+https://commons.wikimedia.org/wiki/File:Coronavirus\_virion\_structure.svg
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{excitation\PYZus{}frequency} \PY{o}{=} \PY{l+m+mf}{8.3e9}
+
+\PY{n}{Q} \PY{o}{=} \PY{l+m+mf}{2.0} \PY{c+c1}{\PYZsh{} also assumed to be invariant}
+\end{Verbatim}
+\end{tcolorbox}
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{percentiles}\PY{p}{(}\PY{n}{inp}\PY{p}{)}\PY{p}{:}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{25}\PY{p}{,} \PY{l+m+mi}{38}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{63}\PY{p}{,} \PY{l+m+mi}{75}\PY{p}{,} \PY{l+m+mi}{90}\PY{p}{,} \PY{l+m+mf}{99.9}\PY{p}{]}\PY{p}{:}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{th percentile: }\PY{l+s+si}{\PYZob{}:2f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{i}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{percentile}\PY{p}{(}\PY{n}{inp}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{af} \PY{o}{=} \PY{l+m+mf}{2.0}\PY{o}{*}\PY{n}{pi}
+
+\PY{k}{def} \PY{n+nf}{electric\PYZus{}field\PYZus{}threshold}\PY{p}{(}\PY{n}{i}\PY{p}{,} \PY{n}{excitation\PYZus{}frequency}\PY{p}{)}\PY{p}{:}
+    \PY{n}{t1} \PY{o}{=} \PY{n}{breaking\PYZus{}stress\PYZus{}samples}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{diameter\PYZus{}samples}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{/} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}
+
+    \PY{n}{t2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{p}{(}\PY{n}{reduced\PYZus{}masses\PYZus{}mu}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{p}{(}\PY{n}{excitation\PYZus{}frequency}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PYZbs{}
+            \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{n}{reduced\PYZus{}masses\PYZus{}mu}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{Q}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{excitation\PYZus{}frequency}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}
+    \PY{n}{b} \PY{o}{=} \PY{l+m+mf}{3.45} \PY{o}{*} \PY{n}{charge\PYZus{}samples}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{*} \PY{n}{reduced\PYZus{}masses\PYZus{}mu}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}
+
+    \PY{n}{electric\PYZus{}field\PYZus{}thresholds} \PY{o}{=} \PY{p}{(}\PY{n}{t1} \PY{o}{*} \PY{n}{t2}\PY{p}{)} \PY{o}{/} \PY{n}{b}
+    
+    \PY{k}{return} \PY{n}{electric\PYZus{}field\PYZus{}thresholds}
+
+\PY{c+c1}{\PYZsh{}eq 12 in [Yang 2015]}
+\PY{k}{def} \PY{n+nf}{electric\PYZus{}field\PYZus{}thresholds}\PY{p}{(}\PY{n}{excitation\PYZus{}frequency}\PY{p}{)}\PY{p}{:}
+
+    \PY{n}{t1} \PY{o}{=} \PY{n}{breaking\PYZus{}stress\PYZus{}samples} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{diameter\PYZus{}samples} \PY{o}{/} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}
+
+    \PY{n}{t2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{p}{(}\PY{n}{reduced\PYZus{}masses\PYZus{}mu}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{p}{(}\PY{n}{excitation\PYZus{}frequency}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PYZbs{}
+            \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{n}{reduced\PYZus{}masses\PYZus{}mu}\PY{p}{)}\PY{o}{/}\PY{n}{Q}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{excitation\PYZus{}frequency}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}
+    \PY{n}{b} \PY{o}{=} \PY{l+m+mf}{3.45} \PY{o}{*} \PY{n}{charge\PYZus{}samples} \PY{o}{*} \PY{n}{reduced\PYZus{}masses\PYZus{}mu} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{o}{*}\PY{n}{af}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}
+
+    \PY{n}{electric\PYZus{}field\PYZus{}thresholds} \PY{o}{=} \PY{p}{(}\PY{n}{t1} \PY{o}{*} \PY{n}{t2}\PY{p}{)} \PY{o}{/} \PY{n}{b}
+    
+    \PY{k}{return} \PY{n}{electric\PYZus{}field\PYZus{}thresholds}
+
+\PY{n}{single\PYZus{}freq\PYZus{}elecric\PYZus{}field\PYZus{}thresholds} \PY{o}{=} \PY{n}{electric\PYZus{}field\PYZus{}thresholds}\PY{p}{(}\PY{n}{excitation\PYZus{}frequency}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Predicted distribution of electric fields required to inactivate infective Inf. A}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PYZbs{}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{given excitation at a single frequency}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}elecric\PYZus{}field\PYZus{}thresholds}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Electric field (V/m)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{percentiles}\PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}elecric\PYZus{}field\PYZus{}thresholds}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Yang get:}
+\PY{c+c1}{\PYZsh{} 100\PYZpc{}: 275 V/m}
+\PY{c+c1}{\PYZsh{} 63\PYZpc{}: 171 V/m}
+\PY{c+c1}{\PYZsh{} 38\PYZpc{}: 87 V/m}
+\PY{c+c1}{\PYZsh{} 6\PYZpc{}: 68 V/m}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+6th percentile: 104.519073
+25th percentile: 178.738256
+38th percentile: 226.608581
+50th percentile: 272.961741
+63th percentile: 329.662413
+75th percentile: 395.087502
+90th percentile: 512.626157
+99.9th percentile: 870.175943
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_35_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    IEEE et al appear to specify power densities as those in free space, a
+small distance from the body:
+
+    \[S = \frac{|E|^2}{Z_0}\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{single\PYZus{}freq\PYZus{}power\PYZus{}densities} \PY{o}{=} \PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}elecric\PYZus{}field\PYZus{}thresholds}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0}\PY{p}{)} \PY{o}{/} \PY{l+m+mf}{377.0}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Predicted distribution of power densities required to inactivate infective Inf. A}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PYZbs{}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{given excitation at a single frequency}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}power\PYZus{}densities}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Power density (W/m\PYZca{}2)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{percentiles}\PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}power\PYZus{}densities}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+6th percentile: 28.976758
+25th percentile: 84.741023
+38th percentile: 136.210741
+50th percentile: 197.634249
+63th percentile: 288.268717
+75th percentile: 414.042797
+90th percentile: 697.044008
+99.9th percentile: 2008.529495
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_38_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{choice}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{size} \PY{o}{=} \PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:}
+
+    \PY{n}{freqs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mf}{1e9}\PY{p}{,}\PY{l+m+mf}{15e9}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{freqs}\PY{p}{,}\PY{n}{electric\PYZus{}field\PYZus{}threshold}\PY{p}{(}\PY{n}{i}\PY{p}{,} \PY{n}{freqs}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Electric field threshold of a sample of virions against excitation frequency}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{ticklabel\PYZus{}format}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sci}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scilimits}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{)}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Frequency (GHz)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Theshold (V/m)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    
+    \PY{n}{optimal\PYZus{}excitation\PYZus{}frequency} \PY{o}{=} \PY{p}{(}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mf}{2.0} \PY{o}{*} \PY{n}{Q}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0} \PY{o}{\PYZhy{}} \PY{l+m+mf}{1.0}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{2.0}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{p}{(}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{*}\PY{n}{Q}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{2.0}\PY{o}{*}\PY{n}{pi}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{optimal\PYZus{}excitation\PYZus{}frequency}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+7279284906.563067
+7494657688.343927
+7060094218.977478
+7880199441.398486
+7887076651.1556635
+8391826356.039286
+7687065355.281846
+7674184760.335817
+7851298608.500301
+8105547455.286027
+7543804559.687341
+8037100367.448972
+7135882289.73944
+7124796958.367642
+7740345854.416245
+7688243255.571538
+7908508087.189577
+7891495836.990037
+7598584570.812886
+7735221662.281465
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_39_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    The resonant frequency does not necessarily correspond to the optimal
+excitation frequency. The positive critical point of (12) is
+
+\[w = \frac{\sqrt{2 Q^2 - 1} f_{res}}{\sqrt{2} \ Q}\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{optimal\PYZus{}excitation\PYZus{}frequencies} \PY{o}{=} \PY{p}{(}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mf}{2.0} \PY{o}{*} \PY{n}{Q}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{2.0} \PY{o}{\PYZhy{}} \PY{l+m+mf}{1.0}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{2.0}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{resonant\PYZus{}frequencies}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{p}{(}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{*}\PY{n}{Q}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{2.0}\PY{o}{*}\PY{n}{pi}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{optimal\PYZus{}excitation\PYZus{}frequencies}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{ticklabel\PYZus{}format}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sci}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scilimits}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_41_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{sweep\PYZus{}thresholds} \PY{o}{=} \PY{n}{electric\PYZus{}field\PYZus{}thresholds}\PY{p}{(}\PY{n}{optimal\PYZus{}excitation\PYZus{}frequencies}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}plt.hist(thresholds, 50)}
+
+\PY{c+c1}{\PYZsh{} percent\PYZus{}under(sweep\PYZus{}thresholds, 200.0)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}thresholds}\PY{o}{\PYZhy{}}\PY{n}{sweep\PYZus{}thresholds}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Given a frequency sweep in which each virion is excited with its frequency of maximum power dissipation,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The following threshold percentiles would be expected:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{percentiles}\PY{p}{(}\PY{n}{sweep\PYZus{}thresholds}\PY{p}{)}
+
+
+\PY{n}{percentiles}\PY{p}{(}\PY{n}{single\PYZus{}freq\PYZus{}thresholds}\PY{o}{\PYZhy{}}\PY{n}{sweep\PYZus{}thresholds}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-25-36c65eab0b34> in <module>
+          5 \# percent\_under(sweep\_thresholds, 200.0)
+          6 
+    ----> 7 plt.hist(single\_freq\_thresholds-sweep\_thresholds, 100)
+          8 
+          9 print("Given a frequency sweep in which each virion is excited with its frequency of maximum power dissipation,")
+
+
+        NameError: name 'single\_freq\_thresholds' is not defined
+
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
