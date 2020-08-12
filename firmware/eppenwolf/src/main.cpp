@@ -3,7 +3,7 @@
 #include "VCO_driver.hpp"
 #include "turbidimeter.hpp"
 #include "stepper.hpp"
-
+#include "thermal.hpp"
 int main(void)
 {
 

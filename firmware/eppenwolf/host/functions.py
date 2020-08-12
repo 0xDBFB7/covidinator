@@ -4,10 +4,12 @@ from device_comms import *
 position = 0
 
 def set_VCO(link, base_bias_voltage, varactor_voltage, supply_voltage, power_state):
+    max_supply = 5.0
+
     send_size = 0
     send_size = add_float(link, send_size, base_bias_voltage)
     send_size = add_float(link, send_size, varactor_voltage)
-    send_size = add_float(link, send_size, supply_voltage)
+    send_size = add_float(link, send_size, np.clip(supply_voltage, 0, max_supply))
     send_size = add_float(link, send_size, power_state)
 
     link.send(send_size, packet_id=0)
@@ -166,3 +168,15 @@ def read_multimeter():
     multimeter.write("val?\r\n".encode())
     val = float(multimeter.readline())
     return val
+
+def measure_spectrum(link, voltage_list, averages, amplifier_supply):
+    data = np.zeros_like(voltage_list)
+    for a in range(0, averages):
+        for idx, v in enumerate(voltage_list):
+            print(f"Capturing spectrum: {v}")
+            set_VCO(link, 0, v, amplifier_supply, 1)
+            read_multimeter()
+            data[idx] += read_multimeter()
+
+    data /= averages
+    return data

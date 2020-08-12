@@ -23,7 +23,7 @@ import random
 
 @
 
-Positions of the three quantities on the slide are randomized\cite{first2000}. 
+Positions of the three quantities on the slide are randomized\cite{first2000}.
 
 
 \section{Preparation}
@@ -31,9 +31,8 @@ Positions of the three quantities on the slide are randomized\cite{first2000}.
 Autoclave
 
 
-
-
 <<microwave_spectrum.py>>=
+
 
 
 
