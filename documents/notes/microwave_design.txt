@@ -2272,3 +2272,29 @@ and then measure the freq. distribution on the far end. Good luck with that.
 
 Can't have parallel plate modes if there's no ground plane! 
 
+The platonic ideal of the gcwg doesn't have a ground plane. Using a ground plane and via fencing
+greatly reduces crosstalk bwetween traces, but that shouldn't be an issue here.
+
+The "0.2mm" gap is really closer to 0.3 mm, but that's still only 60Z - shouldn't be too bad.
+Should probably reduce the cutting depth to -0.06 or something.
+
+Coplanar waveguide seems to work great for exposure electric fields.
+
+It's probably better to AC-couple in series and then put the diode directly on the microstrip.
+we'll get a little less distortion that way probably
+
+Could add a ground plane after!
+
+Add alignment corners
+
+Loss on this cpwg is 2 dB over the 50 mm. That's killer!
+
+With tiny little microwells, however, we can probably drop that down to a few mm.
+
+A 1 mm uwell filled to 0.63 
+
+little a circular patch makes a wideband antenna:
+https://ieeexplore-ieee-org.ezproxy.library.yorku.ca/stamp/stamp.jsp?tp=&arnumber=1461127
+
+
+
