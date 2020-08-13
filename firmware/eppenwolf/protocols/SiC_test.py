@@ -6,18 +6,24 @@ from functions import *
 link = device_comms.connect()
 from matplotlib import pyplot as plt
 
-voltages = np.arange(0, 12, 0.5)
+voltages = np.arange(2, 12, 0.1)
+background = np.zeros_like(voltages)
+sample = np.zeros_like(voltages)
+for i in range(0, 3):
+    input("Remove sample")
 
-input("Remove sample")
+    background += measure_spectrum(link, voltages, 2, 5)
 
-background = measure_spectrum(link, voltages, 1, 4)
+    input("insert sample")
 
-input("insert sample")
-
-sample = measure_spectrum(link, voltages, 1, 4)
+    sample += measure_spectrum(link, voltages, 2, 5)
 
 
-output = sample - background
+output = (sample - background)/3.0
 
 plt.plot(voltages,output)
+plt.figure()
+plt.plot(voltages,sample)
+plt.plot(voltages,background)
+
 plt.show()

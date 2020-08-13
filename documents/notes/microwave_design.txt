@@ -2259,9 +2259,16 @@ Apparently randomization is generally a good idea. Unfortunately, we're below wh
 theorem would start to take effect; at least two runs would be required.
 
 
+In coplanar waveguide it's apparently a good idea to 50-ohm terminate with two 100-ohm resistors, 
+one to each ground plane.
 
+Ah! the vias are required to prevent "parallel plate modes" in cpwg.
 
+"What is significantly different in this case compared to the unmetallized substrate
+is the presence of a zero cutoff TEM mode (Fig. 4). "
 
+We could, I suppose, apply a sharp impulse to the cuvette, just like was done in the simulation,
+and then measure the freq. distribution on the far end. Good luck with that.
 
-
+Can't have parallel plate modes if there's no ground plane! 
 
