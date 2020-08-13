@@ -146,7 +146,6 @@ pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.
 
 
 
-
 print_step = 500
 dump_step = 2e-12
 
@@ -155,7 +154,7 @@ prev_dump_time = 0
 f = 8e9
 while(pcb.time < (2.0 * 2.0 * pi * f)):
 
-    # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9/100.0)
+    # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
 
     source_voltage = sin(pcb.time * 2.0 * pi * f)
     print(source_voltage)

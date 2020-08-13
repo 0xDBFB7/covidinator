@@ -2296,5 +2296,13 @@ A 1 mm uwell filled to 0.63
 little a circular patch makes a wideband antenna:
 https://ieeexplore-ieee-org.ezproxy.library.yorku.ca/stamp/stamp.jsp?tp=&arnumber=1461127
 
+circular defect in the ground plane?
+
+fluid in the high-field gap?
+
+Punching a 0.9mm hole in polyprop is totally possible.
+It certainly is gummy, but not too gummy.
+However, filling it is just as hard as with the microchannel.
+
 
 
