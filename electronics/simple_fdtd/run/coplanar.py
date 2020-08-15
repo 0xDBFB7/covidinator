@@ -112,7 +112,7 @@ pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size)
 
 
 pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
 
 
 

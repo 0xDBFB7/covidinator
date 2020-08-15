@@ -2304,5 +2304,7 @@ Punching a 0.9mm hole in polyprop is totally possible.
 It certainly is gummy, but not too gummy.
 However, filling it is just as hard as with the microchannel.
 
+Just stop the microstrip! it'll radiate from the end!
+
 
 

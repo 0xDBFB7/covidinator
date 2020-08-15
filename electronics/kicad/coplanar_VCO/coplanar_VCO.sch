@@ -500,21 +500,21 @@ $EndComp
 $Comp
 L Connector:Test_Point TPSO1
 U 1 1 5F45EF57
-P 8500 900
-F 0 "TPSO1" H 8558 1018 50  0000 L CNN
-F 1 "Vsource" H 8558 927 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 8700 900 50  0001 C CNN
-F 3 "~" H 8700 900 50  0001 C CNN
-F 4 "V" H 8500 900 50  0001 C CNN "Spice_Primitive"
-F 5 "pulse(0 2 20p 5p 1p 1 1)" H 8500 900 50  0001 C CNN "Spice_Model"
-F 6 "N" H 8500 900 50  0001 C CNN "Spice_Netlist_Enabled"
-	1    8500 900 
+P 3950 1650
+F 0 "TPSO1" H 4008 1768 50  0000 L CNN
+F 1 "Vsource" H 4008 1677 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 4150 1650 50  0001 C CNN
+F 3 "~" H 4150 1650 50  0001 C CNN
+F 4 "V" H 3950 1650 50  0001 C CNN "Spice_Primitive"
+F 5 "pulse(0 2 20p 5p 1p 1 1)" H 3950 1650 50  0001 C CNN "Spice_Model"
+F 6 "N" H 3950 1650 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3950 1650
 	1    0    0    -1  
 $EndComp
-Text GLabel 8500 1050 2    50   Input ~ 0
+Text GLabel 3950 1800 2    50   Input ~ 0
 nsource
 Wire Wire Line
-	8500 900  8500 1050
+	3950 1650 3950 1800
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R3
 U 1 1 5F6DE03D

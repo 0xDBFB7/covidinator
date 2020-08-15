@@ -1,0 +1,104 @@
+\documentclass[fleqn,10pt]{paper}
+
+\usepackage[left=2cm,right=2cm,
+top=0.5cm,
+bottom=1.5cm,%
+headheight=11pt,%
+letterpaper]{geometry}
+
+\include{preamble}
+
+
+\title{ {\it Proposal:}\\ Determining the efficacy of pulsed microwave-acoustic viral envelope disruption in COVID-19 treatment}
+
+\begin{document}
+
+\maketitle
+
+
+
+{\Large \textbf{The mechanism}}
+
+
+\cite{Microwave2009} \textrightarrow \ (\cite{focusing2014} $\parallel$ \cite{Efficient2015} $\parallel$ \cite{Resonant2017})\footnote{A great many more papers are involved.} appear to establish that the net charge, mass distribution, and envelope stiffness of a few species of viruses support a weak resonance mode in the microwave spectrum, with a peak at roughly 8 GHz for Inf. A.
+
+They appear to demonstrate that this allows a comparatively inconsequential electromagnetic field magnitude to produce mechanical stresses sufficient to crack the lipid envelope, destroying the virus.
+
+\cite{Efficient2015} specifically provides a reasonable "spherical-cow" model for how this could occur that agrees well with experiment.\footnote{See also \ghfile{documents/biology.ipynb}}
+
+This work would seem to be more useful if extended with the following assertion: the virus' Q factor has been determined to be only about 2, meaning that the steady-state amplitude and stresses should be reached in some nanoseconds.
+
+Barring protein mechanical fatigue\cite{Mechanical2013} or some other mechanism that could prolong the inactivation duration, it appears to be possible to reduce the required dissipated energy density to a minuscule fraction of all safety limits by pulsing the field at nanosecond scales. This incidentally also permits scanning of a focal point so that a significant area can be treated with a relatively small transmit power.
+
+\cite{Efficient2015} test with various strains of Influenza A, we are testing with Coliphage T4; structural similarities with NCoV mean this may be transferable. 
+
+These authors above deserve all the credit for this finding; nothing in this work is even remotely novel.
+
+\begin{autem}
+	It should be noted that all of the claims we make hinge on this hypothesis of nanosecond-scale inactivation. \cite{Efficient2015} and \cite{focusing2014} use a 15-minute exposure, which is apparently the norm for this field. We are trying to obtain data to more firmly establish this now.
+\end{autem}
+
+
+
+{\Large \textbf{Advantages over existing techniques}}
+
+From crude attenuation data, this pulsed field can be safely produced at least 3 cm deep in tissue. This would seem to be unlike any other mechanisms in its specificity; near or far\cite{Germicidal2017}UV, chemical sterilization, etc. This opens up a particularly interesting direct treatment modality.
+
+Also unlike UV, the X-band is minimally attenuated by air; in the extreme, installations with megawatt-scale klystrons could potentially prevent airborne transmission in square-kilometer areas.
+
+Equally unlike other techniques, if the assumptions above hold, this would act instantaneously, providing $>$ 80\% inactivation in the targeted area (depending on some population parameters).
+
+The amplifiers for this frequency range fall within the regime of many off-the-shelf radar systems; miniature personal emitters could be produced for $ < \$10$ with semiconductor amplifiers; and the high-power systems for direct treatment are only a few orders of magnitude above that.
+
+{\Large \textbf{Is it safe?}}
+
+The consensus is that conditions in our cells are highly unfavorable for any such resonance modes; damping from biological solvents is too strong \cite{Vibrational2002}. Harm occurs only through thermal mechanisms; therefore an almost arbitrarily powerful pulse can be safely applied for infinitesimal periods.
+
+Quality in-vitro data supports this assertion. \cite{Cytogenetic2006} expose cells to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration, 50 khz repetition rate, a whopping pulse power density of 250,000\Wsqm\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100\Wsqm (the safety limit), for 2 hours, finding no change in any of the measured quantities. \cite{DNA2004} replicate this finding, finding genotoxicity purely through the expected thermal mode. \footnote{These papers were cherry-picked from a sea of positive results. See the full paper for the rationale.}
+
+The literature reviews of \cite{ICNIRP2020} and \cite{C95} are exhaustive; however, there is not a great deal of in-vivo evidence in this frequency range\cite{New2019}\cite{Comprehensive2018}.
+
+We are unsure what specific feature of the virion accounts for this discrepancy. The lipid bilayer of the virion differs in composition from that of the host cell, imparting a different net charge.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{biology/output_35_1.png}
+\end{figure}
+
+
+microwave diathermy and hyperthermia; 
+
+
+
+
+
+Several more recent papers \cite{Theoretical2020} on the technique have been published, but these are largely pseudoscientific and lack detail. 
+
+We are not aware of any clinical trial using microwave at these frequencies.
+
+
+
+
+
+Research question: 
+Does 
+Null Hypothesis: There is no difference in fluoride release between the Compomer and Glass- ionomer cement.
+Alternate Hypothesis: There is a difference in fluoride release between the Compomer and Glass-ionomer cement.
+Disease progression
+
+Proposed intervention:
+
+
+
+\section{Potential Benefits and Risks to Patients:}
+
+\section{Operational Planning and Budgeting:}
+
+
+
+Keysight / Agilent 83732B
+
+
+
+\end{document}
