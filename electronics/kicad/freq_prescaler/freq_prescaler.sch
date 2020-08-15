@@ -27,18 +27,6 @@ $EndComp
 Text Notes 1700 3750 0    50   ~ 0
 Input power range of the HMC. is max. +5 dBm across the spectrum, 0 dBm recommended.\n
 $Comp
-L 0xDBFB7:attenuator R2
-U 1 1 5F838885
-P 1900 2700
-F 0 "R2" H 1925 2915 50  0000 C CNN
-F 1 "PAT1220" H 1925 2824 50  0000 C CNN
-F 2 "0xDBFB7:PAT1220" H 1900 2700 50  0001 C CNN
-F 3 "" H 1900 2700 50  0001 C CNN
-F 4 "-10 dBm" H 1925 2733 50  0000 C CNN "Field4"
-	1    1900 2700
-	1    0    0    -1  
-$EndComp
-$Comp
 L 0xDBFB7:SKY65013 U5
 U 1 1 5F838D69
 P 6650 2650
@@ -117,46 +105,19 @@ F 3 "" H 6650 3300 50  0001 C CNN
 	1    6650 3300
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0103
-U 1 1 5F842A34
-P 1700 2950
-F 0 "#PWR0103" H 1700 2950 30  0001 C CNN
-F 1 "GND" H 1700 2880 30  0001 C CNN
-F 2 "" H 1700 2950 50  0001 C CNN
-F 3 "" H 1700 2950 50  0001 C CNN
-	1    1700 2950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6150 2900 6300 2900
 Text Notes 1250 4000 0    50   ~ 0
 O/P is -9 to -6 dBm, too low for the logic levels of the \nSY.
 $Comp
 L conn:CONN_1 P1
 U 1 1 5F844EAC
-P 600 2800
-F 0 "P1" H 533 2703 40  0000 C CNN
-F 1 "CONN_1" H 550 2840 30  0001 C CNN
-F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 600 2800 50  0001 C CNN
-F 3 "" H 600 2800 50  0001 C CNN
-	1    600  2800
+P 1500 2800
+F 0 "P1" H 1433 2703 40  0000 C CNN
+F 1 "CONN_1" H 1450 2840 30  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 1500 2800 50  0001 C CNN
+F 3 "" H 1500 2800 50  0001 C CNN
+	1    1500 2800
 	-1   0    0    1   
 $EndComp
-$Comp
-L SparkFun-Capacitors:6PF-0402-50V-0.5% C2
-U 1 1 5F84D039
-P 1350 2800
-F 0 "C2" V 1200 2850 45  0000 C CNN
-F 1 "1 nF" V 1116 2850 45  0000 C CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 1350 3050 20  0001 C CNN
-F 3 "" H 1350 2800 50  0001 C CNN
-F 4 "" V 1189 2850 60  0000 C CNN "Field4"
-	1    1350 2800
-	0    1    -1   0   
-$EndComp
-Wire Wire Line
-	1700 2800 1550 2800
 $Comp
 L power:GND #PWR0104
 U 1 1 5F856AB4
@@ -179,8 +140,6 @@ F 3 "" H 4100 3200 50  0001 C CNN
 	1    4100 3200
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	750  2800 1250 2800
 $Comp
 L SparkFun-Resistors:0.22OHM-0805-1_4W-1% R4
 U 1 1 5F85FAE8
@@ -518,7 +477,7 @@ U 1 1 5F8AA363
 P 9100 5250
 F 0 "P2" H 9158 5250 40  0000 L CNN
 F 1 "OUTPUT" H 9050 5290 30  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 9100 5250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.5x2.5mm" H 9100 5250 50  0001 C CNN
 F 3 "" H 9100 5250 50  0001 C CNN
 	1    9100 5250
 	1    0    0    -1  
@@ -683,7 +642,7 @@ U 1 1 5F8EAFF7
 P 9000 6250
 F 0 "P4" V 8932 6309 40  0000 L CNN
 F 1 "OUTPUT" H 8950 6290 30  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 9000 6250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.5x2.5mm" H 9000 6250 50  0001 C CNN
 F 3 "" H 9000 6250 50  0001 C CNN
 	1    9000 6250
 	0    1    1    0   
@@ -733,8 +692,6 @@ F 3 "" H 4850 2400 50  0001 C CNN
 	1    4850 2400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4900 2900 5850 2900
 $Comp
 L SparkFun-Capacitors:6PF-0402-50V-0.5% C3
 U 1 1 5F4DC557
@@ -1164,7 +1121,7 @@ U 1 1 5F5A4D62
 P 7350 2100
 F 0 "P7" H 7283 2003 40  0000 C CNN
 F 1 "CONN_1" H 7300 2140 30  0001 C CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 7350 2100 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.5x2.5mm" H 7350 2100 50  0001 C CNN
 F 3 "" H 7350 2100 50  0001 C CNN
 	1    7350 2100
 	-1   0    0    1   
@@ -1176,7 +1133,7 @@ U 1 1 5F5A7041
 P 3150 6000
 F 0 "P5" H 3083 5903 40  0000 C CNN
 F 1 "CONN_1" H 3100 6040 30  0001 C CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3150 6000 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.5x2.5mm" H 3150 6000 50  0001 C CNN
 F 3 "" H 3150 6000 50  0001 C CNN
 	1    3150 6000
 	-1   0    0    1   
@@ -1251,7 +1208,7 @@ U 1 1 5F484393
 P 3000 50
 F 0 "P8" H 2933 -47 40  0000 C CNN
 F 1 "a" H 2950 90  30  0001 C CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3000 50  50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.5x2.5mm" H 3000 50  50  0001 C CNN
 F 3 "" H 3000 50  50  0001 C CNN
 	1    3000 50  
 	0    -1   -1   0   
@@ -1299,17 +1256,6 @@ $EndComp
 Wire Wire Line
 	3000 200  3000 500 
 $Comp
-L power:GND #PWR0138
-U 1 1 5F4843B8
-P 3000 2400
-F 0 "#PWR0138" H 3000 2400 30  0001 C CNN
-F 1 "GND" H 3000 2330 30  0001 C CNN
-F 2 "" H 3000 2400 50  0001 C CNN
-F 3 "" H 3000 2400 50  0001 C CNN
-	1    3000 2400
-	1    0    0    -1  
-$EndComp
-$Comp
 L SparkFun-Capacitors:6PF-0402-50V-0.5% C22
 U 1 1 5F6817E0
 P 3000 2800
@@ -1322,23 +1268,6 @@ F 4 "" V 2839 2850 60  0000 C CNN "Field4"
 	0    1    -1   0   
 $EndComp
 $Comp
-L SparkFun-Capacitors:6PF-0402-50V-0.5% C23
-U 1 1 5F6850C4
-P 3300 2800
-F 0 "C23" V 3150 2850 45  0000 C CNN
-F 1 "1 nF" V 3066 2850 45  0000 C CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3300 3050 20  0001 C CNN
-F 3 "" H 3300 2800 50  0001 C CNN
-F 4 "" V 3139 2850 60  0000 C CNN "Field4"
-	1    3300 2800
-	0    1    -1   0   
-$EndComp
-Connection ~ 3200 2800
-Wire Wire Line
-	3500 2800 4100 2800
-Wire Wire Line
-	2150 2800 2900 2800
-$Comp
 L SparkFun-Resistors:RESISTOR0402 R3
 U 1 1 5F6D38E6
 P 3000 700
@@ -1350,4 +1279,13 @@ F 4 " " V 3084 768 60  0000 L CNN "Field4"
 	1    3000 700 
 	0    -1   -1   0   
 $EndComp
+Wire Wire Line
+	1650 2800 2900 2800
+Wire Wire Line
+	3200 2800 4100 2800
+Connection ~ 3200 2800
+Wire Wire Line
+	4900 2900 5850 2900
+Wire Wire Line
+	6150 2900 6300 2900
 $EndSCHEMATC

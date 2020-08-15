@@ -2306,5 +2306,11 @@ However, filling it is just as hard as with the microchannel.
 
 Just stop the microstrip! it'll radiate from the end!
 
+interditigtated electrode for high field
+
+Simple waveguide applicators look good.
+
+
+
 
 

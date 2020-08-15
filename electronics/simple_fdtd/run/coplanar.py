@@ -23,7 +23,7 @@ from pytexit import py2tex
 import pickle
 
 import numpy as np
-
+import math
 
 
 fdtd.set_backend("torch.cuda.float32")
@@ -98,21 +98,27 @@ pcb.copper_mask[0:-1, pcb.xy_margin+1:-pcb.xy_margin-2, 0:pcb.ground_plane_z_top
 
 #ground 2
 pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size):-pcb.xy_margin, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
 
 #ground 1
 pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size), \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
 
 # defect_length = 1.5e-3
 # defect_width =
 # pcb.copper_mask[,int((microstrip_length/2.0)/pcb.cell_size):int((microstrip_length/2.0+defect_length)/pcb.cell_size), z_slice] = 1
 
 
+radius = int(1e-3 / pcb.cell_size)
+for x in range(0, int((sim_width)/pcb.cell_size)+pcb.xy_margin):
+    for y in range(0, int((microstrip_length)/pcb.cell_size)):
+
+        pcb.copper_mask[x, y, z_slice] = (pcb.copper_mask[x, y, z_slice] or math.sqrt((x-centerline)**2.0 + ( (y-((int((microstrip_length/2.0)/pcb.cell_size))+pcb.xy_margin)) - radius)**2.0 ) < radius)
+
 
 
 pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int((microstrip_length/2.0 + 1.0e-3 )/pcb.cell_size))), z_slice] = 1
 
 
 
@@ -156,7 +162,7 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
     # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
 
-    source_voltage = sin(pcb.time * 2.0 * pi * f)
+    source_voltage = sin(pcb.time * 2.0 * pi * f) 
     print(source_voltage)
 
     z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
