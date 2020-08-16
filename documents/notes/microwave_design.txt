@@ -2304,7 +2304,8 @@ Punching a 0.9mm hole in polyprop is totally possible.
 It certainly is gummy, but not too gummy.
 However, filling it is just as hard as with the microchannel.
 
-Just stop the microstrip! it'll radiate from the end!
+Just stop the microstrip! it'll radiate from the end! - 
+nope, not more effectively.
 
 interditigtated electrode for high field
 
@@ -2312,5 +2313,21 @@ Simple waveguide applicators look good.
 
 
 
+Found an analog devices amp, the HMC996- this is the amp of my dreams!
 
+remember the polyfuse!
+
+
+There's a "BCA protein assay" that changes color - but isn't specific to live cells.
+The plaque assay for covid looks pretty hard.
+
+There don't seem to be any standards for designing equipment for use in BSL-3.
+
+Leaking samples seems to be a big problem. We definitely don't want to cause any safety issues,
+so we should be sure that 
+
+0.8 mm
+
+ eeproms with 'industrial scale' seem to be fine at 125c? Voice recorder?
+ some labs have vo
 
