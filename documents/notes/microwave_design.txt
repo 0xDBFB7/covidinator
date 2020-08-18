@@ -2437,3 +2437,13 @@ A slight note on the FFT (I got trolled by this in my thesis): Before running FF
 ooh, a latched comparator as the sampler. That's neat.
 
 
+
+Got the pipette, a "topette" brand. Really nice quality for $70!
+Reverse pipetting might be needed.
+0.1 uL is unreasonably small. 0.25 is fine.
+The 10 uL tips are about 0.85 mm in diameter.
+
+The detuned-vernier technique of \cite{16psresolution2003} is really amazing.
+No need for a delay line!
+
+
