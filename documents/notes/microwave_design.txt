@@ -2446,4 +2446,15 @@ The 10 uL tips are about 0.85 mm in diameter.
 The detuned-vernier technique of \cite{16psresolution2003} is really amazing.
 No need for a delay line!
 
+I don't know how it.is got this tool to work so fast. It's amazing!
+
+PMA RT-qPCR can quantify 
+
+The lung is far more spongy that I had presumed!
+Fill gaps with paraffin dielectric
+
+Wow, the discontinuity between fat and muscle dielectric is huge! It's way easier to get
+through fat!
+
+Thermoacoustic
 
