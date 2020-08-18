@@ -2329,5 +2329,111 @@ so we should be sure that
 0.8 mm
 
  eeproms with 'industrial scale' seem to be fine at 125c? Voice recorder?
- some labs have vo
+
+"gel loading" pipette tips have specified sizes. 
+"ultra micropoint"
+mcmcrrr 	6500T51	
+
+732-12023-1-ND‎
+‎155124RS73200A‎
+Würth Elektronik
+LED RED CLEAR 1206 SMD R/A
+
+
+"Some amplifiers will have multiple stages, so each stage will need to be biased separately."
+
+
+"This procedure assumes the amplifi er under test is a part that
+requires a dual supply; a positive supply for the drain-source and
+a negative supply for the gate-source. If there are multiple gate
+controls it is assumed for this procedure that they are connected
+together. Use knob style voltage power supplies – not key pad
+entry types. The supplies should be used in a fl oating manner
+with no connection to the supply ground terminal"
+
+
+The lung is not directly connected to the chest cavity. We should compute how much power
+is reflected from that interface - and can a phased-array compensate for that?
+
+there are "needle microwave probes" - invasive, but treat 2cm areas; probe radiators,
+
+the analog trace coming back to the teensy seems to be suceptible
+
+how do we maintain spring pressure? Thumbscrews might work, but might tear gloves
+wing head screws. bingo.
+
+As yet there is no data on dielectric spectroscopy of SARS-NCoV.
+
+new fav. "majestic tech:" chloralkali cell halls. 
+
+Delectric loaded waveguides can provide greater specificity
+
+use DC coupling to determine capacitance?
+
+TDS, pulse spectroscopy, would probably be a cheaper way of doing this. However,
+it doesn't allow us to measure the inactivation thresholds over many cycles.
+A SY58051AU makes a nice and fast pulse, many GHz. https://www.fetchmodus.org/projects/risetime/
+TDS is apparently better, see 
+\cite{Time2003a}
+
+"A rapidly increasing voltage step V tŽ . is applied to the 0
+line and recorded, along with the reflected voltage R tŽ .
+returned from the sample and delayed by the cable propagation time Figure 2 . Any cable or instrument artifacts Ž .
+are separated from the sample response due to the propagation delay, thus making them easy to identify and control. The entire frequency spectrum is captured at once,
+thus eliminating drift and distortion between frequencies."
+
+"MATFIT from"
+
+the "can't open pdf" problem seems to be the result of the cache folder filling up.
+The maximum size of the cache is calculated as a percentage of available disk space.
+
+ --disk-cache-size=xxx (in bytes) aha!
+
+
+https://www.linuxliteos.com/forums/other/how-to-limit-chromium-browser's-cache-size/
+sudo nano /etc/chromium-browser/default
+CHROMIUM_FLAGS="--disk-cache-size=52428800 --disk-cache-dir=$HOME/Desktop/chromium-cache"
+
+--aggressive-cache-discard
+
+
+That was pretty dumb. I was looking at noise sources, freq. combs, broadband this and that,
+but the answer was a simple logic gate!
+
+sampling oscilloscope time-domain spectorcopy
+
+fast rail-to-rail current-mode logic
+(CML)
+
+Delay-line 
+For acquiring the reflected signal an 8-bit analogto-digital converter is used, driven by the THS4509
+differential operational amplifier (OA).
+
+" Since the acquisition period is not
+an important parameter regarding the sampling
+frequency, this AOC is not required to operate at high
+speed, but only with a small acquisition time. In our
+implementation we have chosen AOS830, which can
+operate at a maximum frequency of 60[MHz] with a
+full-scale step acquisition time of 2,5[ns]."
+
+Sample-and-hold?
+
+
+SY89295UMG delay line, 1024 taps, 10 ps resolution!
+
+Needs a fast op-amp. Seems like you could just sum the two voltage signals and sample?
+Then you can use a slow ADC, take as long as you want.
+
+Hmm, seems like the sampling technique just shifts the problem to "how do you window such 
+a fast signal."
+https://hackaday.io/project/167292-8-ghz-sampling-oscilloscope
+
+
+"
+A slight note on the FFT (I got trolled by this in my thesis): Before running FFT on the signal acquired by TDR with step generator, differentiate the data first, then run the FFT, then the calibration and then IFFT and integrate the output. Without the differentiation, you get massive spectral leakage. Then, windowing and zero padding is practically unnecessary unless you want to improve the spectral resolution.
+"
+
+ooh, a latched comparator as the sampler. That's neat.
+
 

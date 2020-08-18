@@ -413,7 +413,12 @@ NGSPICE's KSPICE coupled transmission lines require the capacitance and inductan
 
 \rule{\linewidth}{0.2pt}
 
-In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the SPICE portion is less than some threshold.
+In practice, the timestep required to obtain convergence in particularly tight corners of the SPICE simulation can drop to 1e-20, which is far below the Courant limit of the FDTD simulation. To eek out a bit more performance, a simple adaptive-timestep technique from [ a ] is used; we simply set the timestep so that the maximum change in voltage per timestep from the SPICE portion is less than 
+some threshold.
+
+
+\PRLsep{{\itshape Sampling time-domain spectrometry}}
+
 
 
 \PRLsep{{\itshape Power amplifier }}
