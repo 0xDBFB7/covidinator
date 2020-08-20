@@ -1,0 +1,104 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 17 33
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R1
+U 1 1 5FC1DAB1
+P 3300 4000
+AR Path="/5FC1C285/5FC1DAB1" Ref="R1"  Part="1" 
+AR Path="/5FC224F2/5FC1DAB1" Ref="R2"  Part="1" 
+AR Path="/5FC225C6/5FC1DAB1" Ref="R3"  Part="1" 
+AR Path="/5FC2266C/5FC1DAB1" Ref="R4"  Part="1" 
+AR Path="/5FC227E3/5FC1DAB1" Ref="R5"  Part="1" 
+AR Path="/5FC22DDF/5FC1DAB1" Ref="R6"  Part="1" 
+AR Path="/5FC22DE2/5FC1DAB1" Ref="R7"  Part="1" 
+AR Path="/5FC22DE5/5FC1DAB1" Ref="R8"  Part="1" 
+AR Path="/5FC2BBEA/5FC1DAB1" Ref="R9"  Part="1" 
+AR Path="/5FC2BBED/5FC1DAB1" Ref="R10"  Part="1" 
+AR Path="/5FC2BBF0/5FC1DAB1" Ref="R11"  Part="1" 
+AR Path="/5FC2BBF3/5FC1DAB1" Ref="R12"  Part="1" 
+AR Path="/5FC2BBF6/5FC1DAB1" Ref="R13"  Part="1" 
+AR Path="/5FC2BBF9/5FC1DAB1" Ref="R14"  Part="1" 
+AR Path="/5FC2BBFC/5FC1DAB1" Ref="R15"  Part="1" 
+AR Path="/5FC2BBFF/5FC1DAB1" Ref="R16"  Part="1" 
+F 0 "R16" V 3205 4068 45  0000 L CNN
+F 1 "330" V 3289 4068 45  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 3300 4150 20  0001 C CNN
+F 3 "" H 3300 4000 60  0001 C CNN
+F 4 " " V 3384 4068 60  0000 L CNN "Field4"
+	1    3300 4000
+	0    -1   -1   0   
+$EndComp
+Text HLabel 3300 3300 0    50   Input ~ 0
+SEL
+$Comp
+L power:GND #PWR?
+U 1 1 5FC1FCC6
+P 3300 4200
+AR Path="/5FC1FCC6" Ref="#PWR?"  Part="1" 
+AR Path="/5FC1C285/5FC1FCC6" Ref="#PWR0103"  Part="1" 
+AR Path="/5FC224F2/5FC1FCC6" Ref="#PWR0104"  Part="1" 
+AR Path="/5FC225C6/5FC1FCC6" Ref="#PWR0105"  Part="1" 
+AR Path="/5FC2266C/5FC1FCC6" Ref="#PWR0106"  Part="1" 
+AR Path="/5FC227E3/5FC1FCC6" Ref="#PWR0107"  Part="1" 
+AR Path="/5FC22DDF/5FC1FCC6" Ref="#PWR0108"  Part="1" 
+AR Path="/5FC22DE2/5FC1FCC6" Ref="#PWR0109"  Part="1" 
+AR Path="/5FC22DE5/5FC1FCC6" Ref="#PWR0110"  Part="1" 
+AR Path="/5FC2BBEA/5FC1FCC6" Ref="#PWR0111"  Part="1" 
+AR Path="/5FC2BBED/5FC1FCC6" Ref="#PWR0112"  Part="1" 
+AR Path="/5FC2BBF0/5FC1FCC6" Ref="#PWR0113"  Part="1" 
+AR Path="/5FC2BBF3/5FC1FCC6" Ref="#PWR0114"  Part="1" 
+AR Path="/5FC2BBF6/5FC1FCC6" Ref="#PWR0115"  Part="1" 
+AR Path="/5FC2BBF9/5FC1FCC6" Ref="#PWR0116"  Part="1" 
+AR Path="/5FC2BBFC/5FC1FCC6" Ref="#PWR0117"  Part="1" 
+AR Path="/5FC2BBFF/5FC1FCC6" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 3300 4200 30  0001 C CNN
+F 1 "GND" H 3300 4130 30  0001 C CNN
+F 2 "" H 3300 4200 50  0001 C CNN
+F 3 "" H 3300 4200 50  0001 C CNN
+	1    3300 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 3500 3300 3300
+$Comp
+L SparkFun-LED:LED-GREEN1206-BOTTOM D9
+U 1 1 5FC32F33
+P 3300 3600
+AR Path="/5FC2BBEA/5FC32F33" Ref="D9"  Part="1" 
+AR Path="/5FC1C285/5FC32F33" Ref="D1"  Part="1" 
+AR Path="/5FC224F2/5FC32F33" Ref="D2"  Part="1" 
+AR Path="/5FC225C6/5FC32F33" Ref="D3"  Part="1" 
+AR Path="/5FC2266C/5FC32F33" Ref="D4"  Part="1" 
+AR Path="/5FC227E3/5FC32F33" Ref="D5"  Part="1" 
+AR Path="/5FC22DDF/5FC32F33" Ref="D6"  Part="1" 
+AR Path="/5FC22DE2/5FC32F33" Ref="D7"  Part="1" 
+AR Path="/5FC22DE5/5FC32F33" Ref="D8"  Part="1" 
+AR Path="/5FC2BBED/5FC32F33" Ref="D10"  Part="1" 
+AR Path="/5FC2BBF0/5FC32F33" Ref="D11"  Part="1" 
+AR Path="/5FC2BBF3/5FC32F33" Ref="D12"  Part="1" 
+AR Path="/5FC2BBF6/5FC32F33" Ref="D13"  Part="1" 
+AR Path="/5FC2BBF9/5FC32F33" Ref="D14"  Part="1" 
+AR Path="/5FC2BBFC/5FC32F33" Ref="D15"  Part="1" 
+AR Path="/5FC2BBFF/5FC32F33" Ref="D16"  Part="1" 
+F 0 "D16" H 3378 3592 45  0000 L CNN
+F 1 "LED-GREEN1206-BOTTOM" H 3378 3508 45  0000 L CNN
+F 2 "LED-1206-BOTTOM" V 3100 3600 20  0001 C CNN
+F 3 "" H 3300 3600 50  0001 C CNN
+F 4 "" H 3378 3466 60  0000 L CNN "Field4"
+	1    3300 3600
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

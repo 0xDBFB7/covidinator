@@ -1,0 +1,745 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 33
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0104
+U 1 1 5FB132CB
+P 3850 1250
+F 0 "#SUPPLY0104" H 3900 1250 45  0001 L BNN
+F 1 "3.3V" H 3850 1420 45  0000 C CNN
+F 2 "" V 3808 1377 60  0000 L CNN
+F 3 "" H 3850 1250 60  0001 C CNN
+	1    3850 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC595 U17
+U 1 1 5F9FBE35
+P 5900 1500
+F 0 "U17" H 5900 2281 50  0000 C CNN
+F 1 "74HC595" H 5900 2190 50  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 5900 1500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 5900 1500 50  0001 C CNN
+	1    5900 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:CD74HC4067M U19
+U 1 1 5F9E314D
+P 1750 1700
+F 0 "U19" H 1750 2881 50  0000 C CNN
+F 1 "CD74HC4067M" H 1750 2790 50  0000 C CNN
+F 2 "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm" H 2650 700 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf" H 1400 2550 50  0001 C CNN
+	1    1750 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5F8B2112
+P 3850 1550
+F 0 "#PWR04" H 3850 1550 30  0001 C CNN
+F 1 "GND" H 3850 1480 30  0001 C CNN
+F 2 "" H 3850 1550 50  0001 C CNN
+F 3 "" H 3850 1550 50  0001 C CNN
+	1    3850 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C1
+U 1 1 5F7B2CEB
+P 3850 1450
+F 0 "C1" H 3958 1542 45  0000 L CNN
+F 1 "0.1 uF" H 3958 1458 45  0000 L CNN
+F 2 "0603" H 3850 1700 20  0001 C CNN
+F 3 "" H 3850 1450 50  0001 C CNN
+F 4 "" H 3958 1416 60  0000 L CNN "Field4"
+	1    3850 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0101
+U 1 1 5FC1912D
+P 5900 900
+F 0 "#SUPPLY0101" H 5950 900 45  0001 L BNN
+F 1 "3.3V" H 5900 1070 45  0000 C CNN
+F 2 "" V 5858 1027 60  0000 L CNN
+F 3 "" H 5900 900 60  0001 C CNN
+	1    5900 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5FC1959D
+P 5900 2200
+F 0 "#PWR0101" H 5900 2200 30  0001 C CNN
+F 1 "GND" H 5900 2130 30  0001 C CNN
+F 2 "" H 5900 2200 50  0001 C CNN
+F 3 "" H 5900 2200 50  0001 C CNN
+	1    5900 2200
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 6850 1000 550  200 
+U 5FC1C285
+F0 "Sheet5FC1C284" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 1100 50 
+$EndSheet
+$Sheet
+S 6850 1400 550  200 
+U 5FC224F2
+F0 "sheet5FC224EF" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 1500 50 
+$EndSheet
+$Sheet
+S 6850 1800 550  200 
+U 5FC225C6
+F0 "sheet5FC225C3" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 1900 50 
+$EndSheet
+$Sheet
+S 6850 2250 550  200 
+U 5FC2266C
+F0 "sheet5FC22669" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 2350 50 
+$EndSheet
+$Sheet
+S 6850 2650 550  200 
+U 5FC227E3
+F0 "sheet5FC227E0" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 2750 50 
+$EndSheet
+$Sheet
+S 6850 3050 550  200 
+U 5FC22DDF
+F0 "sheet5FC22DDA" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 3150 50 
+$EndSheet
+$Sheet
+S 6850 3500 550  200 
+U 5FC22DE2
+F0 "sheet5FC22DDB" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 3600 50 
+$EndSheet
+$Sheet
+S 6850 3900 550  200 
+U 5FC22DE5
+F0 "sheet5FC22DDC" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 6850 4000 50 
+$EndSheet
+Wire Wire Line
+	6300 1100 6850 1100
+Wire Wire Line
+	6300 1200 6800 1200
+Wire Wire Line
+	6800 1200 6800 1500
+Wire Wire Line
+	6800 1500 6850 1500
+Wire Wire Line
+	6300 1300 6750 1300
+Wire Wire Line
+	6750 1300 6750 1900
+Wire Wire Line
+	6750 1900 6850 1900
+Wire Wire Line
+	6300 1400 6700 1400
+Wire Wire Line
+	6700 1400 6700 2350
+Wire Wire Line
+	6700 2350 6850 2350
+Wire Wire Line
+	6300 1500 6650 1500
+Wire Wire Line
+	6650 1500 6650 2750
+Wire Wire Line
+	6650 2750 6850 2750
+Wire Wire Line
+	6300 1600 6600 1600
+Wire Wire Line
+	6600 1600 6600 3150
+Wire Wire Line
+	6600 3150 6850 3150
+Wire Wire Line
+	6300 1700 6550 1700
+Wire Wire Line
+	6550 1700 6550 3600
+Wire Wire Line
+	6550 3600 6850 3600
+Wire Wire Line
+	6300 1800 6500 1800
+Wire Wire Line
+	6500 1800 6500 4000
+Wire Wire Line
+	6500 4000 6850 4000
+$Comp
+L 74xx:74HC595 U1
+U 1 1 5FC2BBDB
+P 8900 1450
+F 0 "U1" H 8900 2231 50  0000 C CNN
+F 1 "74HC595" H 8900 2140 50  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 8900 1450 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 8900 1450 50  0001 C CNN
+	1    8900 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0102
+U 1 1 5FC2BBE1
+P 8900 850
+F 0 "#SUPPLY0102" H 8950 850 45  0001 L BNN
+F 1 "3.3V" H 8900 1020 45  0000 C CNN
+F 2 "" V 8858 977 60  0000 L CNN
+F 3 "" H 8900 850 60  0001 C CNN
+	1    8900 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5FC2BBE7
+P 8900 2150
+F 0 "#PWR0102" H 8900 2150 30  0001 C CNN
+F 1 "GND" H 8900 2080 30  0001 C CNN
+F 2 "" H 8900 2150 50  0001 C CNN
+F 3 "" H 8900 2150 50  0001 C CNN
+	1    8900 2150
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 9850 950  550  200 
+U 5FC2BBEA
+F0 "sheet5FC2BBCE" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 1050 50 
+$EndSheet
+$Sheet
+S 9850 1350 550  200 
+U 5FC2BBED
+F0 "sheet5FC2BBCF" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 1450 50 
+$EndSheet
+$Sheet
+S 9850 1750 550  200 
+U 5FC2BBF0
+F0 "sheet5FC2BBD0" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 1850 50 
+$EndSheet
+$Sheet
+S 9850 2200 550  200 
+U 5FC2BBF3
+F0 "sheet5FC2BBD1" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 2300 50 
+$EndSheet
+$Sheet
+S 9850 2600 550  200 
+U 5FC2BBF6
+F0 "sheet5FC2BBD2" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 2700 50 
+$EndSheet
+$Sheet
+S 9850 3000 550  200 
+U 5FC2BBF9
+F0 "sheet5FC2BBD3" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 3100 50 
+$EndSheet
+$Sheet
+S 9850 3450 550  200 
+U 5FC2BBFC
+F0 "sheet5FC2BBD4" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 3550 50 
+$EndSheet
+$Sheet
+S 9850 3850 550  200 
+U 5FC2BBFF
+F0 "sheet5FC2BBD5" 50
+F1 "LED_segment.sch" 50
+F2 "SEL" I L 9850 3950 50 
+$EndSheet
+Wire Wire Line
+	9300 1050 9850 1050
+Wire Wire Line
+	9300 1150 9800 1150
+Wire Wire Line
+	9800 1150 9800 1450
+Wire Wire Line
+	9800 1450 9850 1450
+Wire Wire Line
+	9300 1250 9750 1250
+Wire Wire Line
+	9750 1250 9750 1850
+Wire Wire Line
+	9750 1850 9850 1850
+Wire Wire Line
+	9300 1350 9700 1350
+Wire Wire Line
+	9700 1350 9700 2300
+Wire Wire Line
+	9700 2300 9850 2300
+Wire Wire Line
+	9300 1450 9650 1450
+Wire Wire Line
+	9650 1450 9650 2700
+Wire Wire Line
+	9650 2700 9850 2700
+Wire Wire Line
+	9300 1550 9600 1550
+Wire Wire Line
+	9600 1550 9600 3100
+Wire Wire Line
+	9600 3100 9850 3100
+Wire Wire Line
+	9300 1650 9550 1650
+Wire Wire Line
+	9550 1650 9550 3550
+Wire Wire Line
+	9550 3550 9850 3550
+Wire Wire Line
+	9300 1750 9500 1750
+Wire Wire Line
+	9500 1750 9500 3950
+Wire Wire Line
+	9500 3950 9850 3950
+Text GLabel 6300 2000 2    50   Input ~ 0
+CASC
+Text GLabel 8500 1050 0    50   Input ~ 0
+CASC
+Text GLabel 8500 1550 0    50   Input ~ 0
+LATCH
+Text GLabel 5500 1600 0    50   Input ~ 0
+LATCH
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 5FC387E6
+P 4850 1600
+AR Path="/5FC1C285/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC224F2/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC225C6/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2266C/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC227E3/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC22DDF/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC22DE2/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC22DE5/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBEA/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBED/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF0/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF3/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF6/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF9/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBFC/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC2BBFF/5FC387E6" Ref="R?"  Part="1" 
+AR Path="/5FC387E6" Ref="R17"  Part="1" 
+F 0 "R17" V 4755 1668 45  0000 L CNN
+F 1 "1k" V 4839 1668 45  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4850 1750 20  0001 C CNN
+F 3 "" H 4850 1600 60  0001 C CNN
+F 4 " " V 4934 1668 60  0000 L CNN "Field4"
+	1    4850 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5FC3BA10
+P 4850 1800
+F 0 "#PWR0119" H 4850 1800 30  0001 C CNN
+F 1 "GND" H 4850 1730 30  0001 C CNN
+F 2 "" H 4850 1800 50  0001 C CNN
+F 3 "" H 4850 1800 50  0001 C CNN
+	1    4850 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 1400 4850 1400
+$Comp
+L power:GND #PWR0120
+U 1 1 5FC3CA0B
+P 5500 1700
+F 0 "#PWR0120" H 5500 1700 30  0001 C CNN
+F 1 "GND" H 5500 1630 30  0001 C CNN
+F 2 "" H 5500 1700 50  0001 C CNN
+F 3 "" H 5500 1700 50  0001 C CNN
+	1    5500 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5FC3CD42
+P 8500 1650
+F 0 "#PWR0121" H 8500 1650 30  0001 C CNN
+F 1 "GND" H 8500 1580 30  0001 C CNN
+F 2 "" H 8500 1650 50  0001 C CNN
+F 3 "" H 8500 1650 50  0001 C CNN
+	1    8500 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0103
+U 1 1 5FC3F492
+P 7950 700
+F 0 "#SUPPLY0103" H 8000 700 45  0001 L BNN
+F 1 "3.3V" H 7950 870 45  0000 C CNN
+F 2 "" V 7908 827 60  0000 L CNN
+F 3 "" H 7950 700 60  0001 C CNN
+	1    7950 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 5FC3F498
+P 7950 1000
+F 0 "#PWR0122" H 7950 1000 30  0001 C CNN
+F 1 "GND" H 7950 930 30  0001 C CNN
+F 2 "" H 7950 1000 50  0001 C CNN
+F 3 "" H 7950 1000 50  0001 C CNN
+	1    7950 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C3
+U 1 1 5FC3F49F
+P 7950 900
+F 0 "C3" H 8058 992 45  0000 L CNN
+F 1 "0.1 uF" H 8058 908 45  0000 L CNN
+F 2 "0603" H 7950 1150 20  0001 C CNN
+F 3 "" H 7950 900 50  0001 C CNN
+F 4 "" H 8058 866 60  0000 L CNN "Field4"
+	1    7950 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0105
+U 1 1 5FC44077
+P 850 800
+F 0 "#SUPPLY0105" H 900 800 45  0001 L BNN
+F 1 "3.3V" H 850 970 45  0000 C CNN
+F 2 "" V 808 927 60  0000 L CNN
+F 3 "" H 850 800 60  0001 C CNN
+	1    850  800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 5FC4407D
+P 850 1100
+F 0 "#PWR0123" H 850 1100 30  0001 C CNN
+F 1 "GND" H 850 1030 30  0001 C CNN
+F 2 "" H 850 1100 50  0001 C CNN
+F 3 "" H 850 1100 50  0001 C CNN
+	1    850  1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C2
+U 1 1 5FC44084
+P 850 1000
+F 0 "C2" H 958 1092 45  0000 L CNN
+F 1 "0.1 uF" H 958 1008 45  0000 L CNN
+F 2 "0603" H 850 1250 20  0001 C CNN
+F 3 "" H 850 1000 50  0001 C CNN
+F 4 "" H 958 966 60  0000 L CNN "Field4"
+	1    850  1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0106
+U 1 1 5FC44976
+P 1750 700
+F 0 "#SUPPLY0106" H 1800 700 45  0001 L BNN
+F 1 "3.3V" H 1750 870 45  0000 C CNN
+F 2 "" V 1708 827 60  0000 L CNN
+F 3 "" H 1750 700 60  0001 C CNN
+	1    1750 700 
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 2650 5400 700  150 
+U 5FC47654
+F0 "Sheet5FC47653" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 5500 50 
+$EndSheet
+$Comp
+L power:GND #PWR0124
+U 1 1 5FC49FE5
+P 1750 2800
+F 0 "#PWR0124" H 1750 2800 30  0001 C CNN
+F 1 "GND" H 1750 2730 30  0001 C CNN
+F 2 "" H 1750 2800 50  0001 C CNN
+F 3 "" H 1750 2800 50  0001 C CNN
+	1    1750 2800
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 2650 5100 700  150 
+U 5FC5771C
+F0 "sheet5FC57719" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 5200 50 
+$EndSheet
+$Sheet
+S 2650 4800 700  150 
+U 5FC58972
+F0 "sheet5FC5896F" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 4900 50 
+$EndSheet
+$Sheet
+S 2650 4500 700  150 
+U 5FC5929A
+F0 "sheet5FC59297" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 4600 50 
+$EndSheet
+$Sheet
+S 2650 4200 700  150 
+U 5FC5B14C
+F0 "sheet5FC5B146" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 4300 50 
+$EndSheet
+$Sheet
+S 2650 3900 700  150 
+U 5FC5B14F
+F0 "sheet5FC5B147" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 4000 50 
+$EndSheet
+$Sheet
+S 2650 3600 700  150 
+U 5FC5B152
+F0 "sheet5FC5B148" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 3700 50 
+$EndSheet
+$Sheet
+S 2650 3300 700  150 
+U 5FC5B155
+F0 "sheet5FC5B149" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 3400 50 
+$EndSheet
+$Sheet
+S 2650 3000 700  150 
+U 5FC5BFFA
+F0 "sheet5FC5BFF0" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 3100 50 
+$EndSheet
+$Sheet
+S 2650 2700 700  150 
+U 5FC5BFFD
+F0 "sheet5FC5BFF1" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 2800 50 
+$EndSheet
+$Sheet
+S 2650 2400 700  150 
+U 5FC5C000
+F0 "sheet5FC5BFF2" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 2500 50 
+$EndSheet
+$Sheet
+S 2650 2100 700  150 
+U 5FC5C003
+F0 "sheet5FC5BFF3" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 2200 50 
+$EndSheet
+$Sheet
+S 2650 1800 700  150 
+U 5FC5C006
+F0 "sheet5FC5BFF4" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 1900 50 
+$EndSheet
+$Sheet
+S 2650 1500 700  150 
+U 5FC5C009
+F0 "sheet5FC5BFF5" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 1600 50 
+$EndSheet
+$Sheet
+S 2650 1200 700  150 
+U 5FC5C00C
+F0 "sheet5FC5BFF6" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 1300 50 
+$EndSheet
+$Sheet
+S 2650 900  700  150 
+U 5FC5C00F
+F0 "sheet5FC5BFF7" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 1000 50 
+$EndSheet
+Wire Bus Line
+	2400 700  3500 700 
+Entry Wire Line
+	3400 4900 3500 5000
+Entry Wire Line
+	3400 1000 3500 1100
+Entry Wire Line
+	3400 1300 3500 1400
+Entry Wire Line
+	3400 1600 3500 1700
+Entry Wire Line
+	3400 1900 3500 2000
+Entry Wire Line
+	3400 2200 3500 2300
+Entry Wire Line
+	3400 2500 3500 2600
+Entry Wire Line
+	3400 2800 3500 2900
+Entry Wire Line
+	3400 3100 3500 3200
+Entry Wire Line
+	3400 3400 3500 3500
+Entry Wire Line
+	3400 3700 3500 3800
+Entry Wire Line
+	3400 4000 3500 4100
+Entry Wire Line
+	3400 4300 3500 4400
+Entry Wire Line
+	3400 4600 3500 4700
+Entry Wire Line
+	3400 5200 3500 5300
+Entry Wire Line
+	3400 5500 3500 5600
+Wire Wire Line
+	2250 1000 2300 1000
+Entry Wire Line
+	2300 1000 2400 1100
+Wire Wire Line
+	3350 1000 3400 1000
+Wire Wire Line
+	3350 1300 3400 1300
+Wire Wire Line
+	3350 1600 3400 1600
+Wire Wire Line
+	3350 1900 3400 1900
+Wire Wire Line
+	3350 2200 3400 2200
+Wire Wire Line
+	3350 2500 3400 2500
+Wire Wire Line
+	3350 2800 3400 2800
+Wire Wire Line
+	3350 3100 3400 3100
+Wire Wire Line
+	3350 3400 3400 3400
+Wire Wire Line
+	3350 3700 3400 3700
+Wire Wire Line
+	3350 4000 3400 4000
+Wire Wire Line
+	3350 4300 3400 4300
+Wire Wire Line
+	3350 4600 3400 4600
+Wire Wire Line
+	3350 4900 3400 4900
+Wire Wire Line
+	3350 5200 3400 5200
+Wire Wire Line
+	3350 5500 3400 5500
+Entry Wire Line
+	2300 1100 2400 1200
+Entry Wire Line
+	2300 1200 2400 1300
+Entry Wire Line
+	2300 1300 2400 1400
+Entry Wire Line
+	2300 1400 2400 1500
+Entry Wire Line
+	2300 1500 2400 1600
+Entry Wire Line
+	2300 1600 2400 1700
+Entry Wire Line
+	2300 1700 2400 1800
+Entry Wire Line
+	2300 1800 2400 1900
+Entry Wire Line
+	2300 1900 2400 2000
+Entry Wire Line
+	2300 2000 2400 2100
+Entry Wire Line
+	2300 2100 2400 2200
+Entry Wire Line
+	2300 2200 2400 2300
+Entry Wire Line
+	2300 2300 2400 2400
+Entry Wire Line
+	2300 2400 2400 2500
+Entry Wire Line
+	2300 2500 2400 2600
+Wire Wire Line
+	2250 1100 2300 1100
+Wire Wire Line
+	2250 1200 2300 1200
+Wire Wire Line
+	2250 1300 2300 1300
+Wire Wire Line
+	2250 1400 2300 1400
+Wire Wire Line
+	2250 1500 2300 1500
+Wire Wire Line
+	2250 1600 2300 1600
+Wire Wire Line
+	2250 1700 2300 1700
+Wire Wire Line
+	2250 1800 2300 1800
+Wire Wire Line
+	2250 1900 2300 1900
+Wire Wire Line
+	2250 2000 2300 2000
+Wire Wire Line
+	2250 2100 2300 2100
+Wire Wire Line
+	2250 2200 2300 2200
+Wire Wire Line
+	2250 2300 2300 2300
+Wire Wire Line
+	2250 2400 2300 2400
+Wire Wire Line
+	2250 2500 2300 2500
+Text GLabel 4850 1400 0    50   Input ~ 0
+CLR
+Text GLabel 8050 1350 0    50   Input ~ 0
+CLR
+Wire Wire Line
+	8500 1350 8050 1350
+Wire Bus Line
+	2400 700  2400 2650
+Wire Bus Line
+	3500 700  3500 5700
+Text GLabel 8500 1250 0    50   Input ~ 0
+CLK
+Text GLabel 5500 1300 0    50   Input ~ 0
+CLK
+$EndSCHEMATC

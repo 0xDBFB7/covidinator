@@ -2458,3 +2458,36 @@ through fat!
 
 Thermoacoustic
 
+The heart is right there! Will the pulse affect the heart?
+
+Waveguide exposers have the disadvantage of being narrow-spectrum.
+
+The SY100 /4 downconverter didn't really work very well. 
+
+We need to pulse the HMC996 output. We could do this by just pulsing the power to the HMC732 VCO.
+I'm not sure that's a good idea, however. 
+The 996 has a power modulation pin ostensibly for this purpose; but it requires -4.5v.
+That means we need a fast voltage inverter (?), which I don't have on hand.
+Probably something like a differential driver 
+
+mosfet: 
+"Using negative voltage will increase turn-on delay time not the actual turn-on rise time. It will decrease turn-off delay time as there will be a higher voltage difference to pull the gate voltage below the threshold."
+
+ hc.meddevices-instrumentsmed.sc@canada.ca is probably the best place to ask 
+https://www.canada.ca/en/health-canada/services/drugs-health-products/covid19-industry/medical-devices/testing.html
+
+ Handles should be added to the cuvette to make it easier to move around on the board.
+
+ O ring gasket
+
+Abbot PCR test lists that: 
+"Pipettes with aerosol barrier tips or disposable transfer pipettes are used for all pipetting. ""
+
+Looks like bio-cabinets often have internal outlets.
+
+Abbott recommends filter-pipettes for all pipetting.
+
+Put the well plate into a big falcon tube to keep sterile?
+
+
+
