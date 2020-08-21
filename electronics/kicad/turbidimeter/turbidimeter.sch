@@ -522,13 +522,6 @@ F1 "LTOF_segment.sch" 50
 F2 "SDA_" I R 3350 4300 50 
 $EndSheet
 $Sheet
-S 2650 3900 700  150 
-U 5FC5B14F
-F0 "sheet5FC5B147" 50
-F1 "LTOF_segment.sch" 50
-F2 "SDA_" I R 3350 4000 50 
-$EndSheet
-$Sheet
 S 2650 3600 700  150 
 U 5FC5B152
 F0 "sheet5FC5B148" 50
@@ -548,13 +541,6 @@ U 5FC5BFFA
 F0 "sheet5FC5BFF0" 50
 F1 "LTOF_segment.sch" 50
 F2 "SDA_" I R 3350 3100 50 
-$EndSheet
-$Sheet
-S 2650 2700 700  150 
-U 5FC5BFFD
-F0 "sheet5FC5BFF1" 50
-F1 "LTOF_segment.sch" 50
-F2 "SDA_" I R 3350 2800 50 
 $EndSheet
 $Sheet
 S 2650 2400 700  150 
@@ -598,44 +584,8 @@ F0 "sheet5FC5BFF7" 50
 F1 "LTOF_segment.sch" 50
 F2 "SDA_" I R 3350 1000 50 
 $EndSheet
-Wire Bus Line
-	2400 700  3500 700 
-Entry Wire Line
-	3400 4900 3500 5000
-Entry Wire Line
-	3400 1000 3500 1100
-Entry Wire Line
-	3400 1300 3500 1400
-Entry Wire Line
-	3400 1600 3500 1700
-Entry Wire Line
-	3400 1900 3500 2000
-Entry Wire Line
-	3400 2200 3500 2300
-Entry Wire Line
-	3400 2500 3500 2600
-Entry Wire Line
-	3400 2800 3500 2900
-Entry Wire Line
-	3400 3100 3500 3200
-Entry Wire Line
-	3400 3400 3500 3500
-Entry Wire Line
-	3400 3700 3500 3800
-Entry Wire Line
-	3400 4000 3500 4100
-Entry Wire Line
-	3400 4300 3500 4400
-Entry Wire Line
-	3400 4600 3500 4700
-Entry Wire Line
-	3400 5200 3500 5300
-Entry Wire Line
-	3400 5500 3500 5600
 Wire Wire Line
 	2250 1000 2300 1000
-Entry Wire Line
-	2300 1000 2400 1100
 Wire Wire Line
 	3350 1000 3400 1000
 Wire Wire Line
@@ -668,36 +618,6 @@ Wire Wire Line
 	3350 5200 3400 5200
 Wire Wire Line
 	3350 5500 3400 5500
-Entry Wire Line
-	2300 1100 2400 1200
-Entry Wire Line
-	2300 1200 2400 1300
-Entry Wire Line
-	2300 1300 2400 1400
-Entry Wire Line
-	2300 1400 2400 1500
-Entry Wire Line
-	2300 1500 2400 1600
-Entry Wire Line
-	2300 1600 2400 1700
-Entry Wire Line
-	2300 1700 2400 1800
-Entry Wire Line
-	2300 1800 2400 1900
-Entry Wire Line
-	2300 1900 2400 2000
-Entry Wire Line
-	2300 2000 2400 2100
-Entry Wire Line
-	2300 2100 2400 2200
-Entry Wire Line
-	2300 2200 2400 2300
-Entry Wire Line
-	2300 2300 2400 2400
-Entry Wire Line
-	2300 2400 2400 2500
-Entry Wire Line
-	2300 2500 2400 2600
 Wire Wire Line
 	2250 1100 2300 1100
 Wire Wire Line
@@ -734,12 +654,182 @@ Text GLabel 8050 1350 0    50   Input ~ 0
 CLR
 Wire Wire Line
 	8500 1350 8050 1350
-Wire Bus Line
-	2400 700  2400 2650
-Wire Bus Line
-	3500 700  3500 5700
 Text GLabel 8500 1250 0    50   Input ~ 0
 CLK
 Text GLabel 5500 1300 0    50   Input ~ 0
 CLK
+$Sheet
+S 2650 3900 700  150 
+U 5FC5B14F
+F0 "sheet5FC5B147" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 4000 50 
+$EndSheet
+$Sheet
+S 2650 2700 700  150 
+U 5FC5BFFD
+F0 "sheet5FC5BFF1" 50
+F1 "LTOF_segment.sch" 50
+F2 "SDA_" I R 3350 2800 50 
+$EndSheet
+Text Label 2300 1000 0    50   ~ 0
+S0
+Text Label 2300 1100 0    50   ~ 0
+S1
+Text Label 2300 1200 0    50   ~ 0
+S2
+Text Label 2300 1300 0    50   ~ 0
+S3
+Text Label 2300 1400 0    50   ~ 0
+S4
+Text Label 2300 1500 0    50   ~ 0
+S5
+Text Label 2300 1600 0    50   ~ 0
+S6
+Text Label 2300 1700 0    50   ~ 0
+S7
+Text Label 2300 1800 0    50   ~ 0
+S8
+Text Label 2300 1900 0    50   ~ 0
+S9
+Text Label 2300 2000 0    50   ~ 0
+S10
+Text Label 2300 2100 0    50   ~ 0
+S11
+Text Label 2300 2200 0    50   ~ 0
+S12
+Text Label 2300 2300 0    50   ~ 0
+S13
+Text Label 2300 2400 0    50   ~ 0
+S14
+Text Label 2300 2500 0    50   ~ 0
+S15
+Text Label 3400 1000 0    50   ~ 0
+S0
+Text Label 3400 1300 0    50   ~ 0
+S1
+Text Label 3400 1600 0    50   ~ 0
+S2
+Text Label 3400 1900 0    50   ~ 0
+S3
+Text Label 3400 2200 0    50   ~ 0
+S4
+Text Label 3400 2500 0    50   ~ 0
+S5
+Text Label 3400 2800 0    50   ~ 0
+S6
+Text Label 3400 3100 0    50   ~ 0
+S7
+Text Label 3400 3400 0    50   ~ 0
+S8
+Text Label 3400 3700 0    50   ~ 0
+S9
+Text Label 3400 4000 0    50   ~ 0
+S10
+Text Label 3400 4300 0    50   ~ 0
+S11
+Text Label 3400 4600 0    50   ~ 0
+S12
+Text Label 3400 4900 0    50   ~ 0
+S13
+Text Label 3400 5200 0    50   ~ 0
+S14
+Text Label 3400 5500 0    50   ~ 0
+S15
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C21
+U 1 1 5FCF4ECB
+P 1850 7600
+F 0 "C21" H 1958 7692 45  0000 L CNN
+F 1 "0.1 uF" H 1958 7608 45  0000 L CNN
+F 2 "0603" H 1850 7850 20  0001 C CNN
+F 3 "" H 1850 7600 50  0001 C CNN
+F 4 "" H 1958 7566 60  0000 L CNN "Field4"
+	1    1850 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C23
+U 1 1 5FCF566E
+P 2750 7400
+F 0 "C23" H 2858 7492 45  0000 L CNN
+F 1 "0.1 uF" H 2858 7408 45  0000 L CNN
+F 2 "0603" H 2750 7650 20  0001 C CNN
+F 3 "" H 2750 7400 50  0001 C CNN
+F 4 "" H 2858 7366 60  0000 L CNN "Field4"
+	1    2750 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C25
+U 1 1 5FCF5955
+P 3600 7550
+F 0 "C25" H 3708 7642 45  0000 L CNN
+F 1 "0.1 uF" H 3708 7558 45  0000 L CNN
+F 2 "0603" H 3600 7800 20  0001 C CNN
+F 3 "" H 3600 7550 50  0001 C CNN
+F 4 "" H 3708 7516 60  0000 L CNN "Field4"
+	1    3600 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C27
+U 1 1 5FCF5BC4
+P 4200 7450
+F 0 "C27" H 4308 7542 45  0000 L CNN
+F 1 "0.1 uF" H 4308 7458 45  0000 L CNN
+F 2 "0603" H 4200 7700 20  0001 C CNN
+F 3 "" H 4200 7450 50  0001 C CNN
+F 4 "" H 4308 7416 60  0000 L CNN "Field4"
+	1    4200 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C20
+U 1 1 5FCF72A9
+P 1700 6900
+F 0 "C20" H 1808 6992 45  0000 L CNN
+F 1 "0.1 uF" H 1808 6908 45  0000 L CNN
+F 2 "0603" H 1700 7150 20  0001 C CNN
+F 3 "" H 1700 6900 50  0001 C CNN
+F 4 "" H 1808 6866 60  0000 L CNN "Field4"
+	1    1700 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C22
+U 1 1 5FCF72B0
+P 2600 6700
+F 0 "C22" H 2708 6792 45  0000 L CNN
+F 1 "0.1 uF" H 2708 6708 45  0000 L CNN
+F 2 "0603" H 2600 6950 20  0001 C CNN
+F 3 "" H 2600 6700 50  0001 C CNN
+F 4 "" H 2708 6666 60  0000 L CNN "Field4"
+	1    2600 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C24
+U 1 1 5FCF72B7
+P 3450 6850
+F 0 "C24" H 3558 6942 45  0000 L CNN
+F 1 "0.1 uF" H 3558 6858 45  0000 L CNN
+F 2 "0603" H 3450 7100 20  0001 C CNN
+F 3 "" H 3450 6850 50  0001 C CNN
+F 4 "" H 3558 6816 60  0000 L CNN "Field4"
+	1    3450 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C26
+U 1 1 5FCF72BE
+P 4050 6750
+F 0 "C26" H 4158 6842 45  0000 L CNN
+F 1 "0.1 uF" H 4158 6758 45  0000 L CNN
+F 2 "0603" H 4050 7000 20  0001 C CNN
+F 3 "" H 4050 6750 50  0001 C CNN
+F 4 "" H 4158 6716 60  0000 L CNN "Field4"
+	1    4050 6750
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

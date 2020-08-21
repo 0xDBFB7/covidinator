@@ -2489,5 +2489,6 @@ Abbott recommends filter-pipettes for all pipetting.
 
 Put the well plate into a big falcon tube to keep sterile?
 
-
+The coplanar waveguide more closely approximates a buried or embedded coplanar waveguide at the cuvette.
+described in \cite{Characteristics1997}
 
