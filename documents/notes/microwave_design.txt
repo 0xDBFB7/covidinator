@@ -2492,3 +2492,7 @@ Put the well plate into a big falcon tube to keep sterile?
 The coplanar waveguide more closely approximates a buried or embedded coplanar waveguide at the cuvette.
 described in \cite{Characteristics1997}
 
+We should actually see the envelope breaking on an oscillograph of the pulse. There should be 
+a non-repeatable dip in the pulse envelope on the first shot.
+
+Could put kapton on after probing as a soldermask 
