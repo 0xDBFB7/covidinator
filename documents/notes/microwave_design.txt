@@ -2496,3 +2496,6 @@ We should actually see the envelope breaking on an oscillograph of the pulse. Th
 a non-repeatable dip in the pulse envelope on the first shot.
 
 Could put kapton on after probing as a soldermask 
+
+For prototyping, minimize orthogonality. For production, maximize.
+
