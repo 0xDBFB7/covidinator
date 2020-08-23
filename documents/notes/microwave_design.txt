@@ -2499,3 +2499,14 @@ Could put kapton on after probing as a soldermask
 
 For prototyping, minimize orthogonality. For production, maximize.
 
+Wow, these pins are made of "Poly liquid crystal". That's pretty neat!
+
+
+More from the texas people! 
+
+Mention that this has nothing to do with the purely pseudoscientific field of microwave resonance
+techniques.
+
+The total amount of energy delivered is equivalent to [a ladybug bumping into one's chest?]
+
+
