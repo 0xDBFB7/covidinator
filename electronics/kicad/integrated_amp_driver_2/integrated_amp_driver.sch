@@ -16,124 +16,58 @@ $EndDescr
 $Comp
 L SparkFun-Resistors:0.75OHM-0805-1_4W-1% R5
 U 1 1 5F62017A
-P -3250 5400
-F 0 "R5" H -3250 5594 45  0000 C CNN
-F 1 "0.1r" H -3250 5510 45  0000 C CNN
-F 2 "0805" H -3250 5550 20  0001 C CNN
-F 3 "" H -3250 5400 60  0001 C CNN
-F 4 "" H -3250 5521 60  0000 C CNN "Field4"
-	1    -3250 5400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR021
-U 1 1 5F6410F6
-P -4750 2500
-F 0 "#PWR021" H -4750 2500 30  0001 C CNN
-F 1 "GND" H -4750 2430 30  0001 C CNN
-F 2 "" H -4750 2500 50  0001 C CNN
-F 3 "" H -4750 2500 50  0001 C CNN
-	1    -4750 2500
+P 15700 -1450
+F 0 "R5" H 15700 -1256 45  0000 C CNN
+F 1 "0.1r" H 15700 -1340 45  0000 C CNN
+F 2 "0805" H 15700 -1300 20  0001 C CNN
+F 3 "" H 15700 -1450 60  0001 C CNN
+F 4 "" H 15700 -1329 60  0000 C CNN "Field4"
+	1    15700 -1450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	-3150 5050 -3050 5050
+	15800 -1800 15900 -1800
 Wire Wire Line
-	-3050 5050 -3050 5400
-Connection ~ -3050 5400
+	15900 -1800 15900 -1450
+Connection ~ 15900 -1450
 Wire Wire Line
-	-3350 5050 -3450 5050
+	15600 -1800 15500 -1800
 Wire Wire Line
-	-3450 5050 -3450 5400
+	15500 -1800 15500 -1450
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY011
 U 1 1 5F653BA0
-P -3550 4850
-F 0 "#SUPPLY011" H -3500 4850 45  0001 L BNN
-F 1 "3.3V" V -3550 4978 45  0000 L CNN
-F 2 "" V -3592 4977 60  0000 L CNN
-F 3 "" H -3550 4850 60  0001 C CNN
-	1    -3550 4850
+P 15400 -2000
+F 0 "#SUPPLY011" H 15450 -2000 45  0001 L BNN
+F 1 "3.3V" V 15400 -1872 45  0000 L CNN
+F 2 "" V 15358 -1873 60  0000 L CNN
+F 3 "" H 15400 -2000 60  0001 C CNN
+	1    15400 -2000
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR018
 U 1 1 5F654A4A
-P -2950 4850
-F 0 "#PWR018" H -2950 4850 30  0001 C CNN
-F 1 "GND" H -2950 4780 30  0001 C CNN
-F 2 "" H -2950 4850 50  0001 C CNN
-F 3 "" H -2950 4850 50  0001 C CNN
-	1    -2950 4850
+P 16000 -2000
+F 0 "#PWR018" H 16000 -2000 30  0001 C CNN
+F 1 "GND" H 16000 -2070 30  0001 C CNN
+F 2 "" H 16000 -2000 50  0001 C CNN
+F 3 "" H 16000 -2000 50  0001 C CNN
+	1    16000 -2000
 	0    -1   -1   0   
 $EndComp
-Text GLabel -5150 2100 0    50   Input ~ 0
-~VCO_POWER_CONTROL
-Text GLabel -3250 4450 2    50   Input ~ 0
+Text GLabel 15700 -2400 2    50   Input ~ 0
 current_sense_output
 $Comp
 L Amplifier_Current:INA194 U8
 U 1 1 5F6507F7
-P -3250 4750
-F 0 "U8" V -3204 4406 50  0000 R CNN
-F 1 "INA194" V -3295 4406 50  0000 R CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H -3250 4750 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ina193.pdf" H -3250 4750 50  0001 C CNN
-	1    -3250 4750
+P 15700 -2100
+F 0 "U8" V 15746 -2444 50  0000 R CNN
+F 1 "INA194" V 15655 -2444 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 15700 -2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ina193.pdf" H 15700 -2100 50  0001 C CNN
+	1    15700 -2100
 	0    -1   -1   0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY04
-U 1 1 5F74E44A
-P 13150 1550
-F 0 "#SUPPLY04" H 13200 1550 45  0001 L BNN
-F 1 "5V" V 13150 1678 45  0000 L CNN
-F 2 "" V 13192 1678 60  0000 L CNN
-F 3 "" H 13150 1550 60  0001 C CNN
-	1    13150 1550
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR03
-U 1 1 5F750581
-P 12850 1850
-F 0 "#PWR03" H 12850 1850 30  0001 C CNN
-F 1 "GND" H 12850 1780 30  0001 C CNN
-F 2 "" H 12850 1850 50  0001 C CNN
-F 3 "" H 12850 1850 50  0001 C CNN
-	1    12850 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:12V #SUPPLY03
-U 1 1 5F773F2C
-P 12550 1550
-F 0 "#SUPPLY03" H 12600 1550 45  0001 L BNN
-F 1 "12V" V 12550 1678 45  0000 L CNN
-F 2 "" V 12508 1677 60  0000 L CNN
-F 3 "" H 12550 1550 60  0001 C CNN
-	1    12550 1550
-	0    -1   -1   0   
-$EndComp
-$Comp
-L dk_PMIC-Voltage-Regulators-Linear:LM7812CT_LTB U1
-U 1 1 5F7DB396
-P 12850 1550
-F 0 "U1" H 12850 1837 60  0000 C CNN
-F 1 "LM7805" H 12850 1731 60  0000 C CNN
-F 2 "digikey-footprints:SOT-223" H 13050 1750 60  0001 L CNN
-F 3 "https://www.fairchildsemi.com/datasheets/LM/LM7805.pdf" H 13050 1850 60  0001 L CNN
-F 4 "LM7812CTFS-ND" H 13050 1950 60  0001 L CNN "Digi-Key_PN"
-F 5 "LM7812CT" H 13050 2050 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H 13050 2150 60  0001 L CNN "Category"
-F 7 "PMIC - Voltage Regulators - Linear" H 13050 2250 60  0001 L CNN "Family"
-F 8 "https://www.fairchildsemi.com/datasheets/LM/LM7805.pdf" H 13050 2350 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/LM7812CT/LM7812CTFS-ND/1923051" H 13050 2450 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC REG LINEAR 12V 1A TO220-3" H 13050 2550 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 13050 2650 60  0001 L CNN "Manufacturer"
-F 12 "Last Time Buy NonStock" H 13050 2750 60  0001 L CNN "Status"
-	1    12850 1550
-	1    0    0    -1  
 $EndComp
 $Comp
 L Regulator_SwitchedCapacitor:LM2776 U5
@@ -146,53 +80,8 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm2776.pdf" H 14150 5150 50  0001 C CNN
 	1    16000 3900
 	1    0    0    -1  
 $EndComp
-$Comp
-L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U9
-U 1 1 5F5FD827
-P -4750 2200
-F 0 "U9" H -4306 2303 60  0000 L CNN
-F 1 "MCP1416T-E_OT" H -4306 2197 60  0000 L CNN
-F 2 "digikey-footprints:SOT-753" H -4550 2400 60  0001 L CNN
-F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H -4550 2500 60  0001 L CNN
-F 4 "MCP1416T-E/OTCT-ND" H -4550 2600 60  0001 L CNN "Digi-Key_PN"
-F 5 "MCP1416T-E/OT" H -4550 2700 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H -4550 2800 60  0001 L CNN "Category"
-F 7 "PMIC - Gate Drivers" H -4550 2900 60  0001 L CNN "Family"
-F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H -4550 3000 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H -4550 3100 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H -4550 3200 60  0001 L CNN "Description"
-F 11 "Microchip Technology" H -4550 3300 60  0001 L CNN "Manufacturer"
-F 12 "Active" H -4550 3400 60  0001 L CNN "Status"
-	1    -4750 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R6
-U 1 1 5F90275C
-P -5150 1900
-F 0 "R6" V -5055 1832 45  0000 R CNN
-F 1 "1k" V -5139 1832 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H -5150 2050 20  0001 C CNN
-F 3 "" H -5150 1900 60  0001 C CNN
-F 4 " " V -5234 1832 60  0000 R CNN "Field4"
-	1    -5150 1900
-	0    -1   -1   0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:3.3V #SUPPLY013
-U 1 1 5F905D5F
-P -5150 1700
-F 0 "#SUPPLY013" H -5100 1700 45  0001 L BNN
-F 1 "3.3V" H -5150 1870 45  0000 C CNN
-F 2 "" V -5192 1827 60  0000 L CNN
-F 3 "" H -5150 1700 60  0001 C CNN
-	1    -5150 1700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	-3050 5400 -2900 5400
-Text Notes 13050 5550 0    50   ~ 0
-"Application Notes_Bias and RF Sequencing for GaN and LDMOS RF Power Devices",\n"Remark: Power devices are particularly\nunstable at low drain voltages. This is the\nreason why [the device must be in] pinch-off when Vds is lower than\n the recommended operating Vds value"
+	15900 -1450 16050 -1450
 $Comp
 L SparkFun-IC-Conversion:MCP4725SOT-23 U14
 U 1 1 5F930B85
@@ -241,13 +130,13 @@ $EndComp
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R16
 U 1 1 5F9D800B
-P 7200 6000
-F 0 "R16" V 7295 5932 45  0000 R CNN
-F 1 "4.7k" V 7211 5932 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 7200 6150 20  0001 C CNN
-F 3 "" H 7200 6000 60  0001 C CNN
-F 4 " " V 7116 5932 60  0000 R CNN "Field4"
-	1    7200 6000
+P 13450 -3500
+F 0 "R16" V 13545 -3568 45  0000 R CNN
+F 1 "4.7k" V 13461 -3568 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 13450 -3350 20  0001 C CNN
+F 3 "" H 13450 -3500 60  0001 C CNN
+F 4 " " V 13366 -3568 60  0000 R CNN "Field4"
+	1    13450 -3500
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -358,48 +247,44 @@ F 3 "" H 16850 2900 50  0001 C CNN
 	1    16850 2900
 	0    -1   -1   0   
 $EndComp
-Text GLabel 7200 6200 2    50   Input ~ 0
+Text GLabel 13450 -3300 2    50   Input ~ 0
 SCL
-Text GLabel 7750 6200 2    50   Input ~ 0
+Text GLabel 14000 -3300 2    50   Input ~ 0
 SDA
 $Comp
 L SparkFun-Resistors:RESISTOR0402 R17
 U 1 1 5FA2EC1D
-P 7750 6000
-F 0 "R17" V 7845 5932 45  0000 R CNN
-F 1 "4.7k" V 7761 5932 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 7750 6150 20  0001 C CNN
-F 3 "" H 7750 6000 60  0001 C CNN
-F 4 " " V 7666 5932 60  0000 R CNN "Field4"
-	1    7750 6000
+P 14000 -3500
+F 0 "R17" V 14095 -3568 45  0000 R CNN
+F 1 "4.7k" V 14011 -3568 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 14000 -3350 20  0001 C CNN
+F 3 "" H 14000 -3500 60  0001 C CNN
+F 4 " " V 13916 -3568 60  0000 R CNN "Field4"
+	1    14000 -3500
 	0    -1   -1   0   
 $EndComp
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0102
 U 1 1 5FA2F912
-P 7200 5800
-F 0 "#SUPPLY0102" H 7250 5800 45  0001 L BNN
-F 1 "3.3V" H 7200 5970 45  0000 C CNN
-F 2 "" V 7158 5927 60  0000 L CNN
-F 3 "" H 7200 5800 60  0001 C CNN
-	1    7200 5800
+P 13450 -3700
+F 0 "#SUPPLY0102" H 13500 -3700 45  0001 L BNN
+F 1 "3.3V" H 13450 -3530 45  0000 C CNN
+F 2 "" V 13408 -3573 60  0000 L CNN
+F 3 "" H 13450 -3700 60  0001 C CNN
+	1    13450 -3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0103
 U 1 1 5FA2FCA8
-P 7750 5800
-F 0 "#SUPPLY0103" H 7800 5800 45  0001 L BNN
-F 1 "3.3V" H 7750 5970 45  0000 C CNN
-F 2 "" V 7708 5927 60  0000 L CNN
-F 3 "" H 7750 5800 60  0001 C CNN
-	1    7750 5800
+P 14000 -3700
+F 0 "#SUPPLY0103" H 14050 -3700 45  0001 L BNN
+F 1 "3.3V" H 14000 -3530 45  0000 C CNN
+F 2 "" V 13958 -3573 60  0000 L CNN
+F 3 "" H 14000 -3700 60  0001 C CNN
+	1    14000 -3700
 	1    0    0    -1  
 $EndComp
-Text Notes 18650 4550 0    50   ~ 0
-I2c multiplexer see https://electronics.stackexchange.com/a/392155/25599
-Text Notes 16900 5750 0    50   ~ 0
-Because \n- the diode detector output is so close to the RF trace, \n- the far-end output has to travel parallel to the trace,\n- and filtering might affect the RF impedance\nit helps to digitize the output immediately; hence the ADCs.\n\nAlso, since initial impedance measurements have to be taken with a\n low-power signal so as to not destroy the virus, the programmable-gain amp  also helps a lot.
 $Comp
 L power:GND #PWR0119
 U 1 1 5FA6C97D
@@ -475,17 +360,6 @@ SCL
 Text GLabel 16050 2800 0    50   Input ~ 0
 GATE_DAC_I2C_SELECT
 $Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0106
-U 1 1 5FB20353
-P -4750 1800
-F 0 "#SUPPLY0106" H -4700 1800 45  0001 L BNN
-F 1 "5V" V -4750 1928 45  0000 L CNN
-F 2 "" V -4708 1928 60  0000 L CNN
-F 3 "" H -4750 1800 60  0001 C CNN
-	1    -4750 1800
-	1    0    0    -1  
-$EndComp
-$Comp
 L SparkFun-PowerSymbols:5V #SUPPLY0108
 U 1 1 5FB2268D
 P 16850 2000
@@ -560,86 +434,19 @@ F 4 "" H 15208 3766 60  0000 L CNN "Field4"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0116
-U 1 1 5FB851E2
-P -1900 2550
-F 0 "#PWR0116" H -1900 2550 30  0001 C CNN
-F 1 "GND" H -1900 2480 30  0001 C CNN
-F 2 "" H -1900 2550 50  0001 C CNN
-F 3 "" H -1900 2550 50  0001 C CNN
-	1    -1900 2550
-	1    0    0    -1  
-$EndComp
-Text GLabel -2300 2150 0    50   Input ~ 0
-~AMP_DRAIN_CONTROL
-$Comp
-L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U20
-U 1 1 5FB851F2
-P -1900 2250
-F 0 "U20" H -1456 2353 60  0000 L CNN
-F 1 "MCP1416T-E_OT" H -1456 2247 60  0000 L CNN
-F 2 "digikey-footprints:SOT-753" H -1700 2450 60  0001 L CNN
-F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H -1700 2550 60  0001 L CNN
-F 4 "MCP1416T-E/OTCT-ND" H -1700 2650 60  0001 L CNN "Digi-Key_PN"
-F 5 "MCP1416T-E/OT" H -1700 2750 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H -1700 2850 60  0001 L CNN "Category"
-F 7 "PMIC - Gate Drivers" H -1700 2950 60  0001 L CNN "Family"
-F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H -1700 3050 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H -1700 3150 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H -1700 3250 60  0001 L CNN "Description"
-F 11 "Microchip Technology" H -1700 3350 60  0001 L CNN "Manufacturer"
-F 12 "Active" H -1700 3450 60  0001 L CNN "Status"
-	1    -1900 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Resistors:RESISTOR0402 R15
-U 1 1 5FB851F9
-P -2300 1950
-F 0 "R15" V -2205 1882 45  0000 R CNN
-F 1 "1k" V -2289 1882 45  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H -2300 2100 20  0001 C CNN
-F 3 "" H -2300 1950 60  0001 C CNN
-F 4 " " V -2384 1882 60  0000 R CNN "Field4"
-	1    -2300 1950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:3.3V #SUPPLY0111
-U 1 1 5FB851FF
-P -2300 1750
-F 0 "#SUPPLY0111" H -2250 1750 45  0001 L BNN
-F 1 "3.3V" H -2300 1920 45  0000 C CNN
-F 2 "" V -2342 1877 60  0000 L CNN
-F 3 "" H -2300 1750 60  0001 C CNN
-	1    -2300 1750
-	1    0    0    -1  
-$EndComp
-$Comp
 L SparkFun-PowerSymbols:5V #SUPPLY0112
 U 1 1 5FB8524E
-P -3600 5400
-F 0 "#SUPPLY0112" H -3550 5400 45  0001 L BNN
-F 1 "5V" V -3600 5528 45  0000 L CNN
-F 2 "" V -3558 5528 60  0000 L CNN
-F 3 "" H -3600 5400 60  0001 C CNN
-	1    -3600 5400
+P 15350 -1450
+F 0 "#SUPPLY0112" H 15400 -1450 45  0001 L BNN
+F 1 "5V" V 15350 -1322 45  0000 L CNN
+F 2 "" V 15392 -1322 60  0000 L CNN
+F 3 "" H 15350 -1450 60  0001 C CNN
+	1    15350 -1450
 	0    -1   -1   0   
 $EndComp
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0113
-U 1 1 5FB85255
-P -1900 1850
-F 0 "#SUPPLY0113" H -1850 1850 45  0001 L BNN
-F 1 "5V" V -1900 1978 45  0000 L CNN
-F 2 "" V -1858 1978 60  0000 L CNN
-F 3 "" H -1900 1850 60  0001 C CNN
-	1    -1900 1850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	-3600 5400 -3450 5400
-Connection ~ -3450 5400
+	15350 -1450 15500 -1450
+Connection ~ 15500 -1450
 $Comp
 L SparkFun-PowerSymbols:5V #SUPPLY0115
 U 1 1 5FBF709B
@@ -741,339 +548,79 @@ F 3 "" H 17400 4000 50  0001 C CNN
 	1    17400 4000
 	1    0    0    -1  
 $EndComp
-$Comp
-L conn:CONN_6 P4
-U 1 1 6030FABA
-P 7650 3050
-F 0 "P4" H 7778 3093 60  0000 L CNN
-F 1 "CONN_6" H 7778 2987 60  0000 L CNN
-F 2 "Connectors2:1X06-SMD_RA_MALE" H 7650 3050 50  0001 C CNN
-F 3 "" H 7650 3050 50  0001 C CNN
-	1    7650 3050
-	-1   0    0    1   
-$EndComp
-Text GLabel 7950 4150 2    50   Input ~ 0
-SDA
-Text GLabel 7950 4250 2    50   Input ~ 0
-SCL
-$Comp
-L SparkFun-PowerSymbols:3.3V #SUPPLY0124
-U 1 1 60313EC0
-P 7950 4050
-F 0 "#SUPPLY0124" H 8000 4050 45  0001 L BNN
-F 1 "3.3V" V 7950 4178 45  0000 L CNN
-F 2 "" V 7908 4177 60  0000 L CNN
-F 3 "" H 7950 4050 60  0001 C CNN
-	1    7950 4050
-	0    1    1    0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0125
-U 1 1 603149B2
-P 7950 3750
-F 0 "#SUPPLY0125" H 8000 3750 45  0001 L BNN
-F 1 "5V" V 7950 3878 45  0000 L CNN
-F 2 "" V 7992 3878 60  0000 L CNN
-F 3 "" H 7950 3750 60  0001 C CNN
-	1    7950 3750
-	0    1    1    0   
-$EndComp
 Text GLabel 18250 1900 2    50   Input ~ 0
-AMP_GAIN_CONTROL_
-Text GLabel 7950 3950 2    50   Input ~ 0
 AMP_GAIN_CONTROL_
 Text GLabel 18250 2900 2    50   Input ~ 0
 AMP_GATE_CONTROL_
-Text GLabel 7950 3850 2    50   Input ~ 0
-AMP_GATE_CONTROL_
-Text GLabel 8000 2800 2    50   Input ~ 0
-VCO_POWER_CONTROL_
-Text GLabel -4350 2100 2    50   Input ~ 0
-VCO_POWER_CONTROL_
-$Comp
-L conn:CONN_6 P5
-U 1 1 6030EDCF
-P 7600 4000
-F 0 "P5" H 7467 4487 60  0000 C CNN
-F 1 "CONN_6" H 7467 4381 60  0000 C CNN
-F 2 "Connectors2:1X06-SMD_RA_MALE" H 7600 4000 50  0001 C CNN
-F 3 "" H 7600 4000 50  0001 C CNN
-	1    7600 4000
-	-1   0    0    -1  
-$EndComp
-Text GLabel 8000 2900 2    50   Input ~ 0
-Vtune
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0127
-U 1 1 603C1BA0
-P 8000 3300
-F 0 "#SUPPLY0127" H 8050 3300 45  0001 L BNN
-F 1 "5V" V 8000 3428 45  0000 L CNN
-F 2 "" V 8042 3428 60  0000 L CNN
-F 3 "" H 8000 3300 60  0001 C CNN
-	1    8000 3300
-	0    1    1    0   
-$EndComp
-Text GLabel 8000 3000 2    50   Input ~ 0
-AMP_DRAIN_CONTROL_
-$Comp
-L power:GND #PWR0101
-U 1 1 603E7DB6
-P 8000 3100
-F 0 "#PWR0101" H 8000 3100 30  0001 C CNN
-F 1 "GND" H 8000 3030 30  0001 C CNN
-F 2 "" H 8000 3100 50  0001 C CNN
-F 3 "" H 8000 3100 50  0001 C CNN
-	1    8000 3100
-	0    -1   -1   0   
-$EndComp
-Text GLabel -1500 2150 2    50   Input ~ 0
-AMP_DRAIN_CONTROL_
-Text GLabel 8000 3200 2    50   Input ~ 0
+Text GLabel 16050 -1450 2    50   Input ~ 0
 AMP_DRAIN_SUPPLY
-Text GLabel -2900 5400 2    50   Input ~ 0
-AMP_DRAIN_SUPPLY
-Text GLabel 4200 -1200 0    50   Input ~ 0
-current_sense_output
-$Comp
-L Device:Jumper JP1
-U 1 1 606E475C
-P 9900 2800
-F 0 "JP1" H 9900 3064 50  0000 C CNN
-F 1 "Jumper" H 9900 2973 50  0000 C CNN
-F 2 "0xDBFB7:JUMPER_5102" H 9900 2800 50  0001 C CNN
-F 3 "~" H 9900 2800 50  0001 C CNN
-	1    9900 2800
-	1    0    0    -1  
-$EndComp
 $Comp
 L SparkFun-Capacitors:0.1UF-0603-25V-5% C11
 U 1 1 60717C1D
-P -1450 4850
-F 0 "C11" H -1342 4942 45  0000 L CNN
-F 1 "0.1 uF" H -1342 4858 45  0000 L CNN
-F 2 "0603" H -1450 5100 20  0001 C CNN
-F 3 "" H -1450 4850 50  0001 C CNN
-F 4 "" H -1342 4816 60  0000 L CNN "Field4"
-	1    -1450 4850
+P 17100 -1850
+F 0 "C11" H 17208 -1758 45  0000 L CNN
+F 1 "0.1 uF" H 17208 -1842 45  0000 L CNN
+F 2 "0603" H 17100 -1600 20  0001 C CNN
+F 3 "" H 17100 -1850 50  0001 C CNN
+F 4 "" H 17208 -1884 60  0000 L CNN "Field4"
+	1    17100 -1850
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0122
 U 1 1 60717C23
-P -1450 4950
-F 0 "#PWR0122" H -1450 4950 30  0001 C CNN
-F 1 "GND" H -1450 4880 30  0001 C CNN
-F 2 "" H -1450 4950 50  0001 C CNN
-F 3 "" H -1450 4950 50  0001 C CNN
-	1    -1450 4950
+P 17100 -1750
+F 0 "#PWR0122" H 17100 -1750 30  0001 C CNN
+F 1 "GND" H 17100 -1820 30  0001 C CNN
+F 2 "" H 17100 -1750 50  0001 C CNN
+F 3 "" H 17100 -1750 50  0001 C CNN
+	1    17100 -1750
 	1    0    0    -1  
 $EndComp
 $Comp
 L SparkFun-PowerSymbols:3.3V #SUPPLY0121
 U 1 1 60718232
-P -1450 4650
-F 0 "#SUPPLY0121" H -1400 4650 45  0001 L BNN
-F 1 "3.3V" V -1450 4778 45  0000 L CNN
-F 2 "" V -1492 4777 60  0000 L CNN
-F 3 "" H -1450 4650 60  0001 C CNN
-	1    -1450 4650
+P 17100 -2050
+F 0 "#SUPPLY0121" H 17150 -2050 45  0001 L BNN
+F 1 "3.3V" V 17100 -1922 45  0000 L CNN
+F 2 "" V 17058 -1923 60  0000 L CNN
+F 3 "" H 17100 -2050 60  0001 C CNN
+	1    17100 -2050
 	1    0    0    -1  
 $EndComp
 $Comp
 L SparkFun-Capacitors:0.1UF-0603-25V-5% C13
 U 1 1 6075B561
-P 8850 5200
-F 0 "C13" H 8958 5292 45  0000 L CNN
-F 1 "0.1 uF" H 8958 5208 45  0000 L CNN
-F 2 "0603" H 8850 5450 20  0001 C CNN
-F 3 "" H 8850 5200 50  0001 C CNN
-F 4 "" H 8958 5166 60  0000 L CNN "Field4"
-	1    8850 5200
+P 15900 700
+F 0 "C13" H 16008 792 45  0000 L CNN
+F 1 "0.1 uF" H 16008 708 45  0000 L CNN
+F 2 "0603" H 15900 950 20  0001 C CNN
+F 3 "" H 15900 700 50  0001 C CNN
+F 4 "" H 16008 666 60  0000 L CNN "Field4"
+	1    15900 700 
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0123
 U 1 1 6075B567
-P 8850 5300
-F 0 "#PWR0123" H 8850 5300 30  0001 C CNN
-F 1 "GND" H 8850 5230 30  0001 C CNN
-F 2 "" H 8850 5300 50  0001 C CNN
-F 3 "" H 8850 5300 50  0001 C CNN
-	1    8850 5300
+P 15900 800
+F 0 "#PWR0123" H 15900 800 30  0001 C CNN
+F 1 "GND" H 15900 730 30  0001 C CNN
+F 2 "" H 15900 800 50  0001 C CNN
+F 3 "" H 15900 800 50  0001 C CNN
+	1    15900 800 
 	1    0    0    -1  
 $EndComp
 $Comp
 L SparkFun-PowerSymbols:5V #SUPPLY0122
 U 1 1 6075B56D
-P 8850 5000
-F 0 "#SUPPLY0122" H 8900 5000 45  0001 L BNN
-F 1 "5V" V 8850 5128 45  0000 L CNN
-F 2 "" V 8892 5128 60  0000 L CNN
-F 3 "" H 8850 5000 60  0001 C CNN
-	1    8850 5000
+P 15900 500
+F 0 "#SUPPLY0122" H 15950 500 45  0001 L BNN
+F 1 "5V" V 15900 628 45  0000 L CNN
+F 2 "" V 15942 628 60  0000 L CNN
+F 3 "" H 15900 500 60  0001 C CNN
+	1    15900 500 
 	0    1    -1   0   
-$EndComp
-$Comp
-L SparkFun-Capacitors:0.1UF-0603-25V-5% C14
-U 1 1 60790017
-P -2500 2800
-F 0 "C14" H -2392 2892 45  0000 L CNN
-F 1 "0.1 uF" H -2392 2808 45  0000 L CNN
-F 2 "0603" H -2500 3050 20  0001 C CNN
-F 3 "" H -2500 2800 50  0001 C CNN
-F 4 "" H -2392 2766 60  0000 L CNN "Field4"
-	1    -2500 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0124
-U 1 1 6079001D
-P -2500 2900
-F 0 "#PWR0124" H -2500 2900 30  0001 C CNN
-F 1 "GND" H -2500 2830 30  0001 C CNN
-F 2 "" H -2500 2900 50  0001 C CNN
-F 3 "" H -2500 2900 50  0001 C CNN
-	1    -2500 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0123
-U 1 1 60790023
-P -2500 2600
-F 0 "#SUPPLY0123" H -2450 2600 45  0001 L BNN
-F 1 "5V" V -2500 2728 45  0000 L CNN
-F 2 "" V -2458 2728 60  0000 L CNN
-F 3 "" H -2500 2600 60  0001 C CNN
-	1    -2500 2600
-	0    1    -1   0   
-$EndComp
-$Comp
-L SparkFun-Capacitors:0.1UF-0603-25V-5% C15
-U 1 1 607994DD
-P -4300 2750
-F 0 "C15" H -4192 2842 45  0000 L CNN
-F 1 "0.1 uF" H -4192 2758 45  0000 L CNN
-F 2 "0603" H -4300 3000 20  0001 C CNN
-F 3 "" H -4300 2750 50  0001 C CNN
-F 4 "" H -4192 2716 60  0000 L CNN "Field4"
-	1    -4300 2750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0131
-U 1 1 607994E3
-P -4300 2850
-F 0 "#PWR0131" H -4300 2850 30  0001 C CNN
-F 1 "GND" H -4300 2780 30  0001 C CNN
-F 2 "" H -4300 2850 50  0001 C CNN
-F 3 "" H -4300 2850 50  0001 C CNN
-	1    -4300 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0126
-U 1 1 607994E9
-P -4300 2550
-F 0 "#SUPPLY0126" H -4250 2550 45  0001 L BNN
-F 1 "5V" V -4300 2678 45  0000 L CNN
-F 2 "" V -4258 2678 60  0000 L CNN
-F 3 "" H -4300 2550 60  0001 C CNN
-	1    -4300 2550
-	0    1    -1   0   
-$EndComp
-$Comp
-L SparkFun-Capacitors:1.0UF-1206-50V-10% C16
-U 1 1 607DDE7E
-P 12500 950
-F 0 "C16" H 12608 1042 45  0000 L CNN
-F 1 "10uF" H 12608 958 45  0000 L CNN
-F 2 "1206" H 12500 1200 20  0001 C CNN
-F 3 "" H 12500 950 50  0001 C CNN
-F 4 "" H 12608 916 60  0000 L CNN "Field4"
-	1    12500 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Capacitors:0.1UF-0603-25V-5% C17
-U 1 1 607DDE85
-P 12950 950
-F 0 "C17" H 13058 1042 45  0000 L CNN
-F 1 "0.1 uF" H 13058 958 45  0000 L CNN
-F 2 "0603" H 12950 1200 20  0001 C CNN
-F 3 "" H 12950 950 50  0001 C CNN
-F 4 "" H 13058 916 60  0000 L CNN "Field4"
-	1    12950 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	12950 750  12500 750 
-$Comp
-L power:GND #PWR0132
-U 1 1 607DDE8C
-P 12500 1050
-F 0 "#PWR0132" H 12500 1050 30  0001 C CNN
-F 1 "GND" H 12500 980 30  0001 C CNN
-F 2 "" H 12500 1050 50  0001 C CNN
-F 3 "" H 12500 1050 50  0001 C CNN
-	1    12500 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0133
-U 1 1 607DDE92
-P 12950 1050
-F 0 "#PWR0133" H 12950 1050 30  0001 C CNN
-F 1 "GND" H 12950 980 30  0001 C CNN
-F 2 "" H 12950 1050 50  0001 C CNN
-F 3 "" H 12950 1050 50  0001 C CNN
-	1    12950 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:12V #SUPPLY0128
-U 1 1 607DE535
-P 12500 750
-F 0 "#SUPPLY0128" H 12550 750 45  0001 L BNN
-F 1 "12V" V 12500 878 45  0000 L CNN
-F 2 "" V 12458 877 60  0000 L CNN
-F 3 "" H 12500 750 60  0001 C CNN
-	1    12500 750 
-	0    -1   -1   0   
-$EndComp
-Connection ~ 12500 750 
-$Comp
-L power:GND #PWR0135
-U 1 1 6085A149
-P 4450 -1800
-F 0 "#PWR0135" H 4450 -1800 30  0001 C CNN
-F 1 "GND" H 4450 -1870 30  0001 C CNN
-F 2 "" H 4450 -1800 50  0001 C CNN
-F 3 "" H 4450 -1800 50  0001 C CNN
-	1    4450 -1800
-	0    1    1    0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:3.3V #SUPPLY0129
-U 1 1 6085E7DC
-P 4450 -1600
-F 0 "#SUPPLY0129" H 4500 -1600 45  0001 L BNN
-F 1 "3.3V" H 4450 -1430 45  0000 C CNN
-F 2 "" V 4408 -1473 60  0000 L CNN
-F 3 "" H 4450 -1600 60  0001 C CNN
-	1    4450 -1600
-	0    -1   -1   0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0130
-U 1 1 6085EB17
-P 4450 -1700
-F 0 "#SUPPLY0130" H 4500 -1700 45  0001 L BNN
-F 1 "5V" V 4450 -1572 45  0000 L CNN
-F 2 "" V 4492 -1572 60  0000 L CNN
-F 3 "" H 4450 -1700 60  0001 C CNN
-	1    4450 -1700
-	0    -1   -1   0   
 $EndComp
 $Comp
 L SparkFun-PowerSymbols:5V #SUPPLY0131
@@ -1097,177 +644,667 @@ F 3 "" H 950 5900 60  0001 C CNN
 	1    950  5900
 	0    -1   1    0   
 $EndComp
-Text GLabel 3950 -300 0    50   Input ~ 0
-GAIN_DAC_I2C_SELECT
-Text GLabel 4200 -600 0    50   Input ~ 0
-GATE_DAC_I2C_SELECT
-Text GLabel 4200 -1050 0    50   Input ~ 0
-TUNING_DAC_I2C_SELECT
-Text GLabel 4200 -750 0    50   Input ~ 0
-~VCO_POWER_CONTROL
-Text GLabel 4200 -900 0    50   Input ~ 0
-~AMP_DRAIN_CONTROL
 $Comp
-L conn:CONN_6 P3
-U 1 1 608C54BB
-P 4800 -850
-F 0 "P3" H 4667 -363 60  0000 C CNN
-F 1 "CONN_6" H 4667 -469 60  0000 C CNN
-F 2 "Connectors2:1X06-SMD_RA_MALE" H 4800 -850 50  0001 C CNN
-F 3 "" H 4800 -850 50  0001 C CNN
-	1    4800 -850
-	1    0    0    1   
+L SparkFun-PowerSymbols:5V #SUPPLY0126
+U 1 1 607994E9
+P 11200 -1100
+F 0 "#SUPPLY0126" H 11250 -1100 45  0001 L BNN
+F 1 "5V" V 11200 -972 45  0000 L CNN
+F 2 "" V 11242 -972 60  0000 L CNN
+F 3 "" H 11200 -1100 60  0001 C CNN
+	1    11200 -1100
+	0    1    -1   0   
 $EndComp
-Wire Wire Line
-	4450 -1100 4200 -1100
-Wire Wire Line
-	4200 -1100 4200 -1200
-Wire Wire Line
-	4200 -1050 4450 -1050
-Wire Wire Line
-	4450 -1050 4450 -1000
-Wire Wire Line
-	4200 -900 4450 -900
-Text GLabel 4450 -1500 0    50   Input ~ 0
-SDA
-Text GLabel 4450 -1400 0    50   Input ~ 0
-SCL
 $Comp
-L conn:CONN_6 P1
-U 1 1 608DA211
-P 4800 -1550
-F 0 "P1" H 4667 -1063 60  0000 C CNN
-F 1 "CONN_6" H 4667 -1169 60  0000 C CNN
-F 2 "Connectors2:1X06-SMD_RA_MALE" H 4800 -1550 50  0001 C CNN
-F 3 "" H 4800 -1550 50  0001 C CNN
-	1    4800 -1550
-	1    0    0    1   
+L power:GND #PWR0131
+U 1 1 607994E3
+P 11200 -800
+F 0 "#PWR0131" H 11200 -800 30  0001 C CNN
+F 1 "GND" H 11200 -870 30  0001 C CNN
+F 2 "" H 11200 -800 50  0001 C CNN
+F 3 "" H 11200 -800 50  0001 C CNN
+	1    11200 -800
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4200 -750 4450 -750
-Wire Wire Line
-	4450 -750 4450 -800
-Wire Wire Line
-	4200 -600 4300 -600
-Wire Wire Line
-	4300 -600 4300 -700
-Wire Wire Line
-	4300 -700 4450 -700
-Wire Wire Line
-	4200 -400 4450 -400
-Wire Wire Line
-	4450 -400 4450 -600
-Wire Wire Line
-	4200 -450 4200 -400
 $Comp
-L power:GND #PWR0134
-U 1 1 607F381D
-P 12350 2150
-F 0 "#PWR0134" H 12350 2150 30  0001 C CNN
-F 1 "GND" H 12350 2080 30  0001 C CNN
-F 2 "" H 12350 2150 50  0001 C CNN
-F 3 "" H 12350 2150 50  0001 C CNN
-	1    12350 2150
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C15
+U 1 1 607994DD
+P 11200 -900
+F 0 "C15" H 11308 -808 45  0000 L CNN
+F 1 "0.1 uF" H 11308 -892 45  0000 L CNN
+F 2 "0603" H 11200 -650 20  0001 C CNN
+F 3 "" H 11200 -900 50  0001 C CNN
+F 4 "" H 11308 -934 60  0000 L CNN "Field4"
+	1    11200 -900
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0123
+U 1 1 60790023
+P 13000 -1050
+F 0 "#SUPPLY0123" H 13050 -1050 45  0001 L BNN
+F 1 "5V" V 13000 -922 45  0000 L CNN
+F 2 "" V 13042 -922 60  0000 L CNN
+F 3 "" H 13000 -1050 60  0001 C CNN
+	1    13000 -1050
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0124
+U 1 1 6079001D
+P 13000 -750
+F 0 "#PWR0124" H 13000 -750 30  0001 C CNN
+F 1 "GND" H 13000 -820 30  0001 C CNN
+F 2 "" H 13000 -750 50  0001 C CNN
+F 3 "" H 13000 -750 50  0001 C CNN
+	1    13000 -750
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C14
+U 1 1 60790017
+P 13000 -850
+F 0 "C14" H 13108 -758 45  0000 L CNN
+F 1 "0.1 uF" H 13108 -842 45  0000 L CNN
+F 2 "0603" H 13000 -600 20  0001 C CNN
+F 3 "" H 13000 -850 50  0001 C CNN
+F 4 "" H 13108 -884 60  0000 L CNN "Field4"
+	1    13000 -850
+	1    0    0    -1  
+$EndComp
+Text GLabel 14000 -1500 2    50   Input ~ 0
+AMP_DRAIN_CONTROL_
+Text GLabel 11150 -1550 2    50   Input ~ 0
+VCO_POWER_CONTROL_
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0113
+U 1 1 5FB85255
+P 13600 -1800
+F 0 "#SUPPLY0113" H 13650 -1800 45  0001 L BNN
+F 1 "5V" V 13600 -1672 45  0000 L CNN
+F 2 "" V 13642 -1672 60  0000 L CNN
+F 3 "" H 13600 -1800 60  0001 C CNN
+	1    13600 -1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0111
+U 1 1 5FB851FF
+P 13200 -1900
+F 0 "#SUPPLY0111" H 13250 -1900 45  0001 L BNN
+F 1 "3.3V" H 13200 -1730 45  0000 C CNN
+F 2 "" V 13158 -1773 60  0000 L CNN
+F 3 "" H 13200 -1900 60  0001 C CNN
+	1    13200 -1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R15
+U 1 1 5FB851F9
+P 13200 -1700
+F 0 "R15" V 13295 -1768 45  0000 R CNN
+F 1 "1k" V 13211 -1768 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 13200 -1550 20  0001 C CNN
+F 3 "" H 13200 -1700 60  0001 C CNN
+F 4 " " V 13116 -1768 60  0000 R CNN "Field4"
+	1    13200 -1700
 	0    -1   -1   0   
 $EndComp
 $Comp
-L SparkFun-Connectors:CONN_03 J5
-U 1 1 605E2923
-P 12250 2350
-F 0 "J5" H 12208 2860 45  0000 C CNN
-F 1 "CONN_03" H 12208 2776 45  0000 C CNN
-F 2 "Connectors2:1X03_SMD_RA_MALE" H 12250 2750 20  0001 C CNN
-F 3 "" H 12250 2350 50  0001 C CNN
-F 4 "XXX-00000" H 12208 2681 60  0000 C CNN "Field4"
-	1    12250 2350
+L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U20
+U 1 1 5FB851F2
+P 13600 -1400
+F 0 "U20" H 14044 -1297 60  0000 L CNN
+F 1 "MCP1416T-E_OT" H 14044 -1403 60  0000 L CNN
+F 2 "digikey-footprints:SOT-753" H 13800 -1200 60  0001 L CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 13800 -1100 60  0001 L CNN
+F 4 "MCP1416T-E/OTCT-ND" H 13800 -1000 60  0001 L CNN "Digi-Key_PN"
+F 5 "MCP1416T-E/OT" H 13800 -900 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 13800 -800 60  0001 L CNN "Category"
+F 7 "PMIC - Gate Drivers" H 13800 -700 60  0001 L CNN "Family"
+F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 13800 -600 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 13800 -500 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 13800 -400 60  0001 L CNN "Description"
+F 11 "Microchip Technology" H 13800 -300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 13800 -200 60  0001 L CNN "Status"
+	1    13600 -1400
 	1    0    0    -1  
+$EndComp
+Text GLabel 13200 -1500 0    50   Input ~ 0
+~AMP_DRAIN_CONTROL
+$Comp
+L power:GND #PWR0116
+U 1 1 5FB851E2
+P 13600 -1100
+F 0 "#PWR0116" H 13600 -1100 30  0001 C CNN
+F 1 "GND" H 13600 -1170 30  0001 C CNN
+F 2 "" H 13600 -1100 50  0001 C CNN
+F 3 "" H 13600 -1100 50  0001 C CNN
+	1    13600 -1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0106
+U 1 1 5FB20353
+P 10750 -1850
+F 0 "#SUPPLY0106" H 10800 -1850 45  0001 L BNN
+F 1 "5V" V 10750 -1722 45  0000 L CNN
+F 2 "" V 10792 -1722 60  0000 L CNN
+F 3 "" H 10750 -1850 60  0001 C CNN
+	1    10750 -1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY013
+U 1 1 5F905D5F
+P 10350 -1950
+F 0 "#SUPPLY013" H 10400 -1950 45  0001 L BNN
+F 1 "3.3V" H 10350 -1780 45  0000 C CNN
+F 2 "" V 10308 -1823 60  0000 L CNN
+F 3 "" H 10350 -1950 60  0001 C CNN
+	1    10350 -1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R6
+U 1 1 5F90275C
+P 10350 -1750
+F 0 "R6" V 10445 -1818 45  0000 R CNN
+F 1 "1k" V 10361 -1818 45  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 10350 -1600 20  0001 C CNN
+F 3 "" H 10350 -1750 60  0001 C CNN
+F 4 " " V 10266 -1818 60  0000 R CNN "Field4"
+	1    10350 -1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U9
+U 1 1 5F5FD827
+P 10750 -1450
+F 0 "U9" H 11194 -1347 60  0000 L CNN
+F 1 "MCP1416T-E_OT" H 11194 -1453 60  0000 L CNN
+F 2 "digikey-footprints:SOT-753" H 10950 -1250 60  0001 L CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 10950 -1150 60  0001 L CNN
+F 4 "MCP1416T-E/OTCT-ND" H 10950 -1050 60  0001 L CNN "Digi-Key_PN"
+F 5 "MCP1416T-E/OT" H 10950 -950 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 10950 -850 60  0001 L CNN "Category"
+F 7 "PMIC - Gate Drivers" H 10950 -750 60  0001 L CNN "Family"
+F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 10950 -650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 10950 -550 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 10950 -450 60  0001 L CNN "Description"
+F 11 "Microchip Technology" H 10950 -350 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 10950 -250 60  0001 L CNN "Status"
+	1    10750 -1450
+	1    0    0    -1  
+$EndComp
+Text GLabel 10350 -1550 0    50   Input ~ 0
+~VCO_POWER_CONTROL
+$Comp
+L power:GND #PWR021
+U 1 1 5F6410F6
+P 10750 -1150
+F 0 "#PWR021" H 10750 -1150 30  0001 C CNN
+F 1 "GND" H 10750 -1220 30  0001 C CNN
+F 2 "" H 10750 -1150 50  0001 C CNN
+F 3 "" H 10750 -1150 50  0001 C CNN
+	1    10750 -1150
+	1    0    0    -1  
+$EndComp
+Text Notes 16900 5750 0    50   ~ 0
+Because \n- the diode detector output is so close to the RF trace, \n- the far-end output has to travel parallel to the trace,\n- and filtering might affect the RF impedance\nit helps to digitize the output immediately; hence the ADCs.\n\nAlso, since initial impedance measurements have to be taken with a\n low-power signal so as to not destroy the virus, the programmable-gain amp  also helps a lot.
+Text Notes 18650 4550 0    50   ~ 0
+I2c multiplexer see https://electronics.stackexchange.com/a/392155/25599
+Text Notes 13050 5550 0    50   ~ 0
+"Application Notes_Bias and RF Sequencing for GaN and LDMOS RF Power Devices",\n"Remark: Power devices are particularly\nunstable at low drain voltages. This is the\nreason why [the device must be in] pinch-off when Vds is lower than\n the recommended operating Vds value"
+$Comp
+L conn:CONN_3 J2
+U 1 1 60B7ECC2
+P 14100 2950
+F 0 "J2" H 14100 2872 45  0000 R CNN
+F 1 "CONN_02" V 14016 2872 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left" H 14100 3200 20  0001 C CNN
+F 3 "" H 14100 2950 50  0001 C CNN
+F 4 "" H 14058 3181 60  0000 C CNN "Field4"
+	1    14100 2950
+	-1   0    0    1   
+$EndComp
+Text GLabel 14450 2850 2    50   Input ~ 0
+SDA
+Text GLabel 14450 2950 2    50   Input ~ 0
+SCL
+Text GLabel 14450 3050 2    50   Input ~ 0
+GATE_DAC_I2C_SELECT
+$Comp
+L conn:CONN_3 J3
+U 1 1 60B848F0
+P 14150 2000
+F 0 "J3" H 14150 1922 45  0000 R CNN
+F 1 "CONN_02" V 14066 1922 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left" H 14150 2250 20  0001 C CNN
+F 3 "" H 14150 2000 50  0001 C CNN
+F 4 "" H 14108 2231 60  0000 C CNN "Field4"
+	1    14150 2000
+	-1   0    0    1   
+$EndComp
+Text GLabel 14500 1900 2    50   Input ~ 0
+SDA
+Text GLabel 14500 2000 2    50   Input ~ 0
+SCL
+Text GLabel 14500 2100 2    50   Input ~ 0
+GAIN_DAC_I2C_SELECT
+$Comp
+L SparkFun-Connectors:CONN_02 J1
+U 1 1 60B8506B
+P 14100 1300
+F 0 "J1" H 14100 1222 45  0000 R CNN
+F 1 "CONN_02" V 14016 1222 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 14100 1550 20  0001 C CNN
+F 3 "" H 14100 1300 50  0001 C CNN
+F 4 "" H 14058 1531 60  0000 C CNN "Field4"
+	1    14100 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0104
+U 1 1 60B85A24
+P 14000 1300
+F 0 "#SUPPLY0104" H 14050 1300 45  0001 L BNN
+F 1 "5V" V 14000 1428 45  0000 L CNN
+F 2 "" V 14042 1428 60  0000 L CNN
+F 3 "" H 14000 1300 60  0001 C CNN
+	1    14000 1300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 60B8645D
+P 14000 1400
+F 0 "#PWR0101" H 14000 1400 30  0001 C CNN
+F 1 "GND" H 14000 1330 30  0001 C CNN
+F 2 "" H 14000 1400 50  0001 C CNN
+F 3 "" H 14000 1400 50  0001 C CNN
+	1    14000 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J4
+U 1 1 60B86C40
+P 19700 1050
+F 0 "J4" H 19700 972 45  0000 R CNN
+F 1 "CONN_02" V 19616 972 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 19700 1300 20  0001 C CNN
+F 3 "" H 19700 1050 50  0001 C CNN
+F 4 "" H 19658 1281 60  0000 C CNN "Field4"
+	1    19700 1050
+	-1   0    0    1   
+$EndComp
+Text GLabel 19600 1050 0    50   Input ~ 0
+AMP_GAIN_CONTROL_
+Text GLabel 19600 1150 0    50   Input ~ 0
+AMP_GATE_CONTROL_
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0105
+U 1 1 60BAACB6
+P 17450 600
+F 0 "#SUPPLY0105" H 17500 600 45  0001 L BNN
+F 1 "5V" V 17450 728 45  0000 L CNN
+F 2 "" V 17492 728 60  0000 L CNN
+F 3 "" H 17450 600 60  0001 C CNN
+	1    17450 600 
+	0    1    -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0103
-U 1 1 604CD9BF
-P 12350 2350
-F 0 "#PWR0103" H 12350 2350 30  0001 C CNN
-F 1 "GND" H 12350 2280 30  0001 C CNN
-F 2 "" H 12350 2350 50  0001 C CNN
-F 3 "" H 12350 2350 50  0001 C CNN
-	1    12350 2350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:12V #SUPPLY01
-U 1 1 5F7C3D57
-P 12350 2250
-F 0 "#SUPPLY01" H 12400 2250 45  0001 L BNN
-F 1 "12V" V 12350 2378 45  0000 L CNN
-F 2 "" V 12308 2377 60  0000 L CNN
-F 3 "" H 12350 2250 60  0001 C CNN
-	1    12350 2250
-	0    1    1    0   
-$EndComp
-Text GLabel 6150 1550 0    50   Input ~ 0
-Vtune
-Text GLabel 6150 1450 0    50   Input ~ 0
-SDA
-Text GLabel 6150 1250 0    50   Input ~ 0
-TUNING_DAC_I2C_SELECT
-Text GLabel 6150 1350 0    50   Input ~ 0
-SCL
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0117
-U 1 1 60A230FC
-P 6150 1150
-F 0 "#SUPPLY0117" H 6200 1150 45  0001 L BNN
-F 1 "5V" V 6150 1277 45  0000 L CNN
-F 2 "" V 6192 1278 60  0000 L CNN
-F 3 "" H 6150 1150 60  0001 C CNN
-	1    6150 1150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L conn:CONN_6 J1
-U 1 1 60A1ACE6
-P 6500 1300
-F 0 "J1" H 6628 1332 45  0000 L CNN
-F 1 "CONN_04" H 6628 1248 45  0000 L CNN
-F 2 "Connectors2:1X06-SMD-FEMALE" H 6500 1800 20  0001 C CNN
-F 3 "" H 6500 1300 50  0001 C CNN
-F 4 "" H 6628 1206 60  0000 L CNN "Field4"
-	1    6500 1300
+U 1 1 60BAACBC
+P 17450 900
+F 0 "#PWR0103" H 17450 900 30  0001 C CNN
+F 1 "GND" H 17450 830 30  0001 C CNN
+F 2 "" H 17450 900 50  0001 C CNN
+F 3 "" H 17450 900 50  0001 C CNN
+	1    17450 900 
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0106
-U 1 1 60A19394
-P 6150 1050
-F 0 "#PWR0106" H 6150 1050 30  0001 C CNN
-F 1 "GND" H 6150 980 30  0001 C CNN
-F 2 "" H 6150 1050 50  0001 C CNN
-F 3 "" H 6150 1050 50  0001 C CNN
-	1    6150 1050
-	0    1    1    0   
-$EndComp
-Text GLabel 4200 -450 0    50   Input ~ 0
-GAIN_DAC_I2C_SELECT
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY?
-U 1 1 60B2B974
-P 10200 2800
-F 0 "#SUPPLY?" H 10250 2800 45  0001 L BNN
-F 1 "5V" V 10200 2928 45  0000 L CNN
-F 2 "" V 10242 2928 60  0000 L CNN
-F 3 "" H 10200 2800 60  0001 C CNN
-	1    10200 2800
-	0    1    1    0   
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C1
+U 1 1 60BAACC3
+P 17450 800
+F 0 "C1" H 17558 892 45  0000 L CNN
+F 1 "0.1 uF" H 17558 808 45  0000 L CNN
+F 2 "0603" H 17450 1050 20  0001 C CNN
+F 3 "" H 17450 800 50  0001 C CNN
+F 4 "" H 17558 766 60  0000 L CNN "Field4"
+	1    17450 800 
+	1    0    0    -1  
 $EndComp
 $Comp
-L SparkFun-PowerSymbols:5V #SUPPLY?
-U 1 1 60B2BD97
-P 9600 2800
-F 0 "#SUPPLY?" H 9650 2800 45  0001 L BNN
-F 1 "5V" V 9600 2928 45  0000 L CNN
-F 2 "" V 9642 2928 60  0000 L CNN
-F 3 "" H 9600 2800 60  0001 C CNN
-	1    9600 2800
+L SparkFun-PowerSymbols:5V #SUPPLY0107
+U 1 1 60BABE4B
+P 18150 3600
+F 0 "#SUPPLY0107" H 18200 3600 45  0001 L BNN
+F 1 "5V" V 18150 3728 45  0000 L CNN
+F 2 "" V 18192 3728 60  0000 L CNN
+F 3 "" H 18150 3600 60  0001 C CNN
+	1    18150 3600
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 60BABE51
+P 18150 3900
+F 0 "#PWR0104" H 18150 3900 30  0001 C CNN
+F 1 "GND" H 18150 3830 30  0001 C CNN
+F 2 "" H 18150 3900 50  0001 C CNN
+F 3 "" H 18150 3900 50  0001 C CNN
+	1    18150 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C2
+U 1 1 60BABE58
+P 18150 3800
+F 0 "C2" H 18258 3892 45  0000 L CNN
+F 1 "0.1 uF" H 18258 3808 45  0000 L CNN
+F 2 "0603" H 18150 4050 20  0001 C CNN
+F 3 "" H 18150 3800 50  0001 C CNN
+F 4 "" H 18258 3766 60  0000 L CNN "Field4"
+	1    18150 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J5
+U 1 1 60BBDACD
+P 12200 -2800
+F 0 "J5" H 12200 -2878 45  0000 R CNN
+F 1 "CONN_02" V 12116 -2878 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 12200 -2550 20  0001 C CNN
+F 3 "" H 12200 -2800 50  0001 C CNN
+F 4 "" H 12158 -2569 60  0000 C CNN "Field4"
+	1    12200 -2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0114
+U 1 1 60BBDAD3
+P 12100 -2800
+F 0 "#SUPPLY0114" H 12150 -2800 45  0001 L BNN
+F 1 "5V" V 12100 -2672 45  0000 L CNN
+F 2 "" V 12142 -2672 60  0000 L CNN
+F 3 "" H 12100 -2800 60  0001 C CNN
+	1    12100 -2800
 	0    -1   -1   0   
 $EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 60BBDAD9
+P 12100 -2700
+F 0 "#PWR0105" H 12100 -2700 30  0001 C CNN
+F 1 "GND" H 12100 -2770 30  0001 C CNN
+F 2 "" H 12100 -2700 50  0001 C CNN
+F 3 "" H 12100 -2700 50  0001 C CNN
+	1    12100 -2700
+	0    1    1    0   
+$EndComp
+$Comp
+L conn:CONN_3 J6
+U 1 1 60BC1D64
+P 14450 -600
+F 0 "J6" H 14450 -678 45  0000 R CNN
+F 1 "CONN_02" V 14366 -678 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left" H 14450 -350 20  0001 C CNN
+F 3 "" H 14450 -600 50  0001 C CNN
+F 4 "" H 14408 -369 60  0000 C CNN "Field4"
+	1    14450 -600
+	-1   0    0    1   
+$EndComp
+Text GLabel 14800 -700 2    50   Input ~ 0
+AMP_DRAIN_CONTROL_
+Text GLabel 14800 -600 2    50   Input ~ 0
+AMP_DRAIN_SUPPLY
+Text GLabel 14800 -500 2    50   Input ~ 0
+VCO_POWER_CONTROL_
+$Comp
+L SparkFun-Connectors:CONN_02 J10
+U 1 1 60BC49DB
+P 16750 -3450
+F 0 "J10" H 16750 -3528 45  0000 R CNN
+F 1 "CONN_02" V 16666 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 16750 -3200 20  0001 C CNN
+F 3 "" H 16750 -3450 50  0001 C CNN
+F 4 "" H 16708 -3219 60  0000 C CNN "Field4"
+	1    16750 -3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J9
+U 1 1 60BC5D8E
+P 16250 -3450
+F 0 "J9" H 16250 -3528 45  0000 R CNN
+F 1 "CONN_02" V 16166 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 16250 -3200 20  0001 C CNN
+F 3 "" H 16250 -3450 50  0001 C CNN
+F 4 "" H 16208 -3219 60  0000 C CNN "Field4"
+	1    16250 -3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J8
+U 1 1 60BC6061
+P 15850 -3450
+F 0 "J8" H 15850 -3528 45  0000 R CNN
+F 1 "CONN_02" V 15766 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 15850 -3200 20  0001 C CNN
+F 3 "" H 15850 -3450 50  0001 C CNN
+F 4 "" H 15808 -3219 60  0000 C CNN "Field4"
+	1    15850 -3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J7
+U 1 1 60BC6823
+P 15400 -3450
+F 0 "J7" H 15400 -3528 45  0000 R CNN
+F 1 "CONN_02" V 15316 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 15400 -3200 20  0001 C CNN
+F 3 "" H 15400 -3450 50  0001 C CNN
+F 4 "" H 15358 -3219 60  0000 C CNN "Field4"
+	1    15400 -3450
+	1    0    0    -1  
+$EndComp
+Connection ~ 15950 -3550
+Connection ~ 16350 -3550
+Wire Wire Line
+	16350 -3550 15950 -3550
+Connection ~ 16850 -3550
+Wire Wire Line
+	16850 -3550 16350 -3550
+Wire Wire Line
+	15500 -3450 15950 -3450
+Connection ~ 15950 -3450
+Wire Wire Line
+	15950 -3450 16350 -3450
+Connection ~ 16350 -3450
+Wire Wire Line
+	16350 -3450 16850 -3450
+Connection ~ 16850 -3450
+Text GLabel 17450 -3550 2    50   Input ~ 0
+SDA
+Text GLabel 17450 -3450 2    50   Input ~ 0
+SCL
+$Comp
+L SparkFun-Connectors:CONN_02 J12
+U 1 1 60BDEE0C
+P 15000 -3450
+F 0 "J12" H 15000 -3528 45  0000 R CNN
+F 1 "CONN_02" V 14916 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 15000 -3200 20  0001 C CNN
+F 3 "" H 15000 -3450 50  0001 C CNN
+F 4 "" H 14958 -3219 60  0000 C CNN "Field4"
+	1    15000 -3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J11
+U 1 1 60BDF08D
+P 14550 -3450
+F 0 "J11" H 14550 -3528 45  0000 R CNN
+F 1 "CONN_02" V 14466 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 14550 -3200 20  0001 C CNN
+F 3 "" H 14550 -3450 50  0001 C CNN
+F 4 "" H 14508 -3219 60  0000 C CNN "Field4"
+	1    14550 -3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15100 -3550 15500 -3550
+Connection ~ 15500 -3550
+Wire Wire Line
+	15500 -3550 15950 -3550
+Wire Wire Line
+	15100 -3450 15500 -3450
+Connection ~ 15500 -3450
+Wire Wire Line
+	14650 -3550 15100 -3550
+Connection ~ 15100 -3550
+Wire Wire Line
+	14650 -3450 15100 -3450
+Connection ~ 15100 -3450
+Text GLabel 9400 -1000 0    50   Input ~ 0
+~AMP_DRAIN_CONTROL
+Text GLabel 9400 -1100 0    50   Input ~ 0
+~VCO_POWER_CONTROL
+$Comp
+L conn:CONN_3 J14
+U 1 1 60C09208
+P 9750 -1000
+F 0 "J14" H 9750 -1078 45  0000 R CNN
+F 1 "CONN_02" V 9666 -1078 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left" H 9750 -750 20  0001 C CNN
+F 3 "" H 9750 -1000 50  0001 C CNN
+F 4 "" H 9708 -769 60  0000 C CNN "Field4"
+	1    9750 -1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J16
+U 1 1 60C1F558
+P 15250 -4150
+F 0 "J16" H 15250 -4228 45  0000 R CNN
+F 1 "CONN_02" V 15166 -4228 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 15250 -3900 20  0001 C CNN
+F 3 "" H 15250 -4150 50  0001 C CNN
+F 4 "" H 15208 -3919 60  0000 C CNN "Field4"
+	1    15250 -4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J17
+U 1 1 60C1F993
+P 15600 -4150
+F 0 "J17" H 15600 -4228 45  0000 R CNN
+F 1 "CONN_02" V 15516 -4228 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 15600 -3900 20  0001 C CNN
+F 3 "" H 15600 -4150 50  0001 C CNN
+F 4 "" H 15558 -3919 60  0000 C CNN "Field4"
+	1    15600 -4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J18
+U 1 1 60C1FC80
+P 15950 -4150
+F 0 "J18" H 15950 -4228 45  0000 R CNN
+F 1 "CONN_02" V 15866 -4228 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 15950 -3900 20  0001 C CNN
+F 3 "" H 15950 -4150 50  0001 C CNN
+F 4 "" H 15908 -3919 60  0000 C CNN "Field4"
+	1    15950 -4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-Connectors:CONN_02 J15
+U 1 1 60C23C17
+P 14900 -4150
+F 0 "J15" H 14900 -4228 45  0000 R CNN
+F 1 "CONN_02" V 14816 -4228 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 14900 -3900 20  0001 C CNN
+F 3 "" H 14900 -4150 50  0001 C CNN
+F 4 "" H 14858 -3919 60  0000 C CNN "Field4"
+	1    14900 -4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0117
+U 1 1 60C24980
+P 14800 -4150
+F 0 "#SUPPLY0117" H 14850 -4150 45  0001 L BNN
+F 1 "5V" V 14800 -4022 45  0000 L CNN
+F 2 "" V 14842 -4022 60  0000 L CNN
+F 3 "" H 14800 -4150 60  0001 C CNN
+	1    14800 -4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 60C24986
+P 14800 -4050
+F 0 "#PWR0107" H 14800 -4050 30  0001 C CNN
+F 1 "GND" H 14800 -4120 30  0001 C CNN
+F 2 "" H 14800 -4050 50  0001 C CNN
+F 3 "" H 14800 -4050 50  0001 C CNN
+	1    14800 -4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	14800 -4150 15150 -4150
+Connection ~ 14800 -4150
+Connection ~ 15150 -4150
+Wire Wire Line
+	15150 -4150 15500 -4150
+Connection ~ 15500 -4150
+Wire Wire Line
+	15500 -4150 15850 -4150
+Wire Wire Line
+	15850 -4050 15500 -4050
+Connection ~ 14800 -4050
+Connection ~ 15150 -4050
+Wire Wire Line
+	15150 -4050 14800 -4050
+Connection ~ 15500 -4050
+Wire Wire Line
+	15500 -4050 15150 -4050
+Text GLabel 9400 -900 0    50   Input ~ 0
+current_sense_output
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0118
+U 1 1 60C38B79
+P 17400 -3350
+F 0 "#SUPPLY0118" H 17450 -3350 45  0001 L BNN
+F 1 "3.3V" H 17400 -3180 45  0000 C CNN
+F 2 "" V 17358 -3223 60  0000 L CNN
+F 3 "" H 17400 -3350 60  0001 C CNN
+	1    17400 -3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	16850 -3550 17400 -3550
+Wire Wire Line
+	16850 -3450 17400 -3450
+$Comp
+L conn:CONN_3 J13
+U 1 1 60C43CAA
+P 17050 -3450
+F 0 "J13" H 17050 -3528 45  0000 R CNN
+F 1 "CONN_02" V 16966 -3528 45  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left" H 17050 -3200 20  0001 C CNN
+F 3 "" H 17050 -3450 50  0001 C CNN
+F 4 "" H 17008 -3219 60  0000 C CNN "Field4"
+	1    17050 -3450
+	-1   0    0    1   
+$EndComp
+Connection ~ 17400 -3550
+Wire Wire Line
+	17400 -3550 17450 -3550
+Connection ~ 17400 -3450
+Wire Wire Line
+	17400 -3450 17450 -3450
 $EndSCHEMATC
