@@ -23,6 +23,7 @@
 
 
 
+#define DAC_MAX_VAL 4095
 
 // #define MAX_MSG_SIZE  4096
 

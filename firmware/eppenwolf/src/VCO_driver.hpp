@@ -9,6 +9,7 @@
 #include "WProgram.h"
 
 #endif
+
 #include "Wire.h"
 
 #include "MCP4725.h"
@@ -16,9 +17,9 @@
 #include "comms.hpp"
 #include <WString.h>
 
-#define DAC_MAX_VAL 4095
 
 void unselect_dacs();
+float get_drain_current();
 
 void init_VCO();
 void set_VCO(float varactor_voltage, bool power_state);

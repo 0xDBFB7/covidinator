@@ -16,7 +16,7 @@
 #define GAIN_DAC_GAIN 1
 #define GATE_DAC_GAIN 0.5
 
-MCP4725 DAC;
+MCP4725 DAC_instance;
 
 void init_VCO(){
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
@@ -33,10 +33,10 @@ void init_VCO(){
     digitalWriteFast(AMP_POWER_CONTROL_PIN, 1);
 
     unselect_dacs();
-    DAC.begin(0b1100010);
+    DAC_instance.begin(0x61);
     //0b1100010
     //
-    DAC.setVoltage(0);
+    DAC_instance.setVoltage(0);
 }
 
 void unselect_dacs(){
@@ -45,7 +45,7 @@ void unselect_dacs(){
     digitalWriteFast(GATE_DAC_SELECT_PIN, LOW);
 }
 
-void get_drain_current(){
+float get_drain_current(){
     return (((analogRead(DRAIN_CURRENT_SENSE_PIN) / ANALOG_READ_MAX_VAL)*3.3) / 0.1)/20.0;
 }
 
@@ -71,19 +71,20 @@ void get_drain_current(){
 
 
 void set_VCO(float varactor_voltage, bool power_state){
+    // debug_serial.printf("\nVCO set to %f, %f, %f, %i\n", varactor_voltage, power_state);
+
     varactor_voltage = constrain(varactor_voltage, 0, 20.0);
     uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/TUNE_DAC_SUPPLY_VOLTAGE) * DAC_MAX_VAL;
-    //
-    //
+    // //
+    // //
     unselect_dacs();
     digitalWriteFast(TUNE_DAC_SELECT_PIN, 1);
-    DAC.setVoltage(varactor_value);
-    unselect_dacs();
-    // //p-channel inverts!
-    digitalWriteFast(PULSE_PIN, !power_state);
-    //
-    // debug_serial.printf("\nVCO set to %f, %f, %f, %i\n", base_bias_voltage, varactor_voltage, supply_voltage, power_state);
-    // //now that's what I call convenience.
+    DAC_instance.setVoltage(varactor_value);
+    // unselect_dacs();
+    // // //p-channel inverts!
+    // digitalWriteFast(VCO_POWER_CONTROL_PIN, !power_state);
+
+    //now that's what I call convenience.
 
 }
 

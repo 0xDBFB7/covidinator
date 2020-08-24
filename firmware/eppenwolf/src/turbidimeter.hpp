@@ -1,7 +1,7 @@
 #ifndef turbidimeter_H
 #define turbidimeter_H
 
-#include <FreqCount.h>
+// #include <FreqCount.h>
 #include "WProgram.h"
 #include "comms.hpp"
 
