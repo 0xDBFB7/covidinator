@@ -16,14 +16,16 @@
 #include "comms.hpp"
 #include <WString.h>
 
+#define DAC_MAX_VAL 4095
 
+void unselect_dacs();
 
 void init_VCO();
-void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state);
-
-void LO_power(bool power);
-void LO_tune(float target_value);
-void pulse_VCO(int pulse_duration_nanoseconds);
+void set_VCO(float varactor_voltage, bool power_state);
+//
+// void LO_power(bool power);
+// void LO_tune(float target_value);
+// void pulse_VCO(int pulse_duration_nanoseconds);
 // struct transistor_driver{
 //     String name = "";
 //

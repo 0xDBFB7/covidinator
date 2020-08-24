@@ -126,19 +126,11 @@ CPP_FILES := $(filter-out test_main.cpp, $(CPP_FILES))
 L_INC := $(foreach lib,$(filter %/, $(wildcard $(LIBRARYPATH)/*/)), -I$(lib))
 
 
-LCPP_FILES += $(wildcard $(LIBRARYPATH)/TMCStepper/src/*.cpp)
-LCPP_FILES += $(wildcard $(LIBRARYPATH)/TMCStepper/src/source/*.cpp)
-
-L_INC += -I$(LIBRARYPATH)/TMCStepper/src/
-L_INC += -I$(LIBRARYPATH)/TMCStepper/src/source/
 
 LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/SPI/*.cpp)
 L_INC += -I$(COREPATH)/../../libraries/SPI/
 
-LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/FreqCount/*.cpp)
-L_INC += -I$(COREPATH)/../../libraries/FreqCount/
-LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/FreqMeasure/*.cpp)
-L_INC += -I$(COREPATH)/../../libraries/FreqMeasure/
+
 LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/Wire/*.cpp)
 L_INC += -I$(COREPATH)/../../libraries/Wire/
 

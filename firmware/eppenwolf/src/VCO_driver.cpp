@@ -1,90 +1,84 @@
 #include "VCO_driver.hpp"
 
+#define DRAIN_CURRENT_SENSE_PIN A0
 
-#define LO_POWER_PIN 2
-#define LO_VARACTOR_PWM_PIN 3
+#define VCO_POWER_CONTROL_PIN 5
+#define AMP_POWER_CONTROL_PIN 6
 
+#define TUNE_DAC_SELECT_PIN 2
+#define GAIN_DAC_SELECT_PIN 3
+#define GATE_DAC_SELECT_PIN 4
 
-#define BASE_BIAS_PWM_PIN 9 //PWM
-#define VARACTOR_PWM_PIN 10 //PWM
-
-#define SUPPLY_PIN 16
-
-#define PULSE_PIN 17
-
-
+#define TUNE_DAC_SUPPLY_VOLTAGE 3.3
+#define AMP_DAC_SUPPLY_VOLTAGE 5.0
 // non-inverting config. = 1 + Rf/Rin
-#define BASE_BIAS_GAIN 11
 #define VARACTOR_GAIN 11
-#define SUPPLY_GAIN 11
+#define GAIN_DAC_GAIN 1
+#define GATE_DAC_GAIN 0.5
 
-MCP4725 vco_varactor_DAC;
+MCP4725 DAC;
 
 void init_VCO(){
     analogWriteResolution(ANALOG_WRITE_RESOLUTION);
     analogReadResolution(ANALOG_READ_RESOLUTION);
-    analogWriteFrequency(VARACTOR_PWM_PIN, 11718.75);
 
-    pinMode(BASE_BIAS_PWM_PIN, OUTPUT);
-    pinMode(VARACTOR_PWM_PIN, OUTPUT);
-    pinMode(PULSE_PIN, OUTPUT);
-
-    analogWrite(BASE_BIAS_PWM_PIN, 0);
-    analogWrite(VARACTOR_PWM_PIN, 0);
-    analogWrite(SUPPLY_PIN, 0);
+    pinMode(TUNE_DAC_SELECT_PIN, OUTPUT);
+    pinMode(GAIN_DAC_SELECT_PIN, OUTPUT);
+    pinMode(GATE_DAC_SELECT_PIN, OUTPUT);
+    pinMode(VCO_POWER_CONTROL_PIN, OUTPUT);
+    pinMode(AMP_POWER_CONTROL_PIN, OUTPUT);
 
     //p-channel inverts!
-    digitalWriteFast(PULSE_PIN, 1);
+    digitalWriteFast(VCO_POWER_CONTROL_PIN, 1);
+    digitalWriteFast(AMP_POWER_CONTROL_PIN, 1);
 
-
-    pinMode(LO_POWER_PIN, OUTPUT);
-    pinMode(LO_VARACTOR_PWM_PIN, OUTPUT);
-
-    vco_varactor_DAC.begin(0x60);
-    vco_varactor_DAC.setVoltage(0);
-
-}
-
-
-void pulse_VCO(int pulse_duration_nanoseconds){
-
-    int pulse_cycles = (pulse_duration_nanoseconds * 1.0e-9) / (1.0 / ((float)F_CPU));
-    pulse_cycles /= 10; // about 20% off.
-
-    noInterrupts(); //sei
-
-    volatile int i = 0;
-
-    //p-channel inverts!
-    digitalWriteFast(PULSE_PIN, 0);
-    for(i = 0; i < pulse_cycles; i++){
-        asm volatile("nop");
-    }
-    digitalWriteFast(PULSE_PIN, 1);
-    interrupts();
-    //cli
-}
-
-#define DAC_MAX_VAL 4095
-
-void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_voltage, bool power_state){
+    unselect_dacs();
+    DAC.begin(0b1100010);
+    //0b1100010
     //
-    base_bias_voltage = constrain(base_bias_voltage, 0, 20.0);
+    DAC.setVoltage(0);
+}
+
+void unselect_dacs(){
+    digitalWriteFast(TUNE_DAC_SELECT_PIN, LOW);
+    digitalWriteFast(GAIN_DAC_SELECT_PIN, LOW);
+    digitalWriteFast(GATE_DAC_SELECT_PIN, LOW);
+}
+
+void get_drain_current(){
+    return (((analogRead(DRAIN_CURRENT_SENSE_PIN) / ANALOG_READ_MAX_VAL)*3.3) / 0.1)/20.0;
+}
+
+// void pulse_VCO(int pulse_duration_nanoseconds){
+//
+//     int pulse_cycles = (pulse_duration_nanoseconds * 1.0e-9) / (1.0 / ((float)F_CPU));
+//     pulse_cycles /= 10; // about 20% off.
+//
+//     noInterrupts(); //sei
+//
+//     volatile int i = 0;
+//
+//     //p-channel inverts!
+//     digitalWriteFast(PULSE_PIN, 0);
+//     for(i = 0; i < pulse_cycles; i++){
+//         asm volatile("nop");
+//     }
+//     digitalWriteFast(PULSE_PIN, 1);
+//     interrupts();
+//     //cli
+// }
+
+
+
+void set_VCO(float varactor_voltage, bool power_state){
     varactor_voltage = constrain(varactor_voltage, 0, 20.0);
-    supply_voltage = constrain(supply_voltage, 1.5, 12);
-    //
-    const float lm317_offset_voltage = 1.5;
-    uint16_t base_bias_value = ((base_bias_voltage/BASE_BIAS_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
-    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/CORE_SUPPLY_VOLTAGE) * DAC_MAX_VAL;
-    uint16_t supply_value = (((supply_voltage-lm317_offset_voltage)/SUPPLY_GAIN)/CORE_SUPPLY_VOLTAGE) * ANALOG_WRITE_MAX_VAL;
+    uint16_t varactor_value = ((varactor_voltage/VARACTOR_GAIN)/TUNE_DAC_SUPPLY_VOLTAGE) * DAC_MAX_VAL;
     //
     //
-    vco_varactor_DAC.setVoltage(varactor_value);
-    // //
-    analogWrite(BASE_BIAS_PWM_PIN, base_bias_value);
-    // analogWrite(VARACTOR_PWM_PIN, varactor_value);
-    analogWrite(SUPPLY_PIN, supply_value);
-    //
+    unselect_dacs();
+    digitalWriteFast(TUNE_DAC_SELECT_PIN, 1);
+    DAC.setVoltage(varactor_value);
+    unselect_dacs();
     // //p-channel inverts!
     digitalWriteFast(PULSE_PIN, !power_state);
     //
@@ -94,19 +88,21 @@ void set_VCO(float base_bias_voltage, float varactor_voltage, float supply_volta
 }
 
 
-void LO_power(bool power){
-    // analogWriteFrequency(LO_VARACTOR_PWM_PIN, 50000.0);
-    debug_serial.printf("LO power set to %i\n", power);
-    digitalWrite(2, power);
-}
 
-void LO_tune(float value){
 
-    const int mosfet_threshold = 0.7;
-    int lo_val = (ANALOG_WRITE_MAX_VAL - (value*ANALOG_WRITE_MAX_VAL)) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VAL);
-    debug_serial.printf("LO tune set to %i\n", lo_val);
-    analogWrite(LO_VARACTOR_PWM_PIN, lo_val);
-}
+// void LO_power(bool power){
+//     // analogWriteFrequency(LO_VARACTOR_PWM_PIN, 50000.0);
+//     debug_serial.printf("LO power set to %i\n", power);
+//     digitalWrite(2, power);
+// }
+//
+// void LO_tune(float value){
+//
+//     const int mosfet_threshold = 0.7;
+//     int lo_val = (ANALOG_WRITE_MAX_VAL - (value*ANALOG_WRITE_MAX_VAL)) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VAL);
+//     debug_serial.printf("LO tune set to %i\n", lo_val);
+//     analogWrite(LO_VARACTOR_PWM_PIN, lo_val);
+// }
 
 
 
