@@ -26,6 +26,9 @@ hole_margin = 2.0;
 echo(slide_length);
 echo(slide_width);
 
+text_height = 1;
+text_size = 1;
+alpha = "ABCDEFGHIJKLMNOP";
 
 difference(){
     cube([slide_width, slide_length, slide_height], false);
@@ -42,6 +45,8 @@ difference(){
                 translate([x_centerline, y_centerline, cuvette_bottom_margin+cuvette_depth])
                        cylinder(slide_height - (cuvette_bottom_margin+cuvette_depth)+1,
                                         d=access_hole_diameter,center=false);
+                
+                translate([x_centerline-text_size/2, y_centerline+cuvette_spacing/2-text_size/2, slide_height - text_height])             linear_extrude(text_height){ text(alpha[i], text_size); };
             }
                     
             translate([0, y_centerline, cuvette_bottom_margin])
@@ -51,7 +56,8 @@ difference(){
             translate([slide_width, y_centerline, cuvette_bottom_margin])
                    cylinder(slide_height,
                                     d=alignment_pin_diameter,center=false);
-      
+            
+            
          
         }
         translate([x_centerline, 2.5, cuvette_bottom_margin])
@@ -60,6 +66,8 @@ difference(){
         translate([x_centerline, slide_length-2.5, cuvette_bottom_margin])
            cylinder(slide_height,
                             d=2.0,center=false);
+        
+       
     }
 }
 

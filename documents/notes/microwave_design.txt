@@ -2509,4 +2509,4 @@ techniques.
 
 The total amount of energy delivered is equivalent to [a ladybug bumping into one's chest?]
 
-
+'fdtd' was very helpful in that its first-class python API.
