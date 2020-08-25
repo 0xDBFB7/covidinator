@@ -2521,3 +2521,6 @@ The 467MP doesn't bond to polyprop.
 
 Should make the turbidimeter as two boards, since we don't need the thing in the incubator anymore.
 
+Notched swing bar on screws as preload
+
+
