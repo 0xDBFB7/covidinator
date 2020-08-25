@@ -2,42 +2,37 @@
 #include <ADS1115_lite.h>
 #include "host_comms.hpp"
 
-ADS1115_lite adc_0(ADS1115_ADDRESS_ADDR_GND);
-ADS1115_lite adc_1(ADS1115_ADDRESS_ADDR_VDD);
+ADS1115_lite near_adc(ADS1115_ADDRESS_ADDR_GND);
+ADS1115_lite far_adc(ADS1115_ADDRESS_ADDR_VDD);
 
 void init_ADCs(){
 
-    adc_0.setGain(ADS1115_REG_CONFIG_PGA_2_048V);
-    adc_0.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
-    adc_0.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
+    near_adc.setGain(ADS1115_REG_CONFIG_PGA_2_048V);
+    near_adc.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
+    near_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_1);
 
-    adc_1.setGain(ADS1115_REG_CONFIG_PGA_2_048V);
-    adc_1.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
-    adc_1.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
+    far_adc.setGain(ADS1115_REG_CONFIG_PGA_2_048V);
+    far_adc.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
+    far_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
 
-
-
-
-
-    if (!adc_0.testConnection()) {
-      debug_serial.println("Near ADC Failed"); //oh man...something is wrong
-      return;
+    if (!near_adc.testConnection()) {
+      debug_serial.println("Near ADC Failed");
     }
-    if (!adc_1.testConnection()) {
-      debug_serial.println("Far ADC Failed"); //oh man...something is wrong
-      return;
+    if (!far_adc.testConnection()) {
+      debug_serial.println("Far ADC Failed");
     }
+
 }
 
 void get_power_levels(){
 
-    adc_0.triggerConversion();
-    uint16_t near_single_diode_value = adc_0.getConversion();
-    debug_serial.println(((float)((near_single_diode_value-32768)/32768))*2.048);
+    near_adc.triggerConversion();
+    uint16_t near_single_diode_value = near_adc.getConversion();
+    debug_serial.println(((float)((near_single_diode_value)/(float)32768))*2.048, 7);
 
-    adc_1.triggerConversion();
-    uint16_t far_single_diode_value = adc_1.getConversion();
-    debug_serial.println(((float)(far_single_diode_value-32768)/32768)*2.048);
+    far_adc.triggerConversion();
+    uint16_t far_single_diode_value = far_adc.getConversion();
+    debug_serial.println(((float)(far_single_diode_value)/(float)32768)*2.048, 7);
 
 
 }

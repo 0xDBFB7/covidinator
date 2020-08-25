@@ -46,7 +46,13 @@ void unselect_dacs(){
 }
 
 float get_drain_current(){
-    return (((analogRead(DRAIN_CURRENT_SENSE_PIN) / ANALOG_READ_MAX_VAL)*3.3) / 0.1)/20.0;
+    // float avg = 0;
+    // for(int i = 0; i < 10; i++){
+    //     avg += (((analogRead(DRAIN_CURRENT_SENSE_PIN) / (float)ANALOG_READ_MAX_VAL)*3.3) / 0.1)/50.0;
+    //     delayMicroseconds(500);
+    // }
+    // avg /= 10;
+    return (((analogRead(DRAIN_CURRENT_SENSE_PIN) / (float)ANALOG_READ_MAX_VAL)*3.3) / 0.1)/50.0;;
 }
 
 // void pulse_VCO(int pulse_duration_nanoseconds){
@@ -98,28 +104,31 @@ void start_amplifier(){
 
     set_amp_power_state(0);
     set_VCO(0, 0); //Make sure VCO is off
-
     set_amp_gain_voltage(4.5);
-    set_amp_gate_voltage(1.0);
+    set_amp_gate_voltage(1.6);
     delay(10);
     set_amp_power_state(1);
-    // for(float i = 3.3/2; i > 0.5; i-= 0.01){
 
-    //     if(current > 0.14){
-    //         debug_serial.println(i);
-    //         break;
-    //     }
-    //     delay(100);
-    // }
-    // for(float i = 0; i < 20; i+=0.5){
+    for(float i = 1.6; i > 0.2; i-= 0.01){
+        float current = get_drain_current();
+        debug_serial.println(current);
+        set_amp_gate_voltage(i);
+        if(current > 0.22){
+            debug_serial.println(i);
+            break;
+        }
+        delay(20);
+    }
     set_VCO(10,1);
-    delay(500);
+    delay(1000);
     // }
     float current = get_drain_current();
-    debug_serial.println(current);
+
+    debug_serial.print("current:");
+    debug_serial.println(current, 8);
     get_power_levels();
     set_VCO(10,0);
-
+    set_amp_gate_voltage(1.6);
     set_amp_power_state(0);
 }
 
