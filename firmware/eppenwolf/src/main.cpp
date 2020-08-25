@@ -1,5 +1,6 @@
 #include "WProgram.h"
 #include "host_comms.hpp"
+#include "power_sensor.hpp"
 // #include "VCO_driver.hpp"
 // #include "turbidimeter.hpp"
 // #include "stepper.hpp"
@@ -16,6 +17,8 @@ int main(void)
 
 	// // turbidimeter_instance.init();
 	init_VCO();
+	init_ADCs();
+	get_power_levels();
 	// init_thermal();
 	// home();
 	while(1){

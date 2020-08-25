@@ -29,9 +29,7 @@ context = pyudev.Context()
 #
 #     return HOST_COMM_PORT, DEBUG_PORT
 
-multimeter = serial.Serial('/dev/ttyS0',115200,timeout=5)
-
-
+multimeter = serial.Serial('/dev/ttyS0',115200,timeout=None)
 
 
 def connect():

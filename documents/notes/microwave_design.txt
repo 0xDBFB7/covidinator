@@ -2514,3 +2514,10 @@ The total amount of energy delivered is equivalent to [a ladybug bumping into on
 Single sinusoidal pulses with phases 
 
 https://www.uthscsa.edu/academics/biomedical-sciences/faculty/profile/68246/Vijayalaxmi%2C-Vijayalaxmi
+
+Yknow, if the cuvette is properly sealed, there really isn't any risk to the user.
+
+The 467MP doesn't bond to polyprop.
+
+Should make the turbidimeter as two boards, since we don't need the thing in the incubator anymore.
+

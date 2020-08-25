@@ -141,6 +141,10 @@ L_INC += -I$(LIBRARYPATH)/SerialTransfer/src/
 #LCPP_FILES += $(wildcard $(LIBRARYPATH)/MLX90621-Lite/*.cpp)
 #L_INC += -I$(LIBRARYPATH)/MLX90621-Lite/
 
+LCPP_FILES += $(wildcard $(LIBRARYPATH)/ADS1115-Lite/src/*.cpp)
+L_INC += -I$(LIBRARYPATH)/ADS1115-Lite/src/
+
+
 LCPP_FILES += $(wildcard $(LIBRARYPATH)/MCP4725/MCP4725/*.cpp)
 L_INC += -I$(LIBRARYPATH)/MCP4725/MCP4725/
 

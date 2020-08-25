@@ -1,5 +1,5 @@
 #include "VCO_driver.hpp"
-
+#include "power_sensor.hpp"
 #define DRAIN_CURRENT_SENSE_PIN A0
 
 #define VCO_POWER_CONTROL_PIN 5
@@ -111,12 +111,13 @@ void start_amplifier(){
     //     }
     //     delay(100);
     // }
-    for(float i = 0; i < 20; i+=0.5){
-        set_VCO(i,1);
-        delay(500);
-    }
+    // for(float i = 0; i < 20; i+=0.5){
+    set_VCO(10,1);
+    delay(500);
+    // }
     float current = get_drain_current();
     debug_serial.println(current);
+    get_power_levels();
     set_VCO(10,0);
 
     set_amp_power_state(0);
