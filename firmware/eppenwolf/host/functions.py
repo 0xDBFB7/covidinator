@@ -20,6 +20,23 @@ def set_VCO(link, varactor_voltage, power_state):
     clear_buffers(link)
 
 
+def start_amplifier(link):
+    max_supply = 5.0
+
+    send_size = 0
+    send_size = add_float(link, send_size, 0)
+
+    link.send(send_size, packet_id=1)
+
+    wait_for_response(link)
+
+    pos = 0
+    val, pos = rx_float(link, pos)
+
+    clear_buffers(link)
+
+
+
 def sample_turbidity(link):
     send_size = 0
     send_size = add_float(link, send_size, 0)

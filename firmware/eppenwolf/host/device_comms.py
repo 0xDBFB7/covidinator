@@ -36,7 +36,7 @@ multimeter = serial.Serial('/dev/ttyS0',115200,timeout=5)
 
 def connect():
     # HOST_COMM_PORT, DEBUG_PORT = find_devices() ??not working
-    HOST_COMM_PORT = '/dev/ttyUSB3'
+    HOST_COMM_PORT = '/dev/ttyUSB4'
     link = txfer.SerialTransfer(HOST_COMM_PORT)
     link.open()
     # DEBUG_COMM_INSTANCE = serial.Serial(DEBUG_PORT, 115200)

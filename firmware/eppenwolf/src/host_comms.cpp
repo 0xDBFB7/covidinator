@@ -8,6 +8,7 @@ void dispatch(){
     if(host_transfer.available()){
         switch(host_transfer.currentPacketID()) {
             case 0: set_VCO_handler(); break;
+            case 1: start_amplifier(); break;
             // case 1: turbidimeter_instance.sample_turbidity(); break;
             // case 2: move(); break;
             // case 3: home_cmd(); break;
@@ -53,7 +54,22 @@ void set_VCO_handler(){
 
     host_transfer.sendData(sendSize, 10);
 }
-//
+
+void start_amplifier_cmd(){
+    uint16_t recSize = 0;
+
+    float varactor_voltage, power_state;
+    recSize = host_transfer.rxObj(varactor_voltage, recSize);
+
+    start_amplifier();
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+
+    host_transfer.sendData(sendSize, 10);
+}
+
 // void turbidimeter::sample_turbidity(){
 //     uint16_t recSize = 0;
 //     float t; //always need to read something

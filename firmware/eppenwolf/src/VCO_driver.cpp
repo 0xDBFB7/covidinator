@@ -10,10 +10,10 @@
 #define GATE_DAC_SELECT_PIN 4
 
 #define TUNE_DAC_SUPPLY_VOLTAGE 3.3
-#define AMP_DAC_SUPPLY_VOLTAGE 5.0
+#define AMP_DAC_SUPPLY_VOLTAGE 3.3
 // non-inverting config. = 1 + Rf/Rin
 #define VARACTOR_GAIN 11
-#define GAIN_DAC_GAIN 1
+#define GAIN_DAC_GAIN 2
 #define GATE_DAC_GAIN 0.5
 
 MCP4725 DAC_instance;
@@ -68,9 +68,69 @@ float get_drain_current(){
 //     //cli
 // }
 
+void set_amp_gain_voltage(float gain_voltage){
+    gain_voltage = constrain(gain_voltage, 0, 4.5);
+    uint16_t gain_value = ((gain_voltage/GAIN_DAC_GAIN)/AMP_DAC_SUPPLY_VOLTAGE) * DAC_MAX_VAL;
 
+    unselect_dacs();
+    digitalWriteFast(GAIN_DAC_SELECT_PIN, 1);
+    DAC_instance.setVoltage(gain_value);
+    unselect_dacs();
+}
+
+void set_amp_gate_voltage(float voltage){
+    voltage = constrain(voltage, 0, 2.5);
+    uint16_t value = ((voltage/GATE_DAC_GAIN)/AMP_DAC_SUPPLY_VOLTAGE) * DAC_MAX_VAL;
+
+    unselect_dacs();
+    digitalWriteFast(GATE_DAC_SELECT_PIN, 1);
+    DAC_instance.setVoltage(value);
+    unselect_dacs();
+}
+
+void set_amp_power_state(bool power_state){
+    digitalWriteFast(AMP_POWER_CONTROL_PIN, !power_state);
+}
+
+//
+
+void start_amplifier(){
+
+    set_amp_power_state(0);
+    set_VCO(0, 0); //Make sure VCO is off
+
+    set_amp_gain_voltage(4.5);
+    set_amp_gate_voltage(1.0);
+    delay(10);
+    set_amp_power_state(1);
+    // for(float i = 3.3/2; i > 0.5; i-= 0.01){
+
+    //     if(current > 0.14){
+    //         debug_serial.println(i);
+    //         break;
+    //     }
+    //     delay(100);
+    // }
+    set_VCO(10,1);
+    delay(2000);
+    float current = get_drain_current();
+    debug_serial.println(current);
+    set_VCO(10,0);
+
+    set_amp_power_state(0);
+}
+
+//
+// void kill_amplifier(){
+//     set_VCO(0, 0); //Make sure VCO is off
+//
+//
+// }
+//
 
 void set_VCO(float varactor_voltage, bool power_state){
+
+
     // debug_serial.printf("\nVCO set to %f, %f, %f, %i\n", varactor_voltage, power_state);
 
     varactor_voltage = constrain(varactor_voltage, 0, 20.0);
@@ -80,11 +140,10 @@ void set_VCO(float varactor_voltage, bool power_state){
     unselect_dacs();
     digitalWriteFast(TUNE_DAC_SELECT_PIN, 1);
     DAC_instance.setVoltage(varactor_value);
-    // unselect_dacs();
+    unselect_dacs();
     // // //p-channel inverts!
-    // digitalWriteFast(VCO_POWER_CONTROL_PIN, !power_state);
+    digitalWriteFast(VCO_POWER_CONTROL_PIN, !power_state);
 
-    //now that's what I call convenience.
 
 }
 

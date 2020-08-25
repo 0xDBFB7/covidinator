@@ -21,8 +21,14 @@
 void unselect_dacs();
 float get_drain_current();
 
+void set_amp_gain_voltage(float gain_voltage);
+void set_amp_gate_voltage(float voltage);
+void set_amp_power_state(bool power_state);
+
 void init_VCO();
 void set_VCO(float varactor_voltage, bool power_state);
+void start_amplifier();
+
 //
 // void LO_power(bool power);
 // void LO_tune(float target_value);
