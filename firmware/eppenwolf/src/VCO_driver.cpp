@@ -111,8 +111,10 @@ void start_amplifier(){
     //     }
     //     delay(100);
     // }
-    set_VCO(10,1);
-    delay(2000);
+    for(float i = 0; i < 20; i+=0.5){
+        set_VCO(i,1);
+        delay(500);
+    }
     float current = get_drain_current();
     debug_serial.println(current);
     set_VCO(10,0);
