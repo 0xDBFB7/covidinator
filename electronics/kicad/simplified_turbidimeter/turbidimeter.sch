@@ -1,0 +1,374 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L conn:CONN_6 P1
+U 1 1 60C7935F
+P 4300 2050
+F 0 "P1" H 4428 2093 60  0000 L CNN
+F 1 "CONN_6" H 4428 1987 60  0000 L CNN
+F 2 "Connectors2:1X06-SMD-FEMALE" H 4300 2050 50  0001 C CNN
+F 3 "" H 4300 2050 50  0001 C CNN
+	1    4300 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 60C9FE37
+P 4650 1800
+F 0 "#PWR0111" H 4650 1800 30  0001 C CNN
+F 1 "GND" H 4650 1730 30  0001 C CNN
+F 2 "" H 4650 1800 50  0001 C CNN
+F 3 "" H 4650 1800 50  0001 C CNN
+	1    4650 1800
+	0    -1   -1   0   
+$EndComp
+Text GLabel 1650 4850 2    50   Input ~ 0
+SCL
+Text GLabel 1650 4750 2    50   Input ~ 0
+SDA
+$Comp
+L conn:CONN_6 P3
+U 1 1 60CA3815
+P 1300 4800
+F 0 "P3" H 1428 4843 60  0000 L CNN
+F 1 "CONN_6" H 1428 4737 60  0000 L CNN
+F 2 "Connectors2:1X06-SMD-FEMALE" H 1300 4800 50  0001 C CNN
+F 3 "" H 1300 4800 50  0001 C CNN
+	1    1300 4800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 60CA3DB2
+P 1650 4550
+F 0 "#PWR0112" H 1650 4550 30  0001 C CNN
+F 1 "GND" H 1650 4480 30  0001 C CNN
+F 2 "" H 1650 4550 50  0001 C CNN
+F 3 "" H 1650 4550 50  0001 C CNN
+	1    1650 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0103
+U 1 1 60CA4298
+P 1650 4650
+F 0 "#SUPPLY0103" H 1700 4650 45  0001 L BNN
+F 1 "3.3V" H 1650 4820 45  0000 C CNN
+F 2 "" V 1608 4777 60  0000 L CNN
+F 3 "" H 1650 4650 60  0001 C CNN
+	1    1650 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L 0xDBFB7:TSL2571FN U1
+U 1 1 60CE0951
+P 2800 2850
+AR Path="/60CE0951" Ref="U1"  Part="1" 
+AR Path="/5FC47654/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5771C/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC58972/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5929A/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC59BFE/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5B14C/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5B14F/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5B152/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5B155/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5BFFA/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5BFFD/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5C000/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5C003/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5C006/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5C009/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5C00C/60CE0951" Ref="U?"  Part="1" 
+AR Path="/5FC5C00F/60CE0951" Ref="U?"  Part="1" 
+F 0 "U1" H 2800 2975 50  0000 C CNN
+F 1 "TSL2571FN" H 2800 2884 50  0000 C CNN
+F 2 "Silicon-Standard:DFN-6-2X2" H 2800 2850 50  0001 C CNN
+F 3 "" H 2800 2850 50  0001 C CNN
+	1    2800 2850
+	1    0    0    -1  
+$EndComp
+Text GLabel 2500 3150 0    50   Input ~ 0
+SCL
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0101
+U 1 1 60CE0966
+P 2600 2450
+AR Path="/60CE0966" Ref="#SUPPLY0101"  Part="1" 
+AR Path="/5FC47654/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5771C/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC58972/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5929A/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC59BFE/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B14C/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B14F/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B152/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B155/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5BFFA/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5BFFD/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C000/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C003/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C006/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C009/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C00C/60CE0966" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C00F/60CE0966" Ref="#SUPPLY?"  Part="1" 
+F 0 "#SUPPLY0101" H 2650 2450 45  0001 L BNN
+F 1 "3.3V" H 2600 2620 45  0000 C CNN
+F 2 "" V 2558 2577 60  0000 L CNN
+F 3 "" H 2600 2450 60  0001 C CNN
+	1    2600 2450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2500 3050 2050 3050
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C1
+U 1 1 60CE096E
+P 2800 2450
+AR Path="/60CE096E" Ref="C1"  Part="1" 
+AR Path="/5FC47654/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5771C/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC58972/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5929A/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5B14C/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5B14F/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5B152/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5B155/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5BFFA/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5BFFD/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5C000/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5C003/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5C006/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5C009/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5C00C/60CE096E" Ref="C?"  Part="1" 
+AR Path="/5FC5C00F/60CE096E" Ref="C?"  Part="1" 
+F 0 "C1" H 2908 2542 45  0000 L CNN
+F 1 "0.1 uF" H 2908 2458 45  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2800 2700 20  0001 C CNN
+F 3 "" H 2800 2450 50  0001 C CNN
+F 4 "" H 2908 2416 60  0000 L CNN "Field4"
+	1    2800 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 60CE0958
+P 3100 2950
+AR Path="/60CE0958" Ref="#PWR0101"  Part="1" 
+AR Path="/5FC47654/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5771C/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC58972/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5929A/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC59BFE/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B14C/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B14F/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B152/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B155/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5BFFA/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5BFFD/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C000/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C003/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C006/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C009/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C00C/60CE0958" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C00F/60CE0958" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0101" H 3100 2950 30  0001 C CNN
+F 1 "GND" H 3100 2880 30  0001 C CNN
+F 2 "" H 3100 2950 50  0001 C CNN
+F 3 "" H 3100 2950 50  0001 C CNN
+	1    3100 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 60CE1A5F
+P 2900 2450
+AR Path="/60CE1A5F" Ref="#PWR0102"  Part="1" 
+AR Path="/5FC47654/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5771C/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC58972/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5929A/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC59BFE/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B14C/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B14F/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B152/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5B155/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5BFFA/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5BFFD/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C000/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C003/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C006/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C009/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C00C/60CE1A5F" Ref="#PWR?"  Part="1" 
+AR Path="/5FC5C00F/60CE1A5F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0102" H 2900 2450 30  0001 C CNN
+F 1 "GND" H 2900 2380 30  0001 C CNN
+F 2 "" H 2900 2450 50  0001 C CNN
+F 3 "" H 2900 2450 50  0001 C CNN
+	1    2900 2450
+	0    -1   -1   0   
+$EndComp
+Text GLabel 2050 3050 0    50   Input ~ 0
+SDA
+$Comp
+L SparkFun-PowerSymbols:3.3V #SUPPLY0102
+U 1 1 60CE2C15
+P 2500 2950
+AR Path="/60CE2C15" Ref="#SUPPLY0102"  Part="1" 
+AR Path="/5FC47654/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5771C/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC58972/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5929A/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC59BFE/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B14C/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B14F/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B152/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5B155/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5BFFA/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5BFFD/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C000/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C003/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C006/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C009/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C00C/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+AR Path="/5FC5C00F/60CE2C15" Ref="#SUPPLY?"  Part="1" 
+F 0 "#SUPPLY0102" H 2550 2950 45  0001 L BNN
+F 1 "3.3V" H 2500 3120 45  0000 C CNN
+F 2 "" V 2458 3077 60  0000 L CNN
+F 3 "" H 2500 2950 60  0001 C CNN
+	1    2500 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0402 R?
+U 1 1 60CE44EB
+P 4900 2600
+AR Path="/5FC1C285/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC224F2/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC225C6/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2266C/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC227E3/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC22DDF/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC22DE2/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC22DE5/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBEA/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBED/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF0/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF3/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF6/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBF9/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBFC/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/5FC2BBFF/60CE44EB" Ref="R?"  Part="1" 
+AR Path="/60CE44EB" Ref="R1"  Part="1" 
+F 0 "R1" V 4805 2668 45  0000 L CNN
+F 1 "330" V 4889 2668 45  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4900 2750 20  0001 C CNN
+F 3 "" H 4900 2600 60  0001 C CNN
+F 4 " " V 4984 2668 60  0000 L CNN "Field4"
+	1    4900 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 60CE44F2
+P 4900 2800
+AR Path="/60CE44F2" Ref="#PWR0103"  Part="1" 
+AR Path="/5FC1C285/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC224F2/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC225C6/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2266C/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC227E3/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC22DDF/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC22DE2/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC22DE5/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBEA/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBED/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBF0/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBF3/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBF6/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBF9/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBFC/60CE44F2" Ref="#PWR?"  Part="1" 
+AR Path="/5FC2BBFF/60CE44F2" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0103" H 4900 2800 30  0001 C CNN
+F 1 "GND" H 4900 2730 30  0001 C CNN
+F 2 "" H 4900 2800 50  0001 C CNN
+F 3 "" H 4900 2800 50  0001 C CNN
+	1    4900 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2100 4900 1900
+$Comp
+L SparkFun-LED:LED-GREEN1206-BOTTOM D?
+U 1 1 60CE44FA
+P 4900 2200
+AR Path="/5FC2BBEA/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC1C285/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC224F2/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC225C6/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2266C/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC227E3/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC22DDF/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC22DE2/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC22DE5/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBED/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBF0/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBF3/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBF6/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBF9/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBFC/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/5FC2BBFF/60CE44FA" Ref="D?"  Part="1" 
+AR Path="/60CE44FA" Ref="D1"  Part="1" 
+F 0 "D1" H 4978 2192 45  0000 L CNN
+F 1 "LED-GREEN1206-BOTTOM" H 4978 2108 45  0000 L CNN
+F 2 "LED-1206-BOTTOM" V 4700 2200 20  0001 C CNN
+F 3 "" H 4900 2200 50  0001 C CNN
+F 4 "" H 4978 2066 60  0000 L CNN "Field4"
+	1    4900 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 1900 4650 1900
+$Comp
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C2
+U 1 1 60CE97FB
+P 2850 1800
+AR Path="/60CE97FB" Ref="C2"  Part="1" 
+AR Path="/5FC47654/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5771C/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC58972/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5929A/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5B14C/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5B14F/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5B152/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5B155/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5BFFA/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5BFFD/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5C000/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5C003/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5C006/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5C009/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5C00C/60CE97FB" Ref="C?"  Part="1" 
+AR Path="/5FC5C00F/60CE97FB" Ref="C?"  Part="1" 
+F 0 "C2" H 2958 1892 45  0000 L CNN
+F 1 "0.1 uF" H 2958 1808 45  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2850 2050 20  0001 C CNN
+F 3 "" H 2850 1800 50  0001 C CNN
+F 4 "" H 2958 1766 60  0000 L CNN "Field4"
+	1    2850 1800
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC

@@ -39,10 +39,12 @@ void get_power_levels(){
 
     near_adc.triggerConversion();
     uint16_t near_single_diode_value = near_adc.getConversion();
-    debug_serial.println(((float)((near_single_diode_value)/(float)32768))*PGA_scale, 7);
 
     far_adc.triggerConversion();
     uint16_t far_single_diode_value = far_adc.getConversion();
+
+    debug_serial.print(((float)((near_single_diode_value)/(float)32768))*PGA_scale, 7);
+    debug_serial.print(",");
     debug_serial.println(((float)(far_single_diode_value)/(float)32768)*PGA_scale, 7);
 
 

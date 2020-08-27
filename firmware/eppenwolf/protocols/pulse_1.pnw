@@ -6,7 +6,6 @@
 
 
 
-
 <<pulse_1.py>>=
 import device_comms
 import sweep
@@ -14,18 +13,19 @@ import sweep
 @
 
 
-Our aims with this experiment are to perform the following:
+Our aims with this experiment were to perform the following:
 
 \begin{itemize}
 \item Crudely demonstrate the pulse hypothesis. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation.
     While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
-\item Avoid any ambiguity regarding the 7 C temperature rise seen in the previous paper.
+\item Simulataneously, avoid any ambiguity related to the 7 C temperature rise seen in the previous paper.
 \item Demonstrate a cheap microwave spectrometer that could be quickly used on NCoV.
 \end{itemize}
 
 In the end, performing this was probably a mistake; but by the time we realized this we had already put in the bulk of the time.
 
 Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
+
 
 
 For each of the animal and human published studies, four
@@ -53,6 +53,9 @@ were included in the experiments, S or nS. However, it was not our
 intention to ‘‘rank’’ the publications either to exclude or include
 the reported data in the meta-analysis.
 
+\cite{Efficient2015} use freeze-thaw to crack the viral capsid as a positive control.
+T4 appeared to be more resistant.
+
 Properties:
 
 active phage/sterile broth/autoclaved phage
@@ -62,10 +65,10 @@ e. coli / no e. coli (sterile broth)
 
 Of these, the following combinations make sense:
 
-"negative control": Active phage & e. coli & unexposed
-"e.coli control": Sterile broth & e. coli & unexposed
-"positive control": Autoclaved phage & e. coli & unexposed
-
+"negative control": Active phage & e. coli & sham-exposed
+"e.coli control": Sterile broth & e. coli & sham-exposed
+"positive control": Autoclaved phage & e. coli & sham-exposed
+"continuous trial": Autoclaved phage & e. coli & sham-exposed
 
 Each on two plates.
 

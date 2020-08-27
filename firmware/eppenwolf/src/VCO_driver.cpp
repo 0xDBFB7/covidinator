@@ -113,21 +113,36 @@ void start_amplifier(){
         float current = get_drain_current();
         debug_serial.println(current);
         set_amp_gate_voltage(i);
-        if(current > 0.14){
+        if(current > 0.08){
             debug_serial.println(i);
             break;
         }
         delay(20);
     }
-    set_VCO(2,1);
-    delay(7000);
+    set_VCO(9.5,1);
+
+    debug_serial.println("VCO On");
+
+    set_amp_gain_voltage(2.5);
+
+    for(int i = 0; i < 1; i++){
+        for(float j = 0; j < 10; j+=0.01){
+            debug_serial.print(j);
+            debug_serial.print(",");
+            set_VCO(j,1);
+            delayMicroseconds(100);
+            get_power_levels();
+        }
+    }
+
+    debug_serial.println("VCO Off");
     // }
     float current = get_drain_current();
 
     debug_serial.print("current:");
     debug_serial.println(current, 8);
     get_power_levels();
-    set_VCO(2,0);
+    set_VCO(9.5,0);
     set_amp_gate_voltage(1.6);
     set_amp_power_state(0);
 }
