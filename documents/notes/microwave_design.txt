@@ -2523,4 +2523,7 @@ Should make the turbidimeter as two boards, since we don't need the thing in the
 
 Notched swing bar on screws as preload
 
+bar graph - perfect?
+
+talk to sociologist regarding introduction section
 

@@ -113,21 +113,21 @@ void start_amplifier(){
         float current = get_drain_current();
         debug_serial.println(current);
         set_amp_gate_voltage(i);
-        if(current > 0.22){
+        if(current > 0.14){
             debug_serial.println(i);
             break;
         }
         delay(20);
     }
-    set_VCO(10,1);
-    delay(1000);
+    set_VCO(2,1);
+    delay(7000);
     // }
     float current = get_drain_current();
 
     debug_serial.print("current:");
     debug_serial.println(current, 8);
     get_power_levels();
-    set_VCO(10,0);
+    set_VCO(2,0);
     set_amp_gate_voltage(1.6);
     set_amp_power_state(0);
 }
@@ -169,7 +169,7 @@ void set_VCO(float varactor_voltage, bool power_state){
 // }
 //
 // void LO_tune(float value){
-//
+//7
 //     const int mosfet_threshold = 0.7;
 //     int lo_val = (ANALOG_WRITE_MAX_VAL - (value*ANALOG_WRITE_MAX_VAL)) + ((mosfet_threshold / 3.3)*ANALOG_WRITE_MAX_VAL);
 //     debug_serial.printf("LO tune set to %i\n", lo_val);
