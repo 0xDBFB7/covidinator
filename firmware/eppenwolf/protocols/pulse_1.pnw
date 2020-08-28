@@ -68,17 +68,23 @@ Of these, the following combinations make sense:
 
 "negative control": Active phage & e. coli & sham-exposed
 "e.coli control": Sterile broth & e. coli & sham-exposed
+"sterility control": Sterile broth & no e. coli & sham-exposed
 "positive control": Autoclaved phage & e. coli & sham-exposed
 "continuous trial": Autoclaved phage & e. coli & sham-exposed
 
 Each on two plates.
 
 
-The signal used was extremely spectrally impure; phase noise was incredibly
+The signal used was extremely spectrally impure; phase noise was very high.
 
 (An HMB downconverter and 6.4 GHz LO was tried, but it was found that this was much less informative and confusing
 due to a lack of effective image rejection and LO spur rejection.)
 
+From FDTD simulations of this cuvette arrangement \ghfile{electronics/simple_fdtd/runs/coplanar}, the fringe field in the fluid
+is approximately 90 V/m per volt of amplitude.
+
+It is possible to subtract the diode drop using [], but because of design flaws in the AC coupling, this was not done.
+A Shottky drop of 0.25 V is assumed in all cases.
 
 - Un-exposed phage-only control:
 
@@ -91,8 +97,19 @@ Add 1 unit phage to cuvette. Monitor turbidity.
 - Un-exposed e. coli + positive autoclaved phage control
 - 1 - minute exposed
 
+To preclude the possibility of damage to the sample while the spectrum is recorded.
+
+0.3 V on a 50-ohm line is
+
+0.4 mW × 10 s / ((4 J / (g × K)) × 0.2 µL × (1 g / mL)) ➞ K
+
+ = 5 K
+
+0.001/(0.256/(2^15))
+
 
 \section{Microwave spectrum determination}
+
 
 active phage/sterile broth/autoclaved phage
 

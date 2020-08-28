@@ -12,24 +12,21 @@ ADS1115_lite far_adc(ADS1115_ADDRESS_ADDR_VDD);
 // #define ADS1115_REG_CONFIG_PGA_0_512V   (0x0800)  // +/-0.512V range = Gain 8
 // #define ADS1115_REG_CONFIG_PGA_0_256V   (0x0A00)  // +/-0.256V range = Gain 16
 
-#define PGA ADS1115_REG_CONFIG_PGA_4_096V
-#define PGA_scale 4.096
-
 const int scale_settings[] = {0x0000, 0x0200, 0x0400, 0x0600, 0x0800, 0x0A00};
 const float scale_voltages[] = {6.144, 4.096, 2.048, 1.024, 0.512, 0.256};
 
-int near_scale = 0;
-int far_scale = 0;
+int near_scale = 3;
+int far_scale = 3;
 
 void init_ADCs(){
 
-    near_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_1);
-    near_adc.setGain(PGA);
+    near_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
+    near_adc.setGain(scale_settings[near_scale]);
     near_adc.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
 
 
     far_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
-    far_adc.setGain(PGA);
+    far_adc.setGain(scale_settings[far_scale]);
     far_adc.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
 
     if (!near_adc.testConnection()) {
@@ -43,7 +40,7 @@ void init_ADCs(){
 
 void get_power_levels(){
     //worst-case, on highest PGA scale,
-    
+
     near_adc.triggerConversion();
     uint16_t near_single_diode_value = near_adc.getConversion();
 

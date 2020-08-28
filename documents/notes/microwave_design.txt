@@ -2536,3 +2536,5 @@ Aha! Print numbers on the cover film!
  mention how useful the 2.2k rf choked grounded-leg probe was
 
  record millis() along with other columns.
+
+ something tripped out on a long 10-second max power test.

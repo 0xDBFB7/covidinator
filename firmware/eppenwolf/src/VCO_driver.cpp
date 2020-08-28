@@ -123,9 +123,14 @@ void start_amplifier(){
 
     debug_serial.println("VCO On");
 
-    set_amp_gain_voltage(2.5);
-
-    for(int i = 0; i < 1; i++){
+    // set_amp_gain_voltage(2.5);
+    set_amp_gain_voltage(4.0);
+    // set_VCO(4.5,1);
+    // for(int i = 0; i < 200; i++){
+    //     get_power_levels();
+    //     delay(100);
+    // }
+    for(int i = 0; i < 5; i++){
         for(float j = 0; j < 10; j+=0.01){
             debug_serial.print(j);
             debug_serial.print(",");
@@ -134,7 +139,7 @@ void start_amplifier(){
             get_power_levels();
         }
     }
-
+    // delay(30000);
     debug_serial.println("VCO Off");
     // }
     float current = get_drain_current();

@@ -32,7 +32,7 @@ We also did not understand the *confined* part in the *confined* acoustic resona
 Simulating the aggregate bose condensate wavefunction is well beyond us.
 
 
-
+Both finite-element, molecular-dynamics, and stiffness-eigenvalue normal mode techniques have been used to great effect for this purpose. 
 
 
 %\end{multicols}
@@ -145,12 +145,14 @@ Different versions of the IEEE standard have used equations of equivalent form b
 
 \PRLsep{{\itshape Wherein an oscillator is designed }}
 
+Many 
+
 Three incorrect pieces of information conspired to lead us to try to develop an inexpensive ultrawideband oscillator.
 
 \begin{itemize}
 	\item The assumption that a broadband frequency sweep would drastically improve the inactivation threshold, and moreover that 
 	\item The ideal 
-	\item The assumption that the only YIG-tuned 
+	\item The assumption that the only commercially available oscillators in this frequency range were expensive YIG-tuned devices.
 \end{itemize}
 
 There are really two different conflicting criteria: 
@@ -518,6 +520,23 @@ Most equations in papers on the FDTD method are supplied without making the scal
 
 Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run dimensional analysis using a unit-aware calculator such as {\it sharkdp/insect}.
 
+\rule{\linewidth}{0.2pt}
+
+
+
+\begin{quote}
+With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.
+\end{quote}
+- von Neumann  
+
+with six parameters, you can do it with only physical constants. Beware numerology.
+
+\rule{\linewidth}{0.2pt}
+
+Most passives (inductors, capacitors) companies supply S-parameters for their parts. Use them.
+
+\rule{\linewidth}{0.2pt}
+
 \PRLsep{{\itshape The antenna itself }}
 
 The impedance of a patch antenna varies with position on its surface. Probe feeds to a specific point on the patch
@@ -750,6 +769,19 @@ We believe once we have the P. Syringae host, we from environmental samples
 Truly the depths of Dunning-Kruger.
 
 \rule{\linewidth}{0.2pt}
+
+
+Lesson learned: implementing safeties in hardware when possible, even in non-critical systems, can greatly speed development.
+
+Like many microwave semiconductor HBT or pHEMT MMICs, the HMC996 amplifier requires.
+
+
+\rule{\linewidth}{0.2pt}
+
+Sometimes vertical integration is the wrong move. Objectively, in this case, it was simply the *wrong decision*. 
+
+\rule{\linewidth}{0.2pt}
+
 %
 %An expert and distinguished gentleman that we contacted regarding assistance resolving transients in our microstrip VCO stated the following:
 %
@@ -764,6 +796,8 @@ Truly the depths of Dunning-Kruger.
 %So perhaps it is wise to ponder the ideas of fools for skeet; one always learns target practice, if only an example what not to do, and occasionally one learns positively. I have often found that I learn greatly from working on the projects of others.
 %
 %We present this only as a cautionary tale in the hopes that someday I will listen.
+
+% This is 
 
 \rule{\linewidth}{0.2pt}
 
