@@ -130,7 +130,7 @@ void start_amplifier(){
 
     // set_amp_gain_voltage(2.5);
     set_amp_gain_voltage(3.5);
-    set_ADC_scales(5, 4);
+    // set_ADC_scales(5, 4);
     // set_VCO(4.5,1);
     // for(int i = 0; i < 200; i++){
     //     get_power_levels();

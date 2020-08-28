@@ -22,12 +22,12 @@ ADS1115_lite far_adc(ADS1115_ADDRESS_ADDR_VDD);
 // #define ADS1115_REG_CONFIG_DR_860SPS   (0x00E0)  // 860 SPS, or every 1.16ms, note that noise free resolution is reduced to ~13.8-15bits, see table 2 in datasheet
 
 
-
+#define num_scales 6
 const int scale_settings[] = {0x0000, 0x0200, 0x0400, 0x0600, 0x0800, 0x0A00};
 const float scale_voltages[] = {6.144, 4.096, 2.048, 1.024, 0.512, 0.256};
 
-int near_scale = 3;
-int far_scale = 3;
+int near_scale = 5;
+int far_scale = 5;
 
 void init_ADCs(){
 
@@ -49,26 +49,79 @@ void init_ADCs(){
 
 }
 
-void set_ADC_scales(int near_scale_, int far_scale_){
-    near_scale = near_scale_;
-    far_scale = far_scale_;
-    near_adc.setGain(scale_settings[near_scale]);
-    far_adc.setGain(scale_settings[far_scale]);
-}
+// void set_ADC_scales(int near_scale_, int far_scale_){
+//     near_scale = near_scale_;
+//     far_scale = far_scale_;
+//     near_adc.setGain(scale_settings[near_scale]);
+//     far_adc.setGain(scale_settings[far_scale]);
+// }
 
 void get_power_levels(){
     //worst-case, on highest PGA scale,
+    float far_single_diode_voltage = 0;
+    float near_single_diode_voltage = 0;
 
-    near_adc.triggerConversion();
-    uint16_t near_single_diode_value = near_adc.getConversion();
+    while(true){
+        near_adc.triggerConversion();
+        uint16_t near_single_diode_value = near_adc.getConversion();
+        near_single_diode_voltage = ((float)((near_single_diode_value)/(float)32768))*scale_voltages[near_scale];
 
-    far_adc.triggerConversion();
-    uint16_t far_single_diode_value = far_adc.getConversion();
+        if(near_single_diode_value >= 32760){
+            if(near_scale > 0){
+                near_scale -= 1;
+                near_adc.setGain(scale_settings[near_scale]);
+                continue;
+            }
+            else{
+                break;
+            }
+        }
+        else if(near_scale < 5 && near_single_diode_voltage < 0.8*scale_voltages[near_scale+1]){
+            near_scale += 1;
+            near_adc.setGain(scale_settings[near_scale]);
+            continue;
+        }
+        else{
+            break;
+        }
+    }
 
-    debug_serial.print(((float)((near_single_diode_value)/(float)32768))*scale_voltages[near_scale], 7);
+    while(true){
+        far_adc.triggerConversion();
+        uint16_t far_single_diode_value = far_adc.getConversion();
+        far_single_diode_voltage = ((float)((far_single_diode_value)/(float)32768))*scale_voltages[far_scale];
+
+        if(far_single_diode_value >= 32760){
+            if(far_scale > 0){
+                far_scale -= 1;
+                far_adc.setGain(scale_settings[far_scale]);
+
+                continue;
+
+            }
+            else{
+                break;
+            }
+        }
+        else if(far_scale < 5 && far_single_diode_voltage < 0.8*scale_voltages[far_scale+1]){
+            far_scale += 1;
+            far_adc.setGain(scale_settings[far_scale]);
+
+            continue;
+        }
+        else{
+            break;
+        }
+    }
+
+
+    debug_serial.print(near_single_diode_voltage, 7);
     debug_serial.print(",");
-    debug_serial.println(((float)(far_single_diode_value)/(float)32768)*scale_voltages[far_scale], 7);
-
+    debug_serial.print(far_single_diode_voltage, 7);
+    debug_serial.print(",");
+    debug_serial.print(near_scale, 7);
+    debug_serial.print(",");
+    debug_serial.println(far_scale, 7);
 
 }
 
