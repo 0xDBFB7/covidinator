@@ -62,6 +62,7 @@ active phage/sterile broth/autoclaved phage
 e. coli / no e. coli (sterile broth)
 300 exposed / 200 exposed / 100 exposed / un- or sham-exposed
 1 unit time pulse-exposed / 10 unit time pulse-exposed / continuous-exposed
+on-resonance exposed / off-resonance exposed
 
 Of these, the following combinations make sense:
 
@@ -73,7 +74,10 @@ Of these, the following combinations make sense:
 Each on two plates.
 
 
+The signal used was extremely spectrally impure; phase noise was incredibly
 
+(An HMB downconverter and 6.4 GHz LO was tried, but it was found that this was much less informative and confusing
+due to a lack of effective image rejection and LO spur rejection.)
 
 
 - Un-exposed phage-only control:
@@ -86,6 +90,15 @@ Add 1 unit phage to cuvette. Monitor turbidity.
 - Un-exposed e. coli + phage control
 - Un-exposed e. coli + positive autoclaved phage control
 - 1 - minute exposed
+
+
+\section{Microwave spectrum determination}
+
+active phage/sterile broth/autoclaved phage
+
+\section
+
+
 
 # T - 5 hours
 

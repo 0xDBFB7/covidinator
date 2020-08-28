@@ -9,7 +9,7 @@ cuvette_depth = 0.7;
 
 cuvette_spacing = 6.0;
 
-access_hole_diameter = 3.0;
+access_hole_diameter = 2.3;
 
 alignment_pin_diameter = 2;
 alignment_pin_x_offset = 3.5-(0.17500/2);
@@ -19,7 +19,7 @@ dowel_pin_diameter = 1.6;
 slide_length = (cuvette_spacing) * num_cuvettes + 2*cuvette_spacing;
 
 slide_height = 3.0;
-slide_width = access_hole_diameter + alignment_pin_diameter/2 + alignment_pin_x_offset;
+slide_width = 3 + alignment_pin_diameter/2 + alignment_pin_x_offset;
 
 x_centerline = slide_width / 2.0;
 
@@ -50,12 +50,7 @@ difference(){
                 
                 translate([x_centerline-text_size/2, y_centerline+cuvette_spacing/2-text_size/2, slide_height - text_height])             linear_extrude(text_height){ text(alpha[i], text_size); };
                 
-                translate([x_centerline*1.5, y_centerline-cuvette_spacing/1.5, cuvette_bottom_margin])
-                   cylinder(slide_height,
-                                    d=dowel_pin_diameter,center=false);
-                translate([x_centerline*0.5, y_centerline-cuvette_spacing/3, cuvette_bottom_margin])
-                   cylinder(slide_height,
-                                    d=dowel_pin_diameter,center=false);
+        
             }
                     
             translate([0, y_centerline, cuvette_bottom_margin])
@@ -66,6 +61,14 @@ difference(){
                    cylinder(slide_height,
                                     d=alignment_pin_diameter,center=false);
             
+            if(!(i < 0 || i == num_cuvettes+1)){
+                translate([x_centerline*1.5, y_centerline-cuvette_spacing/1.5, cuvette_bottom_margin])
+                       cylinder(slide_height,
+                                        d=dowel_pin_diameter,center=false);
+                translate([x_centerline*0.5, y_centerline-cuvette_spacing/3, cuvette_bottom_margin])
+                       cylinder(slide_height,
+                                        d=dowel_pin_diameter,center=false);
+            }
             
          
         }
