@@ -32,7 +32,6 @@ Origin:
 240
 -260
 
-Lung pleural spaces appear to be missing?
 
 
 The material .txt file generated has the format
