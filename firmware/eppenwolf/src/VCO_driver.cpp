@@ -1,5 +1,4 @@
 #include "VCO_driver.hpp"
-#include "power_sensor.hpp"
 #define DRAIN_CURRENT_SENSE_PIN A0
 
 #define VCO_POWER_CONTROL_PIN 5
@@ -101,7 +100,7 @@ void set_amp_power_state(bool power_state){
 //
 
 void take_spectrum(){
-    
+
 }
 
 void start_amplifier(){
@@ -131,11 +130,13 @@ void start_amplifier(){
 
     // set_amp_gain_voltage(2.5);
     set_amp_gain_voltage(3.5);
+    set_ADC_scales(5, 4);
     // set_VCO(4.5,1);
     // for(int i = 0; i < 200; i++){
     //     get_power_levels();
     //     delay(100);
     // }
+    debug_serial.println("========================================================");
     for(int i = 0; i < 20; i++){
         for(float j = 0; j < 12; j+=0.05){
             debug_serial.print(j);
@@ -146,6 +147,7 @@ void start_amplifier(){
         }
         delay(1000);
     }
+    debug_serial.println("========================================================");
     // delay(30000);
     debug_serial.println("VCO Off");
     // }

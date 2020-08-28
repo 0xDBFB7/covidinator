@@ -32,12 +32,12 @@ int far_scale = 3;
 void init_ADCs(){
 
     near_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
-    near_adc.setGain(scale_settings[near_scale]);
     near_adc.setSampleRate(ADS1115_REG_CONFIG_DR_475SPS);
 
+    near_adc.setGain(scale_settings[near_scale]);
+    far_adc.setGain(scale_settings[far_scale]);
 
     far_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
-    far_adc.setGain(scale_settings[far_scale]);
     far_adc.setSampleRate(ADS1115_REG_CONFIG_DR_475SPS);
 
     if (!near_adc.testConnection()) {
@@ -49,12 +49,14 @@ void init_ADCs(){
 
 }
 
-void set_ADC_scales(near_scale, far_scale){
-    int near_scale = 4;
-    int far_scale = 5;
+void set_ADC_scales(int near_scale_, int far_scale_){
+    near_scale = near_scale_;
+    far_scale = far_scale_;
+    near_adc.setGain(scale_settings[near_scale]);
+    far_adc.setGain(scale_settings[far_scale]);
 }
 
-void get_power_levels(int near_scale, int far_scale){
+void get_power_levels(){
     //worst-case, on highest PGA scale,
 
     near_adc.triggerConversion();

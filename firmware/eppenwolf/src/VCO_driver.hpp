@@ -1,4 +1,5 @@
 #include "settings.hpp"
+#include "power_sensor.hpp"
 
 #ifdef MOCK_INCLUDES
 
