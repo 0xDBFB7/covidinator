@@ -12,6 +12,17 @@ ADS1115_lite far_adc(ADS1115_ADDRESS_ADDR_VDD);
 // #define ADS1115_REG_CONFIG_PGA_0_512V   (0x0800)  // +/-0.512V range = Gain 8
 // #define ADS1115_REG_CONFIG_PGA_0_256V   (0x0A00)  // +/-0.256V range = Gain 16
 
+// #define ADS1115_REG_CONFIG_DR_8SPS    (0x0000)  // 8 SPS(Sample per Second), or a sample every 125ms
+// #define ADS1115_REG_CONFIG_DR_16SPS    (0x0020)  // 16 SPS, or every 62.5ms
+// #define ADS1115_REG_CONFIG_DR_32SPS    (0x0040)  // 32 SPS, or every 31.3ms
+// #define ADS1115_REG_CONFIG_DR_64SPS    (0x0060)  // 64 SPS, or every 15.6ms
+// #define ADS1115_REG_CONFIG_DR_128SPS   (0x0080)  // 128 SPS, or every 7.8ms  (default)
+// #define ADS1115_REG_CONFIG_DR_250SPS   (0x00A0)  // 250 SPS, or every 4ms, note that noise free resolution is reduced to ~14.75-16bits, see table 2 in datasheet
+// #define ADS1115_REG_CONFIG_DR_475SPS   (0x00C0)  // 475 SPS, or every 2.1ms, note that noise free resolution is reduced to ~14.3-15.5bits, see table 2 in datasheet
+// #define ADS1115_REG_CONFIG_DR_860SPS   (0x00E0)  // 860 SPS, or every 1.16ms, note that noise free resolution is reduced to ~13.8-15bits, see table 2 in datasheet
+
+
+
 const int scale_settings[] = {0x0000, 0x0200, 0x0400, 0x0600, 0x0800, 0x0A00};
 const float scale_voltages[] = {6.144, 4.096, 2.048, 1.024, 0.512, 0.256};
 
@@ -22,12 +33,12 @@ void init_ADCs(){
 
     near_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
     near_adc.setGain(scale_settings[near_scale]);
-    near_adc.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
+    near_adc.setSampleRate(ADS1115_REG_CONFIG_DR_475SPS);
 
 
     far_adc.setMux(ADS1115_REG_CONFIG_MUX_SINGLE_0);
     far_adc.setGain(scale_settings[far_scale]);
-    far_adc.setSampleRate(ADS1115_REG_CONFIG_DR_128SPS);
+    far_adc.setSampleRate(ADS1115_REG_CONFIG_DR_475SPS);
 
     if (!near_adc.testConnection()) {
       debug_serial.println("Near ADC Failed");
@@ -38,7 +49,12 @@ void init_ADCs(){
 
 }
 
-void get_power_levels(){
+void set_ADC_scales(near_scale, far_scale){
+    int near_scale = 4;
+    int far_scale = 5;
+}
+
+void get_power_levels(int near_scale, int far_scale){
     //worst-case, on highest PGA scale,
 
     near_adc.triggerConversion();
