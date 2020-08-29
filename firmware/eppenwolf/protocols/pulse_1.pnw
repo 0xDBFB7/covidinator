@@ -26,8 +26,6 @@ In the end, performing this was probably a mistake; but by the time we realized 
 
 Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
 
-
-
 For each of the animal and human published studies, four
 predetermined and specific quality control measures were used to
 assess the quality of the publication.
@@ -76,10 +74,10 @@ Of these, the following combinations make sense:
 Each on two plates.
 
 
-The signal used was extremely spectrally impure; phase noise was very high.
+The signal used was spectrally impure; phase noise was very high. However, all spurs are at about 3 dB down.
 
-(A downconverter using an HMB and a 6.4 GHz LO was tried, but it was found that this was much less informative and confusing
-due to a lack of effective mixer image rejection and LO spur rejection.)
+(A downconverter using an HMB and a custom 6.4 GHz LO was tried, but it was found that this was much less informative and more confusing
+due to a lack of effective mixer image and LO spur rejection.)
 
 From FDTD simulations of this cuvette arrangement \ghfile{electronics/simple_fdtd/runs/coplanar}, the fringe field in the fluid
 is approximately 90 V/m per volt of amplitude.
@@ -97,6 +95,7 @@ Add 1 unit phage to cuvette. Monitor turbidity.
 - Un-exposed e. coli + phage control
 - Un-exposed e. coli + positive autoclaved phage control
 - 1 - minute exposed
+
 
 To preclude the possibility of damage to the sample while the spectrum is recorded.
 
@@ -118,12 +117,15 @@ of how much was destroyed. In practice, this could be done by applying two pulse
 or perhaps by a time-domain method. Whether such a signature can be discriminated in a clinical setting remains to be seen.
 
 
+\section{Silicon carbide test}
 
+\cite{Effect2016}
 
 \section{Microwave spectrum determination}
 
 
 active phage/sterile broth/autoclaved phage
+
 
 \section
 

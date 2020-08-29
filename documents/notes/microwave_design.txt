@@ -2540,4 +2540,6 @@ Aha! Print numbers on the cover film!
  something tripped out on a long 10-second max power test.
 
  pulse at every frequency.
- 
+
+
+Dynamic biasing with frequency has no effect on the output power.

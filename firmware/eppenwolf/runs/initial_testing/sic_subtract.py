@@ -7,9 +7,9 @@ background = np.genfromtxt(open('sic_background_9.csv', "r"), delimiter=",", dty
 
 sic = np.genfromtxt(open('sic_9.csv', "r"), delimiter=",", dtype=np.float, encoding='ascii', skip_footer=1)
 
-print(np.argwhere(background[:,0] == 11.95))
-background = np.array(np.vsplit(background, np.ndarray.flatten(np.argwhere(background[:,0] == 0.0))))
-sic = np.array(np.vsplit(sic, np.ndarray.flatten(np.argwhere(sic[:,0] == 0.0))))
+# print(np.argwhere(background[:,0] == 11.95))
+background = np.array(np.vsplit(background, np.ndarray.flatten(np.argwhere(background[:,0] == 11.95)+1)))[0:-1]
+sic = np.array(np.vsplit(sic, np.ndarray.flatten(np.argwhere(sic[:,0] == 11.95)+1)))[0:-1]
 
 # print(background)
 #
@@ -27,7 +27,14 @@ print(averaged_background)
 # print(background)
 # print(sic)
 
-plt.plot(averaged_sic[:,0], averaged_sic[:,1] - averaged_background[:,1])
-plt.plot(averaged_sic[:,0], averaged_sic[:,2] - averaged_background[:,2])
+plt.plot(averaged_sic[:,0], (averaged_sic[:,1] - averaged_background[:,1]) / averaged_background[:,1],label="'Near' sensor,  $\propto$S$_{11}$")
+plt.plot(averaged_sic[:,0], (averaged_sic[:,2] - averaged_background[:,2]) / averaged_background[:,2],label="'Far' sensor,  $\propto$S$_{21}$")
+plt.legend()
+plt.figure()
+plt.plot(averaged_sic[:,0], averaged_sic[:,1],label="'Near' sensor,  $\propto$S$_{11}$")
+plt.plot(averaged_sic[:,0], averaged_sic[:,2],label="'Far' sensor,  $\propto$S$_{21}$")
+plt.plot(averaged_sic[:,0], averaged_background[:,1],label="'Near' sensor,  $\propto$S$_{11}$")
+plt.plot(averaged_sic[:,0], averaged_background[:,2],label="'Far' sensor,  $\propto$S$_{21}$")
+plt.legend()
 
 plt.show()
