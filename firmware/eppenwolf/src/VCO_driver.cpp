@@ -118,7 +118,7 @@ void start_amplifier(){
         float current = get_drain_current();
         debug_serial.println(current);
         set_amp_gate_voltage(i);
-        if(current > 0.08){
+        if(current > 0.12){
             debug_serial.println(i);
             break;
         }
@@ -129,7 +129,7 @@ void start_amplifier(){
     debug_serial.println("VCO On");
 
     // set_amp_gain_voltage(2.5);
-    set_amp_gain_voltage(3.5);
+    set_amp_gain_voltage(4.5);
     // set_ADC_scales(5, 4);
     // set_VCO(4.5,1);
     // for(int i = 0; i < 200; i++){

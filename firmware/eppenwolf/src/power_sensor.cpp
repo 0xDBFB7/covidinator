@@ -61,10 +61,16 @@ void get_power_levels(){
     float far_single_diode_voltage = 0;
     float near_single_diode_voltage = 0;
 
+    int deadlock = 0;
     while(true){
         near_adc.triggerConversion();
         uint16_t near_single_diode_value = near_adc.getConversion();
+        if(near_single_diode_value > 32768){
+            break;
+        }
         near_single_diode_voltage = ((float)((near_single_diode_value)/(float)32768))*scale_voltages[near_scale];
+
+        debug_serial.println(near_single_diode_value);
 
         if(near_single_diode_value >= 32760){
             if(near_scale > 0){
@@ -84,12 +90,21 @@ void get_power_levels(){
         else{
             break;
         }
+
+        if(deadlock > 7) break;
+        deadlock ++;
     }
 
+    deadlock = 0;
     while(true){
         far_adc.triggerConversion();
         uint16_t far_single_diode_value = far_adc.getConversion();
+        if(far_single_diode_value > 32768){
+            break;
+        }
         far_single_diode_voltage = ((float)((far_single_diode_value)/(float)32768))*scale_voltages[far_scale];
+
+        debug_serial.println(far_single_diode_value);
 
         if(far_single_diode_value >= 32760){
             if(far_scale > 0){
@@ -112,6 +127,10 @@ void get_power_levels(){
         else{
             break;
         }
+
+        if(deadlock > 7) break;
+        deadlock ++;
+
     }
 
 
