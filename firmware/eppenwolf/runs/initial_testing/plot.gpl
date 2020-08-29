@@ -1,4 +1,5 @@
 set datafile separator ","
 #plot 'test1.csv' using 1:2, '' using 1:3, 'sic_2.csv' using 1:2, '' using 1:3, 'sic.csv' using 1:2, '' using 1:3,'base_2.csv' using 1:2, '' using 1:3,
-plot 'sic_background_9.csv' using 1:2, '' using 1:3, 'sic_9.csv' using 1:2, '' using 1:3
+#plot  'sic_10.csv' using 1:2, '' using 1:3, '' using 1:6
+plot 'sic_11.csv' using 5:1, '' using 5:2
 pause -1

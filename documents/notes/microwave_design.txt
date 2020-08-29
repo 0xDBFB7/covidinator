@@ -2538,3 +2538,6 @@ Aha! Print numbers on the cover film!
  record millis() along with other columns.
 
  something tripped out on a long 10-second max power test.
+
+ pulse at every frequency.
+ 

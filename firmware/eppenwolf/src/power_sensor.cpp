@@ -70,8 +70,6 @@ void get_power_levels(){
         }
         near_single_diode_voltage = ((float)((near_single_diode_value)/(float)32768))*scale_voltages[near_scale];
 
-        debug_serial.println(near_single_diode_value);
-
         if(near_single_diode_value >= 32760){
             if(near_scale > 0){
                 near_scale -= 1;
@@ -103,8 +101,6 @@ void get_power_levels(){
             break;
         }
         far_single_diode_voltage = ((float)((far_single_diode_value)/(float)32768))*scale_voltages[far_scale];
-
-        debug_serial.println(far_single_diode_value);
 
         if(far_single_diode_value >= 32760){
             if(far_scale > 0){
@@ -140,7 +136,7 @@ void get_power_levels(){
     debug_serial.print(",");
     debug_serial.print(near_scale, 7);
     debug_serial.print(",");
-    debug_serial.println(far_scale, 7);
+    debug_serial.print(far_scale, 7);
 
 }
 
