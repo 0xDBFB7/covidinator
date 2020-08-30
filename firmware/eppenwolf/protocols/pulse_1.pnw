@@ -119,7 +119,7 @@ We expect a non-reversible decrease in the resonance peak after the application 
 we expect a "notch" on the rising edge, with a slow taper upwards, which does not repeat on the next pulse.
 
 If this exists, it would provide a great deal of feedback. Not only would the virus would be destroyed, but we would have a quantitative determination of
-of how much was destroyed. In practice, this could be done by applying two pulses in quick succession and monitoring the change in the reflected power;
+of how effective each treatment was. In practice, this could be done by applying two pulses in quick succession and monitoring the change in the reflected power;
 or perhaps by a time-domain method. Whether such a signature can be discriminated in a clinical setting remains to be seen.
 
 
@@ -128,18 +128,18 @@ or perhaps by a time-domain method. Whether such a signature can be discriminate
 To verify that we can detect a resonance with this setup, we use the microwave susceptor mixture described by \cite{Effect2016}, which can be tuned to the correct range by varying the concentration of SiC to binder. We use the S-1 mixture.
 
 0.6g 2000-mesh silicon carbide powder was added to 1.4 g white Elmer's glue, mixed manually until homogeneous,
- applied to a mylar film, and dried with a hair dryer. A small wafer of the hardened mixture, perhaps 0.3 mm thick, 5 mm x 2 mm, was placed directly on top of the coplanar waveguide.
+ applied to a Mylar film, and dried with a hair dryer. A small wafer of the hardened mixture, perhaps 0.3 mm thick, 5 mm x 2 mm, was placed directly on top of the coplanar waveguide.
 
 
 The spectrum was then captured, averaging (?10) sweeps of the VCO. The background spectrum was taken without the wafer in place.
 
 \begin{figure}[H]
-	\includesvg[width=\textwidth]{firmware/eppenwolf/runs/sic_susceptor/sic_9_1.svg}
+	\includesvg[width=\textwidth]{firmware/eppenwolf/runs/sic_susceptor/sic_9_1}
  	\caption{}
 \end{figure}
 
 \begin{figure}[H]
-	\includesvg[width=\textwidth]{firmware/eppenwolf/runs/sic_susceptor/sic_9_2.svg}
+	\includesvg[width=\textwidth]{firmware/eppenwolf/runs/sic_susceptor/sic_9_2}
  	\caption{}
 \end{figure}
 

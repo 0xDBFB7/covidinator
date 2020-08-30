@@ -155,6 +155,7 @@ void start_amplifier(){
 
     // set_amp_gain_voltage(2.5);
     set_amp_gain_voltage(3.0);
+    //gain varies from 2.2 to 3.4.
     // set_ADC_scales(5, 4);
     set_VCO(4.5,1);
     debug_serial.println("========================================================");
@@ -168,7 +169,6 @@ void start_amplifier(){
             debug_serial.print(",");
             debug_serial.print(get_drain_current());
             debug_serial.println();
-            delay(1000);
         }
         delay(1000);
     }

@@ -19,7 +19,7 @@ int main(void)
 	init_VCO();
 	init_ADCs();
 	get_power_levels();
-	// init_thermal();
+	init_thermal();
 	// home();
 	while(1){
 

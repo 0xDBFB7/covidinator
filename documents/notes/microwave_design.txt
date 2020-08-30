@@ -2543,3 +2543,9 @@ Aha! Print numbers on the cover film!
 
 
 Dynamic biasing with frequency has no effect on the output power.
+
+Stick kapton to wax paper, autoclave
+This silicone-backed kapton is rated as suitable for autoclaving! Yay
+Only decreases transmittance from 9400 to 7700, should be fine.
+
+need secondary containment on the cuvette

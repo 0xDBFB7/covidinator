@@ -5,21 +5,6 @@
 {\Large \it Experiment 2:}\\
 
 
-Our aims with this experiment are to perform the following:
-
-\begin{itemize}
-\item Crudely test the pulse hypothesis. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation.
-    While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
-\item Avoid any ambiguity regarding the temperature rise seen in the previous paper.
-\end{itemize}
-
-
-In the end, performing this was a mistake; but by the time we realized this we had already put in the bulk of the time.
-
-
-Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
-
-
 
 \nwfilename{pulse_1.pnw}\nwbegincode{1}\moddef{pulse_1.py}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
 import device_comms
@@ -27,29 +12,157 @@ import sweep
 
 \nwendcode{}\nwbegindocs{2}\nwdocspar
 
+
+It cannot be overstated how difficult this measurement is to interpret.
+
+Positions of the three quantities on the slide are randomized\cite{first2000}.
+
+
+Our aims with this experiment were to perform the following:
+
+\begin{itemize}
+\item Crudely demonstrate the pulse hypothesis. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation.
+    While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
+\item Simulataneously, avoid any ambiguity related to the 7 C temperature rise seen in the previous paper.
+\item Crudely measure the damage feedback mechanism.
+\item Demonstrate a cheap microwave spectrometer that could be quickly used on NCoV.
+\end{itemize}
+
+In the end, performing this was probably a mistake; but by the time we realized this we had already put in the bulk of the time.
+
+Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
+
 For each of the animal and human published studies, four
 predetermined and specific quality control measures were used to
 assess the quality of the publication.
 1. Whether or not the researchers have used ‘‘blind’’ evaluations to
 avoid individual ‘‘bias’’, B or nB;
+
+// Add a delay to make all cuvettes take the same amount of time
+
 2. Whether or not there was detailed/adequate description of
 ‘‘dosimetry’’ in the publication for independent replication/
 confirmation studies, D or nD.
+
+got that, check
+
 3. Whether or not ‘‘positive controls’’ were included in the
 experiment(s) to replicate/confirm the observations, P or nP.
+
+For phage, this is easy; use autoclaved phage.
+
 4. Whether or not ‘‘sham-exposed controls’’ (more appropriate to
 compare with the observations made in RF exposure conditions)
 were included in the experiments, S or nS. However, it was not our
 intention to ‘‘rank’’ the publications either to exclude or include
 the reported data in the meta-analysis.
 
+\cite{Efficient2015} use freeze-thaw to crack the viral capsid as a positive control.
+T4 appeared to be more resistant.
+
+Properties:
+
+active phage/sterile broth/autoclaved phage/dilute phage in saliva
+e. coli / no e. coli (sterile broth)
+300 exposed / 200 exposed / 100 exposed / un- or sham-exposed
+1 unit time pulse-exposed / 10 unit time pulse-exposed / continuous-exposed
+on-resonance exposed / off-resonance exposed
+
+
+Of these, the following combinations make sense:
+
+"negative control": Active phage & e. coli & sham-exposed
+"e.coli control": Sterile broth & e. coli & sham-exposed
+"sterility control": Sterile broth & no e. coli & sham-exposed
+"positive control": Autoclaved phage & e. coli & sham-exposed
+"continuous trial": Autoclaved phage & e. coli & sham-exposed
+
+Each on two plates.
+
+
+The signal used was spectrally impure; phase noise was very high. However, all spurs are at about 3 dB down.
+
+(A downconverter using an HMB and a custom 6.4 GHz LO was tried, but it was found that this was much less informative and more confusing
+due to a lack of effective mixer image and LO spur rejection.)
+
+From FDTD simulations of this cuvette arrangement \ghfile{electronics/simple_fdtd/runs/coplanar}, the fringe field in the fluid
+is approximately 90 V/m per volt of amplitude.
+
+It is possible to subtract the diode drop using [], but because of design flaws in the AC coupling of the detectors, this was not done.
+A Shottky drop of 0.25 V is assumed in all cases.
+
+- Un-exposed phage-only control:
+
+Add 1 unit phage to cuvette. Monitor turbidity.
+
+- Un-exposed e. coli control.
+- Exposed e. coli control.
+- Exposed phage control.
+- Un-exposed e. coli + phage control
+- Un-exposed e. coli + positive autoclaved phage control
+- 1 - minute exposed
+
+
+To preclude the possibility of damage to the sample while the spectrum is recorded.
+
+0.3 V on a 50-ohm line is
+
+0.4 mW × 10 s / ((4 J / (g × K)) × 0.2 µL × (1 g / mL)) ➞ K
+
+ = 5 K
+
+0.001/(0.256/(2^15))
+
+
+We further postulate the following. When the virus is lysed, the resonator is destroyed. This should be reflected in the impedance spectrum.
+We expect a non-reversible decrease in the resonance peak after the application of power. This should also appear in the time-domain pulse envelope;
+we expect a "notch" on the rising edge, with a slow taper upwards, which does not repeat on the next pulse.
+
+If this exists, it would provide a great deal of feedback. Not only would the virus would be destroyed, but we would have a quantitative determination of
+of how much was destroyed. In practice, this could be done by applying two pulses in quick succession and monitoring the change in the reflected power;
+or perhaps by a time-domain method. Whether such a signature can be discriminated in a clinical setting remains to be seen.
+
+
+\section{Silicon carbide test}
+
+To verify that we can detect a resonance with this setup, we use the microwave susceptor mixture described by \cite{Effect2016}, which can be tuned to the correct range by varying the concentration of SiC to binder. We use the S-1 mixture.
+
+0.6g 2000-mesh silicon carbide powder was added to 1.4 g white Elmer's glue, mixed manually until homogeneous,
+ applied to a mylar film, and dried with a hair dryer. A small wafer of the hardened mixture, perhaps 0.3 mm thick, 5 mm x 2 mm, was placed directly on top of the coplanar waveguide.
+
+
+The spectrum was then captured, averaging (?10) sweeps of the VCO. The background spectrum was taken without the wafer in place.
+
+\begin{figure}[H]
+        \includesvg[width=\textwidth]{sic_9_1}
+        \caption{}
+\end{figure}
+
+\begin{figure}[H]
+        \includesvg[width=\textwidth]{firmware/eppenwolf/runs/sic_susceptor/sic_9_2}
+        \caption{}
+\end{figure}
+
+\cite{Effect2016} measures a peak at about 7.2 GHz. Our peak is at approximately 7.849 GHz, which is well within variation in powder grain sizes and concentration.
+
+The paper specifies the reflection loss, S$_{11}$. Unfortunately, having no directional couplers, it is probably not possible to directly determine S$_{21}$ and S$_{11}$ with this setup.
+
+Naively, we might expect the peak to appear as a decrease at both sensors; instead it appears as an increase in transmission and decrease in reflection. It could be possible that the presence of the dielectric wafer has merely detuned an existing resonance, that the peak is a coincidence, and that these data mean nothing.
+The raw voltage plots do not suggest that this is the case; but it is nonetheless concerning.
+
+\footnote{The paper mentions that the "blending fraction of silicon carbide powders to epoxy resin was 30 \%, 35 \%, 40 \%, 45 \% and 50\% by weight". That seems a little ambiguous as to whether that's "weight per total mass" or "weight per epoxy".}
+
+\section{Microwave spectrum determination}
+
+
+active phage/sterile broth/autoclaved phage
+
+
+\section
+
+
 
 # T - 5 hours
-
-
-# Phage+Bacteria / Bacteria-only / phage only?
-
-# expose (parameters) / sham / thermal positives
 
 
 def initialize():
