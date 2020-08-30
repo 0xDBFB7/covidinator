@@ -28,6 +28,7 @@ print(averaged_background)
 # print(sic)
 
 def freq_eq(x):
+    #HMC732 VCO approx equation
  return 0.4794e9*x + 5.874e9
 
 freqs = freq_eq(averaged_sic[:,0])
@@ -36,12 +37,18 @@ plt.plot(freqs, (averaged_sic[:,1] - averaged_background[:,1]) / averaged_backgr
 plt.plot(freqs, (averaged_sic[:,2] - averaged_background[:,2]) / averaged_background[:,2],label="'Far' sensor,  $\propto$S$_{21}$")
 plt.legend()
 plt.savefig("sic_9_1.svg")
-plt.title("Normalized difference between background and ")
+plt.title("Normalized silicon carbide susceptor spectrum")
+plt.ticklabel_format(style='sci', axis='x', scilimits=(9,9))
+plt.xlabel("Frequency (GHz)")
 plt.figure()
 plt.plot(freqs, averaged_sic[:,1],label="SiC susceptor, 'Near' sensor,  $\propto$S$_{11}$")
 plt.plot(freqs, averaged_sic[:,2],label="SiC susceptor, 'Far' sensor,  $\propto$S$_{21}$")
 plt.plot(freqs, averaged_background[:,1],label="Background, 'Near' sensor,  $\propto$S$_{11}$")
 plt.plot(freqs, averaged_background[:,2],label="Background, 'Far' sensor,  $\propto$S$_{21}$")
+plt.ticklabel_format(style='sci', axis='x', scilimits=(9,9))
 plt.legend()
+plt.xlabel("Frequency (GHz)")
+plt.ylabel("Voltage")
+plt.title("Raw detector voltage")
 plt.savefig("sic_9_2.svg")
 plt.show()
