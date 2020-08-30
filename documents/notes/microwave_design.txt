@@ -2549,3 +2549,5 @@ This silicone-backed kapton is rated as suitable for autoclaving! Yay
 Only decreases transmittance from 9400 to 7700, should be fine.
 
 need secondary containment on the cuvette
+
+autoclave the whole roll of tape?

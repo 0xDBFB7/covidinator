@@ -8,7 +8,7 @@ void dispatch(){
     if(host_transfer.available()){
         switch(host_transfer.currentPacketID()) {
             case 0: set_VCO_handler(); break;
-            case 1: start_amplifier(); break;
+            case 1: master_loop(); break;
             // case 1: turbidimeter_instance.sample_turbidity(); break;
             // case 2: move(); break;
             // case 3: home_cmd(); break;
@@ -83,23 +83,23 @@ void start_amplifier_cmd(){
 //     host_transfer.sendData(sendSize, 0);
 // }
 
-void measure_temperature_cmd(){
-
-    uint16_t recSize = 0;
-    float t; //always need to read something
-    recSize = host_transfer.rxObj(t, recSize);
-
-
-    thermal_sensor.measure(true);
-
-    uint16_t sendSize = 0;
-    sendSize = host_transfer.txObj(thermal_sensor.getAmbient(), sendSize);
-    sendSize = host_transfer.txObj(thermal_sensor.getMinTemp(), sendSize);
-    sendSize = host_transfer.txObj(thermal_sensor.getMaxTemp(), sendSize);
-
-    host_transfer.sendData(sendSize, 0);
-
-}
+// void measure_temperature_cmd(){
+//
+//     uint16_t recSize = 0;
+//     float t; //always need to read something
+//     recSize = host_transfer.rxObj(t, recSize);
+//
+//
+//     thermal_sensor.measure(true);
+//
+//     uint16_t sendSize = 0;
+//     sendSize = host_transfer.txObj(thermal_sensor.getAmbient(), sendSize);
+//     sendSize = host_transfer.txObj(thermal_sensor.getMinTemp(), sendSize);
+//     sendSize = host_transfer.txObj(thermal_sensor.getMaxTemp(), sendSize);
+//
+//     host_transfer.sendData(sendSize, 0);
+//
+// }
 
 //
 // void read_all(){

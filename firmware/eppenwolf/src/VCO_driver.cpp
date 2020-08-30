@@ -38,6 +38,12 @@ void init_VCO(){
     DAC_instance.setVoltage(0);
 }
 
+void select_all_dacs(){
+    digitalWriteFast(TUNE_DAC_SELECT_PIN, HIGH);
+    digitalWriteFast(GAIN_DAC_SELECT_PIN, HIGH);
+    digitalWriteFast(GATE_DAC_SELECT_PIN, HIGH);
+}
+
 void unselect_dacs(){
     digitalWriteFast(TUNE_DAC_SELECT_PIN, LOW);
     digitalWriteFast(GAIN_DAC_SELECT_PIN, LOW);
@@ -98,34 +104,58 @@ void set_amp_power_state(bool power_state){
     digitalWriteFast(AMP_POWER_CONTROL_PIN, !power_state);
 }
 
-//
 
-void take_spectrum(){
+// #define POWER_LEVEL_SAFE
+// #define POWER_LEVEL_SAFE
 
+// #define TEMP_INTERVAL 100
+
+void master_loop(){
+    start_amplifier();
+
+
+    set_amp_gain_voltage(2.3);
+    //gain varies from 2.2 to 3.4.
+
+    set_VCO(0,1);
+    debug_serial.println("VCO On");
+
+    float max_temperature = 0;
+    unsigned long last_temperature_time = millis();
+
+    // debug_serial.println(thermal_sensor.get_ambient_temperature());
+
+    debug_serial.println("========================================================");
+    for(int i = 0; i < 20; i++){
+        for(float j = 0; j < 12; j+=0.05){
+            if(millis() - last_temperature_time > 500){
+                select_all_dacs(); //address conflict
+                max_temperature = get_max_temp();
+                debug_serial.println(max_temperature);
+                unselect_dacs();
+                last_temperature_time = millis();
+            }
+            debug_serial.print(j);
+            debug_serial.print(",");
+            set_VCO(j,1);
+            delayMicroseconds(200);
+            get_power_levels();
+            debug_serial.print(",");
+            debug_serial.print(get_drain_current());
+            debug_serial.print(",");
+            debug_serial.print(max_temperature);
+            debug_serial.println();
+        }
+        delay(1000); //let everything cool before the next run
+    }
+    debug_serial.println("========================================================");
+    debug_serial.println("VCO Off");
+
+
+
+    kill_amplifier();
 }
 
-// void determine_gate_spectrum(){
-//     for(float j = 0; j < 12; j+=0.05){
-//         set_VCO(j,1);
-//         delay(20);
-//         for(float i = 1.6; i > 0.2; i-= 0.01){
-//
-//             // debug_serial.println(current);
-//             set_amp_gate_voltage(i);
-//             delay(20);
-//             float current = get_drain_current();
-//
-//             if(current > 0.12){
-//                 get_power_levels();
-//                 debug_serial.print(",");
-//                 debug_serial.print(j);
-//                 debug_serial.print(",");
-//                 debug_serial.println(i);
-//                 break;
-//             }
-//         }
-//     }
-// }
 
 void start_amplifier(){
 
@@ -137,7 +167,6 @@ void start_amplifier(){
     set_amp_power_state(1);
 
     set_VCO(5,1);
-    set_amp_gate_voltage(1.3);
     for(float i = 1.6; i > 0.2; i-= 0.01){
         set_amp_gate_voltage(i);
 
@@ -149,50 +178,20 @@ void start_amplifier(){
         }
         delay(20);
     }
+    set_VCO(0,0);
+    set_amp_gain_voltage(1.0);
+
     // determine_gate_spectrum();
 
-    debug_serial.println("VCO On");
+}
 
-    // set_amp_gain_voltage(2.5);
-    set_amp_gain_voltage(3.0);
-    //gain varies from 2.2 to 3.4.
-    // set_ADC_scales(5, 4);
-    set_VCO(4.5,1);
-    debug_serial.println("========================================================");
-    for(int i = 0; i < 20; i++){
-        for(float j = 0; j < 12; j+=0.05){
-            debug_serial.print(j);
-            debug_serial.print(",");
-            set_VCO(j,1);
-            delayMicroseconds(200);
-            get_power_levels();
-            debug_serial.print(",");
-            debug_serial.print(get_drain_current());
-            debug_serial.println();
-        }
-        delay(1000);
-    }
-    debug_serial.println("========================================================");
-    // delay(30000);
-    debug_serial.println("VCO Off");
-    // }
-    float current = get_drain_current();
 
-    debug_serial.print("current:");
-    debug_serial.println(current, 8);
-    get_power_levels();
-    set_VCO(9.5,0);
+void kill_amplifier(){
+    set_VCO(0,0);
     set_amp_gate_voltage(1.6);
     set_amp_power_state(0);
 }
 
-//
-// void kill_amplifier(){
-//     set_VCO(0, 0); //Make sure VCO is off
-//
-//
-// }
-//
 
 void set_VCO(float varactor_voltage, bool power_state){
 

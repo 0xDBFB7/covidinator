@@ -17,9 +17,10 @@
 
 #include "comms.hpp"
 #include <WString.h>
-
+#include "thermal.hpp"
 
 void unselect_dacs();
+void select_all_dacs();
 float get_drain_current();
 
 void set_amp_gain_voltage(float gain_voltage);
@@ -29,6 +30,9 @@ void set_amp_power_state(bool power_state);
 void init_VCO();
 void set_VCO(float varactor_voltage, bool power_state);
 void start_amplifier();
+void kill_amplifier();
+void master_loop();
+
 void determine_gate_spectrum();
 //
 // void LO_power(bool power);
