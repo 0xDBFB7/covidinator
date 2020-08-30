@@ -58,7 +58,7 @@ def run_sweep(freqs, bin_width, start_freq, end_freq, lna_gain, vga_gain, sample
     # vga_gain = 0 + int(float((gain_db/40.0)*62.0)/2.0)*2
     command = 'hackrf_sweep -f {0}:{1} -a 0 -n{2} -w{3} -l {4} -g {5} -N{6}'.format(\
                         start_freq, end_freq, samples_per_freq, bin_width, lna_gain, vga_gain, N_sweeps)
-    p = Popen(command, stdout = PIPE, shell = True)
+    p = Popen(command, stdout = PIPE, stderr = DEVNULL, shell = True)
 
     n = 0
     for line in p.stdout:

@@ -104,28 +104,28 @@ void take_spectrum(){
 
 }
 
-void determine_gate_spectrum(){
-    for(float j = 0; j < 12; j+=0.05){
-        set_VCO(j,1);
-        delay(20);
-        for(float i = 1.6; i > 0.2; i-= 0.01){
-
-            // debug_serial.println(current);
-            set_amp_gate_voltage(i);
-            delay(20);
-            float current = get_drain_current();
-
-            if(current > 0.12){
-                get_power_levels();
-                debug_serial.print(",");
-                debug_serial.print(j);
-                debug_serial.print(",");
-                debug_serial.println(i);
-                break;
-            }
-        }
-    }
-}
+// void determine_gate_spectrum(){
+//     for(float j = 0; j < 12; j+=0.05){
+//         set_VCO(j,1);
+//         delay(20);
+//         for(float i = 1.6; i > 0.2; i-= 0.01){
+//
+//             // debug_serial.println(current);
+//             set_amp_gate_voltage(i);
+//             delay(20);
+//             float current = get_drain_current();
+//
+//             if(current > 0.12){
+//                 get_power_levels();
+//                 debug_serial.print(",");
+//                 debug_serial.print(j);
+//                 debug_serial.print(",");
+//                 debug_serial.println(i);
+//                 break;
+//             }
+//         }
+//     }
+// }
 
 void start_amplifier(){
 
@@ -137,44 +137,41 @@ void start_amplifier(){
     set_amp_power_state(1);
 
     set_VCO(5,1);
-    // set_amp_gate_voltage(1.3);
-    // for(float i = 1.6; i > 0.2; i-= 0.01){
-    //     set_amp_gate_voltage(i);
+    set_amp_gate_voltage(1.3);
+    for(float i = 1.6; i > 0.2; i-= 0.01){
+        set_amp_gate_voltage(i);
 
-    //     float current = get_drain_current();
-    //     debug_serial.println(current);
-    //     if(current > 0.12){
-    //         debug_serial.println(i);
-    //         break;
-    //     }
-    //     delay(20);
-    // }
-    determine_gate_spectrum();
+        float current = get_drain_current();
+        debug_serial.println(current);
+        if(current > 0.12){
+            debug_serial.println(i);
+            break;
+        }
+        delay(20);
+    }
+    // determine_gate_spectrum();
 
     debug_serial.println("VCO On");
 
     // set_amp_gain_voltage(2.5);
-    set_amp_gain_voltage(4.5);
+    set_amp_gain_voltage(3.0);
     // set_ADC_scales(5, 4);
-    // set_VCO(4.5,1);
-    // for(int i = 0; i < 200; i++){
-    //     get_power_levels();
-    //     delay(100);
-    // }
+    set_VCO(4.5,1);
     debug_serial.println("========================================================");
-    // for(int i = 0; i < 20; i++){
-    //     for(float j = 0; j < 12; j+=0.05){
-    //         debug_serial.print(j);
-    //         debug_serial.print(",");
-    //         set_VCO(j,1);
-    //         delayMicroseconds(200);
-    //         get_power_levels();
-    //         debug_serial.print(",");
-    //         debug_serial.print(get_drain_current());
-    //         debug_serial.println();
-    //     }
-    //     delay(1000);
-    // }
+    for(int i = 0; i < 20; i++){
+        for(float j = 0; j < 12; j+=0.05){
+            debug_serial.print(j);
+            debug_serial.print(",");
+            set_VCO(j,1);
+            delayMicroseconds(200);
+            get_power_levels();
+            debug_serial.print(",");
+            debug_serial.print(get_drain_current());
+            debug_serial.println();
+            delay(1000);
+        }
+        delay(1000);
+    }
     debug_serial.println("========================================================");
     // delay(30000);
     debug_serial.println("VCO Off");
