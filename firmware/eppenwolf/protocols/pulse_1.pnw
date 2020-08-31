@@ -144,7 +144,7 @@ The spectrum was then captured, averaging (?10) sweeps of the VCO. The backgroun
  	\caption{}
 \end{figure}
 
-\cite{Effect2016} measures a peak at about 7.2 GHz. Our peak is at approximately 7.849 GHz, which is well within variation in powder grain sizes and concentration.
+\cite{Effect2016} measures a peak at about 7.2 GHz. Our peak is at approximately $7.84 \pm \approx 0.25$ GHz, which is well within variation in powder grain sizes and concentration.
 
 The paper specifies the reflection loss, S$_{11}$. Unfortunately, having no directional couplers, it is probably not possible to directly determine S$_{21}$ and S$_{11}$ with this setup.
 
@@ -168,8 +168,8 @@ Both sides of the slide were sealed with the Kapton. Alignment pin holes were po
 
 0.3 uL of solution was added to each of the cuvettes in the following order:
 
-0 5
 
+ID 0                                                                                    ID 5
 Phage | Autoclaved phage | Sterile nutrient broth | Sterile nutrient broth | Phage | Autoclaved phage
 
 The slide was snapped on a hard surface to ensure that the droplets were directly on the bottom of the well.
@@ -178,12 +178,16 @@ Transferring such small quantities was quite difficult; the control nutrient bro
 
 The first run was not properly loaded; the first cuvettes were fine, but the last ones were not.
 
-The cuvettes had a great deal of evaporation on the top slide.
+The cuvettes had a great deal of evaporation on the top slide. (This might affect turbidity readings!)
 
 About half way through each run, the power would suddenly snap up.
 
 
+The following improvements are required for the next run:
 
+Higher resolution (0.2v is not sufficient to determine the Q, go back to 0.05)
+Larger volume of phage. Though
+Figure out a way of minimizing heating while testing the spectrum. The temperature 
 
 \section
 
