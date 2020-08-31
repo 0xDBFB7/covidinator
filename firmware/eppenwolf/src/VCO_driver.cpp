@@ -138,7 +138,9 @@ void master_loop(){
     debug_serial.println("========================================================");
     for(int iter_count = 0; iter_count < 2; iter_count++){ // see if anything's changed
         for(int power_level = 0; power_level < no_power_levels; power_level++){
-
+            if(power_level == 2){
+                debug_serial.println("Remove cover film");
+            }
             for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
                 set_VCO(0,0);
 
