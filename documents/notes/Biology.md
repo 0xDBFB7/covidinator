@@ -741,3 +741,14 @@ pI - pH = log10(1/q)
 q = 1/exp(pI - pH)
 
 Autoclaved P0, P1, P2 eppendorfs, just for good measure.
+
+
+Pipetted 2.5 mL sterile broth from B1 into both E12 and E13. Also pipetted 1 mL into C1.
+Autoclaved everything.
+
+These new pipette tips and everything work magnificiently.
+
+Actually,while the new tips work great, I'm going to use the old glass tips for the critical
+ phage pipetting.
+
+

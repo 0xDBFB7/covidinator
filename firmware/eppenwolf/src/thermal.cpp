@@ -6,11 +6,15 @@ float temperatures[64];
 
 void init_thermal(){
     select_all_dacs(); //address conflict
+    delay(1);
     thermal_sensor.initialise(4);
     unselect_dacs();
+    delay(1);
 }
 
 float get_max_temp(){
+    select_all_dacs(); //address conflict
+    delay(5);
     thermal_sensor.get_temperatures(temperatures);
     // thermal_sensor.print_temperatures(debug_serial);
     float max = -100.0;
@@ -19,6 +23,8 @@ float get_max_temp(){
             max = temperatures[i];
         }
     }
+    unselect_dacs();
+    delay(5);
     return max;
 }
 //

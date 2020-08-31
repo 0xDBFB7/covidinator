@@ -30,7 +30,8 @@ Our aims with this experiment were to perform the following:
 
 In the end, performing this was probably a mistake; but by the time we realized this we had already put in the bulk of the time.
 
-Inspired by \cite{Biocoder2010}, we write the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
+Inspired by \cite{Biocoder2010}, we originally planned on writing the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
+However, because the device was planned to run headless in a BSL, this was abandoned.
 
 For each of the animal and human published studies, four
 predetermined and specific quality control measures were used to
@@ -152,10 +153,19 @@ The raw voltage plots do not suggest that this is the case; but it is nonetheles
 
 \footnote{The paper mentions that the "blending fraction of silicon carbide powders to epoxy resin was 30 \%, 35 \%, 40 \%, 45 \% and 50\% by weight". That seems a little ambiguous as to whether that's "weight per total mass" or "weight per epoxy".}
 
-\section{Microwave spectrum determination}
 
 
-active phage/sterile broth/autoclaved phage
+\section{T4 phage experiment 1}
+
+0.2 mL of T4(r?) phage, Carolina (), was pipetted into a freshly autoclaved 1.5 mL eppendorf tube. Since the lids have a tendency to open during the autoclave cycle, the tube was clamped closed by means of screws\footnote{This is probably unsafe.} to a polypropylene plate
+to prevent condensate from the autoclave from diluting the sample. It was then autoclaved for 20 minutes.
+
+The polycarbonate cuvette slide was also autoclaved, along with a length of high-temperature silicone-adhesive Kapton tape wound around a PTFE mandrel \footnote{Substitute with the appropriate plate sealing films}.
+
+\strike{The slide was dried with a jet of clean argon.} The slide was dried in a partially-closed 50 mL Falcon tube.
+
+Both sides of the slide were sealed with the Kapton. Alignment pin holes were poked with a plastic dowel.
+
 
 
 \section

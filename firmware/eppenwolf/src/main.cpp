@@ -17,6 +17,9 @@ int main(void)
 	host_transfer.begin(host_serial);
 	debug_serial.println("\nRESET\n");
 
+	pinMode(BUTTON_PIN, INPUT);
+	digitalWrite(BUTTON_PIN, HIGH); //button pulldown
+
 	// // turbidimeter_instance.init();
 	init_VCO();
 	init_ADCs();
@@ -24,10 +27,6 @@ int main(void)
 	init_thermal();
 	// home();
 	while(1){
-		select_all_dacs(); //address conflict
-		// float max_temperature = get_max_temp();
-		debug_serial.println(thermal_sensor.get_ambient_temperature());
-		unselect_dacs();
 		digitalWrite(13, LOW);
 		delay(100);
 		digitalWrite(13, HIGH);

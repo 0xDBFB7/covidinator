@@ -2551,3 +2551,9 @@ Only decreases transmittance from 9400 to 7700, should be fine.
 need secondary containment on the cuvette
 
 autoclave the whole roll of tape?
+
+silicon might work as a sterile window through which temperature measurements could be made. 
+needs testing.
+
+I2c conflect; also needed slightly lower value i2c pullups. Works great now.
+

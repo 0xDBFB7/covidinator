@@ -22,7 +22,7 @@
 void unselect_dacs();
 void select_all_dacs();
 float get_drain_current();
-
+void wait_for_button();
 void set_amp_gain_voltage(float gain_voltage);
 void set_amp_gate_voltage(float voltage);
 void set_amp_power_state(bool power_state);

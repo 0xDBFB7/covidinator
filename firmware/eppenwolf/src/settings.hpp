@@ -21,7 +21,7 @@
 // #define DAC_write analogWrite
 // #endif
 
-
+#define BUTTON_PIN 16
 
 #define DAC_MAX_VAL 4095
 
