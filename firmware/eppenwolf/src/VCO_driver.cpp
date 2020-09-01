@@ -121,7 +121,7 @@ void master_loop(){
 
     //gain varies from 2.2 to 3.4.
 
-
+    //time constant of the VCO tuning is about 3 ms.
 
     float max_temperature = 0;
     unsigned long last_temperature_time = millis();
@@ -151,16 +151,13 @@ void master_loop(){
                 set_amp_gain_voltage(power_levels[power_level]);
 
                 for(int i = 0; i < 10; i++){
-                    for(float j = 0; j < 12; j += 0.2){
-                        if(millis() - last_temperature_time > 500){
-                            max_temperature = get_max_temp();
-                            last_temperature_time = millis();
-                        }
+                    for(float j = 0; j < 12; j += 0.05){
                         debug_serial.print(j);
                         debug_serial.print(",");
                         set_VCO(j,1);
                         delayMicroseconds(200);
                         get_power_levels();
+                        set_VCO(0,0);
                         debug_serial.print(",");
                         debug_serial.print(get_drain_current());
                         debug_serial.print(",");
@@ -172,8 +169,12 @@ void master_loop(){
                         debug_serial.print(",");
                         debug_serial.print(millis());
                         debug_serial.println();
+                        if(millis() - last_temperature_time > 500){
+                            max_temperature = get_max_temp();
+                            last_temperature_time = millis();
+                        }
                     }
-                    delay(400); //let everything cool before the next run
+                    delay(1500); //let everything cool before the next run
                 }
             }
         }

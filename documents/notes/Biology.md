@@ -752,3 +752,12 @@ Actually,while the new tips work great, I'm going to use the old glass tips for 
  phage pipetting.
 
 
+ There's a 10k resistor on the near-side ADC. 
+
+ What we really need is an exact copy of this board, but with two RF amps, AC-coupled diode
+ detectors on both sides, much faster ADCs, and a CPWG that's as short as possible.
+
+ Anyhow, later. We'll do the run again and see if we get some better data.
+ 
+
+

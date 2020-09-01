@@ -26,6 +26,9 @@ autoclaved_phage_1 = 5
 sterile_broth_0 = 2
 sterile_broth_1 = 3
 
+near_sensor = 1
+far_sensor = 2
+
 # 2 repeats of 3 power levels, 6 cuvettes, 10 cycles each of 61 frequencies (0.2v each) with 10 columns.
 
 # data = np.vsplit(data, np.shape(data)[0]/2)
@@ -42,11 +45,8 @@ data = np.reshape(data, (2, 3, 6, 10))
 
 
 
-data = np.mean(data, 3)
+data = np.mean(data, 3) # average along the column axis
 print(np.shape(data))
-
-
-
 
 
 # print(averaged_background)
@@ -54,27 +54,59 @@ print(np.shape(data))
 # print(background)
 # print(sic)
 
+def get_data(repeat, power_level, cuvette, parameter):
+    return data[repeat, power_level, cuvette][:,parameter]
+
+def normalized_diff(repeat, power_level, cuvette_one, cuvette_two, parameter):
+    return (data[repeat, power_level, cuvette_one][:,parameter] - data[repeat, power_level, cuvette_two][:,parameter]) / data[repeat, power_level, cuvette_two][:,parameter]
+
 def freq_eq(x):
     #HMC732 VCO approx equation
  return 0.4794e9*x + 5.874e9
 
 freqs = freq_eq(data[0, 0, 0][:,0])
 
-plt.plot(freqs, (data[0, 0, 0][:,1] - data[0, 0, 1][:,1]) / data[0, 0, 1][:,1])
-plt.plot(freqs, (data[0, 0, 0][:,2] - data[0, 0, 1][:,2]) / data[0, 0, 1][:,2])
 
-plt.plot(freqs, (data[1, 0, 0][:,1] - data[1, 0, 1][:,1]) / data[1, 0, 1][:,1])
-plt.plot(freqs, (data[1, 0, 0][:,2] - data[1, 0, 1][:,2]) / data[1, 0, 1][:,2])
+plt.plot(freqs, normalized_diff(0, 1, phage_0, sterile_broth_0, near_sensor), label="run 1")
+plt.plot(freqs, normalized_diff(0, 1, phage_0, sterile_broth_0, far_sensor), label="run 1")
 
+plt.plot(freqs, normalized_diff(0, 1, phage_1, sterile_broth_1, near_sensor), label="run 1")
+plt.plot(freqs, normalized_diff(0, 1, phage_1, sterile_broth_1, far_sensor), label="run 1")
 
-plt.plot(freqs, (data[0, 0, 0][:,1] - data[0, 0, 1][:,1]) / data[0, 0, 1][:,1])
-plt.plot(freqs, (data[0, 0, 0][:,2] - data[0, 0, 1][:,2]) / data[0, 0, 1][:,2])
+# plt.plot(freqs, normalized_diff(0, 1, phage_0, autoclaved_phage_0, far_sensor), label="run 1")
 
-plt.plot(freqs, (data[1, 0, 0][:,1] - data[1, 0, 1][:,1]) / data[1, 0, 1][:,1])
-plt.plot(freqs, (data[1, 0, 0][:,2] - data[1, 0, 1][:,2]) / data[1, 0, 1][:,2])
+# plt.plot(freqs, normalized_diff(0, 1, phage_0, autoclaved_phage_0, near_sensor), label="run 1")
+# plt.plot(freqs, normalized_diff(0, 1, phage_0, autoclaved_phage_0, far_sensor), label="run 1")
+#
+# plt.plot(freqs, normalized_diff(1, 1, phage_0, autoclaved_phage_0, near_sensor))
+# plt.plot(freqs, normalized_diff(1, 1, phage_0, autoclaved_phage_0, far_sensor))
+
+# plt.plot(freqs, normalized_diff(0, 1, autoclaved_phage_0, autoclaved_phage_1, near_sensor))
+# plt.plot(freqs, normalized_diff(1, 1, autoclaved_phage_0, autoclaved_phage_1, far_sensor))
+
+plt.legend()
+# plt.plot(freqs, normalized_diff(0, 2, phage_0, autoclaved_phage_0, near_sensor))
+# plt.plot(freqs, normalized_diff(0, 2, phage_0, autoclaved_phage_0, far_sensor))
+
+# plt.plot(freqs, normalized_diff(0, 2, phage_1, autoclaved_phage_1, near_sensor))
+# plt.plot(freqs, normalized_diff(0, 2, phage_1, autoclaved_phage_1, far_sensor))
+#
+# plt.plot(freqs, normalized_diff(0, 1, phage_1, autoclaved_phage_1, near_sensor))
+# plt.plot(freqs, normalized_diff(0, 1, phage_1, autoclaved_phage_1, far_sensor))
+
+# plt.plot(freqs, (data[1, 0, 0][:,near_sensor] - data[1, 0, 1][:,near_sensor]) / data[1, 0, 1][:,near_sensor])
+# plt.plot(freqs, (data[1, 0, 0][:,far_sensor] - data[1, 0, 1][:,far_sensor]) / data[1, 0, 1][:,far_sensor])
+#
+#
+# plt.plot(freqs, (data[0, 0, 0][:,near_sensor] - data[0, 0, 1][:,near_sensor]) / data[0, 0, 1][:,near_sensor])
+# plt.plot(freqs, (data[0, 0, 0][:,far_sensor] - data[0, 0, 1][:,far_sensor]) / data[0, 0, 1][:,far_sensor])
+#
+# plt.plot(freqs, (data[1, 0, 0][:,near_sensor] - data[1, 0, 1][:,near_sensor]) / data[1, 0, 1][:,near_sensor])
+# plt.plot(freqs, (data[1, 0, 0][:,far_sensor] - data[1, 0, 1][:,far_sensor]) / data[1, 0, 1][:,far_sensor])
 
 plt.figure()
-plt.plot(data[0, 0, 0][:,])
+plt.plot(data[0, 0, 0][:,6])
+
 # plt.plot(freqs, (data[0, 0, 0][:,1] - data[0, 0, 1][:,1]) / data[0, 0, 0][:,2])
 #
 # plt.plot(freqs, (data[0, 0, 4][:,1] - data[0, 0, 5][:,1]) / data[0, 0, 5][:,1])

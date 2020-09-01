@@ -63,8 +63,11 @@ void get_power_levels(){
 
     int deadlock = 0;
     while(true){
+        // unsigned long time_1 = micros();
         near_adc.triggerConversion();
         uint16_t near_single_diode_value = near_adc.getConversion();
+        // unsigned long time_2 = micros();
+        // debug_serial.println(time_2 - time_1);
         if(near_single_diode_value > 32768){
             break;
         }

@@ -25,8 +25,10 @@ Our aims with this experiment were to perform the following:
     While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
 \item Simulataneously, avoid any ambiguity related to the 7 C temperature rise seen in the previous paper.
 \item Crudely measure the damage feedback mechanism.
-\item Demonstrate a cheap microwave spectrometer that could be quickly used on NCoV.
+\item Demonstrate a cheap microwave spectrometer that could be used on NCoV.
 \end{itemize}
+
+Because the diode detectors are in an extremely noisy environment, it is important to either
 
 In the end, performing this was probably a mistake; but by the time we realized this we had already put in the bulk of the time.
 
@@ -112,14 +114,13 @@ To preclude the possibility of damage to the sample while the spectrum is record
 
  = 5 K
 
-0.001/(0.256/(2^15))
 
 
 We further postulate the following. When the virus is lysed, the resonator is destroyed. This should be reflected in the impedance spectrum.
 We expect a non-reversible decrease in the resonance peak after the application of power. This should also appear in the time-domain pulse envelope;
 we expect a "notch" on the rising edge, with a slow taper upwards, which does not repeat on the next pulse.
 
-If this exists, it would provide a great deal of feedback. Not only would the virus would be destroyed, but we would have a quantitative determination of
+If this exists, it would provide a great deal of feedback. Not only would the virus be destroyed, but we would have a quantitative determination of
 of how effective each treatment was. In practice, this could be done by applying two pulses in quick succession and monitoring the change in the reflected power;
 or perhaps by a time-domain method. Whether such a signature can be discriminated in a clinical setting remains to be seen.
 
@@ -160,11 +161,16 @@ The raw voltage plots do not suggest that this is the case; but it is nonetheles
 0.2 mL of T4(r?) phage, Carolina (), was pipetted into a freshly autoclaved 1.5 mL eppendorf tube. Since the lids have a tendency to open during the autoclave cycle, the tube was clamped closed by means of screws\footnote{This is probably unsafe.} to a polypropylene plate
 to prevent condensate from the autoclave from diluting the sample. It was then autoclaved for 20 minutes.
 
-The polycarbonate cuvette slide was also autoclaved, along with a length of high-temperature silicone-adhesive Kapton tape wound around a PTFE mandrel \footnote{Substitute with the appropriate plate sealing films}.
+\footnote{This deformed the Eppendorf tubes. Taping them shut is preferable.}
 
-\strike{The slide was dried with a jet of clean argon.} \strike{The slide was dried in a} The slide was sufficiently dry when removed from the autoclave in a 50 mL Falcon tube wrapped in aluminum foil.
+The polycarbonate cuvette slide was also autoclaved, \strike{along with a length of high-temperature silicone-adhesive Kapton tape wound around a PTFE mandrel} \footnote{Substitute with the appropriate plate sealing films}.
+(The adhesive became bonded to the next layer of Kapton. Should be wound onto PTFE, rather than Kapton.)
 
-Both sides of the slide were sealed with the Kapton. Alignment pin holes were poked with a plastic dowel.
+\strike{The slide was dried with a jet of clean Argon.} \strike{The slide was dried in an oven} The slide was sufficiently dry when removed from the autoclave in a 50 mL Falcon tube wrapped in aluminum foil.
+
+\footnote{The autoclave (Instant Pot pressure cooker, see \cite{Assessment2018} and \cite{Using1984}) should be vented immediately after the cycle rather than let cool to prevent condensation.}
+
+Both sides of the slide were sealed with the Kapton. Alignment pin holes were poked with a pin and then a plastic dowel.
 
 0.3 uL of solution was added to each of the cuvettes in the following order:
 
@@ -183,13 +189,35 @@ The cuvettes had a great deal of evaporation on the top slide. (This might affec
 About half way through each run, the power would suddenly snap up.
 
 
+
+Initial analyses showed a very convincing set of peaks. However, the differences between each cuvette and each run far outweighed the
+effect. These data were far too noisy to be of any use; it is assumed that this was primarily due to of evaporation.
+
+
+
 The following improvements are required for the next run:
 
 Higher resolution (0.2v is not sufficient to determine the Q, go back to 0.05)
-Larger volume of phage. Though
-Figure out a way of minimizing heating while testing the spectrum. The temperature 
+Larger volume of phage; perhaps 0.6 uL, for more reliable pipetting.
+Add a small volume of silicone oil on top of the cuvette to prevent evaporation - 2.5 uL?
+(https://ibidi.com/cell-culture-microscopy/106-ibidi-anti-evaporation-oil.html)
+
+Figure out a way of minimizing heating while testing the spectrum. The temperature
+
+Handles should also be added.
 
 \section
+
+2.5 uL of silicone oil (ECO-702, Enparticles Inc. Mixture of phenylmethyl and dimethyl cyclosiloxane) was added to prevent evaporation.
+
+The emissivity of silicone oil is greater than 0.9 for sheets > 0.1 mm thick, so no correction factor is applied to the infrared reading.
+
+Since the temperature is measured at the surface of the oil,
+
+0.6
+
+Unfortunately, silicone oil is an indelible blight.
+
 
 
 
