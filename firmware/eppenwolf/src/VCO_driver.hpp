@@ -29,7 +29,7 @@ void set_amp_power_state(bool power_state);
 
 void init_VCO();
 void set_VCO(float varactor_voltage, bool power_state);
-void start_amplifier();
+void start_amplifier(float set_current);
 void kill_amplifier();
 void master_loop();
 

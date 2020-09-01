@@ -61,24 +61,24 @@ float get_drain_current(){
     // return (((analogRead(DRAIN_CURRENT_SENSE_PIN) / (float)ANALOG_READ_MAX_VAL)*3.3) / 0.1)/50.0;;
 }
 
-// void pulse_VCO(int pulse_duration_nanoseconds){
-//
-//     int pulse_cycles = (pulse_duration_nanoseconds * 1.0e-9) / (1.0 / ((float)F_CPU));
-//     pulse_cycles /= 10; // about 20% off.
-//
-//     noInterrupts(); //sei
-//
-//     volatile int i = 0;
-//
-//     //p-channel inverts!
-//     digitalWriteFast(PULSE_PIN, 0);
-//     for(i = 0; i < pulse_cycles; i++){
-//         asm volatile("nop");
-//     }
-//     digitalWriteFast(PULSE_PIN, 1);
-//     interrupts();
-//     //cli
-// }
+void pulse_VCO(int pulse_duration_nanoseconds){
+
+    int pulse_cycles = (pulse_duration_nanoseconds * 1.0e-9) / (1.0 / ((float)F_CPU));
+    pulse_cycles /= 10; // about 20% off.
+
+    noInterrupts(); //sei
+
+    volatile int i = 0;
+
+    //p-channel inverts!
+    digitalWriteFast(VCO_POWER_CONTROL_PIN, 0);
+    for(i = 0; i < pulse_cycles; i++){
+        asm volatile("nop");
+    }
+    digitalWriteFast(VCO_POWER_CONTROL_PIN, 1);
+    interrupts();
+    //cli
+}
 
 void set_amp_gain_voltage(float gain_voltage){
     gain_voltage = constrain(gain_voltage, 0, 4.5);
@@ -114,10 +114,16 @@ void wait_for_button(){
 
 // #define TEMP_INTERVAL 100
 
-void master_loop(){
-    start_amplifier();
+// void pulse_all(){
+//     debug_serial.print(j);
+//     debug_serial.print(",");
+// }
 
-    const float power_levels[] = {3.0, 3.5, 4.5};
+
+void master_loop(){
+    start_amplifier(0.20);
+
+    const float power_levels[] = {4.5};
 
     //gain varies from 2.2 to 3.4.
 
@@ -131,7 +137,7 @@ void master_loop(){
     debug_serial.println("Make sure tee is running");
 
     const int no_cuvettes = 6;
-    const int no_power_levels = 3;
+    const int no_power_levels = 1;
     int cuvette = 0;
     int power_level = 0;
 
@@ -174,7 +180,7 @@ void master_loop(){
                             last_temperature_time = millis();
                         }
                     }
-                    delay(1500); //let everything cool before the next run
+                    delay(1000); //let everything cool before the next run
                 }
             }
         }
@@ -184,10 +190,14 @@ void master_loop(){
 
 
     kill_amplifier();
+
+
+
+
 }
 
 
-void start_amplifier(){
+void start_amplifier(float set_current){
 
     set_amp_power_state(0);
     set_VCO(0, 0); //Make sure VCO is off
@@ -202,7 +212,7 @@ void start_amplifier(){
 
         float current = get_drain_current();
         debug_serial.println(current);
-        if(current > 0.12){
+        if(current > set_current){
             debug_serial.println(i);
             break;
         }
@@ -210,8 +220,6 @@ void start_amplifier(){
     }
     set_VCO(0,0);
     set_amp_gain_voltage(1.0);
-
-    // determine_gate_spectrum();
 
 }
 

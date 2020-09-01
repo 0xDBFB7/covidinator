@@ -11,8 +11,11 @@
 - BioShop Canada | Reagents, assays, etc | Residential (N) 
 - Flinn Scientifi
 - Karter Scientific Canada | Mostly chemistry, not much bio | Residential (Y)
-Mandel Scientific
+- Mandel Scientific
 - Amazon
 - McMaster-Carr | Lots of bio stuff, surprisingly. 
+- VWR - explicitly allows personal use! Reagents (BCA) are not permitted to residential addresses.
+
+
 
 https://www.stellarscientific.com/clear-pcr-plate-seals-100-cs/

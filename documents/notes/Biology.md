@@ -763,5 +763,21 @@ stick one between...
 
  Anyhow, later. We'll do the run again and see if we get some better data.
  
+Replaced far-side AC coupling cap, now far-side ADC's up to snuff;
+also, bringing the amp current up to 0.2 yields a 
 
+Removed E10 from the freezer, dropped it on the floor, put it back in the freezer.
+
+Heated the silicone oil to 120c in toaster oven in a glass pipette that had been flame-sealed,
+alu foil on the top. After an hour, turned off, waited to cool, poured into sterile eppendorf.
+
+Added 0.2 mL of E10 from the freezer to E11 and E12, put on the shaker in the incubator.
+E10's back in the freezer. 
+
+Pulsing the thing prevents the freq. feedback hackrf from working, predictably.
+
+
+
+
+ 
 

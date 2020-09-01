@@ -16,7 +16,7 @@ alignment_pin_x_offset = 3.5-(0.17500/2);
 
 dowel_pin_diameter = 1.6;
 
-slide_length = (cuvette_spacing) * num_cuvettes + 2*cuvette_spacing;
+slide_length = (cuvette_spacing) * num_cuvettes + 4*cuvette_spacing;
 
 slide_height = 3.0;
 slide_width = 3 + alignment_pin_diameter/2 + alignment_pin_x_offset;
@@ -36,10 +36,10 @@ difference(){
     cube([slide_width, slide_length, slide_height], false);
     
     union(){
-        for (i = [-1:num_cuvettes]){
-            y_centerline = i*cuvette_spacing + 1.5*cuvette_spacing;
+        for (i = [-2:num_cuvettes+1]){
+            y_centerline = i*cuvette_spacing + 2.5*cuvette_spacing;
             
-            if(!(i < 0 || i == num_cuvettes)){
+            if(!(i < 0 || i >= num_cuvettes)){
                 translate([x_centerline, y_centerline, cuvette_bottom_margin])
                        cylinder(slide_height - (cuvette_bottom_margin+cuvette_depth)+1,
                                         d=cuvette_diameter,center=false);

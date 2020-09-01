@@ -212,15 +212,18 @@ Handles should also be added.
 
 An errant AC-coupling cap was added between phage_experiment_1 and _2, greatly increasing SNR on the 'far' sensor.
 
-2.5 uL of silicone oil (ECO-702, Enparticles Inc. Mixture of phenylmethyl and dimethyl cyclosiloxane) was added to prevent evaporation.
+2.5 uL of silicone oil (ECO-702, Enparticles Inc. Mixture of phenylmethyl and dimethyl cyclosiloxane) was added to prevent evaporation. The oil was heated in an oven to 120 C for 1 hour to ensure sterility.
+\footnote{Unfortunately, silicone oil is a pernicious laboratory contaminant; it forms an indeliable layer on almost all surfaces. Disposable glassware and pipettes were used wherever possible. Mineral oils may be a superior choice, but were not compatible with the polycarbonate slide.}
 
-The emissivity of silicone oil is greater than 0.9 for sheets > 0.1 mm thick, so no correction factor is applied to the infrared reading.
+The emissivity of silicone oil is greater than 0.9\cite{Current} for sheets > 0.1 mm thick, so no correction is applied to the infrared reading.
 
 Since the temperature is measured at the surface of the oil,
 
-0.6
 
-Unfortunately, silicone oil is an indelible blight.
+ID 0                                                                                    ID 5
+Phage | Autoclaved phage | Sterile nutrient broth | Sterile nutrient broth | Phage | Autoclaved phage | Phage | Phage
+
+Only cuvettes 0 to 5 were pulsed.
 
 
 
