@@ -97,7 +97,7 @@ spectrum analyzer are now super prominent.
 
 Continue on elab for plots.
 
-
+It takes a while for the amp to ring down after the VCO is shut down!
 
 
 

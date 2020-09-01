@@ -53,14 +53,14 @@ difference(){
         
             }
                     
-            translate([0, y_centerline, cuvette_bottom_margin])
-                   cylinder(slide_height,
-                                    d=alignment_pin_diameter,center=false);
-            
-            translate([slide_width, y_centerline, cuvette_bottom_margin])
-                   cylinder(slide_height,
-                                    d=alignment_pin_diameter,center=false);
-            
+//            translate([0, y_centerline, cuvette_bottom_margin])
+//                   cylinder(slide_height,
+//                                    d=alignment_pin_diameter,center=false);
+//            
+//            translate([slide_width, y_centerline, cuvette_bottom_margin])
+//                   cylinder(slide_height,
+//                                    d=alignment_pin_diameter,center=false);
+//            
             if(!(i < 0 || i == num_cuvettes+1)){
                 translate([x_centerline*1.5, y_centerline-cuvette_spacing/1.5, cuvette_bottom_margin])
                        cylinder(slide_height,
@@ -73,8 +73,12 @@ difference(){
          
         }
    
-   
         
+        translate([x_centerline, cuvette_spacing/2, 0])
+            cylinder(h=slide_height+1, d=2.0);
+        translate([x_centerline, slide_length-cuvette_spacing/2, 0])
+            cylinder(h=slide_height+1, d=2.0);
+            
        
     }
 }

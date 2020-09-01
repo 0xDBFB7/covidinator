@@ -114,82 +114,120 @@ void wait_for_button(){
 
 // #define TEMP_INTERVAL 100
 
-// void pulse_all(){
-//     debug_serial.print(j);
-//     debug_serial.print(",");
-// }
+void pulse_spectrum(int cuvette, bool sham){
 
+    start_amplifier(0.20); // push it to the limit!
 
-void master_loop(){
-    start_amplifier(0.20);
+    set_amp_gain_voltage(4.5);
 
-    const float power_levels[] = {4.5};
-
-    //gain varies from 2.2 to 3.4.
-
-    //time constant of the VCO tuning is about 3 ms.
-
-    float max_temperature = 0;
-    unsigned long last_temperature_time = millis();
-
-    // debug_serial.println(thermal_sensor.get_ambient_temperature());
-
-    debug_serial.println("Make sure tee is running");
-
-    const int no_cuvettes = 6;
-    const int no_power_levels = 1;
-    int cuvette = 0;
-    int power_level = 0;
-
-    debug_serial.println("========================================================");
-    for(int iter_count = 0; iter_count < 2; iter_count++){ // see if anything's changed
-        for(int power_level = 0; power_level < no_power_levels; power_level++){
-            if(power_level == 2){
-                debug_serial.println("Remove cover film");
-            }
-            for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
-                set_VCO(0,0);
-
-                debug_serial.print("Please move to cuvette ");
-                debug_serial.println(cuvette);
-                wait_for_button();
-
-                set_amp_gain_voltage(power_levels[power_level]);
-
-                for(int i = 0; i < 10; i++){
-                    for(float j = 0; j < 12; j += 0.05){
-                        debug_serial.print(j);
-                        debug_serial.print(",");
-                        set_VCO(j,1);
-                        delayMicroseconds(200);
-                        get_power_levels();
-                        set_VCO(0,0);
-                        debug_serial.print(",");
-                        debug_serial.print(get_drain_current());
-                        debug_serial.print(",");
-                        debug_serial.print(max_temperature);
-                        debug_serial.print(",");
-                        debug_serial.print(cuvette);
-                        debug_serial.print(",");
-                        debug_serial.print(power_levels[power_level]);
-                        debug_serial.print(",");
-                        debug_serial.print(millis());
-                        debug_serial.println();
-                        if(millis() - last_temperature_time > 500){
-                            max_temperature = get_max_temp();
-                            last_temperature_time = millis();
-                        }
-                    }
-                    delay(1000); //let everything cool before the next run
-                }
-            }
+    for(float j = 0; j < 12; j += 0.05){
+        debug_serial.print(j);
+        debug_serial.print(",");
+        set_VCO(j,0);
+        delay(5); //wait for the tuning voltage to settle.
+        if(!sham){
+            pulse_VCO(400);
         }
+        float max_temperature = get_max_temp();
+        debug_serial.print(",");
+        debug_serial.print(get_drain_current());
+        debug_serial.print(",");
+        debug_serial.print(max_temperature);
+        debug_serial.print(",");
+        debug_serial.print(cuvette);
+        debug_serial.print(",");
+        debug_serial.print(millis());
+        debug_serial.print(",");
+        debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
+        debug_serial.print(",0,0,0,0,0"); //help data analysis schema
+
+        debug_serial.println();
+
+        delay(100);
     }
-    debug_serial.println("========================================================");
-    debug_serial.println("VCO Off");
 
 
     kill_amplifier();
+
+}
+
+
+void master_loop(){
+
+    pulse_spectrum(0, false);
+
+    // start_amplifier(0.12);
+    //
+    // const float power_levels[] = {2.5};
+    //
+    // //gain varies from 2.2 to 3.4.
+    //
+    // //time constant of the VCO tuning is about 3 ms.
+    //
+    // float max_temperature = 0;
+    // unsigned long last_temperature_time = millis();
+    //
+    // // debug_serial.println(thermal_sensor.get_ambient_temperature());
+    //
+    // debug_serial.println("Make sure tee is running");
+    //
+    // const int no_cuvettes = 6;
+    // const int no_power_levels = 1;
+    // int cuvette = 0;
+    // int power_level = 0;
+    //
+    // debug_serial.println("========================================================");
+    // for(int iter_count = 0; iter_count < 2; iter_count++){ // see if anything's changed
+    //     for(int power_level = 0; power_level < no_power_levels; power_level++){
+    //         if(power_level == 2){
+    //             debug_serial.println("Remove cover film");
+    //         }
+    //         for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
+    //             set_VCO(0,0);
+    //
+    //             debug_serial.print("Please move to cuvette ");
+    //             debug_serial.println(cuvette);
+    //             wait_for_button();
+    //
+    //             set_amp_gain_voltage(power_levels[power_level]);
+    //
+    //             for(int i = 0; i < 5; i++){
+    //                 for(float j = 0; j < 12; j += 0.05){
+    //                     debug_serial.print(j);
+    //                     debug_serial.print(",");
+    //                     set_VCO(j,1);
+    //                     delayMicroseconds(200);
+    //                     get_power_levels();
+    //                     set_VCO(j,0);
+    //                     if(millis() - last_temperature_time > 500){
+    //                         max_temperature = get_max_temp();
+    //                         last_temperature_time = millis();
+    //                     }
+    //                     debug_serial.print(",");
+    //                     debug_serial.print(get_drain_current());
+    //                     debug_serial.print(",");
+    //                     debug_serial.print(max_temperature);
+    //                     debug_serial.print(",");
+    //                     debug_serial.print(cuvette);
+    //                     debug_serial.print(",");
+    //                     debug_serial.print(power_levels[power_level]);
+    //                     debug_serial.print(",");
+    //                     debug_serial.print(millis());
+    //                     debug_serial.println();
+    //                 }
+    //                 delay(400); //let everything cool a bit before the next run
+    //             }
+    //         }
+    //     }
+    // }
+
+
+    // kill_amplifier();
+
+
+    for(int i = 0; i < 100; i++){ //move data offscreen to maintain blindedness
+        debug_serial.println();
+    }
 
 
 
@@ -198,6 +236,9 @@ void master_loop(){
 
 
 void start_amplifier(float set_current){
+
+    debug_serial.println("Remove cuvette, VCO starting");
+    wait_for_button();
 
     set_amp_power_state(0);
     set_VCO(0, 0); //Make sure VCO is off
