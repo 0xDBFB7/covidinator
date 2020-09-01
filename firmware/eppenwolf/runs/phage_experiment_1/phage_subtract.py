@@ -67,11 +67,13 @@ def freq_eq(x):
 freqs = freq_eq(data[0, 0, 0][:,0])
 
 
-plt.plot(freqs, normalized_diff(0, 1, phage_0, sterile_broth_0, near_sensor), label="run 1")
-plt.plot(freqs, normalized_diff(0, 1, phage_0, sterile_broth_0, far_sensor), label="run 1")
+plt.plot(freqs, normalized_diff(0, 1, autoclaved_phage_0, sterile_broth_1, far_sensor), label="run 1")
+plt.plot(freqs, normalized_diff(0, 1, autoclaved_phage_1, sterile_broth_1, far_sensor), label="run 1")
+plt.plot(freqs, normalized_diff(0, 1, autoclaved_phage_1, sterile_broth_0, far_sensor), label="run 1")
+# plt.plot(freqs, normalized_diff(0, 1, phage_0, sterile_broth_0, far_sensor), label="run 1")
 
-plt.plot(freqs, normalized_diff(0, 1, phage_1, sterile_broth_1, near_sensor), label="run 1")
-plt.plot(freqs, normalized_diff(0, 1, phage_1, sterile_broth_1, far_sensor), label="run 1")
+# plt.plot(freqs, normalized_diff(0, 1, phage_1, sterile_broth_1, near_sensor), label="run 1")
+# plt.plot(freqs, normalized_diff(0, 1, phage_1, sterile_broth_1, far_sensor), label="run 1")
 
 # plt.plot(freqs, normalized_diff(0, 1, phage_0, autoclaved_phage_0, far_sensor), label="run 1")
 

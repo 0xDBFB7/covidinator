@@ -85,6 +85,8 @@ Each on two plates.
 
 The signal used was spectrally impure; phase noise was very high. However, all spurs are at about 3 dB down.
 
+VCO voltages were calibrated to frequencies using a HackRF One and an HMC /8 frequency divider.
+
 (A downconverter using an HMB and a custom 6.4 GHz LO was tried, but it was found that this was much less informative and more confusing
 due to a lack of effective mixer image and LO spur rejection.)
 
@@ -133,6 +135,7 @@ To verify that we can detect a resonance with this setup, we use the microwave s
  applied to a Mylar film, and dried with a hair dryer. A small wafer of the hardened mixture, perhaps 0.3 mm thick, 5 mm x 2 mm, was placed directly on top of the coplanar waveguide.
 
 
+
 The spectrum was then captured, averaging (?10) sweeps of the VCO. The background spectrum was taken without the wafer in place.
 
 \begin{figure}[H]
@@ -153,7 +156,6 @@ Naively, we might expect the peak to appear as a decrease at both sensors; inste
 The raw voltage plots do not suggest that this is the case; but it is nonetheless concerning.
 
 \footnote{The paper mentions that the "blending fraction of silicon carbide powders to epoxy resin was 30 \%, 35 \%, 40 \%, 45 \% and 50\% by weight". That seems a little ambiguous as to whether that's "weight per total mass" or "weight per epoxy".}
-
 
 
 \section{T4 phage experiment 1}
@@ -207,6 +209,8 @@ Figure out a way of minimizing heating while testing the spectrum. The temperatu
 Handles should also be added.
 
 \section
+
+An errant AC-coupling cap was added between phage_experiment_1 and _2, greatly increasing SNR on the 'far' sensor.
 
 2.5 uL of silicone oil (ECO-702, Enparticles Inc. Mixture of phenylmethyl and dimethyl cyclosiloxane) was added to prevent evaporation.
 
