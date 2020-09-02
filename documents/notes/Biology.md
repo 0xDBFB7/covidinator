@@ -778,6 +778,8 @@ Pulsing the thing prevents the freq. feedback hackrf from working, predictably.
 
 After 6 hours of shaking and incubating, no change in E12 or E13. Glycerol stock seems to be dead.
 
+Put some of E8, old fridge stock, into E14. 
+
 Tried using the silicone oil cap. Works great. Slowly leaks if inverted, not a huge problem.
 5.0 uL of oil is better.
 
@@ -792,6 +794,14 @@ done!
 
 
 
+when I was playing around with the silicone oil I kept getting droplet formation. To coalesce these,
+apparently you can use electric fields https://www.hindawi.com/journals/ijce/2016/2492453/
+this would allow you to take multiple different chemicals, put them into droplet form,
+and then selectively coalesce them with the reaction chamber. Very neat!
 
- 
+here's something neat: droplet resonant coalescence mentioned in the last paper. Very similar problem
+to the virus!
+
+
+After leaving overnight, all three (E11, E12, E14) are super turbid! Hooray!
 

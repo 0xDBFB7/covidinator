@@ -227,15 +227,12 @@ void master_loop(){
     set_amp_gain_voltage(4.5);
 
 
-
-    pulse_spectrum(0, false);
-
     uint8_t random_byte = Entropy.random(2); // timer-based, random enough seed
 
     const int phage_group_A[] = {0, 6};
     const int phage_group_B[] = {4, 7};
 
-    
+    pulse_spectrum(0, false);
 
     kill_amplifier();
 
