@@ -226,14 +226,13 @@ The emissivity of silicone oil is greater than 0.9\cite{Current} for sheets > 0.
 Since the temperature is measured at the surface of the oil,
 
 A pulse of RF power approximately 30 microseconds long, and then a 100 ms delay, was repeated 240 times over the frequency span, for a guaranteed maximum average power of 60 microwatts.
+Pulse power to the VCO was the only difference between sham exposures and the pulse exposures.
 
-The spectra of all cuvettes was measured twice before and twice after the pulse exposure.
+The spectra of all cuvettes was measured twice before and twice after the pulse exposure, once after addition of the bacteria, and once after incubation was complete.
+
 
 If this doesn't work, remember the power/frequency snap (oscillation?) - amp might not be working properly
 
-Have we lost titer because it's been sitting on the table here? should I be fridging this? Fridged.
-
-if we just add more e.coli , do the droplets coalesce?
 
 
 # T - 5 hours

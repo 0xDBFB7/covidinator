@@ -4,7 +4,7 @@ import sys
 import serial
 #arg 1 is serial port, arg 2 is file to append to.
 
-# python read_turbidimeter.py /dev/ttyUSB5 cuvette_0.csv
+# python -u read_turbidimeter.py /dev/ttyUSB5 slide_0_turbidity.csv
 
 file = open(sys.argv[2], "a")
 

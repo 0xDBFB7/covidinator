@@ -20,7 +20,7 @@ int main(void)
 	pinMode(BUTTON_PIN, INPUT);
 	digitalWrite(BUTTON_PIN, HIGH); //button pulldown
 
-  	Entropy.Initialize(); //timer-based 
+  	Entropy.Initialize(); //timer-based
 
 	// // turbidimeter_instance.init();
 	init_VCO();
@@ -33,6 +33,8 @@ int main(void)
 		delay(100);
 		digitalWrite(13, HIGH);
 		delay(100);
+
+		get_max_temp();
 
 		dispatch();
 

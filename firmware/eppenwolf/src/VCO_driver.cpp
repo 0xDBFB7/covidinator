@@ -114,7 +114,7 @@ void wait_for_button(){
 
 // #define TEMP_INTERVAL 100
 
-void pulse_spectrum(int cuvette, bool sham){
+void pulse_spectrum(int slide, int cuvette, bool sham){
 
     for(float j = 0; j < 12; j += 0.05){
         debug_serial.print(j);
@@ -130,6 +130,8 @@ void pulse_spectrum(int cuvette, bool sham){
         debug_serial.print(max_temperature);
         debug_serial.print(",");
         debug_serial.print(sham);
+        debug_serial.print(",");
+        debug_serial.print(slide);
         debug_serial.print(",");
         debug_serial.print(cuvette);
         debug_serial.print(",");
@@ -152,73 +154,78 @@ void pulse_spectrum(int cuvette, bool sham){
 void master_loop(){
 
 
-    // start_amplifier(0.12);
-    //
-    // const float power_levels[] = {2.5};
-    //
-    // //gain varies from 2.2 to 3.4.
-    //
-    // //time constant of the VCO tuning is about 3 ms.
-    //
-    // float max_temperature = 0;
-    // unsigned long last_temperature_time = millis();
-    //
-    // // debug_serial.println(thermal_sensor.get_ambient_temperature());
-    //
-    // debug_serial.println("Make sure tee is running");
-    //
-    // const int no_cuvettes = 6;
-    // const int no_power_levels = 1;
-    // int cuvette = 0;
-    // int power_level = 0;
-    //
-    // debug_serial.println("========================================================");
-    // for(int iter_count = 0; iter_count < 2; iter_count++){ // see if anything's changed
-    //     for(int power_level = 0; power_level < no_power_levels; power_level++){
-    //         if(power_level == 2){
-    //             debug_serial.println("Remove cover film");
-    //         }
-    //         for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
-    //             set_VCO(0,0);
-    //
-    //             debug_serial.print("Please move to cuvette ");
-    //             debug_serial.println(cuvette);
-    //             wait_for_button();
-    //
-    //             set_amp_gain_voltage(power_levels[power_level]);
-    //
-    //             for(int i = 0; i < 5; i++){
-    //                 for(float j = 0; j < 12; j += 0.05){
-    //                     debug_serial.print(j);
-    //                     debug_serial.print(",");
-    //                     set_VCO(j,1);
-    //                     delayMicroseconds(200);
-    //                     get_power_levels();
-    //                     set_VCO(j,0);
-    //                     if(millis() - last_temperature_time > 500){
-    //                         max_temperature = get_max_temp();
-    //                         last_temperature_time = millis();
-    //                     }
-    //                     debug_serial.print(",");
-    //                     debug_serial.print(get_drain_current());
-    //                     debug_serial.print(",");
-    //                     debug_serial.print(max_temperature);
-    //                     debug_serial.print(",");
-    //                     debug_serial.print(cuvette);
-    //                     debug_serial.print(",");
-    //                     debug_serial.print(power_levels[power_level]);
-    //                     debug_serial.print(",");
-    //                     debug_serial.print(millis());
-    //                     debug_serial.println();
-    //                 }
-    //                 delay(400); //let everything cool a bit before the next run
-    //             }
-    //         }
-    //     }
-    // }
+    start_amplifier(0.12);
+
+    const float power_levels[] = {2.8};
+
+    //gain varies from 2.2 to 3.4.
+
+    //time constant of the VCO tuning is about 3 ms.
+
+    float max_temperature = 0;
+    unsigned long last_temperature_time = millis();
+
+    // debug_serial.println(thermal_sensor.get_ambient_temperature()); //not accurate for some reason?
+
+    debug_serial.println("Make sure tee is running");
+
+    const int no_slides = 2;
+    const int no_cuvettes = 8;
+    const int no_power_levels = 1;
+    const int no_iterations = 2;
+    int cuvette = 0;
+    int power_level = 0;
+
+    debug_serial.println("========================================================");
+    for(int slide = 0; slide < no_slides; slide++){
+        for(int iter_count = 0; iter_count < no_iterations; iter_count++){ // see if anything's changed
+            for(int power_level = 0; power_level < no_power_levels; power_level++){
+                for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
+                    set_VCO(0,0);
+
+                    debug_serial.print("Please move to slide ");
+                    debug_serial.print(slide);
+                    debug_serial.print(" cuvette ");
+                    debug_serial.println(cuvette);
+                    wait_for_button();
+
+                    set_amp_gain_voltage(power_levels[power_level]);
+
+                    for(int i = 0; i < 5; i++){
+                        for(float j = 0; j < 12; j += 0.05){
+                            debug_serial.print(j);
+                            debug_serial.print(",");
+                            set_VCO(j,1);
+                            delayMicroseconds(200);
+                            get_power_levels();
+                            set_VCO(j,0);
+                            if(millis() - last_temperature_time > 500){
+                                max_temperature = get_max_temp();
+                                last_temperature_time = millis();
+                            }
+                            debug_serial.print(",");
+                            debug_serial.print(get_drain_current());
+                            debug_serial.print(",");
+                            debug_serial.print(max_temperature);
+                            debug_serial.print(",");
+                            debug_serial.print(slide);
+                            debug_serial.print(",");
+                            debug_serial.print(cuvette);
+                            debug_serial.print(",");
+                            debug_serial.print(power_levels[power_level]);
+                            debug_serial.print(",");
+                            debug_serial.print(millis());
+                            debug_serial.println();
+                        }
+                        delay(400); //let everything cool a bit before the next run
+                    }
+                }
+            }
+        }
+    }
 
 
-    // kill_amplifier();
+    kill_amplifier();
 
 
 
@@ -226,15 +233,28 @@ void master_loop(){
 
     set_amp_gain_voltage(4.5);
 
-
     uint8_t random_byte = Entropy.random(2); // timer-based, random enough seed
 
-    const int phage_group_A[] = {0, 6};
-    const int phage_group_B[] = {4, 7};
+    const int group_A[] = {0, 1, 2, 6};
+    const int group_B[] = {3, 4, 5, 7};
 
-    pulse_spectrum(0, false);
+    for(int slide = 0; slide < no_slides; slide++){
+        for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
+            debug_serial.print("Please move to slide ");
+            debug_serial.print(slide);
+            debug_serial.print(" cuvette ");
+            debug_serial.println(cuvette);
+            wait_for_button();
+
+            pulse_spectrum(slide, cuvette, false);
+        }
+    }
 
     kill_amplifier();
+
+
+    debug_serial.println("Add e.coli.");
+    wait_for_button();
 
 
 }
@@ -242,7 +262,7 @@ void master_loop(){
 
 void start_amplifier(float set_current){
 
-    debug_serial.println("Remove cuvette, VCO starting");
+    debug_serial.println("Remove cuvette, amplifier starting");
     wait_for_button();
 
     set_amp_power_state(0);

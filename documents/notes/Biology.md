@@ -805,3 +805,8 @@ to the virus!
 
 After leaving overnight, all three (E11, E12, E14) are super turbid! Hooray!
 
+
+Put the phage in the fridge overnight.
+
+if we just add more e.coli , do the droplets coalesce?
+
