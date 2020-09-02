@@ -2,7 +2,7 @@
 #include "host_comms.hpp"
 #include "power_sensor.hpp"
 #include "thermal.hpp"
-
+#include "Entropy.h"
 // #include "VCO_driver.hpp"
 // #include "turbidimeter.hpp"
 // #include "stepper.hpp"
@@ -19,6 +19,8 @@ int main(void)
 
 	pinMode(BUTTON_PIN, INPUT);
 	digitalWrite(BUTTON_PIN, HIGH); //button pulldown
+
+  	Entropy.Initialize(); //timer-based 
 
 	// // turbidimeter_instance.init();
 	init_VCO();

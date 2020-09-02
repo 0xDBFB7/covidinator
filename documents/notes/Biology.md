@@ -776,6 +776,20 @@ E10's back in the freezer.
 
 Pulsing the thing prevents the freq. feedback hackrf from working, predictably.
 
+After 6 hours of shaking and incubating, no change in E12 or E13. Glycerol stock seems to be dead.
+
+Tried using the silicone oil cap. Works great. Slowly leaks if inverted, not a huge problem.
+5.0 uL of oil is better.
+
+Silicone-filled slides should be:
+emptied
+sealed 
+autoclaved 
+washed with soap and water
+blown clear
+autoclaved with back seal
+done!
+
 
 
 

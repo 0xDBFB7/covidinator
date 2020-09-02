@@ -116,10 +116,6 @@ void wait_for_button(){
 
 void pulse_spectrum(int cuvette, bool sham){
 
-    start_amplifier(0.20); // push it to the limit!
-
-    set_amp_gain_voltage(4.5);
-
     for(float j = 0; j < 12; j += 0.05){
         debug_serial.print(j);
         debug_serial.print(",");
@@ -129,10 +125,11 @@ void pulse_spectrum(int cuvette, bool sham){
             pulse_VCO(400);
         }
         float max_temperature = get_max_temp();
-        debug_serial.print(",");
         debug_serial.print(get_drain_current());
         debug_serial.print(",");
         debug_serial.print(max_temperature);
+        debug_serial.print(",");
+        debug_serial.print(sham);
         debug_serial.print(",");
         debug_serial.print(cuvette);
         debug_serial.print(",");
@@ -146,15 +143,14 @@ void pulse_spectrum(int cuvette, bool sham){
         delay(100);
     }
 
-
-    kill_amplifier();
-
+    for(int i = 0; i < 200; i++){ //move data offscreen to maintain blindedness
+        debug_serial.println();
+    }
 }
 
 
 void master_loop(){
 
-    pulse_spectrum(0, false);
 
     // start_amplifier(0.12);
     //
@@ -225,11 +221,23 @@ void master_loop(){
     // kill_amplifier();
 
 
-    for(int i = 0; i < 100; i++){ //move data offscreen to maintain blindedness
-        debug_serial.println();
-    }
+
+    start_amplifier(0.20); // push it to the limit!
+
+    set_amp_gain_voltage(4.5);
 
 
+
+    pulse_spectrum(0, false);
+
+    uint8_t random_byte = Entropy.random(2); // timer-based, random enough seed
+
+    const int phage_group_A[] = {0, 6};
+    const int phage_group_B[] = {4, 7};
+
+    
+
+    kill_amplifier();
 
 
 }

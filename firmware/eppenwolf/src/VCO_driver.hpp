@@ -18,6 +18,7 @@
 #include "comms.hpp"
 #include <WString.h>
 #include "thermal.hpp"
+#include "Entropy.h"
 
 void unselect_dacs();
 void select_all_dacs();

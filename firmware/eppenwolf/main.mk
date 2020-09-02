@@ -134,6 +134,9 @@ L_INC += -I$(COREPATH)/../../libraries/SPI/
 LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/Wire/*.cpp)
 L_INC += -I$(COREPATH)/../../libraries/Wire/
 
+LCPP_FILES += $(wildcard $(COREPATH)/../../libraries/Entropy/*.cpp)
+L_INC += -I$(COREPATH)/../../libraries/Entropy/
+
 LCPP_FILES += $(wildcard $(LIBRARYPATH)/SerialTransfer/src/*.cpp)
 L_INC += -I$(LIBRARYPATH)/SerialTransfer/src/
 
