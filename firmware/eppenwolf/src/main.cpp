@@ -34,8 +34,6 @@ int main(void)
 		digitalWrite(13, HIGH);
 		delay(100);
 
-		get_max_temp();
-
 		dispatch();
 
 	}

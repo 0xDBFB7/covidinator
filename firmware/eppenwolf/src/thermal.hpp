@@ -7,5 +7,9 @@
 void init_thermal();
 
 extern MLX90621 thermal_sensor; //no getters for now
-float get_max_temp();
+// float get_max_temp();
+
+void update_temperatures();
+void print_temperatures();
+
 #endif
