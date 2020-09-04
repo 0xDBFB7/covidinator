@@ -812,3 +812,9 @@ if we just add more e.coli , do the droplets coalesce?
 
 Going through the esophagous might be better!
 
+Put 6x0.2 mL of E13 into EC0, EC1.
+
+Centrifuged the two E.colis at ~ half power for 2 minutes. Centrifuged very nicely - pellet in
+the bottom.
+
+

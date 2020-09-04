@@ -146,7 +146,7 @@ def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fd
     for i in np.unique(raw):
         i = int(i)
         dielectric_constant, conductivity, penetration_depth = lookup_tissue_properties(i, center_frequency)
-        conductivity = 1.0 / (fdtd_grid_cell_size / epsilon_0)
+        conductivity *= (fdtd_grid_cell_size / epsilon_0) #flaport's units
         grid[np.where(raw == i)] = fdtd.AbsorbingObject(permittivity=dielectric_constant, conductivity=conductivity, name=f"t{i}")
 
 
