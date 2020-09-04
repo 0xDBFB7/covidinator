@@ -49,7 +49,7 @@ void setup()
     // Select control register
     Wire.write(0x0F | 0x80);
     // Gain = 1x
-    Wire.write(0x20);
+    Wire.write(0xFF);
     // Stop I2C Transmission
     Wire.endTransmission();
     delay(300);
@@ -110,7 +110,7 @@ long get_sample(){
     long c0Data = (data[1] * 256) + data[0];
     long c1Data = (data[3] * 256) + data[2];
 
-    return c1Data;
+    return c0Data;
 
     //C1 is the infrared channel.
     //The sensor should actually be at the top,
@@ -129,7 +129,7 @@ void wait_for_new_reading(){
 void loop()
 {
 
-    
+//    
     digitalWrite(2, LOW);
     wait_for_new_reading();
     wait_for_new_reading();

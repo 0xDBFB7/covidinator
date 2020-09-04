@@ -815,6 +815,45 @@ Going through the esophagous might be better!
 Put 6x0.2 mL of E13 into EC0, EC1.
 
 Centrifuged the two E.colis at ~ half power for 2 minutes. Centrifuged very nicely - pellet in
-the bottom.
+the bottom.running the test
+dowel pulled out. shortened it halfway through.
+pressing down - there may have been a few runs where the slide was not fully flush with the 
+
+a few of the wells may not have been loaded fully; very hard to do these small volumes!
+
+if the tips get waterlogged, blow them out with argon, dry the bottom of the tip box,
+and make sure the alu foil is sealed.
+
+
+definitely some heating from the hot PA. 
+
+remained blind on slide 0. 
+
+think I may have lost blindedness on slide 1 cuvette 1.
+and cuvette 4.
+
+
+something may have gone wrong here. cuvettes 2 and 6 on slide 1 look like they've evaporated.
+I think they were left on the (v hot) pulse PA strip too long; I left to go to the bathroom
+and deal with shipper. slide 0 still looks great.
+
+covered slide 0 before cuvette 2 post-pulse.
+
+improvements: faster sampling, heatsink to maintain temp
+
+actually used 2.5 uL of sil. oil, wasn't enough.
+
+turbidimeter is no good. Tried various things with 
+
+abandoning this run. no turbidity data, evaporation, too little silicone, dowels keep coming
+out on the spectrometer.
+
+
+:(
+
+having such small volumes is pretty crap. I wish we could make the field larger.
+
+
+
 
 
