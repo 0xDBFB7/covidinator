@@ -2567,7 +2567,9 @@ in fact, that still happens at i=0.12.
 Seems to to be fine; ADCs don't report an increase in VCO-off power.
 
 In fact, the ADCs report *zero*. That doesn't seem right, somehow; but touching with tweezers
-works fine, so IDK.
+works fine, so IDK. 
+
+Indeed, double-checking, it always reports 0.0000 precisely when no power is applied.
 
 A huge amount of noise; can't really use a scope probe.
 

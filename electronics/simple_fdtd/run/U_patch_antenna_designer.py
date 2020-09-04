@@ -118,14 +118,6 @@ def create_U_patch_antenna(patch_width, patch_length, slots, probe_position):
 
 
 
-def gaussian_derivative_pulse(pcb, dt, beta):
-    t = pcb.time
-    s = 4.0/(beta*dt)
-    b = (t - beta*dt)
-    exponent_1 = -1.0*((s)**2.0)*((b)**2.0)
-    part_one = exp(exponent_1)
-    part_two = -2.0*(s**2.0)*b
-    return part_one * part_two
 
 #500 ohms
 

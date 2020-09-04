@@ -810,3 +810,5 @@ Put the phage in the fridge overnight.
 
 if we just add more e.coli , do the droplets coalesce?
 
+Going through the esophagous might be better!
+

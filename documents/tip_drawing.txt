@@ -11,3 +11,13 @@ Snip, perhaps with a razor blade. Inspect for pock mark holes.
 SCratch that. Spinning the tip in a lathe and slowly pressing it into a 0.5 mm die with
 a conical entrance made with a V-bit cutter works great.
 
+Still some variation in the tips though, which I'd like to avoid.
+
+McMaster-carr 30-ga ptfe needles came in. Tried devising some way of converting tip-cone to 
+luer lock, using various hoses, O rings, etc, nothing worked.
+
+However, cutting the PTFE capillary, snipping 2 mm off a standard pipette tip, and then heating
+with 180c air until a blob of polyprop. forms, works great!
+breaks as soon as it's autoclaved, however. The old tips work best.
+
+

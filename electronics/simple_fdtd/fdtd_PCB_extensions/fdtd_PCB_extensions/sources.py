@@ -5,6 +5,18 @@ from math import sin, pi, pow, exp, sqrt
 
 #need a function that slices including the PML margin
 
+def gaussian_derivative_pulse(pcb, dt, beta):
+
+    #fixme: normalize
+    t = pcb.time
+    s = 4.0/(beta*dt)
+    b = (t - beta*dt)
+    exponent_1 = -1.0*((s)**2.0)*((b)**2.0)
+    part_one = exp(exponent_1)
+    part_two = -2.0*(s**2.0)*b
+    return part_one * part_two
+
+
 class Port:
     def __init__(self, pcb, SPICE_net, F_x, F_y):
 
