@@ -231,7 +231,7 @@ Pulse power to the VCO was the only difference between sham exposures and the pu
 After pulses were applied, the optical phage assay of Rajnovic 2019 was used. E.coli B (carolina []) was cultured in a 15 mL Falcon tube.
 After one day of refrigeration, 2 tubes of 1.2 mL were removed and centrifuged\footnote{Centrifuge parameters unknown due to the crudity of the instrument.}.
 
-Immediately after the pulse exposure and the second spectra, 20 uL of the concentrated bacterial pellet was transferred to a fresh Eppendorf, 0.2 mL of nutrient broth was added to the tube, and the pellets re-suspended
+Immediately after the pulse exposure and the second spectra, 10 uL of the concentrated bacterial pellet was transferred to a fresh Eppendorf, 0.2 mL of nutrient broth was added to the tube, and the pellets re-suspended
 using a vortex mixer.\footnote{An orbital palm sander in a bag.}. 1 uL
 
 (taking about 7.5 min.)
@@ -242,6 +242,19 @@ The spectra of all cuvettes was measured twice before and once after the pulse e
 Only the temperature of slide 0 was valid, and only during the first microwave spectrum and during the pulse application.
 
 If this doesn't work, remember the power/frequency snap (oscillation?) - amp might not be working properly
+
+
+The following improvements are required for the next run:
+
+Fix the dowels in place.
+
+
+\section{T4 phage experiment 3}
+
+Essentially identical
+
+\footnote{In fact, greater statistical power would be gained by choosing 2 from 4, rather than between two groups.}
+
 
 
 

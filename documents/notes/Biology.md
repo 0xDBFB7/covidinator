@@ -849,10 +849,15 @@ abandoning this run. no turbidity data, evaporation, too little silicone, dowels
 out on the spectrometer.
 
 
+slide needs t
+
 :(
 
 having such small volumes is pretty crap. I wish we could make the field larger.
 
+BCA assay is hazmat; needs municipal disposal.
+
+glycerol in water is not effective at preventing evaporation \cite{physical}.
 
 
 

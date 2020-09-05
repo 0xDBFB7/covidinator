@@ -20,18 +20,18 @@ cuvette_no = 8
 with serial.Serial(sys.argv[1], 115200, timeout=5) as ser:
     for k in range(0, 2):
         for i in range(0, cuvette_no):
-            # input(f"Move to cuvette {i}, turn light off, press enter when ready.")
-            # ser.reset_input_buffer()
-            # ser.readline()
-            # value = float(ser.readline())
-            # file.write("{},{},{},0\n".format(time.time(), i, value))
-            # print(value)
-            input(f"Move to cuvette {i}, turn light on, press enter when ready.")
+            input(f"Move to slide{k}, cuvette {i}, press enter when ready.")
+            ser.reset_input_buffer()
+            ser.readline()
+            value = float(ser.readline())
+            file.write("{},{},{}\n".format(time.time(), i, value))
+            print(value)
+            # input(f"Move to cuvette {i}, turn light on, press enter when ready.")
             # ser.reset_input_buffer()
             # ser.readline()
             # value = float(ser.readline())
             # file.write("{},{},{},1\n".format(time.time(), i, value))
             # print(value)
 
-            img = cam.get_image()
-            pygame.image.save(img,f"{sys.argv[2]}/{time.time()}-{k}-{i}.jpg")
+            # img = cam.get_image()
+            # pygame.image.save(img,f"{sys.argv[2]}/{time.time()}-{k}-{i}.jpg")
