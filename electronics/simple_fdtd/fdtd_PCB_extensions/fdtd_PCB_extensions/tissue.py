@@ -11,8 +11,28 @@ import matplotlib.pyplot as plt
 import h5py
 from scipy.constants import epsilon_0, mu_0
 
+from fdtd.backend import NumpyBackend
+from fdtd.backend import backend as bd
+
+
 import fdtd
 #imports a VirtualPopulation .raw voxel file.
+
+material_ids_file = '/home/arthurdent/covidinator/biology/FDTD/chunks/2mm_100x100x100_left_lung_5.txt'
+tissue_properties_database_file = '/home/arthurdent/covidinator/biology/FDTD/itis_tissue_properties/SEMCAD_v14.8.h5'
+
+
+def electric_field_penetration_depth(center_frequency, relative_permittivity, conductivity):
+    #from Hand, 1982 and Osepchuk
+
+    angular_frequency = 2.0*pi*center_frequency
+
+    d = (1.0 / angular_frequency)
+    mid = ((relative_permittivity*mu_0*epsilon_0)/2.0)
+    mid *= (sqrt(1.0+((conductivity/(angular_frequency*epsilon_0*relative_permittivity))**2.0))-1)
+    mid = (mid)**(-1.0/2.0)
+
+    return d*mid
 
 
 def cole_cole_4(center_frequency, ef, sigma, deltas, alphas, taus):
@@ -49,7 +69,6 @@ def get_tissue_VirtPopTool_name(raw_id):
     The SEMCAD X virtual population tool generates a list of tissues along with the .raw voxel file.
     These IDs don't correspond to those in the It.Is Tissue Properties Database.
     '''
-    material_ids_file = '../biology/FDTD/chunks/2mm_100x100x50_left_lung_4.txt'
     ids_names = np.genfromtxt(open(material_ids_file, "r"), delimiter="\t", dtype=None, encoding='ascii', skip_footer=7)
     name = ids_names[raw_id-1][4] # tissue name
     name = name[(name.index('/')+1):] #remove duke_blah_blah/ prefix
@@ -58,7 +77,6 @@ def get_tissue_VirtPopTool_name(raw_id):
 
 def lookup_tissue_properties(id, center_frequency):
 
-    tissue_properties_database_file = '../biology/FDTD/itis_tissue_properties/SEMCAD_v14.8.h5'
 
     tissue_obj = 0
     f = h5py.File(tissue_properties_database_file,'r')
@@ -129,25 +147,52 @@ def lookup_tissue_properties(id, center_frequency):
     return dielectric_constant, conductivity, penetration_depth
 
 
-def import_raw_voxel_file(raw_filename, x_cells, y_cells, z_cells):
+def import_raw_voxel_file(raw_filename, cell_sizes):
     raw = np.fromfile(raw_filename, dtype=np.uint8)
-    raw = np.reshape(raw, (x_cells, y_cells, z_cells))
+    raw = np.reshape(raw, cell_sizes)
     return raw
 
-def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fdtd_grid_cell_size):
+def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fdtd_grid_cell_size, center_frequency):
     '''
     fdtd_grid_cell_size must be < and an integer divisor of voxel_file_cell_size
     '''
     # upsample = int(voxel_file_cell_size/fdtd_grid_cell_size)
     # a.repeat(upsample, axis=0).repeat(upsample, axis=1)
-
     #just shift array by some to offset
+
+
+    if(not isinstance(fdtd.backend, NumpyBackend)):
+        active_tissue = bd.zeros((grid.Nx,grid.Ny,grid.Nz,3)).bool()
+        inverse_permittivity = bd.ones((grid.Nx,grid.Ny,grid.Nz,3))
+        absorption_factor = bd.zeros((grid.Nx,grid.Ny,grid.Nz,3))
+    else:
+        active_tissue = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=bool)
+        inverse_permittivity = np.ones((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
+        absorption_factor = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
 
     for i in np.unique(raw):
         i = int(i)
         dielectric_constant, conductivity, penetration_depth = lookup_tissue_properties(i, center_frequency)
         conductivity *= (fdtd_grid_cell_size / epsilon_0) #flaport's units
-        grid[np.where(raw == i)] = fdtd.AbsorbingObject(permittivity=dielectric_constant, conductivity=conductivity, name=f"t{i}")
+
+        cell_indices = np.where(raw == i)
+
+        inverse_permittivity[cell_indices,:] /= dielectric_constant
+
+        absorption_factor[cell_indices,:] = (
+            0.5
+            * grid.courant_number
+            * inverse_permittivity[cell_indices]
+            * conductivity
+            * grid.grid_spacing
+            / fdtd.grid.VACUUM_PERMITTIVITY
+        )
+
+        active_tissue[cell_indices,:] = 1
+        #
+        # grid[] = fdtd.AbsorbingObject(permittivity=dielectric_constant, conductivity=conductivity, name=f"t{i}")
+
+    return inverse_permittivity, absorption_factor, active_tissue
 
 
 if(__name__ == '__main__'):
@@ -160,3 +205,10 @@ if(__name__ == '__main__'):
 
     assert(isclose(blood_perm, 5.74E+1, rel_tol=0.1)) #Blood!
     assert(isclose(blood_cond, 3.04E+0, rel_tol=0.1)) #Blood!
+
+
+    depth = electric_field_penetration_depth(2.99e9, 57.37, 3.04)
+
+    #Blood penetration depth from
+    #http://niremf.ifac.cnr.it/tissprop/htmlclie/htmlclie.php
+    assert(isclose(depth, 0.01339, rel_tol=0.001))

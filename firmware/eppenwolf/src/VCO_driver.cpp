@@ -233,9 +233,6 @@ void take_spectrum(int no_slides, int no_cuvettes, int no_power_levels, int no_i
 void master_loop(){
 
 
-
-
-
     //gain varies from 2.2 to 3.4.
 
     //time constant of the VCO tuning is about 3 ms.
