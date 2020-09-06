@@ -879,3 +879,33 @@ Running slide 1 without cover slip.
 
 
 Teensy died in the middle of the test.
+
+Actually, the tiniest speck of copper had shorted out the 3v3 rail. Re-doing the spectra.
+
+Slide 0 has been duplicated.
+
+The wells on clide 0 with issues are 2, 3, 5.
+
+Slide 1 has no issues. I think the wells just leaked from the top or were jostled.
+
+Got unblinded on slide 0 well 1.
+
+maybe I should have weighed the slides.
+
+Slide 0 still looks exactly the same after pulse.
+
+Both slides were exposed for the entire duration of spectra + pulse + spectra.
+
+Slide 1 still looks perfect after pulsing.
+
+Slide 0 still looks the same after the second set of spectra
+
+Maintaining absolute, zero-tolerance-for-error concentration on a task for more than 4 hours is very difficult. 
+Gives me a lot of respect for the people who have to do this day in, day out.
+Of course, designin gtolerance for error into the experiment would work, but at the cost of more work.
+at the time now? 6 hrs including prep? Starting to make mistakes.
+
+Slide 1 still looks perfect.
+
+
+
