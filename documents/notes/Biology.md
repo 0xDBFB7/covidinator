@@ -909,6 +909,12 @@ Slide 1 still looks perfect.
 
 Began incubation at 18:20.
 
+Slide leaked, 
+
+Removed the entire contents of each well and added to the culture. Worked great.
+
+
+
 
 
 

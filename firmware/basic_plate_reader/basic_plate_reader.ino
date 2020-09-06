@@ -53,7 +53,7 @@ void setup()
     // Select control register
     Wire.write(0x0F | 0x80);
     // Gain = 1x
-    Wire.write(0b10);
+    Wire.write(0b11);
     // Stop I2C Transmission
     Wire.endTransmission();
     delay(300);
