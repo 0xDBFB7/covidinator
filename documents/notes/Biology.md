@@ -907,5 +907,8 @@ at the time now? 6 hrs including prep? Starting to make mistakes.
 
 Slide 1 still looks perfect.
 
+Began incubation at 18:20.
+
+
 
 
