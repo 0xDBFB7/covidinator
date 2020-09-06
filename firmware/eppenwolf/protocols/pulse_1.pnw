@@ -231,11 +231,10 @@ Pulse power to the VCO was the only difference between sham exposures and the pu
 After pulses were applied, the optical phage assay of Rajnovic 2019 was used. E.coli B (carolina []) was cultured in a 15 mL Falcon tube.
 After one day of refrigeration, 2 tubes of 1.2 mL were removed and centrifuged\footnote{Centrifuge parameters unknown due to the crudity of the instrument.}.
 
-Immediately after the pulse exposure and the second spectra, 10 uL of the concentrated bacterial pellet was transferred to a fresh Eppendorf, 0.2 mL of nutrient broth was added to the tube, and the pellets re-suspended
-using a vortex mixer.\footnote{An orbital palm sander in a bag.}. 1 uL
+Immediately after the pulse exposure and the second spectra, 0.2 mL of nutrient broth was added to a fresh Eppendorf tube, 10 uL of the concentrated bacterial pellet was transferred to it, and the pellets re-suspended
+using a vortex mixer.\footnote{An orbital palm sander in a bag.}.
 
-(taking about 7.5 min.)
-
+Sweeping each spectrum took approximately 7.5 minutes, primarily limited by the bandwidth of the sigma-delta ADCs.
 
 The spectra of all cuvettes was measured twice before and once after the pulse exposure, once after addition of the bacteria, and once after incubation was complete.
 
@@ -251,17 +250,24 @@ Wipe excess silicone off the pipette tip to avoid making a mess on the slide and
 
 \section{T4 phage experiment 3}
 
-Essentially identical
+Essentially identical.
 
-Rather than try to do it "one-pot", in the same cuvette, injecting
+Rather than try to do it "one-pot", in the same cuvette, injecting the E.coli into the 0.8 mL cuvette,
 
-Carefully putting 0.7 in with a standard tip, putting 5 uL of silicone oil,
+
+Carefully putting 0.8 uL in with a standard tip, putting 5 uL of silicone oil
+
+
 then 10 uL of broth into the polyprop cuv.
 
 Then withdraw 2.5 uL, still with a standard tip, discharge excess silicone oil back into the well, inoc. into polyprop.
 
 
-\footnote{In fact, greater statistical power would be gained by choosing 2 from 4, rather than between two groups.}
+
+\footnote{In fact, greater statistical power would have been gained by choosing 2 from 4, rather than between two groups of two.}
+
+
+The spectra of all 16 cuvettes was measured twice before and twice after the pulse exposure.
 
 
 

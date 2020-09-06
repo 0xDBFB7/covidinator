@@ -863,3 +863,19 @@ glycerol in water is not effective at preventing evaporation \cite{physical}.
 
 Increased incubator temp from ~34 to 38.
 
+Loading the slides went really well (test 3). Sanded the both sides of the slides for better adhesion and flatness,
+using a kimwipe to dab up (without wiping) excess silicone oil works really well, 
+
+Needed to bend one of the dowels to get the cuvette flush.
+
+remember to tape the 
+
+hmm. almost looks like some might have evaporated again. We'll check with the microscope after.
+
+the two sterile broths and one autoclaved phage seem to have leaked out on S0.
+The rest are all perfectly fine.
+
+Running slide 1 without cover slip.
+
+
+Teensy died in the middle of the test.
