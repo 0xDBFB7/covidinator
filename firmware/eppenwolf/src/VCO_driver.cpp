@@ -290,20 +290,7 @@ void master_loop(){
     kill_amplifier();
 
 
-    take_spectrum(no_slides, no_cuvettes, no_power_levels, 1, num_freq_sweeps);
-
-
-    debug_serial.println("Add e.coli.");
-    wait_for_button();
-
-    take_spectrum(no_slides, no_cuvettes, no_power_levels, 1, num_freq_sweeps);
-
-
-    debug_serial.println("Incubate.");
-    wait_for_button();
-
-    take_spectrum(no_slides, no_cuvettes, no_power_levels, 1, num_freq_sweeps);
-
+    take_spectrum(no_slides, no_cuvettes, no_power_levels, 2, num_freq_sweeps);
 
 }
 

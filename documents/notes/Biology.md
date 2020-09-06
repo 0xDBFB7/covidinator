@@ -848,6 +848,7 @@ turbidimeter is no good. Tried various things with
 abandoning this run. no turbidity data, evaporation, too little silicone, dowels keep coming
 out on the spectrometer.
 
+tried microscope turbidimeter, doesn't work very well.
 
 slide needs t
 
@@ -860,5 +861,5 @@ BCA assay is hazmat; needs municipal disposal.
 glycerol in water is not effective at preventing evaporation \cite{physical}.
 
 
-
+Increased incubator temp from ~34 to 38.
 

@@ -9,38 +9,42 @@ void setup()
     Wire.begin();
     // Initialise serial communication, set baud rate = 9600
     Serial.begin(115200);
-
+    Wire.setClock(400000);
     // Start I2C Transmission
     Wire.beginTransmission(Addr);
     // Select enable register
     Wire.write(0x00 | 0x80);
     // Set power on, ALS enabled
-    Wire.write(0x01);
+    Wire.write(0b00010011);
     // Stop I2C Transmission
     Wire.endTransmission();
     delay(500);
 
-    // Start I2C Transmission
-    Wire.beginTransmission(Addr);
-    // Select enable register
-    Wire.write(0x00 | 0x80);
-    // Set power on, ALS enabled
-    Wire.write(0x0B);
-    // Stop I2C Transmission
-    Wire.endTransmission();
+//    // Start I2C Transmission
+//    Wire.beginTransmission(Addr);
+//    // Select enable register
+//    Wire.write(0x00 | 0x80);
+//    // Set power on, ALS enabled
+//    Wire.write(0x0B);
+//    // Stop I2C Transmission
+//    Wire.endTransmission();
 
     // Start I2C Transmission
     Wire.beginTransmission(Addr);
-    // Select ALS time register
+    
     Wire.write(0x01 | 0x80);
-    Wire.write(0x00);
+//    Wire.write(0x00);
+// Integration time
+    Wire.write(0xFF);
     // Stop I2C Transmission
     Wire.endTransmission();
 
     // Start I2C Transmission
     Wire.beginTransmission(Addr);
     Wire.write(0x03 | 0x80);
+    //wait time
     Wire.write(0xFF);
+
     // Stop I2C Transmission
     Wire.endTransmission();
 
@@ -49,7 +53,7 @@ void setup()
     // Select control register
     Wire.write(0x0F | 0x80);
     // Gain = 1x
-    Wire.write(0xFF);
+    Wire.write(0b10);
     // Stop I2C Transmission
     Wire.endTransmission();
     delay(300);
@@ -140,5 +144,5 @@ void loop()
     long sample = get_sample();
     sample = sample-background;
     Serial.println(sample);
-    delay(500);
+//    delay(500);
 }
