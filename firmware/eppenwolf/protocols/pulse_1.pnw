@@ -274,16 +274,16 @@ exclusion of wells would completely change the conclusion of the experiment.
 
 It's hard to tell how much of this was completely reasonable data processing, and what was massaging the data to determine.
 
-We would like to get an idea of the magnitude of the random errors, but any attempts at error analysis would be misleading and futile.
-Hardly any conclusions can be drawn from n=8.
+We would like to get an idea of the magnitude of the random errors, but any attempts at error analysis with such a small dataset would be misleading and futile.
+Hardly any conclusions can be drawn from n=4.
 
 Moreover, because the positions of the samples in the cuvette are not randomized, gradual heating could introduce an effect.
 
 Wouldn't it be awesome if we had a nice Central Limit-ed dataset like CERN, with nice error bars.
 
-Of course, gathering more garbage 
+Of course, gathering more garbage is not helpful; but since
 
-A technique which is only *statistically* effective would not be particularly useful for the patient; but note that the uncertainty is not in the virus, but in the detection of the inactivation.
+A technique which is only *statistically* effective would not be particularly useful for the patient; but note that the uncertainty is not in the inactivation of the virus, only in our detection of the inactivation.
 
 
 \section{Phage assay comparison blank}
@@ -301,8 +301,9 @@ Both sides covered with non-sterile clear packing tape.
 - 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?] + 0.4 uL phage
 - 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?] + 0.4 uL phage
 
-Started at t=[]
+Started at t=5:15.
 
+Oven / incubator's been off. Don't know how long. Make it an extra half hour for safety.
 
 
 \section{T4 phage experiment 4}

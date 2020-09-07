@@ -161,71 +161,62 @@ bool present(const int array[], int element, int size){
     return false;
 }
 
-void prompt_slide(int slide, int cuvette){
+void prompt_slide(int cuvette){
     debug_serial.println("========================================================");
-    debug_serial.print("Please move to \033[1;36m slide ");
-    debug_serial.print(slide);
-    debug_serial.print("\033[0m  \033[1;33m cuvette ");
+    debug_serial.print("Please move to");
+    debug_serial.print("\033[1;33m cuvette ");
     debug_serial.print(cuvette);
     debug_serial.println("\033[0m");
     wait_for_button();
     debug_serial.println("========================================================");
 }
 
-void take_one_cuvette_spectrum(int no_cuvettes, int no_power_levels, int no_iterations, int num_freq_sweeps){
+void take_one_cuvette_spectrum(int cuvette, bool treatment, int no_power_levels, int no_iterations, int num_freq_sweeps){
 
     float power_levels[] = {3.0};
     float max_temperature = 0;
     unsigned long last_temperature_time = millis();
 
-    start_amplifier(0.12);
 
     for(int iter_count = 0; iter_count < no_iterations; iter_count++){ // see if anything's changed
         for(int power_level = 0; power_level < no_power_levels; power_level++){
-            for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
-                set_VCO(0,0);
+            set_VCO(0,0);
 
-                prompt_slide(slide, cuvette);
+            set_amp_gain_voltage(power_levels[power_level]);
+            delay(10);
 
-                set_amp_gain_voltage(power_levels[power_level]);
-
-                for(int i = 0; i < num_freq_sweeps; i++){
-                    for(float j = 0; j < 12; j += 0.05){
-                        debug_serial.print(j);
-                        debug_serial.print(",");
-                        set_VCO(j,1);
-                        delayMicroseconds(200);
-                        get_power_levels();
-                        set_VCO(j,0);
-                        if(millis() - last_temperature_time > 500){
-                            update_temperatures();
-                            last_temperature_time = millis();
-                        }
-                        debug_serial.print(",");
-                        debug_serial.print(get_drain_current());
-                        print_temperatures();
-                        debug_serial.print(",");
-                        debug_serial.print(slide);
-                        debug_serial.print(",");
-                        debug_serial.print(cuvette);
-                        debug_serial.print(",");
-                        debug_serial.print(power_levels[power_level]);
-                        debug_serial.print(",");
-                        debug_serial.print(millis());
-                        debug_serial.println();
+            for(int i = 0; i < num_freq_sweeps; i++){
+                for(float j = 0; j < 12; j += 0.05){
+                    debug_serial.print(j);
+                    debug_serial.print(",");
+                    set_VCO(j,1);
+                    delayMicroseconds(200);
+                    get_power_levels();
+                    set_VCO(j,0);
+                    if(millis() - last_temperature_time > 500){
+                        update_temperatures();
+                        last_temperature_time = millis();
                     }
-                    delay(400); //let everything cool a bit before the next run
+                    debug_serial.print(",");
+                    debug_serial.print(get_drain_current());
+                    print_temperatures();
+                    debug_serial.print(",");
+                    debug_serial.print(0);
+                    debug_serial.print(",");
+                    debug_serial.print(cuvette);
+                    debug_serial.print(",");
+                    debug_serial.print(power_levels[power_level]);
+                    debug_serial.print(",");
+                    debug_serial.print(millis());
+                    debug_serial.print(",");
+                    debug_serial.print(treatment);
+                    debug_serial.println();
                 }
+                delay(400); //let everything cool a bit before the next run
             }
         }
     }
-    kill_amplifier();
 }
-
-void take_spectrum(){
-
-}
-
 
 void master_loop(){
 
@@ -245,45 +236,66 @@ void master_loop(){
     int cuvette = 0;
     int power_level = 0;
 
-
-    take_spectrum(no_slides, no_cuvettes, no_power_levels, 2, num_freq_sweeps);
-
-
-    start_amplifier(0.20); // push it to the limit!
-
-    set_amp_gain_voltage(4.5);
-
-
-    const int elements_in_group = 4;
-    const int group_A[] = {0, 1, 2, 6};
-    const int group_B[] = {3, 4, 5, 7};
-
-    for(int slide = 0; slide < no_slides; slide++){
-        for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
-            prompt_slide(slide, cuvette);
-            digitalWrite(13, HIGH); //watch led for blinding
-            //haha blinding blinding
-
-            bool in_group_A = present(group_A, cuvette, elements_in_group);
-            bool in_group_B = present(group_B, cuvette, elements_in_group);
-
-            bool treatment = (in_group_A && !random_byte) || (in_group_B && random_byte);
-
-            debug_serial.println(in_group_A);
-            debug_serial.println(in_group_B);
-            debug_serial.println(random_byte);
-
-            debug_serial.println(treatment);
-            pulse_spectrum(slide, cuvette, treatment);
-
-            digitalWrite(13, LOW);
-        }
-    }
-
+    float safe_amplifier_gate_voltage = start_amplifier(0.12);
+    kill_amplifier();
+    float deadly_amplifier_gate_voltage = start_amplifier(0.20); // push it to the limit!
     kill_amplifier();
 
 
-    take_spectrum(no_slides, no_cuvettes, no_power_levels, 2, num_freq_sweeps);
+    for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
+
+        prompt_slide(cuvette);
+        digitalWrite(13, HIGH); //watch led for blinding
+        //haha blinding blinding
+
+        bool treatment = Entropy.random(2);
+        debug_serial.println(treatment);
+
+        quickstart_amplifier(safe_amplifier_gate_voltage);
+
+        take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 2, num_freq_sweeps);
+
+        kill_amplifier();
+
+        delay(3000);
+
+        quickstart_amplifier(deadly_amplifier_gate_voltage);
+        set_amp_gain_voltage(4.5);
+
+        pulse_spectrum(0, cuvette, treatment);
+
+        kill_amplifier();
+
+        delay(3000);
+
+        quickstart_amplifier(safe_amplifier_gate_voltage);
+
+        take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+
+        kill_amplifier();
+
+        delay(3000);
+
+        quickstart_amplifier(deadly_amplifier_gate_voltage);
+        set_amp_gain_voltage(4.5);
+
+        pulse_spectrum(0, cuvette, treatment);
+
+        kill_amplifier();
+
+        delay(3000);
+
+        quickstart_amplifier(safe_amplifier_gate_voltage);
+
+        take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+
+        kill_amplifier();
+
+        delay(3000);
+
+        digitalWrite(13, LOW);
+    }
+
 
 }
 
@@ -296,10 +308,12 @@ void quickstart_amplifier(float gate_voltage){
     set_amp_power_state(1);
     delay(5);
     set_amp_gate_voltage(gate_voltage);
+    delay(5);
+
 }
 
 
-void start_amplifier(float set_current){
+float start_amplifier(float set_current){
 
     debug_serial.println("Remove cuvette, amplifier starting");
     wait_for_button();

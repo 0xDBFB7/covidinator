@@ -46,7 +46,7 @@ for k in range(0, 2):
     # G161 X Y Z
     printer.write(b"M17\n G0 X0\n")
     printer.readline()
-    printer.write(b"G1 X72 F200\n")
+    printer.write(b"G1 X74 F200\n")
     printer.readline() #ok
     printer.write(b"M400\n") # wait for fin of move
     ser.reset_input_buffer()
