@@ -913,6 +913,12 @@ Slide leaked,
 
 Removed the entire contents of each well and added to the culture. Worked great.
 
+what's interesting is if you reverse - that is, 
+
+seems like there hasn't been *any* bacterial growth - perhaps we're still stuck in the lag phase?
+maybe because I've been taking it out so many times, it hasn't had a chance to get going?
+
+
 
 
 
