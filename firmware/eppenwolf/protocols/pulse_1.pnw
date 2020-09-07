@@ -281,6 +281,11 @@ Moreover, because the positions of the samples in the cuvette are not randomized
 
 Wouldn't it be awesome if we had a nice Central Limit-ed dataset like CERN, with nice error bars.
 
+Of course, gathering more garbage 
+
+A technique which is only *statistically* effective would not be particularly useful for the patient; but note that the uncertainty is not in the virus, but in the detection of the inactivation.
+
+
 \section{Phage assay comparison blank}
 
 Filled as below:
@@ -316,9 +321,14 @@ The autoclave cycle was reduced to
 
 Non-concentrated
 
+A variety of changes are made to improve throughput.
+
+The duration is changed to 10 minutes.
+
+The order is changed: rather than capturing the spectrum of two entire slides, pulsing, then measuring again,
+the
 
 The silicone was let to run off,
-
 
 
 

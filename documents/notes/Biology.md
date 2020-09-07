@@ -919,10 +919,14 @@ seems like there hasn't been *any* bacterial growth - perhaps we're still stuck 
 maybe because I've been taking it out so many times, it hasn't had a chance to get going?
 
 
-many of the cuvettes leaked. The kapton didn't bond sufficiently to the polyprop.
+many of the cuvettes leaked. The silicone-backed kapton didn't bond sufficiently to the polyprop,
+and buckled during autoclaving.
 
 The leftover silicone oil from each well seems to have interfered with the turbidity reading, 
-too.
+too. Should be drained.
+
+
+
 
 
 
