@@ -279,7 +279,26 @@ Hardly any conclusions can be drawn from n=8.
 
 Moreover, because the positions of the samples in the cuvette are not randomized, gradual heating could introduce an effect.
 
-Wouldn't it be awesome if we had a nice Central Limit-ed dataset, which we could 
+Wouldn't it be awesome if we had a nice Central Limit-ed dataset like CERN, with nice error bars.
+
+\section{Phage assay comparison blank}
+
+Filled as below:
+
+Both sides covered with non-sterile clear packing tape.
+
+- 10 uL broth
+- 10 uL broth
+- 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?]
+- 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?]
+- 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?] + 0.8 uL phage
+- 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?] + 0.8 uL phage
+- 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?] + 0.4 uL phage
+- 7.5 uL broth + 2.5 uL un-concentrated e.coli from E[16?] + 0.4 uL phage
+
+Started at t=[]
+
+
 
 \section{T4 phage experiment 4}
 
@@ -290,6 +309,15 @@ One of the advantages of having made all the cuvettes and glassware out of polyc
 We have enough phage for several hundred loads.
 
 After a wash and a cycle through the autoclave,
+
+The following changes were made to accelerate the process.
+
+The autoclave cycle was reduced to
+
+Non-concentrated
+
+
+The silicone was let to run off,
 
 
 
