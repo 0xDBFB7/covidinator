@@ -269,6 +269,33 @@ Then withdraw 2.5 uL, still with a standard tip, discharge excess silicone oil b
 
 The spectra of all 16 cuvettes was measured twice before and twice after the pulse exposure.
 
+Unfortunately, the magnitude of the effect depended on precisely how the data were analyzed; small variations in averaging,
+exclusion of wells would completely change the conclusion of the experiment.
+
+It's hard to tell how much of this was completely reasonable data processing, and what was massaging the data to determine.
+
+We would like to get an idea of the magnitude of the random errors, but any attempts at error analysis would be misleading and futile.
+Hardly any conclusions can be drawn from n=8.
+
+Moreover, because the positions of the samples in the cuvette are not randomized, gradual heating could introduce an effect.
+
+Wouldn't it be awesome if we had a nice Central Limit-ed dataset, which we could 
+
+\section{T4 phage experiment 4}
+
+Statistics.
+
+One of the advantages of having made all the cuvettes and glassware out of polycarbonate is that everything is practically indefinitely reusable.
+
+We have enough phage for several hundred loads.
+
+After a wash and a cycle through the autoclave,
+
+
+
+
+
+
 
 
 

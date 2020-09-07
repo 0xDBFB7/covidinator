@@ -99,20 +99,34 @@ broths /= np.linalg.norm(broths)
 
 # autoclaved_phages = get_data(0, slide_0, autoclaved_phage_0, near_sensor)
 # autoclaved_phages += get_data(0, slide_0, autoclaved_phage_1, near_sensor)
-autoclaved_phages = get_data(0, slide_1, autoclaved_phage_0, near_sensor)
-autoclaved_phages += get_data(0, slide_1, autoclaved_phage_1, near_sensor)
-
-# autoclaved_phages += get_data(1, slide_0, autoclaved_phage_0, near_sensor)
-# autoclaved_phages += get_data(1, slide_0, autoclaved_phage_1, near_sensor)
-autoclaved_phages += get_data(1, slide_1, autoclaved_phage_0, near_sensor)
-autoclaved_phages += get_data(1, slide_1, autoclaved_phage_1, near_sensor)
+# autoclaved_phages = get_data(0, slide_1, autoclaved_phage_0, near_sensor)
+# autoclaved_phages += get_data(0, slide_1, autoclaved_phage_1, near_sensor)
+#
+# # autoclaved_phages += get_data(1, slide_0, autoclaved_phage_0, near_sensor)
+# # autoclaved_phages += get_data(1, slide_0, autoclaved_phage_1, near_sensor)
+# autoclaved_phages += get_data(1, slide_1, autoclaved_phage_0, near_sensor)
+# autoclaved_phages += get_data(1, slide_1, autoclaved_phage_1, near_sensor)
 
 # autoclaved_phages += get_data(2, slide_0, autoclaved_phage_0, near_sensor)
 # autoclaved_phages += get_data(2, slide_0, autoclaved_phage_1, near_sensor)
-autoclaved_phages += get_data(2, slide_1, autoclaved_phage_0, near_sensor)
+
+autoclaved_phages_before = get_data(0, slide_1, autoclaved_phage_0, near_sensor)
+autoclaved_phages_before += get_data(0, slide_1, autoclaved_phage_1, near_sensor)
+
+autoclaved_phages_before += get_data(1, slide_1, autoclaved_phage_0, near_sensor)
+autoclaved_phages_before += get_data(1, slide_1, autoclaved_phage_1, near_sensor)
+
+# autoclaved_phages_before /= np.linalg.norm(autoclaved_phages_before)
+
+
+autoclaved_phages = get_data(2, slide_1, autoclaved_phage_0, near_sensor)
 autoclaved_phages += get_data(2, slide_1, autoclaved_phage_1, near_sensor)
 
-autoclaved_phages /= np.linalg.norm(autoclaved_phages)
+autoclaved_phages += get_data(3, slide_1, autoclaved_phage_0, near_sensor)
+autoclaved_phages += get_data(3, slide_1, autoclaved_phage_1, near_sensor)
+
+
+# autoclaved_phages /= np.linalg.norm(autoclaved_phages)
 
 
 # plt.plot(freqs, autoclaved_phages)
@@ -138,28 +152,89 @@ phages += get_data(1, slide_1, phage_2, near_sensor)
 phages += get_data(1, slide_1, phage_3, near_sensor)
 
 
+# phages /= np.linalg.norm(phages)
 
-phages /= np.linalg.norm(phages)
+# plt.plot(freqs, (phages - autoclaved_phages) / autoclaved_phages)
 
-plt.plot(freqs, (phages - autoclaved_phages) / autoclaved_phages)
 
-# exposed_phages = get_data(2, slide_0, phage_0, near_sensor)
-# exposed_phages += get_data(2, slide_0, phage_2, near_sensor)
-exposed_phages = get_data(2, slide_1, phage_0, near_sensor)
-exposed_phages += get_data(2, slide_1, phage_2, near_sensor)
+exposed_phages_before = get_data(0, slide_0, phage_0, near_sensor)
+exposed_phages_before += get_data(0, slide_0, phage_2, near_sensor)
+exposed_phages_before += get_data(0, slide_1, phage_0, near_sensor)
+exposed_phages_before += get_data(0, slide_1, phage_2, near_sensor)
+exposed_phages_before += get_data(1, slide_0, phage_0, near_sensor)
+exposed_phages_before += get_data(1, slide_0, phage_2, near_sensor)
+exposed_phages_before += get_data(1, slide_1, phage_0, near_sensor)
+exposed_phages_before += get_data(1, slide_1, phage_2, near_sensor)
 #
-# control_phages = get_data(2, slide_0, phage_1, near_sensor)
-# control_phages += get_data(2, slide_0, phage_3, near_sensor)
-control_phages = get_data(2, slide_1, phage_1, near_sensor)
+control_phages_before = get_data(0, slide_0, phage_1, near_sensor)
+control_phages_before += get_data(0, slide_0, phage_3, near_sensor)
+control_phages_before += get_data(0, slide_1, phage_1, near_sensor)
+control_phages_before += get_data(0, slide_1, phage_3, near_sensor)
+control_phages_before += get_data(1, slide_0, phage_1, near_sensor)
+control_phages_before += get_data(1, slide_0, phage_3, near_sensor)
+control_phages_before += get_data(1, slide_1, phage_1, near_sensor)
+control_phages_before += get_data(1, slide_1, phage_3, near_sensor)
+
+# exposed_phages_before /= np.linalg.norm(exposed_phages_before)
+#
+# control_phages_before /= np.linalg.norm(control_phages_before)
+
+exposed_phages = get_data(2, slide_0, phage_0, near_sensor)
+exposed_phages += get_data(2, slide_0, phage_2, near_sensor)
+exposed_phages += get_data(2, slide_1, phage_0, near_sensor)
+exposed_phages += get_data(2, slide_1, phage_2, near_sensor)
+exposed_phages += get_data(3, slide_0, phage_0, near_sensor)
+exposed_phages += get_data(3, slide_0, phage_2, near_sensor)
+exposed_phages += get_data(3, slide_1, phage_0, near_sensor)
+exposed_phages += get_data(3, slide_1, phage_2, near_sensor)
+#
+control_phages = get_data(2, slide_0, phage_1, near_sensor)
+control_phages += get_data(2, slide_0, phage_3, near_sensor)
+control_phages += get_data(2, slide_1, phage_1, near_sensor)
 control_phages += get_data(2, slide_1, phage_3, near_sensor)
+control_phages += get_data(3, slide_0, phage_1, near_sensor)
+control_phages += get_data(3, slide_0, phage_3, near_sensor)
+control_phages += get_data(3, slide_1, phage_1, near_sensor)
+control_phages += get_data(3, slide_1, phage_3, near_sensor)
 
-exposed_phages /= np.linalg.norm(exposed_phages)
+# exposed_phages /= np.linalg.norm(exposed_phages)
+#
+# control_phages /= np.linalg.norm(control_phages)
 
-control_phages /= np.linalg.norm(control_phages)
 
-diff = ((exposed_phages-phages) / phages) - ((control_phages-phages) / phages)
 
-plt.plot(freqs,diff)
+diff = ((exposed_phages-autoclaved_phages) / autoclaved_phages) - ((control_phages-autoclaved_phages) / autoclaved_phages)
+diff_before = ((exposed_phages-autoclaved_phages) / autoclaved_phages) - ((control_phages-autoclaved_phages) / autoclaved_phages)
+
+# plt.plot(freqs,diff)
+plt.plot(freqs, ((exposed_phages_before-autoclaved_phages_before) / autoclaved_phages_before) - ((control_phages_before-autoclaved_phages_before) / autoclaved_phages_before))
+plt.plot(freqs, ((exposed_phages-autoclaved_phages) / autoclaved_phages) - ((control_phages-autoclaved_phages) / autoclaved_phages))
+
+
+# plt.plot(freqs, )
+
+# plt.plot(freqs, ((phages - autoclaved_phages_before) / autoclaved_phages_before))
+
+
+#
+# drift_before_after_run = (get_data(1, slide_1, autoclaved_phage_0, near_sensor) - get_data(2, slide_1, autoclaved_phage_1, near_sensor))
+#
+# plt.plot(freqs, drift_before_after_run / np.linalg.norm(drift_before_after_run))
+
+
+
+# there is a significant (probably thermal?) effect from before to after the pulses for all.
+
+
+# plt.plot(freqs, phages)
+
+# plt.plot(freqs, broths)
+# plt.plot(freqs, autoclaved_phages)
+# plt.plot(freqs,control_phages,'b')
+# plt.plot(freqs,exposed_phages,'r')
+
+
+
 
 plt.savefig("exposed_control_diff.svg")
 

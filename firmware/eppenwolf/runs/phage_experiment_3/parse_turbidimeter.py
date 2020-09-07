@@ -8,7 +8,7 @@ beginnings = np.where(data[:-1,1] != data[1:,1])[0]
 
 
 
-data = np.vsplit(data,beginnings)
+data = np.vsplit(data,beginnings+1)
 
 data = data[2:] #first run was with
 
@@ -22,7 +22,7 @@ slide_0_peaks = np.array(None)
 slide_1_peaks = np.array(None)
 for i in range(0, len(slide_0)):
     peaks, _ = find_peaks(slide_0[i][:,2], height=50, distance=60)
-
+    print(slide_0)
     if(slide_0_peaks.size > 1):
         slide_0_peaks = np.vstack((slide_0[i][:,2][peaks],slide_0_peaks))
     else:
