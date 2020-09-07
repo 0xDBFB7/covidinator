@@ -329,6 +329,8 @@ The duration is changed to 10 minutes.
 The order is changed: rather than capturing the spectrum of two entire slides, pulsing, then measuring again,
 the
 
+High-power pulses are changed to every 0.1V rather than 0.05v as before. 
+
 The silicone was let to run off,
 
 
