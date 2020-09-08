@@ -23,21 +23,32 @@ slide_1_peaks = np.array(None)
 for i in range(0, len(slide_0)):
     slide_0[i][:,2][0:100] = 0
     peaks, _ = find_peaks(-slide_0[i][:,2], height=-800, distance=60)
-    plt.plot(slide_0[i][:,2])
-    plt.plot(peaks,slide_0[i][:,2][peaks])
-    plt.show()
+
+    temp_peaks = np.zeros((8))
+
+    for idx, j in enumerate(peaks):
+        trough = np.array(slide_0[i][:,2][j-15:j+15])
+        temp_peaks[idx] = np.average(trough[np.where(trough < 900)])
+
     if(slide_0_peaks.size > 1):
-        slide_0_peaks = np.vstack((slide_0[i][:,2][peaks],slide_0_peaks))
+        slide_0_peaks = np.vstack((slide_0_peaks,temp_peaks))
     else:
-        slide_0_peaks = slide_0[i][:,2][peaks]
+        slide_0_peaks = temp_peaks
 
 
     peaks, _ = find_peaks(-slide_1[i][:,2], height=-800, distance=60)
     peaks = peaks[::-1]
+
+    temp_peaks = np.zeros((8))
+
+    for idx, j in enumerate(peaks):
+        trough = np.array(slide_1[i][:,2][j-15:j+15])
+        temp_peaks[idx] = np.average(trough[np.where(trough < 900)])
+
     if(slide_1_peaks.size > 1):
-        slide_1_peaks = np.vstack((slide_1_peaks, slide_1[i][:,2][peaks]))
+        slide_1_peaks = np.vstack((slide_1_peaks,temp_peaks))
     else:
-        slide_1_peaks = slide_1[i][:,2][peaks]
+        slide_1_peaks = temp_peaks
 
 
     times.append(slide_0[i][:,0][0])
@@ -70,7 +81,7 @@ for i in range(0,8):
 plt.figure()
 
 for i in range(0,8):
-    plt.plot(times, slide_1_peaks[:,i], colors[i])
+    plt.plot(times ,slide_1_peaks[:,i], colors[i])
 
 
 #

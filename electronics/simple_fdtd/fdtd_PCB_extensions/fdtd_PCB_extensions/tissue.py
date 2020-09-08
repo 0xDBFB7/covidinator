@@ -178,7 +178,7 @@ def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fd
 
         i = int(i)
         dielectric_constant, conductivity, penetration_depth = lookup_tissue_properties(i, center_frequency)
-        conductivity *= (fdtd_grid_cell_size / epsilon_0) #flaport's units
+        conductivity = conductivity * (fdtd_grid_cell_size / epsilon_0) #flaport's units
 
         cell_indices = np.where(raw == i)
 

@@ -55,8 +55,8 @@ f = 9e9
 fd.dump_to_vtk(pcb,'dumps/test',0)
 
 dipole_length = int(0.01/pcb.cell_size) #cells
-dipole_source_position = np.array([20,20,20])
-dipole_source_position += pcb.xy_margin
+dipole_source_position = np.array([21,27,75])
+dipole_source_position += pcb.pml_cells
 z_slice = slice(dipole_source_position[Z],dipole_source_position[Z]+1)
 
 raw = tissue.import_raw_voxel_file('/home/arthurdent/covidinator/biology/FDTD/chunks/2mm_100x100x100_left_lung_5.raw', [100,100,100])
@@ -64,6 +64,10 @@ raw = tissue.import_raw_voxel_file('/home/arthurdent/covidinator/biology/FDTD/ch
 raw = np.pad(raw, [(pcb.pml_cells, pcb.pml_cells), (pcb.pml_cells, pcb.pml_cells), (pcb.pml_cells, pcb.pml_cells)], mode='constant')
 print(np.shape(raw))
 print(np.shape(pcb.grid.E))
+raw[dipole_source_position[X]-5:dipole_source_position[X]+5,
+        dipole_source_position[Y]-5:dipole_source_position[Y]+5,
+        dipole_source_position[Z]-15:dipole_source_position[Z]+15] = 0 # putting the antenna directly up against the tissue causes
+        # instability, shock surprise
 
 inverse_permittivity, absorption_factor, active_tissue = tissue.voxel_to_fdtd_grid_import(pcb.grid, raw, [0,0,0], 0.002, pcb.cell_size, f, [0])
 # sys.exit()
@@ -72,6 +76,15 @@ print_step = 500
 dump_step = 2e-12
 
 prev_dump_time = 0
+
+pcb.copper_mask[dipole_source_position[X]:dipole_source_position[X]+1,\
+            dipole_source_position[Y]:dipole_source_position[Y]+1,\
+                dipole_source_position[Z]+1:dipole_source_position[Z]+1+dipole_length] = 1 # zero dipole arm voltage
+
+pcb.copper_mask[dipole_source_position[X]:dipole_source_position[X]+1,\
+            dipole_source_position[Y]:dipole_source_position[Y]+1,\
+                dipole_source_position[Z]-dipole_length:dipole_source_position[Z]] = 1 # zero dipole arm voltage
+
 
 while(pcb.time < (2.0 * 2.0 * pi * f)):
 
@@ -102,7 +115,7 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
     pcb.grid.E[dipole_source_position[X]:dipole_source_position[X]+1,\
                 dipole_source_position[Y]:dipole_source_position[Y]+1,\
-                    dipole_source_position[Z]-1:dipole_source_position[Z]-1-dipole_length,:] = 0 # zero dipole arm voltage
+                    dipole_source_position[Z]-dipole_length:dipole_source_position[Z],:] = 0 # zero dipole arm voltage
 
 
     pcb.grid.E[dipole_source_position[X],dipole_source_position[Y],z_slice,Z] = sqrt(epsilon_0) * ((source_voltage + source_resistive_voltage) / (pcb.cell_size))
