@@ -2573,3 +2573,18 @@ Indeed, double-checking, it always reports 0.0000 precisely when no power is app
 
 A huge amount of noise; can't really use a scope probe.
 
+
+
+Even with 500 watts input power into a dipole, impedance matching to the tissue is so poor that
+while the attenuation is strictly speaking less than 5e-5, the 
+e-field achievable is only about 0.02.
+
+23-ga needles are about the biggest used in biopsy. that's 0.65 mm in diameter.
+
+From fdtd tissue sims, it seems like it's not going to be super practical to produce such high fields. 
+The problem isn't the attenuation factor; it's the amount of power required to get a certain field
+It takes a few kilowatts just to get a few thousand v/m.
+Maybe with a waveguide things would be better.
+
+Bubble position in the 2.5mm slide plate reader prevented it from being effective.
+

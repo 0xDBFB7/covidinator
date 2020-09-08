@@ -35,7 +35,7 @@ void setup()
     Wire.write(0x01 | 0x80);
 //    Wire.write(0x00);
 // Integration time
-    Wire.write(0xFF);
+    Wire.write(0x00);
     // Stop I2C Transmission
     Wire.endTransmission();
 
@@ -53,7 +53,7 @@ void setup()
     // Select control register
     Wire.write(0x0F | 0x80);
     // Gain = 1x
-    Wire.write(0b11);
+    Wire.write(0b00);
     // Stop I2C Transmission
     Wire.endTransmission();
     delay(300);

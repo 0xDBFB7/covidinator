@@ -160,44 +160,56 @@ def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fd
     # a.repeat(upsample, axis=0).repeat(upsample, axis=1)
     #just shift array by some to offset
 
+    #
+    # if(not isinstance(fdtd.backend, NumpyBackend)):
+    #     active_tissue = bd.zeros((grid.Nx-2*pml_,grid.Ny,grid.Nz,3)).bool()
+    #     inverse_permittivity = bd.ones((grid.Nx,grid.Ny,grid.Nz,3))
+    #     absorption_factor = bd.zeros((grid.Nx,grid.Ny,grid.Nz,3))
+    # else:
+    #     active_tissue = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=bool)
+    #     inverse_permittivity = np.ones((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
+    #     absorption_factor = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
+    #
+    #
 
-    if(not isinstance(fdtd.backend, NumpyBackend)):
-        active_tissue = bd.zeros((grid.Nx,grid.Ny,grid.Nz,3)).bool()
-        inverse_permittivity = bd.ones((grid.Nx,grid.Ny,grid.Nz,3))
-        absorption_factor = bd.zeros((grid.Nx,grid.Ny,grid.Nz,3))
-    else:
-        active_tissue = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=bool)
-        inverse_permittivity = np.ones((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
-        absorption_factor = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
-
-
+    conductivity = bd.zeros((100,100,100,3))
+    permittivity = bd.ones((100,100,100,3))
 
     for i in np.unique(raw):
         if(i in exclude):
             continue
-
-        i = int(i)
-        dielectric_constant, conductivity, penetration_depth = lookup_tissue_properties(i, center_frequency)
-        conductivity = conductivity * (fdtd_grid_cell_size / epsilon_0) #flaport's units
-
-        cell_indices = np.where(raw == i)
-
-        inverse_permittivity[cell_indices] /= dielectric_constant
-
-        absorption_factor[cell_indices] = (
-            0.5
-            * grid.courant_number
-            * inverse_permittivity[cell_indices]
-            * conductivity
-            * grid.grid_spacing
-            / fdtd.grid.VACUUM_PERMITTIVITY
-        )
-
-        active_tissue[cell_indices] = 1
         #
-        # grid[] = fdtd.AbsorbingObject(permittivity=dielectric_constant, conductivity=conductivity, name=f"t{i}")
+        # i = int(i)
+        dielectric_constant_, conductivity_, penetration_depth = lookup_tissue_properties(i, center_frequency)
 
-    return inverse_permittivity, absorption_factor, active_tissue
+
+        conductivity_ /= (fdtd_grid_cell_size / epsilon_0) #flaport's units
+        # conductivity = conductivity
+        # # print(conductivity)
+        # # print(dielectric_constant)
+        cell_indices = np.where(raw == i)
+        print(conductivity_)
+        conductivity[cell_indices] = conductivity_
+        permittivity[cell_indices] = dielectric_constant_
+
+        #
+        # inverse_permittivity[cell_indices] /= dielectric_constant
+        #
+        # absorption_factor[cell_indices] = (
+        #     0.5
+        #     * grid.courant_number
+        #     * inverse_permittivity[cell_indices]
+        #     * conductivity
+        #     * grid.grid_spacing
+        #     / fdtd.grid.VACUUM_PERMITTIVITY
+        # )
+        #
+        # active_tissue[cell_indices] = 1
+        #
+
+    grid[10:-10,10:-10,10:-10] = fdtd.AbsorbingObject(permittivity=permittivity, conductivity=conductivity, name=f"t{i}")
+
+    # return inverse_permittivity, absorption_factor, active_tissue
 
 
 if(__name__ == '__main__'):
