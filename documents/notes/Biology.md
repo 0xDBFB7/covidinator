@@ -925,6 +925,13 @@ and buckled during autoclaving.
 The leftover silicone oil from each well seems to have interfered with the turbidity reading, 
 too. Should be drained.
 
+There's a big malloc in the curl_E and curl_H functions - should be fixed
+
+Increasing the Q slightly does indeed make a huge difference to the inactivation field strengths.
+
+Should try first prepare the plate with log-stage bacteria with a glass slide covering, then introduce
+the phage. It should still work like this, but whatever.
+
 
 
 

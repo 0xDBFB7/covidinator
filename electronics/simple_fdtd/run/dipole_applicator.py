@@ -43,25 +43,30 @@ import store
 os.system("rm dumps/*")
 os.system("rm data/*")
 
-N_x = 100
-N_y = 100
-N_z = 100
+N_x = 120
+N_y = 120
+N_z = 110
 
-pcb = fd.PCB(0.002, xy_margin=15, z_margin=15)
-fd.initialize_grid(pcb,N_x,N_y,N_z, courant_number = 0.4)
+pcb = fd.PCB(0.002, xy_margin=0, z_margin=0)
+fd.initialize_grid(pcb,N_x,N_y,N_z, courant_number = 0.2)
 
 f = 9e9
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
 
 dipole_length = int(0.01/pcb.cell_size) #cells
-dipole_source_position = np.array([10,10,10])
+dipole_source_position = np.array([20,20,20])
 dipole_source_position += pcb.xy_margin
 z_slice = slice(dipole_source_position[Z],dipole_source_position[Z]+1)
 
 raw = tissue.import_raw_voxel_file('/home/arthurdent/covidinator/biology/FDTD/chunks/2mm_100x100x100_left_lung_5.raw', [100,100,100])
-inverse_permittivity, absorption_factor, active_tissue = tissue.voxel_to_fdtd_grid_import(pcb.grid, raw, [0,0,0], 0.002, pcb.cell_size, f)
 
+raw = np.pad(raw, [(pcb.pml_cells, pcb.pml_cells), (pcb.pml_cells, pcb.pml_cells), (pcb.pml_cells, pcb.pml_cells)], mode='constant')
+print(np.shape(raw))
+print(np.shape(pcb.grid.E))
+
+inverse_permittivity, absorption_factor, active_tissue = tissue.voxel_to_fdtd_grid_import(pcb.grid, raw, [0,0,0], 0.002, pcb.cell_size, f, [0])
+# sys.exit()
 
 print_step = 500
 dump_step = 2e-12
@@ -86,15 +91,7 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
     #[Luebbers 1996]
 
     #update equation from 'fdtd' - otherwise we'd need thousands of AbsorbingObjects!
-    print(np.shape(absorption_factor[active_tissue]))
-    print(np.shape(pcb.grid.E))
-    pcb.grid.E[active_tissue,:] *= (1 - absorption_factor[active_tissue]) / (1 + absorption_factor[active_tissue])
-    pcb.grid.E[active_tissue,:] += (
-        pcb.grid.courant_number
-        * inverse_permittivity[active_tissue]
-        * curl_H[active_tissue]
-        / (1 + absorption_factor[active_tissue])
-    )
+
 
 
     source_resistive_voltage = (50.0 * current)
@@ -121,3 +118,10 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         prev_dump_time = pcb.time
 
     fd.just_FDTD_step(pcb)
+    pcb.grid.E[active_tissue] *= (1 - absorption_factor[active_tissue]) / (1 + absorption_factor[active_tissue])
+    pcb.grid.E[active_tissue] += (
+        pcb.grid.courant_number
+        * inverse_permittivity[active_tissue]
+        * fdtd.grid.curl_H(pcb.grid.H)[active_tissue]
+        / (1 + absorption_factor[active_tissue])
+    )

@@ -152,7 +152,7 @@ def import_raw_voxel_file(raw_filename, cell_sizes):
     raw = np.reshape(raw, cell_sizes)
     return raw
 
-def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fdtd_grid_cell_size, center_frequency):
+def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fdtd_grid_cell_size, center_frequency, exclude):
     '''
     fdtd_grid_cell_size must be < and an integer divisor of voxel_file_cell_size
     '''
@@ -170,16 +170,21 @@ def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fd
         inverse_permittivity = np.ones((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
         absorption_factor = np.zeros((grid.Nx,grid.Ny,grid.Nz,3), dtype=fdtd.backend.float)
 
+
+
     for i in np.unique(raw):
+        if(i in exclude):
+            continue
+
         i = int(i)
         dielectric_constant, conductivity, penetration_depth = lookup_tissue_properties(i, center_frequency)
         conductivity *= (fdtd_grid_cell_size / epsilon_0) #flaport's units
 
         cell_indices = np.where(raw == i)
 
-        inverse_permittivity[cell_indices,:] /= dielectric_constant
+        inverse_permittivity[cell_indices] /= dielectric_constant
 
-        absorption_factor[cell_indices,:] = (
+        absorption_factor[cell_indices] = (
             0.5
             * grid.courant_number
             * inverse_permittivity[cell_indices]
@@ -188,7 +193,7 @@ def voxel_to_fdtd_grid_import(grid, raw, import_offset, voxel_file_cell_size, fd
             / fdtd.grid.VACUUM_PERMITTIVITY
         )
 
-        active_tissue[cell_indices,:] = 1
+        active_tissue[cell_indices] = 1
         #
         # grid[] = fdtd.AbsorbingObject(permittivity=dielectric_constant, conductivity=conductivity, name=f"t{i}")
 
