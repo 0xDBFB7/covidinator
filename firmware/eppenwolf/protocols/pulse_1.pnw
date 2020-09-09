@@ -314,9 +314,40 @@ No discernable difference between wells yet. Give it another 4 hours.
 Without shaking, no change in turbidity until 20:00.
 
 With shaking, modest turbidity in only 20 minutes!
-0.8 mL phage added to 1 at 21:33
+0.8 uL phage added to 1 at 21:33
+
+Seems like either 1. the bacteria cooled to such a degree that growth stopped or
+2. the phage was added far too late. A water bath might help.
+
+In any case, we now have a turbidimeter, so we can monitor the log.
+
+------------------------------------------------------------------------
+
+0.4 mL of E17 into two tubes. Centrifuged down. Supernatant aliquoted off and disposed.
+Re-suspended.
+
+After 4 mins or so in the incu, added 0.8 uL phage to T1. Sampled turbidity.
+Warmed in 37 C water bath for 20 seconds.
+
+After 30 mins in the incu, removed and sampled turbidiy.
+
+------------------------------------------------------------------------
 
 
+
+"When the same experiment was performed using a tenfold lower cell concentration (107
+cfu/mL) (Fig 2B) the results were somewhat different. While in the 108 cfu/mL culture of Fig
+2A optical density started to increase after only 15 minutes of incubation, in this case, OD
+increase started 70 minutes after the beginning of the experiment. The control without phages
+showed unrestricted growth which slowed down after 180 minutes. As before, addition of
+phages had a clear impact on growth dynamics.
+
+Even very low amounts of phage (5x101 pfu/
+mL) caused detectable cell lysis, with a decrease in OD starting at 190 minutes. Addition of
+higher phage concentrations shortened the time required for the onset of detectable lysis. That
+is, the time necessary to detect cell lysis at 5x102
+, 5x103
+, 5x104 and 5x105 pfu/mL was progressively shortened from 190 to 133 minutes"
 
 \section{T4 phage experiment 4}
 

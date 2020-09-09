@@ -2588,3 +2588,19 @@ Maybe with a waveguide things would be better.
 
 Bubble position in the 2.5mm slide plate reader prevented it from being effective.
 
+It seems like most peopel use
+
+simple CdS cell, connected to dmm, red LED shining through, and - most importantly - 
+a relatively precisely machined delrin tube into which the tube fits quite snugly.
+works great! Also; the rotation of the tube needs to be fixed, otherwise graduations
+affect the turbidity reading. just drawing a line where it lines up is fine.
+
+
+
+maybe using a water bath to get the tubes back up to temp more quickly would be a good idea.
+
+https://tmo.jpl.nasa.gov/progress_report2/42-49/49title.htm
+file:///home/arthurdent/Downloads/49E.PDF
+
+dsn progress reports are so amazing
+

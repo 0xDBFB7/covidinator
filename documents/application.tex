@@ -3,21 +3,38 @@
 \begin{document}
 
 
+
+SARS is found widely distributed throughout many of the most favoured organs \cite{Organ2004}, shielded by an average of 4 cm of chest wall [Schroeder 2013]; so safe external treatment of the body is unlikely.
+
+\cite{neuroinvasive2020} \cite{situ2020}
+
+However, it would be an understatement to say that destruction of lung tissue is significant in the lethality of SARS [Nicholls 2006]. 
+
+A bronchoscopic technique may therefore be effective, very similarly to that demonstrated by [Yuan 2019]: in adults, the bronchi are less than 2 mm thick [Theriault 2018] and the lungs themselves are only on the order of 7 mm thick [Chekan 2016]. The main bronchus is about 8 mm in diameter.
+
+
+
+
 Applying microwave power to the body is already used extensively in diathermy (the internal heating of tissue for therapeutic effect) and hyperthermy (the overheating or cauterization of tissue for destructive effect). While the majority of diathermy systems use much lower frequencies for deeper heating penetration, several papers have explored the 10 GHz band. 
 
 High microwave frequencies are very strongly attenuated by tissue. However, we have a large amount of margin in the electric field - 4 orders of magnitude - that we can trade for penetration depth.
 
-\cite{neuroinvasive2020} \cite{situ2020}
+Industry Canada limits on the instantaneous electric field anywhere inside the body are $1.35 \times 10^{-4}$ V/m $\times$ Hz (\cite{RSS1022015}, Table 4) - that is, $0.81 \times 10^6$ V/m @ 6 GHz to $1.2 \times 10^6$ V/m @ 9 GHz. It should be noted that more recent standards have abandoned instantaneous electric field limits, finding that they have little biological rationale (\cite{C95}, B.4.3, {\it Rationale for pulsed RF field limits}).\footnotemark
+
+$$S = \frac{|E|^2}{Z_0}$$
 
 
-Industry Canada limits on the instantaneous electric field anywhere inside the body are $1.35 \times 10^{-4}$ V/m $\times$ Hz (\cite{RSS1022015}, Table 4) - that is, $0.81 \times 10^6$ V/m @ 6 GHz to $1.2 \times 10^6$ V/m @ 9 GHz. It should be noted that more recent standards have abandoned instantaneous electric field limits, finding that they have little biological rationale (\cite{C95}, B.4.3, {\it Rationale for pulsed RF field limits}).
+\footnotetext{It should also be noted that at very specific pulsed regimes at millimeter wavelengths (far beyond our study) mere adherence to the letter of the law may not be sufficient for protection\cite{Limitations}.}
 
-\footnote{In our case, it seems to make the most sense to discuss the attenuation of the electric field, V/m, rather than the field power (also referred to as the {\it intensity}),\Wsqm, since the inactivation seems most closely related to the former. Penetration depth refers to the depth at which the power is reduced by 1/$e$; skin depth, where the electric field is 1/$e$. The penetration depth is simply half the skin depth.\cite{Penetration2019a}}
 
-Considering only the electric field skin depth\cite{Safety2001}\cite{Physical1982} of average lung tissue\cite{gabriel1996compilation}\cite{Dielectricb}\cite{Dielectric}\cite{Tissue2018} (which changes considerably based on inflation), on the face of it is possible to achieve a field of 150 V/m at a very reasonable depth of 60 mm. We could not find any data on the distribution of gas exchange throughout the cross-section of the lung; however, 
+Considering only the electric field skin depth\footnotemark\cite{Safety2001}\cite{Physical1982} of average lung tissue\cite{gabriel1996compilation}\cite{Dielectricb}\cite{Dielectric}\cite{Tissue2018} (which changes considerably based on inflation), at 8 GHz it appears to be possible to achieve the required field of 150 V/m at a very reasonable depth of 60 mm. We could not find any data on the distribution of gas exchange throughout the cross-section of the lung.
 
-\footnote{It should also be noted that at very specific pulsed regimes at millimeter wavelengths (far beyond our study) mere adherence to the letter of the law may not be sufficient for protection\cite{Limitations}.}
+Two complications present themselves. An annoying layer of muscle 
 
+
+From cursory simulations, it seems quite difficult to generate such high electric fields with a small dipole antenna in the bronchi unless almost implausibly high powers are input. On the other hand, well-tuned. Second, these results are sensitive to the precise
+
+\footnotetext{In our case, it seems to make the most sense to discuss the attenuation of the electric field, V/m, rather than the field power (also referred to as the {\it intensity}),\Wsqm, since the inactivation seems most closely related to the former. Penetration depth refers to the depth at which the power is reduced by 1/$e$; skin depth, where the electric field is 1/$e$. The penetration depth is simply half the skin depth.\cite{Penetration2019a}}
 
 
 
@@ -28,7 +45,14 @@ There seems to be some sort of focusing effect which makes internal bronchoscopi
 
 
 
+
+The 8 GHz tone does not necessarily need to be the fundamental. A carrier wave with a more deeply penetrating wavelength could be used. 
+
+If the carrier is lower in frequency, non-linear materials\cite{Theory1973} will be needed for harmonic generation, or implantable resonators and re-radiators. There are a few paramagnetic contrast agents used in MRI that might be useful for this if the efficiency is sufficient. If the carrier is higher, it can simply be modulated with an 8 GHz tone. In the latter case, there are so-called 'optical windows' in the absorption spectra of tissues, particularly in the near-IR range; however, none seem sufficiently transparent to be useful.
+
 My kingdom for a Bragg peak!
+
+
 
 \clearpage
 \printbibliography[heading=none, title={}, keyword={Flagship}]

@@ -119,15 +119,6 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
     source_resistive_voltage = (50.0 * current)
 
-    pcb.grid.E[dipole_source_position[X]:dipole_source_position[X]+1,\
-                dipole_source_position[Y]:dipole_source_position[Y]+1,\
-                    dipole_source_position[Z]+1:dipole_source_position[Z]+1+dipole_length,:] = 0 # zero dipole arm voltage
-
-    pcb.grid.E[dipole_source_position[X]:dipole_source_position[X]+1,\
-                dipole_source_position[Y]:dipole_source_position[Y]+1,\
-                    dipole_source_position[Z]-dipole_length:dipole_source_position[Z],:] = 0 # zero dipole arm voltage
-
-
     pcb.grid.E[dipole_source_position[X],dipole_source_position[Y],z_slice,Z] = sqrt(epsilon_0) * ((source_voltage) / (pcb.cell_size))
     #
 
