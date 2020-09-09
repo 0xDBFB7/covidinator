@@ -9,6 +9,7 @@
 # torch.autograd.set_detect_anomaly(True)
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
+from fdtd_PCB_extensions import tissue
 from fdtd_PCB_extensions import X,Y,Z, gaussian_derivative_pulse
 from scipy.constants import mu_0, epsilon_0
 import scipy.constants
@@ -25,156 +26,111 @@ import pickle
 import numpy as np
 import math
 
+
 fdtd.set_backend("torch.cuda.float32")
 
+import sys
+#
+# sys.path.append('/home/arthurdent/covidinator/biology/FDTD/')
+# import tissue
 
 # fdtd.set_backend("numpy")
 
 #include store.py
-import sys
 sys.path.append('/home/arthurdent/covidinator/electronics/')
 import store
 
 os.system("rm dumps/*")
 os.system("rm data/*")
 
-#Polycarb. permittivity @ 10 GHz: 2.9 [10.6028/jres.071C.014] - conductivity is very low, no need for absorb.
-#Water permittivity @ 10 GHz: 65 - use AbsorbingObject
+N_x = 120
+N_y = 120
+N_z = 110
 
-skin thickness =
+pcb = fd.PCB(0.002, xy_margin=0, z_margin=0)
+fd.initialize_grid(pcb,N_x,N_y,N_z, courant_number = 0.45)
 
-pcb = fd.PCB(0.00005, xy_margin=15, z_margin=15)
-fd.initialize_grid(pcb,int((sim_width)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.0025/pcb.cell_size), courant_number = 0.8)
-
-
-#
-# def create_tissues():
-#
-#     pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, pcb.ground_plane_z_top:(pcb.ground_plane_z_top+N_substrate)] \
-#                         = fdtd.Object(permittivity=substrate_permittivity, name="substrate")
-#
-#     # fat
-#     pcb.grid[] = fdtd.AbsorbingObject(permittivity=fat_permittivity, conductivity=fat_conductivity)
-
-def create_waveguide():
-    # See "14.5GHz Circular Waveguide Applicator for the Treatment of Skin Cancer"
-
-
-
-
-#
-# fd.create_planes(pcb, 0.032e-3, 6e7)
-# fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)
-#
-
-z_slice = slice(pcb.component_plane_z,(pcb.component_plane_z+1))
-
-
-centerline = int((sim_width / pcb.cell_size ) / 2.0) + pcb.xy_margin
-
-
-#wipe copper
-pcb.copper_mask[:, :, z_slice] = 0
-pcb.copper_mask[:, :, pcb.ground_plane_z_top:pcb.component_plane_z] = 0
-
-
-
-microstrip_gap = 0.2e-3 # distance to ground plane
-#microstrip line
-m_w_N = int((microstrip_width/2)/pcb.cell_size)
-
-#stitch ends of coplanar
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-
-pcb.copper_mask[0:-1, pcb.xy_margin+1:-pcb.xy_margin-2, 0:pcb.ground_plane_z_top] = 0
-
-
-
-
-#ground 2
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size):-pcb.xy_margin, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
-
-#ground 1
-pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size), \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
-
-# defect_length = 1.5e-3
-# defect_width =
-# pcb.copper_mask[,int((microstrip_length/2.0)/pcb.cell_size):int((microstrip_length/2.0+defect_length)/pcb.cell_size), z_slice] = 1
-
-
-radius = int(1e-3 / pcb.cell_size)
-for x in range(0, int((sim_width)/pcb.cell_size)+pcb.xy_margin):
-    for y in range(0, int((microstrip_length)/pcb.cell_size)):
-
-        pcb.copper_mask[x, y, z_slice] = (pcb.copper_mask[x, y, z_slice] or math.sqrt((x-centerline)**2.0 + ( (y-((int((microstrip_length/2.0)/pcb.cell_size))+pcb.xy_margin)) - radius)**2.0 ) < radius)
-
-
-
-pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int((microstrip_length/2.0 + 1.0e-3 )/pcb.cell_size))), z_slice] = 1
-
-
-
-
-#cover tape
-pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
-            (pcb.component_plane_z+1):(pcb.component_plane_z+1+int(cover_tape_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="cover_tape")
-
-
-#polycarb ribbon
-pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, \
-        (pcb.component_plane_z+1+int(cover_tape_thickness/pcb.cell_size)):\
-            (pcb.component_plane_z+1+int(ribbon_thickness/pcb.cell_size))] = fdtd.Object(permittivity=ribbon_dielectric_constant, name="ribbon")
-
-
-
-
-#fluid
-conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
-f_w_N = int((fluid_width/2)/pcb.cell_size)
-pcb.grid[centerline-f_w_N:centerline+f_w_N, pcb.xy_margin:-pcb.xy_margin, \
-            (pcb.component_plane_z+1+int(cover_tape_thickness/pcb.cell_size)):(pcb.component_plane_z+1+\
-                                    int(cover_tape_thickness/pcb.cell_size))+int(fluid_thickness/pcb.cell_size)] \
-                    = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
-
+f = 9e9
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
-pcb.component_ports = [] # wipe ports
-pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length*pcb.cell_size)-pcb.cell_size))
-pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size))
+
+dipole_length = int(0.008/pcb.cell_size) #cells
+dipole_source_position = np.array([33,25,70]) # bronch
+# dipole_source_position = np.array([45,60,70]) #pleural
+dipole_source_position += pcb.pml_cells
+z_slice = slice(dipole_source_position[Z],dipole_source_position[Z]+1)
+
+raw = tissue.import_raw_voxel_file('/home/arthurdent/covidinator/biology/FDTD/chunks/2mm_100x100x100_left_lung_5.raw', [100,100,100])
+
+# raw = np.pad(raw, [(pcb.pml_cells, pcb.pml_cells), (pcb.pml_cells, pcb.pml_cells), (pcb.pml_cells, pcb.pml_cells)], mode='constant')
+print(np.shape(raw))
+print(np.shape(pcb.grid.E))
+raw = raw.transpose()
+raw[dipole_source_position[X]-1 - pcb.pml_cells:dipole_source_position[X]+1- pcb.pml_cells,
+        dipole_source_position[Y]-1- pcb.pml_cells:dipole_source_position[Y]+1- pcb.pml_cells,
+        dipole_source_position[Z]-15- pcb.pml_cells:dipole_source_position[Z]+15- pcb.pml_cells] = 0 # putting the antenna directly up against the tissue causes
+        # instability, shock surprise
 
 
+
+
+tissue.voxel_to_fdtd_grid_import(pcb.grid, raw, [0,0,0], 0.002, pcb.cell_size, f, [0])
+ # inverse_permittivity, absorption_factor, active_tissue =
+# sys.exit()
 
 print_step = 500
 dump_step = 2e-12
 
 prev_dump_time = 0
 
-f = 8e9
+pcb.copper_mask[dipole_source_position[X]:dipole_source_position[X]+1,\
+            dipole_source_position[Y]:dipole_source_position[Y]+1,\
+                dipole_source_position[Z]+1:dipole_source_position[Z]+1+dipole_length] = 1 # zero dipole arm voltage
+
+pcb.copper_mask[dipole_source_position[X]:dipole_source_position[X]+1,\
+            dipole_source_position[Y]:dipole_source_position[Y]+1,\
+                dipole_source_position[Z]-dipole_length:dipole_source_position[Z]] = 1 # zero dipole arm voltage
+
+# pcb.grid[20:30,20:30,20:30] = fdtd.AbsorbingObject(permittivity=10.530940732371782, conductivity=46.77567442100689)
+
+input_power = 500.0
+input_peak = sqrt(2 * input_power * 50.0)
+
 while(pcb.time < (2.0 * 2.0 * pi * f)):
 
-    # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
-
-    source_voltage = sin(pcb.time * 2.0 * pi * f)
+    source_voltage = sin(pcb.time * 2.0 * pi * f) * input_peak
     print(source_voltage)
 
-    z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
+    current = ((pcb.grid.H[dipole_source_position[X],dipole_source_position[Y]-1,z_slice,X]-
+                pcb.grid.H[dipole_source_position[X],dipole_source_position[Y],z_slice,X])*pcb.cell_size)
+    current += ((pcb.grid.H[dipole_source_position[X],dipole_source_position[Y],z_slice,Y]-
+                pcb.grid.H[dipole_source_position[X]-1,dipole_source_position[Y],z_slice,Y])*pcb.cell_size)
 
-    current = pcb.component_ports[0].get_current(pcb)
+    current = float(current.cpu())
+    current /= (pcb.cell_size/sqrt(mu_0))
+    #field normalized according to Flaport's thesis, chapter 4.1.6
+
+
     #[Luebbers 1996]
+
+    #update equation from 'fdtd' - otherwise we'd need thousands of AbsorbingObjects!
+
+
 
     source_resistive_voltage = (50.0 * current)
 
+    pcb.grid.E[dipole_source_position[X]:dipole_source_position[X]+1,\
+                dipole_source_position[Y]:dipole_source_position[Y]+1,\
+                    dipole_source_position[Z]+1:dipole_source_position[Z]+1+dipole_length,:] = 0 # zero dipole arm voltage
 
-    pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
+    pcb.grid.E[dipole_source_position[X]:dipole_source_position[X]+1,\
+                dipole_source_position[Y]:dipole_source_position[Y]+1,\
+                    dipole_source_position[Z]-dipole_length:dipole_source_position[Z],:] = 0 # zero dipole arm voltage
 
-    pcb.component_ports[1].set_voltage(pcb, 0 + (pcb.component_ports[1].get_current(pcb)*50.0))
+
+    pcb.grid.E[dipole_source_position[X],dipole_source_position[Y],z_slice,Z] = sqrt(epsilon_0) * ((source_voltage) / (pcb.cell_size))
+    #
+
 
 
     print(current)
@@ -185,3 +141,18 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         prev_dump_time = pcb.time
 
     fd.just_FDTD_step(pcb)
+    # pcb.grid.update_E()
+    #
+    # pcb.grid.E[active_tissue] *= (1 - absorption_factor[active_tissue]) / (1 + absorption_factor[active_tissue])
+    # pcb.grid.E[active_tissue] += (
+    #     pcb.grid.courant_number
+    #     * inverse_permittivity[active_tissue]
+    #     * fdtd.grid.curl_H(pcb.grid.H)[active_tissue]
+    #     / (1 + absorption_factor[active_tissue])
+    # )
+    #
+    # pcb.grid.update_H()
+    #
+    # pcb.grid.time_steps_passed += 1
+    # pcb.time += pcb.grid.time_step # the adaptive
+    # pcb.times.append(pcb.time)
