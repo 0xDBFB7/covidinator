@@ -940,6 +940,12 @@ Tomorrow just
 
 camera might work as a turbidimeter. Easiest against a black background.
 
-alignment is so critical for od600. standard cuvettes would work better, but 
-not 
+alignment is so critical for od600. standard cuvettes would work better, but I can't get any
+and they're not autoclavable anyhow.
+
+weird how optical density seems to be the only method used, besides lagtogatena enzyme dyealaldfkj aldskf alsdf
+
+G-dlalalctodose
+
+
 
