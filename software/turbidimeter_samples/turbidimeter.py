@@ -1,16 +1,31 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+import serial
 
-background_image = cv2.imread('my_photo-1.jpg',0)
-turbid_img = cv2.imread('my_photo-5.jpg',0)
-turbid_img_2 = cv2.imread('my_photo-4.jpg',0)
-clear_img = cv2.imread('my_photo-2.jpg',0)
-clear_img_2 = cv2.imread('my_photo-3.jpg',0)
+from time import sleep
+import time
+import sys
+from scipy.signal import find_peaks
+from matplotlib import pyplot as plt
+
+# background_image = cv2.imread('my_photo-1.jpg',0)
+# turbid_img = cv2.imread('my_photo-7.jpg',0)
+# turbid_img_2 = cv2.imread('my_photo-8.jpg',0)
+# clear_img = cv2.imread('my_photo-9.jpg',0)
+# clear_img_2 = cv2.imread('my_photo-10.jpg',0)
 
 #https://stackoverflow.com/questions/48482317/slice-an-image-into-tiles-using-numpy/48483743
 
-print(np.shape(clear_img))
+# print(np.shape(clear_img))
+
+
+f = open(sys.argv[2], "a")
+ser = serial.Serial(sys.argv[1], 115200, timeout=2)
+
+
+
+# detector = cv2.QRCodeDetector()
 
 def blockshaped(arr, nrows, ncols):
     """
@@ -28,150 +43,105 @@ def blockshaped(arr, nrows, ncols):
                .reshape(-1, nrows, ncols))
 
 
-chunks =  blockshaped(clear_img, 144, 160)
+while True:
 
-t = []
-for j in chunks:
-    i = np.fft.fft2(j)
-    t.append(np.linalg.norm(i[:,0:np.shape(i)[1]//4])/np.linalg.norm(i[:,np.shape(i)[1]//4:-1]))
-
-print(np.max(t))
-
-
-chunks =  blockshaped(clear_img_2, 144, 160)
-
-t = []
-for j in chunks:
-    i = np.fft.fft2(j)
-    t.append(np.linalg.norm(i[:,0:np.shape(i)[1]//4])/np.linalg.norm(i[:,np.shape(i)[1]//4:-1]))
-
-print(np.max(t))
-
-#
-
-t = []
-chunks =  blockshaped(turbid_img, 144, 160)
-for j in chunks:
-    i = np.fft.fft2(j)
-    t.append(np.linalg.norm(i[:,0:np.shape(i)[1]//4])/np.linalg.norm(i[:,np.shape(i)[1]//4:-1]))
-
-print(np.max(t))
-
-t = []
-chunks =  blockshaped(turbid_img_2, 144, 160)
-for j in chunks:
-    i = np.fft.fft2(j)
-    t.append(np.linalg.norm(i[:,0:np.shape(i)[1]//4])/np.linalg.norm(i[:,np.shape(i)[1]//4:-1]))
-
-print(np.max(t))
-
-
-plt.imshow(clear_chunks[0])
-plt.figure()
-# plt.imshow(clear_img - background_image)
-
-#
-
-
-# clear_img = np.array(clear_img, dtype=np.float)-np.array(background_image,dtype=np.float)
-# clear_img_2 = np.array(clear_img_2, dtype=np.float)-np.array(background_image,dtype=np.float)
-#
-
-#
-# turbid_img = np.array(turbid_img, dtype=np.float)-np.array(background_image,dtype=np.float)
-# plt.imshow(turbid_img)
-# plt.figure()
-#
-# turbid_img_2 = np.array(turbid_img_2, dtype=np.float)-np.array(background_image,dtype=np.float)
-
-# idx = abs(clear_img[:,:]) < 100
-# clear_img[idx] = 0
-#
-# idx = abs(clear_img_2[:,:]) < 100
-# clear_img_2[idx] = 0
-#
-# idx = abs(turbid_img[:,:]) < 100
-# turbid_img[idx] = 0
-#
-# idx = abs(turbid_img_2[:,:]) < 100
-# turbid_img_2[idx] = 0
+    # while(ser.readline() == ""):
+    #     pass
+    #
+    for i in range(0, 100):
 
 
 
-# print(np.max(clear_img))
-# print(np.max(turbid_img))
-#
+
+        while(ser.readline() == b''):
+            pass
+        ser.reset_input_buffer()
+
+
+        cap = cv2.VideoCapture(0)
+        cap.set(3,1280)
+        cap.set(4,720)
+        cap.set(cv2.CAP_PROP_EXPOSURE,-4)
+
+        ret,img_colored = cap.read()
+        img = img_colored[:,:,0]
+
+        cap.release()
+
+        # plt.imshow(img)
+
+        chunks =  blockshaped(img, 144, 160)
+
+        t = []
+        for j in chunks:
+            i = np.fft.fft2(j)
+            t.append(np.linalg.norm(i[:,0:np.shape(i)[1]//4])/np.linalg.norm(i[:,np.shape(i)[1]//4:-1]))
+
+        value = np.max(t)
+
+        flag = cv2.inRange(img_colored, np.array([0, 0, 127]), np.array([50, 50, 255]))#bgR
+        plt.imshow(flag, cmap='gray')
+        # flag = np.mean(np.ndarray.astype(img_colored[600:-1,:,0],np.float) - np.ndarray.astype(img_colored[600:-1,:,1],np.float) )
+        print(np.linalg.norm(flag))
+
+        f.write("{},{},{},{}\n".format(time.time(),i,value,np.linalg.norm(flag)))
+
+        print(value)
+
+        plt.draw()
+        plt.pause(0.1)
+        plt.clf()
 
 
 
-#
+        # if(not ser.readline() == ""):
+        #     print("next")
+        #     continue
 
 
-bk_f = np.fft.fft2(background_image[:,:])[:,0]
+#arg 1 is serial port, arg 2 is file to append to.
 
-# plt.imshow(clear_img)
-# plt.figure()
-#
-# plt.imshow(turbid_img)
-# plt.figure()
-
-# turb_f = np.fft.fft2(turbid_img)
-# turb_f_2 = np.fft.fft2(turbid_img_2)
-# clear_f = np.fft.fft2(clear_img)
-# clear_f_2 = np.fft.fft2(clear_img_2)
-
-# idx = abs(turbid_img-background_image) < 50
-# turbid_img[idx] = 0
-# plt.imshow(turbid_img)
-#
-# print((np.linalg.norm(turb_f[:,0:np.shape(turb_f)[1]//4])/np.linalg.norm(turb_f[:,np.shape(turb_f)[1]//4:-1]))*(np.linalg.norm(turbid_img)))
-# print((np.linalg.norm(turb_f_2[:,0:np.shape(turb_f_2)[1]//4])/np.linalg.norm(turb_f_2[:,np.shape(turb_f_2)[1]//4:-1])) * np.linalg.norm(turbid_img_2))
-# print((np.linalg.norm(clear_f[:,0:np.shape(clear_f)[1]//4])/np.linalg.norm(clear_f[:,np.shape(clear_f)[1]//4:-1]))*(np.linalg.norm(clear_img)))
-# print((np.linalg.norm(clear_f_2[:,0:np.shape(clear_f_2)[1]//4])/np.linalg.norm(clear_f_2[:,np.shape(clear_f_2)[1]//4:-1]))*np.linalg.norm(clear_img_2))
-
-# abs_diff[np.where(abs_diff < 100)] = 0
+# python -u read_turbidimeter.py /dev/ttyUSB5 phage_experiment_3/
 
 
+# import pygame
+# import pygame.camera
 
-# print(np.max(abs(turbid_img - background_image)))
-# print(np.max(abs(turbid_img_2 - background_image)))
-# print(np.max(abs(clear_img - background_image)))
-# print(np.max(abs(clear_img - background_image)))
-# plt.plot(turb_f-bk_f)
-# plt.plot(clear_f-bk_f)
+# pygame.camera.init()
+# cam = pygame.camera.Camera("/dev/video0",(640,480))
+# cam.start()
 
-# plt.img()
+printer = serial.Serial(sys.argv[2], 250000, timeout=100)
 
-# plt.figure()
-# plt.imshow(abs_diff_clear)
-
-# print(np.linalg.norm(abs_diff_turbid))
-# print(np.linalg.norm(abs_diff_clear))
-
-# img = cv2.imread('my_photo-1.jpg',0)
-#
-# bkgrnd = np.fft.fft(img[100,0:50])
-# # fshift = np.fft.fftshift(f)
-# # fshift = f
-# # magnitude_spectrum = 20*np.log(np.abs(fshift))
-# a = []
-# for x, row in enumerate(img[::int(np.shape(img)[1]/50),:]):
-#     for y in
-#         f = np.fft.fft(row)
-#         a.append(np.linalg.norm(f - bkgrnd))
-#
-# plt.plot(a)
-plt.show()
+# cuvette_no = 8
 
 
+#     input("Press enter when ready")
+#     while(True):
+# while(
 
-plt.subplot(121),plt.imshow(img, cmap = 'gray')
-plt.title('Input Image'), plt.xticks([]), plt.yticks([])
-# plt.subplot(122),plt.imshow(magnitude_spectrum, cmap = 'gray')
-plt.figure()
-# for row in :
-# plt.plot(magnitude_spectrum[0])
-# plt.plot(magnitude_spectrum[:][270])
+#remember: 1 is reversed!
 
-plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
-plt.show()
+# length =
+
+# plt.plot(data)
+# plt.show()
+
+
+    # for k in range(0, 2):
+    #     for i in range(0, cuvette_no):
+    #         input(f"Move to slide{k}, cuvette {i}, press enter when ready.")
+    #         ser.reset_input_buffer()
+    #         ser.readline()
+    #         value = float(ser.readline())
+    #         file.write("{},{},{}\n".format(time.time(), i, value))
+    #         print(value)
+            # input(f"Move to cuvette {i}, turn light on, press enter when ready.")
+            # ser.reset_input_buffer()
+            # ser.readline()
+            # value = float(ser.readline())
+            # file.write("{},{},{},1\n".format(time.time(), i, value))
+            # print(value)
+
+            # img = cam.get_image()
+            # pygame.image.save(img,f"{sys.argv[2]}/{time.time()}-{k}-{i}.jpg")
