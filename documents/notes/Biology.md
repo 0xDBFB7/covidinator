@@ -936,3 +936,10 @@ the phage. It should still work like this, but whatever.
 
 Conduction is an unknown.
 
+Tomorrow just 
+
+camera might work as a turbidimeter. Easiest against a black background.
+
+alignment is so critical for od600. standard cuvettes would work better, but 
+not 
+

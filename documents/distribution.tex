@@ -10,7 +10,7 @@ They assume that the virus is a simple damped harmonic oscillator, where the 'co
 
 They determine the net charge experimentally from microwave absorption measurements.
 
-Since [Yang] try to compute the {\it threshold} field to obtain some amount of inactivation, they use a value of 400 piconewtons for the breaking stress of the envelope, obtained from \cite{Bending2011}. This threshold value agrees very well. However, \cite{Bending2011} also mentions that 
+Since \cite{Efficient2015} try to compute the {\it threshold} field to obtain some amount of inactivation, they use a value of 400 piconewtons for the breaking stress of the envelope, obtained from \cite{Bending2011}. This threshold value agrees very well with their experimental data. However, \cite{Bending2011} also mentions that 
 
 \begin{quote}
 	More than 95\% [of] puncture events occurred above 0.4 nN.
@@ -28,15 +28,55 @@ The distribution of breaking strengths in [Li 2011] (Figure 5b) is bimodal, and 
 
 Smudged 
 
+
+
 The simple-harmonic
 
-This problem has a long history, stretching back to Cole-Cole's landmark paper in 1942\cite{Dispersion1941}.
+This problem has a long history, stretching back to Cole-Cole's landmark paper in 1942\cite{Dispersion1941} and \cite{Electrical1941}.
 
-T4 bacteriophage has far greater restraint, with only a 2.5\% $\pm \sigma$ variation in the icosahedral head dimensions \cite{Head1988}. \footnote{} 
+\begin{quote}
+	As Fuoss and Kirkwood have shown, it is possible to calculate the distribution necessary to account for any given experimental results from the observed $\epsilon''$ - frequency relation.
+\end{quote}
+
+Within a sample of a single species, there is $\approx$ 12.7\%  ($109 \pm 16.65 \text{ nm}$\cite{lauffer1944biophysical}, $115 \pm 12 \text{ nm}$ \cite{Characterization1984}) variation in diameter and  \cite{Characterization1984} variation in mass.
+
+Note that, per \cite{lauffer1944biophysical}, of Inf. A and B, "the infectious particles have diameters within the range 80 to 135[nm]". \cite{Efficient2015}'s MDCK plaque assay is already sensitive to infectivity; the extreme-sized non-infective mutants would already be filtered out. Their PCR assay might not be; the DNA of all non-infectious mutants would be considered.
+
+
+Worse still, influenza exhibits pleiomorphy \cite{Influenza2006}; 
+
+
+
+NCoV is closer to \cite{Viral2020}, but does not exhibit pleiomorphy.
+
+A cursory fit found parameters $\bar{\text{Q}}$=3.736,  $\sigma \ \text{Q} = $0.738, $\bar{F}_{res}=$8.606 GHz and $\sigma {F_{res}}=$1.073 and covariance of +1.001. This describes the observed spectrum equally well:
+
+Whether these values also explain the other datasets in \cite{Efficient2015}, such as the inactivation threshold vs frequency has not yet been determined.
+
+Plugging a (single, non-distributed, which must be fixed) Q of 3.75 into the above breaking force distribution, and applying some guesses for the covariance of various parameters, we get:
+
+								Yang get:
+6th percentile: 59.234       68 V/m
+38th percentile: 127.376		87 V/m
+63th percentile: 186.803		171 V/m
+90th percentile: 298.882     100\% 275 V/m
+99.9th percentile: 565.126 
+
+Of course, 
+\begin{quote}
+	With four parameters I can fit an elephant, and with five I can make him wiggle his trunk. \\- J.v.N
+\end{quote}
+
+and here we have some dozen parameters. So these approximations should be regarded with great skepticism.
+
+
+T4 bacteriophage has far greater restraint, with only a 2.5\% $\pm \sigma$ variation in the icosahedral head dimensions \cite{Head1988}.\footnotemark
+
+\footnotetext{T4 also occasionally finds itself as an isometric mutant (See PDB 5VF3).} 
 
 This also 
 
-Since this covariance process will have to be repeated for SARS-NCoV-2 - that is, the CoV for NCoV - 
+Since this entire covariance process will have to be repeated for SARS-NCoV-2 - that is, the CoV for NCoV, we have not bothered to fine-tune any of these fits. This must still be regarded as only a hypothesis.
 
 \begin{center}
 	\begin{tabular}{||c c c c||} 
