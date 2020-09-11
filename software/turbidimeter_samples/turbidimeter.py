@@ -48,12 +48,13 @@ while True:
     # while(ser.readline() == ""):
     #     pass
     #
-    for i in range(0, 100):
+    for x in range(0, 100):
 
 
 
-
-        while(ser.readline() == b''):
+        inp = ser.readline()
+        while(inp == b''):
+            inp = ser.readline()
             pass
         ser.reset_input_buffer()
 
@@ -84,7 +85,7 @@ while True:
         # flag = np.mean(np.ndarray.astype(img_colored[600:-1,:,0],np.float) - np.ndarray.astype(img_colored[600:-1,:,1],np.float) )
         print(np.linalg.norm(flag))
 
-        f.write("{},{},{},{}\n".format(time.time(),i,value,np.linalg.norm(flag)))
+        f.write("{},{},{},{}\n".format(time.time(),int(inp),value,np.linalg.norm(flag)))
 
         print(value)
 
