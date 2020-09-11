@@ -948,4 +948,9 @@ weird how optical density seems to be the only method used, besides lagtogatena 
 G-dlalalctodose
 
 
+The diluted phage eppendorfs can be stored for a while.
+
+
+
+
 

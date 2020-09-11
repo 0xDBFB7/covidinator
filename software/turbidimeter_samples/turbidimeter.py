@@ -86,6 +86,7 @@ while True:
         print(np.linalg.norm(flag))
 
         f.write("{},{},{},{}\n".format(time.time(),int(inp),value,np.linalg.norm(flag)))
+        f.flush()
 
         print(value)
 
