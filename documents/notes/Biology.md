@@ -951,6 +951,12 @@ G-dlalalctodose
 The diluted phage eppendorfs can be stored for a while.
 
 
+Prepared petri dishes should be refrigerated until used and always stored upside down (i.e media in upper dish, cover on bottom). 
+
+Try high-pass filtering the signal to get rid of the offset!
+
+Yknow, we could have just cut a long slot cuvette for higher volume with tape above it
+
 
 
 

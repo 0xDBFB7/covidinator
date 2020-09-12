@@ -395,16 +395,15 @@ The silicone was let to run off,
 
 [move to supplemental]
 
-To simplify and for higher throughput we use the drop-cast absorption protocol of [], which uses only a single layer of 1\% agar for rapid diffusion.
+To simplify and for higher throughput we use the drop-cast absorption protocol of [], which uses only a single layer of 1\% agar for rapid phage diffusion.
 
-A 250 mL beaker covered with alu foil, with stirring, and boiled in a water bath. 1.5 grams of nutrient agar powder (Seaweed inc...) was added to 150 mL water in a until molten. A magnetic stir bar was used to ensure all was fully melted,
-and then the beaker was autoclaved for 15 minutes. After cooling to 60 C for 15 minutes in a water bath, 20 mL of agar was poured onto [100 mm?] polystyrene plates. The plates were dried at 40 C for 3 hours.
+A 150 mL water in a 250 mL beaker covered with alu foil, with stirring, and boiled in a pot of water. 1.5 grams of nutrient agar powder (Seaweed inc...) was added to 150  until molten. A magnetic stir bar was used to ensure all was fully melted,
+and then the beaker was autoclaved for 15 minutes. After cooling to 60 C for 25 minutes in a water bath, 20 mL of agar was poured onto [100 mm?] polystyrene plates. The plates were left to set, then dried inverted with a flamed bent copper wire spacer for air exchange at 37 C for 2 hours.
  The plates were then stored inverted in plastic bags at 4 C until use.
+ \footnote{How agar percentages are specified seems somewhat ambiguous to me - is the percent of the agar itself (a viscosity measure), or the nutrient-agar mix (a growth measure)?
+     Weight/weight? It appears to be w/v of the whole dry powder in distilled water.}
 
-After cooling, 1 mL of overnight culture was poured across the plate, the excess drained, and allowed to dry for 15 minutes at room temperature.
-
-\footnote{How agar percentages are specified seems somewhat ambiguous to me - is the percent of the agar itself (a viscosity measure), or the nutrient-agar mix (a growth measure)?
-    Weight/weight? It appears to be w/v of the whole dry powder in distilled water.}
+After cooling, 1 mL of overnight culture was poured across the plate, excess drained, and allowed to dry for 15 minutes at room temperature.
 
 A control plate was made with pure stock phage and autoclaved phage.
 
@@ -413,6 +412,14 @@ Not having a 10 uL pipette, the 0.8 uL sample of phage was diluted in 10 uL of s
 This was repeated 4 times for each sample on the control.
 
 \strike{Each 0.8 uL sample was diluted in 0.2 mL of nutrient broth, a 250x dilution. If the 10^6 pfu.}
+
+60c to pour was I think too high - condensation was too high, even after 1 hour at 37c no change.
+
+Going for a higher temp - PS melts at 90 and agar at 80 C, so we should be okay going to 60 or 70 C.
+
+". The dryness of the agar is very important; if too moist, the
+drops will run and coalesce, if too dry, the bacteria will grow
+poorly"
 
 
 

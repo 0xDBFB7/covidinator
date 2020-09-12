@@ -29,6 +29,8 @@ int main(void)
 	init_thermal();
 	// home();
 	while(1){
+		// update_temperatures();
+		// print_temperatures();
 		digitalWrite(13, LOW);
 		delay(100);
 		digitalWrite(13, HIGH);
