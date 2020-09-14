@@ -35,6 +35,11 @@ In the end, performing this was probably a mistake; but by the time we realized 
 Inspired by \cite{Biocoder2010}, we originally planned on writing the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
 However, because the device was planned to run headless in a BSL, this was abandoned.
 
+
+Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy") of is a \cite{Time2003a}
+
+
+
 For each of the animal and human published studies, four
 predetermined and specific quality control measures were used to
 assess the quality of the publication.
@@ -124,7 +129,9 @@ we expect a "notch" on the rising edge, with a slow taper upwards, which does no
 
 If this exists, it would provide a great deal of feedback. Not only would the virus be destroyed, but we would have a quantitative determination of
 of how effective each treatment was. In practice, this could be done by applying two pulses in quick succession and monitoring the change in the reflected power;
-or perhaps by a time-domain method. Whether such a signature can be discriminated in a clinical setting remains to be seen.
+or perhaps by a time-domain pulse-shape method. Whether such a signature can be discriminated from background in a clinical setting remains to be seen.
+
+This seemed important to establish, as it allows the thresholds to be determined without a time-intensive and potentially dangerous infectivity assay step (making it more plausible that we would get biosafety approval on NCoV).
 
 
 \section{Silicon carbide test}
@@ -398,29 +405,39 @@ The silicone was let to run off,
 To simplify and for higher throughput we use the drop-cast absorption protocol of [], which uses only a single layer of 1\% agar for rapid phage diffusion.
 
 A 150 mL water in a 250 mL beaker covered with alu foil, with stirring, and boiled in a pot of water. 1.5 grams of nutrient agar powder (Seaweed inc...) was added to 150  until molten. A magnetic stir bar was used to ensure all was fully melted,
-and then the beaker was autoclaved for 15 minutes. After cooling to 60 C for 25 minutes in a water bath, 20 mL of agar was poured onto [100 mm?] polystyrene plates. The plates were left to set, then dried inverted with a flamed bent copper wire spacer for air exchange at 37 C for 2 hours.
+and then the beaker was autoclaved for 15 minutes. After cooling to 60 C for 25 minutes in a water bath, 20 mL of agar was poured onto [100 mm?] polystyrene plates. The plates were left to set, then dried inverted with a flamed bent copper wire spacer for air exchange at 70 C for [1 hours?].
  The plates were then stored inverted in plastic bags at 4 C until use.
  \footnote{How agar percentages are specified seems somewhat ambiguous to me - is the percent of the agar itself (a viscosity measure), or the nutrient-agar mix (a growth measure)?
      Weight/weight? It appears to be w/v of the whole dry powder in distilled water.}
 
-After cooling, 1 mL of overnight culture was poured across the plate, excess drained, and allowed to dry for 15 minutes at room temperature.
+After cooling, 1 mL of overnight culture was poured across the plate, excess drained onto the next plate, and allowed to dry for 35 minutes at room temperature.
 
 A control plate was made with pure stock phage and autoclaved phage.
 
-Not having a 10 uL pipette, the 0.8 uL sample of phage was diluted in 10 uL of sterile broth on a sterile microscope slide, then all 10 uL was added in 2.5 uL steps to the agar.
+The sample was retrieved from the cuvette by carefully removing the tape backing and withdrawing 0.8 uL from the reverse side, to avoid a silicone oil bubble.
 
-This was repeated 4 times for each sample on the control.
+Unfortunately, this ended up being very inconsistent.
+
+Not having a 10 uL pipette, the 0.8 uL sample of phage was diluted in 7.5 uL of sterile broth in a microplate, then all 7.5 uL was added in 2.5 uL steps to the agar.
 
 \strike{Each 0.8 uL sample was diluted in 0.2 mL of nutrient broth, a 250x dilution. If the 10^6 pfu.}
 
-60c to pour was I think too high - condensation was too high, even after 1 hour at 37c no change.
-
-Going for a higher temp - PS melts at 90 and agar at 80 C, so we should be okay going to 60 or 70 C.
+60c to pour was I think too high - condensation was high, even after 1 hour at 37c no change.
 
 ". The dryness of the agar is very important; if too moist, the
 drops will run and coalesce, if too dry, the bacteria will grow
 poorly"
 
+The plates were dried at ~70 C in an oven with the slightly open.
+
+The plates were incubated overnight. The lawn was very nicely formed; the phage concentration was
+
+It was difficult to tell where the drops were placed, and they ran together.
+
+
+Gold pogo pins could be used to pierce through the silicone oil layer...anodized aluminum wire?
+
+Because it would be difficult to maintain temperature on the
 
 
 

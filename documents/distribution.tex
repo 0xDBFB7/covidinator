@@ -10,6 +10,8 @@ They assume that the virus is a simple damped harmonic oscillator, where the 'co
 
 They determine the net charge experimentally from microwave absorption measurements.
 
+\cite{Microwave2009} already mention this effect; \cite{Elastic} does a much better analysis than we do.
+
 Since \cite{Efficient2015} try to compute the {\it threshold} field to obtain some amount of inactivation, they use a value of 400 piconewtons for the breaking stress of the envelope, obtained from \cite{Bending2011}. This threshold value agrees very well with their experimental data. However, \cite{Bending2011} also mentions that 
 
 \begin{quote}
@@ -32,13 +34,15 @@ Smudged
 
 The simple-harmonic
 
-This problem has a long history, stretching back to Cole-Cole's landmark paper in 1942\cite{Dispersion1941} and \cite{Electrical1941}.
+This problem has a long history, stretching back to Cole-Cole's landmark paper in 1942\cite{Dispersion1941} and \cite{Electrical1941}. 
 
 \begin{quote}
 	As Fuoss and Kirkwood have shown, it is possible to calculate the distribution necessary to account for any given experimental results from the observed $\epsilon''$ - frequency relation.
 \end{quote}
 
 Within a sample of a single species, there is $\approx$ 12.7\%  ($109 \pm 16.65 \text{ nm}$\cite{lauffer1944biophysical}, $115 \pm 12 \text{ nm}$ \cite{Characterization1984}) variation in diameter and  \cite{Characterization1984} variation in mass.
+
+
 
 Note that, per \cite{lauffer1944biophysical}, of Inf. A and B, "the infectious particles have diameters within the range 80 to 135[nm]". \cite{Efficient2015}'s MDCK plaque assay is already sensitive to infectivity; the extreme-sized non-infective mutants would already be filtered out. Their PCR assay might not be; the DNA of all non-infectious mutants would be considered.
 
@@ -53,7 +57,7 @@ A cursory fit found parameters $\bar{\text{Q}}$=3.736,  $\sigma \ \text{Q} = $0.
 
 Whether these values also explain the other datasets in \cite{Efficient2015}, such as the inactivation threshold vs frequency has not yet been determined.
 
-Plugging a (single, non-distributed, which must be fixed) Q of 3.75 into the above breaking force distribution, and applying some guesses for the covariance of various parameters, we get:
+Plugging a (single, non-distributed, which must be fixed; FIXME) Q of 3.75 into the above breaking force distribution, and applying some guesses for the covariance of various parameters, we get:
 
 								Yang get:
 6th percentile: 59.234       68 V/m
@@ -64,7 +68,7 @@ Plugging a (single, non-distributed, which must be fixed) Q of 3.75 into the abo
 
 Of course, 
 \begin{quote}
-	With four parameters I can fit an elephant, and with five I can make him wiggle his trunk. \\- J.v.N
+	With four parameters I can fit an elephant, and with five I can make him wiggle his trunk. \\- J.v.N.
 \end{quote}
 
 and here we have some dozen parameters. So these approximations should be regarded with great skepticism.
@@ -74,9 +78,21 @@ T4 bacteriophage has far greater restraint, with only a 2.5\% $\pm \sigma$ varia
 
 \footnotetext{T4 also occasionally finds itself as an isometric mutant (See PDB 5VF3).} 
 
-This also 
+Since this entire covariance process will have to be repeated for SARS-NCoV-2 - that is, the CoV for NCoV, we have not bothered to fine-tune any of these fits. This must still be regarded as only a speculative hypothesis.
 
-Since this entire covariance process will have to be repeated for SARS-NCoV-2 - that is, the CoV for NCoV, we have not bothered to fine-tune any of these fits. This must still be regarded as only a hypothesis.
+
+
+However, it offers a slight optimization: rather than applying a pulse of a single frequency, the pulses should be swept across the frequency distribution. From the (extremely crude) approximations on Inf. A above, this has little effect on $<$ 90-th percentile virions, but decreases the inactivation field of the last 10\% by perhaps 50 V/m.
+
+In practice, not having a single frequency to design a microwave system around makes engineering quite a bit more complex; whether this tradeoff is worth making depends. "Broadbanding" makes all the $\lambda / 4$ structures behave rather poorly; depending on the bandwidth required, biasing may need to be made inductive or resistive.
+
+In the case of patch antennas for phased arrays, U-slots have to be added to dull the impedance bandwidth; all sorts of free-space injection-locking techniques become untenable; waveguide applicators start to run into overlapping transmission modes.
+
+For the pre-engineered, off-the-shelf clinical without cost constraints, this is probably not a serious issue.
+
+It may be useful to choose a few 
+
+
 
 \begin{center}
 	\begin{tabular}{||c c c c||} 

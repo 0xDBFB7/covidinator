@@ -957,6 +957,11 @@ Try high-pass filtering the signal to get rid of the offset!
 
 Yknow, we could have just cut a long slot cuvette for higher volume with tape above it
 
+flip it around; drive the 8 pins individually, monitor the bottom 
+
+no, other way around - drive the bottoms individually, monitor the 8 pins all connected together
+
+
 
 
 
