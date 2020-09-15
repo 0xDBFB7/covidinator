@@ -397,12 +397,18 @@ The silicone was let to run off,
 
 
 
+Improvements for "production":
+
+Heatsink on bottom to limit temperature rise; temperature controlled bed.
+
+
+
 
 ------------------------------------------------------------------------
 
 [move to supplemental]
 
-To simplify and for higher throughput we use the drop-cast absorption protocol of [], which uses only a single layer of 1\% agar for rapid phage diffusion.
+To simplify and for higher throughput we use the drop-cast absorption protocol of \cite{Simple2018}, which uses only a single layer of 1\% agar.
 
 A 150 mL water in a 250 mL beaker covered with alu foil, with stirring, and boiled in a pot of water. 1.5 grams of nutrient agar powder (Seaweed inc...) was added to 150  until molten. A magnetic stir bar was used to ensure all was fully melted,
 and then the beaker was autoclaved for 15 minutes. After cooling to 60 C for 25 minutes in a water bath, 20 mL of agar was poured onto [100 mm?] polystyrene plates. The plates were left to set, then dried inverted with a flamed bent copper wire spacer for air exchange at 70 C for [1 hours?].
@@ -435,11 +441,23 @@ The plates were incubated overnight. The lawn was very nicely formed; the phage 
 It was difficult to tell where the drops were placed, and they ran together.
 
 
-Gold pogo pins could be used to pierce through the silicone oil layer...anodized aluminum wire?
 
-Because it would be difficult to maintain temperature on the
+\section{Phage impedance assay test}
 
-\section{Phage assay comparison blank}
+Because it would be difficult to maintain temperature on and multiplexing was difficult, low-frequency E. coli culture monitoring impedance spectra were performed separately.
+
+An ultra-simple KHz impedance spectrometer was built, following \cite{unconventional2015}.
+
+Purely contactless, capacitively coupled impedance measurement was found to have an unworkably small signal level;
+however, a single conduction path and a single capacitive coupling through the Kapton film yielded a 10 mV signal level with 5V Vpp drive. A 110x amplifier was used to bring levels up.
+
+0.7 mm gold-plated spring pins ('pogo' pins) pierced the silicone oil layer; 1.4 mm pads were the second electrode.\footnote{Platinum, gold wire, anodized aluminum, or graphite would likely have worked equally well.} The pins were wiped with 99\% alcohol then dipped in a dish of 50\% alcohol before each test.
+
+2.5 uL stationary e. coli culture was added to 5 uL broth and 2.5 uL phage or autoclaved phage.
+
+0 - 3 were phage; 4-7 were autoclaved phage.
+
+Sonication could have been an alternative to autoclaving.
 
 
 
