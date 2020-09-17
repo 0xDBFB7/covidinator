@@ -400,6 +400,7 @@ The silicone was let to run off,
 Improvements for "production":
 
 Heatsink on bottom to limit temperature rise; temperature controlled bed.
+Much faster ADCs.
 
 
 
@@ -444,6 +445,8 @@ It was difficult to tell where the drops were placed, and they ran together.
 
 \section{Phage impedance assay test}
 
+[move to supplemental]
+
 Because it would be difficult to maintain temperature on and multiplexing was difficult, low-frequency E. coli culture monitoring impedance spectra were performed separately.
 
 An ultra-simple KHz impedance spectrometer was built, following \cite{unconventional2015}.
@@ -451,13 +454,42 @@ An ultra-simple KHz impedance spectrometer was built, following \cite{unconventi
 Purely contactless, capacitively coupled impedance measurement was found to have an unworkably small signal level;
 however, a single conduction path and a single capacitive coupling through the Kapton film yielded a 10 mV signal level with 5V Vpp drive. A 110x amplifier was used to bring levels up.
 
-0.7 mm gold-plated spring pins ('pogo' pins) pierced the silicone oil layer; 1.4 mm pads were the second electrode.\footnote{Platinum, gold wire, anodized aluminum, or graphite would likely have worked equally well.} The pins were wiped with 99\% alcohol then dipped in a dish of 50\% alcohol before each test.
+0.7 mm gold-plated spring pins ('pogo' pins) pierced the silicone oil layer and pressed against the bottom tape; 1.4 mm pads were the second electrode.\footnote{Platinum, gold wire, anodized aluminum, or graphite would likely have worked equally well.} The pins were wiped with 99\% alcohol before each test.
 
 2.5 uL stationary e. coli culture was added to 5 uL broth and 2.5 uL phage or autoclaved phage.
 
 0 - 3 were phage; 4-7 were autoclaved phage.
 
-Sonication could have been an alternative to autoclaving.
+Failure. decrease in signal rather than the expected increase, and no difference between autoclaved and phage.
+
+\section{E. coli flavin autofluorescence}
+
+[move to supplemental]
+
+Added 2.5 uL to 5 uL broth. There does seem to be an fluorescence signal from; 100 uS long pulse, -70 mV is a good threshold.
+ Hz w/e.c, 2.9-5 Hz broth
+
+Put the original eppendorf culture full of e. coli in. Jumped to 18 Hz @ -81 mV! Fantastic!
+
+Thought I was all clever-like, using the oscope trigger out as the comparator and plugging that into a counter,
+but above 20 Hz there's no thingy.
+
+No. No go.
+
+Weird background noise.
+
+" By moving into this hydrophobic environment and away from the solvent, the ethidium cation is forced to shed any water molecules that were associated with it. As water is a highly efficient fluorescence quencher, the removal of these water molecules allows the ethidium to fluoresce.[citation needed]"
+
+\section{Nucleic acid UV extinction }
+
+
+
+\section{GelRed }
+
+\section{IPTG-induced }
+
+0.1M * 238.31 g/mol * 1.5 mL = 35 mg
+
 
 
 

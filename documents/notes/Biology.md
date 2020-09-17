@@ -965,3 +965,6 @@ no, other way around - drive the bottoms individually, monitor the 8 pins all co
 
 
 
+Sonication could have been an alternative to autoclaving.
+
+
