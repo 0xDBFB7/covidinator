@@ -21,10 +21,11 @@ Positions of the three quantities on the slide are randomized\cite{first2000}.
 Our aims with this experiment were to perform the following:
 
 \begin{itemize}
+\item Convince ourselves that our skepticsm is unjustified.
 \item Crudely demonstrate the pulse hypothesis. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation.
     While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
 \item Simulataneously, avoid any ambiguity related to the 7 C temperature rise seen in the previous paper.
-\item Crudely measure the damage feedback mechanism.
+\item Verify the damage feedback mechanism.
 \item Demonstrate a cheap microwave spectrometer that could be used on NCoV.
 \end{itemize}
 
@@ -37,6 +38,9 @@ However, because the device was planned to run headless in a BSL, this was aband
 
 
 Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy") of is a \cite{Time2003a}
+
+
+Electron paramagnetic resonance spectroscopy uses microwave cavities in the X-band
 
 
 
@@ -480,6 +484,8 @@ Weird background noise.
 
 " By moving into this hydrophobic environment and away from the solvent, the ethidium cation is forced to shed any water molecules that were associated with it. As water is a highly efficient fluorescence quencher, the removal of these water molecules allows the ethidium to fluoresce.[citation needed]"
 
+
+
 \section{Nucleic acid UV extinction }
 
 
@@ -491,7 +497,7 @@ Weird background noise.
 0.1M * 238.31 g/mol * 1.5 mL = 35 mg
 
 
-Replace AC coupling capacitors 
+Replace AC coupling capacitors
 
 
 
