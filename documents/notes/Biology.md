@@ -967,4 +967,7 @@ no, other way around - drive the bottoms individually, monitor the 8 pins all co
 
 Sonication could have been an alternative to autoclaving.
 
+Promega Diamond dyes look pretty nice.
+
+Beta-glo looks pretty good; however, the 37 C incubation temperature might actually break it!
 

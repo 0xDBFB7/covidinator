@@ -500,6 +500,11 @@ Weird background noise.
 Replace AC coupling capacitors
 
 
+20 nF * 1000 ohms = 20 us - replace AC-coupling capacitors after tests are done to check actual pulse shape
+200 picofarads * 1000 ohms = 200 ns
+
+
+
 
 # T - 5 hours
 
