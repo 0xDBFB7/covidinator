@@ -69,6 +69,10 @@ def waveguide(pcb, position, f, lower_cutoff_frequency):
     #https://www.everythingrf.com/tech-resources/waveguides-sizes
     # https://www.microwaves101.com/encyclopedias/waveguide-mathematics for guide wavelength
 
+
+    # [1]Waveguide Theory n.d. http://emlab.uiuc.edu/ece451/appnotes/r-waveguide.pdf (accessed September 20, 2020).
+
+
     # scratch that -
     # lambda_ = (1.0/f)*c
     #

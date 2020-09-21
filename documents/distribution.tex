@@ -23,11 +23,11 @@ Since \cite{Efficient2015} try to compute the {\it threshold} field to obtain so
 
 Inputting this yield stress distribution produces an inactivation field distribution that is far higher than that of \cite{Efficient2015}'s experimental data by some 200 V/m.
 
-Let us therefore re-examine the reason why.
+Let us therefore re-examine the microwave spectrum. Much of this data was found in order to try to simulate the inactivation mechanism by molecular dynamics, so it was not a complete waste of time.
 
 The liposome breaking force is distributed in an obstinately non-gaussian bimodal manner, so we override the covariance matrix and introduce a gaussian KDE sampled from the force histogram in \cite{Bending2011}.
 
-
+Lorentzian
 
 
 "95%.".
@@ -53,7 +53,14 @@ Note that, per \cite{lauffer1944biophysical}, of Inf. A and B, "the infectious p
 
 Worse still, influenza exhibits pleiomorphy, stretching into a variety of \cite{Influenza2006}; 
 
-Charge \footnotemark
+Charge can be determined by the primary structure sequence. A table of net charges of Inf. A, and T4. however, a few influzena proteins have been found to have anomalous secondary structure charge.
+
+
+
+Because CryoEM uses charged particles, it is technically feasible to determine the net charge distribution in the whole virus using an ingenious \cite{Identification2018} technique. However, this has not yet been implemented in any
+
+
+\footnotemark
 
 \footnotetext{
 	It has been shown that, over decades, single species of viruses can effect large-scale changes in the net charges of their proteins without altering their function\cite{Dynamics2010}. Use of this technique will provide a selection bias towards immunity to electromagnetic fields. We do not have the biological knowledge to determine whether this is plausible; it simply seemed worth mentioning. 

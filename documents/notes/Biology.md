@@ -969,5 +969,20 @@ Sonication could have been an alternative to autoclaving.
 
 Promega Diamond dyes look pretty nice.
 
+
+
+Use a magnet to move the cuvette in the dark-box
+
+nonlinear transmission ines can sharpen the pulse
+
+Might have to be wary of the 
+
 Beta-glo looks pretty good; however, the 37 C incubation temperature might actually break it!
+
+The linear region of beta-glo might not be high enough?
+10000 b-gal per cell * 10^7 * b-gal mw = 7.7x10^-8 g b-gal / mL
+Perfect!
+
+
+
 

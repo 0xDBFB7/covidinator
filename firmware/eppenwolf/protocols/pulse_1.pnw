@@ -37,10 +37,45 @@ Inspired by \cite{Biocoder2010}, we originally planned on writing the microbiolo
 However, because the device was planned to run headless in a BSL, this was abandoned.
 
 
-Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy") of is a \cite{Time2003a}
+
+This is probably not the best method. Ideally, we should have used a technique orthogonal to previous studies.
+
+Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy")
+
+The notable Feldman biological spectroscopy group recommends a time-domain spectroscopy method\cite{Time2003a}, a modification of beloved TDR techniques. They cite several advantages, including easy subtraction of test jig artifacts.
+Generating a sharp-edged impulse with 10+ GHz spectral components is far easier and cheaper than an equivalent CW oscillator; but then we could not simultaneously expose the virus to the pulsed CW tone to verify the inactivation field thresholds.
+A 10+ GHz oscilloscope is generally required for this method, but sampling\footnotemark oscilloscopes may suffice. \cite{16psresolution2003} offer a simple way to do away with the delay lines that are usually required.
+
+\footnotetext{'Sampling' is an absurd name - all DSOs sample! A 'sampling oscilloscope' builds up the waveform over a large number of cycles.}
+
+On the other hand, microwave cavity resonators can often provide a much higher sensitivity. The sensitivity can be made proportional to the Q, and even a crude microwave cavity can easily have a Q > 500.
+As an example, EPR spectroscopes use cavities in their microwave bridges.
+
+Cavities designed for wide-band use are generally mechanically tuned with a shorting plunger; the plunger itself presents difficulty in design\cite{Contactless2019}.
+However, conventional waveguide cavities run into overlapping modes beyond half an octave, beyond which more than one dimension must be altered. We desired a spectrum across the entire 6 - 12 GHz octave.
+
+Open-ended coaxial resonators can offer the required tuning range\cite{Wideband1981}\cite{Study2014a}. Microwave Fabry-Perot etalons are also satisfactory.\cite{FabryPerot1982}
+
+Simple open-ended coax dipped in the solution are the status quo\cite{Coaxial1980}. However, these appear to be particularly prone to generating resonance-like artifacts - not that the coplanar method is necessarily any better.
 
 
-Electron paramagnetic resonance spectroscopy uses microwave cavities in the X-band
+We end up using the coplanar waveguide setup, just like \cite{Efficient2015}, with the simplifications of \cite{Sun}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
+This was done because of our lack of access to the requisite power amplifiers; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure.
+Rather than the very professional gold and SiO2-coated sensor, we use a basic coplanar waveguide.
+The sample is held against the waveguide in a cylindrical well 1 mm in diameter and approx. 1 mm high, in a polycarbonate slide registrated with plastic dowel pins. 0.8 uL of sample are added using a micropipette. A 0.06 mm silicone-adhesive Kapton tape insulates the fluid from the waveguide (#)
+This is capped with a layer of silicone oil to prevent evaporation and contamination; this worked very effectively.
+
+Such small volumes caused us a great deal of difficulty.
+
+A microstrip produces a slightly larger fringe field.
+
+Coplanar waveguides are usually designed with a ground plane and
+
+
+
+
+
+
 
 
 
