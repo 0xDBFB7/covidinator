@@ -983,6 +983,6 @@ The linear region of beta-glo might not be high enough?
 10000 b-gal per cell * 10^7 * b-gal mw = 7.7x10^-8 g b-gal / mL
 Perfect!
 
-
+man, I really need that mind-map lab notebook.
 
 

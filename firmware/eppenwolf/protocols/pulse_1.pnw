@@ -59,17 +59,32 @@ Open-ended coaxial resonators can offer the required tuning range\cite{Wideband1
 Simple open-ended coax dipped in the solution are the status quo\cite{Coaxial1980}. However, these appear to be particularly prone to generating resonance-like artifacts - not that the coplanar method is necessarily any better.
 
 
-We end up using the coplanar waveguide setup, just like \cite{Efficient2015}, with the simplifications of \cite{Sun}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
-This was done because of our lack of access to the requisite power amplifiers; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure.
-Rather than the very professional gold and SiO2-coated sensor, we use a basic coplanar waveguide.
-The sample is held against the waveguide in a cylindrical well 1 mm in diameter and approx. 1 mm high, in a polycarbonate slide registrated with plastic dowel pins. 0.8 uL of sample are added using a micropipette. A 0.06 mm silicone-adhesive Kapton tape insulates the fluid from the waveguide (#)
-This is capped with a layer of silicone oil to prevent evaporation and contamination; this worked very effectively.
+We end up using the coplanar waveguide setup of \cite{Efficient2015}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
+This was done because of our lack of access to the requisite power amplifiers; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure without disturbance.
 
-Such small volumes caused us a great deal of difficulty.
+Rather than the very professional gold and SiO2-coated sensing structure, we use a basic $50\pm20$ ohm coplanar waveguide, like \cite{Sun}.
 
-A microstrip produces a slightly larger fringe field.
+FDTD simulations of the assembly indicated that the fringe field in the cuvette was approximately [80]? V/m per volt of amplitude.
 
-Coplanar waveguides are usually designed with a ground plane and
+
+[cpwg sim here]
+
+
+The sample is held against the waveguide in a cylindrical well 1 mm in diameter and approx. 1 mm high, in a 3 mm high machined polycarbonate slide registrated with plastic dowel pins. 0.8 uL of sample are added using a micropipette. A 0.06 mm silicone-adhesive Kapton tape insulates the fluid from the waveguide (#)
+Evaporation was very significant, even if the top of the well was sealed with tape, so the cuvette is capped with a layer of silicone oil in a 2.3 mm step; this worked very effectively.
+
+Such small volumes caused us no end of difficulty. It is very difficult to obtain a log-phase culture required; but, conversely, it is impossible to consistently add reagents or retrieve the sample after the silicone cap is added, so all the ingredients for the assay must be added before.
+
+This is definitively not the correct way to go about this, but it does seem to work. U
+
+Conventional microstrip produces a considerably larger fringe field. However, the ground plane in microstrip is on the bottom layer. The sensitive QFN device ground pins would need to be stitched from the top to the bottom, inevitably adding all sorts of weird and wonderful resonators.
+We were not able to prototype with vias with sufficiently low inductance to negate thise issues; so a single-layer, top-side-only stackup is used. The difference in performance and in ease of layout and routing is tremendous.
+
+Coplanar waveguides are usually designed with a ground plane and via stitching on either side (GCPW), which both improves isolation and noise, but also helps to avoid undesirable parallel-plate propagation modes. Not including a ground plane avoids these modes, but decreases the fringe field slightly. We did not add a ground plane.
+
+
+
+
 
 
 

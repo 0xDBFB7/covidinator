@@ -5,3 +5,4 @@
 
 Set transparent background, remove axes, exteraneous legends, compression=0 ,
 make sure there's enough contrast on a white background,
+# 
