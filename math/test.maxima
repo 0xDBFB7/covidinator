@@ -1,7 +1,0 @@
-
-j ; /* and */
-
-m_reduced * 'diff(z, t, 2) + k * z + b * 'diff(z, t, 1)
-
-
-sum1: sum(1/x^2, x, 1, j);

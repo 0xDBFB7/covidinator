@@ -984,5 +984,6 @@ The linear region of beta-glo might not be high enough?
 Perfect!
 
 man, I really need that mind-map lab notebook.
+gprmax does support dispersive materials
 
 

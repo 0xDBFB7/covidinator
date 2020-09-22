@@ -13,6 +13,9 @@ import sweep
 @
 
 
+Rationale for using T4
+
+
 It cannot be overstated how difficult this measurement is to interpret.
 
 Positions of the three quantities on the slide are randomized\cite{first2000}.
@@ -59,23 +62,32 @@ Open-ended coaxial resonators can offer the required tuning range\cite{Wideband1
 Simple open-ended coax dipped in the solution are the status quo\cite{Coaxial1980}. However, these appear to be particularly prone to generating resonance-like artifacts - not that the coplanar method is necessarily any better.
 
 
-We end up using the coplanar waveguide setup of \cite{Efficient2015}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
+We end up using the coplanar waveguide setup, essentially exactly like \cite{Efficient2015}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
 This was done because of our lack of access to the requisite power amplifiers; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure without disturbance.
 
 Rather than the very professional gold and SiO2-coated sensing structure, we use a basic $50\pm20$ ohm coplanar waveguide, like \cite{Sun}.
 
-FDTD simulations of the assembly indicated that the fringe field in the cuvette was approximately [80]? V/m per volt of amplitude.
+An FDTD simulation was performed of the cuvette-waveguide assembly\footnotemark. The bottom tape was made 0.5 mm thick in the simulation dielectric_constant, and non-conductive\footnotemark. Amplitude values were obtained with a soft 50 ohm source with a 1 V amplitude (which would produce a value of 0.5 V - (Shottky drop + small frequency-dependent loss) on the detectors).
 
+The fringe field in the bottom 40\% (0.4 mm) of the fluid-filled well averaged 160 V/m per volt of uncorrected detector input amplitude, with a peak of 200 $\frac{V/m}{V}$ and two hot-spots at the interfaces of < 0.1 mm each. The remaining 60\% (0.6 mm) decreased from 120 $\frac{V/m}{V}$ to 60 $\frac{V/m}{V}$.
+
+\footnotetext{TODO: Update sim to new cuvette dimensions}
+
+\footnotetext{TODO: Update sim real phage fluid conductivity}
 
 [cpwg sim here]
 
 
-The sample is held against the waveguide in a cylindrical well 1 mm in diameter and approx. 1 mm high, in a 3 mm high machined polycarbonate slide registrated with plastic dowel pins. 0.8 uL of sample are added using a micropipette. A 0.06 mm silicone-adhesive Kapton tape insulates the fluid from the waveguide (#)
-Evaporation was very significant, even if the top of the well was sealed with tape, so the cuvette is capped with a layer of silicone oil in a 2.3 mm step; this worked very effectively.
+The sample is held against the waveguide in a cylindrical well 1 mm in diameter and approx. 1 mm high, in a 3 mm high machined polycarbonate slide, 8 wells per slide.\footnotemark This is aligned on the spectrometer with plastic dowel pins. 0.8 uL of sample are added to each well using a micropipette. A 0.06 mm silicone-adhesive Kapton tape insulates the fluid from the waveguide (#)
+Evaporation was very significant even if the top of the well was sealed with tape, so the cuvette is capped with a layer of silicone oil in a 2.3 mm opening; this worked very effectively.
+
+[detail of slide]
+
+\footnotetext{Off-the-shelf 1536-well plates have similar dimensions and could be substituted in the future.}
 
 Such small volumes caused us no end of difficulty. It is very difficult to obtain a log-phase culture required; but, conversely, it is impossible to consistently add reagents or retrieve the sample after the silicone cap is added, so all the ingredients for the assay must be added before.
 
-This is definitively not the correct way to go about this, but it does seem to work. U
+Needless to say, this is definitely not the correct way to go about this. However, it seems provide good results.
 
 Conventional microstrip produces a considerably larger fringe field. However, the ground plane in microstrip is on the bottom layer. The sensitive QFN device ground pins would need to be stitched from the top to the bottom, inevitably adding all sorts of weird and wonderful resonators.
 We were not able to prototype with vias with sufficiently low inductance to negate thise issues; so a single-layer, top-side-only stackup is used. The difference in performance and in ease of layout and routing is tremendous.
@@ -148,9 +160,6 @@ VCO voltages were calibrated to frequencies using a HackRF One and an HMC /8 fre
 
 (A downconverter using an HMB and a custom 6.4 GHz LO was tried, but it was found that this was much less informative and more confusing
 due to a lack of effective mixer image and LO spur rejection.)
-
-From FDTD simulations of this cuvette arrangement \ghfile{electronics/simple_fdtd/runs/coplanar}, the fringe field in the fluid
-is approximately 90 V/m per volt of amplitude.
 
 It is possible to subtract the diode drop using [], but because of design flaws in the AC coupling of the detectors, this was not done.
 A Shottky drop of 0.25 V is assumed in all cases.

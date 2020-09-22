@@ -1,0 +1,15 @@
+
+/* j ; /* and */
+
+num_modes = 10;
+
+/* array (y, fixnum, j); */
+
+
+
+E_mode:
+E: sum(motion_mode, 1, num_modes);
+
+equation_of_motion: q * E = m_reduced * 'diff(z, t, 2) + k * z + b * 'diff(z, t, 1);
+
+ode2(equation_of_motion, 1, );
