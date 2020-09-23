@@ -5,6 +5,26 @@ num_modes = 10;
 
 /* array (y, fixnum, j); */
 
+/*
+See "Compilation of the dielectric properties of body tissues at RF and microwave frequencies.", Gabriel 1996
+Equation 3, page 12.
+*/
+
+
+/* angular_frequency = 2.0*pi*center_frequency
+
+complex_permittivity = complex(ef, 0) */
+
+/*
+cole_cole_4: sum(deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n]))), 0, 3);
+
+complex_permittivity += (sigma/((complex(0, 1)*angular_frequency*epsilon_0)))
+
+return complex_permittivity */
+
+array (mode_permittivities, 200);
+array (mode_conductivities, 200);
+
 
 
 E_mode:
@@ -12,4 +32,4 @@ E: sum(motion_mode, 1, num_modes);
 
 equation_of_motion: q * E = m_reduced * 'diff(z, t, 2) + k * z + b * 'diff(z, t, 1);
 
-ode2(equation_of_motion, 1, );
+ode2(equation_of_motion, );
