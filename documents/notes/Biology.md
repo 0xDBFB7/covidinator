@@ -986,4 +986,6 @@ Perfect!
 man, I really need that mind-map lab notebook.
 gprmax does support dispersive materials
 
+we should verify, based on simple solvated sphere damping, whether the damping is of the right order of magnitude
+
 

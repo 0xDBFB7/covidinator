@@ -523,6 +523,8 @@ however, a single conduction path and a single capacitive coupling through the K
 
 Failure. decrease in signal rather than the expected increase, and no difference between autoclaved and phage.
 
+Looking at this later - the fluid has leaked out of the wells after some time. That might be why this didn't work.
+
 \section{E. coli flavin autofluorescence}
 
 [move to supplemental]
@@ -549,13 +551,55 @@ Weird background noise.
 
 \section{GelRed }
 
-\section{IPTG-induced }
+This whole thing is actually a lot like sonication.
 
-0.1M * 238.31 g/mol * 1.5 mL = 35 mg
+\section{Beta-Glo assay test 1}
 
+Based on the assay of \cite{liquid1993}, which uses CPRG. lactose is also a reasonably good inducer without the burden of e coli
+
+The sulfur atom in the IPTG gums up the works, and builds up in the cell.
+
+This assay adds an unfortunate unknown which  E. coli were to change between th
+beta-gal denatures at 60c, so thermal lysis won't be effective. Sonication might be, though.
+
+Promega recommend a 1:1 volume of assay to reagent.
+
+\cite{liquid1993} use 25 uL 0.1M IPTG solution to 25 mL of culture, which is then concentrated to 1.25 mL of culture.
+
+32 mM * 238.31 g/mol * 5 mL = 40 milligrams of IPTG powder were weighed and added to 5 mL sterile distilled water in a 15 mL Falcon,
+so that after addition of 2.5 uL in 0.2 mL, 0.4 mM concentration would be achieved - 4x the minimum for full expression, according to \cite{Recombinant1999}.
+
+
+Mix in a seperate container
+
+dammit, it lyses cells! dammit! " For the latter purpose, the
+reagent also contains a detergent that lyses cells to release
+the β-galactosidase present."
+
+". Therefore, DCE was the most suitable
+solvent and completely removed the non-ionic detergent Triton X-100",
+ well, there you go.
+
+Nothing in the substrate looks like a detergent [via MSDS]. The buffer says it has Nonylphenol Ethoxylate, which is indeed a surfactant/detergent.
+
+Unfortunately, the buffer also contains MgCl, which i think is important to the functioning of the assay. The substrate and buffer both contain "sulfuric acid magnesium salt".
+
+Magnesium pills have MgO. Milk of mag. is MgOH.
+
+hmm! epsom salts (magnesium sulfate) might work. and we've got some  epsom salt - magnesium sulfate heptahydrate.
+
+mgoh+hcl = mgcl. neat!
+
+oh, hang on, "sulfuric acid magnesium salt" is just epsom. hmm.
+
+The original geiger paper uses mgcl. The geiger paper specifies that "MgCl" participates in the reaction, rather than Mg2+ ion as specced by Promega.
+
+
+
+
+Is phage light-sensitive? Probably! Dammit!
 
 Replace AC coupling capacitors
-
 
 20 nF * 1000 ohms = 20 us - replace AC-coupling capacitors after tests are done to check actual pulse shape
 200 picofarads * 1000 ohms = 200 ns

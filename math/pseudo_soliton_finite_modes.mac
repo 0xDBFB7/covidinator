@@ -1,0 +1,50 @@
+
+ /* and */
+
+
+/* array (y, fixnum, j); */
+
+/*
+See "Compilation of the dielectric properties of body tissues at RF and microwave frequencies.", Gabriel 1996
+Equation 3, page 12.
+*/
+
+
+/* angular_frequency = 2.0*pi*center_frequency
+
+complex_permittivity = complex(ef, 0) */
+
+/*
+cole_cole_4: sum(deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n]))), 0, 3);
+
+complex_permittivity += (sigma/((complex(0, 1)*angular_frequency*epsilon_0)))
+
+return complex_permittivity */
+
+num_modes = 10;
+
+array (mode_permittivities, 500);
+array (mode_E_penetration_depths, 500);
+array (Cs, 500);
+array (omegas, 500);
+array (betas, 500);
+array (phis, 500);
+
+/* had to change z to x here */
+
+E_mode: Cs[n] * sin(omegas[n]*t - betas[n]*x + phis[n]) * exp(-1.0 * (x / mode_E_penetration_depths[n]));
+E_total: sum(E_mode, n, 1, num_modes); /* watch the zero index here */
+
+/* E_mode; */
+
+/* tex (''E_mode); */
+
+/* positive. */
+
+equation_of_motion: q * E_total = m_reduced * 'diff(z, t, 2) + k * z + b * 'diff(z, t, 1);
+
+/* tex (''equation_of_motion); */
+
+/* bc2(equation_of_motion,  */
+
+/* solution: ode2(equation_of_motion, z, t); */

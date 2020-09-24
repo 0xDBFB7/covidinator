@@ -29,7 +29,7 @@ def electric_field_penetration_depth(center_frequency, relative_permittivity, co
 
     d = (1.0 / angular_frequency)
     mid = ((relative_permittivity*mu_0*epsilon_0)/2.0)
-    mid *= (sqrt(1.0+((conductivity/(angular_frequency*epsilon_0*relative_permittivity))**2.0))-1)
+    mid *= (np.sqrt(1.0+((conductivity/(angular_frequency*epsilon_0*relative_permittivity))**2.0))-1)
     mid = (mid)**(-1.0/2.0)
 
     return d*mid
