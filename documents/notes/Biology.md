@@ -986,6 +986,74 @@ Perfect!
 man, I really need that mind-map lab notebook.
 gprmax does support dispersive materials
 
-we should verify, based on simple solvated sphere damping, whether the damping is of the right order of magnitude
+Section on beta-glo, trying to get the detergent out or re-build the buffer without the detergent:
+
+
+/*
+
+\section{MgCl2 from MgO}
+
+Mix in a seperate container
+
+dammit, it lyses cells! dammit! " For the latter purpose, the
+reagent also contains a detergent that lyses cells to release
+the β-galactosidase present."
+
+". Therefore, DCE was the most suitable
+solvent and completely removed the non-ionic detergent Triton X-100",
+ well, there you go.
+
+Nothing in the substrate looks like a detergent [via MSDS]. The buffer says it has Nonylphenol Ethoxylate, which is indeed a surfactant/detergent.
+
+Unfortunately, the buffer also contains the MgCl, which i think is important to the functioning of the assay. The substrate and buffer both contain "sulfuric acid magnesium salt".
+
+Magnesium pills have MgO. Milk of mag. is MgOH.
+
+hmm! epsom salts (magnesium sulfate) might work. and we've got some  epsom salt - magnesium sulfate heptahydrate.
+
+mgoh+hcl = mgcl. neat!
+
+oh, hang on, "sulfuric acid magnesium salt" is just epsom. hmm.
+
+The original geiger paper uses mgcl. The geiger paper specifies that "MgCl" participates in the reaction, rather than Mg2+ ion as specced by Promega.
+
+
+ MgO = 40.3044 g/mol  with 2x
+
+1 mL of 10M HCL (10 mmol total). 5 mmol MgO needed, that's 0.2 g. To completely react, use 0.25g MgO.
+
+in 5.5 mL water.
+
+The buffer has 11 mg / m3 magnesium chloride. That's 115.5 /nanomolar/. There's no way the existing Mg is going to be exhausted!
+
+What, I'm supposed to add 25 picomoles of magnesium? come on.
+
+Hmm, no, that's stupid. I made a mistake.
+
+Geiger used 0.01 mol MgCl2. Our initial solution needs to be 0.8 M MgCl then.
+
+
+mmm but the luciferase needed to break the luciferin
+---------------
+
+So:
+
+1 mL of 10M HCL (10 mmol total) diluted in in 5.5 mL water. Add 0.25 g MgO (6.25 mmol). Filter?
+
+To form 0.8 M MgCl2. Add 2.5 uL to
+
+
+I guess an alternative would be to do the phage reaction normally, then remove (?) the sample from the well, spin (?) down the
+intact bacteria to prevent lysis, and then ...
+
+--------------- */
+
+
+
+
+
+
+-----------------------------
+
 
 

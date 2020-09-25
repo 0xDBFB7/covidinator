@@ -566,33 +566,41 @@ Promega recommend a 1:1 volume of assay to reagent.
 
 \cite{liquid1993} use 25 uL 0.1M IPTG solution to 25 mL of culture, which is then concentrated to 1.25 mL of culture.
 
-32 mM * 238.31 g/mol * 5 mL = 40 milligrams of IPTG powder were weighed and added to 5 mL sterile distilled water in a 15 mL Falcon,
+32 mM * 238.31 g/mol * 5 mL = 40 milligrams of IPTG powder were weighed and added to 5 mL autoclaved distilled water in a 15 mL Falcon,
 so that after addition of 2.5 uL in 0.2 mL, 0.4 mM concentration would be achieved - 4x the minimum for full expression, according to \cite{Recombinant1999}.
 
+5 uL of E. coli culture was added to 0.2 mL sterile broth. 2.5 uL of IPTG solution was added.
 
-Mix in a seperate container
+This was then incubated for 45 minutes.
 
-dammit, it lyses cells! dammit! " For the latter purpose, the
-reagent also contains a detergent that lyses cells to release
-the β-galactosidase present."
+Two wells were filled with 2.5 uL of phage, 2.5 uL of the above culture, and 5 uL beta-glo reagent.
 
-". Therefore, DCE was the most suitable
-solvent and completely removed the non-ionic detergent Triton X-100",
- well, there you go.
+2 mm diameter well.
 
-Nothing in the substrate looks like a detergent [via MSDS]. The buffer says it has Nonylphenol Ethoxylate, which is indeed a surfactant/detergent.
+It seems like detergent lysis really isn't a problem? see \cite{rapid2014}. We'll try it.
 
-Unfortunately, the buffer also contains MgCl, which i think is important to the functioning of the assay. The substrate and buffer both contain "sulfuric acid magnesium salt".
 
-Magnesium pills have MgO. Milk of mag. is MgOH.
 
-hmm! epsom salts (magnesium sulfate) might work. and we've got some  epsom salt - magnesium sulfate heptahydrate.
 
-mgoh+hcl = mgcl. neat!
 
-oh, hang on, "sulfuric acid magnesium salt" is just epsom. hmm.
 
-The original geiger paper uses mgcl. The geiger paper specifies that "MgCl" participates in the reaction, rather than Mg2+ ion as specced by Promega.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

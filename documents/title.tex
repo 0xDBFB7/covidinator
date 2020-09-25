@@ -30,20 +30,23 @@
 
 
 \begin{textblock}{10}(5,0.5)
-\noindent This document may be updated regularly. Please view the latest version at \href{https://www.github.com/0xDBFB7/covidinator}{github.com/0xDBFB7/covidinator}. This is V0.0.1.
+\noindent Data and software produced during this research are available at \\ \href{https://www.github.com/0xDBFB7/covidinator}{github.com/0xDBFB7/covidinator}. This document may be updated as information changes. Please view the latest version. This is V0.0.1.
 \end{textblock}
 %\begin{textblock}{5}(1,27)
 %\end{textblock}
 
 \begin{quotation} % abstract requires re-writing an introduction. Screw that.
 
-Previous studies appear to demonstrate that several species of viruses exhibit an anomalous dielectric relaxation time of $> 75 \text{ ps}$, as opposed to $< 20 \text{ ps}$ \footnotemark \dubiousdiscuss in the structures of human tissue.
+Previous studies appear to demonstrate that several species of viruses exhibit an anomalous dielectric relaxation time of $> 75 \text{ ps}$, as opposed to $< 20 \text{ ps}$ \footnotemark \dubiousdiscuss in the structures of human tissue.\\
 
 
-Then, net charge, rings up and shatters, much like a singer might a wine glass. Such a non-thermal mechanism is quite unprecedented and extremely dubious, oft-posited but never substantiated; so it has taken some convincing that this is not a particularly abstruse artifact. The structure of the virion appears to fill a singular gap in existing solvent damping theory.\\
+Other studies then appear to demonstrate experimentally that, due to this effect and the favorable combination of envelope and genome net charge, envelope and capsid yield stress, mass distribution, and overall stiffness, when the virus is exposed to tones in the X-band, it rings up and the envelope shatters - much like a singer might shatter a wine glass.\\
 
+Such a non-thermal mechanism is quite unprecedented and extremely dubious, oft-posited but never substantiated; so it has taken some convincing that this is not a particularly abstruse artifact. The structure of the virion appears to fill a singular gap in existing solvent damping theory.\footnotemark In fact, even in light of the fine evidence that the other groups have collected, and the poor-quality data we have collected, we are still not entirely convinced that this effect exists - but perhaps this skepticism is unjustified.\\
 
-We contribute almost nothing to the record, except by apparently replicating the effect in a T4 coliphage surrogate, using both microwave feedback and a fluroimetric beta-galactosidase infectivity assay. We appear to demonstrate that inactivation does not require 15 minutes, but is complete in less than 500 nanoseconds. This provides a headroom of some $10^6$ to all safety limits, which can be traded for distance or depth. \\
+\footnotetext{we should verify, based on simple solvated sphere damping, whether the damping is of the right order of magnitude}
+
+We contribute almost nothing to the record (much of our discussion has already been covered by []), except by apparently replicating the effect in a T4 coliphage surrogate, using both microwave feedback and a luminometric beta-galactosidase infectivity assay. We appear to demonstrate that inactivation does not require 15 minutes, but is complete in less than 500 nanoseconds. This provides a headroom of some $10^6$ to all safety limits, which can be traded for distance or depth. \\
 
 This technique is unique in that it is selective, save for Far UV or cold-plasma sterilization. Its advantages over those is that it operates over large volumes with inexpensive emitters, but, most critically, can be made to penetrate tissue without harm.
 
@@ -51,7 +54,14 @@ We briefly review the biological basis for the safety. There is solid in vitro a
 
 \footnotetext{This value for human structures is the aggregate Cole-Cole relaxation time from Gabriel. This is an unfair comparison; the relaxation time of a heterogeneous mixture such as tissue often appears smaller than that of a pure sample. Additionally, it is probably not valid to compare a Cole-Cole tau. However, this value agrees well with the individual findings of cellular modes, so we are comfortable with this comparison. }
 
-We examine three applications. First, free-space techniques are easily implemented to prevent respiratory transmission.
+We briefly examine three applications. All depend significantly on what the microwave spectrum of SARS-NCoV-2 ends up being, which must be measured - or possibly reconstructed from existing whole-virion data or determined from MD simulation. 
+
+With refinements, our inexpensive pulsed microwave spectrometer can obtain the required absorption and threshold data with sufficiently concentrated specimens; but proper dielectric spectroscopy labs (or, in a pinch, swept-EPR/ESR equipment \st{when used improperly}) will provide a much more detailed spectrum. A slightly safer low-titer primary specimen may be usable to avoid BSL-3 requirements. \\
+
+
+
+First, free-space techniques are easily implemented to prevent respiratory transmission. A \$10 emitter appears to suffice on a personal level, and \$100 systems for room-scale.\\
+ 
 %
 Second, via cursory FDTD simulations, using off-the-shelf equipment and modified non-invasive microwave diathermy techniques, it appears to be possible to inactivate all virions in the outer 2 cm of the lungs and inner 1 cm of the bronchi without any effect on the surrounding tissue. 
 \\
@@ -89,7 +99,6 @@ Legend:  \cmark $ = $ crude experiment, not nearly definitive, needs more work $
   
 \end{itemize}\
 
-With refinements, our inexpensive pulsed microwave spectrometer can obtain the required data with sufficiently concentrated specimens; but certain swept-EPR or ESR equipment may provide a much more sensitive spectrum \st{when used improperly} with modifications in technique. \\
 
 It is perhaps notable that a completely free and open-source toolchain was used for the entire project.
 
