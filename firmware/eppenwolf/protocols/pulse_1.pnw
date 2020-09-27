@@ -566,23 +566,76 @@ Promega recommend a 1:1 volume of assay to reagent.
 
 \cite{liquid1993} use 25 uL 0.1M IPTG solution to 25 mL of culture, which is then concentrated to 1.25 mL of culture.
 
-32 mM * 238.31 g/mol * 5 mL = 40 milligrams of IPTG powder were weighed and added to 5 mL autoclaved distilled water in a 15 mL Falcon,
+32 mM * 238.31 g/mol * 5 mL = 40 milligrams (+- 20 mg) of IPTG powder were weighed and added to 5 mL autoclaved distilled water in a 15 mL Falcon,
 so that after addition of 2.5 uL in 0.2 mL, 0.4 mM concentration would be achieved - 4x the minimum for full expression, according to \cite{Recombinant1999}.
 
-5 uL of E. coli culture was added to 0.2 mL sterile broth. 2.5 uL of IPTG solution was added.
+\strike{2.5 uL} 0.2 mL of E. coli culture was added to 0.2 mL sterile broth. 2.5 uL of IPTG solution (\@4 C) was added.
 
-This was then incubated for 45 minutes.
+This was then incubated for 45 minutes with shaking.
 
-Two wells were filled with 2.5 uL of phage, 2.5 uL of the above culture, and 5 uL beta-glo reagent.
+After an hour, the culture still hadn't reached a significant turbidity. (more inoculation is probably a good idea)
+
+If we start with a 100 NTU culture, that's 5000 CFU/ml \cite{Turbidimetric2020}; x 2.5 uL / 0.2 mL = 12 CFU (ouch!)
+
+Lag time of 30 minutes, doubling time is perhaps 20 minutes - no wonder it took so long to culture last time. Decided to add 0.2 mL to speed things up a bit.
+
+
+
+Two wells were filled with either 2.5 uL of phage or broth, 2.5 uL of the above culture, and 5 uL beta-glo reagent.
 
 2 mm diameter well.
+
+The substrate and buffer was then thawed in room temperature water.
+
+
 
 It seems like detergent lysis really isn't a problem? see \cite{rapid2014}. We'll try it.
 
 
+Subst Bottle: 15.090g
+Reagent: 13.07g
+
+Substrate: 0.154g.
+
+Opened the vial, broke up the substrate with a clean knife, poured into a 50mL Falcon with alu foil on it.
+
+I have the distinct impression that that step should have been done in a fume hood.
+
+Next, let's weigh out 0.1*0.154 = 0.0154g (ouch!).
+
+Thawed the buffer, mixed. May have gotten the mixture wrong (and by a lot). Very sticky. Oh well.
+
+No luminescence immediately when mixed. Put in incubator for 10 minutes.
+
+very faint luminescence after 2 min in the incu - on both (uh oh!). I could detect it by eye.
+
+camera didn't get anything.
+
+E+I is the IPTG culture.
+
+pmt:
+background: 0.13.
+P: 2.37
+C: 2.36.
+
+Another 30 minutes incu.: drop to 0.9 on both, still no difference between the wells.
+
+:( :(
 
 
 
+The phage was pretty turbid, should swap that out next time I get a chance.
+
+A few seconds of sonication didn't seem to affect things
+
+Beta-glo background is at ~0, very nice.
+
+So it certainly seems like the lytic detergent in the beta-glo is working great, contrary to previous reports. fuck.
+
+Film would be a useful way to get a long integration time.
+
+
+Troubleshoot? See if the detergent really is the problem somehow?
 
 
 

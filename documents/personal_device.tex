@@ -10,11 +10,29 @@ What follows is intended to be a casual, first-principles e. Be very careful wit
 
 Trivially extending great work by \cite{Focusing} on passive reflectarrays, a 40-element active-antenna phased array, each element of which consists of a negative-resistance device such as the BFP620 transistor, a tuning varactor, a patch antenna, and a resonator, each contributing a pulsed tone of 500 nanoseconds length and 10 milliwatts of RF power, and a focal point spatial scan rate and pulse repetition frequency of 6 KHz. produces a field pattern which, when scanned, appears to be suitable to deny respiratory transmission in a 'face shield' configuration. 
 
+Such a field would comply with all standards by at least a factor of 20.
+
 %figure from ipynb
+
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	\includegraphics[width=\textwidth]{muller_test_cropped.jpg}
+	\caption{\\ How simple an active antenna element can be. This is based on the feedback-loop oscillator of \cite{SmallSize2008}, and uses a single CEL CE3520K3 GaAs FET (\$2.5) and one 100pF capacitor. It oscillated with extreme instability at about 5 GHz.}
+\end{figure}
+
+
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	\includegraphics[width=\textwidth]{my_photo-17.jpg}
+	\caption{\\ An ultrawideband tunable 7 GHz VCO based on \cite{TripleTuned2008}. This uses an Infineon BFP620 SiGe:C transistor (\$0.3) and a network of four varactor diodes. Unfortunately, the Si varactors did not appear to have a sufficiently high Q to prevent mode-hopping, and the output spectrum reflects the ignorance of its designer; however, it appeared to be capable of producing the 10 dBm required above.}
+\end{figure}
+
 
 % a prototype oscillator
 
-Such a field would comply with all  standards by at least a factor of 20.
+
 
 Injection locking rather than discrete phase shifters saves a number of components.
 
