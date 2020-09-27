@@ -1057,3 +1057,8 @@ intact bacteria to prevent lysis, and then ...
 
 
 
+P10, mixed 1:1 0.2 mL with glycerine, put in the freezer.
+
+
+"continue with a trypan blue staining on an aliquot. This allows you to see the amount of `intact cells` in your solution. Damaged cells will turn blue because the dye is taken up.
+"

@@ -637,7 +637,43 @@ Film would be a useful way to get a long integration time.
 
 Troubleshoot? See if the detergent really is the problem somehow?
 
+Oh, huh - E coli is not very sensitive to Tx-100.
 
+Try diluting the thing massively to minimize the detergent concentration.
+
+Okay, so it immediately glowed. That means either: that's just the background for this combination,
+
+
+Aha! Try centrifuging and taking the just supernatant to see if it's breaking the envelope or if the beta-galact... is already in solution?
+
+why did the luminescence die out so quickly? That's stupid.
+
+
+\section{Beta-Glo assay test 2}
+
+Perhaps they don't recommend diluting the beta-glo less than 1:1 because the detergent concentration will become too small to lyse. Let's test that.
+
+Oh, what concentration did the original Geiger paper use?
+
+
+Taking the phage out of the equation for now.
+
+"Ultrasound bath will not work efficiently" aha. It might work slightly. Electroporator (neat), Glass beads in a vortex mixer (don't have glass beads), ultrasonic bath (no), dish soap (maybe?) freeze thaw (fiiine).
+
+/* A sample of ~50 uL of the iptg-induced e.coli, E+P (now overnight old), was put in an eppendorf S1 and vortexed with three zinc-plated BBs for 30 seconds, then transferred to S2.
+
+
+2.5 uL of beta-glo reagent was diluted in 0.2 mL water.
+
+2.5 uL of this solution was added to both wells.
+
+E+B went into well C, S2 into the next well from C, and then a blank 2.5 uL beta glo into the next.
+
+
+
+
+
+A fresh sample of phage, P9, was taken from the root for all the later experiments.
 
 
 
