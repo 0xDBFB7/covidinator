@@ -673,24 +673,204 @@ E+B went into well C, S2 into the next well from C, and then a blank 2.5 uL beta
 
 
 
+
+3-minute-later : nothing on C.
+
+3.4 mV on S2.
+
+The SNR with this dilution doesn't seem to be high enough to detect the change.
+
+Added 2.5 uL b-glo to both.
+
+C: 2.34 again? huh.
+
+Ooooh perhaps it's being saturated! Dropped the gain to 0.390v on C.
+
+Exactly the same on S2.
+
+After 5 min, increased to 0.434 (huh?)
+
+exactly the same on the other C.
+
+hmm, but on C it's rising quite quickly - C=0.464 now, S2=0.415????? wtf?
+
+There's still the same discrepancy. C=0.484 now, S2=0.416.
+
+Still increasing on C. 0.5 now.
+
+Background with nothing but 2.5 uL of pure Glo is 0.025. That's good - at least the beta assay is working properly.
+
+
+After an hour, 94 mv on S2 and 240 mv on C. ?????
+
+Ah, I forgot the evaporation gagain. dammit.
+
+
+https://www.connectedpapers.com/about - check again once past mental block
+
+Conclusion: 1/100 beta-glo doesn't provide enough SNR. At 1:1, glows the same, mechanically lysed or otherwise - therefore, we can assume that
+
+
+\section{Beta-Glo assay test 3}
+
+
+If we centrifuge and we see a /lower/ glow in the supernatant, then that probably means the detergent is breaking the bacteria.
+
+If we centrifuge and we see a /higher/ glow, then the centrifuge probably lysed the cells.
+
+If we see the same, that probably means the beta is already extracellular?
+
+Let's do it.
+
+simultaneously, let's also try 1/10th dilution.
+
+
+4x 2.5uL of distilled water, 1 uL glo in bottom well 0.
+
+
+
+both on 4 filled with 2.5 uL centrifuged S3, then 2.5 uL glo.
+both on 3 filled with 2.5 uL E+B, then 2.5 uL glo.
+
+on c3-1, 33 mv.
+
+C3-2, 47 mV. (possible misalignment on -1)
+
+E+B 1 - 278 mV
+E+B 2 - 357
+
+oh! the temperature is probably still equilibriating. that's why we're getting constantly increasing values. Let's wait 10 mins or so.
+
+C3-1: 500 mV????
+C3-2: 165 mV.
+
+At 8s exposure, iso 1600, can just barely make out the spots. Not enough resolution to really
+
+Astro mode on the pixel almost gets it at a 60s exp, but still not good enough.
+
+back to the pmt. it's been 20 minutes or something.
+
+C3-1: 0.470v
+C3-2: 0.430v
+
+E+B 1: 0.245
+E+B 2: 0.306
+
+Huh. that's really unexpected. Centrifuging seems to have increased the amount of beta-galactosidase present in solution somehow.
+Run to run consistency looks pretty good.
+
+
+
+
+
+
+
+
+
+
+
+Try adding after 1 hour period as described in the thing
+try 1/10 dilution.
+
+
+
+\section{Beta-Glo assay test 4}
+
+
 A fresh sample of phage, P9, was taken from the root for all the later experiments.
 
 
+Both of 4 were filled with 2.5 uL phage, 2.5 uL broth, 2.5 uL E+B, 5 uL beta-glo.
+Both of 3 were filled with 5 uL broth, 2.5 uL E+B, 5 uL beta-glo.
+
+
+Both of 2 were filled with 2.5 uL phage, 2.5 uL broth, 2.5 uL E+B, 0.5 uL beta-glo.
+Both of 1 were filled with 5 uL broth, 2.5 uL E+B, 0.5 uL beta-glo.
+
+Then sealed with silicone oil.
+
+This was then incubated at 37c without being disturbed for 1 hour 45 minutes and then equilibriated to room temperature for 5 minutes.
+
+some of 1 splashed out.
+
+4:1 - 43 mV
+4:2 - 34 mV
+
+3:1 - 47 mV
+3:2 - 70 mV????
+
+2:1 - 9 mV
+2:2 - 11 mV
+
+1:1 - 11 mV
+1:2 - 12 mV.
+
+aldkjfaldfjkaldskjf alsdjkf l;sdjkf sl;dfjk lkdjf ;lksdj
+
+again:
+
+4:1 - 65 mV
+
+oh, interesting, it's still stabilizing.
+
+Again:
+
+4:1 - 55 mV
+4:2 - 45 mV
+
+
+4:1 - 70 mV
+4:2 - 87 mV
+
+Okay let's really let it settle for 20 mins.
+
+After 15 minutes,
+
+4:1 - 41.5 mV
+4:2 - 25.6 mV
+
+3:1 - 45.7 mV
+3:2 - 58.3 mV
+
+[gain on scope changed]
+
+2:1 - 8.65
+2:2 - 8.35
+
+same on the other two.
+dammit!
 
 
 
 
+Big (big!) evaporation. probably all the sample is gone. Not enough silicone oil.
+
+
+
+\section{Beta-Glo assay test 5}
+
+The McMc metal needles work great. Going to use them.
+
+
+
+Both of 4 were filled with 2.5 uL phage, 2.5 uL E+B.
+Both of 3 were filled with 2.5 uL broth, 2.5 uL E+B.
+
+Both of 2 were filled with 2.5 uL phage, 2.5 uL E+B.
+Both of 1 were filled with 2.5 uL broth, 2.5 uL E+B.
+
+Then these were capped with a large amount of silicone oil.
+
+This was incubated overnight, then left at RT for 10 minutes.
+
+Then, 2.5 uL of glo was added to each well using the needle.
+
+30 minutes later at RT, each well was measured.
 
 
 
 
-
-
-
-
-
-
-
+Agar might be a better piercable seal?
 
 
 

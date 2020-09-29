@@ -1062,3 +1062,13 @@ P10, mixed 1:1 0.2 mL with glycerine, put in the freezer.
 
 "continue with a trypan blue staining on an aliquot. This allows you to see the amount of `intact cells` in your solution. Damaged cells will turn blue because the dye is taken up.
 "
+
+There doesn't seem to be an equivalent of StackOverflow - casual Q/A - for biology. 
+The main alternative seems to be ResearchGate, but this doesn't really provide a high quality of 
+answers.
+
+there's also a "4-methylumbelliferone ß-D-galactopyranoside" flouresecent substrate.
+
+"there's also an endogenous and phage-induced β-gal was detected using the electrochemical method with 4-aminophenyl-β-galactopyranoside"
+
+
