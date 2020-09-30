@@ -547,7 +547,7 @@ Weird background noise.
 
 \section{Nucleic acid UV extinction }
 
-
+The 260 nm extinction due to 60 MDa DNA at concentration 10^8 = 10e-9 with a 1 mm path length is 0.002x. that's going to be swamped by everything else.
 
 \section{GelRed }
 
@@ -854,23 +854,118 @@ The McMc metal needles work great. Going to use them.
 
 
 Both of 4 were filled with 2.5 uL phage, 2.5 uL E+B.
-Both of 3 were filled with 2.5 uL broth, 2.5 uL E+B.
+Both of 3 were filled with 2.5 uL phage, 2.5 uL E+B.
 
-Both of 2 were filled with 2.5 uL phage, 2.5 uL E+B.
+Both of 2 were filled with 2.5 uL broth, 2.5 uL E+B.
 Both of 1 were filled with 2.5 uL broth, 2.5 uL E+B.
 
 Then these were capped with a large amount of silicone oil.
 
-This was incubated overnight, then left at RT for 10 minutes.
+
+
+
+This was incubated overnight (9 hrs) , then left at RT for 10 minutes.
+incubator shut off at some point during the night. oops.
 
 Then, 2.5 uL of glo was added to each well using the needle.
 
+
 30 minutes later at RT, each well was measured.
 
-
+put in at like 12:00.
 
 
 Agar might be a better piercable seal?
+
+
+WARNING
+NOTE: made a mistake when loading, 3 and 4 are the phage.
+WARNING
+
+now
+(10 minutes later)
+(30 minutes later)
+
+4:1 - 51 mV.
+4:1 - 85 mV.
+4:1 - 74 mV.
+
+3:1 - 92 mV.
+3:1 - 51 mV.
+3:1 - 45 mV.
+
+2:1 - 61 mV
+2:1 - 60 mV
+
+1:1 - 99 mV
+
+\section{Beta-Glo assay test 6}
+
+
+0.2 mL broth was added to 2 eppendorf tubes.
+
+0.2 mL E20 was added to each.
+
+2.5 uL iptg was added to each.
+
+0.5 uL phage was added to T1.
+
+After 3 hours of incubation with shaking, a good degree of turbididy was built up. 5 uL of beta was added to each (add 0.2 mL if this doesn't work).
+
+After 30 minutes,
+
+T0: 69.5
+T1: 44.5 mV.
+
+???????
+
+The beta-glo assay is aerobic! If the oxygen is depleted, it may not function.
+
+\section{Phage concentration test 1}
+
+0.2 mL e.coli culture and 2.5 uL 32 mM IPTG were added to 0.4 mL broth. This was incubated for 3 hours. (began 15:30)
+
+PEG powder with a MW of 3350 (Bayer RestoraLAX, Laxative grade) was used to concentrate the page by PEG/NaCl precipitation.\cite{Rapid1970}
+
+0.015g NaCl was dissolved in 0.4 mL phage broth for a 0.5 M solution.
+
+0.12g PEG was dissolved to form a 30\% w/v solution.
+
+This was centrifuged at "1/3 power" for 3 minutes.
+
+
+
+2.5 uL of the phage pellet was added to one well and suspended in 5 uL broth by stirring with pipette tip.
+
+Another well was filled with 2.5 uL broth.
+
+The IPTG-induced E. coli was centrifuged down, and 2.5 uL was added to a different well. 5 uL broth was added. Stirred with pipette tip.
+2.5 uL of this was added to the phage and broth control wells.
+
+2.5 uL beta-glo added to both.
+
+0.8 uL was added to a slide.
+
+Cap with sil.
+
+Incubate for 1 hour.
+
+
+
+
+(phage supernatant can be saved and autoclaved to ensure consistency?)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
