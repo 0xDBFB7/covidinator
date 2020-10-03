@@ -923,6 +923,8 @@ The beta-glo assay is aerobic! If the oxygen is depleted, it may not function.
 
 \section{Phage concentration test 1}
 
+
+
 0.2 mL e.coli culture and 2.5 uL 32 mM IPTG were added to 0.4 mL broth. This was incubated for 3 hours. (began 15:30)
 
 PEG powder with a MW of 3350 (Bayer RestoraLAX, Laxative grade) was used to concentrate the page by PEG/NaCl precipitation.\cite{Rapid1970}
@@ -931,9 +933,16 @@ PEG powder with a MW of 3350 (Bayer RestoraLAX, Laxative grade) was used to conc
 
 0.12g PEG was dissolved to form a 30\% w/v solution.
 
-This was centrifuged at "1/3 power" for 3 minutes.
+This was centrifuged at "1/3 power" for 5 minutes.
 
 
+Both components dissolved quite quickly with some agitation, but no phage obviously settled.
+
+I had missed that >15\% decreases the efficiency. Diluted with another 0.2 mL, added another 0.02g NaCl, and now it centrifuged down nicely.
+
+A small precipitate was present.
+
+Chilled at 4c for 10 minutes to help further.
 
 2.5 uL of the phage pellet was added to one well and suspended in 5 uL broth by stirring with pipette tip.
 
@@ -951,15 +960,108 @@ Cap with sil.
 Incubate for 1 hour.
 
 
+Phage: 4.5 mV.
+
+3.1 mV.
+
+Even after a half-hour of incubation, still nothing.
+
+Added another 2.5 uL of glo.
+
+Now there's actually a signal!
+
+Phage: 172 mV.
+
+Control: 267 mV.
+
+Phage: 137 mV.
+
+Now, on the half-hour incubated slide:
+
+p1: 400 uV
+p2: 400 uV.
+
+e1: 400uV.
+
+
+Seemed like it might have worked, but it was just inconsistency in the removing of the pmt hood.
+
+If the PMT hood is removed too quickly after removing power, a way high dark current begins.
+
+Added 2.5 uL of glo to each on the slide.
+
+Phage: 60 mV.
+E. coli: 36 mV.
+
+e2: 174 mv.
+?????????????????????????????????????????????????????
+Later: e2: 51 mV
 
 
 (phage supernatant can be saved and autoclaved to ensure consistency?)
 
 
+weighed on parchment paper on a cheap milligram balance.
 
 
 
+On the plus side, removing / adding fluid to the wells is totally possible with the needle.
 
+\section{Plaque assay test 2}
+
+In fact, these agar plate bacterial-lawn plaque assays seem to be pretty darn reliable. Now that we can remove fluid from the wells and have a microwell plate, let's try it again.
+
+Added 2 mL of e. coli to the well. Made sure it was adequately spread.
+
+After 15 minutes, poured off the excess.
+
+Let dry for 15 minutes.
+
+Filled the wells with 10 uL broth.
+
+0.5 uL phage added to 0, then mixed (using same tip) rightwards.
+
+Same on second row.
+
+1 uL then dropped onto plate. First row might have been botched; used the same tip when transferring.
+Done at 00:20 or so.
+
+After 12 hours, very little contrast. Waiting another 12 hours.
+
+\section{Electrophoresis test 1}
+
+
+Accidentally broke the tray. Fixed by running a soldering gun across the polyethylene crack, then heating with hot air. worked surprisingly well!
+
+Macgyver bicarbonate running buffer\cite{MACGYVER2005} was used. 1L distilled water, 0.05g NaCl, 2g sodium bicarbonate.
+
+Two pieces of graphite were used as electrodes.
+
+On the suggestion of \cite{Inexpensive2012}, RIT navy blue dye was used, first at 0.25g/L - 0.06g / cup.
+
+The stain seems to usually be suspended in an alcohol.
+
+Added ~0.03g stain to 50 mL in a falcon tube. Doesn't stain the filter paper, which is a good sign.
+
+Started at 23:20.
+
+Grade 102 filter paper. Didn't cut at all; round edges just bent over a microscope slide into the buffer.
+Slowly took up the buffer.
+Drew lines ~6 mm apart. three autoclaved phage, three phage.
+Dotted 0.5 uL on each zone.
+
+Set to constant-voltage at 40v. Current increased gradually to 0.005 over time. no evaporation protection.
+
+Stopped at 00:30.
+
+Dipped immediately into the dye for 5 minutes, then removed.
+
+Perhaps some tiny little blobs? It's very hard to tell.
+
+\cite{ELECTROPHORESIS1951a} mentions that "For some experiments particularly
+those employing dextran the paper was dried at ll0°C, prior to staining."
+
+Tried eluting with 5\% acetic, no change. Dye isn't sensitive enough at all.
 
 
 

@@ -1072,3 +1072,5 @@ there's also a "4-methylumbelliferone ß-D-galactopyranoside" flouresecent subst
 "there's also an endogenous and phage-induced β-gal was detected using the electrochemical method with 4-aminophenyl-β-galactopyranoside"
 
 
+methylene blue / malachite green easy to get as fish tank steriliizers??
+
