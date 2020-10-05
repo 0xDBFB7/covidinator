@@ -1074,3 +1074,14 @@ there's also a "4-methylumbelliferone ß-D-galactopyranoside" flouresecent subst
 
 methylene blue / malachite green easy to get as fish tank steriliizers??
 
+
+
+Here's something very interesting! 
+In the 1930s, Tyndall spectra appear to have been commonly used to directly titer phage;
+concentrations > 10^11 turn blue.
+However, this technique seems to have been forgotten?!
+
+
+
+
+

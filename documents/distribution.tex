@@ -3,7 +3,7 @@
 \begin{document}
 	
 \begin{center}
-	{\bf \cite{Microwave2009} already mention this inhomogeneity; \cite{Elastic} perform a much better analysis than we do.}
+	{\bf \cite{Microwave2009} already mention this inhomogeneity; \cite{Elastic} probably perform a much better analysis than we do.}
 \end{center}
 	
 
@@ -21,16 +21,19 @@ Since \cite{Efficient2015} try to compute the {\it threshold} field to obtain so
 	More than 95\% [of] puncture events occurred above 0.4 nN.
 \end{quote}
 
-Inputting this yield stress distribution produces an inactivation field distribution that is far higher than that of \cite{Efficient2015}'s experimental data by some 200 V/m.
+Inputting this AFM-determined yield stress distribution produces an inactivation field distribution that is far higher than that of \cite{Efficient2015}'s experimental data by some 200 V/m.
 
-Let us therefore re-examine the microwave spectrum. Much of this data was found in order to try to simulate the inactivation mechanism by molecular dynamics, so it was not a complete waste of time.
+This is not very surprising. Many reasonable assumptions are made that could account for this discrepancy; the homogeneous-sphere core-shell assumption, for instance.
+
+However, it may be useful to re-examine the microwave spectrum with an eye towards the distribution. 
+
+\begin{toolchain}
+Much of this data was found in order to try to simulate the inactivation mechanism by molecular dynamics, so it was not a complete waste of time.
+\end{toolchain}
 
 The liposome breaking force is distributed in an obstinately non-gaussian bimodal manner, so we override the covariance matrix and introduce a gaussian KDE sampled from the force histogram in \cite{Bending2011}.
 
-Lorentzian
-
-
-"95%.".
+Lorentzian 
 
 The distribution of breaking strengths in [Li 2011] (Figure 5b) is bimodal, and a naive gaussian fit does not produce the above 95\% figure.
 
@@ -38,13 +41,17 @@ Smudged
 
 The simple-harmonic
 
-This problem has a long history, stretching back to Cole-Cole's landmark 1942\cite{Dispersion1941} paper and \cite{Electrical1941}. Such concerning statements as 'mathematically ill-posed' are bandied about; however, standard optimization techniques work fine.
+This problem has a long history, stretching back to Cole-Cole's landmark 1942\cite{Dispersion1941} paper:
 
 \begin{quote}
 	As Fuoss and Kirkwood have shown, it is possible to calculate the distribution necessary to account for any given experimental results from the observed $\epsilon''$ - frequency relation.
 \end{quote}
 
-Within a sample of a single species, there is $\approx$ 12.7\%  ($109 \pm 16.65 \text{ nm}$\cite{lauffer1944biophysical}, $115 \pm 12 \text{ nm}$ \cite{Characterization1984}) variation in diameter and  \cite{Characterization1984} variation in mass.
+and \cite{Electrical1941}. Such concerning statements as 'mathematically ill-posed' are bandied about; however, standard stochastic fitting techniques work fine.
+
+
+
+Within a sample of a single species of Inf. A, there is $\approx$ 12.7\%  ($109 \pm 16.65 \text{ nm}$\cite{lauffer1944biophysical}, $115 \pm 12 \text{ nm}$ \cite{Characterization1984}) variation in diameter and  \cite{Characterization1984} variation in mass.
 
 
 
@@ -53,9 +60,9 @@ Note that, per \cite{lauffer1944biophysical}, of Inf. A and B, "the infectious p
 
 Worse still, influenza exhibits pleiomorphy, stretching into a variety of \cite{Influenza2006}; 
 
-Charge can be determined by the primary structure sequence. A table of net charges of Inf. A, and T4. however, a few influzena proteins have been found to have anomalous secondary structure charge.
+Charge can be determined by the primary structure sequence. A table of net charges of Inf. A, SARS, and T4 proteins is in the github. However, a few influzena proteins have been found to have anomalous secondary structure charge.
 
-TODO: verify charge is 10^7 e as found by Yang
+TODO: verify charge is $10^7$ e as found by Yang
 
 Because CryoEM uses charged particles, it is technically feasible to determine the net charge distribution in the whole virus using an ingenious \cite{Identification2018} technique. However, this has not yet been implemented in any
 
