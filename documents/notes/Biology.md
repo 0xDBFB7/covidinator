@@ -1081,7 +1081,29 @@ In the 1930s, Tyndall spectra appear to have been commonly used to directly tite
 concentrations > 10^11 turn blue.
 However, this technique seems to have been forgotten?!
 
+"When the phage was grown at the expense of a culture of
+B. coli in a simple synthetic medium, high-titre filtrates showed an easily demonstrated Tyndall effect when exposed to a strong beam of light. The highest titre
+filtrates were visibly opalescent under ordinary illumination, and Schlesinger (1933)
+found that the intensity of the Tyndall effect was proportional to and could be used 
+The bacteriophages 335
+to titrate the amount of phage present."
+
+Only problem: Schlesinger 
 
 
 
+
+"Only somebody who has experimentally worked with
+his own hands on various other systems can fully
+appreciate the fundamental change brought by phage." - 
+
+
+Phage mutates 1000x as fast as the host cell
+
+X-gal is only soluble in DMF and DMSO. We choose DMSO due to the other's toxicity.
+
+
+https://ebiz.nserc.ca/
+
+The somerfield precursor 
 
