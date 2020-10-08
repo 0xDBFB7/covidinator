@@ -1,17 +1,6 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
-\clearpage
-{\Large \it Experiment 2:}\\
-
-
-
-<<pulse_1.py>>=
-import device_comms
-import sweep
-
-@
-
 
 Rationale for using T4
 
@@ -21,27 +10,56 @@ It cannot be overstated how difficult this measurement is to interpret.
 Positions of the three quantities on the slide are randomized\cite{first2000}.
 
 
+We have tried to comply with the guidelines
+
 Our aims with this experiment were to perform the following:
 
 \begin{itemize}
 \item Convince ourselves that our skepticsm is unjustified.
-\item Crudely demonstrate the pulse hypothesis. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation.
-    While T4 is quite unlike enveloped viruses, it at least provides a first approximation.
+\item Crudely demonstrate the pulse hypothesis.
 \item Simulataneously, avoid any ambiguity related to the 7 C temperature rise seen in the previous paper.
+\item Test the microwave lysis feedback
 \item Verify the damage feedback mechanism.
 \item Demonstrate a cheap microwave spectrometer that could be used on NCoV.
 \end{itemize}
 
+Demonstrate the effect in a pulsed manner.
+
+A pulse appears to be more easily applicable in the clinic. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation
+- had we missed something; was it possible that inactivation could take so long?
+
+second, it mitigates any possible thermal effect that could have lead to the previous results.
+
+Our justification for wanting a pulse dataset is as follows:
+
+A temperature rise of 7 deg C was found at 6 GHz.
+
+[] found detectable mutagenicity at a mere 2 C temperature rise.
+Of course, a few SNPs here and there is not complete cell lysis; it is extremely implausible that
+the results were the result of the temperature rise. But we nonetheless wanted to control this factor if possible.
+
+The antenna gain increases with frequency (naturally - it goes as aperture size / lambda).
+The gain flatness of the amplifier used is specified at [].
+If the exposure power was measured at the input to the amplifier (the method of power measurement does not appear to be mentioned), is it not
+unreasonable to expect that perhaps, at 9 GHz, the temperature rise, at some point in the 15 minute test, reached 15 C?
+
+This is all post-hoc reasoning. It strains plausibility. If we consider how many negative results went unpublished;
+if we presume that 50 other teams found no effect, is it possible that this is a 1 in 50 fluke?
+
+
+
+
 Because the diode detectors are in an extremely noisy environment, it is important to either
 
-In the end, performing this was probably a mistake; but by the time we realized this we had already put in the bulk of the time.
+In the end, performing this was probably a mistake and unecessary, but by the time we realized this we had already put in the bulk of the time.
 
 Inspired by \cite{Biocoder2010}, we originally planned on writing the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
 However, because the device was planned to run headless in a BSL, this was abandoned.
 
 
+The method we use is terrible. Such small volumes pose incredible headaches and low SNR for little reason.
+Ideally, we should have used a technique orthogonal to previous studies.
 
-This is probably not the best method. Ideally, we should have used a technique orthogonal to previous studies.
 
 Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy")
 
@@ -51,23 +69,22 @@ A 10+ GHz oscilloscope is generally required for this method, but sampling\footn
 
 \footnotetext{'Sampling' is an absurd name - all DSOs sample! A 'sampling oscilloscope' builds up the waveform over a large number of cycles.}
 
-On the other hand, microwave cavity resonators can often provide a much higher sensitivity. The sensitivity can be made proportional to the Q, and even a crude microwave cavity can easily have a Q > 500.
-As an example, EPR spectroscopes use cavities in their microwave bridges.
+On the other hand, microwave cavity resonators can often provide a much higher sensitivity. The sensitivity can (in some cases - there are tradeoffs - see \cite{FabryPerot1982}) be made proportional to the Q, and even a crude microwave cavity can easily have a Q > 500.
+As an example, EPR spectrometers use cavities in their microwave bridges.
 
 Cavities designed for wide-band use are generally mechanically tuned with a shorting plunger; the plunger itself presents difficulty in design\cite{Contactless2019}.
-However, conventional waveguide cavities run into overlapping modes beyond half an octave, beyond which more than one dimension must be altered. We desired a spectrum across the entire 6 - 12 GHz octave.
+However, conventional waveguide cavities run into overlapping modes beyond half an octave, beyond which more than one dimension must usually be altered. We desired a spectrum across the entire 6 - 12 GHz octave.
 
 Open-ended coaxial resonators can offer the required tuning range\cite{Wideband1981}\cite{Study2014a}. Microwave Fabry-Perot etalons are also satisfactory.\cite{FabryPerot1982}
 
-Simple open-ended coax dipped in the solution are the status quo\cite{Coaxial1980}. However, these appear to be particularly prone to generating resonance-like artifacts - not that the coplanar method is necessarily any better.
-
+The status quou for measuring the dielectric properties of liquid is an open-ended coax dipped in the solution\cite{Coaxial1980}. However, these appear to be particularly prone to generating resonance-like artifacts - not that the coplanar method is necessarily any better.
 
 We end up using the coplanar waveguide setup, essentially exactly like \cite{Efficient2015}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
-This was done because of our lack of access to the requisite power amplifiers; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure without disturbance.
+This was done because of our lack of access to power amplifiers with sufficient power output to expose a large volume simultaneously; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure without disturbance.
 
 Rather than the very professional gold and SiO2-coated sensing structure, we use a basic $50\pm20$ ohm coplanar waveguide, like \cite{Sun}.
 
-An FDTD simulation was performed of the cuvette-waveguide assembly\footnotemark. The bottom tape was made 0.5 mm thick in the simulation dielectric_constant, and non-conductive\footnotemark. Amplitude values were obtained with a soft 50 ohm source with a 1 V amplitude (which would produce a value of 0.5 V - (Shottky drop + small frequency-dependent loss) on the detectors).
+An FDTD simulation was performed of the cuvette-waveguide assembly\footnotemark. The bottom tape was made 0.5 mm thick in the simulation dielectric_constant, and non-conductive\footnotemark. Amplitude values were obtained with a soft 50 ohm source with a 1 V peak (2v p-p) (which would produce a value of 0.5 V minus the (Shottky drop and a small frequency-dependent loss) on the detectors).
 
 The fringe field in the bottom 40\% (0.4 mm) of the fluid-filled well averaged 160 V/m per volt of uncorrected detector input amplitude, with a peak of 200 $\frac{V/m}{V}$ and two hot-spots at the interfaces of < 0.1 mm each. The remaining 60\% (0.6 mm) decreased from 120 $\frac{V/m}{V}$ to 60 $\frac{V/m}{V}$.
 
@@ -87,50 +104,42 @@ Evaporation was very significant even if the top of the well was sealed with tap
 
 Such small volumes caused us no end of difficulty. It is very difficult to obtain a log-phase culture required; but, conversely, it is impossible to consistently add reagents or retrieve the sample after the silicone cap is added, so all the ingredients for the assay must be added before.
 
-Needless to say, this is definitely not the correct way to go about this. However, it seems provide good results.
+Needless to say, this is definitely not the correct way to go about this. However, it seems provide acceptable data for these purposes.
 
 Conventional microstrip produces a considerably larger fringe field. However, the ground plane in microstrip is on the bottom layer. The sensitive QFN device ground pins would need to be stitched from the top to the bottom, inevitably adding all sorts of weird and wonderful resonators.
 We were not able to prototype with vias with sufficiently low inductance to negate thise issues; so a single-layer, top-side-only stackup is used. The difference in performance and in ease of layout and routing is tremendous.
 
-Coplanar waveguides are usually designed with a ground plane and via stitching on either side (GCPW), which both improves isolation and noise, but also helps to avoid undesirable parallel-plate propagation modes. Not including a ground plane avoids these modes, but decreases the fringe field slightly. We did not add a ground plane.
+Coplanar waveguides are usually designed with a ground plane and via stitching on either side (GCPW), which both improves isolation and noise, but also helps to avoid parallel-plate propagation modes(\cite{Microwaves101c}, \cite{Propagation1990}, \cite{Characteristics1997}). Not including a ground plane avoids these modes, but decreases the available fringe field slightly. We did not add a ground plane.
+
+The well is covered
 
 
 
 
 
+We have tried to follow the study design best practices of \cite{Biological2016}:
+
+\section{Blinding}
+
+
+
+\section{Dosimetry}
+
+Here we are slightly deficient. Other
+
+\section{Positive control}
+
+\cite{Efficient2015} use freeze-thaw cycles to crack the viral capsid as a positive control.
+T4 appeared to be more resistant to freezing; therefore, our positive control is the aforementioned autoclaved phage.
+
+Not having a sonication probe or Electroporator
+
+\section{Sham controls}
 
 
 
 
 
-
-For each of the animal and human published studies, four
-predetermined and specific quality control measures were used to
-assess the quality of the publication.
-1. Whether or not the researchers have used ‘‘blind’’ evaluations to
-avoid individual ‘‘bias’’, B or nB;
-
-// Add a delay to make all cuvettes take the same amount of time
-
-2. Whether or not there was detailed/adequate description of
-‘‘dosimetry’’ in the publication for independent replication/
-confirmation studies, D or nD.
-
-got that, check
-
-3. Whether or not ‘‘positive controls’’ were included in the
-experiment(s) to replicate/confirm the observations, P or nP.
-
-For phage, this is easy; use autoclaved phage.
-
-4. Whether or not ‘‘sham-exposed controls’’ (more appropriate to
-compare with the observations made in RF exposure conditions)
-were included in the experiments, S or nS. However, it was not our
-intention to ‘‘rank’’ the publications either to exclude or include
-the reported data in the meta-analysis.
-
-\cite{Efficient2015} use freeze-thaw to crack the viral capsid as a positive control.
-T4 appeared to be more resistant.
 
 Properties:
 
@@ -182,9 +191,9 @@ To preclude the possibility of damage to the sample while the spectrum is record
 
  = 5 K
 
+ \section{Microwave lysis feedback}
 
-
-We further postulate the following. When the virus is lysed, the resonator is destroyed. This should be reflected in the impedance spectrum.
+We postulate the following. When the virus is lysed, the resonator is destroyed. This should be reflected in the impedance spectrum.
 We expect a non-reversible decrease in the resonance peak after the application of power. This should also appear in the time-domain pulse envelope;
 we expect a "notch" on the rising edge, with a slow taper upwards, which does not repeat on the next pulse.
 
@@ -198,11 +207,9 @@ One could imagine it to be otherwise. For instance, the lysis that occurs after 
 Similarly, the results of the previous studies could have been obtained without necessarily breaking the virus' envelope.
 
 
-
-
 \section{Silicon carbide test}
 
-To verify that we can detect a resonance with this setup, we use the microwave susceptor mixture described by \cite{Effect2016}, which can be tuned to the correct range by varying the concentration of SiC to binder. We use the S-1 mixture.
+To verify that we can detect a resonance with this setup, we use a microwave susceptor mixture described by \cite{Effect2016}, which can be tuned to the correct range by varying the concentration of SiC to binder. We use the S-1 mixture.
 
 0.6g 2000-mesh silicon carbide powder was added to 1.4 g white Elmer's glue, mixed manually until homogeneous,
  applied to a Mylar film, and dried with a hair dryer. A small wafer of the hardened mixture, perhaps 0.3 mm thick, 5 mm x 2 mm, was placed directly on top of the coplanar waveguide.
@@ -235,7 +242,6 @@ The raw voltage plots do not suggest that this is the case; but it is nonetheles
 
 0.2 mL of T4(r?) phage, Carolina (), was pipetted into a freshly autoclaved 1.5 mL eppendorf tube. Since the lids have a tendency to open during the autoclave cycle, the tube was clamped closed by means of screws\footnote{This is probably unsafe.} to a polypropylene plate
 to prevent condensate from the autoclave from diluting the sample. It was then autoclaved for 20 minutes.
-
 \footnote{This deformed the Eppendorf tubes. Taping them shut is preferable.}
 
 The polycarbonate cuvette slide was also autoclaved, \strike{along with a length of high-temperature silicone-adhesive Kapton tape wound around a PTFE mandrel} \footnote{Substitute with the appropriate plate sealing films}.
@@ -1141,93 +1147,6 @@ Adding cloroform breaks open the remaining unlysed cells immediately after propa
 
 
 
-
-
-
-
-
-
-
-
-Is phage light-sensitive? Probably! Dammit!
-
-Replace AC coupling capacitors
-
-20 nF * 1000 ohms = 20 us - replace AC-coupling capacitors after tests are done to check actual pulse shape
-200 picofarads * 1000 ohms = 200 ns
-
-
-
-
-# T - 5 hours
-
-
-
-def initialize():
-    # Name this run
-    # Fluidic plate ID
-
-
-    print("Fill phage into all selected cuvettes.")
-    Simulataneously and separately
-
-#centrifuge down bacteria lightly to concentrate
-#Mix with fresh broth
-#Vortex for X seconds?
-#
-# Rajnovic 2019
-# Overnight cultures of E. coli were centrifuged and the pellets resuspended in 0.1 mM PB to
-# achieve a concentration of 10^10 cfu/mL.
-# The resulting suspensions were subject to serial dilution
-#
-# For each assay, 160 μL of LB were mixed with
-# 20 μL phage solution, 20 μL of bacteria solution and 20μL of PB in
-
-
-def bacteria_alone_control():
-    //repeated twice
-
-    # fill_phage()
-
-
-def bacteria_and_phage_control():
-    //repeated twice
-
-
-def bacteria_and_inactivated_phage_positive_control():
-    //
-
-"Blank" repeatablity test with just water in all cuvettes
-
-
-Add a small amount of growing e.coli to a new nutrient broth,
-aerate vigorously, then add to culture chamber.
-
-Expose phage.
-Fill culture.
-Monitor culture for log stage.
-Mix culture and phage.
-Monitor mixture.
-
-Types of exposure:
-
-RF
-
-Expose phage, mix with log bacteria, monitor.
-
-Bare
-
-Sham
-
-?
-
-Positive control
-
-Bring phage cuvette temperature to 120c with trace.
-
-
-
-Autoclaved
 
 
 

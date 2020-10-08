@@ -1,0 +1,120 @@
+It is not my place to provide worthy, overbearing reviews of others.
+
+I have found standards organizations to be highly impartial and very effective at accurately
+condensing the literature. 
+
+
+ WHO, FCC, ICNIRP, 
+
+ I hasten to re-emphasize that I believe the standards as currently set are 
+ definitively safe. 
+
+
+However, at the risk of making a fool of myself, I would like to note a few cases in IEEE and 
+that seem to display a very slight fatiguing of the abundantly precautionary principles that guide, for instance, clinical practice.
+
+I have approached this with a mind towards clinical protocol. If this were a drug in some phase 3 trial,
+per some FDA's reguirements, would the evidence suffice? 
+This is a strange perspective for what seems to often be considered a simple engineering problem.
+
+
+
+
+"Rodents were subjected to ... authors concluded that “…humans exposed under similar conditions would show
+no acute injurious biological effects.""
+
+In isolation, this does not seem a sound statment. If you offer rats a drug, and no changes are found,
+it is not possible to then claim that the drug is safe. In the context of the study it may make more
+sense.
+
+"Adair [1] also debated the basis of Albanese’s theses. He suggested that “a 1 MV/m
+pulse with at width of 1 ns should be quite safe”. "
+
+
+Adair was referring to a mechanistic basis, so "should" makes some kind of sense. But it is still a worrying turn of phrase.
+
+
+A unanimous consensus (see Chapter 7) was obtained at the final meeting (following around the table
+accounting). The consensus statement [68] drafted by all was later rescinded by two nations entering abstentions.
+Turkey member, Dr. Seyhan stated that “complete removal of the standard is not appropriate unless we have
+more data from experiments on the subject. I think that it is reasonable to keep the current standards as they
+are” [82]. French member, Dr. Debouzy [23] cited an unpublished study by RTG HFM-189 member Dr. de Seze
+and wrote that “presently it is not possible to build currently systems able to obtain systems strong enough to
+reach biological deleterious effects; however, the results mentioned by René preclude for us to remove at
+national level the corresponding measurements until these results are published, replicated and infirmed or
+confirmed. Consider that our abstention is included in your general consensus process.” Here again it is evident
+that it is difficult to remove an exposure limit shown by over 50 years of research as unnecessary. A paradigm
+once set is truly difficult to shift. 
+
+
+Perhaps I am reading too far into this. Two members agree to sign a document in person,
+then later change their minds. That sounds an awful lot like the introduction to a human-factors
+chapter in a textbook; an organization where the safety culture has slightly degraded; where dissenting 
+opinions are very subtly derided.
+
+
+My engineering professor once noted along the lines of the following:
+
+"Scientists are just engineers that look too much into the details."
+
+That might well be true.
+
+
+In section 2.5:
+
+> A Kuhnian paradigm shift [57] usually occurs when anomalous results are
+obtained and they persist following much scientific discussion and work and then a new paradigm emerges.
+Typically, however, an existing paradigm is supported and the anomaly is revealed to be pathological [58].
+
+> In other words, de Seze et al. [31] is an “anomaly” until
+replicated and validated (and published) with sufficient documentation of exposure conditions and control
+for ionizing contamination. In order to change the “true” and current paradigm of no HPPP-EMF limit
+(IEEE C95.1-2345TM-2014), actually many, additional “anomalies” must accumulate.
+
+
+
+> It is therefore necessary that a paradigm shift be made from prudently avoiding or 
+being precautious based on insufficient scientific data to establishing
+exposure guidelines in accordance with sound scientific data.
+
+
+These points are made are correct, and the points they make about the literature are correct, salient, and
+wise. 
+
+It is not 
+
+
+
+
+
+
+Osepchuk, in an otherwise very enlightening expression of concern on a paper by Belyaev,
+
+
+"
+
+Reviewers and editors, please take note."
+
+In fact, the effect that was noted in the comment was apparently well controlled for.
+So the explanation is wrong. The reason why it is wrong may perhaps be very interesting.
+
+This paper is probably nonsense; its claims are extreme.
+
+
+
+
+
+
+
+
+But in at least two notable instances, IEEE standards have deviated from what I would consider perfect scientific conduct.
+
+If you have spent your entire professional career fighting against inane, misguided interpretations and irreducible results, it is very human . But I expect better than human. when statements like the following "" are made, I cannot.
+
+Bringing up Kuhnian paradigms (a philospher who, I might add, once threw an ashtray at a dissenter)[1] in response to a co-worker's otherwise reasonable objection 
+
+Consider, for instance, the diatribe in , or the con
+
+
+[1] I have also said and done reprehensible things out of anger. That must be allowed to reflect negatively on my character.
+
