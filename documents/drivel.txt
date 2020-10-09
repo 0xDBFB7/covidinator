@@ -47,6 +47,7 @@ that it is difficult to remove an exposure limit shown by over 50 years of resea
 once set is truly difficult to shift. 
 
 
+
 Perhaps I am reading too far into this. Two members agree to sign a document in person,
 then later change their minds. That sounds an awful lot like the introduction to a human-factors
 chapter in a textbook; an organization where the safety culture has slightly degraded; where dissenting 
@@ -71,8 +72,6 @@ replicated and validated (and published) with sufficient documentation of exposu
 for ionizing contamination. In order to change the “true” and current paradigm of no HPPP-EMF limit
 (IEEE C95.1-2345TM-2014), actually many, additional “anomalies” must accumulate.
 
-
-
 > It is therefore necessary that a paradigm shift be made from prudently avoiding or 
 being precautious based on insufficient scientific data to establishing
 exposure guidelines in accordance with sound scientific data.
@@ -81,10 +80,7 @@ exposure guidelines in accordance with sound scientific data.
 These points are made are correct, and the points they make about the literature are correct, salient, and
 wise. 
 
-It is not 
-
-
-
+But I can't help but feel that they are inapproprate for the setting.
 
 
 

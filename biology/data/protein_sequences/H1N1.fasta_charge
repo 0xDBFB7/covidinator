@@ -1,0 +1,12 @@
+sp|P03428|PB2_I34A1 Polymerase basic protein 2 OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=PB2 PE=1 SV=2, 7.0, 24.283192453852035
+sp|P03431|RDRP_I34A1 RNA-directed RNA polymerase catalytic subunit OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=PB1 PE=1 SV=2, 7.0, 25.112250752792644
+sp|P03433|PA_I34A1 Polymerase acidic protein OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=PA PE=1 SV=2, 7.0, -17.280070502727572
+sp|P03452|HEMA_I34A1 Hemagglutinin OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=HA PE=1 SV=2, 7.0, -0.35865969546195087
+sp|P03466|NCAP_I34A1 Nucleoprotein OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=NP PE=1 SV=2, 7.0, 13.287284102683557
+sp|P03468|NRAM_I34A1 Neuraminidase OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=NA PE=3 SV=2, 7.0, 0.8284412976195166
+sp|P03485|M1_I34A1 Matrix protein 1 OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=M PE=1 SV=1, 7.0, 8.118432825599037
+sp|P03496|NS1_I34A1 Non-structural protein 1 OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=NS PE=1 SV=1, 7.0, -0.5591080366017984
+sp|P03508|NEP_I34A1 Nuclear export protein OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=NS PE=1 SV=1, 7.0, -4.264482497807511
+sp|P06821|M2_I34A1 Matrix protein 2 OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=M PE=1 SV=1, 7.0, -1.6035678061011531
+sp|P0C0U1|PB1F2_I34A1 Protein PB1-F2 OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=PB1 PE=1 SV=1, 7.0, 10.92691044482306
+sp|P0CK64|PAX_I34A1 Protein PA-X OS=Influenza A virus (strain A/Puerto Rico/8/1934 H1N1) GN=PA PE=3 SV=1, 7.0, 4.241033525014605

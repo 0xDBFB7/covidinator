@@ -1,0 +1,273 @@
+sp|P00276|GLRX_BPT4 Glutaredoxin OS=Enterobacteria phage T4 GN=NRDC PE=1 SV=1, 7.0, 0.4188665967379478
+sp|P00471|TYSY_BPT4 Thymidylate synthase OS=Enterobacteria phage T4 GN=TD PE=1 SV=1, 7.0, 6.524676421564424
+sp|P00720|ENLYS_BPT4 Endolysin OS=Enterobacteria phage T4 GN=E PE=1 SV=2, 7.0, 8.179151622025536
+sp|P00970|DNLI_BPT4 DNA ligase OS=Enterobacteria phage T4 GN=30 PE=3 SV=1, 7.0, -1.9690847319423508
+sp|P00971|RLIG_BPT4 T4 RNA ligase 1 OS=Enterobacteria phage T4 GN=63 PE=1 SV=1, 7.0, -15.456519115914475
+sp|P03690|VR2A_BPT4 Protein rIIA OS=Enterobacteria phage T4 GN=rIIA PE=2 SV=2, 7.0, -4.733945150540246
+sp|P03691|VR2B_BPT4 Protein rIIB OS=Enterobacteria phage T4 GN=rIIB PE=4 SV=3, 7.0, -1.9414850921836293
+sp|P03695|VHED_BPT4 Single-stranded DNA-binding protein OS=Enterobacteria phage T4 GN=32 PE=1 SV=1, 7.0, -11.633736396624979
+sp|P03715|VSOC_BPT4 Small outer capsid protein OS=Enterobacteria phage T4 GN=soc PE=1 SV=1, 7.0, -0.5190208412887409
+sp|P03718|IPI1_BPT4 Internal protein I OS=Enterobacteria phage T4 GN=ipi1 PE=1 SV=1, 7.0, 2.4801611080955945
+sp|P03719|IPI2_BPT4 Internal protein II OS=Enterobacteria phage T4 GN=ipi2 PE=1 SV=2, 7.0, 4.479072066896931
+sp|P03720|VPIP_BPT4 Prehead core component PIP OS=Enterobacteria phage T4 GN=67 PE=4 SV=1, 7.0, -24.97134111109591
+sp|P03739|TFA_BPT4 Tail fiber assembly protein OS=Enterobacteria phage T4 GN=38 PE=3 SV=1, 7.0, -0.5546877550670364
+sp|P03742|FIB35_BPT4 Long-tail fiber protein Gp35 OS=Enterobacteria phage T4 GN=35 PE=1 SV=4, 7.0, -6.570614600599531
+sp|P03743|FIB36_BPT4 Long-ail fiber protein p36 OS=Enterobacteria phage T4 GN=36 PE=1 SV=1, 7.0, 1.444861098990109
+sp|P03744|FIB37_BPT4 Long-tail fiber protein p37 OS=Enterobacteria phage T4 GN=37 PE=1 SV=1, 7.0, 9.71686088561106
+sp|P04382|DYR_BPT4 Dihydrofolate reductase OS=Enterobacteria phage T4 GN=frd PE=1 SV=1, 7.0, -1.0659093927942707
+sp|P04392|DMA_BPT4 DNA adenine methylase OS=Enterobacteria phage T4 GN=DAM PE=1 SV=1, 7.0, 7.0920145620453034
+sp|P04415|DPOL_BPT4 DNA polymerase OS=Enterobacteria phage T4 GN=43 PE=1 SV=1, 7.0, -7.8023049021487125
+sp|P04418|END5_BPT4 Endonuclease V OS=Enterobacteria phage T4 PE=1 SV=1, 7.0, 5.932440686554886
+sp|P04519|GSTA_BPT4 DNA alpha-glucosyltransferase OS=Enterobacteria phage T4 GN=agt PE=1 SV=1, 7.0, -2.767098085182403
+sp|P04520|PRIM_BPT4 DNA primase OS=Enterobacteria phage T4 GN=58-61 PE=1 SV=1, 7.0, 14.011602964375925
+sp|P04521|EXO1_BPT4 Exonuclease subunit 1 OS=Enterobacteria phage T4 GN=47 PE=1 SV=1, 7.0, -17.70544176492051
+sp|P04522|EXO2_BPT4 Exonuclease subunit 2 OS=Enterobacteria phage T4 GN=46 PE=1 SV=2, 7.0, 5.077325294599609
+sp|P04523|DNRE_BPT4 DNA replication protein OS=Enterobacteria phage T4 GN=69 PE=4 SV=2, 7.0, 18.730995797559515
+sp|P04524|RP55_BPT4 RNA polymerase sigma factor OS=Enterobacteria phage T4 GN=55 PE=1 SV=1, 7.0, -4.067863542938878
+sp|P04525|DPA5_BPT4 DNA polymerase processivity component OS=Enterobacteria phage T4 GN=45 PE=1 SV=3, 7.0, -6.512932237433464
+sp|P04526|DPA44_BPT4 Sliding-clamp-loader gp44 subunit OS=Enterobacteria phage T4 GN=44 PE=1 SV=1, 7.0, 0.717099341169537
+sp|P04527|DPA62_BPT4 Sliding-clamp-loader gp44 subunit OS=Enterobacteria phage T4 GN=62 PE=1 SV=1, 7.0, 3.41519766435513
+sp|P04529|UVSX_BPT4 Recombination and repair protein OS=Enterobacteria phage T4 GN=UVSX PE=1 SV=2, 7.0, -7.352613628518526
+sp|P04530|VG41_BPT4 ATP-dependent helicase 41 OS=Enterobacteria phage T4 GN=41 PE=1 SV=1, 7.0, -8.424265760784788
+sp|P04531|DNMK_BPT4 Deoxynucleotide monophosphate kinase OS=Enterobacteria phage T4 GN=1 PE=1 SV=1, 7.0, -6.333743493970799
+sp|P04532|VG57_BPT4 Tail fiber assembly helper protein OS=Enterobacteria phage T4 GN=57 PE=1 SV=3, 7.0, -8.985689551258522
+sp|P04533|VG57B_BPT4 Gene 57B protein OS=Enterobacteria phage T4 GN=57B PE=4 SV=1, 7.0, -5.851311582211281
+sp|P04534|SCAF_BPT4 Capsid assembly scaffolding protein OS=Enterobacteria phage T4 GN=22 PE=1 SV=2, 7.0, -26.760480932245255
+sp|P04535|CAPSH_BPT4 Major capsid protein OS=Enterobacteria phage T4 GN=gp23 PE=1 SV=2, 7.0, -7.056927283889423
+sp|P04536|EXOD_BPT4 Exodeoxyribonuclease OS=Enterobacteria phage T4 GN=dexA PE=1 SV=1, 7.0, -10.172285384201283
+sp|P04537|UVSY_BPT4 Recombination protein uvsY OS=Enterobacteria phage T4 GN=uvsY PE=1 SV=3, 7.0, 1.4509768733764692
+sp|P04538|GP68_BPT4 Prohead assembly protein gp68 OS=Enterobacteria phage T4 GN=gp68 PE=1 SV=1, 7.0, 9.487119855554278
+sp|P04546|ALC_BPT4 Protein alc OS=Enterobacteria phage T4 GN=alc PE=4 SV=2, 7.0, 0.8135809656599146
+sp|P04547|GSTB_BPT4 DNA beta-glucosyltransferase OS=Enterobacteria phage T4 GN=bgt PE=1 SV=1, 7.0, 7.198013996280407
+sp|P06807|PCPP_BPT4 Prohead core protein protease OS=Enterobacteria phage T4 GN=21 PE=3 SV=2, 7.0, -9.263738150643267
+sp|P06808|HOLIN_BPT4 Holin OS=Enterobacteria phage T4 GN=t PE=1 SV=1, 7.0, 1.8974700413462358
+sp|P06855|KIPN_BPT4 Polynucleotide kinase OS=Enterobacteria phage T4 GN=pseT PE=1 SV=1, 7.0, 5.842121236188551
+sp|P07059|END2_BPT4 Endonuclease II OS=Enterobacteria phage T4 GN=denA PE=1 SV=3, 7.0, 5.444838918907266
+sp|P07065|TOP5_BPT4 DNA topoisomerase medium subunit OS=Enterobacteria phage T4 GN=52 PE=3 SV=2, 7.0, 6.614552207054973
+sp|P07068|PIN_BPT4 Host protease inhibitor OS=Enterobacteria phage T4 GN=pin PE=4 SV=1, 7.0, -12.835243458335649
+sp|P07069|Y04K_BPT4 Uncharacterized 12.6 kDa protein in pin-nrdC intergenic region OS=Enterobacteria phage T4 GN=y04K PE=4 SV=1, 7.0, -11.088094521030154
+sp|P07070|Y04L_BPT4 Uncharacterized 11.9 kDa protein in pin-nrdC intergenic region OS=Enterobacteria phage T4 GN=y04L PE=4 SV=1, 7.0, -15.776074741538823
+sp|P07071|NRDD_BPT4 Anaerobic ribonucleoside-triphosphate reductase OS=Enterobacteria phage T4 GN=NRDD PE=1 SV=4, 7.0, 0.45650114083469195
+sp|P07072|TEV2_BPT4 Intron-associated endonuclease 2 OS=Enterobacteria phage T4 GN=ITEVIIR PE=3 SV=2, 7.0, 29.07226103585595
+sp|P07074|MOBC_BPT4 Probable mobile endonuclease C OS=Enterobacteria phage T4 GN=mobC PE=4 SV=1, 7.0, 20.56388327986607
+sp|P07075|NRDG_BPT4 Anaerobic ribonucleoside-triphosphate reductase-activating protein OS=Enterobacteria phage T4 GN=NRDG PE=3 SV=1, 7.0, 3.5661258944164342
+sp|P07076|Y04H_BPT4 Uncharacterized 7.9 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04H PE=4 SV=1, 7.0, 1.9998227372942647
+sp|P07077|Y04G_BPT4 Uncharacterized 11.8 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04G PE=4 SV=2, 7.0, 4.1772749825389415
+sp|P07078|Y04F_BPT4 Uncharacterized 7.0 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04F PE=4 SV=1, 7.0, 5.443777512342754
+sp|P07079|Y04E_BPT4 Uncharacterized 11.8 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04E PE=4 SV=1, 7.0, 10.205827721302354
+sp|P07080|Y04D_BPT4 Uncharacterized 5.1 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04D PE=4 SV=1, 7.0, 0.9991039133163842
+sp|P07081|Y04C_BPT4 Uncharacterized 9.2 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04C PE=4 SV=1, 7.0, 2.210399546104825
+sp|P07082|Y04B_BPT4 Uncharacterized 12.7 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04B PE=4 SV=1, 7.0, 8.474689809296763
+sp|P07083|Y04A_BPT4 Uncharacterized 9.8 kDa protein in Gp55-nrdG intergenic region OS=Enterobacteria phage T4 GN=y04A PE=4 SV=1, 7.0, -6.8160462521747345
+sp|P07878|VG452_BPT4 Protein gp45.2 OS=Enterobacteria phage T4 GN=45.2 PE=4 SV=1, 7.0, -1.5160832011185805
+sp|P07879|RPBA_BPT4 15 kDa RNA polymerase-binding protein OS=Enterobacteria phage T4 GN=rpbA PE=1 SV=2, 7.0, 0.6661811068189727
+sp|P08773|DCHM_BPT4 Deoxycytidylate 5-hydroxymethyltransferase OS=Enterobacteria phage T4 GN=42 PE=1 SV=1, 7.0, -2.8587401934223804
+sp|P08986|BIMM_BPT4 Immunity protein OS=Enterobacteria phage T4 GN=imm PE=1 SV=1, 7.0, 2.0002333437359274
+sp|P09176|TOPL_BPT4 DNA topoisomerase large subunit OS=Enterobacteria phage T4 GN=39 PE=1 SV=2, 7.0, 1.2072233500309326
+sp|P09425|BP25_BPT4 Baseplate wedge protein gp25 OS=Enterobacteria phage T4 GN=25 PE=1 SV=1, 7.0, -6.0196791795611295
+sp|P10104|WAC_BPT4 Fibritin OS=Enterobacteria phage T4 GN=wac PE=1 SV=5, 7.0, -21.48420925140992
+sp|P10927|BP09_BPT4 Baseplate wedge protein gp9 OS=Enterobacteria phage T4 GN=9 PE=1 SV=1, 7.0, -8.119562958938864
+sp|P10928|BP10_BPT4 Baseplate wedge protein gp10 OS=Enterobacteria phage T4 GN=10 PE=1 SV=1, 7.0, -38.42988709529828
+sp|P10929|BP11_BPT4 Baseplate wedge protein gp11 OS=Enterobacteria phage T4 GN=11 PE=1 SV=1, 7.0, -5.034502654205268
+sp|P10930|FIB12_BPT4 Short tail fiber protein gp12 OS=Enterobacteria phage T4 GN=12 PE=1 SV=3, 7.0, -3.631572840252197
+sp|P11110|NECK1_BPT4 Neck protein gp13 OS=Enterobacteria phage T4 GN=13 PE=1 SV=1, 7.0, -8.089831439141989
+sp|P11111|NECK2_BPT4 Neck protein gp14 OS=Enterobacteria phage T4 GN=14 PE=1 SV=1, 7.0, -16.296051032338024
+sp|P11112|COMPL_BPT4 Tail completion protein gp15 OS=Enterobacteria phage T4 GN=15 PE=1 SV=2, 7.0, -10.022505049898184
+sp|P11156|RIR2_BPT4 Ribonucleoside-diphosphate reductase subunit beta OS=Enterobacteria phage T4 GN=NRDB PE=3 SV=2, 7.0, -14.209014349483018
+sp|P12726|ALT_BPT4 NAD--protein ADP-ribosyltransferase OS=Enterobacteria phage T4 GN=alt PE=4 SV=2, 7.0, -3.3875273090593065
+sp|P13299|TEV1_BPT4 Intron-associated endonuclease 1 OS=Enterobacteria phage T4 GN=ITEVIR PE=1 SV=2, 7.0, 24.63038396336076
+sp|P13300|KITH_BPT4 Thymidine kinase OS=Enterobacteria phage T4 GN=TK PE=3 SV=1, 7.0, -0.9772953844587304
+sp|P13302|IPI3_BPT4 Internal protein III OS=Enterobacteria phage T4 GN=ipi3 PE=1 SV=1, 7.0, 9.475480870217208
+sp|P13303|Y05O_BPT4 Uncharacterized 14.6 kDa protein in mobD-ri intergenic region OS=Enterobacteria phage T4 GN=y05O PE=4 SV=3, 7.0, -2.2819015248895638
+sp|P13304|ANTIH_BPT4 Antiholin OS=Enterobacteria phage T4 GN=rI PE=1 SV=1, 7.0, -4.573234942311441
+sp|P13305|Y05Q_BPT4 Uncharacterized 8.3 kDa protein in ri-tk intergenic region OS=Enterobacteria phage T4 GN=y05Q PE=4 SV=1, 7.0, 6.4815672529037425
+sp|P13306|Y06A_BPT4 Uncharacterized 7.2 kDa protein in tk-vs intergenic region OS=Enterobacteria phage T4 GN=y06A PE=4 SV=1, 7.0, -9.990373701859587
+sp|P13307|Y06B_BPT4 Uncharacterized 7.1 kDa protein in tk-vs intergenic region OS=Enterobacteria phage T4 GN=y06B PE=4 SV=1, 7.0, -8.81162962952415
+sp|P13308|Y06C_BPT4 Uncharacterized 8.5 kDa protein in tk-vs intergenic region OS=Enterobacteria phage T4 GN=y06C PE=4 SV=1, 7.0, 3.866076716295794
+sp|P13309|Y06D_BPT4 Uncharacterized 17.5 kDa protein in tk-vs intergenic region OS=Enterobacteria phage T4 GN=y06D PE=3 SV=1, 7.0, -1.4033981633026693
+sp|P13310|VS_BPT4 Valyl--tRNA ligase modifier OS=Enterobacteria phage T4 GN=vs PE=1 SV=1, 7.0, 5.083774010643658
+sp|P13311|Y06E_BPT4 Uncharacterized 20.7 kDa protein in vs-regB intergenic region OS=Enterobacteria phage T4 GN=y06E PE=4 SV=1, 7.0, 13.909575327894885
+sp|P13312|REGB_BPT4 Endoribonuclease RegB OS=Enterobacteria phage T4 GN=regB PE=1 SV=1, 7.0, 3.1512902057885133
+sp|P13313|Y06F_BPT4 Uncharacterized 10.9 kDa protein in regB-denV intergenic region OS=Enterobacteria phage T4 GN=y06F PE=4 SV=1, 7.0, -1.7856357722109188
+sp|P13314|Y06G_BPT4 Uncharacterized 10.2 kDa protein in regB-denV intergenic region OS=Enterobacteria phage T4 GN=y06G PE=4 SV=1, 7.0, -6.844234347797665
+sp|P13315|Y06H_BPT4 Uncharacterized 6.6 kDa protein in regB-denV intergenic region OS=Enterobacteria phage T4 GN=y06H PE=4 SV=1, 7.0, 2.000563396780911
+sp|P13316|GRCA_BPT4 Autonomous glycyl radical cofactor OS=Enterobacteria phage T4 GN=grcA PE=3 SV=1, 7.0, -2.7894043234587995
+sp|P13317|Y06J_BPT4 Uncharacterized 12.8 kDa protein in regB-denV intergenic region OS=Enterobacteria phage T4 GN=y06J PE=4 SV=2, 7.0, 4.173113839497904
+sp|P13318|Y06K_BPT4 Uncharacterized 25.0 kDa protein in regB-denV intergenic region OS=Enterobacteria phage T4 GN=y06K PE=4 SV=1, 7.0, 10.983709325091807
+sp|P13319|RNH_BPT4 Ribonuclease H OS=Enterobacteria phage T4 GN=rnh PE=1 SV=1, 7.0, 5.341880970448589
+sp|P13320|DSBA_BPT4 Double-stranded DNA-binding protein OS=Enterobacteria phage T4 GN=dsbA PE=1 SV=1, 7.0, -5.270392143198247
+sp|P13321|Y14F_BPT4 Uncharacterized 24.6 kDa protein in Gp32-Gp59 intergenic region OS=Enterobacteria phage T4 GN=y14F PE=4 SV=2, 7.0, 0.5981420986036217
+sp|P13322|Y07D_BPT4 Uncharacterized 6.6 kDa protein in segB-ipI intergenic region OS=Enterobacteria phage T4 GN=y07D PE=4 SV=1, 7.0, 0.9402555377164808
+sp|P13323|Y07C_BPT4 Uncharacterized 16.0 kDa protein in segB-ipI intergenic region OS=Enterobacteria phage T4 GN=y07C PE=4 SV=1, 7.0, -7.067920268907999
+sp|P13324|Y07B_BPT4 Uncharacterized 11.2 kDa protein in segB-ipI intergenic region OS=Enterobacteria phage T4 GN=y07B PE=4 SV=1, 7.0, -3.579480965282481
+sp|P13325|SEGB_BPT4 Putative endonuclease segB OS=Enterobacteria phage T4 GN=segB PE=3 SV=4, 7.0, 12.67445822658124
+sp|P13326|Y03H_BPT4 Uncharacterized 12.4 kDa protein in mobB-Gp55 intergenic region OS=Enterobacteria phage T4 GN=y03H PE=4 SV=1, 7.0, 2.243125732405839
+sp|P13327|Y03G_BPT4 Uncharacterized 7.9 kDa protein in mobB-Gp55 intergenic region OS=Enterobacteria phage T4 GN=y03G PE=4 SV=1, 7.0, 5.446675288701969
+sp|P13328|Y03F_BPT4 Uncharacterized 7.3 kDa protein in mobB-Gp55 intergenic region OS=Enterobacteria phage T4 GN=y03F PE=4 SV=2, 7.0, 3.450646294921547
+sp|P13329|MOBB_BPT4 Probable mobile endonuclease B OS=Enterobacteria phage T4 GN=mobB PE=4 SV=1, 7.0, 24.72125372788987
+sp|P13330|Y03C_BPT4 Uncharacterized 10.3 kDa protein in Gp46-Gp47 intergenic region OS=Enterobacteria phage T4 GN=y03C PE=4 SV=1, 7.0, -8.664347851397965
+sp|P13331|TTTP_BPT4 Tail tube terminator protein OS=Enterobacteria phage T4 GN=3 PE=1 SV=3, 7.0, -9.782112599386227
+sp|P13332|TSP_BPT4 Tail sheath protein OS=Enterobacteria phage T4 GN=18 PE=1 SV=5, 7.0, -14.654852941994791
+sp|P13333|TUBE_BPT4 Tail tube protein gp19 OS=Enterobacteria phage T4 GN=19 PE=1 SV=1, 7.0, -7.778181112403519
+sp|P13334|PORTL_BPT4 Portal protein gp20 OS=Enterobacteria phage T4 GN=20 PE=1 SV=2, 7.0, -14.170508227312332
+sp|P13335|BP26_BPT4 Base plate structural protein gp26 OS=Enterobacteria phage T4 GN=26 PE=4 SV=2, 7.0, -6.042177841254999
+sp|P13336|BP28_BPT4 Baseplate structural protein gp28 OS=Enterobacteria phage T4 GN=28 PE=1 SV=4, 7.0, -1.609446248709134
+sp|P13337|TMP_BPT4 Tape measure protein OS=Enterobacteria phage T4 GN=29 PE=4 SV=1, 7.0, -15.490415870468233
+sp|P13338|VG33_BPT4 RNA polymerase-associated protein Gp33 OS=Enterobacteria phage T4 GN=33 PE=1 SV=1, 7.0, -10.014313776509479
+sp|P13339|BP48_BPT4 Baseplate tail-tube protein gp48 OS=Enterobacteria phage T4 GN=48 PE=1 SV=3, 7.0, 3.2125312453071206
+sp|P13340|END7_BPT4 Recombination endonuclease VII OS=Enterobacteria phage T4 GN=49 PE=1 SV=1, 7.0, 5.077584502250326
+sp|P13341|BP54_BPT4 Baseplate tail-tube protein gp54 OS=Enterobacteria phage T4 GN=54 PE=1 SV=1, 7.0, -3.3308408637899847
+sp|P13342|VG59_BPT4 Protein Gp59 OS=Enterobacteria phage T4 GN=59 PE=1 SV=1, 7.0, 11.403905815061451
+sp|P15075|VG50_BPT4 Head completion protein Gp50 OS=Enterobacteria phage T4 GN=50 PE=4 SV=2, 7.0, 12.202426091824933
+sp|P15076|DNAPR_BPT4 Terminal DNA protecting protein OS=Enterobacteria phage T4 GN=2 PE=4 SV=2, 7.0, 29.936649776769997
+sp|P15556|NDD_BPT4 Nucleoid disruption protein OS=Enterobacteria phage T4 GN=ndd PE=1 SV=2, 7.0, 10.922991831956075
+sp|P16006|DCTD_BPT4 Deoxycytidylate deaminase OS=Enterobacteria phage T4 GN=CD PE=1 SV=1, 7.0, 2.9259884633124247
+sp|P16007|MRH_BPT4 RpoH-modulating protein OS=Enterobacteria phage T4 GN=mrh PE=4 SV=3, 7.0, -9.755731543165048
+sp|P16009|NEEDL_BPT4 Peptidoglycan hydrolase gp5 OS=Enterobacteria phage T4 GN=5 PE=1 SV=2, 7.0, -11.046099140995032
+sp|P16010|SEGC_BPT4 Putative endonuclease segC OS=Enterobacteria phage T4 GN=segC PE=3 SV=3, 7.0, 25.112878638672786
+sp|P16011|BP53_BPT4 Baseplate wedge protein gp53 OS=Enterobacteria phage T4 GN=53 PE=1 SV=1, 7.0, -0.7989284854054175
+sp|P17171|VG40_BPT4 Head formation protein OS=Enterobacteria phage T4 GN=40 PE=1 SV=1, 7.0, -6.538606173443615
+sp|P17172|BP27_BPT4 Baseplate hub protein gp27 OS=Enterobacteria phage T4 GN=27 PE=1 SV=4, 7.0, -9.372044043470572
+sp|P17173|TAP51_BPT4 Baseplate hub assembly protein gp51 OS=Enterobacteria phage T4 GN=51 PE=4 SV=3, 7.0, -2.9484963525238985
+sp|P17307|Y13C_BPT4 Uncharacterized 9.4 kDa protein in Gp31-cd intergenic region OS=Enterobacteria phage T4 GN=y13C PE=4 SV=1, 7.0, 10.167804292431363
+sp|P17308|Y13B_BPT4 Uncharacterized 11.5 kDa protein in Gp31-cd intergenic region OS=Enterobacteria phage T4 GN=y13B PE=4 SV=1, 7.0, 3.2428118352732325
+sp|P17309|VR3_BPT4 Protein rIII OS=Enterobacteria phage T4 GN=rIII PE=1 SV=2, 7.0, 1.9632716796571932
+sp|P17310|Y13A_BPT4 Uncharacterized 11.1 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y13A PE=4 SV=1, 7.0, 16.99234078742679
+sp|P17311|TERS_BPT4 Terminase, small subunit OS=Enterobacteria phage T4 GN=16 PE=1 SV=1, 7.0, -12.261658950309657
+sp|P17312|TERL_BPT4 Terminase, large subunit OS=Enterobacteria phage T4 GN=17 PE=1 SV=1, 7.0, -15.206771505165879
+sp|P17313|VG31_BPT4 Capsid assembly protein Gp31 OS=Enterobacteria phage T4 GN=31 PE=1 SV=1, 7.0, -3.395026226241816
+sp|P18056|HOC_BPT4 Highly immunogenic outer capsid protein OS=Enterobacteria phage T4 GN=hoc PE=1 SV=1, 7.0, -13.09555099192048
+sp|P18057|Y02D_BPT4 Uncharacterized 14.1 kDa protein in imm-Gp43 intergenic region OS=Enterobacteria phage T4 GN=y02D PE=4 SV=1, 7.0, -0.15333581895253778
+sp|P18058|INH_BPT4 Protein inh OS=Enterobacteria phage T4 GN=inh PE=4 SV=2, 7.0, -21.28687474034715
+sp|P18060|SEGE_BPT4 Putative endonuclease segE OS=Enterobacteria phage T4 GN=segE PE=3 SV=2, 7.0, 14.645425717727823
+sp|P18771|FIBP_BPT4 Long-tail fiber proximal subunit OS=Enterobacteria phage T4 GN=34 PE=1 SV=2, 7.0, -17.017067606874093
+sp|P18922|Y16J_BPT4 Uncharacterized 5.1 kDa protein in Gp52-ac intergenic region OS=Enterobacteria phage T4 GN=y16J PE=4 SV=1, 7.0, 1.2366676757977018
+sp|P18924|AC_BPT4 Uncharacterized protein 52.2 OS=Enterobacteria phage T4 GN=ac PE=4 SV=1, 7.0, -1.1228190233476938
+sp|P19060|BP06_BPT4 Baseplate wedge protein gp6 OS=Enterobacteria phage T4 GN=6 PE=1 SV=1, 7.0, -27.58402902264165
+sp|P19061|BP07_BPT4 Baseplate wedge protein gp7 OS=Enterobacteria phage T4 GN=7 PE=1 SV=1, 7.0, -29.32991117319835
+sp|P19062|BP08_BPT4 Baseplate wedge protein gp8 OS=Enterobacteria phage T4 GN=8 PE=1 SV=1, 7.0, -18.409228202362637
+sp|P19895|SEGD_BPT4 Putative endonuclease segD OS=Enterobacteria phage T4 GN=segD PE=3 SV=4, 7.0, 19.604424197799673
+sp|P19896|CAPSP_BPT4 Capsid vertex protein gp24 OS=Enterobacteria phage T4 GN=24 PE=1 SV=2, 7.0, -18.35025489610273
+sp|P20703|UVSW_BPT4 ATP-dependent DNA helicase uvsW OS=Enterobacteria phage T4 GN=uvsW PE=1 SV=2, 7.0, 10.452634126816944
+sp|P20704|Y01J_BPT4 Uncharacterized 8.3 kDa protein in mrh-soc intergenic region OS=Enterobacteria phage T4 GN=y01J PE=4 SV=1, 7.0, -1.5157001097820748
+sp|P20706|Y01I_BPT4 Uncharacterized 12.6 kDa protein in mrh-soc intergenic region OS=Enterobacteria phage T4 GN=y01I PE=4 SV=2, 7.0, -10.876024058194185
+sp|P22915|MOTA_BPT4 Middle transcription regulatory protein motA OS=Enterobacteria phage T4 GN=motA PE=1 SV=1, 7.0, 3.6934426192213343
+sp|P22916|Y16F_BPT4 Uncharacterized 12.8 kDa protein in arn-motA intergenic region OS=Enterobacteria phage T4 GN=y16F PE=4 SV=3, 7.0, 4.20806200425886
+sp|P22917|Y16D_BPT4 Uncharacterized 17.8 kDa protein in arn-motA intergenic region OS=Enterobacteria phage T4 GN=y16D PE=4 SV=2, 7.0, -4.633471209372233
+sp|P22919|Y16C_BPT4 Uncharacterized 11.4 kDa protein in arn-motA intergenic region OS=Enterobacteria phage T4 GN=y16C PE=4 SV=2, 7.0, 1.936240860479371
+sp|P22920|Y16B_BPT4 Uncharacterized 5.2 kDa protein in arn-motA intergenic region OS=Enterobacteria phage T4 GN=y16B PE=4 SV=1, 7.0, 2.3895665735877145
+sp|P23992|TOPS_BPT4 DNA topoisomerase small subunit OS=Enterobacteria phage T4 GN=60 PE=1 SV=1, 7.0, 2.480381802760877
+sp|P25186|Y00A_BPT4 Uncharacterized 8.1 kDa protein in rIIA-Gp60 intergenic region OS=Enterobacteria phage T4 GN=y00A PE=4 SV=1, 7.0, 0.24547562295759273
+sp|P32267|ASIA_BPT4 10 kDa anti-sigma factor OS=Enterobacteria phage T4 GN=asiA PE=1 SV=1, 7.0, -1.7521344418438491
+sp|P32268|Y03B_BPT4 Uncharacterized 8.2 kDa protein in Gp46-Gp47 intergenic region OS=Enterobacteria phage T4 GN=y03B PE=4 SV=2, 7.0, -7.02552747020623
+sp|P32270|DDA_BPT4 ATP-dependent DNA helicase dda OS=Enterobacteria phage T4 GN=dda PE=1 SV=2, 7.0, 4.009350742090666
+sp|P32271|Y06L_BPT4 Uncharacterized 17.7 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06L PE=3 SV=2, 7.0, -3.602008570588901
+sp|P32273|Y06M_BPT4 Uncharacterized 12.2 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06M PE=4 SV=1, 7.0, -0.06019523290098184
+sp|P32274|Y06N_BPT4 Uncharacterized 14.2 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06N PE=4 SV=1, 7.0, 4.140720748980541
+sp|P32275|Y12F_BPT4 Uncharacterized 32.4 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12F PE=4 SV=1, 7.0, -2.531793722603777
+sp|P32276|Y12G_BPT4 Uncharacterized 17.1 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12G PE=4 SV=1, 7.0, 3.18336241604535
+sp|P32277|RLIG2_BPT4 RNA ligase 2 OS=Enterobacteria phage T4 GN=Y10A PE=1 SV=1, 7.0, -3.4900261395316226
+sp|P32278|Y10B_BPT4 Uncharacterized 11.0 kDa protein in Gp24-hoc intergenic region OS=Enterobacteria phage T4 GN=y10B PE=4 SV=1, 7.0, -3.814844584812624
+sp|P32279|Y14A_BPT4 Uncharacterized 12.4 kDa protein in nrdA-td intergenic region OS=Enterobacteria phage T4 GN=y14A PE=4 SV=1, 7.0, 6.807981874298263
+sp|P32280|Y14B_BPT4 Uncharacterized 10.1 kDa protein in nrdA-td intergenic region OS=Enterobacteria phage T4 GN=y14B PE=4 SV=1, 7.0, -1.7901888484525121
+sp|P32281|Y11B_BPT4 Uncharacterized 9.0 kDa protein in uvsW-uvsY intergenic region OS=Enterobacteria phage T4 GN=y11B PE=4 SV=1, 7.0, -4.3055120719044115
+sp|P32282|RIR1_BPT4 Ribonucleoside-diphosphate reductase subunit alpha OS=Enterobacteria phage T4 GN=NRDA PE=3 SV=1, 7.0, -6.262161734582566
+sp|P32283|MOBE_BPT4 Probable mobile endonuclease E OS=Enterobacteria phage T4 GN=mobE PE=4 SV=1, 7.0, 16.613380841740277
+sp|P32284|REPEA_BPT4 DNA replication protein repEA OS=Enterobacteria phage T4 GN=repEA PE=4 SV=1, 7.0, 1.9571467188327072
+sp|P32285|Y00G_BPT4 Uncharacterized protein dexA.1 OS=Enterobacteria phage T4 GN=y00G PE=4 SV=3, 7.0, -0.9979427547041462
+sp|P32286|SEGA_BPT4 Endonuclease segA OS=Enterobacteria phage T4 GN=segA PE=3 SV=1, 7.0, 23.911573421755303
+sp|P32287|Y13D_BPT4 Uncharacterized 12.8 kDa protein in cd-pseT intergenic region OS=Enterobacteria phage T4 GN=y13D PE=4 SV=1, 7.0, 1.930608243495763
+sp|P33084|Y12E_BPT4 Uncharacterized 10.8 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12E PE=4 SV=1, 7.0, 1.9029543337897836
+sp|P39222|Y06O_BPT4 Uncharacterized 15.1 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06O PE=4 SV=1, 7.0, 9.411944656338642
+sp|P39223|Y06P_BPT4 Uncharacterized 23.8 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06P PE=4 SV=1, 7.0, -3.1250060976936114
+sp|P39224|Y06Q_BPT4 Uncharacterized 22.0 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06Q PE=4 SV=1, 7.0, -0.7470828304087174
+sp|P39225|Y06R_BPT4 Uncharacterized 13.1 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y06R PE=4 SV=1, 7.0, -11.047413342298936
+sp|P39226|Y07A_BPT4 Uncharacterized 10.2 kDa protein in e-segB intergenic region OS=Enterobacteria phage T4 GN=y07A PE=4 SV=1, 7.0, -7.545292013720286
+sp|P39228|Y01K_BPT4 Uncharacterized 5.9 kDa protein in Gp58-sp intergenic region OS=Enterobacteria phage T4 GN=y01K PE=4 SV=2, 7.0, -0.9970865318314728
+sp|P39229|Y01L_BPT4 Uncharacterized 24.3 kDa protein in Gp58-sp intergenic region OS=Enterobacteria phage T4 GN=y01L PE=4 SV=2, 7.0, -2.1997052898166034
+sp|P39230|SPAC_BPT4 Protein spackle OS=Enterobacteria phage T4 GN=sp PE=1 SV=1, 7.0, -3.0893114879742956
+sp|P39231|Y02A_BPT4 Uncharacterized 10.2 kDa protein in sp-Gp41 intergenic region OS=Enterobacteria phage T4 GN=y02A PE=4 SV=1, 7.0, 8.176478122493114
+sp|P39232|DMD_BPT4 Antitoxin Dmd OS=Enterobacteria phage T4 GN=dmd PE=1 SV=1, 7.0, -1.0598405266536455
+sp|P39234|Y08B_BPT4 Uncharacterized 10.2 kDa protein in segC-Gp6 intergenic region OS=Enterobacteria phage T4 GN=y08B PE=1 SV=1, 7.0, 2.656281256557617
+sp|P39236|Y05M_BPT4 Uncharacterized 7.1 kDa protein in mobD-ri intergenic region OS=Enterobacteria phage T4 GN=y05M PE=4 SV=1, 7.0, -7.813201514107041
+sp|P39237|Y05L_BPT4 Uncharacterized 6.8 kDa protein in mobD-ri intergenic region OS=Enterobacteria phage T4 GN=y05L PE=4 SV=2, 7.0, -6.7484678459539
+sp|P39238|Y05K_BPT4 Uncharacterized 7.6 kDa protein in mobD-ri intergenic region OS=Enterobacteria phage T4 GN=y05K PE=4 SV=1, 7.0, -3.5452983382556074
+sp|P39239|Y05J_BPT4 Uncharacterized 4.2 kDa protein in mobD-ri intergenic region OS=Enterobacteria phage T4 GN=y05J PE=4 SV=1, 7.0, 1.9958230456206618
+sp|P39240|Y05I_BPT4 Uncharacterized 21.1 kDa protein in mobD-ri intergenic region OS=Enterobacteria phage T4 GN=y05I PE=4 SV=2, 7.0, -2.189067655625074
+sp|P39241|MOBD_BPT4 Probable mobile endonuclease D OS=Enterobacteria phage T4 GN=mobD PE=4 SV=2, 7.0, 28.081571966150037
+sp|P39242|Y05G_BPT4 Uncharacterized 38.9 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05G PE=4 SV=2, 7.0, 0.34619785470512054
+sp|P39243|Y16K_BPT4 Uncharacterized 8.1 kDa protein in ndd-denB intergenic region OS=Enterobacteria phage T4 GN=y16K PE=4 SV=1, 7.0, -8.081677048132427
+sp|P39244|Y16L_BPT4 Uncharacterized 4.4 kDa protein in ndd-denB intergenic region OS=Enterobacteria phage T4 GN=y16L PE=4 SV=1, 7.0, -0.0031747911126769777
+sp|P39245|Y16M_BPT4 Uncharacterized 4.3 kDa protein in ndd-denB intergenic region OS=Enterobacteria phage T4 GN=y16M PE=4 SV=2, 7.0, 0.23951241386539557
+sp|P39247|Y16O_BPT4 Uncharacterized 3.7 kDa protein in ndd-denB intergenic region OS=Enterobacteria phage T4 GN=y16O PE=4 SV=1, 7.0, 0.20747689149817322
+sp|P39248|Y16P_BPT4 Uncharacterized 3.4 kDa protein in ndd-denB intergenic region OS=Enterobacteria phage T4 GN=y16P PE=4 SV=1, 7.0, 0.9386899776689088
+sp|P39249|Y16N_BPT4 Uncharacterized 5.0 kDa protein in ndd-denB intergenic region OS=Enterobacteria phage T4 GN=y16N PE=4 SV=2, 7.0, 0.9985186810267069
+sp|P39250|END4_BPT4 Endonuclease IV OS=Enterobacteria phage T4 GN=denB PE=1 SV=1, 7.0, 0.8078384512330047
+sp|P39251|Y16Q_BPT4 Uncharacterized 7.5 kDa protein in denB-rIIB intergenic region OS=Enterobacteria phage T4 GN=y16Q PE=4 SV=2, 7.0, 0.969561240463106
+sp|P39252|Y04M_BPT4 Uncharacterized 9.4 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y04M PE=4 SV=2, 7.0, 1.479438476911124
+sp|P39253|Y04N_BPT4 Uncharacterized 12.2 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y04N PE=4 SV=2, 7.0, -0.42398648449900306
+sp|P39254|Y04O_BPT4 Uncharacterized 36.3 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y04O PE=4 SV=2, 7.0, 10.759038717256377
+sp|P39255|Y04P_BPT4 Uncharacterized 39.0 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y04P PE=4 SV=1, 7.0, 1.7849006011566515
+sp|P39256|Y05A_BPT4 Uncharacterized 39.7 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05A PE=4 SV=1, 7.0, 12.8388472184381
+sp|P39257|Y05B_BPT4 Uncharacterized 31.7 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05B PE=4 SV=1, 7.0, 9.320289960575666
+sp|P39258|Y05C_BPT4 Uncharacterized 15.3 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05C PE=4 SV=2, 7.0, 0.08209318757491524
+sp|P39259|Y05D_BPT4 Uncharacterized 20.7 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05D PE=4 SV=2, 7.0, 0.2478379235220025
+sp|P39260|Y05E_BPT4 Uncharacterized 12.0 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05E PE=4 SV=2, 7.0, 7.688415886033634
+sp|P39261|Y05F_BPT4 Uncharacterized 36.7 kDa protein in nrdC-mobD intergenic region OS=Enterobacteria phage T4 GN=y05F PE=4 SV=2, 7.0, -10.53149498021976
+sp|P39262|VG56_BPT4 dCTP pyrophosphatase OS=Enterobacteria phage T4 GN=56 PE=4 SV=1, 7.0, -11.87175031954524
+sp|P39415|Y00E_BPT4 Uncharacterized 13.8 kDa protein in motB-dexA intergenic region OS=Enterobacteria phage T4 GN=y00E PE=4 SV=1, 7.0, -2.027401367319009
+sp|P39416|Y00F_BPT4 Uncharacterized 19.7 kDa protein in motB-dexA intergenic region OS=Enterobacteria phage T4 GN=y00F PE=4 SV=1, 7.0, -1.3443476330959239
+sp|P39418|Y00H_BPT4 Uncharacterized 9.5 kDa protein in dexA-dda intergenic region OS=Enterobacteria phage T4 GN=y00H PE=4 SV=1, 7.0, -9.022359348202947
+sp|P39419|Y01A_BPT4 Uncharacterized 12.1 kDa protein in dda-modA intergenic region OS=Enterobacteria phage T4 GN=y01A PE=4 SV=1, 7.0, 6.479360785417248
+sp|P39420|Y01B_BPT4 Uncharacterized 29.0 kDa protein in dda-modA intergenic region OS=Enterobacteria phage T4 GN=y01B PE=4 SV=1, 7.0, 27.614862777985916
+sp|P39421|MODB_BPT4 NAD--protein ADP-ribosyltransferase modB OS=Enterobacteria phage T4 GN=modB PE=1 SV=1, 7.0, -2.1252555973419125
+sp|P39423|MODA_BPT4 NAD--protein ADP-ribosyltransferase modA OS=Enterobacteria phage T4 GN=modA PE=1 SV=2, 7.0, -6.644372383471789
+sp|P39424|Y01E_BPT4 Uncharacterized 7.0 kDa protein in modB-mrh intergenic region OS=Enterobacteria phage T4 GN=y01E PE=4 SV=1, 7.0, -7.513362567936111
+sp|P39425|Y01F_BPT4 Uncharacterized 18.3 kDa protein in modB-mrh intergenic region OS=Enterobacteria phage T4 GN=y01F PE=4 SV=1, 7.0, -0.3032802007605422
+sp|P39426|Y01G_BPT4 Uncharacterized 6.2 kDa protein in modB-mrh intergenic region OS=Enterobacteria phage T4 GN=y01G PE=4 SV=1, 7.0, -0.7575586069926314
+sp|P39427|Y01H_BPT4 Uncharacterized 8.1 kDa protein in modB-mrh intergenic region OS=Enterobacteria phage T4 GN=y01H PE=4 SV=2, 7.0, 0.00290398136554626
+sp|P39487|Y00B_BPT4 Uncharacterized 14.7 kDa protein in Gp60-mobA intergenic region OS=Enterobacteria phage T4 GN=y00B PE=1 SV=1, 7.0, 7.413650132609735
+sp|P39488|Y02C_BPT4 Uncharacterized 5.6 kDa protein in Gp42-imm intergenic region OS=Enterobacteria phage T4 GN=y02C PE=4 SV=1, 7.0, 1.9652258161481293
+sp|P39489|Y03I_BPT4 Uncharacterized 8.5 kDa protein in mobB-Gp55 intergenic region OS=Enterobacteria phage T4 GN=y03I PE=4 SV=2, 7.0, -8.75190097857893
+sp|P39490|Y04J_BPT4 Uncharacterized 6.2 kDa protein in pin-nrdC intergenic region OS=Enterobacteria phage T4 GN=y04J PE=4 SV=1, 7.0, -10.748642471801915
+sp|P39491|Y07E_BPT4 Uncharacterized 18.5 kDa protein in repEA-segC intergenic region OS=Enterobacteria phage T4 GN=y07E PE=4 SV=1, 7.0, -6.992534100528804
+sp|P39492|Y10C_BPT4 Uncharacterized 6.6 kDa protein in Gp24-hoc intergenic region OS=Enterobacteria phage T4 GN=y10C PE=4 SV=1, 7.0, 6.480247685662739
+sp|P39493|Y12A_BPT4 Uncharacterized 10.7 kDa protein in Gp54-alt intergenic region OS=Enterobacteria phage T4 GN=y12A PE=4 SV=1, 7.0, -4.992580169346082
+sp|P39494|Y12B_BPT4 Uncharacterized 7.4 kDa protein in Gp54-alt intergenic region OS=Enterobacteria phage T4 GN=y12B PE=4 SV=1, 7.0, 6.173997922049809
+sp|P39495|Y12C_BPT4 Uncharacterized 6.6 kDa protein in Gp54-alt intergenic region OS=Enterobacteria phage T4 GN=y12C PE=4 SV=2, 7.0, -0.7885764551197472
+sp|P39496|Y12D_BPT4 Uncharacterized 7.2 kDa protein in alt-Gp30 intergenic region OS=Enterobacteria phage T4 GN=y12D PE=4 SV=1, 7.0, -3.9990415077508725
+sp|P39497|Y12H_BPT4 Uncharacterized 8.9 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12H PE=4 SV=1, 7.0, 9.47613928054837
+sp|P39498|Y13E_BPT4 Uncharacterized 8.7 kDa protein in cd-pseT intergenic region OS=Enterobacteria phage T4 GN=y13E PE=4 SV=1, 7.0, 0.2454257469337296
+sp|P39499|Y13F_BPT4 Uncharacterized 10.1 kDa protein in cd-pseT intergenic region OS=Enterobacteria phage T4 GN=y13F PE=4 SV=1, 7.0, -4.273317960072559
+sp|P39500|Y13G_BPT4 Uncharacterized 7.9 kDa protein in cd-pseT intergenic region OS=Enterobacteria phage T4 GN=y13G PE=4 SV=1, 7.0, -7.053544627658743
+sp|P39501|Y13H_BPT4 Uncharacterized 8.7 kDa protein in cd-pseT intergenic region OS=Enterobacteria phage T4 GN=y13H PE=4 SV=1, 7.0, 2.4219940291554938
+sp|P39502|Y13I_BPT4 Uncharacterized 8.8 kDa protein in pseT-alc intergenic region OS=Enterobacteria phage T4 GN=y13I PE=4 SV=1, 7.0, 1.7205070835501022
+sp|P39503|SPAN2_BPT4 Spanin, outer lipoprotein subunit OS=Enterobacteria phage T4 GN=y13J PE=3 SV=3, 7.0, 3.3859381499547703
+sp|P39504|SPAN1_BPT4 Spanin, inner membrane subunit OS=Enterobacteria phage T4 GN=y13K PE=3 SV=1, 7.0, 2.7237099151778734
+sp|P39505|Y13L_BPT4 Uncharacterized 9.4 kDa protein in nrdB-nrdA intergenic region OS=Enterobacteria phage T4 GN=y13L PE=4 SV=1, 7.0, 11.620620172460256
+sp|P39506|Y14C_BPT4 Uncharacterized 9.5 kDa protein in frd-Gp32 intergenic region OS=Enterobacteria phage T4 GN=y14C PE=4 SV=1, 7.0, -4.573520798928954
+sp|P39507|Y14D_BPT4 Uncharacterized 14.7 kDa protein in frd-Gp32 intergenic region OS=Enterobacteria phage T4 GN=y14D PE=4 SV=3, 7.0, -14.595851987087812
+sp|P39508|Y14E_BPT4 Uncharacterized 8.8 kDa protein in frd-Gp32 intergenic region OS=Enterobacteria phage T4 GN=y14E PE=4 SV=1, 7.0, -13.01691270260647
+sp|P39510|ARN_BPT4 Anti-restriction endonuclease OS=Enterobacteria phage T4 GN=arn PE=1 SV=1, 7.0, -8.27696874462421
+sp|P39512|Y16H_BPT4 Uncharacterized 4.8 kDa protein in motA-Gp52 intergenic region OS=Enterobacteria phage T4 GN=y16H PE=4 SV=1, 7.0, 0.9999968377323398
+sp|P39514|TEV3_BPT4 Defective intron-associated endonuclease 3 OS=Enterobacteria phage T4 GN=ITEVIIIR PE=3 SV=1, 7.0, 8.011752425624534
+sp|P62765|STP_BPT4 T4 Suppressor of prr OS=Enterobacteria phage T4 GN=stp PE=4 SV=1, 7.0, 3.478965464903948
+sp|P69702|REGA_BPT4 Translation repressor protein OS=Enterobacteria phage T4 GN=regA PE=1 SV=1, 7.0, 3.6923095011241918
+sp|Q00305|Y12M_BPT4 Uncharacterized 12.9 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12M PE=4 SV=1, 7.0, -0.3062682423645038
+sp|Q00778|Y11A_BPT4 Uncharacterized 6.1 kDa protein in uvsW-uvsY intergenic region OS=Enterobacteria phage T4 GN=y11A PE=4 SV=1, 7.0, -4.847365467892808
+sp|Q01434|Y00D_BPT4 Uncharacterized 5.1 kDa protein in Gp39-comCA intergenic region OS=Enterobacteria phage T4 GN=y00D PE=4 SV=1, 7.0, 3.1149442432290737
+sp|Q01435|Y00C_BPT4 Uncharacterized 7.2 kDa protein in Gp39-comCA intergenic region OS=Enterobacteria phage T4 GN=y00C PE=4 SV=1, 7.0, 1.179509610069522
+sp|Q01436|CEF_BPT4 Protein cef OS=Enterobacteria phage T4 GN=cef PE=4 SV=1, 7.0, -2.5483452172764713
+sp|Q01437|MOTB_BPT4 Transcription regulatory protein motB OS=Enterobacteria phage T4 GN=motB PE=4 SV=1, 7.0, 6.65414954334242
+sp|Q01438|COMCA_BPT4 Protein comC-alpha OS=Enterobacteria phage T4 GN=comCA PE=4 SV=1, 7.0, -10.777387759199422
+sp|Q02405|Y12I_BPT4 Uncharacterized 8.1 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12I PE=4 SV=2, 7.0, -5.545086710499454
+sp|Q02406|Y12J_BPT4 Uncharacterized 7.3 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12J PE=4 SV=1, 7.0, -0.9989167579267205
+sp|Q02407|Y12K_BPT4 Uncharacterized 10.8 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12K PE=4 SV=1, 7.0, 0.4234415084883085
+sp|Q02408|Y12L_BPT4 Uncharacterized 14.1 kDa protein in Gp30-rIII intergenic region OS=Enterobacteria phage T4 GN=y12L PE=4 SV=1, 7.0, 0.8724256535822182
+tr|Q859M4|Q859M4_BPT4 Gp21' prohead core protease alternate start product OS=Enterobacteria phage T4 GN=21' PE=4 SV=1, 7.0, -5.268303875955501
+tr|Q859M5|Q859M5_BPT4 Gp47.1 hypothetical predicted membrane protein OS=Enterobacteria phage T4 GN=47.1 PE=4 SV=1, 7.0, -1.0613100223310914
+tr|Q8SDG4|Q8SDG4_BPT4 Gp26' OS=Enterobacteria phage T4 GN=gp26' PE=4 SV=1, 7.0, -4.124990811765248
+tr|Q96214|Q96214_BPT4 Putative uncharacterized protein mobD.3 OS=Enterobacteria phage T4 GN=mobD.3 PE=4 SV=1, 7.0, 1.9698350929489066
+tr|Q9T0S5|Q9T0S5_BPT4 Ndd.3 hypothetical predicted inner membrane protein OS=Enterobacteria phage T4 GN=ndd.3 PE=4 SV=1, 7.0, 1.208802783274497
+sp|Q9T0T0|Y16A_BPT4 Uncharacterized 5.9 kDa protein in asiA-arn intergenic region OS=Enterobacteria phage T4 GN=y16A PE=4 SV=1, 7.0, -5.5118468839123995
+sp|Q9T0V1|REPEB_BPT4 DNA replication protein repEB OS=Enterobacteria phage T4 GN=repEB PE=4 SV=1, 7.0, -4.552661654331818
