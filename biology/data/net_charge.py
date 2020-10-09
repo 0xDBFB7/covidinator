@@ -29,9 +29,12 @@ for file in files:
         net_charge = seq_param.get_NCPR(pH=7.0)*seq_param.get_length()
         print(net_charge)
 
+
         output.write(header)
         output.write(", ")
         output.write(str(7.0))
+        output.write(str(", "))
+        output.write(str(seq_param.get_molecular_weight()))
         output.write(str(", "))
         output.write(str(net_charge))
         output.write('\n')
