@@ -2604,3 +2604,5 @@ file:///home/arthurdent/Downloads/49E.PDF
 
 dsn progress reports are so amazing
 
+
+Use synthesizer to generate pulses; take the FFT and integrate

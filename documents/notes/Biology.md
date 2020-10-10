@@ -1101,9 +1101,20 @@ appreciate the fundamental change brought by phage." -
 Phage mutates 1000x as fast as the host cell
 
 X-gal is only soluble in DMF and DMSO. We choose DMSO due to the other's toxicity.
-
+DMSO is miscible with water, so that works out nicely. 
+ < 0.75% DMSO seem to not be cytotoxic.
 
 https://ebiz.nserc.ca/
 
 The somerfield precursor 
+
+defrost cycles 
+
+Little bit of trouble getting X-gal imported. Apparently a HS code is needed
+for import purposes; canada has a "Automated Import Reference System" that's really helpful
+catagorized by the chemical structure.
+
+
+
+
 
