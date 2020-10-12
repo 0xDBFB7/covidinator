@@ -75,7 +75,11 @@ def get_tissue_VirtPopTool_name(raw_id):
     return name
 
 
-def lookup_tissue_properties(id, center_frequency):
+
+def get_tissue_cole_cole_coefficients(id):
+
+    #this absolutely should not be hardcoded.
+    tissue_properties_database_file = '../biology/FDTD/itis_tissue_properties/SEMCAD_v14.8.h5'
 
 
     tissue_obj = 0
@@ -139,6 +143,13 @@ def lookup_tissue_properties(id, center_frequency):
 
     sigma = tissue_obj.attrs["sig"]
     ef = tissue_obj.attrs["ef"]
+
+    return ef, sigma, deltas, alphas, taus
+
+def lookup_tissue_properties(id, center_frequency):
+
+
+    ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(id)
 #     print(ef, sigma, deltas, alphas, taus)
     cole_cole_properties = cole_cole_4(center_frequency, ef, sigma, deltas, alphas, taus)
     dielectric_constant, conductivity = complex_permittivity_to_er_and_sigma(cole_cole_properties, center_frequency)
