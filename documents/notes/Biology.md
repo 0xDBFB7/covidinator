@@ -1116,5 +1116,9 @@ catagorized by the chemical structure.
 
 
 
+One of the Adair papers has an equation for the expected damping force.
+
+How do blue/white plates work without lysis?
+
 
 
