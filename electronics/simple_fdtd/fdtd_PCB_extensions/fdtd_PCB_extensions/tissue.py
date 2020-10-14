@@ -74,8 +74,6 @@ def get_tissue_VirtPopTool_name(raw_id):
     name = name[(name.index('/')+1):] #remove duke_blah_blah/ prefix
     return name
 
-
-
 def get_tissue_cole_cole_coefficients(id):
 
     #this absolutely should not be hardcoded.
@@ -145,6 +143,14 @@ def get_tissue_cole_cole_coefficients(id):
     ef = tissue_obj.attrs["ef"]
 
     return ef, sigma, deltas, alphas, taus
+
+def tissue_properties(center_frequency, ef, sigma, deltas, alphas, taus):
+    cole_cole_properties = cole_cole_4(center_frequency, ef, sigma, deltas, alphas, taus)
+    dielectric_constant, conductivity = complex_permittivity_to_er_and_sigma(cole_cole_properties, center_frequency)
+    penetration_depth = electric_field_penetration_depth(center_frequency, dielectric_constant, conductivity)
+
+    return dielectric_constant, penetration_depth
+
 
 def lookup_tissue_properties(id, center_frequency):
 

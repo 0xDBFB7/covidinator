@@ -1121,4 +1121,4 @@ One of the Adair papers has an equation for the expected damping force.
 How do blue/white plates work without lysis?
 
 
-
+I wonder if filter-paper would make a good non-smearing substrate for drop plaque assays. 
