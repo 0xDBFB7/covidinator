@@ -1159,20 +1159,39 @@ Simultaneously, another slug of slant added to 50 mL NB and aerated.
 
 Both left overnight. Neither have IPTG.
 
+Very nice culture in both. A whole lot of the aerated culture evaporated - only 5 mL left of the initial 10 mL.
 
-0.5 mL taken and frozen with glycerol.
+
+0.6 mL non-aerated culture taken and frozen with glycerol.
+0.6 mL T4r fresh stock taken and frozen with glycerol.
+Also some T4r aliquoted into a tube for storage.
+
+
+0.6 mL X-gal aliquoted into a tube.
+
+
+HANG ON! "T4r+" is not a mutant of T4r! It's the other way around! T4r+ is *not* a rapid-lysis phage! Dads'lkfja flk,sjadfolkfhfg dsf dkjfsdfsduc
+fldlfkajdldlkf fukdal dlfkj alkdf  as lsdjkf;ljadflajsdlfalk;jdflkads;adslkjdlkdsfkl;jsdf klj;dsf fkljsdf kljdsf kljjdfs kljdsf kljsdf kljsd fkljsdf lkjaoweitjoeirw
+
 
 \section{X-gal test 1}
+
+X-gal is advantageous over beta-glo for the following reasons: reaction does not depend on oxygen, does not decay with incubation (ideally!),
+no questions regarding detergent presence, is easily read.
+However, it appears to have one issue: it can apparently be taken up by the E.coli and then react with beta-gal without lysis!
+
 
 4 tubes:
 
 0.2 mL NB + 0.2 mL thick aerated e. coli colony + 2.5 uL IPTG + 2.5 uL of the 0.1M X-gal in DMSO solution
-(that's 50 uM; a 0.5\% solution; just the right amount to prevent dmso toxicity).
+(that's 50 uM; a 0.5\% solution; just the right amount to prevent dmso toxicity; also solution contains ethanol).
 
-After half an hour of incubating (to allow sufficient induced E. coli to grow),
+After an hour of incubating (to allow sufficient induced E. coli to grow),
 2.5 uL phage added to each. Continue incubating.
 
-(probably need to make a pre-induced culture of E. coli.)
+(probably need to make a pre-induced aerated culture of E. coli.)
+
+
 
 \section{Phage lysis test 1}
 
@@ -1180,16 +1199,17 @@ After half an hour of incubating (to allow sufficient induced E. coli to grow),
 
 Then, 0.4 mL of phage added.
 
-
-
 \section{Run 5}
-
 
 0.6 mL of IPTG is required for a 50 mL culture.
 
 Should we concentrate?
 
+\section{GelGreen electrophoresis}
 
+A 3x solution is recommended for post-screening.
+
+Carolina GelGreen, 10,000X in water. Soak for 30 min, gently agitating every 5 minutes.
 
 
 
