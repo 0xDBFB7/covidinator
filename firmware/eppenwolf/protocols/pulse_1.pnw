@@ -1150,28 +1150,44 @@ X-gal was held up at the border for 3 weeks, but:
 
 \section{Run 5 prep}
 
+Using a little ammonia fridge now. Better temp control.
 
 Restarting the E. coli culture, just in case.
 
 With care in not contaminating, a 3 mL non-aerated culture of E. coli in a 15 mL Falcon, using a pipette to get a slug of agar slant.
+Simultaneously, another slug of slant added to 50 mL NB and aerated.
+
+Both left overnight. Neither have IPTG.
+
 
 0.5 mL taken and frozen with glycerol.
 
-Simultaneously, another slug of slant added to 50 mL NB and aerated.
-
-
-
 \section{X-gal test 1}
 
+4 tubes:
 
-Nutrient broth + IPTG
+0.2 mL NB + 0.2 mL thick aerated e. coli colony + 2.5 uL IPTG + 2.5 uL of the 0.1M X-gal in DMSO solution
+(that's 50 uM; a 0.5\% solution; just the right amount to prevent dmso toxicity).
+
+After half an hour of incubating (to allow sufficient induced E. coli to grow),
+2.5 uL phage added to each. Continue incubating.
+
+(probably need to make a pre-induced culture of E. coli.)
+
+\section{Phage lysis test 1}
+
+0.2 mL of the thick aerated e. coli in a 10 mL tube. 2 hours of aeration and incubation.
+
+Then, 0.4 mL of phage added.
+
 
 
 \section{Run 5}
 
+
 0.6 mL of IPTG is required for a 50 mL culture.
 
-
+Should we concentrate?
 
 
 
