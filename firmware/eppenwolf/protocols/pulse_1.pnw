@@ -1162,16 +1162,34 @@ Both left overnight. Neither have IPTG.
 Very nice culture in both. A whole lot of the aerated culture evaporated - only 5 mL left of the initial 10 mL.
 
 
+!!!!!!!!!!!!!!!
+
+HANG ON! "T4r+" is not a mutant of T4r! It's the other way around! T4r+ is *not* a rapid-lysis phage! Dads'lkfja flk,sjadfolkfhfg dsf dkjfsdfsduc
+fldlfkajdldlkf fukdal dlfkj alkdf  as lsdjkf;ljadflajsdlfalk;jdflkads;adslkjdlkdsfkl;jsdf klj;dsf fkljsdf kljdsf kljjdfs kljdsf kljsdf kljsd fkljsdf lkjaoweitjoeirw
+
+See Doermann's comments on the same: [1]Hershey AD. Spontaneous Mutations in Bacterial Viruses. Cold Spring Harb Symp Quant Biol 1946;11:67–77. https://doi.org/10.1101/SQB.1946.011.01.010.
+This is really crazy. Most of the great findings fundamental to running phage experiments seem to have been... not lost, per se, but not constantly dredged up to be regarded anew, and so effectively lost?
+At least, that's what reading ResearchGate seems to show.
+Maybe the real experts in this field () - but given that some of the base facts are never referred to in the last 60 years, i'm inclined to belevie otherwise.
+
+All future experiments after this point will be performed using Carolina 12-4335, T4r, not T4r+.
+
+Man, phage is super interesting - not just because of how important the old research was, or the intrinsic neatness of phage, but also because of how awesome
+the "meta-structure" of the literature is.
+
+Also, if there was any doubt that open-access to independent researchers is important, note that d'herelle, the discoverer of phage, was an independent!
+
+!!!!!!!!!!!!!!!!!!
+
+
+
 0.6 mL non-aerated culture taken and frozen with glycerol.
 0.6 mL T4r fresh stock taken and frozen with glycerol.
 Also some T4r aliquoted into a tube for storage.
 
 
+
 0.6 mL X-gal aliquoted into a tube.
-
-
-HANG ON! "T4r+" is not a mutant of T4r! It's the other way around! T4r+ is *not* a rapid-lysis phage! Dads'lkfja flk,sjadfolkfhfg dsf dkjfsdfsduc
-fldlfkajdldlkf fukdal dlfkj alkdf  as lsdjkf;ljadflajsdlfalk;jdflkads;adslkjdlkdsfkl;jsdf klj;dsf fkljsdf kljdsf kljjdfs kljdsf kljsdf kljsd fkljsdf lkjaoweitjoeirw
 
 
 \section{X-gal test 1}
@@ -1186,12 +1204,28 @@ However, it appears to have one issue: it can apparently be taken up by the E.co
 0.2 mL NB + 0.2 mL thick aerated e. coli colony + 2.5 uL IPTG + 2.5 uL of the 0.1M X-gal in DMSO solution
 (that's 50 uM; a 0.5\% solution; just the right amount to prevent dmso toxicity; also solution contains ethanol).
 
+2.5 uL phage added immediately to tube '1' to test the effect of pre-induced vs post-induced.
+
+Started at 17:16.
+
+X-gal is colorless. Tubes are very turbid but colorless.
+
 After an hour of incubating (to allow sufficient induced E. coli to grow),
-2.5 uL phage added to each. Continue incubating.
+2.5 uL phage added to 2 and 3. Continuing to incubate.
 
 (probably need to make a pre-induced aerated culture of E. coli.)
 
+At 17:57, all 4 were vaguely blue. 3 was slightly less blue for some reason?
 
+2.5 uL phage added to 2 at this time. Both 2 and 4 were removed simultaneously to assure pause in incubation.
+
+At 7:15, all were equally, solidly blue.
+
+Indeed, the precipitate is said to form within the bacterium.
+
+Also, the multiplicity of infection with only 2.5 uL was probably too low.
+
+Interesting: the turquoise X-gal solution was very rheoscopic! The turbulent properties of these small tubes are very remarkable!
 
 \section{Phage lysis test 1}
 
@@ -1213,8 +1247,21 @@ Carolina GelGreen, 10,000X in water. Soak for 30 min, gently agitating every 5 m
 
 
 
+\section{X-gal test 2}
 
+1 tube:
 
+0.2 mL NB + 0.2 mL thick aerated e. coli colony + 2.5 uL IPTG + 2.5 uL of the 0.1M X-gal. Mixed throughly by hand.
+
+5.0 uL of this solution was added to 2 wells.
+
+2.5 uL phage was added to one well. 2.5 uL broth to the other.
+
+0.8 uL into each well on a prod slide. 5 uL sil. cap.
+
+Started incubating at 9:19. Will check in 1.5 hours.
+
+Briefly removed at 10:20.
 
 
 
