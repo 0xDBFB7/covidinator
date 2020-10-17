@@ -1227,6 +1227,11 @@ Also, the multiplicity of infection with only 2.5 uL was probably too low.
 
 Interesting: the turquoise X-gal solution was very rheoscopic! The turbulent properties of these small tubes are very remarkable!
 
+After overnight incubation, all 4 had precipitated to a dark blue pellet plus a clear and dark blue band.
+No significant difference in pellet size.
+
+Very pretty!
+
 \section{Phage lysis test 1}
 
 0.2 mL of the thick aerated e. coli in a 10 mL tube. 2 hours of aeration and incubation.
@@ -1249,7 +1254,7 @@ Carolina GelGreen, 10,000X in water. Soak for 30 min, gently agitating every 5 m
 
 \section{X-gal test 2}
 
-1 tube:
+1 tube ('T'):
 
 0.2 mL NB + 0.2 mL thick aerated e. coli colony + 2.5 uL IPTG + 2.5 uL of the 0.1M X-gal. Mixed throughly by hand.
 
@@ -1262,6 +1267,76 @@ Carolina GelGreen, 10,000X in water. Soak for 30 min, gently agitating every 5 m
 Started incubating at 9:19. Will check in 1.5 hours.
 
 Briefly removed at 10:20.
+
+Continued incubating overnight.
+
+There definitely is a slight number of turquoise particles in the 0.8 uL slide. Not really enough e. coli growth to make this
+a workable option, however.
+
+In fact, the microwell that was used to mix, which was basically emptied, has a residue that is very obviously only blue on the non-phage well.
+Hooray!
+
+the 'T' tube premix was kept in the fridge this time; it has remained non-blue. Perfection!
+
+Unfortunately, the dye appears to survive autoclaving. It must be washed out.
+
+Added 3x2.5 uL to 7 wells. Incubating.
+
+
+/* Cooling down x-gal apparently helps to increase the coloration? Neat */
+
+
+After 1 hour 20 min, coloration follows the phage concentration very well.
+
+very nice!
+
+Mixing would be better. Lots of weird, big particles?
+
+
+At 8:15, coloration is much darker. Images of each well were taken. No difference.
+
+gosh DARNIT
+
+What if we try adding the X-gal after phage lysis is complete? This way we negate the effect of the
+
+no, no, we should run a plate plaque assay.
+
+
+\section{Plate plaque assay}
+
+0.1 mL 'T' poured onto plate.
+
+diluted 2.5 uL phage in 0.5 mL broth. Poured onto plate.
+
+Overnight incubation. No plaques. Also no blue - X-gal and IPTG presumably diluted too much.
+
+\section{GelGreen epiflourecence microscopy}
+
+The epiflourecence microscopy counting technique cited in \cite{Bacteriophages2009} is veeery interesting.
+
+It almost seems like they describe flourescence without breaking the capsid? That would be no good for us.
+No, GelGreen doesn't penetrate any membranes.\cite{Quantification2020}
+
+\cite{Quantification2020} find that the LOD is 0.3 ng in a 10 uL sample. That's ssDNA.
+
+In our case, (650 Daltons/bp * 170000 bp) * 10^9/ml * 10 uL = 1.8 nanograms. That should be okay?
+
+
+So: heat the phage to 95 C for 5 minutes.
+
+
+DNA is not adequately destroyed by autoclaving, but thourghough cleaning of the plate should probably suffice.
+
+It might be interesting to try to measure *host* DNA ejected by phage lysis - track the time-course of flourescence vs infection.
+
+
+Use laser goggles to filter out gelgreen excitation.
+
+the Kapton does attenuate the blue a bit, but probably not enough to matter.
+
+Silicon ("avalanche?") photomultipliers are neat.
+
+
 
 
 

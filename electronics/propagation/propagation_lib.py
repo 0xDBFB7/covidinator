@@ -12,58 +12,65 @@ from mpl_toolkits.mplot3d import Axes3D
 import unittest
 
 
+class PCB:
+    def __init__(self):
+        self.a_n_coefficients
 
 
 
+    def fourier_transform(self, input_data, sampling_frequency):
+        self.input_fft = np.fft.fft(input_data)
 
+        a_n_coefficients = fft.real
+        b_n_coefficients = fft.imag
 
-def fourier_transform(input_data):
-    fft = np.fft.fft(input_data)
+        self.base_period = 1.0/len(a_n)
 
-    a_n = fft.real
-    b_n = fft.imag
+        ts = np.linspace(0, 100, 1000)
+        modes = np.arange(0, 1000)
 
-    base_period = 1.0/len(a_n)
-    return fft, a_n, b_n, base_period
-
-
-def attenuate(a_n, b_n, E_penetration_depth, distance):
-    attenuation = exp(-distance/E_penetration_depth)
-    return a_n*attenuation, b_n*attenuation
+        return fft, a_n, b_n, base_period
 
 
 
-def wavenumber(n, base_period, dielectric_constants):
-     return n*(base_period)*2*pi*np.sqrt(mu_0*dielectric_constants*epsilon_0)
+    def attenuate(a_n, b_n, E_penetration_depth, distance):
+        attenuation = exp(-distance/E_penetration_depth)
+        return a_n*attenuation, b_n*attenuation
 
 
 
-def fourier_sum(spatial_phase, t, n, a_n, b_n, base_period):
-    temporal_phase = n*(base_period)*2*pi*t
-
-    phase = temporal_phase + spatial_phase
-    # temporal_phase = 1
-    sum = a_n*np.cos(phase) + b_n*np.sin(phase)
-
-    output = - np.sum(sum, axis=0)
-
-    output /= len(n)
-
-    return output
+    def wavenumber(n, base_period, dielectric_constants):
+         return self.modes*(base_period)*2*pi*np.sqrt(mu_0*dielectric_constants*epsilon_0)
 
 
-# def optimal_frequency():
-    # arccos
 
-# def analytic_oscillator_fourier_sum():
+    def fourier_sum(spatial_phase, t, n, a_n, b_n, base_period):
+        temporal_phase = n*(base_period)*2*pi*t # this isn't correct. See folding:
+
+        \cite{Comments1993}
+        
+        phase = temporal_phase + spatial_phase
+        # temporal_phase = 1
+        sum = a_n*np.cos(phase) + b_n*np.sin(phase)
+
+        output = - np.sum(sum, axis=0)
+
+        output /= len(n)
+
+        return output
+
+
+    # def optimal_frequency():
+        # arccos
+
+    # def analytic_oscillator_fourier_sum():
 
 
 class test_fourier(unittest.TestCase):
 
     def test_sine_fourier(self):
 
-        ts = np.linspace(0, 100, 1000)
-        n = np.arange(0, 1000)
+
 
         input_data = np.zeros_like(ts)
         input_data[0:300] = np.sin(2.0*pi*ts[0:300])
