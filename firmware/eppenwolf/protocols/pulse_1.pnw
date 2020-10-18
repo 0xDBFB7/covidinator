@@ -5,6 +5,14 @@
 Rationale for using T4
 
 
+Yang uses AFM data indicating a 0.14 MPa yield stress.
+
+\cite{Osmotic2003} 30 atmospheres, and breaks at a pressure differential of 100 atm.
+T4 stress
+
+by $\sigma = pr / 2t $,
+t = 7 nm, r = 60 nm, and p =
+
 It cannot be overstated how difficult this measurement is to interpret.
 
 Positions of the three quantities on the slide are randomized\cite{first2000}.
@@ -22,6 +30,10 @@ Our aims with this experiment were to perform the following:
 \item Verify the damage feedback mechanism.
 \item Demonstrate a cheap microwave spectrometer that could be used on NCoV.
 \end{itemize}
+
+
+This was very dumb.
+
 
 Demonstrate the effect in a pulsed manner.
 
@@ -1294,6 +1306,7 @@ Mixing would be better. Lots of weird, big particles?
 
 
 At 8:15, coloration is much darker. Images of each well were taken. No difference.
+'convert 2_5uL_phage.jpg -resize 1x1 txt:-'
 
 gosh DARNIT
 
@@ -1319,22 +1332,58 @@ No, GelGreen doesn't penetrate any membranes.\cite{Quantification2020}
 
 \cite{Quantification2020} find that the LOD is 0.3 ng in a 10 uL sample. That's ssDNA.
 
-In our case, (650 Daltons/bp * 170000 bp) * 10^9/ml * 10 uL = 1.8 nanograms. That should be okay?
+In our case, (650 Daltons/bp * 170000 bp) * 3*10^9/ml * 10 uL = 5.5 nanograms. That should be okay?
 
 
-So: heat the phage to 95 C for 5 minutes.
 
 
 DNA is not adequately destroyed by autoclaving, but thourghough cleaning of the plate should probably suffice.
 
 It might be interesting to try to measure *host* DNA ejected by phage lysis - track the time-course of flourescence vs infection.
 
+Or perhaps do both?
 
 Use laser goggles to filter out gelgreen excitation.
 
 the Kapton does attenuate the blue a bit, but probably not enough to matter.
 
 Silicon ("avalanche?") photomultipliers are neat.
+
+Polycarb is apparently fine with bleach, which destroys DNA.
+
+---------------------------------------------------------------------------------
+
+The phage capsid seems to break at about 90c\cite{Thermala}.
+
+Heat a 1.5ml tube with 0.2 mL stock phage to 95 C for 5 minutes: 'P-DNA'
+
+Autoclave
+
+2.5 uL of GelGreen in 10 mL distilled water, a 4000x dilution.
+
+2.5 uL of this is added to 5 uL of standard phage and 5 uL 'P-DNA'.
+
+10000x we wanted.
+
+Working under "subdued" light,
+
+[hey, this is like homeopathy!]
+[I'm a 10x engineer, but only in the context of homopathic tinctures]
+
+Excited with blue LED.
+I don't see anything.
+
+Neither with blue blacklight.
+
+Some background flour. from the phage.
+
+Added a slug of gelgreen to 'T', plus a little dish detergent. Very faint green.
+
+
+
+
+
+
 
 
 
