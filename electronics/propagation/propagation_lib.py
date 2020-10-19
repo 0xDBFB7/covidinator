@@ -12,24 +12,25 @@ from mpl_toolkits.mplot3d import Axes3D
 import unittest
 
 
-class PCB:
+class propagator:
     def __init__(self):
-        self.a_n_coefficients
+        pass
 
 
+    def fourier_transform(self, input_data, sampling_frequency, frequency_scale):
+        self.input_fft = np.fft.rfft(input_data)
 
-    def fourier_transform(self, input_data, sampling_frequency):
-        self.input_fft = np.fft.fft(input_data)
+        self.a_n_coefficients = fft.real
+        self.b_n_coefficients = fft.imag
 
-        a_n_coefficients = fft.real
-        b_n_coefficients = fft.imag
+        # duration =
+        self.base_period = sampling_frequency/len(input_data)
 
-        self.base_period = 1.0/len(a_n)
 
-        ts = np.linspace(0, 100, 1000)
-        modes = np.arange(0, 1000)
+        self.times = np.arange(0, len(input_data)*(1.0/(sampling_frequency*frequency_scale)), len(input_data))
+        self.mode_frequencies = np.arange((sampling_frequency * frequency_scale)/len(input_data), (base_period))
 
-        return fft, a_n, b_n, base_period
+        return fft, self.a_n_coefficients, self.b_n_coefficients, base_period
 
 
 
@@ -45,35 +46,7 @@ class PCB:
 
 
     def fourier_sum(spatial_phase, t, n, a_n, b_n, base_period):
-        temporal_phase = n*(base_period)*2*pi*t # this isn't correct. See folding:
 
-        \cite{Comments1993}
-        
-        phase = temporal_phase + spatial_phase
-        # temporal_phase = 1
-        sum = a_n*np.cos(phase) + b_n*np.sin(phase)
-
-        output = - np.sum(sum, axis=0)
-
-        output /= len(n)
-
-        return output
-
-
-    # def optimal_frequency():
-        # arccos
-
-    # def analytic_oscillator_fourier_sum():
-
-
-class test_fourier(unittest.TestCase):
-
-    def test_sine_fourier(self):
-
-
-
-        input_data = np.zeros_like(ts)
-        input_data[0:300] = np.sin(2.0*pi*ts[0:300])
 
         fft, a_n, b_n, base_period = fourier_transform(input_data)
 
@@ -109,6 +82,41 @@ class test_fourier(unittest.TestCase):
             plt.plot(output)
 
         plt.show()
+
+
+        temporal_phase = n*(base_period)*2*pi*t # this isn't correct. See folding:
+        # [1]Luebbers R, Uno T, Kumagai K. Comments with reply, on \
+        # “Pulse propagation in a linear, causally dispersive medium” by K.E. Oughstun. Proceedings of the IEEE
+        # 1993;81:631–9. https://doi.org/10.1109/5.219349.
+
+
+
+        phase = temporal_phase + spatial_phase
+        # temporal_phase = 1
+        sum = a_n*np.cos(phase) + b_n*np.sin(phase)
+
+        output = np.sum(sum, axis=0)
+
+        output /= len(n)
+
+        return output
+
+
+    # def optimal_frequency():
+        # arccos
+
+    # def analytic_oscillator_fourier_sum():
+
+
+class test_fourier(unittest.TestCase):
+
+    def test_sine_fourier(self):
+
+
+
+        input_data = np.zeros_like(ts)
+        input_data[0:300] = np.sin(2.0*pi*ts[0:300])
+
 
 if __name__ == '__main__':
     unittest.main()
