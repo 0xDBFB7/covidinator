@@ -73,6 +73,17 @@ The method we use is terrible. Such small volumes pose incredible headaches and 
 Ideally, we should have used a technique orthogonal to previous studies.
 
 
+We later found the following paper, which essentially solves every problem. Arguably no studies should ever be conducted on any less than such a setup.
+
+"thus requiring that only perfunctory attention be paid to the sample geometry."
+
+"The system therefore allows very straightforward determination of the free-space absorption
+coefficient of the sample based on the photothermal
+signals measured as a function of distance along the
+transmission line."
+
+
+
 Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy")
 
 The notable Feldman biological spectroscopy group recommends a time-domain spectroscopy method\cite{Time2003a}, a modification of beloved TDR techniques. They cite several advantages, including easy subtraction of test jig artifacts.

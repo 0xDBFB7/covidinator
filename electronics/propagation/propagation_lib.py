@@ -82,7 +82,7 @@ class propagator:
 
     def fourier_sum(self, spatial_phase, t):
 
-        temporal_phase = self.mode_frequencies*2*pi*t
+        temporal_phase = np.outer(self.mode_frequencies*2*pi,t)
         # np.outer(,t)
         # [1]Luebbers R, Uno T, Kumagai K. Comments with reply, on \
         # “Pulse propagation in a linear, causally dispersive medium” by K.E. Oughstun. Proceedings of the IEEE
@@ -93,7 +93,7 @@ class propagator:
         # temporal_phase = 1
         sum = self.a_n_coefficients*np.cos(phase) + self.b_n_coefficients*np.sin(phase)
 
-        output = np.sum(sum, axis=0) #1
+        output = np.sum(sum, axis=1) #1
 
         output /= len(self.mode_frequencies)
 
