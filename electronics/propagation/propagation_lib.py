@@ -89,7 +89,7 @@ class propagator:
         # 1993;81:631–9. https://doi.org/10.1109/5.219349.
 
 
-        phase = spatial_phase + temporal_phase
+        phase = spatial_phase + temporal_phase.T
         # temporal_phase = 1
         sum = self.a_n_coefficients*np.cos(phase) + self.b_n_coefficients*np.sin(phase)
 
@@ -139,12 +139,13 @@ class test_fourier(unittest.TestCase):
 
 
         times = np.linspace(0, 1.0/frequency_scale_factor, int(sampling_frequency)*10)
-        output = np.zeros_like(times)
+        # output = np.zeros_like(times)
 
         z = np.zeros_like(p.mode_frequencies)
-        for i,t in enumerate(times):
-            output[i] = p.fourier_sum(z,t)
+        # for i,t in enumerate(times):
+            # output[i] = p.fourier_sum(z,t)
 
+        output = p.fourier_sum(z, times)
 
         # plt.plot(p.fourier_sum(, times))
         plt.plot(times, output)

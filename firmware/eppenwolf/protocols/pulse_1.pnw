@@ -73,14 +73,14 @@ The method we use is terrible. Such small volumes pose incredible headaches and 
 Ideally, we should have used a technique orthogonal to previous studies.
 
 
-We later found the following paper, which essentially solves every problem. Arguably no studies should ever be conducted on any less than such a setup.
-
-"thus requiring that only perfunctory attention be paid to the sample geometry."
-
-"The system therefore allows very straightforward determination of the free-space absorption
+We later found the following paper on phase fluctuation optical heterodyne spectroscopy \cite{Broadband1988}, which solves essentially all issues surrounding. Arguably no biological-resonance studies should ever be conducted on any less than such a setup.
+it "[requires] that only perfunctory attention be paid to the sample geometry.", and "allows very straightforward determination of the free-space absorption
 coefficient of the sample based on the photothermal
 signals measured as a function of distance along the
 transmission line."
+
+"This spectroscopic technique stands in contrast to the time-domain reflectometer and network-analyzer techniques-not
+zero-background methods-that require the measurement of small changes in large signals."
 
 
 
