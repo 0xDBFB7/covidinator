@@ -80,7 +80,7 @@ class propagator:
         #
         # plt.show()
 
-    def fourier_sum(self, spatial_phase, t):
+    def fourier_sum(self, spatial_phase, aux_phase, t):
 
         temporal_phase = np.outer(self.mode_frequencies*2*pi,t)
         # np.outer(,t)
@@ -89,7 +89,7 @@ class propagator:
         # 1993;81:631–9. https://doi.org/10.1109/5.219349.
 
 
-        phase = spatial_phase + temporal_phase.T
+        phase = spatial_phase + temporal_phase.T + aux_phase
         # temporal_phase = 1
         sum = self.a_n_coefficients*np.cos(phase) + self.b_n_coefficients*np.sin(phase)
 
@@ -103,7 +103,9 @@ class propagator:
     # def optimal_frequency():
         # arccos
 
-    # def analytic_oscillator_fourier_sum():
+    def analytic_oscillator_excitation(self, damping_beta):
+        aux_phase = atan((2.0* damping_beta * self.mode_frequencies) / ())
+
 
 
 class test_fourier(unittest.TestCase):
@@ -148,8 +150,8 @@ class test_fourier(unittest.TestCase):
         output = p.fourier_sum(z, times)
 
         # plt.plot(p.fourier_sum(, times))
-        plt.plot(times, output)
-        plt.show()
+        # plt.plot(times, output)
+        # plt.show()
 
 
 

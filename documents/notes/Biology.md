@@ -1122,3 +1122,6 @@ How do blue/white plates work without lysis?
 
 
 I wonder if filter-paper would make a good non-smearing substrate for drop plaque assays. 
+
+It's interesting how a whole theoretical framework was built around the first Edwards paper,
+

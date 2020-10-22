@@ -1,0 +1,8 @@
+
+Usually an emission filter is used. "to cut off the tails of the LEDs"
+but none of the spectra I can find have any meaningful tails.
+
+Thorlabs has some cheap Schott glass filters that might be suitable.
+
+
+

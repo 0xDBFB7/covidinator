@@ -1,0 +1,27 @@
+
+So by measuring the *curve* of the thermal pulse attenuation along a transmission line in the solution,
+essentially all issues could be subtracted.
+
+Probably the flourescence tone could be modulated onto this, too.
+
+white-light interferometry has apparently been used for this along
+
+Verdet constant temperature shift? Nah, too small.
+
+32khz crystals can be made to oscillate in solution.
+
+Ah! Use a bunch of quartz oscillators as a temperature probe!
+
+Beat two oscillators - diode mixer
+
+oh wait, that's not really ideal. We need to measure the shift locked into the sawtooth;
+a slow integrating method like that probably isn't great?
+
+A tuning-fork crystal has the advantage of being non-metallic.
+
+50 ppm over 80c on 20 MHz = only a few counts per second over temp.
+
+IT must be remembered that heat won't diffuse over these short timescales.
+
+use those little tungsten wires?
+
