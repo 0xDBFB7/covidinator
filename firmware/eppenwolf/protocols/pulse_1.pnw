@@ -1428,10 +1428,17 @@ Test solutions were made in the following way:
 
 Perhaps the thing should not be randomized.
 
-Using an LTOF converter rather than a
+Using an LTOF converter rather than the PMT because the high voltage takes 30 seconds to decay, limiting throughput.
+PMT provides much higher sensitivity and also better time-domain response but needs more care in light-tightness.
+Apparently you can pulse a high input luminosity, way exceeding the current limit, and the tube won't be damaged
+as long as the average current limit isn't excessive. However, I've had issues with very high background (trace gas spalled off?)
+after oversaturation.
 
-LTOF converter "straight through" under filter, based on []. 445 nm laser seems to have a far better emission spectrum
-than any un-emission-filtered LED. LED casing seems to flouresce somehow?
+
+
+
+LTOF converter "straight through" underneath filter underneath slide, based on []. 445 nm laser seems to have a far better emission spectrum
+than any un-emission-filtered LED. Blue LED casing seems to flouresce white somehow?
 
 There's still a substantial amount of bleed-through; probably not the ideal geometry.
 
@@ -1481,7 +1488,7 @@ Well 7: , 2.6 KHz, well-formed pulse.
 Made a mistake, laser stuck on. Well looks damaged.
 
 
-Using Rigol scope, 100 us/div, auto cursors for frequency (not measure function).
+Using Rigol scope, 100 us/div, auto cursors for frequency (not measure function). Trigger set to 23.3 ms. 3.9V on the LTOF. No filtering capacitor.
 
 Well 6 (blank): 1.70 KHz.
 
@@ -1522,9 +1529,19 @@ That works for me!
 Now, it's possible that this is an artifact of different transmission properties of the two fluids that isn't visible.
 This won't be a problem in the real test.
 
+I think a lot of the variation is probably pipetting technique. Need to standardize that better.
+
+Use SMD resistor to cal sensor.
+
+\section{Sensor calibration}
 
 
-\section{Realtime DNA flourescence microscopy after pulse}
+
+\section{Run 5}
+
+
+Pre-heat
+
 
 
 
