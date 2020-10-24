@@ -1400,31 +1400,162 @@ autoclaved P-DNA. no.
 The thing is basically white - maybe the filter I'm using just isn't good enough.
 really seems like it should be brighter though.
 
+
+
 -----------------------------------------------------------------
 
-Got a Tiffen brand Orange 16 at The Thought Eporium's suggestion.
-
+Got a Tiffen brand Wratten Orange 16 at The Thought Eporium's suggestion.
+5 or 10 layers of Kapton really does seem to be the same.
 
 
 The 445nm laser on the Eleksmaker seems to
-
-At 40\%
+/* At 40\% */
 
 A slight green tinge
 
 The whole thing seems to light up like a cristmas tree.
 
+0.2 mL phage. Taped shut, autoclaved.
+
 Test solutions were made in the following way:
 
 0.2 mL GelGreen
-0.2 mL 
+0.2 mL
 
-\section{Realtime DNA flourescence microscopy after pulse}
+\section{LTOF fluorescence detection}
+
+
 
 Perhaps the thing should not be randomized.
 
+Using an LTOF converter rather than a
 
-There's a surprising amount of bleed-through
+LTOF converter "straight through" under filter, based on []. 445 nm laser seems to have a far better emission spectrum
+than any un-emission-filtered LED. LED casing seems to flouresce somehow?
+
+There's still a substantial amount of bleed-through; probably not the ideal geometry.
+
+Comparing: tube 'DNA' (unknown \% gelgreen) with tube 'B3'. The tubes are visually indistinguishable.
+
+5\% power for 20000.
+
+0 (DNA):
+
+Started at 135. Over 20 seconds, dropped to 114, then after the next 20,
+
+No obvious effects on the well.
+
+4 (blank):
+
+Started at 135, dropped to 115.
+
+------------------------------------
+
+10% power.
+
+220 hz, dropped quickly.
+
+------------------------------------
+
+Changed power:
+
+20% power. Laser defocused to a line about the same length as the well.
+
+50 ms pulse. Pulse duration trigger on scope.
+
+0: 500 Hz. drops about 5 hz per.
+
+HMM! Seems like it doesn't have the time resolution! The pulse is jagged because of the PWM frequency on the control -
+But not on the flourescence!
+In any case, time res. is not sufficient.
+
+"By default, the spindle PWM frequency is 1kHz" - GRBL.
+
+
+Changed power:
+
+LaserWeb settings 100\%, 5 ms. (Actual duration is quite a bit longer than 5 ms).
+
+Well 7: , 2.6 KHz, well-formed pulse.
+
+Made a mistake, laser stuck on. Well looks damaged.
+
+
+Using Rigol scope, 100 us/div, auto cursors for frequency (not measure function).
+
+Well 6 (blank): 1.70 KHz.
+
+Well 1 (DNA): 2.19 KHz. (Aha!)
+2.04 KHz (changed scope settings).
+
+2: (DNA): 1.96 Khz.
+
+3: no well.
+
+4: (dna) 2.10 KHz.
+
+5: (blank) 1.61 KHz. Very repeatable.
+
+Back to 0: 2.15 Khz.
+
+6: 1.77 KHz.
+
+
+To recap:
+
+Blank:
+
+1.70 KHz
+1.61 KHz
+1.77 KHz
+
+DNA:
+
+2.04 KHz
+1.96 Khz
+2.10 KHz
+2.15 Khz
+
+
+That works for me!
+
+Now, it's possible that this is an artifact of different transmission properties of the two fluids that isn't visible.
+This won't be a problem in the real test.
+
+
+
+\section{Realtime DNA flourescence microscopy after pulse}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Realtime DNA flourescence microscopy after pulse}
+
+
+
+
+
+
+
+
+
+
+
+\section{Quartz viscosimeter thermography}
+
+Slide quartz transverse along CPW? ultrasonic phase?
 
 
 
