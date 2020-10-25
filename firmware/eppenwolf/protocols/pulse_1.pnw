@@ -1586,7 +1586,34 @@ Slide 1 cuvette 1 had more time off the spectrometer [cooling down] than the pre
 There was some crazing on the slides from the last laser run. Dropped the power to 80\%.
 Fluorescence data in the dir.
 
+Oh hey, there's an easy way to correct for transmission: shine a green or red light through it!
 
+oops!
+
+oh well.
+
+
+NOTE:
+
+an issue reading on slide 0, well 7, slide 1, well 5. I have removed the anomalies and replaced with their more well-behaved replicates.
+
+
+
+Huh! Little problem here: the .pkl'd doesn't match the printout!
+The .txt does.
+
+NOTE: Re-analyze run 4; maybe the same bug is present?
+Nope. Just checked. It's not.
+
+
+
+
+
+
+
+oh, of COURSE
+
+80% vs 100% - 80% will PWM, whereas 100% is continuous!
 
 
 
