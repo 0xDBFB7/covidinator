@@ -1559,21 +1559,32 @@ Each well:
 5 uL autoclaved phage, 5 uL GelGreen.
 5 uL autoclaved phage, 5 uL GelGreen.
 
+Probably be better if I used a more concentrated gg; right now we're diluting the whole signal by two...
 
 
-Probably be better if I used a more concentrated gg; right now we're diluting by two...
-
-
-The slides were washed thourghoughly and dried in the autoclave for 6 minutes.
-
-
+The tape was removed from the slides,
+slides were washed thourghoughly with soap and water, rinsed, dried with argon gas and dried in the autoclave for 6 minutes.
 
 
 
+Loaded to print. 0.8 uL apiece. Nice and consistent, I think.
 
 
 
+Two sets of pulses and sweeps were used - IDK why, that was stupid and time consuming, but whatevs.
 
+If this doesn't work, should try removing the low-power test sweep.
+
+
+Slide 0 done. For reference, the process takes about 25 minutes.
+
+Slide 1 cuvette 1 had more time off the spectrometer [cooling down] than the previous ones.
+
+
+---------------------------------------------------------------
+
+There was some crazing on the slides from the last laser run. Dropped the power to 80\%.
+Fluorescence data in the dir.
 
 
 
