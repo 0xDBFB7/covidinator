@@ -1531,19 +1531,40 @@ This won't be a problem in the real test.
 
 I think a lot of the variation is probably pipetting technique. Need to standardize that better.
 
-Use SMD resistor to cal sensor.
 
-\section{Sensor calibration}
-
+PA has been autoclaved for 20 mins, for reference.
 
 
 \section{Run 5}
 
-
-Pre-heat
-
+Re-aligned the thermal sensor with a hot wire. Seems to be sufficiently well aligned.
 
 
+While actually randomly choosing options (P, PA, B for each well) would probably lead to a better distribution,
+some slides may not have one of the options, so slide-to-slide consistency has to be maintained.
+
+Pre-heat the board.
+
+Phage + GelGreen
+
+Phage Autoclaved + distilled water
+Phage Autoclaved + GelGreen
+
+This gives us the maximum fluorescence delta we can expect.
+
+
+
+Each well:
+5 uL phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL GelGreen.
+
+
+
+Probably be better if I used a more concentrated gg; right now we're diluting by two...
+
+
+The slides were washed thourghoughly and dried in the autoclave for 6 minutes.
 
 
 
@@ -1565,7 +1586,7 @@ Pre-heat
 
 
 
-
+\section{GelGreen host DNA lysis detection}
 
 
 
@@ -1573,6 +1594,7 @@ Pre-heat
 \section{Quartz viscosimeter thermography}
 
 Slide quartz transverse along CPW? ultrasonic phase?
+
 
 
 

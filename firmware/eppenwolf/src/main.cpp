@@ -31,6 +31,9 @@ int main(void)
 	while(1){
 		// update_temperatures();
 		// print_temperatures();
+		//
+		// debug_serial.println("\n");
+
 		digitalWrite(13, LOW);
 		delay(100);
 		digitalWrite(13, HIGH);
