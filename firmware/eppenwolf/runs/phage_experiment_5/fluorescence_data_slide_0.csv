@@ -23,7 +23,7 @@ that's why automation is essential!
 All drops present, no obvious issues.
 
 
-
+100%:
 
 0, 1.94
 0, 1.91
@@ -41,3 +41,16 @@ All drops present, no obvious issues.
 6, 2.21
 7, 2.14
 7, 2.08
+
+
+
+And now the green correction factors:
+
+0, 254
+1, 286
+2, 279
+3, 274
+4, 349
+5: 220
+6: 312
+7: 296

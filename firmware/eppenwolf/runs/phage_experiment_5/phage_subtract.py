@@ -84,12 +84,27 @@ flourescence_data =  np.reshape(flourescence_data, (2,8,2))
 
 flourescence_data = np.mean(flourescence_data, 2)
 
-phage = []
-autoclaved_phage_and_green = []
-autoclaved_phage_and_water = []
+true=[]
+false=[]
+pag = []
+paw = []
+
+pag_true = []
+pag_false = []
+# phage = []
+# autoclaved_phage_and_green = []
+# autoclaved_phage_and_water = []
 
 for i in range(0,2):
     for j in range(0,8):
+        if(i == 1 and j == 7):
+            continue
+
+        if(i == 0 and j == 7):
+            continue
+        if(i == 1 and j == 5):
+            continue
+
         treatment[i,j] = bool(data[i,j,0][0,15])
         #
         # print(data[i,j][0][:,1:3])
@@ -98,15 +113,27 @@ for i in range(0,2):
 
         print(i, j, treatment[i,j], candidate_names[choices[i,j]], flourescence_data[i,j])
         data[i,j] = flourescence_data[i,j]
+        #
+        # if(choices[i,j] == 1):
+        #     autoclaved_phage_and_green.append(data[i,j])
+        # if(choices[i,j] == 2):
+        #     autoclaved_phage_and_water.append(data[i,j])
+
+        if(treatment[i,j] and choices[i,j] == phage_choice):
+            true.append(data[i,j])
+        if(not treatment[i,j] and choices[i,j] == phage_choice):
+            false.append(data[i,j])
 
         if(choices[i,j] == 1):
-            autoclaved_phage_and_green.append(data[i,j])
+            pag.append(data[i,j])
         if(choices[i,j] == 2):
-            autoclaved_phage_and_water.append(data[i,j])
+            paw.append(data[i,j])
 
+        if(treatment[i,j] and choices[i,j] == 1):
+            pag_true.append(data[i,j])
+        if(not treatment[i,j] and choices[i,j] == 1):
+            pag_false.append(data[i,j])
 
-        # if(not treatment[i,j] and choices[i,j] == phage_choice):
-        #     false.append(data[i,j])
 
         #
         # if(treatment[i,j] and choices[i,j] == phage_choice):
@@ -123,13 +150,18 @@ for i in range(0,2):
         #     control.append(data[i,j])
         # #
 
-plt.plot(autoclaved_phage_and_green)
-plt.plot(autoclaved_phage_and_water)
-
-plt.show()
+# plt.plot(autoclaved_phage_and_green)
+# plt.plot(autoclaved_phage_and_water)
 #
-# print(np.mean(true))
-# print(np.mean(false))
+# plt.show()
+#
+print(np.mean(true))
+print(np.mean(false))
+print(np.mean(pag))
+print(np.mean(paw))
+
+
+
 
 print(treatment)
 print(choices)
