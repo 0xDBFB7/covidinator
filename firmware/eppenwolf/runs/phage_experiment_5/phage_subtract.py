@@ -84,6 +84,21 @@ flourescence_data =  np.reshape(flourescence_data, (2,8,2))
 
 flourescence_data = np.mean(flourescence_data, 2)
 
+
+green_corrections = np.genfromtxt(open('green_corrections.csv', "r"), delimiter=",", dtype=np.float, encoding='ascii', skip_header=0)
+
+green_corrections = green_corrections[:,1]
+
+green_corrections =  np.reshape( green_corrections, (2,8))
+
+green_corrections /= np.linalg.norm(green_corrections)
+
+green_corrections = 1.0/green_corrections
+
+flourescence_data *= green_corrections
+flourescence_data /= np.max(flourescence_data)
+
+
 true=[]
 false=[]
 pag = []
@@ -100,10 +115,10 @@ for i in range(0,2):
         if(i == 1 and j == 7):
             continue
 
-        if(i == 0 and j == 7):
-            continue
-        if(i == 1 and j == 5):
-            continue
+        # if(i == 0 and j == 7):
+        #     continue
+        # if(i == 1 and j == 5):
+        #     continue
 
         treatment[i,j] = bool(data[i,j,0][0,15])
         #
