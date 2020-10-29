@@ -78,25 +78,27 @@ control = []
 
 flourescence_data = np.genfromtxt(open('fluorescence_data_cleaned.csv', "r"), delimiter=",", dtype=np.float, encoding='ascii', skip_header=0)
 
-flourescence_data = flourescence_data[:,2]
+# flourescence_data = flourescence_data[:,2]
 
-flourescence_data =  np.reshape(flourescence_data, (2,8,2))
+flourescence_data =  np.reshape(flourescence_data, (2,8))
 
-flourescence_data = np.mean(flourescence_data, 2)
+# flourescence_data = np.mean(flourescence_data, 2)
 
+# flourescence_data -= np.min(flourescence_data)
+# flourescence_data /= np.max(flourescence_data)
 
-green_corrections = np.genfromtxt(open('green_corrections.csv', "r"), delimiter=",", dtype=np.float, encoding='ascii', skip_header=0)
-
-green_corrections = green_corrections[:,1]
-
-green_corrections =  np.reshape( green_corrections, (2,8))
-
-green_corrections /= np.linalg.norm(green_corrections)
-
-green_corrections = 1.0/green_corrections
-
-flourescence_data *= green_corrections
-flourescence_data /= np.max(flourescence_data)
+# green_corrections = np.genfromtxt(open('green_corrections.csv', "r"), delimiter=",", dtype=np.float, encoding='ascii', skip_header=0)
+#
+# green_corrections = green_corrections[:,1]
+#
+# green_corrections =  np.reshape( green_corrections, (2,8))
+#
+# green_corrections /= np.linalg.norm(green_corrections)
+#
+# green_corrections = 1.0/green_corrections
+#
+# flourescence_data *= green_corrections
+# flourescence_data /= np.max(flourescence_data)
 
 
 true=[]

@@ -1615,6 +1615,16 @@ oh, of COURSE
 
 80% vs 100% - 80% will PWM, whereas 100% is continuous!
 
+Nope, still no go. The signal we're seeing is still just bleed-through. Need a real filter.
+
+Tried the 470 nm blue LED from before. Still no go; filter is basically transparent to the LED.
+
+So, the 445 blue laser is giving us too high a background and only cuts the edge off the excitation spectrum.
+488 cyan lasers are way too expensive (except cheap pointers from china, a reasonable source actually)
+
+Need a real set of emission/excitation filters.
+
+
 
 
 \section{Realtime DNA flourescence microscopy after pulse}
