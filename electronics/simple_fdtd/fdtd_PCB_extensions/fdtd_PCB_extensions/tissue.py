@@ -21,6 +21,8 @@ import fdtd
 material_ids_file = '/home/arthurdent/covidinator/biology/FDTD/chunks/2mm_100x100x100_left_lung_5.txt'
 tissue_properties_database_file = '/home/arthurdent/covidinator/biology/FDTD/itis_tissue_properties/SEMCAD_v14.8.h5'
 
+#os.environ.get('ITIS_TISSUE_DATABASE')
+
 
 def electric_field_penetration_depth(center_frequency, relative_permittivity, conductivity):
     #from Hand, 1982 and Osepchuk
@@ -77,8 +79,6 @@ def get_tissue_VirtPopTool_name(raw_id):
 def get_tissue_cole_cole_coefficients(id):
 
     #this absolutely should not be hardcoded.
-    tissue_properties_database_file = '../biology/FDTD/itis_tissue_properties/SEMCAD_v14.8.h5'
-
 
     tissue_obj = 0
     f = h5py.File(tissue_properties_database_file,'r')

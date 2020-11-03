@@ -1373,6 +1373,8 @@ Heat a 1.5ml tube with 0.2 mL stock phage to 95 C for 5 minutes: 'P-DNA'
 
 Autoclave
 
+SYBR recommends a #15 filter.
+
 2.5 uL of GelGreen in 10 mL distilled water, a 4000x dilution.
 
 2.5 uL of this is added to 5 uL of standard phage and 5 uL 'P-DNA'.
@@ -1624,10 +1626,160 @@ So, the 445 blue laser is giving us too high a background and only cuts the edge
 
 Need a real set of emission/excitation filters.
 
+\section{Improved fluorescence setup}
+
+Got a clearance Edmund Optics dielectric optical filter. 486 +/- 10 nm.
+
+Using a Cree 4000k high-CRI white LED, very bright cyan through the filter, however bands of green at large angles. Very pretty, but
+not what we're going for.
+
+The thorlab filter is mounted, but this Edmund is not; there's a rim of uncoated glass that seems to be letting some light past, too.
+
+Even with this filter, a lot of apparent "leakage" through the #16 filter.
+
+Used one of the cheap broadcom fiber connectors. Put an O-ring on the inside.
+Works great, seems like essentially the same dark current as before. No change when illuminating externally.
+
+Unfortunately, the loss from the fiber seems to be way too high even at the highest gain.
+- disregard - had tape over the input and not correctly aligned.
 
 
+whipped up a fresh PA+GG, seems to be more fluroscent?
+
+The PMT
+
+Haven't yet tried just the Tiffen and PMT, nor have
+
+
+Tried a whole bunch of different optical arrangements. No success somehow?
+
+Set up on the microscope. Made a little delrin adaptor to hold the green filter inside an objective.
+Taking a few 8s pictures made the problem clear: green light is getting through the excitation filter.
+
+All RIGHT! Swapped out the white LED for the blue Luxeon Star. already looks pretty cyan even before the filter!
+
+At 350 mA, through the filter, a 30 second exposure produced an obvious green spot where none existed before.
+
+'xset dpms force off'
+
+There's still light leakage when the objective is brought into focus with the condenser.
+This produces a blue clearly distinct from the green. No green is present when this is done.
+
+Moving the condenser focus doesn't seem to help reject much light.
+
+This was all holding the camera up to the thing, btw.
+
+ImageJ sum works pretty well to get details.
+
+Somehow the 30-second exposure captures /way/ more data than the guvc.
+
+yep, there's just nothing there.
+
+Tried out an ELP camera with the big lens. Works great! at 5000 exposure (the maximum) almost a live view!
+
+CCD sensors are apparently much better at long eposures?
+
+It's actually super useful having a camera rather than a PMT - much better troubleshooting data.
+the excitation and emission are clearly distinct.
+
+
+1-minute exposures are actually meaningful here.
+
+Use the zoom on the camera!
+
+
+need to:
+
+- make a mount for the slide
+- same for the light
+- deal with the Kapton attenuation - probably replace with Scotchtape? alternatively, can we flip the slide for long enough?
+- clean the optics - make sure they're all the right way around
+
+Mounted the PMT.
+
+Lots of light leakage from the dovetail of the eye-width ajuster...thingy.
+Heck of a lot of leakage through the other eyepiece!
+
+Had to turn off guvcview to turn off the monitors.
+
+without the eyepiece (diopter?), seems like it's position-sensitive, which is no good.
+
+wayyy more sensitive with the PMT aligned right though.
+
+using a flash from a real camera works well, really neat to see on the PMT.
+
+maybe there's some way to do a lock-in amp?
+Freq. response of the pmt is pretty bad, but apparently adding a load can fix that
+
+the signal generator output on the LED is super sharp, for reference.
+
+Added a 670 ohm resistor as the output load. the sensitivity of the PMT is now AMAZING - like, holy crap! what a change!
+pulses are about 10 mV apiece now.
+using the frequency counter on the scope.
+
+Freq. response doesn't seem to be that much better.
+
+Coupling the exication light to a fiber optic and then exciting "across"
+is for some reaon extremely effective.
+
+
+
+It's very clear which is the DNA tube and which is the control tube now.
+
+
+However, the slide still seems to be strangely diffusive or reflective; the background when using the slide is far higher than, say,
+the polypropylene tubes.
+
+Might want to try a polypropylene slide.
+
+
+Something to note:
+
+in contrast with absorbance,
+
+Aha! discriminate via energy!
+nooope. The reason why pulse height varies with input energy in scintillator applications
+is because multiple photons are emitted.
+
+that was pretty dumb.
+
+swapped out the 700 ohm load for a 50-ohm. Still works great, and the time-domain response is now < 1 ns.
+just one problem: there aren't enough photons! even with the other resistor value, when the LED is pulsed
+we only get about 2 khz, of which most are background.
+
+with a long enough integration time, the method of
+\cite{PhaseModulation2000}
+would work (kinda like a sampling oscope) but we're going to be waiting a while!
+
+there's room for improvement on the background (from external sources); right now it's a few hz.
+
+adding a lock-in amplifier might help.
+
+adding the Tiffen filter in series with the existing green filter seems to work great.
+Backround 2.6
+straight through: 17
+w/ tiffen: 3.7
+
+OTOH, kapton can take 35 down to 3 vs 1.5!
+the tiffen would need to be cut down, too.
+
+using the tiffen filter atop a slide, I think I've narrowed down the problem:
+
+POLYCARBONATE FLUOURESCES
+
+a little coupon of acrylic clearly does not. neither does polypropylene.
+
+since this plate doesn't need to be autoclaveable, we can probably get away with
+
+made a little coupon out of polyprop. now that it's not transparent, need to figure out a better mount for the fiber.
+illuminating "through" is still way too much, no snr.
+
+AC couple, bias to 50\%, that way we only need a single-supply op-amp.
+
+Still haven't tried the concentrated phage and the dye. might be useful.
 
 \section{Realtime DNA flourescence microscopy after pulse}
+
 
 
 

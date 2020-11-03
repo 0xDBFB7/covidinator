@@ -40,45 +40,22 @@ class propagator:
 
 
 
-    def wavenumber(n, base_period, dielectric_constants):
-         return self.modes*(base_period)*2*pi*np.sqrt(mu_0*dielectric_constants*epsilon_0)
+    def wavenumber(self):
+         return self.mode_frequencies*2*pi*np.sqrt(mu_0*self.dielectric_constants*epsilon_0)
 
+    def populate_tissue_properties(self, tissue_id):
+         self.ef, self.sigma, self.deltas, self.alphas, self.taus = get_tissue_cole_cole_coefficients(tissue_id)   
+         self.dielectric_constants = np.ones_like(self.mode_frequencies)
+         self.penetration_depth = np.ones_like(self.mode_frequencies)
+         for i in range(0, len(self.mode_frequencies)):
+            self.dielectric_constants[i], self.penetration_depth[i] = tissue_properties(self.mode_frequencies[i], self.ef, self.sigma, self.deltas, self.alphas, self.taus)
+    
         #
         #
-        # fft, a_n, b_n, base_period = fourier_transform(input_data)
-        #
-        # #split into the two phases
-        #
-        # # 1000
         #
         # a_n, b_n = attenuate(a_n, b_n, 1,0.5)
         #
-        # output = np.zeros_like(ts)
-        #
-        # plt.plot(input_data)
-        #
-        # #
-        # # ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(100)
-        # # dielectric_constants = np.ones_like(input_data)
-        # # penetration_depth = np.ones_like(input_data)
-        #
-        # for i in range(0, len(input_data)):
-        #     center_frequency = n*(base_period)
-        #     print(center_frequency)
-        #     dielectric_constants[i], penetration_depth[i] = tissue_properties(center_frequency, ef, sigma, deltas, alphas, taus)
-        #
-        #
-        # for j,z in enumerate(np.linspace(0,100)):
-        #     spatial_phase = wavenumber(n, base_period, dielectric_constant)*z
-        #
-        #     for i,t in enumerate(ts):
-        #         print(i)
-        #         output[i] = fourier_sum(spatial_phase, i, n, a_n, b_n, base_period)
-        #
-        #         # plt.plot(fft)
-        #     plt.plot(output)
-        #
-        # plt.show()
+        
 
     def fourier_sum(self, spatial_phase, aux_phase, t):
 
@@ -116,7 +93,7 @@ class test_fourier(unittest.TestCase):
         input_frequency = 1000.0
         frequency_scale_factor = 1.0e6
         times = np.linspace(0, 1.0, sampling_frequency)
-        input_data = np.zeros_like(times)
+        input_data = np.zeros_like(times, dtype=np.float32)
         input_data = np.sin(2.0*pi*times*1000.0)
 
         p = propagator()
@@ -132,26 +109,27 @@ class test_fourier(unittest.TestCase):
         sampling_frequency = 5000
         input_frequency = 1000.0
         frequency_scale_factor = 1e6
-        times = np.linspace(0, 1.0, sampling_frequency)
-        input_data = np.zeros_like(times)
+        times = np.linspace(0, 1.0, sampling_frequency, dtype=np.float32)
+        input_data = np.zeros_like(times, dtype=np.float32)
         input_data = np.sin(2.0*pi*times*input_frequency)
 
         p = propagator()
         p.fourier_transform(input_data, sampling_frequency, frequency_scale_factor)
 
 
-        times = np.linspace(0, 1.0/frequency_scale_factor, int(sampling_frequency)*10)
-        # output = np.zeros_like(times)
+        times = np.linspace(0, 10*(1.0/(frequency_scale_factor*input_frequency)), int(sampling_frequency)*10)
 
-        z = np.zeros_like(p.mode_frequencies)
-        # for i,t in enumerate(times):
-            # output[i] = p.fourier_sum(z,t)
 
-        output = p.fourier_sum(z, times)
+        p.populate_tissue_properties(50)
+        spatial_phase = p.wavenumber()
 
-        # plt.plot(p.fourier_sum(, times))
-        # plt.plot(times, output)
-        # plt.show()
+
+        aux_phase = np.zeros_like(spatial_phase,dtype=np.float32)
+        output = p.fourier_sum(spatial_phase, aux_phase, times)
+
+
+        plt.plot(times, output)
+        plt.show()
 
 
 
