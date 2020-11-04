@@ -1778,6 +1778,17 @@ AC couple, bias to 50\%, that way we only need a single-supply op-amp.
 
 Still haven't tried the concentrated phage and the dye. might be useful.
 
+
+
+Built up the PMT counter preamp circuit.
+
+at 50r, it's a little hot.
+
+Also, the comparator and thing can resonate. need way better decoupling.
+
+counts up to 5 MHz, where the PMT saturates anyway.
+
+
 \section{Realtime DNA flourescence microscopy after pulse}
 
 
