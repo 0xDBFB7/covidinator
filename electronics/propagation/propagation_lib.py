@@ -111,16 +111,16 @@ class test_fourier(unittest.TestCase):
         frequency_scale_factor = 1e6
         times = np.linspace(0, 1.0, sampling_frequency, dtype=np.float32)
         input_data = np.zeros_like(times, dtype=np.float32)
-        input_data = np.sin(2.0*pi*times*input_frequency)
+        input_data[0:500] = np.sin(2.0*pi*times*input_frequency)[0:500]
 
         p = propagator()
         p.fourier_transform(input_data, sampling_frequency, frequency_scale_factor)
 
 
-        times = np.linspace(0, 10*(1.0/(frequency_scale_factor*input_frequency)), int(sampling_frequency)*10)
+        times = np.linspace(0, 500*(1.0/(frequency_scale_factor*input_frequency)), int(sampling_frequency)*10)
 
 
-        p.populate_tissue_properties(50)
+        p.populate_tissue_properties(39)
         spatial_phase = p.wavenumber()
 
 
