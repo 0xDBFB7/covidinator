@@ -1797,6 +1797,7 @@ oooooh! detect saturation nonlinearity? increase the amount of light,
 
 it seems like the ability to do lock-in modulation is a pretty important advantage of fluro over luminosity unless some sort of LCD shutter is used,
 
+With the technique in this commit, there's actually still a lot of drift. ?
 
 \section{Realtime DNA flourescence microscopy after pulse}
 
