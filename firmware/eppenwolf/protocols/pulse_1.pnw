@@ -1799,6 +1799,12 @@ it seems like the ability to do lock-in modulation is a pretty important advanta
 
 With the technique in this commit, there's actually still a lot of drift. ?
 
+
+This is known as Synchronous Photon Counting. SRS has a good app note on it, but the best paper is Arecchi \cite{Measurement1966a}.
+
+
+
+
 \section{Realtime DNA flourescence microscopy after pulse}
 
 
