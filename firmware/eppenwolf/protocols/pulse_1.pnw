@@ -1808,6 +1808,8 @@ the engagement per tooth is not enough. Dropped spindle down to 6720, feed rate 
 added water. Worked great.
 
 
+Some sort of glitch occurs every ~10 seconds on the counter: the count jumps up or down by about 60000.
+
 \section{Realtime DNA flourescence microscopy after pulse}
 
 
