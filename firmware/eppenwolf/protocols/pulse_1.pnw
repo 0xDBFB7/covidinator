@@ -1810,6 +1810,22 @@ added water. Worked great.
 
 Some sort of glitch occurs every ~10 seconds on the counter: the count jumps up or down by about 60000.
 
+
+No. So here's a weird thing: it looked like there was some obtuse bug in the counter, spent a while
+trying to track it down, then noticed that the counter value was a few orders of magnitude larger than
+the oscilloscope count. The compara. threshold wasn't set right, and it was just picking up noise.
+
+huh, might have to watch for that?
+
+anyhow, now it works fantastic
+
+should change the light mod period back.
+
+
+the power supply is a little drifty in CC mode. Should swap it out for a resistor.
+Cree says don't exceed 300\% of the continuous power in pulse mode.
+
+
 \section{Realtime DNA flourescence microscopy after pulse}
 
 
