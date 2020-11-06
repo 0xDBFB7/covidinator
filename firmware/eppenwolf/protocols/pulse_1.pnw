@@ -1802,7 +1802,10 @@ With the technique in this commit, there's actually still a lot of drift. ?
 
 This is known as Synchronous Photon Counting. SRS has a good app note on it, but the best paper is Arecchi \cite{Measurement1966a}.
 
-
+Because of the high autofluorescence background of the lexan, milling a new set of slides out of polypropylene.
+At 200 down 1000 mm/min mill, 24k spindle the bit gummed up immediately.
+the engagement per tooth is not enough. Dropped spindle down to 6720, feed rate up to 1200,
+added water. Worked great.
 
 
 \section{Realtime DNA flourescence microscopy after pulse}
