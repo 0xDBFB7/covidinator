@@ -1824,6 +1824,26 @@ should change the light mod period back.
 
 the power supply is a little drifty in CC mode. Should swap it out for a resistor.
 Cree says don't exceed 300\% of the continuous power in pulse mode.
+XPEBBL-L1-0000-00301-SB01
+
+3.1V
+
+A 6 ohm 0.6 w resistor is required. (3 15-ohm-ers in parallel)?
+
+Even that is pretty drifty. I think the mosfet isn't being driven hard enough at 5vg, and so thermal variations are doing the drifting.
+psu voltage is stable.
+
+
+The actual noise equation is pretty complex, but according to Comp. Physics book a uniform step size random walk goes an average of sqrt(N) away from the origin.
+If that's true, the true signal goes as N, the noise goes as sqrt(n).
+
+Cut the Tiffen to size. Scribed with carbide bit, covered in masking tape, put into vise, tapped lightly.
+broke pretty cleanly. One piece did shatter. Wrapped in one layer of Kapton, put it in the optical path. Tx does seem to be reduced.
+
+
+
+
+
 
 
 \section{Realtime DNA flourescence microscopy after pulse}
