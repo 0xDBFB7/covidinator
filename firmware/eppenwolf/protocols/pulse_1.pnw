@@ -1843,7 +1843,7 @@ broke pretty cleanly. One piece did shatter. Wrapped in one layer of Kapton, put
 
 There's some kind of rythmic cycle in the data over 30s or so. probably due to the drift in the current. need to fix that.
 
-
+Fixed. The probe leads were poorly connected?
 
 
 \section{Realtime DNA flourescence microscopy after pulse}
