@@ -1866,7 +1866,14 @@ Each well:
 
 To remove variables, I've removed the freq. measurement sweeps from the eppenwolf code for now.
 
+During dry runs, only during treatment runs, PA power consumption did snap up to 437 from 383
+(about 237 vs 183 on the chip itself) as soon as the VCO frequency reached about 3.7V.
 
+Unblinded on the first well of slide 0.
+
+well 3, too. oops.
+
+6, too. dammit! need a better blinding method!
 
 
 
