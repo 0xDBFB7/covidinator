@@ -1847,7 +1847,44 @@ Fixed. The probe leads were poorly connected?
 
 There's a small bias in the positive direction for some reason.
 
-\section{Realtime DNA flourescence microscopy after pulse}
+
+
+
+
+
+
+
+
+\section{Phage fluorescence run 1 (phage_experiment_6)}
+
+
+
+Each well:
+5 uL phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL GelGreen.
+
+To remove variables, I've removed the freq. measurement sweeps from the eppenwolf code for now.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

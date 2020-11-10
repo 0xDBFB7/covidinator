@@ -248,32 +248,13 @@ void master_loop(){
         bool treatment = Entropy.random(2);
         debug_serial.println(treatment);
 
-        quickstart_amplifier(safe_amplifier_gate_voltage);
-
-        take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
-
-        kill_amplifier();
-
-        delay(3000);
-
-        quickstart_amplifier(deadly_amplifier_gate_voltage);
-        set_amp_gain_voltage(4.5);
-
-        pulse_spectrum(0, cuvette, treatment);
-
-        kill_amplifier();
-
-        delay(3000);
-
-        quickstart_amplifier(safe_amplifier_gate_voltage);
-
-        take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
-
-        kill_amplifier();
-
-        
-
-        delay(3000);
+        // quickstart_amplifier(safe_amplifier_gate_voltage);
+        //
+        // take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+        //
+        // kill_amplifier();
+        //
+        // delay(3000);
 
         quickstart_amplifier(deadly_amplifier_gate_voltage);
         set_amp_gain_voltage(4.5);
@@ -282,19 +263,40 @@ void master_loop(){
 
         kill_amplifier();
 
-        delay(3000);
+        // delay(3000);
+        //
+        // quickstart_amplifier(safe_amplifier_gate_voltage);
+        //
+        // take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+        //
+        // kill_amplifier();
 
-        quickstart_amplifier(safe_amplifier_gate_voltage);
 
-        take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+        //
+        // delay(3000);
+        //
+        // quickstart_amplifier(deadly_amplifier_gate_voltage);
+        // set_amp_gain_voltage(4.5);
+        //
+        // pulse_spectrum(0, cuvette, treatment);
+        //
+        // kill_amplifier();
+        //
+        // delay(3000);
+        //
+        // quickstart_amplifier(safe_amplifier_gate_voltage);
+        //
+        // take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+        //
+        // kill_amplifier();
+        //
+        // delay(3000);
 
-        kill_amplifier();
 
-        delay(3000);
+
+
 
         digitalWrite(13, LOW);
-
-
 
         for(int i = 0; i < 200; i++){ //move data offscreen to maintain blindedness
             debug_serial.println();
