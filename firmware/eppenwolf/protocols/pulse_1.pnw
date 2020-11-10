@@ -1845,6 +1845,7 @@ There's some kind of rythmic cycle in the data over 30s or so. probably due to t
 
 Fixed. The probe leads were poorly connected?
 
+There's a small bias in the positive direction for some reason.
 
 \section{Realtime DNA flourescence microscopy after pulse}
 
