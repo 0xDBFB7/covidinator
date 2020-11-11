@@ -1887,6 +1887,10 @@ perhaps even the data analysis should be blinded?
 
 
 
+Measuring the excitation LED output with an LED as a photodiode, switching time is about 100 ns and then it oscillates for a few ns after.
+
+1 MHz works fine
+
 
 
 
