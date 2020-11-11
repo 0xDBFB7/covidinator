@@ -1901,7 +1901,8 @@ trying the time-correlated technique now. not sure if the deconvolution is going
 Have to use the "basic functions" pll under quartus
 
 
-
+Trying a design at a slow speed definitely helps to elucidate timing issues.
+200 MHz causes garbage to be stored in the time-domain data.
 
 
 
