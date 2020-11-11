@@ -1896,9 +1896,9 @@ Using I/Q demodulation with a 90-degree phase shifted led clock.
 100 khz seems to provide good noise performance. No I/Q phase shift is evident, however.
 
 
+trying the time-correlated technique now. not sure if the deconvolution is going to be too bad
 
-
-
+Have to use the "basic functions" pll under quartus
 
 
 
