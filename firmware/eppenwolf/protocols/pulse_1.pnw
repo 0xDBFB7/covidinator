@@ -1904,7 +1904,7 @@ Have to use the "basic functions" pll under quartus
 Trying a design at a slow speed definitely helps to elucidate timing issues.
 200 MHz causes garbage to be stored in the time-domain data.
 
-
+If the thing is adjusted improperly, it's possible to get the 100 khz tone to couple into the sensor.
 
 
 \section{GelGreen host DNA lysis detection}
