@@ -32,8 +32,8 @@ broth_choice = 2
 #     choices = np.array(pickle.load(f))
 
 
-choices = np.array([[0,1,0,0,2,1,0,2],
-	[2,1,0,2,0,0,1,0]])
+choices = np.array([[2, 2, 0, 1, 0, 0, 1, 0],
+                    [0, 0, 1, 0, 0, 1, 2, 2])
 
 
 print(choices)
