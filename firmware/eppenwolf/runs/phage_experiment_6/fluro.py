@@ -33,7 +33,13 @@ for i in range(0, 7):
         if(choices[0][i] == 0 and treatment[0][i]):
             phage_treated = np.concatenate((phage_treated,slide_0_data[i]))
         if(choices[1][i] == 0 and treatment[1][i]):
+            phage_treated = np.concatenate((phage_treated, slide_1_data[i]))
+
+        if(choices[0][i] == 0 and not treatment[0][i]):
+            phage_untreated = np.concatenate((phage_untreated,slide_0_data[i]))
+        if(choices[1][i] == 0 and not treatment[1][i]):
             phage_untreated = np.concatenate((phage_untreated, slide_1_data[i]))
+
 
         if(choices[0][i] == 1):
             PAG = np.concatenate((PAG,slide_0_data[i]))
