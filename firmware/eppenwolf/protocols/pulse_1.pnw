@@ -1862,7 +1862,7 @@ There's a small bias in the positive direction for some reason.
 Each well:
 5 uL phage, 5 uL GelGreen.
 5 uL autoclaved phage, 5 uL GelGreen.
-5 uL autoclaved phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL water - fixed this row of text after the fact! I'm pretty sure I used water in the actual experiment.
 
 To remove variables, I've removed the freq. measurement sweeps from the eppenwolf code for now.
 
@@ -1909,6 +1909,25 @@ If the thing is adjusted improperly, it's possible to get the 100 khz tone to co
 
 https://bitesizebio.com/3473/pcr-the-right-way-to-decontaminate-and-eliminate-false-positives/
 "I tend to use a 10 dilution of Clorox and, in the above-mentioned study, Prince and Andrus used around a 20x dilution. You can make your own choice."
+
+\section{Phage fluorescence run 1 (phage_experiment_7)}
+
+
+Autoclaved everything, washed throughly. No bleach yet.
+
+Each well:
+5 uL phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL GelGreen.
+5 uL autoclaved phage, 5 uL distilled water - like last time.
+
+
+
+Going to use slightly less silicone oil this time: it sort of overflowed last time:
+3.5 uL (2.5 + 1 uL).
+
+NOTE! 1 and 0 were filled reversed!
+
+
 
 
 
