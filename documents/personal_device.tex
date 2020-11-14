@@ -8,6 +8,18 @@ What follows is intended to be a casual, first-principles e. Be very careful wit
 
 {\color{red} speculation \{ } 
 
+\clearpage
+{\Large \it The plausibility of low-cost microwave masks}\\
+
+With the most recent few generations of semiconductor processes, producing significant powers in the X-band has become inexpensive. Silicon transistors are limited in their output power and gain; Silicon-on-insulator topologies 
+
+This is perhaps most readily illustrated with the HB100 radar module. This device implements a complete doppler radar with two RF MOSFETS and a dielectric resonator. It operates at 10.6 GHz, yet are produced for under \$3. The PCB is stock FR4.
+
+Our crude experimentation has yielded about 10 mW with a single SiGe:C transistor, the Infineon BFP620 (\$ 0.34 apiece \@ 1000-of.). For the personal microwave sterilizer, given the threshold levels found by Yang, this corresponds to a cost per sterilized cubic centimeter of approx. \cite{BFP620H7764XTSA1}.
+
+
+
+
 Trivially extending great work by \cite{Focusing} on passive reflectarrays, a 40-element active-antenna phased array, each element of which consists of a negative-resistance device such as the BFP620 transistor, a tuning varactor, a patch antenna, and a resonator, each contributing a pulsed tone of 500 nanoseconds length and 10 milliwatts of RF power, and a focal point spatial scan rate and pulse repetition frequency of 6 KHz. produces a field pattern which, when scanned, appears to be suitable to deny respiratory transmission in a 'face shield' configuration. 
 
 Such a field would comply with all standards by at least a factor of 20.

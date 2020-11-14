@@ -17,7 +17,7 @@ class propagator:
         pass
 
 
-    def fourier_transform(self, input_data, sampling_frequency, frequency_scale_factor):
+    def fourier_transform(self, input_data, sampling_frequency, frequency_scale_factor, threshold_amplitude = 1e-4):
         self.input_fft = np.fft.rfft(input_data)
 
         self.a_n_coefficients = self.input_fft.real
@@ -30,6 +30,13 @@ class propagator:
         self.times = np.linspace(0, len(self.a_n_coefficients)*(1.0/(sampling_frequency*frequency_scale_factor)), len(self.a_n_coefficients))
         self.mode_frequencies = np.linspace(frequency_step, (len(self.a_n_coefficients)/2)*frequency_step, len(self.a_n_coefficients))
 
+        print(len(self.mode_frequencies))
+        magnitudes = np.sqrt(self.a_n_coefficients**2.0 + self.b_n_coefficients**2.0)
+        filted_indices = magnitudes > threshold_amplitude*np.max(magnitudes)
+        self.mode_frequencies = self.mode_frequencies[filted_indices]
+        self.a_n_coefficients = self.a_n_coefficients[filted_indices]
+        self.b_n_coefficients = self.b_n_coefficients[filted_indices]
+        print(len(self.mode_frequencies))
         # return fft, self.a_n_coefficients, self.b_n_coefficients, base_period
 
 
@@ -44,30 +51,33 @@ class propagator:
          return self.mode_frequencies*2*pi*np.sqrt(mu_0*self.dielectric_constants*epsilon_0)
 
     def populate_tissue_properties(self, tissue_id):
-         self.ef, self.sigma, self.deltas, self.alphas, self.taus = get_tissue_cole_cole_coefficients(tissue_id)   
+         self.ef, self.sigma, self.deltas, self.alphas, self.taus = get_tissue_cole_cole_coefficients(tissue_id)
          self.dielectric_constants = np.ones_like(self.mode_frequencies)
          self.penetration_depth = np.ones_like(self.mode_frequencies)
          for i in range(0, len(self.mode_frequencies)):
             self.dielectric_constants[i], self.penetration_depth[i] = tissue_properties(self.mode_frequencies[i], self.ef, self.sigma, self.deltas, self.alphas, self.taus)
-    
+
         #
         #
         #
         # a_n, b_n = attenuate(a_n, b_n, 1,0.5)
         #
-        
+
 
     def fourier_sum(self, spatial_phase, aux_phase, t):
+        print(len(self.mode_frequencies))
+        temporal_phase = np.outer(self.mode_frequencies*2*pi,t).T
 
-        temporal_phase = np.outer(self.mode_frequencies*2*pi,t)
         # np.outer(,t)
         # [1]Luebbers R, Uno T, Kumagai K. Comments with reply, on \
         # “Pulse propagation in a linear, causally dispersive medium” by K.E. Oughstun. Proceedings of the IEEE
         # 1993;81:631–9. https://doi.org/10.1109/5.219349.
 
 
-        phase = spatial_phase + temporal_phase.T + aux_phase
+        phase = spatial_phase + temporal_phase + aux_phase
+
         # temporal_phase = 1
+
         sum = self.a_n_coefficients*np.cos(phase) + self.b_n_coefficients*np.sin(phase)
 
         output = np.sum(sum, axis=1) #1
@@ -106,29 +116,35 @@ class test_fourier(unittest.TestCase):
         print(times[-1])
 
     def test_fourier_reconstruction(self):
-        sampling_frequency = 5000
+        sampling_frequency = 50000
         input_frequency = 1000.0
         frequency_scale_factor = 1e6
         times = np.linspace(0, 1.0, sampling_frequency, dtype=np.float32)
+        times = np.tile(times, 5)
         input_data = np.zeros_like(times, dtype=np.float32)
         input_data[0:500] = np.sin(2.0*pi*times*input_frequency)[0:500]
+        input_data = np.tile(input_data, 5)
 
+
+
+        print(len(input_data))
         p = propagator()
-        p.fourier_transform(input_data, sampling_frequency, frequency_scale_factor)
+        p.fourier_transform(input_data, sampling_frequency, frequency_scale_factor, threshold_amplitude=0.1)
 
 
-        times = np.linspace(0, 500*(1.0/(frequency_scale_factor*input_frequency)), int(sampling_frequency)*10)
+        times = np.linspace(0, 100*(1.0/(frequency_scale_factor*input_frequency)), int(sampling_frequency)*10)
 
 
-        p.populate_tissue_properties(39)
-        spatial_phase = p.wavenumber()
-
+        # p.populate_tissue_properties(39)
+        # spatial_phase = p.wavenumber()
+        spatial_phase = np.zeros_like(p.mode_frequencies,dtype=np.float32)
 
         aux_phase = np.zeros_like(spatial_phase,dtype=np.float32)
         output = p.fourier_sum(spatial_phase, aux_phase, times)
 
 
-        plt.plot(times, output)
+
+        plt.plot(times,output)
         plt.show()
 
 

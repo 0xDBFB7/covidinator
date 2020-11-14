@@ -8,7 +8,26 @@
 
 \rule{\linewidth}{0.2pt}
 
+There seems to be a drive towards small volumes and microfluidics. This is great; these are cool technologies; but in our case these were a huge hindrance.
+
+There are a lot of reasons why small volumes are useful: you can run more tests with a given quantity of sample - a 1500-well microplate assay would be a hard sell with even 1.5 mL tubes; small samples are diluted to a lesser degree. 
+
+However, it should also be considered that most tolerances and precisions do not scale with volume. 
+Rheology does not scale with volume, so bacterial culture becomes a challenge. Dust and contaminants do not scale. Optical path lengths are much shorter. Most assays will have decreased resolution. Precision in dispensing is much more critical, as is deformation due to autoclaving. The "hairs" that appear on machined polypropylene, which are almost impossible to remove, can be as large as your sample. Evaporation is much more critical.
+
+Most importantly, annoyance scales inversely with size. It is hard to work with a quantity of fluid which is barely visible.
+
+\rule{\linewidth}{0.2pt}
+
+Minor errors in . Reproducible coding helps, but it would be much better if we had used standard software engineering best practices; red-teaming, unit testing on generated data, etc. It might also be helpful if the data itself are blinded against randomly generated controls - in many cases that's not possible, but it might be useful in some circumstances.
+
+See Phosphine.
+
+\rule{\linewidth}{0.2pt}
+
 The phage field - and many other fields - seem to have a problem where most of the really important base discoveries related to practice - 
+
+Some things actually seem to have been lost.
 
 \rule{\linewidth}{0.2pt}
 
@@ -29,7 +48,7 @@ A simulation is just a universe in a bottle that you can examine more closely; a
 
 But this need for documentation conflicts with the rapid, iterative cycle necessary for productivity.
 
-This is obvious to all compentent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs, input files) of each distinct test. 
+This is obvious to all competent, but when rapidly iteratively testing with simulations, it may be helpful to automatically save a package with images of all the components (schematics, graphs, input files) of each distinct test. 
 
 For comparison to experiment, having a webcam take an image of the assembled board is also helpful. 
 
@@ -49,11 +68,11 @@ It is far easier to use existing, well-characterized reference designs verbatim 
 
 \rule{\linewidth}{0.2pt}
 
-When rapidly testing data analyses which aren't really conducive to unit testing, I previously used to run the whole simulation, look at the analysis, re-run the sim, etc.
+When rapidly testing data analyses of simulations which aren't really conducive to unit testing, I previously used to run the whole simulation, look at the analysis, re-run the sim, etc.
 
-This is slow. I often don't change the input parameters for the sim, but just the analysis. However, there's often a large amount of state to persist to disk.
+This is slow. I often don't change the input parameters for the sim, but just the analysis. However, there's often a large amount of state to persist to disk, so it's not worth writing a serializer just to store this throwaway run.
 
-Saving the entire session with 'dill' is very helpful.
+In this case, saving the entire simulation session with 'dill' is very helpful.
 
 \rule{\linewidth}{0.2pt}
 
@@ -79,7 +98,7 @@ For instance, this was done with the PDB reader in the OpenMM wrapper and JAMES.
 
 \rule{\linewidth}{0.2pt}
 
-There's also a very neat thing that seems to be common in computational biology, but which doesn't seem popular in other fields. After an algorithm or software tool is written (and the source published seperately), a simple CGI frontend is written around it and hosted on the university's servers. eLNemo and the CHARMMing web interface are advanced examples of this. This way, anyone with an input file can get results without futzing around with installation. 
+There's also a very neat thing that seems to be common in computational biology, but which doesn't seem popular in other fields. After an algorithm or software tool is written (and the source published separately), a simple CGI frontend is written around it and hosted on the university's servers. eLNemo and the CHARMMing web interface are advanced examples of this. This way, anyone with an input file can get results without futzing around with installation. 
 
 The computational biologists have beat us at our own game.
 

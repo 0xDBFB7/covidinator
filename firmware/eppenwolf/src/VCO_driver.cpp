@@ -114,28 +114,32 @@ void wait_for_button(){
 
 // #define TEMP_INTERVAL 100
 
-void pulse_spectrum(int slide, int cuvette, bool treatment){
+void pulse_spectrum(int slide, int cuvette, bool treatment, float deadly_amplifier_gate_voltage){
 
-    for(float j = 0; j < 12; j += 0.05){
+    for(float j = 0; j < 12; j += 0.25){
         debug_serial.print(j);
         debug_serial.print(",");
+        quickstart_amplifier(deadly_amplifier_gate_voltage);
+        set_amp_gain_voltage(4.5);
         set_VCO(j,0);
         delay(5); //wait for the tuning voltage to settle.
         if(treatment){
             pulse_VCO(400);
         }
-        update_temperatures();
-        get_power_levels(); // just in case something goes wrong
-        debug_serial.print(",");
-        debug_serial.print(get_drain_current());
-        print_temperatures();
-        debug_serial.print(",");
-        debug_serial.print(slide);
-        debug_serial.print(",");
-        debug_serial.print(cuvette);
-        debug_serial.print(",");
-        debug_serial.print(millis());
-        debug_serial.print(",");
+        kill_amplifier();
+
+        // update_temperatures();
+        // get_power_levels(); // just in case something goes wrong
+        // debug_serial.print(",");
+        // debug_serial.print(get_drain_current());
+        // print_temperatures();
+        // debug_serial.print(",");
+        // debug_serial.print(slide);
+        // debug_serial.print(",");
+        // debug_serial.print(cuvette);
+        // debug_serial.print(",");
+        // debug_serial.print(millis());
+        // debug_serial.print(",");
         debug_serial.print(treatment);
         debug_serial.print(",");
         debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
@@ -253,15 +257,13 @@ void master_loop(){
         // take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
         //
         // kill_amplifier();
-        //  
+        //
         // delay(3000);
 
-        quickstart_amplifier(deadly_amplifier_gate_voltage);
-        set_amp_gain_voltage(4.5);
 
-        pulse_spectrum(0, cuvette, treatment);
 
-        kill_amplifier();
+        pulse_spectrum(0, cuvette, treatment, deadly_amplifier_gate_voltage);
+
 
         // delay(3000);
         //

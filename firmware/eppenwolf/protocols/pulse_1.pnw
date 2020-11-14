@@ -1934,6 +1934,72 @@ oh wow, the RF from the PA is so extreme that it completely overwhelms the PMT p
 slipped on the slide on w6 and w7.
 
 
+IMPORTANT Note!
+
+A minor bug - the letters 'un'! produced a graph which, if published, would have completely changed the conclusion.
+you can see the difference in exp_6 p6 vs FIXED.
+
+how do we prevent something like this?
+
+
+
+\section{Capillary setting up}
+
+
+0.25 * 0.4794 GHz = 100 Mhz
+
+40 mm * pi * (0.020 in / 2) ^2 to microliters = 8
+
+10 mm * pi * (0.012 in / 2) ^2 to microliters = 0.72
+
+
+
+
+6 seconds per sweep. At 1 uL, that's 5 minutes per 50 uL. That's great!
+
+
+The tiffen 16 filter alone is not sufficient to block the excitation light. Some 500k counts with the red diopter
+and just the excitation.
+
+
+Turn off the amplifier between pulses!
+
+Added this function. Works great - average current draw is only ~20 mA extra now, no change between control and treat.
+
+
+Sample Carryover
+• Eliminate sample carryover by flushing the syringe
+5 to 10 times with solvent. Discard the first 2 to 3
+solvent washes to avoid sample contamination.
+
+
+The fluorescence now registers 9000 counts vs 1300 counts on DNA vs blank: fiber optic excitation and
+the 10 nm emission filter.
+
+
+Each pulse takes 125 ms.
+
+
+
+\section{Capillary setting up}
+
+It doesn't seem like the PA and control should be run though the capillary?
+The sham already takes care of that...
+
+There should be one more tube: Phage and GG, not run through the machine,
+as a blank. It's possible that the capillary might damage some of the phages,
+in which case the sham counts would be elevated over the true background.
+
+The capillary can't be put all the way to the bottom of the tube. Therefore, the working volume should be slightly
+less than the true volume in the tube.
+
+0.2 mL autoclaved phage
+
+\section{Run 8}
+
+
+
+
 
 \section{GelGreen host DNA lysis detection}
 
