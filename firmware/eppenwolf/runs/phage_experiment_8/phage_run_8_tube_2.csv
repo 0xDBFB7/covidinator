@@ -1,6 +1,3 @@
-Make sure tee is running; and set tee file to the slide #
-========================================================
-[1;33m Please present cleaning tube[0m========================================================
 Remove cuvette, amplifier starting
 0.10
 0.11
@@ -10,6 +7,7 @@ Remove cuvette, amplifier starting
 0.11
 0.11
 0.11
+0.11
 0.12
 0.12
 0.12
@@ -17,7 +15,7 @@ Remove cuvette, amplifier starting
 0.12
 0.12
 0.12
-1.46
+1.45
 Remove cuvette, amplifier starting
 0.09
 0.11
@@ -113,7 +111,7 @@ Remove cuvette, amplifier starting
 ========================================================
 [1;35m Please present testing tube[0m========================================================
 Treatment:[8m 
-1
+0
 [0m
 
 
@@ -317,6 +315,3 @@ Treatment:[8m
 
 ========================================================
 [1;35m Remove tube[0m========================================================
-Make sure tee is running; and set tee file to the slide #
-========================================================
-[1;33m Please present cleaning tube[0m========================================================
