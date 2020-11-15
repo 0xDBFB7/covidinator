@@ -307,11 +307,14 @@ void master_loop(){
 
 
     debug_serial.println("========================================================");
-    debug_serial.print("\033[1;35m Please present sample tube\033[0m");
+    debug_serial.print("\033[1;35m Please present stock tube\033[0m");
     debug_serial.println("========================================================");
     wait_for_button();
     move_absolute(0);
-
+    debug_serial.println("========================================================");
+    debug_serial.print("\033[1;35m Please present testing tube\033[0m");
+    debug_serial.println("========================================================");
+    wait_for_button();
 
 
 
@@ -338,8 +341,8 @@ void master_loop(){
 
     digitalWrite(13, HIGH);
 
-    for(float j = 0; j < 12; j += 0.5){
-        for(float distance = 0; distance < working_distance; distance += step_distance){
+    for(float distance = 0; distance < working_distance; distance += step_distance){
+        for(float j = 0; j < 12; j += 0.5){
 
             // debug_serial.print(j);
             // debug_serial.print(",");
@@ -375,10 +378,9 @@ void master_loop(){
 
             move_absolute(distance);
         }
-        move_absolute(0);
 
+        // move_absolute(0);
         delay(1000);
-
 
     }
     digitalWrite(13, LOW);
@@ -428,7 +430,11 @@ void master_loop(){
     }
     // }
 
-
+    debug_serial.println("========================================================");
+    debug_serial.print("\033[1;35m Remove tube\033[0m");
+    debug_serial.println("========================================================");
+    wait_for_button();
+    move_absolute(0);
 }
 
 void quickstart_amplifier(float gate_voltage){
@@ -441,7 +447,6 @@ void quickstart_amplifier(float gate_voltage){
     delay(5);
     set_amp_gate_voltage(gate_voltage);
     delay(5);
-
 }
 
 

@@ -109,9 +109,9 @@ void move_relative(bool direction, float distance){
     // driver.toff(5);
     for(int i = 0; i < num_steps; i++){
     	digitalWriteFast(STEP_PIN, HIGH);
-    	delayMicroseconds(1000);
+    	delayMicroseconds(600);
     	digitalWriteFast(STEP_PIN, LOW);
-    	delayMicroseconds(1000);
+    	delayMicroseconds(600);
     }
     digitalWrite(EN_PIN, 1);
     // driver.toff(0);
