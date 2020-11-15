@@ -289,7 +289,8 @@ void master_loop(){
     //     delay(1000);
     // }
 
-    flush();
+    // flush();
+    move_absolute(working_distance);
 
 
     float safe_amplifier_gate_voltage = start_amplifier(0.12);

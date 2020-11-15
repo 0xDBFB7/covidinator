@@ -2020,6 +2020,7 @@ Light source fell off the microscope. Re attached, still same 15000 counts.
 
 Plunger priming seems to be slightly different on tube 2.
 
+10-second exposure, yellow objective
 
 Tube 0:
 
@@ -2082,6 +2083,43 @@ Okay, put a box over the thing, moved the light fiber so that the position of th
 3:
 
 11815
+
+maybe when I touched the hose it somehow contaminated with dna?
+
+could I have mixed up the tubes? I don't think so, but it's possible???
+in fact, that would explain the results: tube 1 and 2 were mixed up?
+
+did it heat up?
+
+Things to fix:
+
+Priming of plunger. Consistency.
+Touchless capillary - mount in a larger tube?
+
+
+\section{Run 8 tube 4,5,6,7}
+
+
+Now always starting from a completely empty (air-filled) capillary and dead volume, with just a tiny amount of water wetting the plunger.
+manually flushing and purging the syringe.
+
+All tubes went well. need to fix the homing procedure, broken threads on the slide.
+
+
+Tube 4:
+
+
+
+Tube 5:
+
+
+
+Tube 6:
+
+
+
+Tube 7:
+
 
 
 
