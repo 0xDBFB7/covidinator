@@ -2021,7 +2021,45 @@ Light source fell off the microscope. Re attached, still same 15000 counts.
 Plunger priming seems to be slightly different on tube 2.
 
 
+Tube 0:
 
+break blind: treat 0.
+
+8480
+8496
+8510
+9135
+9044
+
+Tube 1:
+
+treat 1
+
+9423
+9917
+9218
+9918
+10117
+
+Tube 2:
+
+treat 0
+
+13296
+13519
+13462
+13568
+13886
+
+Tube 3:
+
+treat 1
+
+13265
+13860
+13486
+13293
+13933
 
 
 
