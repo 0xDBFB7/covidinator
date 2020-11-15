@@ -27,6 +27,7 @@ int main(void)
 	init_ADCs();
 	get_power_levels();
 	init_thermal();
+	init_stepper();
 	// home();
 	while(1){
 		// update_temperatures();

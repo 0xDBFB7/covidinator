@@ -1946,6 +1946,11 @@ how do we prevent something like this?
 \section{Capillary setting up}
 
 
+Because of the diffucilties in assaying such a small volume, we need to increase the sample volume.
+the only straightforward way I can think of doing this with the current setup is by running everything through a capillary.
+
+
+
 0.25 * 0.4794 GHz = 100 Mhz
 
 40 mm * pi * (0.020 in / 2) ^2 to microliters = 8
@@ -1977,7 +1982,7 @@ The fluorescence now registers 9000 counts vs 1300 counts on DNA vs blank: fiber
 the 10 nm emission filter.
 
 
-Each pulse takes 125 ms.
+Each pulse takes 125 ms. At 0.5 uL/pulse, 50 uL total, 10 second withdraw time is needed
 
 
 

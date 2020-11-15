@@ -19,7 +19,7 @@
 #include <WString.h>
 #include "thermal.hpp"
 #include "Entropy.h"
-
+#include "stepper.hpp"
 void unselect_dacs();
 void select_all_dacs();
 float get_drain_current();

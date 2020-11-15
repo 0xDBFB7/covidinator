@@ -10,7 +10,7 @@ void dispatch(){
             case 0: set_VCO_handler(); break;
             case 1: master_loop(); break;
             // case 1: turbidimeter_instance.sample_turbidity(); break;
-            // case 2: move(); break;
+            case 2: move(); break;
             // case 3: home_cmd(); break;
             // case 4: move_absolute_cmd(); break;
             // case 5: move_to_cuvette_cmd(); break;
@@ -38,6 +38,21 @@ void loopback(){
     host_transfer.sendData(sendSize, 10);
 }
 
+
+void move(){
+    uint16_t recSize = 0;
+
+    float direction, distance;
+    recSize = host_transfer.rxObj(direction, recSize);
+    recSize = host_transfer.rxObj(distance, recSize);
+
+    move_relative(direction, distance);
+
+    uint16_t sendSize = 0;
+    sendSize = host_transfer.txObj(0, sendSize);
+
+    host_transfer.sendData(sendSize, 10);
+}
 
 void set_VCO_handler(){
     uint16_t recSize = 0;

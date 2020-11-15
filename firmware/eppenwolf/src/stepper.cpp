@@ -1,9 +1,9 @@
 // //From https://github.com/teemuatlut/TMCStepper
-// #include "stepper.hpp"
+#include "stepper.hpp"
 //
-// #define EN_PIN           5 // Enable
-// #define DIR_PIN          12 // Direction
-// #define STEP_PIN         11 // Step
+#define EN_PIN           10 // Enable
+#define DIR_PIN          12 // Direction
+#define STEP_PIN         11 // Step
 // #define CS_PIN           4 // Chip select
 // #define SW_MOSI          23 // Software Master Out Slave In (MOSI)
 // #define SW_MISO          13 // Software Master In Slave Out (MISO)
@@ -15,10 +15,10 @@
 //                      // Panucatt BSD2660 uses 0.1
 //                      // Watterott TMC5160 uses 0.075
 //
-// #define DEG_PER_STEP 18.0
-// #define SCREW_PITCH 0.5 //mm
-// #define MICROSTEPS 16
-// const float distance_per_step = ((DEG_PER_STEP / 360.0) * SCREW_PITCH);
+#define DEG_PER_STEP 18.0
+#define SCREW_PITCH 0.5 //mm
+#define MICROSTEPS 4
+const float distance_per_step = ((DEG_PER_STEP / 360.0) * SCREW_PITCH);
 //
 // // https://www.trinamic.com/support/eval-kits/details/tmc5160-bob/
 // //  (STEP = REFL, DIR = REFR)
@@ -31,7 +31,7 @@
 // // 0 ---->
 // // <---- 1
 //
-// float position = 0;
+float position = 0;
 //
 // #define CUVETTE_SPACING 4.9966
 // #define HOME_OFFSET -52.55 //distance from home point to first cuvette
@@ -47,7 +47,7 @@
 // const float function_offsets[] = {0.0, 4.0};
 //
 //
-// void init_stepper(){
+void init_stepper(){
 //     // driver.begin();
 // 	// driver.rms_current(500);
 // 	// driver.en_pwm_mode(1);
@@ -75,45 +75,48 @@
 //     // driver.sgt(-63);
 //     // driver.push();
 //
-// 	// pinMode(EN_PIN, OUTPUT);
+	pinMode(EN_PIN, OUTPUT);
+    digitalWrite(EN_PIN, 1);
+
 //     // digitalWrite(EN_PIN, 0);
 //
 //     // digitalWrite(EN_PIN, 1);
-// 	pinMode(STEP_PIN, OUTPUT);
-//     pinMode(DIR_PIN, OUTPUT);
-// }
+	pinMode(STEP_PIN, OUTPUT);
+    pinMode(DIR_PIN, OUTPUT);
+}
 //
 // void move_to_cuvette(int index, int function){
 //     move_absolute(HOME_OFFSET); //backlash compensation
 //     move_absolute(HOME_OFFSET + index*CUVETTE_SPACING + function_offsets[function]);
 // }
 //
-// void move_absolute(float new_position){
-//     debug_serial.printf("Moving to %f from %f\n", new_position, position);
-//     float delta = new_position - position;
+void move_absolute(float new_position){
+    // debug_serial.printf("Moving to %f from %f\n", new_position, position);
+    float delta = new_position - position;
+
+    move_relative((delta < 0), fabs(delta));
+
+    position = new_position;
+}
 //
-//     move_relative((delta < 0), fabs(delta));
-//
-//     position = new_position;
-// }
-//
-// void move_relative(bool direction, float distance){
-//     //ignores all 'position' info.
-//
-//     digitalWrite(DIR_PIN, direction);
-//
-//     int num_steps = distance/distance_per_step * MICROSTEPS;
-//
-//     driver.toff(5);
-//     for(int i = 0; i < num_steps; i++){
-//     	digitalWriteFast(STEP_PIN, HIGH);
-//     	delayMicroseconds(30);
-//     	digitalWriteFast(STEP_PIN, LOW);
-//     	delayMicroseconds(30);
-//     }
-//     driver.toff(0);
-//
-// }
+void move_relative(bool direction, float distance){
+    //ignores all 'position' info.
+
+    digitalWrite(DIR_PIN, direction);
+    digitalWrite(EN_PIN, 0);
+    int num_steps = distance/distance_per_step * MICROSTEPS;
+
+    // driver.toff(5);
+    for(int i = 0; i < num_steps; i++){
+    	digitalWriteFast(STEP_PIN, HIGH);
+    	delayMicroseconds(1000);
+    	digitalWriteFast(STEP_PIN, LOW);
+    	delayMicroseconds(1000);
+    }
+    digitalWrite(EN_PIN, 1);
+    // driver.toff(0);
+
+}
 //
 //
 //

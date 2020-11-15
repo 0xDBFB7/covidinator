@@ -116,38 +116,51 @@ void wait_for_button(){
 
 void pulse_spectrum(int slide, int cuvette, bool treatment, float deadly_amplifier_gate_voltage){
 
-    for(float j = 0; j < 12; j += 0.25){
-        debug_serial.print(j);
-        debug_serial.print(",");
-        quickstart_amplifier(deadly_amplifier_gate_voltage);
-        set_amp_gain_voltage(4.5);
-        set_VCO(j,0);
-        delay(5); //wait for the tuning voltage to settle.
-        if(treatment){
-            pulse_VCO(400);
+    for(float j = 0; j < 12; j += 0.5){
+        for(float distance = 0; distance < 12; distance += 0.5){
+
+
+            digitalWrite(13, HIGH);
+
+            debug_serial.print(j);
+            debug_serial.print(",");
+            quickstart_amplifier(deadly_amplifier_gate_voltage);
+            set_amp_gain_voltage(4.5);
+            set_VCO(j,0);
+            delay(5); //wait for the tuning voltage to settle.
+            if(treatment){
+                pulse_VCO(400);
+            }
+            kill_amplifier();
+
+            // update_temperatures();
+            // get_power_levels(); // just in case something goes wrong
+            // debug_serial.print(",");
+            // debug_serial.print(get_drain_current());
+            // print_temperatures();
+            // debug_serial.print(",");
+            // debug_serial.print(slide);
+            // debug_serial.print(",");
+            // debug_serial.print(cuvette);
+            // debug_serial.print(",");
+            // debug_serial.print(millis());
+            // debug_serial.print(",");
+            debug_serial.print(treatment);
+            debug_serial.print(",");
+            debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
+            debug_serial.print(",0,0,0,0,0"); //help data analysis schema
+
+            debug_serial.println();
+
+            digitalWrite(13, LOW);
+            delay(100);
+
         }
-        kill_amplifier();
+        digitalWrite(13, LOW);
 
-        // update_temperatures();
-        // get_power_levels(); // just in case something goes wrong
-        // debug_serial.print(",");
-        // debug_serial.print(get_drain_current());
-        // print_temperatures();
-        // debug_serial.print(",");
-        // debug_serial.print(slide);
-        // debug_serial.print(",");
-        // debug_serial.print(cuvette);
-        // debug_serial.print(",");
-        // debug_serial.print(millis());
-        // debug_serial.print(",");
-        debug_serial.print(treatment);
-        debug_serial.print(",");
-        debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
-        debug_serial.print(",0,0,0,0,0"); //help data analysis schema
+        delay(1000);
 
-        debug_serial.println();
 
-        delay(100);
     }
 
 }
@@ -219,6 +232,32 @@ void take_one_cuvette_spectrum(int cuvette, bool treatment, int no_power_levels,
     }
 }
 
+const float working_distance = 50.0;
+const float step_distance = 0.5;
+
+
+void flush(){
+    debug_serial.println("========================================================");
+    debug_serial.print("\033[1;33m Please present cleaning tube\033[0m");
+    debug_serial.println("========================================================");
+    wait_for_button();
+
+
+    // move_absolute(0);
+    // debug_serial.println("========================================================");
+    // debug_serial.print("\033[1;33m Disconnect luer\033[0m");
+    // debug_serial.println("========================================================");
+    // wait_for_button();
+    // move_absolute(working_distance);
+
+
+    for(float cycle = 0; cycle < 3; cycle++){
+        move_absolute(0);
+        move_absolute(working_distance);
+    }
+}
+
+
 void master_loop(){
 
 
@@ -237,20 +276,50 @@ void master_loop(){
     int cuvette = 0;
     int power_level = 0;
 
+    move_relative(1, 10); //home
+    move_relative(0, 5);
+    //position is now zero: fully retracted
+
+
+    // move_relative(1, 10);
+    //
+    // while(true){
+    //     // 0 is dispense, 1 is retract.
+    //
+    //     delay(1000);
+    // }
+
+    flush();
+
+
     float safe_amplifier_gate_voltage = start_amplifier(0.12);
     kill_amplifier();
     float deadly_amplifier_gate_voltage = start_amplifier(0.20); // push it to the limit!
     kill_amplifier();
 
 
-    for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
+    // for(int cuvette = 0; cuvette < no_cuvettes; cuvette++){
 
-        prompt_slide(cuvette);
-        digitalWrite(13, HIGH); //watch led for blinding
+        // prompt_slide(cuvette);
+        // digitalWrite(13, HIGH); //watch led for blinding
         //haha blinding blinding
 
-        bool treatment = Entropy.random(2);
-        debug_serial.println(treatment);
+
+
+    debug_serial.println("========================================================");
+    debug_serial.print("\033[1;35m Please present sample tube\033[0m");
+    debug_serial.println("========================================================");
+    wait_for_button();
+    move_absolute(0);
+
+
+
+
+    bool treatment = Entropy.random(2);
+    debug_serial.println("Treatment:\u001b[8m ");
+    debug_serial.println(treatment);
+    debug_serial.println("\e[0m");
+
 
         // quickstart_amplifier(safe_amplifier_gate_voltage);
         //
@@ -262,7 +331,61 @@ void master_loop(){
 
 
 
-        pulse_spectrum(0, cuvette, treatment, deadly_amplifier_gate_voltage);
+    // pulse_spectrum(0, cuvette, treatment, deadly_amplifier_gate_voltage);
+
+
+
+
+    digitalWrite(13, HIGH);
+
+    for(float j = 0; j < 12; j += 0.5){
+        for(float distance = 0; distance < working_distance; distance += step_distance){
+
+            // debug_serial.print(j);
+            // debug_serial.print(",");
+            quickstart_amplifier(deadly_amplifier_gate_voltage);
+            set_amp_gain_voltage(4.5);
+            set_VCO(j,0);
+            delay(5); //wait for the tuning voltage to settle.
+            if(treatment){
+                pulse_VCO(400);
+            }
+            delay(1); // wait for RF to die out.
+            kill_amplifier();
+
+            // update_temperatures();
+            // get_power_levels(); // just in case something goes wrong
+            // debug_serial.print(",");
+            // debug_serial.print(get_drain_current());
+            // print_temperatures();
+            // debug_serial.print(",");
+            // debug_serial.print(slide);
+            // debug_serial.print(",");
+            // debug_serial.print(cuvette);
+            // debug_serial.print(",");
+            // debug_serial.print(millis());
+            // debug_serial.print(",");
+            // debug_serial.print(treatment);
+            // debug_serial.print(",");
+            // debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
+            // debug_serial.print(",0,0,0,0,0"); //help data analysis schema
+            // debug_serial.println();
+
+            delay(100);
+
+            move_absolute(distance);
+        }
+        move_absolute(0);
+
+        delay(1000);
+
+
+    }
+    digitalWrite(13, LOW);
+
+
+
+
 
 
         // delay(3000);
@@ -298,12 +421,12 @@ void master_loop(){
 
 
 
-        digitalWrite(13, LOW);
+    digitalWrite(13, LOW);
 
-        for(int i = 0; i < 200; i++){ //move data offscreen to maintain blindedness
-            debug_serial.println();
-        }
+    for(int i = 0; i < 200; i++){ //move data offscreen to maintain blindedness
+        debug_serial.println();
     }
+    // }
 
 
 }
