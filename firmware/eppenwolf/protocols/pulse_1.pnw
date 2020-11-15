@@ -2108,20 +2108,28 @@ All tubes went well. need to fix the homing procedure, broken threads on the sli
 
 Tube 4:
 
+t1
+
 11071
 11018
 
 Tube 5:
+
+t1
 
 12255
 12176
 
 Tube 6:
 
+t0
+
 12329
 12435
 
 Tube 7:
+
+t1
 
 12606
 12264
