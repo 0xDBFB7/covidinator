@@ -87,15 +87,15 @@ It uses a phase-sensing, providing a 1 microdegree temperature measurement.
 This requires no special equipment beyond standard optical lab supplies - mirrors, servoing piezo stages.
 
 
-Microwave dielectric spectroscopy ("impedance spectroscopy", "absorption spectroscopy")
+Microwave dielectric spectrometry ("impedance spectroscopy", "absorption spectroscopy")
 
 The notable Feldman biological spectroscopy group recommends a time-domain spectroscopy method\cite{Time2003a}, a modification of beloved TDR techniques. They cite several advantages, including easy subtraction of test jig artifacts.
 Generating a sharp-edged impulse with 10+ GHz spectral components is far easier and cheaper than an equivalent CW oscillator; but then we could not simultaneously expose the virus to the pulsed CW tone to verify the inactivation field thresholds.
 A 10+ GHz oscilloscope is generally required for this method, but sampling\footnotemark oscilloscopes may suffice. \cite{16psresolution2003} offer a simple way to do away with the delay lines that are usually required.
 
-\footnotetext{'Sampling' is an absurd name - all DSOs sample! A 'sampling oscilloscope' builds up the waveform over a large number of cycles.}
+\footnotetext{Confusing name - a 'sampling oscilloscope' builds up the waveform over a large number of cycles.}
 
-On the other hand, microwave cavity resonators can often provide a much higher sensitivity. The sensitivity can (in some cases - there are tradeoffs - see \cite{FabryPerot1982}) be made proportional to the Q, and even a crude microwave cavity can easily have a Q > 500.
+On the other hand, putting the sample into a microwave cavity resonator can often provide a much higher sensitivity. The sensitivity can (in some cases - there are tradeoffs - see \cite{FabryPerot1982}) be made proportional to the Q, and even a crude microwave cavity can easily have a Q > 500.
 As an example, EPR spectrometers use cavities in their microwave bridges.
 
 Cavities designed for wide-band use are generally mechanically tuned with a shorting plunger; the plunger itself presents difficulty in design\cite{Contactless2019}.
