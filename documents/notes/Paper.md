@@ -18,7 +18,7 @@ Uncontrolled electric field limits in Canada are 61.4 V/m and controlled is 137 
 
 #### Exposure time
 
-Both Yang and [] (apparently arbitrarily) chose a 15-minute exposure in their tests. To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure. 
+Both Yang and [] (apparently arbitrarily) chose a 15-minute exposure in their tests. To determine the effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must first establish the required duration of exposure.
 
 As opposed to chemical inactivation, where the time dependence is dominated by viscous fluid dynamic effects [Hirose 2017], or ionizing radiation, where a certain dose of photons must be absorbed, 
 
@@ -30,19 +30,19 @@ Variance in the sizes and stiffness of viruses (due to mutations) could shift th
 
 Other research[] has found T4 approximately a thousand times "easier" to inactivate chemically; however, its capsid is mechanically approx. 2x stronger than H3N2's envelope.
 
-> [] obtain an excellent prediction using an elastic continuum method with a spherical virus, with opposite charges in core and shell. 
+> [] obtain an excellent prediction using an elastic continuum method with a spherical virus, with opposite charges in core and shell.
 
 We wished to gain more insight into the processes which cause the fracture, in an attempt to reduce the field requirements further.
 
-Both coarse-grained bead-spring molecular dynamics (via integration of particle motion) and finite-element methods (via solution of governing elastic PDEs) have been used to great effect for simulation of mechanical properties of viruses. More recently, all-atom methods have also become computationally viable. An MD scheme was chosen for no particularly good reason. 
+Both coarse-grained bead-spring molecular dynamics (via integration of particle motion) and finite-element methods (via solution of governing elastic PDEs) have been used to great effect for simulation of mechanical properties of viruses. More recently, all-atom methods have also become computationally viable. An MD scheme was chosen for no particularly good reason.
 
 The algebraic normal-mode methods included in many software packages [charmm] are not generally sufficient for this task, as they often assume the limit of low-amplitudes.
 
-LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been made to work with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, because of the specific time-domain electric field impulses desired, and because of the multiple-run frequency sweep required to optimize the impulse, a custom simplistic MD code was written. 
+LAMMPS, GROMACS, OpenMM and HOOMD-blue were evaluated, and all could been made to work with some modification. However, because of difficulties in defining new force-fields for coarse-grained bead-spring modelling, because of the specific time-domain electric field impulses desired, and because of the multiple-run frequency sweep required to optimize the impulse, a custom simplistic MD code was written.
 
 Unfortunately, electric polarization effects, (the redistribution of electrons)
 
-The phage model was produced from raw CryoEM data using ProDy. ~~The coronavirid model was produced with LipidWrapper.~~ 
+The phage model was produced from raw CryoEM data using ProDy. ~~The coronavirid model was produced with LipidWrapper.~~
 
 [] Each field seems to invent its own terminology for multiscale modelling. "coarse-graining" is referred to as DSMC.
 
@@ -57,12 +57,11 @@ It remains to be seen how much not-invented-here fallacy was baked into this pro
 1answer
 
 1. CBS Ben
-   
+
    · 11 months ago  
-   
+
    They can be refrigerated up to a year without any change in labeled titer.
 
 
 double-wide, with 'resources' and 'figures' on the right pane? Emphasizes other documents
 and figures more
-

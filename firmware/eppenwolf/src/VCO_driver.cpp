@@ -319,7 +319,9 @@ void master_loop(){
 
 
 
-    bool treatment = Entropy.random(2);
+    // bool treatment = Entropy.random(2);
+    //REENABLE IN PROD
+    bool treatment = 1;
     debug_serial.println("Treatment:\u001b[8m ");
     debug_serial.println(treatment);
     debug_serial.println("\e[0m");

@@ -83,6 +83,9 @@ void init_stepper(){
 //     // digitalWrite(EN_PIN, 1);
 	pinMode(STEP_PIN, OUTPUT);
     pinMode(DIR_PIN, OUTPUT);
+
+
+    pinMode(pin, INPUT_PULLUP); 
 }
 //
 // void move_to_cuvette(int index, int function){

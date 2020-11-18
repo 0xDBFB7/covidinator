@@ -13,7 +13,7 @@ What follows is intended to be a casual, first-principles e. Be very careful wit
 
 With the most recent few generations of semiconductor processes, producing significant powers in the X-band has become inexpensive. Silicon transistors are limited in their output power and gain; Silicon-on-insulator topologies 
 
-This is perhaps most readily illustrated with the HB100 radar module. This device implements a complete doppler radar with two RF MOSFETS and a dielectric resonator. It operates at 10.6 GHz, yet are produced for under \$3. The PCB is stock FR4.
+This is perhaps most readily illustrated with the commercial HB100 radar module. This device implements a complete Doppler radar with two RF FETs and one dielectric resonator on a standard FR4 substrate. It operates at 10.6 GHz, yet are produced for under \$3.
 
 Our crude experimentation has yielded about 10 mW with a single SiGe:C transistor, the Infineon BFP620 (\$ 0.34 apiece \@ 1000-of.). For the personal microwave sterilizer, given the threshold levels found by Yang, this corresponds to a cost per sterilized cubic centimeter of approx. \cite{BFP620H7764XTSA1}.
 
@@ -49,6 +49,7 @@ Such a field would comply with all standards by at least a factor of 20.
 Injection locking rather than discrete phase shifters saves a number of components.
 
 Such a device would cost about \$12 in silicon at prototype prices, provide half a month of battery life on two alkaline AAA cells, 
+
 
 We demonstrate this form factor because, superficially, there are fewer people than there are places. But is such a device really necessary or useful? Is it sufficiently superior to a fiber mask to justify spending energy developing it? It has the advantage of being self-cleaning; and hair, eyes; a hand brought near the face is immediately sterilized.
 

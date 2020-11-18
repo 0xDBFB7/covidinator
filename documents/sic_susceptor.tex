@@ -1,0 +1,36 @@
+%!TeX root = sic_susceptor
+\documentclass[paper.tex]{subfiles}
+\begin{document}
+
+\section{Silicon carbide test}
+
+To verify that we can detect a resonance with this setup, we use a microwave susceptor mixture described by \cite{Effect2016}, which can be tuned to the correct range by varying the concentration of SiC to binder. We used the S-1 mixture.
+
+0.6g 2000-mesh silicon carbide powder was added to 1.4 g white Elmer's glue, mixed manually until homogeneous,
+ applied to a Mylar film, and dried with a hair dryer. A small wafer of the hardened mixture, perhaps 0.3 mm thick, 5 mm x 2 mm, was placed directly on top of the coplanar waveguide.
+
+
+
+The spectrum was then captured, averaging multiple sweeps of the VCO. A background spectrum was taken without the wafer in place, and then the two sweeps were subtracted.
+
+\begin{figure}[H]
+	\includesvg[width=\textwidth]{sic_9_1}
+ 	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\includesvg[width=\textwidth]{sic_9_2}
+ 	\caption{}
+\end{figure}
+
+\cite{Effect2016} measures a peak at about 7.2 GHz. Our peak is at approximately $7.84 \pm \approx 0.25$ GHz, which is well within variation in powder grain sizes and concentration.
+
+The paper specifies the reflection loss, S$_{11}$. Unfortunately, having not designed in directional couplers, it is probably not possible to directly determine S$_{21}$ and S$_{11}$ with this setup.
+
+Naively, we might expect the peak to appear as a decrease at both sensors; instead it appears as an increase in the far sensor and decrease in the near sensor. It could be possible that the presence of the dielectric wafer has merely detuned an existing resonance, that the peak is a coincidence, and that these data mean nothing.
+
+The raw voltage plots do not suggest that this is the case; but it is nonetheless concerning.
+
+\footnote{The paper mentions that the "blending fraction of silicon carbide powders to epoxy resin was 30 \%, 35 \%, 40 \%, 45 \% and 50\% by weight". That seems a little ambiguous as to whether that's "weight per total mass" or "weight per epoxy".}
+
+\end{document}
