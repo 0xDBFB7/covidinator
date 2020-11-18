@@ -276,8 +276,8 @@ void master_loop(){
     int cuvette = 0;
     int power_level = 0;
 
-    move_relative(1, 10); //home
-    move_relative(0, 5);
+    // move_relative(1, 10); //home
+    // move_relative(0, 5);
     //position is now zero: fully retracted
 
 
@@ -393,13 +393,13 @@ void master_loop(){
 
 
 
-        // delay(3000);
-        //
-        // quickstart_amplifier(safe_amplifier_gate_voltage);
-        //
-        // take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
-        //
-        // kill_amplifier();
+    // delay(3000);
+
+    quickstart_amplifier(safe_amplifier_gate_voltage);
+
+    take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, 1);
+
+    kill_amplifier();
 
 
         //

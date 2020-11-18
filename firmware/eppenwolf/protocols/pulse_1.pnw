@@ -2105,16 +2105,101 @@ t1
 12264
 
 
-50 uL PAG1: 
+50 uL PAG1 standard: 32738
 50 uL PG1:
 
+will tell once I re-mix another batch of PG
 
+
+Protocol:
+
+1. Make sure a small bead of water is present at the plunger so it's not running dry.
+2. Cycle the plunger 3 times in a fresh tube of water.
+3. Purge the capillary and luer dead volume completely.
+
+Run the test.
+
+Measure.
+4. 10 second integration time, 100khz oscillate. Tab on tube pointing down.
+
+Make sure the capillary is dry and empty after experiments, crystallization might be an issue.
+
+PAG1 standard stored at room temp.
 
 \section{Run 9}
 
-Going to disable the sham temporarily, make treatment deterministic to speed up testing.
+Going to disable the randomized sham temporarily, make treatment deterministic to speed up testing.
 any published data must use the randomized sham function.
 
+Introduction:
+
+Ishii and Yanagida \cite{two1977}, (Qin \cite{Structure2010}), find at a pH of 10.6, about 0.3x inactivation after a few minutes of incubation:
+the capsid is weakened greatly by the base, relying on the "clamp proteins" hoc and soc.
+
+Using a 0.05M carbonate-bicarbonate buffer to adjust the pH.
+
+pH 10.5 requires 1g/l bicarbonate and 9.274 g/L of carbonate (https://www.aatbio.com/resources/buffer-preparations-and-recipes/carbonate-bicarbonate-buffer-ph-9-2-to-10-6)
+and that's linear with scaling.
+
+0.1 g / 10 mL bicarb
+0.9274 g / 10 mL carbonate
+
+for a 0.05 M in 0.4 mL
+
+20 uL / 0.4 mL = 20
+
+bi. should be added first, then
+
+Done. 10 mL 1M, diluted with tap water. Tested with litmus, indeed between 10 and 11.
+
+Mixed 8*2.5 uL of that with PG1.
+
+Pre-run fluro signal of 0.4 mL PG1:
+
+14391
+14131
+14764
+
+as expected.
+
+Used tubes rinsed throughly (including lid!), then autoclaved for 6 min in a beaker covered with alu. not quite dry.
+
+After 15 min or so, PG1: 16617 (slow inactivation, as expected)
+
+however, tube 0 (ran through capillary) only reads
+
+4500
+
+counts.
+
+Ran a tube with the same PG1, still alkali, tube 1, through the capillary manually, without running the amp.
+
+13700 counts, as expected.
+
+re installed the previous tube, 4519, 4205...
+
+Some of the autoclaved tubes have a significant amount of water in them. It's possible that that's the cause.
+using a brand new tube, tube 2, running tube 0 again.
+
+The plate appears to be about 27 deg C, against the 19 C background, so a thermal effect with the GelGreen is not impossible.
+Tube 1 was run through much faster, so not a very representative sham.
+
+Tube 2 reads
+
+12947
+12389
+
+Which is much more reasonable. dilution was clearly an issue! Must figure out a reliable drying procedure.
+
+PG1, 0.25 mL or something remaining, now reads 17732 counts, good agreement with the study
+
+(I attribute the reduced count rate of tube 1,2 to the lower volume, btw)
+
+Re-litmus paper tested tube 2. pH is lower than expected: only about 8. Must re-run.
+
+Conclusion:
+
+No clear inactivation with weakened phage.
 
 
 
