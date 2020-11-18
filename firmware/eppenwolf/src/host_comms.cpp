@@ -69,6 +69,10 @@ void set_VCO_handler(){
 
     host_transfer.sendData(sendSize, 10);
 }
+
+// void reset(){
+//     SCB_AIRCR = 0x05FA0004;
+// }
 //
 // void start_amplifier_cmd(){
 //     uint16_t recSize = 0;

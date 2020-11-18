@@ -85,7 +85,7 @@ void init_stepper(){
     pinMode(DIR_PIN, OUTPUT);
 
 
-    pinMode(pin, INPUT_PULLUP); 
+    pinMode(9, INPUT_PULLUP);
 }
 //
 // void move_to_cuvette(int index, int function){
@@ -123,25 +123,21 @@ void move_relative(bool direction, float distance){
 //
 //
 //
-// void home(){
-//     while(!digitalReadFast(7)){
-//         move_relative(0,1);
-//     }
-//     move_relative(0,1);
-//     driver.toff(5);
-//
-//     digitalWrite(DIR_PIN, 1);
-//     while(digitalReadFast(7)){
-//         digitalWriteFast(STEP_PIN, HIGH);
-//         delayMicroseconds(50);
-//         digitalWriteFast(STEP_PIN, LOW);
-//         delayMicroseconds(50);
-//     }
-//
-//     driver.toff(0);
-//     position = 0;
-//     move_to_cuvette(0, 0);
-// }
+void home(){
+    while(digitalReadFast(9)){
+        move_relative(1,1);
+    }
+    digitalWrite(DIR_PIN, 0);
+    digitalWrite(EN_PIN, 0);
+    while(!digitalReadFast(9)){
+        digitalWriteFast(STEP_PIN, HIGH);
+        delayMicroseconds(600);
+        digitalWriteFast(STEP_PIN, LOW);
+        delayMicroseconds(600);
+    }
+    digitalWrite(EN_PIN, 1);
+    position = 0;
+}
 //
 // // void setup() {
 // // 	Serial.begin(9600);

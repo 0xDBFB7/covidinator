@@ -28,7 +28,7 @@ int main(void)
 	get_power_levels();
 	init_thermal();
 	init_stepper();
-	// home();
+	home();
 	while(1){
 		// update_temperatures();
 		// print_temperatures();
@@ -39,6 +39,7 @@ int main(void)
 		delay(100);
 		digitalWrite(13, HIGH);
 		delay(100);
+
 
 		dispatch();
 
