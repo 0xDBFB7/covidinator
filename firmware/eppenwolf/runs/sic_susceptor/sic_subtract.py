@@ -51,4 +51,8 @@ plt.xlabel("Frequency (GHz)")
 plt.ylabel("Voltage")
 plt.title("Raw detector voltage")
 plt.savefig("sic_9_2.svg")
+# plt.show()
+
+plt.figure()
+plt.plot(freqs, (averaged_sic[:,2]/averaged_sic[:,1]) / (averaged_background[:,2]/averaged_background[:,1]),label="'Far' sensor,  $\propto$S$_{21}$")
 plt.show()

@@ -2195,13 +2195,12 @@ PG1, 0.25 mL or something remaining, now reads 17732 counts, good agreement with
 
 (I attribute the reduced count rate of tube 1,2 to the lower volume, btw)
 
-Re-litmus paper tested tube 2. pH is lower than expected: only about 8. Must re-run.
 
-Conclusion:
+Re-litmus paper tested tube 2. pH might be lower than expected.
 
-No clear inactivation with weakened phage.
+\section{Run 10}
 
-
+going to take the spectrum again. if there's an obvious resonance, we're good.
 
 
 \section{GelGreen host DNA lysis detection}
