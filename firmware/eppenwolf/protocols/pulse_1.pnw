@@ -2198,9 +2198,26 @@ PG1, 0.25 mL or something remaining, now reads 17732 counts, good agreement with
 
 Re-litmus paper tested tube 2. pH might be lower than expected.
 
+
+
+Several hours later, PG1 is now at 23600, exactly as expected. wonderful!
+
+
 \section{Run 10}
 
 going to take the spectrum again. if there's an obvious resonance, we're good.
+
+dividing the near and far sensors works great. obvious resonance, but in background too. probably from water-filled capillary.
+tiny little ripples here and there, but no
+
+
+Looking at the far detector, the difference in pulse length between pulse_VCO(400) (all previous runs) and pulse_VCO(10000) is < 10 uS:
+however, the pulse peak voltage is about 3.16 vs 1.88 (missing out on 60\% of the pulse!). Going to re-do some previous tests for this reason.
+
+
+
+
+
 
 
 \section{GelGreen host DNA lysis detection}

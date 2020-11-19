@@ -290,7 +290,7 @@ void master_loop(){
     // }
 
     // flush();
-    // move_absolute(working_distance);
+    move_absolute(working_distance);
 
 
     float safe_amplifier_gate_voltage = start_amplifier(0.12);
@@ -306,17 +306,17 @@ void master_loop(){
         //haha blinding blinding
 
 
-    //
-    // debug_serial.println("========================================================");
-    // debug_serial.print("\033[1;35m Please present stock tube\033[0m");
-    // debug_serial.println("========================================================");
-    // wait_for_button();
-    // move_absolute(0);
-    // debug_serial.println("========================================================");
-    // debug_serial.print("\033[1;35m Please present testing tube\033[0m");
-    // debug_serial.println("========================================================");
-    // wait_for_button();
-    //
+
+    debug_serial.println("========================================================");
+    debug_serial.print("\033[1;35m Please present stock tube\033[0m");
+    debug_serial.println("========================================================");
+    wait_for_button();
+    move_absolute(0);
+    debug_serial.println("========================================================");
+    debug_serial.print("\033[1;35m Please present testing tube\033[0m");
+    debug_serial.println("========================================================");
+    wait_for_button();
+
 
 
     // bool treatment = Entropy.random(2);
@@ -342,83 +342,65 @@ void master_loop(){
 
 
 
-    // digitalWrite(13, HIGH);
+    digitalWrite(13, HIGH);
 
-    // for(float distance = 0; distance < working_distance; distance += step_distance){
-    //     for(float j = 0; j < 12; j += 0.5){
-    //
-    //         // debug_serial.print(j);
-    //         // debug_serial.print(",");
-    //         quickstart_amplifier(deadly_amplifier_gate_voltage);
-    //         set_amp_gain_voltage(4.5);
-    //         set_VCO(j,0);
-    //         delay(5); //wait for the tuning voltage to settle.
-    //         if(treatment){
-    //             pulse_VCO(400);
-    //         }
-    //         delay(1); // wait for RF to die out.
-    //         kill_amplifier();
-    //
-    //         // update_temperatures();
-    //         // get_power_levels(); // just in case something goes wrong
-    //         // debug_serial.print(",");
-    //         // debug_serial.print(get_drain_current());
-    //         // print_temperatures();
-    //         // debug_serial.print(",");
-    //         // debug_serial.print(slide);
-    //         // debug_serial.print(",");
-    //         // debug_serial.print(cuvette);
-    //         // debug_serial.print(",");
-    //         // debug_serial.print(millis());
-    //         // debug_serial.print(",");
-    //         // debug_serial.print(treatment);
-    //         // debug_serial.print(",");
-    //         // debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
-    //         // debug_serial.print(",0,0,0,0,0"); //help data analysis schema
-    //         // debug_serial.println();
-    //
-    //         delay(100);
-    //
-    //         move_absolute(distance);
-    //     }
-    //
-    //     // move_absolute(0);
-    //     delay(1000);
-    //
-    // }
-    // digitalWrite(13, LOW);
+    for(float distance = 0; distance < working_distance; distance += step_distance){
+        for(float j = 0; j < 12; j += 0.5){
 
+            // debug_serial.print(j);
+            // debug_serial.print(",");
+            quickstart_amplifier(deadly_amplifier_gate_voltage);
+            set_amp_gain_voltage(4.5);
+            set_VCO(j,0);
+            delay(5); //wait for the tuning voltage to settle.
+            if(treatment){
+                pulse_VCO(10000);
+            }
+            delay(1); // wait for RF to die out.
+            kill_amplifier();
 
+            // update_temperatures();
+            // get_power_levels(); // just in case something goes wrong
+            // debug_serial.print(",");
+            // debug_serial.print(get_drain_current());
+            // print_temperatures();
+            // debug_serial.print(",");
+            // debug_serial.print(slide);
+            // debug_serial.print(",");
+            // debug_serial.print(cuvette);
+            // debug_serial.print(",");
+            // debug_serial.print(millis());
+            // debug_serial.print(",");
+            // debug_serial.print(treatment);
+            // debug_serial.print(",");
+            // debug_serial.print("37373737"); //identifier for pulse line, float so numpy's happy
+            // debug_serial.print(",0,0,0,0,0"); //help data analysis schema
+            // debug_serial.println();
+
+            delay(100);
+
+            move_absolute(distance);
+        }
+
+        // move_absolute(0);
+        delay(1000);
+
+    }
+    digitalWrite(13, LOW);
 
 
 
 
-    // delay(3000);
-
-    debug_serial.println("========================================================");
-    debug_serial.print("\033[1;35m Please present phage tube\033[0m");
-    debug_serial.println("========================================================");
-    wait_for_button();
-
-    // move_absolute(0);
-
-    quickstart_amplifier(safe_amplifier_gate_voltage);
-
-    take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, 1);
-
-    kill_amplifier();
 
 
-    debug_serial.println("========================================================");
-    debug_serial.print("\033[1;35m Please present ontrol tube\033[0m");
-    debug_serial.println("========================================================");
-    wait_for_button();
+        // delay(3000);
+        //
+        // quickstart_amplifier(safe_amplifier_gate_voltage);
+        //
+        // take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, num_freq_sweeps);
+        //
+        // kill_amplifier();
 
-    quickstart_amplifier(safe_amplifier_gate_voltage);
-
-    take_one_cuvette_spectrum(cuvette, treatment, no_power_levels, 1, 1);
-
-    kill_amplifier();
 
         //
         // delay(3000);
