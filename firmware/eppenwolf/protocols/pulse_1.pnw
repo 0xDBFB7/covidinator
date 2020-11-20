@@ -2275,7 +2275,24 @@ most of the power is being absorbed!
 
 that's bad!
 
-Updated the deadly-power graph. 
+Updated the deadly-power graph. Indeed, huge decay. what's up with that?
+
+the other side of the current limiter chip is drooping to 3v. ?
+
+The pulse current must be spiking above 200 mA.
+0.18 A drain current works, but still triggers the thinger.
+
+0.17 does not seem to trigger the lockout, especially with a delay to prevent overheating.
+peak voltage is 1.224v.
+
+
+With this newfound stability at high powers, I figured I'd re-do the spectrum again.
+If capsid breaks during a sweep, I think we would expect a sharp "snap" in the microwave spectrum
+that doesn't repeat on the second round. I have found such a snap, attached at run 10 phage_subtract_2.
+it is very close to the known resonance, so I'm almost sure it's an artifact.
+
+
+
 
 \section{GelGreen host DNA lysis detection}
 

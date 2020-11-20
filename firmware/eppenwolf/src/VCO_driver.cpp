@@ -295,7 +295,7 @@ void master_loop(){
 
     float safe_amplifier_gate_voltage = start_amplifier(0.12);
     kill_amplifier();
-    float deadly_amplifier_gate_voltage = start_amplifier(0.20); // push it to the limit!
+    float deadly_amplifier_gate_voltage = start_amplifier(0.17); // push it to the limit!
     kill_amplifier();
 
 
