@@ -1128,13 +1128,25 @@ It's interesting how a whole theoretical framework was built around tfirst Edwar
 
 
 
-Burkhartsmeyer \cite{Optical2020} measures the same resonance via optical methods. looks pretty
-sharp. huh.
+Burkhartsmeyer \cite{Optical2020} measures the same resonance via optical methods. lo
 
 
 
+The fact that phi6 is a dsRNA virus is somehwat annoying, because it means:
+we can't autoclave the virus for standards
+Gelgreen has a lower sensitivity
+RNases are more sensitive
 
 
+pr772 coliphage has a lipid envelope /inside/ the 
+so does PR4, PM2
 
+The lipid envelope is pretty small though
 
+the envelope of phi 6 can be destroyed without inactivating the phage or releasing the genome.
+That's concerning. perhaps the capsid can be dissolved separately?
 
+phage has an osmosis feedback mechansim
+
+PR4,PM2, PR772 is nice because it's a coliphage, meaning I don't need to figure out how to culture
+p. syringae

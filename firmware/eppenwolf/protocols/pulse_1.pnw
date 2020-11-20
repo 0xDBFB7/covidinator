@@ -2246,10 +2246,24 @@ probably need to do shams again.
 Disconnect the frequency divider. It's not being used and it takes 0.35 W.
 Scratch that. It's not causing the heating.
 
-Mixed a fresh PG1, using two brand new tubes.
+Mixed a fresh PG1, no alkali, using two brand new tubes. 0.2 mL phage, 0.2 ml 1/4000 gelgreen.
 
 
+purged capillary, 0 got the treatment.
 
+10000 counts.
+
+the sham tube (confirmed that it definitely did not get exposed) is
+
+10700
+
+completely within the error.
+
+Why do the tubes have this multi-modal distribution, with 10,000, 13000, etc?
+
+So, even with the highest exposure power, at 20 us pulses, T4 does not seem to exhibit any inactivation.
+
+That's 160000 cycles, btw.
 
 
 
