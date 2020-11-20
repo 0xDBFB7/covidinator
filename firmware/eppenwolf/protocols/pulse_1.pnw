@@ -2265,7 +2265,17 @@ So, even with the highest exposure power, at 20 us pulses, T4 does not seem to e
 
 That's 160000 cycles, btw.
 
+Running one more tube with long exposure of 10000000 cycles per freq per sweep . shouldn't be surprised if we see inactivation,
+probably a thermal effect
 
+Nope, ~10000 counts.
+
+Oh dear! Measuring the far detector with the sample in the capillary, the peak has dropped to 1.1v! oh no!
+most of the power is being absorbed!
+
+that's bad!
+
+Updated the deadly-power graph. 
 
 \section{GelGreen host DNA lysis detection}
 
