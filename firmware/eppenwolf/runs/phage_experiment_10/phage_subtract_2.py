@@ -47,6 +47,8 @@ freqs = freq_eq(data[0][0][:,0])
 plt.plot(freqs,(data[1][0][:,far_sensor]/data[1][0][:,near_sensor])/(data[2][0][:,far_sensor]/data[2][0][:,near_sensor]))
 plt.plot(freqs,(data[1][1][:,far_sensor]/data[1][1][:,near_sensor])/(data[2][1][:,far_sensor]/data[2][1][:,near_sensor]))
 plt.plot(freqs,(data[1][2][:,far_sensor]/data[1][2][:,near_sensor])/(data[2][2][:,far_sensor]/data[2][2][:,near_sensor]))
+plt.plot(freqs,(data[1][3][:,far_sensor]/data[1][3][:,near_sensor])/(data[2][3][:,far_sensor]/data[2][3][:,near_sensor]))
+plt.plot(freqs,(data[1][4][:,far_sensor]/data[1][4][:,near_sensor])/(data[2][4][:,far_sensor]/data[2][4][:,near_sensor]))
 
 
 # plt.plot(freqs, treated_phage[sample_post_treatment][:,near_sensor] - control[sample_post_treatment][:,near_sensor])

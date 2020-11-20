@@ -1150,3 +1150,32 @@ phage has an osmosis feedback mechansim
 
 PR4,PM2, PR772 is nice because it's a coliphage, meaning I don't need to figure out how to culture
 p. syringae
+
+however, PR2, PM2 are 
+
+Concentrations of 0.05 M EDTA had no effect on phi6, whereas concentrations of EDTA as low as 10-4 M dissociated the
+phi6 nucleocapsids.
+Comparative properties of bacteriophage phi6 and phi6 nucleocapsid.
+EDTA can be obtained as ear flushes for dogs.
+
+we could use an inactivated flu virus of some type, seems like they're still BSL-2
+
+Tectiviridae 
+
+
+: My outer lipid envelope fuses with the host, inserting the inner genome-containing
+protein capsid. Sensible.
+tectiviridae: wHaT If my lipid MeMBranE was InSide ThE caPsId?
+v.: no that doesn't make se-
+tectiviridae: aaaaaaaaaHAHAHAHAHA
+v.: you look like an idiot. Wear your coat like everyone else.
+tectiviridae: <pouts> MY GENOME IS INSIDE A LIPID BILAYER and you can't stop meeee
+v.: ...
+someone put me in EDTA then I'll HAVE NO CAPSID AT ALL
+
+PRD1
+
+hmm! liposomes of various sizes, containing DNA can be produced by dessicating, sonicating, and then re-hydrating
+a lipid-containing solution. 
+
+
