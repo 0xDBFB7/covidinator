@@ -115,6 +115,8 @@ class test_fourier(unittest.TestCase):
         print(p.mode_frequencies)
         print(times[-1])
 
+
+
     def test_fourier_reconstruction(self):
         sampling_frequency = 50000
         input_frequency = 1000.0
@@ -142,7 +144,7 @@ class test_fourier(unittest.TestCase):
         aux_phase = np.zeros_like(spatial_phase,dtype=np.float32)
         output = p.fourier_sum(spatial_phase, aux_phase, times)
 
-
+        assert(output - input == 0)
 
         plt.plot(times,output)
         plt.show()

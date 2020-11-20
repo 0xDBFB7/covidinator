@@ -2215,6 +2215,39 @@ Looking at the far detector, the difference in pulse length between pulse_VCO(40
 however, the pulse peak voltage is about 3.16 vs 1.88 (missing out on 60\% of the pulse!). Going to re-do some previous tests for this reason.
 
 
+\section{Run 11}
+
+Stock pulse exposure again, but with the higher pulse peak.
+
+Darnit, didn't purge right. repeating.
+
+Using leftover akali PG1.
+
+background (50 uL) with that solution is now 20473.
+
+treated tubes are now
+
+14000
+
+and
+
+16000
+
+the treatment consistently *lower* than the manually-dispensed background.
+is it possible that on the slow passthrough some phage or gg is getting adsorbed onto the capillary?
+or is this just a thermal effect what with the alkali.
+
+need to repeat with standard, non-alkali.
+
+probably need to do shams again.
+
+\section{Run 12}
+
+Disconnect the frequency divider. It's not being used and it takes 0.35 W.
+Scratch that. It's not causing the heating.
+
+Mixed a fresh PG1, using two brand new tubes.
+
 
 
 
