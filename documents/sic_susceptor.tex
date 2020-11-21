@@ -14,12 +14,12 @@ To verify that we can detect a resonance with this setup, we use a microwave sus
 The spectrum was then captured, averaging multiple sweeps of the VCO. A background spectrum was taken without the wafer in place, and then the two sweeps were subtracted.
 
 \begin{figure}[H]
-	\includesvg[width=\textwidth]{sic_9_1}
+	\includesvg[width=\textwidth]{../firmware/eppenwolf/runs/sic_susceptor/sic_9_1}
  	\caption{}
 \end{figure}
 
 \begin{figure}[H]
-	\includesvg[width=\textwidth]{sic_9_2}
+	\includesvg[width=\textwidth]{../firmware/eppenwolf/runs/sic_susceptor/sic_9_2}
  	\caption{}
 \end{figure}
 
@@ -29,7 +29,7 @@ The paper specifies the reflection loss, S$_{11}$. Unfortunately, having not des
 
 Naively, we might expect the peak to appear as a decrease at both sensors; instead it appears as an increase in the far sensor and decrease in the near sensor. It could be possible that the presence of the dielectric wafer has merely detuned an existing resonance, that the peak is a coincidence, and that these data mean nothing.
 
-The raw voltage plots do not suggest that this is the case; but it is nonetheless concerning.
+\strike The raw voltage plots do not suggest that this is the case; but it is nonetheless concerning.
 
 \footnote{The paper mentions that the "blending fraction of silicon carbide powders to epoxy resin was 30 \%, 35 \%, 40 \%, 45 \% and 50\% by weight". That seems a little ambiguous as to whether that's "weight per total mass" or "weight per epoxy".}
 

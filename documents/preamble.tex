@@ -74,9 +74,13 @@
 
 %
 %
-%\usepackage{titlesec}
+\usepackage{titlesec}
 %
 %% custom section
+
+
+\titleformat{\section}
+{\normalfont\LARGE\bfseries}{\thesection}{1em}{}
 %\titleformat{\section}
 %{\normalfont\LARGE\bfseries\PRLsep}
 %{{{{\itshape \thesection\hskip 9pt\textpipe\hskip 9pt}}}}{0pt}{}
@@ -111,6 +115,8 @@
 			}
 
 \usepackage{tcolorbox}
+\newtcolorbox{protocol}{colback=yellow!5!white,colframe=yellow!75!black}
+\newtcolorbox{equipment}{colback=orange!5!white,colframe=orange!75!black}
 \newtcolorbox{autem}{colback=red!5!white,colframe=red!75!black}
 \newtcolorbox{toolchain}{colback=blue!5!white,colframe=blue!40!black!40}
 %https://tex.stackexchange.com/questions/66154/how-to-construct-a-coloured-box-with-rounded-corners

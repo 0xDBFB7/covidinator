@@ -1173,9 +1173,22 @@ tectiviridae: <pouts> MY GENOME IS INSIDE A LIPID BILAYER and you can't stop mee
 v.: ...
 someone put me in EDTA then I'll HAVE NO CAPSID AT ALL
 
-PRD1
+That's phage PRD1 at DSMZ.
 
 hmm! liposomes of various sizes, containing DNA can be produced by dessicating, sonicating, and then re-hydrating
-a lipid-containing solution. 
+a lipid-containing solution. good alternative model to viruses?
+Salmon sperm dna in liposomes  
 
+the dielectric constant of distilled water drops fro 60 to ~3 when frozen,
+and the loss tangen from 0.157 to 0.0009.
 
+assuming the liquid drop model from Ford 2003, to scale the phage resonance of Burkhartsmeyer,
+
+(sqrt(1/((120/2)^3)) / sqrt(1/((22/2)^3))) * 30 GHz
+
+then T4 would have a resonance mode at 2 GHz! That seems implausible based on the 100 nm 
+influenza values. 
+
+The elastic sphere model is linear with diameter. 
+
+then the resonant frequency of practically all would be within the sweep we're using.
