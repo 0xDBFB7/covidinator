@@ -6,9 +6,16 @@
 
 Yang et al determine that in order to fit their microwave absorption cross-section data, and produce the decrease in infectivity via precisely the mechanism they suggest, the "core" and "shell" of Influenza A should have an effective charge of about $q=1 \times 10^7 e^-$. 
 
+Liu et al mention that "Counterions
+dissolved in solution will thus be adsorbed on the surface of
+a protein and form an electric double layer."
+
+The mechanism given is that ions from solution counteract the protein charges to form an "electric double layer". In any case, the best representation is two concentric spheres with a net charge each.
+
 Is such a charge plausible? 
 
-As might be expected, the electrostatic properties of the virus differ from that of host cells, both on the sub-protein level\cite{Icosahedral2019} \footnotemark \ and in the lipid bilayer \cite{Lipid2015} \footnotemark. The mechanism given is that ions from solution counteract the protein charges to form an "electric double layer". In any case, the best representation is two concentric spheres with a net charge each.
+As might be expected, the electrostatic properties of the virus differ from that of host cells, both on the sub-protein level\cite{Icosahedral2019} \footnotemark \ and in the lipid bilayer \cite{Lipid2015} \footnotemark. 
+
 
 \footnotetext{
 	\cite{Icosahedral2019}: \begin{quote}
@@ -18,15 +25,30 @@ As might be expected, the electrostatic properties of the virus differ from that
 
 \footnotetext{The virus steals its envelope from the host cell; but it tie dyes its duds before it bounces.}
 
+\footnote{Influenza also has several other fascinating electrostatic properties. First, the net charge }
+
 \begin{autem}
 	autem: Are you sure you're understanding the nature of this "effective" charge properly?
 \end{autem}
 
 \subsection{Major proteins and other components}
 
-Protein net charges extracted from primary protein sequences compiled by the proteome-pI database \cite{ProteomepI2017} and UniProt using localCIDER \cite{CIDER2017}. See \ghfile{biology/data/net_charge.py} and structure.csv. Detailed source information will be added later! There are many.
+On the largest scale, at a pH of 7, the net charges of the 11 proteins coded for by the Influenza A genome only contribute
+
+Protein net charges extracted from protein primary structure sequences\footnotemark compiled by the proteome-pI database \cite{ProteomepI2017} and UniProt\footnotemark using localCIDER \cite{CIDER2017}. See \ghfile{biology/data/net_charge.py} and structure.csv. Detailed source information will be added later! There are many.
 
 Note that this is considering the net charge of a whole isolated protein. Some proteins poke through the envelope; if a zwitterionic polarization existed from one end to another, for instance, this would not count here but would affect the coupling to an EM field. Given the size of most proteins, however, this doesn't seem like a likely effect.
+
+\footnotetext{
+	It should be noted that these are the simplest primary structure charges. The charge in practice is determined by the secondary structure and the bonding to adjacent structures. More precise charges appear to be somewhat inconsistent. [] Find that the isoelectric point of the M protein charge is so low that it runs off the end of their 2D electrophoresis gel. However, the predicted value by [] is about 3.
+	This is not of much importance for here, but may be important when setting up MD simulations.
+}
+
+\footnotetext{
+
+Because CryoEM uses charged particles, it is possible to extract the actual charge distribution of a structure directly from an un-fit \cite{Identification2018}.
+
+}
 
 \subsection{Electrostatic energy}
 
@@ -121,7 +143,6 @@ If we assume that the charge is not as. All other properties being equal, to acc
 2. The concentration of virus was higher than measured.
 
 
-On the largest scale, at a pH of 7, the net charges of the 11 proteins coded for by the Influenza A genome only contribute 
 
 
 
@@ -143,12 +164,7 @@ detect resonances with amplitudes less than 1/20th of that
 reported by Edwards et al. (1984).
 
 
-In my field, I am used to being able to make a definite mechanistic claim. Such and such a gamma ray will not break the bond in so and so; the energy is too low. However, we might not be able to expect such a clear answer from biology; how many treatments do we know of where the interaction with every structure in the body is known? In some cases, all we appear to be able to say is that we've tested it in a convincingly large number of ways and just don't see it.
 
-That seems defeatist, but it perhaps should be something we can prepare for.
-
-
-\cite{Identification2018}
 
 
 
