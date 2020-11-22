@@ -2300,6 +2300,24 @@ I guess we'll wait for phi6 and see if it works?
 
 ask prof sharamian to expose tubes?
 
+\section{Saturated salt solution}
+
+100 g NaCl was added to PG1 (approximately 0.25 mL remaining)
+
+counts only 5000.
+
+pulse_VCO(10000); and 0.20 deadly current. a consistent 2.96 V maximum was observed.
+
+3200 counts on 0, exposed
+
+ran a sham:
+
+3200 counts.
+
+
+
+
+
 
 \section{GelGreen host DNA lysis detection}
 

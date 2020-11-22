@@ -1,18 +1,52 @@
+%!TeX root = background
+\documentclass[paper.tex]{subfiles}
+\begin{document}
 
 
 We have cycled between condemning as pathological science, and lauding it as the cure. Barring 
 
 
+we appear to have lost confidence in the concept of measurement itself.
+
+
+
+the only analagous non-thermal mechansism we are aware of is electroporation; and that requires the diffusion of ionized sodium and potassium charge carriers through the membrane, which would seem to necessarily require a non-
+
+Laser
 
 
 
 
+
+
+
+
+
+A poignant summary of the consensus is found in \cite{IEEE2006}, Annex B, "Identification of levels of RF exposure responsible for adverse effects: summary of the literature".
+
+\begin{quote}
+	Further examination of the RF literature reveals no reproducible low level (non-thermal) effect that would
+	occur even under extreme environmental exposures. The scientific consensus is that there are no accepted
+	theoretical mechanisms that would suggest the existence of such effects. This consensus further supports the
+	analysis presented in this section, i.e., that harmful effects are and will be due to excessive absorption of
+	energy, resulting in heating that can result in a detrimentally elevated temperature. 
+	
+	The accepted mechanism is RF energy absorbed by the biological system through interaction with polar molecules (dielectric relaxation) or interactions with ions (ohmic loss) is rapidly dispersed to all modes of the system leading to an average energy rise or temperature elevation. 
+	
+	Since publication of ANSI C95.1-1982 [B6], significant advances have been made in our knowledge of the biological effects of exposure to RF energy. This increased knowledge strengthens the basis for and confidence in the statement that the MPEs and BRs in this	standard are protective against established adverse health effects with a large margin of safety.
+\end{quote}
+
+and, 
+
+\begin{quote}
+	...the two major groups that develop RF safety standards and
+	guidelines (ICES and ICNIRP) agree that thermal effects continue to be the appropriate basis for protection
+	against RF exposure at frequencies above 100 kHz.
+\end{quote}
 
 
 
 Previous works (Liu et al, ) appear to demonstrate that several species of viruses exhibit an anomalous dielectric relaxation time of $> 75 \text{ ps}$, as opposed to $< 20 \text{ ps}$ \footnotemark measured in the structures of human tissue.\\
-
-
 
 Other studies (Yang et al, Hung et al, Sun et al) then appear to demonstrate experimentally that - due to this effect and the favorable combination of envelope and genome net charge, envelope and capsid yield stress, mass distribution, and overall stiffness - certain viruses can  apparently be made to ring up, leading their envelope to shatter, when exposed to intense but ostensibly safe CW tones in the X-band - very much like a singer might shatter a wine glass.\\
 
@@ -52,3 +86,90 @@ Not to be confused with pseudoscientific 'resonance therapies', nor reports of a
 
 This means that the technique is {\it selective}.
 
+
+
+
+
+
+
+
+is is apparently easy to draw the wrong conculsion from a funnel plot, however. Here's one example of a flawed analysis: http://ies.fsv.cuni.cz/sci/publication/show/id/5277/lang/cs
+
+Thanks to James Picone https://skeptics.stackexchange.com/a/49751/ for the analysis.
+
+"The funnels are heavily asymmetrical: the left-hand side of the funnels is almost completely missing, hence we have good reason to believe that publication selection bias is strong in this literature." - 
+
+
+
+
+
+
+
+
+
+
+\subsection{Artifacts in past absorption spectroscopy experiments}
+
+Edwards et al in 1984 and 1985 measured the reflection from an open-ended coaxial line dipped in DNA solution and found that DNA appeared to have a resonance-like peak.
+
+Such an effect is so unexpected - Bigio et  aldescribe it as “astonishing”. Edwards hypothesized that the outer hydration layers could have a sort of elastic, non-viscous isolating effect. This result seems to have triggered a large amount of work to model this interaction, and various other interactions, in an attempt to explain the observed resonance.
+
+Footnote [At first blush, such an explanation does not seem unreasonable. In the case of the virus, for instance, the expected amplitude of oscillation for which this mechanism applies is on the order of one water molecule (~0.1 nm).
+
+Treating the interaction between the first few solvent layers surrounding some biological structure is indeed quite difficult; we encountered this in trying to setup MD This can be seen in [MD paper], so it is reasonable that continuum-like damping assumptions might break down. 
+
+In the case of a uniform rotating sphere, for instance, the [Einstein - ?] viscous drag force diverges from the continuum hypothesis toward zero.]
+
+This really shouldn’t be treated classically, either - Frolich 
+
+Unfortunately for these hypotheses, Foster 1986, replicating Edwards’ coaxial line method with a more rigorous error analysis on plus an equally rigorous transmission-line absorption, and Bigio in 1993, an ingenious thermo-optical technique, quite definitively demonstrate - to absurd precision -  that the previous results were a characteristic artifact of coaxial-line spectrometry, and that DNA does not have any resonance mode at any microwave frequency.
+
+In Bigio’s words “Extreme care”. Because it involves a differential measurement of two samples.
+
+Hagmann and Gandhi \cite{Substitution1982}
+
+
+
+For a 0.5% tolerance in the frequency of a dielectric resonator (which), it must be machined to an accuracy of less than 0.05 mm.
+
+https://exxelia.com/uploads/PDF/e6000-v1.pdf
+
+
+crude, amateurish equipment, by making completely justifiable changes in calibration and post-processing correction for thermal drift, normalization, etc, we could produce a resonance mode at many frequencies. almost any frequency we liked. We were able to produce many candidate peaks even in pure water.
+
+
+autem We have not yet examined the details of the hydration-layer theory.
+
+
+Liu and Yang use a coplanar waveguide, and offer hydration layers along the lines of Edwards as a theoretical basis.
+
+
+
+
+However, as Foster et al demonstrated, there is nothing necessarily wrong with VNA-based dielectric spectrometry, if it is well conducted. The Liu and Yang group seem very competent experimenters, and the experiments are very well conducted; but history would seem to suggest that we take some degree of caution.
+
+
+
+
+\subsection{Thermal controls}
+
+In inevitable temperature rise as a confounding factor. Power dissipation necessarily produces a  As anyone who has scalded their mouths on microwaved dinner may know, microwave irradiation can produce unintuitive temperature gradients, with local hot-spots that can be difficult to measure directly.
+
+
+Microwave engineering is, itself  difficult. What type of attenuator you use?
+
+Publication bias in the positive direction. A p=0.001. Something along an anthropic principle. In effect, the literature selects for causes of a false positive that would be expected to be an extremely improbable set of circumstances; 
+
+
+
+
+T4 capsid withstands a pressure differential of more than 30 atmospheres, crystallizing the genome packed within.
+
+
+
+
+
+\cite{Osmotic2003}
+
+
+\end{document}
