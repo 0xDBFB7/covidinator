@@ -1,41 +1,169 @@
-%!TeX root = background
+%!TeX root = detection
 \documentclass[paper.tex]{subfiles}
 \begin{document}
+
+\begin{autem}
+	I hasten to note that quantifying phage titer is a completely solved problem, and is a procedure often done in kindergarten labs. The amount of time and effort we spent here was completely unjustifiable. It was driven by an acute lack of competence, equipment, and the small volume constraints of our original poorly designed microwave setup.
+\end{autem}
+
+
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	\includegraphics[width=\textwidth]{chunk_4}
+	\caption{
+		\light{
+			\\
+			We've got a thing\\
+			that's called\\
+			{\it Radar Love}\\}
+		We've got a wave\\
+		in the air}
+\end{figure}
+
+
+
+Essentially the only method of determining the activity of phage is to have it infect a suitable host.
+
+Typically, this is done either in a large tube or a flat-sided optical cuvette.
+
+Because the variation in the optical density is quite small, this poses some rather. 
+
+A lot of the basic facts of phage were determined in the 1930s; 
+
+A small vial of liquid has a much larger surface area relative to its thermal mass. sis removed, the temperature drops very rapidly; if the temperature drops outside the "physiological range" of around 33-40 C, growth is stunted \cite{effect2003}. \cite{growth1946}. I'm not sure if this was the problem I encountered, 
+
+As a faculative aerobe, E.coli requires a concentration of oxygen to be present in the mixture for speedy replication \cite{Effect1965}; and this supply must also be kept sterile. One method to ensure this is by using a bubbler aerator; Carolina recommends an aquarium pump with cotton-ball filters. 
+
+Another method, often used in microfluidics\cite{Microfluidic}, is that of \cite{method1951}; the Manganese dioxide catalyzed decomposition of hydrogen peroxide. $MnO_2$ is readily obtained from alkaline batteries; and in this case no sterility issues are presented. However, it is not obvious how antimicrobial $H_2O_2$ vapor can be prevented from contacting the culture.
+
+Bottles of zero air may be more effective.
+
+In commercial fluid transfer machines, this is often resolved by HEPA filtering the input to an enclosing cabinet.
+
+Shaking incubators, where the flasks are 
+
+Ensuring that a great deal of headspace was present in a sealed tube (that is, culturing 2.5 mL in a 15 mL falcon tube) was sufficient for brief, low-density.
+
+
+
+As the size of the well decreases, the Reynolds number also decreases \footnote{In fact, in the case of a circular well, it's not obvious that this is the case - the cross section decreases faster than the characteristic length}, and turbulent flow is greatly hampered.
+
+Even slight rotation of the tube, such that the graduations 
+
+"Chromogenic" substances \cite{Fluorogenic1991}, or the degradation of various dyes like Methylene Blue; tetrazolium dye methods;
+
+Using 2.5 mm diameter x 3 mm high wells cut in polycarbonate and sealed with clear packing tape. However, the presence of small bubbles in the headspace of the wells prevented a consistent reading.
+
+We tried simply adding 1 uL of culture to the microscope slide;
+
+The 8-bit resolution and dynamic range of most cameras did not seem sufficient to discern the turbidity; and masking and correcting for 
+
+\cite{Vision2016} use an ingenious technique. A background with sharp light-to-dark edges is used. Slicing the image into chunks only slightly larger than the object,
+
+
+The 0.8 uL sample in each was not sufficient to produce a measurable change in turbidity in a 0.2 uL - or we were not experienced enough to perform the phage lysis protocol properly.
+
+However, we were not able to make smaller volumes of culture enter the log phase.
+
+
+
+
+Another very interesting technique is that of \cite{Study2003}, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 It should be noted that 
 
-- Detect the growth of the host bacteria, and measure effects of the phage on that growth
+\subsection{Detect the growth of the host, and measure effects of the virus on that growth}
 
-- Plaque plating
+\subsubsection{Plaque assay}
 
+The plaque assay for viruses has remained essentially unchanged since Delbruck's era.
+
+Advantages over broth methods are the longer infective period without agitation or 
 
 Contamination - in both directions: if you don’t wash your hands properly before working, you might end up with a thick soup of some truly horrific bacteria.
 
-Plates are super sensitive, but in general I didn’t have huge issues with contamination; even my bad aseptic technique was fine - perhaps 1 contaminant region per plate.
+Despite poor aseptic technique, contamination was not a serious issue - perhaps 1 contaminant region per plate.
+
+Incubating the bacterial lawn for sufficient contrast to read the plaques imposes a ~1 to 3 day delay between test and results. Each test requires several dilution tubes
 
 
-- Detect the lysis of bacteria, the release of intracellular material
+
+\subsubsection{Broth assays}
+
+This, however, requires a microplate reader which can simultaneously agitate for sufficient oxygen, incubate, and 
+
+Tetrazolium dyes are metabolized 
+
+GFP
+
+\subsubsection{Detect the release of intracellular material due to the lysis of the host}
+
+One common target is the enzyme $\beta$-galactosidase. E. coli and other. Both  isopropyl $\beta$-D-thiogalactoside. Lactose itself is a reasonable substitute (Borralho \cite{Lactose2002}).
+
+Ijzerman
+
+X-gal \cite{Improved}
+
+I was introduced to this by Ijzerman \cite{liquid1993}, who recommend chlorophenol red $\beta$-D-galactopyranoside (CPRG) as the chromogen for a high sensitivity. CPRG is very hard to obtain except through Sigma.
+
 
 
 beta-galactosidase
 
 
-A fingerprint, for instance, has only about 0.2 ng of DNA (Subhani), so contamination is not a huge issue.
 
-Detect the lysis of the virus, and the release of intra-viral material
+\includegraphics[width=\textwidth]{x_gal.jpg}
 
-
+\includegraphics[width=\textwidth]{x_gal_and_flourescence/CIMG6810.JPG}
 
  It’s probably in principle possible to synthesize them yourself, but it’s totally impractical. You will probably need a corporate address HS codes. 
 
 T4 has a comparatively huge genome, which makes this easier.
 
-Directly detect the virus itself
+
+\subsubsection{Detect the lysis of the virus, and the release of intra-viral material}
+
+A fingerprint, for instance, has only about 0.2 ng of DNA (Subhani), so contamination is not a huge issue.
+
+\subsubsection{Directly detect the virus itself}
+
+Phages release several small compounds like putrescine and spermadine when broken (Minagawa\cite{characteristics1961}). These can be indicated colorimetrically at ppm scales with ninhydrin, or at nanogram scales via fluorescamine. 
+
+Otherwise, GFP-flouresecent strains of E. coli, or phage which has been labelled with a 
 
 
 
 
-PEG apparently concentrates to 10^12 or 13 no matter what the starting concentration is (huh?), very convenient.
+PEG apparently concentrates to $10^{12}$ or 13 no matter what the starting concentration is (huh?), very convenient.
 
 Concentrated can be put into the microgram range of many standard protein assays like BCA, but that requires propagation and PEG precipitation, plus many such assays pose disposal hazards and stain labware. 
+
+
+\end{document}
