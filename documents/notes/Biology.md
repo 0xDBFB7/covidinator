@@ -1192,3 +1192,10 @@ influenza values.
 The elastic sphere model is linear with diameter. 
 
 then the resonant frequency of practically all would be within the sweep we're using.
+
+
+interlibrary loan
+
+hathitrust is good to get the page numbers
+
+
