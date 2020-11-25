@@ -5,6 +5,14 @@
 Rationale for using T4
 
 
+
+As noted, this field reached a reasonable level of quality. 1951. Some standards.
+By using yet another design, with a new set of unknown artifacts, we are actually hampering this field;
+and so we encourage anyone who may wish to replicate this result not to use this system.
+In this case, we are limited by budget - primarily the power amplifiers we have access to.
+
+
+
 Yang uses AFM data indicating a 0.14 MPa yield stress.
 
 \cite{Osmotic2003} 30 atmospheres, and breaks at a pressure differential of 100 atm.
@@ -2344,6 +2352,49 @@ Filtered through a 0.22 micron syringe filter. About 3 mL yield.
 
 After an hour of settling, the whole mass congealed. Obviously too much lethiscin was used!
 
+This congealed into a useless mass. After determining that the vial marked "lethicin" actually contained gelatin, we repeated.
+
+
+\section{Liposome surrogate 2}
+
+Soy lethicin powder, Amazon, about 25\% PC.
+
+
+\section{Wait}
+
+Run through the gap in the coplanar waveguide.
+
+0.5 V / 0.0002 m = 2500 V/m ! aha!
+
+Needs to be insulated...
+silicone conformal coating works pretty well for that.
+
+Say we have a 0.02 mm radius tube, 5 mm long.
+
+ ((10 us * (11 V * 0.2 A)) /  4.18 J/(g*K))/((pi * (0.02 mm^2) * 5 mm) * 1 (g/mL) ) * 300
+
+each pulse raises the temperature by
+
+300 pulses, 5.027 C, before the volume is purged.
+
+
+argon blast to clean tube
+
+Ohm out salt water to confirm non-conductivity
+
+0.6 or 0.5 millimeter drill
+
+2 layers for better thickness
+
+Coated the waveguide with a few dabs of MG chemicals silicone conformal coating.
+
+Used a few drops of Testor's clear parts cement to glue the tubes to a polycarbonate block.
+
+
+
+
+
+
 
 \cite{Encapsulation1982}.
 
@@ -2351,11 +2402,7 @@ After an hour of settling, the whole mass congealed. Obviously too much lethisci
 
 
 
-
-
-
-
-make sweep finer 
+make sweep finer
 
 
 
