@@ -8,16 +8,19 @@
 \end{autem}
 
 
+Let us use a first-order Fermi estimate of the drag force to see if speculative mechanisms are required.
+
 We use Persson's description of purely classical Navier-Stokes drag \cite{nature1986} on a homogeneous sphere in a viscous liquid. The first breathing mode is used for a conservative estimate.
 
-To compare with Yang's results, Influenza A. Density is equal to that of the surrounding solution: $\rho_{liquid} = \rho_{solid} = 1000 \text{kg/m}^3$. R = 50 nm. An approximate c=1000 m/s is used. Viscosity of $\mu=10e-3 Ns/m^2$ is used.
+To compare with Yang's results, Influenza A. Density is equal to that of the surrounding solution: $\rho_{liquid} = \rho_{solid} = 1000 \text{kg/m}^3$. R = 50 nm. Viscosity of $\mu=10e-3 Ns/m^2$ is used.
 
-$$ b = \frac{4\mu}{R^2 \rho_{solid}} = \frac{4 \cdot 1\times 10^{-3}\  \text{N}\cdot \text{s} / \text{m}^2 }{(50 \text{nm})^2 1000 \text{kg /m}^2} = 1.6 \times 10^9\ \text{N}\cdot \text{s} /( \text{m}\cdot\text{kg})$$
+$$ \gamma = \frac{4\mu}{R^2 \rho_{solid}} = \frac{4 \cdot 1\times 10^{-3}\  \text{N}\cdot \text{s} / \text{m}^2 }{(50 \text{nm})^2 1000 \text{kg /m}^2} = 1.6 \times 10^9 \text{s}^{-1} = 1.6\ \text{GHz}$$
 
-Where $\mu$ is the viscosity of the fluid, R is the radius of the sphere, $\rho_{solid}$. \footnotemark
+Where $\mu$ is the viscosity of the fluid, R is the radius of the sphere, $\rho_{solid}$. \footnotemark \footnotemark
 
 \footnotetext{I must remember to disambiguate denominators by adding brackets. Is $1/R^2\rho$ = $1/(R^2 \rho)$ or $(1/R^2)\cdot\rho$ ?}
 
+\footnotetext{Persson seems to go against modern convention, using 1/s as the damping in the differential equation.}
 
 $$m = \rho_{solid}  (4/3) \pi r^3 = 5.2 \times 10^{-19} \text{ kg} $$
 
@@ -25,11 +28,22 @@ $$m = \rho_{solid}  (4/3) \pi r^3 = 5.2 \times 10^{-19} \text{ kg} $$
 
 The exponential damping time constant (units 1 / s ) is then
 
-$$\gamma = \frac{b}{2m} = $$
+Finally, where the densities of the two materials are equal (a reasonable approximation), An approximate c=1000 m/s is used. 
 
-Finally,
+$$ \omega_{res} = c / R = 20 \text{GHz}$$
 
-$$ \omega_{res} = \sqrt{\frac{(\rho_{solid} / \rho_{liquid})c^2}{R^2}} $$
+This is about double that seen by Sun. Most critically, however,
+
+$$ Q = \omega_{res}/(2\gamma) = 6.25 $$
+
+Which is distinctly in the underdamped regime.
+
+Contrast this with Adair's arguments along the same lines reporting sub-picosecond relaxation times.
+
+However, if we apply the same arguments to microtubules \cite{Viscous2000}, omega_c = 80 GHz, and Q=11.2. Such an effect is so trivial that we find it hard to believe.
+
+
+
 
 
 
