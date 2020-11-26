@@ -2355,9 +2355,6 @@ After an hour of settling, the whole mass congealed. Obviously too much lethisci
 This congealed into a useless mass. After determining that the vial marked "lethicin" actually contained gelatin, we repeated.
 
 
-\section{Liposome surrogate 2}
-
-Soy lethicin powder, Amazon, about 25\% PC.
 
 
 \section{CPWG microfluidics}
@@ -2397,7 +2394,57 @@ a bit of tape into the waveguide gap at the edges.
 Now it's very sealed.
 
 
-\section{}
+\section{Run 12}
+
+Fresh batch of PG1.
+
+Completely purged the tube.
+
+Dead volume is admittedly a bit higher than before.
+
+Tube 0 gets the treatment.
+
+Pulse waveform looks pretty different now.
+
+Tube 0 counts:
+
+~10000.
+
+Tube 1 counts:
+
+12000?
+
+what?
+
+????
+
+Yup, those values are consistent for tubes 0 and 1.
+
+The sham is 2000 counts higher than the control.
+
+??????
+
+??????
+
+In any case, we don't see the huge spike that we would have expected.
+
+\section{Liposome surrogate 2}
+
+Soy lethicin powder, Amazon, about 25\% phosphadylcholine.
+
+0.2 L
+
+Paper specifies 1 mg/mL
+
+That's 1 g/L
+
+0.2 g/0.2 L
+
+x4, because,
+
+that's 0.8 g/0.2 L.
+
+
 
 
 
