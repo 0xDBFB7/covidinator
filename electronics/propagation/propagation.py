@@ -12,25 +12,39 @@ from propagation_lib import propagator
 
 
 
+#
+# waveform = np.genfromtxt("NLTL_input_tone/NLTL-6275_cleaned.csv", delimiter=",", dtype=np.float, encoding='ascii', skip_header=0)
+#
+# waveform[:,0] = waveform[:,0] * 1e-12 #picoseonds
+#
+# input_frequency = 10e9
+# sampling_frequency = 1000.0*input_frequency
+#
+# times = np.linspace(0, 1.0/input_frequency, 1000)
+# input_data = np.interp(times, waveform[:,0], waveform[:,1])
+#
+# input_data -= np.mean(input_data) #remove the stupid zero reject
+# input_data /= np.max(input_data) # normalize
+#
+# input_cycles = 10
+#
+# input_data = np.tile(input_data, 2)
+# input_data[len(input_data/2):] = 0
+#
+# input_data = np.tile(input_data, input_cycles)
+#
 
-waveform = np.genfromtxt("NLTL_input_tone/NLTL-6275_cleaned.csv", delimiter=",", dtype=np.float, encoding='ascii', skip_header=0)
 
-waveform[:,0] = waveform[:,0] * 1e-12 #picoseonds
-
-input_frequency = 10e9
+input_frequency = 1000.0e6
 sampling_frequency = 1000.0*input_frequency
+frequency_scale_factor = 1
+times = np.linspace(0, 100*1.0/input_frequency, 100*1000)
+# times = np.tile(times, 5)
+input_data = np.zeros_like(times, dtype=np.float64)
+input_data[:5000] = np.sin(2.0*pi*times*input_frequency)[0:5000]
+# input_data = np.tile(input_data, 2)
 
-times = np.linspace(0, 1.0/input_frequency, 1000)
-input_data = np.interp(times, waveform[:,0], waveform[:,1])
-
-input_cycles = 10
-
-input_data = np.tile(input_data, input_cycles)
-
-
-input_data -= np.mean(input_data) #remove the stupid zero reject
-input_data /= np.max(input_data) # normalize
-
+input_cycles = 2
 
 p = propagator()
 p.fourier_transform(input_data, sampling_frequency, 1.0)
@@ -40,18 +54,27 @@ depth_in_tissue = 0.001
 
 p.populate_tissue_properties(48) #muscle
 
+#
+# for idx, depth_in_tissue in enumerate(np.arange(0, 0.1, 0.001)):
+#     p.fourier_transform(input_data, sampling_frequency, 1.0)
+#
+#     spatial_phase = p.wavenumbers() * depth_in_tissue
+#     # spatial_phase = np.zeros_like(p.mode_frequencies,dtype=np.float64)
+#     p.attenuate(depth_in_tissue) # this global doesn't make any sense. pretty stupid design.
+#
+#     output = p.fourier_sum(spatial_phase)
+#     output -= np.mean(output)
+#     # print(depth_in_tissue, 1/np.max(output))
+#     plt.plot(output[0:int(len(output)/(input_cycles/2))])
+# plt.show()
 
-for idx, depth_in_tissue in enumerate(np.arange(0, 0.1, 0.001)):
-    p.fourier_transform(input_data, sampling_frequency, 1.0)
-    
-    spatial_phase = p.wavenumbers() * depth_in_tissue
-    # spatial_phase = np.zeros_like(p.mode_frequencies,dtype=np.float64)
-    p.attenuate(depth_in_tissue)
+spatial_phase = p.wavenumbers() * depth_in_tissue
+p.attenuate(depth_in_tissue) # this global doesn't make any sense. pretty stupid design.
 
-    output = p.fourier_sum(spatial_phase)
-    output -= np.mean(output)
-    print(depth_in_tissue, 1/np.max(output))
-    # plt.plot(output[0:int(len(output)/(input_cycles/2))])
+output = p.fourier_sum(spatial_phase)
+output -= np.mean(output)
+# print(depth_in_tissue, 1/np.max(output))
+plt.plot(input_data)
 plt.show()
 
 #assert(output - input == 0)

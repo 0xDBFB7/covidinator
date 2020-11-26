@@ -106,6 +106,15 @@ class propagator:
     #     return [U[1], -2*U[1] - 2*U[0] + E_field*charge]
 
 
+    def standard_precursor_burst():
+        input_frequency = 1000.0e6
+        sampling_frequency = 1000.0*input_frequency
+        frequency_scale_factor = 1
+        times = np.linspace(0, 100*1.0/input_frequency, 100*1000)
+        # times = np.tile(times, 5)
+        input_data = np.zeros_like(times, dtype=np.float64)
+        input_data[:5000] = np.sin(2.0*pi*times*input_frequency)[0:5000]
+        
 
 class test_fourier(unittest.TestCase):
 
