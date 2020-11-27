@@ -35,13 +35,13 @@ from propagation_lib import propagator
 #
 
 
-input_frequency = 1000.0e6
+input_frequency = 9000.0e6
 sampling_frequency = 1000.0*input_frequency
 frequency_scale_factor = 1
 times = np.linspace(0, 100*1.0/input_frequency, 100*1000)
 # times = np.tile(times, 5)
 input_data = np.zeros_like(times, dtype=np.float64)
-input_data[:5000] = np.sin(2.0*pi*times*input_frequency)[0:5000]
+input_data = np.sin(2.0*pi*times*input_frequency)
 # input_data = np.tile(input_data, 2)
 
 input_cycles = 2
@@ -50,7 +50,7 @@ p = propagator()
 p.fourier_transform(input_data, sampling_frequency, 1.0)
 
 
-depth_in_tissue = 0.001
+depth_in_tissue = 0.1
 
 p.populate_tissue_properties(48) #muscle
 
@@ -68,13 +68,14 @@ p.populate_tissue_properties(48) #muscle
 #     plt.plot(output[0:int(len(output)/(input_cycles/2))])
 # plt.show()
 
-spatial_phase = p.wavenumbers() * depth_in_tissue
+# spatial_phase = p.wavenumbers() * depth_in_tissue
+spatial_phase = np.zeros_like(p.mode_frequencies,dtype=np.float64)
 p.attenuate(depth_in_tissue) # this global doesn't make any sense. pretty stupid design.
 
 output = p.fourier_sum(spatial_phase)
 output -= np.mean(output)
 # print(depth_in_tissue, 1/np.max(output))
-plt.plot(input_data)
+plt.plot(output)
 plt.show()
 
 #assert(output - input == 0)

@@ -2632,3 +2632,7 @@ The thermal sensor is 16x4, MLX90621, 60x16 deg field of view - 3.6 deg / pixel.
 
 
 NLTL doesn't really help penetrate. Not really sure why yet.
+
+
+It seemed like a chirped gaussian was a good excitation, but nope!
+
