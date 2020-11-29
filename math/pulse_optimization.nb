@@ -1,0 +1,105 @@
+Notebook[{Cell[
+BoxData[RowBox[{}]],"Input",CellLabel -> "In[1]:= ",ExpressionUUID -> "841af5c0-d102-4360-91c6-9445cd47e4d7"],Cell[
+TextData[
+{"http","://","www1",".","spms",".","ntu",".","edu",".","sg","/~","ydchong","/","teaching","/","10_greens_function",".","pdf"," ","-"," ","eq"," ","4",StyleBox[
+RowBox[{","," "}]],"eq"," ","15","\n"}],"Text",ExpressionUUID -> "edac3c18-8bf4-4c01-a240-3a858c08a461"],Cell[
+BoxData[
+RowBox[{"Clear","[","\"Global`*\"","]"}]],"Input",ExpressionUUID -> "26a84d99-d88d-4b85-9ee3-eecc5f9627fa"],Cell[
+BoxData[
+{RowBox[{"eps"," ","="," ",RowBox[{"UnitConvert","[",RowBox[{"Quantity","[","\"ElectricConstant\"","]"}],"]"}]}],"\n",RowBox[
+{RowBox[{"mu"," ","="," ",RowBox[{"UnitConvert","["," ",RowBox[{"Quantity","[","\"MagneticConstant\"","]"}],"]"}]}],"\n","\n"}]}],
+"Input",CellLabel -> "In[255]:= ",ExpressionUUID -> "c37b3240-c2cf-4fad-bc63-89a7c135b9a1"],Cell[
+TextData[
+{"Define"," ","x"," ","as"," ","the"," ","depth"," ","in"," ","tissue"," ","and"," ","y"," ","as"," ","the"," ","amplitude"," ","of"," ","the"," ","oscillator",".","\n","\n","Session"," ","sometimes"," ","needs"," ","to"," ","be"," ","restarted"}],
+"Text",ExpressionUUID -> "12d67740-e192-4c8c-be3b-f7c623d8e8c5"],Cell[
+BoxData[""],
+"Input",CellLabel -> "In[257]:= ",ExpressionUUID -> "c5a73455-3b41-465f-9ab3-bf2bdabcca4c"],Cell[
+BoxData[
+{RowBox[{"\n",RowBox[{"DielectricTau"," ","=",RowBox[{"("," ",RowBox[{"8.1","*",RowBox[
+{"10","^",RowBox[{"-","12"}]}]}]," ",")"}]}]}],"\n",RowBox[{"epsInf"," ","="," ","5.5"," "}],"\n",RowBox[
+{"epsS"," ","="," ","65.0"}],RowBox[{"\n","\n"}],RowBox[{RowBox[{"Debye","[","omega_","]"}]," ",":=","  ",RowBox[
+{"(",RowBox[{"epsInf","+",RowBox[{"(",RowBox[{RowBox[{"(",RowBox[{"epsS","-","epsInf"}],")"}],"/",RowBox[
+{"(",RowBox[{"1","+",RowBox[{"\[ImaginaryI]","*","omega","*","DielectricTau"}]}],")"}]}],")"}]}],")"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Wavenumber","[",RowBox[{"ComplexPermittivity_",",","omega_"}],"]"}]," ",":=",RowBox[
+{"omega","*",RowBox[{"Sqrt","[",RowBox[{RowBox[{"Re","[","ComplexPermittivity","]"}],"*","mu","*","eps"}],"]"}]}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"phaseShift","[",RowBox[{"x_",",","ComplexPermittivity_",",","omega_"}],"]"}]," ",":="," ",RowBox[
+{"(",RowBox[{RowBox[{"Cos","[",RowBox[{"x","*",RowBox[{"Wavenumber","[",RowBox[{"ComplexPermittivity",",","omega"}],"]"}]}],"]"}]," ","+"," ",RowBox[
+{"\[ImaginaryI]"," ",RowBox[{"Sin","[",RowBox[{"x","*",RowBox[{"Wavenumber","[",RowBox[
+{"ComplexPermittivity",",","omega"}],"]"}]}],"]"}]}]}],")"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Conductivity","[",RowBox[{"ComplexPermittivity_",",","omega_"}],"]"}]," ",":="," ",RowBox[
+{"Abs","[",RowBox[{RowBox[{"Im","[","ComplexPermittivity","]"}],"*",RowBox[{"(",RowBox[
+{"(",RowBox[{"omega","*","eps"}],")"}],")"}]}],"]"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"(*"," ",RowBox[{"Eq"," ","from"," ","Osepchuk"}]," ","*)"}],"\n",RowBox[
+{RowBox[{"EPenetrationDepth","[",RowBox[{"ComplexPermittivity_",","," ","omega_"}],"]"}]," ",":=","  ",RowBox[
+{"(",RowBox[{RowBox[{"(",RowBox[{"1","/","omega"}],")"}]," ","*"," ",RowBox[{"(",RowBox[
+{RowBox[{"(",RowBox[{RowBox[{"(",RowBox[{RowBox[{"(",RowBox[{RowBox[{"Re","[","ComplexPermittivity","]"}]," ","*"," ","mu"," ","*"," ","eps"}],")"}],"/","2"}],")"}]," ","*",RowBox[
+{"(",RowBox[{RowBox[{"Sqrt","[",RowBox[{"1","+",RowBox[{"(",RowBox[{RowBox[{"(",RowBox[
+{RowBox[{"Conductivity","[",RowBox[{"ComplexPermittivity",",","omega"}],"]"}],"/",RowBox[
+{"(",RowBox[{"omega","*","eps","*",RowBox[{"Re","[","ComplexPermittivity","]"}]}],")"}]}],")"}],"^","2"}],")"}]}]," ","]"}],"-","1"}],")"}]}],")"}],"^",RowBox[
+{"(",RowBox[{"-","0.5"}],")"}]}],")"}]}],")"}]}]}],RowBox[{"\n","\n"}],RowBox[{RowBox[
+{"attenuation","[",RowBox[{"x_",","," ","ComplexPermittivity_",","," ","omega_"}],"]"}]," ",":=",RowBox[
+{RowBox[{"Exp","[",RowBox[{RowBox[{"-","x"}],"/",RowBox[{"EPenetrationDepth","[",RowBox[
+{"ComplexPermittivity",","," ","omega"}],"]"}]}]," ","]"}]," ","+"," ",RowBox[{"\[ImaginaryI]"," ",RowBox[
+{"Exp","[",RowBox[{RowBox[{"-","x"}],"/",RowBox[{"EPenetrationDepth","[",RowBox[{"ComplexPermittivity",","," ","omega"}],"]"}]}]," ","]"}]}]}]}],"\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"is"," ","it"," ","actually"," ","valid"," ","to"," ","scale"," ","the"," ","whole"," ","complex"," ","number"," ","like"," ",RowBox[
+{"this","?"," ","need"}]," ","to"," ","scale"," ","the"," ","magnitude"," ","prolly"}],"..."}],"*)"}]}],
+"Input",CellLabel -> "In[258]:= ",ExpressionUUID -> "b021d4b7-b0d2-4f4d-b49a-aa4bb3dd4c54"],Cell[
+BoxData[
+""],"Input",CellLabel -> "In[267]:= ",ExpressionUUID -> "ddea558f-bfa9-45d5-93c5-8487b9109d39"],Cell[
+BoxData[
+RowBox[{"\n",RowBox[{RowBox[{"LogLinearPlot","[",RowBox[{RowBox[{"Re","[",RowBox[
+{"Debye","["," ","omega","]"}],"]"}],",",RowBox[{"{",RowBox[{"omega",","," ","1.0",","," ",RowBox[
+{"(",RowBox[{"10","^","16"}],")"}]}],"}"}]}],"]"}],"\n",RowBox[{"(*",RowBox[{RowBox[
+{"LogLinearPlot","[",RowBox[{RowBox[{"Abs","[",RowBox[{"Im","[",RowBox[{"Debye","[","omega","]"}],"]"}],"]"}],",","freqrange",",",RowBox[
+{"PlotRange","\[Rule]","All"}]}],"]"}],"\n",RowBox[{"LogLogPlot","[",RowBox[{RowBox[
+{"Conductivity","[",RowBox[{RowBox[{"Debye","[","omega","]"}],",","omega"}],"]"}],",","freqrange",",",RowBox[
+{"PlotRange","\[Rule]","All"}]}],"]"}],"\n",RowBox[{"LogLogPlot","[",RowBox[{RowBox[
+{"EPenetrationDepth","[",RowBox[{RowBox[{"Debye","[","omega","]"}],",","omega"}],"]"}],",","freqrange",",",RowBox[
+{"PlotRange","\[Rule]","All"}]}],"]"}]}],"*)"}]}]}]],"Input",CellLabel -> "In[268]:= ",
+ExpressionUUID -> "77be507d-c1ed-4a49-a517-89b81486ddea"],Cell[
+BoxData[""],"Input",
+CellLabel -> "In[269]:= ",ExpressionUUID -> "bfa81e05-12a6-46e4-9b1a-b8d032d99f8b"],Cell[
+BoxData[
+RowBox[{RowBox[{"IncidentWaveform","[","t_","]"}]," ",":="," ",RowBox[{"Sin","[","t","]"}]}]],
+"Input",CellLabel -> "In[270]:= ",ExpressionUUID -> "78a91f40-4ffd-4d56-9f1b-8a3a1bac2f3e"],Cell[
+
+"\<\>","Text",ExpressionUUID -> "062bc203-8f6d-4eda-8580-77bbf1b82944"],Cell[
+BoxData[
+RowBox[{" ","\n","\[NonBreakingSpace]"}]],"Input",CellLabel -> "In[271]:= ",ExpressionUUID -> "d73bb6d7-4095-46b8-ac79-35e7ad5dea4c"],Cell[
+BoxData[
+RowBox[{RowBox[{"EDispersedField","[",RowBox[{"x_",","," ","t_"}],"]"}]," ","="," ",RowBox[
+{"InverseFourierTransform","[",RowBox[{RowBox[{"(",RowBox[{RowBox[{"FourierTransform","[",RowBox[
+{RowBox[{"IncidentWaveform","[","t","]"}],",","t",","," ","omega"}],"]"}]," ","*",RowBox[
+{"(",RowBox[{"1","+",RowBox[{"0","\[ImaginaryI]"}]}],")"}]}],")"}],",","omega",",","t"}],"]"}]}]],
+"Input",ExpressionUUID -> "2a50080c-7ab5-43aa-a1d9-b1df01e5919e"],Cell[
+BoxData[RowBox[
+{"Plot","[",RowBox[{RowBox[{"EDispersedField","[",RowBox[{"0.1",","," ","t"}],"]"}],",",RowBox[
+{"{",RowBox[{"t",",","0",",","10"}],"}"}]}],"]"}]],"Input",CellLabel -> "In[281]:= ",
+ExpressionUUID -> "0b67cdf6-32bc-445b-b155-3e9b7ccf1d34"],Cell[
+BoxData[RowBox[{"With","[",RowBox[
+{RowBox[{"{",RowBox[{RowBox[{"t","=","12.0"}],",",RowBox[{"omega","=","1000000"}]}],"}"}],",",RowBox[
+{"Evaluate","[",RowBox[{"(",RowBox[{"FourierTransform","[",RowBox[{RowBox[{"IncidentWaveform","[","t","]"}],",","t",","," ","omega"}],"]"}]," ",")"}],"]"}]}],"]"}]],
+"Input",CellLabel -> "In[282]:= ",ExpressionUUID -> "b0ab139a-d820-4d88-89bf-99cadda8d078"],Cell[
+BoxData[
+""],"Input",CellLabel -> "In[276]:= ",ExpressionUUID -> "2a01ff08-787f-4ce4-a089-93d67c67e622"],Cell[
+BoxData[
+""],"Input",CellLabel -> "In[277]:= ",ExpressionUUID -> "542672c3-cfd5-4ec9-9b02-2cc55976e4f0"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Green's"," ","function"}],"Section",ExpressionUUID -> "3567b622-c9c4-432e-9e2e-04916d2f7ceb"],Cell[
+BoxData[
+RowBox[{RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]," ","="," ",RowBox[{RowBox[
+{"UnitStep","[",RowBox[{"t","-","tprime"}],"]"}],"*",RowBox[{"Exp","[","]"}]}]}]],
+"Input",CellLabel -> "In[278]:= ",ExpressionUUID -> "01aba2fb-ff4b-4904-97f9-007b1b37282d"],Cell[
+TextData[
+{"tprime"," ","here"," ","is"," ","a"," ","dummy"," ","variable"," ","only"," ","used"," ","in"," ","the"," ","integral",StyleBox[
+RowBox[{"."," "}]],"Eq",StyleBox[RowBox[{"."," "}]],"4",StyleBox[RowBox[{"."," "}]]}],
+"Text",ExpressionUUID -> "800b4503-f8c0-4ab1-bb79-7a90f052cf98"],Cell[
+BoxData[RowBox[
+{RowBox[{"y","[",RowBox[{"x",",","t"}],"]"}],"="," ",RowBox[{"Integrate","[",RowBox[
+{RowBox[{RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]," ","*",RowBox[{"("," ",RowBox[
+{RowBox[{"(",RowBox[{"q","*",RowBox[{"DispersedEField","[",RowBox[{"x",","," ","tprime"}],"]"}]}],")"}],"/","m"}],")"}]}],",",RowBox[
+{"{",RowBox[{"tprime",","," ",RowBox[{"-","\[Infinity]"}],","," ","\[Infinity]"}],"}"}]}],"]"}]}]],
+"Input",CellLabel -> "In[279]:= ",ExpressionUUID -> "5eea29af-0c1a-4e22-a455-f08d1225ba0d"]},
+Open],ExpressionUUID -> "33de6077-34b2-4f14-b134-1d5cac96be87"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.1 for Wolfram Cloud 1.56 (September 30, 2020)",TaggingRules -> {"TryRealOnly" -> False}]

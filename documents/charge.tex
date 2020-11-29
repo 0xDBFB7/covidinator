@@ -1,54 +1,68 @@
 %!TeX root = charge
 \documentclass[paper.tex]{subfiles}
+\usepackage{parselines} 
+
+
 \begin{document}
+	
+
 
 \section{Charge}
 
+
+\begin{autem}
+	What is the charge on phage x174 from Burkhauzens Raman spectroscopy data?
+\end{autem}
+
 Yang et al determine that in order to fit their microwave absorption cross-section data, and produce the decrease in infectivity via precisely the mechanism they suggest, the "core" and "shell" of Influenza A should have an effective charge of about $q=1 \times 10^7 e^-$. 
 
-Liu et al mention that "Counterions
-dissolved in solution will thus be adsorbed on the surface of
-a protein and form an electric double layer."
+The mechanism given is that ions from solution counteract the protein charges to form an "electric double layer". In any case, the best representation is two concentric spheres, with a net charge each.
 
-The mechanism given is that ions from solution counteract the protein charges to form an "electric double layer". In any case, the best representation is two concentric spheres with a net charge each.
+What specifically contributes to this charge? For the purposes of coarse MD simulation, it seemed useful to localize the charge concentration. 
 
-Is such a charge plausible? 
-
-As might be expected, the electrostatic properties of the virus differ from that of host cells, both on the sub-protein level\cite{Icosahedral2019} \footnotemark \ and in the lipid bilayer \cite{Lipid2015} \footnotemark. 
-
+As might be expected, the electrostatic properties of the virus differ from that of host cell, both on the sub-protein level\cite{Icosahedral2019} \footnotemark \ and in the lipid bilayer \cite{Lipid2015} \footnotemark. 
 
 \footnotetext{
 	\cite{Icosahedral2019}: \begin{quote}
-		Different from insect, plant, and human, viruses had more positively charged than negatively charged segments. Viral proteins were the only class enriched in extremely high positively charged segments (charge greaterthan + 17) when compared to the overall proteome (1B-inset with p-values).
+		Different from insect, plant, and human, viruses had more positively charged than negatively charged segments. Viral proteins were the only class enriched in extremely high positively charged segments (charge $> +17$) when compared to the overall proteome (1B-inset with p-values).
 	\end{quote}
 }
 
 \footnotetext{The virus steals its envelope from the host cell; but it tie dyes its duds before it bounces.}
 
-\footnote{Influenza also has several other fascinating electrostatic properties. First, the net charge }
+\footnote{Influenza also has several other fascinating electrostatic properties. First, the net charge on the virion changes}
 
 \begin{autem}
 	autem: Are you sure you're understanding the nature of this "effective" charge properly?
 \end{autem}
 
-\subsection{Major proteins and other components}
+\subsection{Major components}
 
-On the largest scale, at a pH of 7, the net charges of the 11 proteins coded for by the Influenza A genome only contribute
+At the largest scale, at a pH of 7 the net charges of the 4 proteins that comprise ~88\% of the protein mass\cite{Quantitative1981} of the virus (of the 11 coded for by the Influenza A genome) only contribute at most  $\approx 1 \times 10^5\  e^-$.
 
-Protein net charges extracted from protein primary structure sequences\footnotemark compiled by the proteome-pI database \cite{ProteomepI2017} and UniProt\footnotemark using localCIDER \cite{CIDER2017}. See \ghfile{biology/data/net_charge.py} and structure.csv. Detailed source information will be added later! There are many.
+\begin{sidenote}
+Protein net charges extracted from protein primary structure sequences\footnotemark compiled by the proteome-pI database \cite{ProteomepI2017} and UniProt\footnotemark using localCIDER \cite{CIDER2017}. See \ghfile{biology/data/net_charge.py} and structure.xlsx. Detailed source information will be added later!
+\end{sidenote}
+Assuming a charge of $2e^-$ per base pair due to phosphate groups, the 13.5 kbp of RNA can hardly contribute $> 3e^- \times10^4$
 
-Note that this is considering the net charge of a whole isolated protein. Some proteins poke through the envelope; if a zwitterionic polarization existed from one end to another, for instance, this would not count here but would affect the coupling to an EM field. Given the size of most proteins, however, this doesn't seem like a likely effect.
 
-\footnotetext{
-	It should be noted that these are the simplest primary structure charges. The charge in practice is determined by the secondary structure and the bonding to adjacent structures. More precise charges appear to be somewhat inconsistent. [] Find that the isoelectric point of the M protein charge is so low that it runs off the end of their 2D electrophoresis gel. However, the predicted value by [] is about 3.
-	This is not of much importance for here, but may be important when setting up MD simulations.
-}
+Note that this is considering the net charge of a whole isolated protein. Some proteins poke through the envelope; if a zwitterionic polarization existed from one end of a protein to another, for instance, this would not count here but would affect the coupling to an EM field. Given the small extent of most of the structural proteins, however, this doesn't seem like a likely effect.
 
-\footnotetext{
-
-Because CryoEM uses charged particles, it is possible to extract the actual charge distribution of a structure directly from an un-fit \cite{Identification2018}.
-
-}
+\begin{sidenote}
+	It should be noted that these are the simplest, first-order primary structure charges. In practice, the charge is determined by the secondary structure and the bonding to adjacent structures.
+	
+	 Penhoet \cite{Structurea}, "the viral glycoproteins and nonstructural protein are heterogeneous in isoelectric point, forming constellations of interrelated protein spots." whether this is intra- or inter-virion hetrogenity is unknown to us. 
+	
+	Empirically-determined charges appear to be somewhat inconsistent:
+	
+	Privalsky and Penhoet \cite{Influenza1978} and Penhoet \cite{Structurea} find that the isoelectric point of the M protein is so acidic that it runs right off the end of their 2D electrophoresis gel. They also note that 
+	
+	However, the predicted value by [] is about 3.
+	
+	This is not of much importance for this section, but may be important when setting up MD simulations.
+	
+	Because CryoEM uses charged particles, it is theoretically possible to extract the actual charge distribution of a macrostructure directly from an un-fit CryoEM map \cite{Identification2018}. 
+\end{sidenote}
 
 \subsection{Electrostatic energy}
 
@@ -56,10 +70,9 @@ Let's compare the potential energy that would be required to assemble a single s
 
 %https://www.macmillanlearning.com/studentresources/college/physics/tiplermodernphysics6e/classial_concept_review/chapter_11_ccr_20_electrostatic_energy_of_a_sphere_of_charge.pdf
 
-$$ U = \frac{3}{5}  \frac{1}{4 \pi \epsilon_0} \frac{Q^2}{R} \approx 2.3\text{e}^{-7} \text{ J} $$
+$$ U = \frac{3}{5}  \frac{1}{4 \pi \epsilon_0} \frac{Q^2}{R} \approx 2.3\text{e}^{-7} \text{ J} \approx 6 \times 10^{11}\  \text{ATP-equivalent} $$
 %U = (3/5) * 1/(4*pi*electricConstant) *((1e7 electricCharge)^2 / 60 nanometers) = 2.30708e-7 J
 
-The total is $6 \times 10^{11}$ ATP-equivalent.
 
 %50 kJ per mole, 6.022*10^23 = 9.9634673e-13 * 50 kj = 5e-8 J
 
@@ -73,7 +86,7 @@ Of course, much of the potential energy may have already existed in the host cel
 
 \subsection{First principles}
 
-Influenza is approximately 174 MDa Ruigrok. Assuming a typical 50\% H concentration, such a charge would require about 1 in every 15 atoms to have a free electron. Compare to less than 1/100 for Arginine or 1/600 for DNA. This would give a different meaning to "Blood Plasma".
+Influenza is approximately 174 MDa Ruigrok. Assuming a typical 50\% H concentration, such a charge would require about 1 in every 15 atoms to have a free electron - a very different definition of "blood plasma". Compare to less than 1/100 for Arginine or 1/600 for DNA. 
 
 \begin{autem}
 	autem: What does a "free" electron mean in this context? Over what spatial extent does the "free" charge act?
@@ -119,7 +132,7 @@ This is actually not too extreme. Some small bacteriophages can reach 3 M.
 "Osmotic Shock and the Strength of Viral Capsids"
 
 \footnotetext{
-For an impermeable virus like the even-numbered T's, the inside salt concentration is set by the incubation solution's value of nb. Anderson et al. (1953) found in the case of T6, upon rapid dilution with distilled water, for example, that incubation nb values on the order of 1.5 M were required for osmotic shock. From Eq. 2, and n0 \approx 3 M, it follows that nin \approx 0.62 M and hence n++ n- \approx 4.2 M, which because of the Donnan equilibrium is indeed significantly larger than 2nb \approx 3 M.
+For an impermeable virus like the even-numbered T's, the inside salt concentration is set by the incubation solution's value of nb. Anderson et al. (1953) found in the case of T6, upon rapid dilution with distilled water, for example, that incubation nb values on the order of 1.5 M were required for osmotic shock. From Eq. 2, and n0 \approx 3 M, it follows that nin $\approx 0.62 M$ and hence n++ n- \approx 4.2 M, which because of the Donnan equilibrium is indeed significantly larger than 2nb \approx 3 M.
 }
 https://www-sciencedirect-com.ezproxy.library.yorku.ca/science/article/pii/S0006349503744555
 
@@ -130,19 +143,15 @@ https://www-sciencedirect-com.ezproxy.library.yorku.ca/science/article/pii/S0006
 \end{autem}
 
 
+\subsection{Discussion}
 
+If we assume that the charge is not as. All other properties being equal, to account for the same coupling and absorption, it seems one or many of the following would seem to need to be true:
 
-
-
-
-
-
-If we assume that the charge is not as. All other properties being equal, to account for the same coupling and absorption, one of the following would seem to need to be true:
-
-1. the effective path length of the waveguide used by Sun may not be as they expected.
-2. The concentration of virus was higher than measured.
-
-
+\begin{itemize}
+\item We have grossly misunderstood the nature of the charge imbalance. Most likely.
+\item The effective path length of the waveguide used by Sun may not be as they expected, or otherwise the corrections made are not of the correct scale.
+\item The concentration of virus was higher than measured by plaque assay - perhaps a dilution was missed.
+\end{itemize}
 
 
 
