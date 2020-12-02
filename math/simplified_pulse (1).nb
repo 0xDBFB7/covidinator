@@ -1,0 +1,116 @@
+Notebook[{Cell[
+TextData[{"Goal",":","\n","\n","What",StyleBox[RowBox[{","," "}]],"approximately",StyleBox[
+RowBox[{","," "}]],"is"," ","the"," ","arbitrary"," ","periodic"," ","or"," ","non-periodic"," ","waveform",StyleBox[
+RowBox[{" ","(\[Phi]("}]],"t",StyleBox[RowBox[{")),"," "}]],"which",StyleBox[RowBox[
+{","," "}]],"when"," ","propagated"," ","through"," ","a"," ","dispersive",StyleBox[
+RowBox[{","," "}]],"lossy"," ","medium"," ","with"," ","complex"," ","permittivity"," ","Debye",StyleBox[
+RowBox[{"[\[Omega]],"," "}]],"drives"," ","a"," ","damped"," ","harmonic"," ","oscillator"," ","y","[","t",StyleBox[
+RowBox[{"]"," "}]],"to"," ","the"," ","maximum"," ","transient"," ","amplitude","?\n","\n","See https://apps.dtic.mil/dtic/tr/fulltext/u2/a371944.pdf\n","http://www1.spms.ntu.edu.sg/~ydchong/teaching/10_greens_function.pdf"}],
+"Text",ExpressionUUID -> "66da92ed-e4b4-4bd0-b36a-0bb73466fe90"],Cell[
+TextData[{"The"," ","typical"," ","method"," ","is"," ","to"," ","Fourier"," ","transform"," ","the"," ","pulse"," ","into"," ","the"," ","frequency"," ","domain",StyleBox[
+RowBox[{","," "}]],"shift"," ","each"," ","frequency's"," ","phase"," ","and"," ","attenuate",StyleBox[
+RowBox[{","," "}]],"FT"," ","back"," ","to"," ","time-domain",StyleBox[RowBox[{","," "}]],"\n"}],
+"Text",ExpressionUUID -> "783be41a-82ec-4bcd-81e6-eb0ec71a520e"],Cell[
+BoxData[RowBox[
+{RowBox[{"Clear","[","\"Global`*\"","]"}],"\n","\n",RowBox[{"c"," ","="," ",RowBox[
+{"UnitConvert","[",RowBox[{"Quantity","[","\"SpeedOfLight\"","]"}],"]"}]}],"\n","\n",RowBox[
+{"DielectricTau"," ","=",RowBox[{"("," ",RowBox[{"8.1","*",RowBox[{"10","^",RowBox[
+{"-","12"}]}]}]," ",")"}]}],"\n",RowBox[{"epsInf"," ","="," ","5.5"}]," ","\n",RowBox[
+{"epsS"," ","="," ","65.0"}],"\n","\n",RowBox[{"\[Omega]0"," ","="," ",RowBox[{"2","*","\[Pi]","*","8","*",RowBox[
+{"10","^","9"}]}]}],"\n",RowBox[{"\[Gamma]"," ","="," ","1"}],"\n",RowBox[{"q"," ","="," ",RowBox[
+{"10","^","7"}]}],"\n",RowBox[{"m"," ","="," ",RowBox[{"10","^",RowBox[{"-","10"}]}]}],"\n","\n",RowBox[
+{RowBox[{"Debye","[","omega_","]"}]," ",":=","  ",RowBox[{RowBox[{"(",RowBox[{"epsInf","+",RowBox[
+{"(",RowBox[{RowBox[{"(",RowBox[{"epsS","-","epsInf"}],")"}],"/",RowBox[{"(",RowBox[
+{"1","+",RowBox[{"\[ImaginaryI]","*","omega","*","DielectricTau"}]}],")"}]}],")"}]}],")"}]," ","+"," ","\n"}]}]}]],
+"Input",ExpressionUUID -> "b602343b-b483-4d1e-863d-e2e7f2164489"],Cell[
+BoxData[RowBox[
+{RowBox[{"T","[","\[Omega]","]"}]," ","="," "}]],"Input",ExpressionUUID -> "0ff83127-9c30-4e87-a0ea-e8cad9962796"],Cell[
+TextData[
+{"Eqs",StyleBox[RowBox[{"."," "}]],"8",StyleBox[RowBox[{","," "}]],"10",StyleBox[
+RowBox[{","," "}]],"11",StyleBox[RowBox[{","," "}]],"13"," ","in"," ","https","://","apps",".","dtic",".","mil","/","dtic","/","tr","/","fulltext","/","u2","/","a371944",".","pdf"}],
+"Text",ExpressionUUID -> "d9db67a2-24b1-4c38-9f7f-3e5d3459acea"],Cell[
+BoxData[RowBox[
+{RowBox[{"k","[","omega_","]"}]," ",":="," ",RowBox[{RowBox[{"(",RowBox[{"omega"," ","/"," ","c"}],")"}]," ","*"," ",RowBox[
+{"Sqrt","[",RowBox[{"Debye","[","omega","]"}],"]"}]}]}]],"Input",CellLabel -> "In[2]:= ",
+ExpressionUUID -> "41cac874-96c7-4f9b-9391-65d6bc18ea76"],Cell[
+BoxData[RowBox[{}]],
+"Input",CellLabel -> "In[3]:= ",ExpressionUUID -> "9456ee00-5be9-45a0-9e12-5cf5755f53d3"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"\[Phi]","[","t_","]"}]," ",":="," ",RowBox[{"Sin","[","t","]"}]}],"\n",RowBox[
+{"(*"," ","placeholder"," ","*)"}]}]],"Input",ExpressionUUID -> "8ef257be-1604-4825-814d-ddcf517b91c2"],Cell[
+BoxData[
+RowBox[{RowBox[{"Eft","[","omega_","]"}]," ",":="," ",RowBox[{"Defer","[",RowBox[
+{"Integrate","[",RowBox[{RowBox[{RowBox[{"\[Phi]","[","t","]"}],"*",RowBox[{"Exp","[",RowBox[
+{RowBox[{"-","\[ImaginaryI]"}],"*","omega","*"," ","t"}],"]"}]}],",",RowBox[{"{",RowBox[
+{"t",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}],"]"}]}]],"Input",
+CellLabel -> "In[36]:= ",ExpressionUUID -> "1694616d-6629-445d-accf-3a31e490f623"],Cell[
+BoxData[
+RowBox[{"Plot","[",RowBox[{RowBox[{"Eft","[","t","]"}],",",RowBox[{"{",RowBox[{"t",",","0",",","10"}],"}"}]}],"]"}]],
+"Input",ExpressionUUID -> "392adc8a-1898-46c9-92f3-b18856eb99f7"],Cell[
+BoxData[""],
+"Input",ExpressionUUID -> "96097f2d-b4d5-4097-939f-d78de38d5b62"],Cell[
+BoxData[RowBox[
+{RowBox[{"Ef","[",RowBox[{"x_",","," ","t_"}],"]"}]," ",":=",RowBox[{RowBox[{"(",RowBox[
+{"1","/",RowBox[{"(",RowBox[{"2","\[Pi]"}],")"}]}],")"}]," ","*"," ",RowBox[{"Integrate","["," ",RowBox[
+{RowBox[{RowBox[{"Exp","[",RowBox[{RowBox[{"-",RowBox[{"\[ImaginaryI]k","[","\[Omega]","]"}]}],"x"}],"]"}],"*",RowBox[
+{"Eft","[","\[Omega]","]"}]," ","*",RowBox[{"Exp","[",RowBox[{"\[ImaginaryI]","*","\[Omega]","*","t"}],"]"}]}],",",RowBox[
+{"{",RowBox[{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}]}]}]],
+"Input",CellLabel -> "In[37]:= ",ExpressionUUID -> "107971e4-bb8e-47e4-a2c0-a2f3dccea5f8"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Ef","[",RowBox[{"0",","," ","1"}],"]"}]],"Input",CellLabel -> "In[34]:= ",
+ExpressionUUID -> "c7440bc0-2521-43e5-aee2-deb5c692b3ce"],Cell[
+BoxData[FractionBox[
+RowBox[{SubsuperscriptBox["\[Integral]",RowBox[{"-","\[Infinity]"}],"\[Infinity]"],RowBox[
+{RowBox[{SuperscriptBox["\[ExponentialE]",RowBox[{"\[ImaginaryI]"," ","\[Omega]"}]]," ",RowBox[
+{SubsuperscriptBox["\[Integral]",RowBox[{"-","\[Infinity]"}],"\[Infinity]"],RowBox[
+{RowBox[{RowBox[{"\[Phi]","[","t","]"}]," ",RowBox[{"Exp","[",RowBox[{RowBox[{"-","\[ImaginaryI]"}]," ","\[Omega]"," ","t"}],"]"}]}],RowBox[
+{"\[DifferentialD]","t"}]}]}]}],RowBox[{"\[DifferentialD]","\[Omega]"}]}]}],RowBox[
+{"2"," ","\[Pi]"}]],StandardForm],"Output",CellLabel -> "Out[34]= ",ExpressionUUID -> "f74b505a-ff44-4324-a988-a0597d4565d3"]},
+Open],ExpressionUUID -> "3713898a-a8bf-42ff-91ad-bb880c242e1f"],Cell[
+BoxData[RowBox[
+{"Plot","[",RowBox[{RowBox[{"Ef","[",RowBox[{"0",",","t"}],"]"}],",",RowBox[{"{",RowBox[
+{"t",",","0",",","10"}],"}"}]}],"]"}]],"Input",CellLabel -> "In[12]:= ",ExpressionUUID -> "c97b0d23-5e71-4aa1-982c-aea6206bc578"],Cell[
+TextData[
+{"In"," ","the"," ","underdamped"," ","case",StyleBox[RowBox[{","," "}]],"the"," ","Green's"," ","function"," ","relating"," "}],
+"Text",ExpressionUUID -> "76bca385-ad62-4654-ba09-59e98e714d1c"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"G","[",RowBox[{"t_",",","tprime_"}],"]"}]," ",":="," ",RowBox[
+{RowBox[{"UnitStep","[",RowBox[{"t","-","tprime"}],"]"}]," ","*",RowBox[{"Exp","[",RowBox[
+{RowBox[{"-","\[Gamma]"}],RowBox[{"(",RowBox[{"t","-","tprime"}],")"}]}],"]"}]," ","*"," ",RowBox[
+{"1","/",RowBox[{"Sqrt","[",RowBox[{RowBox[{"\[Gamma]","^","2"}]," ","-"," ",RowBox[
+{"\[Omega]0","^","2"}]}],"]"}]}],"*",RowBox[{"Sinh","[",RowBox[{RowBox[{"Sqrt","[",RowBox[
+{RowBox[{"gamma","^","2"}],"-",RowBox[{"\[Omega]0","^","2"}]}],"]"}],RowBox[{"(",RowBox[
+{"t","-","tprime"}],")"}]}],"]"}]}]}],"\n",RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]}],
+"Input",CellLabel -> "In[38]:= ",ExpressionUUID -> "2a600f4a-8af1-4a6b-b53e-a33bf7c0d786"],Cell[
+BoxData[
+FractionBox[RowBox[{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"-",RowBox[{"(",RowBox[
+{"t","-","tprime"}],")"}]}]," ","\[Gamma]"}]]," ",RowBox[{"Sinh","[",RowBox[{RowBox[
+{"(",RowBox[{"t","-","tprime"}],")"}]," ",SqrtBox[RowBox[{SuperscriptBox["gamma",
+"2"],"-",SuperscriptBox["\[Omega]0","2"]}]]}],"]"}]," ",RowBox[{"UnitStep","[",RowBox[
+{"t","-","tprime"}],"]"}]}],SqrtBox[RowBox[{SuperscriptBox["\[Gamma]","2"],"-",SuperscriptBox[
+"\[Omega]0","2"]}]]],StandardForm],"Output",CellLabel -> "Out[39]= ",ExpressionUUID -> "1a12821d-b919-481f-bda1-e58ac81a7615"]},
+Open],ExpressionUUID -> "04f2fd8f-3c2b-435a-aab3-9c7b0bd668d6"],Cell[
+TextData[{"tprime"," ","here"," ","is"," ","a"," ","dummy"," ","variable"," ","only"," ","used"," ","in"," ","the"," ","integral",StyleBox[
+RowBox[{"."," "}]],"Eq",StyleBox[RowBox[{"."," "}]],"4",StyleBox[RowBox[{"."," "}]]}],
+"Text",ExpressionUUID -> "860b20f3-8907-451f-8c02-a2173efc5c53"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"y","[",RowBox[{"x_",",","t_"}],"]"}]," ",":=",RowBox[
+{"Defer","["," ",RowBox[{"Integrate","[",RowBox[{RowBox[{RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]," ","*",RowBox[
+{"("," ",RowBox[{RowBox[{"(",RowBox[{"q","*",RowBox[{"Ef","[",RowBox[{"x",","," ","tprime"}],"]"}]}],")"}],"/","m"}],")"}]}],",",RowBox[
+{"{",RowBox[{"tprime",","," ",RowBox[{"-","\[Infinity]"}],","," ","\[Infinity]"}],"}"}]}],"]"}],"]"}]}],"\n",RowBox[
+{"Simplify","[","y","]"}],"\n",RowBox[{"y","[",RowBox[{"x",",","t"}],"]"}]}],"Input",
+CellLabel -> "In[40]:= ",ExpressionUUID -> "98fdf7e9-4ca1-4e53-808d-2d9f2ed18f8a"],Cell[
+BoxData[
+"y",StandardForm],"Output",CellLabel -> "Out[41]= ",ExpressionUUID -> "fe78bfbc-1090-481c-aa08-d6d841ec6176"],Cell[
+BoxData[
+RowBox[{SubsuperscriptBox["\[Integral]",RowBox[{"-","\[Infinity]"}],"\[Infinity]"],RowBox[
+{FractionBox[RowBox[{RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]," ",RowBox[
+{"(",RowBox[{"q"," ",RowBox[{"Ef","[",RowBox[{"x",",","tprime"}],"]"}]}],")"}]}],
+"m"],RowBox[{"\[DifferentialD]","tprime"}]}]}],StandardForm],"Output",CellLabel -> "Out[42]= ",
+ExpressionUUID -> "02966d6b-8d2e-4c38-97de-159695306413"]},Open],ExpressionUUID -> "f9324445-1cf7-47c7-9ed9-f612ee989645"],Cell[
+
+"\<\>","Text",ExpressionUUID -> "083f2453-173b-4f3c-8170-d8fbcbaded1d"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.2 for Wolfram Cloud 1.57 (November 23, 2020)"]

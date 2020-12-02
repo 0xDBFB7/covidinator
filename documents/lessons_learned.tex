@@ -5,6 +5,19 @@
 
 \paragraph{Lessons Learned} \
 
+\rule{\linewidth}{0.2pt}
+
+It is interesting to think about the meta-issues surrounding this project. Beta-glo assay, not a few kilometers away the food bank ran out of food and people were not able. 
+
+\rule{\linewidth}{0.2pt}
+
+This one was taught to me by Yuriy!
+
+We were trying to write a pre-baked math worksheet into Wolfram Mathematica.
+
+It is useful to first strictly implement precisely as written, and only when all parts are operational and understood, begin modifying for your own use.
+
+This is common practice in many fields, but hadn't occurred to me for math. 
 
 \rule{\linewidth}{0.2pt}
 
@@ -16,8 +29,7 @@ Rigorous literature reviews are very important. de Seze has a good example: sear
 
 \rule{\linewidth}{0.2pt}
 
-Papers only carry the scientific heritage that their authors saw fit to include in the references section. 
-
+Papers only carry the scientific heritage that their authors saw fit to include in the references section, and only provide the context included in the "introduction". 
 
 \rule{\linewidth}{0.2pt}
 
@@ -32,9 +44,13 @@ Most importantly, annoyance scales inversely with size. It is hard to work with 
 
 \rule{\linewidth}{0.2pt}
 
-Minor errors in . Reproducible coding helps, but it would be much better if we had used standard software engineering best practices; red-teaming, unit testing on randomly generated data, etc. It might also be helpful if the data itself are blinded against randomly generated controls - in many cases that's not possible, but it might be useful in some circumstances.
+We often came across a situation in which minor errors in software,  would completely change the conclusion of our results.
+
+Reproducible coding helps, but it would be much better if we had used standard software engineering best practices; red-teaming, unit testing on randomly generated data, etc. It might also be helpful if the data itself are blinded against randomly generated controls - in many cases that's not possible, but it might be useful in some circumstances.
 
 See Phosphine.
+
+It may be useful to make explicit to the reader where particular sensitivities - high gradients of conclusion against some factor - might exist in your research.
 
 \rule{\linewidth}{0.2pt}
 
@@ -69,17 +85,19 @@ Many months of testing have vanished into the ether due to
 
 Version control alone isn't quite enough. Just having a simulation setup file somewhere in the commit history isn't "discoverable" - that is, you must be able to see what the input and output was without re-running the simulation. 
 
-Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it!
+Manually taking notes tended to disrupt the flow of testing; and in any case, just noting "SIR filter has appropriate phase response" is almost useless. What {\it was} the phase response? Plot it, and upload it!
 
 Software such as Sumatra, Sacred, recipy, and others. In our case, we used eLabFTW's elabapy bindings.
 
-I think this is a good general rule: record as much detail automatically as possible
+I think this is a good general rule: record as much detail as automatically as possible
 
 \rule{\linewidth}{0.2pt}
 
 It is far easier to use existing, well-characterized reference designs verbatim than to modify 
 
 \rule{\linewidth}{0.2pt}
+
+Dill
 
 When rapidly testing data analyses of simulations which aren't really conducive to unit testing, I previously used to run the whole simulation, look at the analysis, re-run the sim, etc.
 
@@ -109,9 +127,11 @@ In some situations (especially where the library has a permissive licence) perha
 
 For instance, this was done with the PDB reader in the OpenMM wrapper and JAMES.
 
+Honestly, this might already account for a difference in productivity between, say, Python, and C++. the package manager.
+
 \rule{\linewidth}{0.2pt}
 
-There's also a very neat thing that seems to be common in computational biology, but which doesn't seem popular in other fields. After an algorithm or software tool is written (and the source published separately), a simple CGI frontend is written around it and hosted on the university's servers. eLNemo and the CHARMMing web interface are advanced examples of this. This way, anyone with an input file can get results without futzing around with installation. 
+There's also a very neat thing that seems to be common in computational biology, but which doesn't seem popular in other fields. After an algorithm or software tool is written (and the source published separately), a simple CGI frontend is written around it and hosted on the university's servers. eLNemo and the CHARMMing web interface are advanced examples of this. This way, anyone with an input file can get results without futzing around with installation, at least for the few decades that the servers are maintained.
 
 The computational biologists have beat us at our own game.
 
@@ -119,7 +139,7 @@ The computational biologists have beat us at our own game.
 
 We have always encountered wasting extreme amounts of time on subtle assembly mistakes in hardware prototypes. 
 
-In one example in this project, many hours were wasted because the enamel insulation on a bodge wire had not burned off completely in the solder joint, leading to a high-impedance connection.
+In one example in this project, many hours were wasted because the enamel insulation on a bodge wire had not burned off completely in a solder joint, leading to a high-impedance connection.
 
 The same has occurred in previous projects; in one example, many days were spent debugging software to fix an apparently slow hardware interrupt, which ended up being the result of a poor solder paste stencil leading to a hidden high-impedance connection to a leadless package.
 
@@ -137,7 +157,7 @@ Numerology doesn't pay
 
 \rule{\linewidth}{0.2pt}
 
-The ability to almost immediately compare simulation to experiment was essential.
+The ability to almost immediately compare simulation to experiment was of great use almost everywhere in this project. This hybrid, "lockstep" approach between theory, simulation, and practice works, I think, extremely well. Even if all these intermediate experiments fail, the mere process of setting up an experiment offers you insight - and forces you to persue leads - which would not otherwise have been gained. Is it better than, say, spending a year carefully establishing the theory behind an experiment, and then doing one? I'm not sure. Other teams have had great success with this.
 
 \rule{\linewidth}{0.2pt}
 
@@ -200,7 +220,7 @@ We present this only as a cautionary tale in the hopes that someday I will liste
 
  This is 
 
-but, some months later, it was found that he was *right* - absolutely right.
+but, some months later, it was found that he was *right* - absolutely right. This was a grave error in management!
 
 \rule{\linewidth}{0.2pt}
 
