@@ -1,0 +1,8 @@
+
+
+Ex = F*Exp[-\[ImaginaryI]*(\[Omega]/c0)*n[\[Omega]]*z]
+
+ex[z_, t_]  := 1/Sqrt[2*\[Pi]] * Integral[Ex[z,\[Omega]]*Exp[\[ImaginaryI]*\[Omega]*t],{\[Omega],-Infinity, +Infinity}]
+
+A=1
+W= Integral [F[\[Omega]],{\[Omega], -Infinity, +Infinity}]
