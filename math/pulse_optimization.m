@@ -7,13 +7,13 @@ G(omega) = 1/(omega_res^2 - (2*i*beta*omega) - omega^2)
 n(omega) = sqrt(eps_inf + (eps_s - eps_inf)/((1-i*omega*tau)*(1-i*omega*tau_f)))
 
 
-e_x = G(omega) * (F(omega)*exp(-1i*(omega/c0)*n(omega)*z)*exp(1i*omega*t))
+e_x = G(omega) * (F(omega)*exp(1i*(omega/c0)*n(omega)*z)*exp(-1i*omega*t))
 
 W = (1/Z0) * real(n(omega))*abs(F(omega))^2
 
 W = subs(W)
 
-xi = -e_x + lambda*W
+xi = conj(-e_x) + lambda*W
 grad_xi = functionalDerivative(xi,F)
 
 % note the sneaky n_i and n_r in the complex conjugate!
@@ -45,15 +45,25 @@ F_optimal = subs(F_optimal, beta, 10^-10)
 F_optimal = subs(F_optimal, Z0, 377)
 F_optimal = subs(F_optimal, c0, 3e8)
 
-F_optimal = subs(F_optimal, t, 0)
-F_optimal = subs(F_optimal, z, 0)
+F_optimal = subs(F_optimal, t, 0.0)
+F_optimal = subs(F_optimal, z, 0.05)
 
 
 F(omega) = rhs(F_optimal)
 
 %simplify(F(10))
-fplot(real(F(omega)),[1e8, 10000e9])
-fplot(imag(F(omega)),[1e8, 10000e9])
+fplot(real(F(omega)),[1e8, 10000e9]);
+fplot(imag(F(omega)),[1e8, 10000e9]);
+
+x = 1e4:5e8:3000e9;
+
+vpa(F(x))
+
+time = ifft(complex(double(real(vpa(F(x)))),double(imag(vpa(F(x))))));
+
+time = repmat(time,1,3);
+
+plot(real(time))
 
 %sol = isolate(grad_xi,F(omega))
 %pretty(sol)
