@@ -114,7 +114,7 @@ class propagator:
         # times = np.tile(times, 5)
         input_data = np.zeros_like(times, dtype=np.float64)
         input_data[:5000] = np.sin(2.0*pi*times*input_frequency)[0:5000]
-        
+
 
 class test_fourier(unittest.TestCase):
 
