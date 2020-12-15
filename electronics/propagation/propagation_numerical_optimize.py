@@ -13,7 +13,7 @@ eps_inf = 4.0
 eps_s = 75.0
 tau_f = 5*10**-14
 tau = 8*10**-12
-omega_res = 2*pi*8e9
+omega_res = 2.0*pi*8e9
 
 Z0 = 377.0
 c0 = 3e8
@@ -25,10 +25,10 @@ z = 0.5
 
 
 Q = 2.0
-beta = 1
+gamma = omega_res / q
 
 def greens_function(omega):
-    return 1.0/(omega_res**2 - (2.0*1j*beta*omega) - omega**2)
+    return 1.0/(omega_res**2.0 - omega**2.0 + 1j*gamma*omega)
 
 def refractive_index(omega):
     #refractive index is n = sqrt(mu/epsilon)
@@ -38,7 +38,8 @@ def propagate(F, omega, z):
 
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
-    propagated = (frequency_domain*np.exp(-1j*(omega/c0)*refractive_index(omega)*z))
+    print(greens_function(omega))
+    propagated =  greens_function(omega) * (frequency_domain*np.exp(-1j*(omega/c0)*refractive_index(omega)*z))
     # watch the sign here - fix if needed
 
     return np.fft.ifft(propagated)
@@ -54,7 +55,8 @@ times = np.linspace(-duration,duration,samples)
 F=np.ones(samples)
 omega = 2*pi*np.fft.fftfreq(samples)*(samples/(duration*2))
 
-F[len(F)//2:-1] = 0
+# F[len(F)//2:-1] = 0
+F = np.sin(times*omega_res)
 
 # output = propagate(F, omega, z)
 #
