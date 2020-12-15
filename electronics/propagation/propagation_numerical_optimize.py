@@ -17,18 +17,18 @@ omega_res = 2.0*pi*8e9
 
 Z0 = 377.0
 c0 = 3e8
-m_reduced = 1
-q = 1
+m_reduced = 1.16e-19
+q = 10e4 * 10e-19
 
 t= 0.0
 z = 0.5
 
 
 Q = 2.0
-gamma = omega_res / q
+gamma = omega_res / Q
 
 def greens_function(omega):
-    return 1.0/(omega_res**2.0 - omega**2.0 + 1j*gamma*omega)
+    return q/(m_reduced*(omega_res**2.0 - omega**2.0 + (1j*gamma*omega)))
 
 def refractive_index(omega):
     #refractive index is n = sqrt(mu/epsilon)
@@ -38,8 +38,7 @@ def propagate(F, omega, z):
 
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
-    print(greens_function(omega))
-    propagated =  greens_function(omega) * (frequency_domain*np.exp(-1j*(omega/c0)*refractive_index(omega)*z))
+    propagated =  greens_function(omega) * frequency_domain * 
     # watch the sign here - fix if needed
 
     return np.fft.ifft(propagated)
@@ -48,8 +47,8 @@ def propagate(F, omega, z):
 def cost_function(F, omega, z):
     return abs(-np.max(propagate(F, omega, z)) + np.max(F**2.0))
 
-duration = 1000e-10
-samples = 300
+duration = 100e-10
+samples = 10000
 times = np.linspace(-duration,duration,samples)
 
 F=np.ones(samples)
@@ -69,3 +68,6 @@ output = F
 plt.plot(times, output)
 plt.plot(times, propagate(output, omega, z))
 plt.show()
+
+# plt.plot(omega,greens_function(omega)/1e-10)
+# plt.show()
