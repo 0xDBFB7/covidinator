@@ -8,11 +8,10 @@ import scipy.constants
 from fdtd_PCB_extensions.tissue import cole_cole_4, complex_permittivity_to_er_and_sigma, electric_field_penetration_depth
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import minimize, basinhopping
+from fdtd_PCB_extensions.tissue import cole_cole_4, get_tissue_cole_cole_coefficients
 
-eps_inf = 4.0
-eps_s = 75.0
-tau_f = 5*10**-14
-tau = 8*10**-12
+
+
 omega_res = 2.0*pi*8e9
 
 Z0 = 377.0
@@ -29,19 +28,49 @@ z = 0.05
 Q = 2.0
 gamma = omega_res / Q
 
+
+
+
 def greens_function(omega):
     return q/(m_reduced*(omega_res**2.0 - omega**2.0 + (1j*gamma*omega)))
 
-def refractive_index(omega):
+
+#debye water coefficients
+eps_inf = 4.0
+eps_s = 75.0
+tau_f = 5*10**-14
+tau = 8*10**-12
+
+def debye_refractive_index(omega):
     #refractive index is n = sqrt(mu/epsilon)
     return np.sqrt(eps_inf + (eps_s - eps_inf)/((1.0-1j*omega*tau)*(1.0-1j*omega*tau_f)))
+
+#cole-cole refractive index
+ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(48)
+
+def cole_refractive_index(omega):
+    '''
+    See "Compilation of the dielectric properties of body tissues at RF and microwave frequencies.", Gabriel 1996
+    Equation 3, page 12.
+    '''
+    angular_frequency = omega
+    complex_permittivity = complex(ef, 0)
+    for n in range(0, 4):
+        complex_permittivity += deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n])))
+
+
+    complex_permittivity[angular_frequency > 0] += (sigma/((complex(0, 1)*angular_frequency[angular_frequency > 0]*epsilon_0)))
+
+    n = np.sqrt(1.0 / complex_permittivity)
+    return n
+
 
 def propagate(F, omega, z):
 
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
 
-    propagated =  greens_function(omega) * frequency_domain * np.exp(1j*(omega/c0)*refractive_index(omega)*z)
+    propagated =  greens_function(omega) * frequency_domain * np.exp(1j*(omega/c0)*cole_refractive_index(omega)*z)
     # watch the sign here - fix if needed
 
     return np.fft.ifft(propagated)
@@ -52,8 +81,8 @@ def propagate(F, omega, z):
 def cost_function(F, omega, z):
     return abs(-np.max(propagate(F, omega, z))/picometer) + np.max(F**2.0)
 
-duration = 50e-10
-samples = int(np.ceil(duration * omega_res * 2.0 * 5.0))
+duration = 5e-10
+samples = int(np.ceil(duration * omega_res * 2.0 * 10.0))
 print(f"Samples: {samples}")
 times = np.linspace(-duration,duration,samples)
 
@@ -66,7 +95,7 @@ omega = 2*pi*np.fft.fftfreq(samples)*(samples/(duration*2))
 # output = propagate(F, omega, z)
 #
 
-output = minimize(cost_function, F, args=(omega, z), options={'disp': True} )['x']
+output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=5e-10 )['x']
 
 #"method": "Nelder-Mead",
 # output = basinhopping(cost_function, F, minimizer_kwargs={"args":(omega, z)}, disp=True)['x']
