@@ -50,7 +50,7 @@ def cole_cole_4(center_frequency, ef, sigma, deltas, alphas, taus):
     for n in range(0, 4):
         complex_permittivity += deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n])))
 
-    complex_permittivity += (sigma/((complex(0, 1)*angular_frequency*epsilon_0)))
+    complex_permittivity[angular_frequency > 0] += (sigma/((complex(0, 1)*angular_frequency[angular_frequency > 0]*epsilon_0)))
 
 
     return complex_permittivity

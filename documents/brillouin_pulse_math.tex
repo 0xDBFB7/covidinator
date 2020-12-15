@@ -1,9 +1,35 @@
 %!TeX root = brillouin_pulse_math
 \documentclass[paper.tex]{subfiles}
 \begin{document}
-	
 
-	
+
+Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors.
+
+
+
+The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 book\cite{Wave1960} on the topic. \footnotemark
+
+
+
+
+\footnotetext{Some of the initial work on these precursors (or "forerunners", as they were known at the time) apparently neglected some of the higher-order terms, leading to the conclusion that the signals were "very weak". However, the amplitude is often much greater than that of the carrier. See wikipedia.}
+
+These are fascinating structures which arise as a result of two aspects Albanese \cite{Shortrisetime1989}: 
+
+The highly dispersive nature of tissue, which
+
+The change in loss - and increase in penetration depth - 
+
+A third aspect leads to the formation of the prototypical brilluoin precursor: any "sharp" beginning or end of a wave, or other spatially confined structure, includes harmonics up to these \footnotemark
+
+\footnotetext{it is interesting to note that a similar - if not equivalent - effect leads to the Heisenberg uncertainty principle. The more localized a }
+
+
+
+At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the brilluoin train drives the virus with an equally, implementing this would decrease the surface field required for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e-5$). 
+
+However, the energy
+
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
 % section on Greens functions
 % and also 
@@ -11,9 +37,51 @@
 % https://www.int.washington.edu/users/dbkaplan/228_01/green.pdf	
 
 
+
+
+by Wait \cite{Propagation1965}:
+
+\begin{quote}
+In such cases, it may be feasible to evaluate the integral by a purely numerical procedure. With the wide availability of the digital computer, this is certainly fashionable at the moment. Consequently, one might say that the problem has been solved and no further discussion is needed. 
+
+However, it would be a pity if one accepted this answer since all physical insight into the nature of transient processes has been ignored. 
+\end{quote}
+
+
+
+Chirped-gaussian Macke \cite{Simple2012}.
+
+
+
+One route of inquiry was the following: Unfortunately, despite NLTLs producing strong wideband components, they do not appear to satisfy the requirements for Brillouin pulses. 
+\begin{autem}
+	This should be replicated.
+\end{autem}
+
+temporal Soliton-producing nonlinear transmission lines, and NLTL oscillators constructed therefrom, particularly well suited 
+
+
+Transient solution
+
+
+A qualitative statement of the problem, for context:
+An arbitrary waveform, given in the frequency domain as F(ω),
+propagates through a dispersive, lossy medium. It then drives a
+damped harmonic oscillator that is initially at rest.
+
+
+What F produces the peak transient amplitude on the oscillator?
+
+
+
+Using an energy constraint, appears to tend towards a step-function impulse, perhaps as a result of Pontryagin's maximum principle.
+
+
 Pulse energy, rather than peak field, is not obviously the ideal constraint for this problem; however, it is the one most compatible with lagrange multiplier techniques.
 
-The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action (see Feynman lectures). In this case, the path through space from endpoints a to b is replaced with the whole frequency domain from -$\inf$ to +$\inf$.
+Tufts \cite{Optimum1964}
+
+The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action (see Feynman lectures). In this case, it appears that the path through space from endpoints a to b is replaced with the whole frequency domain from -$\inf$ to +$\inf$. 
 
 Aha! That's the ticket! 
 
@@ -22,5 +90,8 @@ Search terms: "first variation", gateaux derivative,
 As noted by Pozar, the complex conjugate arises from the concept of "adjointness". Franks.
 
 Note the ni in the complex conjugate!
+
+
+Left-hand and right-handed complex.
 
 \end{document}

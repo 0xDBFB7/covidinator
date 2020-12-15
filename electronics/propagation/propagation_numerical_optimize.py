@@ -22,7 +22,7 @@ q = 10e3 * 10e-19
 picometer = 1e-12
 
 t= 0.0
-z = 0.05
+z = 0.08
 
 
 Q = 2.0
@@ -48,21 +48,21 @@ def debye_refractive_index(omega):
 #cole-cole refractive index
 ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(48)
 
-def cole_refractive_index(omega):
-    '''
-    See "Compilation of the dielectric properties of body tissues at RF and microwave frequencies.", Gabriel 1996
-    Equation 3, page 12.
-    '''
-    angular_frequency = omega
-    complex_permittivity = complex(ef, 0)
-    for n in range(0, 4):
-        complex_permittivity += deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n])))
 
-
-    complex_permittivity[angular_frequency > 0] += (sigma/((complex(0, 1)*angular_frequency[angular_frequency > 0]*epsilon_0)))
-
-    n = np.sqrt(1.0 / complex_permittivity)
-    return n
+# def cole_refractive_index(omega):
+#     '''
+#     See "Compilation of the dielectric properties of body tissues at RF and microwave frequencies.", Gabriel 1996
+#     Equation 3, page 12.
+#     '''
+#     angular_frequency = omega
+#     complex_permittivity = complex(ef, 0)
+#     for n in range(0, 4):
+#         complex_permittivity += deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n])))
+#
+#     complex_permittivity[angular_frequency > 0] += (sigma/((complex(0, 1)*angular_frequency[angular_frequency > 0]*epsilon_0)))
+#
+#     n = np.sqrt(complex_permittivity)
+#     return complex_permittivity
 
 
 def propagate(F, omega, z):
@@ -70,7 +70,9 @@ def propagate(F, omega, z):
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
 
-    propagated =  greens_function(omega) * frequency_domain * np.exp(1j*(omega/c0)*cole_refractive_index(omega)*z)
+    n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus))
+    n[omega == 0] = 1
+    propagated =  greens_function(omega) * frequency_domain * np.exp(-1j*(omega/c0)*n*z)
     # watch the sign here - fix if needed
 
     return np.fft.ifft(propagated)
@@ -81,19 +83,20 @@ def propagate(F, omega, z):
 def cost_function(F, omega, z):
     return abs(-np.max(propagate(F, omega, z))/picometer) + np.max(F**2.0)
 
-duration = 5e-10
-samples = int(np.ceil(duration * omega_res * 2.0 * 10.0))
-print(f"Samples: {samples}")
+duration = 30e-10
+samples = int(np.ceil(duration * omega_res * 2.0 * 5.0))
 times = np.linspace(-duration,duration,samples)
 
 F=np.ones(samples)
 omega = 2*pi*np.fft.fftfreq(samples)*(samples/(duration*2))
+print(f"Samples: {samples} | < 1e10: {np.count_nonzero(omega < 1e10)}")
+
 
 # F[len(F)//2:-1] = 0
 # F = np.sin(times*omega_res)
 
 # output = propagate(F, omega, z)
-#
+
 
 output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=5e-10 )['x']
 
@@ -105,17 +108,18 @@ oscillation = propagate(output, omega, z)/picometer
 
 transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
 
-print(f"{(transfer_ratio * 800000)} at E-field limit, {3*275} desired")
+print(f"{(transfer_ratio * 800000)} pm at E-field limit, {3*275} pm desired")
 
 
-print("Picometers " )
 
 plt.subplot(1,2,1)
 plt.plot(times, output)
 plt.subplot(1,2,2)
 plt.plot(times, oscillation)
 plt.show()
-
-
-# plt.plot(omega,greens_function(omega))
+#
+# n = cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus)
+# plt.plot(omega,np.real(n))
+# plt.plot(omega,np.imag(n))
+#
 # plt.show()
