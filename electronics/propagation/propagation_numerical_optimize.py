@@ -18,10 +18,12 @@ omega_res = 2.0*pi*8e9
 Z0 = 377.0
 c0 = 3e8
 m_reduced = 1.16e-19
-q = 10e4 * 10e-19
+q = 10e3 * 10e-19
+
+picometer = 1e-12
 
 t= 0.0
-z = 0.5
+z = 0.05
 
 
 Q = 2.0
@@ -38,36 +40,53 @@ def propagate(F, omega, z):
 
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
-    propagated =  greens_function(omega) * frequency_domain * 
+
+    propagated =  greens_function(omega) * frequency_domain * np.exp(1j*(omega/c0)*refractive_index(omega)*z)
     # watch the sign here - fix if needed
 
     return np.fft.ifft(propagated)
 
 
-def cost_function(F, omega, z):
-    return abs(-np.max(propagate(F, omega, z)) + np.max(F**2.0))
+#energy constraint always tends toward a step function
 
-duration = 100e-10
-samples = 10000
+def cost_function(F, omega, z):
+    return abs(-np.max(propagate(F, omega, z))/picometer) + np.max(F**2.0)
+
+duration = 50e-10
+samples = int(np.ceil(duration * omega_res * 2.0 * 5.0))
+print(f"Samples: {samples}")
 times = np.linspace(-duration,duration,samples)
 
 F=np.ones(samples)
 omega = 2*pi*np.fft.fftfreq(samples)*(samples/(duration*2))
 
 # F[len(F)//2:-1] = 0
-F = np.sin(times*omega_res)
+# F = np.sin(times*omega_res)
 
 # output = propagate(F, omega, z)
 #
 
-# output = minimize(cost_function, F, args=(omega, z), options={'disp': True} )['x']
+output = minimize(cost_function, F, args=(omega, z), options={'disp': True} )['x']
 
-# output = basinhopping(cost_function, F, minimizer_kwargs={"method": "Nelder-Mead", "args":(omega, z)}, disp=True)['x']
-output = F
+#"method": "Nelder-Mead",
+# output = basinhopping(cost_function, F, minimizer_kwargs={"args":(omega, z)}, disp=True)['x']
+# output = F
 
+oscillation = propagate(output, omega, z)/picometer
+
+transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
+
+print(f"{(transfer_ratio * 800000)} at E-field limit, {3*275} desired")
+
+
+print("Picometers " )
+
+plt.subplot(1,2,1)
 plt.plot(times, output)
-plt.plot(times, propagate(output, omega, z))
+plt.subplot(1,2,2)
+plt.plot(times, oscillation)
 plt.show()
 
-# plt.plot(omega,greens_function(omega)/1e-10)
+
+# plt.plot(omega,greens_function(omega))
 # plt.show()
