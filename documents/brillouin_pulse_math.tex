@@ -6,6 +6,8 @@
 
 Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors.
 
+Are similar to soliton 
+
 
 
 The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 book\cite{Wave1960} on the topic. \footnotemark
@@ -24,7 +26,7 @@ A third aspect leads to the formation of the prototypical brilluoin precursor: a
 \footnotetext{it is interesting to note that a similar - if not equivalent - effect leads to the Heisenberg uncertainty principle. The more localized a }
 
 
-At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$.
+At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$. The sharp edges are at approx. 250 GHz. 
 
 
 
@@ -70,7 +72,7 @@ Transient solution
 A qualitative statement of the problem:
 
 \begin{toolchain}
-An arbitrary waveform propagates through a dispersive, lossy medium with a certain analytic dispersion relation. It then drives a
+An arbitrary waveform propagates through a dispersive, lossy medium with a certain analytic complex permittivity. It then drives a
 damped harmonic oscillator that is initially at rest.\\
 
 What waveform produces the peak transient amplitude on the oscillator?
@@ -78,13 +80,13 @@ What waveform produces the peak transient amplitude on the oscillator?
 
 \subsection{Analytic techniques}
 
-Quote Wait \cite{Propagation1965}:
 
-\begin{quote}
+
+\begin{fquote}[Wait][ \cite{Propagation1965}]
 	In such cases, it may be feasible to evaluate the integral by a purely numerical procedure. With the wide availability of the digital computer, this is certainly fashionable at the moment. Consequently, one might say that the problem has been solved and no further discussion is needed. \\
 	
 	However, it would be a pity if one accepted this answer since all physical insight into the nature of transient processes has been ignored. 
-\end{quote}
+\end{fquote}
 
 
 
@@ -119,7 +121,7 @@ Macke \cite{Simple2012} have come up with a number of other analytic representat
 
 \section{Zhu et al 's dispersive waveform optimization propagation formulation}
 
-The most promising analytical technique that we explored was essentially equivalent to Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}, This is based on a lagrange multiplier technique and variational calculus\footnotetext .
+The most promising analytical technique that we explored was essentially equivalent to Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}, This is based on a lagrange multiplier technique\cite{Methods1989} and variational calculus\footnotetext .
 
 $$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
 

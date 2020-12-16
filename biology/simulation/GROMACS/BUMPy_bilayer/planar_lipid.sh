@@ -1,1 +1,1 @@
-python insane.py -l POPC -d 10 -dz 7 -o bilayer.pdb
+insane -l POPC -d 10 -dz 7 -o bilayer.pdb

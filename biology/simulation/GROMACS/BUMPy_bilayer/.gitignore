@@ -1,3 +1,8 @@
 output/*
 insane.py
 martinize.py
+bumpy.py
+*.ndx
+*.top
+insane
+*.gro

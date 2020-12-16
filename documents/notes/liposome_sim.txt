@@ -1,0 +1,4 @@
+Chimera seems to bork when loading the 4 M atom file.
+
+dccmd might be good, a few us / day at 160k particles, but does it do electric field? And also
+conversions are required
