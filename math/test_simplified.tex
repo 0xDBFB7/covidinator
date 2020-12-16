@@ -1,0 +1,55 @@
+\documentclass[]{article}
+
+\usepackage{pdfpages}
+
+\begin{document}
+
+
+Existing worked example from a paper:
+
+$$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
+
+$$W = \frac{1}{\eta_0} \int_{-\infty}^{+\infty}{(n_r(\omega))\ |F(\omega)|^2}\ d\omega$$\\
+
+Where $n(\omega)$ is a complex function, $n_r()$ is the real part of the same, everything else is a real constant. An existing paper sets up the functional with a lagrange multiplier\\
+
+$$\xi = -e_x(z,t) + \lambda W$$\\
+
+Takes the functional ("variational") gradient with respect to $F(\omega)$.
+
+$$ \nabla \xi = -\frac{1}{\sqrt{2\pi}} \left(e^{- j (\omega/c_0)n(\omega)z}\right)^\star \  e^{-j\omega T} + \lambda...$$
+
+Where * is the complex conjugate.\\
+
+The $\nabla H() = H()^\star$ thing seems to come from Franks, Signal Theory, 1969, page 140 onwards; I can't seem to make heads or tails of his formulation... \\
+
+Neither Mathematica's VariationalD, Matlab's Fundiff, nor Maple's functionalDerivative seem to yield any meaningful result for grad xi, but I probably set things up wrong.\\
+
+They then set
+
+$$\nabla \xi = 0$$
+
+and solve for $F(\omega)$ normally. (then fourier transform back to $F(t)$)\\
+
+\pagebreak
+
+What I'd like to do is modify this to maximize the amplitude x(t) of oscillation of a harmonic oscillator. Using the Greens function solution, \\
+
+where q is a charge, oscillation amplitude is
+
+
+listed therein (eq. 15, for the underdamped case).\\
+
+Anyhow, then modify the lagrange multiplier,
+
+$$\xi = -x(t) + \lambda W$$\\
+
+And now,
+
+$$\nabla \xi = 0$$
+
+That seems to be the hard part.\\
+
+Is there any chance you could suggest a route to attack this gradient?
+
+\end{document}

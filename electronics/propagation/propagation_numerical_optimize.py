@@ -32,6 +32,7 @@ gamma = omega_res / Q
 
 
 def greens_function(omega):
+    #see Feynman Lectures, volume 1 lecture 23 equation 8.
     return q/(m_reduced*(omega_res**2.0 - omega**2.0 + (1j*gamma*omega)))
 
 
@@ -98,7 +99,7 @@ print(f"Samples: {samples} | < 1e10: {np.count_nonzero(omega < 1e10)}")
 # output = propagate(F, omega, z)
 
 
-output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=5e-10 )['x']
+output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=1e-10 )['x']
 
 #"method": "Nelder-Mead",
 # output = basinhopping(cost_function, F, minimizer_kwargs={"args":(omega, z)}, disp=True)['x']

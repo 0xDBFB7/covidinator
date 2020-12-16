@@ -3,13 +3,12 @@
 \begin{document}
 
 
+
 Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors.
 
 
 
 The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 book\cite{Wave1960} on the topic. \footnotemark
-
-
 
 
 \footnotetext{Some of the initial work on these precursors (or "forerunners", as they were known at the time) apparently neglected some of the higher-order terms, leading to the conclusion that the signals were "very weak". However, the amplitude is often much greater than that of the carrier. See wikipedia.}
@@ -25,10 +24,19 @@ A third aspect leads to the formation of the prototypical brilluoin precursor: a
 \footnotetext{it is interesting to note that a similar - if not equivalent - effect leads to the Heisenberg uncertainty principle. The more localized a }
 
 
+At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$.
 
-At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the brilluoin train drives the virus with an equally, implementing this would decrease the surface field required for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e-5$). 
 
-However, the energy
+
+At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the brilluoin train drives the virus with an equally, implementing this would decrease the field at the skin required for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
+
+However, the energy contained in such a standard pulsed-sine or gaussian train decays very quickly, 
+
+These precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose,
+
+\footnotetext{Well, Ong don't really observe the precursor itself, it seems.}
+
+
 
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
 % section on Greens functions
@@ -39,21 +47,16 @@ However, the energy
 
 
 
-by Wait \cite{Propagation1965}:
 
-\begin{quote}
-In such cases, it may be feasible to evaluate the integral by a purely numerical procedure. With the wide availability of the digital computer, this is certainly fashionable at the moment. Consequently, one might say that the problem has been solved and no further discussion is needed. 
-
-However, it would be a pity if one accepted this answer since all physical insight into the nature of transient processes has been ignored. 
-\end{quote}
+Note: this isn't truly transient - the fourier integral is still periodic, wrapping around every x cycles. It's just more transient than the steady-state.
 
 
 
-Chirped-gaussian Macke \cite{Simple2012}.
+
+attack pattern alpha
 
 
-
-One route of inquiry was the following: Unfortunately, despite NLTLs producing strong wideband components, they do not appear to satisfy the requirements for Brillouin pulses. 
+ Unfortunately, despite NLTLs producing strong wideband components, they do not appear to satisfy the requirements for Brillouin pulses. 
 \begin{autem}
 	This should be replicated.
 \end{autem}
@@ -63,25 +66,112 @@ temporal Soliton-producing nonlinear transmission lines, and NLTL oscillators co
 
 Transient solution
 
+\pagebreak
+A qualitative statement of the problem:
 
-A qualitative statement of the problem, for context:
-An arbitrary waveform, given in the frequency domain as F(ω),
-propagates through a dispersive, lossy medium. It then drives a
-damped harmonic oscillator that is initially at rest.
+\begin{toolchain}
+An arbitrary waveform propagates through a dispersive, lossy medium with a certain analytic dispersion relation. It then drives a
+damped harmonic oscillator that is initially at rest.\\
+
+What waveform produces the peak transient amplitude on the oscillator?
+\end{toolchain}
+
+\subsection{Analytic techniques}
+
+Quote Wait \cite{Propagation1965}:
+
+\begin{quote}
+	In such cases, it may be feasible to evaluate the integral by a purely numerical procedure. With the wide availability of the digital computer, this is certainly fashionable at the moment. Consequently, one might say that the problem has been solved and no further discussion is needed. \\
+	
+	However, it would be a pity if one accepted this answer since all physical insight into the nature of transient processes has been ignored. 
+\end{quote}
 
 
-What F produces the peak transient amplitude on the oscillator?
 
 
 
-Using an energy constraint, appears to tend towards a step-function impulse, perhaps as a result of Pontryagin's maximum principle.
+\begin{autem}
+Reflection from tissue interfaces?
+
+Thermal noise will kick the oscillator around; it won't necessarily start at rest. Will this affect the 
+\end{autem}
+
+One might suggest try to find the optimal transient solution first, and then try to build an input waveform deconvolved through the  transfer function of the tissue. This hardly seems liable to produce a truly optimal solution, however.
+
+Each problem has been solved separately. There are some nearly equivalent but not mathematically identical formulations for optimal control of quantum systems with dispersion.\footnotemark However, in the classical domain, this appears to be unprecedented in the literature.
+
+\footnotetext{While not strictly related, \cite{Wavepacket1989} tune a light pulse to match the wavefunction of the desired chemical products in a photo-reaction, which is just pretty darned awesome}
+
+Also, this seems similar to a pulse propagating through the tissue's Cole medium and then dissipating the maximum power in a uniform Lorentz medium, which might be another route to attacking it.
+
+Another route might be to set up two ODEs for the wave equation and the oscillator and solve them simultaneously.
+
+Progress was hindered by the ~6 conventions for Fourier normalization, the sign or handedness of the imaginary number. What self-respecting field has completely antipodal definitions of the same concept.
+
+oh, on the same topic, can we finally settle the i / j convention. Also, everyone that doesn't explicitly note  
+
+Optimal pulses for several situations in Debye and Lorentz media have been determined by Oughstun's asymptotic method, which appears to be highly satisfactory in terms of physical intution, and also avoids truncation issues that befall fourier-transform techniques. In general, these optimal pulses are simple gaussian monopulses or higher-order gaussian derivatives \cite{Optimal2017} \cite{Optimal2015}. 
+
+Macke \cite{Simple2012} have come up with a number of other analytic representations for various signals, such as chirped gaussian pulses.
+
+
+
+
+\section{Zhu et al 's dispersive waveform optimization propagation formulation}
+
+The most promising analytical technique that we explored was essentially equivalent to Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}, This is based on a lagrange multiplier technique and variational calculus\footnotetext .
+
+$$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
+
+where $\int e^{j \omega t} d\omega$ is the inverse fourier transform.
+
+$$W = \frac{1}{\eta_0} \int_{-\infty}^{+\infty}{(n_r(\omega))\ |F(\omega)|^2}\ d\omega$$\\
+
+Where $n(\omega)$ is a complex refractive index per Debye relaxation equation, $n_r()$ is the real part of the same, everything else is a real constant. Set up a functional with a lagrange multiplier\\
+
+$$\xi = -e_x(z,t) + \lambda W$$\\
+
+Take the functional ("variational") gradient with respect to $F(\omega)$.
+
+$$ \nabla \xi = -\frac{1}{\sqrt{2\pi}} \left(e^{- j (\omega/c_0)n(\omega)z}\right)^\star \  e^{-j\omega T} + \lambda...$$
+
+At this point, you could choose to perform a second integral over the time-domain Greens function solution to the harmonic oscillator\cite{Complex2020}, eq. 4 and 15, 
+
+$$x(t) = \int_{-\infty}^{+\infty}{G(t,t')\ \frac{q\cdot e_x(z,t'))}{m}\ } dt'$$\\
+
+(eq. 15, for the underdamped case)
+
+$$G(t,t') = UnitStep(t-t') \frac{1}{\sqrt{\gamma^2-\omega_0^2}  }\sinh\left({\sqrt{\gamma^2-\omega_0^2}}\ (t-t')\right)$$
+
+But a much more straightforward 
+
+Where * is the complex conjugate.\\
+
+The $\nabla H() = H()^\star$ thing seems to come from Franks, Signal Theory, 1969, page 140 onwards; I cannot make heads or tails of his formulation.
+
+Neither Mathematica's VariationalD, Matlab's Fundiff, nor Maple's functionalDerivative seem to yield any meaningful result for grad xi.\\
+
+Then set
+
+$$x(t) = \int_{-\infty}^{+\infty}{G(t,t')\ \frac{q\cdot e_x(z,t'))}{m}\ } dt'$$\\
+
+Anyhow, then modify the lagrange multiplier,
+
+$$\xi = -x(t) + \lambda W$$\\
+
+And now,
+
+$$\nabla \xi = 0$$
+
+
+
 
 
 Pulse energy, rather than peak field, is not obviously the ideal constraint for this problem; however, it is the one most compatible with lagrange multiplier techniques.
 
 Tufts \cite{Optimum1964}
 
-The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action (see Feynman lectures). In this case, it appears that the path through space from endpoints a to b is replaced with the whole frequency domain from -$\inf$ to +$\inf$. 
+The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action (see Feynman lectures). In these types of problems, it appears that the path of integration through space from endpoints a to b is replaced with the whole frequency domain from -$\infty$ to +$\infty$. 
 
 Aha! That's the ticket! 
 
@@ -92,6 +182,19 @@ As noted by Pozar, the complex conjugate arises from the concept of "adjointness
 Note the ni in the complex conjugate!
 
 
-Left-hand and right-handed complex.
+\subsection{Laziness prevails; a return to numerical optimization}
+
+Numerically solving optimal control problems using CG was noted by Lasdon \cite{conjugate1967} and revisited by Kek \cite{Conjugate}. 
+
+Using an energy constraint, appears to tend towards a square step function or a sharp impulse, perhaps as a result of Pontryagin's maximum principle\cite{Optimum1964}.
+
+
+
+\subsection{Laziness prevails; a return to numerical optimization}
+
+
+
+
+
 
 \end{document}
