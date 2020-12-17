@@ -2,3 +2,31 @@ Chimera seems to bork when loading the 4 M atom file.
 
 dccmd might be good, a few us / day at 160k particles, but does it do electric field? And also
 conversions are required
+
+"
+n. In general, however, the time scale of the Martini simulations has to be interpreted with care.
+
+Martini has been parameterized using time steps in the range of 20-40 fs. Whether you can use 40 fs or have to settle for a somewhat smaller time step depends on your system, and on your attitude toward coarse-grained modeling, as explained below.
+"
+
+
+http://cgmartini.nl/index.php/faq
+
+http://manual.gromacs.org/documentation/2019.1/how-to/special.html
+
+"
+Lipid force fields
+• Groups: phosphate, choline, glycerol, acyl
+• Surprisingly hard to get accurate results
+• Many force fields lead to lipid area & volumes
+that are 20% lower than experimental values!
+
+One reason for the difficulties in simulating
+membranes is the sensitivity to nonbonded
+Van der Waals parameters
+
+"
+
+"g_density
+You need to provide electrons.dat with
+number of electrons/atom, see -h flag."

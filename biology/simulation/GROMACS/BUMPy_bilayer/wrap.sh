@@ -1,5 +1,5 @@
 
-python3 bumpy.py -f bilayer.pdb -o membrane.pdb -n index.ndx -p topol.top -s sphere -z 250 -g r_sphere:500
+python3 bumpy.py -f bilayer.pdb -o membrane.pdb -n index.ndx -p topol.top -s sphere -z 200 -g r_sphere:100
 
 
 # There appears to be a bug in bumpy with Z values > 100

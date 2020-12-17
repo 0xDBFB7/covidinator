@@ -6,3 +6,5 @@ bumpy.py
 *.top
 insane
 *.gro
+*.pdb
+toppar/
