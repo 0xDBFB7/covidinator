@@ -8,3 +8,4 @@ insane
 *.gro
 *.pdb
 toppar/
+*.mdp

@@ -32,3 +32,8 @@ You need to provide electrons.dat with
 number of electrons/atom, see -h flag."
 
 the martini lipid net charges are in the itp.
+
+do an impulse response
+
+
+tried CHARMM-gui martini maker vescile builder for the fun of it, it crashed - oops, sorry
