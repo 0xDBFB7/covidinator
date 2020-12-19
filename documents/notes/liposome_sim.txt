@@ -40,3 +40,6 @@ tried CHARMM-gui martini maker vescile builder for the fun of it, it crashed - o
 
 may have to switch to stiff during minimization see martini .itp
 
+lloooooots of lincs warnings.
+
+vmd works great
