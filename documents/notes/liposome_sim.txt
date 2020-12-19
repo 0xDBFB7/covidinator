@@ -37,3 +37,6 @@ do an impulse response
 
 
 tried CHARMM-gui martini maker vescile builder for the fun of it, it crashed - oops, sorry
+
+may have to switch to stiff during minimization see martini .itp
+
