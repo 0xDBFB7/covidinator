@@ -43,3 +43,11 @@ may have to switch to stiff during minimization see martini .itp
 lloooooots of lincs warnings.
 
 vmd works great
+
+if you get a atom W not found, you need to add the main martini itp
+
+got a segfault when fmax was above e5. ran minimize a little longer.
+
+switching from Pwater to water fixed links warnings.
+
+

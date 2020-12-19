@@ -41,7 +41,7 @@ vdw_type                 = cutoff ;(for use with Verlet-pairlist)
 rvdw                     = 1.1 ;(for use with Verlet-pairlist)
 
 tcoupl                   = berendsen
-tc-grps                  = POPC PW
+tc-grps                  = POPC W
 tau_t                    = 4.0   4.0
 ref_t                    = 298   298
 Pcoupl                   = berendsen  ; parrinello-rahman

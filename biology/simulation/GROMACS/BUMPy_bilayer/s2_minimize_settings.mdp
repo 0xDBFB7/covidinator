@@ -17,7 +17,7 @@ title                    = Martini
 ; Time steps smaller than 20 fs are not required unless specifically stated in the itp file.
 
 integrator               = steep
-nsteps                   = 10000
+nsteps                   = 1000
 emtol = 0.1
 nstcgsteep = 10
 emstep = 0.001
@@ -65,7 +65,7 @@ verlet-buffer-tolerance  = 0.005
 coulombtype              = cutoff
 coulomb-modifier         = Potential-shift-verlet
 rcoulomb                 = 1.1
-epsilon_r                = 2.5	; 2.5 (with polarizable water)
+epsilon_r                = 15	; 2.5 (with polarizable water)
 vdw_type                 = cutoff
 vdw-modifier             = Potential-shift-verlet
 rvdw                     = 1.1
