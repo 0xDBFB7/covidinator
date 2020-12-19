@@ -5,6 +5,8 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 
 rm ./output/s3/*
 
+#dodecahedron
+
 $GMX_DIR/gmx_mpi editconf -box 35 -f ./output/s2/minimized_bilayer.pdb -o ./output/s3/centered.pdb -bt cubic
 
 #$GMX_DIR/gmx_mpi solvate -cs polarize-water.gro -cp ./output/s3/centered.pdb -p output/topol.top -o output/s3/solvated.pdb -shell 30

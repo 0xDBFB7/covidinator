@@ -7,12 +7,12 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 
 rm ./output/s6/*
 
-cp s6_run_settings.mdp output/s6/s6_run_settings.mdp
-$GMX_DIR/gmx_mpi grompp -f output/s6/s6_run_settings.mdp -c ./output/s5/solvated_ionized_minimized.pdb -p output/topol.top -o ./output/s6/bilayer.tpr
+cp s6_run_settings.mdp output/s7/s6_run_settings.mdp
+$GMX_DIR/gmx_mpi grompp -f output/s7/s6_run_settings.mdp -c ./output/s6/equilibriated.pdb -p output/topol.top -o ./output/s7/bilayer.tpr
 cd output/s6
 
 #short equilibration
-$GMX_DIR/gmx_mpi mdrun -nsteps 500 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log
+$GMX_DIR/gmx_mpi mdrun -nsteps 500 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log -mtx output/s7/hessian.mtx
 
 #$GMX_DIR/gmx_mpi mdrun -nsteps 15000 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log
 #

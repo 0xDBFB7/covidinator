@@ -50,5 +50,21 @@ got a segfault when fmax was above e5. ran minimize a little longer.
 
 switching from Pwater to water fixed links warnings.
 
-gromacs hung: dt was too large for some reasong.
+gromacs hung: dt was too large (>10 fs doesn't work) for some reasong.
 
+vmd:
+
+set PLUGINDIR
+make LINUXAMD64
+make distrib
+
+export TCL_INCLUDE_DIR=/usr/include/tcl/
+./configure LINUXAMD64 OPENGL FLTK TK CUDA PTHREADS TCL
+cd src
+make veryclean
+make
+
+
+scratch that. Download a precompiled,  then do 
+https://www.ks.uiuc.edu/Research/vmd/current/ig/node6.html
+done.
