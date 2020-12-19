@@ -50,4 +50,5 @@ got a segfault when fmax was above e5. ran minimize a little longer.
 
 switching from Pwater to water fixed links warnings.
 
+gromacs hung: dt was too large for some reasong.
 

@@ -11,6 +11,9 @@ title                    = Martini
 ; Time steps exceeding 40 fs should not be used; time steps smaller
 ; than 20 fs are also not required unless specifically stated in the itp file.
 
+;                V/nm  omega/ps
+electric-field-x = 0.0001  0.125     0     0
+; 2*pi * 20e9 * 1e-12
 
 integrator               = md
 dt                       = 0.010
