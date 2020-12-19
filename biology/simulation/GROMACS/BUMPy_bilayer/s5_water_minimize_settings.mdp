@@ -17,10 +17,10 @@ title                    = Martini
 ; Time steps smaller than 20 fs are not required unless specifically stated in the itp file.
 
 integrator               = steep
-nsteps                   = 10000
+nsteps                   = 100
 emtol = 0.1
 nstcgsteep = 10
-emstep = 0.001
+emstep = 0.01
 
 nstxout                  = 0
 nstvout                  = 0
@@ -30,7 +30,7 @@ nstenergy                = 100
 nstxout-compressed       = 1000
 compressed-x-precision   = 100
 compressed-x-grps        =
-energygrps               = POPC
+energygrps               =
 
 ; NEIGHBOURLIST and MARTINI
 ; To achieve faster simulations in combination with the Verlet-neighborlist

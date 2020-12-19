@@ -5,12 +5,12 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 
 #gmx grompp -f polarize-water.mdp -r system-genion.gro -c system-genion.gro -p system.top -o system_minimization.tpr
 
-rm ./output/s2/*
+rm ./output/s5/*
 
 
-$GMX_DIR/gmx_mpi grompp -f s2_minimize_settings.mdp -c ./output/s1/membrane.pdb -p output/topol.top -o ./output/s2/bilayer.tpr
+$GMX_DIR/gmx_mpi grompp -f s5_water_minimize_settings.mdp -c ./output/s4/solvated_ionized.pdb -p output/topol.top -o ./output/s5/bilayer.tpr
 
-$GMX_DIR/gmx_mpi mdrun -s ./output/s2/bilayer.tpr -v -c ./output/s2/minimized_bilayer.pdb -o ./output/s2/minimized_energy.trr -e ./output/s2/ener.edr -g ./output/s2/md.log
+$GMX_DIR/gmx_mpi mdrun -s ./output/s5/bilayer.tpr -v -c ./output/s5/solvated_ionized_minimized.pdb -o ./output/s5/minimized_energy.trr -e ./output/s5/ener.edr -g ./output/s5/md.log
 
 #"Perform a short energy minimization of the system containing only the lipids;
 #the only reason for doing this, is getting rid of high forces
