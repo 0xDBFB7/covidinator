@@ -4,8 +4,11 @@ martinize.py
 bumpy.py
 *.ndx
 *.top
+!includes.top
 insane
 *.gro
 *.pdb
 toppar/
 *.tpr
+*.trr
+*.xtc

@@ -1,7 +1,7 @@
 
 
-python3 bumpy.py -f bilayer.pdb -o membrane.pdb -n index.ndx -p bumpy_output.top  -s sphere -z 7 -g r_sphere:150
-cat includes.top bumpy_output.top > topol.top
+python3 bumpy.py -f ./output/s0/bilayer.pdb -o ./output/s1/membrane.pdb -n ./output/s1/index.ndx -p ./output/s1/bumpy_output.top  -s sphere -z 7 -g r_sphere:150
+cat includes.top ./output/s1/bumpy_output.top > ./output/topol.top
 
 # There appears to be a bug in bumpy with Z values > 100
 # bumpy.py:161: RuntimeWarning: Mean of empty slice.
