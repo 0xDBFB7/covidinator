@@ -6,14 +6,16 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 rm ./output/s3/*
 
 #dodecahedron
+#cubic
 
-$GMX_DIR/gmx_mpi editconf -box 35 -f ./output/s2/minimized_bilayer.pdb -o ./output/s3/centered.pdb -bt cubic
+$GMX_DIR/gmx_mpi editconf -d 20 -f ./output/s2/minimized_bilayer.pdb -o ./output/s3/centered.gro -bt cubic
 
 #$GMX_DIR/gmx_mpi solvate -cs polarize-water.gro -cp ./output/s3/centered.pdb -p output/topol.top -o output/s3/solvated.pdb -shell 30
 
-$GMX_DIR/gmx_mpi solvate -cs water.gro -cp ./output/s3/centered.pdb -p output/topol.top -o output/s3/solvated.pdb -shell 30
+$GMX_DIR/gmx_mpi solvate -cs water.gro -cp ./output/s3/centered.gro -p output/topol.top -o output/s3/solvated.gro -shell 20
 
-$GMX_DIR/gmx_mpi grompp -f s2_minimize_settings.mdp -c ./output/s3/solvated.pdb -p output/topol.top -o ./output/s3/solvated_bilayer.tpr
+$GMX_DIR/gmx_mpi grompp -f s2_minimize_settings.mdp -c ./output/s3/solvated.gro -p output/topol.top -o ./output/s3/solvated_bilayer.tpr
 
+#$GMX_DIR/gmx_mpi trjconv -pbc mol -ur compact
 
 #specify bath coupling

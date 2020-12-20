@@ -77,4 +77,4 @@ a big part of setting up a simulation
  is knowing what sensible defaults exist and why certain decisions should be made - 
  it seems like they nailed it here
 
- 
+ wrapping with all PUPI didn't work at all - instability, Fmax=1e5

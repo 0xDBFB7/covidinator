@@ -90,7 +90,7 @@ rvdw                     = 1.1
 ; coupling should be done semiisotropic.
 
 tcoupl                   = v-rescale
-tc-grps                  = POPC
+tc-grps                  = PUPI
 tau_t                    = 1.0
 ref_t                    = 320
 Pcoupl                   = parrinello-rahman
