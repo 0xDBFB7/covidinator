@@ -6,3 +6,6 @@ cp travis_input.txt output/s8/travis_input.txt
 
 cd output/s8/
 $TRAVIS_DIR/travis -p ../s7/trajectory.pdb -i travis_input.txt
+
+cd ../../
+gnuplot plot_spectrum.plt
