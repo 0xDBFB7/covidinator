@@ -46,8 +46,8 @@ rvdw                     = 1.1 ;(for use with Verlet-pairlist)
 
 tcoupl                   = berendsen
 tc-grps                  = PUPI POPC W ION
-tau_t                    = 4.0   4.0
-ref_t                    = 298   298
+tau_t                    = 4.0   4.0 4.0 4.0
+ref_t                    = 298   298 298 298
 Pcoupl                   = berendsen  ; parrinello-rahman
 Pcoupltype               = semiisotropic
 tau_p                    = 12.0  ;parrinello-rahman is more stable with larger tau-p, DdJ, 20130422
