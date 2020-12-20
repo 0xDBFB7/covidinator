@@ -15,7 +15,6 @@ cd output/s6
 $GMX_DIR/gmx_mpi mdrun -nsteps 500 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log
 
 
-
 #$GMX_DIR/gmx_mpi mdrun -nsteps 15000 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log
 #
 #gmx trjconv -f output/s6/traj_comp.xtc -s output/s5/solvated_ionized_minimized.pdb equilibriated.pdb

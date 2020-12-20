@@ -2,64 +2,75 @@
 ! Created with TRAVIS version compiled at Dec 19 2020 18:13:10
 ! Source code version: May 4 2020 (may the force (-: ) HF2
 ! Input file written at Sat Dec 19 18:26:24 2020.
-! Do you want to assign atom data to them (y/n)? [yes] 
+! Do you want to assign atom data to them (y/n)? [yes]
 no
-! Do you want to hide atom type "Gl" (y/n)? [yes] 
+! Do you want to hide atom type "Gl" (y/n)? [yes]
 no
-! Do you want to hide atom type "Nc" (y/n)? [yes] 
+! Do you want to hide atom type "Nc" (y/n)? [yes]
 no
-! Does your system really contain the chemical element "Nc" (y), or are these "N" atoms (n)? [no] 
+! Does your system really contain the chemical element "Nc" (y), or are these "N" atoms (n)? [no]
 u
 ! Invalid input. Enter "y" or "n".
-! Does your system really contain the chemical element "Nc" (y), or are these "N" atoms (n)? [no] 
+! Does your system really contain the chemical element "Nc" (y), or are these "N" atoms (n)? [no]
 y
-! Does your system really contain the chemical element "Po" (y), or are these "P" atoms (n)? [no] 
+! Does your system really contain the chemical element "Po" (y), or are these "P" atoms (n)? [no]
 y
-! Use the advanced mode until the analysis selection menu (y/n)? [no] 
+! Use the advanced mode until the analysis selection menu (y/n)? [no]
 y
-! Use these values (y) or enter different values (n)? [yes] 
+! Use these values (y) or enter different values (n)? [yes]
 n
 ! Use periodic boundary conditions (0=no, x, y, z, xy, xz, xyz)? [xyz]
 0
-! Execute molecule recognition for which time step (-1 = disable)? [0] 
+! Execute molecule recognition for which time step (-1 = disable)? [0]
 -1
-! Show bond matrices only for first representant of each molecule type (y/n)? [yes] 
+! Show bond matrices only for first representant of each molecule type (y/n)? [yes]
 yes
-! Show only bonds in the bond matrices (y/n)? [yes] 
+! Show only bonds in the bond matrices (y/n)? [yes]
 yes
-! Create images of the structural formulas (y/n)? [no] 
+! Create images of the structural formulas (y/n)? [no]
 n
-! Accept these molecules (y) or change something (n)? [yes] 
+! Accept these molecules (y) or change something (n)? [yes]
 
-! Change the atom ordering in some molecule (y/n)? [no] 
+! Change the atom ordering in some molecule (y/n)? [no]
 
-! Define additional virtual atoms (y/n)? [no] 
+! Define additional virtual atoms (y/n)? [no]
 
-! Do you want to define pseudo-molecules (y/n)? [no] 
+! Do you want to define pseudo-molecules (y/n)? [no]
 
 ! Which functions to compute (comma separated)?
 power
-! Use the advanced mode for the main part (y/n)? [no] 
-
-! Enter the physical time distance between successive trajectory frames in fs: [0.5] 
+tes
+! Invalid input. Enter "y" or "n".
+! Use the advanced mode for the main part (y/n)? [no]
+y
+! Enter the physical time distance between successive trajectory frames in fs: [0.5]
 10
-! Compute global power spectrum of whole system (y/n) [yes] 
+! Compute global power spectrum of whole system (y/n) [yes]
 
-! Enter the correlation depth of the ACF (in trajectory frames): [4] 
+! Enter the correlation depth of the ACF (in trajectory frames): [1024]
+3000
+! Write cartesian contributions (x, y, z, xy, xz, yz) of this power spectrum (y/n)? [no]
 
-! Weight autocorrelation functions by atomic mass (y/n)? [yes] 
-n
-! Calculate spectrum up to which wave number (cm^-1)? [1667.82 cm^-1] 
+! Window function: None (0), cos^2(a*t) (1), exp(-t/a) (2), exp(-(t/a)^2) (3) [1]
+0
+! Weight autocorrelation functions by atomic mass (y/n)? [yes]
+no
+! Zero Padding: How many zeros to insert? [3072]
+100000
+! Calculate spectrum up to which wave number (cm^-1)? [1667.82 cm^-1]
 
-! Correct frequency shift of the Verlet integrator (y/n)? [no] 
+! Save autocorrelation function (y/n)? [no]
 
-! Compute power spectrum of certain atoms/molecules (y/n)? [no] 
+! Correct frequency shift of the Verlet integrator (y/n)? [no]
 
-! Proceed anyway (y/n)? [yes] 
+! Compute power spectrum of certain atoms/molecules (y/n)? [no]
 
-! In which trajectory frame to start processing the trajectory? [1] 
+! Proceed anyway (y/n)? [yes]
 
-! How many trajectory frames to read (from this position on)? [all] 
+! Perform a multi-interval analysis (y/n)? [no]
 
-! Use every n-th read trajectory frame for the analysis: [1] 
+! In which trajectory frame to start processing the trajectory? [1]
 
+! How many trajectory frames to read (from this position on)? [all]
+4000
+! Use every n-th read trajectory frame for the analysis: [1]

@@ -15,7 +15,7 @@ title                    = Martini
 ;electric-field-x = 0.0001  0.125     0     0
 ; 2*pi * 20e9 * 1e-12
 
-integrator               = nm
+integrator               = md
 dt                       = 0.010
 nsteps                   = 100000
 nstcomm                  = 100
@@ -26,8 +26,8 @@ nstxout                  = 0
 nstvout                  = 0
 nstfout                  = 0
 nstlog                   = 10000 ; Output frequency for energies to log file
-nstenergy                = 100   ; Output frequency for energies to energy file
-nstxtcout                = 100   ; Output frequency for .xtc file
+nstenergy                = 10000   ; Output frequency for energies to energy file
+nstxtcout                = 1   ; Output frequency for .xtc file
 xtc_precision            = 100
 xtc-grps                 =
 
