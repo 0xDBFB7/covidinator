@@ -48,7 +48,7 @@ y
 ! Compute global power spectrum of whole system (y/n) [yes]
 
 ! Enter the correlation depth of the ACF (in trajectory frames): [1024]
-3000
+750
 ! Write cartesian contributions (x, y, z, xy, xz, yz) of this power spectrum (y/n)? [no]
 
 ! Window function: None (0), cos^2(a*t) (1), exp(-t/a) (2), exp(-(t/a)^2) (3) [1]
@@ -72,5 +72,5 @@ no
 ! In which trajectory frame to start processing the trajectory? [1]
 
 ! How many trajectory frames to read (from this position on)? [all]
-4000
+900
 ! Use every n-th read trajectory frame for the analysis: [1]
