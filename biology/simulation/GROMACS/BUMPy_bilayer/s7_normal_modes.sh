@@ -1,24 +1,20 @@
 GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 
+rm ./output/s7/*
 
-#$GMX_DIR/gmx_mpi genion -p topol.top
+cp s7_normal_modes.mdp output/s6/s7_normal_modes.mdp
+$GMX_DIR/gmx_mpi grompp -f output/s6/s6_run_settings.mdp -c ./output/s6/equilibriated.pdb -p output/topol.top -o ./output/s7/bilayer.tpr
 
-#gmx grompp -f polarize-water.mdp -r system-genion.gro -c system-genion.gro -p system.top -o system_minimization.tpr
+#need 100,000 samples at 10 fs/sample to get 1 GHz freq. reolutio
+# that's a lot of data on disk
 
-rm ./output/s6/*
+cd output/s7
+$GMX_DIR/gmx_mpi mdrun -nsteps 1000 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log
 
-cp s6_run_settings.mdp output/s7/s6_run_settings.mdp
-$GMX_DIR/gmx_mpi grompp -f output/s7/s6_run_settings.mdp -c ./output/s6/equilibriated.pdb -p output/topol.top -o ./output/s7/bilayer.tpr
-cd output/s6
+cd ../../
 
-#short equilibration
-$GMX_DIR/gmx_mpi mdrun -nsteps 500 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log -mtx output/s7/hessian.mtx
+#obtain a subset of trajectories
+gmx make_ndx -natoms 1000 -f ./output/s6/equilibriated.pdb -o ./output/s7/subset.ndx
 
-#$GMX_DIR/gmx_mpi mdrun -nsteps 15000 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log
-#
-#gmx trjconv -f output/s6/traj_comp.xtc -s output/s5/solvated_ionized_minimized.pdb equilibriated.pdb
-#$GMX_DIR/gmx_mpi mdrun -nsteps 500 -s bilayer.tpr -v -c .pdb -o trajectory.trr -e ener.edr -g md.log
-
-#"Perform a short energy minimization of the system containing only the lipids;
-#the only reason for doing this, is getting rid of high forces
-#between beads that may have been placed quite close to each other. "
+#select group 2, POPC (might change)
+echo "2" | $GMX_DIR/gmx_mpi trjconv -n ./output/s7/subset.ndx -f output/s6/traj_comp.xtc -s output/s6/bilayer.tpr -o output/s6/trajectory.pdb

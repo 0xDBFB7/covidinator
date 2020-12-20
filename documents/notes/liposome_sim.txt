@@ -68,3 +68,13 @@ make
 scratch that. Download a precompiled,  then do 
 https://www.ks.uiuc.edu/Research/vmd/current/ig/node6.html
 done.
+
+
+I really, really like TRAVIS's input questionaire system! It probably isn't optimal
+for most types of programs, but it's very thoughtfully designed
+
+a big part of setting up a simulation
+ is knowing what sensible defaults exist and why certain decisions should be made - 
+ it seems like they nailed it here
+
+ 
