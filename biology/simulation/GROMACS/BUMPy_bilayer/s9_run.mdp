@@ -13,7 +13,9 @@ title                    = Martini
 
 ;                V/nm  omega/ps
 ;electric-field-x = 0.5  0.44     10     0
-electric-field-x = 0.5  0.44     5     0
+electric-field-x = 1  6.28     0.25     0
+electric-field-y = 1  6.28     0        0
+
 
 ;name NA or name PO4
 lincs-warnangle = 90
