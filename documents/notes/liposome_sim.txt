@@ -81,3 +81,16 @@ a big part of setting up a simulation
 A mix of 1PUPI to 3 POPC worked great.
 
 Used RMSD visualizer with "name PO4 or name NA" works great. Graphics-representations also is good.
+
+
+Aha! RMSD at a certain frequency depends greatly on the tau_t value using a berendstend thermo.
+Solvent tau of 4 and a lipid tau of 20 yields a sizable increase.
+
+Altering the lipid tau_t has a surprisingly small effect on the shape of the spectrum; 
+a small increase in the height of the peak.
+
+
+aha, this is called "non-equilibrium MD".
+
+https://nanohub.org/resources/7582/download/Martini_L10_NonequilibruimMD.pdf
+

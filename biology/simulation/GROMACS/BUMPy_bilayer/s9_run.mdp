@@ -13,8 +13,9 @@ title                    = Martini
 
 ;                V/nm  omega/ps
 ;electric-field-x = 0.5  0.44     10     0
-electric-field-x = 1  6.28     0.25     0
-electric-field-y = 1  6.28     0        0
+electric-field-x = 0.001  0.44     0.25     0
+;electric-field-y = 0.001  0.44     0        0
+
 
 
 ;name NA or name PO4
@@ -55,7 +56,7 @@ rvdw                     = 1.1 ;(for use with Verlet-pairlist)
 
 tcoupl                   = berendsen
 tc-grps                  = PUPI POPC W ION
-tau_t                    = 4.0   4.0 4.0 4.0
+tau_t                    = 20.0   20.0 4.0 20.0
 ref_t                    = 298   298 298 298
 Pcoupl                   = berendsen  ; parrinello-rahman
 Pcoupltype               = semiisotropic

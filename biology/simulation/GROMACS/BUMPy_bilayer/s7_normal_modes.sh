@@ -3,7 +3,7 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 rm ./output/s7/*
 
 cp s7_normal_modes.mdp output/s7/s7_normal_modes.mdp
-$GMX_DIR/gmx_mpi grompp -f output/s7/s7_normal_modes.mdp -c ./output/s6/equilibriated.pdb -p output/topol.top -o ./output/s7/bilayer.tpr
+$GMX_DIR/gmx_mpi grompp -f output/s7/s7_normal_modes.mdp -c ./output/s6/equilibriated.pdb -p output/topol.top -o ./output/s7/bilayer.tpr -maxwarn 1
 
 #need 100,000 samples at 10 fs/sample to get 1 GHz freq. reolutio
 # that's a lot of data on disk
