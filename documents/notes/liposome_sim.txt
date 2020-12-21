@@ -78,3 +78,6 @@ a big part of setting up a simulation
  it seems like they nailed it here
 
  wrapping with all PUPI didn't work at all - instability, Fmax=1e5
+A mix of 1PUPI to 3 POPC worked great.
+
+Used RMSD visualizer with "name PO4 or name NA" works great. Graphics-representations also is good.
