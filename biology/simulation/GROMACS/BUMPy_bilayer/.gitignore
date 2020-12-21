@@ -13,3 +13,6 @@ toppar/
 *.trr
 *.xtc
 output_test_1/
+!water.gro
+!water_name_2.gro
+!toppar/

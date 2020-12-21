@@ -11,7 +11,9 @@ $GMX_DIR/gmx_mpi mdrun -nsteps 10000 -s bilayer.tpr -v -c equilibriated.pdb -o t
 cd ../../
 
 
-
+# Things fall apart; the centre cannot hold;
+# The best lack all conviction, while the worst
+# Are full of passionate intensity.
 
 #--------------
 #this stuff is no longer needed; travis has a cool zero-pad function for just this purpose.
