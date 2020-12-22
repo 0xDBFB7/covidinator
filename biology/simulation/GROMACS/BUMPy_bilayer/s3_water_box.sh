@@ -17,7 +17,7 @@ $GMX_DIR/gmx_mpi solvate -cs water.gro -cp ./output/s3/centered.gro -p output/to
 $GMX_DIR/gmx_mpi solvate -cs water_name_2.gro -cp ./output/s3/solvated.gro -p output/topol.top -o output/s3/solvated.gro -shell 2
 
 
-$GMX_DIR/gmx_mpi grompp -f s2_minimize_settings.mdp -c ./output/s3/solvated.gro -p output/topol.top -o ./output/s3/solvated_bilayer.tpr
+$GMX_DIR/gmx_mpi grompp -f s2_minimize_settings.mdp -r ./output/s3/solvated.gro -c ./output/s3/solvated.gro -p output/topol.top -o ./output/s3/solvated_bilayer.tpr
 
 #$GMX_DIR/gmx_mpi trjconv -pbc mol -ur compact
 

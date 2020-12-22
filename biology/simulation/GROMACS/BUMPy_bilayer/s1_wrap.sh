@@ -1,7 +1,7 @@
 
 # if you get a collision (inf force) on minimize, twiddle the 150 to 149,148,151 or so to fix clashes
 
-python3 bumpy.py -f ./output/s0/bilayer.pdb -o ./output/s1/membrane.pdb -n ./output/s1/index.ndx -p ./output/s1/bumpy_output.top  -s sphere -z 7 -g r_sphere:150
+python3 bumpy.py -f ./output/s0/bilayer.pdb -o ./output/s1/membrane.pdb -n ./output/s1/index.ndx -p ./output/s1/bumpy_output.top  -s sphere -z 7 -g r_sphere:152
 cat includes.top ./output/s1/bumpy_output.top > ./output/topol.top
 
 # There appears to be a bug in bumpy with Z values > 100

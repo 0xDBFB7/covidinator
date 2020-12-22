@@ -66,12 +66,16 @@
  ;id 	type 	resnr 	residu 	atom 	cgnr 	charge
   1 	P4 	1 	W 	W 	1 	0
 
-  ;;;;;; WATER (representing 4 H2O molecules)
+  ;;;;;; WATER, except it's BOUndary!
 
   [ moleculetype ]
   ; molname  	nrexcl
-    W2 	    	1
+    BU 	    	1
 
   [ atoms ]
   ;id 	type 	resnr 	residu 	atom 	cgnr 	charge
-   1 	P4 	1 	W 	W 	1 	0
+   1 	P4 	1 	BND	BU 	1 	0
+
+   [ position_restraints ]
+   ;  i funct       fcx        fcy        fcz
+      1    1         1000     1000       1000

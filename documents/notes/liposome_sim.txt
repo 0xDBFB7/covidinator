@@ -94,3 +94,7 @@ aha, this is called "non-equilibrium MD".
 
 https://nanohub.org/resources/7582/download/Martini_L10_NonequilibruimMD.pdf
 
+
+Warning: atom name 1251287 in output/topol.top and ./output/s3/solvated.gro does not match (W - W2)
+
+verify that that's working properly
