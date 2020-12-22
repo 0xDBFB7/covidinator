@@ -3,7 +3,7 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 rm ./output/s9/*
 
 cp s9_run.mdp output/s9/s9_run.mdp
-$GMX_DIR/gmx_mpi grompp -f output/s9/s9_run.mdp -c ./output/s7/equilibriated.pdb -p output/topol.top -o ./output/s9/bilayer.tpr -maxwarn 1
+$GMX_DIR/gmx_mpi grompp -f output/s9/s9_run.mdp -r ./output/s7/equilibriated.pdb -c ./output/s7/equilibriated.pdb -p output/topol.top -o ./output/s9/bilayer.tpr -maxwarn 1
 
 cd output/s9
 $GMX_DIR/gmx_mpi mdrun -nsteps 10000 -s bilayer.tpr -v -c equilibriated.pdb -o trajectory.trr -e ener.edr -g md.log

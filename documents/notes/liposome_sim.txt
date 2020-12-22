@@ -98,3 +98,8 @@ https://nanohub.org/resources/7582/download/Martini_L10_NonequilibruimMD.pdf
 Warning: atom name 1251287 in output/topol.top and ./output/s3/solvated.gro does not match (W - W2)
 
 verify that that's working properly
+
+hang on a min, if 4 ps damping is actually reasonable for solvent, why would a non-eq
+sim be more meaninful? 
+
+really a friction term would be better, but whatever

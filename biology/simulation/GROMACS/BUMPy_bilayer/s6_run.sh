@@ -9,7 +9,7 @@ GMX_DIR="/home/arthurdent/Programs/gromacs-2020.1/gromacs-2020.1/build/bin"
 rm ./output/s6/*
 
 cp s6_run_settings.mdp output/s6/s6_run_settings.mdp
-$GMX_DIR/gmx_mpi grompp -f output/s6/s6_run_settings.mdp -c ./output/s5/solvated_ionized_minimized.pdb -p output/topol.top -o ./output/s6/bilayer.tpr
+$GMX_DIR/gmx_mpi grompp -f output/s6/s6_run_settings.mdp -r ./output/s5/solvated_ionized_minimized.pdb -c ./output/s5/solvated_ionized_minimized.pdb -p output/topol.top -o ./output/s6/bilayer.tpr
 cd output/s6
 
 #short equilibration

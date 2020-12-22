@@ -55,14 +55,14 @@ vdw_type                 = cutoff ;(for use with Verlet-pairlist)
 rvdw                     = 1.1 ;(for use with Verlet-pairlist)
 
 tcoupl                   = berendsen
-tc-grps                  = PUPI POPC W ION
-tau_t                    = 20.0   20.0 4.0 20.0
-ref_t                    = 298   298 298 298
-Pcoupl                   = berendsen  ; parrinello-rahman
-Pcoupltype               = semiisotropic
-tau_p                    = 12.0  ;parrinello-rahman is more stable with larger tau-p, DdJ, 20130422
-compressibility          = 3e-4       3e-4
-ref_p                    = 1.0        1.0
+tc-grps                  = PUPI     POPC      W      ION       BND
+tau_t                    = 100.0     100.0    100.0  100.0     0.1
+ref_t                    = 298      298       298    298       298
+;Pcoupl                   = berendsen  ; parrinello-rahman
+;Pcoupltype               = semiisotropic
+;tau_p                    = 12.0  ;parrinello-rahman is more stable with larger tau-p, DdJ, 20130422
+;compressibility          = 3e-4       3e-4
+;ref_p                    = 1.0        1.0
 
 gen_vel                  = yes
 gen_temp                 = 298
