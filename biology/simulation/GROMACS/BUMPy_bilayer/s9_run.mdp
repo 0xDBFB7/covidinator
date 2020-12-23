@@ -13,7 +13,7 @@ title                    = Martini
 
 ;                V/nm  omega/ps
 ;electric-field-x = 0.5  0.44     10     0
-electric-field-x = 0.0001  0.37     0.25     0
+;electric-field-x = 0.0001  0.37     0.25     0
 ;electric-field-y = 0.001  0.44     0        0
 
 
@@ -86,7 +86,7 @@ rot-ngroups              = 1
 ; Rotation group name
 rot-group0               = POPC
 ; Rotation potential. Can be iso, iso-pf, pm, pm-pf, rm, rm-pf, rm2, rm2-pf, flex, flex-t, flex2, flex2-t
-rot-type0                = flex2-t
+rot-type0                = iso-pf
 ; Use mass-weighting of the rotation group positions
 rot-massw0               = yes
 ; Rotation vector, will get normalized
@@ -94,7 +94,7 @@ rot-vec0                 = 1 0 0
 ; Pivot point for the potentials iso, pm, rm, and rm2 [nm]
 rot-pivot0               = 4.31852e+00  1.73201e+00  1.89800e+00
 ; Rotation rate [degree/ps] and force constant [kJ/(mol*nm^2)]
-rot-rate0                = 10.0
+rot-rate0                = 1.0
 rot-k0                   = 500.0
 ; Slab distance for flexible axis rotation [nm]
 rot-slab-dist0           = 1.5
