@@ -103,3 +103,19 @@ hang on a min, if 4 ps damping is actually reasonable for solvent, why would a n
 sim be more meaninful? 
 
 really a friction term would be better, but whatever
+
+this is interesting: the inside and outside have two different modes and are decoupled!
+
+https://www.ks.uiuc.edu/Research/vmd/mailing_list/vmd-l/6885.html
+
+
+Given the 
+
+why isn't there an overshoot in the sim that would indicate Q>1?
+
+OOOH Yu et al have made a CG model of the virion! Yaaay!
+
+
+In fact, there's some reason to believe that an extremely high statistical certainty in
+an otherwise inconsistent field is an artifact of systematics?
+

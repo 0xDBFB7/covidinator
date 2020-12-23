@@ -13,7 +13,7 @@ title                    = Martini
 
 ;                V/nm  omega/ps
 ;electric-field-x = 0.5  0.44     10     0
-electric-field-x = 0.001  0.44     0.25     0
+electric-field-x = 0.0001  0.37     0.25     0
 ;electric-field-y = 0.001  0.44     0        0
 
 
@@ -72,3 +72,39 @@ constraints              = none
 constraint_algorithm     = Lincs
 continuation             = no
 lincs_order              = 4
+
+
+; ENFORCED ROTATION
+; Enforced rotation: No or Yes
+rotation                 = Yes
+; Output frequency for angle, torque and rotation potential energy for the whole group
+rot-nstrout              = 10
+; Output frequency for per-slab data (angles, torques and slab centers)
+rot-nstsout              = 10
+; Number of rotation groups
+rot-ngroups              = 1
+; Rotation group name
+rot-group0               = POPC
+; Rotation potential. Can be iso, iso-pf, pm, pm-pf, rm, rm-pf, rm2, rm2-pf, flex, flex-t, flex2, flex2-t
+rot-type0                = flex2-t
+; Use mass-weighting of the rotation group positions
+rot-massw0               = yes
+; Rotation vector, will get normalized
+rot-vec0                 = 1 0 0
+; Pivot point for the potentials iso, pm, rm, and rm2 [nm]
+rot-pivot0               = 4.31852e+00  1.73201e+00  1.89800e+00
+; Rotation rate [degree/ps] and force constant [kJ/(mol*nm^2)]
+rot-rate0                = 10.0
+rot-k0                   = 500.0
+; Slab distance for flexible axis rotation [nm]
+rot-slab-dist0           = 1.5
+; Minimum value of Gaussian function for the force to be evaluated (for flex* potentials)
+rot-min-gauss0           = 0.001
+; Value of additive constant epsilon' [nm^2] for rm2* and flex2* potentials
+rot-eps0                 = 0.0001
+; Fitting method to determine angle of rotation group (rmsd, norm, or potential)
+rot-fit-method0          = norm
+; For fit type 'potential', nr. of angles around the reference for which the pot. is evaluated
+rot-potfit-nsteps0       = 21
+; For fit type 'potential', distance in degrees between two consecutive angles
+rot-potfit-step0         = 0.25
