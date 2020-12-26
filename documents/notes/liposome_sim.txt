@@ -115,7 +115,81 @@ why isn't there an overshoot in the sim that would indicate Q>1?
 
 OOOH Yu et al have made a CG model of the virion! Yaaay!
 
+Unfortunately, high dsRNA.
 
 In fact, there's some reason to believe that an extremely high statistical certainty in
 an otherwise inconsistent field is an artifact of systematics?
+
+
+------------ Rotation ---------------
+
+rotating the liposome. 10 deg/ps caused lincs warnings. 1 deg/ps doesnt.
+probably a timestep effect.
+That's 17.4 GHz (1/ps).
+
+Very pretty "slip" boundary at the liposome. very cool.
+
+torque tau0 stabilizes at 1e6 kg/mol = 1.661e-15 Nm.
+
+
+
+The liposome radius is 150 nm. Area = 4 pi r^2.
+
+Can expect the ~16x higher ((60)^2 / (15)^2).
+
+2.6e-14 Nm. 
+
+>>> (2.6e-14 N m) / 60 nm -> nanonewton
+
+  2.6e-14 N × m / 60 nm ➞ nN
+
+   = 433.333 nN
+
+oof!
+
+k = 1.48571e-24 N·m·s/rad
+
+At a megavolt and 1e2 charge, 0.5 picometers, we get freq = 3e4. Maaaaaybe?
+
+Given that previous electrorotation of influenza only report laser induced damage, even 
+at really high fields, it hardly seems plausible that a few rpm are going to matter.
+
+---------------------------------------------------
+
+THOMAS SCHNELLE
+
+It was said that electrorotation was not sufficient to determine the species of the thing.
+But is that really true nowadays? Maybe this warrants more work... 
+
+There are no papers on COVID electrorotation since 2019!!!!!!
+
+ah, this isc alled "electrokinetics".
+
+For each particle type, there exists a near unique
+profile of particle rotation rate with varying applied electric
+field frequency for a given environmental condition.
+
+"Smaller particles can also be investigated without changing the equipment configuration, with a theoretical particle
+diameter limitation of 800 nm proposed by Eppman
+(Eppman et al. 1996). However, in 1999, Gimsa reported
+electrorotation of the influenza virus (Gimsa 1999), although
+this may have been due to clusters of viruses rather that an
+individual virus being rotated."
+
+
+
+We want to detect - say - down to 1000 particles (nasal sample...). 
+
+Schnelle is a good search term for this.
+
+The great thing about electrorotation is that it will be synchronous; there'll be a 
+distinctive 
+
+Unfortunately it seems like it needs a probe beam or other sort of optical detector to get
+the low-level sensing.
+maybe secondary sensing probes?
+
+-----------------------------------------------------
+
+
 

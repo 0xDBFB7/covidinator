@@ -1,0 +1,124 @@
+%!TeX root = comment
+\documentclass[fleqn,10pt]{paper}
+
+\usepackage[left=2cm,right=2cm,
+top=0.5cm,
+bottom=1.5cm,%
+headheight=11pt,%
+letterpaper]{geometry}
+
+\include{preamble}
+
+
+\begin{document}
+
+
+
+Hello you wonderful people.
+
+Perhaps you are here because of the papers
+
+\begin{quote}
+	Yang S-C, Lin H-C, Liu T-M, Lu J-T, Hung W-T, Huang Y-R, et al. Efficient Structure Resonance Energy Transfer from Microwaves to Confined Acoustic Vibrations in Viruses. Scientific Reports 2015;5:1–10. https://doi.org/10.1038/srep18030.
+\end{quote}
+
+\begin{quote}
+Liu T-M, Chen H-P, Wang L-T, Wang J-R, Luo T-N, Chen Y-J, et al. Microwave resonant absorption of viruses through dipolar coupling with confined acoustic vibrations. Appl Phys Lett 2009;94:043902. https://doi.org/10.1063/1.3074371.
+\end{quote}
+
+Or other reports by this team. 
+
+These papers have received some attention due to the apocalypse: for instance,
+
+\begin{quote}
+	Burkhartsmeyer J, Wang Y, Wong KS, Gordon R. Optical Trapping, Sizing, and Probing Acoustic 
+	Modes of a Small Virus. Applied Sciences 2020;10:394. https://doi.org/10.3390/app10010394.
+\end{quote}
+
+
+\begin{quote}
+Uzunoglu N. Theoretical Analysis of the Induction of Forced Resonance Mechanical Oscillations to Virus Particles by Microwave Irradiation:Prospects as an Anti-virus Modality 2020. https://doi.org/10.20944/preprints202004.0462.v1.
+\end{quote}
+
+
+I have attempted to replicate these results, primarily in Bacteriophage T4, without success. 
+However, I have not attained the same regime of electric field, and I cannot yet register anything 
+approaching a conclusion into the scientific record.
+
+However, I think it may be useful to note a few things; to register a tentative negative result in light of the large positive publication bias observed in this field (see the excellent meta-analysis by Vijayalaxmi \cite{Comprehensive2018}).
+
+I do not wish to even slightly degrade the work of the Sun group. It must have taken a great deal of time and effort to conduct, and it is very carefully designed, with many orthogonal measurements.
+
+Indeed, I have no conclusion as to whether the effect seen exists. The effect ultimately requires a 
+fully atomistic treatment, involving a very subtle re-arrangement of the lipid bilayer; ample 
+mechanisms for such an effect exist to account for Sun et al's observations. For instance, see 
+Liburdy's observations of liposome leakage due to oxygen.
+
+Ultimately I do not believe sufficient high-quality data exists to make a determination.
+
+Any expert would probably have immediately identified this; I am not one. 
+
+\section{The observed charge of q=$10^7 e^-$ appears to be difficult to account for via the 
+suggested hypothesis.}
+
+The proteins coded for by the influenza genome do not suggest such a large charge imbalance. The 
+HIV capsid, for instance, has a charge not greater than $4\times 10^3 e^-$.
+
+Such a charge would imply that some 1 in 20 atoms in the virus are associated with a mobile 
+electron. This is an exceptional charge, beyond that of any amino acid species.
+
+Neither can osmotic pressure account for such a charge. 
+
+Induced polarization and/or the associated ion migration is seen in electroporation experiments, 
+and could account for such a charge, but is not expected at frequencies > 100 MHz or at  See ICNIRP 
+reviews on the topic.
+
+\section{Reliable microwave absorption spectra are extremely difficult to obtain.}
+
+Precisely the same story has played out before. Edwards et al. 
+
+The experimenters go to great lengths to use various different test jigs, but, crucially, no error analysis like Foster's is mentioned for any of them. Indeed, in the previous paper on nanoparticle resonance, the experimenters note that the effect was not observed until the jig was modified.
+
+\section{It is possible, with some imagination, to explain the result as a thermal artifact.}
+
+The temperature is measured via a conventional infrared thermometer to be below the lipid melting point, but is otherwise uncontrolled. Previous experiments have shown that such readings are not sufficient to isolate non-thermal effects. 
+
+Figure 6 is then difficult to explain. If the effect is thermal, why would the peak of the inactivation curve lie correspond perfectly to the one obtained by spectroscopy? The gain flatness of the antenna and amplifier may 
+
+
+
+{\Huge \textbf{However}}
+
+\section{Q=2 is somewhat reasonable, surprisingly.}
+
+As noted in the papers, unlike other biological systems it's plausible that the virion would have modes that are at least very close to being under-damped. Burkhartsmeyer offer reasonable evidence for this (although resonance-like artifacts are not unheard-of in Raman spectroscopy). 
+
+This is expected by e.g. basic Stokes viscous drag. The distinction is perhaps because of the large mass that coherently contributes to the oscillation unlike the situations Adair consider with small patches of membranes. A small catch is that the same Stokes continuum arguments suggest that microtubules (if imbued with the same polarization) would exhibit similar behavior, which is not obviously observed in previous studies.
+
+Coarse molecular dynamics sims also concur with Q=1.5. Experiments by Tsen on femtosecond impulses 
+do too (although some care must be taken here as some of these results have been discredited).
+
+This has some pretty awesome implications if it is correct, but whether the small amplitude 
+amplification factor associated with this effect will be important is not known to me.
+
+\section{None of the issues raised above necessarily rule out a non-thermal "keyhole" with 
+megavolt/m fields.}
+
+There is data to support a little-known "prompt" electroporation effect of viruses at 
+some $10^7 \text{V/m}$. Single pulses along these lines are not obviously damaging, per NATO 
+Research Task Group 189. With some optimization, a keyhole between the electroporation threshold 
+for may be found.
+
+\section{The suggestion by Uzunoglu that precursor pulses are satisfactory is prescient.} 
+
+The centimeter-thick layer of highly-conductive muscle which surrounds the lungs prevents treatment 
+without thermal damage.
+ 
+However, a carefully shaped pulse that matches the Cole-Cole dispersion relation of tissue 
+(apparently, a sawtooth) appears to side-step Beer's law decay and drives the oscillator some 300x 
+more strongly.
+
+
+
+
+\end{document}
