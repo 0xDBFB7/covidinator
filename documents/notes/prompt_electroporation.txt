@@ -18,3 +18,84 @@ Silicone oil breaks down at 10-20 kv/mm.
 
 not a whole lot of energy! The TEM lasers use 
 
+
+if AC coupled, pulse width can be varied with argon pressure?
+
+a 2 mil PTFE foil should do it.
+
+
+
+
+     ||
+=====||
+
+
+
+
+The nucleus of human cells is huge, we don't need to worry about that!
+
+
+
+Zeppenwolf
+
+can lathe custom holders
+
+Oh ho ho! Pressurized spark gaps are ITAR restricted!
+
+Jobava has eq 2, 
+
+run bacteria through to isolate some kind of effect?
+
+
+
+Two layers of the 1/2" Kapton (<0.15 mm) can do 10 kv.  
+
+Man, there are these papers fr
+
+A 5 to 1 pulse generator to spark gap 
+
+
+
+
+Built a spark gap using machinist's parallels. Not smooth enough, surprisingly; 
+preferentially goes across certain spots.
+
+this might be an issue with this "linear" design. while it offers a low inductance, 
+
+conversation with Mason and Applied Ion. Good stuff.
+
+there are transient digitizers, see Sandia document, which can do this sort of measurement.
+
+the scan conversion tube, or the Fletcher micro oscillograph, seem like extremely valuable
+devices that have been partially lost to time. 10-ghz  recording?
+
+seem like extremely simple devices, really. 
+
+
+
+the jitter of spark gaps means it's hard to make a sampling oscilloscope!
+
+
+the planar spark gap, ~0.25 mm, poorly aligned single stage already gets us a 5 ns falling edge! 
+
+that's pretty cool!
+
+so-called "peaking switch" or "sharpening switch"
+
+
+
+Ceramic NLTLs need very large voltages to exhibit the effect. is 10 kv enough?
+
+10% sulfuric acid apparently can strip oxides off copper pipe. good for the inside I guess.
+
+
+there are a few RF transistors on digikey that might be effective...
+
+can we 
+
+
+undoped silicon auston switches look pretty simple to build. just need a fast megawatt laser...
+
+
+
+

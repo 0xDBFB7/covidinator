@@ -11,6 +11,8 @@
 \nonstopmode
 
 
+
+
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -55,7 +57,11 @@
 \usepackage[flushleft]{threeparttable}
 
 %\usepackage{biblatex}
-\usepackage[backend=bibtex8, sorting=none]{biblatex}
+\usepackage[backend=bibtex8, sorting=none, style=chem-angew]{biblatex}
+
+\let\cite\footfullcite
+
+%\let\cite\footcite
 
 \addbibresource{processed.bib}
 %biblatex has a zoterordfxml
@@ -186,3 +192,33 @@
 	\end{list}%
 }%
 \makeatother
+
+
+
+
+
+
+
+%%%%********************************************************************
+%title link to doi
+\newbibmacro{string+doiurlisbn}[1]{%
+	\iffieldundef{doi}{%
+		\iffieldundef{url}{%
+			\iffieldundef{isbn}{%
+				\iffieldundef{issn}{%
+					#1%
+				}{%
+					\href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+				}%
+			}{%
+				\href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+			}%
+		}{%
+			\href{\thefield{url}}{#1}%
+		}%
+	}{%
+		\href{https://doi.org/\thefield{doi}}{#1}%
+	}%
+}
+
+\DeclareFieldFormat{journaltitle}{\usebibmacro{string+doiurlisbn}{\mkbibemph{#1}}}

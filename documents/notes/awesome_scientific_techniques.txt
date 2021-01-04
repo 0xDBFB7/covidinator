@@ -1,0 +1,32 @@
+
+Format:
+
+
+Abstract
+Benefits
+Hazards
+
+
+
+- Microwave
+
+- Transmission Lines
+    - Non-grounded Coplanar Waveguide
+        Ground is adjacent; no vias required.
+
+
+
+- Measurement
+    - Diode detector probes 
+        A high impedance
+
+    
+- 
+
+
+
+
+- Mathematics
+    - 
+
+    

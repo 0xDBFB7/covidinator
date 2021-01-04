@@ -1,0 +1,83 @@
+
+
+
+As the sweep speed increases, however, the dot becomes dimmer; lower electron flux. 
+One solution is to run the thing hotter and with a smaller dot, like microoscillographs. 
+
+Direct electron to photographic plate is sometimes used, too.
+Image intensifiers, or microchannel electron multipliers can help 
+(angled holes cause collisions, secondary electrons are emitted by the dielectric and accelerated, or electron beam induced conductivity). 
+
+The propagation speed of the beam leads to a lag; however this shouldn't be a huge issue.
+
+
+Scan converters like the 7912 can form a vidicon tube. 
+
+Modern sensors have a layer of glass right on the sensor, which seems very hard to remove.
+
+However, old VGA sensors have a package with a glass window offset from the bare sensor die
+[Servoli 2011]. Happened to have a suitable webcam.
+
+UV eproms apparently have a "threshold" that can be measured and can be written with an e-beam
+in the same way.
+
+Broke the sensor glass by scoring with carbide pushing with thumb and removing the fragments.
+putting tape over would probably have been a good idea. A few pixels are dead.
+
+Sensor is 3.5 mm by 3 or so. 
+
+delay lines look like a good option for triggering.
+
+
+hdcs - 1020
+
+whatever
+
+sensor noise floor is 70 e- / pixel. pretty good.
+
+couldn't get the first sensor to seal. destroyed it.
+
+broke open a coby snapp camera. same sort of sensor. this time the window was held on with a
+silicone elastomer. broke it, jet of 425c air melted the silicone and it came off. 
+might not have even had to break it.
+
+hey, the deflection will have to 
+
+bloody annoying to seal this up.
+
+FUSES! glass tubes, right diameter! just need to drill a fine hole 
+
+got some phosphor from a broken tube. hard to keep it from vanishing.
+
+they'll probably hold a fine vacuum, too...
+
+use copper tube as the vacuum line.
+
+-------------------oh, did I have the polarity right?-------------------
+
+"Bussmann
+does not offer hermetically sealed fuses for this type of
+application"
+
+doesn't seem like fuses are actually sealed...
+
+it's pretty hard to get a seal to the sensor.
+
+glass fuses pop pretty violently when heated with 425 c air.
+just epoxy on the ends. comes off easily.
+
+"in-vacuum ccd camera"
+
+
+might be able to drive a laser with one of those ECL picosecond drivers, then operate
+a photoconductive switch?
+
+Auston switch
+
+sipms only do a few ns
+oh, no, scratch that, that's the pulse width - the rise time of a TSV spim is ~90 ps @25v!
+
+huh, there are electron detectors on digikey AXUV20HS1
+
+
+

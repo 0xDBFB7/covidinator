@@ -1163,13 +1163,13 @@ we could use an inactivated flu virus of some type, seems like they're still BSL
 Tectiviridae 
 
 
-: My outer lipid envelope fuses with the host, inserting the inner genome-containing
+*viridae: My outer lipid envelope fuses with the host, inserting the inner genome-containing
 protein capsid. Sensible.
-tectiviridae: wHaT If my lipid MeMBranE was InSide ThE caPsId?
-v.: no that doesn't make se-
-tectiviridae: aaaaaaaaaHAHAHAHAHA
-v.: you look like an idiot. Wear your coat like everyone else.
-tectiviridae: <pouts> MY GENOME IS INSIDE A LIPID BILAYER and you can't stop meeee
+Tectiviridae: wHaT If my lipid MeMBranE was InSide ThE caPsId?
+*viridae: no that doesn't make se-
+Tv: aaaaaaaaaHAHAHAHAHA
+Ov.: you look like an idiot. Wear your coat like everyone else.
+Tv: <pouts> MY GENOME IS INSIDE A LIPID BILAYER and you can't stop meeee
 v.: ...
 someone put me in EDTA then I'll HAVE NO CAPSID AT ALL
 
@@ -1197,5 +1197,4 @@ then the resonant frequency of practically all would be within the sweep we're u
 interlibrary loan
 
 hathitrust is good to get the page numbers
-
 
