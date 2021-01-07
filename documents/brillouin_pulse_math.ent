@@ -1,0 +1,48 @@
+\@doanenote {10}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Microwave2012b}{}}}
+\@endanenote 
+\@doanenote {11}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Waveform2003}{}}}
+\@endanenote 
+\@doanenote {12}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Methods1989}{}}}
+\@endanenote 
+\@doanenote {13}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Complex2020}{}}}
+\@endanenote 
+\@doanenote {14}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Optimum1964}{}}}
+\@endanenote 
+\@doanenote {15}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{conjugate1967}{}}}
+\@endanenote 
+\@doanenote {16}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Conjugate}{}}}
+\@endanenote 
+\@doanenote {17}
+macro:->\protecting
+{\blxmkbibnote
+{foot}{\blxciteicmd
+{footfullcite}{}{}{Optimum1964}{}}}
+\@endanenote 

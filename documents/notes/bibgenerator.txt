@@ -1,0 +1,7 @@
+
+ export COVID_collection to BetterBibLateX
+
+grep --color='auto' -P -n "[\x80-\xFF]" references.bib
+tells you if there're unicode issues
+ 
+

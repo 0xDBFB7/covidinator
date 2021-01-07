@@ -97,5 +97,27 @@ can we
 undoped silicon auston switches look pretty simple to build. just need a fast megawatt laser...
 
 
+oh man Li et al have really done it - a marx PFL like the other paper, except with a
+Diodes Inc fast avalanche transistor
+
+
+
+
+
+
+----------------------------------------
+
+Li use a FMMT417TDCT-ND‎avalanche transistor
+what's the difference between an avalanche transistor and a diode?
+
+not many transistors are designed for avalanche use apparently 
+
+Liu Jinuan 
+
+
+
+
+
+
 
 

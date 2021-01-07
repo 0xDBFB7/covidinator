@@ -13,6 +13,7 @@
 
 
 
+
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -44,14 +45,20 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{lettrine}
-%\usepackage[T1]{fontenc}
+
+
+% This allows the endnote and reference footnotes to float with the text.
+%\usepackage{enotez}
+%\let\footnote\endnote
+%\let\footnotetext\endnotetext
+%\let\footnotemark\endnotemark
 
 \usepackage{soul}
 
 
-%\usepackage{draftwatermark}
-%\SetWatermarkText{DRAFT}
-%\SetWatermarkScale{0.25}
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{0.25}
 
 \usepackage{booktabs,caption}
 \usepackage[flushleft]{threeparttable}
@@ -61,9 +68,11 @@
 
 \let\cite\footfullcite
 
+
+
 %\let\cite\footcite
 
-\addbibresource{processed.bib}
+\addbibresource{references.bib}
 %biblatex has a zoterordfxml
 % might avoid the need for python bibtex_collections.py
 

@@ -2,26 +2,24 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
-
+\section{The Brillouin precursors}
 
 Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors.
 
-Are similar to soliton 
+The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 
+book\cite{Wave1960} on the topic. \footnotemark
 
+These are fascinating structures which arise as a result of two aspects (Albanese 
+\cite{Shortrisetime1989}): 
 
+The highly dispersive nature of tissue, which causes a peculiar distortion of short pulses,
 
-The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 book\cite{Wave1960} on the topic. \footnotemark
+The change in loss (the complex part of the permittivity, or the) and increase in penetration depth 
+- 
 
-
-\footnotetext{Some of the initial work on these precursors (or "forerunners", as they were known at the time) apparently neglected some of the higher-order terms, leading to the conclusion that the signals were "very weak". However, the amplitude is often much greater than that of the carrier. See wikipedia.}
-
-These are fascinating structures which arise as a result of two aspects Albanese \cite{Shortrisetime1989}: 
-
-The highly dispersive nature of tissue, which
-
-The change in loss - and increase in penetration depth - 
-
-A third aspect leads to the formation of the prototypical brilluoin precursor: any "sharp" beginning or end of a wave, or other spatially confined structure, includes harmonics up to these \footnotemark
+A third aspect leads to the formation of the prototypical brilluoin precursor: any "sharp" 
+beginning or end of a tone, or other spatially confined structure in a waveform, includes harmonics 
+up to these \footnotemark
 
 \footnotetext{it is interesting to note that a similar - if not equivalent - effect leads to the Heisenberg uncertainty principle. The more localized a }
 
@@ -29,11 +27,16 @@ At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha
 
 
 
-At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the brilluoin train drives the virus with an equally, implementing this would decrease the field at the skin required for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
+At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the Brillouin train 
+drives the virus with an equally, implementing this would decrease the field at the skin required 
+for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than 
+an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
 
 However, the energy contained in such a standard pulsed-sine or gaussian train decays very quickly, 
 
 These precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose,
+
+Also another really good paper that I can't find.
 
 \footnotetext{Well, Ong don't really observe the precursor itself, it seems.}
 
@@ -57,7 +60,10 @@ Note: this isn't truly transient - the fourier integral is still periodic, wrapp
 attack pattern alpha
 
 
- Unfortunately, despite NLTLs producing strong wideband components, they do not appear to satisfy the requirements for Brillouin pulses. 
+Unfortunately, despite NLTLs producing strong wideband components, in cursory simulations they do 
+not appear to satisfy the requirements for Brillouin pulses. Our working hypothesis is that this is 
+because of destructive interference from the falling edge that immediately follows; but this is 
+mere speculation.
 \begin{autem}
 	This should be replicated.
 \end{autem}
@@ -71,8 +77,10 @@ Transient solution
 A qualitative statement of the problem:
 
 \begin{toolchain}
-An arbitrary waveform propagates through a dispersive, lossy medium with a certain analytic complex permittivity. It then drives a
-damped harmonic oscillator that is initially at rest.\\
+An arbitrary waveform propagates through a dispersive, lossy medium with a certain analytic complex 
+permittivity. 
+
+It then drives a damped harmonic oscillator that is initially at rest.\\
 
 What waveform produces the peak transient amplitude on the oscillator?
 \end{toolchain}
@@ -116,11 +124,14 @@ Optimal pulses for several situations in Debye and Lorentz media have been deter
 Macke \cite{Simple2012} have come up with a number of other analytic representations for various signals, such as chirped gaussian pulses.
 
 
+\printendnotes
 
+\subsubsection{Zhu et al 's dispersive waveform optimization propagation formulation}
 
-\section{Zhu et al 's dispersive waveform optimization propagation formulation}
-
-The most promising analytical technique that we explored was essentially equivalent to Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}, This is based on a lagrange multiplier technique\cite{Methods1989} and variational calculus\footnotetext .
+The most promising analytical technique that we explored was essentially equivalent to Zhu, Hum, 
+Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}, 
+This is based on a lagrange multiplier technique\cite{Methods1989} and variational 
+calculus\footnotetext{} .
 
 $$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
 
@@ -150,7 +161,8 @@ Where * is the complex conjugate.\\
 
 The $\nabla H() = H()^\star$ thing seems to come from Franks, Signal Theory, 1969, page 140 onwards; I cannot make heads or tails of his formulation.
 
-Neither Mathematica's VariationalD, Matlab's Fundiff, nor Maple's functionalDerivative seem to yield any meaningful result for grad xi.\\
+Neither Maxima, SageMath, Mathematica's VariationalD, Matlab's Fundiff, nor Maple's 
+functionalDerivative seem to yield any meaningful result for grad xi.\\
 
 Then set
 
@@ -164,17 +176,14 @@ And now,
 
 $$\nabla \xi = 0$$
 
-
-
-
-
 Pulse energy, rather than peak field, is not obviously the ideal constraint for this problem; however, it is the one most compatible with lagrange multiplier techniques.
 
 Tufts \cite{Optimum1964}
 
-The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action (see Feynman lectures). In these types of problems, it appears that the path of integration through space from endpoints a to b is replaced with the whole frequency domain from -$\infty$ to +$\infty$. 
-
-Aha! That's the ticket! 
+The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or 
+the Principle of Least Action (see Feynman lectures). In these types of problems, it appears that 
+the path of integration through space from endpoints a to b is replaced with the whole frequency 
+domain from -$\infty$ to +$\infty$. 
 
 Search terms: "first variation", gateaux derivative, 
 
@@ -185,7 +194,9 @@ Note the ni in the complex conjugate!
 
 \subsection{Laziness prevails; a return to numerical optimization}
 
-Numerically solving optimal control problems using CG was noted by Lasdon \cite{conjugate1967} and revisited by Kek \cite{Conjugate}. 
+Numerically solving optimal control problems using CG was noted by Lasdon \cite{conjugate1967} and 
+revisited by Kek \cite{Conjugate}. They reduce the computational workload by first computing the 
+gradient function by hand.
 
 Using an energy constraint, appears to tend towards a square step function or a sharp impulse, perhaps as a result of Pontryagin's maximum principle\cite{Optimum1964}.
 
