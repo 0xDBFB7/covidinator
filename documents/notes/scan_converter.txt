@@ -130,11 +130,54 @@ try fix
 
 well, that fixed it
 
+IF PI HANGS:
+clear the dirty-bit by fsck-ing /sdc1
+
+raspiconfig camera sets
+start_x=1
+gpu_mem or whatever = 128. then the board hangs.
+fuyckaldfkjalsdkfj ladskj ffuck?
+
+
+
+hey, a TDS820 oscilloscope has a rise time of 58 ps. that's pretty good?
+input v range is 3v. needs a 1000:1 or 30 dB attenuator
+cheap ones only do 200 watts, whereas we'll be somewhere around 20,000 watts.
+in fact, I can't even find a high voltage attenuator with those kinds of specs.
+what do they mean by "sampling" scope? 
+tds820 is a "sampling" scope. dammit.
+
+
+so indeed a capacitive divider will be needed. In any case, 30,000
+
+put up some sheet metal to prevent computer damage 
+
+
+"The Micro Channel Plate's amplification degrades irreversibly with operation, in proportion to the log of total charge passed per channel or display area. For this reason, continued operation with a steady trace and especially at large beam currents must be avoided. The 7104 contains a "limited viewing time" circuit to assist with observing this restriction."
+
+huh!
 
 
 
 
+https://raspberrypi.stackexchange.com/questions/32397/how-to-increase-the-camera-exposure-time
+raspistill -w 2592 -h 1944 -ISO 800 -ss 6000000 -br 80 -co 100 -o out.jpeg
+
+raspivid -t 30000 -w 640 -h 480 -fps 25 -b 1200000 -p 0,0,640,480 -o pivideo.h264
+
+raspivid -ISO 100 -ss 100000000 -fps 0 -o test2.h264 
 
 
+doing SimpleHTTPServer
+works well
 
+this works:
+vlc tcp/h264:/192...
+raspivid -ISO 600 -ss 60000 -fps 0 -t 0 -l -o tcp://0.0.0.0:3333
+
+ss is in microseconds.
+
+rm in.h264 out.mp4 && raspivid -ISO 800 -ss 600000 -br 80 -co 100 -t 5000 -o in.h264 && MP4Box -fps 1 -inter 0 -add in.h264 out.mp4
+t is in ms
+http://192.168.0.47:8080/out.mp4
 
