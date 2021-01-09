@@ -181,3 +181,23 @@ rm in.h264 out.mp4 && raspivid -ISO 800 -ss 600000 -br 80 -co 100 -t 5000 -o in.
 t is in ms
 http://192.168.0.47:8080/out.mp4
 
+
+
+
+heeey, what if we just drill a hole through the PCB for the beam
+to go through and seal both sides with a viton O ring?
+delrin backing to seal the O ring
+
+A delrin fitting that bolts on
+
+use WARP to coupled-sim with FDTD?
+
+the region in a microstrip with a component perpendicular to the beam is 
+relatively small.
+
+designed with Replicate Layout
+
+
+
+
+

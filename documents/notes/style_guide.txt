@@ -1,0 +1,7 @@
+
+
+on schematics:
+
+clearly note which part # were replaced on real hardware and the performance of each
+
+

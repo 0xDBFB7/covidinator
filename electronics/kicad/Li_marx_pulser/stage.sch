@@ -1,0 +1,164 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 15
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SparkFun-Capacitors:1.0UF-0805-25V-_+80_-20%_ C2
+U 1 1 5FF8E244
+P 5500 3850
+AR Path="/5FF8CB67/5FF8E244" Ref="C2"  Part="1" 
+AR Path="/5FFACA99/5FF8E244" Ref="C3"  Part="1" 
+AR Path="/5FFACD74/5FF8E244" Ref="C4"  Part="1" 
+AR Path="/5FFAD745/5FF8E244" Ref="C5"  Part="1" 
+AR Path="/5FFAD749/5FF8E244" Ref="C6"  Part="1" 
+AR Path="/5FFAD74D/5FF8E244" Ref="C7"  Part="1" 
+AR Path="/5FFADF9D/5FF8E244" Ref="C8"  Part="1" 
+AR Path="/5FFADFA1/5FF8E244" Ref="C9"  Part="1" 
+AR Path="/5FFADFA5/5FF8E244" Ref="C10"  Part="1" 
+AR Path="/5FFAE3CB/5FF8E244" Ref="C11"  Part="1" 
+AR Path="/5FFAE3CF/5FF8E244" Ref="C12"  Part="1" 
+AR Path="/5FFAE3D3/5FF8E244" Ref="C13"  Part="1" 
+AR Path="/5FFAE9BE/5FF8E244" Ref="C14"  Part="1" 
+AR Path="/5FFAE9C2/5FF8E244" Ref="C15"  Part="1" 
+AR Path="/5FFAE9C6/5FF8E244" Ref="C?"  Part="1" 
+F 0 "C15" H 5608 3942 45  0000 L CNN
+F 1 "1.0UF-0805-25V-_+80_-20%_" H 5608 3858 45  0000 L CNN
+F 2 "0xDBFB7:1111(2828)" H 5500 4100 20  0001 C CNN
+F 3 "" H 5500 3850 50  0001 C CNN
+	1    5500 3850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-DiscreteSemi:TRANS_NPN-MMBT2222AL Q2
+U 1 1 5FF8E1FA
+P 5700 3850
+AR Path="/5FF8CB67/5FF8E1FA" Ref="Q2"  Part="1" 
+AR Path="/5FFACA99/5FF8E1FA" Ref="Q3"  Part="1" 
+AR Path="/5FFACD74/5FF8E1FA" Ref="Q4"  Part="1" 
+AR Path="/5FFAD745/5FF8E1FA" Ref="Q5"  Part="1" 
+AR Path="/5FFAD749/5FF8E1FA" Ref="Q6"  Part="1" 
+AR Path="/5FFAD74D/5FF8E1FA" Ref="Q7"  Part="1" 
+AR Path="/5FFADF9D/5FF8E1FA" Ref="Q8"  Part="1" 
+AR Path="/5FFADFA1/5FF8E1FA" Ref="Q9"  Part="1" 
+AR Path="/5FFADFA5/5FF8E1FA" Ref="Q10"  Part="1" 
+AR Path="/5FFAE3CB/5FF8E1FA" Ref="Q11"  Part="1" 
+AR Path="/5FFAE3CF/5FF8E1FA" Ref="Q12"  Part="1" 
+AR Path="/5FFAE3D3/5FF8E1FA" Ref="Q13"  Part="1" 
+AR Path="/5FFAE9BE/5FF8E1FA" Ref="Q14"  Part="1" 
+AR Path="/5FFAE9C2/5FF8E1FA" Ref="Q15"  Part="1" 
+AR Path="/5FFAE9C6/5FF8E1FA" Ref="Q?"  Part="1" 
+F 0 "Q15" H 5844 3892 45  0000 L CNN
+F 1 "MMBT5551" H 5844 3808 45  0000 L CNN
+F 2 "SOT23-3" H 5700 4100 20  0001 C CNN
+F 3 "" H 5700 3850 50  0001 C CNN
+F 4 "" H 5844 3766 60  0000 L CNN "Field4"
+	1    5700 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR1206 R5
+U 1 1 5FF9143F
+P 5800 4250
+AR Path="/5FF8CB67/5FF9143F" Ref="R5"  Part="1" 
+AR Path="/5FFACA99/5FF9143F" Ref="R7"  Part="1" 
+AR Path="/5FFACD74/5FF9143F" Ref="R9"  Part="1" 
+AR Path="/5FFAD745/5FF9143F" Ref="R11"  Part="1" 
+AR Path="/5FFAD749/5FF9143F" Ref="R13"  Part="1" 
+AR Path="/5FFAD74D/5FF9143F" Ref="R15"  Part="1" 
+AR Path="/5FFADF9D/5FF9143F" Ref="R17"  Part="1" 
+AR Path="/5FFADFA1/5FF9143F" Ref="R19"  Part="1" 
+AR Path="/5FFADFA5/5FF9143F" Ref="R21"  Part="1" 
+AR Path="/5FFAE3CB/5FF9143F" Ref="R23"  Part="1" 
+AR Path="/5FFAE3CF/5FF9143F" Ref="R25"  Part="1" 
+AR Path="/5FFAE3D3/5FF9143F" Ref="R27"  Part="1" 
+AR Path="/5FFAE9BE/5FF9143F" Ref="R29"  Part="1" 
+AR Path="/5FFAE9C2/5FF9143F" Ref="R31"  Part="1" 
+AR Path="/5FFAE9C6/5FF9143F" Ref="R?"  Part="1" 
+F 0 "R31" V 5705 4318 45  0000 L CNN
+F 1 "100k" V 5789 4318 45  0000 L CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" H 5800 4400 20  0001 C CNN
+F 3 "" H 5800 4250 60  0001 C CNN
+F 4 " " V 5884 4318 60  0000 L CNN "Field4"
+	1    5800 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5FF926B3
+P 5800 4450
+AR Path="/5FF8CB67/5FF926B3" Ref="#PWR0103"  Part="1" 
+AR Path="/5FFACA99/5FF926B3" Ref="#PWR0104"  Part="1" 
+AR Path="/5FFACD74/5FF926B3" Ref="#PWR0105"  Part="1" 
+AR Path="/5FFAD745/5FF926B3" Ref="#PWR0106"  Part="1" 
+AR Path="/5FFAD749/5FF926B3" Ref="#PWR0107"  Part="1" 
+AR Path="/5FFAD74D/5FF926B3" Ref="#PWR0108"  Part="1" 
+AR Path="/5FFADF9D/5FF926B3" Ref="#PWR0109"  Part="1" 
+AR Path="/5FFADFA1/5FF926B3" Ref="#PWR0110"  Part="1" 
+AR Path="/5FFADFA5/5FF926B3" Ref="#PWR0111"  Part="1" 
+AR Path="/5FFAE3CB/5FF926B3" Ref="#PWR0112"  Part="1" 
+AR Path="/5FFAE3CF/5FF926B3" Ref="#PWR0113"  Part="1" 
+AR Path="/5FFAE3D3/5FF926B3" Ref="#PWR0114"  Part="1" 
+AR Path="/5FFAE9BE/5FF926B3" Ref="#PWR0115"  Part="1" 
+AR Path="/5FFAE9C2/5FF926B3" Ref="#PWR0116"  Part="1" 
+AR Path="/5FFAE9C6/5FF926B3" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0116" H 5800 4450 30  0001 C CNN
+F 1 "GND" H 5800 4380 30  0001 C CNN
+F 2 "" H 5800 4450 50  0001 C CNN
+F 3 "" H 5800 4450 50  0001 C CNN
+	1    5800 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 3850 5600 4050
+Wire Wire Line
+	5600 4050 5800 4050
+Connection ~ 5800 4050
+$Comp
+L SparkFun-Resistors:RESISTOR1206 R4
+U 1 1 5FF9AB2D
+P 5800 3450
+AR Path="/5FF8CB67/5FF9AB2D" Ref="R4"  Part="1" 
+AR Path="/5FFACA99/5FF9AB2D" Ref="R6"  Part="1" 
+AR Path="/5FFACD74/5FF9AB2D" Ref="R8"  Part="1" 
+AR Path="/5FFAD745/5FF9AB2D" Ref="R10"  Part="1" 
+AR Path="/5FFAD749/5FF9AB2D" Ref="R12"  Part="1" 
+AR Path="/5FFAD74D/5FF9AB2D" Ref="R14"  Part="1" 
+AR Path="/5FFADF9D/5FF9AB2D" Ref="R16"  Part="1" 
+AR Path="/5FFADFA1/5FF9AB2D" Ref="R18"  Part="1" 
+AR Path="/5FFADFA5/5FF9AB2D" Ref="R20"  Part="1" 
+AR Path="/5FFAE3CB/5FF9AB2D" Ref="R22"  Part="1" 
+AR Path="/5FFAE3CF/5FF9AB2D" Ref="R24"  Part="1" 
+AR Path="/5FFAE3D3/5FF9AB2D" Ref="R26"  Part="1" 
+AR Path="/5FFAE9BE/5FF9AB2D" Ref="R28"  Part="1" 
+AR Path="/5FFAE9C2/5FF9AB2D" Ref="R30"  Part="1" 
+AR Path="/5FFAE9C6/5FF9AB2D" Ref="R?"  Part="1" 
+F 0 "R30" V 5705 3518 45  0000 L CNN
+F 1 "100k" V 5789 3518 45  0000 L CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" H 5800 3600 20  0001 C CNN
+F 3 "" H 5800 3450 60  0001 C CNN
+F 4 " " V 5884 3518 60  0000 L CNN "Field4"
+	1    5800 3450
+	0    1    1    0   
+$EndComp
+Connection ~ 5600 3850
+Wire Wire Line
+	5800 3650 6150 3650
+Connection ~ 5800 3650
+Text HLabel 6150 3650 2    50   Input ~ 0
+NXT_STAGE
+Text HLabel 5300 3850 0    50   Input ~ 0
+PREV_STAGE
+Text GLabel 5800 3250 0    50   Input ~ 0
+HV
+$EndSCHEMATC
