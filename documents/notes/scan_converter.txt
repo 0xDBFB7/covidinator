@@ -199,5 +199,102 @@ designed with Replicate Layout
 
 
 
+just use JB weld, forget O rings
+jb isn't good for the pcb junction though because it's not removable...
 
+
+
+
+1000 V / 0.2 mm to megavolts/m = 5 megavolts/m - definitely will need silicone between there!
+even silicone will barely do it, but whatever...
+
+use the big threaded rod
+
+cut the alumina tube with one of the mcmaster super-thin diamond dremel wheels.
+cut like butter. 2 seconds. no dust. moistened with a few drops of water.
+
+
+
+
+
+
+------------------------------------------------------------
+
+Viral absorbance sensitivity
+
+1e3 electron charge * 10^7 V/m = 1.6 nanonewtons
+
+0.2 N/m capsid stiffness from "tough" paper - an empty capsid will move a few nm!
+
+10^9 * (1 microliter/ 1 ml) (titer) * 1.6 nanonewton * 1 angstrom / 100 picosecond = 1.6 milliwatts
+
+
+total power is 20000 watts, so that requires vertical resolution of (something huge)
+
+now, if the titer is increased to 10^12 by viradel, 1.6 watts. 
+
+the charge might be even higher on t4 - no nucleocapsid to cancel out
+
+wait but there aren't that many particles in the little region. the region is maybe 1 microliter 
+
+make the cpwg region really long to get lots of absorption
+
+however, will time-domain reflectometry work for this?
+
+differential measurement? invert one signal?
+
+will subpixel centroiding be good enough?
+
+10^12 * (10 microliter / 1 ml) * 1.6 nanonewton * (1.6 nanonewton / 0.2 N/m) / 100 picosecond 
+
+= 1200 watts
+
+
+-------------------------------
+
+lathed the front and backplates, milled a slot for the ribbon cable with a 1/16 end mill.
+ JB welded the ribbon cable.
+JB weld measured by scale on a piece of cardboard, dispensed with a broken Q tip.
+
+broke almost every drill bit trying to drill the brass aperture.
+brass is a jerk. should have used aluminum.
+
+soldered some wires on.
+
+JB weld-ed the tubes. Adding a little layer to the end and then turning
+while inserting makes a really, really nice bead.
+
+Baking at 90 C.
+
+phased-array dispersive pulse? would that work?
+
+
+---------------------------------
+
+deflection sensitivity:
+
+1 kev = 1e7 m/s (non-rel) 
+
+2 mm deflection region, electron spends 0.5 ns in that space - nooope, the field is only present for 100 ps so we have to base it on that
+
+(1 mm / 1e7 m/s) in ps = 
+
+
+
+(100 ps * (1000 V/m * 1 electronCharge / 1 electronMass)) * (5 mm / (1e7 m/s)) -> um
+
+8 micrometers (1 pixel)
+
+the deflection wires need to be less than 1 mm wide 
+
+oh wait, that's assuming we can get a 1 um dot, which isn't possible.
+
+20 microns is more like it.
+
+use square gold header pins.
+
+------------------------------------
+
+
+A few papers have used multiple beams or a sheet beam. not sure what advantages that provides.
 

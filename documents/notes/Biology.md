@@ -1198,3 +1198,5 @@ interlibrary loan
 
 hathitrust is good to get the page numbers
 
+here's an interesting thing: the E.coli DNA that was autoclaved and then filtered
+has a strong growth. weird!
