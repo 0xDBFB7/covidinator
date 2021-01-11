@@ -40,11 +40,16 @@
 \usepackage{pdfpages}
 \usepackage{subfiles}
 \usepackage{svg}
+\listfiles
+\svgpath{{../biology/simulation/GROMACS/BUMPy_bilayer/data/}}
+
 \usepackage{sidecap}
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{lettrine}
+
+\usepackage{subfig}
 
 
 % This allows the endnote and reference footnotes to float with the text.
@@ -64,8 +69,8 @@
 \usepackage[flushleft]{threeparttable}
 
 %\usepackage{biblatex}
-\usepackage[backend=bibtex8, sorting=none, style=chem-angew]{biblatex}
-
+\usepackage[backend=bibtex8, sorting=none, style=phys]{biblatex}
+% style=chem-angew
 \let\cite\footfullcite
 
 
@@ -131,10 +136,14 @@
 \renewcommand{\thefootnote}{\textcolor{gray}{\arabic{footnote}}}
 
 
+
+
 \usepackage{graphicx}
 \graphicspath{ {../media/} 
 				{../firmware/eppenwolf/runs/sic_susceptor/} 
+				{../biology/simulation/GROMACS/BUMPy_bilayer/data/}
 			}
+
 
 \usepackage{tcolorbox}
 \newtcolorbox{protocol}{colback=yellow!5!white,colframe=yellow!75!black}

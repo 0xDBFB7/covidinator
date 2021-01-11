@@ -193,3 +193,5 @@ maybe secondary sensing probes?
 
 
 
+A few weeks later, I've already forgotten that I even did the electrorotation torque thing
+or what the units of torque was. goddamnit this note thing isn't working1 

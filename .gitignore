@@ -7,3 +7,5 @@ media/
 *.ngc
 *.FCStd1
 documents/eLabFTW/backup
+
+*.pdf_tex

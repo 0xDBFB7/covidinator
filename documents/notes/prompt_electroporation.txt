@@ -120,6 +120,11 @@ Liu Jinuan
 
 suspended microstrip; 2 plates
 
+there are two different avalanche breakdown modes
+
+old version of 'svg'. downloaded svg.dtx, ran 'tex svg.dtx', 
+copy .sty s to ~/texmf/tex/latex/local
+
 
 
 
