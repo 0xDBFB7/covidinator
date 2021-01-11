@@ -1,6 +1,33 @@
-%!TeX root = fluroescence
+%!TeX root = fluorescence
 \documentclass[paper.tex]{subfiles}
 \begin{document}
+
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	\includegraphics[width=\textwidth]{fluro_1}
+	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	\includegraphics[width=\textwidth]{fluro_2}
+	\caption{}
+\end{figure}
+
+
+For one thing, GelGreen appears to be eminiently stable - samples can be stored for long periods of time; pre-mixed batches.
+
+\subsection{Light source}
+
+A modulation frequency of 
+
+Lexan fluro was unex
+
+Acridine orange (N-alkylacridinium)
+
+Orange 16 
 
 Fluoris
  
@@ -24,6 +51,7 @@ virus-specific
 
 hemagglutinin test
 
+the microscope is largely unnecessary. 
 
 
 bleaching was not obviously an issue, nor was storage with the dye bound to DNA.
@@ -44,7 +72,9 @@ The microscope objective seems to provide sufficient collimation for the emissio
 
 The Edmund filter was unmounted glass. Also, these thin-film filters do not extend to the edge of the glass. Edge-blankening ("inked") fil
 
-The LED was about 3 cm away, and put through a ~3 mm aperture. The output from the filter was directly into the 1 mm fiber, itself improving the bandpass.
+
+
+The LED was about 3 cm away, and put through a ~3 mm aperture in a piece of PVC pipe. The output from the filter was directly into the 1 mm fiber, itself improving the bandpass.
 
 
 
@@ -63,7 +93,7 @@ Low background is required.
 
 Xu's method \cite{Quantification2020}
 
-Performance of this arrangement was very satisfactory. A 10-second integration time, with, produced a background fluorescence signal of ~1500 counts, with per-sample stability of approximately \pm 1500 counts. The  
+Performance of this arrangement was very satisfactory. A 10-second integration time, with, produced a background fluorescence signal of ~1500 counts, with per-sample stability of approximately $\pm 1500$ counts. The  
 
 
 
@@ -93,7 +123,7 @@ As noted by [xi?], this is a saturating effect; if too many flurophores intercal
 autof
 
 
-With the setup we’re using and the small quantities, the excitation light is somewhere around ~10^5 times as powerful as the emission. This doesn’t seem to be a big issue gel-docs, picking out bands on gels - they don’t usually seem to use excitation filters; however, to get the excitation bleed-through low enough to do this quantitative assay, the bleed-through must be really low, and in our testing proper dielectric filters are required on both the excitation and emission sides. 
+With the setup we’re using and the small quantities, the excitation light is somewhere around ~$10^5$ times as powerful as the emission. This doesn’t seem to be a big issue gel-docs, picking out bands on gels - they don’t usually seem to use excitation filters; however, to get the excitation bleed-through low enough to do this quantitative assay, the bleed-through must be really low, and in our testing proper dielectric filters are required on both the excitation and emission sides. 
 
 There are a few sources of noise:
 
@@ -104,28 +134,25 @@ Using microscope optics and the lock-in, essentially a non-issue for use, surpri
 Figure out the average current limit for your PMT, the expected voltage based on your load resistor value and watch that it never exceeds it. It’ll be fine. Even with the room lights
 
 
-Note that PMTs are happy to endure very high pulse currents, like flashbulbs for exciting. 
-
-
-No shutters or anything required. 
+Note that PMTs are happy to endure very high pulse currents, like flashbulbs for exciting; no shutters or anything required. Gating the photomultiplier HV is another technique.
 
 
 The PMT was at maximum sensitivity (in fact, slightly above max voltage)
 
-Gel-docs , with spectra specified using the Wratten scale. These do not seem to have optical density (OD - logarithmic value of transmission in the blocking band) values sufficient for this qfluor. 
+Gel-docs , with spectra specified using the Wratten scale. These filters alone do not seem to have optical density (OD - logarithmic value of transmission in the blocking band) values sufficient for this qfluor. 
 
-Epiflurorescence means the Most commercial microscopes use dichroic beamsplitters, allowing the excitation beam beam to go through the same objective. The dichroic only removes the excitation to the 1\% level - you still need the dielectric filters, and they’re really expensive. With fiber optic excitation at right angles to the objective, scattering was low enough that the dichroic was unnecessary. 
+Most commercial microscopes use dichroic beamsplitters, allowing the excitation and emission beam to go through the same objective. The dichroic only removes the excitation to the 1\% level - you still need the dielectric filters, and they’re really expensive. With fiber optic excitation at right angles to the objective, excitation scattering was low enough that the dichroic was unnecessary. 
 
 You might be wondering why the filters are even required - why not just subtract the excitation bleed-through with a control? Unfortunately, any miniscule variation in the scattering of the excitation will be orders of magnitude larger than the fluorescence signal you’re looking for.
 
 Some papers discuss adding a third chopper or gate period or photomultiplier or to measure the drift of the excitation light source.
 
-Gating the photomultiplier HV is another technique.
+
 
 PCR is another method
 
 
-Silicon photomultipliers like ON's C−Series are almost certainly sufficient for this application, eliminating the HV requirements of PMTs at the cost of a higher dark count and slightly smaller active area.
+Silicon photomultipliers like ON's C-Series are almost certainly sufficient for this application, eliminating the HV requirements of PMTs at the cost of a higher dark count and slightly smaller active area.
 
 half-life is 0.693 times the average lifetime. 
 

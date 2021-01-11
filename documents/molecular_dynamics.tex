@@ -34,19 +34,18 @@ A very large amount of tuning and comparison  to obtain any kind of meaningful
 
 Liposome wrapped with BUMPy\cite{BUMPy2018}. \footnote{Durrant's LipidWrapper are equally good options}. MARTINI 
 coarse-grained 
-lipid and water force field. Run with GROMACS (5?) on the GPU.\footnote{\it "H. H. Williams: Furious activity is no substitute 
-	for understanding.".}  A non-equlibrium simulation (very weak thermostat on lipid) with a thick layer of explicit water and then one monolayer of water with restraints (? N/m spring constant) and a strong thermostat () to crudely emulate a large thermal bath (an "open boundary"). This may not be a good way to do this.
+lipid and water force field. Run with GROMACS (5?) on the GPU. A non-equlibrium simulation (very weak thermostat on lipid) with a thick layer of explicit water and then one monolayer of water with restraints (? N/m spring constant) and a strong thermostat () to crudely emulate a large thermal bath (an "open boundary"). This may not be a good way to do this.
 
 molecular dynamics simulation of a lipid vescicle of 30 nm diameter. A mix of POPC and PUPI added to bring liposome charge to 
 observed levels.
 
-Rather than use built-in normal-mode methods, Fourier analysis of the (lipid-only) trajectory was performed with TRAVIS\footnote{a 
-really fantastic program. Clever user interface too!}, zero-padded at the end to obtain sufficient low-frequency bins with short simulations. The initial "spring Note the non-zero y-intercept. 
+Rather than use standard eigenmode-style normal-mode methods (ProDy), Fourier analysis of the (lipid-only) trajectory was performed with TRAVIS\footnote{a really fantastic program. Clever user interface too!}, zero-padded at the end to obtain sufficient low-frequency bins with short simulations. The initial "spring Note the non-zero y-intercept. 
 
-Computational pipeline available at \ghfile{biology/simulation/GROMACS/BUMPy_bilayer} \footnote{GALAXY or some other, more repeatable "pipeline manager" should have been used}. Elec
+Computational pipeline available at \ghfile{biology/simulation/GROMACS/BUMPy_bilayer} \footnote{GALAXY or RENKU or some other, more repeatable and reproducible "pipeline manager" should have been used}. 
 
+Polarizable water is usually required
 
-Coarse-grained models of COVID with mechanically have recently 
+Coarse-grained models of COVID with mechanically have recently been created; as of this writing the all-important nucleocapsid and RNA 
 
 
 
