@@ -125,6 +125,47 @@ there are two different avalanche breakdown modes
 old version of 'svg'. downloaded svg.dtx, ran 'tex svg.dtx', 
 copy .sty s to ~/texmf/tex/latex/local
 
+Protocols.io is pretty great. Going to use it from now on.
+has an export to json feature, that's important
+
+
+
+
+""
+The electric ﬁeld within the gap is homogeneousfor an electrode thickness that is on the order of the gapdistance or larger. If the electrode thickness becomessmall compared to the gap distance, the ﬁeld becomesincreasingly inhomogeneous, in extreme cases with agreatly varying ﬁeld strength across the gap.
+""
+1 oz copper is ~35µm
+
+"For a 40 mm thickla ye rit r eaches only 64% ofthe nom-inalvalue of100 kV/cm in the center of the gap. Moreover, the elec-tric field is not homogeneous but shows a strong variation of up to30% (4 0 mm thickglue layer) from the center of the gapto the elec-trodes. For thin glue layers, field enhancement at the edges canlead tolocalized field strengthsinexcessof100 kV/cm."
+
+on, 30% isn't bad.
+
+--------------------------------------------------------
+
+can we use FR4 on microstrip? what's the dispersion like?
+
+using wcalc, 
+
+1.6 mm fr4, dipersion is about 10 picoseconds / centimeter at 1 vs 100 ghz. That's not a huge concern??
+loss is 5 dB/cm at 100 GHz. that's 0.3x voltage every cm.
+
+We'll need the reflection stubs to be about 100 ps long, or somewhere around .
+
+metallization losses seem to be really low - it's the loss tangent that's the killer.
+loss is essentially independent of 
+
+teflon is about 1 dB. polycarbonate seems terrible.  polyproplene, however, seems to be okay!
+
+
+
+kin depth is about 0.2 
+
+
+first stage shortens the pulse, second stage reflects it?
+
+
+
+
 
 
 

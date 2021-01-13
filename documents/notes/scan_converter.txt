@@ -261,13 +261,14 @@ brass is a jerk. should have used aluminum.
 
 soldered some wires on.
 
-JB weld-ed the tubes. Adding a little layer to the end and then turning
+JB weld-ed the tubes. Adding a little layer 2 mm away from the end and then turning
 while inserting makes a really, really nice bead.
 
 Baking at 90 C.
 
 phased-array dispersive pulse? would that work?
 
+#51 drill bit is for the  
 
 ---------------------------------
 
@@ -304,4 +305,20 @@ ITAR h.1.a requires "a resolution of 8 bit or more and a sample rate greater tha
 so as long as we have lesss than 256 pixels we'll be fine?
 
 add safety resistor!
+
+get a new stepper driver
+
+it is notable that people say "everything has a resonance frequency", when in fact most cases that ehy refer to, such as biological systems, do not becuase they are overdamped!
+
+
+---------------------
+
+put it together. Pumped down and stablized at 200 microns immediately. great stuff.
+
+lots of vibration; put the pump on foam, that cut it down a lot, taped a wrench
+to the pipe to damp even more, that helped again.
+
+at 5 kV, arcing at the bolts used to squish the oring onto the ceramic probe.
+
+adding a small amount of tape didn't help.
 
