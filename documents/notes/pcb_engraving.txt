@@ -32,4 +32,59 @@ a bit overheated. oven probably needed preheating.
 
 0.17 mm tool diameter setting is even better.
 
-Man, this tool is still going strong after 15+ boards! Incredible
+Man, this tool is still going strong after 15+ boards!
+
+
+
+
+
+
+
+
+---------------------------------
+
+make sure X-axis is the long axis.
+Export gerber. Check use aux. axis.
+
+
+conda deactivate
+cd Programs/flatcam/
+flatcam
+
+(if you get a "can't open defaults" error, delete .FlatCam defaults.json)
+application settings, set to mm and restart.
+
+Import gerber.
+non-copper regions -> generate geometry
+
+
+"Paint area". 
+tool dia 0.17 
+overlap 0.05
+
+---------FOR 1/32"----------
+
+1/32" bit works well at 79% of 300 mm/min. 0.05 mm step down okay at that speed
+on 1.7 mm fr4, some deflection 
+slightly lower, 0.08 perhaps, might be better at higher speed because of pcb deflection
+
+0.79 mm tool dia , 0.15 mm overlap, 24krpm
+
+
+
+
+
+Create CNC job
+export to ngc
+
+
+
+java -jar ~/Programs/autoleveller-0.8.7.jar -g   .ngc
+
+10 mm probe spacing
+
+../../invert_probing.sh AL   .ngc
+
+
+
+

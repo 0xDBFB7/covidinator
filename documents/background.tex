@@ -2,6 +2,50 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
+I was hoping I would have a definitive demonstration, so as to not redirect resources from more promising avenues.
+
+TRL 0
+
+
+
+(more data exists for influenza A; it is sufficiently structurally similar that ).
+
+
+We don't want a purely membrane-electroporative effect since the lipid membrane of the virus is similar to (derived from) the host cell and little selectivity can be expected. Unless the virus has a lower capacitance and charges faster than the cell.
+
+Also, the pore must stay open for long enough that damage is dealt to the virus. 
+
+
+
+Viral electroporation specifically has been observed.
+
+Mizuno \cite{Inactivation1990} 100\% inactivate SVD Enterovirus (a 27 nm non-enveloped encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 120 pulses, 500 or 600 nanoseconds each, at 3 MV/m. 
+
+The thermal artifact  the energy \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K))}. The electrodes were un-insulated, so electrochemical effects are possible.
+
+Temperature rise 
+
+at a slow field of approximately $10^7$ V/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 \cite{Manipulation2013}. 
+
+
+
+\cite{comparative2003} discuss the relative inactivation of bacterial hosts and MS2 and PRD1 phages.
+
+
+
+
+
+
+
+
+
+Electric field has many more free variables than other treatments; 
+
+
+
+best practices were not followed.
+
+A wave propagating into tissue with $e_r=70$ has a refractive index $n=\sqrt{\mu/\epsilon}$, and is transmitted as $\frac{2 n_1}{n_1 + n_2}$; therefore about 0.2x the electric field is transmitted. This is of no concern for waveguide or bolus applicators, since the reflected energy is captured and returned.
 
 NATO Research Task Group 189 \cite{treatyelectromagnetic}
 
@@ -9,17 +53,36 @@ zotero citation graph?
 
 HFM-189 found no published and replicated adverse health effects or biological mechanisms, beyond
 thermal interaction, for pulses shorter than 100 ms which suggested that neither the peak E-field limit in the
-IEEE C95.1TM-2005 safety standard nor the proposed limit in the Directive 2004/40/EC [33] (subsequently
-promulgated as 2013/35/EU [34]) have scientific basis. 
-
-The group noted that physical laws governing the propagation of E-fields in air already limit the maximum allowable peak E-field at ~3 MV/m (air breakdown). Current research efforts by members to expose biological organism(s), tissues, and cells to environmental
-fields up to this magnitude have been unable to elicit an acute biological response.
+IEEE C95.1-2005 safety standard [n.b. 4.3, Table 9, subsection e. peak E field 100 kV/m] nor the proposed limit in the Directive 2004/40/EC [33] (subsequently promulgated as 2013/35/EU [34]) have scientific basis. 
 
 
-\footnote{``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}'' [ICNIRP 2020 \faExternalLink] }
+
+" physical laws governing the propagation of E-fields in air already limit the maximum allowable peak E-field at ~3 MV/m (air breakdown). Current research efforts by members to expose biological organism(s), tissues, and cells to environmental
+fields up to this magnitude have been unable to elicit an acute biological response."
+
+
+\footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
+
+A provisional limit of 100 kV/m; the standard now that the fourier transform instantaneous pulse energy must not exceed 1/5 the energy over some specified averaging time.
+
+C95.1-2005
+
+
+When the waveform of the external electric field is non-sinusoidal, such as with pulsed or mixed frequency
+waveforms, the rms value of the spatially averaged external field shall conform to the MPEs of Table 4, and
+also to either of the criteria stated in 4.1.2.4.1 and 4.1.2.4.2.
+
+
 
 
 C95.1-2019, B.4.3 Rationale for pulsed RF field limits
+
+
+
+
+
+
+
 
 
 
@@ -27,21 +90,32 @@ Cancer treatment involving irreversible electroporation is in a different regime
 
 
 
-Pakhomov \cite{Comparative} expose frog heart cells. No effects.
+Pakhomov \cite{Comparative} expose frog heart cells. No effects on pacemaker at 0.9 kV/m (although the field inside the ). 
+
+
+Note: Not being biologists or microwave engineers, the trained reader may find that we are too verbose in simple technique and not in another. 
+
+
+
+\begin{fquote}[Saviot][ \cite{Comment2004}]
+	We also would like to point out that these normal modes are damped when the virus particle is embedded inside a liquid...when the virus is inside water, for example, there is not much acoustic impedance mismatch at the surface. For this reason the normal modes will be broad and have short lifetimes. Therefore, the objective of killing viruses by sending out sound waves that resonate and destroy them is probably unworkable in such a configuration.	
+\end{fquote}
+
+
 
 
 
 In fact, this specific question is briefly noted in a comment by Saviot \cite{Comment2004} on 
 
-We also would like to point out that these normal modes
-are damped when the virus particle is embedded inside a
-liquid...when the virus is inside water, for example, there is not much acoustic impedance mismatch at the surface. For this reason the normal modes will be broad and have short lifetimes. Therefore, the objective of killing viruses by sending out sound waves that resonate and destroy them is probably unworkable in such a configuration.
+
+
+
+Perilla \cite{}, in a trustworthy explicitly solvated all-atom MD simulation, describe a few surface-wave modes.
 
 
 
 
-
-
+electropermeabilization
 
 
 H. H. Williams: Furious activity is no substitute for understanding.
@@ -58,6 +132,10 @@ or a little magnetite crystal - like that magnetoacoustic paper?
 We have cycled between condemning as pathological science, and lauding it as the cure. Barring 
 
 
+add "timeline"
+
+
+
 \subsection{Liburdy's oxygen-dependent lipid leakage}
 
 
@@ -68,8 +146,6 @@ Impulsive stimulated Raman scattering. We confess to not having studied these me
 the vibrational mode; the optimal pulse duration is some small fraction of the period of the mode in question.
 
 Unfortunately, these results appear to have failed replication \cite{No2011}. In any case, inactivation requires a very long duration of exposure; unlikely to be of great clinical use.
-
-Ultrafast femtosecond laser pulses 
 
 \subsection{Free-electron-laser }
 
@@ -116,11 +192,8 @@ However, there equally appear to be no fundamental reasons why some small-molecu
 Most things with a stiffness matrix has some resonant frequency\citationneeded. As far as we can tell, two justifications underpin the categorical implausibility of resonance-like behavior in 
 
 Notice that a non-zero resonant frequency
-requires
-ωR 6= 0 ⇒ β < ω/√
-2. (49)
-That is, the oscillator must be sufficiently under-damped in order to exhibit a
-resonance response 
+requires $\beta = b/(2m) \i-t \sqrt{2}$ \cite{Driven}
+
 
 \begin{itemize}
 		\item Viscous damping from biological solvents is so strong that the relaxation time is 
@@ -288,10 +361,16 @@ Burton\cite{Effects1950} describe the use of thermochromic pigments to examine h
 
 Bergqvist \cite{Effect1994a} find that the permeabilizing of their liposomes was not due to microwave exposure, but apparently a very peculiar interaction with the Teflon dish that was used only for positive microwave trials. Therefore, every part of the experimental protocol should be maintained precisely identical for non-sham and thermal sham trials.
 
+
 Some research has been discounted due to attenuators that leak high 
 
 
+Matzumoto \cite{Inactivation1991} find that in one case, an arc was struck within the medium, and that the UV light produced was sufficient to inactivate the organism.
+
+
 Microwave engineering is, itself  difficult. What type of attenuator you use?
+
+
 
 
 

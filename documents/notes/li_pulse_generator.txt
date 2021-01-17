@@ -1,0 +1,15 @@
+
+
+-------------Focus on the board for now----------
+
+routing the board. Way too much to cut (6 inches long) with the little engraving bit;
+a 1/32" cutter is going to be used.
+
+
+
+
+built the board. 
+
+the little yellow-transformer PSU works great. Had to add 4700 pF and a rectifier to smooth things
+out 
+

@@ -22,74 +22,6 @@ F2 "NXT_STAGE" I R -1100 5400 50
 F3 "PREV_STAGE" I L -2200 5400 50 
 $EndSheet
 $Comp
-L 74xGxx:74AHC1G08 U2
-U 1 1 5FF94439
-P 3050 3350
-F 0 "U2" H 3025 3617 50  0000 C CNN
-F 1 "74AHC1G08" H 3025 3526 50  0000 C CNN
-F 2 "" H 3050 3350 50  0001 C CNN
-F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3050 3350 50  0001 C CNN
-	1    3050 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xGxx:74AHC1G04 U1
-U 1 1 5FF953EC
-P 1750 3400
-F 0 "U1" H 1725 3667 50  0000 C CNN
-F 1 "74AHC1G04" H 1725 3576 50  0000 C CNN
-F 2 "" H 1750 3400 50  0001 C CNN
-F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 1750 3400 50  0001 C CNN
-	1    1750 3400
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Resistors:RESISTOR0603 R3
-U 1 1 5FF9650E
-P 2250 3750
-F 0 "R3" H 2250 4050 45  0000 C CNN
-F 1 "1k" H 2250 3966 45  0000 C CNN
-F 2 "0603" H 2250 3900 20  0001 C CNN
-F 3 "" H 2250 3750 60  0001 C CNN
-F 4 " " H 2250 3871 60  0000 C CNN "Field4"
-	1    2250 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-Capacitors:0.1UF-0603-25V-5% C1
-U 1 1 5FF977FB
-P 2450 3950
-F 0 "C1" H 2558 4042 45  0000 L CNN
-F 1 "10 nf" H 2558 3958 45  0000 L CNN
-F 2 "0603" H 2450 4200 20  0001 C CNN
-F 3 "" H 2450 3950 50  0001 C CNN
-F 4 "" H 2558 3916 60  0000 L CNN "Field4"
-	1    2450 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0101
-U 1 1 5FF982B7
-P 2450 4050
-F 0 "#PWR0101" H 2450 4050 30  0001 C CNN
-F 1 "GND" H 2450 3980 30  0001 C CNN
-F 2 "" H 2450 4050 50  0001 C CNN
-F 3 "" H 2450 4050 50  0001 C CNN
-	1    2450 4050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2450 3750 2800 3750
-Connection ~ 2450 3750
-Wire Wire Line
-	1450 3400 1450 3050
-Wire Wire Line
-	1450 3050 2750 3050
-Wire Wire Line
-	2750 3050 2750 3300
-Text GLabel 2200 2700 0    50   Input ~ 0
-HV
-$Comp
 L SparkFun-DiscreteSemi:TRANS_NPN-MMBT2222AL Q?
 U 1 1 5FFA25C4
 P -2850 5600
@@ -133,8 +65,6 @@ $EndComp
 Text GLabel -2750 5000 0    50   Input ~ 0
 HV
 Text Label -2950 5600 2    50   ~ 0
-FAST_TRIGGER
-Text Label 3300 3350 0    50   ~ 0
 FAST_TRIGGER
 Wire Wire Line
 	-2200 5400 -2750 5400
@@ -262,8 +192,6 @@ $EndSheet
 Wire Wire Line
 	13300 5400 13400 5400
 Wire Wire Line
-	2750 3400 2000 3400
-Wire Wire Line
 	4900 5400 5000 5400
 Wire Wire Line
 	12100 5400 12200 5400
@@ -287,4 +215,37 @@ Wire Wire Line
 	14500 5400 14750 5400
 Wire Wire Line
 	15050 5400 15350 5400
+$Comp
+L dk_Coaxial-Connectors-RF:CONSMA001-SMD-G J1
+U 1 1 6006D7F3
+P 1700 3700
+F 0 "J1" H 1778 3947 60  0000 C CNN
+F 1 "CONSMA001-SMD-G" H 1778 3841 60  0000 C CNN
+F 2 "digikey-footprints:RF_SMA_Receptical_Vertical_CONSMA001-SMD-G" H 1900 3900 60  0001 L CNN
+F 3 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 1900 4000 60  0001 L CNN
+F 4 "CONSMA001-SMD-G-ND" H 1900 4100 60  0001 L CNN "Digi-Key_PN"
+F 5 "CONSMA001-SMD-G" H 1900 4200 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 1900 4300 60  0001 L CNN "Category"
+F 7 "Coaxial Connectors (RF)" H 1900 4400 60  0001 L CNN "Family"
+F 8 "https://linxtechnologies.com/wp/wp-content/uploads/consma001-smd-g.pdf" H 1900 4500 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/linx-technologies-inc/CONSMA001-SMD-G/CONSMA001-SMD-G-ND/4496569" H 1900 4600 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN SMA RCPT STR 50 OHM SMD" H 1900 4700 60  0001 L CNN "Description"
+F 11 "Linx Technologies Inc." H 1900 4800 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 1900 4900 60  0001 L CNN "Status"
+	1    1700 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 600713C4
+P 1700 3900
+F 0 "#PWR?" H 1700 3900 30  0001 C CNN
+F 1 "GND" H 1700 3830 30  0001 C CNN
+F 2 "" H 1700 3900 50  0001 C CNN
+F 3 "" H 1700 3900 50  0001 C CNN
+	1    1700 3900
+	1    0    0    -1  
+$EndComp
+Text Label 1900 3700 0    50   ~ 0
+FAST_TRIGGER
 $EndSCHEMATC

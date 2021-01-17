@@ -1200,3 +1200,14 @@ hathitrust is good to get the page numbers
 
 here's an interesting thing: the E.coli DNA that was autoclaved and then filtered
 has a strong growth. weird!
+
+
+
+
+
+
+Tarasova do all their simulations with completely neutralized charges.
+
+
+use microwave plasma to surface activate - doesn't really work super well
+laser might

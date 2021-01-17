@@ -172,7 +172,7 @@ doing SimpleHTTPServer
 works well
 
 this works:
-vlc tcp/h264:/192...
+vlc tcp/h264://192...
 raspivid -ISO 600 -ss 60000 -fps 0 -t 0 -l -o tcp://0.0.0.0:3333
 
 ss is in microseconds.
@@ -320,5 +320,111 @@ to the pipe to damp even more, that helped again.
 
 at 5 kV, arcing at the bolts used to squish the oring onto the ceramic probe.
 
-adding a small amount of tape didn't help.
+adding a small amount of kapton didn't help. creepage along the ceramic and then the tape
+the ceramic cold-cathode gun should have been made at least twice as long.
+
+with a 1 mm deflection region, 1500v is still okay (because the freq. response goes as the velocity, 
+which goes as the sqrt.). 1.5 mm is not okay.
+
+
+
+
+netcat -l -p 5000 | mplayer -fps 60 -cache 2048 -
+
+raspivid -t 0 -w 1280 -h 720 -o - | nc 192.168.0.42 5000
+
+
+at about 6 keV, the electron gun broke down. breifly saw some sort of glow,
+burned out part of the camera. corona and breakdown seems to account for the 
+white lines seen, rather than the
+
+
+
+
+
+
+
+
+
+aaha! There was not *sufficient* pressure! 
+drilled some 12l14. broke the #51 drill, switched to #52. definitely have to go slow and peck.
+
+oh, crimp a piece of tubing in a micrometer?
+
+---------------------------------------
+
+
+at 1500 micron, a purple glow extended past the alumina 
+junction. a single line of pixels, sensitive to magnetic field and 
+focus coil.  at about 6 kv (beyond the half-way point on the dial), magnetically sensitive beam is found.
+
+why only a single line?
+
+at higher voltages, the signal seemed to get less noisy, surprisingly;
+however the electron gun quickly broke down in the atmosphere part..
+
+
+
+
+occassionally get a  cmd=0x4f525245mmal: No data received from sensor
+
+raspistill -ss 500000 -ISO 800 --raw -v -e png -o test.png -w 2500 -h 1500
+
+
+10-bit grayscale raw from the camera can be captureed 
+
+ Currently, the only method of accessing the raw bayer data is via the bayer parameter to the capture() method. See Raw Bayer data captures for more information.
+
+raspistill -q 100 -v -e png -o test.png -w 2500 -h 1500
+
+oh.
+
+
+the camera is burned out. only one line of pixels works now, that's why.
+
+circle on camera sensor when removed.
+
+replaced the camera sensor. the trick to removing the glass is to cut around
+the glass straight down, then shave off the plastic lip.
+
+the replaced sensor has not obviously been degraded after a few minutes at ~5 kev.
+visualizes the beam just perfectly.
+
+before, when the pressure was < 300 microns, the gun would break down 
+very easily. At 1500 microns, the gun almost never breaks down at all.
+anode (+ v) is the one closer to the sensor.
+
+light from the cold-cathode discharge is really annoying. Lee and Haine and Jervis tilted their cc tube for this reason.
+
+beam shimmers just like an x-ray tube. Solenoid has some effect.
+
+shimming with a screwdriver with a magnet.
+
+going to use a smaller aperture.
+
+paper discusses making small apertures by poking a needle through
+aluminum foil on a piece of glass.
+
+Made a small brass insert, 1.5 mm dia with a ~1mm hole in it. soldered a piece of copper foil
+over the hole. poked a plastic-head sewing needle into it onto a glass slide, making a very small aperture.
+ then pushed it down the anode.
+
+works great! very little light from the cathode discharge now.
+
+can't believe how well this O-ring anode works! no difficulty sealing despite 5 
+
+no sign of RID on the sensor yet either.
+
+some debris fell into the bore, unfortunately.
+
+the translucency of the alumina tubing is somewhat annoying. ambient conditions need to be pretty 
+dark for a good capture.
+
+
+
+
+
+
+
+
 

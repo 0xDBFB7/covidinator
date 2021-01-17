@@ -1,0 +1,23 @@
+16-01-2021 12:42:11  INFO [main] Autoleveller:55 - Application started
+16-01-2021 12:42:50  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/Li_marx_pulser/CAM/Li_marx_pulser-F_Cu.ngc"
+16-01-2021 12:42:50  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-17.0951 X width=138.505 Y height=17.0951
+16-01-2021 12:43:06 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+16-01-2021 12:43:06 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+16-01-2021 12:43:06  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+16-01-2021 12:43:08  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 1 second(s)
+16-01-2021 12:43:08  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/Li_marx_pulser/CAM/ALLi_marx_pulser-F_Cu.ngc"
+16-01-2021 13:05:49  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:05:59  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:06:08  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:06:19  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:06:39  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:06:51  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:07:00  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:07:16  INFO [main] Autoleveller:55 - Application started
+16-01-2021 13:07:38  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/Li_marx_pulser/CAM/Li_marx_pulser-F_Cu.ngc"
+16-01-2021 13:07:39  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-138.5485 X width=23.1502 Y height=138.5485
+16-01-2021 13:07:42 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+16-01-2021 13:07:42 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+16-01-2021 13:07:42  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+16-01-2021 13:07:44  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 1 second(s)
+16-01-2021 13:07:44  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/Li_marx_pulser/CAM/ALLi_marx_pulser-F_Cu.ngc"

@@ -158,7 +158,7 @@ teflon is about 1 dB. polycarbonate seems terrible.  polyproplene, however, seem
 
 
 
-kin depth is about 0.2 
+skin depth is about 0.2 
 
 
 first stage shortens the pulse, second stage reflects it?
@@ -173,6 +173,77 @@ first stage shortens the pulse, second stage reflects it?
 
 
 
+
+10 ns * 20000 watts = 0.0002 J.
+50 pF * 15 = 750 pF
+0.5 * 750 picofarads * (1000 volts)^2 = 0.000375 J
+0.1 mm ^2 * 5 mm = 0.5 microliters.
+
+(0.0002 J) / (0.5 microliters * (water density) * 4.2 J/(g K)) = 0.09 C
+
+even 100 pulses will only do a 10 C rise.
+
+neat!
+
+
+
+
+bought some skived PTFE sheets from Mcmaster as the substrate. no issues with 
+bonding of the acrylic adhesive on the copper foil tape; sticks really well.
+
+permittivity of ptfe is 2.1. not a significant effect on trace width - 3.6 mm rather than 3.
+Flatness leaves much to be desired. probably needs to be screwed onto some metallic ground plane.
+
+
+doing some simulations of the wave shaper with QUCS.
+
+
+2 1 mm deflection plates. 200v across them. no deflection. magnetic-field sensitive, but
+no deflection. 
+huh.
+
+maybe things aren't aligned right and we're seeing secondary electrons or something?
+
+otherwise we might need to port the discharge tube and 
+
+probably need a new electron gun that's more tightly machined and with a tap-off
+to vary the pressure.
+the tight fit of the alumina bores is really great.
+
+
+put a magnet in the cold cathode - pre-focus
+no, von ardenne says that doesn't work for slow, low-voltage tubes. Wehnelt is better.
+improvements to be made:
+
+longer gap, and pre-anode focus coil
+tighter tolerances on the critical bore
+
+
+
+switch to making the board? diagnostics are not strictly necessary?
+
+
+
+it seems like it should work without a leak - 50 microns should be sufficient pressure?
+maybe try again at a much lower pressure
+
+otherwise drill a tiny hole in the cathode maybe?
+
+
+on 1.6 mm PTFE, 43.14 picoseconds per centimeter.
+actually, the PTFE is closer to 1.7. same difference.
+
+ptfe trace width is actually 5.33 mm. 
+
+ooh, slotline looks prefect! unfortunately, impedance is variable with frequency.
+Mariani has a good diagram on how to couple coax to slotline - it's not like you'd expect.
+
+
+
+I have a few small filament bulbs. might work - a few advangates: can use lower pressure, doesn't need a 
+leak in the electron gun - electrostatic deflection will work better
+
+have a "behaviour and performance" section for each piece of equipment.
 
 
 
