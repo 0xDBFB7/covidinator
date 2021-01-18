@@ -1209,5 +1209,5 @@ has a strong growth. weird!
 Tarasova do all their simulations with completely neutralized charges.
 
 
-use microwave plasma to surface activate - doesn't really work super well
-laser might
+the search terms "virus dipole moment" is what I was missing.
+transient electronic birefringance is an interesting technique for this!

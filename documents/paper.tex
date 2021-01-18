@@ -194,7 +194,7 @@ In the absence of publication bias, since the sampling error is random, all stud
 
 Applying microwave power to the body is already used extensively in diathermy (the internal heating of tissue for therapeutic effect) and hyperthermy (the overheating or cauterization of tissue for destructive effect). While most diathermy systems use much lower frequencies for deeper penetration, several papers have explored the 10 GHz band. 
 
-Industry Canada only appeaars to offer an instantaneous limit at $1.35 \times 10^-4$.
+Industry Canada only appears to offer an instantaneous limit at $1.35 \times 10^-4$.
 
 6 cm of l
 
@@ -331,88 +331,7 @@ Of course, discriminating miniscule returns in free-space is not easy; but with 
 
 
 
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Microwave Musings}\\
-\begin{multicols}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\noindent\fbox{\parbox{\linewidth}{
-	Toolchain:
-	\begin{itemize}
-	\item Failed oscillator feedback-loop optimization toolchain: QUCS 0.0.20 + python-qucs + scipy's 'basinhopper'
-	\item Successful A slightly modified ngspice + ngspyce + pyEVTK
-	\item gprMax for FDTD EM simulation
-	\item KiCAD, wcalc, scikit-rf, ngspice
-	\end{itemize}
-}}
-%
-
-
-Microwave design has a reputation for being the purview of wizards. Modern RF software packages like HFSS, Microwave Office, Agilent's ADS, and Mathworks' RF toolbox, for which; component models 
-
-Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be accurately modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
-
-Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
-
-We are also aided by the fact that what took a \$150,000 computing cluster a single decade ago can now be done in a few minutes by a single budget GPU.
-
-
-\end{multicols}
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Interference}\\
-\begin{multicols}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Mass production}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-Almost all components on the device can be replicated with fully vertically-integrated first-principles. Capacitors can be
-
-If this 'electromagnetic mask' form is the ideal (not nearly), 
-
-The largest RFID plants can produce
-
-a minimum of 5 GaAs or SiGe:C transistors will be required. Without SOI or, it does not appear that 
-
-As a lower bound, there are 1 million hospital beds in the U.S. [AHA 2018]; and as an upper bound obtaining global herd immunity would take 1.75 billion units.
-
-It is difficult to determine the supply capacity for these semiconductor processes; information is not forthcoming from the manufacturers. Fermi estimates \footnote{GaAs MMIC market of \$2.2 Bn USD / random sample of MMIC prices = about 2 Bil devices / yr, 3e9 wifi connected devices produced each year,}
-
-
-
-It is possible to use common Si-based devices at these frequencies, especially with second-harmonic techniques [Winch 1982]. However, obtaining the required gain and output power is not a trivial matter. 
-
-The techniques and equipment required to produce these devices are extremely complex; load-lock UHV,  
-
-
-Figures are not forthcoming, 
-
-Given the supply difficulties of comparatively simple materials such as Tyvek at pandemic scales, it is difficult to imagine that RF semiconductor production can be immediately re-tasked and scaled to this degree. 
-
-\paragraph{\textbf{Vacuum RF triode}}\
-
-
-
-Especially combined with an integrated titanium sorption pump,
-
-One concern is the large filament heater power, which prevents the use of low-cost button cells for power. Use of cold-cathode field-emitter arrays would alleviate this issue, but at the cost of complexity.
-
-Small tungsten incandescent lights are available down to 0.05 watts. With a suitable high-efficiency cathode coating, a pulsed heater power of less than 0.02
-
-
-
-\end{multicols}
-
-\clearpage
 
 %\paragraph{}
 

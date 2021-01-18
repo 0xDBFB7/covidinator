@@ -669,7 +669,38 @@ One problem with the formal, academic paper format is that one starts to believe
 \label{para}
 \ref{para}
 
-\paragraph{Timeline}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\Large Microwave Musings}\\
+\begin{multicols}{1}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\noindent\fbox{\parbox{\linewidth}{
+			Toolchain:
+			\begin{itemize}
+				\item Failed oscillator feedback-loop optimization toolchain: QUCS 0.0.20 + python-qucs + scipy's 'basinhopper'
+				\item Successful A slightly modified ngspice + ngspyce + pyEVTK
+				\item gprMax for FDTD EM simulation
+				\item KiCAD, wcalc, scikit-rf, ngspice
+			\end{itemize}
+	}}
+	%
+	
+	
+	Microwave design has a reputation for being the purview of wizards. Modern RF software packages like HFSS, Microwave Office, Agilent's ADS, and Mathworks' RF toolbox, for which; component models 
+	
+	Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be accurately modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
+	
+	Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
+	
+	We are also aided by the fact that what took a \$150,000 computing cluster a single decade ago can now be done in a few minutes by a single budget GPU.
+
+
+
+\section{Timeline}
 
 \paragraph{Comments by others}
 
