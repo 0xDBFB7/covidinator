@@ -13,3 +13,41 @@ built the board.
 the little yellow-transformer PSU works great. Had to add 4700 pF and a rectifier to smooth things
 out 
 
+maybe the generator is working fine - it's just too fast?
+no, that's not plausible. the time constant should be the same for all the caps.
+Oak use a 
+
+With the ON semi transistors and Oak 1991  test jig (fig 1), (albeit with a 50pf cap
+and 100k resistor)
+I only get a 100v pulse.
+
+whoa! with the micro-commercial-co 5551s, 252V!!!!
+
+
+interestingly, one of the transistors didn't work at all.
+232v,
+
+
+about 20 ns fall time - trigger pulse isn't great
+might need that ECL driver to properly trigger... 
+
+first 4 transistors make a nice pulse, but it just decays back down. perhaps the capacitors
+are not of sufficeintyl low ESR? The first stage swings ~300v, the capacitor drops about 50v,
+
+at about 320V, the pulse starts to form maybe 5 stages down. 50 v amplitude.
+
+at 340, the whole line breaks down.
+some ripple. added 0.1 uF foil caps. 
+
+no dice. no pulse.
+
+putting two 5551s in parallel makes no difference either.
+
+the dtic paper mentions 2n3700s as being good. there's an SMD verion, the 2n3700 UB.
+
+
+capaciors are also the cheaper ones, too.
+
+
+using 10M rather than 100k seems to have made a small difference.
+

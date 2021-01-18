@@ -390,9 +390,11 @@ the glass straight down, then shave off the plastic lip.
 the replaced sensor has not obviously been degraded after a few minutes at ~5 kev.
 visualizes the beam just perfectly.
 
-before, when the pressure was < 300 microns, the gun would break down 
+before, when the pressure was < 300 microns, the gun would break down (externally, a spark)
 very easily. At 1500 microns, the gun almost never breaks down at all.
 anode (+ v) is the one closer to the sensor.
+
+used a small needle valve from mcmaster (and another valve) to control the pressure. Works very well, easily controllable.
 
 light from the cold-cathode discharge is really annoying. Lee and Haine and Jervis tilted their cc tube for this reason.
 

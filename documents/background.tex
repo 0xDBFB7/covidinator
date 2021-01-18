@@ -4,7 +4,16 @@
 
 I was hoping I would have a definitive demonstration, so as to not redirect resources from more promising avenues.
 
+
 TRL 0
+
+
+Regurgitating Yang et al's line of reasoning, with a few; they study a 1 kV/m, 15 minute exposure, whereas we are concerned with a 3 MV/m, 500 picosecond regime. 
+
+
+T4 capsid withstands a pressure differential of more than 30 atmospheres, crystallizing the genome packed within. \cite{Osmotic2003}
+
+
 
 
 
@@ -17,20 +26,16 @@ Also, the pore must stay open for long enough that damage is dealt to the virus.
 
 
 
-Viral electroporation specifically has been observed.
+Electroporation of viral membranes and capsids has been observed.
 
 Mizuno \cite{Inactivation1990} 100\% inactivate SVD Enterovirus (a 27 nm non-enveloped encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 120 pulses, 500 or 600 nanoseconds each, at 3 MV/m. 
 
-The thermal artifact  the energy \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K))}. The electrodes were un-insulated, so electrochemical effects are possible.
+The thermal artifact cannot necessarily be discounted. The energy \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K))}. The electrodes were un-insulated, so electrochemical effects are possible.
 
-Temperature rise 
-
-at a slow field of approximately $10^7$ V/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 \cite{Manipulation2013}. 
+Interestingly
 
 
-
-\cite{comparative2003} discuss the relative inactivation of bacterial hosts and MS2 and PRD1 phages.
-
+Madiyar observe rapid permeabilization at a field of approximately $10^7$ V/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 \cite{Manipulation2013}. 
 
 
 
@@ -45,7 +50,7 @@ Electric field has many more free variables than other treatments;
 
 best practices were not followed.
 
-A wave propagating into tissue with $e_r=70$ has a refractive index $n=\sqrt{\mu/\epsilon}$, and is transmitted as $\frac{2 n_1}{n_1 + n_2}$; therefore about 0.2x the electric field is transmitted. This is of no concern for waveguide or bolus applicators, since the reflected energy is captured and returned.
+\footnote{A wave propagating into tissue with $\epsilon=70$ has a refractive index $n=\sqrt{\mu/\epsilon}$, and is transmitted as $\frac{2 n_1}{n_1 + n_2}$. This is of no concern for waveguide or bolus applicators, since the reflected energy is captured and returned.}
 
 NATO Research Task Group 189 \cite{treatyelectromagnetic}
 
@@ -97,15 +102,16 @@ Note: Not being biologists or microwave engineers, the trained reader may find t
 
 
 
+
+In fact, this specific question is briefly noted in a comment by Saviot \cite{Comment2004} on 
+
+
 \begin{fquote}[Saviot][ \cite{Comment2004}]
 	We also would like to point out that these normal modes are damped when the virus particle is embedded inside a liquid...when the virus is inside water, for example, there is not much acoustic impedance mismatch at the surface. For this reason the normal modes will be broad and have short lifetimes. Therefore, the objective of killing viruses by sending out sound waves that resonate and destroy them is probably unworkable in such a configuration.	
 \end{fquote}
 
 
 
-
-
-In fact, this specific question is briefly noted in a comment by Saviot \cite{Comment2004} on 
 
 
 
@@ -240,47 +246,9 @@ One of the assumptions that underpin
 
 
 
-Previous works (Liu et al, ) appear to demonstrate that several species of viruses exhibit an anomalous dielectric relaxation time of $> 75 \text{ ps}$, as opposed to $<< 20 \text{ ps}$ \footnotemark measured in the structures of human tissue.\\
+Electrolysi
 
-Other studies (Yang et al, Hung et al, Sun et al) then appear to demonstrate experimentally that - due to this effect and the favorable combination of envelope and genome net charge, envelope and capsid yield stress, mass distribution, and overall stiffness - certain viruses can  apparently be made to ring up, leading their envelope to shatter, when exposed to intense but ostensibly safe CW tones in the X-band - very much like a singer might shatter a wine glass.\\
-
-Such a non-thermal mechanism is quite unprecedented and extremely dubious, oft-posited but never substantiated; so it has taken some convincing that this is not a particularly abstruse artifact, especially when considered in the context of the broader non-thermal effects literature. For instance, the very paper (Edwards) which spurred development of the hydration-layer damping hypothesis used to explain these results, is has been quite\cite{Resonances1987} definitively\cite{Microwave1993a} shown to be an artifact, one which we unfortunately have not excluded in our study.\footnotemark \ In fact, even in light of the fine evidence that the other groups have collected, and the poor-quality data we have collected, we are still not entirely convinced that this effect exists - but perhaps this skepticism is unjustified.\\
-
-\footnotetext{we should verify, based on simple solvated sphere damping, whether the damping is of the right order of magnitude}
-
-We contribute almost nothing to the record (much of our discussion has already been covered by []), except by apparently replicating the effect in a T4 bacteriophage surrogate, using both microwave feedback and a luminometric beta-galactosidase infectivity assay. We appear to demonstrate that inactivation does not require 15 minutes, but is complete in less than 500 nanoseconds. This provides a headroom of some $10^6$ to all safety limits imposed by all known harm mechanisms, which can be traded for depth in tissue or distance in space. \\
-
-This technique appears to be unique in that it is selective, save for Far UV or cold-plasma sterilization. Its advantages over those is that it operates over large volumes with inexpensive emitters, but, most critically, can be made to penetrate tissue without harm.
-
-We briefly review the biological basis for the safety. There is solid in vitro and limited in vivo evidence of safety in this regime.
-
-\footnotetext{This value for human structures is the aggregate Cole-Cole relaxation time from Gabriel, in the case of breast tissue (which has the highest value). This is somewhat an unfair comparison; the relaxation time of a heterogeneous mixture such as tissue often appears smaller than that of a pure sample. However, this value agrees well with the individual findings of cellular modes (for instance, the damping from Adair's estimates is approx. 10 ps)}
-
-We briefly examine three applications. All depend significantly on what the microwave spectrum of SARS-NCoV-2 ends up being, which must be measured - or possibly reconstructed from existing whole-virion data or determined from coarse-grained MD simulation. 
-
-With refinements, our inexpensive pulsed microwave spectrometer can obtain the required absorption and threshold data with sufficiently concentrated specimens; but proper dielectric spectroscopy labs (or, in a pinch, swept-EPR/ESR equipment \st{when used improperly}) will provide a much more detailed spectrum. A slightly safer low-titer primary specimen may be usable to avoid BSL-3 requirements. \\
-
-
-
-First, free-space techniques are easily implemented to prevent respiratory transmission. A \$10 emitter appears to suffice on a personal level, and \$100 systems for room-scale.\\
- 
-%
-Second, via cursory FDTD simulations, using off-the-shelf equipment and modified non-invasive microwave diathermy techniques, it appears to be possible to inactivate all virions in the outer 2 cm of the lungs and inner 1 cm of the bronchi without any effect on the surrounding tissue. 
-\\
-
-[] notes that with a bit more effort, by harnessing the dispersive nature of tissue using modulated Brillouin precursors, it may be possible to remove the virus from the body altogether.\\
-
-The mechanism also provides a few distinctive microwave signatures that may be useful for detection; it remains to be seen whether these can be discerned in practice.
-
-The claims above are extraordinary. We do not provide the extraordinary quality of evidence required to support them. Consider: is it more likely that an undergraduate in his parent's basement, with no experience in biology or microwave design, has misinterpreted a blip from a cobbled-together machine, or that 
-
-expelling its viral contents into solution and 
-
-Not to be confused with pseudoscientific 'resonance therapies', nor reports of a connection with 5G communications.
-
-This means that the technique is {\it selective}.
-
-
+\cite{comparative2003} discuss the relative inactivation of bacterial hosts and MS2 and PRD1 phages. 
 
 \subsection{Artifacts in past absorption spectroscopy experiments, and the subsequent development and debunking of non-classical damping hypotheses}
 
@@ -317,7 +285,7 @@ Liu and Yang use a coplanar waveguide, and offer hydration layers along the line
 
 
 
-However, as Foster et al demonstrated, there is nothing necessarily wrong with VNA-based dielectric spectroscopy if it is well conducted. The Liu and Yang group seem very competent experimenters, and the experiments are very well conducted; but history would seem to suggest that we take some degree of caution.
+However, as Foster et al demonstrated, there is nothing necessarily wrong with VNA-based dielectric spectroscopy if it is well conducted. The Sun group seem very competent experimenters, and the experiments are very well conducted; but history would seem to suggest that we take some degree of caution.
 
 
 
@@ -348,30 +316,51 @@ Kozempel \cite{Preliminary1997} and \cite{Inactivationa}. They take great pains 
 
 This is a fascinating result, and one which should be compared to the existing literature and very carefully replicated to isolate the mechanism. However, unless it is suggested that {\it Pediococcus sp.} also exhibits a confined microwave resonance of the same nature, it appears that periodic temperature measurements within the physiological range are not necessarily a sufficiently stringent control to definitively {\it isolate} resonant effects from other mechanisms.
 
-Conversely, if temperature control is not possible, 
+Conversely, if temperature control is not possible, the temperature can be allowed to rise so long as a positive control is present in which 
 
-In Gandhi \cite{Basic1983}, nichrome heaters and copper-constantan thermocouples are used to generate the same temperature-time profile in both the treatment and the control to within 0.02 C, finding no effect. 
+In Gandhi \cite{Basic1983}, nichrome heaters and copper-constantan thermocouples are used to generate the same temperature-time profile in both the treatment and this positive control to within 0.02 C, finding no effect. 
 
 Burton\cite{Effects1950} describe the use of thermochromic pigments to examine heating profiles. Using low-frequency exposure, they are able to produce localized regions in excess of 50 C.
 
 
 
 
+
+
+[Vj] mention the importance of precise dosimetry. Even simple structures can produce hot-spots 
+Yang et al use both a plastic cuvette, and a single drop of solution on a glass slide; in either case, a sharp change dielectric constant is present.
+
+
+We do not intend to denigrate the work or otherwise cast aspersions on the authors of the mentioned papers; their experiment extremely well-designed and performed. 
+
+However, since the result is unexpected, we would like to mention a few means by which the effect described could be achieved without strong non-thermal coupling.
+
+\begin{quote}
+	
+	To confirm that our observation is not due to the microwave thermal heating effect, we had monitored the sample temperature change during the microwave illumination experiments with a radiated power density of 486W/m2 at a frequency of 6GHz by using an infrared thermal imaging camera with a temperature accuracy of 0.05°C (CHCT, P384-20). The temperature rise after 15 minutes radiation was 7°C, from 27.5°C up to 34.5°C. We thus exclude the possible contribution of microwave thermal heating effect to inactivation H3N2 viruses under our experimental condition.
+	
+\end{quote}
+
+The frequency-dependent inactivation seen in Figure 4b of \cite{Efficient2015} is difficult to explain without invoking non-thermal mechanisms. Only one  It is not mentioned how this applied power level was measured. 
+
+The QPJ-06183640 amplifier in question is not available on the supplier's website \cite{Microwaved} has gain flatness of 3.5 dB over 6-12 GHz - just over 1 octave. The amplifier used in [Hung] is not mentioned; because the frequency range mentioned (6 GHz to 18 GHz) is the same as that of the amplifier, we assume the same amplifier was used. 
+
+If the amplifier happened to be matched better at 8 GHz than 12 GHz.
+
+If the output power was calculated based on the input power (which appears to have been done) rather than being measured in free-space, a shape very similar to that seen will be formed.
+
+Similarly, the gain of the EM-6969 antenna\cite{EM6969} varies from 17 dBi to 21 dBi over the frequency range in Figure 3.
+
+However, that the spectra of all these effects would combine to produce a peak at precisely the resonant frequency determined by the entirely different microwave cuvette is highly implausible; and so Figure 4b really does seem to be good evidence of such an effect.
+
+
 \subsection{Other artifacts}
 
 Bergqvist \cite{Effect1994a} find that the permeabilizing of their liposomes was not due to microwave exposure, but apparently a very peculiar interaction with the Teflon dish that was used only for positive microwave trials. Therefore, every part of the experimental protocol should be maintained precisely identical for non-sham and thermal sham trials.
 
-
 Some research has been discounted due to attenuators that leak high 
 
-
 Matzumoto \cite{Inactivation1991} find that in one case, an arc was struck within the medium, and that the UV light produced was sufficient to inactivate the organism.
-
-
-Microwave engineering is, itself  difficult. What type of attenuator you use?
-
-
-
 
 
 \subsection{Meta issues with the field}
@@ -398,13 +387,81 @@ Non-photothermal optical Raman methods can also apparently synthesize artifacts 
 
 
 
-T4 capsid withstands a pressure differential of more than 30 atmospheres, crystallizing the genome packed within.
 
 
 
 
 
-\cite{Osmotic2003}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Previous works (Liu et al, ) appear to demonstrate that several species of viruses exhibit an anomalous dielectric relaxation time of $> 75 \text{ ps}$, as opposed to $<< 20 \text{ ps}$ \footnotemark measured in the structures of human tissue.\\
+
+Other studies (Yang et al, Hung et al, Sun et al) then appear to demonstrate experimentally that - due to this effect and the favorable combination of envelope and genome net charge, envelope and capsid yield stress, mass distribution, and overall stiffness - certain viruses can  apparently be made to ring up, leading their envelope to shatter, when exposed to intense but ostensibly safe CW tones in the X-band - very much like a singer might shatter a wine glass.\\
+
+Such a non-thermal mechanism is quite unprecedented and extremely dubious, oft-posited but never substantiated; so it has taken some convincing that this is not a particularly abstruse artifact, especially when considered in the context of the broader non-thermal effects literature. For instance, the very paper (Edwards) which spurred development of the hydration-layer damping hypothesis used to explain these results, is has been quite\cite{Resonances1987} definitively\cite{Microwave1993a} shown to be an artifact, one which we unfortunately have not excluded in our study.\footnotemark \ In fact, even in light of the fine evidence that the other groups have collected, and the poor-quality data we have collected, we are still not entirely convinced that this effect exists - but perhaps this skepticism is unjustified.\\
+
+\footnotetext{we should verify, based on simple solvated sphere damping, whether the damping is of the right order of magnitude}
+
+We contribute almost nothing to the record (much of our discussion has already been covered by []), except by apparently replicating the effect in a T4 bacteriophage surrogate, using both microwave feedback and a luminometric beta-galactosidase infectivity assay. We appear to demonstrate that inactivation does not require 15 minutes, but is complete in less than 500 nanoseconds. This provides a headroom of some $10^6$ to all safety limits imposed by all known harm mechanisms, which can be traded for depth in tissue or distance in space. \\
+
+This technique appears to be unique in that it is selective, save for Far UV or cold-plasma sterilization. Its advantages over those is that it operates over large volumes with inexpensive emitters, but, most critically, can be made to penetrate tissue without harm.
+
+We briefly review the biological basis for the safety. There is solid in vitro and limited in vivo evidence of safety in this regime.
+
+\footnotetext{This value for human structures is the aggregate Cole-Cole relaxation time from Gabriel, in the case of breast tissue (which has the highest value). This is somewhat an unfair comparison; the relaxation time of a heterogeneous mixture such as tissue often appears smaller than that of a pure sample. However, this value agrees well with the individual findings of cellular modes (for instance, the damping from Adair's estimates is approx. 10 ps)}
+
+We briefly examine three applications. All depend significantly on what the microwave spectrum of SARS-NCoV-2 ends up being, which must be measured - or possibly reconstructed from existing whole-virion data or determined from coarse-grained MD simulation. 
+
+With refinements, our inexpensive pulsed microwave spectrometer can obtain the required absorption and threshold data with sufficiently concentrated specimens; but proper dielectric spectroscopy labs (or, in a pinch, swept-EPR/ESR equipment \st{when used improperly}) will provide a much more detailed spectrum. A slightly safer low-titer primary specimen may be usable to avoid BSL-3 requirements. \\
+
+
+
+First, free-space techniques are easily implemented to prevent respiratory transmission. A \$10 emitter appears to suffice on a personal level, and \$100 systems for room-scale.\\
+
+%
+Second, via cursory FDTD simulations, using off-the-shelf equipment and modified non-invasive microwave diathermy techniques, it appears to be possible to inactivate all virions in the outer 2 cm of the lungs and inner 1 cm of the bronchi without any effect on the surrounding tissue. 
+\\
+
+[] notes that with a bit more effort, by harnessing the dispersive nature of tissue using modulated Brillouin precursors, it may be possible to remove the virus from the body altogether.\\
+
+The mechanism also provides a few distinctive microwave signatures that may be useful for detection; it remains to be seen whether these can be discerned in practice.
+
+The claims above are extraordinary. We do not provide the extraordinary quality of evidence required to support them. Consider: is it more likely that an undergraduate in his parent's basement, with no experience in biology or microwave design, has misinterpreted a blip from a cobbled-together machine, or that 
+
+expelling its viral contents into solution and 
+
+Not to be confused with pseudoscientific 'resonance therapies', nor reports of a connection with 5G communications.
+
+This means that the technique is {\it selective}.
+
+
+
+
+
+
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
