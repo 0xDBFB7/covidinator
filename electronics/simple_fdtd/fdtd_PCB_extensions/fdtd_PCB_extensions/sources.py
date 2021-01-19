@@ -48,7 +48,7 @@ class Port:
                     (pcb.grid.H[self.N_x-1,self.N_y,z_slice,Y]/sqrt(mu_0)))*pcb.cell_size)
 
         current = float(current.cpu())
-        # current /= (pcb.cell_size/sqrt(mu_0))
+        # current /= (pcb.cell_size)
 
         #field normalized according to Flaport's thesis, chapter 4.1.6
 

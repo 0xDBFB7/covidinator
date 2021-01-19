@@ -54,9 +54,11 @@ fluid_dielectric_constant = 65
 
 sim_width = 4e-3
 
-pcb = fd.PCB(0.05e-3, xy_margin=15, z_margin=15)
+pcb = fd.PCB(0.1e-3, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((sim_width)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.0015/pcb.cell_size), courant_number = 0.4)
+                                int(0.0015/pcb.cell_size), courant_number = 0.01)
+
+#depends on timestep courant number!
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)
@@ -158,11 +160,11 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         current = pcb.component_ports[0].get_current(pcb)
         #[Luebbers 1996]
 
-        source_resistive_voltage = (1.0 * current)
+        source_resistive_voltage = (50.0 * current)
 
         pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
 
-        port_2_voltage = (pcb.component_ports[1].get_current(pcb)*1.0)
+        port_2_voltage = (pcb.component_ports[1].get_current(pcb)*50.0)
         pcb.component_ports[1].set_voltage(pcb, port_2_voltage)
 
 
@@ -171,8 +173,8 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
         # print(pcb.component_ports[1].get_current(pcb))
         # # print(port_2_voltage)
-        print(pcb.component_ports[1].get_voltage(pcb))
         print(pcb.component_ports[0].get_voltage(pcb))
+        print(pcb.component_ports[1].get_voltage(pcb))
 
         # voltages = np.append(voltages, source_voltage)
         # currents = np.append(currents, current)
