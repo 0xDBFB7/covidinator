@@ -162,7 +162,7 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
     # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
 
-    source_voltage = sin(pcb.time * 2.0 * pi * f) 
+    source_voltage = sin(pcb.time * 2.0 * pi * f)
     print(source_voltage)
 
     z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)

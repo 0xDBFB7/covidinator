@@ -52,11 +52,11 @@ microstrip_length = 10e-3
 fluid_dielectric_constant = 65
 
 
-sim_width = 5e-3
+sim_width = 4e-3
 
-pcb = fd.PCB(40e-5, xy_margin=15, z_margin=15)
+pcb = fd.PCB(0.025e-3, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((sim_width)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.0025/pcb.cell_size), courant_number = 0.4)
+                                int(0.001/pcb.cell_size), courant_number = 0.4)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)
@@ -79,46 +79,47 @@ microstrip_gap = 0.2e-3 # distance to ground plane
 m_w_N = int((microstrip_width/2)/pcb.cell_size)
 
 #stitch ends of coplanar
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
-pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 0 # vias
+pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
+pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
+pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
+pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
 
-pcb.copper_mask[0:-1, pcb.xy_margin+1:-pcb.xy_margin-2, 0:pcb.ground_plane_z_top] = 0
+# pcb.copper_mask[0:-1, pcb.xy_margin+1:-pcb.xy_margin-2, 0:pcb.ground_plane_z_top] = 0
 
 
 
 
 #ground 2
 pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size):-pcb.xy_margin, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
 
 #ground 1
 pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size), \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/2.0/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
 
 # defect_length = 1.5e-3
 # defect_width =
 # pcb.copper_mask[,int((microstrip_length/2.0)/pcb.cell_size):int((microstrip_length/2.0+defect_length)/pcb.cell_size), z_slice] = 1
 
 
-radius = int(1e-3 / pcb.cell_size)
-for x in range(0, int((sim_width)/pcb.cell_size)+pcb.xy_margin):
-    for y in range(0, int((microstrip_length)/pcb.cell_size)):
-
-        pcb.copper_mask[x, y, z_slice] = (pcb.copper_mask[x, y, z_slice] or math.sqrt((x-centerline)**2.0 + ( (y-((int((microstrip_length/2.0)/pcb.cell_size))+pcb.xy_margin)) - radius)**2.0 ) < radius)
-
+# radius = int(1e-3 / pcb.cell_size)
+# for x in range(0, int((sim_width)/pcb.cell_size)+pcb.xy_margin):
+#     for y in range(0, int((microstrip_length)/pcb.cell_size)):
+#
+#         pcb.copper_mask[x, y, z_slice] = (pcb.copper_mask[x, y, z_slice] or math.sqrt((x-centerline)**2.0 + ( (y-((int((microstrip_length/2.0)/pcb.cell_size))+pcb.xy_margin)) - radius)**2.0 ) < radius)
+#
 
 
 pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int((microstrip_length/2.0 + 1.0e-3 )/pcb.cell_size))), z_slice] = 1
+                    pcb.xy_margin:int(pcb.xy_margin+(int((microstrip_length )/pcb.cell_size))), z_slice] = 1
 
 
 
 #fluid
 conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
-pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int(microstrip_length/2.0/pcb.cell_size), \
-            pcb.component_plane_z-(0.1//pcb.cell_size): pcb.component_plane_z ] \
+
+pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
+            int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
                         = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
 
 
