@@ -47,16 +47,16 @@ substrate_dielectric_constant = 4.4
 
 
 microstrip_width = 1e-3
-microstrip_length = 10e-3
+microstrip_length = 20e-3
 
 fluid_dielectric_constant = 65
 
 
 sim_width = 4e-3
 
-pcb = fd.PCB(0.025e-3, xy_margin=15, z_margin=15)
+pcb = fd.PCB(0.040e-3, xy_margin=13, z_margin=13)
 fd.initialize_grid(pcb,int((sim_width)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.001/pcb.cell_size), courant_number = 0.4)
+                                int(0.0015/pcb.cell_size), courant_number = 0.4)
 
 fd.create_planes(pcb, 0.032e-3, 6e7)
 fd.create_substrate(pcb, substrate_thickness, substrate_dielectric_constant, 0.02, 9e9)
@@ -81,8 +81,8 @@ m_w_N = int((microstrip_width/2)/pcb.cell_size)
 #stitch ends of coplanar
 pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
 pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
-pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, -pcb.xy_margin,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
+pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, -pcb.xy_margin-1,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
+pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, -pcb.xy_margin-1,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
 
 # pcb.copper_mask[0:-1, pcb.xy_margin+1:-pcb.xy_margin-2, 0:pcb.ground_plane_z_top] = 0
 
@@ -125,10 +125,12 @@ pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), 
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports
-pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length*pcb.cell_size)-pcb.cell_size))
+pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length)-pcb.cell_size))
 pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size))
 
+voltages = np.array([])
 
+currents = np.array([])
 
 print_step = 500
 dump_step = 2e-12
@@ -138,29 +140,36 @@ prev_dump_time = 0
 f = 8e9
 while(pcb.time < (2.0 * 2.0 * pi * f)):
 
-    # # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
+    try:
+        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
 
-    source_voltage = sin(pcb.time * 2.0 * pi * f)
-    print(source_voltage)
+        #source_voltage = sin(pcb.time * 2.0 * pi * f)
+        print(source_voltage)
 
-    z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
+        z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
 
-    current = pcb.component_ports[0].get_current(pcb)
-    #[Luebbers 1996]
+        current = pcb.component_ports[0].get_current(pcb)
+        #[Luebbers 1996]
 
-    source_resistive_voltage = (50.0 * current)
-
-
-    pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
-
-    pcb.component_ports[1].set_voltage(pcb, 0 + (pcb.component_ports[1].get_current(pcb)*50.0))
+        source_resistive_voltage = (50.0 * current)
 
 
-    print(current)
+        pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
 
-    if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
-        #paraview gets confused if the first number isn't zero.
-        fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
-        prev_dump_time = pcb.time
+        pcb.component_ports[1].set_voltage(pcb, 0 + (pcb.component_ports[1].get_current(pcb)*50.0))
 
-    fd.just_FDTD_step(pcb)
+
+        print(current)
+
+        voltages = np.append(voltages, source_voltage)
+        currents = np.append(currents, current)
+
+        if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
+            #paraview gets confused if the first number isn't zero.
+            fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
+            prev_dump_time = pcb.time
+
+        fd.just_FDTD_step(pcb)
+    except KeyboardInterrupt:
+        dill.dump_session("data/microfluidic.pkl")
+        break
