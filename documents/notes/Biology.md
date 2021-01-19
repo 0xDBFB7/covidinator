@@ -1209,5 +1209,6 @@ has a strong growth. weird!
 Tarasova do all their simulations with completely neutralized charges.
 
 
-the search terms "virus dipole moment" is what I was missing.
+the search term "virus dipole moment" is what I was missing.
 transient electronic birefringance is an interesting technique for this!
+

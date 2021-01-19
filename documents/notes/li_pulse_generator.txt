@@ -51,3 +51,10 @@ capaciors are also the cheaper ones, too.
 
 using 10M rather than 100k seems to have made a small difference.
 
+
+
+
+The hand-formable coax cable I bought, a CCSMA-MM-086-12, attenuates -0.82 dB/foot at 12 GHz.
+about 0.83x power and 0.90x field. no problemo.
+
+
