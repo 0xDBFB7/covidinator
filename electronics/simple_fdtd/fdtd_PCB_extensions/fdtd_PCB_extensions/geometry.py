@@ -6,7 +6,7 @@ from .PCB import *
 
 def initialize_grid(pcb, N_x, N_y, N_z, courant_number=None):
     N_x += 2*(pcb.xy_margin) # wtf? Fix this
-    N_y += 2*(pcb.xy_margin) # wtf? Fix this 
+    N_y += 2*(pcb.xy_margin) # wtf? Fix this
     N_z += pcb.pml_cells+pcb.z_margin # wtf? Fix this
     grid = fdtd.Grid(
         (N_x,N_y,N_z),

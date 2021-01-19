@@ -51,7 +51,7 @@ plt.figure()
 #
 # Z0 = scipy.constants.physical_constants['characteristic impedance of vacuum'][0]
 
-impedance_spectrum = abs(voltage_spectrum/current_spectrum)
+impedance_spectrum = voltage_spectrum/current_spectrum
 
 plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 # plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
