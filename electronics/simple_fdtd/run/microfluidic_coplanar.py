@@ -26,7 +26,7 @@ import numpy as np
 import math
 
 
-fdtd.set_backend("torch.cuda.float32")
+fdtd.set_backend("torch.cuda")
 
 
 # fdtd.set_backend("numpy")
@@ -47,16 +47,16 @@ substrate_dielectric_constant = 4.4
 
 
 microstrip_width = 1e-3
-microstrip_length = 4e-3
+microstrip_length = 0.6e-3
 
 fluid_dielectric_constant = 65
 
 
-sim_width = 4e-3
+sim_width = 6e-3
 
 pcb = fd.PCB(0.1e-3, xy_margin=15, z_margin=15)
 fd.initialize_grid(pcb,int((sim_width)/pcb.cell_size),int((microstrip_length)/pcb.cell_size),
-                                int(0.0015/pcb.cell_size), courant_number = 0.01)
+                                int(0.003/pcb.cell_size), courant_number = 0.4)
 
 #depends on timestep courant number!
 
@@ -71,8 +71,8 @@ centerline = int((sim_width / pcb.cell_size ) / 2.0) + pcb.xy_margin
 
 
 #wipe copper
-pcb.copper_mask[:, :, z_slice] = 0
-pcb.copper_mask[:, :, pcb.ground_plane_z_top:pcb.component_plane_z] = 0
+# pcb.copper_mask[:, :, z_slice] = 0
+# pcb.copper_mask[:, :, pcb.ground_plane_z_top:pcb.component_plane_z] = 0
 
 
 
@@ -85,7 +85,7 @@ m_w_N = int((microstrip_width/2)/pcb.cell_size)
 # pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, pcb.xy_margin+2,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
 # pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+1, -pcb.xy_margin-2,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
 # pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-1, -pcb.xy_margin-2,pcb.ground_plane_z_top:pcb.component_plane_z] = 1 # vias
-
+#
 
 # pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-2:centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+2,  -pcb.xy_margin-2:-pcb.xy_margin,0:pcb.ground_plane_z_top] = 1 # vias
 # pcb.copper_mask[centerline-m_w_N-int(microstrip_gap/pcb.cell_size)-2:centerline+m_w_N+int(microstrip_gap/pcb.cell_size)+2,  pcb.xy_margin:pcb.xy_margin+2,0:pcb.ground_plane_z_top] = 1 # vias
@@ -98,13 +98,13 @@ m_w_N = int((microstrip_width/2)/pcb.cell_size)
 #
 
 
-#ground 2
-pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size):-pcb.xy_margin, \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
-
-#ground 1
-pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size), \
-                    pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+# #ground 2
+# pcb.copper_mask[centerline+m_w_N+int(microstrip_gap/pcb.cell_size):-pcb.xy_margin, \
+#                     pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
+#
+# #ground 1
+# pcb.copper_mask[pcb.xy_margin:centerline-m_w_N-int(microstrip_gap/pcb.cell_size), \
+#                     pcb.xy_margin:int(pcb.xy_margin+(int(microstrip_length/pcb.cell_size))), z_slice] = 1
 
 # defect_length = 1.5e-3
 # defect_width =
@@ -126,16 +126,17 @@ pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
 
 #fluid
 conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
-
+#
 # pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
 #             int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
 #                         = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
-
+#
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports
-pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length)-pcb.cell_size*3))
-pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size*3))
+pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length)-pcb.cell_size))
+pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, (microstrip_length)-pcb.cell_size))
+# pcb.component_ports.append(fd.Port(pcb, 0, int((sim_width / pcb.cell_size ) / 2.0)*pcb.cell_size, pcb.cell_size*3))
 
 voltages = np.array([])
 
@@ -146,13 +147,13 @@ dump_step = 2e-12
 
 prev_dump_time = 0
 
-f = 8e9
+f = 100e9
 while(pcb.time < (2.0 * 2.0 * pi * f)):
 
     try:
         # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
-        source_voltage = 1.0
-        #source_voltage = sin(pcb.time * 2.0 * pi * f)
+        source_voltage = (pcb.time*f)/((pcb.time*f)+1)
+        # source_voltage = sin(pcb.time * 2.0 * pi * f)
         # print(source_voltage)
 
         z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
@@ -164,8 +165,8 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
         pcb.component_ports[0].set_voltage(pcb, source_voltage + source_resistive_voltage)
 
-        port_2_voltage = (pcb.component_ports[1].get_current(pcb)*50.0)
-        pcb.component_ports[1].set_voltage(pcb, port_2_voltage)
+        # port_2_voltage = (pcb.component_ports[1].get_current(pcb)*50.0)
+        # pcb.component_ports[1].set_voltage(pcb, 0)
 
 
         print(pcb.component_ports[0].get_current(pcb))
@@ -178,11 +179,11 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
         # voltages = np.append(voltages, source_voltage)
         # currents = np.append(currents, current)
-
-        if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
-            #paraview gets confused if the first number isn't zero.
-            fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
-            prev_dump_time = pcb.time
+        #
+        # if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
+        #     #paraview gets confused if the first number isn't zero.
+        #     fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
+        #     prev_dump_time = pcb.time
 
         fd.just_FDTD_step(pcb)
     except KeyboardInterrupt:

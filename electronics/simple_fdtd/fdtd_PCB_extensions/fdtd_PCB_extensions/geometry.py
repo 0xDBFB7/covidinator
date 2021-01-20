@@ -56,7 +56,8 @@ def create_substrate(pcb, substrate_thickness, substrate_permittivity, loss_tang
 
     N_substrate = ceil(substrate_thickness / pcb.cell_size)
 
-    substrate_conductivity = loss_tangent * (2.0*pi) * 2.4e9 * epsilon_0 * substrate_permittivity * conductivity_scaling
+    substrate_conductivity = loss_tangent * (2.0*pi) * loss_tangent_frequency * epsilon_0 * substrate_permittivity * conductivity_scaling
+    #conductivity = substrate_conductivity,
     #loss tangent not accounted for
     # substrate_conductivity = 0
     pcb.grid[pcb.xy_margin:-pcb.xy_margin, pcb.xy_margin:-pcb.xy_margin, pcb.ground_plane_z_top:(pcb.ground_plane_z_top+N_substrate)] \

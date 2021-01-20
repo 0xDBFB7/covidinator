@@ -38,30 +38,32 @@ class Port:
         pcb.copper_mask[self.N_x,self.N_y,pcb.component_plane_z:pcb.component_plane_z] = 1 #make a conductor
 
     def get_current(self, pcb):
-        #[Luebbers 1996]
+        #really needs to be fixed!
+
+        #[Luebbers 1996 1992]
 
         z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
 
-        current = (((pcb.grid.H[self.N_x,self.N_y-1,z_slice,X]/sqrt(mu_0))-
-                    (pcb.grid.H[self.N_x,self.N_y,z_slice,X]/sqrt(mu_0)))*pcb.cell_size)
-        current += (((pcb.grid.H[self.N_x,self.N_y,z_slice,Y]/sqrt(mu_0))-
-                    (pcb.grid.H[self.N_x-1,self.N_y,z_slice,Y]/sqrt(mu_0)))*pcb.cell_size)
+        current = (((pcb.grid.H[self.N_x,self.N_y-1,z_slice,X])-
+                    (pcb.grid.H[self.N_x,self.N_y,z_slice,X]))*pcb.cell_size)
+        current += (((pcb.grid.H[self.N_x,self.N_y,z_slice,Y])-
+                    (pcb.grid.H[self.N_x-1,self.N_y,z_slice,Y]))*pcb.cell_size)
 
         current = float(current.cpu())
-        # current /= (pcb.cell_size)
+        # current /= (pcb.cell_size/sqrt(mu_0))
 
         #field normalized according to Flaport's thesis, chapter 4.1.6
 
         # account for Yee cell inaccuracies [Fang 1994].
         z_slice_2 = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
 
-        current_2 = (((pcb.grid.H[self.N_x,self.N_y-1,z_slice_2,X]/sqrt(mu_0))-
-                    (pcb.grid.H[self.N_x,self.N_y,z_slice_2,X]/sqrt(mu_0)))*pcb.cell_size)
-        current_2 += (((pcb.grid.H[self.N_x,self.N_y,z_slice_2,Y]/sqrt(mu_0))-
-                    (pcb.grid.H[self.N_x-1,self.N_y,z_slice_2,Y]/sqrt(mu_0)))*pcb.cell_size)
+        current_2 = (((pcb.grid.H[self.N_x,self.N_y-1,z_slice_2,X])-
+                    (pcb.grid.H[self.N_x,self.N_y,z_slice_2,X]))*pcb.cell_size)
+        current_2 += (((pcb.grid.H[self.N_x,self.N_y,z_slice_2,Y])-
+                    (pcb.grid.H[self.N_x-1,self.N_y,z_slice_2,Y]))*pcb.cell_size)
         # current
         current_2 = float(current_2.cpu())
-        # current_2 /= (pcb.cell_size)
+        # current_2 /= (pcb.cell_size/sqrt(mu_0))
 
 
         current = ((current+current_2) / 2.0)

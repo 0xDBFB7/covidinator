@@ -1,10 +1,10 @@
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
-from fdtd_PCB_extensions import X,Y,Z
-from scipy.constants import mu_0
+from fdtd_PCB_extensions import X,Y,Z, gaussian_derivative_pulse
+from scipy.constants import mu_0, epsilon_0
 import scipy.constants
 import numpy as np
-from math import sin, pi, pow, exp
+from math import sin, pi, pow, exp, sqrt
 import time
 import os
 import matplotlib.pyplot as plt
@@ -150,35 +150,34 @@ def sim_VSWR(pcb):
         z_slice = slice(pcb.component_plane_z-1,pcb.component_plane_z)
 
 
-        current = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]-
-                    pcb.grid.H[port.N_x,port.N_y,z_slice,X])*pcb.cell_size)
-        current += ((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]-
-                    pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y])*pcb.cell_size)
+        current = (((pcb.grid.H[port.N_x,port.N_y-1,z_slice,X]/sqrt(mu_0))-
+                    (pcb.grid.H[port.N_x,port.N_y,z_slice,X]/sqrt(mu_0)))*pcb.cell_size)
+        current += (((pcb.grid.H[port.N_x,port.N_y,z_slice,Y]/sqrt(mu_0))-
+                    (pcb.grid.H[port.N_x-1,port.N_y,z_slice,Y]/sqrt(mu_0)))*pcb.cell_size)
         # current
 
         current = current.cpu()
-        current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+        # current /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
         #[Luebbers 1996]
 
         source_resistive_voltage = (50.0 * current) / (pcb.cell_size)
 
 
-        pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = source_voltage / (pcb.cell_size) + source_resistive_voltage
-
+        pcb.grid.E[port.N_x,port.N_y,z_slice,Z] = sqrt(epsilon_0) * (source_voltage / (pcb.cell_size) + source_resistive_voltage)
 
 
 
         # account for Yee cell inaccuracies [Fang 1994].
         z_slice_2 = slice(pcb.component_plane_z-2,pcb.component_plane_z-1)
 
-        current_2 = ((pcb.grid.H[port.N_x,port.N_y-1,z_slice_2,X]-
-                    pcb.grid.H[port.N_x,port.N_y,z_slice_2,X])*pcb.cell_size)
-        current_2 += ((pcb.grid.H[port.N_x,port.N_y,z_slice_2,Y]-
-                    pcb.grid.H[port.N_x-1,port.N_y,z_slice_2,Y])*pcb.cell_size)
+        current_2 = (((pcb.grid.H[port.N_x,port.N_y-1,z_slice_2,X]/sqrt(mu_0))-
+                    (pcb.grid.H[port.N_x,port.N_y,z_slice_2,X]/sqrt(mu_0)))*pcb.cell_size)
+        current_2 += (((pcb.grid.H[port.N_x,port.N_y,z_slice_2,Y]/sqrt(mu_0))-
+                    (pcb.grid.H[port.N_x-1,port.N_y,z_slice_2,Y]/sqrt(mu_0)))*pcb.cell_size)
         # current
         current_2 = current_2.cpu()
-        current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
+        # current_2 /= mu_0*(pcb.cell_size/pcb.grid.time_step)
 
 
 
@@ -212,7 +211,7 @@ def sim_VSWR(pcb):
         #     #they use 2000 timesteps at 1.8 ps each. We find depending on the cirumstance, 7000
         #     break
 
-        if(len(currents) > 5000):
+        if(len(currents) > 10000):
             break
 
     print("=========== Finished! ============")
@@ -289,9 +288,9 @@ plt.legend()
 
 plt.figure()
 
-Z0 = scipy.constants.physical_constants['characteristic impedance of vacuum'][0]
+# Z0 = scipy.constants.physical_constants['characteristic impedance of vacuum'][0]
 
-impedance_spectrum = (abs(2.0*voltage_spectrum/(current_spectrum+current_spectrum_2)) - Z0) / 2.0
+impedance_spectrum = (abs(2.0*voltage_spectrum/(current_spectrum+current_spectrum_2))) / 2.0
 
 plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 # plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
