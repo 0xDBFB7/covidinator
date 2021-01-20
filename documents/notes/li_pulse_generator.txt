@@ -58,3 +58,9 @@ The hand-formable coax cable I bought, a CCSMA-MM-086-12, attenuates -0.82 dB/fo
 about 0.83x power and 0.90x field. no problemo.
 
 
+rebuilt the generator with the FMMT417s and the ATC 100B caps.
+With a 1 GS/sec 150 MHz scope and 100 MHz probe, we get a falling edge of 0.6 nanoseconds
+and a pulse width of ~3 ns. 
+be intersting to see if the caps or the fets were responsible.
+
+

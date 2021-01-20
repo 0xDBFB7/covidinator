@@ -127,10 +127,10 @@ pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
 #fluid
 conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
 #
-pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
-            int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
-                        = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
-
+# pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
+#             int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
+#                         = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
+#
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports
@@ -186,13 +186,14 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         print(pcb.component_ports[0].get_voltage(pcb))
         print(pcb.component_ports[1].get_voltage(pcb))
 
-        # voltages = np.append(voltages, source_voltage)
-        # currents = np.append(currents, current)
+        voltages = np.append(voltages, source_voltage)
+        currents = np.append(currents, current)
         #
         # if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
         #     #paraview gets confused if the first number isn't zero.
         #     fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
         #     prev_dump_time = pcb.time
+
 
 
         pcb.grid.update_H()
@@ -201,6 +202,9 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         pcb.time += pcb.grid.time_step # the adaptive
         pcb.times.append(pcb.time)
 
+        if(len(currents) > 30000):
+            dill.dump_session("data/microfluidic.pkl")
+            break
 
     except KeyboardInterrupt:
         dill.dump_session("data/microfluidic.pkl")

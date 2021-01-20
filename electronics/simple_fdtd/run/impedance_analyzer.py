@@ -18,7 +18,7 @@ print(required_length)
 voltages = np.pad(voltages, (0, required_length), 'edge')
 currents = np.pad(currents, (0, required_length), 'edge')
 
-times_padded = np.pad(pcb.times, (1, required_length), 'edge')
+times_padded = np.pad(pcb.times, (0, required_length), 'edge')
 
 
 
@@ -51,9 +51,9 @@ plt.figure()
 #
 # Z0 = scipy.constants.physical_constants['characteristic impedance of vacuum'][0]
 
-impedance_spectrum = voltage_spectrum/current_spectrum
+impedance_spectrum = abs(voltage_spectrum/current_spectrum)
 
-plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
+plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq]-50.0)
 # plt.plot(spectrum_freqs[begin_freq:end_freq],impedance_spectrum[begin_freq:end_freq])
 plt.savefig('/tmp/impedance_spectrum.svg')
 # # plt.plot(spectrum_freqs,(voltage_spectrum/current_spectrum))
