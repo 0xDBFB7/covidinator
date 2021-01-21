@@ -9,7 +9,7 @@
 # torch.autograd.set_detect_anomaly(True)
 import fdtd_PCB_extensions as fd
 from fdtd_PCB_extensions import fdtd
-from fdtd_PCB_extensions import X,Y,Z, gaussian_derivative_pulse
+from fdtd_PCB_extensions import X,Y,Z, normalized_gaussian_pulse, normalized_gaussian_derivative_pulse
 from scipy.constants import mu_0, epsilon_0
 import scipy.constants
 from math import sin, pi, pow, exp, sqrt
@@ -127,10 +127,10 @@ pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
 #fluid
 conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
 #
-# pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
-#             int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
-#                         = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
-#
+pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
+            int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
+                        = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
+
 
 fd.dump_to_vtk(pcb,'dumps/test',0)
 pcb.component_ports = [] # wipe ports
@@ -157,8 +157,8 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         pcb.grid.E[pcb.copper_mask] = 0
 
 
-
-        source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
+        source_voltage = normalized_gaussian_derivative_pulse(pcb,1e-9)
+        # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
 
         # source_voltage = (pcb.time*f)/((pcb.time*f)+1) # smooth ramp
 
@@ -188,6 +188,8 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
         voltages = np.append(voltages, source_voltage)
         currents = np.append(currents, current)
+
+        print(pcb.time)
         #
         # if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
         #     #paraview gets confused if the first number isn't zero.
