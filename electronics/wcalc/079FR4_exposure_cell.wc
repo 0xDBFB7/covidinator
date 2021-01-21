@@ -1,0 +1,115 @@
+#
+# File:      /home/arthurdent/covidinator/electronics/wcalc/079FR4_exposure_cell.wc
+# Modified:  Wed Jan 20 16:58:12 2021
+# Wcalc Version 1.1
+
+[wcalc]
+wcalc_file_version = 0.1
+model_name = coplanar
+
+
+[coplanar]
+
+# Coplanar waveguide file version
+file_version = 0.1
+
+# Length (meters)
+L = 0.01
+
+# Width (meters)
+W = 0.001
+
+# Spacing (meters)
+S = 0.00015
+
+# Include the bottom side ground?
+WithGround = 0
+
+# Characteristic Impedance (ohms)
+Z0 = 38.5683947497505
+
+# Electrical Length (degrees)
+Elen = 311.111458914448
+
+# Frequency of operation
+freq = 15000000000
+
+# User units
+
+# Length, width, substrate and metal thickness units
+units_lwht = 2
+# [mm]
+
+# Incremental inductance units
+units_L = 1-6
+# [nH/inch]
+
+# Incremental resistance units
+units_R = 1-6
+# [mOhm/inch]
+
+# Incremental capacitance units
+units_C = 1-6
+# [pF/inch]
+
+# Incremental conductance units
+units_G = 0-6
+# [uMho/inch]
+
+# Line physical length units
+units_len = 0
+# [nm]
+
+# Frequency units
+units_freq = 4
+# [GHz]
+
+# Loss units
+units_loss = 0
+# [dB]
+
+# Loss/length units
+units_losslen = 0-3
+# [dB/cm]
+
+# Resistivity units
+units_rho = 2-4
+# [Ohm-m]
+
+# Surface roughness units (RMS)
+units_rough = 5
+# [mil]
+
+# Delay units
+units_delay = 2
+# [ps]
+
+# Skin depth units
+units_depth = 5
+# [mil]
+
+# End correction units
+units_deltal = 6
+# [inch]
+
+
+[substrate]
+
+# Height (meters)
+H = 0.00079
+
+# Relative dielectric constant
+ER = 4.8
+
+# Metalization thickness (meters)
+TMET = 3.5e-05
+
+# Metalization resistivity (ohm-meters)
+RHO = 3e-08
+
+# Metalization surface roughness (meters-RMS)
+ROUGH = 2.54e-08
+
+# Dielectric loss tangent
+TAND = 0.025
+

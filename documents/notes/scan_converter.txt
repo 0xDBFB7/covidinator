@@ -423,6 +423,12 @@ the translucency of the alumina tubing is somewhat annoying. ambient conditions 
 dark for a good capture.
 
 
+An LR44 coin cell has no trouble lighting the little 1.4V lamp (JKL Components Corp. 1728).
+120 mAh - the bulb draws 60 ma, so 2 hours of life. not too bad. this means we don't need
+to worry about a floating supply.
+
+oh neat, "self biasing", "Cathode bias resistor". one fewer psu.
+
 
 
 

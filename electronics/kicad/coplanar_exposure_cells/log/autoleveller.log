@@ -1,0 +1,16 @@
+20-01-2021 18:22:59  INFO [main] Autoleveller:55 - Application started
+20-01-2021 18:23:26  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/coplanar_exposure_cells-F_Cu.ngc"
+20-01-2021 18:23:26  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-4.4091 X width=16.205 Y height=4.4091
+20-01-2021 18:23:52 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+20-01-2021 18:23:52 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+20-01-2021 18:23:52  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+20-01-2021 18:23:52  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+20-01-2021 18:23:52  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"
+20-01-2021 18:29:13  INFO [main] Autoleveller:55 - Application started
+20-01-2021 18:29:24  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/coplanar_exposure_cells-F_Cu.ngc"
+20-01-2021 18:29:25  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-36.4091 X width=16.205 Y height=36.4091
+20-01-2021 18:29:35 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+20-01-2021 18:29:35 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+20-01-2021 18:29:35  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+20-01-2021 18:29:35  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+20-01-2021 18:29:35  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"

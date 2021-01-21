@@ -6,7 +6,7 @@ import sys
 sys.path.append('/home/arthurdent/covidinator/electronics/')
 import store
 
-dill.load_session("microfluidic.pkl")
+dill.load_session(sys.argv[1])
 
 
 desired_res = 300 #100 points below F_max
