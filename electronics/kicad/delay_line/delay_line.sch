@@ -311,39 +311,8 @@ F 3 "~" H 9400 5300 50  0001 C CNN
 	1    9400 5300
 	0    1    1    0   
 $EndComp
-$Comp
-L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U6
-U 1 1 60094C17
-P 8800 2350
-F 0 "U6" H 9244 2453 60  0000 L CNN
-F 1 "MCP1416T-E_OT" H 9244 2347 60  0000 L CNN
-F 2 "digikey-footprints:SOT-753" H 9000 2550 60  0001 L CNN
-F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 9000 2650 60  0001 L CNN
-F 4 "MCP1416T-E/OTCT-ND" H 9000 2750 60  0001 L CNN "Digi-Key_PN"
-F 5 "MCP1416T-E/OT" H 9000 2850 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H 9000 2950 60  0001 L CNN "Category"
-F 7 "PMIC - Gate Drivers" H 9000 3050 60  0001 L CNN "Family"
-F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 9000 3150 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 9000 3250 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 9000 3350 60  0001 L CNN "Description"
-F 11 "Microchip Technology" H 9000 3450 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 9000 3550 60  0001 L CNN "Status"
-	1    8800 2350
-	1    0    0    -1  
-$EndComp
 Text GLabel 6700 2650 0    50   Input ~ 0
 PULSE_TRIGGER
-$Comp
-L SparkFun-PowerSymbols:5V #SUPPLY0110
-U 1 1 600967CA
-P 8800 1950
-F 0 "#SUPPLY0110" H 8850 1950 45  0001 L BNN
-F 1 "5V" V 8800 2078 45  0000 L CNN
-F 2 "" H 8800 2131 60  0000 C CNN
-F 3 "" H 8800 1950 60  0001 C CNN
-	1    8800 1950
-	1    0    0    -1  
-$EndComp
 $Comp
 L 74xGxx:74AHC1G08 U5
 U 1 1 6009F15B
@@ -372,17 +341,6 @@ Text GLabel 7600 2200 0    50   Input ~ 0
 PULSE_TRIGGER
 Wire Wire Line
 	7600 2650 7600 2300
-$Comp
-L power:GND #PWR0116
-U 1 1 600A3C94
-P 8800 2650
-F 0 "#PWR0116" H 8800 2650 30  0001 C CNN
-F 1 "GND" H 8800 2580 30  0001 C CNN
-F 2 "" H 8800 2650 50  0001 C CNN
-F 3 "" H 8800 2650 50  0001 C CNN
-	1    8800 2650
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR0117
 U 1 1 600A408F
@@ -454,7 +412,7 @@ Text GLabel 1950 5800 2    50   Input ~ 0
 CLK
 Text GLabel 1950 5900 2    50   Input ~ 0
 D
-Text GLabel 10250 4900 2    50   Input ~ 0
+Text GLabel 10300 4900 2    50   Input ~ 0
 COAX
 $Comp
 L conn:CONN_2 P1
@@ -490,10 +448,10 @@ F 3 "" H 9000 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SparkFun-Capacitors:0.1UF-0603-25V-5% C?
+L SparkFun-Capacitors:0.1UF-0603-25V-5% C4
 U 1 1 6016D4E6
 P 10250 2250
-F 0 "C?" V 10484 2300 45  0000 C CNN
+F 0 "C4" V 10484 2300 45  0000 C CNN
 F 1 "0.1UF-0603-25V-5%" V 10400 2300 45  0000 C CNN
 F 2 "0603" H 10250 2500 20  0001 C CNN
 F 3 "" H 10250 2250 50  0001 C CNN
@@ -504,10 +462,10 @@ $EndComp
 Wire Wire Line
 	9200 2250 10050 2250
 $Comp
-L SparkFun-Resistors:RESISTOR0805 R?
+L SparkFun-Resistors:RESISTOR0805 R1
 U 1 1 6016EE58
 P 10350 2450
-F 0 "R?" V 10255 2518 45  0000 L CNN
+F 0 "R1" V 10255 2518 45  0000 L CNN
 F 1 "50 ohm" V 10339 2518 45  0000 L CNN
 F 2 "0805" H 10350 2600 20  0001 C CNN
 F 3 "" H 10350 2450 60  0001 C CNN
@@ -516,14 +474,61 @@ F 4 " " V 10434 2518 60  0000 L CNN "Field4"
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0101
 U 1 1 6016FF07
 P 10350 2650
-F 0 "#PWR?" H 10350 2650 30  0001 C CNN
+F 0 "#PWR0101" H 10350 2650 30  0001 C CNN
 F 1 "GND" H 10350 2580 30  0001 C CNN
 F 2 "" H 10350 2650 50  0001 C CNN
 F 3 "" H 10350 2650 50  0001 C CNN
 	1    10350 2650
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:GND #PWR0116
+U 1 1 600A3C94
+P 8800 2650
+F 0 "#PWR0116" H 8800 2650 30  0001 C CNN
+F 1 "GND" H 8800 2580 30  0001 C CNN
+F 2 "" H 8800 2650 50  0001 C CNN
+F 3 "" H 8800 2650 50  0001 C CNN
+	1    8800 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:5V #SUPPLY0110
+U 1 1 600967CA
+P 8800 1950
+F 0 "#SUPPLY0110" H 8850 1950 45  0001 L BNN
+F 1 "5V" V 8800 2078 45  0000 L CNN
+F 2 "" H 8800 2131 60  0000 C CNN
+F 3 "" H 8800 1950 60  0001 C CNN
+	1    8800 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_PMIC-Gate-Drivers:MCP1416T-E_OT U6
+U 1 1 60094C17
+P 8800 2350
+F 0 "U6" H 9244 2453 60  0000 L CNN
+F 1 "MCP1416T-E_OT" H 9244 2347 60  0000 L CNN
+F 2 "digikey-footprints:SOT-753" H 9000 2550 60  0001 L CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 9000 2650 60  0001 L CNN
+F 4 "MCP1416T-E/OTCT-ND" H 9000 2750 60  0001 L CNN "Digi-Key_PN"
+F 5 "MCP1416T-E/OT" H 9000 2850 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 9000 2950 60  0001 L CNN "Category"
+F 7 "PMIC - Gate Drivers" H 9000 3050 60  0001 L CNN "Family"
+F 8 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en536128" H 9000 3150 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/microchip-technology/MCP1416T-E-OT/MCP1416T-E-OTCT-ND/1963940" H 9000 3250 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC MOSFET DVR 1.5A HS SOT23-5" H 9000 3350 60  0001 L CNN "Description"
+F 11 "Microchip Technology" H 9000 3450 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 9000 3550 60  0001 L CNN "Status"
+	1    8800 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 2250 10800 2250
+Connection ~ 10350 2250
+Text Notes 6750 3050 0    50   ~ 0
+100 pF and 1k makes a good delay here. \n74 series is a little slow- 50 ns min
 $EndSCHEMATC

@@ -14,3 +14,17 @@
 20-01-2021 18:29:35  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
 20-01-2021 18:29:35  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
 20-01-2021 18:29:35  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"
+21-01-2021 19:19:49  INFO [main] Autoleveller:55 - Application started
+21-01-2021 19:20:09  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/delay_line/delay_line-F_Cu.gbr"
+21-01-2021 19:20:10  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=0 X width=0 Y height=0
+21-01-2021 19:20:51  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/delay_line/delay_line-F_Cu.ngc"
+21-01-2021 19:20:51  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-30.073 X width=42.6746 Y height=30.073
+21-01-2021 19:21:15  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/delay_line/delay_line-F_Cu.ngc"
+21-01-2021 19:21:16  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-30.073 X width=42.6746 Y height=30.073
+21-01-2021 19:21:20  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/delay_line/delay_line-F_Cu.ngc"
+21-01-2021 19:21:21  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-30.073 X width=42.6746 Y height=30.073
+21-01-2021 19:21:24 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+21-01-2021 19:21:24 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+21-01-2021 19:21:24  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+21-01-2021 19:21:26  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 1 second(s)
+21-01-2021 19:21:26  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/delay_line/ALdelay_line-F_Cu.ngc"

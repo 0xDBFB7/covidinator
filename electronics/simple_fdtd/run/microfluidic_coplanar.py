@@ -127,7 +127,7 @@ pcb.copper_mask[centerline-m_w_N:centerline+m_w_N, \
 #fluid
 conductivity_scaling = 1.0/(pcb.cell_size / epsilon_0) #again, flaport's thesis.
 #
-pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size)), int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
+pcb.grid[centerline+m_w_N:(centerline+m_w_N+int(microstrip_gap/pcb.cell_size))-1, int((microstrip_length*0.25)/pcb.cell_size):int((microstrip_length*0.75)/pcb.cell_size), \
             int(pcb.component_plane_z-(0.1e-3//pcb.cell_size)): pcb.component_plane_z+2 ] \
                         = fdtd.AbsorbingObject(conductivity=0.010*conductivity_scaling, permittivity=fluid_dielectric_constant, name="fluid")
 
@@ -143,7 +143,8 @@ voltages = np.array([])
 currents = np.array([])
 
 print_step = 500
-dump_step = 2e-12
+# dump_step = 2e-12
+dump_step = 1e-11
 
 prev_dump_time = 0
 
@@ -157,7 +158,7 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
         pcb.grid.E[pcb.copper_mask] = 0
 
 
-        source_voltage = normalized_gaussian_derivative_pulse(pcb,1e-9)
+        source_voltage = normalized_gaussian_derivative_pulse(pcb,0.1e-9)
         # source_voltage = gaussian_derivative_pulse(pcb, 4e-12, 32)/(26.804e9)
 
         # source_voltage = (pcb.time*f)/((pcb.time*f)+1) # smooth ramp
@@ -191,10 +192,10 @@ while(pcb.time < (2.0 * 2.0 * pi * f)):
 
         print(pcb.time)
         #
-        # if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
-        #     #paraview gets confused if the first number isn't zero.
-        #     fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
-        #     prev_dump_time = pcb.time
+        if((dump_step and abs(pcb.time-prev_dump_time) > dump_step) or pcb.grid.time_steps_passed == 0):
+            #paraview gets confused if the first number isn't zero.
+            fd.dump_to_vtk(pcb,'dumps/test',pcb.grid.time_steps_passed)
+            prev_dump_time = pcb.time
 
 
 

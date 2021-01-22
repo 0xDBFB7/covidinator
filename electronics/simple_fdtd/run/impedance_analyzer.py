@@ -18,7 +18,7 @@ print(required_length)
 voltages = np.pad(voltages, (0, required_length), 'edge')
 currents = np.pad(currents, (0, required_length), 'edge')
 
-times_padded = np.pad(pcb.times, (0, required_length), 'edge')
+times_padded = np.pad(pcb.times, (1, required_length), 'edge')
 
 
 

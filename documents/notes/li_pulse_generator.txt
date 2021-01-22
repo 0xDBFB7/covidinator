@@ -67,8 +67,14 @@ be interesting to see if the caps or the fets were responsible.
 
 with a coplanar exposure jig and the semirigid coax, 
 plus direct grounding of the probe rather than the lead,
-falling edge seems to be around 1.5 ns now -
+falling edge seems to be around 1.5 ns now, 450V:
 however, we're way past the bandwidth of any of the components so none of this is reliable.
 
+
+
+testing the trigger pulse generator - NAND and AND gates. straight through is too fast;
+about a 1 ns pulse, and it doesn't get all the way up. needs to be slowed slightly.
+
+both delay line and thinger works great.
 
 
