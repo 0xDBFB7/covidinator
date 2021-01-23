@@ -16,10 +16,13 @@ import dill
 
 omega_res = 2.0*pi*8e9
 
+electron_charge = 1.602e-19 # Coulomb
 Z0 = 377.0
 c0 = 3e8
-m_reduced = 1.16e-19
-q = 10e3 * 10e-19
+
+
+m_reduced = 1.16e-19 #kg
+q = 10e3 * electron_charge # effective charge -
 
 picometer = 1e-12
 
@@ -27,7 +30,7 @@ t= 0.0
 z = 0.08
 
 
-Q = 2.0
+Q = 1.5
 gamma = omega_res / Q
 
 
@@ -131,29 +134,29 @@ except:
 # output = basinhopping(cost_function, F, minimizer_kwargs={"args":(omega, z)}, disp=True)['x']
 # output = F
 
-oscillation = propagate(output, omega, z)/picometer
+input_amplitude = (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
+
+output = output-np.mean(output)
+output /= input_amplitude
+
+oscillation = propagate(output, omega, z)
 propagated_field = propagate_field_only(output, omega, z)
 
-input_amplitude = (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
 transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / input_amplitude
 
-print(f"{(transfer_ratio * 800000)} pm at E-field limit, {3*275} pm desired")
+print(f"{(transfer_ratio * 800000)} pm at E-field limit, {3.0*275.0} pm desired")
 
-
-normalized_output = output-np.mean(output)
-normalized_output /= input_amplitude
-
-normalized_propagated_field = (propagated_field - np.mean(propagated_field))/input_amplitude
-
-normalized_oscillation = (oscillation-np.mean(oscillation))/input_amplitude
-normalized_oscillation *= 1e6 # 1 megavolt field
+fs = np.linspace(0,30e9*2*pi)
+plt.plot(fs,greens_function(fs))
+plt.show()
 
 plt.subplot(2,2,1)
-plt.plot(times, normalized_output)
+plt.plot(times, output)
 plt.subplot(2,2,2)
-plt.plot(times, normalized_oscillation)
+plt.plot(times, (oscillation*1e7 / 1e-12))
+plt.title("Picometers oscillation amplitude per megavolt")
 plt.subplot(2,2,3)
-plt.plot(times, normalized_propagated_field)
+plt.plot(times, propagated_field)
 plt.savefig("muscle_pulse_8cm_minimize_test2.svg")
 plt.show()
 #
