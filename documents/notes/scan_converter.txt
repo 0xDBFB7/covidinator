@@ -429,6 +429,16 @@ to worry about a floating supply.
 
 oh neat, "self biasing", "Cathode bias resistor". one fewer psu.
 
+xpdc2 has support for background gas, but no geometry??
+xoopic is good for this problem.
+seem to have changed their input file structure.
+
+Particle-In-Cell Code with Monte Carlo Collisions 
+
+huh, warp does support collisisons. see Tegerup.
+
+double sided pcbs make great feedthroughs!
+
 
 
 

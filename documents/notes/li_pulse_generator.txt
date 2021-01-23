@@ -75,6 +75,6 @@ however, we're way past the bandwidth of any of the components so none of this i
 testing the trigger pulse generator - NAND and AND gates. straight through is too fast;
 about a 1 ns pulse, and it doesn't get all the way up. needs to be slowed slightly.
 
-both delay line and thinger works great.
+both sides of the delay line work great. 4V 100 ps on one side, steady on the other side.
 
 

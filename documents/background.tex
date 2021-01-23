@@ -5,22 +5,60 @@
 I was hoping I would have a definitive demonstration, so as to not redirect resources from more promising avenues.
 
 
+Note that it is possible that this has already been worked on. The last review was several months ago, and the literature is changing very rapidly.
+
+
 TRL 0
 
 suggestive, especially because a model organism
 
+An abundance of mechanisms exist to. Irritatingly, such mechanisms have almost universally been ruled out by careful experiment. Many entirely plausible mechanisms exist for which the only valid answer is that they simply do not occur in practice.
+
+
+
+
 
 Regurgitating Yang et al's line of reasoning, with a few; they study a 1 kV/m, 15 minute exposure, whereas we are concerned with a 3 MV/m, 500 picosecond regime. 
+
+
+
 
 \begin{multicols}{1}
 
 T4 capsid withstands a pressure differential of more than 30 atmospheres, crystallizing the genome packed within. \cite{Osmotic2003}
 
 
+formal literature review; In particular no search criteria were defined.
 
+%
+\footnote{It may be useful to clarify 'non-thermal'; it caused us some confusion, as the proteins of the virion locally absorb energy and undoubtedly increase in temperature; indeed the same denaturation processes may occur. The key is that, when excited in this manner, the energies in the envelope are poorly modeled by a Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'.} 
+%
+
+Additionally, other sterilization techniques may produce superior results with less faffing about and should be evaluated in the same context. For instance, data on far UV [Buonanno 2017] indicates safety.\\
+
+
+
+"Windows" of the same sort have been found, both in thermal and pulsed ultra-high-power UV Prodouz \cite{Use1987a}.
 
 
 (more data exists for influenza A; it is sufficiently structurally similar that ).
+
+
+
+Excellent theoretical arguments against the possibility of non-thermal effects can be found Adair \cite{Vibrational2002}, Adair \cite{Biological2002}, and Foster \cite{Viscous2000} on microtubules. 
+
+
+
+Adair \cite{Biophysics2000} on Brillouin.
+
+\nameref{sec:viscousdamping}
+
+Data cannot be trusted implicitly. By time-domain spectrometry (a reasonably trustworthy technique), Miura \cite{Microwave1994} find 
+
+
+Owrutsky Vibrational1994
+
+
 
 
 We don't want a purely membrane-electroporative effect since the lipid membrane of the virus is similar to (derived from) the host cell and little selectivity can be expected. Unless the virus has a lower capacitance and charges faster than the cell.
@@ -43,20 +81,13 @@ Madiyar observe rapid permeabilization at a field of approximately $10^7$ V/m, i
 
 The field strengths are high enough to lead to Townsend breakdowns in air (if the duration is longer than the formative lag). In some sense, we are concerned with field magn
 
-
+This idea, that resonances, is backed up by measurements by Gabriel; the slowest relaxation time in the microwave regime appear to be in the mammary glands, and. Small resonances will be disguised by the aggregation, however.
 
 
 Dielectric measurements on different proteins demonstrate that the slowest relaxation 
 
 
 
-
-
-The very high voltage means that low-sensitivity diagnostics, like lithium niobate optical probes. Not having a suitable optical bench, an electron-beam probe, similar to a streak camera, itself similar in principle to scan-conversion digitizer tubes in Tek SCD and 7912 series transient digitizers.
-
-If a low voltage sensitivity is required, and because modern high-pixel-density CMOS sensors allow the required deflection and the entire structure to be minimized, these are simple to design and inexpensive (much of the complexity being in the slow-wave or travelling-wave structure which is usually required to match the signal velocity to the - slowing down light without affecting its properties or drawing power is an extremely difficult problem) and can offer sample rates in the terasamples/s and analog bandwidths , albeit with low vertical resolution. 
-
-original von Ardenne 
 
 
 
@@ -68,16 +99,17 @@ Electric field has many more free variables than other treatments;
 
 best practices were not followed.
 
-\footnote{A wave propagating into tissue with $\epsilon=70$ has a refractive index $n=\sqrt{\mu/\epsilon}$, and is transmitted as $\frac{2 n_1}{n_1 + n_2}$. This is of no concern for waveguide or bolus applicators, since the reflected energy is captured and returned.}
+
 
 NATO Research Task Group 189 \cite{treatyelectromagnetic}
 
 zotero citation graph?
 
+\begin{fquote}[Wait][ \cite{treatyelectromagnetic}]
 HFM-189 found no published and replicated adverse health effects or biological mechanisms, beyond
 thermal interaction, for pulses shorter than 100 ms which suggested that neither the peak E-field limit in the
-IEEE C95.1-2005 safety standard [n.b. 4.3, Table 9, subsection e. peak E field 100 kV/m] nor the proposed limit in the Directive 2004/40/EC [33] (subsequently promulgated as 2013/35/EU [34]) have scientific basis. 
-
+IEEE C95.1-2005 safety standard [n.b. chapter 4.3, Table 9, subsection e. peak E field 100 kV/m] nor the proposed limit in the Directive 2004/40/EC [33] (subsequently promulgated as 2013/35/EU [34]) have scientific basis. 
+\end{fquote}
 
 
 " physical laws governing the propagation of E-fields in air already limit the maximum allowable peak E-field at ~3 MV/m (air breakdown). Current research efforts by members to expose biological organism(s), tissues, and cells to environmental
@@ -102,7 +134,7 @@ C95.1-2019, B.4.3 Rationale for pulsed RF field limits
 
 
 
-
+\footnote{A wave propagating into tissue with $\epsilon_r=70$ has a refractive index $n=\sqrt{\mu_r/\epsilon_r}$, and is transmitted as $\frac{2 n_1}{n_1 + n_2}$. This is of no concern for waveguide or bolus applicators, since the reflected energy is captured and returned.}
 
 
 
@@ -113,10 +145,10 @@ Cancer treatment involving irreversible electroporation is in a different regime
 
 
 
-Pakhomov \cite{Comparative} expose frog heart cells. No effects on pacemaker at 0.9 kV/m (although the field inside the ). 
+Pakhomov \cite{Comparative} expose frog heart cells, and find no effects on functioning pacemaker cells at 0.9 kV/m (although the field inside the waveguide may be lower). 
 
 
-Note: Not being biologists or microwave engineers, the trained reader may find that we are too verbose in simple technique and not in another. 
+Note: The author not being biologists or microwave engineers, the trained reader may find that we are too verbose in simple technique and methodology and not detailed in another.
 
 
 Is this resonance of Q=2 really of any practical use?
@@ -162,12 +194,32 @@ add "timeline"
 
 
 
-\subsection{Tsen's femtosecond laser ISRU}
+\subsection{Coherent control and laser chemistry}
 
-Impulsive stimulated Raman scattering. We confess to not having studied these mechanisms in great detail. Does not directly act on 
-the vibrational mode; the optimal pulse duration is some small fraction of the period of the mode in question.
 
-Unfortunately, these results appear to have failed replication \cite{No2011}. In any case, inactivation requires a very long duration of exposure; unlikely to be of great clinical use.
+
+Man \cite{Picosecond2016b} perform a trustworthy all-atom molecular dynamics simulation of . As with most molecular dynamics simulations, the applied field was enhanced by several orders of magnitude to an unrealistic 2 gigavolts per meter to make the reaction proceed fast enough to be captured without excessive computation time.
+
+
+
+\subsection{Picosecond and femtosecond laser studies}
+
+A group of literature exists concerning the excitation of these modes with picosecond or femtosecond lasers. A pulse some 300 fs long and with a carrier of around 600 nm. Impulsive stimulated Raman scattering. We confess to not having studied these mechanisms in great detail. The pulse does not directly act on the vibrational mode; the optimal pulse duration is some small fraction of the period of the mode in question.
+
+M13 is a 880 nm by 6.6 nm rod \cite{M132015}. 
+
+Dykeman \cite{Vibrational2009} perform an all-atom molecular dynamics simulation of ISRU of phage M13, albeit without a heat bath to accurately represent damping. An interesting result is that despite the broadband nature of the pulse, \char`~80\% of the pulse energy couples into only 5 modes, starting at approx. 20 GHz. The binding energy is implied to be too high to explain the experimental results. 
+
+Zhou \cite{Maximum2010} consider the optimal control theory for this problem. 
+
+Unfortunately, the experimental results on M13 appear to have completely failed replication by Wigle \cite{No2011}, and those on lymphocytes do not agree with existing literature by two orders of magnitude \cite{Targeted2002}, observing that over 1 TW of incident power is required to reproduce the effects by . 
+
+1 TW / (100 ps / 0.3 ps) = 3 GW 
+
+In any case, inactivation through this mechanism appears to require a very long duration of exposure.
+
+
+
 
 \subsection{Free-electron-laser }
 
@@ -175,9 +227,7 @@ Unfortunately, these results appear to have failed replication \cite{No2011}. In
 If this mechanism exists, it would seem to provide significant advantages over existing UV or cold-plasma sterilization. 
 
 If the extensions made in our paper are valid, this is a non-ionizing, non-thermal
-%
-\footnote{It may be useful to define 'non-thermal'; it caused us some confusion. Certainly the proteins of the virion locally absorb energy and increase in temperature. The key is that, when excited in this manner, the energies in the envelope are poorly modeled by a Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'. In contrast, with typical 2.4 GHz microwave exposure, sterilization can only occur by aggregate heating of the fluid and tissue.} 
-%
+
 , non-chemical technique, harmless for continuous exposure to tissue, which can sterilize air and surfaces alike, including skin, eyes, and within hair; it evolves no ozone, can readily be generated with \$1 USD - scale devices, acts instantaneously, and - perhaps most critically - could be made to act {\bf within infected tissues}.
 
 
@@ -195,10 +245,6 @@ If the extensions made in our paper are valid, this is a non-ionizing, non-therm
 
 the only analagous non-thermal mechansism we are aware of is electroporation; and that requires the diffusion of ionized sodium and potassium charge carriers through the membrane, which would seem to necessarily require a non-
 
-Laser
-
-
-Additionally, other sterilization techniques may produce superior results with less faffing about and should be evaluated in the same context. For instance, data on far UV [Buonanno 2017] indicates safety.\\
 
 
 So far as we are aware, there are no fundamental physical obstacles to non-thermal effects in biological systems. As an example, electroporation is a well-established - now a common laboratory procedure, in which an enormous electric field causes ions in solution to migrate across the membrane, 
@@ -262,21 +308,23 @@ Electrolysi
 
 \cite{comparative2003} discuss the relative inactivation of bacterial hosts and MS2 and PRD1 phages. 
 
+\section{Matters to consider in the design of experiments and the evaluation of literature}
+
 \subsection{Artifacts in past absorption spectroscopy experiments, and the subsequent development and debunking of non-classical damping hypotheses}
 
-Edwards et al in 1984 and 1985 measured the reflection from an open-ended coaxial line dipped in DNA solution and found that DNA appeared to have a resonance-like peak.
+Edwards et al in 1984 and 1985 measured the reflection from an open-ended coaxial line dipped in DNA solution and found that DNA appeared to produce a resonance-like peak.
 
 Such an effect is so unexpected - Bigio et al describe it as “astonishing”. Edwards hypothesized that the outer hydration layers could have a sort of elastic, non-viscous isolating effect. This result seems to have triggered a large amount of work to model this interaction, and various other interactions, in an attempt to explain the observed resonance.
 
-Footnote [At first blush, such an explanation does not seem unreasonable. In the case of the virus, for instance, the expected amplitude of oscillation for which this mechanism applies is on the order of one water molecule (~0.1 nm).
+At first blush, such an explanation does not seem unreasonable. In the case of the virus, for instance, the expected amplitude of oscillation for which this mechanism applies is on the order of one water molecule (~0.1 nm).
 
 Treating the interaction between the first few solvent layers surrounding some biological structure is indeed quite difficult; we encountered this in trying to setup MD This can be seen in [MD paper], so it is reasonable that continuum-like damping assumptions might break down. 
 
-In the case of a uniform rotating sphere, for instance, the [Einstein - ?] viscous drag force diverges from the continuum hypothesis toward zero.]
+In the case of a uniform rotating sphere, for instance, the [Einstein - ?] viscous drag force diverges strikingly from the continuum hypothesis toward zero.
 
 This really shouldn’t be treated classically, either - Frolich 
 
-\lettrine{U}nfortunately for these hypotheses, Foster 1986, replicating Edwards’ coaxial line method with a more rigorous error analysis on plus an equally rigorous transmission-line absorption, and Bigio in 1993, an ingenious thermo-optical technique, quite definitively demonstrate - to absurd precision -  that the previous results were a characteristic artifact of coaxial-line spectrometry, and that DNA does not have any resonance mode at any microwave frequency.
+\lettrine{U}nfortunately for these hypotheses, Foster 1986, replicating Edwards’ coaxial line method with a more rigorous error analysis on plus an equally rigorous transmission-line absorption, Gabriel, and Bigio in 1993, an ingenious thermo-optical technique, quite definitively demonstrate - to absurd precision -  that the previous results were a characteristic artifact of coaxial-line spectrometry, and that DNA does not have any resonance mode at any microwave frequency.
 
 In Bigio’s words “Extreme care”. Because it involves a differential measurement of two samples.
 

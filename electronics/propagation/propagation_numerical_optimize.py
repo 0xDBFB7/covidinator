@@ -9,6 +9,8 @@ from fdtd_PCB_extensions.tissue import cole_cole_4, complex_permittivity_to_er_a
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import minimize, basinhopping
 from fdtd_PCB_extensions.tissue import cole_cole_4, get_tissue_cole_cole_coefficients
+import pickle
+import dill
 
 
 
@@ -79,10 +81,26 @@ def propagate(F, omega, z):
     return np.fft.ifft(propagated)
 
 
+def propagate_field_only(F, omega, z):
+
+    frequency_domain = np.fft.fft(F)
+    # greens_function(omega) * q/m_reduced *
+
+    n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus))
+    n[omega == 0] = 1
+    propagated = frequency_domain * np.exp(-1j*(omega/c0)*n*z)
+    # watch the sign here - fix if needed
+
+    return np.fft.ifft(propagated)
+
+
 #energy constraint always tends toward a step function
 
 def cost_function(F, omega, z):
     return abs(-np.max(propagate(F, omega, z))/picometer) + np.max(F**2.0)
+
+
+
 
 duration = 30e-10
 samples = int(np.ceil(duration * omega_res * 2.0 * 5.0))
@@ -98,25 +116,45 @@ print(f"Samples: {samples} | < 1e10: {np.count_nonzero(omega < 1e10)}")
 
 # output = propagate(F, omega, z)
 
+filename = 'globalsave.pkl'
+try:
+    dill.load_session(filename)
+except:
 
-output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=1e-10 )['x']
+    output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=1e-10 )['x']
+
+    dill.dump_session(filename)
+
+
 
 #"method": "Nelder-Mead",
 # output = basinhopping(cost_function, F, minimizer_kwargs={"args":(omega, z)}, disp=True)['x']
 # output = F
 
 oscillation = propagate(output, omega, z)/picometer
+propagated_field = propagate_field_only(output, omega, z)
 
-transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
+input_amplitude = (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
+transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / input_amplitude
 
 print(f"{(transfer_ratio * 800000)} pm at E-field limit, {3*275} pm desired")
 
 
+normalized_output = output-np.mean(output)
+normalized_output /= input_amplitude
 
-plt.subplot(1,2,1)
-plt.plot(times, output)
-plt.subplot(1,2,2)
-plt.plot(times, oscillation)
+normalized_propagated_field = (propagated_field - np.mean(propagated_field))/input_amplitude
+
+normalized_oscillation = (oscillation-np.mean(oscillation))/input_amplitude
+normalized_oscillation *= 1e6 # 1 megavolt field
+
+plt.subplot(2,2,1)
+plt.plot(times, normalized_output)
+plt.subplot(2,2,2)
+plt.plot(times, normalized_oscillation)
+plt.subplot(2,2,3)
+plt.plot(times, normalized_propagated_field)
+plt.savefig("muscle_pulse_8cm_minimize_test2.svg")
 plt.show()
 #
 # n = cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus)

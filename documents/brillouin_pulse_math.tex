@@ -2,12 +2,13 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
+\pagebreak
 \section{The Brillouin precursors}
 
 Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors.
 
 
-Such thin coaxial cables have extremely high losses and cannot 
+The extremely high losses from such thin coaxial cables should be considered.
 
 The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 
 book\cite{Wave1960} on the topic. \footnotemark
@@ -19,19 +20,37 @@ The highly dispersive nature of tissue, which causes a peculiar distortion of sh
 
 The change in loss (the complex part of the permittivity, or the) and increase in penetration depth 
 
-
-While it is clearly possible to produce this abnormal penetration (any sharp edge suffices), it was not obvious to us that a waveform 
-could be constructed that would be 
-an effective driver for the normal modes in question. Oughston ; if the pulses are too close together, they distort the precursor thus 
-formed.
-
-
-
 A third aspect leads to the formation of the prototypical brilluoin precursor: any "sharp" 
 beginning or end of a tone, or other spatially confined structure in a waveform, includes harmonics 
 up to these \footnotemark
 
+
+Precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose; and various techniques for breast cancer detection.
+
+
+Also another really good paper that I can't find.
+
+\footnotetext{Well, Ong don't really observe the precursor itself, it seems.}
+
+
+
+
+While it is clearly possible to produce this abnormal penetration (any sharp edge suffices), it was not obvious to us that a waveform 
+could be constructed that would be an effective driver for the normal modes in question. 
+Oughston ; if the pulses are too close together, they distort the precursor thus formed.
+
+
+
 \footnotetext{it is interesting to note that a similar - if not equivalent - effect leads to the Heisenberg uncertainty principle. The more localized a }
+
+
+\begin{figure}[H]
+	%	\makebox[\textwidth][c]{
+		\includesvg[width=\textwidth]{muscle_pulse_8cm_minimize_test1}
+	\caption{Second.}
+\end{figure}
+
+
 
 At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$. The sharp edges are at approx. 250 GHz. 
 
@@ -43,13 +62,6 @@ for complete eradication of the virus from the body to a perfectly practicable 1
 an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
 
 However, the energy contained in such a standard pulsed-sine or gaussian train decays very quickly, 
-
-These precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose,
-
-Also another really good paper that I can't find.
-
-\footnotetext{Well, Ong don't really observe the precursor itself, it seems.}
-
 
 
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
@@ -98,6 +110,8 @@ What waveform produces the peak transient amplitude on the oscillator?
 \subsection{Analytic techniques}
 
 
+\paragraph{\textbf{Subharmonics}}\
+
 
 \begin{fquote}[Wait][ \cite{Propagation1965}]
 	In such cases, it may be feasible to evaluate the integral by a purely numerical procedure. With the wide availability of the digital computer, this is certainly fashionable at the moment. Consequently, one might say that the problem has been solved and no further discussion is needed. \\
@@ -131,10 +145,10 @@ oh, on the same topic, can we finally settle the i / j convention. Also, everyon
 
 Optimal pulses for several situations in Debye and Lorentz media have been determined by Oughstun's asymptotic method, which appears to be highly satisfactory in terms of physical intution, and also avoids truncation issues that befall fourier-transform techniques. In general, these optimal pulses are simple gaussian monopulses or higher-order gaussian derivatives \cite{Optimal2017} \cite{Optimal2015}. 
 
-Macke \cite{Simple2012} have come up with a number of other analytic representations for various signals, such as chirped gaussian pulses.
+Macke \cite{Simple2012} have come up with a number of other analytic dispersion representations for various signals, such as chirped gaussian pulses.
 
 
-\printendnotes
+%\printendnotes
 
 \subsubsection{Zhu et al 's dispersive waveform optimization propagation formulation}
 
