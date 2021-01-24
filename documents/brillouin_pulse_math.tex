@@ -5,7 +5,7 @@
 \pagebreak
 \section{The Brillouin precursors}
 
-Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors.
+Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors, and dispersion in general.
 
 
 The extremely high losses from such thin coaxial cables should be considered.
@@ -16,23 +16,23 @@ book\cite{Wave1960} on the topic. \footnotemark
 These are fascinating structures which arise as a result of two aspects (Albanese 
 \cite{Shortrisetime1989}): 
 
-The highly dispersive nature of tissue, which causes a peculiar distortion of short pulses,
+\begin{itemize}
+	\item The highly dispersive nature of tissue, which causes a peculiar distortion of short pulses,
+	\item The variation in loss (the imaginary part of the complex permittivity) and penetration depth versus frequency. 
+\end{itemize}
 
-The change in loss (the complex part of the permittivity, or the) and increase in penetration depth 
-
-A third aspect leads to the formation of the prototypical brilluoin precursor: any "sharp" 
-beginning or end of a tone, or other spatially confined structure in a waveform, includes harmonics 
-up to these \footnotemark
+A third aspect leads to the formation of the prototypical Brillouin precursor specifically: any sharp 
+beginning or end of a tone, or other sharply defined structure in a waveform, includes harmonics beyond the tone's carrier wave up to the rise time \footnotemark. \wikinote{add image}
 
 
-Precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose; and various techniques for breast cancer detection.
+Precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose; and various techniques for breast cancer detection. 
 
 
 Also another really good paper that I can't find.
 
 \footnotetext{Well, Ong don't really observe the precursor itself, it seems.}
 
-
+By putting more power in higher frequencies, 
 
 
 While it is clearly possible to produce this abnormal penetration (any sharp edge suffices), it was not obvious to us that a waveform 
@@ -224,8 +224,12 @@ However, a maximum absolute value constraint produces fantastic results.
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{
 	\includesvg[width=\textwidth]{muscle_pulse_8cm_minimize_test1}
-	\caption{Second.}
+	\caption{}
 \end{figure}
+
+
+The (noisy) output of the optimization for z=0.08 m in muscle. The low-frequency component is believed to be due to the FFT window size. Increasing the window size with the same sample rate caused CG convergence to stall. However, it's interesting that this appears to result in a larger amplitude. 
+
 
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{
@@ -233,7 +237,7 @@ However, a maximum absolute value constraint produces fantastic results.
 	\caption{Second.}
 \end{figure}
 
- Believed to be FFT window artifacts. Increasing the window size with the same sample rate caused CG convergence to stall.
+
 
 
 
