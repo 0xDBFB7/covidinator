@@ -24,6 +24,7 @@ c0 = 3e8
 m_reduced = 1.16e-19 #kg
 q = 10e3 * electron_charge # effective charge -
 
+
 picometer = 1e-12
 
 t= 0.0
@@ -34,11 +35,10 @@ Q = 1.5
 gamma = omega_res / Q
 
 
-
-
 def greens_function(omega):
     #see Feynman Lectures, volume 1 lecture 23 equation 8.
     return q/(m_reduced*(omega_res**2.0 - omega**2.0 + (1j*gamma*omega)))
+
 
 
 #debye water coefficients
@@ -55,46 +55,31 @@ def debye_refractive_index(omega):
 ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(48)
 
 
-# def cole_refractive_index(omega):
 #     '''
 #     See "Compilation of the dielectric properties of body tissues at RF and microwave frequencies.", Gabriel 1996
 #     Equation 3, page 12.
 #     '''
-#     angular_frequency = omega
-#     complex_permittivity = complex(ef, 0)
-#     for n in range(0, 4):
-#         complex_permittivity += deltas[n] / (1.0 + ((complex(0, 1)*angular_frequency*taus[n])**(1.0-alphas[n])))
-#
-#     complex_permittivity[angular_frequency > 0] += (sigma/((complex(0, 1)*angular_frequency[angular_frequency > 0]*epsilon_0)))
-#
-#     n = np.sqrt(complex_permittivity)
-#     return complex_permittivity
 
 
-def propagate(F, omega, z):
+
+def propagate(F, omega, z, oscillator=True):
 
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
 
     n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus))
     n[omega == 0] = 1
-    propagated =  greens_function(omega) * frequency_domain * np.exp(-1j*(omega/c0)*n*z)
+
+    frequency_domain[omega < 5e9] = 0
+    frequency_domain[omega > 100e9] = 0
+
+
+    oscillator_amplitude = greens_function(omega) if oscillator else 1
+    propagated = oscillator_amplitude * frequency_domain * np.exp(-1j*(omega/c0)*n*z)
     # watch the sign here - fix if needed
 
     return np.fft.ifft(propagated)
 
-
-def propagate_field_only(F, omega, z):
-
-    frequency_domain = np.fft.fft(F)
-    # greens_function(omega) * q/m_reduced *
-
-    n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus))
-    n[omega == 0] = 1
-    propagated = frequency_domain * np.exp(-1j*(omega/c0)*n*z)
-    # watch the sign here - fix if needed
-
-    return np.fft.ifft(propagated)
 
 
 #energy constraint always tends toward a step function
@@ -119,14 +104,18 @@ print(f"Samples: {samples} | < 1e10: {np.count_nonzero(omega < 1e10)}")
 
 # output = propagate(F, omega, z)
 
-filename = 'globalsave.pkl'
 try:
-    dill.load_session(filename)
+    f = open("output.pkl",'rb')
+    output = pickle.load(f)
+    f.close()
 except:
 
     output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=1e-10 )['x']
 
-    dill.dump_session(filename)
+    f = open("output.pkl","wb")
+    pickle.dump(output,f)
+    f.close()
+
 
 
 
@@ -134,21 +123,24 @@ except:
 # output = basinhopping(cost_function, F, minimizer_kwargs={"args":(omega, z)}, disp=True)['x']
 # output = F
 
+
+
+
+output = propagate(output, omega, 0, oscillator=False) #if a filter is enabled
+
 input_amplitude = (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
 
 output = output-np.mean(output)
 output /= input_amplitude
 
+
 oscillation = propagate(output, omega, z)
-propagated_field = propagate_field_only(output, omega, z)
+propagated_field = propagate(output, omega, z, oscillator=False)
 
 transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / input_amplitude
 
 print(f"{(transfer_ratio * 800000)} pm at E-field limit, {3.0*275.0} pm desired")
 
-fs = np.linspace(0,30e9*2*pi)
-plt.plot(fs,greens_function(fs))
-plt.show()
 
 plt.subplot(2,2,1)
 plt.plot(times, output)

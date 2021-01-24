@@ -10,7 +10,7 @@ Things that are here:
  * firmware/eppenwolf/runs: Data from a number of data-taking runs of the Eppenwolf.
  * A few microbiology protocols.
  * A wrapper around flaport/fdtd's awesome electromagnetics library:
- - tissue.py: supports import of IT.IS foundation computational phantom voxel files, with their supplied Cole-Cole dielectric model, for tissue simulations. Pretty rough.
+ - tissue.py: supports import of IT.IS Foundation computational phantom voxel files, with their supplied Cole-Cole dielectric model, for tissue simulations. Pretty rough, not formally validated.
  - PCB.py: A test of coupled NGSPICE - adaptive timestep and direct KiCAD netlist import and probe/source creation. Currently totally broken.
  * biology/JAMES/ A bespoke MD program thanks to the not-invented-here syndrome. Not enough time was spent exploring GROMACS and LAMMPS features for bead-spring elastic models. A complete waste of time. There is zero reason for this to exist.
 
@@ -20,3 +20,6 @@ Things that are here:
 One the one hand, there're some pretty good reasons to want embargoes, like the Ingelfinger rules - no need to lather up a furor just for some idle musings, and publishing too early is a terrible idea. 
 On the other hand, embargo rules came from publishers, and it's not obvious that these decisions were not somewhat motivated by financial considerations.
 There's a recent movement towards more "live" and open science - it's hard to tell when the, especially in a pandemic. Fortunately, it's not like any of what we're discussing here actually matters, anyways.
+
+Because this is basically a TRL 0 technique, 
+
