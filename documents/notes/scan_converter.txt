@@ -415,6 +415,12 @@ works great! very little light from the cathode discharge now.
 
 can't believe how well this O-ring anode works! no difficulty sealing despite 5 
 
+The anode is removable because we might want to just pop a little hole through
+the board - turned out to be useful for replacing the electron gun.
+
+The O ring is held in place with a piece of brass with a 45 deg angle made with a center drill.
+
+
 no sign of RID on the sensor yet either.
 
 some debris fell into the bore, unfortunately.
@@ -438,7 +444,6 @@ Particle-In-Cell Code with Monte Carlo Collisions
 huh, warp does support collisisons. see Tegerup.
 
 double sided pcbs make great feedthroughs!
-
 
 
 

@@ -69,13 +69,12 @@ if we presume that 50 other teams found no effect, is it possible that this is a
 
 
 
-Because the diode detectors are in an extremely noisy environment, it is important to either
+Because the diode detectors are in an extremely noisy environment, it was found useful to immediately digitize the signal within a mm of the output. Care in shielding may alleviate this issue.
 
 In the end, performing this was probably a mistake and unecessary, but by the time we realized this we had already put in the bulk of the time.
 
 Inspired by \cite{Biocoder2010}, we originally planned on writing the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
 However, because the device was planned to run headless in a BSL, this was abandoned.
-
 
 The method we use is terrible. Such small volumes pose incredible headaches and low SNR for little reason.
 Ideally, we should have used a technique orthogonal to previous studies.
