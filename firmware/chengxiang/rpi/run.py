@@ -1,79 +1,46 @@
-import RPi.GPIO as GPIO
-from time import sleep
 
-STEP_PIN = 7
-DIR_PIN = 21
-LIMIT_PIN = 22
-TRIGGER_PIN = 11
-ENABLE_PIN = 19 #might be 16
-
-GPIO.setmode(GPIO.BOARD)
-
-DEG_PER_STEP = 18.0
-SCREW_PITCH = 0.5 # //mm
-MICROSTEPS = 4
-distance_per_step = ((DEG_PER_STEP / 360.0) * SCREW_PITCH);
-#
-GPIO.setup(STEP_PIN, GPIO.OUT)
-GPIO.setup(DIR_PIN, GPIO.OUT)
-GPIO.setup(TRIGGER_PIN, GPIO.OUT)
-GPIO.setup(ENABLE_PIN, GPIO.OUT)
-
-GPIO.setup(LIMIT_PIN, GPIO.IN)
+from functions import *
+import numpy as np
 
 
+home()
 
-position = 0.0
-
-def move_absolute(new_position):
-    print("Moving to {} from {}\n".format(new_position, position))
-    delta = new_position - position
-    move_relative((delta < 0), abs(delta))
-    position = new_position
+working_distance = 50.0 #autosampler length
 
 
+code.interact(local=locals())
 
-def move_relative(direction, distance):
-    GPIO.output(DIR_PIN, direction)
-    GPIO.output(ENABLE_PIN, 0)
+working_volume = 0.2 * 0.2 * 5.0
 
-    num_steps = distance/distance_per_step * MICROSTEPS;
+step_distance = working_volume
 
-    for i in range(int(num_steps)):
-    	GPIO.output(STEP_PIN, 1)
-    	sleep(600 * 1e-6) #microseconds
+#250 steps.
 
-    	GPIO.output(STEP_PIN, 0)
-    	sleep(600 * 1e-6) #microseconds
+pulses_per_volume = 30
 
-    GPIO.output(ENABLE_PIN, 1)
+move_absolute(working_distance);
 
 
-def home():
-    while(GPIO.input(LIMIT_PIN)):
-        move_relative(1,1)
+input("Supply PG1 > ")
 
-    GPIO.output(DIR_PIN, 0)
-    GPIO.output(ENABLE_PIN, 0)
+move_absolute(0)
 
-    while(not GPIO.input(LIMIT_PIN)):
-    	GPIO.output(STEP_PIN, 1)
-    	sleep(1500 * 1e-6) #microseconds
+input("Supply test tube > ")
 
-    	GPIO.output(STEP_PIN, 0)
-    	sleep(1500 * 1e-6) #microseconds
+print("Running")
 
-    GPIO.output(ENABLE_PIN, 1)
-    position = 0
+exposure = True
 
-while True:
-    home()
-    sleep(1)
+for distance in np.arange(0, working_distance, step_distance):
+    move_absolute(distance)
+    for i in range(pulses_per_volume):
+        pulse(exposure)
+        sleep(0.005)
+
+print("Done")
 
 
-
-
-
+#     for(float j = 0; j < 12; j += 0.5){
 
 #
 # digitalWrite(13, HIGH);

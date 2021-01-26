@@ -2555,6 +2555,13 @@ as a result of all the scraping, it's very much possible that the silicone layer
 After several months, the PAG1 calibrator on the fluro still reads 29000 counts,
  very close to the 30,000 previously seen. I love it when things stay working!
 
+Trigger pulse is a little low - 3.8 V and 150 ns long.
+
+Made up a standard PG1 tube. 0.2/0.2 gg. About 8000 counts. (btw when I say counts I'm reading off the IQ_viewer on the fluro)
+
+
+
+
 
 
 
