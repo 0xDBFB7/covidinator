@@ -265,3 +265,7 @@ RPi is used so that the ethernet isolation provides a bit of protection against 
 supplies - so that I don't fry my precious computer if a wire comes off!
 
 
+using the coax cable on the trigger pulse mainly for jitter and stability
+
+
+

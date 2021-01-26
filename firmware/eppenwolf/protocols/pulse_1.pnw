@@ -2549,7 +2549,7 @@ the plastic thing works great. also put two beads of hot glue on the ends of the
 as a result of all the scraping, it's very much possible that the silicone layer has been broken.
 
 
-\section{}
+\section{Li pulser test 1}
 
 
 After several months, the PAG1 calibrator (the large-volume one, not the 50 uL) on the fluro still reads 29000 counts,
@@ -2582,7 +2582,32 @@ Verified that yadda yadda
 
 Tube 1: ~7300 counts.
 
-FUCKER
+Okay so we should re-make the CPWG but thinner for higher electric field.
+
+also, this isn't totally unexpected; the pulse isn't shaped to the 10 GHz tone yet.
+
+Also, T4 just isn't a good surrogate, we've already seen that from the nanotube paper.
+
+maybe try without the terminator?
+
+oh! The connector on the SMA to the pulser wasn't tight! Tightened, ran:
+
+Tube 2: 7108.
+
+\section{Pulse shaped test}
+
+
+Built up the pulse shaper on 1/16" ptfe. Used the whole 6" stock. 5mm wide microstrip for 50Z.
+
+25 mm long microstrip stubs, shorted at the ends.
+
+only about 100 V measured at the terminator.
+
+330 V, 500 Hz 0.2 mm step.
+
+
+
+
 
 
 
