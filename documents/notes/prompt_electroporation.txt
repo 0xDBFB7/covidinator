@@ -249,21 +249,19 @@ have a "behaviour and performance" section for each piece of equipment.
 
 
 
+
 okay, so with the simulation results in mind (namely, that 0.5V on the line leads to 400 V/m 
 in the fluidic channel), we can only expect about 300 kV/m with the current channel.
 oh dear! taking a layer of the fluid away to prevent conduction currents,
 we get only 200 V/m! darn!
 
+oh! fix the conductivity
+
 also a significant phase shift, meaning the wave properties aren't going to be reproduced
 accurately. darnit!
 
 
-
-
-
-
-
-
-
+RPi is used so that the ethernet isolation provides a bit of protection against the EMP and the 10kv
+supplies - so that I don't fry my precious computer if a wire comes off!
 
 
