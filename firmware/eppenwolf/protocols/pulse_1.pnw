@@ -2552,14 +2552,37 @@ as a result of all the scraping, it's very much possible that the silicone layer
 \section{}
 
 
-After several months, the PAG1 calibrator on the fluro still reads 29000 counts,
+After several months, the PAG1 calibrator (the large-volume one, not the 50 uL) on the fluro still reads 29000 counts,
  very close to the 30,000 previously seen. I love it when things stay working!
 
 Trigger pulse is a little low - 3.8 V and 150 ns long.
 
-Made up a standard PG1 tube. 0.2/0.2 gg. About 8000 counts. (btw when I say counts I'm reading off the IQ_viewer on the fluro)
+Made up a standard PG1 tube. 0.2/0.2 gg. About 8000 counts blank. (btw when I say counts I'm reading off the IQ_viewer on the fluro)
+
+none of the phage tubes are turbid, which is good.
+
+Running deterministic.
 
 
+Verified that exposure occurred. 400 V tone; 307 V input. 0.2 mm step,  500 Hz. I think the pulses actually affected the stepping;
+little glitches and the volume isn't exactly right. still enough to accurately
+
+Tube 0: 8100 counts. Exactly the same.
+
+
+Let's increase the voltage and the number of pulses. 300 pulses/0.2 mm at 500 hz (15c temp rise expected, still okay).
+330v to the pulse generator.
+
+Interesting; the pulse is actually bipolar and 575 V (maybe just a scope artifact) measuing at the 50-ohm term.
+probably an artifact of the scope clip.
+
+oh hang on - that's Vpp, which isn't our electric field.
+
+Verified that yadda yadda
+
+Tube 1: ~7300 counts.
+
+FUCKER
 
 
 

@@ -3,12 +3,14 @@ from functions import *
 import numpy as np
 
 
+exposure = bool(input("Exposure? (1/0) > ")) # NOT FOR PRODUCTION USE!
+
 home()
 
 working_distance = 50.0 #autosampler length
 
 
-code.interact(local=locals())
+# code.interact(local=locals())
 
 working_volume = 0.2 * 0.2 * 5.0
 
@@ -16,7 +18,7 @@ step_distance = working_volume
 
 #250 steps.
 
-pulses_per_volume = 30
+pulses_per_volume = 300
 
 move_absolute(working_distance);
 
@@ -27,9 +29,10 @@ move_absolute(0)
 
 input("Supply test tube > ")
 
+input("Turn on supplies")
+
 print("Running")
 
-exposure = True
 
 for distance in np.arange(0, working_distance, step_distance):
     move_absolute(distance)
