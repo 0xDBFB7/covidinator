@@ -26,22 +26,22 @@ GPIO.setup(LIMIT_PIN, GPIO.IN)
 
 position = 0.0
 
-def move_absolute(new_position):
+def move_absolute(new_position,speed=(500 * 1e-6)):
     global position
     print("Moving to {} from {}\n".format(new_position, position))
     delta = new_position - position
-    move_relative(delta < 0, abs(delta))
+    move_relative(delta < 0, abs(delta), speed=speed)
     position = new_position
 
 
 
-def move_relative(direction, distance):
+def move_relative(direction, distance, speed=(500 * 1e-6)):
     GPIO.output(DIR_PIN, bool(direction))
     GPIO.output(ENABLE_PIN, 0)
 
     num_steps = distance/distance_per_step * MICROSTEPS;
 
-    speed = 500 * 1e-6
+    # speed = 500 * 1e-6
 
     for i in range(int(num_steps)):
     	GPIO.output(STEP_PIN, 1)

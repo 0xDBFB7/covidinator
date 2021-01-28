@@ -2608,10 +2608,56 @@ only about 100 V measured at the terminator.
 Tube 3: 6800.
 
 
+\section{Smaller coplanar test}
+
+Smallerizing the CPWG cell. Dropping it to 0.05 mm gap, 0.4 mm wide.
+
+a 0.05 mm by 3 mm section:
+
+(0.5 * 750 picofarads * (400 volts)^2) / (0.00525 mm^3 * (water density) * 4.2 J/(g K)) = 2.5 K
+(Decreased voltage to 400 V since that's all we're actually charging the caps to)
+
+We can probably afford 10 pulses before heat becomes a problem.
+
+Made up the cpwg. -0.035 mm stepdown. No idea how big it is.
+maybe pressure/viscosity/thingy could tell us?
+Somewhat asymmetric due to machining tolerances. Punched the 1/16" holes in the 9594 tape (maybe 3/64 actually) with the hole punch again.
+Sealed up great with hot glue on the ends. Added the hot-glue after sticking on the plate. Only one cpwg is sealed against the hole - the other is covered.
+very high capillary pressure. Reducing speed a lot.
 
 
+Note: no silicone insulating layer! conduction effects are not ruled out.
 
 
+Tube 4: 6000 counts. however that seems really low and might actually be a volume thing - the channel pressure really limited the thing.
+so! What I'm going to do is run that again to get twice the volume, and we'll see if that works.
+nah, it's not a volume thing. perhaps the channel is filtering out some of the GG - or the glue is sticking the phage?
+could there be an electroadhesion thingy where it's being stuck to the channel wall?
+
+Removing the terminator from the end, we get a 1.16 KV pulse
+In fact, the pulse is so strong that it knocks the ethernet off on the RPi that's right next to it.
+
+pulse duration is actually about 10 ns without the terminator - maybe 5 cycles - whoa! still the same power equation, no change in heating
+because I'd already accomodated a 10 ns pulse. but wow!
+
+in fact I swear I could feel the pulse through the scope probe?!?
+
+
+Tube 5: 6080.
+
+Ran a control tube wihtout PSUs: 5400.
+
+huh, that's a little lower.
+one artifact that might occur with this setup is the pulse interfering with the stepper motor travel. haven't really seen that, but it's something to consider.
+
+the concern is that if the volume is a little lower, it might not be aligned with the fluro.
+
+
+weighed the filled tubes. they're all totally different. FUUCKAEDKFJADFFUCKFUCLKFUCCKFKFKFUFKFICJDFLKADSF KAsdflads;jf ldskj flad jkflksdjaflkad sjflkdja lsdkjf l;ds jflkdas jfl;kadsl;kf aldffufkfk
+
+:(FUCK): FUCK()::FAD kfalsdkjf ladf kldajf s;dlkjf    ssdfffuckfuckcifke;lejflkfuckfufkcfkkdfj fkudf aldsjkf ;asdjkf lkd jaflkdj fkldfukfkcdufa; sdlkfj dlkm
+
+gosh darn
 
 
 

@@ -28,3 +28,40 @@
 21-01-2021 19:21:24  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
 21-01-2021 19:21:26  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 1 second(s)
 21-01-2021 19:21:26  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/delay_line/ALdelay_line-F_Cu.ngc"
+27-01-2021 21:41:53  INFO [main] Autoleveller:55 - Application started
+27-01-2021 21:42:22  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/coplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:42:22  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-4.11 X width=15.51 Y height=4.11
+27-01-2021 21:42:27 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+27-01-2021 21:42:27 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+27-01-2021 21:42:27  WARN [AWT-EventQueue-1] AutolevellerGUI:489 - Your working area is smaller than your probing area
+27-01-2021 21:42:30  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+27-01-2021 21:42:31  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+27-01-2021 21:42:31  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:42:38 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+27-01-2021 21:42:38 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+27-01-2021 21:42:38  WARN [AWT-EventQueue-1] AutolevellerGUI:489 - Your working area is smaller than your probing area
+27-01-2021 21:42:39  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+27-01-2021 21:42:39  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+27-01-2021 21:42:39  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:42:51 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+27-01-2021 21:42:51 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+27-01-2021 21:42:51  WARN [AWT-EventQueue-1] AutolevellerGUI:489 - Your working area is smaller than your probing area
+27-01-2021 21:42:52  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+27-01-2021 21:42:52  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+27-01-2021 21:42:52  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:43:03  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/coplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:43:03  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-4.11 X width=15.51 Y height=4.11
+27-01-2021 21:43:06 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+27-01-2021 21:43:06 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+27-01-2021 21:43:06  WARN [AWT-EventQueue-1] AutolevellerGUI:489 - Your working area is smaller than your probing area
+27-01-2021 21:43:07  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+27-01-2021 21:43:07  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+27-01-2021 21:43:07  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:45:10  INFO [main] Autoleveller:55 - Application started
+27-01-2021 21:45:20  INFO [AWT-EventQueue-1] AutolevellerGUI$4:221 - Unmodified GCode File (UGF) set to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/coplanar_exposure_cells-F_Cu.ngc"
+27-01-2021 21:45:20  INFO [AWT-EventQueue-1] AutolevellerGUI$4:232 - Work area is: X=0 Y=-4.11 X width=15.51 Y height=4.11
+27-01-2021 21:45:28 DEBUG [AWT-EventQueue-1] FilterFactory:17 - Creating a new ArcSegmentor with segmentLength 5.0
+27-01-2021 21:45:28 DEBUG [AWT-EventQueue-1] FilterFactory:19 - Successfully created ArcSegmentor: segmentLength = 5.0
+27-01-2021 21:45:28  INFO [AWT-EventQueue-1] Surface:105 - Writing AL file
+27-01-2021 21:45:28  INFO [AWT-EventQueue-1] Surface:130 - Successfully created AL file in 0 second(s)
+27-01-2021 21:45:28  INFO [AWT-EventQueue-1] Surface:131 - AL file written to "/home/arthurdent/covidinator/electronics/kicad/coplanar_exposure_cells/ALcoplanar_exposure_cells-F_Cu.ngc"

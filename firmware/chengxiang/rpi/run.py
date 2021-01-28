@@ -2,6 +2,7 @@
 from functions import *
 import numpy as np
 
+code.interact(local=locals())
 
 exposure = bool(input("Exposure? (1/0) > ")) # NOT FOR PRODUCTION USE!
 
@@ -10,22 +11,21 @@ home()
 working_distance = 50.0 #autosampler length
 
 
-# code.interact(local=locals())
 
-working_volume = 0.2 * 0.2 * 5.0
+working_volume = 0.05 * 0.1 * 4
 
 step_distance = working_volume
 
 #250 steps.
 
-pulses_per_volume = 300
+pulses_per_volume = 5
 
-move_absolute(working_distance);
+move_absolute(working_distance)
 
 
 input("Supply PG1 > ")
 
-move_absolute(0)
+move_absolute(0, (4000 * 1e-6))
 
 input("Supply test tube > ")
 
