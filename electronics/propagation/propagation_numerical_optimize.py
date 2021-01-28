@@ -70,8 +70,8 @@ def propagate(F, omega, z, oscillator=True):
     n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus))
     n[omega == 0] = 1
 
-    frequency_domain[omega < 5e9] = 0
-    frequency_domain[omega > 100e9] = 0
+    # frequency_domain[(omega/(2.0*pi)) < 1e9] = 0
+    # frequency_domain[(omega/(2.0*pi)) > 10e9] = 0
 
 
     oscillator_amplitude = greens_function(omega) if oscillator else 1

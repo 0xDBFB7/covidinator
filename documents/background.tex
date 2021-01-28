@@ -2,10 +2,19 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
+
+
+\begin{multicols}{1}
+
+
+
+\footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
+
+
 I was hoping I would have a definitive demonstration, so as to not redirect resources from more promising avenues.
 
 
-Note that it is possible that this has already been worked on. The last review was several months ago, and the literature is changing very rapidly.
+Note that it is possible that this has already been worked on. The last review was several months ago, and the literature is changing very rapidly. Reuben
 
 Much of the work in this paper was concerned with this paper
 
@@ -31,15 +40,13 @@ It stands to reason, then, that any pulse longer than the relaxation time is not
 
 vestiges
 
-Less than 1 nanosecond (where poration and thermal effects start to become significant, and any previous absorbed power has been dispersed in the solvent) but greater than about 10 picoseconds (covered by existing laser research) and electric fields between 0.1 MV/m (for which biological effects at these timescales are only barely plausible) and 10 MV/m (the production of pulses which strain credulity).
+Less than 1 nanosecond (where poration and thermal effects start to become significant at these fields, and any previous absorbed power has been dispersed in the solvent) but greater than about 10 picoseconds (covered by existing laser research) and electric fields between 0.1 MV/m (for which biological effects at these timescales are only barely plausible) and 10 MV/m (the production of pulses which strain credulity).
 
 as dt decreases, there's lots of room to add more zeros. a pulse 4 orders of magnitude higher than the maximum field used by practically any existing system.
 
 
 
 
-
-\begin{multicols}{1}
 
 T4 capsid withstands a pressure differential of more than 30 atmospheres, crystallizing the genome packed within. \cite{Osmotic2003}
 
@@ -83,21 +90,56 @@ Also, the pore must stay open for long enough that damage is dealt to the virus.
 
 
 
-Electroporation of viral membranes and capsids has been observed.
+Scope for this effect can be seen in the following contrast. The statement which echos the concensus of a number of literature reviews by standards organizations:
 
-Mizuno \cite{Inactivation1990} inactivate SVD Enterovirus (a 27 nm non-enveloped encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 100\% effectiveness at 120 pulses, about 500 nanoseconds each, at 3 MV/m. 
+\begin{fquote}[\textit{NATO Research Task Group 189}, as cited by \textit{C95.1-2019, B.4.3 Rationale for pulsed RF field limits}][ \cite{treatyelectromagnetic}]
+	HFM-189 found no published and replicated adverse health effects or biological mechanisms, beyond
+	thermal interaction, for pulses shorter than 100 ms which suggested that neither the peak E-field limit in the
+	IEEE C95.1-2005 safety standard {\normalfont[NB chapter 4.3, Table 9, subsection e. peak E field 100 kV/m]} nor the proposed limit in the Directive 2004/40/EC [33] (subsequently promulgated as 2013/35/EU [34]) have scientific basis. 
+	
+	Physical laws governing the propagation of E-fields in air already limit the maximum allowable peak E-field at ~3 MV/m (air breakdown). Current research efforts by members to expose biological organism(s), tissues, and cells to environmental
+	fields up to this magnitude have been unable to elicit an acute biological response.
+\end{fquote}
 
-The thermal artifact cannot necessarily be discounted. The energy \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K))}. The electrodes were un-insulated, so electrochemical effects are possible.
+\subsection{Precedent}
 
-Interestingly
+Electropermeabilization of viral membranes and capsids has been observed.
+
+Mizuno \cite{Inactivation1990} inactivate SVD Enterovirus (a 27 nm non-enveloped protein encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 100\% effectiveness with 120 pulses, about 500 nanoseconds each, at 3 MV/m. Electron microscopy demonstrates that the mechanism is irreversible damage to the capsid or envelope respectively and release of the core.
+
+\begin{autem}
+Extreme care must be taken in interpreting the results of any one study in isolation, especially in this field.
+
+In this observation, the thermal artifact cannot necessarily be discounted. The energy dissipated was sufficient to cause a significant temperature rise if localized hot-spots appeared \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K)) = ~50 $\Delta$C, whereas melting temperatures are typically about 90 C for capsids and 50 C for envelopes\cite{Stability1985}}. The electrodes were not insulated, so electrochemical effects are possible but unlikely given the short duration of the pulses. 
+\end{autem}
+
+Madiyar \cite{Manipulation2013} observe rapid permeabilization (likely through the slow, conventional electroporation mechanism) at a field of poorly-defined intensity up to about 10 MV/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 bacteriophage. 
+
+Moreover, these results could easily be explained by a first-order theoretical. Both AFM data and surmised from osmotic pressure, the force scale required to crack the viral envelopes and capsids is about 1 nanonewton. 
 
 
-Madiyar observe rapid permeabilization at a field of approximately $10^7$ V/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 \cite{Manipulation2013}. 
+de Seze
+
+
+
+
+
+\pagebreak
+
+(we use the term electropermeabilization)
+
+
+If we compare in-vitro with in-vitro host cells, the issue becomes less clear.
+
+
+NATO Research Task Group 189 \cite{treatyelectromagnetic}
+
+zotero citation graph?
 
 
 The field strengths are high enough to lead to Townsend breakdowns in air (if the duration is longer than the formative lag). In some sense, we are concerned with field magn
 
-This idea, that resonances, is backed up by measurements by Gabriel; the slowest relaxation time in the microwave regime appear to be in the mammary glands, and. Small resonances will be disguised by the aggregation, however.
+This idea, that resonances, is backed up by measurements on aggregate tissues by Gabriel; the slowest relaxation time in the microwave regime appear to be in the mammary glands, and. Small resonances will be disguised by the aggregation, however.
 
 
 Dielectric measurements on different proteins demonstrate that the slowest relaxation 
@@ -117,22 +159,7 @@ best practices were not followed.
 
 
 
-NATO Research Task Group 189 \cite{treatyelectromagnetic}
 
-zotero citation graph?
-
-\begin{fquote}[NATO Research Task Group 189][ \cite{treatyelectromagnetic}]
-HFM-189 found no published and replicated adverse health effects or biological mechanisms, beyond
-thermal interaction, for pulses shorter than 100 ms which suggested that neither the peak E-field limit in the
-IEEE C95.1-2005 safety standard [n.b. chapter 4.3, Table 9, subsection e. peak E field 100 kV/m] nor the proposed limit in the Directive 2004/40/EC [33] (subsequently promulgated as 2013/35/EU [34]) have scientific basis. 
-\end{fquote}
-
-
-" physical laws governing the propagation of E-fields in air already limit the maximum allowable peak E-field at ~3 MV/m (air breakdown). Current research efforts by members to expose biological organism(s), tissues, and cells to environmental
-fields up to this magnitude have been unable to elicit an acute biological response."
-
-
-\footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
 
 A provisional limit of 100 kV/m; the standard now that the fourier transform instantaneous pulse energy must not exceed 1/5 the energy over some specified averaging time.
 
@@ -143,10 +170,12 @@ When the waveform of the external electric field is non-sinusoidal, such as with
 waveforms, the rms value of the spatially averaged external field shall conform to the MPEs of Table 4, and
 also to either of the criteria stated in 4.1.2.4.1 and 4.1.2.4.2.
 
+ 
+Ultrasonic excitation or acoustic pulses have been considered in the literature; we have not analyzed these claims in any depth.
 
 
 
-C95.1-2019, B.4.3 Rationale for pulsed RF field limits
+
 
 
 
@@ -161,10 +190,7 @@ Cancer treatment involving irreversible electroporation is in a different regime
 
 
 
-Pakhomov \cite{Comparative} expose frog heart cells, and find no effects on functioning pacemaker cells at 0.9 kV/m (although the field inside the waveguide may be lower). 
-
-
-Note: The author not being biologists or microwave engineers, the trained reader may find that we are too verbose in simple technique and methodology and not detailed in another.
+Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). 
 
 
 Is this resonance of Q=2 really of any practical use?
