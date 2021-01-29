@@ -269,3 +269,13 @@ using the coax cable on the trigger pulse mainly for jitter and stability
 
 
 
+add to readme.md:
+
+ * Some musings on a cheap (~$300) 20+ GHz 0.5+ terasample/s von Ardenne-like scan-conversion digitizing probe. Only a few situations in which this would be useful because of the really low sensitivity of von Ardenne-like plates. 
+    - I'm a little wary of working further and publishing any details on this because most detailed descriptions of 10+ GHz transient digitizers since the 1970s are classified (despite being well-described in the public domain since the 1940s!).
+    - On the other hand, work on TDS is maybe limited by labs not having access to an affordable picosecond digitizer, so maybe it warrants some attention.
+
+
+
+
+    

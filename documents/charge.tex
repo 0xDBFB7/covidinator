@@ -19,20 +19,49 @@ The adsorption of metal ions onto the surface of the genome
 \begin{itemize}
 \item The nucleocapsid. 
 \item Induced polarization
-		Persson cite a re-arrangement of electrons as a source of drag. Polarization-like effects are not expected. We have not followed up on this.
-		
+		Persson cite a polarization re-arrangement of electrons as a source of drag. Polarization-like effects are not expected. We have not followed up on this.
 \item 
 \end{itemize}		
 
 
 
-Poisson-Boltzmann family of equations is an extension of standard Laplace and Poisson potentials to solutions containing ions. 
 
-Most situations solve this in equilibrium. However, we are specifically designing the pulse to be so short that ion equilibriation effects cannot occur. 
 
-First the Poisson-Boltzmann equation is run to determine the screened charge density.
 
-$$
+\section{Weakened phage}
+
+should try weakened phage again!
+
+
+
+
+
+
+
+Poisson-Boltzmann family of equations is an extension of standard Laplace and Poisson potentials to solutions containing ions. As with all models, there are many nuances to using these correctly; whether various approximations hold, etc. We will ignore all subtleties. 
+
+Božič \cite{How2012} consider an empty capsid.
+
+The generalized Poisson equation is 
+
+$$\nabla \cdot \left(\epsilon\ \nabla \bar\phi \right) = - \rho$$
+
+We shamelessly steal Brackley \cite{Electrostatic2020}'s formulation (thanks for such detail!)  with one exception. Most solutions consider an equilibrium. However, we are specifically designing the pulse to be too short for ion equilibriation to occur. Therefore we solve in two steps: First the Poisson-Boltzmann equation is run to determine the charge density due to screening; then this is used as a constant to solve when a field is applied.
+
+Reproducing here for convenience:
+
+$$\nabla \cdot \left(\epsilon\ \nabla \bar\phi \right) - \epsilon \kappa^2 \sinh(\bar\phi) = - \rho$$ 
+
+is the potential in V, kappa is a Debye-Huckel parameter. They use an internal dielectric constant of 5, an external of 80 ($\epsilon =  80\epsilon_0$). 1/10 k1
+
+$$\hat\phi = \frac{e_0 \phi}{}$$
+
+where $e_0$ is the electron charge, $k_b$ the Boltzmann constant, and 
+
+
+
+
+
 
 
 
@@ -40,15 +69,20 @@ $$
 
 effective 
 
+\subsection{Empirical methods}
+
+
 
 Birefringence e
 
+
+electroroattion 
 
 
 It is easy to determine an upper limit.
 
 
-Božič \cite{How2012} consider an empty capsid.
+
 
 Donnan equilibrium
 
@@ -82,20 +116,20 @@ As might be expected, the electrostatic properties of the virus differ from that
 
 At the largest scale, at a pH of 7 the net charges of the 4 proteins that comprise ~88\% of the protein mass\cite{Quantitative1981} of the virus (of the 11 coded for by the Influenza A genome) only contribute at most  $\approx 1 \times 10^5\  e^-$.
 
-
-
-
-
-
+(29.8 kb to 29.9 kbp for NCoV-2 \cite{Genomic2020}).
 
 
 
 (these values were only taken at a pH of 7. A larger charge imbalance might be found at less neutral pHes. However, any effect would be of little practical use if it does not occur at physiological pH.)
 
+
+
 \begin{sidenote}
 Protein net charges extracted from protein primary structure sequences\footnotemark compiled by the proteome-pI database \cite{ProteomepI2017} and UniProt\footnotemark using localCIDER \cite{CIDER2017}. See \ghfile{biology/data/net_charge.py} and structure.xlsx. Detailed source information will be added later!
 \end{sidenote}
-Assuming a charge of $2e^-$ per base pair due to phosphate groups, the 13.5 kbp of RNA can hardly contribute $> 3e^- \times10^4$
+
+NOTE SSRNA Assuming a charge of $1e^-$ per base pair due to phosphate groups, the 13.5 kbp of ssRNA can hardly contribute $> 1.5e^- \times10^4$
+
 
 
 Note that this is considering the net charge of a whole isolated protein. Some proteins poke through the envelope; if a zwitterionic polarization existed from one end of a protein to another, for instance, this would not count here but would affect the coupling to an EM field. Given the small extent of most of the structural proteins, however, this doesn't seem like a likely effect.

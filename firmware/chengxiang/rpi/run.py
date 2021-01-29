@@ -18,7 +18,7 @@ step_distance = working_volume
 
 #250 steps.
 
-pulses_per_volume = 5
+pulses_per_volume = 20
 
 move_absolute(working_distance)
 

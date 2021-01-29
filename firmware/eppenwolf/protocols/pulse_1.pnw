@@ -2652,14 +2652,96 @@ one artifact that might occur with this setup is the pulse interfering with the 
 
 the concern is that if the volume is a little lower, it might not be aligned with the fluro.
 
-
-weighed the filled tubes. they're all totally different. FUUCKAEDKFJADFFUCKFUCLKFUCCKFKFKFUFKFICJDFLKADSF KAsdflads;jf ldskj flad jkflksdjaflkad sjflkdja lsdkjf l;ds jflkdas jfl;kadsl;kf aldffufkfk
-
-:(FUCK): FUCK()::FAD kfalsdkjf ladf kldajf s;dlkjf    ssdfffuckfuckcifke;lejflkfuckfufkcfkkdfj fkudf aldsjkf ;asdjkf lkd jaflkdj fkldfukfkcdufa; sdlkfj dlkm
-
 gosh darn
 
-maybe that's just manufacturing tolerance. wouldn've seen such a wide variation in the fluro - that's why it's there!
+maybe that's just manufacturing tolerance. would've seen such a wide variation in the fluro - that's why it's there!
+
+
+purged by removing the leuer lock and drawing air.
+small slug of water was kept to keep the plunger lubricated.
+
+for random statistical uncertainty, going to take a few samples
+from the last run that are still on screen
+
+
+
+6245
+6532
+6612
+6061
+6346
+6176
+6472
+6553
+7412
+5320
+6711
+6007
+
+std dev = 496.7465896
+
+repeatability:
+
+11071
+12329
+
+13900
+9423
+
+
+
+The PAG1 standards were previously consistent between 50 uL and 0.2 mL, so the adsorption doesn't seem to be a problem?
+should try running one through again just to try.
+
+
+\section{Weakened phage}
+
+8x2.5 1M mixed. Litmus shows black on the stock, pale green on the mixed tube (hmm, that's not right?).
+
+Background (0.4 mL) is 8900 counts.
+
+330v, 5 pulses per volume, terminator in place
+
+because the fluro scrolls continuously allows you to pick, that's not great for blinding.
+ changing it so that only one sample is taken per keystroke. will report two samples.
+
+Tube 0:
+
+11123
+10237
+
+Tube 1:
+
+Removing terminator and increasing from 5 to 20 pulses.
+
+10976
+11286
+
+Tube 2 (control, supplies off):
+
+12031
+12429
+
+
+Added another 10 2.5 mL to the PBD1 source tube. Blank is now
+
+11175
+11686
+
+Should do a new autoclaved - just in case something weird happened to the phage so that the upper limit is lower
+
+hang on, pale green on litmus is just 7. Let's add more buffer until we get up to 10.6. Blank:
+
+11959
+
+Tube 3:
+
+8829
+
+
+That should really have done it. The asymmetry might have decreased the field a bit.??.
+
+
 
 
 
