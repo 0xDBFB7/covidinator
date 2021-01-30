@@ -277,5 +277,6 @@ add to readme.md:
 
 
 
+oh man, there's so much going on with lipid 
 
-    
+effective permittivity

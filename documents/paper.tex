@@ -23,7 +23,8 @@
 		\hline
 	\end{tabular}
 
-	\caption{Data from testing on bacteriophage. Data rounded to the nearest thousand photon counts. Not thoroughly characterized. Repeatability between test conditions  Random error between capture windows $\sigma=0.5$ kcounts. Background was not  }
+	\caption{Data from testing on bacteriophage. Data rounded to the nearest thousand photon counts. Not thoroughly characterized. Repeatability between test conditions   Background was no. 
+	The flurometer printed a constant stream of the integration, all within the random error between capture windows $\sigma=0.5$ kcounts. }
 \end{table}
 
 
@@ -31,14 +32,14 @@
 	\captionsetup{singlelinecheck = false, justification=justified}
 	\centering
 	\includegraphics[width=\textwidth]{pulse_exposure_setup.JPG}
-	\caption{\\ Pulse exposure jig. Li et al's pulser seen off the left. Autosampler Pulse shaping plate not shown. Aluminum disc belongs to the scan-conversion digitizer, not used in this study.}
+	\caption{\\ \textit{Chengxiang} pulse exposure jig. pulser seen off the left. Autosampler Pulse shaping plate not shown. Aluminum disc belongs to the scan-conversion digitizer, not used in this study.}
 \end{figure}
 	
 \begin{figure}[H]
 	\captionsetup{singlelinecheck = false, justification=justified}
 	\centering
 	\includegraphics[width=\textwidth]{eppenwolf_2.jpg}
-	\caption{\\ The misguided {\it Eppenwolf} pulsed X-Band microwave spectrometer used in this study, pictured with the near-field cuvette installed.}
+	\caption{\\ \textit{Eppenwolf} misguided pulsed X-Band microwave spectrometer used in this study, pictured with the near-field cuvette installed.}
 \end{figure}
 
 \clearpage
@@ -319,34 +320,24 @@ To the extreme, some papers have used
 {\Large Modes of application}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The mechanism restricts the possible modes of application; it would be useful to 
+\section{Sensing}
 
-\paragraph{\textbf{Personal 'electromagnetic mask'}}\
+There is little discussion on microwave virus detection, with the notable exception of [Mehrotra 2019]. 
 
-Even with judicious use of phased-arrays, spatial power-combining, etc, each transistor can only reasonably maintain sterility in approx. $ 0.1 \text{ m}^3 $.
+However, \cite{Microwave2012} find that - in controlled conditions - they can detect a single E. Coli bacterium in 50 uL of broth via a microwave cavity. 
 
-\paragraph{\textbf{Direct treatments at the fundamental}}\
+Havelka \cite{Highfrequency2011} discuss microtubules.
 
+With an extremely high power excitation pulse, the problem may become somewhat easier; especially if the virus has a ring-down that can be subjected to autocorrelation.
 
+However, the dipole radiation power expected in even the most implausibly optimistic case would be about as follows:
 
+$$P={\frac {\mu _{0}(2 \pi \cdot 20 GHz) ^{4}(0.5 \text{nm} * 10^6 e^-)^{2}}{12\pi c}} = 7.1 \times10^{-16} \text{W} $$
 
-\paragraph{\textbf{More fanciful concepts}}\
+which for most reasonable conditions would $\approx 0.5 Janskies$, meaning that the power radiated from the virus would be considerably overpowered by the milky way.
 
-Many systems operate in these X-band frequency ranges; and precision 
+% (magneticConstant*(2 pi * 20 GHz)^4 * (0.1 nm * 1000 * electronCharge)^2)/(12*pi * c) -> W
 
-It is easy to produce megawatts of power at these frequency ranges using Klystrons. Assuming an appropriate antenna, a single 50MW SLAC XL-class klystron with a PRF of 180 Hz could sanitize almost a square kilometer every second. \footnote{Giving 'asceptic field' new meaning.}
-
-On the other hand, if this is conducted in outdoor free-space, sunlight
-
-Existing marine, weather, and aviation radar systems often use the X-band; depending on the focusing power
-
-\paragraph{Sensing}
-
-there is little discussion on microwave virus detection, with the notable exception of [Mehrotra 2019]. Such scholarly silence is usually an indicator that a technique is impossible for reasons so obvious they scarcely bear repeating. 
-
-However, [Oberoi 2012] find that - in controlled conditions - they can detect a single E. Coli bacterium in 50 uL of broth via a microwave cavity. 
-
-Of course, discriminating miniscule returns in free-space is not easy; but with precise knowledge of this resonance mode, it may become somewhat easier. Frequency-domain measurements can be made with incredible precision; and there are many parameters by which virions could be discriminated; ring-up time of the resonance, excitation non-linearity, etc.
 
 
 \end{multicols}
@@ -380,6 +371,8 @@ Of course, discriminating miniscule returns in free-space is not easy; but with 
 \subfile{fluorescence}
 
 \subfile{detection}
+
+\subfile{lessons_learned}
 
 \nocite{*}
 

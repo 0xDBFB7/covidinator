@@ -2572,6 +2572,7 @@ works fine, so IDK.
 Indeed, double-checking, it always reports 0.0000 precisely when no power is applied.
 
 A huge amount of noise; can't really use a scope probe.
+alt.cuddle
 
 
 
@@ -2637,3 +2638,5 @@ NLTL doesn't really help penetrate. Not really sure why yet.
 It seemed like a chirped gaussian was a good excitation, but nope!
 
 ah darnit, the frequency that's bleeding through on the precursor is actually 1 GHz!
+
+

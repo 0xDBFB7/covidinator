@@ -3,3 +3,5 @@
 
 
 Sparselizard is amazing, but tequires PB in a "weak form"
+
+git-annex is awesome!

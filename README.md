@@ -1,12 +1,12 @@
 Hi! Welcome! There's not a whole lot of real substance here, but maybe you'll find something useful. I hope you like it! 
 
 ```
-<:  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>   ^_^  :>  ^_^  <:
+<:  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  <:
 ```
 
-# [The Paper!](documents/paper_publish.pdf)
+# [The Paper!](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/paper_publish.pdf)
 
-## References & Resources [HTML](documents/references.html) | [Zotero (categories!)](documents/references.rdf) | [BiBTeX](documents/references.bib) 
+## References & Resources [HTML](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/references.html) | [Zotero (categories!)](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/references.rdf) | [BiBTeX](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/references.bib) 
 
 
 Things that are here:
@@ -24,10 +24,6 @@ Things that are here:
  * Bad notes! When the  wanna make a real sweet lab notebook, the current offerings aren't, in my opinion, super great - suggestions for features and workflows are welcome!
 
 ```
-<3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3 
+<3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3 
 ```
-
-One the one hand, there're some pretty good reasons to want embargoes, like the Ingelfinger rules - no need to lather up a furor just for some idle musings, and publishing too early is a terrible idea. 
-On the other hand, embargo rules came from publishers, and it's not obvious that these decisions were not somewhat motivated by financial considerations.
-There's a recent movement towards more "live" and open science - it's hard to tell when the, especially in a pandemic. Fortunately, it's not like any of what we're discussing here actually matters, anyways.
 

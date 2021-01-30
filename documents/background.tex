@@ -6,7 +6,7 @@
 
 \begin{multicols}{1}
 
-
+\section{Background}
 
 \footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
 
@@ -19,7 +19,14 @@ Note that it is possible that this has already been worked on. The last review w
 Much of the work in this paper was concerned with this paper
 
 
-TRL 0
+
+%3 MV/m * 1000 electronCharge * 1 angstrom / (boltzmannConstant * 310 K) = 1.12 kT
+From a pessimistic energetic perspective, 
+, where 0.1 angstrom is derived from the lipid MD simulation. [that's not right!] Compare to ~5 $k_b T$ per protein for capsid binding \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ for lipid bilayer pore formation \cite{Atomistic2014a}.
+%17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
+
+
+
 
 suggestive, especially because a model organism
 
@@ -105,12 +112,12 @@ Scope for this effect can be seen in the following contrast. The statement which
 
 Electropermeabilization of viral membranes and capsids has been observed.
 
-Mizuno \cite{Inactivation1990} inactivate SVD Enterovirus (a 27 nm non-enveloped protein encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 100\% effectiveness with 120 pulses, about 500 nanoseconds each, at 3 MV/m. Electron microscopy demonstrates that the mechanism is irreversible damage to the capsid or envelope respectively and release of the core.
+Mizuno \cite{Inactivation1990} inactivate SVD Enterovirus (a 27 nm non-enveloped protein encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 100\% effectiveness with 120 pulses, about 500 nanoseconds each, at 3 MV/m. Electron microscopy demonstrates that the mechanism is irreversible damage to the capsid or envelope respectively and subsequent release of the core, and is unlike thermal treatment.
 
 \begin{autem}
-Extreme care must be taken in interpreting the results of any one study in isolation, especially in this field.
+Extreme care must be taken in interpreting the results of any one study in isolation, especially in this field. 
 
-In this observation, the thermal artifact cannot necessarily be discounted. The energy dissipated was sufficient to cause a significant temperature rise if localized hot-spots appeared \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K)) = ~50 $\Delta$C, whereas melting temperatures are typically about 90 C for capsids and 50 C for envelopes\cite{Stability1985}}. The electrodes were not insulated, so electrochemical effects are possible but unlikely given the short duration of the pulses. 
+Though the temperature was monitored, In this observation, the thermal artifact cannot necessarily be completely discounted. The energy dissipated was sufficient to cause a significant temperature rise if localized hot-spots appeared \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K)) = ~50 $\Delta$C, whereas melting temperatures are typically about 90 C for capsids \cite{Thermal1999} and 50 C for envelopes\cite{Stability1985}}. \\ The electrodes were not insulated, so electrochemical effects are possible but unlikely given the short duration of the pulses. 
 \end{autem}
 
 Madiyar \cite{Manipulation2013} observe rapid permeabilization (likely through the slow, conventional electroporation mechanism) at a field of poorly-defined intensity up to about 10 MV/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 bacteriophage. 
