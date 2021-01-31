@@ -8,6 +8,10 @@
 
 \section{Background}
 
+
+We were inspired by Yang (gordon reuben following up)
+bona fide clinically useful effect
+
 \footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
 
 
@@ -21,7 +25,7 @@ Much of the work in this paper was concerned with this paper
 
 
 %3 MV/m * 1000 electronCharge * 1 angstrom / (boltzmannConstant * 310 K) = 1.12 kT
-From a pessimistic energetic perspective, 
+From a pessimistic energetic perspective,  !!! we know what the spring constant k should be !!!
 , where 0.1 angstrom is derived from the lipid MD simulation. [that's not right!] Compare to ~5 $k_b T$ per protein for capsid binding \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ for lipid bilayer pore formation \cite{Atomistic2014a}.
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
 
@@ -58,15 +62,18 @@ as dt decreases, there's lots of room to add more zeros. a pulse 4 orders of mag
 T4 capsid withstands a pressure differential of more than 30 atmospheres, crystallizing the genome packed within. \cite{Osmotic2003}
 
 
-formal literature review; In particular no search criteria were defined.
+formal systematic review; in particular no search criteria were defined.
 
 %
 \footnote{It may be useful to clarify 'non-thermal'; it caused us some confusion, as the proteins of the virion locally absorb energy and undoubtedly increase in temperature; indeed the same denaturation processes may occur. The key is that, when excited in this manner, the energies in the envelope are poorly modeled by a Maxwell-Boltzmann distribution; they are not given sufficient time to 'thermalize'.} 
 %
 
+
+The effects that we are concerned with occur 4 orders of magnitude above 
+
+Windows between caused by structural or 
+
 Additionally, other sterilization techniques may produce superior results with less faffing about and should be evaluated in the same context. For instance, data on far UV [Buonanno 2017] indicates safety.\\
-
-
 
 "Windows" of the same sort have been found, both in thermal and pulsed ultra-high-power UV Prodouz \cite{Use1987a}.
 
@@ -558,6 +565,39 @@ expelling its viral contents into solution and
 Not to be confused with pseudoscientific 'resonance therapies', nor reports of a connection with 5G communications.
 
 This means that the technique is {\it selective}.
+
+
+
+
+
+
+which establishes that - unique to certain viruses, and apparently unlike human cellular structures, as we shall see - coincidentally have just the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately 8 GHz.
+
+More critically, [] (and, in parallel, [Hung 2014]) theoretically model and then experimentally validate in various strains of Influenza A that - due to this acoustic-resonance effect - the power density levels required to crack the lipid envelope are near the safety limits for continuous exposure to humans.\footnote{Sort of. See below and supplemental.}
+
+They demonstrate this with both a plaque and PCR assay, finding good agreement with the theoretical model.\footnote{As we will discuss, there are a few issues with the experimental technique.; sham, blinding, and dosimetry demanded by [Vjl.] are not mentioned.}
+
+Like pumping a swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. \\
+\\\\
+
+\paragraph{Ramifications}\
+
+
+
+\begin{autem}
+	
+	{\it autem}\\
+	The previous paragraph may cut an impressive figure; but it hinges on all the rest of this paper being correct.
+	
+\end{autem}
+
+\lettrine{It} cannot be overstated how unexpected and positively dubious this finding appears to be - that is, based on our limited research and inexperience to date.
+
+For even the RF power limits set by standards organizations like \cite{ICNIRP2020} \cite{IEEE2006} appear to be based on the observation that no significant resonance modes exist in biological tissues due to damping forces from the surrounding tissue \cite{Vibrational2002}. As we shall see, this is grounded in solid {\it in vitro} (albeit more limited {\it in vivo}) evidence. 
+
+This may account for why this paper has been largely ignored.
+
+The precise structure and charge of the virion appears to be a singular anomaly in this otherwise categorical non-existence.
 
 
 

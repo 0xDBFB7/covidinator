@@ -14,7 +14,7 @@ import dill
 
 
 
-omega_res = 2.0*pi*8e9
+omega_res = 2.0*pi*30e9
 
 electron_charge = 1.602e-19 # Coulomb
 Z0 = 377.0
@@ -28,7 +28,7 @@ q = 10e3 * electron_charge # effective charge -
 picometer = 1e-12
 
 t= 0.0
-z = 0.08
+z = 0.06
 
 
 Q = 1.5
@@ -51,8 +51,10 @@ def debye_refractive_index(omega):
     #refractive index is n = sqrt(mu/epsilon)
     return np.sqrt(eps_inf + (eps_s - eps_inf)/((1.0-1j*omega*tau)*(1.0-1j*omega*tau_f)))
 
+muscle_id = 48
+lung_id = 41
 #cole-cole refractive index
-ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(48)
+ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(lung_id)
 
 
 #     '''
@@ -62,13 +64,12 @@ ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(48)
 
 
 
-def propagate(F, omega, z, oscillator=True):
+def propagate(F, n, omega, z, oscillator=True):
 
     frequency_domain = np.fft.fft(F)
     # greens_function(omega) * q/m_reduced *
 
-    n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus))
-    n[omega == 0] = 1
+
 
     # frequency_domain[(omega/(2.0*pi)) < 1e9] = 0
     # frequency_domain[(omega/(2.0*pi)) > 10e9] = 0
@@ -84,8 +85,8 @@ def propagate(F, omega, z, oscillator=True):
 
 #energy constraint always tends toward a step function
 
-def cost_function(F, omega, z):
-    return abs(-np.max(propagate(F, omega, z))/picometer) + np.max(F**2.0)
+def cost_function(F, n, omega, z):
+    return abs(-np.max(propagate(F, n, omega, z))/picometer) + np.max(F**2.0)
 
 
 
@@ -98,6 +99,8 @@ F=np.ones(samples)
 omega = 2*pi*np.fft.fftfreq(samples)*(samples/(duration*2))
 print(f"Samples: {samples} | < 1e10: {np.count_nonzero(omega < 1e10)}")
 
+n = np.sqrt(cole_cole_4(omega/(2.0*pi), ef, sigma, deltas, alphas, taus)) #precompute cole-cole refractive index
+n[omega == 0] = 1
 
 # F[len(F)//2:-1] = 0
 # F = np.sin(times*omega_res)
@@ -110,7 +113,7 @@ try:
     f.close()
 except:
 
-    output = minimize(cost_function, F, args=(omega, z), options={'disp': True}, tol=1e-10 )['x']
+    output = minimize(cost_function, F, args=(n, omega, z), options={'disp': True}, tol=1e-10 )['x']
 
     f = open("output.pkl","wb")
     pickle.dump(output,f)
@@ -126,7 +129,7 @@ except:
 
 
 
-output = propagate(output, omega, 0, oscillator=False) #if a filter is enabled
+output = propagate(output, n, omega, 0, oscillator=False) #if a filter is enabled
 
 input_amplitude = (np.max(np.abs(np.real(output)))-np.min(np.abs(np.real(output))))
 
@@ -134,8 +137,8 @@ output = output-np.mean(output)
 output /= input_amplitude
 
 
-oscillation = propagate(output, omega, z)
-propagated_field = propagate(output, omega, z, oscillator=False)
+oscillation = propagate(output, n, omega, z)
+propagated_field = propagate(output, n, omega, z, oscillator=False)
 
 transfer_ratio = (np.max(np.abs(np.real(oscillation)))-np.min(np.abs(np.real(oscillation)))) / input_amplitude
 

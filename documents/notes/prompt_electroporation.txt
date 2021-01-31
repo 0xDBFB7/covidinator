@@ -280,3 +280,13 @@ add to readme.md:
 oh man, there's so much going on with lipid 
 
 effective permittivity
+
+
+Jackson, Electrodynamics has some stuff on forces 
+
+
+
+PyGBe has a sphere mesher. 
+
+
+
