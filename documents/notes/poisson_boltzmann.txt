@@ -2,6 +2,12 @@
 
 
 
-Sparselizard is amazing, but tequires PB in a "weak form"
+Sparselizard is amazing, but tequires PB in a "weak form" 
+sympde can solve those?
+could solve using the analytic potential in that paper and then distribute the charge correctly
 
 git-annex is awesome!
+
+
+cmake .. -DBLAS_INCLUDE_PATH=/usr/include/openblas/ -DBLAS_LIBRARIES=/usr/lib/openblas-base/lib -DMETIS_INCLUDE_PATH=/usr/include/ -DMETIS_LIBRARIES=/usr/lib/ -DSLEPC_INCLUDE_PATH=/usr/include/ -D SLEPC_LIBRARIES=/usr/lib
+

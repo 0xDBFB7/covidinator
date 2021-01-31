@@ -286,7 +286,7 @@ Jackson, Electrodynamics has some stuff on forces
 
 
 
-PyGBe has a sphere mesher. 
-
+PyGBe has a sphere mesher.  doesn't do dielectrics tho
+mathematica has the Laplacian[] thing, which supports spherical coordinates and works pretty well
 
 
