@@ -11,3 +11,4 @@ git-annex is awesome!
 
 cmake .. -DBLAS_INCLUDE_PATH=/usr/include/openblas/ -DBLAS_LIBRARIES=/usr/lib/openblas-base/lib -DMETIS_INCLUDE_PATH=/usr/include/ -DMETIS_LIBRARIES=/usr/lib/ -DSLEPC_INCLUDE_PATH=/usr/include/ -D SLEPC_LIBRARIES=/usr/lib
 
+aha, dielectric is also equal to the diffusion coefficient

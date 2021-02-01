@@ -2,6 +2,7 @@
 
 #define base_type double
 
+void idx(x,y,z)
 
 
 base_type mesh[nx][ny][nz];
@@ -21,7 +22,6 @@ for(int x = 1; x < nx-1; x++){
             value += -1.0*eps[x][y][z-1] * (pot[x][y][z-1]-pot[x][y][z]);
             value += -1.0*eps[x][y][z] * (pot[x][y][z+1]-pot[x][y][z]);
             value += eps[x][y][z]*kappa_squared[x][y][z]*pot[x][y][z];
-            
         }
     }
 }

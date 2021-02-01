@@ -1,0 +1,6 @@
+insobj
+scale=5.0                      ! sets scale to 2 grids/Å
+perfil=60                      ! sets percent box fill to 90%
+is=0.1 ! ionic strength
+exdi=80
+indi=2                         ! interior dielectric = 2

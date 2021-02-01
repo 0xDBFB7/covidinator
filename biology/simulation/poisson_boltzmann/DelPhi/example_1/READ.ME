@@ -1,0 +1,33 @@
+
+Analyzing electrostatic properties of a molecule as a single object (for 
+example: a protein, RNA, DNA). Barstar molecule will be used 
+as an example. The calculations were done at zero salt.
+
+Run DelPhi by typing "delphi param_1". Wait until DelPhi completes 
+the run. The output is given below:
+
+(1) total grid energy          :        5168.769     kt
+(2) self-reaction field energy :      -19088.44     kt
+(3) total s.charge,no epsin carrying :    1.4302
+(4) corrected reaction field energy:   -782.8139     kt
+(5) coulombic energy :                -8125.605     kt
+(6) All energy terms but grid and self_react.:  -8908.419    kt
+
+(1) can't be used in this case, because it carries extra term that needs 
+to be cancelled (this energy will be used very extensive in other 
+examples).
+(2) the energy of transfer of the all atoms from vacuum to a 
+homogeneous media with dielectric constant equal to dielectric 
+constant of protein. See the manual. This number will be used only in 
+very specific cases.
+(3) reports the net charge induced on the surface of the molecule (in 
+electron units)
+(4) the reaction field energy (solvation energy of transfer of the 
+molecule from homogeneous medium of dielectric constant of the 
+protein (epsilon internal) to water (epsilon external))
+(5) the electrostatic energy of interaction between all charges of the 
+molecule, computed as a coulombic interaction in homogeneous 
+medium with dielectric constant of the protein
+(6) is the sum of reaction field energy and coulombic interaction. This 
+is the total energy of molecule. 
+
