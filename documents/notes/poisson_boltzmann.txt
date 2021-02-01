@@ -21,3 +21,8 @@ DelPhi really isn't going to work for this.
 
 4 ways of doing force 
 maxwell stress tensor
+
+pygbe allows a field to be applied!
+
+there's a "dielectric boundary" force -  I don't think we actually need to model that?
+
