@@ -290,3 +290,7 @@ PyGBe has a sphere mesher.  doesn't do dielectrics tho
 mathematica has the Laplacian[] thing, which supports spherical coordinates and works pretty well
 
 
+aHA! it's the quadrupole and multipole expansion! 
+
+
+

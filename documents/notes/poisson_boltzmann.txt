@@ -12,3 +12,12 @@ git-annex is awesome!
 cmake .. -DBLAS_INCLUDE_PATH=/usr/include/openblas/ -DBLAS_LIBRARIES=/usr/lib/openblas-base/lib -DMETIS_INCLUDE_PATH=/usr/include/ -DMETIS_LIBRARIES=/usr/lib/ -DSLEPC_INCLUDE_PATH=/usr/include/ -D SLEPC_LIBRARIES=/usr/lib
 
 aha, dielectric is also equal to the diffusion coefficient
+
+Spherical_multipole_moments
+
+only DelPhi <5.4 supports non-atom objects
+
+DelPhi really isn't going to work for this.
+
+4 ways of doing force 
+maxwell stress tensor
