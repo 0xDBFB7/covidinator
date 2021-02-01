@@ -26,3 +26,11 @@ pygbe allows a field to be applied!
 
 there's a "dielectric boundary" force -  I don't think we actually need to model that?
 
+APBS documentation:
+
+zero “Zero” boundary condition. Dirichlet conditions where the potential at the boundary is set to zero. This
+condition is not commonly used and can result in large errors if used inappropriately.
+
+okay, so let's recap. We've got 
+
+holy crap! MEDUSA is amazing! takes the *strong form*!

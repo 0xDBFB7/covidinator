@@ -11,9 +11,10 @@
 //
 
 
-const int n = 10;
+const int n = 500;
 const int ncubed = (n*n*n);
-
+const double dl = 1;
+const double dl2 = (1.0/(dl*dl));
 //tolerable even at 700. nice!
 
 uint16_t idx(int x, int y, int z){
@@ -46,6 +47,7 @@ int main(){
 
 
     for(int iter = 0; iter < 5000; iter++){
+        base_type residual = 0;
 
         #pragma omp parallel
         {
@@ -54,26 +56,42 @@ int main(){
                 for(int y = 1; y < n-1; y++){
                     for(int z = 1; z < n-1; z++){
                         base_type value = 0;
-                        value += 1.0*eps[idx(x-1,y,z)] * (V[idx(x-1,y,z)]);
-                        value += 1.0*eps[idx(x,y,z)] * (V[idx(x+1,y,z)]);
-                        value += 1.0*eps[idx(x,y-1,z)] * (V[idx(x,y-1,z)]);
-                        value += 1.0*eps[idx(x,y,z)] * (V[idx(x,y+1,z)]);
-                        value += 1.0*eps[idx(x,y,z-1)] * (V[idx(x,y,z-1)]);
-                        value += 1.0*eps[idx(x,y,z)] * (V[idx(x,y,z+1)]);
+                        // u[i,j,k]= Ap*((u[i+1,j,k]+u[i-1,j,k])
+                        //          + Ay*(u[i,j+1,k]+u[i,j-1,k])
+                        //          + Az*(u[i,j,k+1]+u[i,j,k-1])
+
+                                 // - f[i,j,k])
+                        value += dl2*(V[idx(x+1,y,z)]+V[idx(x-1,y,z)]);
+                        value += dl2*(V[idx(x,y+1,z)]+V[idx(x,y-1,z)]);
+                        value += dl2*(V[idx(x,y,z+1)]+V[idx(x,y,z-1)]);
+
+                        // value += 1.0*eps[idx(x-1,y,z)] * (V[idx(x-1,y,z)]);
+                        // value += 1.0*eps[idx(x,y,z)] * (V[idx(x+1,y,z)]);
+                        // value += 1.0*eps[idx(x,y-1,z)] * (V[idx(x,y-1,z)]);
+                        // value += 1.0*eps[idx(x,y,z)] * (V[idx(x,y+1,z)]);
+                        // value += 1.0*eps[idx(x,y,z-1)] * (V[idx(x,y,z-1)]);
+                        // value += 1.0*eps[idx(x,y,z)] * (V[idx(x,y,z+1)]);
                         value -= charge[idx(x,y,z)] / epsilon_0; //space charge term
                         // value -= eps[idx(x,y,z)]*kappa_squared[idx(x,y,z)]*V[idx(x,y,z)];
+                        value *= 1.0/(2.0*((1.0/dl2)*3.0));
+                        // value /= 6.0;
+                        V_new[idx(x,y,z)] = value;
 
-                        value /= 6.0;
-                        V[idx(x,y,z)] = value;
                     }
                 }
             }
         }
         #pragma omp barrier
-        dbg(V[idx(0,0,0)]);
+        for(int i = 0; i < ncubed; i++){
+        if(fabs(V[i]-V_new[i]) > residual){
+            residual = fabs(V[i]-V_new[i]);
+        }
+        }
+        dbg(V[idx(1,1,1)]);
+        dbg(residual);
         std::cout << "test\n";
-        // V.swap(V_new);
-        // std::fill(V_new.begin(), V_new.end(), 0);
+        V.swap(V_new);
+        std::fill(V_new.begin(), V_new.end(), 0);
     }
 
 
