@@ -1,9 +1,8 @@
 #include <medusa/Medusa_fwd.hpp>
 #include <Eigen/SparseCore>
-#include <Eigen/Geometry>
 #include <Eigen/IterativeLinearSolvers>
 
-/// Basic medusa example, we are solving 3D Poisson's equation on rotated and translated unit cube
+/// Basic medusa example, we are solving 2D Poisson's equation on unit square
 /// with Dirichlet boundary conditions.
 /// http://e6.ijs.si/medusa/wiki/index.php/Poisson%27s_equation
 
@@ -11,38 +10,44 @@ using namespace mm;  // NOLINT
 
 int main() {
     // Create the domain and discretize it
-    BoxShape <Vec3d> box(0.0, 1.0);
-    double dx = 0.05;
-    DomainDiscretization <Vec3d> domain = box.discretizeWithStep(dx);
-
-    Eigen::AngleAxisd Q(PI/3, Vec3d(1, 1, 1).normalized());
-    domain.rotate(Q.toRotationMatrix()).translate({-2.5, 0.4, 1.2});
+    BoxShape <Vec2d> box(0.0, 1.0);
+    double dx = 0.01;
+    DomainDiscretization <Vec2d> domain = box.discretizeWithStep(dx);
 
     // Find support for the nodes
     int N = domain.size();
     domain.findSupport(FindClosest(9));  // the support for each node is the closest 9 nodes
 
-    // Construct the approximation engine, in this case a weighted least squares using Gaussians
-    // as basis functions, no weight, and scale to farthest
-    WLS <Gaussians<Vec3d>, NoWeight<Vec3d>, ScaleToFarthest,
-    Eigen::LLT<Eigen::MatrixXd>> wls({9, 30.0});
+    // Construct the approximation engine, in this case a weighted least squares using monomials as
+    // basis functions, no weight, and scale to farthest
+    int m = 2;  // basis order
+    WLS <Monomials<Vec2d>, NoWeight<Vec2d>,
+    ScaleToFarthest> wls(Monomials<Vec2d>::tensorBasis(m));  // tensor basis of monomials
+    // up to order 2,
+    // {1,x,x2,y,yx,yx2,y2,y2x,y2x2}
 
-    auto storage = domain.computeShapes<sh::lap>(wls);  // compute the shapes using our WLS
+    // compute the shapes (we only need the Laplacian) using our WLS
+    auto storage = domain.computeShapes<sh::lap>(wls);
 
     Eigen::SparseMatrix<double, Eigen::RowMajor> M(N, N);
     Eigen::VectorXd rhs(N); rhs.setZero();
-
-    auto op = storage.implicitOperators(M, rhs);  // construct implicit operators over our storage
     M.reserve(storage.supportSizes());
 
+    // construct implicit operators over our storage
+    auto op = storage.implicitOperators(M, rhs);
+    auto op3 = storage.implicitVectorOperators(M, rhs);
+
+    ExplicitVectorOperators<decltype(storage)> op2(storage);
 
 
     for (int i : domain.interior()) {
         double x = domain.pos(i, 0);
         double y = domain.pos(i, 1);
-        double z = domain.pos(i, 2);
         // set the case for nodes in the domain
-        op.div(epsilon(i) * op.grad(i)) = epsilon(i) * kappa_squared * -3 * PI * PI * std::sin(PI * x) * std::sin(PI * y) * std::sin(PI * z);
+
+        // op.lap(i) = -2 * PI * PI * std::sin(PI * x) * std::sin(PI * y);
+        op2.div(op2.grad(i, {-1, -1, -1}),{-1, -1, -1}) = -2 * PI * PI * std::sin(PI * x) * std::sin(PI * y);
+        // op.div(epsilon(i) * op.grad(i)) = epsilon(i) -3 * PI * PI * std::sin(PI * x) * std::sin(PI * y);
     }
     for (int i : domain.boundary()) {
         // enforce the boundary conditions
@@ -51,10 +56,10 @@ int main() {
 
     Eigen::BiCGSTAB<decltype(M), Eigen::IncompleteLUT<double>> solver;
     solver.compute(M);
-    ScalarFieldd u = solver.solve(rhs);  // solve the system
+    ScalarFieldd u = solver.solve(rhs);
 
     // Write the solution into file
-    std::ofstream out_file("poisson_dirichlet_3D_data.m");
+    std::ofstream out_file("poisson_dirichlet_2D_data.m");
     out_file << "positions = " << domain.positions() << ";" << std::endl;
     out_file << "solution = " << u << ";" << std::endl;
     out_file.close();

@@ -1,6 +1,10 @@
-insobj
-scale=5.0                      ! sets scale to 2 grids/Å
-perfil=60                      ! sets percent box fill to 90%
+!insobj
+scale=2                      ! sets scale to 2 grids/
+perfil=80                      ! sets percent box fill to 90%
 is=0.1 ! ionic strength
 exdi=80
-indi=2                         ! interior dielectric = 2
+indi=5                                   ! interior dielectric = 2
+phicon=t
+logpot=t
+loggrp=t
+out(modpdb4, file="test.pqr",format=pqr)

@@ -1,0 +1,6 @@
+ DELPHI PDB FILE
+ FORMAT = PQR
+ 4 digits precison
+ HEADER output from qdiff
+ HEADER atom charges in columns 56-61
+ HEADER atom radii   in columns 63-68

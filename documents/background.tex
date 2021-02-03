@@ -9,10 +9,38 @@
 \section{Background}
 
 
+
+
 \footnote{"nsPEFs"}
 
-We were inspired by Yang (gordon reuben following up)
+
+
+We were inspired to undertake this project by a set of publications by Yang et al, Hung et al, Sun et al.
+
+
+
+
+
+
+
+
+
 bona fide clinically useful effect
+
+
+Any technique that requires background subtraction (see).
+
+
+We distinct regimes, which overlap in physical mechanisms (both involve the charge distribution and relaxation time) but which cite different bodies of literature. Vestiges 
+
+frequency-dependent inactivation
+
+(gordon reuben following up)
+
+
+
+
+
 
 \footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
 
@@ -26,14 +54,22 @@ Much of the work in this paper was concerned with this paper
 
 
 
-%3 MV/m * 1000 electronCharge * 1 angstrom / (boltzmannConstant * 310 K) = 1.12 kT
+%3 MV/m * 10000 electronCharge * 0.1 angstrom / (boltzmannConstant * 310 K) = 11 kT per cycle
 From a pessimistic energetic perspective,  !!! we know what the spring constant k should be !!!
-, where 0.1 angstrom is derived from the lipid MD simulation. [that's not right!] Compare to ~5 $k_b T$ per protein for capsid binding \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ for lipid bilayer pore formation \cite{Atomistic2014a}.
+. We can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency, where $m^*$ is the reduced mass.
+, where 0.1 angstrom is derived from the lipid MD simulation. [that's not right!] 
+
+Compare to ~5 $k_b T$ per protein for capsid binding \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ for lipid bilayer pore formation \cite{Atomistic2014a}.
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
 
 
+%(2*pi*(20 GHz))^2 * 100 MDa to N/m \approx 3000 N/m
+% 1 nanonewton / (3000 N/m) = 3e-13 m
 
+% (2*pi*(5 GHz))^2 * 60 MDa to N/m = 100 N/m
+% 0.1 angstroms
 
+% 1000 N/m = 0.01 Angstroms
 
 
 suggestive, especially because a model organism
@@ -213,6 +249,7 @@ Cancer treatment involving irreversible electroporation is in a different regime
 Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). 
 
 
+
 Is this resonance of Q=2 really of any practical use?
 
 
@@ -334,7 +371,7 @@ To a first order, this simply doesn't seem to be true in the case of the virion.
 
 
 
-
+involving Schnelle 
 
 
 

@@ -1,0 +1,46 @@
+%!TeX root = poisson_boltzmann
+\documentclass[paper.tex]{subfiles}
+\begin{document}
+
+\begin{autem}
+	TODO: Fix this up. This is a central point that should have been done a long time ago. 
+\end{autem}
+
+Poisson-Boltzmann family of equations is an extension of standard Laplace and Poisson potentials to solutions containing ions. It considers an equilibrium. As with all models, there are many nuances to using these correctly; whether various approximations hold, etc. We will ignore all subtleties for now.. 
+
+\textit{Sparselizard} has built-in support for membranes and stokes drag, and might be a good next step. Almost all finite-element programs require PB to be input in weak form, which is pretty tricky. Sympde can help with the weak form. Medusa allows input in strong form, which is convenient.
+
+Mathematica has great support for FEM, but seems to choke on the nonlinear Poisson-Boltzmann for some reason. 
+
+DelPhi poisson-boltzmann solver versions before 6.0 support spherical geometric objects, but flatly refuse to solve a problem this big. A few other solvers exist but are more suited for.
+
+Božič \cite{How2012} consider an empty capsid.
+
+The generalized Poisson equation is 
+
+$$\nabla \cdot \left(\epsilon\ \nabla \bar\phi \right) = - \rho$$
+
+We shamelessly steal Brackley \cite{Electrostatic2020}'s formulation (thanks for such detail!) with one exception. Most solutions consider an equilibrium. However, we are specifically designing the pulse to be too short for ion equilibriation to occur. Therefore we solve in two steps: First the Poisson-Boltzmann equation is run to determine the charge density due to screening.
+
+
+
+Reproducing here for convenience:
+
+$$\nabla \cdot \left(\epsilon\ \nabla \bar\phi \right) - \epsilon \kappa^2 \sinh(\bar\phi) = - \rho$$ 
+
+is the potential in V, kappa is a Debye-Huckel parameter. They use an internal dielectric constant of 5, an external of 80 ($\epsilon =  80\epsilon_0$). 1/10 k1
+
+$$\hat\phi = \frac{e_0 \phi}{}$$
+
+where $e_0$ is the electron charge, $k_b$ the Boltzmann constant, and 
+
+Brackley provide a very convenient analytical solution to the potential in the solvated two-shell case. With \cite{Deformation1991} \cite{Electrostatic2013}.
+
+With the 
+
+
+
+
+
+
+\end{document}

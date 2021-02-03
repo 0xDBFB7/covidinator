@@ -34,3 +34,62 @@ condition is not commonly used and can result in large errors if used inappropri
 okay, so let's recap. We've got 
 
 holy crap! MEDUSA is amazing! takes the *strong form*!
+
+
+devito looks cool, 
+julia 
+
+albany too,
+
+
+mathematica is pretty sweet for this. don't need to worry about units or normalization,
+it works fine no matter what. 
+
+https://reference.wolfram.com/language/FEMDocumentation/tutorial/SolvingPDEwithFEM.html
+space charge thing here is pretty cool
+
+so solving the nonlinear PB problem seems to be pretty tricky. I will use DelPhi in the geometric mode
+to get the charge map, then apply that to a mesh.
+
+so delphi 77 flatly refuses to solve the problem when the sphere is bigger than 300 angstroms.
+whoops!
+
+this is all overkill since the pb field is analytic from that paper - just too lazy to 
+figure out the dimensional analysis and re-jig for concentration
+
+actually that wouldn't be all that hard. just multiply the field by the Ke.
+huh...
+
+tried AFMPB - only supports i386?!? that can't be right.
+
+
+
+can we just superimpose the Z field and then integrate? does superposition hold in this case
+in the non-equilibrium, infinitesimal limit? have to worry about the dielectric...
+
+in the Brackley paper units are phi = kB T / e0
+
+
+
+" the  E -field (and hence the potential gradient) being larger in the medium with the smaller permittivity."
+right.
+
+so:
+
+assuming superposition.
+
+determine constant radial electric field at R: derivative of eq. 21. 
+convert to V/m. 
+
+in the integral, figure out component of ^ field in the +z direction
+
+divide by 80 permittivity (worst case)
+
+surface integral over the sphere, total charge * (dA / volume) 
+
+
+
+
+
+
+
