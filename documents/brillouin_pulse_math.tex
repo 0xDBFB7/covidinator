@@ -152,7 +152,7 @@ oh, on the same topic, can we finally settle the i / j convention. Also, everyon
 
 %\printendnotes
 
-\subsubsection{Zhu et al 's dispersive waveform optimization propagation formulation}
+\subsubsection{Attempt at analytical solution: Zhu et al 's dispersive waveform optimization propagation formulation}
 
 The most promising analytical technique that we explored was a slight modification of a formulation for optimal-energy pulses, largely supplied by Prof. Costas Sarris in a yet-unpublished personal communication, based on Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}. 
 
@@ -160,8 +160,7 @@ This is based on lagrange multipliers and 'functional' or 'variational' calculus
 
 Here, rather than taking the derivative with respect to a small change in a variable, we take the derivative with respect to a small change in the function itself - a very useful technique (that the author was not aware of) which imposes little to no limitation on the form of the solution. For some intuition, the definition of the first variation and the Gateaux derivative may be of some use.
 
-The Euler-Lagrange equation is usually brought up in the case of the Brachistochrone problem, or 
-the Principle of Least Action \footnote{For background, see The Feynman Lectures, vol II chapter 19}. In these types of problems, it appears that the path of integration through space from endpoints a to b can be replaced with the whole frequency domain from -$\infty$ to +$\infty$. 
+A common setup for such a problem is to use the Euler-Lagrange equation; this is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action \footnote{For background, see The Feynman Lectures, vol II chapter 19}. In these types of problems, it appears that the path of integration through space from endpoints a to b is instead replaced by the whole frequency domain from -$\infty$ to +$\infty$. 
 
 $$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
 
@@ -208,9 +207,6 @@ $$\nabla \xi = 0$$
 
 This lagrange multiplier technique has, however, a fundamental limitation (noted by Tufts \cite{Optimum1964}): for reasons that the author does not comprehend, only the pulse energy can be used as a constraint, rather than the value of the peak field. This seems to turn out to be of some importance.
 
-
-
-
 As noted by Pozar, the complex conjugate arises from the concept of "adjointness". Franks.
 
 Note the ni specifically in the complex conjugate!
@@ -223,6 +219,8 @@ revisited by Kek \cite{Conjugate}. They reduce the computational workload by fir
 gradient function by hand.
 
 Using an energy constraint as above appears to tend towards a square step function or a sharp impulse, perhaps as a result of Pontryagin's maximum principle\cite{Optimum1964}.
+
+\ghfile{electronics/propagation/propagation_numerical_optimize.py}
 
 However, a maximum absolute value constraint produces fantastic results.
 

@@ -482,6 +482,8 @@ Much faster ADCs.
 
 ------------------------------------------------------------------------
 
+done [
+
 [move to supplemental]
 
 To simplify and for higher throughput we use the drop-cast absorption protocol of \cite{Simple2018}, which uses only a single layer of 1\% agar.
@@ -516,11 +518,11 @@ The plates were incubated overnight. The lawn was very nicely formed; the phage 
 
 It was difficult to tell where the drops were placed, and they ran together.
 
-
+]
 
 \section{Phage impedance assay test}
 
-[move to supplemental]
+[move to supplemental] done [
 
 Because it would be difficult to maintain temperature on and multiplexing was difficult, low-frequency E. coli culture monitoring impedance spectra were performed separately.
 
@@ -539,9 +541,11 @@ Failure. decrease in signal rather than the expected increase, and no difference
 
 Looking at this later - the fluid has leaked out of the wells after some time. That might be why this didn't work.
 
+]
+
 \section{E. coli flavin autofluorescence}
 
-[move to supplemental]
+[move to supplemental] done [
 
 Added 2.5 uL to 5 uL broth. There does seem to be an fluorescence signal from; 100 uS long pulse, -70 mV is a good threshold.
  Hz w/e.c, 2.9-5 Hz broth
@@ -557,11 +561,17 @@ Weird background noise.
 
 " By moving into this hydrophobic environment and away from the solvent, the ethidium cation is forced to shed any water molecules that were associated with it. As water is a highly efficient fluorescence quencher, the removal of these water molecules allows the ethidium to fluoresce.[citation needed]"
 
+]
 
 
+done [
 \section{Nucleic acid UV extinction }
 
 The 260 nm extinction due to 60 MDa DNA at concentration 10^8 = 10e-9 with a 1 mm path length is 0.002x. that's going to be swamped by everything else.
+
+
+]
+
 
 \section{GelRed }
 
