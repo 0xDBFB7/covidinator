@@ -1,0 +1,130 @@
+Notebook[{Cell[
+BoxData[{RowBox[{"Remove","[","\"Global`*\"","]"}],"\n",RowBox[{"Needs","[","\"VariationalMethods`\"","]"}]}],
+"Input",CellLabel -> "In[6]:= ",ExpressionUUID -> "6f8f502e-6b22-41c3-a828-2bc7a992ff74"],Cell[
+TextData[
+{"A"," ","verbatim"," ","implementation"," ","of"," ","Zhu"," ","et"," ","al"," ","and"," ","Prof",StyleBox[
+RowBox[{"."," "}]],"Sarris'"," ","work",".","\n","Prof",StyleBox[RowBox[{"."," "}]],"Sarris"," ","seems"," ","to"," ","use"," ","an"," ","interesting"," ","notation"," ","for"," ","integrals",StyleBox[
+RowBox[{","," "}]],"where"," ","the"," ","delta"," ","goes"," ","before"," ","the"," ","integrand",StyleBox[
+RowBox[{"."," "}]],"I"," ","don't"," ","think"," ","that"," ","changes"," ","anything",StyleBox[
+RowBox[{"."," "}]]}],"Text",ExpressionUUID -> "64ec8aae-75ff-4a13-a2cb-d1edb75f3f1b"],Cell[
+BoxData[
+{RowBox[{"c0"," ",":="," ",RowBox[{"3"," ","*"," ",RowBox[{"10","^","8"," "}]}]}],"\n",RowBox[
+{"\[Eta]0"," ",":="," ","377.0"}]}],"Input",CellLabel -> "In[8]:= ",ExpressionUUID -> "9b0fd51c-b876-4967-aa98-7e302c605015"],Cell[
+BoxData[
+{RowBox[{RowBox[{"nr","[","\[Omega]_","]"}]," ",":="," ","1"}],"\n",RowBox[{RowBox[
+{"ni","[","\[Omega]_","]"}]," ",":="," ","1"}],"\n",RowBox[{"zd"," ",":="," ","1"}],"\n",RowBox[
+{RowBox[{"n","[","\[Omega]_","]"}],"  ",":="," ",RowBox[{RowBox[{"nr","[","\[Omega]","]"}]," ","+"," ",RowBox[
+{"\[ImaginaryI]","*",RowBox[{"ni","[","\[Omega]","]"}]}]}]}],"\n",RowBox[{"(*"," ",RowBox[
+{RowBox[{"^"," ","complex"}]," ","refractive"," ","index"}]," ","*)"}]}],"Input",
+CellLabel -> "In[10]:= ",ExpressionUUID -> "a529210f-462d-4687-99a2-f547375912eb"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"Ex","[",RowBox[{"z_",",","\[Omega]_"}],"]"}]," ",":="," ",RowBox[
+{RowBox[{"F","[","\[Omega]","]"}],"*",RowBox[{"Exp","[",RowBox[{RowBox[{"-","\[ImaginaryI]"}],"*",RowBox[
+{"(",RowBox[{"\[Omega]","/","c0"}],")"}],"*",RowBox[{"n","[","\[Omega]","]"}],"*","z"}],"]"}]}]}],"\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"^"," ","freq"}],"-",RowBox[{"domain"," ","electric"," ","field"}]}]," ","*)"}]}]],
+"Input",CellLabel -> "In[14]:= ",ExpressionUUID -> "eb36376e-41d1-4daf-a661-3ce0d5d84f82"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"ex","[",RowBox[{"z_",","," ","t_"}],"]"}],"  ",":="," ",RowBox[
+{RowBox[{"1","/",RowBox[{"Sqrt","[",RowBox[{"2","*","\[Pi]"}],"]"}]}]," ","*"," ",RowBox[
+{"Integral","[",RowBox[{RowBox[{RowBox[{"Ex","[",RowBox[{"z",",","\[Omega]"}],"]"}],"*",RowBox[
+{"Exp","[",RowBox[{"\[ImaginaryI]","*","\[Omega]","*","t"}],"]"}]}],",",RowBox[{"{",RowBox[
+{"\[Omega]",",",RowBox[{"-","Infinity"}],","," ",RowBox[{"+","Infinity"}]}],"}"}]}],"]"}]}]}],"\n",RowBox[
+{"(*"," ",RowBox[{"time","-",RowBox[{"domain"," ","electric"," ","field"}]}]," ","*)"}]}]],
+"Input",CellLabel -> "In[15]:= ",ExpressionUUID -> "c3a03ac3-8598-49d8-bc8f-55230958cf00"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{"A","=","1"}],"\n",RowBox[{"W","="," ",RowBox[{"Integral"," ","[",RowBox[
+{RowBox[{"F","[","\[Omega]","]"}],",",RowBox[{"{",RowBox[{"\[Omega]",","," ",RowBox[
+{"-","Infinity"}],","," ",RowBox[{"+","Infinity"}]}],"}"}]}],"]"}]}],"\n",RowBox[
+{RowBox[{"(*",RowBox[{RowBox[{"Input"," ","pulse"," ","energy"," ","constraint"}]," ","-"," ",RowBox[
+{"in"," ","lagrange"," ","notation"," ","this"," ","would"," ","usually"," ","be"," ","g",RowBox[
+{"(",")"}]}]}]," ","*)"}],"\n",RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"It","'"}],"s"," ","not"," ","clear"," ","to"," ","me"," ","that"," ","the"," ","energy"," ","constraint"," ","is"," ","ideal"," ","for"," ","our"," ","specific"," ","problem"}],","," ",RowBox[
+{"but"," ",RowBox[{"we","'"}],"ll"," ","bake"," ","that"," ","later"}]}]," ","*)"}]}]}],
+"Input",CellLabel -> "In[16]:= ",ExpressionUUID -> "1330f275-004c-4b9e-877f-f746903569f5"],Cell[
+BoxData[
+"1",StandardForm],"Output",CellLabel -> "Out[16]= ",ExpressionUUID -> "a1bc752a-5432-449c-9fda-e5dd5689cd45"],Cell[
+BoxData[
+RowBox[{"Integral","[",RowBox[{RowBox[{"F","[","\[Omega]","]"}],",",RowBox[{"{",RowBox[
+{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}],StandardForm],
+"Output",CellLabel -> "Out[17]= ",ExpressionUUID -> "2ba24b43-c3fb-4857-988e-b97abd3e691c"]},
+Open],ExpressionUUID -> "f36131d8-cde3-4267-ab86-29132b61c903"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"\[Xi]"," ","="," ",RowBox[{"-",RowBox[{"ex","[",RowBox[{"0.01",",","0.01"}],"]"}]}]}]],
+"Input",CellLabel -> "In[18]:= ",ExpressionUUID -> "908262a9-5e1a-44dd-b531-59bb5793dcf8"],Cell[
+BoxData[
+RowBox[{"-",FractionBox[RowBox[{"Integral","[",RowBox[{RowBox[{SuperscriptBox["\[ExponentialE]",
+RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],",",RowBox[{"{",RowBox[{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}],
+SqrtBox[RowBox[{"2"," ","\[Pi]"}]]]}],StandardForm],"Output",CellLabel -> "Out[18]= ",
+ExpressionUUID -> "bfa75eec-e9be-4c16-8d7f-ddec3997b3c1"]},Open],ExpressionUUID -> "e6cb632b-0b85-4527-9220-14d43808f80d"],Cell[
+BoxData[
+""],"Input",CellLabel -> "In[19]:= ",ExpressionUUID -> "07569862-00f6-4ed2-b2f4-35e620481e26"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"deriv2","[",RowBox[{"f_",","," ","g_",","," ","x_"}],"]"}]," ",":="," ",RowBox[
+{"Simplify","[",RowBox[{RowBox[{"Dt","[",RowBox[{"f",",","x"}],"]"}],"/",RowBox[{"Dt","[",RowBox[
+{"g",","," ","x"}],"]"}]}],"]"}]}],"\n",RowBox[{RowBox[{"\[Del]","\[Xi]"}]," ",":="," ",RowBox[
+{"deriv2","[",RowBox[{"\[Xi]",",",RowBox[{"F","[","omega","]"}],",","\[Omega]"}],"]"}]}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{"what"," ","they"," ","call"," ","the"," ","gradient"," ",RowBox[
+{"W",".","R",".","T","."," ",RowBox[{"F","[","]"}]}]," ","is"," ","apparently"," ","called"," ","the"," ","variational"," ","derivative"}]," ","*)"}]}]],
+"Input",CellLabel -> "In[29]:= ",ExpressionUUID -> "6eb195e1-e3e3-4141-b1d1-254960178521"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"\[Del]","\[Xi]"}]],"Input",CellLabel -> "In[31]:= ",ExpressionUUID -> "23821e05-c95a-4308-91a1-ed40b2fc0841"],Cell[
+BoxData[
+RowBox[{"-",FractionBox[RowBox[{"0.3989422804014327`"," ",RowBox[{"(",RowBox[{RowBox[
+{SuperscriptBox["Integral",TagBox[RowBox[{"(",RowBox[{"0",",",RowBox[{"{",RowBox[
+{"1",",","0",",","0"}],"}"}]}],")"}],Derivative],MultilineFunction -> None],"[",RowBox[
+{RowBox[{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[
+{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],",",RowBox[{"{",RowBox[{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}],"+",RowBox[
+{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[
+{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],"+",RowBox[{SuperscriptBox["F","\[Prime]",MultilineFunction -> None],"[","\[Omega]","]"}]}],")"}]," ",RowBox[
+{SuperscriptBox["Integral",TagBox[RowBox[{"(",RowBox[{"1",",",RowBox[{"{",RowBox[
+{"0",",","0",",","0"}],"}"}]}],")"}],Derivative],MultilineFunction -> None],"[",RowBox[
+{RowBox[{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[
+{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],",",RowBox[{"{",RowBox[{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}]}]}],")"}]}],
+RowBox[{RowBox[{"Dt","[",RowBox[{"omega",",","\[Omega]"}],"]"}]," ",RowBox[{SuperscriptBox[
+"F","\[Prime]",MultilineFunction -> None],"[","omega","]"}]}]]}],StandardForm],"Output",
+CellLabel -> "Out[31]= ",ExpressionUUID -> "c8362b1c-9800-4148-ab42-8ef0dcaca78c"]},
+Open],ExpressionUUID -> "60cefb1d-0508-4f3b-9db8-eb3fa313d642"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"\n",RowBox[{"Solve","[",RowBox[{RowBox[{RowBox[{"\[Del]","\[Xi]"}],"==","0"}],",",RowBox[
+{"{",RowBox[{"F","[","\[Omega]","]"}],"}"}],",","\[Omega]"}],"]"}]}]],"Input",CellLabel -> "In[33]:= ",
+ExpressionUUID -> "26cca4b2-903d-4bab-a541-52f46a5ca239"],Cell[
+BoxData[TemplateBox[
+{"Solve","bdomv","\"Warning: \\!\\(\\*TagBox[\\\"\[Omega]\\\", Short[#1, 5] & ]\\) is not a valid domain specification. Assuming it is a variable to eliminate.\"",2,33,12,28940540233878309033,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "47859060-d9f3-452e-b395-2df766825986"],Cell[
+BoxData[
+TemplateBox[{"Solve","inex","\"Solve was unable to solve the system with inexact coefficients or the system obtained by direct rationalization of inexact numbers present in the system. Since many of the methods used by Solve require exact input, providing Solve with an exact version of the system may help.\"",2,33,13,28940540233878309033,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "74d0cf32-9e9e-4025-a842-405941338677"],Cell[
+BoxData[
+RowBox[{"Solve","[",RowBox[{RowBox[{RowBox[{"-",FractionBox[RowBox[{"0.3989422804014327`"," ",RowBox[
+{"(",RowBox[{RowBox[{SuperscriptBox["Integral",TagBox[RowBox[{"(",RowBox[{"0",",",RowBox[
+{"{",RowBox[{"1",",","0",",","0"}],"}"}]}],")"}],Derivative],MultilineFunction -> None],"[",RowBox[
+{RowBox[{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[
+{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],",",RowBox[{"{",RowBox[{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}],"+",RowBox[
+{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[
+{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],"+",RowBox[{SuperscriptBox["F","\[Prime]",MultilineFunction -> None],"[","\[Omega]","]"}]}],")"}]," ",RowBox[
+{SuperscriptBox["Integral",TagBox[RowBox[{"(",RowBox[{"1",",",RowBox[{"{",RowBox[
+{"0",",","0",",","0"}],"}"}]}],")"}],Derivative],MultilineFunction -> None],"[",RowBox[
+{RowBox[{SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"(",RowBox[{"3.3333333333333335`*^-11","+",RowBox[
+{"0.009999999966666668`"," ","\[ImaginaryI]"}]}],")"}]," ","\[Omega]"}]]," ",RowBox[
+{"F","[","\[Omega]","]"}]}],",",RowBox[{"{",RowBox[{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}]}]}],")"}]}],
+RowBox[{RowBox[{"Dt","[",RowBox[{"omega",",","\[Omega]"}],"]"}]," ",RowBox[{SuperscriptBox[
+"F","\[Prime]",MultilineFunction -> None],"[","omega","]"}]}]]}],"\[Equal]","0"}],",",RowBox[
+{"{",RowBox[{"F","[","\[Omega]","]"}],"}"}],",","\[Omega]"}],"]"}],StandardForm],
+"Output",CellLabel -> "Out[33]= ",ExpressionUUID -> "56b98141-9d3c-4968-ab2e-500180b3e616"]},
+Open],ExpressionUUID -> "430ab1fa-e93e-4ebd-b0ad-8758185ee94b"],Cell[
+BoxData[""],
+"Input",CellLabel -> "In[25]:= ",ExpressionUUID -> "0c5a5f8f-2d68-4a7f-a945-673f9dbd44bc"],Cell[
+BoxData[
+""],"Input",CellLabel -> "In[26]:= ",ExpressionUUID -> "43831736-2d27-46c2-9ed7-64ed9a2593cb"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "12.2 for Wolfram Cloud 1.57 (November 23, 2020)"]

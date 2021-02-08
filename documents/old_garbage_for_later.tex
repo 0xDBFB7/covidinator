@@ -1,0 +1,123 @@
+
+
+
+\paragraph{Time-domain modulation}
+
+However, there is an obvious avenue of optimization. If the virus is destroyed in a few dozen nanoseconds via an electric field amplitude incidentally caused by an instantaneous power $\text{P}$, but tissue damage requires a temperature rise due to an energy deposition $\text{P} \  \text{dt}$, then we should minimize dt.\
+
+We thus turn the CW microwave signal into a series of effectively instantaneous pulses.
+
+Note that contrary to the limits at lower frequencies, neither ICNIRP nor IEEE appear to explicitly specify a maximum electric field; only the maximum power is specified (thereby implicitly restricting the electric field magnitude).
+
+The safety standards of [IEEE] and [ICNIRP] account for such time-domain modulation by specifying both an average power limit over a 6 minute period, and a time-integrated energy deposition limit. All known non-thermal and thermal physiological effects, including changes in the permeability of membranes, direct nerve stimulation, etc, are accounted for by obeying those two limits.
+
+To drive home this point, apparently the best-quality evidence available fulfills sham requirements provide in-vitro. They expose blood lymphocytes to pulse power in precisely the regime required in this work; 8.2 GHz, 8 ns duration and 50 khz repetition rate, a whopping pulse power density of 250,000 $\text{W/m}^2$\footnote{computed from average power / duty cycle} (2500x the time-averaged power density safety limit), average power density 100 $\text{W/m}^2$ (the safety limit), for 2 hours, finding no change in any of the measured quantities. 
+
+Similarly, [Chemeris 2004] use 8.8 GHz, 180 ns pulse width, peak power 65,000 W, repetition rate 50 Hz, exposure duration 40 min, and find genotoxicity purely due to the temperature rise.
+
+So it appears that this is not merely rules-lawyering to exploit a loophole in the regulations; it is a physically-informed effect.
+
+\begin{autem}
+
+These papers (the best quality we are aware of) were extensively cherry-picked from the literature based on the results of a meta-analysis [Vj. 2019], listing the requirements for reliable in-vitro RF experiments.\\
+
+
+There are a substantial number of papers in the literature which show positive effect sizes; a select few of these are listed in the bibliography. \\
+
+The literature reviews conducted by standards organizations.\\
+
+We are not aware of any past uses of these microwave en-masse. We do not have the 
+
+Moreover, 
+\begin{quote}
+	
+In the absence of publication bias, since the sampling error is random, all studies will be distributed symmetrically around the mean d value.
+
+\end{quote}
+
+
+\end{autem}
+
+\clearpage
+%\printbibliography[heading=none, title={}, keyword={Flagship}]
+\printbibliography[heading=none, title={}, keyword={standards}]
+
+
+
+\clearpage
+{\Large \it Time-dependence}\\
+
+The fact that the viral inactivation is non-thermal
+
+Both [Yang 2015] and [Hung 2014] use an apparently arbitrary 15-minute exposure in their tests - a very reasonable decision, given the focus of their paper. 
+
+The effectiveness against airborne particles, and to minimize the power required in a dwelling phased-array beam, we must establish the required duration of exposure.
+
+{\color{red} speculative hypothesizing \{ } 
+
+In contrast to chemical inactivation, where the time dependence appears to be dominated by viscous fluid dynamic effects [Hirose 2017], or UV inactivation, where a certain quantized dose of photons must be absorbed, we expected RF to act instantaneously.
+
+As a damped, driven oscillator, the ring-up time of the virus depends on the Q factor. Yang et al. state the Q of Inf. A as between 2 and 10, so at 8 GHz the steady-state amplitude should be reached in well under 100 nanoseconds.???????????FIXME
+
+[] found a significant mechanical fatigue effect in phage capsids, where a small strain applied repetitively eventually causes a fracture. Such a mechanism could perhaps extend the exposure required to break the capsid or membrane. Other mechanisms could include some sort of lipid denaturation, requiring an absolute amount of energy absorption to break or twist bonds and modify properties before the envelope fractures.
+
+
+{\color{red}  \} } 
+
+
+
+
+\clearpage
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+%\begin{table} 
+%	\centering
+%	\begin{threeparttable}
+%		\caption{Safety limits from various standards}
+%		\begin{tabular}{lllll}
+%			\toprule
+%			Stubhead & \( df \) & \( f \) & \( \Wsqm \) & \( p \) \\
+%			\midrule
+%			&     \multicolumn{4}{c}{Spanning text}     \\
+%			Row 1    & 1        & 0.67    & 0.55       & 0.41    \\
+%			Row 2    & 2        & 0.02    & 0.01       & 0.39    \\
+%			Row 3    & 3        & 0.15    & 0.33       & 0.34    \\
+%			Row 4    & 4        & 1.00    & 0.76       & 0.54    \\
+%			\bottomrule
+%		\end{tabular}
+%		\begin{tablenotes}
+%			\small
+%			\item This is where authors provide additional information about
+%			the data, including whatever notes are needed.
+%		\end{tablenotes}
+%	\end{threeparttable}
+%\end{table}
+
+All pertinent restrictions for frequency $<$ 6 GHz, for general public.
+ICNIRP 2020, Table 2, "Basic restrictions for electromagnetic field exposure",
+20 \Wsqm, averaged over a 6 min period, averaged over a square $4 \text{cm}^2$ surface area of the body.
+
+Whole-body average SAR $<$ 0.08 W/kg
+
+And, additionally, 
+
+ICNIRP 2020, Table 3, Basic Restrictions
+.
+
+
+
+
+
+We briefly review the biological basis for the safety. There is solid in vitro and limited in vivo evidence of safety in this regime.
+
+We briefly examine three applications. All depend significantly on what the microwave spectrum of SARS-NCoV-2 ends up being, which must be measured - or possibly reconstructed from existing whole-virion data or determined from coarse-grained MD simulation. 
+
+With refinements, our inexpensive pulsed microwave spectrometer can obtain the required absorption and threshold data with sufficiently concentrated specimens; but proper dielectric spectroscopy labs (or, in a pinch, swept-EPR/ESR equipment \st{when used improperly}) will provide a much more detailed spectrum. 
+

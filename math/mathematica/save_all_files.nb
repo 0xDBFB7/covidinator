@@ -1,0 +1,22 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{RowBox[{RowBox[{"meep","=",RowBox[{"CreateArchive","[",RowBox[
+{RowBox[{RowBox[{"Directory","[","]"}],"<>","\"/all/\""}],","," ","\"down.zip\"",","," ",RowBox[
+{"OverwriteTarget","\[Rule]","True"}]}],"]"}]}],";"}],"\n",RowBox[{"obj"," ","="," ",RowBox[
+{"CopyFile","[",RowBox[{"meep",","," ",RowBox[{"CloudObject","[","\"down.zip\"","]"}],","," ",RowBox[
+{"OverwriteTarget","\[Rule]","True"}]}],"]"}]}]}],"Input",CellLabel -> "In[4]:= ",
+ExpressionUUID -> "39928360-3884-48ea-bc91-6d70186d3e82"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"CloudObject","[",TemplateBox[{"\"https://www.wolframcloud.com/obj/therobotist/down.zip\"","https://www.wolframcloud.com/obj/therobotist/down.zip"},
+"HyperlinkURL"],"]"}],CloudObject["https://www.wolframcloud.com/obj/therobotist/down.zip"],
+SelectWithContents -> True],StandardForm],"Output",CellLabel -> "Out[5]= ",ExpressionUUID -> "5a65119a-87ac-45bd-b9d4-ea6ef5f5a921"]},
+Open],ExpressionUUID -> "ca9d6c01-bb33-4979-859b-0f7e950ace1b"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"SetOptions","[",RowBox[{"obj",","," ",RowBox[{"Permissions"," ","\[Rule]"," ","\"Public\""}]}],"]"}]],
+"Input",CellLabel -> "In[6]:= ",ExpressionUUID -> "99e5ad54-dfdd-40be-8660-d3c4ce5db9b0"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"Permissions","\[Rule]","\"Public\""}],"}"}],StandardForm],"Output",
+CellLabel -> "Out[6]= ",ExpressionUUID -> "bfe7ae64-172d-41ac-abf2-813f76124f29"]},
+Open],ExpressionUUID -> "2cd60111-1298-4bc7-b8f2-e12fc4b08a79"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.2 for Wolfram Cloud 1.57.0.2 (December 8, 2020)"]

@@ -26,6 +26,8 @@ An illustrative - to ensure that there was nothing egregiously wrong with the St
 		
 \end{figure}
 
+combine spherical geometry PB with small lipid section
+
 These results are not in any way quantitative, nor do they truly suggest that the effect exists. Critical issues include the lack of deconvolution from the input impulse bandwidth. Lipid vesicle simulations with MARTINI force fields have yielded large-scale stiffness values which are orders of magnitude\cite{Determining2014} from those found experimentally; the speed of sound is also. 
 
 A very large amount of tuning and comparison  to obtain any kind of meaningful  
@@ -39,7 +41,7 @@ lipid and water force field. Run with GROMACS (5?) on the GPU. A non-equlibrium 
 molecular dynamics simulation of a lipid vescicle of 30 nm diameter. A mix of POPC and PUPI added to bring liposome charge to 
 observed levels.
 
-Rather than use standard eigenmode-style normal-mode methods (ProDy), Fourier analysis of the (lipid-only) trajectory was performed with TRAVIS\footnote{a really fantastic program. Clever user interface too!}, zero-padded at the end to obtain sufficient low-frequency bins with short simulations. The initial "spring Note the non-zero y-intercept. 
+Rather than use standard algebraic normal-mode methods (ProDy), Fourier analysis of the (lipid-only) trajectory was performed with TRAVIS\footnote{a really fantastic program. Clever user interface too!}, zero-padded at the end to obtain sufficient low-frequency bins with short simulations. The initial "spring Note the non-zero y-intercept. 
 
 Computational pipeline available at \ghfile{biology/simulation/GROMACS/BUMPy_bilayer} \footnote{GALAXY or RENKU or some other, more repeatable and reproducible "pipeline manager" should have been used}. 
 

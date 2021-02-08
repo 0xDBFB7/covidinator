@@ -14,11 +14,13 @@
 
 
 
+
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-
+\usepackage[sfdefault]{roboto}
+\fontseries{t}\selectfont
 
 \usepackage{noweb}
 
@@ -41,7 +43,8 @@
 \usepackage{subfiles}
 \usepackage{svg}
 \listfiles
-\svgpath{{../biology/simulation/GROMACS/BUMPy_bilayer/data/}{../electronics/propagation/}}
+% it would be best if this was a list of directories 
+\svgpath{{../biology/simulation/GROMACS/BUMPy_bilayer/data/}{../electronics/propagation/} {../math/mathematica/output/}}
 
 \usepackage{sidecap}
 \usepackage{float}
@@ -50,9 +53,6 @@
 \usepackage{lettrine}
 
 \usepackage{subfig}
-
-
-\setlength{\footnotesep}{0.7\baselineskip}
 
 
 
@@ -72,10 +72,41 @@
 \usepackage{booktabs,caption}
 \usepackage[flushleft]{threeparttable}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%CITATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setlength{\footnotesep}{0.7\baselineskip}
+
+
+
 %\usepackage{biblatex}
 \usepackage[backend=bibtex8, sorting=none, style=phys]{biblatex}
 % style=chem-angew
 \let\cite\footfullcite
+
+%--------------------------------------------------------
+% No duplicate footcites
+\usepackage{xparse}% for multiple optional parameters
+\usepackage{ifoddpage}% get correct page number
+
+\makeatletter
+\let\oldfootcite=\footcite
+\RenewDocumentCommand{\footcite}{O{}O{}m}{\checkoddpage
+	\@ifundefined{citepage@#3}{}%
+	{\ifnum\csname citepage@#3\endcsname<\oddpage@page\relax
+		\global\expandafter\let\csname repeatcite@#3\endcsname=\relax
+		\fi}%
+	\@ifundefined{repeatcite@#3}%
+	{\oldfootcite[#1][#2]{#3}%
+		\expandafter\xdef\csname repeatcite@#3\endcsname{\thefootnote}%
+		\expandafter\xdef\csname citepage@#3\endcsname{\arabic{page}}}%
+	{\footnotemark[\csname repeatcite@#3\endcsname]}}
+\makeatother
+%--------------------------------------------------------
+
+
 
 
 
@@ -118,7 +149,7 @@
 %\titleformat{\section}
 %{\normalfont\LARGE\bfseries\PRLsep}
 %{{{{\itshape \thesection\hskip 9pt\textpipe\hskip 9pt}}}}{0pt}{}
-%
+
 %% custom section
 %\titleformat{\subsection}
 %{\normalfont\Large\bfseries\PRLsep}
@@ -150,6 +181,8 @@
 \graphicspath{ {../media/} 
 				{../firmware/eppenwolf/runs/sic_susceptor/} 
 				{../biology/simulation/GROMACS/BUMPy_bilayer/data/}
+				{../biology/FDTD/data/}
+				{../math/mathematica/output/}
 			}
 
 

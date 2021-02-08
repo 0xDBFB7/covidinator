@@ -1,15 +1,83 @@
+%!TeX root = scan_converter
+\documentclass[paper.tex]{subfiles}
+\begin{document}
+
+\begin{autem}
+This is an example of how the course of action can be distorted by engineering. In a non-pandemic scenario such a diversion might have been a reasonable. Indefensible. I am consoled that it did not account for more than 2 to 3 weeks of work.
+\end{autem}
+
+
+\begin{autem}
+	This section is deliberately kept vague and without reference to construction details to avoid export restrictions. In any case, it is hard to imagine a technique fully developed and published in the 1940s would be of great secrecy now. 
+\end{autem}
+
+Because of the small sizes of viruses, all interesting time-domain spectroscopy results require resolving signals with greater than 10 GHz bandwidth.
+
+So called "equivalent-time" or "sampling" oscilloscopes are less expensive; but it was hoped that it would be possible to resolve the breaking of the capsid - a transient, single-shot phenomenon -   A digital oscilloscope capable of real-time sampling such a transient is a tall order, and it did not appear that an undergraduate would be allowed access.
+
+There is also the concern that, when measuring a system producing kilovolt pulses using an instrument with an extremely electrically delicate 1V maximum input, some harm might come to a machine worth more than the experimenter. 
+
+This turned out to be not unfounded - the kilovolt pulser used was observed to cause the RPi controlling the experiment to 
+
+However, transient recordings of sub-nanosecond phenomena were made as early as 1938 by Manfred Von Ardenne using a "micro-oscillograph". By 1946, such oscillographs - now with bandwidths in excess of 10 GHz - were readily available commercially\cite{3beam1946}, and by 1949 found extensive use for quantitative measurements of ultrafast phenomena by Fletcher\cite{Production1949} and others. 
+
+"Direct access" tubes to the logical conclusion. The design of Fletcher puts the cathode ray deflection plates essentially inside the.
+
+The main practical limitations on oscilloscope sweep speed are discussed by Mackay\cite{New1948}, and are imposed by the Y axis deflection plate electron transit time and bandwidth (the X-axis speed is of less importance), and the beam current and sensitivity of the phosphor (faster sweeps reduce the electron flux and brightness of the dot).
+
+
+\begin{figure}[H]
+	%	\makebox[\textwidth][c]{
+	\centering
+	\subfloat[Damage to the sensor, believed to be due to. ]{
+	\includegraphics[width=0.3\textwidth]{e_beam_damage_2}
+	
+}
+	\hfill
+	\subfloat[]{
+		\includegraphics[width=0.3\textwidth]{e_beam_damage}
+		
+	}
+		\hfill
+
+	\subfloat[Direct electron beam detection]{
+	\includegraphics[width=0.3\textwidth]{direct_electron_beam}
+}
+	\caption{Second.}
+		\hfill
+
+\end{figure}
 
 
 
-The very high voltage means that low-sensitivity diagnostics, like lithium niobate optical probes. Not having a suitable optical bench, an electron-beam probe, similar to a streak camera, itself similar in principle to scan-conversion digitizer tubes in Tek SCD and 7912 series transient digitizers.
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	
+	\caption{}
+\end{figure}
 
-If a low voltage sensitivity is required, and because modern high-pixel-density CMOS sensors allow the required deflection and the entire structure to be minimized, these are simple to design and inexpensive (much of the complexity being in the slow-wave or travelling-wave structure which is usually required to match the signal velocity to the - slowing down light without affecting its properties or drawing power is an extremely difficult problem) and can offer sample rates in the terasamples/s and analog bandwidths , albeit with low vertical resolution. 
+
+\begin{figure}[H]
+	\captionsetup{singlelinecheck = false, justification=justified}
+	\centering
+	
+	\caption{}
+\end{figure}
+
+
+The very high voltage actually makes this much easier
+
+means that low-sensitivity diagnostics, like lithium niobate optical probes. Not having a suitable optical bench, an electron-beam probe, similar to a streak camera, itself similar in principle to scan-conversion digitizer tubes in Tek SCD and 7912 series transient digitizers.
+
+If a low voltage sensitivity is required, and because modern high-pixel-density CMOS sensors allow the required deflection (and therefore the entire structure) to be minimized, these are simple to design and inexpensive (much of the complexity is in the slow-wave or travelling-wave structure which is usually required to match the signal velocity to the - slowing down light without affecting its properties or drawing power is an extremely difficult problem) and can offer sample rates in the terasamples/s and analog bandwidths of many dozens of GHz, albeit with very low vertical resolution. 
 
 original von Ardenne 
 
 
-
-We would like real-time rather than equivalent-time sampling, 
+\begin{fquote}[Livermore Operations][\cite{Scan2008}]
+An internal CCD recorder would provide high sensitivity to the swept electron beam, but a CCD in a sealed vacuum tube has never been attempted or demonstrated in the phototube facility at Livermore Operations (LO). A prototype tube would most likely be built with a phosphor screen.
+\end{fquote}
 
 
 Possible routes:
@@ -27,10 +95,6 @@ put the x-axis at a 45 degree angle?
 
 radiation damage to sensor 
 
-A digital oscilloscope capable of real-time sampling such a transient is no small feat, and it was deemed unlikely that we would be 
-able to obtain access, There is also the concern that, when working with a system producing kilovolt 
-pulses and an input of 5v, some harm might come to a machine worth more than the experimenter.
-
 Possibly some optical method. 
 
 however, recording such transients is quite a solved problem, having been accomplished to the required degree 
@@ -44,7 +108,8 @@ The distortion due to transit-time phasing is
 
 $$ \frac{\sin(\frac{2\pi F \tau}{2})}{(2\pi F \tau)/2} $$
 
-where \tau is the transit time of the electron through the deflection region 
+where $\tau$ is the transit time of the electron through the deflection region 
 
 Image intensifier microchannel plates where angled holes cause secondary electron 
 
+\end{document}

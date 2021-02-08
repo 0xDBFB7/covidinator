@@ -81,17 +81,35 @@ The experimenters go to great lengths to use various different test jigs, but, c
 
 \section{It is possible, with some imagination, to explain the result as a thermal artifact.}
 
-The temperature is measured via a conventional infrared thermometer to be below the lipid melting point, but is otherwise uncontrolled. Previous experiments have shown that such readings are not sufficient to isolate non-thermal effects. 
+The temperature is measured via a conventional infrared thermograph to be below the lipid melting point, but is otherwise uncontrolled. Previous experiments have shown that such readings are not sufficient to isolate non-thermal effects with continuous wave exposures. 
 
-Figure 6 is then difficult to explain. If the effect is thermal, why would the peak of the inactivation curve lie correspond perfectly to the one obtained by spectroscopy? The gain flatness of the antenna and amplifier may 
-
+Figure 6 is then difficult to explain. If the effect is thermal, why would the peak of the inactivation curve lie correspond perfectly to the one obtained by spectroscopy? The gain flatness of the antenna and amplifier may be an explanation.
 
 
 {\Huge \textbf{However}}
 
+The fundamental idea of inducing mechanical stresses with large electric fields is quite interesting.
+
+these lines are not obviously damaging to tissue, even in-vivo, per NATO 
+Research Task Group 189.
+
+Mizuno \cite{Inactivation1990} inactivate SVD Enterovirus (a 27 nm non-enveloped protein encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 100\% effectiveness with 120 pulses, about 500 nanoseconds each, at 3 MV/m. Electron microscopy demonstrates that the mechanism is irreversible damage to the capsid or envelope respectively and subsequent release of the core, and is somewhat unlike thermal treatment.
+
+\begin{autem}
+	Extreme care must be taken in interpreting the results of any one study in isolation, especially in this field. 
+	
+	Though the temperature was monitored, In this observation, the thermal artifact cannot necessarily be completely discounted. The energy dissipated was sufficient to cause a significant temperature rise if localized hot-spots appeared \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K)) = ~50 $\Delta$C, whereas melting temperatures are typically about 90 C for capsids \cite{Thermal1999} and 50 C for envelopes\cite{Stability1985}}. \\ The electrodes were not insulated, so electrochemical effects are possible but unlikely given the short duration of the pulses. 
+\end{autem}
+
+Madiyar \cite{Manipulation2013} observe rapid permeabilization (likely through the slow, conventional electroporation mechanism) at a field of poorly-defined intensity up to about 10 MV/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 bacteriophage. 
+
+
+
 \section{Q=2 is somewhat reasonable, surprisingly.}
 
-As noted in the papers, unlike other biological systems it's plausible that the virion would have modes that are at least very close to being under-damped. Burkhartsmeyer offer reasonable evidence for this (although resonance-like artifacts are not unheard-of in Raman spectroscopy). 
+As noted in the papers, unlike other biological systems it's plausible that the virion would have modes that are at least very close to being under-damped. Burkhartsmeyer and the Reuben team offer reasonable evidence for this (although resonance-like artifacts are not unheard-of in Raman spectroscopy). 
+
+Indeed, relatively trustworthy time-domain spectroscopy of proteins \cite{Microwave1994} has found that the relaxation time is proportional to the molecular weight of the structure (of which viruses are perhaps the ultimate example), and can be as slow as 100 MHz in some cases. 
 
 This is expected by e.g. basic Stokes viscous drag. The distinction is perhaps because of the large mass that coherently contributes to the oscillation unlike the situations Adair consider with small patches of membranes. A small catch is that the same Stokes continuum arguments suggest that microtubules (if imbued with the same polarization) would exhibit similar behavior, which is not obviously observed in previous studies.
 
@@ -99,15 +117,29 @@ Coarse molecular dynamics sims also concur with Q=1.5. Experiments by Tsen on fe
 do too (although some care must be taken here as some of these results have been discredited).
 
 This has some pretty awesome implications if it is correct, but whether the small amplitude 
-amplification factor associated with this effect will be important is not known to me.
+amplification factor associated with this effect will be of any utility is not known to me.
 
 \section{None of the issues raised above necessarily rule out a non-thermal "keyhole" with 
 megavolt/m fields.}
 
+
+
+Less than 5 to 10 nanoseconds (where membrane breakdown, ion diffusion, and thermal effects start to become significant at these fields, and any previous absorbed power has been dispersed in the solvent) but greater than about 10 picoseconds (covered by existing laser research) and electric fields between 0.1 MV/m (for which biological effects at these timescales are only barely plausible) and 20 MV/m (the production of pulses which strain credulity).
+
+
+
+
 There is data to support a little-known "prompt" electroporation effect of viruses at 
-some $10^7 \text{V/m}$. Single pulses along these lines are not obviously damaging, per NATO 
-Research Task Group 189. With some optimization, a keyhole between the electroporation threshold 
-for may be found.
+some $10^7 \text{V/m}$.
+
+%3 MV/m * 10000 electronCharge * 0.1 angstrom / (boltzmannConstant * 310 K) = 11 kT per cycle
+From an energetics perspective, we can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency, where $m^*$ is the reduced mass. With relatively sane choices of screened charge and resonant frequency, the energy per monocycle at 5 MV/m varies from 0.01 to 20 times the thermal energy $k_b T$. 
+
+Compare to ~5 $\times k_b T$ per protein for capsid binding \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ for lipid bilayer pore formation \cite{Atomistic2014a}.
+%17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
+
+
+
 
 \section{The suggestion by Uzunoglu that precursor pulses are satisfactory is prescient.} 
 
@@ -115,8 +147,10 @@ The centimeter-thick layer of highly-conductive muscle which surrounds the lungs
 without thermal damage.
  
 However, a carefully shaped pulse that matches the Cole-Cole dispersion relation of tissue 
-(apparently, a sawtooth) appears to side-step Beer's law decay and drives the oscillator some 300x 
-more strongly.
+(apparently, a sawtooth) appears to side-step Beer's law decay, and is able to drive the oscillator of the virus many times more strongly than might be expected.
+
+
+
 
 
 

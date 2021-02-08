@@ -1,0 +1,179 @@
+Notebook[{Cell[
+TextData[{"Goal",":","\n","\n","What",StyleBox[RowBox[{","," "}]],"approximately",StyleBox[
+RowBox[{","," "}]],"is"," ","the"," ","arbitrary"," ","periodic"," ","or"," ","non-periodic"," ","waveform",StyleBox[
+RowBox[{" ","(\[Phi]("}]],"t",StyleBox[RowBox[{")),"," "}]],"which",StyleBox[RowBox[
+{","," "}]],"when"," ","propagated"," ","through"," ","a"," ","dispersive",StyleBox[
+RowBox[{","," "}]],"lossy"," ","medium"," ","with"," ","complex"," ","permittivity"," ","Debye",StyleBox[
+RowBox[{"[\[Omega]],"," "}]],"drives"," ","a"," ","damped"," ","harmonic"," ","oscillator"," ","y","[","t",StyleBox[
+RowBox[{"]"," "}]],"to"," ","the"," ","maximum"," ","transient"," ","amplitude","?\n","\n","See https://apps.dtic.mil/dtic/tr/fulltext/u2/a371944.pdf\n","http://www1.spms.ntu.edu.sg/~ydchong/teaching/10_greens_function.pdf"}],
+"Text",ExpressionUUID -> "66da92ed-e4b4-4bd0-b36a-0bb73466fe90"],Cell[
+TextData[{"The"," ","typical"," ","method"," ","is"," ","to"," ","Fourier"," ","transform"," ","the"," ","pulse"," ","into"," ","the"," ","frequency"," ","domain",StyleBox[
+RowBox[{","," "}]],"shift"," ","each"," ","frequency's"," ","phase"," ","and"," ","attenuate",StyleBox[
+RowBox[{","," "}]],"FT"," ","back"," ","to"," ","time-domain",StyleBox[RowBox[{","," "}]],"\n"}],
+"Text",ExpressionUUID -> "783be41a-82ec-4bcd-81e6-eb0ec71a520e"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Clear","[","\"Global`*\"","]"}],"\n","\n",RowBox[
+{"c"," ","="," ",RowBox[{"UnitConvert","[",RowBox[{"Quantity","[","\"SpeedOfLight\"","]"}],"]"}]}],"\n","\n",RowBox[
+{"DielectricTau"," ","=",RowBox[{"("," ",RowBox[{"8.1","*",RowBox[{"10","^",RowBox[
+{"-","12"}]}]}]," ",")"}]}],"\n",RowBox[{"epsInf"," ","="," ","5.5"}]," ","\n",RowBox[
+{"epsS"," ","="," ","65.0"}],"\n","\n",RowBox[{"\[Omega]0"," ","="," ",RowBox[{"2","*","\[Pi]","*","8","*",RowBox[
+{"10","^","9"}]}]}],"\n",RowBox[{"\[Gamma]"," ","="," ","1"}],"\n",RowBox[{"q"," ","="," ",RowBox[
+{"10","^","7"}]}],"\n",RowBox[{"m"," ","="," ",RowBox[{"10","^",RowBox[{"-","10"}]}]}],"\n","\n",RowBox[
+{RowBox[{"Debye","[","omega_","]"}]," ",":=","  ",RowBox[{RowBox[{"(",RowBox[{"epsInf","+",RowBox[
+{"(",RowBox[{RowBox[{"(",RowBox[{"epsS","-","epsInf"}],")"}],"/",RowBox[{"(",RowBox[
+{"1","+",RowBox[{"\[ImaginaryI]","*","omega","*","DielectricTau"}]}],")"}]}],")"}]}],")"}]," ","+"," ","\n"}]}]}]],
+"Input",CellLabel -> "In[8]:= ",ExpressionUUID -> "b602343b-b483-4d1e-863d-e2e7f2164489"],Cell[
+BoxData[
+TemplateBox[{"299792458",RowBox[{"\"m\"","\[InvisibleSpace]","\"/\"","\[InvisibleSpace]","\"s\""}],"meters per second",FractionBox[
+"\"Meters\"","\"Seconds\""]},"Quantity",SyntaxForm -> Mod],StandardForm],"Output",
+CellLabel -> "Out[9]= ",ExpressionUUID -> "7f3f1518-7e20-44ad-b544-4f88e3a04778"],Cell[
+BoxData[
+"8.1`*^-12",StandardForm],"Output",CellLabel -> "Out[10]= ",ExpressionUUID -> "17104525-31c2-454a-bcda-1728f6a76cab"],Cell[
+BoxData[
+"5.5`",StandardForm],"Output",CellLabel -> "Out[11]= ",ExpressionUUID -> "45ed905d-d601-40ac-b0dc-bdbbd6cfd514"],Cell[
+BoxData[
+"65.`",StandardForm],"Output",CellLabel -> "Out[12]= ",ExpressionUUID -> "a5226dfa-55ff-49cd-9662-3cc02e48ccf8"],Cell[
+BoxData[
+RowBox[{"16000000000"," ","\[Pi]"}],StandardForm],"Output",CellLabel -> "Out[13]= ",
+ExpressionUUID -> "0e4c19a1-3c06-49e1-ae1d-60bdc1107416"],Cell[
+BoxData["1",StandardForm],
+"Output",CellLabel -> "Out[14]= ",ExpressionUUID -> "d785ba68-e53a-4c7b-9a30-70168481d555"],Cell[
+BoxData[
+"10000000",StandardForm],"Output",CellLabel -> "Out[15]= ",ExpressionUUID -> "9b42d398-f86c-4f18-80fc-f01eb52c9000"],Cell[
+BoxData[
+FractionBox["1","10000000000"],StandardForm],"Output",CellLabel -> "Out[16]= ",ExpressionUUID -> "1c7b31a2-d253-4bd3-a539-6ae6783e33cd"],Cell[
+BoxData[
+TemplateBox[{"Syntax","tsntxi","\"\\\"\\!\\(\\*TagBox[RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"epsInf\\\", \\\"+\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"epsS\\\", \\\"-\\\", \\\"epsInf\\\"}], \\\")\\\"}], \\\"/\\\", RowBox[{\\\"(\\\", RowBox[{\\\"1\\\", \\\"+\\\", RowBox[{\\\"\[ImaginaryI]\\\", \\\"*\\\", \\\"omega\\\", \\\"*\\\", \\\"DielectricTau\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}], \\\"+\\\"}], Short[#1, 3] & ]\\)\\\" is incomplete; more input is needed.\\!\\(\\*TagBox[\\\"\\\\\\\"\\\\\\\"\\\", Short[#1, 5] & ]\\)\"",2,17,6,32590464512032028403,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "5544049b-dd20-4631-b2cd-a1b639f7d4f0"]},
+Open],ExpressionUUID -> "f8183f75-3593-40ad-8353-2935f8a56dec"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"T","[","\[Omega]","]"}]," ","="," "}]],"Input",CellLabel -> "In[1]:= ",
+ExpressionUUID -> "0ff83127-9c30-4e87-a0ea-e8cad9962796"],Cell[
+BoxData[TemplateBox[
+{"Syntax","tsntxi","\"\\\"\\!\\(\\*TagBox[RowBox[{RowBox[{\\\"T\\\", \\\"[\\\", \\\"\[Omega]\\\", \\\"]\\\"}], \\\"=\\\"}], Short[#1, 3] & ]\\)\\\" is incomplete; more input is needed.\\!\\(\\*TagBox[\\\"\\\\\\\"\\\\\\\"\\\", Short[#1, 5] & ]\\)\"",2,1,1,32590464512032028403,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "f6e84fa6-89fa-4fcd-9180-9548f27a085c"]},
+Open],ExpressionUUID -> "6a6623a1-16a5-487e-adb6-5ca69b32adc2"],Cell[
+TextData[{"Eqs",StyleBox[
+RowBox[{"."," "}]],"8",StyleBox[RowBox[{","," "}]],"10",StyleBox[RowBox[{","," "}]],"11",StyleBox[
+RowBox[{","," "}]],"13"," ","in"," ","https","://","apps",".","dtic",".","mil","/","dtic","/","tr","/","fulltext","/","u2","/","a371944",".","pdf"}],
+"Text",ExpressionUUID -> "d9db67a2-24b1-4c38-9f7f-3e5d3459acea"],Cell[
+BoxData[RowBox[
+{RowBox[{"k","[","omega_","]"}]," ",":="," ",RowBox[{RowBox[{"(",RowBox[{"omega"," ","/"," ","c"}],")"}]," ","*"," ",RowBox[
+{"Sqrt","[",RowBox[{"Debye","[","omega","]"}],"]"}]}]}]],"Input",CellLabel -> "In[1]:= ",
+ExpressionUUID -> "41cac874-96c7-4f9b-9391-65d6bc18ea76"],Cell[
+BoxData[RowBox[{}]],
+"Input",CellLabel -> "In[2]:= ",ExpressionUUID -> "9456ee00-5be9-45a0-9e12-5cf5755f53d3"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"\[Phi]","[","t_","]"}]," ",":="," ",RowBox[{"Sin","[","t","]"}]}],"\n",RowBox[
+{"(*"," ","placeholder"," ","*)"}]}]],"Input",CellLabel -> "In[3]:= ",ExpressionUUID -> "8ef257be-1604-4825-814d-ddcf517b91c2"],Cell[
+BoxData[
+RowBox[{RowBox[{"Eft","[","omega_","]"}]," ",":="," ",RowBox[{"Defer","[",RowBox[
+{"Integrate","[",RowBox[{RowBox[{RowBox[{"\[Phi]","[","t","]"}],"*",RowBox[{"Exp","[",RowBox[
+{RowBox[{"-","\[ImaginaryI]"}],"*","omega","*"," ","t"}],"]"}]}],",",RowBox[{"{",RowBox[
+{"t",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}],"]"}]}]],"Input",
+CellLabel -> "In[4]:= ",ExpressionUUID -> "1694616d-6629-445d-accf-3a31e490f623"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Plot","[",RowBox[{RowBox[{"Eft","[","t","]"}],",",RowBox[
+{"{",RowBox[{"t",",","0",",","10"}],"}"}]}],"]"}]],"Input",CellLabel -> "In[5]:= ",
+ExpressionUUID -> "392adc8a-1898-46c9-92f3-b18856eb99f7"],Cell[
+BoxData[TemplateBox[
+{"NIntegrate","ncvb","\"NIntegrate failed to converge to prescribed accuracy after \\!\\(\\*TagBox[\\\"9\\\", Short[#1, 5] & ]\\) recursive bisections in \\!\\(\\*TagBox[\\\"t\\\", Short[#1, 5] & ]\\) near \\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"t\\\", \\\"}\\\"}], Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{\\\"-\\\", \\\"4.810366851703783`*^7\\\"}], \\\"}\\\"}], Short[#1, 5] & ]\\). NIntegrate obtained \\!\\(\\*TagBox[RowBox[{RowBox[{\\\"0.027273686927758556`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"2.64343813780793`\\\", \\\" \\\", \\\"\[ImaginaryI]\\\"}]}], Short[#1, 5] & ]\\) and \\!\\(\\*TagBox[\\\"7.759706142080397`\\\", Short[#1, 5] & ]\\) for the integral and error estimates.\"",2,5,2,32590464512032028403,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "e693beb8-5bca-4f47-b676-873e6ec15f01"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","ncvb","\"NIntegrate failed to converge to prescribed accuracy after \\!\\(\\*TagBox[\\\"9\\\", Short[#1, 5] & ]\\) recursive bisections in \\!\\(\\*TagBox[\\\"t\\\", Short[#1, 5] & ]\\) near \\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"t\\\", \\\"}\\\"}], Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"4.810366851703783`*^7\\\", \\\"}\\\"}], Short[#1, 5] & ]\\). NIntegrate obtained \\!\\(\\*TagBox[RowBox[{RowBox[{\\\"-\\\", \\\"4.438598833600951`\\\"}], \\\"+\\\", RowBox[{\\\"0.754043573321372`\\\", \\\" \\\", \\\"\[ImaginaryI]\\\"}]}], Short[#1, 5] & ]\\) and \\!\\(\\*TagBox[\\\"8.354621706931493`\\\", Short[#1, 5] & ]\\) for the integral and error estimates.\"",2,5,3,32590464512032028403,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "62df6aa0-611e-46a1-a5ee-d1148a60a901"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","ncvb","\"NIntegrate failed to converge to prescribed accuracy after \\!\\(\\*TagBox[\\\"9\\\", Short[#1, 5] & ]\\) recursive bisections in \\!\\(\\*TagBox[\\\"t\\\", Short[#1, 5] & ]\\) near \\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"t\\\", \\\"}\\\"}], Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"4.810366851703783`*^7\\\", \\\"}\\\"}], Short[#1, 5] & ]\\). NIntegrate obtained \\!\\(\\*TagBox[RowBox[{RowBox[{\\\"-\\\", \\\"0.025528350017446577`\\\"}], \\\"+\\\", RowBox[{\\\"6.432897334481375`\\\", \\\" \\\", \\\"\[ImaginaryI]\\\"}]}], Short[#1, 5] & ]\\) and \\!\\(\\*TagBox[\\\"10.542360674334107`\\\", Short[#1, 5] & ]\\) for the integral and error estimates.\"",2,5,4,32590464512032028403,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "47f28ef7-b1e3-4e86-84ee-2537fa81efed"],Cell[
+BoxData[
+TemplateBox[{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \\\"ncvb\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,5,5,32590464512032028403,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "dfa0bb30-bf5c-41e7-aca0-0827ea055f1d"],Cell[
+BoxData[
+GraphicsBox[{{},{}},{DisplayFunction -> Identity,Ticks -> {Automatic,Automatic},AxesOrigin -> {0,0},FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},DisplayFunction -> Identity,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.05],Scaled[0.05]}},PlotRangeClipping -> True,ImagePadding -> All,DisplayFunction -> Identity,AspectRatio -> NCache[
+Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,True},AxesLabel -> {None,None},AxesOrigin -> {0,0},RuleDelayed[
+DisplayFunction,Identity],Frame -> {{False,False},{False,False}},FrameLabel -> {{None,None},{None,None}},FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},GridLinesStyle -> Directive[
+GrayLevel[0.5,0.4]],Method -> CompressedData["1:eJzlUstOwzAQbMv7wlscuPENfAAqLYVKFKqm6t1N1u0K1xt5bYnw2/wAtqs+CbkgTkRKtPbuzuxM9mZMA7lXq9V413+eka1sLE4DpyC59EEbpHDK3pPTmTBFYgsFfOQTTWdpJiymW03Xq6ZHI/IpptzVFoxILZKWOxV8Bz4YgWFfZ27j83m3VXLug6HHeuuRY+gTY0RtrKPGYGgccBDXEYqhhOhBSkgtVw4UdD7hZKr8a2W9ojIwGe8GYbjfSh6vw/QJ9S+wwkhtQ7lCDbypu8QqaQAkmVnLGSbTowyW5pTg5kqkMANtK3HD6O9JsK2pVEmuSMLxhfQ2xelqM3rA07hKcyPOAtiYSTkL0Z8EPwD3v6sPEEkqvPhJx+m4Ucw/0F35oEVkMtTCAg+J1GseOyrlnYQpkb0XxYJiPuRhWKbFzSZCyJcULW+6mTcVbbH67Ykii/UNgX1hbEkBLsH/jKFkzS6ieTlCNhLKwX9y4gucBRzd"],PlotRange -> {{0,10},{0.0,0.0}},PlotRangeClipping -> True,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.02],Scaled[0.02]}},Ticks -> {Automatic,Automatic}},
+ExpressionUUID -> "40fd4cf1-c2de-4bdd-8663-b71c70d42ae5"],StandardForm],"Output",
+CellLabel -> "Out[5]= ",ExpressionUUID -> "3979120a-ff55-40dc-8c0e-8c29440b4d0d"]},
+Open],ExpressionUUID -> "18dd21a7-6072-438d-a1e1-c29a38dd8904"],Cell[
+BoxData[""],
+"Input",CellLabel -> "In[6]:= ",ExpressionUUID -> "96097f2d-b4d5-4097-939f-d78de38d5b62"],Cell[
+BoxData[
+RowBox[{RowBox[{"Ef","[",RowBox[{"x_",","," ","t_"}],"]"}]," ",":=",RowBox[{RowBox[
+{"(",RowBox[{"1","/",RowBox[{"(",RowBox[{"2","\[Pi]"}],")"}]}],")"}]," ","*"," ",RowBox[
+{"Integrate","["," ",RowBox[{RowBox[{RowBox[{"Exp","[",RowBox[{RowBox[{"-",RowBox[
+{"\[ImaginaryI]k","[","\[Omega]","]"}]}],"x"}],"]"}],"*",RowBox[{"Eft","[","\[Omega]","]"}]," ","*",RowBox[
+{"Exp","[",RowBox[{"\[ImaginaryI]","*","\[Omega]","*","t"}],"]"}]}],",",RowBox[{"{",RowBox[
+{"\[Omega]",",",RowBox[{"-","\[Infinity]"}],",","\[Infinity]"}],"}"}]}],"]"}]}]}]],
+"Input",CellLabel -> "In[7]:= ",ExpressionUUID -> "107971e4-bb8e-47e4-a2c0-a2f3dccea5f8"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Ef","[",RowBox[{"0",","," ","1"}],"]"}]],"Input",CellLabel -> "In[17]:= ",
+ExpressionUUID -> "c7440bc0-2521-43e5-aee2-deb5c692b3ce"],Cell[
+BoxData[RowBox[{"Ef","[",RowBox[
+{"0",",","1"}],"]"}],StandardForm],"Output",CellLabel -> "Out[17]= ",ExpressionUUID -> "f9b44680-4ca8-4541-a1d8-7ec0e9997ee7"]},
+Open],ExpressionUUID -> "357ccbc4-2b6f-48dc-a62e-afd681e0291d"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Plot","[",RowBox[{RowBox[{"Ef","[",RowBox[{"0",",","t"}],"]"}],",",RowBox[
+{"{",RowBox[{"t",",","0",",","10"}],"}"}]}],"]"}]],"Input",CellLabel -> "In[18]:= ",
+ExpressionUUID -> "c97b0d23-5e71-4aa1-982c-aea6206bc578"],Cell[
+BoxData[GraphicsBox[
+{{},{}},{DisplayFunction -> Identity,Ticks -> {Automatic,Automatic},AxesOrigin -> {0,0},FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},DisplayFunction -> Identity,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.05],Scaled[0.05]}},PlotRangeClipping -> True,ImagePadding -> All,DisplayFunction -> Identity,AspectRatio -> NCache[
+Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,True},AxesLabel -> {None,None},AxesOrigin -> {0,0},RuleDelayed[
+DisplayFunction,Identity],Frame -> {{False,False},{False,False}},FrameLabel -> {{None,None},{None,None}},FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},GridLinesStyle -> Directive[
+GrayLevel[0.5,0.4]],Method -> CompressedData["1:eJzlUstOwzAQbMv7wlscuPENfAAqLYVKFKqm6t1N1u0K1xt5bYnw2/wAtqs+CbkgTkRKtPbuzuxM9mZMA7lXq9V413+eka1sLE4DpyC59EEbpHDK3pPTmTBFYgsFfOQTTWdpJiymW03Xq6ZHI/IpptzVFoxILZKWOxV8Bz4YgWFfZ27j83m3VXLug6HHeuuRY+gTY0RtrKPGYGgccBDXEYqhhOhBSkgtVw4UdD7hZKr8a2W9ojIwGe8GYbjfSh6vw/QJ9S+wwkhtQ7lCDbypu8QqaQAkmVnLGSbTowyW5pTg5kqkMANtK3HD6O9JsK2pVEmuSMLxhfQ2xelqM3rA07hKcyPOAtiYSTkL0Z8EPwD3v6sPEEkqvPhJx+m4Ucw/0F35oEVkMtTCAg+J1GseOyrlnYQpkb0XxYJiPuRhWKbFzSZCyJcULW+6mTcVbbH67Ykii/UNgX1hbEkBLsH/jKFkzS6ieTlCNhLKwX9y4gucBRzd"],PlotRange -> {{0,10},{0.0,0.0}},PlotRangeClipping -> True,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.02],Scaled[0.02]}},Ticks -> {Automatic,Automatic}},
+ExpressionUUID -> "48da208e-42b8-4a77-b1fc-fa715567dd80"],StandardForm],"Output",
+CellLabel -> "Out[18]= ",ExpressionUUID -> "e3eaf2a2-1c30-49a6-8fcd-8ba8d100d733"]},
+Open],ExpressionUUID -> "aebbf5da-d928-409b-892e-192a80afbf13"],Cell[
+TextData[{"In"," ","the"," ","underdamped"," ","case",StyleBox[
+RowBox[{","," "}]],"the"," ","Green's"," ","function"," ","relating"," "}],"Text",
+ExpressionUUID -> "76bca385-ad62-4654-ba09-59e98e714d1c"],Cell[
+CellGroupData[{Cell[
+BoxData[
+{RowBox[{RowBox[{"G","[",RowBox[{"t_",",","tprime_"}],"]"}]," ",":="," ",RowBox[{RowBox[
+{"UnitStep","[",RowBox[{"t","-","tprime"}],"]"}]," ","*",RowBox[{"Exp","[",RowBox[
+{RowBox[{"-","\[Gamma]"}],RowBox[{"(",RowBox[{"t","-","tprime"}],")"}]}],"]"}]," ","*"," ",RowBox[
+{"1","/",RowBox[{"Sqrt","[",RowBox[{RowBox[{"\[Gamma]","^","2"}]," ","-"," ",RowBox[
+{"\[Omega]0","^","2"}]}],"]"}]}],"*",RowBox[{"Sinh","[",RowBox[{RowBox[{"Sqrt","[",RowBox[
+{RowBox[{"gamma","^","2"}],"-",RowBox[{"\[Omega]0","^","2"}]}],"]"}],RowBox[{"(",RowBox[
+{"t","-","tprime"}],")"}]}],"]"}]}]}],"\n",RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]}],
+"Input",CellLabel -> "In[19]:= ",ExpressionUUID -> "2a600f4a-8af1-4a6b-b53e-a33bf7c0d786"],Cell[
+BoxData[
+RowBox[{"-",FractionBox[RowBox[{"\[ImaginaryI]"," ",SuperscriptBox["\[ExponentialE]",
+RowBox[{RowBox[{"-","t"}],"+","tprime"}]]," ",RowBox[{"Sinh","[",RowBox[{SqrtBox[
+RowBox[{SuperscriptBox["gamma","2"],"-",RowBox[{"256000000000000000000"," ",SuperscriptBox[
+"\[Pi]","2"]}]}]]," ",RowBox[{"(",RowBox[{"t","-","tprime"}],")"}]}],"]"}]," ",RowBox[
+{"UnitStep","[",RowBox[{"t","-","tprime"}],"]"}]}],SqrtBox[RowBox[{RowBox[{"-","1"}],"+",RowBox[
+{"256000000000000000000"," ",SuperscriptBox["\[Pi]","2"]}]}]]]}],StandardForm],"Output",
+CellLabel -> "Out[20]= ",ExpressionUUID -> "dac32fc4-dbb5-45ea-a5ee-059ef4d08083"]},
+Open],ExpressionUUID -> "b31c1c25-89d5-426a-975f-38f398a29497"],Cell[
+TextData[{"tprime"," ","here"," ","is"," ","a"," ","dummy"," ","variable"," ","only"," ","used"," ","in"," ","the"," ","integral",StyleBox[
+RowBox[{"."," "}]],"Eq",StyleBox[RowBox[{"."," "}]],"4",StyleBox[RowBox[{"."," "}]]}],
+"Text",ExpressionUUID -> "860b20f3-8907-451f-8c02-a2173efc5c53"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"y","[",RowBox[{"x_",",","t_"}],"]"}]," ",":=",RowBox[
+{"Defer","["," ",RowBox[{"Integrate","[",RowBox[{RowBox[{RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]," ","*",RowBox[
+{"("," ",RowBox[{RowBox[{"(",RowBox[{"q","*",RowBox[{"Ef","[",RowBox[{"x",","," ","tprime"}],"]"}]}],")"}],"/","m"}],")"}]}],",",RowBox[
+{"{",RowBox[{"tprime",","," ",RowBox[{"-","\[Infinity]"}],","," ","\[Infinity]"}],"}"}]}],"]"}],"]"}]}],"\n",RowBox[
+{"Simplify","[","y","]"}],"\n",RowBox[{"y","[",RowBox[{"x",",","t"}],"]"}]}],"Input",
+CellLabel -> "In[21]:= ",ExpressionUUID -> "98fdf7e9-4ca1-4e53-808d-2d9f2ed18f8a"],Cell[
+BoxData[
+"y",StandardForm],"Output",CellLabel -> "Out[22]= ",ExpressionUUID -> "282c7e08-c805-4fe3-91b0-2f4bcb8fe136"],Cell[
+BoxData[
+RowBox[{SubsuperscriptBox["\[Integral]",RowBox[{"-","\[Infinity]"}],"\[Infinity]"],RowBox[
+{FractionBox[RowBox[{RowBox[{"G","[",RowBox[{"t",",","tprime"}],"]"}]," ",RowBox[
+{"(",RowBox[{"q"," ",RowBox[{"Ef","[",RowBox[{"x",",","tprime"}],"]"}]}],")"}]}],
+"m"],RowBox[{"\[DifferentialD]","tprime"}]}]}],StandardForm],"Output",CellLabel -> "Out[23]= ",
+ExpressionUUID -> "db66cdc5-bd75-4783-8903-2f4604ec8905"]},Open],ExpressionUUID -> "adf23e5d-bde9-4f79-bf50-7c3618c6f641"],Cell[
+
+"\<\>","Text",ExpressionUUID -> "083f2453-173b-4f3c-8170-d8fbcbaded1d"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.2 for Wolfram Cloud 1.57 (November 23, 2020)"]

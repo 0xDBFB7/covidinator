@@ -295,7 +295,11 @@ aHA! it's the quadrupole and multipole expansion!
 if we dropped the ustrip to 0.1 mm, and the field goes linearly,
 400 * 300 * 3 / 0.5 = 0.72 MV/m.a
 
-so delphi 
+
+mathematica Online has a really neat export feature, actually
+pretty cool
+
+
 
 
 

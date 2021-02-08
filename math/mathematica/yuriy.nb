@@ -1,0 +1,1 @@
+Notebook[{}, StyleDefinitions->"Default.nb"]
