@@ -14,6 +14,7 @@ def average(arr, n):
 
 import unittest
 
+#old, deprecated, see _numerical_optimize.
 
 class propagator:
     def __init__(self):

@@ -11,7 +11,7 @@ from scipy.optimize import minimize, basinhopping
 from fdtd_PCB_extensions.tissue import cole_cole_4, get_tissue_cole_cole_coefficients
 import pickle
 import dill
-
+import sys
 
 
 omega_res = 2.0*pi*30e9
@@ -89,6 +89,9 @@ def cost_function(F, n, omega, z):
     return abs(-np.max(propagate(F, n, omega, z))/picometer) + np.max(F**2.0)
 
 
+if(not __name__ == "__main__"):
+    sys.exit()
+    #using as a library, get out
 
 
 duration = 30e-10
@@ -106,6 +109,8 @@ n[omega == 0] = 1
 # F = np.sin(times*omega_res)
 
 # output = propagate(F, omega, z)
+
+
 
 try:
     f = open("output.pkl",'rb')

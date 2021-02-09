@@ -15,7 +15,7 @@ Things that are here:
     - Can instantly quantify sub-nanogram quantities of dsDNA using Biotium GelGreen (Xu et al's fast phage titer sampling, score!).
  * Li et al's 600-picosecond avalanche transistor Marx pulser
  * A few microbiology protocols - E. coli and T4 bacteriophage.
- * A cheap (~$300) 6-12 GHz microwave absorption spectrometer. Almost useless for small signals, does not provide the SNR required for biological purposes, don't build one.
+ * A cheap (~$300) 6-12 GHz microwave absorption spectrometer / scalar network analyzer. Almost useless for small signals, does not provide the SNR required for biological purposes, don't build one.
     - firmware/eppenwolf/runs: Data from a number of data-taking runs of the Eppenwolf.
  * A wrapper around flaport/fdtd's awesome electromagnetics library:
     - tissue.py: supports import of IT.IS Foundation computational phantom voxel files, with their supplied Cole-Cole dielectric model, for tissue simulations. Pretty rough, not formally validated.

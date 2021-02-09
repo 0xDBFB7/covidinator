@@ -118,7 +118,7 @@ OOOH Yu et al have made a CG model of the virion! Yaaay!
 Unfortunately, high dsRNA.
 
 In fact, there's some reason to believe that an extremely high statistical certainty in
-an otherwise inconsistent field is an artifact of systematics?
+an otherwise inconsistent field is an indication of a systematic artifact?
 
 
 ------------ Rotation ---------------

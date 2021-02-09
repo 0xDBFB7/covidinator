@@ -10,6 +10,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from propagation_lib import propagator
 
 
+#old, deprecated, see _numerical_optimize.
 
 
 #

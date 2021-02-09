@@ -151,6 +151,7 @@ frequency-dependent inactivation
 
 
 
+After the relaxation time, the energy is a distant memory; only the mechanical effects that were induced during that time can remain. Since the energy is too small to 
 
 
 \footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
@@ -167,10 +168,16 @@ Much of the work in this paper was concerned with this paper
 
 %3 MV/m * 10000 electronCharge * 0.1 angstrom / (boltzmannConstant * 310 K) = 11 kT per cycle
 %3 MV/m * 10000 electronCharge * 0.1 angstrom / (boltzmannConstant * 310 K) = 11 kT per cycle
-From an energetics perspective, we can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency, where $m^*$ is the reduced mass. With relatively sane choices of screened charge and resonant frequency, the energy per monocycle at 5 MV/m varies from 0.01 to 20 times the thermal energy $k_b T$. 
+From an energetics perspective, we can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass. With relatively sane choices of screened charge and resonant frequency, the energy per monocycle at 5 MV/m varies from 0.01 to 20 times the thermal energy $k_b T$. 
 
-Compare to ~5 $k_b T$ per protein for capsid binding \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ for lipid bilayer pore formation \cite{Atomistic2014a}.
+Compare to ~5 $k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014a}.
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
+
+On the other hand, 0.5 angstroms is only a 0.04\% deflection of the capsid, whereas a general value for host cells is about 3\% deflection. 
+
+Certainly the virus will be destroyed at some finite electric field. It remains to be seen whether a practical limit 
+
+ \cite{Resonance1996}
 
 
 %(2*pi*(20 GHz))^2 * 100 MDa to N/m \approx 3000 N/m
@@ -271,15 +278,30 @@ Electropermeabilization of viral membranes and capsids has been observed.
 
 Mizuno \cite{Inactivation1990} inactivate SVD Enterovirus (a 27 nm non-enveloped protein encapsidated ssRNA) and EHV (a 100 nm enveloped dsDNA) with 100\% effectiveness with 120 pulses, about 500 nanoseconds each, at 3 MV/m. Electron microscopy demonstrates that the mechanism is irreversible damage to the capsid or envelope respectively and subsequent release of the core, and is unlike thermal treatment.
 
-\begin{autem}
-Extreme care must be taken in interpreting the results of any one study in isolation, especially in this field. 
+While this result would seem to perfectly align with our hypothesis, extreme care must be taken in interpreting the results of any one study in isolation, especially in this field. 
 
-Though the temperature was monitored, In this observation, the thermal artifact cannot necessarily be completely discounted. The energy dissipated was sufficient to cause a significant temperature rise if localized hot-spots appeared \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K)) = ~50 $\Delta$C, whereas melting temperatures are typically about 90 C for capsids \cite{Thermal1999} and 50 C for envelopes\cite{Stability1985}}. \\ The electrodes were not insulated, so electrochemical effects are possible but unlikely given the short duration of the pulses. 
-\end{autem}
+See the section on pulse artifacts. Electrode insulation is not mentioned, so electrochemical effects are possible but unlikely given the short duration of the pulses. The observed RNA damage is unexpected from a mechanical standpoint but is somewhat like the damage due to copper ions found by \cite{Microwave1987}; therefore electrochemical interaction may have been a confounding factor.
 
-Madiyar \cite{Manipulation2013} observe rapid permeabilization (likely through the slow, conventional electroporation mechanism) at a field of poorly-defined intensity up to about 10 MV/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 bacteriophage. 
+Also, although the temperature was monitored, the thermal artifact cannot necessarily be completely discounted in this experiment. The energy dissipated was sufficient to cause a significant temperature rise if localized hot-spots were to appear \footnote{(43 cal/cc * (3 microliters)) / (3 milligrams * 4.2 J/(g K)) = ~50 $\Delta$C, whereas melting temperatures are typically about 90 C for capsids \cite{Thermal1999} and 50 C for envelopes\cite{Stability1985}}.
+
+
+Madiyar \cite{Manipulation2013} observe rapid permeabilization (perhaps through the slow, conventional charge electroporation mechanism) at a field of poorly-defined intensity up to about 10 MV/m, in the Vaccinia poxvirus (a 300 nm enveloped dsDNA virus). \cite{AC2017}. Interestingly, the same effect is not observed in T4 bacteriophage. 
 
 Moreover, these results could easily be explained by a first-order theoretical. Both AFM data and surmised from osmotic pressure, the force scale required to crack the viral envelopes and capsids is about 1 nanonewton. 
+
+Schnelle\cite{Trapping1996} 
+
+\subsection{Electrorotation}
+
+and Fuhr\cite{Radiofrequency1994} and Grom \cite{Accumulation2006} report on a modification of so-called dielectrophoresis techniques called electrorotation, in a so-called field cage.
+ 
+ 
+ 
+Rotation is sub-synchronous at a few Hz, whereas the field rotates at between 0.1 MHz to over 50 MHz; in all cases the frequency is made high enough that 
+
+In the virus tests by Schnelle, a field of 0.3 MV/m was used, without apparent damage to the virus, though their 
+
+Gimsa \cite{New1999} use a four-electrode cage at 25 kV/m 
 
 
 Electrorotation large field but not seen.
@@ -406,14 +428,12 @@ add "timeline"
 \subsection{Coherent control and laser chemistry}
 
 
-
-Man \cite{Picosecond2016b} perform a trustworthy all-atom molecular dynamics simulation of . As with most molecular dynamics simulations, the applied field was enhanced by several orders of magnitude to an unrealistic 2 gigavolts per meter to make the reaction proceed fast enough to be captured without excessive computation time.
-
+Man \cite{Picosecond2016b} perform a trustworthy all-atom molecular dynamics simulation of a laser pulse tuned to provoke dissociation of a viral capsid. In this case the large-scale structual modes are not involved. As with many molecular dynamics simulations using applied fields, the field was enhanced by several orders of magnitude to an unrealistic 2 gigavolts per meter to make the reaction proceed fast enough to be captured without excessive computation time.
 
 
 \subsection{Picosecond and femtosecond laser studies}
 
-A group of literature exists concerning the excitation of these modes with picosecond or femtosecond lasers. A pulse some 300 fs long and with a carrier of around 600 nm. Impulsive stimulated Raman scattering. We confess to not having studied these mechanisms in great detail. The pulse does not directly act on the vibrational mode; the optimal pulse duration is some small fraction of the period of the mode in question.
+A group of literature exists concerning the excitation of these structural modes with picosecond or femtosecond lasers. A pulse some 300 fs long with a carrier of around 600 nm. Impulsive stimulated Raman scattering. We confess to not having studied this mechanism in great detail. The pulse does not directly act on the vibrational mode; the optimal pulse duration is some small fraction of the period of the mode in question.
 
 M13 is a 880 nm by 6.6 nm rod \cite{M132015}. 
 
@@ -434,7 +454,11 @@ In any case, inactivation through this mechanism appears to require a very long 
 
 
 
-It is common for. However, non-zero resonant frequency requires the ratio of the the loss in energy to the surroundings to the mass, to be greater than $b/(2m) < \omega_{res} \sqrt{2}$ \cite{Driven}; the solution to the harmonic oscillator equation is piecewise around this value. 
+
+It is common for.  However, in the classical case, a non-zero resonant frequency requires the ratio of the loss in energy to the surroundings to the oscillating mass to obey $b/(2m) < \omega_{res} \sqrt{2}$ \cite{Driven}; the solution to the harmonic oscillator equation is piecewise around this value. 
+
+(unless the various small-scale quantum mechanical oscillators are considered, which in our case appear to require fields in excess of 1 TW to access).
+
 
 Most things with a stiffness matrix has some resonant frequency\citationneeded. As far as we can tell, two justifications underpin the categorical implausibility of resonance-like behavior in 
 
@@ -511,7 +535,7 @@ When confronted by an extremely surprising and novel result, it seems useful to 
 \begin{toolchain}
 We must now stress decisively that, as with all scientific critique, this commentary must not be construed as a reflection on the quality of the original study, and especially not towards its authors.\\ 
 
-We are adamant that, in all cases cited, we believe their studies were well designed and conducted: the authors went to considerable and sufficient lengths to demonstrate its validity. 
+We are adamant that, in all cases cited, we believe their studies were well designed and conducted: the authors went to considerable and sufficient lengths to demonstrate its validity. It is easy to say what could have happened, but much harder to say what did happen.
 \end{toolchain}
 
 
@@ -521,7 +545,11 @@ We are adamant that, in all cases cited, we believe their studies were well desi
 	In fact, a scientist's first response upon reading a new paper may be to see a new interpretation, to conceive a different experiment that could provide a wholly new thrust for the paper. This is a thought process that is encouraged in all young scientists, and it is one of the driving forces in science.
 \end{fquote}
 
+
+
 \begin{multicols}{1}
+
+Vijayalaxmi \cite{Biological2016} \cite{Comprehensive2018} \cite{Funding2019} already offer a number of excellent guidelines on best practices in this field; as do Chou \cite{chou1996radio}. We only offer a few issues which we were particularly concerned about when designing our experiments and searching literature. 
 
 
 \subsection{Artifacts in past absorption spectroscopy experiments, and the subsequent development and invalidation of non-classical damping hypotheses}
@@ -586,9 +614,33 @@ Liu and Yang use a coplanar waveguide, and offer hydration layers along the line
 However, as Foster et al demonstrated, there is nothing necessarily wrong with VNA-based dielectric spectroscopy if it is well conducted; but history would seem to suggest that we take some degree of caution with such results.
 
 
+\subsection{Raman spectroscopy}
+
+Very recently, Burkhartsmeyer \cite{Optical2020} have published data replicating the findings on bacteriophage PhiX174 using a single-particle Raman spectroscopy technique. We have not examined these claims in any detail, but believe that they are excellent evidence.
+
+Perhaps these results cannot be trusted implicitly, however, because non-photothermal optical Raman methods can also apparently synthesize artifacts - see unpublished, personal communication with Taylor \cite{mechanisms1981}. As this is an unpublished negative result, we know nothing about the experimental details that led to this error.
+
 \subsection{Thermal controls}
 
 As any researchers who have scalded their mouths on a cheap dinner may know, microwave irradiation can produce unintuitive temperature gradients, with local hot-spots that can be difficult to measure directly.
+
+An electric field necessarily dissipates energy in the surrounding solvent, and 
+
+In inevitable temperature rise as a confounding factor. 
+
+mouse was heating
+
+A few reports in the 1940s suggested that bacteria might be non-thermally inactivated. However, Burton\cite{Effects1950} described an experiment using thermochromic pigments to examine heating profiles throughout the sample. With a half-second pulse of an exposure frequency of only 30 MHz, they observe highly localized regions that exceed 50 C even while the maximum temperature measured by thermocouple never exceeds 36-40 C. This is despite the use of a tube only 9 mm across, where it might be thought that thermal conduction would dissipate any . 
+
+With the shorter wavelengths of microwave frequencies, it seems likely that such effects will be far more pronounced.
+
+This is highlighted by the experiments of Kozempel \cite{Preliminary1997} and \cite{Inactivationa}, discussing the performance of an RF fluid sterilization unit. They take great pains to map the temperature profile using a fiber-optic thermometer; use thermographic indicators; and yet find substantial inactivation of {\it Pediococcus sp.} with a maximum measured temperature of only 40 C.
+
+This is a fascinating result, and one which should be compared to the existing literature and very carefully replicated to isolate the mechanism. However, unless it is suggested that {\it Pediococcus sp.} also exhibits a confined microwave resonance of the same nature as the virus, it appears that temperature measurements within the physiological range are not necessarily a sufficiently stringent control to definitively {\it isolate} resonant effects from other mechanisms.
+
+
+The temperature rise after 15 minutes radiation was 27.5°C up to 34.5°C.
+
 
 To illustrate how sensitive this research is, [Chemeris 2004] mention:
 
@@ -600,34 +652,20 @@ To illustrate how sensitive this research is, [Chemeris 2004] mention:
 
 Of course, this is using an extremely sensitive assay, not an aggregate inactivation 
 
-A previous report of microwave resonance, Grundler \cite{Sharp1983}, use a calorimeter, a stream of cooling water controlled to within 0.1 C, an interferometric thermometer, and can state definitively that at no point does the temperature inhomogeneity exceed 0.02 C.
+A previous report of microwave resonance, Grundler \cite{Sharp1983} use a calorimeter, a stream of cooling water controlled to within 0.1 C, an interferometric thermometer, and can state definitively that at no point does the temperature inhomogeneity exceed 0.02 C.
 
 The experiments of the Sun group 
 
-An electric field necessarily dissipates energy in the surrounding solvent, and 
-
-In inevitable temperature rise as a confounding factor. 
-
-
-Kozempel \cite{Preliminary1997} and \cite{Inactivationa}. They take great pains to map the temperature profile using a fiber-optic thermometer; use thermographic indicators; and find substantial, almost complete inactivation of {\it Pediococcus sp.} with a measured discharge temperature of only 40 C.
-
-This is a fascinating result, and one which should be compared to the existing literature and very carefully replicated to isolate the mechanism. However, unless it is suggested that {\it Pediococcus sp.} also exhibits a confined microwave resonance of the same nature, it appears that periodic temperature measurements within the physiological range are not necessarily a sufficiently stringent control to definitively {\it isolate} resonant effects from other mechanisms.
-
-Conversely, if temperature control is not possible, the temperature can be allowed to rise so long as a positive control is present in which 
+Conversely, if temperature control is not practical, the temperature can be allowed to rise - so long as a positive control is present which can be  
 
 In Gandhi \cite{Basic1983}, nichrome heaters and copper-constantan thermocouples are used to generate the same temperature-time profile in both the treatment and this positive control to within 0.02 C, finding no effect. 
-
-Burton\cite{Effects1950} describe the use of thermochromic pigments to examine heating profiles. Using low-frequency exposure, they are able to produce localized regions in excess of 50 C.
-
 
 
 [Vj] mention the importance of precise dosimetry. Even simple structures can produce hot-spots 
 Yang et al use both a plastic cuvette, and a single drop of solution on a glass slide; in either case, a sharp change dielectric constant is present.
 
 \begin{quote}
-	
-	To confirm that our observation is not due to the microwave thermal heating effect, we had monitored the sample temperature change during the microwave illumination experiments with a radiated power density of 486W/m2 at a frequency of 6GHz by using an infrared thermal imaging camera with a temperature accuracy of 0.05°C (CHCT, P384-20). The temperature rise after 15 minutes radiation was 7°C, from 27.5°C up to 34.5°C. We thus exclude the possible contribution of microwave thermal heating effect to inactivation H3N2 viruses under our experimental condition.
-	
+	To confirm that our observation is not due to the microwave thermal heating effect, we had monitored the sample temperature change during the microwave illumination experiments with a radiated power density of 486W/m2 at a frequency of 6GHz by using an infrared thermal imaging camera with a temperature accuracy of 0.05°C (CHCT, P384-20).  We thus exclude the possible contribution of microwave thermal heating effect to inactivation H3N2 viruses under our experimental condition.
 \end{quote}
 
 Glass and water are not infrared transmissible; only the surface temperature of the sample can be measured. 
@@ -645,11 +683,12 @@ Similarly, the gain of the EM-6969 antenna\cite{EM6969} varies from 17 dBi to 21
 However, that the spectra of all these effects would combine to produce a peak at precisely the resonant frequency determined by the entirely different microwave cuvette is highly implausible; and so Figure 4b really does seem to be good evidence of such an effect.
 
 
-\subsection{Other artifacts}
+\subsection{Even weirder artifacts}
 
 Bergqvist \cite{Effect1994a} find that the permeabilizing of their liposomes was not due to microwave exposure, but apparently a very peculiar interaction with the Teflon dish that was used only for positive microwave trials. Therefore, every part of the experimental protocol should be maintained precisely identical for non-sham and thermal sham trials.
 
 Electrochemical the presence of various ions 
+
 
 
 $20 \text{W/m}^2 * 6 minutes to \text{J/m}^2 = 7200 \text{J/m}^2$
@@ -658,6 +697,10 @@ $20 \text{W/m}^2 * 6 minutes to \text{J/m}^2 = 7200 \text{J/m}^2$
 Some research has been discounted due to attenuators that leak high 
 
 Matzumoto \cite{Inactivation1991} find that in one case, an arc was struck within the medium, and that the UV light produced was sufficient to inactivate the organism.
+
+
+
+
 
 \subsection{Meta issues with the field}
 
@@ -672,20 +715,10 @@ Publication bias in the positive direction. A p=0.001. Something along an anthro
 anthropic principle
 
 
-\subsection{Raman spectroscopy}
-
-Very recently, Burkhartsmeyer \cite{Optical2020} have published data replicating the findings using a single-particle Raman spectroscopy technique. We have not examined these claims in detail, but they are good evidence.
-
-Non-photothermal optical Raman methods can also apparently synthesize artifacts - see unpublished, personal communication with Taylor \cite{mechanisms1981}. 
 
  $<< 20 \text{ ps}$ \footnotemark measured in the structures of human tissue.\\
  
 \footnotetext{This value for human structures is the aggregate Cole-Cole relaxation time from Gabriel, in the case of breast tissue (which has the highest value). This is somewhat an unfair comparison; the relaxation time of a heterogeneous mixture such as tissue often appears smaller than that of a pure sample. However, this value agrees well with the individual findings of cellular modes (for instance, the damping from Adair's estimates is approx. 10 ps)}
-
-
-
-This technique appears to be unique in that it is selective, save for Far UV or cold-plasma sterilization. Its advantages over those is that it operates over large volumes with inexpensive emitters, but, most critically, can be made to penetrate tissue without harm.
-
 
 \end{multicols}
 
