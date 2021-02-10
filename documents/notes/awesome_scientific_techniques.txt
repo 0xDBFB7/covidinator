@@ -21,6 +21,7 @@ Hazards
     - Diode detector probes 
         A high impedance
 
+    - Aperture size measurement through diffraction
     
 - 
 

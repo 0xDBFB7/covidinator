@@ -19,11 +19,6 @@ Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-fle
 \footnotetext{"precursor" is perhaps a misnomer when single pulses are used rather than trapezoidally-modulated tones - Oughston and Najafabadi both call these \textit{Brillouin pulses}.\\ \cite{Optimal2015} \cite{Optimal2017} \cite{Heat2010}.}
 
 
-SIMPLIFY OPTIMIZATION: now try optimizing over a sawtooth wave 
-
-make a 3d plot of sawtooth through tissue and driven amplitude through tissue
-
-
 The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 
 book\cite{Wave1960} on the topic. \footnotemark
 
@@ -53,10 +48,16 @@ By putting more power in higher frequencies,
 
 While it is clearly possible to produce this abnormal penetration (any sharp edge sufficiently distant from  suffices to produce a dispersive pulse), it was not obvious to us that a waveform 
 could be constructed that would be an effective driver for the normal modes in question. 
-Oughston ; if the pulses are too close together, they interfere as they propagate and distort the precursor thus formed.
+
+First, Oughston ; if the pulses are too close together, they interfere as they propagate and distort the precursor thus formed.
+
+As an example, despite the waveform from nonlinear transmission lines producing strong wideband components, in cursory simulations they did not appear to satisfy the requirements for Brillouin pulses\wikinote{dubious-discuss}\wikinote{citation-needed}. Our working hypothesis is that this is because of destructive interference from the falling edge that immediately follows; but this is mere speculation.\wikinote{dubious-discuss}
 
 
-For instance, despite the waveform from nonlinear transmission lines producing strong wideband components, in cursory simulations they did not appear to satisfy the requirements for Brillouin pulses\wikinote{dubious-discuss}\wikinote{citation-needed}. Our working hypothesis is that this is because of destructive interference from the falling edge that immediately follows; but this is mere speculation.\wikinote{dubious-discuss}
+
+Second, while the pulse amplitude decays slowly, the total energy contained in such a precursor decays very quickly. The biological ramfications of discussed in detail by Adair in \cite{Biophysics2000}.
+
+
 
 temporal Soliton-producing nonlinear transmission lines, and NLTL oscillators constructed therefrom, particularly well suited 
 
@@ -75,8 +76,6 @@ At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the
 drives the virus with an equally, implementing this would decrease the field at the skin required 
 for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than 
 an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
-
-However, the energy contained in such a standard pulsed-sine or gaussian train decays very quickly, 
 
 
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
@@ -100,7 +99,7 @@ attack pattern alpha
 Transient solution
 
 \pagebreak
-A qualitative statement of the problem we were trying to solve (which may not be correct, especially if Q turns out to be < 1):
+A qualitative statement of the problem we were trying to solve (which may not a useful formulation, especially if Q turns out to be < 1 and the virus exhibits only relaxational and non-resonant behavior):
 
 \begin{toolchain}
 An arbitrary waveform propagates through a dispersive, lossy medium with a certain analytic complex 
@@ -246,6 +245,11 @@ The (noisy) output of the optimization for z=0.08 m in muscle. The low-frequency
 \end{figure}
 
 
+\begin{figure}[H]
+	%	\makebox[\textwidth][c]{
+	\includesvg[width=\textwidth]{propagated_waveforms}
+	\caption{}
+\end{figure}
 
 Of course, 10x attenuation at 1 MV/m still takes us beyond safe levels at the skin. However, the loss that makes phased-array near-field focusing systems impractical at baseband is no longer a concern. A dispersive phased array with more than 10 elements may allow the complete elimination of attenuation without exceeding the limit field at any point in the body. 
 

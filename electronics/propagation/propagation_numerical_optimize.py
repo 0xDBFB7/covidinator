@@ -89,14 +89,13 @@ def cost_function(F, n, omega, z):
     return abs(-np.max(propagate(F, n, omega, z))/picometer) + np.max(F**2.0)
 
 
-if(not __name__ == "__main__"):
-    sys.exit()
-    #using as a library, get out
-
-
 duration = 30e-10
 samples = int(np.ceil(duration * omega_res * 2.0 * 5.0))
 times = np.linspace(-duration,duration,samples)
+
+print("Sample time: ",times[1]-times[0])
+print("Window duration: ",times[-1]-times[0])
+
 
 F=np.ones(samples)
 omega = 2*pi*np.fft.fftfreq(samples)*(samples/(duration*2))
