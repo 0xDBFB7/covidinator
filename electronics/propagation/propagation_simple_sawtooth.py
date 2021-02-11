@@ -46,7 +46,7 @@ def propagate(F, n, omega, z, oscillator=True):
 
     #filter
     # frequency_domain[(omega/(2.0*pi)) < 1e9] = 0
-    frequency_domain[(omega/(2.0*pi)) > 200e9] = 0
+    frequency_domain[(omega/(2.0*pi)) > 300e9] = 0
 
 
     propagated = frequency_domain * np.exp(-1j*(omega/c0)*n*z)
@@ -87,7 +87,7 @@ os.system("rm pretty_output_*.csv")
 # output = F
 
 depths = 30
-max_depth = 0.06
+max_depth = 0.08
 # snippet_samples = samples // 2 # samples in the middle
 beginning_samples = 0
 end_samples = samples
@@ -100,6 +100,7 @@ plot_indexes = [29]
 
 angular_f = 10e9 * 2 * pi
 
+ylim = 0.02
 # F = np.sin(times*f)
 F = normalized_gaussian_pulse(times,1/(2*pi*10e9))
 for idx,z in enumerate(np.linspace(0, max_depth, depths)):
@@ -109,7 +110,7 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         plt.plot(times, output,'r')
     if(idx in plot_indexes):
         plt.subplot(2,4,2)
-        plt.ylim((-0.05,0.05))
+        plt.ylim((-ylim,ylim))
         plt.plot(times, output,'r')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -127,7 +128,7 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         plt.plot(times, output,'g')
     if(idx in plot_indexes):
         plt.subplot(2,4,4)
-        plt.ylim((-0.05,0.05))
+        plt.ylim((-ylim,ylim))
         plt.plot(times, output,'g')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -146,7 +147,7 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         plt.plot(times, output,'b')
     if(idx in plot_indexes):
         plt.subplot(2,4,6)
-        plt.ylim((-0.05,0.05))
+        plt.ylim((-ylim,ylim))
         plt.plot(times, output,'b')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -164,7 +165,7 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         plt.plot(times, output,'y')
     if(idx in plot_indexes):
         plt.subplot(2,4,8)
-        plt.ylim((-0.05,0.05))
+        plt.ylim((-ylim,ylim))
         plt.plot(times, output,'y')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z

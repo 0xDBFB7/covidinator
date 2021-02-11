@@ -147,9 +147,9 @@ Can expect the ~16x higher ((60)^2 / (15)^2).
 
 oof!
 
-k = 1.48571e-24 N·m·s/rad
+dividing by speed gives us
 
-At a megavolt and 1e2 charge, 0.5 picometers, we get freq = 3e4. Maaaaaybe?
+k = 1.48571e-24 N·m·s/rad
 
 Given that previous electrorotation of influenza only report laser induced damage, even 
 at really high fields, it hardly seems plausible that a few rpm are going to matter.

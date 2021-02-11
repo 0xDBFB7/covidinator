@@ -241,20 +241,27 @@ The (noisy) output of the optimization for z=0.08 m in muscle. The low-frequency
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{
 	\includesvg[width=\textwidth]{muscle_pulse_8cm_minimize_test2}
-	\caption{Second.}
+	\caption{}
 \end{figure}
 
 
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{
 	\includesvg[width=\textwidth]{propagated_waveforms_detail}
-	\caption{}
+	\caption{\\
+		Some input (left) and output (right) waves (without considering oscillator coupling) transmitted through 6 cm of muscle.\\
+		X axis is time; Y axis is amplitude.
+		(a) Gaussian monopulse with 16 ps FWHM.\\
+		(b) Optimized 10 GHz sawtooth wave. Note the slight high-frequency ripple.\\ This has a frequency of approximately 1.5 GHz.\\
+		(c) Prototypical precursor 10 GHz sine burst.\\
+		(d) Continuous 10 GHz sine tone.
+}
 \end{figure}
 
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{
 	\includesvg[width=\textwidth]{propagated_waveforms}
-	\caption{}
+	\caption{The same four pulses plotted against depth (Y axis) and amplitude (Z axis)}
 \end{figure}
 
 Of course, 10x attenuation at 1 MV/m still takes us beyond safe levels at the skin. However, the loss that makes phased-array near-field focusing systems impractical at baseband is no longer a concern. A dispersive phased array with more than 10 elements may allow the complete elimination of attenuation without exceeding the limit field at any point in the body. 

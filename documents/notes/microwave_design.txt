@@ -2643,3 +2643,12 @@ ah darnit, the frequency that's bleeding through on the precursor is actually 1 
 .
 
 
+tried tracking down error in bibtex.
+first stripped ascii:
+LC_ALL=C tr -dc '\0-\177' <references.bib >newfile && mv newfile references.bib
+
+no dice.
+
+used split -n6 and mv xaa ref.b
+
+ to binary search.
