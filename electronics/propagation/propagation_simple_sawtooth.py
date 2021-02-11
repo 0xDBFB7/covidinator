@@ -25,7 +25,7 @@ import store
 muscle_id = 48
 lung_id = 41
 #cole-cole refractive index
-ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(lung_id)
+ef, sigma, deltas, alphas, taus = get_tissue_cole_cole_coefficients(muscle_id)
 c0 = 3e8
 
 
@@ -46,7 +46,7 @@ def propagate(F, n, omega, z, oscillator=True):
 
     #filter
     # frequency_domain[(omega/(2.0*pi)) < 1e9] = 0
-    # frequency_domain[(omega/(2.0*pi)) > 40e9] = 0
+    frequency_domain[(omega/(2.0*pi)) > 200e9] = 0
 
 
     propagated = frequency_domain * np.exp(-1j*(omega/c0)*n*z)
@@ -56,7 +56,7 @@ def propagate(F, n, omega, z, oscillator=True):
 
 
 
-sf = 10e9 * 2 * pi
+sf = 30e9 * 2 * pi
 
 duration = 30e-10
 samples = int(np.ceil(duration * sf * 2.0 * 5.0))
@@ -95,17 +95,21 @@ snippet_samples = end_samples - beginning_samples
 
 bigtable = np.zeros(((depths*snippet_samples), 3))
 
-plot_indexes = [0, 29]
+plot_indexes = [29]
 
 
-f = 10e9 * 2 * pi
+angular_f = 10e9 * 2 * pi
 
 # F = np.sin(times*f)
-F = normalized_gaussian_pulse(times,1/(10e9))
+F = normalized_gaussian_pulse(times,1/(2*pi*10e9))
 for idx,z in enumerate(np.linspace(0, max_depth, depths)):
     output = propagate(F, n, omega, z)
+    if(idx == 0):
+        plt.subplot(2,4,1)
+        plt.plot(times, output,'r')
     if(idx in plot_indexes):
-        plt.subplot(2,2,1)
+        plt.subplot(2,4,2)
+        plt.ylim((-0.05,0.05))
         plt.plot(times, output,'r')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -115,11 +119,15 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         fi.write(b"\n\n")
 
 F[:] = 0
-F[200:400] = sawtooth(times[200:400] * f)
+F[200*3:800*3] = sawtooth(times[200*3:800*3] * angular_f)
 for idx,z in enumerate(np.linspace(0, max_depth, depths)):
     output = propagate(F, n, omega, z)
+    if(idx == 0):
+        plt.subplot(2,4,3)
+        plt.plot(times, output,'g')
     if(idx in plot_indexes):
-        plt.subplot(2,2,2)
+        plt.subplot(2,4,4)
+        plt.ylim((-0.05,0.05))
         plt.plot(times, output,'g')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -129,12 +137,16 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         fi.write(b"\n\n")
 
 F[:] = 0
-F[200:400] = np.sin(times[200:400]*f)
+F[200*3:800*3] = np.sin(times[200*3:800*3]*angular_f)
 # F[200:400] = -np.sin(times[200:400]* 1e9 * 2 * pi)
 for idx,z in enumerate(np.linspace(0, max_depth, depths)):
     output = propagate(F, n, omega, z)
+    if(idx == 0):
+        plt.subplot(2,4,5)
+        plt.plot(times, output,'b')
     if(idx in plot_indexes):
-        plt.subplot(2,2,3)
+        plt.subplot(2,4,6)
+        plt.ylim((-0.05,0.05))
         plt.plot(times, output,'b')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -144,11 +156,15 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         fi.write(b"\n\n")
 
 F[:] = 0
-F = np.sin(times*f)
+F = np.sin(times*angular_f)
 for idx,z in enumerate(np.linspace(0, max_depth, depths)):
     output = propagate(F, n, omega, z)
+    if(idx == 0):
+        plt.subplot(2,4,7)
+        plt.plot(times, output,'y')
     if(idx in plot_indexes):
-        plt.subplot(2,2,4)
+        plt.subplot(2,4,8)
+        plt.ylim((-0.05,0.05))
         plt.plot(times, output,'y')
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),0] = times[beginning_samples:end_samples]
     bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),1] = z
@@ -157,8 +173,9 @@ for idx,z in enumerate(np.linspace(0, max_depth, depths)):
         np.savetxt(fi, bigtable[(idx*snippet_samples):((idx+1)*snippet_samples),:], delimiter=",")
         fi.write(b"\n\n")
 
-
-plt.show()
+plt.draw()
+plt.pause(0.001)
+plt.savefig("propagated_waveforms_detail.svg")
 
 os.system("gnuplot plot_spectrum.plt")
 os.system("eog propagated_waveforms.svg")

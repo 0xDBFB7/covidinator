@@ -17,6 +17,9 @@ set ylabel "depth (m)"
 set xlabel "time (s)"
 set title "test"
 
+set cbrange [0:0.01]
+set logscale cb
+
 set multiplot layout 2,2
 #to plot simultaneously, use \, remove splot.
 set zrange [0:1]
