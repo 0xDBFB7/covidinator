@@ -4,6 +4,226 @@
 
 \section{Experiment 1: Attempts at microwave absorption spectroscopy and inactivation in the microsecond pulsed 100 V/m regime}
 
+\cite{Osmotic2003} 30 atmospheres, and breaks at a pressure differential of 100 atm.
+T4 stress
+
+by $\sigma = pr / 2t $,
+t = 7 nm, r = 60 nm, and p =
+
+\subsection{Introduction}
+
+
+
+Rationale for using T4
+
+
+\begin{autem}
+As noted, this field reached a reasonable level of quality. 1951. Some standards.
+By using yet another design, with a new set of unknown artifacts, we are actually hampering this field;
+and so we encourage anyone who may wish to replicate this result not to use this system.
+In this case, we are limited by budget - primarily the power amplifiers we have access to.
+\end{autem}
+
+
+Positions of the three quantities on the slide are randomized\cite{first2000}.
+
+We have tried to comply with the guidelines
+
+Our aims with this experiment were to perform the following:
+
+\begin{itemize}
+	\item Convince ourselves that our skepticsm is unjustified.
+	\item Crudely demonstrate the pulse hypothesis.
+	\item Simulataneously, avoid any ambiguity related to the 7 C temperature rise seen in the previous paper.
+	\item Test the microwave lysis feedback
+	\item Verify the damage feedback mechanism.
+	\item Demonstrate a cheap microwave spectrometer that could be used on NCoV.
+\end{itemize}
+
+
+This was very dumb.
+
+
+Demonstrate the effect in a pulsed manner.
+
+A pulse appears to be more easily applicable in the clinic. \cite{Efficient2015}'s use of a 15 minute exposure caused us some consternation
+- had we missed something; was it possible that inactivation could take so long?
+
+second, it mitigates any possible thermal effect that could have lead to the previous results.
+
+Our justification for wanting a pulse dataset is as follows:
+
+A temperature rise of 7 deg C was found at 6 GHz.
+
+[] found detectable mutagenicity at a mere 2 C temperature rise.
+Of course, a few SNPs here and there is not complete cell lysis; it is extremely implausible that
+the results were the result of the temperature rise. But we nonetheless wanted to control this factor if possible.
+
+The antenna gain increases with frequency (naturally - it goes as aperture size / lambda).
+The gain flatness of the amplifier used is specified at [].
+If the exposure power was measured at the input to the amplifier (the method of power measurement does not appear to be mentioned), is it not
+unreasonable to expect that perhaps, at 9 GHz, the temperature rise, at some point in the 15 minute test, reached 15 C?
+
+This is all post-hoc reasoning. It strains plausibility. If we consider how many negative results went unpublished;
+if we presume that 50 other teams found no effect, is it possible that this is a 1 in 50 fluke?
+
+
+
+
+Because the diode detectors are in an extremely noisy environment, it was found useful to immediately digitize the signal within a mm of the output. Care in shielding may alleviate this issue.
+
+In the end, performing this was probably a mistake and unecessary, but by the time we realized this we had already put in the bulk of the time.
+
+Inspired by \cite{Biocoder2010}, we originally planned on writing the microbiology protocol directly into the {\it Eppenwolf} firmware using \cite{Noweb}.
+However, because the device was planned to run headless in a BSL, this was abandoned.
+
+The method we use is terrible. Such small volumes pose incredible headaches and low SNR for little reason.
+Ideally, we should have used a technique orthogonal to previous studies.
+
+
+We later found the following paper on phase fluctuation optical heterodyne spectroscopy \cite{Broadband1988}, which solves essentially all issues surrounding. Arguably no biological-resonance studies should ever be conducted on any less than such a setup.
+it "[requires] that only perfunctory attention be paid to the sample geometry.", and "allows very straightforward determination of the free-space absorption
+coefficient of the sample based on the photothermal signals measured as a function of distance along the transmission line."
+
+
+
+"This spectroscopic technique stands in contrast to the time-domain reflectometer and network-analyzer techniques-not
+zero-background methods-that require the measurement of small changes in large signals."
+
+It uses a phase-sensing, providing a 1 microdegree temperature measurement.
+
+This requires no special equipment beyond standard optical lab supplies - mirrors, servoing piezo stages.
+
+
+Microwave dielectric spectrometry ("impedance spectroscopy", "absorption spectroscopy")
+
+The notable Feldman biological spectroscopy group recommends a time-domain spectroscopy method\cite{Time2003a}, a modification of beloved TDR techniques. They cite several advantages, including easy subtraction of test jig artifacts.
+Generating a sharp-edged impulse with 10+ GHz spectral components is far easier and cheaper than an equivalent CW oscillator; but then we could not simultaneously expose the virus to the pulsed CW tone to verify the inactivation field thresholds.
+A 10+ GHz oscilloscope is generally required for this method, but sampling\footnotemark oscilloscopes may suffice. \cite{16psresolution2003} offer a simple way to do away with the delay lines that are usually required.
+
+\footnotetext{Confusing name - a 'sampling oscilloscope' builds up the waveform over a large number of cycles.}
+
+On the other hand, putting the sample into a microwave cavity resonator can often provide a much higher sensitivity. The sensitivity can (in some cases - there are tradeoffs - see \cite{FabryPerot1982}) be made proportional to the Q, and even a crude microwave cavity can easily have a Q > 500.
+As an example, EPR spectrometers use cavities in their microwave bridges.
+
+Cavities designed for wide-band use are generally mechanically tuned with a shorting plunger; the plunger itself presents difficulty in design\cite{Contactless2019}.
+However, conventional waveguide cavities run into overlapping modes beyond half an octave, beyond which more than one dimension must usually be altered. We desired a spectrum across the entire 6 - 12 GHz octave.
+
+Open-ended coaxial resonators can offer the required tuning range\cite{Wideband1981}\cite{Study2014a}. Microwave Fabry-Perot etalons are also satisfactory.\cite{FabryPerot1982}
+
+The status quou for measuring the dielectric properties of liquid is an open-ended coax dipped in the solution\cite{Coaxial1980}. However, these appear to be particularly prone to generating resonance-like artifacts - not that the coplanar method is necessarily any better.
+
+We end up using the coplanar waveguide setup, essentially exactly like \cite{Efficient2015}. Rather than expose the sample separately in a horn antenna, the entirety of the sample is held in the fringe field of the coplanar waveguide.
+This was done because of our lack of access to power amplifiers with sufficient power output to expose a large volume simultaneously; however, it ends up an andvantage, because the spectra of the sample can be obtained immediately before and after exposure without disturbance.
+
+Rather than the very professional gold and SiO2-coated sensing structure, we use a basic $50\pm20$ ohm coplanar waveguide, like \cite{Sun}.
+
+An FDTD simulation was performed of the cuvette-waveguide assembly\footnotemark. The bottom tape was made 0.5 mm thick in the simulation dielectric\_constant, and non-conductive\footnotemark. Amplitude values were obtained with a soft 50 ohm source with a 1 V peak (2v p-p) (which would produce a value of 0.5 V minus the (Shottky drop and a small frequency-dependent loss) on the detectors).
+
+The fringe field in the bottom 40\% (0.4 mm) of the fluid-filled well averaged 160 V/m per volt of uncorrected detector input amplitude, with a peak of 200 $\frac{V/m}{V}$ and two hot-spots at the interfaces of < 0.1 mm each. The remaining 60\% (0.6 mm) decreased from 120 $\frac{V/m}{V}$ to 60 $\frac{V/m}{V}$.
+
+\footnotetext{TODO: Update sim to new cuvette dimensions}
+
+\footnotetext{TODO: Update sim real phage fluid conductivity}
+
+[cpwg sim here]
+
+
+The sample is held against the waveguide in a cylindrical well 1 mm in diameter and approx. 1 mm high, in a 3 mm high machined polycarbonate slide, 8 wells per slide.\footnotemark This is aligned on the spectrometer with plastic dowel pins. 0.8 uL of sample are added to each well using a micropipette. A 0.06 mm silicone-adhesive Kapton tape insulates the fluid from the waveguide ()
+Evaporation was very significant even if the top of the well was sealed with tape, so the cuvette is capped with a layer of silicone oil in a 2.3 mm opening; this worked very effectively.
+
+[detail of slide]
+
+\footnotetext{Off-the-shelf 1536-well plates have similar dimensions and could be substituted in the future.}
+
+Such small volumes caused us no end of difficulty. It is very difficult to obtain a log-phase culture required; but, conversely, it is impossible to consistently add reagents or retrieve the sample after the silicone cap is added, so all the ingredients for the assay must be added before.
+
+Needless to say, this is definitely not the correct way to go about this. However, it seems provide acceptable data for these purposes.
+
+Conventional microstrip produces a considerably larger fringe field. However, the ground plane in microstrip is on the bottom layer. The sensitive QFN device ground pins would need to be stitched from the top to the bottom, inevitably adding all sorts of weird and wonderful resonators.
+We were not able to prototype with vias with sufficiently low inductance to negate thise issues; so a single-layer, top-side-only stackup is used. The difference in performance and in ease of layout and routing is tremendous.
+
+Coplanar waveguides are usually designed with a ground plane and via stitching on either side (GCPW), which both improves isolation and noise, but also helps to avoid parallel-plate propagation modes(\cite{Microwaves101c}, \cite{Propagation1990}, \cite{Characteristics1997}). Not including a ground plane avoids these modes, but decreases the available fringe field slightly. We did not add a ground plane.
+
+The well is covered
+
+
+
+
+
+We have tried to follow the study design best practices of \cite{Biological2016}:
+
+\section{Blinding}
+
+
+
+\section{Dosimetry}
+
+Here we are slightly deficient. Other
+
+\section{Positive control}
+
+\cite{Efficient2015} use freeze-thaw cycles to crack the viral capsid as a positive control.
+T4 appeared to be more resistant to freezing; therefore, our positive control is the aforementioned autoclaved phage.
+
+Not having a sonication probe or Electroporator
+
+\section{Sham controls}
+
+
+
+
+
+
+Properties:
+
+active phage/sterile broth/autoclaved phage/dilute phage in saliva
+e. coli / no e. coli (sterile broth)
+300 exposed / 200 exposed / 100 exposed / un- or sham-exposed
+1 unit time pulse-exposed / 10 unit time pulse-exposed / continuous-exposed
+on-resonance exposed / off-resonance exposed
+
+
+Of these, the following combinations make sense:
+
+"negative control": Active phage \& e. coli \& sham-exposed
+"e.coli control": Sterile broth \& e. coli \& sham-exposed
+"sterility control": Sterile broth \& no e. coli \& sham-exposed
+"positive control": Autoclaved phage \& e. coli \& sham-exposed
+"continuous trial": Autoclaved phage \& e. coli \& sham-exposed
+
+Each on two plates.
+
+
+The signal used was spectrally impure; phase noise was very high. However, all spurs are at about 3 dB down.
+
+VCO voltages were calibrated to frequencies using a HackRF One and an HMC /8 frequency divider.
+
+(A downconverter using an HMB and a custom 6.4 GHz LO was tried, but it was found that this was much less informative and more confusing
+due to a lack of effective mixer image and LO spur rejection.)
+
+It is possible to subtract the diode drop using [], but because of design flaws in the AC coupling of the detectors, this was not done.
+A Shottky drop of 0.25 V is assumed in all cases.
+
+- Un-exposed phage-only control:
+
+Add 1 unit phage to cuvette. Monitor turbidity.
+
+- Un-exposed e. coli control.
+- Exposed e. coli control.
+- Exposed phage control.
+- Un-exposed e. coli + phage control
+- Un-exposed e. coli + positive autoclaved phage control
+- 1 - minute exposed
+
+
+To preclude the possibility of damage to the sample while the spectrum is recorded.
+
+0.3 V on a 50-ohm line is
+
+%0.4 mW × 10 s / ((4 J / (g × K)) × 0.2 µL × (1 g / mL)) ➞ K
+
+5 K
 
 \subsection{Microwave lysis feedback}
 
@@ -18,16 +238,65 @@ One could imagine it to be otherwise. For instance, the lysis that occurs after 
 
 
 
+\begin{center}
+	\begin{tabular}{ |c|c|c|c| } 
+		\hline
+		col1 & col2 & col3 \\
+		\hline
+		\multirow{3}{4em}{Multiple row} 
+		& cell2 & cell3 \\ 
+		& cell5 & cell6 \\ 
+		& cell8 & cell9 \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+
+All biasing and power supplies were programmable and sequenced via an arrangement of DACs and amplifiers.
+
+
+The sample rate of the delta-sigma ADCs was not sufficient to capture the amplitude of the short pulses; therefore 
 
 
 
+\begin{figure}[H]
+	\centering
+
+	\includegraphics[width=\textwidth]{{screenshot_192.168.0.38_2020-11-26_13:38:24}.png}
+
+\end{figure}
 
 
+\begin{figure}[H]
+	\centering
+	
+	\includegraphics[width=\textwidth]{{pulse_detail}.png}
+	
+\end{figure}
 
 
+\subsection{Weakened phage capsid testing}
+
+Ishii and Yanagida \cite{two1977} and Qin \cite{Structure2010} find at a pH of 10.6, about 0.3x inactivation after a few minutes of incubation at 37 C, slowly increasing to. The capsid is weakened greatly by the base, relying on the "clamp proteins" hoc and soc.
 
 
+\section{Saturated salt solution}
 
+100 g NaCl was added to 0.25 mL of PG1. 
+
+counts only 5000.
+
+pulse\_VCO(10000); and 0.20 deadly current. a consistent 2.96 V maximum was observed.
+
+3200 counts on 0, exposed
+
+ran a sham:
+
+3200 counts.
+
+darnit!
+
+blank counts, with 1 ml water, are about 500.
 
 
 

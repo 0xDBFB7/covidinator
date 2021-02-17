@@ -1,6 +1,7 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
+DONE [
 
 Rationale for using T4
 
@@ -224,6 +225,7 @@ To preclude the possibility of damage to the sample while the spectrum is record
 
  = 5 K
 
+
  \section{Microwave lysis feedback}
 
 We postulate the following. When the virus is lysed, the resonator is destroyed. This should be reflected in the impedance spectrum.
@@ -239,7 +241,7 @@ This seemed important to establish, as it allows the thresholds to be determined
 One could imagine it to be otherwise. For instance, the lysis that occurs after phage infection of bacteria does little harm to the cell; only the permeability of the membrane is damaged\cite{GROWTH}.
 Similarly, the results of the previous studies could have been obtained without necessarily breaking the virus' envelope.
 
-
+DONE ]
 
 \section{T4 phage experiment 1}
 
@@ -2506,7 +2508,6 @@ did the autoclave dilute?
 
 
 Freeze-thaw rather than autoclave. might reduce some artifacts.
-
 
 
 

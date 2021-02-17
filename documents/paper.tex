@@ -13,41 +13,41 @@
 
 
 
-\section{Figures which have nothing to do with our conclusion but are pretty nonetheless}
+\section{Figures which have little to do with our conclusion but are pretty nonetheless}
 
 \begin{figure}[H]
 	\captionsetup{singlelinecheck = false, justification=justified}
 	\centering
 	\includegraphics[width=\textwidth]{pulse_exposure_setup.JPG}
-	\caption{\\ \textit{Chengxiang} pulse exposure jig. pulser seen off the left. Autosampler Pulse shaping plate not shown. Aluminum disc belongs to the scan-conversion digitizer, not used in this study.}
+	\caption{\\ \textit{Chengxiang} nanosecond pulse exposure jig. Pulser seen off the left. Pulse shaping plate not shown. Aluminum disc belongs to the scan-conversion digitizer, not used in this study.}
 \end{figure}
 	
 \begin{figure}[H]
 	\captionsetup{singlelinecheck = false, justification=justified}
 	\centering
 	\includegraphics[width=\textwidth]{eppenwolf_2.jpg}
-	\caption{\\ \textit{Eppenwolf} misguided pulsed X-Band microwave spectrometer used in this study, pictured with the near-field cuvette installed.}
+	\caption{\\ \textit{Eppenwolf} misguided pulsed X-Band microwave spectrometer used in this study. (cuvette shown was replaced by the same )}
 \end{figure}
 
 \begin{figure}[H]
 	\captionsetup{singlelinecheck = false, justification=justified}
 	\centering
 	\includegraphics[width=\textwidth]{bronch_9GHz_500W_2_transparent.png}
-	\caption{\\ \textit{Eppenwolf} misguided pulsed X-Band microwave spectrometer used in this study, pictured with the near-field cuvette installed.}
+	\caption{Simulation of a (largely ineffective) bronchoscopic method.}
 \end{figure}
 
 
 
+%
+%\begin{figure}[H]
+%	\makebox[\textwidth][c]{
+%		\includegraphics[width=\textwidth*2]{chunk_4_line_2_1.png}
+%	}%
+%	\caption{Chunk 4, it.is Founda}
+%\end{figure}
 
-\begin{figure}[H]
-	\makebox[\textwidth][c]{
-		\includegraphics[width=\textwidth*2]{chunk_4_line_2_1.png}
-	}%
-	\caption{Chunk 4, it.is Founda}
-\end{figure}
 
-
-\clearpage
+%\clearpage
 
 
 \begin{figure}[H]
@@ -58,24 +58,27 @@
 		\ghfile{covidinator/electronics/simple_fdtd/run/microfluidic_coplanar.py}}
 \end{figure}
 
-
 \begin{figure}[H]
-	\captionsetup{singlelinecheck = false, justification=justified}
-	\centering
-	\includesvg[width=\textwidth]{compChargePlot}
-	\caption{
-		\light{
-			\\
-			We've got a thing\\
-			that's called\\
-			{\it Radar Love}\\}
-		We've got a wave\\
-		in the air}
+	%	\makebox[\textwidth][c]{
+	\includesvg[width=\textwidth]{propagated_waveforms}
+	\caption{Brillouin precursor propagation through tissue (reproduced from section 6).\\
+	(a) Gaussian monopulse with 16 ps FWHM.\\
+	(b) Optimized 10 GHz sawtooth wave. Note the slight high-frequency ripple.\\ This has a frequency of approximately 1.5 GHz.\\
+	(c) Prototypical precursor 10 GHz sine burst.\\
+	(d) Continuous 10 GHz sine tone.}
+
 \end{figure}
 
 
 
-such a waveform may seem implausible but can probably be produced by e.g. an Auston switch feeding a pulse shaping line.
+%\begin{figure}[H]
+%	\captionsetup{singlelinecheck = false, justification=justified}
+%	\centering
+%	\includesvg[width=\textwidth]{compChargePlot}
+%	\caption{Charge distribution using Poisson Boltzmann}
+%\end{figure}
+%
+
 
 
 \clearpage
@@ -131,6 +134,8 @@ such a waveform may seem implausible but can probably be produced by e.g. an Aus
 
 \subfile{supplemental}
 
+\subfile{personal_device}
+
 \section{Appendix on microbiology}
 
 \subfile{sic_susceptor}
@@ -147,6 +152,6 @@ such a waveform may seem implausible but can probably be produced by e.g. an Aus
 
 % LC_ALL=C tr -dc '\0-\177' <references.bib >newfile && mv newfile references.bib 
 
-%\printbibliography[title={General fluidics resources}]
+\printbibliography[title={All references}]
 
 \end{document}

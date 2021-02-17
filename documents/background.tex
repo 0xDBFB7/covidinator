@@ -10,182 +10,150 @@
 
 
 
+We were inspired to undertake this project by a set of publications by a certain Sun group, (primarily Liu et al \cite{Microwave2009} and Yang et al \cite{Efficient2015}, simultaneously demonstrated by Hung et al \cite{focusing2014}).
 
+These reports attempt to establish that, ostensibly unlike human cellular structures, the studied species of viruses have about the right size, shape, stiffness, and net charge distribution such that the lowest normal mode is slightly underdamped and can be driven by intense electric fields. 
 
+The group theoretically model and then experimentally demonstrate in various strains of Influenza A that - supposedly due to this acoustic, normal-mode effect - the field intensity required to crack the lipid envelope is near the safety limits for continuous exposure to humans.
 
+The experiments are competently designed and many orthogonal measurements are made to suggest that such an effect exists.
 
+There are a few minor issues with the experimental technique (see discussion below).
 
+These results have attracted some recent attention. \cite{Optical2020} have observed a normal mode of the same nature optically, and work is proceeding by their team.
 
+However, such a non-thermal mechanism is quite unprecedented and extremely dubious, oft-posited but never substantiated; so it has taken some convincing that this is not a particularly abstruse artifact, especially when considered in the context of the broader non-thermal effects literature.
 
+For even the RF power limits set by standards organizations like \cite{ICNIRP2020} \cite{IEEE2006} appear to be based on the observation that any resonance modes which might exist in biological tissues are categorically overdamped due to viscous from the surrounding solvent to be of any importance \cite{Vibrational2002}, and such charge distributions do not lend themselves to sufficiently strong coupling to external fields. This is grounded in very solid {\it in vitro}, {\it in vivo} evidence and theoretical modelling. 
 
+On the other hand, under clinical and laboratory circumstances, a few well-established non-resonant non-thermal effects have already been put to practical use. 
 
+As an example, electroporation is now a common laboratory procedure in which an enormous electric field causes ions in solution to diffuse across a host cell's membrane, reversibly rendering it permeable (among other, more subtle mechanisms; the minutia of poration are extraordinarily complex and beyond the author's understanding\cite{Theoretical2007}). 
 
-\footnote{"nsPEFs"}
+A variant using irreversible electroporation\cite{Irreversible2013} has recently been used in the clinic\cite{Nonthermal2013} for tumor ablation.% In vitro there is evidence to suggest that sub-cellular effects take place under truly tremendous fields. 
 
+\lettrine{U}nfortunately, it appears that, in order to fit Yang et al's observed data on absorption cross section, and to explain the suggested inactivation mechanism, requires that the virus, a structure with not more than $6 \times 10^8$ atoms and not more than $1 \times 10^8$ solvent molecules, to have an effective charge of $q=10^7$. It is difficult to account for such a charge.
 
-
-We were inspired to undertake this project by a set of publications by Yang et al, Hung et al, Sun et al.
-
-These reports attempt to establish that, ostensibly unlike human cellular structures, the studied species of viruses coincidentally about the right size, shape, stiffness, and net charge distribution to form a weak (Q=2) spherical dipole resonance mode which couples well to the microwave spectrum at approximately 8 GHz.
-
-They theoretically model and then experimentally demonstrate in various strains of Influenza A that - supposedly due to this acoustic-resonance effect - the power density levels required to crack the lipid envelope are near the safety limits for continuous exposure to humans.
-
-The experiments are competently designed and many orthogonal measurements are made to confirm the effect.
-
-There are a few minor issues with the experimental technique 
-
-These very striking results have attracted some recent attention. \cite{Burkhartsmeier} have observed a resonance of the same nature (see below), and work is proceeding by their team.
-
-Such a non-thermal mechanism is quite unprecedented and extremely dubious, oft-posited but never substantiated; so it has taken some convincing that this is not a particularly abstruse artifact, especially when considered in the context of the broader non-thermal effects literature.
-
-For even the RF power limits set by standards organizations like \cite{ICNIRP2020} \cite{IEEE2006} appear to be based on the observation that any resonance modes which might exist in biological tissues are far too overdamped due to viscous from the surrounding solvent to be of any importance \cite{Vibrational2002}; this is grounded in very solid {\it in vitro}, {\it in vivo} and theoretical evidence. 
-
-On the other hand, under clinical and laboratory circumstances, a few well-established non-resonant non-thermal effects have already been put to practical use. An example, electroporation is now a common laboratory procedure, in which an enormous electric field causes ions in solution to migrate across a host cell's membrane. A variant, irreversible electroporation, has been used in the clinic for tumor ablation. In vitro there is evidence to suggest that sub-cellular effects take place under truly tremendous fields. 
-
-
-\lettrine{U}nfortunately, we later realized that for both the absorption cross section and the inactivation mechanism to align as suggested requires the virus, a structure with not more than $6 \times 10^8$ atoms, to have an effective charge of $q=10^7$. It is very difficult to account for such a charge.
+On the other hand, Uzunoglu have produced a formulation of the theoretical analysis which requires a more plausible charge of only $q=10^4$. However, whether even this charge is reasonable given solvent screening is not yet known to us.\footnotemark
 
 % 300 MDa of hydrogen has 3e8 H atoms
 % ((100 nm)^3 * (1000 kg/m^3))/((18.15 g/mol) / avogadroConstant)
 % 600 MDa
 
+\footnotetext{While induced polarization is not expected to occur on GHz time scales, especially where solvent ions are the charge carriers, (see ICNIRP arguments), it is possible that some subtle, extremely fast polarization effect regarding electrons could be used to explain this \cite{nature1986}. We have not investigated this in any depth.}
 
-
-While induced polarization is not expected to occur on GHz time scales, especially where solvent ions are the charge carriers, (see ICNIRP arguments), it is possible that some subtle, extremely fast polarization effect regarding electrons could be used to explain this \cite{nature1986}. We have not investigated this in any depth.
-
-On the other hand, Uzunoglu have produced a formulation of the theoretical analysis which requires a very plausible charge of only $q=10^4$. 
-
-In another attempt to explain non-thermally, it is possible that this result could be explained by a sort of lipid membrane leakage, attributed to oxidation, which has been observed in strikingly similar regime in liposomes; but this would not necessarily explain the frequency-dependent inactivation seen in Figure 4b of \cite{Efficient2015}.
+It is possible that this result could be due to a specific sort of lipid membrane leakage, attributed to oxidation, which has been observed in strikingly similar regime in liposomes (\hyperref[sec:liburdy]{c.f.}); but this would not easily explain the frequency-dependent inactivation seen in Figure 4b of \cite{Efficient2015}.
 
 We are thoroughly mystified by the data presented. For the purposes of this paper, we adopt a working hypothesis that this does not represent a clinically useful effect - especially as the exposures required are close to - or greatly exceed - the thermal limit for safety.
 
-In any case, this is a very interesting result, and should be replicated with better controls. Gordon Reuben's team appear to be on the case, so we will not address this regime, 100 V/m, 15 minute, 8 GHz, any further.
+In any case, this is a very interesting result, and should be replicated with better controls. Reuben's team appear to be on the case, so we will not address this regime, a 15 minute, 100 V/m, 8 GHz, exposure, in much detail.\\
 
-Were such a mechanism to exist, it would seem to provide significant advantages over existing UV or cold-plasma sterilization; 
-
-
-We leave this section here because it will be useful to inform us in the next section.
+Were such a mechanism to exist, it would seem to provide significant advantages over existing Far UV or cold-plasma sterilization.
 
 
+%We leave this section here because it will be useful to inform us in the next section.
 
 
 
-There are some 20,000 papers on the topic of RF safety, with solid mechanistic, in vitro, in vivo and epidemiological evidence of safety in the 2.4 GHz and 5.8 GHz bands.
-
-However, "There are limited experimental human data upon which to set limits on exposures above 6 GHz" [Chan 2019]. Only 2\% of the above papers are on frequencies $>6$ GHz [Vijayalaxmi 2018]. 
-
-In addition, what data remains in this category is of varying quality. 
-
-
-
-As has been starkly demonstrated in the recent hydroxychloroquine contradictions [Gautret 2020] [Geleris 2020], biological research must be essentially perfectly conducted to offer any meaningful results.
-
-So, turning to, we find an entirely new set of problems. This effect is presumed to depend on mechanical forces of the entire virus. The large scales of physical virology all but prevent all-atom simulations that include the genome, but the genome is essential to the effectiveness of this technique. The same reasons currently rule out simulations including chemical reactions, important for lipid oxidation effects. Attempts at coarse-graining require careful tuning \footnote{or "parameterizing" in MD parlance}, where slight mis-steps in problem setup can lead to unphysical effects that completely alter the conclusion, particularly where solvent polarization. The kind which can only be obtained through extensive hard-wrought expertise (which the author does not possess) and careful verification, 
-
-Multiscale or hybrid techniques would seem to offer one route out of this pickle. Simulating a small patch of lipid in explicit solvent, with the pressure provided by
-
-The stymied writer turns to writing inconclusive high-level summaries which lack sufficient detail to be of true use.
-
-
-
-
-
-First, free-space techniques are easily implemented to prevent respiratory transmission. A \$10 emitter appears to suffice on a personal level, and \$100 systems for room-scale.\\
-
-
-Second, via cursory FDTD simulations, using off-the-shelf equipment and modified non-invasive microwave diathermy techniques, it appears to be possible to inactivate all virions in the outer 2 cm of the lungs and inner 1 cm of the bronchi without any effect on the surrounding tissue. 
-
-
-
-
-One might be tempted to cite long wavelength of microwaves as an advantage. A UV photon is approximately the same wavelength as the virus itself;  In the case of, the wavelength is >> diameter, meaning that 
-
-
-
-
-Like pumping a swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. \\
-\\\\
-
-
-It is common for.  However, in the classical case, a non-zero resonant frequency requires the ratio of the loss in energy to the surroundings to the oscillating mass to obey $b/(2m) < \omega_{res} \sqrt{2}$ \cite{Driven}; the solution to the harmonic oscillator equation is piecewise around this value. 
-
-(unless the various small-scale quantum mechanical oscillators are considered, which in our case appear to require fields in excess of 1 TW to access).
-
-
-Most things with a stiffness matrix has some resonant frequency\citationneeded. As far as we can tell, two justifications underpin the categorical implausibility of resonance-like behavior in 
-
+%
+%
+%There are some 20,000 papers on the topic of RF safety, with solid mechanistic, in vitro, in vivo and epidemiological evidence of safety in the 2.4 GHz and 5.8 GHz bands.
+%
+%However, "There are limited experimental human data upon which to set limits on exposures above 6 GHz" [Chan 2019]. Only 2\% of the above papers are on frequencies $>6$ GHz [Vijayalaxmi 2018]. 
+%
+%In addition, what data remains in this category is of varying quality. 
+%
+%
+%
+%As has been starkly demonstrated in the recent hydroxychloroquine contradictions [Gautret 2020] [Geleris 2020], biological research must be essentially perfectly conducted to offer any meaningful results.
+%
+%So, turning to, we find an entirely new set of problems. This effect is presumed to depend on mechanical forces of the entire virus. The large scales of physical virology all but prevent all-atom simulations that include the genome, but the genome is essential to the effectiveness of this technique. The same reasons currently rule out simulations including chemical reactions, important for lipid oxidation effects. Attempts at coarse-graining require careful tuning \footnote{or "parameterizing" in MD parlance}, where slight mis-steps in problem setup can lead to unphysical effects that completely alter the conclusion, particularly where solvent polarization. The kind which can only be obtained through extensive hard-wrought expertise (which the author does not possess) and careful verification, 
+%
+%Multiscale or hybrid techniques would seem to offer one route out of this pickle. Simulating a small patch of lipid in explicit solvent, with the pressure provided by
+%
+%The stymied writer turns to writing inconclusive high-level summaries which lack sufficient detail to be of true use.
+%
+%
+%
+%
+%
+%First, free-space techniques are easily implemented to prevent respiratory transmission. A \$10 emitter appears to suffice on a personal level, and \$100 systems for room-scale.\\
+%
+%
+%Second, via cursory FDTD simulations, using off-the-shelf equipment and modified non-invasive microwave diathermy techniques, it appears to be possible to inactivate all virions in the outer 2 cm of the lungs and inner 1 cm of the bronchi without any effect on the surrounding tissue. 
+%
+%
+%
+%
+%One might be tempted to cite long wavelength of microwaves as an advantage. A UV photon is approximately the same wavelength as the virus itself;  In the case of, the wavelength is >> diameter, meaning that 
+%
+%
+%
+%
+%Like pumping a swing, this effect allows an otherwise inconsequential field magnitude to store energy over a small number of cycles until the virus is destroyed. \\
+%\\\\
+%
+%
+%It is common for.  However, in the classical case, a non-zero resonant frequency requires the ratio of the loss in energy to the surroundings to the oscillating mass to obey $b/(2m) < \omega_{res} \sqrt{2}$ \cite{Driven}; the solution to the harmonic oscillator equation is piecewise around this value. 
+%
+%(unless the various small-scale quantum mechanical oscillators are considered, which in our case appear to require fields in excess of 1 TW to access).
+%
+%
+%Most things with a stiffness matrix has some resonant frequency\citationneeded. As far as we can tell, two justifications underpin the categorical implausibility of resonance-like behavior in 
+%
 
 
 
 Indeed, relatively trustworthy time-domain spectroscopy of proteins \cite{Microwave1994} has found that the relaxation time is proportional to the molecular weight of the structure (of which viruses are perhaps the ultimate example), and can be as slow as 100 MHz in some cases. 
 
-
-\begin{itemize}
-	\item Viscous damping from biological solvents is so strong that the relaxation time is 
-\end{itemize}
-
-To a first order, this simply doesn't seem to be true in the case of the virion.
-
-
-
-
-
-\begin{itemize}
-	\item The charge 
-\end{itemize}
-
-\footnote{It should be noted that this {\it confined} acoustic resonance is subtly distinct from common-and-garden pipe-organ acoustic resonance; this is apparently not a strictly classical phenomenon. Besides standard Coulomb-like and Lennard-Jones-like interactions between constituent particles, if Fr\"{o}hlich is to be believed at these nanoscopic scales there are also wave-function interactions among the particles of the virus which can shift storage to modes not otherwise expected.
-	
-	We confess to not yet understanding this phenomenon; fortunately, while helpful, the details of how this mode appears are not critical to implementing this technique.}
+%
+%\begin{itemize}
+%	\item Viscous damping from biological solvents is so strong that the relaxation time is 
+%\end{itemize}
+%
+%To a first order, this simply doesn't seem to be true in the case of the virion.
+%
+%
+%
+%
+%
+%\begin{itemize}
+%	\item The charge 
+%\end{itemize}
+%
+%\footnote{It should be noted that this {\it confined} acoustic resonance is subtly distinct from common-and-garden pipe-organ acoustic resonance; this is apparently not a strictly classical phenomenon. Besides standard Coulomb-like and Lennard-Jones-like interactions between constituent particles, if Fr\"{o}hlich is to be believed at these nanoscopic scales there are also wave-function interactions among the particles of the virus which can shift storage to modes not otherwise expected.
+%	
+%	We confess to not yet understanding this phenomenon; fortunately, while helpful, the details of how this mode appears are not critical to implementing this technique.}
 
 
 \footnote{All values have been converted to $\text{W/m}^2$ to avoid confusion. 100 $\text{W/m}^2 = 10 \text{ mW/cm}^2 = 10 \text{ dBm/cm}^2$.}
 
 
+%
+%So far as we are aware, there are no fundamental physical obstacles to non-thermal effects in biological systems. 
+%
+%
+%This may account for why this paper has been largely ignored.
+%
+%The precise structure and charge of the virion appears to be a singular anomaly in this otherwise categorical non-existence.
+%
+%
+%
+%
+%
+%Any technique that requires background subtraction (see).
+%
+%
+%We distinct regimes, which overlap in physical mechanisms (both involve the charge distribution and relaxation time) but which cite different bodies of literature. Vestiges 
 
 
-the only analagous non-thermal mechansism we are aware of is electroporation; and that requires the diffusion of ionized sodium and potassium charge carriers through the membrane, which would seem to necessarily require a non-
-
-
-
-So far as we are aware, there are no fundamental physical obstacles to non-thermal effects in biological systems. 
-
-
-This may account for why this paper has been largely ignored.
-
-The precise structure and charge of the virion appears to be a singular anomaly in this otherwise categorical non-existence.
-
-
-
-
-
-Any technique that requires background subtraction (see).
-
-
-We distinct regimes, which overlap in physical mechanisms (both involve the charge distribution and relaxation time) but which cite different bodies of literature. Vestiges 
-
-frequency-dependent inactivation
-
-(gordon reuben following up)
-
-
-
-
-After the relaxation time, the energy is a distant memory; only the mechanical effects that were induced during that time can remain. Since the energy is too small to 
 
 
 \footnote{A note on units, from ICNIRP: ``{[B]elow about 6 GHz, where EMFs penetrate deep into tissue (and thus require depth to be considered), it is useful to describe this in terms of “specific energy absorption rate” (SAR), which is the power absorbed per unit mass $(W/kg)$. Conversely, above 6 GHz, where EMFs are absorbed more superficially (making depth less relevant), it is useful to describe exposure in terms of the density of absorbed power over area $W/m^2$, which we refer to as “absorbed power density”}''. }
 
 
-I was hoping I would have a definitive demonstration, so as to not redirect resources from more promising avenues.
 
-
-Note that it is possible that this has already been worked on. The last review was several months ago, and the literature is changing very rapidly. Reuben
-
-Much of the work in this paper was concerned with this paper
-
-
-
+ 
 %3 MV/m * 10000 electronCharge * 0.1 angstrom / (boltzmannConstant * 310 K) = 11 kT per cycle
 %3 MV/m * 10000 electronCharge * 0.1 angstrom / (boltzmannConstant * 310 K) = 11 kT per cycle
 From an energetics perspective, we can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass. With relatively sane choices of screened charge and resonant frequency, the energy per monocycle at 5 MV/m varies from 0.01 to 20 times the thermal energy $k_b T$. 
@@ -193,11 +161,12 @@ From an energetics perspective, we can obtain the spring constant $k = \omega_{r
 Compare to ~5 $k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and $ (\text{17 to 78 kJ/mol})  / (310 \text{ K}\ k_b) = $ 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014a}.
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
 
-On the other hand, 0.5 angstroms is only a 0.04\% deflection of the capsid, whereas a general value for host cells is about 3\% deflection. 
+On the other hand, a 0.5 angstrom movement is only a 0.04\% deflection of the capsid, whereas a general value for host cells is about 3\% deflection. In addition, with a relaxation time on the order of 500 ps, it is difficult to imagine that the energy will be sufficiently concentrated to be destructive, as after the relaxation time the energy is a distant memory; only the mechanical effects that were induced during that time can remain.
 
-Certainly the virus will be destroyed at some finite electric field. It remains to be seen whether a practical limit 
+At least we do not have to justify observing an effect at an exposure of $10^{-17} W/m^2$ \cite{Resonance1996}.
 
- \cite{Resonance1996}
+Certainly the virus will be destroyed at some finite electric field.
+
 
 
 %(2*pi*(20 GHz))^2 * 100 MDa to N/m \approx 3000 N/m
@@ -208,29 +177,26 @@ Certainly the virus will be destroyed at some finite electric field. It remains 
 
 % 1000 N/m = 0.01 Angstroms
 
-
-suggestive, especially because a model organism
+%
+%suggestive, especially because a model organism
+\clearpage 
 
 An abundance of mechanisms exist to. Irritatingly, such mechanisms have almost universally been ruled out by careful experiment. Many entirely plausible mechanisms exist for which the only valid answer is that they simply do not occur in practice.
 
-
-On the other hand, the maximum amplitude of oscillation is only expected to be on the order of 50 picometers. 
-
+%
+%On the other hand, the maximum amplitude of oscillation is only expected to be on the order of 50 picometers. 
+%
 
 Regurgitating Yang et al's line of reasoning, with a few; they study a 1 kV/m, 15 minute exposure, whereas we are concerned with a 3 MV/m, 500 picosecond regime. 
 
 
-for which our working hypothesis is that there are no clinically useful mechanisms, 
+%for which our working hypothesis is that there are no clinically useful mechanisms, 
 
-
-
-It stands to reason, then, that any pulse longer than the relaxation time is not efficiently. 
-
-vestiges
+It stands to reason, then, that any pulse longer than the relaxation time is not efficiently using the non-thermal nature of the effect.
 
 Less than 1 nanosecond (where poration and thermal effects start to become significant at these fields, and any previous absorbed power has been dispersed in the solvent) but greater than about 10 picoseconds (covered by existing laser research) and electric fields between 0.1 MV/m (for which biological effects at these timescales are only barely plausible) and 10 MV/m (the production of pulses which strain credulity).
 
-as dt decreases, there's lots of room to add more zeros. a pulse 4 orders of magnitude higher than the maximum field used by practically any existing system.
+%as dt decreases, there's lots of room to add more zeros. a pulse 4 orders of magnitude higher than the maximum field used by practically any existing system.
 
 
 
@@ -246,42 +212,39 @@ formal systematic review; in particular no search criteria were defined.
 %
 
 
-The effects that we are concerned with occur 4 orders of magnitude above 
+%The effects that we are concerned with occur 4 orders of magnitude above 
 
-Windows between caused by structural or 
+%Windows between caused by structural or 
 
-Additionally, other sterilization techniques may produce superior results with less faffing about and should be evaluated in the same context. For instance, data on far UV\cite{Germicidal2017} indicates safety.\\
-
-"Windows" of the same sort have been found, both in thermal and pulsed ultra-high-power UV Prodouz \cite{Use1987a}.
-
-
-(more data exists for influenza A; it is sufficiently structurally similar that ).
-
-
-
-Excellent theoretical arguments against the possibility of non-thermal effects can be found Adair \cite{Vibrational2002}, Adair \cite{Biological2002}, and Foster \cite{Viscous2000} on microtubules. 
-
-
-
-Adair \cite{Biophysics2000} on Brillouin.
-
-\nameref{sec:viscousdamping}
-
-Data cannot be trusted implicitly. By time-domain spectrometry (a reasonably trustworthy technique), Miura \cite{Microwave1994} find 
-
-
-Owrutsky Vibrational1994
-
+%Additionally, other sterilization techniques may produce superior results with less faffing about and should be evaluated in the same context. For instance, data on far UV\cite{Germicidal2017} indicates safety.\\
+%
+%"Windows" of the same sort have been found, both in thermal and pulsed ultra-high-power UV Prodouz \cite{Use1987a}.
+%
+%(more data exists for influenza A; it is sufficiently structurally similar that ).
+%
+%Excellent theoretical arguments against the possibility of non-thermal effects can be found Adair \cite{Vibrational2002}, Adair \cite{Biological2002}, and Foster \cite{Viscous2000} on microtubules. 
+%
+%
+%
+%Adair \cite{Biophysics2000} on Brillouin.
+%
+%\nameref{sec:viscousdamping}
+%
+%Owrutsky
+%
+%We don't want a purely membrane-electroporative effect since the lipid membrane of the virus is similar to (derived from) the host cell and little selectivity can be expected. Unless the virus has a lower capacitance and charges faster than the cell.
+%
+%Also, the pore must stay open for long enough that damage is dealt to the virus. 
+%
 
 
+%Scope for clinical utility for this effect can be seen in the following contrast. 
 
-We don't want a purely membrane-electroporative effect since the lipid membrane of the virus is similar to (derived from) the host cell and little selectivity can be expected. Unless the virus has a lower capacitance and charges faster than the cell.
+Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). 
 
-Also, the pore must stay open for long enough that damage is dealt to the virus. 
+Recent data by de Seze following continuous exposure to nanosecond fields at an external field of 3 MV/m \cite{Repeated2020} notes no acute effects, but 
 
-
-
-Scope for this effect can be seen in the following contrast. The statement which echos the concensus of a number of literature reviews by standards organizations:
+The following statement echos the concensus of a number of literature reviews by standards organizations:
 
 \begin{fquote}[\textit{NATO Research Task Group 189}, as cited by \textit{C95.1-2019, B.4.3 Rationale for pulsed RF field limits}][ \cite{treatyelectromagnetic}]
 	HFM-189 found no published and replicated adverse health effects or biological mechanisms, beyond
@@ -309,18 +272,18 @@ Madiyar \cite{Manipulation2013} observe rapid permeabilization (perhaps through 
 
 Moreover, these results could easily be explained by a first-order theoretical. Both AFM data and surmised from osmotic pressure, the force scale required to crack the viral envelopes and capsids is about 1 nanonewton. 
 
-Schnelle\cite{Trapping1996} 
+
 
 \subsection{Dielectrophoresis and electrorotation}
 
-and Fuhr\cite{Radiofrequency1994} and Grom \cite{Accumulation2006} report on a modification of so-called dielectrophoresis techniques called electrorotation, in a so-called field cage.
+Schnelle\cite{Trapping1996} and Fuhr\cite{Radiofrequency1994} and Grom \cite{Accumulation2006} and Gimsa \cite{New1999} report on using a modification of so-called dielectrophoresis techniques called electrorotation, in a so-called field cage.
  
  
-Rotation is sub-synchronous at a few dozen Hz, whereas the field rotates at between 0.1 MHz to over 50 MHz; in most cases the frequency is made high enough that ion does not occur.
+Such electrorotation is always sub-synchronous (unlike optical centrifuge techniques) at a few dozen Hz, whereas the field rotates at between 0.1 MHz to over 50 MHz; in most cases the frequency is made high enough that ion does not occur.
 
-In the virus tests by Schnelle, a field of 0.3 MV/m was used, without apparent damage to the virus, though their 
+In the virus tests by Schnelle, a field of 0.3 MV/m was used, without apparent damage to the virus.
 
-Gimsa \cite{New1999} use a four-electrode cage at 25 kV/m 
+Gimsa \cite{New1999} use a four-electrode cage at 25 kV/m to trap influenza.
 
 Electrorotation large field but not seen.
 
@@ -396,9 +359,6 @@ Cancer treatment involving irreversible electroporation is in a different regime
 
 
 
-Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). 
-
-
 
 Is this resonance of Q=2 really of any practical use?
 
@@ -440,7 +400,7 @@ add "timeline"
 
 
 \subsection{Liburdy's oxygen-dependent lipid leakage}
-
+\label{sec:liburdy}
 
 
 \subsection{Coherent control and laser chemistry}
@@ -540,7 +500,7 @@ We are adamant that, in all cases cited, we believe their studies were well desi
 
 \begin{multicols}{1}
 
-Vijayalaxmi \cite{Biological2016} \cite{Comprehensive2018} \cite{Funding2019} already offer a number of excellent guidelines on best practices in this field; as do Chou \cite{chou1996radio}. We only offer a few issues which we were particularly concerned about when designing our experiments and searching literature. 
+Vijayalaxmi \cite{Biological2016} \cite{Comprehensive2018} \cite{Funding2019} already offer a number of excellent guidelines on best practices in this field; as do Chou \cite{chou1996radio} and \cite{Effects2016} . We only offer a few issues which we were particularly concerned about when designing our experiments and searching literature. 
 
 ; sham, blinding, and dosimetry demanded by Vjl. are not mentioned.
 

@@ -387,14 +387,14 @@ Oscillators must meet the Barkhausen criterion:
 
 \end{itemize}\
 %
-However, a third element is also required:
+However, in practice a third element is also required:
 %
 \begin{itemize}
 \item A frequency-selective element that restricts oscillation modes and decreases phase noise.
 \end{itemize}
 %
 
-With large feedback-loop structures, such as long PiN-switched phasing lines, proximity effects from nearby flesh would detune the oscillator significantly.
+With large feedback-loop structures, such as long PiN-switched phasing lines, proximity effects from nearby flesh were found to detune the oscillator significantly.
 
  design of a triple-tuned oscillator.
 
@@ -559,6 +559,8 @@ The units of the FFT (unlike those of the continuous FT) remain in volts.
 
 Most equations in papers on the FDTD method are supplied without making the scaling factors explicit; some need multiplying by the Courant number, For use with flaport/fdtd the H-field to current line integral in [] requires scaling by $\mu_0 * (dx/dt)$, where $\mu_0$ is the vacuum magnetic permittivity, dx the cell size, and dt the timestep - despite the equation already possessing a deceptive set of $dx$-es.
 
+FIX THIS IT'S WRONG
+
 Naturally, if one is competent, this discrepancy will be immediately obvious. Those not dimensionally-intuitive, such as myself, find it useful to run dimensional analysis using a unit-aware calculator such as {\it sharkdp/insect}.
 
 \rule{\linewidth}{0.2pt}
@@ -699,35 +701,35 @@ One problem with the formal, academic paper format is that one starts to believe
 
 
 \clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\Large Microwave Musings}\\
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	\noindent\fbox{\parbox{\linewidth}{
-			Toolchain:
-			\begin{itemize}
-				\item Failed oscillator feedback-loop optimization toolchain: QUCS 0.0.20 + python-qucs + scipy's 'basinhopper'
-				\item Successful A slightly modified ngspice + ngspyce + pyEVTK
-				\item gprMax for FDTD EM simulation
-				\item KiCAD, wcalc, scikit-rf, ngspice
-			\end{itemize}
-	}}
-	%
-	
-	
-	Microwave design has a reputation for being the purview of wizards. Modern RF software packages like HFSS, Microwave Office, Agilent's ADS, and Mathworks' RF toolbox, for which; component models 
-	
-	Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be accurately modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
-	
-	Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
-	
-	We are also aided by the fact that what took a \$150,000 computing cluster a single decade ago can now be done in a few minutes by a single budget GPU.
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%{\Large Microwave Musings}\\
+%
+%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	
+%	\noindent\fbox{\parbox{\linewidth}{
+%			Toolchain:
+%			\begin{itemize}
+%				\item Failed oscillator feedback-loop optimization toolchain: QUCS 0.0.20 + python-qucs + scipy's 'basinhopper'
+%				\item Successful A slightly modified ngspice + ngspyce + pyEVTK
+%				\item gprMax for FDTD EM simulation
+%				\item KiCAD, wcalc, scikit-rf, ngspice
+%			\end{itemize}
+%	}}
+%	%
+%	
+%	
+%	Microwave design has a reputation for being the purview of wizards. Modern RF software packages like HFSS, Microwave Office, Agilent's ADS, and Mathworks' RF toolbox, for which; component models 
+%	
+%	Luckily, this project falls perfectly within the subset of microwave technologies that do not require a goatee. The vast majority of the behavior of most circuits can be accurately modelled with the very same SPICE tools as one would use at low frequencies. With judicious application of reference designs, it seems to be possible to design 
+%	
+%	Before about 2005, however, it seems to have been somewhat the norm to write a simple numerical code to solve the problem at hand based on underlying principles.
+%	
+%	We are also aided by the fact that what took a \$150,000 computing cluster a single decade ago can now be done in a few minutes by a single budget GPU.
+%
+%
+%
 many programs try to implement their own command scripting language
-if the api doesn't expose access to the data on each timestep, then you're limited to the features that have already been implemented
+if the api doesn't expose fast access to the data on each timestep, then you're limited to the features that have already been implemented
 
 
 \section{Timeline}

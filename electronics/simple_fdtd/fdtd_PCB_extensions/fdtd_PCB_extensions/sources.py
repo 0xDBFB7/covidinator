@@ -82,6 +82,9 @@ class Port:
         return (pcb.grid.E[self.N_x,self.N_y,z_slice,Z]/sqrt(epsilon_0))*(pcb.cell_size)
 
 
+# see http://www.cse.yorku.ca/~kosta/CompVis_Notes/fourier_transform_Gaussian.pdf
+# http://www.sci.utah.edu/~gerig/CS7960-S2010/handouts/04%20Gaussian%20derivatives.pdf
+
 def normalized_gaussian_pulse(pcb,fwhm):
     t = pcb.time
     sigma = fwhm/2.355
@@ -92,6 +95,7 @@ def normalized_gaussian_derivative_pulse(pcb,fwhm):
     sigma = fwhm/2.355
     return (exp((1.0/2.0) - (t**2.0)/(2.0*sigma**2.0))*t)/sigma
 
+###############################################################################
 
 def gaussian_derivative_pulse(pcb, dt, beta):
     #have to normalize
@@ -103,10 +107,7 @@ def gaussian_derivative_pulse(pcb, dt, beta):
     part_two = -2.0*(s**2.0)*b
     return part_one * part_two
 
-
 #scipy.stats.norm.pdf(x, mu, sigma)*(mu - x)/sigma**2
-
-
 
 def compute_all_voltages(pcb):
     for port in pcb.component_ports:
