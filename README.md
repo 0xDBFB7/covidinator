@@ -1,9 +1,15 @@
-Hi! Welcome! There's not a whole lot of real substance here, but maybe you'll find something useful. I hope you like it! 
 
+This was a project to determine if extremely high electric fields can produce mechanical stresses sufficient to break the viral membrane.
 
-# [The Paper!](https://github.com/0xDBFB7/covidinator/releases/download/vx.x/paper.pdf)
+This doesn't seem to be necessarily *completely* implausible, but it's sufficiently remote (and TRL 0) that I'm not super interested in continuing work on it.
+
+# [Terse summary (not entirely finished)](https://github.com/0xDBFB7/covidinator/releases/download/vx.x/summary.pdf) 
+# [Full paper with some supplemental](https://github.com/0xDBFB7/covidinator/releases/download/vx.x/paper.pdf)
 
 ## References & Resources [HTML](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/references.html) | [Zotero (categories!)](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/references.rdf) | [BiBTeX](https://raw.githubusercontent.com/0xDBFB7/covidinator/master/documents/references.bib) 
+
+
+Hi! Welcome! There's not a whole lot of real substance here, but maybe you'll find something useful. I hope you like it! 
 
 ```
 <:  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  :>  ^_^  <:
