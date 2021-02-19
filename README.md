@@ -1,7 +1,11 @@
 
-This was a project to determine if extremely high electric fields can produce mechanical stresses sufficient to break the viral membrane.
+This was a (in retrospect, misguided) project to determine if extremely high electric fields can produce mechanical stresses sufficient to break the viral membrane (so-called electroporation). This doesn't seem to be necessarily *completely* implausible, but it's sufficiently remote (and TRL 0) that I'm not super interested in continuing work on it given circumstances.
 
-This doesn't seem to be necessarily *completely* implausible, but it's sufficiently remote (and TRL 0) that I'm not super interested in continuing work on it.
+I am making this public strictly so that some of the methodology etc will be searchable: I would appreciate it if you don't cite or share this repo.
+
+```
+<3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3   <3 
+```
 
 # [Terse summary (not entirely finished)](https://github.com/0xDBFB7/covidinator/releases/download/vx.x/summary.pdf) 
 # [Full paper with some supplemental](https://github.com/0xDBFB7/covidinator/releases/download/vx.x/paper.pdf)
