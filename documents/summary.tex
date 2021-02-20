@@ -66,7 +66,7 @@
 
 We were inspired to undertake this project by a set of publications by a certain Sun group, (primarily Liu et al \cite{Microwave2009} and Yang et al \cite{Efficient2015}, simultaneously demonstrated by Hung et al \cite{focusing2014}), and \cite{Optical2020} \cite{Theoretical2020}.
 
-We have some minor questions regarding experimental technique\footnote{The use of absorption spectroscopy methods without an error analysis is concerning (see below); an effective charge of $q=10^7 e^-$ was found, which is very hard to explain; a lack of free-space dosimetry or simulation means frequency-selective inactivation could have been due to instrument response, infrared thermography only determines surface temperature.} in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we do not defer greatly to their observations. 
+We have some minor questions regarding experimental technique in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we do not defer greatly to their observations. 
 
 These studies are all founded on the idea that there might be some large-scale structural difference between viruses and all host cellular structures that might usable as leverage to selectively inactivate the virus by some physical - rather than biological - means. Such an inactivation "window" between host cell and virion damage has been found in certain wavelengths of CW Far UV\cite{Germicidal2017} - but also apparently in certain modulated UV pulses\cite{Use1987a}\cite{Can1993}, and also sporadically reported for simple thermal treatment\cite{Summary}. 
 
@@ -80,30 +80,41 @@ However, whether the small difference in driven amplitude between, for example, 
 
 These ideas appear to have originated from work by Frolich\cite{Longrange1968}\cite{Evidence1983}\cite{Biological1980}\cite{Coherence1983} on the possibility of large-scale coherent QM Bose-Einstein condensates, and then many more subtle lines of inquiry\cite{Mechanisms1992}\cite{mechanisms1981}; but, to our knowledge, no such large-scale non-classical effects have ever been substantiated; suggestions of non-classical damping due to hydration layer effects have not been observed. In fact, consensus\cite{Exposure2009}\cite{ICNIRP2020}\cite{C95} appears to agree that, not only are oscillatory effects implausible, there are no relevant, substantiated, non-diffusion-like non-thermal mechanisms. 
 
-The genome charge is almost entirely neutralized  From an energetics perspective, \footnote{we can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass.} With relatively sane choices of charge screening and resonant frequency, the energy absorbed per monocycle at 5 MV/m varies from 0.0001 to 200 times the thermal energy $k_b T$, so the maximum energy 
+Because the effect is so remarkable, we have tried to come up with ways of explaining the observed results without invoking a non-thermal effect:
+\begin{itemize}
+	\item The use of microwave absorption spectroscopy techniques that have previously shown resonance-like artifacts\cite{Resonances1987}. An effective charge of $q=10^7 e^-$ was found, which is very large for a $10^9$ atom structure; genome and protein charge can hardly explain $10^5 e^-$, which would be reduced further by ionic screening. The potential energy of such a sphere of charge exceeds the metabolic burden to build a virus by a factor of 10.
+	\item Infrared thermography only determines the surface temperature. Based on heating patterns seen in other experiments\cite{Effects1950}, the observed 7 C temperature rise does not seem to conclusively rule out a thermal effect. 
+	\item A lack of free-space dosimetry or simulation of power density means that the frequency-selective inactivation could have been due to the frequency response of the power amplifier, antenna gain, and absorption of the cuvette.
+\end{itemize}
 
-Compare to ~5 $k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014a}.
+
+A few well-established non-resonant non-thermal effects have already been put to practical use. Electroporation is a common laboratory procedure where an enormous electric field causes ions in solution to diffuse across a host cell's membrane, reversibly rendering it permeable (among other, more subtle mechanisms; the minutia of poration are extraordinarily complex and beyond the author's understanding\cite{Theoretical2007}). Irreversible electroporation\cite{Irreversible2013} has recently been used in the clinic\cite{Nonthermal2013} for tumor ablation.% In vitro there is evidence to suggest that sub-cellular effects take place under truly tremendous fields. 
+
+The genome charge is almost entirely neutralized by the nucleocapsid. From an energetics perspective, \footnote{we can obtain the spring constant $k = \omega_{res}^2 m^*$ from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass.} With relatively sane choices of charge screening and resonant frequency, the energy absorbed by the whole virus per cycle at 5 MV/m might vary from $10^{-5}$ to 100 times the thermal energy $k_b T$.
+
+Compare to $~5 k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014}.
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
 
-On the other hand, a 0.5 angstrom movement is only a 0.04\% deflection of the capsid, whereas a general value for host cells is about 3\% deflection. In addition, with a relaxation time on the order of 500 ps, it is difficult to imagine that the energy will be sufficiently concentrated to be destructive, as after the relaxation time the energy is a distant memory; only the mechanical effects that were induced during that time can remain.
+On the other hand, such a sub-angstrom movement only produces approx. 0.05\% deflection of the capsid, whereas a general value for host cells is about 3\% deflection. In addition, with a relaxation time on the order of 500 ps, it is difficult to imagine that the energy will be sufficiently concentrated to be destructive, as after the relaxation time the energy is a distant memory; only the mechanical effects that were induced during that time can remain.
 
 Data on the charge distribution of the virion can be obtained by and 2D-PAGE relative protein composition or, interestingly, perhaps directly via extraction from CryoEM maps.
 
 
 
-Modelling this sort of large-scale inactivation mechanism involving the collective motion of some $10^9$ atoms poses a significant computational and theoretical hassle, which has far exceeded our capabilities. Poisson-Boltzmann implicit ionized solvents. 
-
-note clinical irrev electroporation 
-
+Modelling this sort of large-scale inactivation mechanism involving the collective motion of some $10^9$ atoms poses a significant computational and theoretical hassle, which has far exceeded our capabilities. Poisson-Boltzmann implicit ionized solvents.
 
 
 In our cursory testing, Bacteriophage T4 did not appear to be lysed by microsecond pulses between 6 and 12 GHz at about 70 V/m, nor, exploring non-resonant inactivation, did nanosecond pulses up to 1 MV/m appear to have any effect. Note that neither of these regimes overlap with the results of the previous studies.
 
  Non-resonant capsid and envelope breakage at 100 pulses, 500 ns at 3 MV/m, has been previously observed\cite{Inactivation1990} but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (and \cite{Microwave1987}). Long pulses at $10$ MV/m electroporate enveloped viruses similarly to host cells\cite{AC2017} but do not necessarily affect T4\cite{Manipulation2013}. 
 
-In terms of host safety, Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). Excellent recent \textit{in vivo} data by de Seze following continuous exposure to nanosecond pulse trains at an external field up to 3 MV/m \cite{Repeated2020} notes little acute effects, but a massive rate of long-term carcinogenicity.
+In terms of host safety, Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). Excellent recent \textit{in vivo} data by de Seze following continuous exposure to nanosecond pulse trains at an external field up to 3 MV/m \cite{Repeated2020} notes little acute effects, but a massive rate of long-term carcinogenicity. Reviews \cite{Penetration2016c} \cite{Effects2016}.
 
 In almost all recently updated standards, the precautionary 100 kV/m instantaneous field limits established by ANSI have been abolished due to a lack of evidence of harm; an excellent review in this regime is \footnote{\cite{treatyelectromagnetic}, as cited by \textit{C95.1-2019, B.4.3 Rationale for pulsed RF field limits}}. Field limits are now set only by integrated pulse energy.
+
+
+
+There is a body of work on coherent control of viral inactivation using picosecond laser exposure \cite{Maximum2010}; targeting small proteins seems to require very large fields\cite{Picosecond2016b}, but driving using Raman scattering \cite{Inactivation2007} \cite{Prospects2012}\cite{Studies2014} and molecular dynamics \cite{Maximum2010} (but without considering heat-bath damping). however these results have failed replication\cite{No2011}. Interestingly, if the well-established 1 TW power density\cite{Targeted2002} for mammalian cell laser damage is scaled linearly with time to the nanosecond regime ($1\ \text{TW/m}^2 / (100\ \text{ps} / 0.3\ \text{ps}) = 3\ \text{GW/m}^2$), 
 
 Electrorotation\cite{Electrorotation1988}\cite{Electrorotation1997} of viruses has been reported\cite{Analysis2004}\cite{New1999}\cite{comprehensive2001}, but as yet only in a non-destructive low-speed sub-synchronous regime for sensing, using optical means to detect rotation. Dielectrophoresis and electrostatic trapping of viruses has also been reported.
 
@@ -121,8 +132,6 @@ Thermal effects appear to be most common. Most critically, the localized hotspot
 
 FDTD simulation of exposure geometry and sample heating is now usually possible with free, open-source software\footnote{PyTorch FDTD library from \cite{Highly2019} was used in our study with some modification, but \cite{CUDAbased2019} and \cite{openEMS} are also excellent} and should be performed. As above, metal ions from electrodes, UV exposure, and polymer surface effects\cite{Effect1994a} must be ruled out by experimental design. The only artifact-free appear to be 1. Remote exposure, actively cooled OR pulsed exposure with sufficiently short pulses to rule out heating, with. 
 
- There is a body of work on coherent control of viral inactivation using picosecond laser exposure \cite{Maximum2010}; targeting small proteins seems to require very large fields\cite{Picosecond2016b}, but driving using Raman scattering \cite{Inactivation2007} \cite{Prospects2012}\cite{Studies2014} and molecular dynamics \cite{Maximum2010} (but without considering heat-bath damping). however these results have failed replication\cite{No2011}. Interestingly, if the well-established 1 TW power density\cite{Targeted2002} for mammalian cell laser damage is scaled linearly with time to the nanosecond regime ($1\ \text{TW/m}^2 / (100\ \text{ps} / 0.3\ \text{ps}) = 3\ \text{GW/m}^2$), 
-
 If the effect exists, it appears to be impossible at any input power to externally drive a 10 GHz resonator in the lungs because of the layer of conductive muscle that shields the chest cavity (see supplemental). There is precedent for bronchoscopic \cite{Flexible2019}\cite{Antenna2018} or more invasive methods. Dispersion and Brillouin precursors do offer a significant improvement in loss through tissue, and the required electrical waveforms appear to be synthesizeable by variable-impedance or stub transmission-line pulse shaping\cite{Arbitrarya} . A sawtooth might be the optimal waveform (see supplemental). However, obtaining 10 GHz tones deep in the body is still very hard.
 
 Although not sensitive to changes in infectivity, as suggested by \cite{Quantification2020}, amplification-free fluorescence dsDNA detection using photon-counting plate readers using a 1:1 mix of viral solution with 1/4000 Biotium GelGreen (a safe Acridine Orange (N-alkylacridinium) based flurophore) is a very convenient (stable over long periods of time, requires no host culture) and sufficiently sensitive (titers down to $10^8$ of T4 (170 kbp dsDNA)) assay both for capsid damage and, by melting the capsid with an autoclave, for general virus titer estimation, far faster than even high-throughput plaque assays. More useful enveloped viral surrogates like Pseudomonas phage Phi 6 are RNA and a lower sensitivity can be expected. 
@@ -137,13 +146,17 @@ Nephelometry (right-angle light scattering measurement) and turbidimetric (trans
 $\beta$-galactosidase luciferase Promega Beta-Glo\cite{rapid2014}. While undoubtedly useful for quantifying $\beta$-galactosidase, because of ambiguities in the rise and decay of the luminescence signal, short shelf life when components are mixed, storage and reagent mixing requirements, and relatively high cost, Beta-Glo assaying compared unfavorably to direct fluorescence for this application, but this may have been user error.
 
 
-It is difficult to make spark gaps run faster than 200 ps without high-pressure or Marx overvoltage. Avalanche transistors appear to be the easiest way to produce high power sub 100 picosecond pulses. We stole an avalanche Marx design verbatim from Li (\cite{Development2016b} \cite{Design2018c}), which allows large pulses from safer lower voltage supplies (albeit requiring somewhat costly capacitors); but 
+We hoped to shape the nanosecond pulse into a high-voltage 10 GHz tone to drive the virus. This requires an edge faster than ~100 ps. It is difficult, but not impossible\cite{Fundamental1998} to make spark gaps produce such fast edges without high-pressure\cite{Design2007d}\cite{Picosecond1993} or building the gap into a Marx\cite{Simple1991} pulse-forming line. 
+
+Avalanche transistors appear to be the easiest way to produce high power sub-100 picosecond pulses. We stole an avalanche Marx design verbatim from Li (\cite{Development2016b} \cite{Design2018c}), which allows large pulses from safer lower voltage supplies (albeit requiring somewhat costly capacitors); but 
 
 In both of our final experimental setups, non-grounded, single-sided coplanar waveguides were used as exposure chambers, inspired by \cite{Microwave2007}. A programmable syringe pumped 50 uL of fluid at a constant rate through one of the coplanar channels. Simulations showed a significant decrease in field. \cite{Microchamber2011} and \cite{Characterization2012} provide a good review of pulse exposure cells and a design which is much better than ours and should be used instead. Such cells should be used rather than our crude design. \footnote{The utility wcalc was used extensively}.
 
 If a fast laser is available, Auston switches appear to be equally effective.
 
-We are particularly excited by the prospect of using picosecond time-domain measurements not only to perform steady state dielectric measurements or monitor the input pulse, as is now common practice, but to resolve the internal effects of a single high-voltage pulse on the virus in real time. Scan-converter based transient digitizers, such as the Tektronix SCD-5000 series, appear to be the lowest-cost method of obtaining such THz sampling bandwidths. When high voltage pulses are available, miniaturized \ntilde 2 mm internal diameter continuously pumped scan converter tubes like Fecher micro-oscillographs using in-vacuum CMOS image sensors for direct-electron-detection appear to be an easy way to digitize 20+ GHz transients. The main bandwidth limitation appears to be the length of the Y deflection plate and the sensitivity of the recording medium.
+We are particularly excited by the prospect of using picosecond time-domain measurements not only to perform steady state dielectric measurements or monitor the input pulse, as is now common practice, but to resolve the internal effects of a single high-voltage pulse on the virus in real time. Scan-converter based transient digitizers, such as the Tektronix SCD-5000 series, appear to be the lowest-cost method of obtaining such THz sampling bandwidths. 
+
+%When high voltage pulses are available, miniaturized \ntilde 2 mm internal diameter continuously pumped scan converter tubes like Fecher\cite{Production1949} micro-oscillographs using in-vacuum CMOS image sensors for direct-electron-detection appear to be an easy way to digitize 20+ GHz transients. The main bandwidth limitation appears to be the length of the Y deflection plate and the sensitivity of the recording medium.
 
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{

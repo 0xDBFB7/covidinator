@@ -143,6 +143,11 @@
 %
 %% custom section
 
+% hidden footnotes
+\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
+
 
 \titleformat{\section}
 {\normalfont\LARGE\bfseries}{\thesection}{1em}{}

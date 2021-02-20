@@ -2,19 +2,40 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 	
-\begin{center}
+\begin{table}[h!]
+	\centering
 	\begin{tabular}{ |c|c|c| } 
 		\hline
-		 & col2 & col3 \\
+		col1 & kilocounts per 10s integration \\
 		\hline
-		\multirow{3}{4em}{Multiple row} 
-		& cell2 & cell3 \\ 
-		& cell5 & cell6 \\ 
-		& cell8 & cell9 \\ 
+		Autoclaved (0.2 mL) & 32 \\ 
+		Autoclaved (50 uL, sham) & 30 \\ 
+		Autoclaved (0.2 mL) & 29 \\ 
+		PG1 'blank' & 8 \\ 
+		Dist. water & 0.5 \\
+		\hline
+		\multicolumn{2}{|c|}{\ntilde 0.25 MV/m, 0.2 uL/s at 500 Hz  } \\
+		\hline 
+
+		& cell5  \\ 
+		& Negative  \\ 
 		\hline
 	\end{tabular}
-\end{center}
+	
 
-background | volume 
+\end{table}
+
+Data from testing on bacteriophage. Data rounded to the nearest thousand photon counts per 10 seconds. Not thoroughly characterized. 
+
+Field strengths are very approximate. 
+
+Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment.
+
+Repeatability between test conditions was not excellent. The source of the ~7000 count variation between backgrounds is not known.
+
+
+The flurometer printed a constant stream of results, all within the random error between capture windows $\sigma=0.5$ kcounts. Only after most of the data was taken was it realized how dumb this was.
+
+
 
 \end{document}
