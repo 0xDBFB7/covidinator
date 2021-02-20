@@ -6,36 +6,57 @@
 	\centering
 	\begin{tabular}{ |c|c|c| } 
 		\hline
-		col1 & kilocounts per 10s integration \\
+		Exposure & kilocounts per 10s integration & Note \# \\
 		\hline
-		Autoclaved (0.2 mL) & 32 \\ 
-		Autoclaved (50 uL, sham) & 30 \\ 
-		Autoclaved (0.2 mL) & 29 \\ 
-		PG1 'blank' & 8 \\ 
+		Autoclaved phage & 30 & \\ 
+		Autoclaved p. (50 uL) & 32 & Run 8\\ 
+		\hline
+		Phage culture 'blank' & 8 & \\ 
 		Dist. water & 0.5 \\
 		\hline
-		\multicolumn{2}{|c|}{\ntilde 0.25 MV/m, 0.2 uL/s at 500 Hz  } \\
+		\multicolumn{3}{|c|}{\ntilde 10 or 20 us  } \\
+		\hline
+		 & \\ 
+		\hline
+		\multicolumn{3}{|c|}{\ntilde 10 or 20 us, pH 10.6} \\
+		\hline
+		\multicolumn{3}{|c|}{\ntilde 0.2 mm \ntilde 0.25 MV/m, 0.2 uL/s, various pulse counts  } \\
 		\hline 
-
-		& cell5  \\ 
-		& Negative  \\ 
+		 Blank & 8 & Li test 1\\
+		 + & 8 & Li test 1\\
+ 		 + & 7 & Li test 1\\
+ 		 + & 7 & Li test 1\\
+ 		 \hline
+		\multicolumn{3}{|c|}{\ntilde 0.05 mm \ntilde 1 MV/m, 0.2 uL/s, various pulse counts  } \\
+		\hline
+		Sham & 5 & Sma. co. \\
+		+ & 6 & Sma. co.  \\ 
+		+ & 6 & Sma. co.  \\ 
 		\hline
 	\end{tabular}
-	
-
 \end{table}
 
-Data from testing on bacteriophage. Data rounded to the nearest thousand photon counts per 10 seconds. Not thoroughly characterized. 
+Data from testing on bacteriophage. Data rounded to the nearest thousand photon counts per 10 seconds. thoroughly characterized. 
 
 Field strengths are very approximate. 
 
 Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment.
 
-Repeatability between test conditions was not excellent. The source of the ~7000 count variation between backgrounds is not known.
+Repeatability between test conditions was not terrific. The source of the \ntilde 5000 count variation between some equivalent samples is not known. However, in no case did any tube approach the 22 to 30 kcounts of the autoclave.
 
+Stock culture had titer $3\times 10^9$ T4r.
 
-The flurometer printed a constant stream of results, all within the random error between capture windows $\sigma=0.5$ kcounts. Only after most of the data was taken was it realized how dumb this was.
+The fluor-meter printed a constant stream of results, all within the random error between capture windows $\sigma=0.5$ kcounts. Only after most of the data was taken was it realized how dumb this was.
 
+Results aggregated over the course of several months.
+
+In all cases, thermal artifact was completely di
+
+The firmware and data analysis scripts originally randomly generated blinded sham and autoclave assignments and automatically treated the samples accordingly. It also printed blinded templates for pipetting. This was done partly in the hopes that massively oversampling the microwave absorption spectrometer across the physical tolerances would highlight any resonances and changes in the resonances. 
+
+However, as the spectrometer was abandoned, this non-deterministic property caused significant issues while troubleshooting the fluorescence detection system, and \st{expedience} \textit{laziness} prompted us to disable this system. This violates best practices.
+
+A layer of silicone conformal coating was applied to the 0.2 mm 
 
 
 \end{document}
