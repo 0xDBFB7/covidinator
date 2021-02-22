@@ -8,37 +8,47 @@
 		\hline
 		Exposure & kilocounts per 10s integration & Note \# \\
 		\hline
-		Autoclaved phage & 30 & \\ 
+		Autoclaved phage (0.2 mL) & 30 & \\ 
 		Autoclaved p. (50 uL) & 32 & Run 8\\ 
 		\hline
 		Phage culture 'blank' & 8 & \\ 
-		Dist. water & 0.5 \\
+		Water & 1 & \\
 		\hline
 		\multicolumn{3}{|c|}{\ntilde 10 or 20 us  } \\
 		\hline
 		 & \\ 
 		\hline
-		\multicolumn{3}{|c|}{\ntilde 10 or 20 us, pH 10.6} \\
+		\multicolumn{3}{|c|}{Sweep from 6 to 12 GHz, average approximately 150 V/m, 10 or 20 us CW pulses} \\
 		\hline
-		\multicolumn{3}{|c|}{\ntilde 0.2 mm \ntilde 0.25 MV/m, 0.2 uL/s, various pulse counts  } \\
+		\multicolumn{3}{|c|}{\ntilde 0.05 mm, \ntilde } \\
+		\hline
+		\multicolumn{3}{|c|}{\ntilde 0.2 mm channel, 0.2 uL/s, various pulse counts and termination} \\
 		\hline 
-		 Blank & 8 & Li test 1\\
-		 + & 8 & Li test 1\\
- 		 + & 7 & Li test 1\\
- 		 + & 7 & Li test 1\\
+		 Blank    & 8 & Li test 1\\
+		 +           & 8 & Li test 1\\
+ 		 +           & 7 & Li test 1\\
+ 		 +           & 7 & Li test 1\\
+ 		 + \& shaper & 7 & Li test 1\\
  		 \hline
-		\multicolumn{3}{|c|}{\ntilde 0.05 mm \ntilde 1 MV/m, 0.2 uL/s, various pulse counts  } \\
+		\multicolumn{3}{|c|}{\ntilde 0.05 mm channel, \ntilde 0.75 MV/m, 0.2 uL/s, various pulse counts and termination} \\
 		\hline
-		Sham & 5 & Sma. co. \\
-		+ & 6 & Sma. co.  \\ 
-		+ & 6 & Sma. co.  \\ 
+		Sham & 5 & Smaller \\
+		+ & 6 & Smaller \\ 
+		+ & 6 & Smaller  \\ 
+		\hline
+		\multicolumn{3}{|c|}{\ntilde 0.05 mm channel, \ntilde 0.75 MV/m, 0.2 uL/s, basic buffer, but pH may not have been 10.6} \\
+		\hline
+		+ & 11 & Weakened \\
+		+ (no term) & 11 & Weakened \\ 
+		Sham & 12 & Weakened  \\ 
 		\hline
 	\end{tabular}
 \end{table}
 
-Data from testing on bacteriophage. Data rounded to the nearest thousand photon counts per 10 seconds. thoroughly characterized. 
+Data from testing on bacteriophage. Data rounded (0.5 and above up) to the nearest thousand photon counts per 10 seconds. %thoroughly characterized. 
 
-Field strengths are very approximate. 
+
+
 
 Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment.
 
@@ -50,13 +60,13 @@ The fluor-meter printed a constant stream of results, all within the random erro
 
 Results aggregated over the course of several months.
 
-In all cases, thermal artifact was completely di
+In all cases, a thermal effect was implausible; the total energy in the pulse train precluded heating above the capsid melting temperature.\cite{Effects1951}
 
-The firmware and data analysis scripts originally randomly generated blinded sham and autoclave assignments and automatically treated the samples accordingly. It also printed blinded templates for pipetting. This was done partly in the hopes that massively oversampling the microwave absorption spectrometer across the physical tolerances would highlight any resonances and changes in the resonances. 
+In an early iteration of the experiment, the firmware and data analysis scripts randomly generated blinded sham and autoclave assignments and automatically treated the samples accordingly. It also printed blinded templates for pipetting. This was done partly in the hopes that massively oversampling the microwave absorption spectrometer across the range of physical tolerances would highlight any resonances.\cite{first2000} 
 
-However, as the spectrometer was abandoned, this non-deterministic property caused significant issues while troubleshooting the fluorescence detection system, and \st{expedience} \textit{laziness} prompted us to disable this system. This violates best practices.
+However, as spectrometry was abandoned, this non-deterministic property caused significant issues while troubleshooting the fluorescence detection system, and \st{expedience} \st{\textit{laziness}} prompted us to disable this system, violating best practices.
 
-A layer of silicone conformal coating was applied to the 0.2 mm 
+A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide to avoid the copper ion artifact, but this could not be done on the 0.05 mm waveguide.
 
 
 \end{document}

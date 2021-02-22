@@ -303,3 +303,6 @@ pretty cool
 
 
 
+Huh, on the last test, the field may have been very high indeed
+0.2 mm 
+
