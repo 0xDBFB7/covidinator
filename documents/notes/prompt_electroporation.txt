@@ -303,6 +303,22 @@ pretty cool
 
 
 
-Huh, on the last test, the field may have been very high indeed
-0.2 mm 
+printed out a microruler. Looks pretty ugly but the cm/mm scales are fine.
+
+try microsecond, 300V pulses? shouldn't be too hard to do... mosfet on the low side
+
+-----------------------
+
+determining the actual width of the exposure cells.
+
+on the smallest one, 223 px/mm, channel is 7 px wide. 0.031 mm. The other side of the CPWG is about
+2x as wide, FWIW. (asymetric CPWG)
+
+on the second pulser WG, 96 px/mm. Copper width is pretty rough; ranges from 
+0.1 mm to 0.145
+
+on Eppenwolf, 156 px, 44 px - 0.2 to 0.28 mm, very close to the target.
+
+
+
 

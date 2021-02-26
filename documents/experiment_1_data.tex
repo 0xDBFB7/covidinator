@@ -1,7 +1,8 @@
 %!TeX root = experiment_1_data
 \documentclass[paper.tex]{subfiles}
 \begin{document}
-	
+
+\subsection{Data from testing on bacteriophage T4}
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{ |c|c|c| } 
@@ -13,15 +14,41 @@
 		\hline
 		Phage culture 'blank' & 8 & \\ 
 		Water & 1 & \\
+
 		\hline
-		\multicolumn{3}{|c|}{\ntilde 10 or 20 us  } \\
+		\multicolumn{3}{|c|}{NF capillary, 6 to 12 GHz, average approximately 150 V/m, 10 or 20 us CW pulses} \\
 		\hline
-		 & \\ 
+		Sham   & 12 & Run 8 t4,5...\\
+		+ & 11 & Run 8 t4,5...\\
+		+  & 12 & Run 8 t4,5...\\
+		+  & 12 & Run 8 t4,5...\\
 		\hline
-		\multicolumn{3}{|c|}{Sweep from 6 to 12 GHz, average approximately 150 V/m, 10 or 20 us CW pulses} \\
+		\multicolumn{3}{|c|}{NF capillary, 6 to 12 GHz, phage degraded with basic buffer} \\
 		\hline
+		Blank (0 min) & 14 & Run 9\\
+		Blank (\ntilde 15 min) & 17 & Run 9\\
+		Sham (\ntilde 15 min) & 5 & Run 9\\
+		Blank (\ntilde 4 hr) & 24 & Run 9\\
+		\hline
+		+  & 14 & Run 11\\
+		Sham & 17 & Run 11\\
+		\hline
+		\multicolumn{3}{|c|}{NF capillary, 6 to 12 GHz, average approximately 150 V/m, 10 or 20 us CW pulses} \\
+		\hline
+		Sham & 12 & Run 12\\
+		+    & 10 & Run 12\\
+		\hline
+		\multicolumn{3}{|c|}{0.2 mm channel, 6 to 12 GHz, average approximately 150 V/m, 10 or 20 us CW pulses} \\
+		\hline
+		 Sham & 12 & CPWG micro-\\
+ 		 +    & 10 & CPWG micro-\\
+ 		\hline
+ 		
+ 		
 		\multicolumn{3}{|c|}{\ntilde 0.05 mm, \ntilde } \\
 		\hline
+		
+		
 		\multicolumn{3}{|c|}{\ntilde 0.2 mm channel, 0.2 uL/s, various pulse counts and termination} \\
 		\hline 
 		 Blank    & 8 & Li test 1\\
@@ -30,43 +57,67 @@
  		 +           & 7 & Li test 1\\
  		 + \& shaper & 7 & Li test 1\\
  		 \hline
-		\multicolumn{3}{|c|}{\ntilde 0.05 mm channel, \ntilde 0.75 MV/m, 0.2 uL/s, various pulse counts and termination} \\
+ 		 
+ 		 
+		\multicolumn{3}{|c|}{\ntilde 0.05 mm channel, 0.2 uL/s, various pulse counts and termination} \\
 		\hline
 		Sham & 5 & Smaller \\
 		+ & 6 & Smaller \\ 
 		+ & 6 & Smaller  \\ 
 		\hline
-		\multicolumn{3}{|c|}{\ntilde 0.05 mm channel, \ntilde 0.75 MV/m, 0.2 uL/s, basic buffer, but pH may not have been 10.6} \\
+		
+		
+		\multicolumn{3}{|c|}{\ntilde 0.05 mm channel, 0.2 uL/s, basic buffer, tainted as pH may not have been 10.6} \\
 		\hline
+		Sham & 12 & Weakened \\ 
+		Blank & 11 & Weakened  \\ 
+		Blank & 12 & Weakened  \\ 
+		Blank & 9 & Weakened  \\ 
 		+ & 11 & Weakened \\
 		+ (no term) & 11 & Weakened \\ 
-		Sham & 12 & Weakened  \\ 
+		+ & 9 & Weakened \\ 
 		\hline
 	\end{tabular}
 \end{table}
 
-Data from testing on bacteriophage. Data rounded (0.5 and above up) to the nearest thousand photon counts per 10 seconds. %thoroughly characterized. 
+As noted, this field reached a reasonable level of quality many decades ago, and many of the most troubling issues had already been encountered and addressed satisfactorily in experimental designs\cite{Biological1984}. In some cases, these are thoroughly characterized and described. UWB rat paper. But it seems to me that each worker (myself included!) is using their own test arrangement; and yet the studies are not so different as to require such customization. analysis anew to ascertain the very details of how the study was conducted, rather than simply its results. 
+
+By using yet another exposure cell, introducing an new set of unknown artifacts, we are actually hampering this field; and so we encourage anyone who may wish to replicate this result not to use this system, but one of the existing, well-characterized systems mentioned below or in the literature.
+
+For in-vitro research, it seems to me that perhaps this field is running into the issues Feynman's rat-races \cite{Cargo}. There are a large number of very tricky variables. 
 
 
 
 
-Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment.
+ In this case, we were limited by budget - primarily the power amplifiers we have access to.
 
-Repeatability between test conditions was not terrific. The source of the \ntilde 5000 count variation between some equivalent samples is not known. However, in no case did any tube approach the 22 to 30 kcounts of the autoclave.
+It occurs to me that perhaps a set of exquisitely characterized standardized test cells and procedures would be helpful; and a requirement that any papers on the topic either use such a cell, or if their study requires some exceptional treatment, to follow an established procedure to add a new cell to the standard. 
+
+
+ Data rounded to the nearest thousand photon counts per 10 seconds. %thoroughly characterized. 
+
+Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment. 'sham' indicates 
+
+Repeatability between test conditions was not terrific. The source of the \ntilde 5000 count variation between some equivalent samples, and between "blank" and "sham", is not known. However, in no case did any sample\wikinote{verify} approach the 22 to 30 kcounts of the autoclave.
 
 Stock culture had titer $3\times 10^9$ T4r.
+
+The electrodes are only 1 oz copper thick (35 micrometers); but the engraved channel is significantly deeper. \cite{Nanosecond2006} and simulations seem to suggest that this is not a serious problem, but it is possible that the field in much of the channel was much lower than predicted.
 
 The fluor-meter printed a constant stream of results, all within the random error between capture windows $\sigma=0.5$ kcounts. Only after most of the data was taken was it realized how dumb this was.
 
 Results aggregated over the course of several months.
 
-In all cases, a thermal effect was implausible; the total energy in the pulse train precluded heating above the capsid melting temperature.\cite{Effects1951}
+In all cases, a thermal effect was made implausible; the total energy in the pulse train precluded heating above the capsid melting temperature\cite{Effects1951}.
+
+Only tubes 4 onwards are shown from Run 8 data because the capillary purging protocol was changed. In the final iteration, the autosampler was disconnected. The capillary was flushed with water; then the leuer lock was disconnected, air withdrawn into the syringe, and then purged through the capillary and fluidic channel.
 
 In an early iteration of the experiment, the firmware and data analysis scripts randomly generated blinded sham and autoclave assignments and automatically treated the samples accordingly. It also printed blinded templates for pipetting. This was done partly in the hopes that massively oversampling the microwave absorption spectrometer across the range of physical tolerances would highlight any resonances.\cite{first2000} 
 
-However, as spectrometry was abandoned, this non-deterministic property caused significant issues while troubleshooting the fluorescence detection system, and \st{expedience} \st{\textit{laziness}} prompted us to disable this system, violating best practices.
+However, as spectrometry was abandoned, this non-deterministic property caused considerable issues while troubleshooting the fluorescence detection system, and \st{expedience} \footnote{laziness} prompted us to disable this system at run 9, defying best practices on blinded trials.
 
 A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide to avoid the copper ion artifact, but this could not be done on the 0.05 mm waveguide.
 
+\clearpage
 
 \end{document}
