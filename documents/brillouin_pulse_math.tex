@@ -2,101 +2,53 @@
 \documentclass[paper.tex]{subfiles}
 \begin{document}
 
-
-
-The extremely high losses from such thin coaxial cables should be considered.
-
-
-\pagebreak
 \section{Dispersion Timothy and the Brillouin Precursors}
 
-Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent this lossy-flesh problem: the Brillouin and Sommerfeld precursors\footnotemark, and pulse or wavepacket dispersion in tissues in general.\footnotemark
-
-\footnotetext{
-	Sincere thanks go to the legendary Kurt Oughstun for taking the time to reply to our emails.
-}
+Uzunoglu \cite{Theoretical2020} mention a handy way to circumvent the lossy-flesh problem: the Brillouin and Sommerfeld precursors\footnotemark, and pulse or wavepacket dispersion in tissues in general. The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 book\cite{Wave1960} on the topic.
 
 \footnotetext{"precursor" is perhaps a misnomer when single pulses are used rather than trapezoidally-modulated tones - Oughston and Najafabadi both call these \textit{Brillouin pulses}.\\ \cite{Optimal2015} \cite{Optimal2017} \cite{Heat2010}.}
 
 
-The original text of these papers are in German; translations can be found in Léon Brillouin's 1960 
-book\cite{Wave1960} on the topic. \footnotemark
 
 These are fascinating structures somewhat similar to solitons, which arise as a result of an interplay between two aspects (Albanese 
 \cite{Shortrisetime1989}): 
 
 \begin{itemize}
-	\item The highly dispersive nature of tissue, which causes a peculiar distortion of pulses with broadband spectral content,
+	\item The highly dispersive nature of tissue (the variation in speed of light with frequency), which causes a peculiar distortion of short pulses (which necessarily have a broadband spectral content).
 	\item The variation in loss (the imaginary part of the complex permittivity and the penetration depth) versus frequency. \wikinote{add image from that mathematica code}
 \end{itemize}
 
 
 A third aspect leads to the formation of the prototypical Brillouin precursor specifically: any sharp 
-beginning or end of a tone, or other sharply defined structure in a waveform, includes harmonics beyond the tone's carrier wave up to the rise time \footnotemark. \wikinote{add image}
+beginning or end of a tone, or other sharply defined structure in a waveform, includes harmonics beyond the tone's carrier wave up to the rise time\wikinote{add image}.
 
 The aspect that makes the precursors useful is that they sidestep Bragg's Law decay, with an amplitude that decays as $1/\sqrt{z}$ rather than $e^{-z}$. Note that Bragg's law is still strictly obeyed in the frequency domain (excepting second-order "bleaching" (Lukofsky \cite{Can}) or induced transparency-like (\cite{Electromagnetically1997}) effects).
 
-Precursors have been used in practice, by Ong \cite{Detection2003} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose; and various techniques for breast cancer detection. 
+Based on Yang's inactivation thresholds, for instance, at 9 GHz, assuming that a torso is about 10 penetration depths in radius and the hypothetical Brillouin train drives the virus equally effectively as, implementing a precursor would decrease the field required at the skin to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
 
+Precursors have been used in practice, by Ong \cite{Detection2003}\footnote{Well, Ong don't really observe the precursor itself directly, it seems.} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose; and various techniques for tumor detection.\footnote{TODO: Also another really good paper that I can't find}
 
-Also another really good paper that I can't find.
+While it is clearly possible to produce this abnormal penetration (any sharp edge sufficiently distant from suffices to provoke dispersive distortion), it was not obvious to us that a waveform could be constructed that would be an effective driver for the 10 GHz normal modes in question. 
 
-\footnotetext{Well, Ong don't really observe the precursor itself, it seems.}
+First, if dispersive pulses are too close together, they interfere as they propagate and diminish the precursor thus formed \cite{Dynamical2005}.
 
-By putting more power in higher frequencies, 
+As an example, despite the waveform from nonlinear transmission lines\cite{NLTL6275} producing strong wideband components, in cursory simulations they did not appear to satisfy the requirements for usable Brillouin pulses\wikinote{dubious-discuss}\wikinote{citation-needed}. Our working hypothesis is that this is because of destructive interference from the falling edge that immediately follows; but this is mere speculation.\wikinote{dubious-discuss}
 
+Second, and most critically, while the pulse amplitude decays slowly, the total energy contained in such a precursor decays very quickly. The biological ramifications of this are discussed in detail by Adair in \cite{Biophysics2000}.
 
-While it is clearly possible to produce this abnormal penetration (any sharp edge sufficiently distant from  suffices to produce a dispersive pulse), it was not obvious to us that a waveform 
-could be constructed that would be an effective driver for the normal modes in question. 
+%temporal Soliton-producing nonlinear transmission lines, and NLTL oscillators constructed therefrom, particularly well suited 
+%
+%At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$. The sharp edges are at approx. 250 GHz. 
 
-First, Oughston ; if the pulses are too close together, they interfere as they propagate and distort the precursor thus formed.
+Dispersive pulse propagation is easily modelled by a Fourier transform, propagation, and an inverse fourier transform (see Franzen \cite{Wideband1999}, see also \cite{Comments1993} and \cite{Shortrisetime1989}). \footnote{This isn't truly a transient process, of course - the fourier integral is still periodic, wrapping around the window; it's just more transient than a steady-state}.
 
-As an example, despite the waveform from nonlinear transmission lines producing strong wideband components, in cursory simulations they did not appear to satisfy the requirements for Brillouin pulses\wikinote{dubious-discuss}\wikinote{citation-needed}. Our working hypothesis is that this is because of destructive interference from the falling edge that immediately follows; but this is mere speculation.\wikinote{dubious-discuss}
-
-
-
-Second, while the pulse amplitude decays slowly, the total energy contained in such a precursor decays very quickly. The biological ramfications of discussed in detail by Adair in \cite{Biophysics2000}.
-
-
-
-temporal Soliton-producing nonlinear transmission lines, and NLTL oscillators constructed therefrom, particularly well suited 
-
-
-
-\footnotetext{it is interesting to note that a similar - if not equivalent - effect leads to the Heisenberg uncertainty principle. The more localized a }
-
-
-
-
-At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$. The sharp edges are at approx. 250 GHz. 
-
-
-
-At 9 GHz, assuming that a torso is about 10 penetration depths in radius and the Brillouin train 
-drives the virus with an equally, implementing this would decrease the field at the skin required 
-for complete eradication of the virus from the body to a perfectly practicable 1 kV/m, rather than 
-an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
-
+The loss and refractive index can be obtained from a four term Cole-Cole model\cite{dielectric1996}\cite{gabriel1996compilation}. We used parameters from the it.is tissue database \cite{Tissue2018a}.
 
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
 % section on Greens functions
 % and also 
 % and
 % https://www.int.washington.edu/users/dbkaplan/228_01/green.pdf	
-
-
-
-
-
-Note: this isn't truly transient - the fourier integral is still periodic, wrapping around every x cycles. It's just more transient than the steady-state.
-
-
-
-
-attack pattern alpha
-
-
-Transient solution
 
 \pagebreak
 A qualitative statement of the problem we were trying to solve (which may not a useful formulation, especially if Q turns out to be < 1 and the virus exhibits only relaxational and non-resonant behavior):
@@ -116,16 +68,12 @@ Each problem has been solved separately. There are some nearly equivalent but no
 
 \footnotetext{While not strictly related, \cite{Wavepacket1989} tune a light pulse to match the wavefunction of the desired chemical products in a photo-reaction, which is just pretty darned awesome}
 
-
 Optimal pulses for several situations in Debye and Lorentz media have been determined by Oughstun's asymptotic method, which appears to be highly satisfactory in terms of physical intution, and also avoids truncation issues that befall fourier-transform techniques. In general, these optimal pulses are simple gaussian monopulses or higher-order gaussian derivatives \cite{Optimal2017} \cite{Optimal2015}. 
 
 Macke \cite{Simple2012} have come up with a number of analytic dispersion representations for various signals, such as chirped gaussian pulses; however, as it turns out, it was important that we not constrain ourselves to parameterized shapes.
 
 
 \subsection{Analytic techniques}
-
-
-\paragraph{\textbf{Subharmonics}}\
 
 
 \begin{fquote}[Wait][ \cite{Propagation1965}]
@@ -137,6 +85,7 @@ Macke \cite{Simple2012} have come up with a number of analytic dispersion repres
 
 
 \begin{autem}
+	autem: 
 Reflection from tissue interfaces?
 
 Thermal noise will kick the oscillator around; it won't necessarily start at rest. Will this affect the 
@@ -149,68 +98,68 @@ Also, this seems similar to a pulse propagating through the tissue's Cole medium
 
 Another route might be to set up two ODEs for the wave equation and the oscillator and solve them simultaneously.
 
-Progress was hindered by the ~6 conventions for Fourier normalization, the sign or handedness of the imaginary number. What self-respecting field has completely antipodal definitions of the same concept.
-
-oh, on the same topic, can we finally settle the i / j convention. Also, everyone that doesn't explicitly note  
+\footnote{Progress was hindered by the number of conventions for Fourier normalization. It's all well and good for the signal processing specialists to make all sorts of excuses about brevity, but when crossing fields it's pretty annoying for such a fundamental concept to be so loosely defined. On the same topic, can we finally settle the i vs. j convention, and the choice of reduced units in molecular dynamics?}
 
 %\printendnotes
 
 \subsubsection{Attempt at analytical solution: Zhu et al 's dispersive waveform optimization propagation formulation}
 
-The most promising analytical technique that we explored was a slight modification of a formulation for optimal-energy pulses, largely supplied by Prof. Costas Sarris in a yet-unpublished personal communication, based on Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}. 
+We apologize in advance for the desecration of mathematics in this section.
+
+The most promising analytical technique explored was a slight modification of a formulation for optimal-energy pulses, largely supplied by Prof. Costas Sarris in a yet-unpublished personal communication, based on Zhu, Hum, Costas formulation in \cite{Microwave2012b}, previously discussed by Pozar \cite{Waveform2003}. 
 
 This is based on lagrange multipliers and 'functional' or 'variational' calculus\cite{Methods1989}. 
 
-Here, rather than taking the derivative with respect to a small change in a variable, we take the derivative with respect to a small change in the function itself - a very useful technique (that the author was not aware of) which imposes little to no limitation on the form of the solution. For some intuition, the definition of the first variation and the Gateaux derivative may be of some use.
+Here, rather than taking the derivative with respect to a small change in a variable, we take the derivative with respect to a small change in the function itself - a very useful technique \footnote{that the author was not aware of!} which imposes little to no limitation on the form of the solution. For some intuition, the definition of the first variation and the Gateaux derivative may be of some use.\footnote{The complex conjugate in Sarris' formulation, $\nabla H() = H()^\star$, seems to come from \cite{Signal1969}, page 140 onwards; I cannot make heads or tails of his formulation. Pozar note that this complex conjugate arises from the concept of "adjointness".}
 
-A common setup for such a problem is to use the Euler-Lagrange equation; this is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action \footnote{For background, see The Feynman Lectures, vol II chapter 19}. In these types of problems, it appears that the path of integration through space from endpoints a to b is instead replaced by the whole frequency domain from -$\infty$ to +$\infty$. 
+A common setup for such a problem is to use the Euler-Lagrange equation; this is usually brought up in the case of the Brachistochrone problem, or the Principle of Least Action \footnote{For background, see The Feynman Lectures, vol II chapter 19}. In these types of problems, it appears that the path of integration through space from endpoints a to b can be replaced by the whole frequency domain from -$\infty$ to +$\infty$. 
 
 $$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
 
-where $\int e^{j \omega t} d\omega$ is the inverse fourier transform.
+where $\int e^{j \omega t} d\omega$ is the inverse fourier transform. At this point, you could choose to perform a second integral over the time-domain Greens function solution to the harmonic oscillator\cite{Complex2020}, or substitute 
 
-$$W = \frac{1}{\eta_0} \int_{-\infty}^{+\infty}{(n_r(\omega))\ |F(\omega)|^2}\ d\omega$$\\
+\footnote{Many symbolic math tools have support for functional calculus. However, neither Maxima, SageMath, Mathematica's VariationalD, Matlab's Fundiff, nor Maple's functionalDerivative seem to yield any meaningful result for grad xi.}\\
 
-Where $n(\omega)$ is a complex refractive index per Debye relaxation equation, $n_r()$ is the real part of the same, everything else is a real constant. Set up a functional with a lagrange multiplier\\
+%$$W = \frac{1}{\eta_0} \int_{-\infty}^{+\infty}{(n_r(\omega))\ |F(\omega)|^2}\ d\omega$$\\
+%
+%Where $n(\omega)$ is a complex refractive index per Debye relaxation equation, $n_r()$ is the real part of the same, everything else is a real constant. Set up a functional with a lagrange multiplier\\
+%
+%$$\xi = -e_x(z,t) + \lambda W$$\\
+%
+%Take the functional ("variational") gradient with respect to $F(\omega)$.
+%
+%$$ \nabla \xi = -\frac{1}{\sqrt{2\pi}} \left(e^{- j (\omega/c_0)n(\omega)z}\right)^\star \  e^{-j\omega T} + \lambda...$$
+%
+%At this point, you could choose to perform a second integral over the time-domain Greens function solution to the harmonic oscillator\cite{Complex2020}, eq. 4 and 15, 
+%
+%$$x(t) = \int_{-\infty}^{+\infty}{G(t,t')\ \frac{q\cdot e_x(z,t'))}{m}\ } dt'$$\\
+%
+%(eq. 15, for the underdamped case)
+%
+%$$G(t,t') = UnitStep(t-t') \frac{1}{\sqrt{\gamma^2-\omega_0^2}  }\sinh\left({\sqrt{\gamma^2-\omega_0^2}}\ (t-t')\right)$$
+%
+%But a much more straightforward 
+%
+%Where * is the complex conjugate.\\
 
-$$\xi = -e_x(z,t) + \lambda W$$\\
 
-Take the functional ("variational") gradient with respect to $F(\omega)$.
 
-$$ \nabla \xi = -\frac{1}{\sqrt{2\pi}} \left(e^{- j (\omega/c_0)n(\omega)z}\right)^\star \  e^{-j\omega T} + \lambda...$$
 
-At this point, you could choose to perform a second integral over the time-domain Greens function solution to the harmonic oscillator\cite{Complex2020}, eq. 4 and 15, 
+%
+%Then set
+%
+%$$x(t) = \int_{-\infty}^{+\infty}{G(t,t')\ \frac{q\cdot e_x(z,t'))}{m}\ } dt'$$\\
+%
+%Anyhow, then modify the lagrange multiplier,
+%
+%$$\xi = -x(t) + \lambda W$$\\
+%
+%And now,
+%
+%$$\nabla \xi = 0$$
 
-$$x(t) = \int_{-\infty}^{+\infty}{G(t,t')\ \frac{q\cdot e_x(z,t'))}{m}\ } dt'$$\\
+This lagrange multiplier technique has, however, a fundamental limitation (noted by Tufts \cite{Optimum1964}): for reasons that the author does not yet comprehend, only the pulse energy can be used as a constraint, rather than the value of the peak field. This seems to turn out to be of some importance.
 
-(eq. 15, for the underdamped case)
-
-$$G(t,t') = UnitStep(t-t') \frac{1}{\sqrt{\gamma^2-\omega_0^2}  }\sinh\left({\sqrt{\gamma^2-\omega_0^2}}\ (t-t')\right)$$
-
-But a much more straightforward 
-
-Where * is the complex conjugate.\\
-
-The $\nabla H() = H()^\star$ thing seems to come from Franks, Signal Theory, 1969, page 140 onwards; I cannot make heads or tails of his formulation.
-
-Neither Maxima, SageMath, Mathematica's VariationalD, Matlab's Fundiff, nor Maple's 
-functionalDerivative seem to yield any meaningful result for grad xi.\\
-
-Then set
-
-$$x(t) = \int_{-\infty}^{+\infty}{G(t,t')\ \frac{q\cdot e_x(z,t'))}{m}\ } dt'$$\\
-
-Anyhow, then modify the lagrange multiplier,
-
-$$\xi = -x(t) + \lambda W$$\\
-
-And now,
-
-$$\nabla \xi = 0$$
-
-This lagrange multiplier technique has, however, a fundamental limitation (noted by Tufts \cite{Optimum1964}): for reasons that the author does not comprehend, only the pulse energy can be used as a constraint, rather than the value of the peak field. This seems to turn out to be of some importance.
-
-As noted by Pozar, the complex conjugate arises from the concept of "adjointness". Franks.
 
 Note the ni specifically in the complex conjugate!
 

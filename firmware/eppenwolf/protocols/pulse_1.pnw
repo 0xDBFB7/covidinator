@@ -2764,4 +2764,79 @@ forcing through the capillary is similar to French pressure cell press
 
 
 
+
+
+
+
+\section{Cleanup}
+
+-----------------------
+
+determining the actual width of the exposure cells.
+
+on the smallest one, 223 px/mm, channel is 7 px wide. 0.031 mm. The other side of the CPWG is about
+2x as wide, FWIW. (asymetric CPWG)
+
+on the second pulser WG, 96 px/mm. Copper width is pretty rough; ranges from
+0.1 mm to 0.145
+
+on Eppenwolf, 156 px, 44 px - 0.2 to 0.28 mm, very close to the target.
+
+
+The fields are therefore:
+
+- Eppenwolf NF capillary:
+---------------------------------
+Field sim from "Coplanar waveguide dosimetry"
+
+80 to 20 V/m per 0.5 V (FDTD)
+
+Max voltage: 3.84 V on detectors, 2.12 V on the line (7 GHz)
+Min voltage: 0.6 v on detectors, 0.5 V on the line (12 GHz)
+
+Max possible field: 339 V/m
+Min expected field: 84.8 V/m
+
+
+---------------------------------
+- Eppenwolf with channel:
+Field sim from "Coplanar waveguide dosimetry"
+
+Pessimistic sim, 200 V/m per 0.5 V
+
+
+Max voltage: 3.84 V on detectors, 2.12 V on the line (7 GHz)
+Min voltage: 0.6 v on detectors, 0.5 V on the line (12 GHz)
+
+Max possible field: 2.12 / 0.2 mm = 10.6 kV/m (7 GHz)
+Min expected field 0.5 * 400 V/m/v (FDTD) = 200 V/m (12 GHz)
+
+Errors are propagated linearly - no distribution is assumed.
+
+---------------------------------
+
+ - Wide pulser
+
+Max voltage (no terminator, 150 MHz 1:100 probe, 200 MHz oscilloscope): 1.16 kV, 10 ns.
+Min voltage (terminator) 388 V, 3 ns
+
+Max possible field: 1160 / 0.2 mm = 5.6 MV/m
+Min expected field 388 * 400 V/m/v (FDTD) = 0.155 MV/m (12 GHz)
+
+---------------------------------
+
+Narrow Pulser
+
+Max voltage (no terminator, 150 MHz 1:100 probe, 200 MHz oscilloscope): 1.16 kV, 10 ns.
+Min voltage (terminator) 388 V, 3 ns
+
+400/(0.03/0.2) = 2666
+
+Max theoretical field: 1160 / 0.03 mm = 38 MV/m
+Min expected field 388 * 2666 (FDTD) = 1.03 MV/m (12 GHz)
+
+
+
+
+
 \end{document}
