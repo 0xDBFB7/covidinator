@@ -46,16 +46,7 @@
 %
 
 \subfile{experiment_1_data}
-\begin{figure}[H]
-	%	\makebox[\textwidth][c]{
-	\includesvg[width=\textwidth]{propagated_waveforms}
-	\caption{Brillouin precursor propagation through tissue (reproduced from section 6).\\
-		(a) Gaussian monopulse with 16 ps FWHM.\\
-		(b) Optimized 10 GHz sawtooth wave. Note the slight high-frequency ripple.\\ This has a frequency of approximately 1.5 GHz.\\
-		(c) Prototypical precursor 10 GHz sine burst.\\
-		(d) Continuous 10 GHz sine tone.}
-	
-\end{figure}
+
 \clearpage
 %
 %\begin{figure}[H]
@@ -74,9 +65,11 @@
 %\section{Terse? I can be terse. Once, in flight school, I was laconic.}
 
 \begin{multicols}{1}
+
+%\begin{refsection}
 \lettrine{W}e were inspired to undertake this project by a set of publications by a certain Sun group, (primarily Liu et al \cite{Microwave2009} and Yang et al \cite{Efficient2015}, simultaneously demonstrated by Hung et al \cite{focusing2014}), partially replicated by \cite{Optical2020} and discussed by \cite{Theoretical2020}.
 
-We have some minor questions regarding experimental technique in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we do not defer greatly to their observations. 
+We have some minor questions regarding experimental technique in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we try not to defer greatly to their observations. 
 
 These studies are all founded on the idea that some large-scale structural difference between viruses and all host cellular structures might usable as leverage to selectively inactivate the virus by some physical - rather than biological - means. For example, such an inactivation "window" between host cell and virion damage has been found in certain wavelengths of CW Far UV\cite{Germicidal2017} - but also apparently in certain modulated UV pulses\cite{Use1987a}\cite{Can1993}, and also sporadically reported for simple thermal treatment\cite{Summary}; however, the differential inactivation modes found so far do not appear to be of much use in the clinic.
 
@@ -84,23 +77,23 @@ A few well-established non-resonant non-thermal effects caused by extreme electr
 
 Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have not yet found any discussion of clinical treatment of viral infection with these conventional electroporation therapies.% In vitro there is evidence to suggest that sub-cellular effects take place under truly tremendous fields. 
 
-More specifically, the concept of driving a virus as a harmonic oscillator, as suggested by has been previously considered only briefly \cite{MECHANICAL1968}\cite{Comment2004}\cite{Vibrational2009}\cite{Maximum2010}, perhaps first because in almost all cases structures in tissue are so over-damped by the surrounding solvent\cite{Vibrational2002}\cite{Biological2002}\cite{Biophysics2000}\cite{Viscous2000} as to have no non-zero resonant frequency at all \cite{dielectric1996}\cite{gabriel1996compilation}\wikinote{not in citation}\wikinote{discuss}; and second, because the charge distributions found in biology are too small for energies significantly above the thermal background to be absorbed via applied fields. 
+If the duration of exposure is sufficiently short that thermal and membrane breakdown effects can be neglected, tissue appears to withstand peak electric fields of great magnitude - above 1 nanosecond megavolt/meter, even in in-vivo studies - without severe acute effects(\cite{Repeated2020}\cite{Review2011} and below).
+
+More specifically, the concept of driving a virus as a harmonic oscillator, as suggested by \cite{Efficient2015} has been previously considered only briefly \cite{MECHANICAL1968}\cite{Comment2004}\cite{Vibrational2009}\cite{Maximum2010}, perhaps first because in almost all cases structures in tissue are so over-damped by the surrounding solvent\cite{Vibrational2002}\cite{Biological2002}\cite{Biophysics2000}\cite{Viscous2000} as to have no non-zero resonant frequency at all \cite{dielectric1996}\cite{gabriel1996compilation}\wikinote{not in citation}\wikinote{discuss}; and second, because the charge distributions found in biology are too small for energies significantly above the thermal background to be absorbed via applied fields. 
 
 On the other hand, the possibility of a slightly underdamped virion does not appear to be entirely unexpected; classical viscous Stokes drag predicts such behavior\cite{nature1986} (see supplemental), and large proteins have been found with similar properties\cite{Microwave1994}; and while MHz transverse resonances in microtubules are ruled out\cite{Viscous2000}, the same arguments suggest that very weak GHz longitudinal modes may exist.
 
 However, whether the small difference in driven amplitude between, for example, a $Q\approx0.5$ host structure normal mode and a $Q\lessapprox6$ virion mode could possibly be of any clinical value is not clear to us.
 
+%
+%\printbibliography[heading=subbibliography]
+%\end{refsection}	
 
+The idea of driven oscillation in biological systems appears to have originated from work by Frohlich\cite{Longrange1968}\cite{Evidence1983}\cite{Biological1980}\cite{Coherence1983} on the possibility of large-scale coherent QM Bose-Einstein condensates, and then many more subtle lines of inquiry\cite{Mechanisms1992}\cite{mechanisms1981}; but, to our knowledge, no such large-scale non-classical effects have ever been substantiated; specifically, suggestions of non-classical damping due to hydration layer effects have not been observed. In fact, evidence to date\cite{Exposure2009}\cite{ICNIRP2020}\cite{C95} appears to agree that, not only are oscillatory effects implausible, there are no relevant, substantiated, non-diffusion-like non-thermal mechanisms. 
 
-
-The idea of driven oscillation in biological systems appears to have originated from work by Frohlich\cite{Longrange1968}\cite{Evidence1983}\cite{Biological1980}\cite{Coherence1983} on the possibility of large-scale coherent QM Bose-Einstein condensates, and then many more subtle lines of inquiry\cite{Mechanisms1992}\cite{mechanisms1981}; but, to our knowledge, no such large-scale non-classical effects have ever been substantiated; specifically, suggestions of non-classical damping due to hydration layer effects have not been observed. In fact, consensus\cite{Exposure2009}\cite{ICNIRP2020}\cite{C95} appears to agree that, not only are oscillatory effects implausible, there are no relevant, substantiated, non-diffusion-like non-thermal mechanisms. 
-
-Because the effect seen by Yang et al \cite{Efficient2015} is so striking compared to previous work in the non-thermal literature, we have tried to invent with ways of explaining the observed results without invoking a non-thermal effect. Sufficient orthogonal measurements were made so that this is quite difficult. The most plausible timeline was:
+Because the effect seen by\cite{Efficient2015} is so striking compared to previous work in the non-thermal literature, we have tried to invent ways of explaining the observed results without invoking a non-thermal effect. Sufficient orthogonal measurements were made, so this is quite difficult. The most plausible timeline was:
 \begin{itemize}
-	\item The use of microwave absorption spectroscopy techniques somewhat similar to those which have previously shown resonance-like artifacts\cite{Resonances1987}. An effective charge of $q=10^7 e^-$ was found, which is very large for a $10^9$ atom structure.  Genome and protein charge can hardly explain $10^5 e^-$, which would be reduced further by ionic screening. It appears that the potential energy of such a sphere of charge would exceed the observed metabolic burden to build a virus by a significant factor\footnotemark.
-	
-	
-	\footnotetext{
+	\item The use of microwave absorption spectroscopy techniques somewhat similar to those which have previously shown resonance-like artifacts\cite{Resonances1987}. In particular, an effective charge of $q=10^7 e^-$ was found via this method, which is very large for a $10^9$ atom structure.  Genome and protein charge can hardly explain $10^5 e^-$ (see below), which would be reduced further by ionic screening. It appears that the potential energy of such a sphere of charge would exceed the observed metabolic burden to build a virus by a significant factor \footnote{
 		$$ U = \frac{3}{5}  \frac{1}{4 \pi \epsilon_0} \frac{Q^2}{R} \approx 2.3\text{e}^{-7} \text{ J} \approx 6 \times 10^{11}\  \text{ATP-equivalent} $$
 		%U = (3/5) * 1/(4*pi*electricConstant) *((1e7 electricCharge)^2 / 60 nanometers) = 2.30708e-7 J
 		
@@ -108,37 +101,43 @@ Because the effect seen by Yang et al \cite{Efficient2015} is so striking compar
 		
 		Mahmoudabadi\cite{Energetic2017} provide a total per-virion energetic cost of $10^8 $ ATP-equivalent , so this appears to be 3 orders of magnitude too large.
 		
-		Of course, much of the potential energy may have already existed in the host cell, so this is possibly a flawed comparison. If most of the charge is contributed by osmotic, ion, this potential energy may not be considered in the above. Autem: is it possible for the charged core to compensate for the potential energy of the charged shell?}
+		Of course, much of the potential energy may have already existed in the host cell, so this is possibly a flawed comparison. If most of the charge is contributed by osmotic, ion, this potential energy may not be considered in the above. Autem: is it possible for the charged core to compensate for the potential energy of the charged shell?}. Ion polarization effects are generally not indicated at these timescales\cite{ICNIRP2020}, but faster electron polarization might occur to some small degree. 
+	
+	
+	
 	
 	\item Infrared thermography only determines the surface temperature. Based on heating patterns seen in other experiments\cite{Effects1950}, the observed surface temperature rise does not seem to conclusively rule out a very localized thermal effect. 
 	\item Therefore, without free-space dosimetry or simulation of power density to demonstrate otherwise, the frequency-selective inactivation could be explained by the frequency response of the power amplifier, antenna gain, and absorption of the cuvette.
 \end{itemize}
 
-It seems reasonable that a field with a strong positive publication bias\cite{Comprehensive2018}, in the presence of strong peer review, might tend towards only the most abstruse and difficult to explain false-positive results. 
+It seems reasonable that a field with a strong positive publication bias\cite{Comprehensive2018}, in the presence of stringent peer review, might tend towards only the most abstruse and difficult to explain false-positive results. 
 
-However, if this is a thermal artifact, the fact that the spectrometry and inactivation data shown align perfectly is very difficult to explain; and so this chain of events seems unlikely. We are forced to be satisfied with mystification.
+However, if this is a thermal artifact, the fact that the spectrometry and inactivation data shown align perfectly is very difficult to explain; and so this chain of events seems unlikely.
 
+An interesting effect, superficially similar to the leakage found by Yang et al, has been observed on lipid liposomes similar to viral envelopes\cite{MicrowaveStimulated1985}\cite{Influence}\cite{Correlation1994}\cite{contribution2019}. These results are of excellent quality, with good thermal controls. \footnote{One founding researcher has been implicated in a research scandal; however, the Livermore report on the topic does not appear to be public, so we cannot evaluate the basis for these claims.} This effect appears to depend on dissolved oxygen\cite{Microwaves1987}\cite{Microwaves1988}, somewhat contrary to a mechanical effect. The phase transition temperature of the lipids used (the point at which pores reseal) is also a relevant quantity. 
 
+One such report has been found to be a very strange artifact caused by the Teflon dish used for microwave trials\cite{Effect1994a}, highlighting the need for exactly identical sham trials.
 
-The genome charge is almost entirely neutralized by the nucleocapsid. 
+Custom single-lipid liposome surrogates appear to be relatively easy to produce and fill with a DNA tracer by sonication and dehydration\cite{Encapsulation1982}\cite{OPTIMIZATION2017}\cite{Liposome2014}. We encountered one problem removing unencapsulated DNA, which typically requires ultracentrifugation as precipitation of liposomes is difficult. However, \cite{novela} appear to demonstrate that ethanol extraction is satisfactory. This likely does not lead to DNA precipitation because of the lack of salt. 
 
-From an energetics perspective, \footnote{The dipole spring constant can be extracted from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass ($k = \omega_{res}^2 m^2$). } With relatively sane choices of solvent charge screening and resonant frequency, the energy absorbed by the whole virus per cycle at 5 MV/m might vary from $10^{-5}$ to 100 times the thermal energy $k_b T$.
+With\footnote{The dipole spring constant can be extracted from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass ($k = \omega_{res}^2 m^2$). } relatively sane choices of solvent charge screening and resonant frequency, the energy absorbed by the whole virus per cycle at 5 MV/m might vary from $10^{-5}$ to 100 times the thermal energy $k_b T$.
 %TODO check effect of damping on hookes law energy.
 
 Compare to $~5 k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014}.
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
 
-On the other hand, such a sub-angstrom movement only produces approx. 0.05\% deflection of the capsid, whereas a general value for the rupture of host cells is about 3\% deflection. The stiffness of the genome may explain this. In addition, with a relaxation time on the order of 500 ps, it is difficult to imagine that the energy will be sufficiently concentrated in the capsid to be destructive. After the relaxation time, the energy is a distant memory; only the mechanical effects that were induced during that time can remain.
+On the other hand, such a sub-angstrom movement can only induce approx. 0.05\% deflection of the capsid, whereas a general value for the rupture of host cells is about 3\% deflection\cite{Electromechanical1989}. The stiffness of the genome could be used to explain this. With a relaxation time on the order of 500 ps, it is difficult to imagine that this energy will be sufficiently concentrated in the capsid to be destructive. After the relaxation time, only the mechanical effects that were induced can remain.
 
-Data on the charge distribution of the virion can be obtained by and 2D-PAGE relative protein composition or perhaps directly via extraction from whole-virion CryoEM maps, because of the charge-sensitive nature of electrons over X-ray diffraction \cite{Identification2018}\cite{Electrostatic2020}; but this has not yet been implemented.
+Modelling this sort of multi-scale inactivation mechanism involving the collective motion of some $10^9$ atoms poses a significant computational and theoretical hassle, which has far exceeded our capabilities. 
+
+Coarse-graining; but, as with all simulations, the problem must be set up with great care and experience (polarizable water; proper heat-bath damping coefficients and choice of integrator)\cite{Membrane2016}, and with an understanding of possible failure modes; we did not trust our abilities to produce correct results. Parametrizing based on all-atom simulations of small capsid segments or proteins \cite{Elucidating2009}. Mechanically reasonable coarse-grained models have recently been published for SARS-NCoV-2\cite{Multiscale2020}. DNA can be represented by homogeneous beads restrained by Lennard-Jones forces \cite{Communication2013}. Finite-element analysis \cite{Finite2008}
+
+Poisson-Boltzmann implicit ionized solvents.
 
 
+Data on the charge distribution of the virion can be obtained by and 2D-PAGE relative protein composition - or even perhaps directly, via extraction from whole-virion CryoEM maps, because of the charge-sensitive nature of the technique \cite{Identification2018}\cite{Electrostatic2020}. This has not yet been implemented in any software tools and seems quite tricky. The genome charge is almost entirely neutralized by the nucleocapsid. 
 
-Modelling this sort of multi-scale inactivation mechanism involving the collective motion of some $10^9$ atoms poses a significant computational and theoretical hassle, which has far exceeded our capabilities. Poisson-Boltzmann implicit ionized solvents.
-
-Parametrizing based on all-atom simulations of small capsid segments or proteins \cite{Elucidating2009}. Mechanically reasonable coarse-grained models have recently been published for SARS-NCoV-2. DNA with beads restrained by Lennard-Jones forces \cite{Communication2013}. Finite-element analysis \cite{Finite2008}; some Poisson-Boltzmann solvers
-
-GROMACS simulations of liposomes, trajectories fourier transformed with \cite{TRAVIS2011}
+GROMACS simulations of liposomes, trajectories fourier transformed with \cite{TRAVIS2011}.
 
 In our cursory testing, Bacteriophage T4 did not appear to be lysed by 10 microsecond pulses between 6 and 12 GHz at about 70 V/m, nor, exploring non-resonant inactivation, did nanosecond pulses up to 1 MV/m appear to have any effect. Note that neither of these regimes overlap with the results of the previous studies.
 
@@ -152,15 +151,13 @@ In almost all recently updated standards, the precautionary 100 kV/m instantaneo
 
 Previous field limits were set by the microwave hearing effect, a primarily thermoelastic mechanical \cite{MICROWAVEINDUCED1975}. Thermoelastic effects can cause damage, but primarily when \cite{Thermoacoustic2017}\cite{MECHANICAL1968}. \cite{Radiation1996}
 
-There is a body of work on coherent control of viral inactivation using picosecond laser exposure \cite{Maximum2010}; targeting small proteins seems to require very large fields\cite{Picosecond2016b}, but breaking viral capsids by exciting long-wavelength vibrations using Raman scattering has been reported experimentally \cite{Inactivation2007}\cite{Prospects2012}\cite{Studies2014}, however these results have failed replication\cite{No2011}. The author has not investigated this mechanism in any detail. Molecular dynamics of ISRU has been considered \cite{Maximum2010}, (\cite{Vibrational2009} but without considering heat-bath damping). Interestingly, if the well-established 1 TW power density\cite{Targeted2002} for mammalian cell laser damage is scaled linearly with time to the nanosecond regime ($1\ \text{TW/m}^2 / (100\ \text{ps} / 0.3\ \text{ps}) = 3\ \text{GW/m}^2$), 
+There is a body of work on coherent control of viral inactivation using picosecond laser exposure \cite{Maximum2010}; targeting small proteins seems to require very large fields\cite{Picosecond2016b}, but breaking viral capsids by exciting long-wavelength vibrations using Raman scattering has been reported experimentally \cite{Inactivation2007}\cite{Prospects2012}\cite{Studies2014}, however these results have failed replication\cite{No2011}. The author has not investigated this mechanism in any detail. Molecular dynamics of ISRU has been considered \cite{Maximum2010}, (\cite{Vibrational2009} but without considering heat-bath damping). Interestingly, if the well-established 1 TW power density\cite{Targeted2002} for mammalian cell damage by femtosecond laser is scaled linearly with time to the nanosecond regime, a power density similar to that of \cite{Repeated2020} is found ($1\ \text{TW/m}^2 / (100\ \text{ps} / 0.3\ \text{ps}) = 3\ \text{GW/m}^2$). 
 
 Optical centrifuges use a rotating polarization to induce a dipole moment and spin up small molecules \cite{Forced2000}\cite{Spinning2000}. Electrorotation\cite{RotatingFieldInduced1982}\cite{Electrorotation1988}\cite{Electrorotation1997}\cite{Dielectric1988} of viruses has been reported\cite{Analysis2004}\cite{New1999}\cite{comprehensive2001}, but as yet only in a non-destructive low-speed sub-synchronous regime for sensing, using optical means to detect rotation - using the virion as a kind of electrostatic induction motor. High-frequency dielectrophoresis and electrostatic trapping of viruses has also been reported\cite{Accumulation2006}, without suggestions of electrostatic damage, implying that conventional irreversible electroporation of viruses should require longer than 10 microseconds.
 
-A rotational drag coefficient can extracted from MD simulation\cite{Evaluating2017}. Simulating a 30 nm lipid liposome using the MARTINI coarse-grained \cite{MARTINI2007} lipid force fields with GROMACS\cite{GROMACS2005}' torque measurement feature, kindly implemented by Kutzner \cite{Keep2011}. This suggests a maximum rotation frequency $10^7$ on the order of $10^3$, but this value requires so many assumptions that it's hardly worth mentioning. From \cite{Spinning2008}, the upper bound of a homogenous spherical virus with 10 MPa overall tensile strength appears to be about $10^9$ Hz. \footnote{\ghfile{documents/optical_centrifuge.ipynb}}
+A rotational drag coefficient can extracted from MD simulation\cite{Evaluating2017}. We simulated a 30 nm lipid liposome using the MARTINI coarse-grained \cite{MARTINI2007} lipid force fields with GROMACS\cite{GROMACS2005}' torque measurement feature, kindly implemented by Kutzner \cite{Keep2011}. This suggests a maximum rotation frequency at on the order of $10^3$, but this value requires so many assumptions that it's hardly worth mentioning. From \cite{Spinning2008}, the upper bound of a homogenous spherical virus with 10 MPa overall tensile strength appears to be about $10^9$ Hz. \footnote{\ghfile{documents/optical_centrifuge.ipynb}}
 
-An effect \cite{MicrowaveStimulated1985}\cite{Influence}\cite{Correlation1994}\cite{contribution2019}. These results are of excellent quality, with good thermal controls. \footnote{One founding researcher has been implicated in a research scandal; however, the Livermore report on the topic does not appear to be public, so we cannot evaluate the basis for these claims.} This effect appears to depend on dissolved oxygen\cite{Microwaves1987}\cite{Microwaves1988}, evidence against a mechanical effect. The lipid "transition temperature" - the point at which pores reseal - is also relevant. One report has been found to be a very strange artifact\cite{Effect1994a}.
 
-Custom single-lipid liposome surrogates appear to be relatively easy to produce and fill with a DNA tracer by sonication and dehydration\cite{Encapsulation1982}\cite{OPTIMIZATION2017}\cite{Liposome2014}. One problem encountered removing unencapsulated DNA, which typically requires ultracentrifugiation as precipitation of liposomes is more difficult. However, \cite{novela} appear to demonstrate that ethanol is satisfactory, and likely does not lead to DNA precipitation because of the lack of salt. 
 
 Almost all biological spectroscopy techniques have produced resonance-like artifacts at some point in the literature, and we suggest that even the most striking and competently-obtained absorption data should not necessarily be trusted implicitly. Trustworthiness probably depends most significantly on the quality of error analysis; many have made good use of otherwise unreliable techniques. However, particularly in a field with a high positive publication bias, it seems most productive to use the most advanced techniques, those that are foolproof by their very nature. Based only on our experience of the literature, in order of decreasing reliability for resonance measurement:
 
@@ -171,8 +168,9 @@ Almost all biological spectroscopy techniques have produced resonance-like artif
 \item Frequency-domain CW VNA absorption or reflection (\cite{Microwave1982} $\neq$ [\cite{Resonances1987} \cite{Dielectric1989}]) \cite{Substitution1982} \cite{Millimeter1980}.
 \end{itemize}
 
-In our experiments with our homebrew spectrometer, we were able to produce many candidate resonances with perfectly justifiable modifications to post-processing, which raises interesting (but not novel\cite{Reanalysis2020}\cite{statistical2020}) questions regarding software quality in such research. \footnote{Perhaps developing the analysis software only on some sort of blind, synthetic data would offer a }
+Although not representative of careful, well-calibrated VNA testing because of the crudity of our homebrew spectrometer, we were able to produce many candidate resonances in our data with perfectly justifiable modifications to post-processing, which raises interesting (but not novel\cite{Reanalysis2020}\cite{statistical2020}) questions regarding software development in such conditions. \footnote{One solution might be to keep all data blinded while developing the analysis software, and use synthetic data to calibrate. One objection might be that the data often inform the required calibration; we might retort that if the technique is so sensitive that the calibration procedure cannot be known beforehand, a different technique should be used.}
 
+\end{multicols}
 \begin{figure}[H]
 	%	\makebox[\textwidth][c]{
 	\includesvg[width=\textwidth]{propagated_waveforms}
@@ -184,6 +182,7 @@ In our experiments with our homebrew spectrometer, we were able to produce many 
 	
 \end{figure}
 
+\begin{multicols}{1}
 Positive artifacts are very common in this field, and extreme care in experimental design appears to be required to produce any meaningful result. Excellent best-practices guidelines and meta-analyses are available in \cite{Biological2016} \cite{Comprehensive2018} \cite{Funding2019}, \cite{chou1996radio} and \cite{Effects2016}.
 
 Thermal effects appear to be most common. For instance, Manikowska\cite{Effects1985a} showed a "highly significant (P > 0.001)" result, and state that "...under our experimental conditions, effects of heat stress and local heating are unlikely". This result was promptly refuted by \cite{Cytogenetic1986}, who suggest a thermal artifact. Most critically, the localized hotspots created by microwave exposure are often almost impossible to measure. Ideally, experimental design should guarantee that even slight localized temperature rise above 3 C cannot occur \cite{Sharp1983}\cite{Effects1951}\cite{DNA2004}, or use thermally-matched shams\cite{Basic1983}.
@@ -200,12 +199,11 @@ A sawtooth might be the optimal waveform (see below). However, obtaining 10 GHz 
 
 Early albanese with mm used vircator diodes. 
 
-
 What quantity is referred to; induced dipole due to polarization or ionic.
 
-T4 was selected because of large amount of history and safety of the host. T4 does not have a nucleocapsid; the charge distribution is likely stronger than. Phi6 \footnote{An interesting}. Some more useful surrogates may include Pseudomonas Phi 6\cite{Selection2017}, PM2, 
+T4 was selected for biosafety reasons, and because of the large amount of structural data available. T4 does not have a nucleocapsid; the charge distribution is likely much stronger than other RNA-like viruses Phi 6\footnote{Naming organisms with greek letters makes literature review somewhat more difficult, because many search engines do not support Unicode.}. Some more useful surrogates may include Pseudomonas Phi 6\cite{Selection2017}, the lipid-bearing PM2, PRD1 or PR4\cite{Lipidcontaining1979} if the outer protein capsid is dissolved\cite{Bacteriophage2002}, \cite{Dissociation1993}, or lipid liposomes. Certain phages also allow efficient concentration without ultracentrifuge, either by PEG precipitation\cite{Rapid1970} and settling, or via VIRADEL\cite{GROWTH}\cite{Chemical1982}\cite{highly1988}\cite{AdsorptionElution1989}, by altering the zeta potential of a syringe filter. 
 
-Viradel
+
 
 30 atmospheres. When phage is rapidly immersed in solution of high osmotic strength, the active system that maintains osmotic equilibrium is overwhelmed, and the resulting force ruptures the capsid. \cite{Osmotic2003}, and breaks at a pressure differential of 100 atm. By $\sigma = pr / 2t $ t = 5.7 nm\cite{Head1988} and r=60 nm, capsid strength should be about 53 MPa, less than the 100 to 300 MPa cited by \cite{Bacteriophage2004}.
 %((100 atm * 60 nanometers) / (2*(5.7 nanometers))) to MPa
@@ -218,7 +216,7 @@ This was a very convenient (stable over long periods of time, requires no host c
 
 This assay works because the flurophore drastically changes fluorescence intensity and lifetime when in complex with DNA\cite{SYBR2012}\cite{Characterization2010}, and the large size of the GelGreen molecule prevents diffusion through intact membranes.
 
-While their bandwidth is narrow, very cheap 0.5" laser line thin-film filters still work great for both excitation and emission for fluorescence techniques. Blue LEDs [Cree XLamp XP-E2 Blue Starboard] are then sufficient for excitation (though high CRI white LEDs emit more 480 nm blue, green leakage is too high). Dichroic mirrors are unnecessary for this application. Use a 1 mm plastic fiber optic at right angles to decrease excitation light scattering. Beware material autofluorescence - custom Lexan cuvettes unexpectedly overwhelmed the DNA signal (final set: [emission: Tiffen Orange 16 gel\cite{lide2004crc} in series with Thorlabs FL05532, 532nm, 10 nm FWHM] [Edmund 28432, 486 nm]). A surplus Hammamatsu R4220 with HC123 current-limiting base at maximum sensitivity was used. A low-voltage silicon photomultiplier will probably be sufficient in most cases.
+While their bandwidth is narrow, very cheap 0.5" laser line thin-film filters still work great for both excitation and emission for fluorescence techniques. Blue LEDs [Cree XLamp XP-E2 Blue Starboard] are then sufficient for excitation (though high CRI white LEDs emit more 480 nm blue, green leakage is too high). Dichroic mirrors are unnecessary for this application. Use a 1 mm plastic fiber optic at right angles to decrease excitation light scattering. Beware material autofluorescence - custom Lexan cuvettes unexpectedly overwhelmed the DNA signal (final set: [emission: Tiffen Orange 16 gel\cite{lide2004crc} in series with Thorlabs FL05532, 532nm, 10 nm FWHM] [Edmund 28432, 486 nm]). A surplus Hammamatsu R4220 with HC123 current-limiting base at maximum sensitivity was used. A low-voltage silicon photomultiplier like ON Semi's C-Series SiPMs will probably be sufficient in most cases.
 
 PMT dark counts and ambient light were removed by synchronous photon counting - add when light is on, subtract when light is off.  This cannot be done with luminescence. Further filtering could be done by fluorescence lifetime discrimination. 
 
@@ -261,9 +259,9 @@ Background ('blank', in notes) readings measure the amount of DNA present in the
 
 Repeatability between test conditions was not terrific. The source of the \ntilde 5000 count variation between some equivalent samples, and between "blank" and "sham", is not known.
 
-Ishii and Yanagida \cite{two1977}, (Qin \cite{Structure2010}), find at a pH of 10.6, about 0.3x inactivation after a few minutes of incubation at 37 C, and almost complete loss after a few hours. The capsid is weakened greatly by the base, relying on the "clamp proteins" hoc and soc.
+Ishii and Yanagida \cite{two1977}, (Qin \cite{Structure2010}), find at a pH of 10.6, about 0.3x inactivation after a few minutes of incubation at 37 C, and almost complete loss after a few hours. The capsid is weakened greatly by the base, relying on the "clamp proteins" hoc and soc. It was thought that, if the phage capsid was weakened, it might be easier to destroy electrically. A sodium carbonate-bicarbonate buffer was used to raise the pH. Run 9 and Weakened show these results. 
 
-Note the difference in base inactivation timeline between Run 9 and Weakened. In one case, base inactivation is found exactly as predicted; little inactivation is found in the other. We cannot explain this result.
+Note the difference in base inactivation timeline between Run 9 and Weakened. In one case, base inactivation is found exactly as predicted; little inactivation is found in the other. We cannot explain this result; it is possible that the buffer degraded somehow between experiments.
 
 In no case did any field-exposed sample\wikinote{verify in notes} approach the 30 kcounts of the autoclave; therefore, we do not consider this a positive result.
 
@@ -289,7 +287,7 @@ A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide t
 
 \begin{tcolorbox}
 	
-	The following is probably self-evident to all good scientists, and will ring worthy and overripe to those experienced; unfortunately, we only learned it during this project, so it seems worthwhile to make explicit.\\
+	The following is probably self-evident to all good scientists; unfortunately, we only learned it during this project, so it seems worthwhile to make explicit.\\
 	
 	As noted later, this field reached a reasonable level of quality many decades ago, and many of the most troubling issues had already been encountered and addressed satisfactorily in published experimental designs\cite{Biological1984}. 
 	
@@ -311,22 +309,22 @@ We are particularly excited by the prospect of using picosecond time-domain meas
 
 %When high voltage pulses are available, miniaturized \ntilde 2 mm internal diameter continuously pumped scan converter tubes like Fecher\cite{Production1949} micro-oscillographs using in-vacuum CMOS image sensors for direct-electron-detection appear to be an easy way to digitize 20+ GHz transients. The main bandwidth limitation appears to be the length of the Y deflection plate and the sensitivity of the recording medium.
 
-\begin{figure}[H]
-	%	\makebox[\textwidth][c]{
-	\centering
-	\subfloat[Direct electron beam detection]{
-		\includegraphics[width=0.3\textwidth]{direct_electron_beam}
-	}
-	\subfloat[Damage to the sensor, believed to be due to. ]{
-		\includegraphics[width=0.3\textwidth]{e_beam_damage_2}
-	}
-	\subfloat[]{
-		\includegraphics[width=0.3\textwidth]{e_beam_damage}
-	}
-	\caption{Second.}
-	\hfill
-	
-\end{figure}
+%\begin{figure}[H]
+%	%	\makebox[\textwidth][c]{
+%	\centering
+%	\subfloat[Direct electron beam detection]{
+%		\includegraphics[width=0.3\textwidth]{direct_electron_beam}
+%	}
+%	\subfloat[Damage to the sensor, believed to be due to. ]{
+%		\includegraphics[width=0.3\textwidth]{e_beam_damage_2}
+%	}
+%	\subfloat[]{
+%		\includegraphics[width=0.3\textwidth]{e_beam_damage}
+%	}
+%	\caption{Second.}
+%	\hfill
+%	
+%\end{figure}
 
 
 Using Eppendorf tubes as. Impedimetric 

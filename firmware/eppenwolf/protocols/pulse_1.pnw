@@ -2833,7 +2833,7 @@ Min voltage (terminator) 388 V, 3 ns
 400/(0.03/0.2) = 2666
 
 Max theoretical field: 1160 / 0.03 mm = 38 MV/m
-Min expected field 388 * 2666 (FDTD) = 1.03 MV/m (12 GHz)
+Min expected field 388 * 2666 (FDTD) = 1.03 MV/m 
 
 
 

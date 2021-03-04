@@ -17,7 +17,7 @@
 %  the viral envelope via shaped dispersive pulse
 % On the sub-nanosecond electropermeabilization of viruses
 \title{Some notes and experiments on the electropermeabilization of viral membranes}
-\author{\small{Daniel Correia}}
+\author{\small{Daniel Correia (therobotist+paper@gmail.com)}}
 %\subtitle{A shadowy flight into the dangerous world of a viral inactivation mechanism which should not exist.}
 \date{March 2021}
 
@@ -32,18 +32,19 @@
 
 
 \begin{abstract}
-	It has been suggested that the charge distribution and damping of the virus might offer some scope for inactivation by extreme electric fields, through mechanical damage to the viral membrane via a mechanism similar to, but distinct from, established lipid electroporation effects. \\
+	It has been suggested that the charge distribution and damping of the virus might offer some scope for inactivation by extreme electric fields, through mechanical forces on the envelope; a mechanism similar to, but distinct from, established lipid electroporation effects.\\
+
+	A series of haphazard experiments on bacteriophage T4 have yielded no novel results. With a field of $10^6$ V/m in the nanosecond pulse regime and $10^2$ V/m in the microsecond pulsed X-band regime, we have not replicated the conditions or results of previous studies, especially considering the lack of a lipid envelope in the chosen surrogate. A generous reader might regard this as a negative result. Pulse shaping, a central interest of this study, was not employed due to a lack of diagnostic equipment.\\
 	
-	Due to wide error bars and an unhealthy preoccupation with methodology and instrumentation, we have not been able to contribute even a tenuous theoretical or experimental basis for, or against, such an effect. It is hoped that this work will be of some small use in suggesting some lines of inquiry for future experimenters, and reporting some pitfalls encountered.\\
+	Due to wide error bars and an unhealthy preoccupation with methodology and instrumentation, we have not been able to contribute even a tenuous theoretical or experimental basis for, or against, such an effect. It is hoped that this work will be of some small use in suggesting some lines of inquiry for future efforts, and in reporting some pitfalls encountered.\\
 	
+	Optimization suggests that in certain cases, due to the Brillouin precursors, the minimum-amplitude waveform to maximally drive the virion when propagated through a lossy, dispersive medium like tissue may be simply a sawtooth.\\
 	
-	A series of haphazard experiments on bacteriophage T4 have yielded no novel results. With a field of $10^6$ V/m in the nanosecond pulse regime and $10^2$ V/m in the microsecond pulsed X-band regime, we have not replicated the conditions or results of previous studies, especially considering the lack of a lipid envelope in the chosen surrogate. A generous reader might regard this as a negative result. Pulse shaping, a central thesis of this study, was not employed due to a lack of feedback.
+	Some precedent exists for adjacent routes such as optical centrifuge and electrorotation; modifications to existing microsecond DC irreversible electroporation therapies may also be plausible; but we have not studied these techniques in any depth and have no reason to believe that they can be made practical or effective.\\
 	
-	Optimization suggests that in certain cases, due to the Brillouin precursors, the minimum-amplitude waveform to maximally drive an oscillator like the virion through a lossy dispersive medium like tissue appears to be simply a sawtooth.\\
+	Given that every avenue pursued consumes precious resources and attention, together with the TRL 0 nature of the effect, in retrospect, this was probably not a good use of time.\\
 	
-	Some precedent exists for adjacent routes such as optical centrifuge and electrorotation or 
-	
-	An entirely free and open-source software toolchain was used for the majority of the project; all instruments are relatively inexpensive to build; and so the results are hopefully replicable by any interested workers.
+	An entirely free and open-source software toolchain was used for the majority of the project, and all instruments required are relatively inexpensive to build; and so the results are hopefully replicable by any interested workers.
 %	
 %	It has previously been suggested that viruses may possess interesting dielectric properties; in particular, a substantial charge distribution and a relatively long relaxation time. If the duration of exposure is sufficiently short that thermal and membrane breakdown effects can be neglected, tissue appears to withstand peak electric fields of great magnitude - above 1 nanosecond megavolt/meter, even in in-vivo studies - without severe acute effects.\\
 %	
@@ -73,11 +74,12 @@
 
 %\begin{textblock}{\textwidth}(1,24)
 \begin{tcolorbox}
-\noindent \small{A more detailed (but completely unfinished) paper, a reference database for convenience, the (admittedly garbage) codebase, and a few other notes are available at 
-\href{https://www.github.com/0xDBFB7/covidinator}{github.com/0xDBFB7/covidinator} \textit{[currently private]}. This document 
-may be updated as information changes; minor revisions will be posted to the version at GitHub first.\\
+\noindent \small{This document is not peer-reviewed and should not be taken seriously.\\
+	
+More experimental details, a categorized reference database for convenience, the (admittedly garbage) codebase, and a few other notes will be available at 
+\href{https://www.github.com/0xDBFB7/covidinator}{github.com/0xDBFB7/covidinator}. Criticism on content and comprehensibility is invited; either via email, \href{https://forum.0xdbfb7.com/t/discussion-on-covidinator/19}{a public forum}, or the GitHub issues page. \\
 
-This document is written in a terse and inaccessible format, at a time when clear and broadly understandable language is particularly important\cite{Re2021}. It is hoped that it will be rewritten at some point in the future. 
+We regret that this document is written in a terse and inaccessible format at a time when clear and broadly understandable language is particularly important\cite{Re2021}, and apologize for any misinterpretation that this may cause. The effects discussed are implausible in anything but the most controlled clinical situations, and would never be encountered in any existing setting.
 
 %While the main papers are referred to, a second category of literature often exists }
 }

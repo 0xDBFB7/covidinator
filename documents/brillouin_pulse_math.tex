@@ -40,9 +40,9 @@ Second, and most critically, while the pulse amplitude decays slowly, the total 
 %
 %At a depth of 8 cm in Cole-Cole muscle, an 8 GHz resonance, attack pattern alpha appears to achieve 4 picometers of oscillation amplitude, rather than 0.01 picometers with $\sin(t\ \omega_{resonance})$. The sharp edges are at approx. 250 GHz. 
 
-Dispersive pulse propagation is easily modelled by a Fourier transform, propagation, and an inverse fourier transform (see Franzen \cite{Wideband1999}, see also \cite{Comments1993} and \cite{Shortrisetime1989}). \footnote{This isn't truly a transient process, of course - the fourier integral is still periodic, wrapping around the window; it's just more transient than a steady-state}.
+Dispersive pulse propagation is easily modelled by a Fourier transform, propagation, and an inverse fourier transform (see Franzen \cite{Wideband1999}, see also \cite{Comments1993} and \cite{Shortrisetime1989})\footnote{implemented in\ghfile{/home/arthurdent/Projects/covidinator/electronics/propagation/propagation_numerical_optimize.py}} \footnote{This isn't truly a transient process, of course - the fourier integral is still periodic, wrapping around the window; it's just more transient than a steady-state}.
 
-The loss and refractive index can be obtained from a four term Cole-Cole model\cite{dielectric1996}\cite{gabriel1996compilation}. We used parameters from the it.is tissue database \cite{Tissue2018a}.
+The loss and refractive index can be obtained from a four term Cole-Cole model\cite{gabriel1996compilation}\footnote{implemented in\ghfile{/electronics/simple_fdtd/fdtd_PCB_extensions/fdtd_PCB_extensions/tissue.py}}. We used parameters from the IT.IS Foundation tissue database\cite{Tissue2018a}.
 
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
 % section on Greens functions
@@ -213,16 +213,8 @@ The (noisy) output of the optimization for z=0.08 m in muscle. The low-frequency
 	\caption{The same four pulses plotted against depth (Y axis) and amplitude (Z axis)}
 \end{figure}
 
-Of course, 10x attenuation at 1 MV/m still takes us beyond safe levels at the skin. However, the loss that makes phased-array near-field focusing systems impractical at baseband is no longer a concern. A dispersive phased array with more than 10 elements may allow the complete elimination of attenuation without exceeding the limit field at any point in the body. 
+Of course, 10x attenuation at 1 MV/m still takes us beyond safe levels at the skin. However, the loss that makes phased-array near-field focusing systems impractical at baseband is no longer as significant of a concern. A dispersive phased array with more than 10 elements may improve penetration further.
 
-
-\section{Pulse shaping}
-
-Producing such arbitrary electrical impulses may seem implausible; but in fact, if is a sufficiently sharp and only a few cycles are required, 
-
-can probably be produced by e.g. an Auston switch feeding a pulse shaping line.
-
-Arbitrary pulses can be formed by 
 
 
 
