@@ -3,6 +3,7 @@
 \begin{document}
 
 \subsection{Data from testing on bacteriophage T4}
+
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{ |c|c|c|c| } 
@@ -24,14 +25,14 @@
 
 
 		\hline
-		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses 84.8 V/m pessimistic to 339 V/m optimistic} \\
+		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses, 84.8 V/m to 339 V/m} \\
 		\hline
 		Sham   & 12 & Run 8 t4,5...\\
 		+ & 11 & Run 8 t4,5...\\
 		+  & 12 & Run 8 t4,5...\\
 		+  & 12 & Run 8 t4,5...\\
 		\hline
-		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, phage degraded with basic buffer, 84.8 V/m pessimistic to 339 V/m optimistic} \\
+		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, phage degraded with basic buffer, 84.8 V/m to 339 V/m} \\
 		\hline
 		Blank (0 min) & 14 & Run 9 \\
 		Blank (\ntilde 15 min) & 17 & Run 9\\
@@ -41,7 +42,7 @@
 		+  & 14 & Run 11\\
 		Sham & 17 & Run 11\\
 		\hline
-		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses, 84.8 V/m pessimistic to 339 V/m optimistic} \\
+		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses, 84.8 V/m to 339 V/m} \\
 		\hline
 		Sham & 12 & Run 12\\
 		+    & 10 & Run 12\\
@@ -77,7 +78,7 @@
 		
 		\multicolumn{3}{|c|}{\ntilde 0.03 mm channel, basic buffer, tainted as pH may not have been 10.6, 1 MV/m to 38 MV/m} \\
 		\hline
-		Sham & 12 & Weakened \\ 
+		Sham & 12 & Weakened \\  
 		Blank & 11 & Weakened  \\ 
 		Blank & 12 & Weakened  \\ 
 		Blank & 9 & Weakened  \\ 
@@ -87,10 +88,15 @@
 		\hline
 	\end{tabular}
 \end{table}
+%how many counts?
+
+Note the width of the electric field error bars. These are not meaningful random or systematic intervals; while we have tried to do our best with the instruments available, we cannot confidently assert that the field was within this range.
 
 Original notes for this table can be inspected at \ghfile{firmware/eppenwolf/pulse_1.pnw}. Data rounded to the nearest thousand fluorescence photon counts per 10 seconds. Larger numbers are presumed to correlate with greater capsid damage.
 
 See notes on experiment design and data collection in main body.
+
+
 
 
 \end{document}

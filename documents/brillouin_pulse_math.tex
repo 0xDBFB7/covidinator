@@ -42,7 +42,7 @@ Second, and most critically, while the pulse amplitude decays slowly, the total 
 
 Dispersive pulse propagation is easily modelled by a Fourier transform, propagation, and an inverse fourier transform (see Franzen \cite{Wideband1999}, see also \cite{Comments1993} and \cite{Shortrisetime1989})\footnote{implemented in\ghfile{/home/arthurdent/Projects/covidinator/electronics/propagation/propagation_numerical_optimize.py}} \footnote{This isn't truly a transient process, of course - the fourier integral is still periodic, wrapping around the window; it's just more transient than a steady-state}.
 
-The loss and refractive index can be obtained from a four term Cole-Cole model\cite{gabriel1996compilation}\footnote{implemented in\ghfile{/electronics/simple_fdtd/fdtd_PCB_extensions/fdtd_PCB_extensions/tissue.py}}. We used parameters from the IT.IS Foundation tissue database\cite{Tissue2018a}.
+The loss and refractive index can be obtained from a four term Cole-Cole model\cite{gabriel1996compilation}\footnote{implemented in\ghfile{/electronics/simple_fdtd/fdtd_PCB_extensions/fdtd_PCB_extensions/tissue.py}}. We used parameters from the IT.IS Foundation tissue database\cite{Tissue2018a}. IT.IS Foundation computational phantom 'duke V3.0' was used, \cite{Duke2014}.
 
 %http://web.physics.ucsb.edu/~fratus/phys103/LN/DHM.pdf
 % section on Greens functions
