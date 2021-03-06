@@ -116,7 +116,7 @@ A common setup for such a problem is to use the Euler-Lagrange equation; this is
 
 $$ e_x(z,t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}{F(\omega) e^{- j (\omega/c_0)n(\omega)z}\ e^{j\omega t} d\omega} $$
 
-where $\int e^{j \omega t} d\omega$ is the inverse fourier transform. At this point, you could choose to perform a second integral over the time-domain Greens function solution to the harmonic oscillator\cite{Complex2020}, or substitute 
+where $\int e^{j \omega t} d\omega$ is the inverse fourier transform. At this point, you could choose to perform a second integral over the time-domain Greens function solution to the harmonic oscillator\cite{Complex2020} - or straightforwardly integrate over the frequency-domain Greens function.
 
 \footnote{Many symbolic math tools have support for functional calculus. However, neither Maxima, SageMath, Mathematica's VariationalD, Matlab's Fundiff, nor Maple's functionalDerivative seem to yield any meaningful result for grad xi.}\\
 
@@ -161,7 +161,7 @@ where $\int e^{j \omega t} d\omega$ is the inverse fourier transform. At this po
 This lagrange multiplier technique has, however, a fundamental limitation (noted by Tufts \cite{Optimum1964}): for reasons that the author does not yet comprehend, only the pulse energy can be used as a constraint, rather than the value of the peak field. This seems to turn out to be of some importance.
 
 
-Note the ni specifically in the complex conjugate!
+\footnote{Note the ni specifically in the complex conjugate!}
 
 
 \subsection{Laziness prevails; a return to numerical optimization}
@@ -174,7 +174,7 @@ Using an energy constraint as above appears to tend towards a square step functi
 
 \ghfile{electronics/propagation/propagation_numerical_optimize.py}
 
-However, a maximum absolute value constraint produces fantastic results.
+However, a maximum absolute value constraint appears to produce fantastic results.
 
 
 \begin{figure}[H]
