@@ -25,14 +25,14 @@
 
 
 		\hline
-		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses, 84.8 V/m to 339 V/m} \\
+		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses, 85 V/m to 339 V/m expected} \\
 		\hline
 		Sham   & 12 & Run 8 t4,5...\\
 		+ & 11 & Run 8 t4,5...\\
 		+  & 12 & Run 8 t4,5...\\
 		+  & 12 & Run 8 t4,5...\\
 		\hline
-		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, phage degraded with basic buffer, 84.8 V/m to 339 V/m} \\
+		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, phage degraded with basic buffer, 85 V/m to 339 V/m expected} \\
 		\hline
 		Blank (0 min) & 14 & Run 9 \\
 		Blank (\ntilde 15 min) & 17 & Run 9\\
@@ -42,12 +42,12 @@
 		+  & 14 & Run 11\\
 		Sham & 17 & Run 11\\
 		\hline
-		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses, 84.8 V/m to 339 V/m} \\
+		\multicolumn{3}{|c|}{\textbf{NF capillary}, 6 to 12 GHz, 10 or 20 us CW pulses} \\
 		\hline
 		Sham & 12 & Run 12\\
 		+    & 10 & Run 12\\
 		\hline
-		\multicolumn{3}{|c|}{\textbf{0.2 mm channel}, 6 to 12 GHz, 10 or 20 us CW pulses, 200 V/m pes. and 10.6 kV/m opt.} \\
+		\multicolumn{3}{|c|}{\textbf{0.2 mm channel}, 6 to 12 GHz, 10 or 20 us CW pulses, 200 V/m to 850 V/m exp., 10.6 kV/m pk} \\
 		\hline
 		 Sham & 12 & CPWG micro-\\
  		 +    & 10 & CPWG micro-\\
@@ -58,7 +58,7 @@
 		\hline
 
  		\hline
-		\multicolumn{3}{|c|}{\ntilde 0.2 mm channel, various pulse counts and termination, 0.155 MV/m to 5.6 MV/m} \\
+		\multicolumn{3}{|c|}{\ntilde 0.2 mm channel, various pulse counts and termination, 0.155 MV/m expected, 5.6 MV/m peak} \\
 		\hline 
 		 Blank    & 8 & Li test 1\\
 		 +           & 8 & Li test 1\\
@@ -68,7 +68,7 @@
  		 \hline
  		 
  		 
-		\multicolumn{3}{|c|}{\ntilde 0.03 mm channel, 0.2 uL/s, various pulse counts and termination, 1 MV/m to 38 MV/m} \\
+		\multicolumn{3}{|c|}{\ntilde 0.03 mm channel, 0.2 uL/s, various pulse counts and termination, 1 MV/m expected, 38 MV/m peak} \\
 		\hline
 		Sham & 5 & Smaller \\
 		+ & 6 & Smaller \\ 
@@ -76,7 +76,7 @@
 		\hline
 		
 		
-		\multicolumn{3}{|c|}{\ntilde 0.03 mm channel, basic buffer, tainted as pH may not have been 10.6, 1 MV/m to 38 MV/m} \\
+		\multicolumn{3}{|c|}{\ntilde 0.03 mm channel, basic buffer, tainted as pH may not have been 10.6, 1 MV/m exp., 38 MV/m pk} \\
 		\hline
 		Sham & 12 & Weakened \\  
 		Blank & 11 & Weakened  \\ 
@@ -88,13 +88,13 @@
 		\hline
 	\end{tabular}
 \end{table}
-%how many counts?
+%how many pulses?
 
-Note the width of the electric field error bars. These are not meaningful random or systematic intervals; while we have tried to do our best with the instruments available, we cannot confidently assert that the field was within this range.
+Original notes for this table can be inspected at \ghfile{firmware/eppenwolf/pulse_1.pnw}. Data rounded to the nearest thousand fluorescence photon counts per 10 seconds. Larger numbers are presumed to correlate with greater capsid damage (see Autoclaved).
 
-Original notes for this table can be inspected at \ghfile{firmware/eppenwolf/pulse_1.pnw}. Data rounded to the nearest thousand fluorescence photon counts per 10 seconds. Larger numbers are presumed to correlate with greater capsid damage.
+Note the width of the electric field bounds. These are not meaningful random or systematic intervals; we can only confidently assert that the field did not exceed the peak value at any point within the channel. Expected values based on FDTD simulation and voltage; peak based on channel width and voltage.
 
-See notes on experiment design and data collection in main body.
+See notes on experiment design and data collection in main body and GitHub supplemental.
 
 
 

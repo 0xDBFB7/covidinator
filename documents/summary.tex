@@ -33,11 +33,18 @@
 	}
 %	\caption{Simulation of a (largely ineffective) bronchoscopic method.}
 
-	\caption*{\small{\textit{Chengxiang} nanosecond pulse exposure jig. Aluminum disc belongs to the scan-conversion digitizer, not used in this study.}}
-		\caption*{\small{Pulsed X-Band microwave spectrometer used in this study.}}
-				\caption*{\small{FDTD simulation geometry of the 0.2 mm coplanar waveguide exposure cell. }}
-						\caption*{\small{The very pretty opalescent blue culture caused by E. coli B and X-gal.}}
-						\caption*{\small{Fluorescence reader used.}} 
+	\caption*{\small{\\
+	(a) \textit{Chengxiang} nanosecond pulse exposure jig. Aluminum disc belongs to the scan-conversion digitizer, not used in this study.\\
+	(b) Pulsed X-Band microwave spectrometer used.\\
+	(c) Simulation of a (largely ineffective) bronchoscopic method.\\
+	(d) FDTD simulation geometry of the 0.2 mm coplanar waveguide exposure cell.\\
+	(e)	The very pretty opalescent blue culture caused by E. coli B uptake of X-Gal.\\
+	(f) Fluorescence reader used.\\
+}}
+%		\caption*{\small{}}
+%				\caption*{\small{FDTD simulation geometry of the 0.2 mm coplanar waveguide exposure cell. }}
+%						\caption*{\small{The very pretty opalescent blue culture caused by E. coli B and X-gal.}}
+%						\caption*{\small{Fluorescence reader used.}} 
 %	\caption{Brillouin precursor propagation through tissue (reproduced from section 6).\\
 %		(a) Gaussian monopulse with 16 ps FWHM.\\
 %		(b) Optimized 10 GHz sawtooth wave. Note the slight high-frequency ripple.\\ This has a frequency of approximately 1.5 GHz.\\
@@ -74,11 +81,13 @@
 %\begin{refsection}
 \lettrine{W}e were inspired to undertake this project by a set of publications by a certain Sun group, (primarily Liu et al \cite{Microwave2009} and Yang et al \cite{Efficient2015}, simultaneously demonstrated by Hung et al \cite{focusing2014}), partially replicated by \cite{Optical2020} and discussed by \cite{Theoretical2020}.
 
-We have some minor questions regarding experimental technique in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we try not to defer greatly to their observations. 
+%We have some minor reservations regarding experimental technique in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we try not to defer greatly to their observations. 
 
-These studies are all founded on the idea that some large-scale structural difference between viruses and all host cellular structures might usable as leverage to selectively inactivate the virus by some physical - rather than biological - means. For example, such an inactivation "window" between host cell and virion damage has been found in certain wavelengths of CW Far UV\cite{Germicidal2017} - but also apparently in certain modulated UV pulses\cite{Use1987a}\cite{Can1993}, and also sporadically reported for simple thermal treatment\cite{Summary}; however, the differential inactivation modes found so far do not appear to be of much use in the clinic.
+These studies are all founded on the idea that some large-scale structural difference between viruses and all host cellular structures might usable as leverage to selectively inactivate the virus by some physical - rather than biological - means. For example, such an inactivation "window" between host cell and virion damage has been found in certain wavelengths of CW Far UV\cite{Germicidal2017} - but also apparently in certain modulated UV pulses\cite{Use1987a}\cite{Can1993}, and also sporadically reported for simple thermal treatment\cite{Summary}; however, the modes exhibiting differential inactivation that have been found so far do not appear to be of particular use in the clinic.
 
-A few well-established non-resonant non-thermal effects caused by extreme electric fields have already been put to practical use. Electroporation\cite{Electroporation1988} is a common laboratory procedure in which an enormous electric field causes ions in solution to diffuse across a host cell's membrane, capacitively charging it. This leads to a change in lipid conformation, reversibly rendering the membrane permeable (among other, more subtle mechanisms; the minutia of poration are extraordinarily complex and beyond the author's understanding\cite{Theoretical2007}). 
+Some possible minor shortcomings of the original experiments are due to be addressed by other groups\cite{Generating}, so we try not to defer greatly to those observations.
+
+A few well-established non-resonant non-thermal effects caused by extreme electric fields have already been put to practical use. Electroporation\cite{Electroporation1988}, now a common laboratory procedure, occurs when an enormous electric field causes ions in solution to diffuse across a cell membrane, capacitively charging it. This leads to a change in lipid conformation, reversibly rendering the membrane permeable (among other, more subtle mechanisms; the minutia of poration are extraordinarily complex and beyond the author's understanding\cite{Theoretical2007}). 
 
 Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have not yet found any discussion of clinical treatment of viral infection with these conventional electroporation therapies.% In vitro there is evidence to suggest that sub-cellular effects take place under truly tremendous fields. 
 
@@ -127,31 +136,42 @@ An interesting effect, superficially similar to the leakage found by Yang et al,
 One such report has been found to be a very strange artifact caused by the Teflon dish used for microwave trials\cite{Effect1994a}, highlighting the need for exactly identical sham trials.
 
 
-
 With\footnote{The dipole spring constant can be extracted from the resonant frequency and therefore from the speed of sound and $m^*$, the reduced mass ($k = \omega_{res}^2 m^2$). } relatively sane choices of solvent charge screening and resonant frequency, the energy absorbed by the whole virus per cycle at 5 MV/m might vary from $10^{-5}$ to 100 times the thermal energy $k_b T$.
 
-Compare to $~5 k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014}. \cite{Electrostatic2020a}
+Compare to $~5 k_b T$ per protein for 1 capsid segment binding energy \cite{Energies2012} \cite{Weak2002} and 6 to 30 $k_b T$ to form a single pore in a lipid bilayer \cite{Atomistic2014}. 
 %17 or 78 kJ/mol / (boltzmannConstant * 310 K) / avogadroConstant = 6.5 to 30.3 kT
 
-Brackley \cite{Electrostatic2020} describe various analytic representations of the charge screening about the virion with the Poisson-Boltzmann equation. 
-
-From a force perspective, the $10^3$ genome charge easily provides the nanonewton force scale required\cite{Bacteriophage2004} to break capsids or envelopes in 5 MV/m fields; but accurate estimation of the capsid stress will require application of the Maxwell stress tensor \cite{Electrostatic2013}\cite{Deformation1991}
-
-On the other hand, such a sub-angstrom movement can only induce approx. 0.05\% deflection of the capsid, whereas a general value for the rupture of host cells is about 3\% deflection\cite{Electromechanical1989}. The stiffness of the genome could be used to explain this. With a relaxation time on the order of 500 ps, it is difficult to imagine that this energy will be sufficiently concentrated in the capsid to be destructive. After the relaxation time, only the mechanical effects that were induced can remain.
-
-Modelling this sort of multi-scale inactivation mechanism involving the collective motion of some $10^9$ atoms poses a significant computational and theoretical hassle, which has far exceeded our capabilities. 
-
-Coarse-graining; but, as with all simulations, the problem must be set up with great care and experience (polarizable water; proper heat-bath damping coefficients and choice of integrator)\cite{Membrane2016}, and with an understanding of possible failure modes; we did not trust our abilities to produce correct results. Parametrizing based on all-atom simulations of small capsid segments or proteins \cite{Elucidating2009}. Mechanically reasonable coarse-grained models have recently been published for SARS-NCoV-2\cite{Multiscale2020}. DNA can be represented by homogeneous beads restrained by Lennard-Jones forces \cite{Communication2013}. Finite-element analysis \cite{Finite2008} 
-
-Coupling FEM \cite{Electrostatic2020a}. 
+With a relaxation time on the order of 500 ps, it is somewhat difficult to imagine that this energy will be sufficiently concentrated in the capsid to be destructive. After the relaxation time, only the mechanical effects that were induced can remain, unless some progressive chemical or fatigue-like degradation occurs.
 
 
+Brackley \cite{Electrostatic2020} describe various analytic representations of the charge screening about the virion with the Poisson-Boltzmann equation; by translating the obtained charge into a steady-state Poisson simulation (ions will not migrate in nanosecond pulse timescales), a relatively representative simulation may be obtained\footnote{implementation attempted at \ghfile{/math/mathematica/analytic_force.nb}}.
 
-Data on the charge distribution of the virion can be obtained by and 2D-PAGE relative protein composition - or even perhaps directly, via extraction from whole-virion CryoEM maps, because of the charge-sensitive nature of the technique \cite{Identification2018}\cite{Electrostatic2020}. This has not yet been implemented in any software tools and seems quite tricky. The genome charge is almost entirely neutralized by the nucleocapsid. 
+\end{multicols}
+\begin{autem}
+	autem, discuss\\
+	At the risk of seeming a fool, what is the correct metric for the charge quantity being discussed? We are interested in the stress produced by a certain arbitrary distribution of charge. Assuming a spherically symmetric virus composed of two charged shells, there is no intrinsic dipole moment. Polarizability or induced dipole moment are not obviously relevant; stress could be produced in an extremely stiff structure with no electron mobility. The virion has little net charge. Multipole expansions are not clearly relevant.
+\end{autem}
+\begin{multicols}{1}
+From a force perspective, the $10^3$ genome charge easily provides the nanonewton force scale required\cite{Bacteriophage2004} to break capsids or envelopes in 5 MV/m fields; but accurate estimation of the capsid stress will likely require application of the Maxwell stress tensor \cite{Electrostatic2013}\cite{Deformation1991}.
 
-GROMACS simulations of liposomes, trajectories fourier transformed with \cite{TRAVIS2011}.
+On the other hand, such a sub-angstrom movement can only induce approximately a 0.05\% deflection of the capsid, whereas a general value for the rupture of host cells is about 3\% deflection\cite{Electromechanical1989}. The stiffness of the genome could be used to explain this. 
 
-In our cursory testing, Bacteriophage T4 did not appear to be lysed by 10 microsecond pulses between 6 and 12 GHz at about 70 V/m, nor, exploring non-resonant inactivation, did nanosecond pulses up to 1 MV/m appear to have any effect. Note that neither of these regimes overlap with the results of the previous studies.
+Accurately modelling this sort of multi-scale inactivation mechanism involving the collective motion of some $10^9$ atoms simultaneously with fatigue from atomic dislocations\cite{Physical2010} and reactive oxidation effects poses a significant computational and theoretical hassle, which has far exceeded our capabilities.
+
+All-atom simulations of whole capsids are now possible, but existing pipelines tend to lack genome or nucleocapsid\cite{Mesoscale2020}\cite{Physical2017} and are extremely computationally demanding.
+
+Coarse-graining is one route out; but, as with all abstractions in simulations, the problem must be set up with great care and experience (polarizable water; proper heat-bath damping coefficients and choice of integrator)\cite{Membrane2016}\cite{Determining2014}, and with an understanding of possible failure modes; we did not trust our abilities to produce correct results. An illustrative GROMACS simulation of a liposome, trajectories fourier transformed with \cite{TRAVIS2011}, was used to determine some parameters\footnote{implemented at \ghfile{/biology/simulation/GROMACS/BUMPy_bilayer/}, see supplemental}.
+
+Parameterizing coarse bead-spring models based on all-atom simulations of small capsid segments or proteins \cite{Elucidating2009} is another technique. In this case, DNA/RNA can be represented by homogeneous beads restrained by Lennard-Jones forces \cite{Communication2013}. Mechanically reasonable coarse-grained models have recently been published for SARS-NCoV-2\cite{Multiscale2020}. Finite-element analysis \cite{Finite2008} 
+
+Coupling finite-element and Poisson-Boltzmann\cite{Electrostatic2020a}. 
+
+
+An approximate charge distribution of the proteins of the virion can be obtained by multiplying primary structure charges (in our case, extracted \cite{CIDER2017}, or (\cite{complete2003})) by observed protein contribution to total MW\cite{Quantitative1981}, old 2D-PAGE gels \cite{Influenza1978}\cite{Structurea} (which also provides an estimate of the variation in the charge, important for accurate spectroscopy, see supplemental) - or perhaps directly via extraction from whole-virion CryoEM maps, enabled by the charge-sensitive nature of the technique \cite{Identification2018}\cite{Electrostatic2020}. This has not yet been implemented in any software tools and seems quite tricky. 
+
+The genome charge is almost entirely neutralized by the nucleocapsid. 
+
+In our cursory testing, Bacteriophage T4 did not appear to be lysed by 10 microsecond pulses between 6 and 12 GHz at about $10^2$ to $10^3$ V/m, nor, exploring non-resonant inactivation, did nanosecond pulses up to a few MV/m appear to have any effect. Note that neither of these regimes overlap with the results of the previous studies.
 
 Non-resonant capsid and envelope breakage with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990} but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (and \cite{Microwave1987}). Long pulses at $10$ MV/m electroporate enveloped viruses similarly to host cells\cite{AC2017} but do not necessarily affect T4\cite{Manipulation2013}. 
 
@@ -167,7 +187,7 @@ There is a body of work on coherent control of viral inactivation using picoseco
 
 Optical centrifuges use a rotating polarization to induce a dipole moment and spin up small molecules \cite{Forced2000}\cite{Spinning2000}. Electrorotation\cite{RotatingFieldInduced1982}\cite{Electrorotation1988}\cite{Electrorotation1997}\cite{Dielectric1988} of viruses has been reported\cite{Analysis2004}\cite{New1999}\cite{comprehensive2001}, but as yet only in a non-destructive low-speed sub-synchronous regime for sensing, using optical means to detect rotation - using the virion as a kind of electrostatic induction motor. High-frequency dielectrophoresis and electrostatic trapping of viruses has also been reported\cite{Accumulation2006}, without suggestions of electrostatic damage, implying that conventional irreversible electroporation of viruses should require longer than 10 microseconds.
 
-A rotational drag coefficient can extracted from MD simulation\cite{Evaluating2017}. We simulated a 30 nm lipid liposome using the MARTINI coarse-grained \cite{MARTINI2007} lipid force fields with GROMACS\cite{GROMACS2005}' torque measurement feature, kindly implemented by Kutzner \cite{Keep2011}. This suggests a maximum rotation frequency at on the order of $10^3$, but this value requires so many assumptions that it's hardly worth mentioning. From \cite{Spinning2008}, the upper bound of a homogenous spherical virus with 10 MPa overall tensile strength appears to be about $10^9$ Hz. \footnote{\ghfile{documents/optical_centrifuge.ipynb}}
+A rotational drag coefficient can extracted from MD simulation\cite{Evaluating2017}. We simulated a 30 nm lipid liposome using the MARTINI coarse-grained \cite{MARTINI2007}\cite{BUMPy2018}\cite{Tsjerk2020} lipid force fields with GROMACS\cite{GROMACS2005}' torque measurement feature, kindly implemented by Kutzner \cite{Keep2011}. This suggests a maximum rotation frequency on the order of $10^3$, but this value requires so many assumptions that it's hardly worth mentioning. From \cite{Spinning2008}, the upper bound of a homogenous spherical virus with 10 MPa overall tensile strength appears to be about $10^9$ Hz. \footnote{\ghfile{documents/optical_centrifuge.ipynb}} 
 
 
 
@@ -193,7 +213,7 @@ Next appear to be electrochemical\cite{Comparative2003} effects; as noted above,
 
 If the effect exists, efficient use of the lower damping would seem to require more than one cycle of oscillation. It appears to be impossible at any input power to effectively drive a 10 GHz resonator in the lungs from outside the torso, partly because of the layer of conductive muscle that shields the chest cavity (see supplemental). Open-ended waveguides\cite{OpenEnded1982}\cite{Analysis1989}\cite{142018} or water bolus allow efficient coupling to the body. There is precedent for bronchoscopic \cite{Flexible2019}\cite{Antenna2018} or more invasive methods\cite{Implantable1980}\cite{Implantable1982}\cite{Electromagnetic1983}. 
 
-Dispersion and Brillouin precursors do offer a significant improvement in loss through tissue, and the required electrical waveforms appear to be synthesizeable by variable-impedance or stub transmission-line pulse shaping\cite{Coaxial1985}\cite{Arbitrarya}. 
+Dispersion and Brillouin precursors do offer a means to produce a significant improvement in loss through tissue, and the required electrical waveforms appear to be synthesizeable by variable-impedance or stub transmission-line pulse shaping\cite{Coaxial1985}\cite{Arbitrarya}. 
 
 A sawtooth might be the optimal waveform (see below). However, obtaining 10 GHz tones deep in the body is still very hard, and may require very complicated dispersive phased arrays\cite{Microwave1982a}.
 
@@ -201,12 +221,14 @@ Early albanese with mm used vircator diodes.
 
 What quantity is referred to; induced dipole due to polarization or ionic.
 
-T4 was selected for biosafety reasons, and because of the large amount of structural data available. T4 does not have a nucleocapsid; the charge distribution is likely much stronger than other RNA-like viruses Phi 6\footnote{Naming organisms with greek letters makes literature review somewhat more difficult, because many search engines do not support Unicode.}. Some more useful surrogates may include Pseudomonas Phi 6\cite{Selection2017}, the lipid-bearing PM2, PRD1 or PR4\cite{Lipidcontaining1979} if the outer protein capsid is dissolved\cite{Bacteriophage2002}, \cite{Dissociation1993}, or lipid liposomes. Certain phages also allow efficient concentration without ultracentrifuge, either by PEG precipitation\cite{Rapid1970} and settling, or via VIRADEL\cite{GROWTH}\cite{Chemical1982}\cite{highly1988}\cite{AdsorptionElution1989}, by altering the zeta potential of a syringe filter. 
+T4r was selected for biosafety reasons, and because of the large amount of structural data available. T4\cite{History1995} does not have a nucleocapsid; the charge distribution is likely much stronger than other RNA-like viruses Phi 6\footnote{Naming organisms with greek letters makes literature review somewhat more difficult, because many search engines do not support Unicode.}. Some more useful surrogates may include Pseudomonas Phi 6\cite{Selection2017}, the lipid-bearing PM2, PRD1 or PR4\cite{Lipidcontaining1979} if the outer protein capsid is dissolved\cite{Bacteriophage2002}, \cite{Dissociation1993}, or lipid liposomes. Certain phages also allow efficient concentration without ultracentrifuge, either by PEG precipitation\cite{Rapid1970} and settling, or via VIRADEL\cite{GROWTH}\cite{Chemical1982}\cite{highly1988}\cite{AdsorptionElution1989}, by altering the zeta potential of a syringe filter. 
 
 Custom single-lipid liposome surrogates appear to be relatively easy to produce and fill with a DNA tracer by sonication and dehydration\cite{Encapsulation1982}\cite{OPTIMIZATION2017}\cite{Liposome2014}. We encountered one problem removing unencapsulated DNA, which typically requires ultracentrifugation as precipitation of liposomes is difficult. However, \cite{novela} appear to demonstrate that ethanol extraction is satisfactory. This likely does not lead to DNA precipitation because of the lack of salt. 
 
-30 atmospheres. When phage is rapidly immersed in solution of high osmotic strength, the active system that maintains osmotic equilibrium is overwhelmed, and the resulting force ruptures the capsid. \cite{Osmotic2003}, and breaks at a pressure differential of 100 atm. By $\sigma = pr / 2t $ t = 5.7 nm\cite{Head1988} and r=60 nm, capsid strength should be about 53 MPa, less than the 100 to 300 MPa cited by \cite{Bacteriophage2004}.
+When phage is rapidly immersed in solution of high osmotic strength, the active system that maintains osmotic equilibrium is overwhelmed, and the resulting pressure ruptures the capsid when it exceeds 100 atm \cite{Osmotic2003}. By $\sigma = pr / 2t $ t = 5.7 nm\cite{Head1988} and r=60 nm, capsid strength should be about 53 MPa, less than the 100 to 300 MPa cited by \cite{Bacteriophage2004}.
 %((100 atm * 60 nanometers) / (2*(5.7 nanometers))) to MPa
+
+\subsection{Experiment methods}
 
 The original paper by Yang et al used plaque assays and RT-PCR to measure envelope damage. Quantification of viral titer is a thoroughly solved problem, which did not justify the amount of time we spent developing the below procedures.
 
@@ -226,9 +248,9 @@ A number of other capsid damage assays were evaluated. However, these initial te
 
 Nephelometry (right-angle light scatter detection) and turbidimetry (transmission) using CdS and LtoF sensors; despite being visible to the naked eye "clean" 2 hour E. coli cultures 1.5 mL. Turbidimetry\cite{Fast2019} Impedimietric In addition, removing the necessitating 
 
-E. coli produces the enzyme $\beta$-galactosidase to break lactose into glucose for later metabolism. A luciferase-based luminescent assay, Promega Beta-Glo, was evaluated. One component of the beta-glo contains a proprietary detergent designed to lyse cells\cite{BETAGLO2003} and expose the enzyme, counterproductive for phage use. Perhaps the detergent is not effective on bacteria, or the paper substrate that w\cite{rapid2014}as used is sufficient. The detergent could perhaps be removed with BioBeads if this is desired.
+E. coli produces the enzyme $\beta$-galactosidase to break lactose into glucose for later metabolism. A luciferase-based luminescent assay, Promega Beta-Glo, was evaluated, as described in\cite{rapid2014}. One component of the beta-glo contains a proprietary detergent designed to lyse cells\cite{BETAGLO2003} and expose the enzyme, counterproductive for phage use. Perhaps the detergent is not effective on bacteria, or the paper substrate that was used is sufficient. The detergent could perhaps be removed with BioBeads if this is desired.
  
-While undoubtedly essential and very effective for its intended purpose (accurately quantifying lac operon activity), because of ambiguities in the rise and decay of the luminescence signal, short shelf life after the two components are mixed, oxygen depletion in small cuvettes, concerns regarding the detergent, and cost, Beta-Glo compared unfavorably to direct fluorescence or X-Gal for this application.
+While undoubtedly essential and very effective for its intended purpose (accurately quantifying lac operon activity), because of ambiguities in the rise and decay of the luminescence signal, short shelf life after the two components are mixed, oxygen depletion in small cuvettes, concerns regarding the detergent, and cost, Beta-Glo compared unfavorably to direct fluorescence or X-Gal for this specific application.
 
 Positive control samples were put in a commercial pressure cooker to autoclave for either 6 or 20 minutes in an Eppendorf tube: the pressure was released after the cycle to prevent dilution. The flurophore was added after autoclaving.
 
@@ -242,22 +264,26 @@ A programmable syringe withdrew and pumped 50 uL of fluid at a constant rate thr
 
  FDTD simulations showed a significant decrease in field. \cite{Microchamber2011} and \cite{Characterization2012} provide a good review of pulse exposure cells and a design which is much better than ours and should be used instead. \cite{Electromagnetic1989} \footnote{The utility wcalc was used extensively}.
 
-If a fast laser is available, Auston switches appear to be equally effective.
 
 
 
-\subsection{Notes}
+
 
 %
 %For in-vitro research, it seems to me that perhaps this field is running into the issues Feynman's rat-races \cite{Cargo}. There are a large number of very tricky variables. 
 
 
+The fluor-meter printed a constant stream of results, all within the random error between capture windows $\sigma=0.5$ kcounts. Only after most of the data was taken was it realized how dumb this was.
+
 
 Data rounded to the nearest thousand photon counts per 10 seconds. %thoroughly characterized. 
 
-Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment. 'sham' indicates a blank sample that was injected through the capillary identically to the treatment samples, except with either the VCO or Marx pulser disabled.
+If a fast laser is available, Auston switches appear to be equally effective.
+
 
 Repeatability between test conditions was not terrific. The source of the \ntilde 5000 count variation between some equivalent samples, and between "blank" and "sham", is not known.
+
+Background ('blank', in notes) readings measure the amount of DNA present in the phage culture tube before any treatment. 'sham' indicates a blank sample that was injected through the capillary identically to the treatment samples, except with either the VCO or Marx pulser disabled.
 
 Ishii and Yanagida \cite{two1977}, (Qin \cite{Structure2010}), find at a pH of 10.6, about 0.3x inactivation after a few minutes of incubation at 37 C, and almost complete loss after a few hours. The capsid is weakened greatly by the base, relying on the "clamp proteins" hoc and soc. It was thought that, if the phage capsid was weakened, it might be easier to destroy electrically. A sodium carbonate-bicarbonate buffer was used to raise the pH. Run 9 and Weakened show these results. 
 
@@ -269,8 +295,6 @@ Stock culture had titer $3\times 10^9$ T4r.
 
 The electrodes were only 1 oz copper thick (35 micrometers), but the engraved channel is significantly deeper. 
 \cite{Nanosecond2006} and simulations seem to suggest that this is not a serious problem, but it is possible that the field in much of the channel was much lower than predicted.
-
-The fluor-meter printed a constant stream of results, all within the random error between capture windows $\sigma=0.5$ kcounts. Only after most of the data was taken was it realized how dumb this was.
 
 Results aggregated over the course of several months.
 
@@ -287,7 +311,6 @@ A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide t
 
 For the Eppenwolf, the lower bound is the lowest voltage measured on the diode detector through the sweep (at 12 GHz), (raw unconverted voltage across frequency can be seen at\ghfile{firmware/eppenwolf/runs/phage_experiment_12/screenshot_192.168.0.38_2020-11-26_13:38:24.png} - it is not recorded which detector this was seen at) multiplied by the FDTD results for the coplanar waveguide voltage to channel field scaling factor. The upper bound is the maximum voltage seen over the frequency sweep multiplied by the same FDTD factor.
 
-\section{Discussion}
 
 
 
