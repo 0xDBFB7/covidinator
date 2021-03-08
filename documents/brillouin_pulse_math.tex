@@ -24,7 +24,7 @@ beginning or end of a tone, or other sharply defined structure in a waveform, in
 
 The aspect that makes the precursors useful is that they sidestep Bragg's Law decay, with an amplitude that decays as $1/\sqrt{z}$ rather than $e^{-z}$. Note that Bragg's law is still strictly obeyed in the frequency domain (excepting second-order "bleaching" (Lukofsky \cite{Can}) or induced transparency-like (\cite{Electromagnetically1997}) effects).
 
-Based on Yang's inactivation thresholds, for instance, at 9 GHz, assuming that a torso is about 10 penetration depths in radius and the hypothetical Brillouin train drives the virus equally effectively as, implementing a precursor would decrease the field required at the skin to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
+Based on Yang's inactivation thresholds, for instance, at 9 GHz, assuming that a torso is about 10 penetration depths in radius and the hypothetical Brillouin train drives the virus equally effectively as a pure sine, implementing a precursor would decrease the field required at the skin to a perfectly practicable 1 kV/m, rather than an air-ionizing 6.6 MV/m ($\frac{1}{\sqrt{10}}=0.316$ versus $e^{-10}=4.5e^{-5}$). 
 
 Precursors have been used in practice, by Ong \cite{Detection2003}\footnote{Well, Ong don't really observe the precursor itself directly, it seems.} using simple square waves to detect respiration\footnotemark, Ossberger \cite{Noninvasive2004} for the same purpose; and various techniques for tumor detection.\footnote{TODO: Also another really good paper that I can't find}
 
@@ -187,11 +187,11 @@ However, a maximum absolute value constraint appears to produce fantastic result
 The (noisy) output of the optimization for z=0.08 m in muscle. The low-frequency component is believed to be due to the FFT window size. Increasing the window size with the same sample rate caused CG convergence to stall. However, it's interesting that this appears to result in a larger amplitude. 
 
 
-\begin{figure}[H]
-	%	\makebox[\textwidth][c]{
-	\includesvg[width=\textwidth]{muscle_pulse_8cm_minimize_test2}
-	\caption{}
-\end{figure}
+%\begin{figure}[H]
+%	%	\makebox[\textwidth][c]{
+%	\includesvg[width=\textwidth]{muscle_pulse_8cm_minimize_test2}
+%	\caption{}
+%\end{figure}
 
 
 \begin{figure}[H]

@@ -221,7 +221,7 @@ E. coli phage T4r was selected for biosafety reasons, and because of the large a
 
 Custom single-lipid liposome surrogates appear to be relatively easy to produce and fill with a DNA tracer by sonication and dehydration\cite{Encapsulation1982}\cite{OPTIMIZATION2017}\cite{Liposome2014}. We encountered one problem in removing unencapsulated DNA, which typically requires ultracentrifugation as precipitation of liposomes is difficult. However, \cite{novela} appear to demonstrate that ethanol extraction is satisfactory - we have not tested this. This likely does not lead to DNA precipitation because of the lack of salt. 
 
-When phage is rapidly immersed in solution of high osmotic strength, the active system that maintains osmotic equilibrium is overwhelmed, and the resulting pressure ruptures the capsid when it exceeds about 100 atm \cite{Osmotic2003}. By $\sigma = pr / 2t $ t = 5.7 nm\cite{Head1988} and r=60 nm, capsid strength should be about 53 MPa, less than the 100 to 300 MPa cited by \cite{Bacteriophage2004}.
+When phage is rapidly immersed in solution of differing osmotic strength, the active system that maintains osmotic equilibrium is overwhelmed, and the resulting pressure ruptures the capsid when it exceeds about 100 atm \cite{Osmotic2003}. By $\sigma = pr / 2t $ t = 5.7 nm\cite{Head1988} and r=60 nm, capsid strength should be about 53 MPa, less than the 100 to 300 MPa cited by \cite{Bacteriophage2004}.
 %((100 atm * 60 nanometers) / (2*(5.7 nanometers))) to MPa
 
 \subsection{Experiment methods}
@@ -236,7 +236,7 @@ This assay works because the flurophore drastically changes fluorescence intensi
 
 While their bandwidth is narrow, very cheap 0.5" laser line thin-film filters still work great for both excitation and emission for fluorescence techniques. Blue LEDs [Cree XLamp XP-E2 Blue Starboard] are then sufficient for excitation (though high CRI white LEDs emit more 480 nm blue, green leakage is too high). Dichroic mirrors are unnecessary for this application. Use a 1 mm plastic fiber optic at right angles to decrease excitation light scattering. Beware material autofluorescence - custom Lexan cuvettes unexpectedly overwhelmed the DNA signal (final set: [emission: Tiffen Orange 16 gel\cite{lide2004crc} in series with Thorlabs FL05532, 532nm, 10 nm FWHM] [Edmund 28432, 486 nm]). A surplus Hammamatsu R4220 with HC123 current-limiting base at maximum sensitivity was used. A low-voltage silicon photomultiplier like ON Semi's C-Series SiPMs will probably be sufficient in most cases.
 
-PMT dark counts and ambient light were removed by synchronous photon counting\cite{Measurement1966} - add when light is on, subtract when light is off.  This cannot be done with luminescence. Further filtering could be done by fluorescence lifetime discrimination. 
+PMT dark counts and ambient light were removed by synchronous photon counting\cite{Measurement1966} - add when light is on, subtract when light is off. The fluorescence excitation light was 50\% square-wave modulated at 100 khz.  This cannot be done with luminescence. Further filtering could be done by fluorescence lifetime discrimination. 
 
 Many luminescent assays require high-performance DSLR CCDs capable of several minute exposures. \cite{Image2012} use ImageJ\cite{NIH2012} to stack frames from standard CMOS video cameras. In our testing, this was ineffective with expensive, high-quality industrial CMOS cameras, but extremely effective with webcams and ELP-brand cameras. Performance of such a stacked video approached that of the photomultiplier. 
 
@@ -305,7 +305,7 @@ However, as spectrometry was abandoned, this non-deterministic property caused c
 A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide to avoid the copper ion artifact, but this could not be done on the 0.03 mm waveguide.
 
 
-For the Eppenwolf, the lower bound is the lowest voltage measured on the diode detector through the sweep (at 12 GHz), (raw unconverted voltage across frequency can be seen at\ghfile{firmware/eppenwolf/runs/phage_experiment_12/screenshot_192.168.0.38_2020-11-26_13:38:24.png} - it is not recorded which detector this was seen at) multiplied by the FDTD results for the coplanar waveguide voltage to channel field scaling factor. The upper bound is the maximum voltage seen over the frequency sweep multiplied by the same FDTD factor.
+For the Eppenwolf, the lower bound is the lowest voltage measured on the diode detector through the sweep (at 12 GHz), (raw unconverted voltage across frequency can be seen at\ghfile{/firmware/eppenwolf/runs/phage_experiment_12/screenshot_192.168.0.38_2020-11-26_13:38:24.png} - it is not recorded which detector this was seen at) multiplied by the FDTD results for the coplanar waveguide voltage to channel field scaling factor. The upper bound is the maximum voltage seen over the frequency sweep multiplied by the same FDTD factor.
 
 
 
@@ -360,7 +360,7 @@ Before the HMC732 was used, a misguided effort was spent in trying to develop an
 
 \section{Acknowledgements}
 
-Funded in part by the author's company, SafeSump Inc., and Ideal Consulting Inc., and the author's parents. The author was at YorkU for the duration of this project.
+Funded in part by the author's company, SafeSump Inc., and Ideal Consulting Ltd., and the author's parents. The author was at YorkU for the duration of this project.
 
 Special thanks to my parents, Doris and Brian, without whom this work would have been accomplished by someone else, and whose extraordinary support made this paper possible.
 
