@@ -306,3 +306,10 @@ pretty cool
 printed out a microruler. Looks pretty ugly but the cm/mm scales are fine.
 
 try microsecond, 300V pulses? shouldn't be too hard to do... mosfet on the low side
+
+
+
+use a STAR or RRID method.
+
+Really need to get a 'methods' section.
+
