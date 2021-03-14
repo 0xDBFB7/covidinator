@@ -78,3 +78,5 @@ about a 1 ns pulse, and it doesn't get all the way up. needs to be slowed slight
 both sides of the delay line work great. 4V 100 ps on one side, steady on the other side.
 
 
+HIA4 is the high voltage power supply.
+

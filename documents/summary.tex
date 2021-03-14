@@ -79,6 +79,21 @@
 \begin{multicols}{1}
 
 %\begin{refsection}
+
+A few well-established non-resonant non-thermal phenomena caused by extreme electric fields have been put to practical use.
+
+Electroporation\cite{Electroporation1988}, now a common laboratory procedure, occurs when an enormous electric field causes ions in solution to diffuse across a cell membrane, capacitively charging it, provoking a change in lipid bilayer conformation\cite{Membrane2016}, reversibly rendering the membrane permeable. This is one among many other, more subtle mechanisms; the minutia of poration can become extraordinarily complex in certain circumstances and are beyond the author's current understanding\cite{Theoretical2007}. 
+
+Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have found surprisingly little discussion on clinical treatment of viral infection with these conventional electroporation therapies.
+
+However, long pulses at $\approx10$ MV/m appear to electroporate large enveloped viruses, similarly to host cells\cite{AC2017}, which we believe might hint that a regime of intensity, duration, and pulse count may exist to target the viral envelope. In fact, despite considering the somewhat harder problem of electroporating while inside the cell, rather than in extracellular fluid, \cite{Electroporation2013} report selective electroporation of 250 nm liposomes with 4 ns pulses up to 10 MV/m without inducing damage to the host cell - which seems a very important result. Despite the number of free parameters in pulse exposure, it is possible that scaling laws might conceivably preclude the formation of destructive transmembrane potentials in 100 nm-scale viruses.
+
+The same field intensities do not appear to damage phages with protein capsids\cite{Manipulation2013}, in line with our negative results on T4.
+
+Non-resonant capsid and envelope breakage with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990}, but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (c.f. \cite{Microwave1987}). 
+
+However, perhaps regrettably, the experiments reported in this study were not designed to address the question of whether conventional ion- and bilayer- driven electroporation can be harnessed, but rather to test whether purely mechanical damage from $qE$ forces can be easily observed in viruses. 
+
 \lettrine{W}e were inspired to undertake this project by a set of publications by a certain Sun group, (primarily Liu et al \cite{Microwave2009} and Yang et al \cite{Efficient2015}, simultaneously demonstrated by Hung et al \cite{focusing2014}), partially replicated by \cite{Optical2020} and discussed by \cite{Theoretical2020}.
 
 %We have some minor reservations regarding experimental technique in the original papers that can only be addressed by more extensive replication studies, and luckily are due to be answered by other groups\cite{Generating}, so we try not to defer greatly to their observations. 
@@ -87,17 +102,7 @@ These studies are all founded on the idea that some large-scale structural diffe
 
 Some possible minor shortcomings of the original experiments are due to be addressed by other groups\cite{Generating}, so we try not to defer greatly to those observations.
 
-A few well-established non-resonant non-thermal effects caused by extreme electric fields have already been put to practical use. Electroporation\cite{Electroporation1988}, now a common laboratory procedure, occurs when an enormous electric field causes ions in solution to diffuse across a cell membrane, capacitively charging it. This leads to a change in lipid conformation, reversibly rendering the membrane permeable. This is one among other, more subtle mechanisms; the minutia of poration are extraordinarily complex and beyond the author's current understanding\cite{Theoretical2007}. 
-
-Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have found surprisingly little discussion on clinical treatment of viral infection with these conventional electroporation therapies.% In vitro there is evidence to suggest that sub-cellular effects take place under truly tremendous fields. 
-
-Long pulses at $\approx10$ MV/m appear to electroporate enveloped viruses similarly to host cells\cite{AC2017}, which we believe might hint that a regime of intensity, duration, and pulse count may exist to target the viral envelope. The same field intensity does not appear to damage phages with protein capsids\cite{Manipulation2013}. 
-
-Non-resonant capsid and envelope breakage with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990}, but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (c.f. \cite{Microwave1987}). 
-
 If the duration of exposure is sufficiently short that thermal and membrane breakdown effects can be neglected, tissue appears to withstand peak electric fields of great magnitude - above 1 nanosecond megavolt/meter, even in in-vivo studies - without severe acute effects (\cite{Repeated2020}\cite{Review2011}\cite{DNA2004} and below).
-
-However, perhaps regrettably, the experiments reported here were not designed to address the question of whether conventional ion- and bilayer- driven electroporation can be harnessed, but rather to test whether purely mechanical damage from $qE$ forces can be easily observed. 
 
 The specific concept of driving a virus as a harmonic oscillator suggested by \cite{Efficient2015} has been previously considered only briefly \cite{MECHANICAL1968}\cite{Comment2004}\cite{Vibrational2009}\cite{Maximum2010}\cite{Effects1951}, perhaps first because in almost all cases structures in tissue are so over-damped by the surrounding solvent\cite{Vibrational2002}\cite{Biological2002}\cite{Biophysics2000}\cite{Viscous2000} as to have no non-zero resonant frequency at all \cite{dielectric1996}\cite{gabriel1996compilation}\wikinote{not in citation}\wikinote{discuss}; and second, because the charge distributions found in biology are too small for energies significantly above the thermal background to be absorbed via applied fields. 
 
@@ -195,16 +200,16 @@ A rotational drag coefficient can extracted from MD simulation\cite{Evaluating20
 
 
 
-Almost all biological spectroscopy techniques have produced resonance-like artifacts at some point in the literature, and we suggest that even the most striking and competently-obtained absorption data should not necessarily be trusted implicitly. Trustworthiness probably depends most significantly on the quality of error analysis; many have made good use of otherwise unreliable techniques. However, particularly in a field with a high positive publication bias, it seems most productive to use the most advanced techniques, those that are foolproof by their very nature. Based only on our experience of the literature, in order of decreasing reliability for resonance measurement:
+Almost all biological spectroscopy techniques have produced resonance-like artifacts at some point in the literature, and we suggest that even the most striking and competently-obtained absorption data should not necessarily be trusted implicitly. Trustworthiness probably depends most significantly on the quality of error analysis; many have made good use of otherwise unreliable techniques. However, particularly in this field, it seems most productive to use the most advanced techniques, those that are foolproof by their very nature. Based only on our experience of the literature, in order of decreasing reliability for resonance measurement:
 
 \begin{itemize}
 \item Background-free photothermal optical \cite{Microwave1993a}\cite{Broadband1988}
 \item Time-domain spectroscopy (many advantages cited by \cite{Time2003}, including instant, drift-free capture of all frequencies and limited instrumentation artifacts), \cite{Dielectric2004}\cite{Microwave1994}
-\item Raman or other non-photothermal optical (\cite{optical1983} $\neq$ [\cite{Resonances1987} \cite{Dielectric1989}]) and also \footnote{see Taylor \cite{mechanisms1981} citing unpublished, personal communication}, but we have no understanding of how such artifacts could form
+\item Raman or other non-photothermal optical (\cite{optical1983} $\neq$ [\cite{Resonances1987} \cite{Dielectric1989}]) and also \footnote{see Taylor \cite{mechanisms1981} citing unpublished, personal communication - a textbook example of positive publication bias!}, but we have no understanding of how such artifacts could form
 \item Frequency-domain CW VNA absorption or reflection (\cite{Microwave1982} $\neq$ [\cite{Resonances1987} \cite{Dielectric1989}]) \cite{Substitution1982} \cite{Millimeter1980}.
 \end{itemize}
 
-Although not representative of careful, well-calibrated VNA testing because of the crudity of our homebrew spectrometer, we were able to produce many candidate resonances in our data with perfectly justifiable modifications to post-processing, which raises interesting (but not novel\cite{Reanalysis2020}\cite{statistical2020}) questions regarding software development in such conditions. \footnote{One solution might be to keep all data blinded while developing the analysis software, and use synthetic data to calibrate. One objection might be that the data often inform the required calibration; we might retort that if the technique is so sensitive that the calibration procedure cannot be known beforehand, a different technique should be used.}
+Although not representative of careful, well-calibrated VNA testing because of the crudity of our homebrew spectrometer, we were able to produce many candidate resonances in our data with perfectly justifiable modifications to post-processing, which raises interesting (but not novel\cite{Blindinga}, \cite{Reanalysis2020}\cite{statistical2020}) questions regarding software development in such conditions. \footnote{One solution might be to keep all data blind while developing the analysis software, and use synthetic data to calibrate. One objection might be that the data often inform the required calibration; we might retort that if the technique is so sensitive that the calibration procedure cannot be known beforehand, a different method with a higher SNR should be used.}
 
 
 Positive artifacts are very common when exposing organisms to electric fields, and extreme care in experimental design appears to be required to produce any meaningful result. Excellent best-practices guidelines and meta-analyses are available in \cite{Biological2016} \cite{Comprehensive2018} \cite{Funding2019}, \cite{chou1996radio} and \cite{Effects2016}.
@@ -230,7 +235,7 @@ Custom single-lipid liposome surrogates appear to be relatively easy to produce 
 When phage is rapidly immersed in solution of differing osmotic strength, the active system that maintains osmotic equilibrium is overwhelmed, and the resulting pressure ruptures the capsid when it exceeds about 100 atm \cite{Osmotic2003}. By $\sigma = pr / 2t $ t = 5.7 nm\cite{Head1988} and r=60 nm, capsid strength should be about 53 MPa, less than the 100 to 300 MPa cited by \cite{Bacteriophage2004}.
 %((100 atm * 60 nanometers) / (2*(5.7 nanometers))) to MPa
 
-\subsection{Materials and methods}
+\subsection{Experiment notes}
 
 The original paper by Yang et al used plaque assays and RT-PCR to measure envelope damage. Quantification of viral titer is a thoroughly solved problem, which did not justify the amount of time we spent developing the below procedures.
 
@@ -254,21 +259,17 @@ E. coli produces the enzyme $\beta$-galactosidase to break lactose into glucose 
  
 While undoubtedly essential and very effective for its intended purpose (accurately quantifying lac operon activity), because of ambiguities in the rise and decay of the luminescence signal, short shelf life after the two components are mixed, oxygen depletion in small cuvettes, concerns regarding the detergent, and cost, Beta-Glo compared unfavorably to direct fluorescence or X-Gal for this specific application.
 
-Positive control samples were put in a commercial pressure cooker to autoclave for either 6 or 20 minutes in an Eppendorf tube: the pressure was released after the cycle to prevent dilution. The flurophore was added after autoclaving.
+Positive control samples were put in a commercial pressure cooker to autoclave for 20 minutes in an Eppendorf tube: the pressure was released after the cycle to prevent dilution. The flurophore was added after autoclaving.
 
 We hoped to shape the nanosecond pulse into a high-voltage 10 GHz tone to drive the virus. This requires an edge faster than ~100 ps. It appears to be difficult, but not impossible\cite{Fundamental1998}to make spark gaps produce such fast edges without high-pressure\cite{kHz1995} \cite{Design2007d}\cite{Picosecond1993} or building the gap into a Marx\cite{Simple1991} pulse-forming line. 
 
-Avalanche transistors appear to be the easiest way to produce high power sub-100 picosecond pulses. We stole an avalanche Marx design verbatim from Li (\cite{Development2016b} \cite{Design2018c}), which allows large pulses from safer lower voltage supplies (albeit requiring somewhat costly capacitors). 2N5551 transistors used to be common \cite{Avalanche1991}\cite{high1994}\cite{High1998}; our testing with Raj's FMMT417
+Avalanche transistors appear to be the easiest way to produce high power sub-100 picosecond pulses. We stole an avalanche Marx design verbatim from Li et al (\cite{Development2016b} \cite{Design2018c}), which allows large, fast pulses to be produced from lower voltage supplies (albeit requiring somewhat costly capacitors). 2N5551 transistors used to be commonly used for this purpose. \cite{Avalanche1991}\cite{high1994}\cite{High1998}; Oak's test circuit .
 
 In both of our final experimental setups, non-grounded, single-sided coplanar waveguides were used as exposure chambers, inspired by the CPWG heater of \cite{Microwave2007}. \cite{Nanosecond2006} describe a very similar arrangement. 
 
-A programmable syringe withdrew and pumped 50 uL of fluid at a constant rate through one of the coplanar channels, via a 4 cm long silicone capillary (McMaster-Carr \#51845K65) immersed in a 1.5 mL centrifuge tube using a 26 Ga Luer-lock (\#6710A76). Forcing phage through the capillary is similar to lysis with a French pressure cell press, but no such effects were obviously seen.
+A programmable syringe withdrew and pumped approximately 50 uL of fluid at a constant rate through one of the coplanar channels, via a 4 cm long silicone capillary (McMaster-Carr \#51845K65) immersed in a 1.5 mL centrifuge tube using a 26 Ga Luer-lock (\#6710A76). Forcing phage through the capillary is similar to lysis with a French pressure cell press, but no such effects were obviously seen.
 
- FDTD simulations showed a significant decrease in field. \cite{Microchamber2011} and \cite{Characterization2012} provide a good review of pulse exposure cells and a design which is much better than ours and should be used instead. \cite{Electromagnetic1989} \footnote{The utility wcalc was used extensively}.
-
-
-
-
+FDTD simulations showed a significant decrease in field. \cite{Microchamber2011} and \cite{Characterization2012} provide a good review of pulse exposure cells and a design which is much better than ours and should be used instead. \cite{Electromagnetic1989} \footnote{The utility wcalc was used extensively}.
 
 
 %
@@ -300,15 +301,13 @@ The electrodes were only 1 oz copper thick (35 micrometers), but the engraved ch
 
 Results aggregated over the course of several months.
 
-In all cases, a thermal effect was made implausible; the total energy in the pulse train precluded heating above the capsid melting temperature\cite{Effects1951}.
+In all cases, a thermal effect was made implausible because of the short pulse duration; the total energy in the pulse train precluded heating above the capsid melting temperature, like\cite{Effects1951} - about 90 C for capsids \cite{Thermal1999} and 50 C for envelopes\cite{Stability1985}.
 
 Only tubes 4 onwards are shown from Run 8 data because the capillary purging protocol was changed. In the final iteration, the autosampler was disconnected. The capillary was flushed with water; then the leuer lock was disconnected, air withdrawn into the syringe, and then purged through the capillary and fluidic channel.
 
 In an early iteration of the experiment, the firmware and data analysis scripts randomly generated blinded sham and autoclave assignments and automatically treated the samples accordingly. It also printed blinded templates for pipetting. This was done partly in the hopes that massively oversampling the microwave absorption spectrometer across the range of physical tolerances would highlight any resonances.\cite{first2000} 
 
 However, as spectrometry was abandoned, this non-deterministic property caused considerable issues while troubleshooting the fluorescence detection system, and \st{expedience} \footnote{laziness} prompted us to disable this system at run 9, defying best practices on blinded trials.
-
-A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide to avoid the copper ion artifact, but this could not be done on the 0.03 mm waveguide.
 
 
 For the Eppenwolf, the lower bound is the lowest voltage measured on the diode detector through the sweep (at 12 GHz), (raw unconverted voltage across frequency can be seen at\ghfile{/firmware/eppenwolf/runs/phage_experiment_12/screenshot_192.168.0.38_2020-11-26_13:38:24.png} - it is not recorded which detector this was seen at) multiplied by the FDTD results for the coplanar waveguide voltage to channel field scaling factor. The upper bound is the maximum voltage seen over the frequency sweep multiplied by the same FDTD factor.
@@ -336,10 +335,46 @@ For the Eppenwolf, the lower bound is the lowest voltage measured on the diode d
 	%\blfootnote{It occurs to me that perhaps a set of standardized test cells and procedures would be helpful; along with a requirement that any papers on the topic either use such a cell, or, if their study requires some exceptional treatment, to follow some established step-by-step procedure to add a new cell to the standard.}
 \end{tcolorbox}
 
+We are particularly excited by the prospect of using picosecond time-domain measurements not only to perform low-field-intensity steady state dielectric measurements or monitor the input pulse, as is now common practice, but to resolve the internal effects of a single high-voltage pulse on the virus in real time. Scan-converter based transient digitizers, such as the Tektronix SCD-5000 series, appear to be the lowest-cost method of obtaining the >0.5 THz sampling bandwidths required, when the tube bandwidth is deconvolved.
+
+Fecher\cite{Production1949} micro-oscillographs
+
+\section{Materials and methods}
+
+\subsubsection{Main sample preparation}
+
+A stock preparation of 1:150 Biotium GelGreen was diluted to 1:4000 in a 15 mL Falcon tube.
+
+With a Kartell 0.2 mL fixed-volume micropipette (McMaster-Carr \#7015T17) connected to an autoclaved and flamed glass pipette,  0.2 mL of Carolina 124330 (early assay tests) or Carolina 124335 (electric field tests), titer $3\times10^9$, was transferred into a 1.5 mL Eppendorf tube. Field-tested phage was stored in a 4 C fridge for several months during the experiment.
+
+ stored in an aluminum light-tight bag was pipetted into the same 1.5 mL tube.
+
+\subsubsection{Main sample preparation}
+
+\subsubsection{Nanosecond pulsed trials}
+
+A clone of Li et al's pulse generator was engraved with a 30 degree V-bit cutter onto a 1.6 mm double-sided 1 oz copper FR4 substrate. ATC 100B470JT500XT capacitors and FMMT417 transistors were used.
+
+Two coplanar waveguides, approximately 2.5 cm long, designed with 'wcalc'\cite{Wcalc}, were similarly engraved into a single-sided 0.8 mm 1 oz copper FR4 substrate (MG chemicals). One waveguide (referred to as "0.2 mm channel") was 0.4 mm wide with 0.1 mm and 0.15 mm wide slots (asymmetric due to machining tolerances). The other was 0.4 mm wide with 0.03 and 0.06 mm slots. 
+
+The depth of the channels was not precisely known but considerably exceeded the copper thickness, as is reflected in the simulation.
+
+Two end-launch SMA connectors were soldered to the waveguide; one connector was either terminated with a standard 50-ohm SMA terminator or left open, depending on the trial, and the other connected via semirigid coax (CCSMA-MM-086-12) to the pulse generator.
+
+\conclusiongrad 
+
+A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide to avoid the copper ion artifact, but this could not be done on the 0.03 mm waveguide.
+
+HIA4 power supply.
 
 
 
-We are particularly excited by the prospect of using picosecond time-domain measurements not only to perform steady state dielectric measurements or monitor the input pulse, as is now common practice, but to resolve the internal effects of a single high-voltage pulse on the virus in real time. Scan-converter based transient digitizers, such as the Tektronix SCD-5000 series, appear to be the lowest-cost method of obtaining the >0.5 THz sampling bandwidths required, when the tube bandwidth is deconvolved.
+
+
+\subsubsection{FDTD tissue modelling}
+
+To determine penetration of waves in tissue, the four term Cole-Cole model\cite{gabriel1996compilation}, \ghfile{/electronics/simple_fdtd/fdtd_PCB_extensions/fdtd_PCB_extensions/tissue.py}, was used with parameters from the IT.IS Foundation tissue database\cite{Tissue2018a}. The IT.IS Foundation computational phantom 'duke V3.0' was used, \cite{Duke2014}.
+
 
 %When high voltage pulses are available, miniaturized \ntilde 2 mm internal diameter continuously pumped scan converter tubes like Fecher\cite{Production1949} micro-oscillographs using in-vacuum CMOS image sensors for direct-electron-detection appear to be an easy way to digitize 20+ GHz transients. The main bandwidth limitation appears to be the length of the Y deflection plate and the sensitivity of the recording medium.
 
@@ -366,7 +401,7 @@ Before the HMC732 was used, a misguided effort was spent in trying to develop an
 
 \section{Acknowledgements}
 
-Funded in part by the author's company, SafeSump Inc., and Ideal Consulting Ltd., and the author's parents. The author was at YorkU for the duration of this project.
+Funded in part by the author's company, SafeSump Inc., and Ideal Consulting Ltd., and the author's parents.
 
 Special thanks to my parents, Doris and Brian, without whom this work would have been accomplished by someone else, and whose extraordinary support made this paper possible.
 
@@ -382,6 +417,6 @@ Special thanks to Alexandra Elbakyan and Aaron Swartz.
 
 
 
-\subfile{brillouin_pulse_math}
+%\subfile{brillouin_pulse_math}
 
 \end{document}
