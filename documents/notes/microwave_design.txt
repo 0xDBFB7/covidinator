@@ -2624,6 +2624,8 @@ When Hargrave sciences takes off, I would like to put a policy in place
 that any materials I have are made freely available to anyone who can demonstrate that they
 are able to safely handle them.
 
+This might be hard. However, 
+
 Carolina might actually sell X-gal!
 
 
@@ -2655,5 +2657,8 @@ used split -n6 and mv xaa ref.b
 
 
 
+
+Technological and Theoretical Aspects for Testing Electroporation on Liposomes
+neat coaxial coupler design, very clever
 
 

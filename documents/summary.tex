@@ -86,13 +86,13 @@ Electroporation\cite{Electroporation1988}, now a common laboratory procedure, oc
 
 Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have found surprisingly little discussion on clinical treatment of viral infection with these conventional electroporation therapies.
 
-However, long pulses at $\approx10$ MV/m appear to electroporate large enveloped viruses, similarly to host cells\cite{AC2017}, which we believe might hint that a regime of intensity, duration, and pulse count may exist to target the viral envelope. In fact, despite considering the somewhat harder problem of electroporating while inside the cell, rather than in extracellular fluid, \cite{Electroporation2013} report selective electroporation of 250 nm liposomes with 4 ns pulses up to 10 MV/m without inducing damage to the host cell - which seems a very important result. Despite the number of free parameters in pulse exposure, it is possible that scaling laws might conceivably preclude the formation of destructive transmembrane potentials in 100 nm-scale viruses.
+However, long pulses at $\approx10$ MV/m appear to electroporate large enveloped viruses, similarly to host cells\cite{AC2017}, which we believe might hint that a regime of intensity, duration, and pulse count may exist to target the viral envelope. In fact, despite considering the somewhat harder problem of electroporating while inside the cell, rather than in extracellular fluid, \cite{Electroporation2013} report that 250 nm liposomes should be porated without inducing damage to the host cell, and modelling shows that 100 nm liposomes may be porated by 4 ns pulses never exceeding 20 MV/m. Despite the number of free parameters in pulse exposure, it is possible that scaling laws might conceivably preclude the safe formation of destructive transmembrane potentials in 100 nm-scale viruses.
 
 The same field intensities do not appear to damage phages with protein capsids\cite{Manipulation2013}, in line with our negative results on T4.
 
 Non-resonant capsid and envelope breakage with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990}, but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (c.f. \cite{Microwave1987}). 
 
-However, perhaps regrettably, the experiments reported in this study were not designed to address the question of whether conventional ion- and bilayer- driven electroporation can be harnessed, but rather to test whether purely mechanical damage from $qE$ forces can be easily observed in viruses. 
+However, perhaps regrettably, the experiments reported in this study were not designed to address the question of whether this conventional ion- and bilayer- driven electroporation can be harnessed, but rather to test whether purely mechanical damage from $qE$ forces can be easily observed in viruses. 
 
 \lettrine{W}e were inspired to undertake this project by a set of publications by a certain Sun group, (primarily Liu et al \cite{Microwave2009} and Yang et al \cite{Efficient2015}, simultaneously demonstrated by Hung et al \cite{focusing2014}), partially replicated by \cite{Optical2020} and discussed by \cite{Theoretical2020}.
 
@@ -184,7 +184,9 @@ In our cursory testing, Bacteriophage T4 did not appear to be lysed by 10 micros
 
 In terms of host safety, Pakhomov \cite{Comparative} find no non-thermal effects on functioning frog heart pacemaker cells at 0.9 MV/m (although the field inside the tissue was not measured and could have been lower). Excellent recent \textit{in vivo} data by de Seze following continuous exposure to nanosecond pulse trains at an external field up to 3 MV/m \cite{Repeated2020} notes little acute effects, but a massive rate of long-term carcinogenicity. 
 
-In-vitro, there appears to be a consistent set of effects of nanosecond pulses, or nsPEF, distinct from membrane effects, that occur on small intracellular organelles (see reviews \cite{Penetration2016c} \cite{Effects2016} ), \cite{Bioeffects}, 
+In-vitro, there appears to be a consistent set of effects of nanosecond pulses, or nsPEF, distinct from membrane effects, that occur on small intracellular organelles (see reviews \cite{Penetration2016c} \cite{Effects2016} ), \cite{Bioeffects}.
+
+Apoptosis \cite{Effect2008}
 
 In almost all recently updated standards, the precautionary 100 kV/m instantaneous field limits established by ANSI have been abolished due to a lack of evidence of harm; an excellent review in this regime is \footnote{\cite{treatyelectromagnetic}, as cited by \textit{C95.1-2019, B.4.3 Rationale for pulsed RF field limits}.\footnote{That same review also contains the following, which highlights the incredible difficulty of obtaining reliable results in this field: "Dr. de Seze also described an experiment in which two sham groups were mistakenly run and a significant difference was found. Dr. Klauenberg noted another series of experiments he reviewed where experimental treatment groups did not vary while the sham groups compared to each other did resulting in a significant difference that was otherwise meaningless."}}. Field limits are now generally set only by integrated pulse energy.
 
@@ -196,7 +198,9 @@ There is a body of work on coherent control of viral inactivation using picoseco
 
 Optical centrifuges use a rotating polarization to induce a dipole moment and spin up small molecules \cite{Forced2000}\cite{Spinning2000}. Electrorotation\cite{RotatingFieldInduced1982}\cite{Electrorotation1988}\cite{Electrorotation1997}\cite{Dielectric1988} of viruses has been reported\cite{Analysis2004}\cite{New1999}\cite{comprehensive2001}, but as yet only in a non-destructive low-speed sub-synchronous regime for sensing, using optical means to detect rotation - using the virion as a kind of electrostatic induction motor. High-frequency dielectrophoresis and electrostatic trapping of viruses has also been reported\cite{Accumulation2006}, without suggestions of electrostatic damage, implying that conventional irreversible electroporation of viruses should require longer than 10 microseconds.
 
-A rotational drag coefficient can extracted from MD simulation\cite{Evaluating2017}. We simulated a 30 nm lipid liposome using the MARTINI coarse-grained \cite{MARTINI2007}\cite{BUMPy2018}\cite{Tsjerk2020} lipid force fields with GROMACS\cite{GROMACS2005}' torque measurement feature, kindly implemented by Kutzner \cite{Keep2011}. This suggests a maximum rotation frequency on the order of $10^3$, but this value requires so many assumptions that it's hardly worth mentioning. From \cite{Spinning2008}, the upper bound of a homogenous spherical virus with 10 MPa overall tensile strength appears to be about $10^9$ Hz. \footnote{\ghfile{documents/optical_centrifuge.ipynb}} 
+A rotational drag coefficient can extracted from MD simulation\cite{Evaluating2017}. We simulated a 30 nm lipid liposome using the MARTINI coarse-grained \cite{MARTINI2007}\cite{BUMPy2018}\cite{Tsjerk2020} lipid force fields with GROMACS\cite{GROMACS2005}' torque measurement feature, kindly implemented by Kutzner \cite{Keep2011}. This suggests a maximum rotation frequency on the order of $10^3$, but this value requires so many assumptions that it's hardly worth mentioning.
+
+From \cite{Spinning2008}, the upper bound of a homogenous spherical virus with 10 MPa overall tensile strength appears to be about $10^9$ Hz. \footnote{\ghfile{documents/optical_centrifuge.ipynb}} 
 
 
 
@@ -220,9 +224,13 @@ FDTD simulation of exposure geometry and sample heating is now usually possible 
 
 Next appear to be electrochemical\cite{Comparative2003} effects; as noted above, metal ions from electrodes can wreak havoc. Even more obscure differences between positive and sham, such as very strange polymer surface effects observed by\cite{Effect1994a}, must be ruled out by experimental design.
 
-If the effect exists, efficient use of the lower damping would seem to require more than one cycle of oscillation. It appears to be impossible at any input power to effectively drive a 10 GHz resonator in the lungs from outside the torso, partly because of the layer of conductive muscle that shields the chest cavity (see supplemental). Open-ended waveguides\cite{OpenEnded1982}\cite{Analysis1989}\cite{142018} or water bolus allow efficient coupling to the body. There is precedent for bronchoscopic \cite{Flexible2019}\cite{Antenna2018} or more invasive methods\cite{Implantable1980}\cite{Implantable1982}\cite{Electromagnetic1983}. 
+If the effect exists, efficient use of the lower damping would seem to require more than one cycle of oscillation. It appears to be impossible at any input power to effectively drive a 10 GHz resonator in the lungs from outside the torso, partly because of the layer of conductive muscle that shields the chest cavity.
+
+Open-ended waveguides\cite{OpenEnded1982}\cite{Analysis1989}\cite{142018} or water bolus allow efficient coupling to the body. There is precedent for bronchoscopic \cite{Flexible2019}\cite{Antenna2018} or more invasive methods\cite{Implantable1980}\cite{Implantable1982}\cite{Electromagnetic1983}. 
 
 Dispersion and Brillouin precursors do offer a means to produce a significant improvement in loss through tissue, and the required electrical waveforms appear to be synthesizeable by variable-impedance or stub transmission-line pulse shaping\cite{Coaxial1985}\cite{Arbitrarya}. 
+
+See supplemental for a cursory treatment of the Brillouin precursors.
 
 A sawtooth might be the optimal waveform (see below). However, obtaining 10 GHz tones deep in the body is still very hard, and may require very complicated dispersive phased arrays\cite{Microwave1982a}.
 
@@ -337,7 +345,9 @@ For the Eppenwolf, the lower bound is the lowest voltage measured on the diode d
 
 We are particularly excited by the prospect of using picosecond time-domain measurements not only to perform low-field-intensity steady state dielectric measurements or monitor the input pulse, as is now common practice, but to resolve the internal effects of a single high-voltage pulse on the virus in real time. Scan-converter based transient digitizers, such as the Tektronix SCD-5000 series, appear to be the lowest-cost method of obtaining the >0.5 THz sampling bandwidths required, when the tube bandwidth is deconvolved.
 
-Fecher\cite{Production1949} micro-oscillographs
+%Fecher\cite{Production1949} micro-oscillographs
+
+Before the HMC732 was used, a misguided effort was spent in trying to develop an inexpensive wideband tunable oscillator for spectrometry. This will be chronicled in the GitHub repository.
 
 \section{Materials and methods}
 
@@ -353,7 +363,7 @@ With a Kartell 0.2 mL fixed-volume micropipette (McMaster-Carr \#7015T17) connec
 
 \subsubsection{Nanosecond pulsed trials}
 
-A clone of Li et al's pulse generator was engraved with a 30 degree V-bit cutter onto a 1.6 mm double-sided 1 oz copper FR4 substrate. ATC 100B470JT500XT capacitors and FMMT417 transistors were used.
+A clone of Li et al's pulse generator was engraved with a 30 degree V-bit cutter onto a 1.6 mm double-sided 1 oz copper FR4 substrate. ATC 100B470JT500XT capacitors and FMMT417 transistors were used. This was powered by a HIA4 power supply at 330v.
 
 Two coplanar waveguides, approximately 2.5 cm long, designed with 'wcalc'\cite{Wcalc}, were similarly engraved into a single-sided 0.8 mm 1 oz copper FR4 substrate (MG chemicals). One waveguide (referred to as "0.2 mm channel") was 0.4 mm wide with 0.1 mm and 0.15 mm wide slots (asymmetric due to machining tolerances). The other was 0.4 mm wide with 0.03 and 0.06 mm slots. 
 
@@ -365,7 +375,7 @@ Two end-launch SMA connectors were soldered to the waveguide; one connector was 
 
 A thin layer of silicone conformal coating was applied to the 0.2 mm waveguide to avoid the copper ion artifact, but this could not be done on the 0.03 mm waveguide.
 
-HIA4 power supply.
+
 
 
 
@@ -395,7 +405,7 @@ To determine penetration of waves in tissue, the four term Cole-Cole model\cite{
 %	
 %\end{figure}
 
-Before the HMC732 was used, a misguided effort was spent in trying to develop an inexpensive wideband tunable oscillator for spectrometry. This will be chronicled in the GitHub repository.
+
 
 \end{multicols}
 

@@ -1,0 +1,103 @@
+%!TeX root = pure_electroporation
+\documentclass[paper.tex]{subfiles}
+\begin{document}
+
+
+
+
+\title{Selective electroporation of the viral envelope via nanosecond pulses}
+\author{\small{Daniel Correia\orcidlink{0000-0002-9353-0216} (therobotist@gmail.com), Ontario, Canada.}}
+\date{March 2021}
+
+\flushbottom 
+\maketitle
+\thispagestyle{empty}
+
+\renewcommand{\abstractname}{Summary}    % clear the title
+
+
+
+\begin{abstract}
+	Extreme electric fields drive transmembrane potentials, leading to pores in membranes; this phenomenon is commonly harnessed for transfection into the cell in the laboratory, and similar pulses have recently been shown to be effective in the clinic for ablating tumors. 
+	
+	As pulse duration is reduced from the microsecond to sub-nanosecond regime, and the field is increased to approach the breakdown voltage of tissue, effects on smaller structures are expected and observed. 
+	
+	As a followup to 
+	
+	Recently-developed gigawatt pulse systems may offer a possible means of noninvasively propagating such pulses into deep tissues, such as within lungs. 
+\end{abstract}
+
+At the risk of spending more time producing underpowered "scientifically useless" results, 
+
+As in the previous paper, we must stress that meaningful bioelectrics research hinges very strongly on experimental design and methodology, and very few results can be trusted implicitly.
+
+
+
+can determine the conductivity sigma from Brackley's kappa debye length
+
+A danger would be that if a nuclear or organelle membrane were to be porated, viral ssRNA may be admitted to places it shouldn't be, which would be bad news. 
+
+Pulse count and timing is another free variable. Joshi et al \cite{Selfconsistent2001} model that a carefully timed second pulse can have much greater effects than a single pulse, in agreement with experiment.
+
+Of course, unlike localized tumors, viral infections are systemic, affecting many of the most favoured organs. However, either blood 
+
+Note that, mostly contrary to these observations, 
+
+
+\cite{Nanosecond2006b} 
+
+
+
+
+
+
+
+
+
+
+
+Some scaling laws for membrane charging effects due to short (sub Tc) pulses are given by Schoenbach \cite{Bioelectric2007}. 
+
+The membrane charging time constant Cole single-shell model \cite{Ultrashort2004} simplified for the low-density case, 
+
+$$\tau_c = \left(1 \frac{\rho_1}{2} + \rho_2\right) C_m (D/2)$$
+
+\cite{Bioelectric2007} eq. 15, 
+
+$$\Delta V_M = \frac{3}{2}\frac{E\tau D}{2 \tau_c }$$
+
+substituting,
+
+$$\Delta V_M = \frac{3}{2}\frac{E \tau}{C_m ((\rho_1/2) + \rho_2)}$$
+
+that is, all else being equal, the transmembrane voltage appears to be invariant with raw particle diameter.
+
+The membrane capacitance per unit area, $C_m$, is determined simply by parallel-plate Ermolina \cite{Study2001}; $C_m = (k\epsilon_0) / d$, where d is the membrane thickness. The cell and nucleus membrane have similar capacitance, but greatly differ in conductivity.
+
+
+
+The dielectric properties of viruses have been determined by the fascinating technique of electrorotation (and dielectrophoresis). There is considerable variation.
+
+
+Influenza has a membrane thickness of 4 nm (Harris \cite{Influenza2006}), 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Is the effect replicable, or is it simply an electrochemical artifact? Will these nanopores be destructive to viruses - will the pores be open for sufficient time for the ssRNA to be released? Will the nucleocapsid restrain the genome sufficiently and prevent membrane damage from inactivating the virus? Are the apoptosis effects likely to be triggered before these? Are there similar structures in tissue?
+
+
+
+\end{document}

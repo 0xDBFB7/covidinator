@@ -1212,3 +1212,13 @@ Tarasova do all their simulations with completely neutralized charges.
 the search term "virus dipole moment" is what I was missing.
 transient electronic birefringance is an interesting technique for this!
 
+
+
+
+
+
+gelfiltration 
+
+should put a test tube into the microwave to see the heating patterns
+
+

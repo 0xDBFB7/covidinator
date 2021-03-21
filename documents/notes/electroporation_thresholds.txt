@@ -1,0 +1,44 @@
+
+
+
+Chen, Leukemic2004 
+
+Previous studies [3,6] showed that the effects of such ultrashort pulses on cells could not be described in terms of classical electroporation. 
+
+Single 60 ns, 2.6 MV/m caused cell membrane permabilization. 10 ns 6.5 MV/m did not.
+
+10 ns, 6.5 MV/m 
+
+A single 10 ns, 65 kV/cm electrical pulse,
+which had no effect on plasma membrane integrity
+(Fig. 2), caused the nucleus in an AO-stained HL-60 cell
+to become irregularly shaped
+
+This is in line with the analysis of SCHOENBACH 2004, where pulses shorter than 25 ns are expected to produce a greater field strength
+
+
+Romeo 2017 cites Shoenbach 2008's circuital model, which is apparently a good fit for
+nanosecond pulses. Cool!
+
+For a membrane with a relative dielectric constant of 8, the
+electric field in the membrane is ten times higher than the
+electric field in the adjacent cytoplasm, which has a dielectric
+constant of 80. The electric field then acts directly on membrane
+proteins, rather than causing charging of the membrane, and, if
+sufficiently strong, can cause direct and instant conformational
+changes, such as voltage gating.
+
+
+we need a conductivity. Huhes 2001 find, using a multi-shell model, for Herpes,
+ internal permittivity 30, conductivity 30 millisiemens/m, shell permittiivty 80
+
+Schnelle 1996 find, with a single sphere model, 0.8 mS/m, er 3. (closer to Brackley)
+
+Gimsa 1999 find for Influenza:
+core:
+0.1 mS/m (two orders off from hughes!) er 30,
+shell:
+0.1 uS/m, er 80
+
+Chen 1997, liposomes, ~30% similar er between inside and outside,
+10^-6 S/m
