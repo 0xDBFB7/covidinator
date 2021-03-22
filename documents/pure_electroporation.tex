@@ -9,7 +9,7 @@
 
 \title{Selective electroporation of the viral envelope}
 \author{\small{Daniel Correia\orcidlink{0000-0002-9353-0216} (therobotist@gmail.com), Ontario, Canada.}}
-\date{March 2021}
+\date{March 21 2021}
 
 \flushbottom 
 \maketitle
@@ -20,14 +20,18 @@
 
 
 \begin{abstract}
-	\noindent Extreme electric fields drive transmembrane potentials, leading to pores through membranes; this phenomenon is commonly harnessed for transfection into the cell in the laboratory, and similar techniques have recently been shown to be effective in the clinic for ablating tumors.\\
+	\noindent The phenomenon of electroporation occurs when extreme applied electric fields in the MV/m range drive transmembrane potentials, leading to pores through membranes; this is commonly harnessed for transfection into the cell in the laboratory, and has recently been shown to be safe and effective in the clinic for ablating tumors.\\
 	
-	\noindent As pulse duration is reduced from the microsecond to nanosecond regime, effects targeting smaller intracellular structures are expected and observed. Indeed, pulses shorter than 10 ns have been observed to porate the nuclear envelope and organelle membranes while leaving the cell membrane intact. 
+	\noindent As pulse duration is reduced from the microsecond to nanosecond regime, effects targeting smaller intracellular structures are expected and observed. Indeed, pulses shorter than 10 ns have been observed to porate the nuclear envelope and organelle membranes while leaving the plasma membrane intact. \\
 	
-	Recently-developed gigawatt pulse systems may offer a possible means of noninvasively propagating such pulses into deep tissues, such as within lungs. 
+	Dielectric properties apparently due to the 
+	
+	\noindent Recently-developed gigawatt pulse systems may offer a possible means of noninvasively propagating such pulses into deep tissues, such as within lungs. 
 \end{abstract}
 
-As a followup to. 
+As a followup to \cite{notes2021}
+
+The same electrostatic effects on lipid bilayers have been investigated for decades. Many extremely fascinating hydrodynamic and parametric 
 
 At the risk of spending more time producing underpowered "scientifically useless" results, 
 
@@ -36,7 +40,9 @@ As in the previous paper, we must stress that meaningful bioelectrics research h
 
 A serious danger would be that if a nuclear or organelle membrane were to be porated, viral ssRNA may be admitted to places it shouldn't be. The author does not have the biology experience to evaluate this risk.
 
-Pulse count and inter-pulse timing is another free variable. Joshi et al \cite{Selfconsistent2001} model that a carefully timed second pulse can have greater effects than a single pulse, in agreement with experiment.
+Pulse count and inter-pulse timing is another free variable. Joshi et al \cite{Selfconsistent2001} model that a carefully timed second pulse can have greater effects than a single pulse, in agreement with experiment on E. coli.
+
+
 
 Of course, unlike localized tumors, viral infections are systemic, affecting many of the most favoured organs. However, either blood 
 
@@ -46,31 +52,27 @@ Note that, mostly contrary to these observations,
 \cite{Nanosecond2006b} 
 
 
+This seems too simple.
 
 
 
+\subsection*{Basic scaling laws}
 
-\section*{Basic scaling laws}
+Some extremely simplified scaling laws for membrane charging effects due to short (sub Tc) pulses are given by Schoenbach \cite{Bioelectric2007}. These are based primarily on an equivalent circuit model.
 
-
-Some scaling laws for membrane charging effects due to short (sub Tc) pulses are given by Schoenbach \cite{Bioelectric2007}. 
-
-The membrane charging time constant Cole single-shell model \cite{Ultrashort2004} - simplified for the low-density case - 
+The membrane charging time constant from a single-shell model \cite{Ultrashort2004} - simplified for the low-density case
 
 $$\tau_c = \left(1 \frac{\rho_{medium}}{2} + \rho_{internal}\right) C_m (D/2)$$
 
-where $\rho_{medium}$ and $\rho_{internal}$ are the resistivities of the medium and internal fluid (the cytoplasm for cells, and assumed to be the 'core' for viruses). \cite{Bioelectric2007} eq. 15, 
+where $\rho_{medium}$ and $\rho_{internal}$ are the resistivities of the medium and internal fluid (the cytoplasm for cells, and assumed to be the 'core' for viruses). Electroporation is a highly nonlinear effect, and this . \cite{Bioelectric2007} eq. 15, 
 
 $$\Delta V_M = \frac{3}{2}\frac{E\tau D}{2 \tau_c }$$
-
-
-pore size vs time? same size pore in a smal lparticle 
 
 substituting,
 
 $$\Delta V_M = \frac{3}{2}\frac{E \tau}{C_m ((\rho_1/2) + \rho_2)}$$
 
-that is, all else being equal, the induced transmembrane voltage appears to be invariant with raw particle diameter - contrary to Rjif's more detailed analysis.
+that is, all else being equal, the induced transmembrane voltage appears to be invariant with raw particle diameter - mildly contrary to Rjif's more detailed analysis.
 
 The viral envelope capacitance per unit area, $C_m$, can be determined simply by parallel-plate (Ermolina \cite{Study2001}); $C_m = (k\epsilon_0) / d$, where d is the membrane thickness. The cell and nucleus membrane have similar capacitance, but greatly differ in conductivity. 
 
@@ -78,7 +80,7 @@ There may be an existing transmembrane potential that must be added - this is ne
 
 The dielectric properties of viruses have been determined by the fascinating technique of electrorotation (and dielectrophoresis). There is some variation in reported values. The internal core permittivity of viruses is often referred to as being about 2 to 3 (Brackley \cite{Electrostatic2020}, SARS-CoV-2; and Schnelle \cite{Trapping1996}, Sendai and Influenza A) - however, Gimsa \cite{New1999}, on influenza, and Hughes\cite{Dielectrophoretic2001} on HSV-1 both suggest an internal $\epsilon_r$ of 30. We have not investigated this discrepancy. The internal permittivity of impermeable viruses depends on the growth medium's osmotic strength\cite{Osmotic2003}, so results with different media may not be comparable.
 
-In electrorotation, it is usually found that the viral shell has a permittivity of about 60 to 80, similar to the nuclear membrane (60 to 100) but massively unlike the cell membrane ($\epsilon_r\approx 10$). 
+In electrorotation, it is usually found that the viral shell has a permittivity of about 60 to 80, similar to the nuclear membrane (60 to 100) but massively unlike the cell membrane ($\epsilon_r\approx 10$). This is very remarkable, since the lipid bilayer itself is somewhat similar in composition to the host cell; envelope, spike and membrane proteins may account.
 
 Influenza has a membrane thickness of about 4 nm (Harris \cite{Influenza2006}). However, Gimsa and Hughes use a shell thickness of 18 and 15 nm, respectively, to account for the membrane proteins and hemaglutinase. The $C_{envelope}$ may therefore fall within the range $2.9 \text{ to } 17.7 \text{ uF/cm}^2$.
 
@@ -93,7 +95,7 @@ The time constant of the virus therefore appears to be between 7 and 44 us, comp
 
 At first glance, this may seem unfortunate: the host will be destroyed far before the virus.
 
-However, if a pulse train with a pulse duration shorter than the cell time constant, an intensity too low for, and a repetition rate of some 3 us, (200 khz), 
+However, if a monopolar pulse train with a pulse duration shorter than the cell time constant, an intensity too low for, and a repetition rate of some 3 us, (200 khz), 
 
 This is unlike the 'killing blow' described in Schoenberterg where pores have already formed.
 

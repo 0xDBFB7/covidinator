@@ -75,3 +75,23 @@ tau for simple bilayer is about 70 to 600 ns.
 Letter1974
 
 
+put resistors in parallel
+
+simulate a small virus membrane segment - two on top of each other
+membrane proteins stuck in there
+monitor membrane field
+modulate inside conductivity
+there's a lot of small stuff stuck in the membrane that will modulate the
+permittivity
+
+
+pulser, 50 picofarads * 200000 ohms = 10 us time constant
+
+might want to add more resistors in parallel to speed up?
+
+though the pulser was only tested to 10 khz in the Li study
+
+
+
+
+
