@@ -61,3 +61,17 @@ Chan 1997, liposomes, ~30% similar er between inside and outside,
 10^-6 S/m
 
 (note that some use milliseiemens per cm!)
+
+sucrose increases eR by a small amount - to 3 or so.
+
+Benz,
+
+Bilayers are varactors. 
+
+At low voltages the specific capacity of the membranes from
+oxidized cholesterol/n-decane is 555 nF/cm^2.
+tau for simple bilayer is about 70 to 600 ns.
+
+Letter1974
+
+

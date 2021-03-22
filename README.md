@@ -1,3 +1,15 @@
+
+# Update March 2021
+
+Now shifted focus to purely electroporative effects. Please see
+
+# [Pure electroporation](https://github.com/0xDBFB7/covidinator/releases/download/vx.x/pure_electroporation.pdf) 
+
+Thanks!
+
+---
+
+
 Hi! Welcome! There's not a whole lot of real substance here, but maybe you'll find something useful. I hope you like it! 
 
 This was a (in retrospect, misguided) project to determine if extremely high electric fields can produce mechanical stresses sufficient to break the viral membrane (so-called electroporation). This doesn't seem to be necessarily *completely* implausible, but it's sufficiently remote (and TRL 0) that I'm not super interested in continuing work on it given circumstances.
