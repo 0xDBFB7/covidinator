@@ -3,5 +3,8 @@
 
 grep --color='auto' -P -n "[\x80-\xFF]" references.bib
 tells you if there're unicode issues
+
+
+you have to edit saved search to update!
  
 

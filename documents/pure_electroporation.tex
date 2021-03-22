@@ -1,11 +1,13 @@
 %!TeX root = pure_electroporation
-\documentclass[paper.tex]{subfiles}
+\documentclass[fleqn,10pt]{article}
+
+\include{preamble}
 \begin{document}
 
 
 
 
-\title{Selective electroporation of the viral envelope via nanosecond pulses}
+\title{On selective electroporation of the viral envelope}
 \author{\small{Daniel Correia\orcidlink{0000-0002-9353-0216} (therobotist@gmail.com), Ontario, Canada.}}
 \date{March 2021}
 
@@ -18,9 +20,9 @@
 
 
 \begin{abstract}
-	Extreme electric fields drive transmembrane potentials, leading to pores in membranes; this phenomenon is commonly harnessed for transfection into the cell in the laboratory, and similar pulses have recently been shown to be effective in the clinic for ablating tumors. 
+	\noindent Extreme electric fields drive transmembrane potentials, leading to pores through membranes; this phenomenon is commonly harnessed for transfection into the cell in the laboratory, and similar techniques have recently been shown to be effective in the clinic for ablating tumors.\\
 	
-	As pulse duration is reduced from the microsecond to sub-nanosecond regime, and the field is increased to approach the breakdown voltage of tissue, effects on smaller structures are expected and observed. 
+	\noindent As pulse duration is reduced from the microsecond to nanosecond regime, effects targeting smaller intracellular structures are expected and observed. Indeed, pulses shorter than 10 ns have been observed to porate the nuclear envelope while leaving the cell membrane intact.
 	
 	As a followup to 
 	
@@ -35,9 +37,9 @@ As in the previous paper, we must stress that meaningful bioelectrics research h
 
 can determine the conductivity sigma from Brackley's kappa debye length
 
-A danger would be that if a nuclear or organelle membrane were to be porated, viral ssRNA may be admitted to places it shouldn't be, which would be bad news. 
+A serious danger would be that if a nuclear or organelle membrane were to be porated, viral ssRNA may be admitted to places it shouldn't be. The author does not have the biology experience to evaluate this risk.
 
-Pulse count and timing is another free variable. Joshi et al \cite{Selfconsistent2001} model that a carefully timed second pulse can have much greater effects than a single pulse, in agreement with experiment.
+Pulse count and inter-pulse timing is another free variable. Joshi et al \cite{Selfconsistent2001} model that a carefully timed second pulse can have greater effects than a single pulse, in agreement with experiment.
 
 Of course, unlike localized tumors, viral infections are systemic, affecting many of the most favoured organs. However, either blood 
 
@@ -51,35 +53,56 @@ Note that, mostly contrary to these observations,
 
 
 
-
-
-
+\section*{Basic scaling laws}
 
 
 Some scaling laws for membrane charging effects due to short (sub Tc) pulses are given by Schoenbach \cite{Bioelectric2007}. 
 
-The membrane charging time constant Cole single-shell model \cite{Ultrashort2004} simplified for the low-density case, 
+The membrane charging time constant Cole single-shell model \cite{Ultrashort2004} - simplified for the low-density case - 
 
-$$\tau_c = \left(1 \frac{\rho_1}{2} + \rho_2\right) C_m (D/2)$$
+$$\tau_c = \left(1 \frac{\rho_{medium}}{2} + \rho_{internal}\right) C_m (D/2)$$
 
-\cite{Bioelectric2007} eq. 15, 
+where $\rho_{medium}$ and $\rho_{internal}$ are the resistivities of the medium and internal fluid (the cytoplasm for cells, and assumed to be the 'core' for viruses). \cite{Bioelectric2007} eq. 15, 
 
 $$\Delta V_M = \frac{3}{2}\frac{E\tau D}{2 \tau_c }$$
+
+
+pore size vs time? same size pore in a smal lparticle 
 
 substituting,
 
 $$\Delta V_M = \frac{3}{2}\frac{E \tau}{C_m ((\rho_1/2) + \rho_2)}$$
 
-that is, all else being equal, the transmembrane voltage appears to be invariant with raw particle diameter.
+that is, all else being equal, the induced transmembrane voltage appears to be invariant with raw particle diameter - contrary to Rjif's more detailed analysis.
 
-The membrane capacitance per unit area, $C_m$, is determined simply by parallel-plate Ermolina \cite{Study2001}; $C_m = (k\epsilon_0) / d$, where d is the membrane thickness. The cell and nucleus membrane have similar capacitance, but greatly differ in conductivity.
+The viral envelope capacitance per unit area, $C_m$, can be determined simply by parallel-plate (Ermolina \cite{Study2001}); $C_m = (k\epsilon_0) / d$, where d is the membrane thickness. The cell and nucleus membrane have similar capacitance, but greatly differ in conductivity. 
+
+There may be an existing transmembrane potential that must be added - this is neglected in this case.
+
+The dielectric properties of viruses have been determined by the fascinating technique of electrorotation (and dielectrophoresis). There is some variation in reported values. The internal core permittivity of viruses is often referred to as being about 2 to 3 (Brackley \cite{Electrostatic2020}, SARS-CoV-2; and Schnelle \cite{Trapping1996}, Sendai and Influenza A) - however, Gimsa \cite{New1999}, on influenza, and Hughes\cite{Dielectrophoretic2001} on HSV-1 both suggest an internal $\epsilon_r$ of 30. We have not investigated this discrepancy. The internal permittivity of impermeable viruses depends on the growth medium's osmotic strength\cite{Osmotic2003}, so results with different media may not be comparable.
+
+It is usually agreed that the viral shell has a permittivity of about 60 to 80, similar to the nuclear membrane (60 to 100) but unlike the cell membrane ($\epsilon_r\approx 10$). 
+
+Influenza has a membrane thickness of about 4 nm (Harris \cite{Influenza2006}). However, Gimsa and Hughes use a shell thickness of 18 and 15 nm, respectively, to account for the membrane proteins and hemaglutinase. The $C_{envelope}$ may therefore fall within the range $2.9 \text{ to } 17.7 \text{ uF/cm}^2$.
+
+% >>> (80 * electricConstant) / 4 nanometers -> 17.7 uF/cm^2
+% >>> (60 * electricConstant) / 18 nanometers -> 2.9514 uF/cm^2
+
+Gimsa and Schnelle data on influenza seems to suggest a core conductivity of 0.1 to 1 milliSiemens/m (1000 to 10000 $\Omega \cdot m$), far less conductive than cytoplasm or nucleoplasm, at about 1 S/m (1 $\Omega \cdot m$) \cite{Study2001}.
+
+The viral envelope appears to be slightly less conductive than the cell membrane (0.1 $\micro$S/m \cite{New1999} vs 10 $\micro$S/m \cite{Study2001}), and far less conductive than the nuclear envelope (0.1 $\text{m}$S/m \cite{Study2001}). This ratio is the relevant quantity to find the steady state transmembrane voltage for long pulses (before pore conduction becomes relevant).
+
+The time constant of the virus therefore appears to be between 7 and 44 us, compared to about 100 ns for most host cells, the discrepancy mainly contributed by the internal core conductivity and the shell permittivity.
+
+At first glance, this may seem unfortunate: the host will be destroyed far before the virus.
+
+However, if a pulse train with a pulse duration shorter than the cell time constant, an intensity too low for, and a repetition rate of some 3 us, (200 khz), 
+
+This is unlike the 'killing blow' described in Schoenberterg where pores have already formed.
 
 
 
-The dielectric properties of viruses have been determined by the fascinating technique of electrorotation (and dielectrophoresis). There is considerable variation.
-
-
-Influenza has a membrane thickness of 4 nm (Harris \cite{Influenza2006}), 
+% 1 Ohm m / 2 + 5000 ohm meter * 2.9 uF/cm^2 * 50 nm
 
 
 
@@ -95,8 +118,7 @@ Influenza has a membrane thickness of 4 nm (Harris \cite{Influenza2006}),
 
 
 
-
-Is the effect replicable, or is it simply an electrochemical artifact? Will these nanopores be destructive to viruses - will the pores be open for sufficient time for the ssRNA to be released? Will the nucleocapsid restrain the genome sufficiently and prevent membrane damage from inactivating the virus? Are the apoptosis effects likely to be triggered before these? Are there similar structures in tissue?
+%Is the effect replicable, or is it simply an electrochemical artifact? Will these nanopores be destructive to viruses - will the pores be open for sufficient time for the ssRNA to be released? Will the nucleocapsid restrain the genome sufficiently and prevent membrane damage from inactivating the virus? Are the apoptosis effects likely to be triggered before these? Are there similar structures in tissue?
 
 
 

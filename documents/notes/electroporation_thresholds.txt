@@ -29,16 +29,35 @@ sufficiently strong, can cause direct and instant conformational
 changes, such as voltage gating.
 
 
-we need a conductivity. Huhes 2001 find, using a multi-shell model, for Herpes,
- internal permittivity 30, conductivity 30 millisiemens/m, shell permittiivty 80
+we need a conductivity. Hughes 2001 find, using a multi-shell model, for Herpes,
+protein capsid thickness 15 nm
+core:
+30 mS/m 
+er 30
+shell:
+<not given>
+er 60
 
-Schnelle 1996 find, with a single sphere model, 0.8 mS/m, er 3. (closer to Brackley)
+
+Schnelle 1996 find, with a single sphere model, (closer to Brackley)
+18 nm shell thickness
+core:
+0.8 mS/m (1250 ohm-meter)
+
+shell:
+
+
 
 Gimsa 1999 find for Influenza:
+18 nm shell thickness
 core:
-0.1 mS/m (two orders off from hughes!) er 30,
+0.1 mS/m (two orders off from hughes!) (10000 Ω·m)
+er 30
 shell:
-0.1 uS/m, er 80
+0.1 uS/m
+er 80
 
-Chen 1997, liposomes, ~30% similar er between inside and outside,
+Chan 1997, liposomes, ~30% similar er between inside and outside,
 10^-6 S/m
+
+(note that some use milliseiemens per cm!)
