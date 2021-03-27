@@ -1,4 +1,4 @@
-.title Oscillator
+.title pore
 
 Vsupply VCC 0 PULSE(0 1 20p 5p 1p 10ns 1us)
 
@@ -10,7 +10,7 @@ Rmem1 inp m1 10k
 
 Rcore m1 m2 100
 
-Rmem1 m2 0 10k
+Rmem2 m2 0 10k
 Cmem2 m2 0 1NF
 
 
@@ -26,7 +26,7 @@ setcs DIOtDepCapMax = 2.0
 tran 1p 300000ps uic
 //uic?
 plot inp
-plot (v(imp)-v(m1))
+plot (v(inp)-v(m1))
 plot v(m2)
 
 .endc

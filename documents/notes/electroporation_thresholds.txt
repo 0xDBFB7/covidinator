@@ -1,4 +1,8 @@
+Boukany
 
+ Indeed, experiments on cells have demonstrated that the
+application of 20 pulses as short as 50 ns can induce electrofusion
+[146]. 
 
 
 Chen, Leukemic2004 
@@ -16,6 +20,9 @@ to become irregularly shaped
 
 This is in line with the analysis of SCHOENBACH 2004, where pulses shorter than 25 ns are expected to produce a greater field strength
 
+Gimsa 1994 have a section "Measurement of the internal conductivity" with an interesting 
+protocol for leaking ions and conductivities.
+
 
 Romeo 2017 cites Shoenbach 2008's circuital model, which is apparently a good fit for
 nanosecond pulses. Cool!
@@ -31,6 +38,7 @@ changes, such as voltage gating.
 
 we need a conductivity. Hughes 2001 find, using a multi-shell model, for Herpes,
 protein capsid thickness 15 nm
+media: (5 mS/m hughes 1998)
 core:
 30 mS/m 
 er 30
@@ -39,23 +47,73 @@ shell:
 er 60
 
 
+
 Schnelle 1996 find, with a single sphere model, (closer to Brackley)
 18 nm shell thickness
+media: variously, 3 mS/m to 74 mS/m 
 core:
 0.8 mS/m (1250 ohm-meter)
-
+permettivity 3
 shell:
 
 
 
 Gimsa 1999 find for Influenza:
 18 nm shell thickness
+media: 6.5 and 74 mS/m
 core:
 0.1 mS/m (two orders off from hughes!) (10000 Ω·m)
 er 30
 shell:
 0.1 uS/m
 er 80
+
+Ermolina on tobacco mosaic:
+
+core:
+
+most notably: "TMV has a pI of 3.5 and contains a large
+number of acidic groups." - very different from info or SARS.
+
+Green thesis, TMV, 16 mS/v conductivity: 
+0.15 or 0.085 S/m 
+
+"TMV virions are unenveloped and can be considered to be a solid protein object with a
+given surface charge density. The high value of the particle conductivity is therefore likely to
+arise from the counterions associated with the surface charge moving along the surface as well as
+charges moving inside the particle. As mentioned previously, the different labelling procedures
+result in a different surface charge distribution which could account for the difference in the
+conductivity values for the two types of TMV. "
+
+Touw on Alfalfa virus find 
+a dielectric relaxation time of 600 ns. 
+
+
+
+The FEM electret modelling paper Javidpour 2020:
+"We assume that there are no salt ions
+inside the lipid envelope, but that the envelope is completely permeable to them"
+
+shell: 
+
+er 4 (direct conflict with the experimental results!)
+
+
+
+Ting 2011 (donnan)
+
+"As usual, the small ions, which
+can diffuse freely, maintain charge neutrality subject to equality of chemical potential for each of the small ion species across the
+viral capsid"
+Here's an interesting thing: if the ion mobility was sufficiently low, the *osmotic pressure*
+could still be balanced as usual but still agree with conductivity results?
+
+Gimsa 1994 says *regarding membranes not core*,
+"Membrane conductivity, in general, cannot be independent of the intracellular ion concentration."
+
+
+
+
 
 Chan 1997, liposomes, ~30% similar er between inside and outside,
 10^-6 S/m
@@ -91,7 +149,43 @@ might want to add more resistors in parallel to speed up?
 
 though the pulser was only tested to 10 khz in the Li study
 
+sea water is 5 S/m, tap about 50 mS/m, and distilled about 0.1 uS/m
+
+There's a "stern surface conductance" that I don't know about yet. Nakano 
+measure adenoviruses but only report this surface conductance.
+
+Ermolina find for CPMV and TMV (table 1) that conductivity is about 50 to 100 mS/m, 
+agreeing with the HSV-1 results. (Both are non-enveloped)
+
+Sharifipour actually test electroporation of HIV and find that 2.3 MV/m 
+"disclosed significantly reduced infectivity of
+electroporatically transformed HIV viruses compared to
+untransformed HIV viruses"
+
+Got an awesome email back from Gimsa. He replied with Dielectric1994,
+says to look at Schwan's data Dielectric1966. Specifically he says it's the low *water* content.
+Does he mean ion content or water content? The water can't be relevant. 
+
+Brackley cite Siber 2012, who cite ref 78, a permittivity of proteins of 5.
+
+T4 is impermeable and the osmotic strength in the capsid is set by the.
 
 
+Should really make a table with all this stuff
 
+oh man, I don't know if I want to cite the sharifipour
+
+talked to Ryan
+
+Oh wow cell sizes vary much more than the 6 um paper I cited, 
+so the long time constants in that one paper are also reasonable
+
+write an equation to optimize waveform to get max transmembrane ratio?
+
+Gabriel table 1, dielectric properties of tissues:
+tau 2 ranges from 560 ns (liver) to 6 ns (tendon). tau3 ranges from 22 to 159 us
+helpfully, conductivity values are also given:
+the alphas are very low, indicating a very broad distribution of relaxation times.
+
+Kotnik is the right tool to use
 

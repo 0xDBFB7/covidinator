@@ -1,0 +1,2 @@
+
+The equivalent of the discrete fourier transform for the laplace transform is called the Z-transform.
