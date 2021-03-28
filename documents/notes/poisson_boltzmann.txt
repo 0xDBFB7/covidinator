@@ -132,4 +132,3 @@ Bae call this "electro-mechanical permeabilization", suggest a pipette as the co
 cuvette (cool!), and cite a simple analytical transmembrane potential from Needham 
 
 
-for some reason the  Efield is  discontinuous - we can't actually determine what the stress on the 

@@ -2,10 +2,12 @@ from dataclasses import dataclass
 from math import pi, sqrt, e, log, isclose, exp
 # from scipy.optimize import curve_fit
 # import numpy as np
+from numpy import heaviside
 # import matplotlib.pyplot as plt
 # import h5py
 from scipy.constants import epsilon_0, mu_0
 
+ustep = heaviside
 
 outer_radius_R = 0
 membrane_thickness_d = 0
@@ -27,6 +29,8 @@ Time course of transmembrane voltage induced by time-varying electric fields—a
 Bioelectrochemistry and Bioenergetics 1998;45:3–16.
 https://doi.org/10.1016/S0302-4598(97)00093-7.
 
+Kotnik et al also have number of other papers with minor variations that may be of some use
+
 If a truly arbitrary
 the equivalent of the discrete fourier transform for the Laplace transform appears to be the Z-transform.
 
@@ -42,7 +46,7 @@ def tau_2_f(b_1, b_2, b_3):
 
 
 
-def delta_transmembrane_trapezoidal(t, start_time, a_1, a_2, b_3, R):
+def delta_transmembrane_unit_ramp(t, start_time, R):
 
     l_o = conductivity_extracellular # S/m
     l_i = conductivity_intracellular #S/m
@@ -58,12 +62,20 @@ def delta_transmembrane_trapezoidal(t, start_time, a_1, a_2, b_3, R):
 
     b_1 = 2.0 * R**3.0 * (l_m + 2.0*l_o) * (l_m + 0.5 * l_i) + 2.0 * (R-d)**3.0 * (l_m - l_o) * (l_i - l_m)
 
-    b_2 = 2.0 * R**3.0 * (l_i * (0.5 * e_m + e_o) + l_m * (0.5*e_i + 2.0*e_m + 2*e_0) + l_0 * (e_i + 2.0 * e_m)) + (2.0 * (R - d)**3.0 * (l_i * (e_m - e_0) + l_m * (e_i - 2.0*e_m + e_o) - l_0 * (e_i - e_m))) # is this truly a multiply, or a cross?
+    b_2 = 2.0 * R**3.0 * (l_i * (0.5 * e_m + e_o) + l_m * (0.5*e_i + 2.0*e_m + 2*e_0) + l_0 * (e_i + 2.0 * e_m))\
+                + (2.0 * (R - d)**3.0 * (l_i * (e_m - e_0) + l_m * (e_i - 2.0*e_m + e_o) - l_0 * (e_i - e_m))) # is this truly a multiply, or a cross?
     b_3 = 2.0 - R**3.0 * (e_m + 2.0*e_0) * (e_m + 0.5 * e_i) + 2.0 * (R-d)**3.0 * (e_m - e_0) * (e_i - e_m)
+
+    # Kotnik variously use "step function" or the "unit step".
 
     tau_1 = tau_1_f(b_1, b_2, b_3)
     tau_2 = tau_2_f(b_1, b_2, b_3)
 
-    delta_phi_m_t = (a_1 / b_1) * t * u
-
-    
+    # a9d, Kotnik 1998, unit ramp function response
+    delta_phi_m_t = (a_1 / b_1) * t * ustep(t)
+    phisub1 = (a_2 / (2 * b_1)) - ((a_1*b_2) / (2 * (b_1 **2.0)))
+    phisub2 = (((a_1 * b_3)/b_1) + ((a_2 * b_2) / (2.0 * b_1)) - ((a_1 * (b_2**2.0)) / (2.0 * (b_1**2.0))) - a_3)
+    phisub3 = np.sqrt(b_2**2.0 - 4.0 * b_1 * b_3)
+    delta_phi_m_t += (phisub1 + (phisub2/phisub3)) * (1.0 - exp(-t/tau_1)) * ustep(t)
+    delta_phi_m_t += (phisub1 + (phisub2/phisub3)) * (1.0 - exp(-t/tau_2)) * ustep(t)
+    delta_phi_m_t *= R
