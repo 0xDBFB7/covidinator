@@ -1,11 +1,15 @@
 from dataclasses import dataclass
-from math import sqrt
+from math import pi, sqrt, e, log, isclose, exp
+# from scipy.optimize import curve_fit
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import h5py
+from scipy.constants import epsilon_0, mu_0
 
 
-
-outer_radius_R =
-membrane_thickness_d
-membrane_capacitance_Cm
+outer_radius_R = 0
+membrane_thickness_d = 0
+membrane_capacitance_Cm = 0
 
 
 @dataclass
@@ -38,12 +42,14 @@ def tau_2_f(b_1, b_2, b_3):
 
 
 
-def delta_transmembrane_trapezoidal(t, a_1, a_2, b_3, R):
+def delta_transmembrane_trapezoidal(t, start_time, a_1, a_2, b_3, R):
 
-    l_o = conductivity_extracellular
-    l_i = conductivity_intracellular
+    l_o = conductivity_extracellular # S/m
+    l_i = conductivity_intracellular #S/m
 
-`   sub1 = (3.0 * (R**2.0) - 3.0 * d * R + d**2.0)
+    # epsilon_0
+
+    sub1 = (3.0 * (R**2.0) - 3.0 * d * R + d**2.0)
     sub2 = (3.0 * d * R - d**2.0)
 
     a_1 = 3.0 * d * l_o * ((l_i * (sub1)) + l_n*(sub2)) #eq.9a
@@ -52,8 +58,10 @@ def delta_transmembrane_trapezoidal(t, a_1, a_2, b_3, R):
 
     b_1 = 2.0 * R**3.0 * (l_m + 2.0*l_o) * (l_m + 0.5 * l_i) + 2.0 * (R-d)**3.0 * (l_m - l_o) * (l_i - l_m)
 
-    b_2 = 2.0 * R**3.0 * (l_i * (0.5 * e_m + e_o) + l_m * (0.5*e_i + 2.0*e_m + 2*e_0) + l_0 * (e_i + 2.0 * e_m)) + 2.0 * (R - d)**3.0\
-     * (l_i * (e_m - e_0) + l_m * (e_i - 2.0*e_m + e_o) - l_0 * (e_i - e_m)
+    b_2 = 2.0 * R**3.0 * (l_i * (0.5 * e_m + e_o) + l_m * (0.5*e_i + 2.0*e_m + 2*e_0) + l_0 * (e_i + 2.0 * e_m)) + (2.0 * (R - d)**3.0 * (l_i * (e_m - e_0) + l_m * (e_i - 2.0*e_m + e_o) - l_0 * (e_i - e_m))) # is this truly a multiply, or a cross?
     b_3 = 2.0 - R**3.0 * (e_m + 2.0*e_0) * (e_m + 0.5 * e_i) + 2.0 * (R-d)**3.0 * (e_m - e_0) * (e_i - e_m)
 
-    tau_1 = tau_1_f()
+    tau_1 = tau_1_f(b_1, b_2, b_3)
+    tau_2 = tau_2_f(b_1, b_2, b_3)
+
+    delta_phi_m_t = (a_1 / b_1) * t * u
