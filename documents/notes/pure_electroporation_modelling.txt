@@ -1,2 +1,7 @@
 
-The equivalent of the discrete fourier transform for the laplace transform is called the Z-transform.
+Kotnik has a good body of work in this field. Not FDTD wave-propagation like, but close enough. 
+Kotnik 2006 gives a kotnik 1998-like laplace method for organelles (huge increase in organelle)
+
+Kotnik 2000 (second-order) discusses relaxation (debye) effects a little more, but not much
+
+

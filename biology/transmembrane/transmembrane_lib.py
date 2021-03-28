@@ -65,3 +65,5 @@ def delta_transmembrane_trapezoidal(t, start_time, a_1, a_2, b_3, R):
     tau_2 = tau_2_f(b_1, b_2, b_3)
 
     delta_phi_m_t = (a_1 / b_1) * t * u
+
+    
