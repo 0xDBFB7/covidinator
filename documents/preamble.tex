@@ -82,10 +82,12 @@
 
 
 %\usepackage{biblatex}
-\usepackage[backend=bibtex8, sorting=none, citestyle=verbose-ibid,bibstyle=phys]{biblatex}
+\usepackage[backend=bibtex8, sorting=none, style=phys, doi=true]{biblatex}
 %style=phys
 % style=chem-angew
-\let\cite\footcite
+% citestyle=verbose-ibid,bibstyle=phys
+% , url=true, doi=true
+\let\cite\footfullcite
 
 %--------------------------------------------------------
 % No duplicate footcites

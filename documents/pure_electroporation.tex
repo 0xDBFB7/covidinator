@@ -1,23 +1,36 @@
 %!TeX root = pure_electroporation
-\documentclass[fleqn,10pt]{article}
+\documentclass[fleqn,10pt]{paper}
+
+\usepackage[left=2cm,right=2cm,
+top=0.5cm,
+bottom=1.5cm,%
+headheight=11pt,%
+letterpaper]{geometry}
 
 \include{preamble}
+
 \begin{document}
 
 
 
 
 \title{Selective electroporation of the viral envelope}
-\author{\small{Daniel Correia\orcidlink{0000-0002-9353-0216} (therobotist@gmail.com), Ontario, Canada.}}
-\date{March 21 2021}
+\author{\footnotesize{Daniel Correia\orcidlink{0000-0002-9353-0216} \footnote{therobotist@gmail.com, Ontario, Canada.}}}
+\date{\small{March 21 2021}}
 
 \flushbottom 
+%%\maketitle
+%\begingroup
+%\let\center\flushleft
+%\let\endcenter\endflushleft
 \maketitle
+%\endgroup
+
+
+
 \thispagestyle{empty}
 
 \renewcommand{\abstractname}{Summary}    % clear the title
-
-
 
 \begin{abstract}
 	\noindent The phenomenon of electroporation occurs when extreme applied electric fields in the MV/m range drive transmembrane potentials, leading to pores through membranes; this is commonly harnessed for transfection into the cell in the laboratory, and has recently been shown to be safe and effective in the clinic for ablating tumors.\\
@@ -60,6 +73,7 @@ The same field intensities do not appear to damage phages with protein capsids\c
 
 Non-resonant capsid and envelope breakage with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990}, but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (c.f. \cite{Microwave1987}). 
 
+The trapping experiments we use were conducted at 
 
 As in the previous paper, we must stress that meaningful bioelectrics research hinges very strongly on experimental design and methodology, and very few results can be trusted implicitly.
 
@@ -80,6 +94,8 @@ Note that, despite clear evidence in nanosecond review, microsecond in vivo and 
 
 This property is 
 \cite{Nanosecond2006b} 
+
+
 
 This seems too simple.
 
@@ -139,7 +155,12 @@ Basic dry-weight measurements seem to suggest that influenza contains about 60\%
 % Actual envelope resistance:
 % 
 
-Critically, Gimsa and Schnelle data, both on influenza, seems to suggest a core conductivity of 0.1 to 1 milliSiemens/m (1000 to 10000 $\Omega \cdot m$). This is far less conductive than cytoplasm or nucleoplasm, each on the order of 1 S/m (1 $\Omega \cdot m$) \cite{Study2001}. 
+Critically, Gimsa and Schnelle data, both on influenza, seems to suggest a core conductivity of 0.8 to 0.1 milliSiemens/m (1000 to 10000 $\Omega \cdot m$), using a medium conductivity of 74 mS/m and 3 mS/m, respectively. This is far less conductive than cytoplasm or nucleoplasm, each on the order of 1 S/m (1 $\Omega \cdot m$) \cite{Study2001}. 
+
+% if this is correct, scaling linearly:
+% like 60 % water in core  * (1 S/m / 0.074) would get us to 1 mS/m.
+
+% absolute pessimistic, using 0.8 mS/m and Schnelle's medium conductivity, would get us 0.008 * 0.6 * (1/0.003) = 1.6 S/m
 
 However, Hughes suggests 30 mS/m for HSV-1, a significant discrepancy. Unlike influenza, HSV-1 has a complete protein capsid rather than a helical nucleocapsid. Protein capsids are typically regarded as monolithic and impermeable, whereas enveloped viruses are permeable, and therefore the ionic strength of the medium may be very important. No other sources of data on permittivity ion mobility in enveloped viruses were found.  \footnote{Special thanks to Professor Jan Gimsa for replying to my email!}
 
