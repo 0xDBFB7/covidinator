@@ -114,6 +114,8 @@ def delta_transmembrane_trapezoid(t, t_start, t_rise, t_fall, duration, cell, E_
     # If you create a function by multiplying two functions in time,
     # there is no easy way to find the Laplace Transform of the resulting function.
 
+
+    #ramp slope is 1: constructed from various ramps
     out = delta_transmembrane_unit_ramp(t - t_start, cell)/t_rise - delta_transmembrane_unit_ramp(t - t_start - t_rise, cell)/t_rise
     out += -delta_transmembrane_unit_ramp(t - t_start - t_rise - duration, cell)/t_fall
     out += delta_transmembrane_unit_ramp(t - t_start - t_rise - t_fall - duration, cell)/t_fall
