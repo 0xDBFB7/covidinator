@@ -8,5 +8,9 @@ Kotnik 2000 (second-order) discusses relaxation (debye) effects a little more, b
 There's a curious pulse that looks like an AC-coupling, negative polarity, 
 that occurs near tau_2 and with the same relaxation time. It's extremely high amplitude compared
 to the rest of the pulse...not sure if it's an artifact?
-occurs even if only a single ramp is used - might be due to the inflection point of t=0? 
+occurs even if only a single ramp is used - might be due to the inflection point of t=0?
+
+
+it might be difficult to solve the thing for a maximum-value constraint;
+however, integrating is probably an even better 
 

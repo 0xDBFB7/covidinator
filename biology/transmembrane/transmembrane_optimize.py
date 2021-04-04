@@ -24,15 +24,19 @@ virus = Cell(0.3, 80, 0.005, 30, 1e-8, 60, 50e-9, 14e-9)
 # plt.plot(t, deltaV)
 
 def cost_function(x):
-    x = np.abs(x)
-    print(x)
-    return np.max(delta_transmembrane_rectangular_train(t, 1e-6, x[0], 100, x[1], host_cell, 10.0e6)) - np.max(delta_transmembrane_rectangular_train(t, 1e-6, x[0], 100, x[1], virus, 10.0e6))
+    # x = np.abs(x)
+    # print(x)
+    host_amp = np.max(delta_transmembrane_rectangular_array(t, 10, x, host_cell))
+    vir_amp = np.max(delta_transmembrane_rectangular_array(t, 10, x, virus))
+    return host_amp - vir_amp
+    # return np.max(delta_transmembrane_rectangular_train(t, 1e-6, x[0], 10, x[1], host_cell, 10.0e6)) - np.max(delta_transmembrane_rectangular_train(t, 1e-6, x[0], 10, x[1], virus, 10.0e6))
 
 #use rectangle pulses to construct a waveform?
 #
-x0 = [1e-9, 1e-6]
-#x = minimize(cost_function, x0, method='CG', options={"disp":True}).x
-x= [1.49011602e-08, 0.1e-06]
+# x0 = [1e-9, 1e-6]
+x0 = np.zeros(30)
+x = minimize(cost_function, x0, method='CG', options={"disp":True}).x
+#x= [1.49011602e-08, 0.1e-06]
 #still need polarities
 #x=[1.17462645e-04,  1.03637294e-06]
 deltaV = delta_transmembrane_rectangular_train(t, 1e-6, x[0], 5, x[1], host_cell, 10.0e6)

@@ -4,4 +4,12 @@ searching for references.
 "enveloped virus transmembrane potential electroporation", scholar,
 
 
+------"electric field "virus" sterilization electroporation enveloped", scholar
+
+"AIR DISINFECTION PROCEDURES IN THE DENTAL OFFICE
+DURING THE COVID-19 PANDEMIC", mentions electric field, but only in passing and not cited
+
+"Virus Inactivation in Water Using Laser-Induced Graphene Filters"
+"Thus, a greater field is required for electroporation of smaller organisms like a virus as
+compared to bacteria"
 

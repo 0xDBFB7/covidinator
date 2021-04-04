@@ -181,6 +181,13 @@ def delta_transmembrane_rectangular_train(t, t_start, duration, count, period, c
     o *= E_field_magnitude
     return o
 
+def delta_transmembrane_rectangular_array(t, count, x, cell):
+    o = np.zeros_like(t)
+    # start, duration,
+    for i in range(0, count):
+        o += (delta_transmembrane_unit_step(t-x[i*3], cell) - delta_transmembrane_unit_step(t-x[(i*3)+1], cell)) * 10e6 * x[i*3 + 2]
+    return o
+
 def delta_transmembrane_trapezoid(t, t_start, t_rise, t_fall, duration, cell, E_field_magnitude):
     # https://lpsa.swarthmore.edu/LaplaceXform/FwdLaplace/LaplaceFuncs.html#Ramp
     # When composing a complex function from elementary functions, it is important to only use addition.
