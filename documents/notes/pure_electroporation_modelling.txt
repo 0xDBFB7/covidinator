@@ -12,5 +12,10 @@ occurs even if only a single ramp is used - might be due to the inflection point
 
 
 it might be difficult to solve the thing for a maximum-value constraint;
-however, integrating is probably an even better 
+however, integrating is probably an even better way
+
+neither Mathematica or sympy 
+
+grosse and schwan 1992 actually explicitly consider a surface conductance. very important stuff in notes
+
 
