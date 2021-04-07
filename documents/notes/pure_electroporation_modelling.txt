@@ -18,4 +18,20 @@ neither Mathematica or sympy
 
 grosse and schwan 1992 actually explicitly consider a surface conductance. very important stuff in notes
 
+can we take the fourier transform rather than the laplace?
+
+"If the transfer function of a system is given by H(s), then the impulse response of a system is given by h(t) where h(t) is the inverse Laplace Transform of H(s)."
+
+I guess we could try 
+
+two problems with Lagrange multipliers in the complex plane: what is the energy constraint ? probably needs a contour integral. How do do?
+
+H-FIRE  (high frequency electroporation)
+
+integrating over the complex plane to get the amp requires contour integration
+
+so the inverse laplace transform seems to exist for kotnik's laplace transform.
+interesting
+
+oh yay, lagrange multiplier over the complex plane!
 

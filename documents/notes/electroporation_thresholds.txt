@@ -191,3 +191,14 @@ Kotnik is the right tool to use
 
 Electroinsertion
 
+The conference proc. book with Schwan, dielectrop. and ..., 
+provides an expression for the time constant of the peak spectrum (see that Alfalfa paper).
+
+actually, the step response given by kotnik is already good enough for arbitrary waveforms using the 
+technique described by Matt L 
+pretty sure it's identical to the green's function method 
+
+it should be possible to evaluate that integral (of Kotnik's unit steps)? 
+
+
+
