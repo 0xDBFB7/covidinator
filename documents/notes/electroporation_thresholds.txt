@@ -232,7 +232,12 @@ the indefinite power integral of
 note how the order of the fdtd step mattered
 note how the order of the fdtd step mattered
 
-optimizing fo the ration of host_cell over virus seems to work okay
+optimizing the total power ratio  of host_cell over virus seems to work okay
+using a power cost function for the ratio (sum(e^2 )) doesn't really work
+beacause it puts oscillatory power to make the average 0
+
+when plotting the step responses, it seems like there's a weird glitch on the virus
+it goes up linearly 
 
 
 
