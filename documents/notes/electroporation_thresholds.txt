@@ -197,8 +197,21 @@ provides an expression for the time constant of the peak spectrum (see that Alfa
 actually, the step response given by kotnik is already good enough for arbitrary waveforms using the 
 technique described by Matt L 
 pretty sure it's identical to the green's function method 
+indeed it is!
+
+(otherwise known as a convolution integral)
 
 it should be possible to evaluate that integral (of Kotnik's unit steps)? 
 
+apparently we can either integrate step response * derivative of Ef[],
+or integrate impulse response (derivative of step response) * Ef[] 
+(might be easier to do variational calc on that)
+
+NOTE: Mathematica does not handle UnitStep the same as HeavisideTheta;
+the derivative of one is Indeterminate, while the other is DiracDelta!
+
+neither the step or impulse response integrals seem to have closed-form solutions.
+can we exchange the integration order for the second integral over the energy?
 
 
+Only need to integrate from 0 to t if h and Ef are both 0 for t < 0

@@ -44,7 +44,7 @@ letterpaper]{geometry}
 
 \lettrine{A}{s} a followup to a technical report \cite{notes2021}, presenting experimental data on protein capsid adjacent technique; 
 
-There, the relevant time constants referred to the viscous loss of energy into the surrounding medium and the normal modes of the viral envelope; here the time constants relate to ion diffusion and capacitive charging. The relevant damage quantities were mechanical displacement and membrane stress, whereas here we consider transmembrane voltage and pore diameter. 
+While both mechanisms time constants, those discussed in the previous paper referred to the viscous loss of energy into the surrounding medium and the normal modes of the viral envelope; here the time constants relate to capacitive charging and ion diffusion. The relevant damage quantities were mechanical displacement and membrane stress, whereas here we consider transmembrane voltage and pore diameter. 
 
 Electroinsertion of proteins into membranes\cite{Clinical1996}; to provoke a local immune response near affected tissues,  
 
@@ -99,9 +99,13 @@ This property is
 
 This seems too simple.
 
-Viruses have extraordinary mechanical properties\footnote{Why is this? What selection pressures drive the selected pressure?}, so it seems reasonable that their dielectric properties could differ substantially from that of other structures. In the case of bacteriophages, the genome is packaged so tightly that the core is best considered an amorphous, glass-like material. ssRNA viruses like coronaviridae are perhaps somewhat less . On the other hand, the human "structome" also contains countless lipid vesicles that might plausibly 
+Viruses have extraordinary mechanical properties\footnote{Why is this? What selection pressures drive the selection of this pressure?}, so it seems reasonable that their dielectric properties could differ substantially from that of other structures. 
 
-The most obvious difference is scale. Viruses are minute. The classic Schwan equation implies that the transmembrane voltage 
+In the extreme case of the bacteriophage, the genome is packaged so tightly into the protein capsid that the core is often described as a glassy crystal of DNA\cite{Conformation2007}. ssRNA viruses like coronaviridae are perhaps somewhat less. 
+
+On the other hand, the human "structome" also contains countless lipid vesicles that might plausibly 
+
+
 
 
 
@@ -109,7 +113,9 @@ At the risk of spending more time producing underpowered "scientifically useless
 
 \subsection*{Basic scaling laws}
 
+The most obvious difference is scale. Viruses are minute. The classic Schwan equation implies that the transmembrane voltage is proportional to 
 
+There are two characteristic time constants; a low and a high-frequency one.
 
 Some extremely simplified scaling laws for membrane charging effects due to short (sub Tc) pulses are given by Schoenbach \cite{Bioelectric2007}. This is based primarily on an equivalent circuit model, we largely neglect the electrodynamics that apply with short pulses and also the conductivity change due to pore formation. Electroporation is a highly nonlinear effect\cite{Letter1974}, and this .
 
@@ -199,9 +205,13 @@ Kotnik-simulchouski
 
 (Helmholz)
 
+\subsection{Optimal pulse}
 
+This bears considerable similarity to e.g. radar waveform design and compressed sensing.
 
+Lagrange multipliers. Unfortunately, while closed-form solutions appear to be readily available for some simplified cases (such as when the membrane is infinitesimally thin), 
 
+The impulse response is the derivative of the step response. The convolution integral (or sum, in the discrete case) can be performed 
 
 
 
