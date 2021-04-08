@@ -215,3 +215,24 @@ can we exchange the integration order for the second integral over the energy?
 
 
 Only need to integrate from 0 to t if h and Ef are both 0 for t < 0
+
+
+the direct integral of the impulse*Ef[] over tau or t  is very unwieldy - really huge.
+
+hang on a minute, if Fourier can convolve accurately, can we
+ just do the same fourier transform lagrange trick 
+to convolve?
+
+
+https://class.ece.uw.edu/235dl/EE235/Project/lesson17/lesson17.html
+"We've just shown that the Fourier Transform of the convolution of two functions is simply the product of the Fourier Transforms of the functions. This means that for linear, time-invariant systems, where the input/output relationship is described by a convolution, you can avoid convolution by using Fourier Transforms. This is a very powerful result."
+
+the indefinite power integral of 
+
+note how the order of the fdtd step mattered
+note how the order of the fdtd step mattered
+
+optimizing fo the ration of host_cell over virus seems to work okay
+
+
+
