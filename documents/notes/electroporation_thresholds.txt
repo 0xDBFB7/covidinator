@@ -239,5 +239,7 @@ beacause it puts oscillatory power to make the average 0
 when plotting the step responses, it seems like there's a weird glitch on the virus
 it goes up linearly 
 
+ooh, side effect of constraining the pulse energy to one, bipolar pulses don't work
+oops
 
 
