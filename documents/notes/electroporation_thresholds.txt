@@ -242,4 +242,10 @@ it goes up linearly
 ooh, side effect of constraining the pulse energy to one, bipolar pulses don't work
 oops
 
+return ((- virus_output) + (abs(tstop - np.linalg.norm(convolve_output(input, host_cell, dt) * 1e6)))) 
+just makes 
+
+
+how about bang-bang control?
+
 
