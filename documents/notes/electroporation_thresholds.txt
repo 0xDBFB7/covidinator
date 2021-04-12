@@ -222,7 +222,7 @@ the direct integral of the impulse*Ef[] over tau or t  is very unwieldy - really
 hang on a minute, if Fourier can convolve accurately, can we
  just do the same fourier transform lagrange trick 
 to convolve?
-
+haphazardly optimizing pulse duration/spacing using kotnik's technique is not obviously effective. 
 
 https://class.ece.uw.edu/235dl/EE235/Project/lesson17/lesson17.html
 "We've just shown that the Fourier Transform of the convolution of two functions is simply the product of the Fourier Transforms of the functions. This means that for linear, time-invariant systems, where the input/output relationship is described by a convolution, you can avoid convolution by using Fourier Transforms. This is a very powerful result."
@@ -247,5 +247,38 @@ just makes
 
 
 how about bang-bang control?
+doing bang-bang over the ratio of virus to host doesn't seem to work
+doing based on the slope might work maybe?
+
+
+so based on these parameters, we would expect a 
+20e-6/50e-9 1/400 ratio in the steady state. Indeed, this is exactly what we see.
+
+
+However, with a short sub-nanosecond pulse, I actually can get 1/6.8 with a virus membrane er=80,
+despite the time constants being less than 20% different
+
+host_cell = Cell(0.3, 80, 0.3, 80, 1e-7, 5, 20e-6, 5e-9, t)
+virus = Cell(0.3, 80, 0.005, 30, 1e-8, 80, 50e-9, 14e-9, t)
+Host cell 4.4455226913733625e-07, 2.361165949232313e-09
+virus 3.7644303303652596e-07, 3.460238575701499e-09
+
+with a virus membrane Er of 5 rather than 80, the ratio improves to 1/2.7!!!
+with 80 and dropping the host cell size from 20 to 2.5 um, 
+
+changing the virus core permittivity to 5 rather than 30 has a very small impact.
+same with 80 rather than 30.
+same with the conductivity? hmm, that's messed up...
+changing the virus membrane to 5 nm and er 5 still doesn't break it.
+it really is just a size thing? somehow?
+need some way of displaying the multivariate variation with all the variables
+
+
+
+so there are apparently two different ways to solve these optimal control problems 
+(and just doing it like this is not one of them.); indirect, using the variational calculus, 
+and 'direct', using numerical methods.  Lots of these are proprietary or MATLAB;
+the paper on gekko has a good review of programs for this purpose.
+
 
 
