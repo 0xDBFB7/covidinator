@@ -280,5 +280,13 @@ so there are apparently two different ways to solve these optimal control proble
 and 'direct', using numerical methods.  Lots of these are proprietary or MATLAB;
 the paper on gekko has a good review of programs for this purpose.
 
+might want to convert the step response into a DE somehow, since most solvers want the differential 
+eq form
+(actually it looks like it'll be easier to go from the laplace transform to the DE:
+https://lpsa.swarthmore.edu/Representations/SysRepTransformations/TF2SDE.html )
+
+Schaum's outline of differential equations has a whole section on convolutions and the unit step
+
+gekko seems to require conversion of the high-order ODE to a single-order DE by substitution.
 
 
