@@ -290,3 +290,10 @@ Schaum's outline of differential equations has a whole section on convolutions a
 gekko seems to require conversion of the high-order ODE to a single-order DE by substitution.
 
 
+interesting thing from gekko docs:
+
+"The traditional method for max value (max) is not continuously differentiable 
+and can cause a gradient-based optimizer to fail to converge:...
+
+"The traditional method for absolute value (abs) has a point that is not continuously differentiable at an argument value of zero and can cause a gradient-based optimizer to fail to converge:"
+
