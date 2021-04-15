@@ -297,3 +297,7 @@ and can cause a gradient-based optimizer to fail to converge:...
 
 "The traditional method for absolute value (abs) has a point that is not continuously differentiable at an argument value of zero and can cause a gradient-based optimizer to fail to converge:"
 
+gekko might not be great because it seems to somewhat revolve around a uniform timestep
+psopt includes 'pseudospectral' stuff, might work better
+
+should use PACE to do the image thing
