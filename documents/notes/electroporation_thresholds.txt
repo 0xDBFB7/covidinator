@@ -313,3 +313,7 @@ is  the background APmonitor thing in float or double?
 PSOPT has automatic scaling.
 
 oh hey, both gekko and psopt use ipopt internaly.
+
+not sure if adol was compiled with sparse enabled - it used the apt adol version,
+anyhow we'll try
+
