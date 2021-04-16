@@ -317,3 +317,6 @@ oh hey, both gekko and psopt use ipopt internaly.
 not sure if adol was compiled with sparse enabled - it used the apt adol version,
 anyhow we'll try
 
+gekko keeps playing with my heart - keeps optimizing at 1e-20 whatever and everything' sjust numerical
+noise
+
