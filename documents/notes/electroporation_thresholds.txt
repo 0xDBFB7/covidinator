@@ -310,3 +310,6 @@ works great when the end time is greater than 1 microsecond, but
 I think we're hitting precision limits (might need to scale) 
 is  the background APmonitor thing in float or double?
 
+PSOPT has automatic scaling.
+
+oh hey, both gekko and psopt use ipopt internaly.
