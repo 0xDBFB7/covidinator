@@ -301,3 +301,12 @@ gekko might not be great because it seems to somewhat revolve around a uniform t
 psopt includes 'pseudospectral' stuff, might work better
 
 should use PACE to do the image thing
+
+
+gekko allows direct state-space input!
+
+well, simulating the DE with gekko in mode 4 
+works great when the end time is greater than 1 microsecond, but 
+I think we're hitting precision limits (might need to scale) 
+is  the background APmonitor thing in float or double?
+
