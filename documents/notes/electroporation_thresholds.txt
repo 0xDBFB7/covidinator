@@ -334,4 +334,10 @@ thing would have so much trouble with it.
 Aha, initial guess is important - using an initial guess of 0 trapped the integral constraint,
 1 on both control and states worked great
 
+gnuplot wasn't scaling right for the small values. edited 
+double range_min = 1e-11; in psopt/src/plot.cxx
+hum, gnuplot doesn't actually autoscale exponentially. 
+
+edited line 137 in plot.cxx to remove the manual plot range. gnuplot does a good enough job as it is.
+
 
