@@ -323,3 +323,6 @@ noise, seems unstable perhaps due to a lack of auto scaling.
 
 need to look up the cost function
 
+
+Victor M. Becerra the PSOPT author seems like such a cool guy!
+definitely one of the most well-documented scientific software packages 
