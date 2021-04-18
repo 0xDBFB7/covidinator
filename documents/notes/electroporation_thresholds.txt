@@ -331,5 +331,7 @@ definitely one of the most well-documented scientific software packages
 actually, the output value of the Kotnik diffeq is very, very small - it makes sense that the
 thing would have so much trouble with it.
 
+Aha, initial guess is important - using an initial guess of 0 trapped the integral constraint,
+1 on both control and states worked great
 
 
