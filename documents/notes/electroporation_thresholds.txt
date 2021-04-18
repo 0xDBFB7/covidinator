@@ -326,3 +326,10 @@ need to look up the cost function
 
 Victor M. Becerra the PSOPT author seems like such a cool guy!
 definitely one of the most well-documented scientific software packages 
+
+
+actually, the output value of the Kotnik diffeq is very, very small - it makes sense that the
+thing would have so much trouble with it.
+
+
+
