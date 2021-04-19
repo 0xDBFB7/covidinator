@@ -344,4 +344,9 @@ turned on -Ofast in psopt. let's see how that works?
 both -O2 and -Ofast are crazy fast. 5 or 10x, easily.
 nothing's parallel, so OMP_NUM... >1 actually makes things slower.
 
+one solution was just two humps.
+lots of weird "failed" solutions that I don't understand. 
+
+
+
 
