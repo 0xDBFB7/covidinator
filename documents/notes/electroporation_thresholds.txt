@@ -362,7 +362,10 @@ remember to thank lanl for spral integration
 have to set cuda_home for spral to compile
 
 https://github.com/lanl-ansi/spral/blob/master/COMPILE.md
-then
+thensudo ln -s ./* /usr/lib/spral/
+
 https://github.com/coin-or/Ipopt/blob/devel/doc/install.dox
 
+the coin-or version isn't done yet: used everything as described in the lanl PR
 
+oh my god the problem was that I had messed up my LDFLAGS environment variable
