@@ -346,6 +346,17 @@ nothing's parallel, so OMP_NUM... >1 actually makes things slower.
 
 one solution was just two humps.
 lots of weird "failed" solutions that I don't understand. 
+even though the ODE error is reported to be e-8, the virus voltage is totally different
+if I put it into the convolver
+
+from casadi:
+
+"Note that, unfortunately, we cannot guarantee the stability of using the newer linear solvers (MA57, MA77, MA86 and MA97 that are only free for academics) since HSL has not granted us any maintenance license."
+
+apparently the best free solver is SPRAL, gpu accel, 
+spral needs to be compiled without -j.
+
+snopt might be good too
 
 
 
