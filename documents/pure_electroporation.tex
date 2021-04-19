@@ -183,6 +183,8 @@ Basic dry-weight measurements seem to suggest that influenza contains about 60\%
 % Actual envelope resistance:
 % 
 
+
+
 Critically, Gimsa and Schnelle data, both on influenza, seems to suggest a core conductivity of 0.8 to 0.1 milliSiemens/m (1000 to 10000 $\Omega \cdot m$), using a medium conductivity of 74 mS/m and 3 mS/m, respectively. This is far less conductive than cytoplasm or nucleoplasm, each on the order of 1 S/m (1 $\Omega \cdot m$) \cite{Study2001}. 
 
 % if this is correct, scaling linearly:
@@ -237,8 +239,14 @@ There exists an alternative convolution technique, due to the Convolution Proper
 
 The fourier transform of both the impulse response and the step response exist, are analytic and of manageable size.
 
+For use with GEKKO, the transfer function was converted into a system of differential equations:
 
+For PSOPT, a further modification was needed, as the library does not support the derivative of the control during .
 
+Initial guess of 0 produces a trap.
+
+because the problem depends on the second derivative of sub-nanosecond curves, the scaling varies by about 30 orders of magnitude.
+PSOPT [] with IPOPT\cite{implementation2006} solver.
 
 
 
