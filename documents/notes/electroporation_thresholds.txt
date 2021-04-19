@@ -340,4 +340,8 @@ hum, gnuplot doesn't actually autoscale exponentially.
 
 edited line 137 in plot.cxx to remove the manual plot range. gnuplot does a good enough job as it is.
 
+turned on -Ofast in psopt. let's see how that works? 
+both -O2 and -Ofast are crazy fast. 5 or 10x, easily.
+nothing's parallel, so OMP_NUM... >1 actually makes things slower.
+
 
