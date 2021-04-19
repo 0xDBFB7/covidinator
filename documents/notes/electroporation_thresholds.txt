@@ -358,6 +358,11 @@ spral needs to be compiled without -j.
 
 snopt might be good too
 
+remember to thank lanl for spral integration
+have to set cuda_home for spral to compile
 
+https://github.com/lanl-ansi/spral/blob/master/COMPILE.md
+then
+https://github.com/coin-or/Ipopt/blob/devel/doc/install.dox
 
 
