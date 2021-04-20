@@ -400,3 +400,5 @@ the LQR gradient method seems like it should be a bit more robust than what we'r
 http://www.kostasalexis.com/lqr-control.html
 https://julienpascal.github.io/post/lqr/
 
+almost had the solution with PSOPT, but it keeps glitching out on me
+
