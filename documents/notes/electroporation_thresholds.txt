@@ -380,3 +380,19 @@ for some reason, spral is really slow. In any case, got access to HSL.
 using the derivative bounds to creep up on the solution seems to work really well actually
 seems like the reason for the weird non-converging solutions was that the derivative bound
 was higher than the number of nodes could account for
+
+
+COIN-OR Foundation is an interesting example of a non-profit that does good applied research work
+have a lot of corporate members
+
+this is kind of like a double-pendulum; underactuated. 
+Fortunately, it seems to be linear
+
+"http://www.taumuon.co.uk/2016/02/lqr-control-of-inverted-pendulum-in-c-using-eigen.html"
+The LQR control applied to the non-linear system does stabilise the system, but it is more oscillatory.
+
+https://julienpascal.github.io/post/lqr/
+
+before I had a u0*u0 energy constraint and a -x0_v x0v + _h _h cost function.
+LQR also uses an integral cost function (though no energy constraint necessarily)
+
