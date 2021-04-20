@@ -227,7 +227,7 @@ The question of optimizing a pulse is not novel, having been discussed by many g
 
 This bears considerable similarity to e.g. radar waveform design and compressed sensing, and also problems of optimal control. In many cases, the optimal control is equal to the transfer function
 
-The time-domain response can be obtained by the convolution integral with the step or impulse response function, or by manually integrating the differential equation via some integrator.
+The time-domain response can be obtained from the step or impulse response function by evaluating the convolution integral, or by manually integrating the differential equation via some integrator.
 
 Lagrange multipliers. Unfortunately, while closed-form solutions appear to be readily available for some simplified cases (such as when the membrane is infinitesimally thin or when permittivity is neglected) [schwan paper], 
 
@@ -237,19 +237,32 @@ The impulse response is the derivative of the step response. The convolution int
 
 There exists an alternative convolution technique, due to the Convolution Property of the fourier transform.
 
-The fourier transform of both the impulse response and the step response exist, are analytic and of manageable size.
+The fourier transform of both the impulse response and the step response exist, are analytic and of manageable size; however, the integral of the cost function is extremely unweildy.
+
+\subsection{Optimal control solvers}
+
+An excellent overview of solutions http://plato.asu.edu/sub/nlounres.html
 
 For use with GEKKO, the transfer function was converted into a system of differential equations:
 
-For PSOPT, a further modification was needed, as the library does not support the derivative of the control during .
+For PSOPT, a further modification was needed, as the library does not support the derivative of the control.
 
 Initial guess of 0 produces a trap.
 
 because the problem depends on the second derivative of sub-nanosecond curves, the scaling varies by about 30 orders of magnitude.
-PSOPT [] with IPOPT\cite{implementation2006} solver.
+PSOPT [] with IPOPT\cite{implementation2006} solver. PSOPT has the advantage of semi-automatic scaling based on bounds. 
 
-A hard-to-detect lack of convergence would often produce a fallacious simulated output from PSOPT. To double-check that the issue was not numerical, the output was fed through the convolution integral.
+Both PSOPT and GEKKO's APMonitor backend use the famous ipopt solver. A number of linear solvers can be used. LANL's Tasseff's integration with the SPRAL solver, reportedly faster on large problems, was 
 
+It was found very useful to test the 
+
+A hard-to-detect lack of convergence would often produce a fallacious simulated output from PSOPT. To double-check that the solution was actually valid, the output was fed through the convolution integral method.
+
+Considerable difficulty was encountered. 
+
+
+
+\subsection{Optimal control solvers}
 
 
 % Is the effect replicable, or is it simply an electrochemical artifact? Will these nanopores be destructive to viruses - will the pores be open for sufficient time for the ssRNA to be released? Will the nucleocapsid restrain the genome sufficiently and prevent membrane damage from inactivating the virus? Are the apoptosis effects likely to be triggered before these? Are there similar structures in tissue?

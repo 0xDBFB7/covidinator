@@ -361,11 +361,19 @@ snopt might be good too
 remember to thank lanl for spral integration
 have to set cuda_home for spral to compile
 
-https://github.com/lanl-ansi/spral/blob/master/COMPILE.md
-thensudo ln -s ./* /usr/lib/spral/
-
-https://github.com/coin-or/Ipopt/blob/devel/doc/install.dox
-
 the coin-or version isn't done yet: used everything as described in the lanl PR
 
 oh my god the problem was that I had messed up my LDFLAGS environment variable
+
+https://gist.github.com/tasseff/ee61ef6c15d3c54e0a6b3e488f2a65be
+verbatim, worked great
+
+should add an autorange flag to algorithm workspace struct
+
+have to run sudo ldconfig after any lib installation
+
+with mumps, ofast mention
+
+
+for some reason, spral is really slow. In any case, got access to HSL.
+
