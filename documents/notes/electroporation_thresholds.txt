@@ -377,3 +377,6 @@ with mumps, ofast mention
 
 for some reason, spral is really slow. In any case, got access to HSL.
 
+using the derivative bounds to creep up on the solution seems to work really well actually
+seems like the reason for the weird non-converging solutions was that the derivative bound
+was higher than the number of nodes could account for
