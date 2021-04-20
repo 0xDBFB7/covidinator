@@ -402,3 +402,8 @@ https://julienpascal.github.io/post/lqr/
 
 almost had the solution with PSOPT, but it keeps glitching out on me
 
+https://ocw.mit.edu/courses/mechanical-engineering/2-154-maneuvering-and-control-of-surface-and-underwater-vehicles-13-49-fall-2004/lecture-notes/lec19.pdf
+gradient solution 
+
+might want to re-run with an even lower derivative scaling
+
