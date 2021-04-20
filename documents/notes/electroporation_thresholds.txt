@@ -397,5 +397,6 @@ before I had a u0*u0 energy constraint and a -x0_v x0v + _h _h cost function.
 LQR also uses an integral cost function (though no energy constraint necessarily)
 
 the LQR gradient method seems like it should be a bit more robust than what we're doing here.
-
+http://www.kostasalexis.com/lqr-control.html
+https://julienpascal.github.io/post/lqr/
 
