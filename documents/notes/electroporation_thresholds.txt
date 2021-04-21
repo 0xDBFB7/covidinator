@@ -407,3 +407,5 @@ gradient solution
 
 might want to re-run with an even lower derivative scaling
 
+looks awfully like the subtracted impulse response I did a while ago, subtracted every other decay time
+
