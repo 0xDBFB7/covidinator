@@ -56,13 +56,13 @@ It is, in general, something of a singular outlier in that it is one of very few
 
 Electroinsertion of proteins into membranes\cite{Clinical1996}; to provoke a local immune response near diseased tissues, 
 
-
-
 At the risk of self-plagarism, we will restate precedent 
 
 The same electrostatic effects on lipid bilayers have been investigated for decades. Many extremely fascinating hydrodynamic and parametric 
 
-The idea of inactivating viruses via electric fields is not new. Very recently, Osorio \cite{Receptor2021} have reported on a susceptibility of SARS-CoV-2's spike proteins to intense electric fields; however, in general, techniques targeting proteins appear to require truly extreme; in their study, fields of up to 2.9 GV/m were required. Dissocation of capsid proteins has been predicted by Man \cite{Picosecond2016b} at 2 GV/m. Similar techniques Tsen \cite{Studies2014}, but these have not been replicated \cite{No2011}. These regimes of intensity may possibly be accessible via ultrashort optical techniques.
+The idea of inactivating viruses via electric fields is not new. Very recently, Osorio \cite{Receptor2021} have reported on a susceptibility of SARS-CoV-2's spike protein to intense electric fields; however, in general, techniques targeting proteins appear to require truly extreme; in their study, fields of up to 2.9 GV/m were required. Dissocation of capsid proteins has been predicted by Man \cite{Picosecond2016b} at 2 GV/m.
+
+These regimes of intensity may possibly be accessible via ultrashort optical techniques. Similarly, Tsen \cite{Studies2014} report a non-electroporative mechanism, but these results have not been replicated at that intensity\cite{No2011}. 
 
 on the other hand, the idea of shocking a virus is so basic that it can scarcely be believed 
 
@@ -97,11 +97,11 @@ Pulse count and inter-pulse timing is another free variable. Joshi et al \cite{S
 
 This seems to hint that electroporation occurs at the same order of magnitude field as host cells.
 
-Of course, unlike localized tumors, viral infections are systemic, affecting many of the most favoured organs. However, either blood 
+Of course, unlike localized tumors, viral infections are systemic, affecting many of the most favoured organs. 
 
 
 
-Note that, despite clear evidence in nanosecond review, microsecond in vivo and clinical treatment, nanosecond in vivo conduction, and, The NATO review of vivo data regarding non-contact, "electrodeless", even above the thresholds that might otherwise be expected to cause electroporation. has not yet found any evidence demonstrating electroporation via pulsed RF. de Seze, 
+Note that, despite clear evidence in [nanosecond review], microsecond in vivo and clinical treatment, nanosecond in vivo conduction, and, The NATO review of vivo data regarding non-contact, "electrodeless", even above the thresholds that might otherwise be expected to cause electroporation. has not yet found any evidence demonstrating electroporation via pulsed RF. de Seze, 
 
 This property is 
 \cite{Nanosecond2006b} 
@@ -225,7 +225,11 @@ The question of optimizing a pulse is not novel, having been discussed by many g
 
 \subsection{Optimal pulse}
 
-This bears considerable similarity to e.g. radar waveform design and compressed sensing, and also problems of optimal control. In many cases, the optimal control is equal to the transfer function
+This bears considerable similarity to e.g. radar waveform design and compressed sensing, and also problems of coherent control in quantum systems. In many cases, the optimal control is equal to the transfer function
+
+single input, multiple output 
+
+"Underactuated";
 
 The time-domain response can be obtained from the step or impulse response function by evaluating the convolution integral, or by manually integrating the differential equation via some integrator.
 
@@ -239,28 +243,28 @@ There exists an alternative convolution technique, due to the Convolution Proper
 
 The fourier transform of both the impulse response and the step response exist, are analytic and of manageable size; however, the integral of the cost function is extremely unweildy.
 
-\subsection{Pseudospectral solvers}
+\subsection{direct method Pseudospectral solvers}
 
 An excellent overview of solutions http://plato.asu.edu/sub/nlounres.html
 
 For use with GEKKO, the transfer function was converted into a system of differential equations:
 
-For PSOPT, a further modification was needed, as the library does not support the derivative of the control.
+For PSOPT, a further modification was needed, as the library does not support the derivative of the control; the second derivative was used as the control.
 
-Initial guess of 0 produces a trap.
 
-because the problem depends on the second derivative of sub-nanosecond curves, the scaling varies by about 30 orders of magnitude.
-PSOPT [] with IPOPT\cite{implementation2006} solver. PSOPT has the advantage of semi-automatic scaling based on bounds. 
+
+because the problem depends on the second derivative of sub-nanosecond curves, the scaling varies by about 20 orders of magnitude.
+PSOPT [] with IPOPT\cite{implementation2006} solver. PSOPT has the advantage of semi-automatic scaling based on supplied bounds. 
 
 Both PSOPT and GEKKO's APMonitor backend use the famous ipopt solver. A number of linear solvers can be used. LANL's Tasseff's integration with the SPRAL solver, reportedly faster on large problems, was 
 
-It was found very useful to test the 
+It was found very useful to test the equation setup by first propagating a test using a standard integrator (PSOPT's rk4 or mode 4).
 
 A hard-to-detect lack of convergence would often produce a fallacious simulated output from PSOPT. To double-check that the solution was actually valid, the output was fed through the convolution integral method.
 
 Considerable difficulty was encountered. 
 
-
+First the objective function with an integral power constraint was used, but this did not yield
 
 \subsection{Optimal control solvers}
 
