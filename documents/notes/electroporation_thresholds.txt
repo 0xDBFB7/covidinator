@@ -400,12 +400,27 @@ the LQR gradient method seems like it should be a bit more robust than what we'r
 http://www.kostasalexis.com/lqr-control.html
 https://julienpascal.github.io/post/lqr/
 
-almost had the solution with PSOPT, but it keeps glitching out on me
+almost had the solution with PSOPT, but it keeps glitching out on me,
+going to absurd solutions that don't obey the constraints.
 
 https://ocw.mit.edu/courses/mechanical-engineering/2-154-maneuvering-and-control-of-surface-and-underwater-vehicles-13-49-fall-2004/lecture-notes/lec19.pdf
-gradient solution 
+general gradient solution method, similar to LQR method, might be good
 
 might want to re-run with an even lower derivative scaling
-
 looks awfully like the subtracted impulse response I did a while ago, subtracted every other decay time
+
+
+apparently variable scaling is really, really important 
+see casadi blog post
+
+
+casadi has an example for LQR! neat
+
+one thing about casadi is that it's not designed around batteries-included (integrators need to b
+e written yourself, etc), so 
+
+NLOptControl looks good
+
+A whole other field called "Differential dynamic programming".
+https://github.com/baggepinnen/DifferentialDynamicProgramming.jl
 
