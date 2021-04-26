@@ -424,3 +424,23 @@ NLOptControl looks good
 A whole other field called "Differential dynamic programming".
 https://github.com/baggepinnen/DifferentialDynamicProgramming.jl
 
+PyOMO looks okay, Control Toolbox, 
+
+bocop has a nice GUI...
+openocl is for matlab/maybe octave?
+
+"CONDOR on Github" looks like a stable option
+
+
+anassinator has a cool ilqr implemenation. Let's breifly try that first
+ [constraints] is achieved by instead fitting for unconstrained actions and then applying it to a squashing function $\tanh(\textbf{u})$."
+cool!
+"Otherwise I'd try generating the random path differently -- a random walk for example might converge more easily."
+
+oh! cool!
+
+
+https://jonathan-hui.medium.com/rl-lqr-ilqr-linear-quadratic-regulator-a5de5104c750 
+great review of ilqr, ddp, etc
+interesting - ddp is just an extension of ilqr to higher orders
+the term "programming" actually just means "optimization" - programming used to mean optimization
