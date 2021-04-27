@@ -271,7 +271,7 @@ An excellent overview of solutions http://plato.asu.edu/sub/nlounres.html
 
 For use with GEKKO, the transfer function was converted into a system of differential equations:
 
-For PSOPT, a further modification was needed, as the library does not support the derivative of the control; the second derivative was used as the control.
+For PSOPT, a further modification was needed, as the library does not support the derivative of the control; the second derivative was used as the control, and input into a differential-algebraic equation form.
 
 
 
@@ -286,7 +286,7 @@ A hard-to-detect lack of convergence would often produce a fallacious simulated 
 
 Considerable difficulty was encountered. 
 
-First the objective function with an integral power constraint was used, but this did not yield
+First the objective function with a constant integral control power constraint was used, but this did not yield
 
 \subsection{Optimal control solvers}
 

@@ -444,3 +444,16 @@ https://jonathan-hui.medium.com/rl-lqr-ilqr-linear-quadratic-regulator-a5de5104c
 great review of ilqr, ddp, etc
 interesting - ddp is just an extension of ilqr to higher orders
 the term "programming" actually just means "optimization" - programming used to mean optimization
+
+
+scaling is apparently a big topic - lots of work on scaling differential equations
+
+optimal impulse control
+
+Harney discusses high-index DAEs. GEKKO (APMonitor) has some advanced algorithms to do this
+that I don't understand.
+http://www.scholarpedia.org/article/Differential-algebraic_equations
+
+https://www.cs.ubc.ca/~mitchell/Class/CS532M.2007W2/Talks/differentialDPYeo.pdf
+
+ddp is a locally linearized version of LQR.
