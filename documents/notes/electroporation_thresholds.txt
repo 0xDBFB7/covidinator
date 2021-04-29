@@ -457,3 +457,11 @@ http://www.scholarpedia.org/article/Differential-algebraic_equations
 https://www.cs.ubc.ca/~mitchell/Class/CS532M.2007W2/Talks/differentialDPYeo.pdf
 
 ddp is a locally linearized version of LQR.
+
+
+
+a really awesome way of taking mathematics notes: https://math.stackexchange.com/a/29373/827672
+
+
+
+

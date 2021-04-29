@@ -9,6 +9,11 @@ letterpaper]{geometry}
 
 \include{preamble}
 
+\usepackage{physics}
+\usepackage{bm}
+\newcommand{\bstar}[1]{ {#1}^{\bm*} }
+
+
 \begin{document}
 
 
@@ -49,20 +54,22 @@ At the risk of spending more time producing underpowered "scientifically useless
 
 In a continued effort to make ultracrepidarian physicists such as ourselves feel useful 
 
-While both mechanisms hinge on time constants, those discussed in the previous paper referred to the time for viscous loss of energy into the surrounding medium and the normal modes of the viral envelope; here the time constants relate to capacitive charging, and Smoluchowski processes. The relevant damage quantities were mechanical displacement and membrane stress, whereas here we consider transmembrane voltage and pore diameter. 
+While both mechanisms hinge on a set of time constants, those discussed in the previous paper referred to the time for viscous loss of energy into the surrounding medium and the normal modes of the viral envelope; here the time constants relate to capacitive charging, and Smoluchowski processes. Previously, the relevant quantities describing damage to the virion were mechanical displacement and membrane stress, whereas here we consider transmembrane voltage and pore diameter. 
 
-At the risk of self-plagarism, we will restate some precedent
+At the risk of self-plagarism, we will restate some precedent.
 
 The field-induced breakdown of lipid membranes has proved to be a particularly useful property of the cell. From initial studies of crude membrane breakdown effects \cite{Reversible1979}
 
 hit "with an electric field strong enough to knock over a horse, and they do enough things to justify international meetings, to fill a sizable book, and to lead one to speak of an entirely new technology for cell manipulation."
 
-It is, in general, something of a singular outlier in that it is one of very few biological mechanisms relevant at practical electric field intensities. Along with thermal treatment, it also performs an operation something like integration, distinct from absolute-value. It is perhaps this property which provides a small degree of tunability.
+It is, in general, something of a singular outlier in that it is one of very few biological mechanisms relevant at practical electric field intensities. Similar to thermal treatment, it also performs an operation something like integration with a threshold, a process distinct from normal absolute-value. It is perhaps this property which provides a small degree of tunability.
 
-\footnote{It is amusing to draw parallels between electroporation and Bialke et al's reports on spacecraft reaction wheels. In both cases, destructive process are charging of the external shell (the spacecraft itself), a highly resistive layer (a layer of grease on the ball bearings), and a }
+\footnote{It is amusing to draw parallels between electroporation and Bialke et al's reports on spacecraft reaction wheels. In both cases, destructive process involve differential charging of the external shell (the spacecraft itself) against an internal shell (the reaction wheels), producing a potential difference across a highly resistive layer (a layer of grease on the ball bearings)}
 
 
-Varactor-like parametric, as the bilayer is squished by the potential; 
+Varactor-like parametric properties as the bilayer is squished by the potential. hydrodynamic
+
+The same Debye screening effects are also of some relevance. 
 
 Electroinsertion of proteins into membranes\cite{Clinical1996}; to provoke a local immune response near diseased tissues, 
 
@@ -70,12 +77,12 @@ The same electrostatic effects on lipid bilayers have been investigated for deca
 
 The idea of inactivating viruses via electric fields is not new. Very recently, Osorio \cite{Receptor2021} have reported on a susceptibility of SARS-CoV-2's spike protein to intense electric fields; however, in general, techniques targeting proteins appear to require truly extreme; in their study, fields of up to 2.9 GV/m were required. Dissocation of capsid proteins has been predicted by Man \cite{Picosecond2016b} at 2 GV/m.
 
-These regimes of intensity may possibly be accessible via ultrashort optical techniques. Similarly, Tsen \cite{Studies2014} report a non-electroporative mechanism, but these results have not been replicated at that intensity\cite{No2011}. 
+These regimes of intensity may possibly be accessible via ultrashort optical techniques. Similarly, Tsen \cite{Studies2014} report a non-electroporative mechanism, but these results have not been successfully independently replicated at that intensity\cite{No2011}. 
 
 on the other hand, the idea of shocking a virus is so basic that it can scarcely be believed 
 
 
-Electroporation\cite{Electroporation1988}, now a common laboratory procedure, occurs when an enormous electric field causes ions in solution to diffuse across a cell membrane, capacitively charging it, provoking a change in lipid bilayer conformation\cite{Membrane2016}, reversibly rendering the membrane permeable. This is one among many other, more subtle mechanisms; the minutia of poration can become extraordinarily complex in certain circumstances and are beyond the author's current understanding\cite{Theoretical2007}. Hydrodynamic
+Electroporation\cite{Electroporation1988}, now a common laboratory procedure, occurs when an enormous electric field causes ions in solution to diffuse across a cell membrane, capacitively charging it, provoking a change in lipid bilayer conformation\cite{Membrane2016}, either reversibly rendering the membrane permeable or, if the number and size of pores is considerable, the membrane may be permanently destroyed. This is one among many other, more subtle mechanisms; the minutia of poration can become extraordinarily complex in certain circumstances and are beyond the author's current understanding\cite{Theoretical2007}. Hydrodynamic
 
 Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have found surprisingly little discussion on clinical treatment of viral infection with these conventional electroporation therapies.
 
@@ -130,13 +137,15 @@ On the other hand, the cellular "structome" also contains countless vesicles and
 
 
 
-\subsection*{Basic scaling laws}
+\section*{Basic scaling laws}
 
-The most obvious difference is scale. Viruses are minute. All other properties of the, the classic Schwan equation implies that the steady-state DC transmembrane voltage is proportional to the size of the particle.
+The most obvious difference is scale. Viruses are minute. All other properties of the system being equal, the standard Schwan equation for transmembrane voltage implies that the steady-state DC voltage is proportional to the size of the particle. In the case of a 100 nm virus 
 
-Madiyar's Vaccinia electroporation data aligns with. Assuming that the host porates at 0.05 MV/m, the 250 nm vaccinia might be expected to have a threshold of 4 MV/m. 
 
-However, this does not explain 
+
+Madiyar's Vaccinia electroporation data aligns with. Assuming that the host porates at 0.05 MV/m, the 250 nm vaccinia might be expected to have a threshold of 4 MV/m. Mutatoyo's data also agree.  
+
+This does not agree with the two reports. It does not seem plausible that the 
 
 %1/(250e-9 / 20e-6)
 
@@ -152,7 +161,7 @@ Despite the two having nearly identical time constants, the course of the transm
 
 There are two characteristic time constants; a low and a high-frequency one.
 
-Some extremely simplified scaling laws for membrane charging effects due to short (sub Tc) pulses are given by Schoenbach \cite{Bioelectric2007}. This is based primarily on an equivalent circuit model, we largely neglect the electrodynamics that apply with short pulses and also the conductivity change due to pore formation. Electroporation is a highly nonlinear effect\cite{Letter1974}, and this .
+Some extremely simplified scaling laws for membrane charging effects due to short (sub-first time constant) pulses are given by Schoenbach \cite{Bioelectric2007}. This is based primarily on an equivalent circuit model, we largely neglect the electrodynamics that apply with short pulses and also the conductivity change due to pore formation, modelled by [insert equation from "ADC" paper]. Electroporation is a highly nonlinear effect\cite{Letter1974}, and this .
 
 The membrane charging time constant from a single-shell model \cite{Ultrashort2004} - simplified for the low-density case. As the fraction, and papers citing this usually mention that this may not be representative of charging time in tissue.
 
@@ -170,6 +179,13 @@ that is, all else being equal, the induced transmembrane voltage appears to be i
 
 The viral envelope capacitance per unit area, $C_m$, can be determined simply by parallel-plate (Ermolina \cite{Study2001}); $C_m = (k\epsilon_0) / d$, where d is the membrane thickness. The cell and nucleus membrane have similar capacitance, but greatly differ in conductivity. 
 
+Regrettably, despite their diminutive radii, viruses and host cells may well have overlapping time constants due to the other dielectric properties. However, even in the case where both time constants are nearly equivalent, a marked discrepancy in the time evolution of short pulses can be seen.
+
+[step response]
+
+And so, despite having similar time constants, a short gaussian pulse [] long 
+
+
 There may be an existing transmembrane potential that must be added - this is neglected in this case.
 
 The dielectric properties of viruses have been determined by the fascinating technique of electrorotation, dielectrophoresis, and dielectric spectroscopy. To prevent fluid heating, these are often conducted in low osmotic strength media. Enveloped viruses are permeable to small ions, and so some results may not necessarily representative of conductivities in physiological conditions; \cite{Assessment}.
@@ -180,11 +196,11 @@ Via electrorotation, it is usually found that the viral shell has a permittivity
 
 On the other hand, \cite{Electrostatic2020a} use a membrane value of 4.
 
-want to more accurately represent the - most importantly, the core permittivity seems like it should alter the reflection significantly at high frequencies, but isn't usually treated 
+Equivalent circuit models want to more accurately represent the - most importantly, the core permittivity intuitively seems like it should alter the reflection significantly at high frequencies, but isn't usually treated 
 
 Influenza has a membrane thickness of about 4 nm (Harris \cite{Influenza2006}). However, Gimsa and Hughes use a shell thickness of 18 and 15 nm, respectively, to account for the membrane proteins and hemaglutinase. The $C_{envelope}$ may therefore be expected to fall within the range $2.9 \text{ to } 17.7 \text{ uF/cm}^2$.
 
-Basic dry-weight measurements seem to suggest that influenza contains about 60\% water by weight \cite{lauffer1944biophysical}. Has diffusion coefficients and maintains a Donnan ion size equilibrium similar to that of lipid bilayers \cite{Effect2015b}.
+Dry-weight measurements seem to suggest that influenza contains about 60\% water by weight \cite{lauffer1944biophysical}. Has diffusion coefficients and maintains a Donnan ion size equilibrium similar to that of lipid bilayers \cite{Effect2015b}. 
 
 % should this be noweb python? python isn't really unit aware though
 % maybe sympy or something?
@@ -232,7 +248,7 @@ The dielectric properties of viruses do appear to differ considerably from the h
 %At first glance, this may seem unfortunate: the host will be electroporated far before the virus.
 %However, if a monopolar pulse train with a pulse duration shorter than the cell time constant, an intensity too low for, and a repetition rate of some 3 us, (200 khz), 
 
-\subsection{Electrodynamic considerations}
+\subsection*{Electrodynamic considerations}
 
 Kotnik note an important fact: all these permittivity and conductivity values will also depend on frequency, which is not included in their model. We have not examined how these factors can be extracted from. Also disregarded are the Poisson-boltzmann shielding space-charges that proved all-important in the last study. 
 
@@ -240,16 +256,18 @@ The necessity for the Laplace transform over the Fourier-based method used for t
 
 The question of optimizing a pulse is not novel, having been discussed by many groups in the past. Retelj use a series of 
 
-\subsection{Optimal pulse}
+\subsection*{Optimal pulse}
 
-Differential 
+We must apologize once again to the mathematicians for sins of terminology.
 
-This bears considerable similarity to e.g. radar waveform design and compressed sensing, and also problems of coherent control in quantum systems. In many cases, the optimal control is equal to the transfer function
+
+
+This bears considerable similarity to e.g. radar waveform design and compressed sensing; problems of coherent control of quantum systems. In many cases, the optimal control is equal to the transfer function
 
 
 single input, multiple output 
 
-"Underactuated";
+"Underactuated" robotics
 
 two plant
 
@@ -265,7 +283,7 @@ There exists an alternative convolution technique, due to the Convolution Proper
 
 The fourier transform of both the impulse response and the step response exist, are analytic and of manageable size; however, the integral of the cost function is extremely unweildy.
 
-\subsection{direct method Pseudospectral solvers}
+\subsection*{direct method Pseudospectral solvers}
 
 An excellent overview of solutions http://plato.asu.edu/sub/nlounres.html
 
@@ -286,9 +304,65 @@ A hard-to-detect lack of convergence would often produce a fallacious simulated 
 
 Considerable difficulty was encountered. 
 
-First the objective function with a constant integral control power constraint was used, but this did not yield
+An objective function with a constant integral control power constraint, $t_{end} = \int_0^t_{end} u(t)^2 dt$ was used, but this did not appear to yield meaningful results.
 
-\subsection{Optimal control solvers}
+\subsection*{Optimal control solvers}
+
+
+
+
+
+
+
+
+
+\subsection*{Nondimensionalization}
+
+The coefficients have a very small value; even time has a very small value. This was believed to account for at least some of the 
+
+
+
+$$\dv[2]{x_V}{t} = 
+\frac{R a_{1V}}{b_{1V}} \dv[2]{u}{t} 
++ \frac{R a_{2V}}{b_{1V}}  \dv{u}{t} 
++ \frac{R a_{3V}}{b_{1V}}  u
+- \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
+- \frac{b_{3V}}{b_{1V}} x_V $$
+
+$$\dv[2]{x_H}{t} = 
+\frac{R a_{1H}}{b_{1H}} \dv[2]{u}{t} 
++ \frac{R a_{2H}}{b_{1H}}  \dv{u}{t} 
++ \frac{R a_{3H}}{b_{1H}}  u
+- \frac{b_{2H}}{b_{1H}} \dv{x_H}{t}
+- \frac{b_{3H}}{b_{1H}} x_H $$
+
+
+%x2  = (R*a1*u2 + R*a2*u1 + R*a3*u0 - b2*x1 - b3*x0)/b1
+% https://math.stackexchange.com/questions/3435173/how-to-nondimensionalize-a-second-order-differential-equation
+
+
+let $x_V^{\bm*} = \frac{x_V}{x_{VK}}$ and $t^{\bm*} = \frac{t}{t_{K}}$ where $_K$ denotes a nondimensionalization constant ($t_0$ is switched to $t_K$ to avoid confusion with x0 used in simulation). (the forcing functional u is dependent on t, but this is implied).\\ \\
+
+$$\frac{d^n}{dt^n} = \frac{1}{{t_K}^n}\frac{d^n}{d\bstar{t}^n}$$\\
+
+
+$$\dv[2]{x_V}{t} = 
+\frac{R a_{1V}}{b_{1V}} \dv[2]{u}{t} 
++ \frac{R a_{2V}}{b_{1V}}  \dv{u}{t} 
++ \frac{R a_{3V}}{b_{1V}}  u
+- \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
+- \frac{b_{3V}}{b_{1V}} x_V $$
+
+
+GEKKO's .dt() operator allows u0 to be chosen as the control. 
+Otherwise, the DAE form requires u2 to be used as the control.
+
+
+
+
+denormalize u?
+
+
 
 
 % Is the effect replicable, or is it simply an electrochemical artifact? Will these nanopores be destructive to viruses - will the pores be open for sufficient time for the ssRNA to be released? Will the nucleocapsid restrain the genome sufficiently and prevent membrane damage from inactivating the virus? Are the apoptosis effects likely to be triggered before these? Are there similar structures in tissue?
