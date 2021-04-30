@@ -20,7 +20,7 @@ letterpaper]{geometry}
 
 
 \title{Selective electroporation of the viral envelope}
-\author{\footnotesize{Daniel Correia\orcidlink{0000-0002-9353-0216}}\footnote{therobotist@gmail.com, Ontario, Canada.}}
+\author{\footnotesize{Daniel Correia\orcidlink{0000-0002-9353-0216}}\footnote{Ontario, Canada; contact information in the ORCiD.}}
 \date{\small{March 21 2021}}
 
 \flushbottom 
@@ -47,7 +47,7 @@ letterpaper]{geometry}
 	\noindent Recently-developed multi-gigawatt electrical pulse systems may offer a possible means of noninvasively propagating such pulses into deep tissues, such as within lungs. 
 \end{abstract}
 
-
+%mention the github again
 \lettrine{A}{s} an addendum to a crude technical report \cite{notes2021} by the author, presenting some experimental results on an adjacent technique
 
 At the risk of spending more time producing underpowered "scientifically useless" results, 
@@ -273,15 +273,21 @@ two plant
 
 The time-domain response can be obtained from the step or impulse response function by evaluating the convolution integral, or by manually integrating the differential equation via some integrator.
 
-Lagrange multipliers. Unfortunately, while closed-form solutions appear to be readily available for some simplified cases (such as when the membrane is infinitesimally thin or when permittivity is neglected) [schwan paper], 
+In the previous paper, an analytic method was shown using variational calculus / lagrange multiplier. Unfortunately, while closed-form solutions appear to be readily available for some simplified cases (such as when the membrane is infinitesimally thin or when permittivity is neglected) [schwan paper], 
 
-Kotnik discuss the transmembrane voltage due to several pulse shapes formed from the Laplace Transform of the original differential equation. Talele offer their own response due to an arbitrary waveform can be produced by 
+Kotnik discuss the transmembrane voltage due to several pulse shapes formed from the Laplace Transform of the original differential equation. 
+
+\subsection{Attempts to solve in s-space; convolution integral}
+
+Talele offer their own response due to an arbitrary waveform using the step response and a convolution integral \cite{Nonlinear2007}.
 
 The impulse response is the derivative of the step response. The convolution integral (or sum, in the discrete case) can be performed either with the derivative of the input function and the step response, or the impulse response and the input function as algebraic convenience demands. Unfortunately
 
 There exists an alternative convolution technique, due to the Convolution Property of the fourier transform.
 
-The fourier transform of both the impulse response and the step response exist, are analytic and of manageable size; however, the integral of the cost function is extremely unweildy.
+Via Mathematica, the Fourier transform of both the impulse response and the step response exist, are analytic and of manageable size; however, the integral of the cost function is extremely unwieldy.
+
+Subtracting the frequency domain of the step responses of the two produced an interesting pulse, but not nearly optimal.
 
 \subsection*{direct method Pseudospectral solvers}
 

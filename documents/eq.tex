@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+%Gummi|065|=)
+\title{\textbf{Welcome to Gummi 0.6.6}}
+\author{Alexander Van der Meij\\
+		Wei-Ning Huang\\
+		Dion Timmermann}
+\date{}
+
+\usepackage{physics}
+
+\usepackage{bm}
+
+
+
+\begin{document}
+
+$$\dv[2]{x_V}{t} =
+			  \frac{R a_{1V}}{b_{1V}} \dv[2]{u(t)}{t}
+			+ \frac{R a_{2V}}{b_{1V}}  \dv{u(t)}{t}
+			+ \frac{R a_{3V}}{b_{1V}}  u(t)
+			- \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
+			- \frac{b_{3V}}{b_{1V}} x_V $$
+
+$$\dv[2]{x_H}{t} =
+			  \frac{R a_{1H}}{b_{1H}} \dv[2]{u(t)}{t}
+			+ \frac{R a_{2H}}{b_{1H}}  \dv{u(t)}{t}
+			+ \frac{R a_{3H}}{b_{1H}}  u(t)
+			- \frac{b_{2H}}{b_{1H}} \dv{x_H}{t}
+			- \frac{b_{3H}}{b_{1H}} x_H $$
+
+
+% x2  = (R*a1*u2 + R*a2*u1 + R*a3*u0 - b2*x1 - b3*x0)/b1
+% https://math.stackexchange.com/questions/3435173/how-to-nondimensionalize-a-second-order-differential-equation
+
+
+let $\bm\tilde x_V = \frac{x_V}{x_{VK}}$ and $\bm\tilde t = \frac{t}{t_{K}}$ where $_K$ denotes a nondimensionalization constant ($t_0$ is switched to $t_K$ to avoid confusion with x0 used in simulation). \\ \\
+
+$$\frac{d^n}{dt^n} = \frac{1}{{t_K}^n}\frac{d^n}{d{\bm\tilde t}^n}$$\\
+
+
+
+
+
+GEKKO's .dt() operator allows u0 to be chosen as the control.
+    Otherwise, the DAE form requires u2 to be used as the control.
+
+
+
+
+
+\end{document}
