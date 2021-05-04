@@ -462,6 +462,13 @@ ddp is a locally linearized version of LQR.
 
 a really awesome way of taking mathematics notes: https://math.stackexchange.com/a/29373/827672
 
+seems like the same problems, of systematization and error reporting, exist in computational fields too:
+
+A professional problem exists in the computational fluid dynamics community and also in 
+the broader area of computational physics. 
+Namely, there is a need for higher standards on the control of numerical accuracy.
+
+
 
 
 
