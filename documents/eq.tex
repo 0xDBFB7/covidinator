@@ -7,43 +7,99 @@
 \date{}
 
 \usepackage{physics}
-
 \usepackage{bm}
+\usepackage{listings}
+\newcommand{\bstar}[1]{ {#1}^{\bm*} }
+
 
 
 
 \begin{document}
 
-$$\dv[2]{x_V}{t} =
-			  \frac{R a_{1V}}{b_{1V}} \dv[2]{u(t)}{t}
-			+ \frac{R a_{2V}}{b_{1V}}  \dv{u(t)}{t}
-			+ \frac{R a_{3V}}{b_{1V}}  u(t)
-			- \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
-			- \frac{b_{3V}}{b_{1V}} x_V $$
 
-$$\dv[2]{x_H}{t} =
-			  \frac{R a_{1H}}{b_{1H}} \dv[2]{u(t)}{t}
-			+ \frac{R a_{2H}}{b_{1H}}  \dv{u(t)}{t}
-			+ \frac{R a_{3H}}{b_{1H}}  u(t)
-			- \frac{b_{2H}}{b_{1H}} \dv{x_H}{t}
-			- \frac{b_{3H}}{b_{1H}} x_H $$
+\{ $a_{1V}$... \} etc have 
 
 
-% x2  = (R*a1*u2 + R*a2*u1 + R*a3*u0 - b2*x1 - b3*x0)/b1
+the a and b coefficients both have units     
+       
+\[ \{\text{meter}\cdot \text{siemens}^2, \  \text{farad}\cdot \text{meter}\cdot \text{siemens} ,\ \text{farad}^2 \cdot \text{meter}\} \]
+
+
+in physical units, typical values for as an example, \\
+\verb|Cell(0.3, 80, 0.005, 30, 1e-8, 60, 50e-9, 14e-9, t)| \
+
+$$R = 2.5\times10^{-8}$$
+$$a_1 = 6\times10^{-26}$$
+$$a_2 = 9\times10^{-33}$$
+$$a_3 = 2\times10^{-41}$$
+$$b_1 = 4\times10^{-26}$$
+$$b_2 = 1\times10^{-32}$$
+$$b_3 = 4\times10^{-41}$$
+
+An input control waveform u(t) (volts per meter), and two output waveforms, $x_V(t)$ and $x_H(t)$ in volts.\\
+
+
+%virus.__dict__
+
+
+
+
+
+
+First system of differential equations (named V):\\
+
+$$\dv[2]{x_V}{t} = 
+\frac{R_V a_{1V}}{b_{1V}} \dv[2]{u}{t} 
++ \frac{R_V a_{2V}}{b_{1V}}  \dv{u}{t} 
++ \frac{R_V a_{3V}}{b_{1V}}  u
+- \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
+- \frac{b_{3V}}{b_{1V}} x_V $$
+
+
+In practice, the solver takes a DAE: the second differential equation is split into an explicit system of eqs:
+
+$$u1 = \dv{}{t} u$$
+$$u2 = \dv{}{t} u1$$
+
+
+$$x1_V = \dv{}{t} x0_V$$
+$$x2_V = \dv{}{t} x1_V$$
+
+
+Another system is solved simultaneously (named H), of identical form but different coefficients:
+
+$$\dv[2]{x_H}{t} = 
+\frac{R_H a_{1H}}{b_{1H}} \dv[2]{u}{t} 
++ \frac{R_H a_{2H}}{b_{1H}}  \dv{u}{t} 
++ \frac{R_H a_{3H}}{b_{1H}}  u
+- \frac{b_{2H}}{b_{1H}} \dv{x_H}{t}
+- \frac{b_{3H}}{b_{1H}} x_H $$
+
+
+%x2  = (R*a1*u2 + R*a2*u1 + R*a3*u0 - b2*x1 - b3*x0)/b1
+
+
+
+\subsection*{Nondimensionalization}
+
+Let $x_V^{\bm*} = \frac{x_V}{x_{VK}}$ and $t^{\bm*} = \frac{t}{t_{K}}$ where $_K$ denotes a nondimensionalization constant (standard convention of $t_0$ is changed to $t_K$ to avoid confusion with subscript 0s used in simulation). (the forcing functional u is dependent on t, but this is implied).\\ \\
+
+$$\frac{d^n}{dt^n} = \frac{1}{{t_K}^n}\frac{d^n}{d{\bstar{t}}^n}$$\\
+
 % https://math.stackexchange.com/questions/3435173/how-to-nondimensionalize-a-second-order-differential-equation
+% http://math.colgate.edu/~wweckesser/math312Spring05/handouts/Nondim.pdf
+% https://faculty.math.illinois.edu/~rdeville/teaching/558/nondimensionalization.pdf
+% http://math.colgate.edu/~wweckesser/math312Spring05/handouts/MoreNondim.pdf
 
 
-let $\bm\tilde x_V = \frac{x_V}{x_{VK}}$ and $\bm\tilde t = \frac{t}{t_{K}}$ where $_K$ denotes a nondimensionalization constant ($t_0$ is switched to $t_K$ to avoid confusion with x0 used in simulation). \\ \\
+% Kronbichler et al suggest an interesting method of nondimensionalizing.
 
-$$\frac{d^n}{dt^n} = \frac{1}{{t_K}^n}\frac{d^n}{d{\bm\tilde t}^n}$$\\
-
-
+% https://www.math.colostate.edu/~bangerth/publications/2008-boussinesq.pdf
 
 
 
-GEKKO's .dt() operator allows u0 to be chosen as the control.
-    Otherwise, the DAE form requires u2 to be used as the control.
-
+GEKKO's .dt() operator allows u0 to be chosen as the control. 
+Otherwise, the DAE form requires u2 to be used as the control.
 
 
 
