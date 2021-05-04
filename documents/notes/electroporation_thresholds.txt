@@ -470,5 +470,8 @@ Namely, there is a need for higher standards on the control of numerical accurac
 
 
 
+the node time resolution seems to have the largest effect on convergence. 
+unfortunately psopt seems to max out at 3500 nodes.
+
 
 
