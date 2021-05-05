@@ -472,6 +472,34 @@ Namely, there is a need for higher standards on the control of numerical accurac
 
 the node time resolution seems to have the largest effect on convergence. 
 unfortunately psopt seems to max out at 3500 nodes.
+almost need something even larger scale.
+
+however, below 1 ns it seems to max out.
+
+this might conceivably be because of the u2 control.
+
+disabled the discretizan error feature of psopt temporarily because it's not needed if mesh refinement isn't used.
+
+when the timescale is sufficiently small (3500 nodes over 7 ns), a wiggly trace 
+
+iLQR just goes immediately to a unit step when cost function is x0^2, x0^2
+can't be persuaded otherwise.
+
+statistically optimal over some distribution of host cells
+
+oh, can we split this into a PDE? two derivatives in each direction?
+no, PDEs have multiple ind. vars, we only have the one (t)
+
+integrate both sides?
+
+bernstein and haddad discuss some things related to non-zero setpoints
+ in LQR-like regulators.
+
+ something called "reduction of order" for diffeqs. 
+ there's also something called "model order reduction" which seems more a numerical thing
+
+ 1 what if we introduce a test function like Xv = sqrt(x) Xh = 0? Is that overconstrained?
+ 2 what is the functional derivative of a differential equation?
 
 
-
+ kolabtree has g
