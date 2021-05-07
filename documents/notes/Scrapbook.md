@@ -64,3 +64,11 @@ Zotero provides pdf names in the RDF file. cites should link to the local pdf?
 
 
 Workflows that integrate both software workflows and IRL experiments; timers for processes, etc; records runs and 
+
+
+instant searching of all text like zotero
+
+zotero integration
+
+extremely fast user interface that doesn't interfere with thinking while observing experiments
+

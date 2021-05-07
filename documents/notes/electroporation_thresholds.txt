@@ -503,3 +503,13 @@ bernstein and haddad discuss some things related to non-zero setpoints
 
 
  kolabtree has g
+
+
+
+ http://cvmlib.com/runge/
+
+ decimals don't play nice with sympy
+
+ 
+oh wow, every solution to 
+
