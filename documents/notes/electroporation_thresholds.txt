@@ -506,10 +506,14 @@ bernstein and haddad discuss some things related to non-zero setpoints
 
 
 
- http://cvmlib.com/runge/
+http://cvmlib.com/runge/
 
- decimals don't play nice with sympy
+decimals don't play nice with sympy
 
- 
-oh wow, every solution to 
+
+trying to use PSOPT or GEKKO with the u'' u' u = 0 constraint
+really doesn't seem to work for unknown reasons.
+However, that does have an analytic solution with a simple form and two free
+coefficients. 
+
 

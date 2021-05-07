@@ -11,6 +11,7 @@ letterpaper]{geometry}
 
 \usepackage{physics}
 \usepackage{bm}
+\usepackage{listings}
 \newcommand{\bstar}[1]{ {#1}^{\bm*} }
 
 
@@ -252,9 +253,9 @@ Kotnik note an important fact: all these permittivity and conductivity values wi
 
 The necessity for the Laplace transform over the Fourier-based method used for the precursor propagation in the previous report is founded in the requirement for a fully transient solution with a definite t=0.
 
-The question of optimizing a pulse is not novel, having been discussed by many groups in the past. Retelj use a series of 
+The concept of optimizing an electroporation pulse is not novel, having been discussed by many groups in the past; either to prodduce different sterilization effects, tee Retelj use a series of 
 
-\subsection*{Optimal pulse}
+\subsection{Attempts to solve for the optimal pulse in the s-space; convolution integral}
 
 We must apologize once again to the mathematicians for sins of terminology.
 
@@ -275,7 +276,7 @@ In the previous paper, an analytic method was shown using variational calculus /
 
 Kotnik discuss the transmembrane voltage due to several pulse shapes formed from the Laplace Transform of the original differential equation. 
 
-\subsection{Attempts to solve in s-space; convolution integral}
+
 
 Talele offer their own response due to an arbitrary waveform using the step response and a convolution integral \cite{Nonlinear2007}.
 
@@ -286,6 +287,8 @@ There exists an alternative convolution technique, due to the Convolution Proper
 Via Mathematica, the Fourier transform of both the impulse response and the step response exist, are analytic and of manageable size; however, the integral of the cost function is extremely unwieldy.
 
 Subtracting the frequency domain of the step responses of the two produced an interesting pulse, but not nearly optimal.
+
+
 
 \subsection*{direct method Pseudospectral solvers}
 
@@ -308,54 +311,89 @@ A hard-to-detect lack of convergence would often produce a fallacious simulated 
 
 Considerable difficulty was encountered. 
 
-An objective function with a constant integral control power constraint, $t_{end} = \int_0^t_{end} u(t)^2 dt$ was used, but this did not appear to yield meaningful results.
+An objective function with a constant integral control power constraint, $t_{end} = \int_0^{t_{end}} u(t)^2 dt$ was used, but this did not appear to yield meaningful results.
 
 \subsection*{Optimal control solvers}
 
 
 
 
-
+iLQR. Differential dynamic programming was not evaluated (julia lib).
 
 
 
 
 \subsection*{Nondimensionalization}
 
-The coefficients have a very small value; even time has a very small value. This was believed to account for at least some of the 
+The coefficients all have a very small value in standard units. Numerical error was presumed to account for at least some of the difficulty in optimization, so was partially nondimensionalized. 
 
+the a and b coefficients both have units     
 
+\[ \{\text{meter}\cdot \text{siemens}^2, \  \text{farad}\cdot \text{meter}\cdot \text{siemens} ,\ \text{farad}^2 \cdot \text{meter}\} \]
+
+in physical units, typical values for as an example, \\
+\verb|Cell(0.3, 80, 0.005, 30, 1e-8, 60, 50e-9, 14e-9, t)| \
+
+$$R = 2.5\times10^{-8}$$
+$$a_1 = 6\times10^{-26}$$
+$$a_2 = 9\times10^{-33}$$
+$$a_3 = 2\times10^{-41}$$
+$$b_1 = 4\times10^{-26}$$
+$$b_2 = 1\times10^{-32}$$
+$$b_3 = 4\times10^{-41}$$
+
+An input control waveform u(t) (volts per meter), and two output waveforms, $x_V(t)$ and $x_H(t)$ in volts.\\
+
+%virus.__dict__
+
+First system of differential equations (named V):\\
 
 $$\dv[2]{x_V}{t} = 
-\frac{R a_{1V}}{b_{1V}} \dv[2]{u}{t} 
-+ \frac{R a_{2V}}{b_{1V}}  \dv{u}{t} 
-+ \frac{R a_{3V}}{b_{1V}}  u
+\frac{R_V a_{1V}}{b_{1V}} \dv[2]{u}{t} 
++ \frac{R_V a_{2V}}{b_{1V}}  \dv{u}{t} 
++ \frac{R_V a_{3V}}{b_{1V}}  u
 - \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
 - \frac{b_{3V}}{b_{1V}} x_V $$
 
+
+In practice, the solver takes a DAE: the second differential equation is split into an explicit system of eqs:
+
+$$u1 = \dv{}{t} u$$
+$$u2 = \dv{}{t} u1$$
+
+
+$$x1_V = \dv{}{t} x0_V$$
+$$x2_V = \dv{}{t} x1_V$$
+
+
+Another system is solved simultaneously (named H), of identical form but different coefficients:
+
 $$\dv[2]{x_H}{t} = 
-\frac{R a_{1H}}{b_{1H}} \dv[2]{u}{t} 
-+ \frac{R a_{2H}}{b_{1H}}  \dv{u}{t} 
-+ \frac{R a_{3H}}{b_{1H}}  u
+\frac{R_H a_{1H}}{b_{1H}} \dv[2]{u}{t} 
++ \frac{R_H a_{2H}}{b_{1H}}  \dv{u}{t} 
++ \frac{R_H a_{3H}}{b_{1H}}  u
 - \frac{b_{2H}}{b_{1H}} \dv{x_H}{t}
 - \frac{b_{3H}}{b_{1H}} x_H $$
 
 
 %x2  = (R*a1*u2 + R*a2*u1 + R*a3*u0 - b2*x1 - b3*x0)/b1
+
+\subsection*{Nondimensionalization}
+
+Let $x_V^{\bm*} = \frac{x_V}{x_{VK}}$ and $t^{\bm*} = \frac{t}{t_{K}}$ where $_K$ denotes a nondimensionalization constant (standard convention of $t_0$ is changed to $t_K$ to avoid confusion with subscript 0s used in simulation). (the forcing functional u is dependent on t, but this is implied).\\ \\
+
+$$\frac{d^n}{dt^n} = \frac{1}{{t_K}^n}\frac{d^n}{d{\bstar{t}}^n}$$\\
+
 % https://math.stackexchange.com/questions/3435173/how-to-nondimensionalize-a-second-order-differential-equation
+% http://math.colgate.edu/~wweckesser/math312Spring05/handouts/Nondim.pdf
+% https://faculty.math.illinois.edu/~rdeville/teaching/558/nondimensionalization.pdf
+% http://math.colgate.edu/~wweckesser/math312Spring05/handouts/MoreNondim.pdf
 
 
-let $x_V^{\bm*} = \frac{x_V}{x_{VK}}$ and $t^{\bm*} = \frac{t}{t_{K}}$ where $_K$ denotes a nondimensionalization constant ($t_0$ is switched to $t_K$ to avoid confusion with x0 used in simulation). (the forcing functional u is dependent on t, but this is implied).\\ \\
+% Kronbichler et al suggest an interesting method of nondimensionalizing.
 
-$$\frac{d^n}{dt^n} = \frac{1}{{t_K}^n}\frac{d^n}{d\bstar{t}^n}$$\\
+% https://www.math.colostate.edu/~bangerth/publications/2008-boussinesq.pdf
 
-
-$$\dv[2]{x_V}{t} = 
-\frac{R a_{1V}}{b_{1V}} \dv[2]{u}{t} 
-+ \frac{R a_{2V}}{b_{1V}}  \dv{u}{t} 
-+ \frac{R a_{3V}}{b_{1V}}  u
-- \frac{b_{2V}}{b_{1V}} \dv{x_V}{t}
-- \frac{b_{3V}}{b_{1V}} x_V $$
 
 
 GEKKO's .dt() operator allows u0 to be chosen as the control. 
@@ -363,16 +401,12 @@ Otherwise, the DAE form requires u2 to be used as the control.
 
 
 
-
-denormalize u?
-
+\subsection*{}
 
 
+However, this overlooks a much simpler method.
 
-% Is the effect replicable, or is it simply an electrochemical artifact? Will these nanopores be destructive to viruses - will the pores be open for sufficient time for the ssRNA to be released? Will the nucleocapsid restrain the genome sufficiently and prevent membrane damage from inactivating the virus? Are the apoptosis effects likely to be triggered before these? Are there similar structures in tissue?
-
-% A serious danger would be that if a nuclear or organelle membrane were to be porated, viral ssRNA may be admitted to places it shouldn't be. The author does not have the biology experience to evaluate this risk.
-
+Setting say, the logistic equation, produces an overdetermined system. using the above as a constraint in PSOPT was also ineffective.
 
 
 \end{document}
