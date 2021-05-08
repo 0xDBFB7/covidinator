@@ -516,4 +516,15 @@ really doesn't seem to work for unknown reasons.
 However, that does have an analytic solution with a simple form and two free
 coefficients. 
 
+from the analytic solution to the constraint, plugging in ICS
+ u(0) u(1e-6)=1 - C1 and C2 are set 
+
+ when computing the analytic solution, switching to dtype 128 made a huge difference
+ in the output.
+ yikes
+
+ before python allocates memory, there's a little dip in the graph before it goes up
+
+
+
 
