@@ -527,4 +527,12 @@ from the analytic solution to the constraint, plugging in ICS
 
 
 
+okay, is this even first-order plausible? we want 
+
+1.4985017480024355e-05u''
+7.076385761392137e-14u'
+8.354217053559112e-23u
+
+did I switch around the alpha beta gammas perhaps?
+
 
