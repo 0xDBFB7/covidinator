@@ -1,4 +1,84 @@
+
+
+The problem
+
+experience
+
+things are going to get inexorably harder, more data will be input 
+
+simultaneously too much quality control and not  enough 
+we need to see every half-hearted attempt, in order to put the right priors on papers
+
+
+texture is lost compared to older papers
+
+old cern papers at the dawn of the internet where lab notebooks and instruments are 
+
+protocols.io
+
+it is extremely time consuming to accurately record every experimental detail in 
+a human-readable way 
+should be available for introspection. 
+(this might seem invasive, but I don't think a well-kept lab notebook should include too many overly-personal
+details anyhow!)
+
+
+journals use supplemental (durrant a good example), but not enough
+
+TEM laser paper
+
+This has a few effects:
+
+kill multiple birds with one stone
+
+- fields where minute experimental details affect 
+- it is possible that industry cannot as easily implement complex innovations
+- it may be more difficult to falsify data, and mistakes like experimenter biases can be more easily seen
+- publication bias 
+
+
+how much of this do we want to take on responsibility for and feature creep?
+
+
+current options:
+
+- A wiki. a great option.
+- Whitequark's lab notebook
+- eLabFTW
+     elabftw's API is awesome.
+- a google doc.
+     one problem is that you tend to just append to the bottom 
+     no sense of the certainty of a fact,
+    old information is not replaced
+- STAR methods
+- Galaxy project
+- stuff like [lab that bought ipad]
+- that one lab's custom lab scrapbook
+- that math wiki
+
+
+now, this is a crazy thought, but
+it might even be possible to have this partly replace journals themselves. 
+
+we see OpenReviews ; dozens of indexes for specific 
+
+
+
+Things that are not helping:
+
+proprietary.
+
+papers have to do their own literature reviews, whereas it could be expected that an entire field
+would have a master globally editable literature review 
+(on the other hand the entire point is when you have a novel idea, so 
+doing that sort of thing is maybe not useful)
+
+
+
 *asciientist*
+
+virtual environments for installing programs?
+
 
 - Available over HTTP - maybe that should be seperate?
 
@@ -29,7 +109,7 @@
 - Code, too! Runnable python inline! Oh boy!
 
 - Zotero notes are integrated properly
-
+1
 - Settings (media folder) and binary appended to the end of file to work better with version control
 
 based on asciio

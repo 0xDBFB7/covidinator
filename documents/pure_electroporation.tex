@@ -2,7 +2,7 @@
 \documentclass[fleqn,10pt]{paper}
 
 \usepackage[left=2cm,right=2cm,
-top=0.85cm,
+top=1.25cm,
 bottom=1.5cm,%
 headheight=11pt,%
 letterpaper]{geometry}
@@ -14,6 +14,7 @@ letterpaper]{geometry}
 \usepackage{listings}
 \newcommand{\bstar}[1]{ {#1}^{\bm*} }
 
+ \pagestyle{empty}
 
 \begin{document}
 
@@ -39,7 +40,7 @@ letterpaper]{geometry}
 \renewcommand{\abstractname}{Summary}    % clear the title
 
 \begin{abstract}
-	\noindent The phenomenon of electroporation occurs when extreme applied electric fields in the MV/m range drive transmembrane potentials, leading to pores in, and perhaps the destruction of, membranes; this is commonly harnessed for transfection into the cell in the laboratory, and has recently been shown to be safe and effective in the clinic for the in-situ ablation of tumors.
+	\noindent The phenomenon of electroporation occurs when extreme applied electric fields in the MV/m range drive transmembrane potentials, leading to pores in, and perhaps the destruction of, membranes; this is commonly harnessed for transfection into the cell in the laboratory, and has recently been shown clinically to be safe and effective for the in-situ ablation of tumors.
 	
 	\noindent As pulse duration is reduced from the microsecond to nanosecond regime, effects targeting smaller intracellular structures are expected and observed, and a degree of tunability arises. Indeed, pulses shorter than 10 ns have been observed to porate the nuclear envelope and organelle membranes while leaving the plasma membrane intact.
 	
@@ -48,20 +49,24 @@ letterpaper]{geometry}
 	\noindent Recently-developed multi-gigawatt electrical pulse systems may offer a possible means of noninvasively propagating such pulses into deep tissues, such as within lungs. 
 \end{abstract}
 
+%send to jeff on the discord?
+
 %mention the github again
 \lettrine{A}{s} an addendum to a crude technical report \cite{notes2021} by the author, presenting some experimental results on an adjacent technique
 
 At the risk of spending more time producing underpowered "scientifically useless" results, 
 
-In a continued effort to make ultracrepidarian physicists such as ourselves feel useful 
+In a continued effort to make ultracrepidarian pseudo-physicists such as ourselves feel useful 
 
+\begin{tcolorbox}
 While both mechanisms hinge on a set of time constants, those discussed in the previous paper referred to the time for viscous loss of energy into the surrounding medium and the normal modes of the viral envelope; here the time constants relate to capacitive charging, and Smoluchowski processes. Previously, the relevant quantities describing damage to the virion were mechanical displacement and membrane stress, whereas here we consider transmembrane voltage and pore diameter. 
+\end{tcolorbox}
 
 At the risk of self-plagarism, we will restate some precedent.
 
 The field-induced breakdown of lipid membranes has proved to be a particularly useful property of the cell. From initial studies of crude membrane breakdown effects \cite{Reversible1979}
 
-hit "with an electric field strong enough to knock over a horse, and they do enough things to justify international meetings, to fill a sizable book, and to lead one to speak of an entirely new technology for cell manipulation."
+when a strong electric field is applied, they "do enough things to justify international meetings, to fill a sizable book, and to lead one to speak of an entirely new technology for cell manipulation."
 
 It is, in general, something of a singular outlier in that it is one of very few biological mechanisms relevant at practical electric field intensities. Similar to thermal treatment, it also performs an operation something like integration with a threshold, a process distinct from normal absolute-value. It is perhaps this property which provides a small degree of tunability.
 
@@ -78,10 +83,7 @@ The same electrostatic effects on lipid bilayers have been investigated for deca
 
 The idea of inactivating viruses via electric fields is not new. Very recently, Osorio \cite{Receptor2021} have reported on a susceptibility of SARS-CoV-2's spike protein to intense electric fields; however, in general, techniques targeting proteins appear to require truly extreme; in their study, fields of up to 2.9 GV/m were required. Dissocation of capsid proteins has been predicted by Man \cite{Picosecond2016b} at 2 GV/m.
 
-These regimes of intensity may possibly be accessible via ultrashort optical techniques. Similarly, Tsen \cite{Studies2014} report a non-electroporative mechanism, but these results have not been successfully independently replicated at that intensity\cite{No2011}. 
-
-on the other hand, the idea of shocking a virus is so basic that it can scarcely be believed 
-
+These regimes of intensity may possibly be accessible via ultrashort optical techniques. Accordingly, Tsen \cite{Studies2014} report a non-electroporative mechanism, but these results have not been successfully independently replicated at that intensity\cite{No2011}. 
 
 Electroporation\cite{Electroporation1988}, now a common laboratory procedure, occurs when an enormous electric field causes ions in solution to diffuse across a cell membrane, capacitively charging it, provoking a change in lipid bilayer conformation\cite{Membrane2016}, either reversibly rendering the membrane permeable or, if the number and size of pores is considerable, the membrane may be permanently destroyed. This is one among many other, more subtle mechanisms; the minutia of poration can become extraordinarily complex in certain circumstances and are beyond the author's current understanding\cite{Theoretical2007}. Hydrodynamic
 
@@ -114,6 +116,8 @@ Pulse count and inter-pulse timing is another free variable. Joshi et al \cite{S
 This seems to hint that electroporation occurs at the same order of magnitude field as host cells.
 
 Of course, unlike localized tumors, viral infections are systemic, affecting many of the most favoured organs. 
+
+Also be of some use for testing and detection. 
 
 
 
@@ -253,13 +257,11 @@ Kotnik note an important fact: all these permittivity and conductivity values wi
 
 The necessity for the Laplace transform over the Fourier-based method used for the precursor propagation in the previous report is founded in the requirement for a fully transient solution with a definite t=0.
 
-The concept of optimizing an electroporation pulse is not novel, having been discussed by many groups in the past; either to prodduce different sterilization effects, tee Retelj use a series of 
+The concept of optimizing an electroporation pulse is not novel, having been discussed by many groups in the past; either to prodduce different sterilization effects, tee Retelj use a series of, to 
 
 \subsection{Attempts to solve for the optimal pulse in the s-space; convolution integral}
 
 We must apologize once again to the mathematicians for sins of terminology.
-
-
 
 This bears considerable similarity to e.g. radar waveform design and compressed sensing; problems of coherent control of quantum systems. In many cases, the optimal control is equal to the transfer function
 

@@ -536,3 +536,13 @@ okay, is this even first-order plausible? we want
 did I switch around the alpha beta gammas perhaps?
 
 
+
+so the first attempt at turning the kotnik xfer function into a DE tuns out to have had a problem, 
+simulating isn't equal.
+
+I want it in DE form because evaluating the xfer fun. with a convolution 
+doesn't scale the same as DE with multigrid or something
+there's fft methods for convolution but I don't want to use them right now.
+
+ 
+
