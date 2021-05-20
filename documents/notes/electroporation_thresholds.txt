@@ -544,5 +544,15 @@ I want it in DE form because evaluating the xfer fun. with a convolution
 doesn't scale the same as DE with multigrid or something
 there's fft methods for convolution but I don't want to use them right now.
 
- 
+ why, intuitively, are  "multiplications by "s" in the Laplace domain are replaced by derivatives in time)."?
+
+
+
+
+ scipy.signal.lsim2 has an example of turning an LTI system into a differential equation.
+
+ for some reason, had to switch terms around (system = signal.lti(np.float64([virus.a_3,virus.a_2,virus.a_1]),np.float64([virus.b_3,virus.b_2,virus.b_1])))
+even though scipy lti takes it in descending order of power
+
+
 
