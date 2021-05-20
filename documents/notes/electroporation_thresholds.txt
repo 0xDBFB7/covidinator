@@ -553,6 +553,7 @@ there's fft methods for convolution but I don't want to use them right now.
 
  for some reason, had to switch terms around (system = signal.lti(np.float64([virus.a_3,virus.a_2,virus.a_1]),np.float64([virus.b_3,virus.b_2,virus.b_1])))
 even though scipy lti takes it in descending order of power
+indeed, reversing the terms fixed it, even though eq. 8, F(s) 
 
 
 
