@@ -558,5 +558,8 @@ indeed, reversing the terms fixed it, even though eq. 8, F(s)
 
 I should use bazel for the next project.
 
+paper title is not specific enough.
 
+with the cost function suggested by Cesareo, the rho^2 term decisively changes the 
+form of the solution. very strange!
 
