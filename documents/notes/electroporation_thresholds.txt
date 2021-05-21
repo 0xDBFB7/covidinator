@@ -556,4 +556,7 @@ even though scipy lti takes it in descending order of power
 indeed, reversing the terms fixed it, even though eq. 8, F(s) 
 
 
+I should use bazel for the next project.
+
+
 
