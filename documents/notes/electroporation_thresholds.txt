@@ -563,3 +563,6 @@ paper title is not specific enough.
 with the cost function suggested by Cesareo, the rho^2 term decisively changes the 
 form of the solution. very strange!
 
+
+most things in the paper and code still have the switched order. dagnabbit
+
