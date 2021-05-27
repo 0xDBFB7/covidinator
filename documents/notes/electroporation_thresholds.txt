@@ -555,6 +555,8 @@ there's fft methods for convolution but I don't want to use them right now.
 even though scipy lti takes it in descending order of power
 indeed, reversing the terms fixed it, even though eq. 8, F(s) 
 
+ed, later: while this fixed the problem at long timescales, it did not with short!
+
 
 I should use bazel for the next project.
 
@@ -565,4 +567,12 @@ form of the solution. very strange!
 
 
 most things in the paper and code still have the switched order. dagnabbit
+
+
+Erronously set u1(t=0), u2(t=0) ICs to 0 in the code. This is not necssary.
+ only x1_h, x2_h would be unphysical.
+
+This made a great difference in the range of possible solutions.
+
+
 
