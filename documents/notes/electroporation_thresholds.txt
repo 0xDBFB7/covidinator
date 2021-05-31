@@ -575,4 +575,4 @@ Erronously set u1(t=0), u2(t=0) ICs to 0 in the code. This is not necssary.
 This made a great difference in the range of possible solutions.
 
 
-
+#odeint did not produce the correct result except when rtol and atol were set very fine!
