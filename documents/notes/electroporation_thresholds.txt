@@ -576,3 +576,17 @@ This made a great difference in the range of possible solutions.
 
 
 #odeint did not produce the correct result except when rtol and atol were set very fine!
+
+
+sTried changing the control from u2 to u0. Reasoning:
+often PSOPT would come to a solution that would not behave the same with a later convolution integral.
+=using u2 as the control seemed to provoke unphysical stuff
+ As expected, hugely higher computational complexity
+(doesn't operate with node count > 150 vs 3000 before). 
+
+PSOPT's built in interpolated derivatives were way too slow. 
+
+
+so the weird problem with gekko is adding a positive initial guess 
+without overriding the boundary conditions.
+perhaps I'm not doing this right. m.fix yields an error
