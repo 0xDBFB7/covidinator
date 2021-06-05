@@ -590,3 +590,5 @@ PSOPT's built in interpolated derivatives were way too slow.
 so the weird problem with gekko is adding a positive initial guess 
 without overriding the boundary conditions.
 perhaps I'm not doing this right. m.fix yields an error
+
+

@@ -1,0 +1,18 @@
+Hi! PSOPT is terrific!
+
+To Professor Becerra: the psopt.org website domain appears to have expired.
+
+1. Probably everyone already knows this, but compiling PSOPT with 
+
+set (CMAKE_CXX_FLAGS "-O2") [ or -Ofast   ]
+
+in CMakeLists.txt greatly improves the simulation speed in my case.
+
+2.
+
+A team at LANL have incorporated the CUDA GPU-accelerated solver SPRAL as a solver for Ipopt. Following the instructions here seemed to work, though I didn't see any improvement in speed. Might be worthwhile 
+
+3.
+
+I had a problem involving requiring the second derivative of a control in the DAE. The get_control_derivative function works great for the first derivative; also, for large node counts it seems to put too much in the 
+
