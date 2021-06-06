@@ -152,3 +152,12 @@ zotero integration
 
 extremely fast user interface that doesn't interfere with thinking while observing experiments
 
+
+Great paper:
+
+"Oleksik et al. [142] reported on their observational study of electronic lab notebooks (ELN)
+in a research organization. They found that the flexibility of digital media can lead to much
+less precision during experiment recording and that ‘freezing’ parts of the record might be
+necessary. The authors stressed that “ELN environments need to incorporate automatic or
+semi- automatic features that are supported by sophisticated technologies [...].”"
+https://edoc.ub.uni-muenchen.de/26940/1/Feger_Sebastian.pdf

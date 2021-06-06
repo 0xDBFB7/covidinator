@@ -14,5 +14,7 @@ A team at LANL have incorporated the CUDA GPU-accelerated solver SPRAL as a solv
 
 3.
 
-I had a problem involving requiring the second derivative of a control in the DAE. The get_control_derivative function works great for the first derivative; also, for large node counts it seems to put too much in the 
+I had a problem involving requiring the second derivative of a control in the DAE. The get_control_derivative function works great for the first derivative, but it wasn't obvious to me how I could get the second derivative that way. 
+
+also, for large node counts it seems to put too much in the 
 
