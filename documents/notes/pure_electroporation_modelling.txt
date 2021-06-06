@@ -37,3 +37,5 @@ oh yay, lagrange multiplier over the complex plane!
 
 
 both finite element and multigrid work - interesting
+
+need to look into "pole placement"

@@ -294,17 +294,18 @@ Subtracting the frequency domain of the step responses of the two produced an in
 
 %polarization? can we somehow twist the polarization?
 
-\subsection*{direct method Pseudospectral solvers}
+\subsection*{Pseudospectral solvers}
 
-An excellent overview of solutions http://plato.asu.edu/sub/nlounres.html
+% is this direct or indirect method?
+
+%An excellent overview of solutions http://plato.asu.edu/sub/nlounres.html - nah, not really that good
 
 For use with GEKKO, the transfer function was converted into a system of differential equations:
 
 For PSOPT, a further modification was needed, as the library does not support the derivative of the control; the second derivative was used as the control, and input into a differential-algebraic equation form.
 
+Because the problem depends on the second derivative of sub-nanosecond curves, base variable and coefficient scaling varies by more than 20 orders of magnitude. 
 
-
-because the problem depends on the second derivative of sub-nanosecond curves, the scaling varies by about 20 orders of magnitude.
 PSOPT [] with IPOPT\cite{implementation2006} solver. PSOPT has the advantage of semi-automatic scaling based on supplied bounds. 
 
 Both PSOPT and GEKKO's APMonitor backend use the famous ipopt solver. A number of linear solvers can be used. LANL's Tasseff's integration with the SPRAL solver, reportedly faster on large problems, was 
@@ -429,16 +430,22 @@ Extremely speculative and
 
 Involves careful control of the second derivative of a waveform 
 
+optimal over a distribution 
 
 
-\subsection{Software used:}
+
+\subsection{Software used and evaluated:}
+
+casADi;
 
 typeset in LaTeX using TeXstudio.
 
 
 
 
+\subsection{Recommended reading}
 
+de Seze; 
 
 
 
