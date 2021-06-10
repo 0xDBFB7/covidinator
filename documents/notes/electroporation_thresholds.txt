@@ -592,3 +592,25 @@ without overriding the boundary conditions.
 perhaps I'm not doing this right. m.fix yields an error
 
 
+need to look into "pole placement"
+
+this "differential evolution" algorithm actually looks really sweet - very parallelizable,
+
+
+thinking about how we make a "power transfer function" (to get the absolute value) - the answer
+https://electronics.stackexchange.com/questions/31652/transfer-function-of-a-full-bridge-diode-rectifier
+seems to be that it's not possible?
+
+The requirement of linearity fails for a diode (i.e., f(ax)≠af(x) for a<0), 
+and thus the traditional definition of "transfer function" carries little meaning. 
+The best you can do is come up with a mathematical expression for the output.
+
+tried Cesearo's suggested Differential Evolution on the problem, didn't obviously work.
+
+https://hal.inria.fr/file/index/docid/390435/filename/Diehl.pdf is a very, very good review
+
+the problem with pole-placement is that it's not possible to 
+
+python lib "do-mpc" looks like it'll be perfect.
+for now going to try hampath bang-bang 
+

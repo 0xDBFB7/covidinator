@@ -21,7 +21,7 @@ letterpaper]{geometry}
 
 
 
-\title{Optimal control for selective electroporation of the viral envelope}
+\title{Selective electroporation of the viral envelope via optimal control of transmembrane potential}
 \author{\footnotesize{Daniel Correia\orcidlink{0000-0002-9353-0216}}\footnote{Ontario, Canada; contact information in the ORCiD.}}
 \date{\small{March 21 2021}}
 
@@ -40,9 +40,9 @@ letterpaper]{geometry}
 \renewcommand{\abstractname}{Summary}    % clear the title
 
 \begin{abstract}
-	\noindent The phenomenon of electroporation occurs when extreme applied electric fields in the MV/m range drive transmembrane potentials, leading to pores in, and perhaps the destruction of, membranes; this is commonly harnessed for transfection into the cell in the laboratory, and has recently been shown clinically to be safe and effective for the in-situ ablation of tumors.
+	\noindent The phenomenon of electroporation occurs when extreme applied electric fields in the MV/m range drive transmembrane potentials, leading to pores in (and potentially the destruction of) membranes. This is commonly harnessed for transfection into the cell in the laboratory, and has recently been shown clinically to be safe and effective for the in-situ ablation of tumors.
 	
-	\noindent As pulse duration is reduced from the microsecond to nanosecond regime, effects targeting smaller intracellular structures are expected and observed, and a degree of tunability arises. Indeed, pulses shorter than 10 ns have been observed to porate the nuclear envelope and organelle membranes while leaving the plasma membrane intact.
+	\noindent As pulse duration is reduced from the microsecond to sub-nanosecond regime, effects targeting smaller intracellular structures are expected and observed, and a degree of tunability arises. Indeed, pulses shorter than 10 ns have been observed to porate the nuclear envelope and organelle membranes while leaving the plasma membrane intact.
 	
 	fortuitous Dielectric properties apparently due to the 
 	
@@ -68,7 +68,7 @@ At the risk of self-plagarism, we will restate some precedent.
 
 The field-induced breakdown of lipid membranes has proved to be a particularly useful property of the cell. From initial studies of crude membrane breakdown effects \cite{Reversible1979}
 
-when a strong electric field is applied, they "do enough things to justify international meetings, to fill a sizable book, and to lead one to speak of an entirely new technology for cell manipulation."
+when a strong electric field is applied, they "...do enough things to justify international meetings, to fill a sizable book, and to lead one to speak of an entirely new technology for cell manipulation."
 
 It is, in general, something of a singular outlier in that it is one of very few biological mechanisms relevant at practical electric field intensities. Similar to thermal treatment, it also performs an operation something like integration with a threshold, a process distinct from normal absolute-value. It is perhaps this property which provides a small degree of tunability.
 
@@ -91,23 +91,23 @@ Electroporation\cite{Electroporation1988}, now a common laboratory procedure, oc
 
 Therapies based on irreversible electroporation\cite{Nonthermal2013}\cite{Lipid2017} have recently been used in the clinic\cite{Irreversible2013} for tumor ablation. There is much discussion on electroporation as an alternative to viral vectors, but we have found surprisingly little discussion on clinical treatment of viral infection with these conventional electroporation therapies.
 
+
+As in the previous paper, we must stress that meaningful bioelectrics research hinges very strongly on experimental design and methodology, and very few results can be trusted implicitly. It appears to be very difficult to unambiguously determine effects and their cause on a system as complex as a cell, especially when electrodes are in contact with solution and release an energy-dependent dose of metal ions.
+
+
 However, long pulses at $\approx10$ MV/m appear to electroporate large enveloped viruses, similarly to host cells\cite{AC2017}
 
 There is a single report of the electroporation of HIV in the gray literature. This one of very few reports involving the electroporation of viruses, reporting the ~95\% inactivation of HIV using a standard commercial Bio-Rad electroporation system at 2.3 MV/m. However, the authors appear to have committed such an egregious breach of research ethics that we cannot cite them here.
 
  which we believe might hint that a regime of intensity, duration, and pulse count may exist to target the viral envelope. 
  
-Despite considering the somewhat harder problem of electroporating while inside the cell, rather than in extracellular fluid, \cite{Electroporation2013} report that 250 nm liposomes should be porated without inducing damage to the host cell, and modelling shows that 100 nm liposomes may be porated by 4 ns pulses never exceeding 20 MV/m. 
+Despite considering the presumably harder problem of electroporating small lipid vesicles while inside the cell, rather than in extracellular fluid, \cite{Electroporation2013} report that 250 nm liposomes should be porated without inducing damage to the host cell, and their modelling shows that 100 nm liposomes may be porated by 4 ns pulses never exceeding 20 MV/m. 
 
-The same field intensities do not appear to damage phages with protein capsids\cite{Manipulation2013}, in line with our negative results on T4.
+The same field intensities do not appear to damage phages with protein capsids\cite{Manipulation2013}, in line with our previously-reported negative results on T4.
 
-Non-resonant capsid and envelope breakage with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990}, but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (c.f. \cite{Microwave1987}). 
+Capsid and envelope permeablization with 120 pulses, 500 ns each, at 3 MV/m, has been previously observed\cite{Inactivation1990}, but the RNA damage suggests that this is an electrochemical artifact \cite{Formation1996} (c.f. \cite{Microwave1987}). 
 
 The trapping experiments we use were conducted at 
-
-As in the previous paper, we must stress that meaningful bioelectrics research hinges very strongly on experimental design and methodology, and very few results can be trusted implicitly. It appears to be very difficult to unambiguously determine effects and their cause on a system as complex as a cell, especially when electrodes are in contact with solution and release an energy-dependent dose of metal ions.
-
-
 
 
 As in the previous paper, bulk dielectric properties of tissues are given by Gabriel. 
@@ -136,21 +136,42 @@ This property is
 
 This seems too simple.
 
-Viruses have extraordinary mechanical properties\footnote{Why is this? What selection pressures drive the selection of this pressure?}, so it seems reasonable that their dielectric properties could differ substantially from those of other biological structures. 
+Viruses have extraordinary mechanical properties (why is this? What selection pressures drive the selection of this pressure?), so it seems reasonable to speculate that their dielectric properties could differ substantially from those of other biological structures. 
 
-In the extreme case of the bacteriophage, the genome is packaged so tightly into the protein capsid that the core is often described as a glassy crystal of DNA\cite{Conformation2007}. ssRNA viruses like coronaviridae might be expected to be somewhat more sedate in packing density, but this does not seem to be borne out in the core conductivity data.
+In the extreme case of coliform bacteriophage, the genome is packaged so tightly into the protein capsid that the core is most accurately described as a glassy crystal of DNA\cite{Conformation2007}. ssRNA viruses like coronaviridae might be expected to be somewhat more sedate in packing density, but this does not seem to be borne out in the core conductivity data.
 
-On the other hand, the eukaryotic "structome" also contains countless vesicles and structures of similar nature that might plausibly be damaged; small pockets of lipid in the endoplasmic reticula - nuclear pore complexes, etc. This appears to be seen to some degree in Gabriel's data; dense tissues exhibit many [double check this]. It may not be possible to meaningfully predict all possible off-target effects, much like in drug discovery.
+On the other hand, the eukaryotic "structome" also contains countless vesicles and structures of similar nature that might plausibly be damaged; small pockets of lipid in the endoplasmic reticula - nuclear pore complexes, etc. This appears to be seen to some degree in Gabriel's data; dense tissues exhibit a high cole-cole alpha coefficient [double check this]. It may not be possible to meaningfully predict all possible off-target effects, much like in drug discovery.
+
+
+
+
+
 
 \section*{Basic scaling laws}
 
 The most obvious difference is scale. Viruses are minute. All other properties of the system being equal, the standard Schwan equation for transmembrane voltage implies that the steady-state DC voltage is proportional to the size of the particle. In the case of a 100 nm virus 
 
-
-
-Madiyar's Vaccinia electroporation data aligns with. Assuming that the host porates at 0.05 MV/m, the 250 nm vaccinia might be expected to have a threshold of 4 MV/m. Mutatoyo's data also agree.  
+Madiyar's Vaccinia electroporation data aligns with. Assuming that the host becomes permeable at 0.05 MV/m, the 250 nm vaccinia might be expected to have a threshold of 4 MV/m. Mutatoyo's data also agree.  
 
 This does not agree with the two reports. It does not seem plausible that the 
+
+A normalized (note that the true value of the virus' transmembrane voltage is, again, a factor of 400 reduced).
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{step_course}
+\end{figure}
+
+
+Despite the two having similar time constants (host: $\tau_1=444\ \text{ns},\ \tau_2=2.3\ \text{ns}$, virus: $\tau_1=295\ \text{ns},\ \tau_2=3.1\ \text{ns}$), the time course of the transmembrane voltage is clearly distinct. (Plot generated via the convolution method, \ghfile{transmembrane_steady_state.py})
+
+
+Consider the following double gaussian waveform, each with a FWHM of 500 picoseconds, separated by 1 nanosecond. In this case, the peak virus transmembrane voltage is no longer 1/400 less than the host cell, but 1/6.5, and the total energy in each curve is also improved to a ratio of 1/37. The second, inverted pulse has the effect of quickly zeroing out the host cell's decaying potential to improve the virus' energy ratio.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{gaussian_pulse}
+\end{figure}
+
+
 
 %1/(250e-9 / 20e-6)
 
@@ -158,8 +179,6 @@ This does not agree with the two reports. It does not seem plausible that the
 
 However, not field-time product [analytic, ]. 
 
-Despite the two having nearly identical time constants, the course of the transmembrane voltage is clearly different.
-[transmembrane plot here]
 
 [gaussian pulse results, 1/2.7]. 
 
@@ -255,11 +274,11 @@ The dielectric properties of viruses do appear to differ considerably from the h
 
 \subsection*{Electrodynamic considerations}
 
-Kotnik note an important fact: all these permittivity and conductivity values will also depend on frequency, which is not included in their model. We have not examined how these factors can be extracted from. Also disregarded are the Poisson-boltzmann shielding space-charges that proved all-important in the last study. 
+Kotnik note an important fact: all these permittivity and conductivity values will also depend on frequency, which is not included in their model. We have not examined whether these factors can be extracted from existing plots. Also disregarded are the Poisson-Boltzmann shielding space-charges that proved all-important in the last study. 
 
 The necessity for the Laplace transform over the Fourier-based method used for the precursor propagation in the previous report is founded in the requirement for a fully transient solution with a definite t=0.
 
-The concept of optimizing an electroporation pulse is not novel, having been discussed by many groups in the past; either to prodduce different sterilization effects, tee Retelj use a series of, to 
+The concept of optimizing an electroporation pulse is not novel, having been discussed by many groups in the past; either to produce different sterilization effects, tee Retelj use a series of, to 
 
 \subsection{Attempts to solve for the optimal pulse in the s-space; convolution integral}
 

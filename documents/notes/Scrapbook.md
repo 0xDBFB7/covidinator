@@ -161,3 +161,16 @@ less precision during experiment recording and that ‘freezing’ parts of the 
 necessary. The authors stressed that “ELN environments need to incorporate automatic or
 semi- automatic features that are supported by sophisticated technologies [...].”"
 https://edoc.ub.uni-muenchen.de/26940/1/Feger_Sebastian.pdf
+
+
+http://www.funraniumlabs.com/
+"As an example, Glenn Seaborg’s lab notebooks are immaculate, clear and easy to follow. Seriously, I’m jealous of his penmanship."
+
+
+https://en.wikipedia.org/wiki/The_Iron_Giant
+He made sure to spread out the work on scenes between experienced and younger animators, noting, "You overburden your strongest people and underburden the others [if you let your top talent monopolize the best assignments]."
+
+
+http://www.jesshamrick.com/2016/03/07/passing-quals/
+"Different people prepare for quals in different ways. One of my labmates prepared by writing hand-written notes in many small notebooks and then scanning them. Another labmate made a handful of slides per paper. For me, I decided to write blog posts on each paper."
+
