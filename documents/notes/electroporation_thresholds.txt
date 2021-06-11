@@ -614,3 +614,7 @@ the problem with pole-placement is that it's not possible to
 python lib "do-mpc" looks like it'll be perfect.
 for now going to try hampath bang-bang 
 
+
+the hampath installer guides you through setup in a very convienient manner. very nice.
+export PATH=$PATH:/home/arthurdent/Projects/covidinator/biology/kotnik_transmembrane/hampath/hampath307/bin
+
