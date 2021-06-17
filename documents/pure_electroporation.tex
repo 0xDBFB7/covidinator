@@ -142,7 +142,7 @@ On the other hand, the eukaryotic "structome" also contains countless vesicles a
 
 \section*{Basic scaling laws}
 
-The most obvious difference is scale. All other properties of the system being equal, the standard Schwan equation for transmembrane voltage implies that the steady-state DC voltage is proportional to the size of the particle. In the case of a 100 nm virus, this would 400x difference, which is reflected precisely in the steady state numerical simulations that follow.
+The most obvious difference is scale. All other properties of the system being equal, the standard Schwan equation for transmembrane voltage, $\Delta \phi = (3/2) E R \cos(\theta)$ implies that the steady-state DC voltage is proportional to the size of the particle. In the case of a 100 nm virus, this would 400x difference, which is reflected precisely in the steady state numerical simulations that follow.
 
 Madiyar's Vaccinia electroporation data aligns with. Assuming that the host becomes permeable at 0.05 MV/m, the 250 nm vaccinia might be expected to have a threshold of 4 MV/m. Mutatoyo's data also agree roughly.  
 
@@ -287,7 +287,7 @@ The dielectric properties of viruses do appear to differ considerably from the h
 	
 	We will continue to use this convention, assuming the subscripts on equations 9a through f are correct. 
 	
-	This transposition was only detected late in the project, and so some documentation may still contain the incorrect coefficients. Beware.
+	This minor transposition was only detected late in the project, and so some documentation may still contain the incorrect coefficients. Beware.
 
 \end{tcolorbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
@@ -306,13 +306,15 @@ The concept of optimizing an electroporation pulse is not novel, having been dis
 
 We must apologize once again to the mathematicians for sins of terminology and rigor.
 
-This bears considerable similarity to e.g. radar waveform design and compressed sensing; problems of coherent control of quantum systems. In many cases, the optimal control is equal to the transfer function
+This bears considerable similarity to e.g. radar waveform design and compressed sensing; problems of coherent control of quantum systems, single input multiple output underactuated robotics, simultaneous stabilization\cite{results1984}\cite{Simultaneous2005}.
+
+In many cases, the optimal (minimum-energy) control is equal to the transfer function
 
 Scipy has a convenient LTI class that accepts the terms.
 
-single input, multiple output 
 
-underactuated robotics, simultaneous stabilization\cite{results1984}\cite{Simultaneous2005}
+
+
 
 two plant
 
@@ -351,13 +353,13 @@ Subtracting the frequency domain of the step responses of the two produced an in
 
 For use with GEKKO, the transfer function was converted into a system of differential equations:
 
-For PSOPT, a further modification was needed, as the library does not support the derivative of the control; the second derivative was used as the control, and input into a differential-algebraic equation form.
+For PSOPT, a further modification was needed, as the library does not appear to natively support the second derivative of the control; the second derivative was used as the control, and input into a differential-algebraic equation form.
 
 Because the problem depends on the second derivative of sub-nanosecond curves, base variable and coefficient scaling varies by more than 20 orders of magnitude. 
 
 PSOPT [] with IPOPT\cite{implementation2006} solver. PSOPT has the advantage of semi-automatic scaling based on supplied bounds. 
 
-Both PSOPT and GEKKO's APMonitor backend use the famous ipopt solver. A number of linear solvers can be used. LANL's Tasseff's integration with the SPRAL solver, reportedly faster on large problems, was 
+Both PSOPT and GEKKO's APMonitor backend use the famous ipopt solver. A number of linear solvers can be used. LANL's Tasseff's integration with the SPRAL solver, reportedly faster on large problems, was . HSL libraries ma57 and ma97 were used.
 
 It was found very useful to test the equation setup by first propagating a test using a standard integrator (PSOPT's rk4 or mode 4).
 
@@ -483,7 +485,9 @@ Setting say, the logistic equation, produces an overdetermined system. using the
 
 Written in texst
 
-\subsection*{Limitations and next steps}
+\section*{Sensitivity analysis}
+
+\section*{Limitations and next steps}
 
 Extremely speculative and 
 
@@ -494,7 +498,9 @@ optimal over a distribution
 "Bulk effects", as the concentration increases, can completely alter the. It may not be possible to produce a robust enough scheme 
 
 
-\subsection{Software used and evaluated:}
+sensitivity analysis
+
+\subsection*{Software used and evaluated:}
 
 casADi;
 
@@ -503,7 +509,8 @@ typeset in LaTeX on TeXstudio and Gummi.
 
 
 
-\subsection{Recommended reading}
+
+\subsection*{Recommended reading}
 
 de Seze; 
 

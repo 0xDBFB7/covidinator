@@ -174,3 +174,15 @@ He made sure to spread out the work on scenes between experienced and younger an
 http://www.jesshamrick.com/2016/03/07/passing-quals/
 "Different people prepare for quals in different ways. One of my labmates prepared by writing hand-written notes in many small notebooks and then scanning them. Another labmate made a handful of slides per paper. For me, I decided to write blog posts on each paper."
 
+
+
+Notational Velocity (or nvPY ) has an interesting set of features that might be worth including.
+in particular, it seems to maybe solve the part about finding buried facts  
+
+it's easy to write things that are unsupported by evidence. 
+need some way of linking a note to its source, making it explicit
+whether it be a table of data, a 
+
+how about just a set of standards for publications?
+
+
