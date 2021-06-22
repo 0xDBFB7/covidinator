@@ -1,8 +1,14 @@
 
 
+Is it possible to make an electronic lab notebook that intrinsically makes the user a better scientist? 
+
+dude, this is hard.
+
+
 The problem
 
 experience
+
 
 things are going to get inexorably harder, more data will be input 
 
@@ -12,7 +18,12 @@ we need to see every half-hearted attempt, in order to put the right priors on p
 
 texture is lost compared to older papers
 
-old cern papers at the dawn of the internet where lab notebooks and instruments are 
+
+Many of these are little more than a digital blank worksheet. 
+
+
+
+old cern papers at the dawn of the internet where lab notebooks and instruments  
 
 protocols.io
 
@@ -22,6 +33,7 @@ should be available for introspection.
 (this might seem invasive, but I don't think a well-kept lab notebook should include too many overly-personal
 details anyhow!)
 
+vanquish proprietariness
 
 journals use supplemental (durrant a good example), but not enough
 
@@ -39,6 +51,7 @@ kill multiple birds with one stone
 
 how much of this do we want to take on responsibility for and feature creep?
 
+Many extremely competent people are working on this problem, and my primitive exploration will certainly never approach their labours.
 
 current options:
 
@@ -54,7 +67,15 @@ current options:
 - Galaxy project
 - stuff like [lab that bought ipad]
 - that one lab's custom lab scrapbook
+- ornl
 - that math wiki
+- https://openwetware.org/wiki/Main_Page
+
+
+Collection of inspiration and guidelines on lab notebooks
+
+- https://scout.lib.utk.edu/repositories/2/archival_objects/223576
+https://people.ece.cornell.edu/land/ElectronicNotebooks.html
 
 
 now, this is a crazy thought, but
@@ -183,6 +204,21 @@ it's easy to write things that are unsupported by evidence.
 need some way of linking a note to its source, making it explicit
 whether it be a table of data, a 
 
+lines drawn from sentences in papers to their supporting documentation.
+
 how about just a set of standards for publications?
+
+ssh kiosk@gemini.circumlunar.space
+
+lack of review articles that aren't books or wikipedia [see that recent paper]
+
+scientists are already performing excruciatingly detailed reviews for their papers,
+that stuff is just lost when condensing down to 8 to 19 pages with a half-page introduction. That source 
+material should be there! Of course, each paper's topic is ostensibly novel, so some re-review might be necessary, 
+but still!
+
+per-field standardized nomenclature?
+
+
 
 

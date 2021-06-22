@@ -22,7 +22,8 @@ letterpaper]{geometry}
 
 
 \title{Selective electroporation of the viral envelope via optimal control of transmembrane potential}
-\author{\footnotesize{Daniel Correia\orcidlink{0000-0002-9353-0216}}\footnote{Ontario, Canada; contact information in the ORCiD.}}
+\author{\footnotesize{Daniel Correia\orcidlink{0000-0002-9353-0216} \{dcorreia@whimsysciences.com || therobotist@gmail.com\}
+		 \href{https://0xdbfb7.com/email_pledge.txt}{Please don't hesitate to contact; see here}}\footnote{Ontario, Canada; contact information in the ORCiD.}}
 \date{\small{March 21 2021}}
 
 \flushbottom 
@@ -287,7 +288,7 @@ The dielectric properties of viruses do appear to differ considerably from the h
 	
 	We will continue to use this convention, assuming the subscripts on equations 9a through f are correct. 
 	
-	This minor transposition was only detected late in the project, and so some documentation may still contain the incorrect coefficients. Beware.
+	This minor transposition was only detected late in the project, so some documentation in the repository may still contain the incorrect coefficients. Beware.
 
 \end{tcolorbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
@@ -308,13 +309,15 @@ We must apologize once again to the mathematicians for sins of terminology and r
 
 This bears considerable similarity to e.g. radar waveform design and compressed sensing; problems of coherent control of quantum systems, single input multiple output underactuated robotics, simultaneous stabilization\cite{results1984}\cite{Simultaneous2005}.
 
+a double integrator 
+
 In many cases, the optimal (minimum-energy) control is equal to the transfer function
 
 Scipy has a convenient LTI class that accepts the terms.
 
 
 
-
+There are suprisingly many more quan
 
 two plant
 
@@ -478,16 +481,24 @@ However, this overlooks a much simpler method.
 
 Setting say, the logistic equation, produces an overdetermined system. using the above as a constraint in PSOPT was also ineffective.
 
-
 \begin{tcolorbox}
-	First instinct might be to try to solve for the waveform that sets alpha beta gamma to zero. 
+	First instinct might be to try to solve for the waveform that sets alpha beta gamma to zero; feeding this though produces a reasonable solution []. 
 \end{tcolorbox}
 
-Written in texst
+Puts much more effort into further analytical rearrangement before resorting to; by more fully using Pontryagin's Maximum Principle, and by formulating a control theoretic Hamiltonian. What looks to be a superb code hampath, did not have the experience to implement the hamiltonian at short notice.
+
+
+\subsection*{Bang-bang control}
+
+A good review of advanced bang-bang control techniques \cite{Computations2004}. 
+
+
+
+
 
 \section*{Sensitivity analysis}
 
-\section*{Limitations and next steps}
+\section*{Limitations and recommendations for further study}
 
 Extremely speculative and 
 
@@ -516,12 +527,13 @@ de Seze;
 
 The book Scaling of Differential Equations is an excellent guide to the numerical treatment of DEs.
 
+\section*{Commentary and discussion}
+
+In easily mutable versions of this paper, this section will be 
 
 
 
-
-
-
+I have been lucky to have been provided the opportunity to conduct this research. 
 
 
 
