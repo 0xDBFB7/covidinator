@@ -220,5 +220,18 @@ but still!
 per-field standardized nomenclature?
 
 
+actually, the bang bang control can be analytic? since it's just a sum of analytic step functions
+another advantage of bang-bang is that the cost function can actually be a division!
+
+make scrapbook a jupyterlab extnesion?
+
+
+julia's Pluto.jl looks great!
+
+ornl's: 
+
+" Interactive input into the notebook is accomplished through CGI scripts. "
+
+
 
 

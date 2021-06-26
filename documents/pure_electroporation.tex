@@ -469,8 +469,9 @@ A system of first-order Differential-Algebraic Equations:
 
 Smooth noise-free combined filter and differentiator.
 
+mayer (endpoint) or Lagrange (integral)
 
-An advantage of bang-bang or bang-off-bang over is that the values of u0 are not free. In this case, it was often found that (perhaps due to poorly-chosen values of the penalty factor rho, a poor initial guess, or some other issue in the problem setup), the gradient descent would decrease the control magnitude to a value below numerical accuracy. This necessitated a Lagrange constraint on the total, further increasing the computational complexity and restricting the class of solutions. 
+An advantage of bang-bang or bang-singular-bang over is that the values of u0 are not free. In PSOPT and , it was often found that (perhaps due to poorly-chosen values of the penalty factor rho, a poor initial guess, or some other issue in the problem setup), the gradient descent would decrease the control magnitude to a value below numerical accuracy. This necessitated a Lagrange constraint on the integral, further increasing the computational complexity and restricting the class of solutions. 
 
 
 
@@ -485,13 +486,19 @@ Setting say, the logistic equation, produces an overdetermined system. using the
 	First instinct might be to try to solve for the waveform that sets alpha beta gamma to zero; feeding this though produces a reasonable solution []. 
 \end{tcolorbox}
 
-Puts much more effort into further analytical rearrangement before resorting to; by more fully using Pontryagin's Maximum Principle, and by formulating a control theoretic Hamiltonian. What looks to be a superb code hampath, did not have the experience to implement the hamiltonian at short notice.
-
-
-\subsection*{Bang-bang control}
+\subsection*{Hampath bang-bang control}
 
 A good review of advanced bang-bang control techniques \cite{Computations2004}. 
 
+Puts much more effort into further analytical rearrangement before resorting to; by more fully using Pontryagin's Maximum Principle, and by formulating a control theoretic Hamiltonian. What looks to be a superb code hampath, did not have the experience to implement the hamiltonian at short notice.
+
+
+
+\subsection*{Niemann's bang-bang control control}
+
+Niemann describes a straightforward bang-bang formulation using gradient methods, using gradient projection to implement the required boundaries \cite{Determinationa}. Because the unit step function of the transmembrane voltage is analytic, a bang-bang control can be simulated without integration, by simply summing the (as described by Kotnik). This appears to automatically resolve "backwards-integration" and sorting issues presented in chapter 3 of Niemann's thesis.
+
+While 
 
 
 
@@ -500,16 +507,24 @@ A good review of advanced bang-bang control techniques \cite{Computations2004}.
 
 \section*{Limitations and recommendations for further study}
 
+
+
 Extremely speculative and 
+
+As previously mentioned, electroporation is rarely seen in non-contact studies. It is possible that some nuanced 
 
 Involves careful control of the second derivative of a waveform 
 
-optimal over a distribution 
+Viruses vary by \%x . optimal over a distribution of cells and viruses. 
 
 "Bulk effects", as the concentration increases, can completely alter the. It may not be possible to produce a robust enough scheme 
 
-
 sensitivity analysis
+
+
+must necessarily operate "open loop", without feedback, towards the transmembrane voltage
+
+
 
 \subsection*{Software used and evaluated:}
 
