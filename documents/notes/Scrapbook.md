@@ -1,5 +1,9 @@
 
 
+Hargrave: The Scientist's Scrapbook
+
+Science, with Texture!
+
 Is it possible to make an electronic lab notebook that intrinsically makes the user a better scientist? 
 
 dude, this is hard.
@@ -8,7 +12,6 @@ dude, this is hard.
 The problem
 
 experience
-
 
 things are going to get inexorably harder, more data will be input 
 
@@ -21,7 +24,7 @@ texture is lost compared to older papers
 
 Many of these are little more than a digital blank worksheet. 
 
-
+high cognitive load
 
 old cern papers at the dawn of the internet where lab notebooks and instruments  
 
@@ -233,5 +236,32 @@ ornl's:
 " Interactive input into the notebook is accomplished through CGI scripts. "
 
 
+
+could directly integrate with the zotero sqlite apparently.
+
+TUI interface to avoid buttons
+
+android tablet usb keyboard
+
+support websites like charmm-gui 
+
+man I so want a single-source...
+
+It's a machine, Schroeder. It doesn't get pissed off. It doesn't get happy, it doesn't get sad, it doesn't laugh at your jokes.
+It just runs programs.
+
+
+the problem with git is storing stuff like images or datasets. How do we get that stuff
+
+represent everything as a computational graph
+
+everything is an object? objects also include "how to obtain". That is, a link to the university's
+server (kind of like Tim Berners Lee's new ideas). On git clone,  
+
+"fix" vs "edit"? way to justify edits inline
+
+"backed up"
+
+gpg encrypted
 
 
